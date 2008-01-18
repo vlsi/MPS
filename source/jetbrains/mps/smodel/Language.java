@@ -6,7 +6,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -57,6 +56,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private boolean myUpToDate = true;
 
   private boolean myUpdateLastGenerationTimeCalled = false;
+  private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
 
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
   private SModelCommandListener myAspectModelsListener = new SModelCommandListener() {
@@ -300,7 +300,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       }
       myGenerators.clear();
     }
-
+    myNotFoundRefactorings.clear();
   }
 
   public void setLanguageDescriptor(final @NotNull LanguageDescriptor newDescriptor) {
@@ -357,10 +357,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
 
     aspects.addAll(CollectionUtil.asList(
-            ".editor", ".actions", ".constraints",
-            ".intentions", ".findUsages", ".builder", ".scripts",
-            ".helgins", ".plugin", ".textGen",
-            ".textPresentation", ".design", ".util", ".runtime", ".cfa"
+      ".editor", ".actions", ".constraints",
+      ".intentions", ".findUsages", ".builder", ".scripts",
+      ".helgins", ".plugin", ".textGen",
+      ".textPresentation", ".design", ".util", ".runtime", ".cfa"
     ));
     result.add(getModuleUID());
     for (String aspect : aspects) {
@@ -457,7 +457,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   @NotNull
-  public String getNamespace() {    
+  public String getNamespace() {
     String result = getLanguageDescriptor().getNamespace();
     assert result != null;
     return result;
@@ -775,14 +775,14 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         ConceptDeclaration cd = (ConceptDeclaration) declaration;
         if (cd.getExtends() != null) {
           result.addAll(SModelUtil_new.getDeclaringLanguage(
-                  cd.getExtends(), GlobalScope.getInstance()).getParentNames(
-                  NameUtil.nodeFQName(cd.getExtends())));
+            cd.getExtends(), GlobalScope.getInstance()).getParentNames(
+            NameUtil.nodeFQName(cd.getExtends())));
         }
 
         for (InterfaceConceptReference icr : cd.getImplementses()) {
           result.addAll(SModelUtil_new.getDeclaringLanguage(
-                  icr.getIntfc(), GlobalScope.getInstance()).getParentNames(
-                  NameUtil.nodeFQName(icr.getIntfc())));
+            icr.getIntfc(), GlobalScope.getInstance()).getParentNames(
+            NameUtil.nodeFQName(icr.getIntfc())));
         }
       }
 
@@ -790,8 +790,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
         for (InterfaceConceptReference icr : icd.getExtendses()) {
           result.addAll(SModelUtil_new.getDeclaringLanguage(
-                  icr.getIntfc(), GlobalScope.getInstance()).getParentNames(
-                  NameUtil.nodeFQName(icr.getIntfc())));
+            icr.getIntfc(), GlobalScope.getInstance()).getParentNames(
+            NameUtil.nodeFQName(icr.getIntfc())));
         }
       }
 
@@ -1037,8 +1037,12 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       try {
         String fqName = packageName + "." + refactoring.getName();
         Class<ILoggableRefactoring> cls = getClass(fqName);
+        SNodePointer pointer = new SNodePointer(refactoring.getNode());
         if (cls == null) {
-          LOG.error("Can't find " + fqName);
+          if (!myNotFoundRefactorings.contains(pointer)) {
+            LOG.error("Can't find " + fqName);
+            myNotFoundRefactorings.add(pointer);
+          }
           continue;
         }
         result.add(cls.getConstructor().newInstance());

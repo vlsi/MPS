@@ -9,25 +9,30 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.smodel.SNodePointer;
+import java.util.List;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import javax.swing.JOptionPane;
+import jetbrains.mps.ide.IDEProjectFrame;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
-import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import java.util.ArrayList;
-import jetbrains.mps.refactoring.framework.ChooseStringComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
-public class Rename extends AbstractLoggableRefactoring {
-  public static final String newName = "newName";
+public class SafeDelete extends AbstractLoggableRefactoring {
 
   public static String getKeyStroke_static() {
-    return "shift F6";
+    return "";
   }
 
   public static Class getClass_static() {
-    return Rename.class;
+    return SafeDelete.class;
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
@@ -41,19 +46,19 @@ public class Rename extends AbstractLoggableRefactoring {
 
 
   public String getUserFriendlyName() {
-    return "Rename";
+    return "Safe Delete (under construction)";
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1200667642215#1199457919461";
+    return "jetbrains.mps.core.scripts@1_0_1200667642215#1200665013408";
   }
 
   public String getKeyStroke() {
-    return Rename.getKeyStroke_static();
+    return SafeDelete.getKeyStroke_static();
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return Rename.isApplicableWRTConcept_static(node);
+    return SafeDelete.isApplicableWRTConcept_static(node);
   }
 
   public String getApplicableConceptFQName() {
@@ -65,13 +70,26 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return actionContext.getNode() != null;
+    {
+      SNode node = actionContext.getNode();
+      if(node == null) {
+        return false;
+      }
+      SearchResults searchResults = new NodeUsages_Finder().find(new SearchQuery(new SNodePointer(node), actionContext.getScope()));
+      List<SearchResult> aliveResults = searchResults.getAliveResults();
+      if(!(aliveResults.isEmpty())) {
+        int size = aliveResults.size();
+        JOptionPane.showMessageDialog(((IDEProjectFrame)actionContext.get(IDEProjectFrame.class)).getMainFrame(), size + " usages found, can't perform safe delete");
+        return false;
+      }
+      return true;
+    }
   }
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SNode node = actionContext.getNode();
-      node.setName(((String)refactoringContext.getParameter("newName")));
+      SNodeOperations.deleteNode(node);
     }
   }
 
@@ -82,19 +100,9 @@ public class Rename extends AbstractLoggableRefactoring {
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
   }
 
-  public String newName_initialValue(ActionContext actionContext) {
-    return actionContext.getNode().getName();
-  }
-
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
     boolean result = false;
     List<IChooseComponent> components = new ArrayList<IChooseComponent>();
-    {
-      IChooseComponent<String> chooseComponent;
-      chooseComponent = new ChooseStringComponent("new name:", "newName");
-      chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
-      components.add(chooseComponent);
-    }
     ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
     dialog.showDialog();
     result = dialog.getResult();

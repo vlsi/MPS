@@ -58,7 +58,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1199627211950#1198076144993";
+    return "jetbrains.mps.core.scripts@1_0_1200667642215#1198076144993";
   }
 
   public String getKeyStroke() {
