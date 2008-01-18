@@ -1339,7 +1339,7 @@ public final class SNode {
     try {
       s = BaseConcept_Behavior.call_getPresentation_1180102203531(this);
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(t, this);
     }
     if (s == null) {
       LOG.error("no presentation for node: " + this.getDebugText());
