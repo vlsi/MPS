@@ -859,6 +859,7 @@
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/constraintsLanguage/constraintsLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/constraintsLanguage/constraintsLanguage.iml" group="languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" group="baseLanguageExt" />
+      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/csharp-runtime/csharp-runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/csharp-runtime/csharp-runtime.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/dates-runtime/dates-runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/dates-runtime/dates-runtime.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/dnq.iml" filepath="$PROJECT_DIR$/platform/dnq/dnq.iml" group="platform/dnq/language" />
@@ -1999,5 +2000,8 @@
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
   </component>
+  <UsedPathMacros>
+    <macro name="TEMPLATE" />
+  </UsedPathMacros>
 </project>
 
