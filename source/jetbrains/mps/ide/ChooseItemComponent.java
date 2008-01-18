@@ -77,7 +77,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
       public void actionPerformed(ActionEvent e) {
         final Item selectedItem = (Item) myList.getSelectedValue();
         if (selectedItem == null) return;
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+        CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
             doChoose(selectedItem);
           }
