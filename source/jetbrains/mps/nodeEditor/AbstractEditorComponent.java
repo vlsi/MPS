@@ -1740,10 +1740,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             return;
           }
           TypeChecker.getInstance().checkRoot(sNode.getContainingRoot(), true);
+          rebuildEditorContent();
         }
       });
-
-      rebuildEditorContent();
       keyEvent.consume();
       return;
     }
