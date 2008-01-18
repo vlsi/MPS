@@ -59,6 +59,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private boolean myTransient;
 
   private long myDiskTimestamp = -1;
+  private boolean myIsTestRefactoringMode = false;
 
   public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelUID modelUID) {
     myModelUID = modelUID;
@@ -266,10 +267,17 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
+  public void setTestRefactoringMode(boolean isTestRefactoringMode) {
+    myIsTestRefactoringMode = isTestRefactoringMode;
+  }
+
   private void playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
     int currentVersion = modelDescriptor.getVersion();
     int usedVersion = mySModel.getUsedVersion(modelDescriptor.getModelUID());
     if (currentVersion > usedVersion) {
+      if (myIsTestRefactoringMode) {
+        System.err.println("current version of used model " + modelDescriptor + " is " + currentVersion + ", used version is " + usedVersion);
+      }
       SModel importedModel = modelDescriptor.getSModel();
       RefactoringHistory refactoringHistory = importedModel.getRefactoringHistory();
       for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {

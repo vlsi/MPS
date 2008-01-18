@@ -39,8 +39,11 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
         System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
         return false;
       }
+      ((DefaultSModelDescriptor)sandbox1).setTestRefactoringMode(true);
       SModel sModel = sandbox1.getSModel();
-      return sModel.getRoots().get(0).getConceptFqName().equals(structureModelDescriptor + "." + newConceptName);
+      String conceptFqName = sModel.getRoots().get(0).getConceptFqName();
+      System.err.println("Inspected concept FQ name = " + conceptFqName);
+      return conceptFqName.equals(structureModelDescriptor + "." + newConceptName);
     } catch (Throwable t) {
       t.printStackTrace();
       return false;
