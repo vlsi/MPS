@@ -25,7 +25,7 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
         TypeChecker.getInstance().reportTypeError(basicBlock.getSourceNode(), "unreachable statement", "jetbrains.mps.baseLanguage.helgins", "1196169269696");
       }
     }
-    if(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+    if(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(SNodeOperations.isInstanceOf(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
       IControlFlowGraph controlFlowGraph = cfgBuilder.getControlFlowGraph();
       Set<BasicBlock> lastBlocks = RulesFunctions_BaseLanguage.findLastBlocks(controlFlowGraph);
       for(BasicBlock basicBlock : lastBlocks) {
