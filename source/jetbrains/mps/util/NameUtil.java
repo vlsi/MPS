@@ -288,4 +288,14 @@ public class NameUtil {
     String prop = Character.toUpperCase(property.charAt(0)) + property.substring(1);
     return "set" + prop;
   }
+
+  public static String getAdderName(String property) {
+    String prop = Character.toUpperCase(property.charAt(0)) + property.substring(1);
+    return "add" + prop;
+  }
+
+  public static String getRemoverName(String property) {
+    String prop = Character.toUpperCase(property.charAt(0)) + property.substring(1);
+    return "remove" + prop;
+  }
 }
