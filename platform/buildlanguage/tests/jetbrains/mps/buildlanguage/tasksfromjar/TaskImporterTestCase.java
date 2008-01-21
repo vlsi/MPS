@@ -6,6 +6,7 @@ import jetbrains.mps.buildlanguage.tasksfromjar.SmartItemsInfoExtractor.IWalker;
 import jetbrains.mps.buildlanguage.resource.Child;
 import jetbrains.mps.buildlanguage.resource.Parent;
 import jetbrains.mps.buildlanguage.tasksfromjar.SmartItemsInfoExtractor;
+import jetbrains.mps.buildlanguage.tasksfromjar.ClassInfo.Attribute;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import org.apache.tools.ant.Task;
@@ -22,10 +23,13 @@ public class TaskImporterTestCase extends TestCase {
 
   public void testTestTask1(){
     try {
-      Map<String, Class<?>> attrs = SmartItemsInfoExtractor.getInstance().getAttributesFromTask(ANT_PATH,"jetbrains.mps.buildlanguage.resource.TestTask", Task.class, TEST_FOLDER);
-      assertTrue(attrs.get("booleanattribute").equals(boolean.class));
-      assertTrue(attrs.get("intattribute").equals(int.class));
-      assertTrue(attrs.get("stringattribute").equals(String.class));
+      ClassLoader loader = SmartItemsInfoExtractor.getInstance().createClassLoader(ANT_PATH, TEST_FOLDER);
+      ClassInfo classInfo = new ClassInfo(loader.loadClass("jetbrains.mps.buildlanguage.resource.TestTask"));
+      Set<Attribute> attrs = classInfo.getAttributes();
+      assertTrue(attrs.contains(new Attribute("booleanattribute")));
+      assertTrue(attrs.contains(new Attribute("booleanattribute")));
+      assertTrue(attrs.contains(new Attribute("stringattribute")));
+      // TODO check types
       assertEquals(3, attrs.size());
     } catch (IOException e) {
       throw new RuntimeException(e);
