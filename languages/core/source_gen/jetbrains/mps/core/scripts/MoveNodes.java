@@ -17,6 +17,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
@@ -108,6 +109,14 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       return true;
     }
     return false;
+  }
+
+  public boolean showsAffectedNodes() {
+    return false;
+  }
+
+  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return null;
   }
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {

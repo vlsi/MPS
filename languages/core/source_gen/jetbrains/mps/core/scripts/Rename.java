@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.List;
@@ -62,6 +63,14 @@ public class Rename extends AbstractLoggableRefactoring {
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
     return actionContext.getNode() != null;
+  }
+
+  public boolean showsAffectedNodes() {
+    return false;
+  }
+
+  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return null;
   }
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {

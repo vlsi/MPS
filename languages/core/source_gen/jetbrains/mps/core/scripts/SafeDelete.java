@@ -17,6 +17,7 @@ import java.util.List;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.findusages.view.NewUsagesView;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -24,6 +25,7 @@ import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
 
 public class SafeDelete extends AbstractLoggableRefactoring {
+  public static final String showAffectedNodes = "showAffectedNodes";
 
   public static String getKeyStroke_static() {
     return "alt DELETE";
@@ -77,10 +79,30 @@ public class SafeDelete extends AbstractLoggableRefactoring {
         IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
         NewUsagesView newUsagesView = projectFrame.getUsagesView();
         newUsagesView.showResults(searchQuery, searchResults);
-        JOptionPane.showMessageDialog((projectFrame).getMainFrame(), size + " usages found, can't perform safe delete");
+        String message = size + " usages found. delete anyway?";
+        JFrame component = projectFrame.getMainFrame();
+        int option = JOptionPane.showConfirmDialog(component, message, "Safe Delete", JOptionPane.YES_NO_OPTION);
+        if(option == JOptionPane.YES_OPTION) {
+          refactoringContext.setParameter("showAffectedNodes", true);
+          return true;
+        }
         return false;
       }
+      refactoringContext.setParameter("showAffectedNodes", false);
       return true;
+    }
+  }
+
+  public boolean showsAffectedNodes() {
+    return true;
+  }
+
+  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+    {
+      SNode node = actionContext.getNode();
+      SearchQuery searchQuery = new SearchQuery(new SNodePointer(node), actionContext.getScope());
+      SearchResults searchResults = new NodeUsages_Finder().find(searchQuery);
+      return searchResults;
     }
   }
 

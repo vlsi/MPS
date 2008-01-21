@@ -1,6 +1,7 @@
 package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
@@ -59,7 +60,11 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return true;
   }
 
-  public boolean showsUsages() {
+  public boolean showsAffectedNodes() {
     return false;
+  }
+
+  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return null;
   }
 }

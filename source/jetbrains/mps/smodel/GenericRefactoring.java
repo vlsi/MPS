@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -38,8 +39,14 @@ public class GenericRefactoring {
     RefactoringContext refactoringContext = new RefactoringContext();
     boolean success = myRefactoring.askForInfo(context, refactoringContext);
     if (!success) return;
-    if (myRefactoring.showsUsages()) {
-      NewRefactoringView.showRefactoringView(this, context, refactoringContext);
+    if (myRefactoring.showsAffectedNodes()) {
+      SearchResults usages = myRefactoring.getAffectedNodes(context, refactoringContext);
+      if (usages != null) {
+        refactoringContext.setUsages(usages);
+        NewRefactoringView.showRefactoringView(this, context, refactoringContext);
+      } else {
+        doExecute(context, refactoringContext);
+      }
     } else {
       doExecute(context, refactoringContext);
     }
@@ -54,19 +61,19 @@ public class GenericRefactoring {
 
     if (myRefactoring.doesUpdateModel()) {
       writeIntoLog(model, refactoringContext);
-    }
-    refactoringContext.computeCaches();
-    for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
-      String stereotype = anotherDescriptor.getStereotype();
-      if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
-        continue;
+      refactoringContext.computeCaches();
+      for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
+        String stereotype = anotherDescriptor.getStereotype();
+        if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
+          continue;
+        }
+        if (!anotherDescriptor.isInitialized()) continue;
+        SModel anotherModel = anotherDescriptor.getSModel();
+        if (model != anotherModel
+          && !anotherModel.getImportedModelUIDs().contains(model.getUID())
+          && !anotherModel.getLanguageAspectModelsUIDs().contains(model.getUID())) continue;
+        processModel(anotherModel, model, refactoringContext);
       }
-      if (!anotherDescriptor.isInitialized()) continue;
-      SModel anotherModel = anotherDescriptor.getSModel();
-      if (model != anotherModel
-              && !anotherModel.getImportedModelUIDs().contains(model.getUID())
-              && !anotherModel.getLanguageAspectModelsUIDs().contains(model.getUID())) continue;
-      processModel(anotherModel, model, refactoringContext);
     }
 
     Map<IModule, List<SModel>> sourceModels = myRefactoring.getModelsToGenerate(context, refactoringContext);
@@ -80,17 +87,17 @@ public class GenericRefactoring {
     for (IModule sourceModule : sourceModels.keySet()) {
       IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
       new GeneratorManager().generateModels(sourceModels.get(sourceModule),
-              BootstrapLanguages.getInstance().getBaseLanguage(),
-              operationContext,
-              IGenerationType.FILES,
-              new IGenerationScript() {
-                public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
-                  return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
-                }
-              },
-              IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
-              new DefaultMessageHandler(operationContext.getProject()),
-              false);
+        BootstrapLanguages.getInstance().getBaseLanguage(),
+        operationContext,
+        IGenerationType.FILES,
+        new IGenerationScript() {
+          public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
+            return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
+          }
+        },
+        IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
+        new DefaultMessageHandler(operationContext.getProject()),
+        false);
     }
 
 
