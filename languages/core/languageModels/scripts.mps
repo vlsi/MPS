@@ -873,34 +873,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1200914822893">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200914822894">
-                <property name="name" value="newUsagesView" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1200914822895">
-                  <link role="classifier" targetNodeId="23.~NewUsagesView" resolveInfo="NewUsagesView" />
-                </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1200914822896">
-                  <link role="baseMethodDeclaration" targetNodeId="16.~IDEProjectFrame.getUsagesView():jetbrains.mps.ide.findusages.view.NewUsagesView" resolveInfo="getUsagesView" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200914822897">
-                    <link role="variableDeclaration" targetNodeId="1200914765078" resolveInfo="projectFrame" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200914835602">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1200914842417">
-                <link role="baseMethodDeclaration" targetNodeId="23.~NewUsagesView.showResults(jetbrains.mps.ide.findusages.model.searchquery.SearchQuery,jetbrains.mps.ide.findusages.model.result.SearchResults):void" resolveInfo="showResults" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200914835603">
-                  <link role="variableDeclaration" targetNodeId="1200914822894" resolveInfo="newUsagesView" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200914860411">
-                  <link role="variableDeclaration" targetNodeId="1200914856263" resolveInfo="searchQuery" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200914862820">
-                  <link role="variableDeclaration" targetNodeId="1200666877988" resolveInfo="searchResults" />
-                </node>
-              </node>
-            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1200933694689">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200933694690">
                 <property name="name" value="message" />
