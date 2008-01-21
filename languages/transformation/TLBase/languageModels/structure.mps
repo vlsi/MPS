@@ -3,31 +3,31 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.intentions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.intentions" version="-1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.findUsages" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.findUsages" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   </language>
   <maxImportIndex value="11" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -69,6 +69,10 @@
     <property name="name" value="NodeMacro" />
     <property name="package" value="Macro" />
     <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1200912223215">
+      <property name="role" value="mappingLabel" />
+      <link role="target" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1131073118435">
       <property name="value" value="$$" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
@@ -188,6 +192,12 @@
       <property name="role" value="postMappingScript" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1195502151594" resolveInfo="MappingScriptReference" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1200911492601">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="mappingLabel" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1200911316486" resolveInfo="LabelDeclaration" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1163452921864">
       <property name="value" value="mapping configuration" />
@@ -1376,6 +1386,23 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1198104959103">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200911316486">
+    <property name="name" value="MappingLabelDeclaration" />
+    <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1200911342686">
+      <property name="role" value="sourceConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1200913004646">
+      <property name="role" value="targetConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1200911338810">
+      <link role="intfc" targetNodeId="2.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>

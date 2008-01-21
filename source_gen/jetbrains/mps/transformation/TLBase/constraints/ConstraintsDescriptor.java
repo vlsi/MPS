@@ -14,6 +14,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   public  ConstraintsDescriptor() {
     this.myConstraints.add(new Root_MappingRule_template_ReferentConstraint());
     this.myConstraints.add(new CreateRootRule_templateNode_ReferentConstraint());
+    this.myConstraints.add(new NodeMacro_mappingLabel_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
