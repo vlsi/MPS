@@ -44,10 +44,6 @@ public class Rename extends AbstractLoggableRefactoring {
     return "Rename";
   }
 
-  public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1200919507100#1199457919461";
-  }
-
   public String getKeyStroke() {
     return Rename.getKeyStroke_static();
   }
@@ -80,6 +76,10 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
+  }
+
+  public boolean doesUpdateModel() {
+    return false;
   }
 
   public String newName_initialValue(ActionContext actionContext) {

@@ -77,10 +77,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "userFriendlyName");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1191238835892(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).toString() + "#" + _context.getNode().getId();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1199466527696(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
     return SNodeOperations.getModel(conceptDeclaration) + "." + SPropertyOperations.getString(conceptDeclaration, "name");
@@ -89,6 +85,10 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1199468168869(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode overriden = SLinkOperations.getTarget(_context.getNode(), "overrides", false);
     return SNodeOperations.getModel(overriden) + "." + SPropertyOperations.getString(overriden, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1200921209509(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "updateModelClause", true) != null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1197993525530(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -121,10 +121,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1200668668194(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      Pattern_ pattern_1200668988514 = new Pattern_();
-      SNode coercedNode_1200668988513 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1200668988514);
-      if(coercedNode_1200668988513 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1200668988514.PatternVar;
+      Pattern_ pattern_1200921959366 = new Pattern_();
+      SNode coercedNode_1200921959365 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1200921959366);
+      if(coercedNode_1200921959365 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1200921959366.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }

@@ -57,10 +57,6 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return "Move Nodes";
   }
 
-  public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1200919507100#1198076144993";
-  }
-
   public String getKeyStroke() {
     return MoveNodes.getKeyStroke_static();
   }
@@ -143,6 +139,10 @@ public class MoveNodes extends AbstractLoggableRefactoring {
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
+  }
+
+  public boolean doesUpdateModel() {
+    return true;
   }
 
   public IChooseComponentPart<Object> target_componentCreator(ActionContext actionContext) {

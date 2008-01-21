@@ -49,10 +49,6 @@ public class RenameConcept extends AbstractLoggableRefactoring {
     return "Rename Concept";
   }
 
-  public String getSourceId() {
-    return "jetbrains.mps.bootstrap.structureLanguage.scripts#1198085953023";
-  }
-
   public String getKeyStroke() {
     return RenameConcept.getKeyStroke_static();
   }
@@ -103,6 +99,10 @@ public class RenameConcept extends AbstractLoggableRefactoring {
     refactoringContext.updateModelWithMaps(model);
   }
 
+  public boolean doesUpdateModel() {
+    return true;
+  }
+
   public String newName_initialValue(ActionContext actionContext) {
     SNode node = actionContext.getNode();
     if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"))) {
@@ -112,18 +112,20 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
-    boolean result = false;
-    List<IChooseComponent> components = new ArrayList<IChooseComponent>();
     {
-      IChooseComponent<String> chooseComponent;
-      chooseComponent = new ChooseStringComponent("new concept name", "newName");
-      chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
-      components.add(chooseComponent);
+      boolean result = false;
+      List<IChooseComponent> components = new ArrayList<IChooseComponent>();
+      {
+        IChooseComponent<String> chooseComponent;
+        chooseComponent = new ChooseStringComponent("new concept name", "newName");
+        chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
+        components.add(chooseComponent);
+      }
+      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
+      dialog.showDialog();
+      result = dialog.getResult();
+      return result;
     }
-    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
-    dialog.showDialog();
-    result = dialog.getResult();
-    return result;
   }
 
 }

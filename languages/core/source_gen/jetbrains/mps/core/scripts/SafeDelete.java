@@ -47,10 +47,6 @@ public class SafeDelete extends AbstractLoggableRefactoring {
     return "Safe Delete (under construction)";
   }
 
-  public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1200919507100#1200665013408";
-  }
-
   public String getKeyStroke() {
     return SafeDelete.getKeyStroke_static();
   }
@@ -100,6 +96,10 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
+  }
+
+  public boolean doesUpdateModel() {
+    return false;
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {

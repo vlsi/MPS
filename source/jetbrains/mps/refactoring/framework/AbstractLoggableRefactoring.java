@@ -27,15 +27,11 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
   }
 
-  public Map<String, Object> askForInfo(ActionContext actionContext) {
-    return new HashMap<String, Object>();
+  public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return isApplicable(actionContext, refactoringContext);
   }
 
   public String getUserFriendlyName() {
-    return null;
-  }
-
-  public String getSourceId() {
     return null;
   }
 
@@ -57,5 +53,9 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
 
   public Class getOverridenRefactoringClass() {
     return null;
+  }
+
+  public boolean doesUpdateModel() {
+    return true;
   }
 }

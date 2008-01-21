@@ -56,10 +56,6 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     return "Move Concepts";
   }
 
-  public String getSourceId() {
-    return "jetbrains.mps.bootstrap.structureLanguage.scripts#1198173570106";
-  }
-
   public String getKeyStroke() {
     return MoveConcepts.getKeyStroke_static();
   }
@@ -174,19 +170,25 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     refactoringContext.updateModelWithMaps(model);
   }
 
+  public boolean doesUpdateModel() {
+    return true;
+  }
+
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
-    boolean result = false;
-    List<IChooseComponent> components = new ArrayList<IChooseComponent>();
     {
-      IChooseComponent<SModelDescriptor> chooseComponent;
-      chooseComponent = new ChooseModelDescriptorComponent("choose target model", "targetModel", actionContext);
-      chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(actionContext));
-      components.add(chooseComponent);
+      boolean result = false;
+      List<IChooseComponent> components = new ArrayList<IChooseComponent>();
+      {
+        IChooseComponent<SModelDescriptor> chooseComponent;
+        chooseComponent = new ChooseModelDescriptorComponent("choose target model", "targetModel", actionContext);
+        chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(actionContext));
+        components.add(chooseComponent);
+      }
+      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
+      dialog.showDialog();
+      result = dialog.getResult();
+      return result;
     }
-    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
-    dialog.showDialog();
-    result = dialog.getResult();
-    return result;
   }
 
   public static class My_targetModel_Condition implements Condition<SModelDescriptor> {
