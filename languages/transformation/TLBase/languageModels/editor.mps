@@ -869,6 +869,7 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1200911479270" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1200911481866">
             <property name="vertical" value="true" />
+            <property name="gridLayout" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1200911492601" />
           </node>
         </node>
