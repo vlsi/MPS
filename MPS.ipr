@@ -942,7 +942,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.MPSLauncher" />
-      <option name="VM_PARAMETERS" value="-Xmx1024m -ea -Dmps.internal=true" />
+      <option name="VM_PARAMETERS" value="-Xmx1224m -XX:MaxPermSize=110m -ea -Dmps.internal=true" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/build/" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -958,7 +958,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
+        <option name="myExternalizedOptions" value="&#10;snapshots-dir=&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
@@ -968,7 +968,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -976,7 +976,7 @@
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="-Xms128m -Xmx256m" />
-      <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="MForum/web/Web">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -990,7 +990,7 @@
       </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="charisma-app/web/charisma-web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
+        <option name="DEPLOY" value="true" />
       </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -1017,7 +1017,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;force-jvmti=true&#13;&#10;snapshots-dir=&#13;&#10;startup=0&#13;&#10;" />
+        <option name="myExternalizedOptions" value="&#10;force-jvmti=true&#10;snapshots-dir=&#10;startup=0&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
@@ -1565,7 +1565,9 @@
         <root url="jar://$PROJECT_DIR$/lib/freemarker/freemarker-2.3.10.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/freemarker/freemarker-2.3.10-src.zip!/" />
+      </SOURCES>
     </library>
     <library name="Annotations">
       <CLASSES>
@@ -1932,7 +1934,6 @@
         <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-dbcp/jars/commons-dbcp-1.1.jar!/" />
         <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jotm/jars/jotm-jrmp_stubs-1.4.3.jar!/" />
         <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/csv/jars/csv-20.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-logging/jars/commons-logging-1.0.4.jar!/" />
         <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/cglib/jars/cglib-full-2.0.1.jar!/" />
         <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/bonnie/jars/bonnie-2007-01-11-1.jar!/" />
         <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/glue/jars/glue-5.0b2.jar!/" />
@@ -1992,9 +1993,12 @@
         <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xml-security/jars/xmlsec-1.1.0.jar!/" />
         <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/servletapi/jars/servletapi-2.3.jar!/" />
         <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/velocity/jars/velocity-1.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-logging/jars/commons-logging-1.1.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-logging/jars/commons-logging-1.1-src.jar!/" />
+      </SOURCES>
     </library>
   </component>
   <component name="uidesigner-configuration">

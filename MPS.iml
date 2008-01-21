@@ -93,7 +93,6 @@
     <orderEntry type="library" exported="" name="Annotations" level="project" />
     <orderEntry type="library" name="asm" level="project" />
     <orderEntry type="library" name="commons-logging" level="project" />
-    <orderEntry type="library" name="jetty" level="project" />
     <orderEntry type="library" name="stax" level="project" />
     <orderEntry type="library" name="Equinox" level="project" />
     <orderEntry type="library" name="Eclipse FS" level="project" />
@@ -125,7 +124,7 @@
     <Base>
       <setting name="state" value="2" />
     </Base>
-    <LanguageOptions name="$APPLICATION_HOME_DIR$/bin">
+    <LanguageOptions name="$TEMPLATE$">
       <option name="templateOptions">
         <value>
           <option name="block" value="true" />
