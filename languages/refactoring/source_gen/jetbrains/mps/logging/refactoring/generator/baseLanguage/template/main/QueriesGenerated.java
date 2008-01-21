@@ -13,6 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -125,10 +126,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1200668668194(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      Pattern_ pattern_1200933242610 = new Pattern_();
-      SNode coercedNode_1200933242609 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1200933242610);
-      if(coercedNode_1200933242609 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1200933242610.PatternVar;
+      Pattern_ pattern_1200935780096 = new Pattern_();
+      SNode coercedNode_1200935780095 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1200935780096);
+      if(coercedNode_1200935780095 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1200935780096.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -185,6 +186,11 @@ public class QueriesGenerated {
     SNode conceptFunction = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode method = (SNode)_context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
     return ListOperations.getElement(SLinkOperations.getTargets(method, "parameter", true), 1);
+  }
+
+  public static Object referenceMacro_GetReferent_1200935757745(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "argument", false), "argumentType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    return SLinkOperations.getTarget(classifierType, "classifier", false);
   }
 
   public static boolean ifMacro_Condition_1199462382860(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -357,10 +363,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197373531048(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rValue", true);
-  }
-
-  public static SNode sourceNodeQuery_1198175268252(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "argument", false), "argumentType", true);
   }
 
   public static SNode sourceNodeQuery_1192804088431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

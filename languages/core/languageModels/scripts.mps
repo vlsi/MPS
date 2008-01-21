@@ -2,75 +2,15 @@
 <model name="jetbrains.mps.core.scripts">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.findUsages" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
-  </language>
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
-  </language>
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
-  </language>
-  <language namespace="jetbrains.mps.ide.scriptLanguage">
-    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.structure" version="-1" />
-  </language>
-  <language namespace="jetbrains.mps.logging.refactoring">
-    <languageAspect modelUID="jetbrains.mps.logging.refactoring.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.logging.refactoring.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.logging.refactoring.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.logging.refactoring.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
-  </language>
-  <language namespace="jetbrains.mps.quotation">
-    <languageAspect modelUID="jetbrains.mps.quotation.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.quotation.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.quotation.structure" version="-1" />
-  </language>
-  <language namespace="jetbrains.mps.core">
-    <languageAspect modelUID="jetbrains.mps.core.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.core.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.core.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.core.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.core.structure" version="-1" />
-  </language>
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
-  </language>
-  <language namespace="jetbrains.mps.bootstrap.editorLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
-  </language>
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.ide.scriptLanguage" />
+  <language namespace="jetbrains.mps.logging.refactoring" />
+  <language namespace="jetbrains.mps.quotation" />
+  <language namespace="jetbrains.mps.core" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <maxImportIndex value="23" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
@@ -1102,6 +1042,18 @@
     </node>
     <node role="affectedNodesClause" type="jetbrains.mps.logging.refactoring.structure.AffectedNodesClause" id="1200933346055">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200933346056">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1200934698105">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200934698106">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1200934705363">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1200934706880" />
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1200934702907">
+            <node role="expression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1200934702908">
+              <link role="argument" targetNodeId="1200933930873" resolveInfo="showAffectedNodes" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1200933394221">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200933394222">
             <property name="name" value="node" />

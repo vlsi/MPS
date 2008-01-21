@@ -117,10 +117,14 @@ public class NewRefactoringView extends DefaultTool {
   }
 
   private void initUsagesView() {
-    myUsageView.setRunOptions(TreeBuilder.forFinder(new ConstantFinder(mySearchResults.getSearchResults())),
-      null,
-      false,
-      mySearchResults);
+    new Thread() {
+      public void run() {
+        myUsageView.setRunOptions(TreeBuilder.forFinder(new ConstantFinder(mySearchResults.getSearchResults())),
+          null,
+          false,
+          mySearchResults);
+      }
+    }.start();
   }
 
   public String getName() {

@@ -99,6 +99,9 @@ public class SafeDelete extends AbstractLoggableRefactoring {
 
   public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
+      if(!(((Boolean)refactoringContext.getParameter("showAffectedNodes")))) {
+        return null;
+      }
       SNode node = actionContext.getNode();
       SearchQuery searchQuery = new SearchQuery(new SNodePointer(node), actionContext.getScope());
       SearchResults searchResults = new NodeUsages_Finder().find(searchQuery);
