@@ -275,9 +275,12 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     int currentVersion = modelDescriptor.getVersion();
     int usedVersion = mySModel.getUsedVersion(modelDescriptor.getModelUID());
     if (myIsTestRefactoringMode) {
-      System.err.println("current version of used model " + modelDescriptor + " is " + currentVersion + ", used version is " + usedVersion);
+      System.err.println(this + ": current version of used model " + modelDescriptor + " is " + currentVersion + ", used version is " + usedVersion);
     }
     if (currentVersion > usedVersion) {
+      if (myIsTestRefactoringMode) {
+        System.err.println("updating a model " + this);
+      }
       SModel importedModel = modelDescriptor.getSModel();
       RefactoringHistory refactoringHistory = importedModel.getRefactoringHistory();
       for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
