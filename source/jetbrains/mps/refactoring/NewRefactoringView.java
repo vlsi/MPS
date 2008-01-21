@@ -12,6 +12,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.GenericRefactoring;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -32,6 +33,7 @@ import org.jdom.Element;
  */
 public class NewRefactoringView extends DefaultTool {
   private static Map<IDEProjectFrame, NewRefactoringView> ourRefactoringViews = new WeakHashMap<IDEProjectFrame, NewRefactoringView>();
+  private static final Logger LOG = Logger.getLogger(NewRefactoringView.class);
 
   private String myName;
   private GenericRefactoring myRefactoring;
@@ -118,7 +120,7 @@ public class NewRefactoringView extends DefaultTool {
   }
 
   private void initUsagesView() {
-    new Thread() {
+    Thread thread = new Thread() {
       public void run() {
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
@@ -129,7 +131,13 @@ public class NewRefactoringView extends DefaultTool {
           }
         });
       }
-    }.start();
+    };
+    thread.start();
+   /* try {
+      thread.join();
+    } catch (InterruptedException ex) {
+      LOG.error(ex);
+    }*/
   }
 
   public String getName() {
