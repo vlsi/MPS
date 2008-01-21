@@ -281,6 +281,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       }
     }
 
+    System.err.println("saving metadata");
     DefaultMetadataPersistence.save(metadataFile, metadata);
   }
 

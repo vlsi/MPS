@@ -274,10 +274,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private void playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
     int currentVersion = modelDescriptor.getVersion();
     int usedVersion = mySModel.getUsedVersion(modelDescriptor.getModelUID());
+    if (myIsTestRefactoringMode) {
+      System.err.println("current version of used model " + modelDescriptor + " is " + currentVersion + ", used version is " + usedVersion);
+    }
     if (currentVersion > usedVersion) {
-      if (myIsTestRefactoringMode) {
-        System.err.println("current version of used model " + modelDescriptor + " is " + currentVersion + ", used version is " + usedVersion);
-      }
       SModel importedModel = modelDescriptor.getSModel();
       RefactoringHistory refactoringHistory = importedModel.getRefactoringHistory();
       for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
@@ -711,6 +711,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   public void setVersion(int newVersion) {
+    System.err.println("setting version for model " + this + ": " + newVersion);
     setAttribute(VERSION, "" + newVersion);
   }
 
