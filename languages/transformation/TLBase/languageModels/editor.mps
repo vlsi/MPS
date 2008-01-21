@@ -5587,12 +5587,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200913832415">
         <property name="text" value="(" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200916090755">
-        <property name="text" value="in" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1200913861873">
-        <link role="relationDeclaration" targetNodeId="1.1200913810085" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200913865125">
         <property name="text" value="with" />
       </node>
@@ -5607,6 +5601,12 @@
             <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
           </node>
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200916090755">
+        <property name="text" value="in" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1200913861873">
+        <link role="relationDeclaration" targetNodeId="1.1200913810085" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200913833901">
         <property name="text" value=")" />

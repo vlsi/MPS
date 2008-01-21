@@ -1399,7 +1399,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200911316486">
     <property name="name" value="MappingLabelDeclaration" />
-    <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="1200922856752" resolveInfo="BaseLabelDeclaration" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1200911342686">
       <property name="role" value="sourceConcept" />
       <property name="sourceCardinality" value="1" />
@@ -1434,6 +1434,13 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1200913720998">
       <link role="conceptPropertyDeclaration" targetNodeId="11.1138763241883" resolveInfo="applicable_to_node" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200922856752">
+    <property name="name" value="BaseLabelDeclaration" />
+    <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1200922864063">
+      <link role="intfc" targetNodeId="2.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>
