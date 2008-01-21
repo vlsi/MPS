@@ -9,14 +9,15 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import javax.swing.JOptionPane;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.findusages.view.NewUsagesView;
+import javax.swing.JOptionPane;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
@@ -47,7 +48,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1200669113602#1200665013408";
+    return "jetbrains.mps.core.scripts@1_0_1200914821338#1200665013408";
   }
 
   public String getKeyStroke() {
@@ -72,11 +73,15 @@ public class SafeDelete extends AbstractLoggableRefactoring {
       if(node == null) {
         return false;
       }
-      SearchResults searchResults = new NodeUsages_Finder().find(new SearchQuery(new SNodePointer(node), actionContext.getScope()));
+      SearchQuery searchQuery = new SearchQuery(new SNodePointer(node), actionContext.getScope());
+      SearchResults searchResults = new NodeUsages_Finder().find(searchQuery);
       List<SearchResult> aliveResults = searchResults.getAliveResults();
       if(!(aliveResults.isEmpty())) {
         int size = aliveResults.size();
-        JOptionPane.showMessageDialog(((IDEProjectFrame)actionContext.get(IDEProjectFrame.class)).getMainFrame(), size + " usages found, can't perform safe delete");
+        IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
+        NewUsagesView newUsagesView = projectFrame.getUsagesView();
+        newUsagesView.showResults(searchQuery, searchResults);
+        JOptionPane.showMessageDialog((projectFrame).getMainFrame(), size + " usages found, can't perform safe delete");
         return false;
       }
       return true;
