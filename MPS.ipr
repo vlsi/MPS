@@ -849,10 +849,10 @@
       <module fileurl="file://$PROJECT_DIR$/platform/businessRules/businessRules.iml" filepath="$PROJECT_DIR$/platform/businessRules/businessRules.iml" group="platform/businessRules" />
       <module fileurl="file://$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" filepath="$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" group="platform/businessRules" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/cfaLanguage/cfaLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/cfaLanguage/cfaLanguage.iml" group="languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-agent/charisma-agent.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-agent/charisma-agent.iml" group="charisma" />
-      <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-app/charisma-app.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-app/charisma-app.iml" group="charisma" />
-      <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-jira-client/charisma-jira-client.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-jira-client/charisma-jira-client.iml" group="charisma" />
-      <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/charisma-jira-plugin.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-jira-plugin/charisma-jira-plugin.iml" group="charisma" />
+      <module fileurl="file://$CHARISMA_HOME$/charisma-agent/charisma-agent.iml" filepath="$CHARISMA_HOME$/charisma-agent/charisma-agent.iml" group="charisma" />
+      <module fileurl="file://$CHARISMA_HOME$/charisma-app/charisma-app.iml" filepath="$CHARISMA_HOME$/charisma-app/charisma-app.iml" group="charisma" />
+      <module fileurl="file://$CHARISMA_HOME$/charisma-jira-client/charisma-jira-client.iml" filepath="$CHARISMA_HOME$/charisma-jira-client/charisma-jira-client.iml" group="charisma" />
+      <module fileurl="file://$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" filepath="$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" group="charisma" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/collections-runtime/collections-runtime.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/core/configuration/configuration.iml" filepath="$PROJECT_DIR$/core/configuration/configuration.iml" group="core/configuration" />
       <module fileurl="file://$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" filepath="$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" group="core/configuration" />
@@ -990,7 +990,7 @@
       </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="charisma-app/web/charisma-web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="true" />
+        <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
@@ -2004,5 +2004,9 @@
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
   </component>
+  <UsedPathMacros>
+    <macro name="CHARISMA_HOME" />
+    <macro name="MPS_HOME" />
+  </UsedPathMacros>
 </project>
 
