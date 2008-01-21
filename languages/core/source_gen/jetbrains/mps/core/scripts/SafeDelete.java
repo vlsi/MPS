@@ -45,7 +45,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
 
 
   public String getUserFriendlyName() {
-    return "Safe Delete (under construction)";
+    return "Safe Delete Node";
   }
 
   public String getKeyStroke() {

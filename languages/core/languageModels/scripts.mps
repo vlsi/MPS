@@ -751,7 +751,7 @@
   </node>
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1200665013408">
     <property name="name" value="SafeDelete" />
-    <property name="userFriendlyName" value="Safe Delete (under construction)" />
+    <property name="userFriendlyName" value="Safe Delete Node" />
     <link role="applicableConcept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="internalArguments" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1200933930873">
       <property name="name" value="showAffectedNodes" />
