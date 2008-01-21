@@ -26,7 +26,7 @@ import java.util.HashMap;
 public class SafeDelete extends AbstractLoggableRefactoring {
 
   public static String getKeyStroke_static() {
-    return "";
+    return "alt DELETE";
   }
 
   public static Class getClass_static() {
@@ -48,7 +48,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1200914821338#1200665013408";
+    return "jetbrains.mps.core.scripts@1_0_1200919507100#1200665013408";
   }
 
   public String getKeyStroke() {

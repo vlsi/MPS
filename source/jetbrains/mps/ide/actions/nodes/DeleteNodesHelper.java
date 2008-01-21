@@ -7,7 +7,9 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.dialogs.YesNoToAllDialog;
-import jetbrains.mps.refactoring.common.safeDelete.SafeDeleteRefactoringAction;
+import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
+import jetbrains.mps.core.scripts.SafeDelete;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
 import java.util.Iterator;
@@ -80,8 +82,9 @@ public class DeleteNodesHelper {
   }
 
   private void safeDelete(IOperationContext context, SNode node) {
-    final SafeDeleteRefactoringAction safeDeleteAction = new SafeDeleteRefactoringAction();
+    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(new SafeDelete(), context.getProject());
     final ActionContext newContext = new ActionContext(context, node);
+    newContext.put(List.class, CollectionUtil.asList(node));
     safeDeleteAction.update(newContext);
     if (safeDeleteAction.isEnabled()) {
       safeDeleteAction.execute(newContext);

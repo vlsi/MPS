@@ -1023,6 +1023,10 @@
         </node>
       </node>
     </node>
+    <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1200919343189">
+      <property name="modifiers" value="alt" />
+      <property name="keycode" value="VK_DELETE" />
+    </node>
   </node>
 </model>
 
