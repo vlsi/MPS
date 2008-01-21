@@ -49,7 +49,14 @@ public class TemplateProcessor {
       if (macroCount <= nodeMacrosToSkip) continue;
       NodeMacro nodeMacro = (NodeMacro) templateChildNode;
       generationTracer.pushMacro(nodeMacro.getNode());
-      String mappingName_ = nodeMacro.getMappingId() != null ? nodeMacro.getMappingId() : mappingName;
+      String mappingName_ = null;
+      if (nodeMacro.getMappingId() != null) {
+        mappingName_ = nodeMacro.getMappingId();
+      }
+      if (nodeMacro.getMappingLabel() != null) {
+        mappingName_ = nodeMacro.getMappingLabel().getName(); 
+      }
+
       if (nodeMacro instanceof LoopMacro) {
         // $LOOP$
         List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
