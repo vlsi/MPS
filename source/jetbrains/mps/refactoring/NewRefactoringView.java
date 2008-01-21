@@ -145,8 +145,12 @@ public class NewRefactoringView extends DefaultTool {
   }
 
   private void doRefactor() {
-    myRefactoring.doExecute(myActionContext, myRefactoringContext);
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        myRefactoring.doExecute(myActionContext, myRefactoringContext);
     closeRefactoringView(myProjectFrame);
+      }
+    });
   }
 
   public JComponent getComponent() {
