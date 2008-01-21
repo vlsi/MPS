@@ -208,7 +208,12 @@ public class GeneratorUtil {
           if (templateNode != null) {
             generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
             generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
-            createRootNodeFromTemplate(rule.getName(), templateNode, inputNode, generator);
+
+            String mappingName = rule.getName();
+            if (rule.getLabelDeclaration() != null) {
+              mappingName = rule.getLabelDeclaration().getName();
+            }
+            createRootNodeFromTemplate(mappingName, templateNode, inputNode, generator);
           } else {
             generator.showErrorMessage(BaseAdapter.fromAdapter(rule), "no template is defined for the rule");
           }
