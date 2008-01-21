@@ -451,32 +451,34 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void moveCurrentUp() {
+    final SNode[] current = new SNode[1];
     CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
       public void run() {
-        final SNode current = getSelectedCell().getSNode();
-        new IntelligentNodeMover(current) {
+        current[0] = getSelectedCell().getSNode();
+        new IntelligentNodeMover(current[0]) {
           boolean forward() {
             return false;
           }
         }.move();
-        selectNode(current);
       }
     });
+    selectNode(current[0]);
   }
 
 
   private void moveCurrentDown() {
+    final SNode[] current = new SNode[1];
     CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
       public void run() {
-        final SNode current = getSelectedCell().getSNode();
-        new IntelligentNodeMover(current) {
+        current[0] = getSelectedCell().getSNode();
+        new IntelligentNodeMover(current[0]) {
           boolean forward() {
             return true;
           }
         }.move();
-        selectNode(current);
       }
     });
+    selectNode(current[0]);
   }
 
   private SNode findLeftNode(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
@@ -976,10 +978,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void selectNode(final SNode node) {
-    EditorCell nodeCell = findNodeCell(node);
-    if (nodeCell != null) {
-      changeSelection(nodeCell);
-    }
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        EditorCell nodeCell = findNodeCell(node);
+        if (nodeCell != null) {
+          changeSelection(nodeCell);
+        }
+      }
+    });
   }
 
 
