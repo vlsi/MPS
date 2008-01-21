@@ -1405,5 +1405,27 @@
       <link role="intfc" targetNodeId="2.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200913690460">
+    <property name="name" value="Node_FindOutputNode" />
+    <link role="extends" targetNodeId="11.1138411891628" resolveInfo="SNodeOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1200913810085">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="templateGenerator" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="6.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1200913726734">
+      <property name="role" value="label" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1200913919570">
+      <property name="value" value="find output node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1200913720998">
+      <link role="conceptPropertyDeclaration" targetNodeId="11.1138763241883" resolveInfo="applicable_to_node" />
+    </node>
+  </node>
 </model>
 
