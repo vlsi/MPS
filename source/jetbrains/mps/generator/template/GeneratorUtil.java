@@ -314,7 +314,16 @@ public class GeneratorUtil {
         LOG.error(e);
       }
       if (contextParentNode != null) {
-        String mappingName = templateFragment.getName() != null ? templateFragment.getName() : ruleMappingName;
+        String mappingName = null;
+
+        if (templateFragment.getLabelDeclaration() != null) {
+          mappingName = templateFragment.getLabelDeclaration().getName();
+        } else if (templateFragment.getName() != null) {
+          mappingName = templateFragment.getName();
+        } else {
+          mappingName = ruleMappingName;
+        }
+
         try {
           List<SNode> outputNodesToWeave = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateFragmentNode, inputNode, generator);
           String childRole = templateFragmentNode.getRole_();
@@ -536,7 +545,12 @@ public class GeneratorUtil {
       TemplateFragment fragment = getFragmentFromTemplate(template, inputNode, rule.getNode(), generator);
       if (fragment != null) {
         reductionTemplateNode = fragment.getParent().getNode();
-        mappingName = fragment.getName();
+        if (fragment.getName() != null) {
+          mappingName = fragment.getName();
+        }
+        if (fragment.getLabelDeclaration() != null) {
+          mappingName = fragment.getLabelDeclaration().getName();
+        }
       }
     }
 

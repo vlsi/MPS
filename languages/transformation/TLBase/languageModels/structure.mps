@@ -208,6 +208,10 @@
     <property name="name" value="TemplateFragment" />
     <property name="package" value="Template" />
     <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1200916687663">
+      <property name="role" value="labelDeclaration" />
+      <link role="target" targetNodeId="1200911316486" resolveInfo="MappingLabelDeclaration" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1184374535435">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="contextNodeQuery" />

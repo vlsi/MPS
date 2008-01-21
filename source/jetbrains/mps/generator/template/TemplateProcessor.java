@@ -182,6 +182,9 @@ public class TemplateProcessor {
                 if (fragment.getName() != null) {
                   mappingName_ = fragment.getName();
                 }
+                if (fragment.getLabelDeclaration() != null) {
+                  mappingName_ = fragment.getLabelDeclaration().getName();
+                }
               }
             }
           }
@@ -226,6 +229,9 @@ public class TemplateProcessor {
           SNode templateForInclude = fragment.getParent().getNode();
           if (fragment.getName() != null) {
             mappingName_ = fragment.getName();
+          }
+          if (fragment.getLabelDeclaration() != null) {
+            mappingName_ = fragment.getLabelDeclaration().getName();
           }
           boolean inputChanged = (newInputNode != inputNode);
           if (inputChanged) {
