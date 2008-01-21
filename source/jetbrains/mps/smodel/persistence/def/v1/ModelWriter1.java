@@ -44,11 +44,14 @@ public class ModelWriter1 implements IModelWriter {
           }
         });
         for (SModelDescriptor sModelDescriptor : aspectModelDescriptors) {
-          Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
           SModelUID uid = sModelDescriptor.getModelUID();
-          aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, uid.toString());
-          aspectModelElement.setAttribute(ModelPersistence.VERSION, "" + sourceModel.getLanguageAspectModelVersion(uid));
-          languageElem.addContent(aspectModelElement);
+          int modelVersion = sourceModel.getLanguageAspectModelVersion(uid);
+          if (modelVersion > -1) {
+            Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
+            aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, uid.toString());
+            aspectModelElement.setAttribute(ModelPersistence.VERSION, "" + modelVersion);
+            languageElem.addContent(aspectModelElement);
+          }
         }
       }
       rootElement.addContent(languageElem);
