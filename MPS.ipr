@@ -172,6 +172,11 @@
               <file url="file://$PROJECT_DIR$/app/accounting/web-app/WEB-INF/web.xml" />
             </files>
           </module>
+          <module name="charisma">
+            <files>
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/web.xml" />
+            </files>
+          </module>
         </modules>
       </facet-type>
       <facet-type id="jpa">
@@ -848,6 +853,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/businessRules/businessRules.iml" filepath="$PROJECT_DIR$/platform/businessRules/businessRules.iml" group="platform/businessRules" />
       <module fileurl="file://$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" filepath="$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" group="platform/businessRules" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/cfaLanguage/cfaLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/cfaLanguage/cfaLanguage.iml" group="languageDesign" />
+      <module fileurl="file://$CHARISMA_HOME$/charisma.iml" filepath="$CHARISMA_HOME$/charisma.iml" group="charisma" />
       <module fileurl="file://$CHARISMA_HOME$/charisma-agent/charisma-agent.iml" filepath="$CHARISMA_HOME$/charisma-agent/charisma-agent.iml" group="charisma" />
       <module fileurl="file://$CHARISMA_HOME$/charisma-app/charisma-app.iml" filepath="$CHARISMA_HOME$/charisma-app/charisma-app.iml" group="charisma" />
       <module fileurl="file://$CHARISMA_HOME$/charisma-jira-client/charisma-jira-client.iml" filepath="$CHARISMA_HOME$/charisma-jira-client/charisma-jira-client.iml" group="charisma" />
