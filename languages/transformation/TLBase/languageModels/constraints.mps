@@ -74,6 +74,24 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141231">
     <property name="package" value="Rule" />
     <link role="concept" targetNodeId="1.1167514355419" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200921917360">
+      <property name="name" value="getTemplateType" />
+      <link role="overridenMethod" targetNodeId="1200921606270" resolveInfo="getTemplateType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200921917362">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1200921920677">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200921934215">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1200921935140" />
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200921923336">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1200921933996">
+                <link role="link" targetNodeId="1.1167514355421" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1200921922710" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1200921918926" />
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141232">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141233" />
     </node>
@@ -893,6 +911,16 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1200918245282">
     <property name="package" value="Rule" />
     <link role="concept" targetNodeId="1.1167169308231" resolveInfo="BaseMappingRule" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200921606270">
+      <property name="name" value="getTemplateType" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1200921615380" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200921606272">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1200921622194">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1200921623242" />
+        </node>
+      </node>
+    </node>
     <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1200918246832">
       <link role="applicableLink" targetNodeId="1.1200917515464" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1200918247948">
@@ -979,6 +1007,60 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1200918245283">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200918245284" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1200921859653">
+    <property name="package" value="Rule" />
+    <link role="concept" targetNodeId="1.1167327847730" resolveInfo="Reduction_MappingRule" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200921861203">
+      <property name="name" value="getTemplateType" />
+      <link role="overridenMethod" targetNodeId="1200921606270" resolveInfo="getTemplateType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200921861205">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1200921864910">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200921869667">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1200921909108">
+              <link role="link" targetNodeId="1.1168285871518" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200921867569">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1200921869306">
+                <link role="link" targetNodeId="1.1167327847732" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1200921867287" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1200921863471" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1200921859654">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200921859655" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1200921939141">
+    <property name="package" value="Rule" />
+    <link role="concept" targetNodeId="1.1167171569011" resolveInfo="Weaving_MappingRule" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200921940644">
+      <property name="name" value="getTemplateType" />
+      <link role="overridenMethod" targetNodeId="1200921606270" resolveInfo="getTemplateType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200921940646">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1200921944586">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200921948437">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1200921949971">
+              <link role="link" targetNodeId="1.1168285871518" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200921946276">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1200921948139">
+                <link role="link" targetNodeId="1.1167171569014" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1200921945619" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1200921942616" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1200921939142">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200921939143" />
     </node>
   </node>
 </model>
