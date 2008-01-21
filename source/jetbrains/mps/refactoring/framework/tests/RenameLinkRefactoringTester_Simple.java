@@ -1,6 +1,5 @@
 package jetbrains.mps.refactoring.framework.tests;
 
-import jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept;
 import jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.action.ActionContext;
@@ -28,7 +27,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
     GenericRefactoring refactoring_renameLink = new GenericRefactoring(new RenameLink());
 
     System.err.println("executing a refactoring");
-    refactoring_renameLink.execute(actionContext, refactoringContext);
+    refactoring_renameLink.doExecute(actionContext, refactoringContext);
 
     try {
       System.err.println("checking a model");

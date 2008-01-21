@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.AbstractAction;
+
 public class SearchQuery implements IExternalizableComponent {
   private static final String NODE = "node";
   private static final String SCOPE = "scope";
@@ -27,10 +29,18 @@ public class SearchQuery implements IExternalizableComponent {
 
   private SNodePointer myNodePointer;
   private IScope myScope;
+  
+  private transient Runnable myAction;
 
   public SearchQuery(@NotNull SNodePointer nodePointer, IScope scope) {
     myNodePointer = nodePointer;
     myScope = scope;
+  }
+
+  public SearchQuery(@NotNull SNodePointer nodePointer, IScope scope, Runnable action) {
+    myNodePointer = nodePointer;
+    myScope = scope;
+    myAction = action;
   }
 
   public SearchQuery(SNode node, IScope scope) {
@@ -51,6 +61,10 @@ public class SearchQuery implements IExternalizableComponent {
 
   public IScope getScope() {
     return myScope;
+  }
+
+  public Runnable getAction() {
+    return myAction;
   }
 
   public void write(Element element, MPSProject project) {

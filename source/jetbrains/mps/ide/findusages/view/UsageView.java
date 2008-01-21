@@ -103,6 +103,7 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public void rerun() {
+    if (mySearchQuery == null) return;
     if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNodePointer().getNode() == null)) return;
     run();
   }

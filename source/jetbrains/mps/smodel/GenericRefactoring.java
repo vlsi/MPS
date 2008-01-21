@@ -10,18 +10,15 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
-import jetbrains.mps.refactoring.framework.RefactoringLoggingFailedException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.logging.refactoring.structure.*;
+import jetbrains.mps.refactoring.NewRefactoringView;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 
 import java.util.Map;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -41,10 +38,14 @@ public class GenericRefactoring {
     RefactoringContext refactoringContext = new RefactoringContext();
     boolean success = myRefactoring.askForInfo(context, refactoringContext);
     if (!success) return;
-    execute(context, refactoringContext);
+    if (myRefactoring.showsUsages()) {
+      NewRefactoringView.showRefactoringView(this, context, refactoringContext);
+    } else {
+      doExecute(context, refactoringContext);
+    }
   }
 
-  public void execute(@NotNull ActionContext context, @NotNull RefactoringContext refactoringContext) {
+  public void doExecute(@NotNull ActionContext context, @NotNull RefactoringContext refactoringContext) {
     refactoringContext.setRefactoring(myRefactoring);
     myRefactoring.doRefactor(context, refactoringContext);
     SModelDescriptor modelDescriptor = context.getModel();
@@ -115,5 +116,9 @@ public class GenericRefactoring {
 
   public boolean isApplicable(SNode node) {
     return myRefactoring.isApplicableWRTConcept(node);
+  }
+
+  public String getUserFriendlyName() {
+    return myRefactoring.getUserFriendlyName();
   }
 }

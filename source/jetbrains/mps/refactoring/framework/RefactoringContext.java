@@ -7,6 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -50,6 +51,7 @@ public class RefactoringContext {
   private Map<SNodeId, Set<FullNodeId>> myNodeIdsToFullNodeIdsCache = new HashMap<SNodeId, Set<FullNodeId>>();
   private boolean myCachesAreUpToDate = false;
   private Serializer mySerializer = new Serializer();
+  private SearchResults myUsages;
   //-----------------
 
   public RefactoringContext() {
@@ -109,6 +111,14 @@ public class RefactoringContext {
   public void clearAdditionalParemeters() {
     myAdditionalParametersMap.clear();
     myCachesAreUpToDate = false;
+  }
+
+  public @Nullable SearchResults getUsages() {
+    return myUsages;
+  }
+
+  public void setUsages(SearchResults usages) {
+    myUsages = usages;
   }
 
   public SNode moveNodeToNode(SNode sourceNode, String role, SNode targetNode) {

@@ -58,4 +58,8 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
   public boolean doesUpdateModel() {
     return true;
   }
+
+  public boolean showsUsages() {
+    return false;
+  }
 }

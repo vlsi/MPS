@@ -4,7 +4,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink;
 import jetbrains.mps.bootstrap.structureLanguage.scripts.RenameProperty;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 
@@ -28,7 +27,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
     GenericRefactoring refactoring_renameLink = new GenericRefactoring(new RenameProperty());
 
     System.err.println("executing a refactoring");
-    refactoring_renameLink.execute(actionContext, refactoringContext);
+    refactoring_renameLink.doExecute(actionContext, refactoringContext);
 
     try {
       System.err.println("checking a model");
