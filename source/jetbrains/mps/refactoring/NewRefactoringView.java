@@ -7,6 +7,7 @@ import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ConstantFinder;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.GenericRefactoring;
@@ -119,10 +120,14 @@ public class NewRefactoringView extends DefaultTool {
   private void initUsagesView() {
     new Thread() {
       public void run() {
-        myUsageView.setRunOptions(TreeBuilder.forFinder(new ConstantFinder(mySearchResults.getSearchResults())),
-          null,
-          false,
-          mySearchResults);
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            myUsageView.setRunOptions(TreeBuilder.forFinder(new ConstantFinder(mySearchResults.getSearchResults())),
+              null,
+              false,
+              mySearchResults);
+          }
+        });
       }
     }.start();
   }
