@@ -73,6 +73,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1200924580714(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
+  }
+
   public static SNode sourceNodeQuery_1168025917226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -129,48 +133,53 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "leftExpression", true);
   }
 
+  public static SNode sourceNodeQuery_1200924590431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "templateGenerator", true);
+  }
+
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619599466(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619796790(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619844945(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619847603(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619852561(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619868267(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619865210(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619877062(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619879860(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619882833(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1195503404236(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getQueriesGeneratedClass(_context.getGenerator());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(null, "queriesGenerated");
   }
 
   public static void mappingScript_CodeBlock_1199965771120(final IOperationContext operationContext, final MappingScriptContext _context) {

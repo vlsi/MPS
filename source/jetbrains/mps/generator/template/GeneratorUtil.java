@@ -157,7 +157,11 @@ public class GeneratorUtil {
         generator.getGeneratorSessionContext().getGenerationTracer().pushRule(createRootRule.getNode());
         boolean wasChanged = generator.isChanged();
         try {
-          createRootNodeFromTemplate(createRootRule.getName(), BaseAdapter.fromAdapter(templateNode), null, generator);
+          String mappingName = createRootRule.getName();
+          if (createRootRule.getLabel() != null) {
+            mappingName = createRootRule.getLabel().getName();
+          }
+          createRootNodeFromTemplate(mappingName, BaseAdapter.fromAdapter(templateNode), null, generator);
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
           generator.setChanged(wasChanged);
