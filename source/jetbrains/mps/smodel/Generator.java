@@ -3,18 +3,20 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ConversionUtil;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.GeneratorReference;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -205,7 +207,7 @@ public class Generator extends AbstractModule {
   }
 
   @Nullable
-  public File getClassesGen() {
+  public IFile getClassesGen() {
     return mySourceLanguage.getClassesGen();
   }
 }

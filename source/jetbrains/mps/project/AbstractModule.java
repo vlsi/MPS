@@ -141,11 +141,11 @@ public abstract class AbstractModule implements IModule {
   }
 
 
-  public File getClassesGen() {
+  public IFile getClassesGen() {
     if (getDescriptorFile() == null) {
       return null;
     }
-    return new File(getDescriptorFile().getParent().toFile(), "classes_gen");
+    return getDescriptorFile().getParent().child("classes_gen");
   }
 
   //

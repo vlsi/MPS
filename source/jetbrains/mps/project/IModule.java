@@ -60,7 +60,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   void readModels();
 
-  File getClassesGen();
+  IFile getClassesGen();
 
   Set<IModule> getVisibleModules();
 

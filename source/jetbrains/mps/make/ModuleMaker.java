@@ -34,7 +34,7 @@ public class ModuleMaker {
       monitor.start("Clean", 2000);
       for (IModule m : modules) {
         monitor.addText("Cleaning " + m.getModuleUID() + "...");
-        FileUtil.delete(m.getClassesGen());
+        FileUtil.delete(m.getClassesGen().toFile());
       }
       monitor.addText("Done");
     } finally {
@@ -93,7 +93,7 @@ public class ModuleMaker {
         addSource(compiler, new File(sp), "", m);
       }
 
-      FileUtil.delete(m.getClassesGen());
+      FileUtil.delete(m.getClassesGen().toFile());
     }
 
     compiler.compile();
@@ -126,7 +126,7 @@ public class ModuleMaker {
         }
         if (myContainingModules.containsKey(containerClassName)) {
           IModule m = myContainingModules.get(containerClassName);
-          File classesGen = m.getClassesGen();
+          File classesGen = m.getClassesGen().toFile();
           String packageName = NameUtil.namespaceFromLongName(name);
           File outputDir = new File(classesGen + File.separator + packageName.replace('.', File.separatorChar));
           outputDir.mkdirs();                    
@@ -224,7 +224,7 @@ public class ModuleMaker {
       return true;
     }
 
-    File classesGen = m.getClassesGen();
+    File classesGen = m.getClassesGen().toFile();
 
     long classesTimeStamp = FileUtil.getNewestFileTime(classesGen);
     long sourcesTimeStamp = 0;
