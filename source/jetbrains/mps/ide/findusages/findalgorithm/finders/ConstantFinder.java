@@ -10,15 +10,19 @@ import org.jdom.Element;
 
 import java.util.Collection;
 
-public class NodesFinder extends BaseFinder {
+public class ConstantFinder extends BaseFinder {
   private static final String RESULTS = "results";
 
   private SearchResults myResults = new SearchResults();
 
-  public NodesFinder(Collection<SNode> nodes, String categoryName) {
+  public ConstantFinder(Collection<SNode> nodes, String categoryName) {
     for (SNode node : nodes) {
       myResults.getSearchResults().add(new SearchResult(new SNodePointer(node), categoryName));
     }
+  }
+
+  public ConstantFinder(Collection<SearchResult> searchResults) {
+    myResults.getSearchResults().addAll(searchResults);
   }
 
   public SearchResults find(SearchQuery query) {

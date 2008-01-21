@@ -17,14 +17,14 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.view.util.HintDialog;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.ConstantFinder;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -170,8 +170,17 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     });
   }
 
-  public void showResults(SearchQuery query, SearchResults searchResults) {
-    showResults(searchResults, false, false, null, query, false);
+  public void showResults(final SearchQuery query, final SearchResults searchResults) {
+
+    new Thread() {
+      public void run() {
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            showResults(searchResults, false, false, TreeBuilder.forFinder(new ConstantFinder(searchResults.getSearchResults())), query, false);
+          }
+        });
+      }
+    }.start();
   }
 
   private void showResults(final SearchResults searchResults, boolean showOne, boolean newTab, IResultProvider provider, SearchQuery query, boolean isRerunnable) {
