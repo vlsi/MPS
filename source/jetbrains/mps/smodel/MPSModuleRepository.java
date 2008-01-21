@@ -36,7 +36,7 @@ public class MPSModuleRepository {
   public static final String LANGUAGE_EXT = ".mpl";
   public static final String SOLUTION_EXT = ".msd";
   public static final String DEVKIT_EXT = ".devkit";
-  public static final String MPS_ARCHIVE = ".mar";
+  public static final String MPS_ARCHIVE = ".mpsarch";
 
   public static MPSModuleRepository getInstance() {
     return ApplicationComponents.getInstance().getComponent(MPSModuleRepository.class);
