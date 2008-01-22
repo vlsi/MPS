@@ -219,6 +219,60 @@
           <module name="webrSamples_hello" />
           <module name="webrSamples_sandbox" />
           <module name="webr_userManagement" />
+          <module name="charisma">
+            <files>
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/persistentStore.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/testPersistentStore.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/transientStore.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/activity/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/admin/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/entityBrowser/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/errors/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/flex/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/SecurityRequestProcessorImplConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/datetimeConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/notificationsConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/userManagementConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/main/webConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/businessRulesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/charismaTextIndexConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/entityMetaDataConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/modelMetadataConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/storeConfigurationDatabase.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/project/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/rss/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/security/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/security/editRoles/converterConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/security/roles/converterConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/tests/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/user/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/webtests/webUnitConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/wiki/wikiLinkHandlersConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/issue/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/linkIssue/converterConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/tagIssue/converterConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/workspace/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/notifications/runtime/spring/email.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/converter/converterConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/converter/converterManagerConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/error/actionFactoriesConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/ActionRequestProcessorConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/ClasspathRequestProcessorConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/EventRequestProcessorConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/FileUploadRequestProcessorConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/HtmlTemplateRequestProcessorConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/PersistentFileRequestProcessorConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/TextRequestProcessorConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/actionConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/rest/RESTConfigConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/rest/RESTRequestProcessorConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/wiki/wikiLinkHandlersConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/wiki/wikiManagerConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/mps/wiki/runtime/higlighter/java/higlighterBeansConfiguration.xml" />
+              <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/teamsys/dnq/runtime/files/entityMetaDataConfiguration.xml" />
+            </files>
+          </module>
         </modules>
       </facet-type>
     </autodetection-disabled>
@@ -1879,132 +1933,6 @@
       </CLASSES>
       <JAVADOC />
       <SOURCES />
-    </library>
-    <library name="Jira Development Kit">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-mail/jars/atlassian-mail-2007_03_23.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/dom4j/jars/dom4j-1.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/activation/jars/activation-1.0.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jelly/jars/commons-jelly-tags-http-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/alt/jars/alt-0.07-jdk1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jotm/jars/jonas_timer-1.4.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/alt/jars/alt-0.07-j1.3-j2ee1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ofbcore/jars/ofbcore-extutil-2.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-johnson/jars/atlassian-johnson-2007-06-01.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jta/jars/jta-1.0.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jdom/jars/jdom-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/carol/jars/carol-properties.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-pool/jars/commons-pool-1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-collections/jars/commons-collections-3.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jfree/jars/jcommon-1.0.8.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/oro/jars/oro-2.0.7.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/carol/jars/carol-1.5.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-lang/jars/commons-lang-2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ots-jts/jars/ots-jts_1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-extras/jars/atlassian-extras-0.7.29.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-core/jars/atlassian-core-2007-04-23.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jregex/jars/jregex-1.2_01.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/mockobjects/jars/mockobjects-0.07-j1.3-j2ee1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/picocontainer/jars/picocontainer-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-profiling/jars/atlassian-profiling-1.1.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/axis/jars/axis-saaj-1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/datafile/jars/datafile-1.3.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/lucene/jars/lucene-core-1.9.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jelly/jars/commons-jelly-tags-log-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-digester/jars/commons-digester-1.4.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-velocity/jars/atlassian-velocity-0.3.19.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/osworkflow/jars/osworkflow-2.8.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/osuser/jars/osuser-1.0-dev-log4j-1.4jdk-7Dec05.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jtidy/jars/jtidy-r8-20050104.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-jdk-utilities/jars/atlassian-jdk-utilities-0.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jotm/jars/jotm-iiop_stubs-1.4.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/axis/jars/axis-wsdl4j-1.5.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/easymock/jars/easymockclassextension-1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/oscore/jars/oscore-2.2.6-dev-9Nov05.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/mockobjects/jars/mockobjects-0.07-jdk1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ofbcore/jars/ofbcore-xerces-serialize.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/axis/jars/axis-1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ofbcore/jars/ofbcore-service-2.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/junit/jars/junit-3.8.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-trackback/jars/atlassian-trackback-2007-01-25.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jelly/jars/commons-jelly-tags-soap-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-bandana/jars/atlassian-bandana-0.1.13.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jsch/jars/jsch-0.1.23.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jelly/jars/commons-jelly-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/bsf/jars/bsf-2.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/propertyset/jars/propertyset-1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/log4j/jars/log4j-1.2.7.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ehcache/jars/ehcache-1.2.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-codec/jars/commons-codec-1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-plugins/jars/atlassian-plugins-2006-11-10-2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-dbcp/jars/commons-dbcp-1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jotm/jars/jotm-jrmp_stubs-1.4.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/csv/jars/csv-20.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/cglib/jars/cglib-full-2.0.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/bonnie/jars/bonnie-2007-01-11-1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/glue/jars/glue-5.0b2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/lucene/jars/lucene-analyzers-1.9.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ofbcore/jars/ofbcore-entity-2.1.1-atlassian-2007-05-07.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jcaptcha/jars/jcaptcha-all-1.0-RC2.0.1-atlassian-2007-03-07.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jelly/jars/commons-jelly-tags-junit-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jzlib/jars/jzlib-1.0.5.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jelly/jars/commons-jelly-tags-email-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-jira/jars/atlassian-jira-3.10.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jexl/jars/commons-jexl-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jelly/jars/commons-jelly-tags-sql-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-httpclient/jars/commons-httpclient-3.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/javamail/jars/javamail-1.3.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-configuration/jars/commons-configuration-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/net.java.dev.urlrewrite/jars/urlrewritefilter-2.3-atlassian-3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/bsh/jars/bsh-1.2b7.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/org.codehaus.xfire/jars/xfire-all-1.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/hsqldb/jars/hsqldb-1.8.0.5.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jotm/jars/objectweb-datasource-1.4.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/dwr/jars/dwr-1.1.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/axis/jars/axis-jaxrpc-1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-ofbiz/jars/atlassian-ofbiz-0.3.8.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-configurableobjects/jars/atlassian-configurableobjects-0.4.22.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/easymock/jars/easymock-1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ofbcore/jars/ofbcore-share-2.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-cache-servlet/jars/atlassian-cache-servlet-0.5.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jelly/jars/commons-jelly-tags-util-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-discovery/jars/commons-discovery-0.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-scheduler/jars/atlassian-scheduler-2007-04-05.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-tagutil/jars/atlassian-tagutil-0.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/backport-util-concurrent/jars/backport-util-concurrent-2.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-renderer/jars/atlassian-renderer-2007.01.17.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/javacvs/jars/javacvs-2007-04-04-patched.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jotm/jars/jotm-1.4.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/p6spy/jars/p6spy-1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jndi/jars/jndi-1.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jfreechart/jars/jfreechart-1.0.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/quartz/jars/quartz-1.4.5.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-beanutils/jars/commons-beanutils-1.6.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/mockobjects/jars/mockobjects-DEV.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xstream/jars/xstream-1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xml-apis/jars/xml-apis-1.0.b2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/webwork/jars/pell-multipart-request-1.31.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/sitemesh/jars/sitemesh-2.3-dev-25Oct-05.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xapool/jars/xapool-1.3.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xerces/jars/xercesImpl-2.6.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/woodstox/jars/wstx-asl-2.9.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xpp3/jars/xpp3-1.1.3.4-RC8.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/saxon/jars/saxon-noaelfred-6.5.5.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/radeox/jars/radeox-1.0b2-forked-22Apr2004.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xmlrpc/jars/xmlrpc-2.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/statcvs/jars/statcvs-20060222-patched.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/webwork/jars/webwork-30Apr07-jiratld.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/stax/jars/stax-api-1.0.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/seraph/jars/seraph-0.7.21.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xml-security/jars/xmlsec-1.1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/servletapi/jars/servletapi-2.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/velocity/jars/velocity-1.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-logging/jars/commons-logging-1.1.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-logging/jars/commons-logging-1.1-src.jar!/" />
-      </SOURCES>
     </library>
   </component>
   <component name="uidesigner-configuration">
