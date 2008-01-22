@@ -11,6 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -81,6 +82,14 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
       }
       return ((SNode)refactoringContext.getParameter("targetConcept")) != concept && AbstractConceptDeclaration_Behavior.call_isAssignableFrom_1198080700262(((SNode)refactoringContext.getParameter("targetConcept")), concept);
     }
+  }
+
+  public boolean showsAffectedNodes() {
+    return false;
+  }
+
+  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return null;
   }
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {

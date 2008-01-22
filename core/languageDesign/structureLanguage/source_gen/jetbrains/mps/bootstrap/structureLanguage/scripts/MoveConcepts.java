@@ -12,6 +12,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -85,6 +86,14 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       }
       return true;
     }
+  }
+
+  public boolean showsAffectedNodes() {
+    return false;
+  }
+
+  public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
+    return null;
   }
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
