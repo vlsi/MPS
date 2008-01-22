@@ -1,7 +1,6 @@
 package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.baseLanguage.structure.*;
-import jetbrains.mps.formulaLanguage.evaluator.Omega;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -53,11 +52,6 @@ public class Queries {
   }
 
   public static Object CustomExpression_getBinaryOperationType(Object... args) {
-    for (int i = 0; i <= 1; i++) {
-      if (args[i] instanceof Omega) {
-        return args[1 - i];
-      }
-    }
     SNode leftType = (SNode) args[0];
     SNode rightType = (SNode) args[1];
     boolean mayBeString = false;
