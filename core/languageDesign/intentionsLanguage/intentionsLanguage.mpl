@@ -34,8 +34,12 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
-  <runtimeClassPath />
+  <classPath>
+    <entry path="${language_descriptor}\classes" />
+  </classPath>
+  <runtimeClassPath>
+    <entry path="${language_descriptor}\classes" />
+  </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
