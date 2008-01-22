@@ -3,15 +3,19 @@ package jetbrains.mps.smodel.behaviour;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.GlobalScope;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public final class BehaviorManager {
   private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
@@ -47,10 +51,10 @@ public final class BehaviorManager {
     } else {
       while (concept != null) {
         String fqName = NameUtil.nodeFQName(concept);
-        String behaviourClass = behaviorClassByConceptFqName(fqName);
+        String behaviorClass = behaviorClassByConceptFqName(fqName);
 
         try {
-          Class cls = language.getClass(behaviourClass);          
+          Class cls = language.getClass(behaviorClass);
           if (cls != null) {
             Method method = cls.getMethod("init", SNode.class);
 
@@ -77,6 +81,31 @@ public final class BehaviorManager {
         e.printStackTrace();
       }
     }
+  }
+
+  public String getDefaultConcreteConceptFqName(String fqName, IScope scope) {
+    String result = fqName;
+    String behaviorClass = behaviorClassByConceptFqName(fqName);
+    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
+    Language language = scope.getLanguage(namespace);
+    if (language != null) {
+      Class cls = language.getClass(behaviorClass);
+      if (cls != null) {
+        try {
+          Method method = cls.getMethod(BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
+          try {
+            result = (String) method.invoke(null);
+          } catch (IllegalAccessException e) {
+            throw new UnsupportedOperationException();
+          } catch (InvocationTargetException e) {
+            throw new UnsupportedOperationException();
+          }
+        } catch (NoSuchMethodException e) {
+          // ignore
+        }
+      }
+    }
+    return result;
   }
 
   private String behaviorClassByConceptFqName(String fqName) {
@@ -123,11 +152,11 @@ public final class BehaviorManager {
   }
 
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return _invokeInternal(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);    
+    return _invokeInternal(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
   }
 
   private <T> T _invokeInternal(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    assert node != null;    
+    assert node != null;
     List<AbstractConceptDeclaration> superConcepts;
     if (callerConceptFqName == null) {
       AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
