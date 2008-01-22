@@ -6,13 +6,13 @@
       <sourceFolder url="file://$MODULE_DIR$/core/configurations/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/core/configurations/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/baseLanguage/resolve/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.configuration" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/actionsLanguage/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/constraintsLanguage/solutions/constraintLanguageSandbox/META-INF" />
+      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/core/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/editorLanguage/languages/editorLanguage/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/findUsagesLanguage/languages/findUsagesLanguage/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/helgins/languages/test/META-INF" />
@@ -26,9 +26,6 @@
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/smodelLanguage/solutions/typetest/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/structureLanguage/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/structureLanguage/solutions/sandbox/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/transformation/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/transformation/TLBase/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/transformation/TLBase_sandbox/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/transformation/test/inputLang/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/transformation/test/inputModels/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/transformation/test/outputLang/META-INF" />
@@ -46,11 +43,6 @@
       <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/solutions/MPS.Classpath/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/solutions/testLogger/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/solutions/testLogger2/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/languages/refactoringLanguage/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/languages/testLog/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/languages/testLog239/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/solutions/sandbox/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/core/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/date/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/formulaLanguage/language/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/patternLanguage/languages/patterns/META-INF" />
@@ -83,7 +75,6 @@
     <orderEntry type="library" name="Eclipse JDT" level="project" />
     <orderEntry type="library" name="Alloy" level="project" />
     <orderEntry type="module" module-name="jetbrains.mps.baseLanguage" exported="" />
-    <orderEntry type="module" module-name="jetbrains.mps.core" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
     <orderEntry type="module" module-name="baseLanguageExt" />
     <orderEntry type="module" module-name="configuration" exported="" />
@@ -102,6 +93,7 @@
     <orderEntry type="module" module-name="findUsagesLanguage" exported="" />
     <orderEntry type="module" module-name="refactoringLanguage" exported="" />
     <orderEntry type="module" module-name="transformation" exported="" />
+    <orderEntry type="module" module-name="jetbrains.mps.core" exported="" />
     <orderEntryProperties />
   </component>
   <component name="copyright">

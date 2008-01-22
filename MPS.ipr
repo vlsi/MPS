@@ -920,7 +920,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" filepath="$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentionsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentionsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/jetbrains.mps.baseLanguage.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/jetbrains.mps.baseLanguage.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/core/jetbrains.mps.core.iml" filepath="$PROJECT_DIR$/languages/core/jetbrains.mps.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/app/mf/lair1/lair1.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" group="app/ParserGenerator" />
