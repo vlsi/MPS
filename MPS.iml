@@ -6,7 +6,6 @@
       <sourceFolder url="file://$MODULE_DIR$/core/configurations/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/core/configurations/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/baseLanguage/resolve/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/findUsagesLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/refactoring/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/transformation/test/inputLang/source_gen" isTestSource="false" />
@@ -18,6 +17,7 @@
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/actionsLanguage/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/constraintsLanguage/solutions/constraintLanguageSandbox/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/editorLanguage/languages/editorLanguage/META-INF" />
+      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/findUsagesLanguage/languages/findUsagesLanguage/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/helgins/languages/test/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/helgins/solutions/jetbrains.mps.bootstrap.helgins.sandbox/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/intentionsLanguage/META-INF" />
@@ -43,8 +43,6 @@
       <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/solutions/MPS.Classpath/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/solutions/testLogger/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/solutions/testLogger2/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/bootstrap/findUsagesLanguage/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/bootstrap/findUsagesLanguage/languages/findUsagesLanguage/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/languages/refactoringLanguage/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/languages/testLog/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/languages/testLog239/META-INF" />
@@ -104,6 +102,7 @@
     <orderEntry type="module" module-name="smodeLanguage" exported="" />
     <orderEntry type="module" module-name="structureLanguage" exported="" />
     <orderEntry type="module" module-name="intentionsLanguage" exported="" />
+    <orderEntry type="module" module-name="findUsagesLanguage" exported="" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
