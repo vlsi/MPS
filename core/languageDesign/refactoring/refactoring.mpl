@@ -37,7 +37,9 @@
     </generator>
   </generators>
   <classPath />
-  <runtimeClassPath />
+  <runtimeClassPath>
+    <entry path="${language_descriptor}\classes" />
+  </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
