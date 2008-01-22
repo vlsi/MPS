@@ -11,7 +11,6 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/smodelLanguage/solutions/samples/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/structureLanguage/solutions/sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/helgins/languages/subtyping/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/refactoring/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/transformation/test/inputLang/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/transformation/test/inputModels/source_gen" isTestSource="false" />
@@ -19,7 +18,6 @@
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.configuration" />
-      <excludeFolder url="file://$MODULE_DIR$/app/fibonacci/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/annotations/languages/annotations/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/annotations/languages/comments/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/annotations/solutions/sandbox/META-INF" />
@@ -58,12 +56,6 @@
       <excludeFolder url="file://$MODULE_DIR$/languages/core/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/date/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/formulaLanguage/language/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/helgins/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/helgins/languages/lambdaCurry/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/helgins/languages/lambdaTypes/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/helgins/languages/quotation/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/helgins/languages/subtyping/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/helgins/solutions/sandbox/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/patternLanguage/languages/patterns/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/patternLanguage/solutions/sandbox/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/projectLanguage/META-INF" />
@@ -74,12 +66,6 @@
       <excludeFolder url="file://$MODULE_DIR$/languages/transformation/test/inputModels/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/transformation/test/outputLang/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/xml/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/projects/hello/languages/hello1/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/projects/hello/solutions/sandbox/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/projects/lambda/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/projects/lambda/languages/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/projects/testNewAnnotations/languages/testNewAnnotations/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/projects/testNewAnnotations/solutions/main/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/tools/tomcat/webapps" />
     </content>
     <orderEntry type="inheritedJdk" />
