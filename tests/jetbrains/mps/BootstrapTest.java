@@ -52,7 +52,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testRefactoringLanguage() {
-    String res = testProject(new File("core/languageDesign/refactoringLanguage/refactoring.mpr"));
+    String res = testProject(new File("core/languageDesign/refactoring/refactoring.mpr"));
     assertTrue(res, res == null);
   }
 
