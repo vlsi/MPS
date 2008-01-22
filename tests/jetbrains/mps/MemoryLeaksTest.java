@@ -7,7 +7,7 @@ import java.io.File;
 
 public class MemoryLeaksTest extends BaseMPSTest {
   public void testEditorLanguageGenerationLeaks() {
-    assertTrue(testProjectGenerationForLeaks(new File("languages/bootstrap/editorLanguage/editorLanguage.mpr")));
+    assertTrue(testProjectGenerationForLeaks(new File("core/languageDesign/editorLanguage/editorLanguage.mpr")));
   }
 
   public void testPubMedDBGenerationLeaks() {
