@@ -17,7 +17,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testCoreLanguage() {
-    String res = testProject(new File("languages/core/core.mpr"));
+    String res = testProject(new File("core/languageDesign/core.mpr"));
     assertTrue(res, res == null);
   }
 
