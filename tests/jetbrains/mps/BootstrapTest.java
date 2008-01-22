@@ -22,42 +22,42 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testStructureLanguage() {
-    String res = testProject(new File("languages/bootstrap/structureLanguage/structureLanguage.mpr"));
+    String res = testProject(new File("core/languageDesign/structureLanguage/structureLanguage.mpr"));
     assertTrue(res, res == null);
   }
 
   public void testEditorLanguage() {
-    String res = testProject(new File("languages/bootstrap/editorLanguage/editorLanguage.mpr"));
+    String res = testProject(new File("core/languageDesign/editorLanguage/editorLanguage.mpr"));
     assertTrue(res, res == null);
   }
 
   public void testConstraintsLanguage() {
-    String res = testProject(new File("languages/bootstrap/constraintsLanguage/constraintsLanguage.mpr"));
+    String res = testProject(new File("core/languageDesign/constraintsLanguage/constraintsLanguage.mpr"));
     assertTrue(res, res == null);
   }
 
   public void testSModelLanguage() {
-    String res = testProject(new File("languages/bootstrap/smodelLanguage/smodelLanguage.mpr"));
+    String res = testProject(new File("core/languageDesign/smodelLanguage/smodelLanguage.mpr"));
     assertTrue(res, res == null);
   }
 
   public void testActionsLanguage() {
-    String res = testProject(new File("languages/bootstrap/actionsLanguage/actionsLanguage.mpr"));
+    String res = testProject(new File("core/languageDesign/actionsLanguage/actionsLanguage.mpr"));
     assertTrue(res, res == null);
   }
 
   public void testHelgins() {
-    String res = testProject(new File("languages/bootstrap/helgins/jetbrains.mps.bootstrap.helgins.mpr"));
+    String res = testProject(new File("core/languageDesign/helgins/jetbrains.mps.bootstrap.helgins.mpr"));
     assertTrue(res, res == null);
   }
 
   public void testRefactoringLanguage() {
-    String res = testProject(new File("languages/bootstrap/refactoringLanguage/refactoring.mpr"));
+    String res = testProject(new File("core/languageDesign/refactoringLanguage/refactoring.mpr"));
     assertTrue(res, res == null);
   }
 
   public void testSharedConcepts() {
-    String res = testProject(new File("languages/bootstrap/sharedConcepts/sharedConcepts.mpr"));
+    String res = testProject(new File("core/languageDesign/sharedConcepts/sharedConcepts.mpr"));
     assertTrue(res, res == null);
   }
 
@@ -77,7 +77,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testIntentionsLanguage() {
-    String res = testProject(new File("languages/bootstrap/intentionsLanguage/intentionsLanguage.mpr"));
+    String res = testProject(new File("core/languageDesign/intentionsLanguage/intentionsLanguage.mpr"));
     assertTrue(res, res == null);
   }
 
