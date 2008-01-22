@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.ext.collections.unittest.query_operations">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="5" />
@@ -97,6 +98,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201003766756" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170287404137">
       <property name="name" value="test_2" />
@@ -210,10 +212,12 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201003770277" />
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170283318409">
       <link role="classifier" targetNodeId="1.~TestCase" resolveInfo="TestCase" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201003764395" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170284741330">
     <property name="name" value="Where_Select_Test1" />
@@ -453,10 +457,12 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201003808351" />
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170284767436">
       <link role="classifier" targetNodeId="1.~TestCase" resolveInfo="TestCase" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201003806191" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170285527128">
     <property name="name" value="Mapping_Test1" />
@@ -941,6 +947,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201003776802" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170287183418">
       <property name="name" value="test_2" />
@@ -1048,10 +1055,12 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201003799359" />
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170287058615">
       <link role="classifier" targetNodeId="1.~TestCase" resolveInfo="TestCase" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201003774208" />
   </node>
 </model>
 
