@@ -100,7 +100,7 @@ public class NewRefactoringView extends DefaultTool {
       public void write(Element element, MPSProject project) {
       }
     };
-    myButtonsPanel = new JPanel(new FlowLayout());
+    myButtonsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     myDoRefactorButton = new JButton(new AbstractAction("Do Refactor") {
       public void actionPerformed(ActionEvent e) {
         doRefactor();
@@ -115,7 +115,7 @@ public class NewRefactoringView extends DefaultTool {
     myButtonsPanel.add(myCancelButton);
 
     myPanel.add(myUsageView.getComponent(), BorderLayout.CENTER);
-    myPanel.add(myButtonsPanel, BorderLayout.NORTH);
+    myPanel.add(myButtonsPanel, BorderLayout.SOUTH);
 
     initUsagesView();
   }
