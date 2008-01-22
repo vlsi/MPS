@@ -3,6 +3,7 @@ package jetbrains.mps.refactoring;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.findusages.view.UsageView;
+import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ConstantFinder;
@@ -126,18 +127,13 @@ public class NewRefactoringView extends DefaultTool {
           public void run() {
             myUsageView.setRunOptions(TreeBuilder.forFinder(new ConstantFinder(mySearchResults.getSearchResults())),
               null,
-              false,
+              new ButtonConfiguration(false, false,  false),
               mySearchResults);
           }
         });
       }
     };
     thread.start();
-   /* try {
-      thread.join();
-    } catch (InterruptedException ex) {
-      LOG.error(ex);
-    }*/
   }
 
   public String getName() {
@@ -156,7 +152,7 @@ public class NewRefactoringView extends DefaultTool {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         myRefactoring.doExecute(myActionContext, myRefactoringContext);
-    closeRefactoringView(myProjectFrame);
+        closeRefactoringView(myProjectFrame);
       }
     });
   }

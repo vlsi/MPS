@@ -73,18 +73,25 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, boolean isRerunnable) {
+    setRunOptions(resultProvider, searchQuery, new ButtonConfiguration(isRerunnable));
+  }
+
+  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration) {
     assert !myIsInitialized;
     myIsInitialized = true;
     myResultProvider = resultProvider;
     mySearchQuery = searchQuery;
-    myIsRerunnable = isRerunnable;
-    myPanel.add(new ActionsToolbar(myIsRerunnable), BorderLayout.WEST);
+    myIsRerunnable = buttonConfiguration.isShowRerunButton();
+    myPanel.add(new ActionsToolbar(buttonConfiguration), BorderLayout.WEST);
   }
 
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, boolean isRerunnable, SearchResults results) {
-    assert !ThreadUtils.isEventDispatchThread();
-    setRunOptions(resultProvider, searchQuery, isRerunnable);
+    setRunOptions(resultProvider, searchQuery, new ButtonConfiguration(isRerunnable), results);
+  }
 
+  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration, SearchResults results) {
+    assert !ThreadUtils.isEventDispatchThread();
+    setRunOptions(resultProvider, searchQuery, buttonConfiguration);
     myFoundModelDescriptors = collectModels(results.getSearchResults());
     myTreeWrapper.setContents(results);
   }
@@ -103,6 +110,7 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public void rerun() {
+    if (!myIsRerunnable) return;
     if (mySearchQuery == null) return;
     if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNodePointer().getNode() == null)) return;
     run();
@@ -142,7 +150,7 @@ public abstract class UsageView implements IExternalizableComponent {
 
     Element optionsXML = element.getChild(OPTIONS);
     myIsRerunnable = Boolean.parseBoolean(optionsXML.getAttributeValue(RERUNNABLE));
-    myPanel.add(new ActionsToolbar(myIsRerunnable), BorderLayout.WEST);
+    myPanel.add(new ActionsToolbar(new ButtonConfiguration(myIsRerunnable)), BorderLayout.WEST);
 
     Element resultProviderXML = element.getChild(RESULT_PROVIDER);
     String className = resultProviderXML.getAttributeValue(CLASS_NAME);
@@ -217,13 +225,13 @@ public abstract class UsageView implements IExternalizableComponent {
   public abstract void close();
 
   private class ActionsToolbar extends MPSToolBar {
-    private ActionsToolbar(boolean isRerunnable) {
+    private ActionsToolbar(ButtonConfiguration buttonConfiguration) {
       super(JToolBar.VERTICAL);
-      createButtons(isRerunnable);
+      createButtons(buttonConfiguration);
     }
 
-    private void createButtons(boolean isRerunnable) {
-      if (isRerunnable) {
+    private void createButtons(ButtonConfiguration buttonConfiguration) {
+      if (buttonConfiguration.isShowRerunButton()) {
         add(new AnonymButton(Icons.RERUN_ICON, "Rerun search") {
           public void action() {
             new Thread() {
@@ -234,11 +242,13 @@ public abstract class UsageView implements IExternalizableComponent {
           }
         });
       }
-      add(new AnonymButton(Icons.REGENERATE_ICON, "Regenerate models") {
-        public void action() {
-          regenerate();
-        }
-      });
+      if (buttonConfiguration.isShowRegenerateButton()) {
+        add(new AnonymButton(Icons.REGENERATE_ICON, "Regenerate models") {
+          public void action() {
+            regenerate();
+          }
+        });
+      }
       add(new AnonymButton(Icons.COLLAPSE_ICON, "Collapse") {
         public void action() {
           myTreeWrapper.collapseResults();
@@ -259,17 +269,49 @@ public abstract class UsageView implements IExternalizableComponent {
           myTreeWrapper.nextOccurence();
         }
       });
-      add(new AnonymButton(Icons.CLOSE_ICON, "Close") {
-        public void action() {
-          close();
-        }
-      });
+      if (buttonConfiguration.isShowCloseButton()) {
+        add(new AnonymButton(Icons.CLOSE_ICON, "Close") {
+          public void action() {
+            close();
+          }
+        });
+      }
 
       setFloatable(false);
     }
 
     protected EmptyBorder createBorder() {
       return new EmptyBorder(2, 1, 2, 1);
+    }
+  }
+
+  public static class ButtonConfiguration {
+    private boolean myShowRerunButton;
+    private boolean myShowRegenerateButton;
+    private boolean myShowCloseButton;
+
+    public ButtonConfiguration(boolean showRerun, boolean showRegenerate, boolean showClose) {
+      myShowRerunButton = showRerun;
+      myShowRegenerateButton = showRegenerate;
+      myShowCloseButton = showClose;
+    }
+
+    public ButtonConfiguration(boolean showRerun) {
+      myShowRerunButton = showRerun;
+      myShowRegenerateButton = true;
+      myShowCloseButton = true;
+    }
+
+    public boolean isShowRegenerateButton() {
+      return myShowRegenerateButton;
+    }
+
+    public boolean isShowRerunButton() {
+      return myShowRerunButton;
+    }
+
+    public boolean isShowCloseButton() {
+      return myShowCloseButton;
     }
   }
 
