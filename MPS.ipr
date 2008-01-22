@@ -842,7 +842,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" filepath="$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/solutions/YPath-solutions.iml" filepath="$PROJECT_DIR$/platform/ypath/solutions/YPath-solutions.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/app/accounting/accounting.iml" filepath="$PROJECT_DIR$/app/accounting/accounting.iml" group="app" />
-      <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/actionsLanguage/actionsLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/actionsLanguage/actionsLanguage.iml" group="languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/agreement/agreement.iml" filepath="$PROJECT_DIR$/app/agreement/agreement.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/dev/baseLanguageExt.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" group="baseLanguageExt" />
@@ -852,7 +852,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/platform/businessRules/businessRules.iml" filepath="$PROJECT_DIR$/platform/businessRules/businessRules.iml" group="platform/businessRules" />
       <module fileurl="file://$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" filepath="$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" group="platform/businessRules" />
-      <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/cfaLanguage/cfaLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/cfaLanguage/cfaLanguage.iml" group="languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/cfaLanguage/cfaLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/cfaLanguage/cfaLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$CHARISMA_HOME$/charisma.iml" filepath="$CHARISMA_HOME$/charisma.iml" group="charisma" />
       <module fileurl="file://$CHARISMA_HOME$/charisma-agent/charisma-agent.iml" filepath="$CHARISMA_HOME$/charisma-agent/charisma-agent.iml" group="charisma" />
       <module fileurl="file://$CHARISMA_HOME$/charisma-app/charisma-app.iml" filepath="$CHARISMA_HOME$/charisma-app/charisma-app.iml" group="charisma" />
@@ -861,7 +861,7 @@
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/collections-runtime/collections-runtime.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/core/configuration/configuration.iml" filepath="$PROJECT_DIR$/core/configuration/configuration.iml" group="core/configuration" />
       <module fileurl="file://$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" filepath="$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" group="core/configuration" />
-      <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/constraintsLanguage/constraintsLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/constraintsLanguage/constraintsLanguage.iml" group="languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/csharp-runtime/csharp-runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/csharp-runtime/csharp-runtime.iml" group="baseLanguageExt" />
@@ -870,11 +870,11 @@
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/dnq.iml" filepath="$PROJECT_DIR$/platform/dnq/dnq.iml" group="platform/dnq/language" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/app/dslbook_example/dslbook_example.iml" filepath="$PROJECT_DIR$/app/dslbook_example/dslbook_example.iml" group="app" />
-      <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/editorLanguage/editorLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/editorLanguage/editorLanguage.iml" group="languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/editorLanguage/editorLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/editorLanguage/editorLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/app/mf/gothic/gothic.iml" group="app/mf" />
-      <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/helgins/helgins.iml" filepath="$PROJECT_DIR$/languages/bootstrap/helgins/helgins.iml" group="languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" filepath="$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/jetbrains.mps.baseLanguage.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/jetbrains.mps.baseLanguage.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/core/jetbrains.mps.core.iml" filepath="$PROJECT_DIR$/languages/core/jetbrains.mps.core.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/app/mf/lair1/lair1.iml" group="app/mf" />
@@ -883,16 +883,16 @@
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" group="app/ParserGenerator" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/regexp.iml" filepath="$PROJECT_DIR$/platform/regexp/regexp.iml" group="platform/regexp" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" filepath="$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" group="platform/regexp" />
-      <module fileurl="file://$PROJECT_DIR$/languages/scriptLanguage/scriptLanguage.iml" filepath="$PROJECT_DIR$/languages/scriptLanguage/scriptLanguage.iml" group="languageDesign/scriptLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/languages/scriptLanguageInternal/scriptLanguageInternal.iml" filepath="$PROJECT_DIR$/languages/scriptLanguageInternal/scriptLanguageInternal.iml" group="languageDesign/scriptLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/languages/scriptLanguage/runtime/scriptLanguage_runtime.iml" filepath="$PROJECT_DIR$/languages/scriptLanguage/runtime/scriptLanguage_runtime.iml" group="languageDesign/scriptLanguage" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguage/scriptLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguage/scriptLanguage.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguageInternal/scriptLanguageInternal.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguageInternal/scriptLanguageInternal.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguage/runtime/scriptLanguage_runtime.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguage/runtime/scriptLanguage_runtime.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/search-watch/search-watch.iml" filepath="$PROJECT_DIR$/app/search-watch/search-watch.iml" group="app" />
-      <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/sharedConcepts/sharedConcepts.iml" filepath="$PROJECT_DIR$/languages/bootstrap/sharedConcepts/sharedConcepts.iml" group="languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/smodelLanguage/smodeLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/smodelLanguage/smodeLanguage.iml" group="languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/sharedConcepts/sharedConcepts.iml" filepath="$PROJECT_DIR$/core/languageDesign/sharedConcepts/sharedConcepts.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/smodelLanguage/smodeLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/smodelLanguage/smodeLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/springframework/springframework.iml" filepath="$PROJECT_DIR$/platform/springframework/springframework.iml" group="platform/spring-framework" />
       <module fileurl="file://$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" group="platform/spring-framework" />
       <module fileurl="file://$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" filepath="$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" group="platform" />
-      <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/structureLanguage/structureLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/structureLanguage/structureLanguage.iml" group="languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/stwiki/stwiki-webapp.iml" filepath="$PROJECT_DIR$/app/stwiki/stwiki-webapp.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />

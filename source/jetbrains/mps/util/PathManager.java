@@ -164,6 +164,10 @@ public class PathManager {
     return getHomePath() + File.separator + "languages";
   }
 
+  public static String getLanguageDesignPath() {
+    return getHomePath() + File.separator + "core" + File.separator + "languageDesign";
+  }
+
   public static String getPlatformPath() {
     return getHomePath() + File.separator + "platform";
   }

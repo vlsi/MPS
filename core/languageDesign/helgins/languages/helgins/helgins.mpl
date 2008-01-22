@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.helgins" pluginClass="jetbrains.mps.helgins.integration.HelginsLangPlugin" generatorOutputPath="${mps_home}\languages\bootstrap\helgins\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.bootstrap.helgins" pluginClass="jetbrains.mps.helgins.integration.HelginsLangPlugin" generatorOutputPath="${mps_home}\core\languageDesign\helgins\source_gen" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.helgins.structure" />
   </structure>
@@ -51,10 +51,10 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\languages\bootstrap\helgins\classes" />
+    <entry path="${mps_home}\core\languageDesign\helgins\classes" />
   </classPath>
   <runtimeClassPath>
-    <entry path="${mps_home}\languages\bootstrap\helgins\classes" />
+    <entry path="${mps_home}\core\languageDesign\helgins\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
