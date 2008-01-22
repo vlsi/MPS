@@ -79,11 +79,7 @@ public class TaskImporterTestCase extends TestCase {
     List<ClassInfo> toImport = scanner.scan();
     IClassInfoProvider provider = scanner.createClassInfoProvider();
 
-    Importer<String> importer = new Importer<String>(toImport, Collections.EMPTY_MAP, new IClassInfoProvider() {
-      public ClassInfo createClassInfo(Class clazz) {
-        return new ClassInfo(clazz);  //To change body of implemented methods use File | Settings | File Templates.
-      }
-    });
+    Importer<String> importer = new Importer<String>(toImport, Collections.EMPTY_MAP, provider);
 
     for (ClassInfo cl : scanner.getRoots()){
       importer.createDeclaration(testBuilder, cl);
@@ -114,14 +110,14 @@ public class TaskImporterTestCase extends TestCase {
     Assert.fail(writer.toString());
   }
 
-  public void testDeprecated(){
-    ClassInfo ci = new ClassInfo(Exec.class);
+  public void testDeprecated() throws IOException {
+    ClassInfo ci = Scanner.getClassInfo(Exec.class, new JarFile(ANT_PATH + Scanner.LIB_ANT_JAR));
     assertTrue(ci.isDeprecated());
   }
 
-  public void testNotDeprecated(){
-    ClassInfo ci = new ClassInfo(Zip.class);
-    assertFalse(ci.isDeprecated());
+  public void testNotDeprecated() throws IOException {
+    ClassInfo ci = Scanner.getClassInfo(Zip.class, new JarFile(ANT_PATH + Scanner.LIB_ANT_JAR));
+    assertTrue(ci.isDeprecated());
   }
 
   private class TestBuilder implements IBuilder<String> {
