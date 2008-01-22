@@ -1,0 +1,60 @@
+package jetbrains.mps.transformation.TLBase.plugin;
+
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.event.SModelsListener;
+import jetbrains.mps.smodel.event.SModelsMulticaster;
+import jetbrains.mps.transformation.TemplateLanguageUtil;
+
+/**
+ * Igor Alshannikov
+ * Jan 16, 2008
+ */
+public class RootTemplateAnnotator implements SModelsListener {
+
+  private SModelListener myModelListener = new MyModelListener();
+
+  public void init() {
+    SModelsMulticaster.getInstance().addSModelsListener(this);
+  }
+
+  public void shutDown() {
+    SModelsMulticaster.getInstance().removeSModelsListener(this);
+  }
+
+  public void modelCreated(SModelDescriptor modelDescriptor) {
+    if (modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+      modelDescriptor.addWeakModelListener(myModelListener);
+    }
+  }
+
+  public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {
+    if (modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+      modelDescriptor.removeModelListener(myModelListener);
+    }
+  }
+
+  public void modelDeleted(SModelDescriptor modelDescriptor) {
+  }
+
+  public void modelLoaded(SModelDescriptor modelDescriptor) {
+    if (modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+      modelDescriptor.addWeakModelListener(myModelListener);
+    }
+  }
+
+  private class MyModelListener extends SModelAdapter {
+
+    public void rootAdded(SModelRootEvent event) {
+      SNode newRoot = event.getRoot();
+      if (newRoot.getNodeLanguage() != BootstrapLanguages.getInstance().getTLBase()) {
+        TemplateLanguageUtil.addRootTemplateAnnotation(newRoot);
+      }
+    }
+  }
+}

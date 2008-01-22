@@ -403,18 +403,23 @@ public abstract class MPSTree extends JTree {
     scrollRowToVisible(getRowForPath(path));
   }
 
-  public void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+  public void runRebuildAction(final Runnable rebuildAction, final boolean saveExpansion) {
     if (!ThreadUtils.isEventDispatchThread()) {
       throw new RuntimeException("Rebuild now can be only called from UI thread");
     }
 
-    List<String> expansion = getExpandedPaths();
-    List<String> selection = getSelectedPaths();
-    rebuildAction.run();
-    if (saveExpansion) {
-      expandPaths(expansion);
-      selectPaths(selection);
-    }
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        List<String> expansion = getExpandedPaths();
+        List<String> selection = getSelectedPaths();
+        rebuildAction.run();
+        if (saveExpansion) {
+          expandPaths(expansion);
+          selectPaths(selection);
+        }
+      }
+    });
+
   }
 
   public void rebuildTreeLater(final Runnable rebuildAction, final boolean saveExpansion) {
