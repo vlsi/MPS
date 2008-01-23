@@ -42,7 +42,12 @@ public class FinderNode extends BaseLeaf {
     final SearchResults[] results = new SearchResults[1];
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        results[0] = myFinder.find(query);
+        try {
+          results[0] = myFinder.find(query);
+        } catch (Throwable t) {
+          LOG.error(t.getMessage(), t);
+          results[0] = new SearchResults();
+        }
       }
     });
     monitor.finishTask();

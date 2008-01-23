@@ -48,7 +48,13 @@ public class FilterNode extends BaseNode {
     final SearchResults[] results = new SearchResults[1];
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        results[0] = myFilter.filter(myChildren.get(0).getResults(query, monitor));
+        SearchResults childRes = myChildren.get(0).getResults(query, monitor);
+        try {
+          results[0] = myFilter.filter(childRes);
+        } catch (Throwable t) {
+          LOG.error(t.getMessage(), t);
+          results[0] = childRes;
+        }
       }
     });
     monitor.finishTask(getTaskName());
