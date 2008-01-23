@@ -111,13 +111,13 @@ public class TaskImporterTestCase extends TestCase {
   }
 
   public void testDeprecated() throws IOException {
-    ClassInfo ci = Scanner.getClassInfo(Exec.class, new JarFile(ANT_PATH + Scanner.LIB_ANT_JAR));
+    ClassInfo ci = Scanner.getClassInfo(Exec.class, new JarFile[]{new JarFile(ANT_PATH + Scanner.LIB_ANT_JAR)});
     assertTrue(ci.isDeprecated());
   }
 
   public void testNotDeprecated() throws IOException {
-    ClassInfo ci = Scanner.getClassInfo(Zip.class, new JarFile(ANT_PATH + Scanner.LIB_ANT_JAR));
-    assertTrue(ci.isDeprecated());
+    ClassInfo ci = Scanner.getClassInfo(Zip.class, new JarFile[]{new JarFile(ANT_PATH + Scanner.LIB_ANT_JAR)});
+    assertFalse(ci.isDeprecated());
   }
 
   private class TestBuilder implements IBuilder<String> {

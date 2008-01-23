@@ -14,9 +14,9 @@ import java.util.List;
 public class Project extends BaseConcept implements INamedConcept, IPropertyHolder {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.Project";
   public static String DEFAULT = "default";
+  public static String DEFINITIONS = "definitions";
   public static String BASEDIR = "basedir";
   public static String TARGET = "target";
-  public static String IMPORTS = "imports";
   public static String PATHS = "paths";
   public static String IMPORT_PROPERTIES = "importProperties";
   public static String PROPERTY = "property";
@@ -46,6 +46,14 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     super.setChild(Project.DEFAULT, node);
   }
 
+  public Definitions getDefinitions() {
+    return (Definitions)this.getChild(Project.DEFINITIONS);
+  }
+
+  public void setDefinitions(Definitions node) {
+    super.setChild(Project.DEFINITIONS, node);
+  }
+
   public FileName getBasedir() {
     return (FileName)this.getChild(Project.BASEDIR);
   }
@@ -72,26 +80,6 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
 
   public void insertTarget(TargetDeclaration prev, TargetDeclaration node) {
     this.insertChild(prev, Project.TARGET, node);
-  }
-
-  public int getImportsesCount() {
-    return this.getChildCount(Project.IMPORTS);
-  }
-
-  public Iterator<ImportDeclatation> importses() {
-    return this.children(Project.IMPORTS);
-  }
-
-  public List<ImportDeclatation> getImportses() {
-    return this.getChildren(Project.IMPORTS);
-  }
-
-  public void addImports(ImportDeclatation node) {
-    this.addChild(Project.IMPORTS, node);
-  }
-
-  public void insertImports(ImportDeclatation prev, ImportDeclatation node) {
-    this.insertChild(prev, Project.IMPORTS, node);
   }
 
   public int getPathsesCount() {

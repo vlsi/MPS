@@ -37,14 +37,14 @@ public class PropertyReference_propertyDeclaration_ReferentConstraint implements
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
     {
-      ICursor<SNode> _zCursor11 = CursorFactory.createCursor(SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.buildlanguage.structure.IPropertyHolder", true));
+      ICursor<SNode> _zCursor14 = CursorFactory.createCursor(SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.buildlanguage.structure.IPropertyHolder", true));
       try {
-        while(_zCursor11.moveToNext()) {
-          SNode holder = _zCursor11.getCurrent();
+        while(_zCursor14.moveToNext()) {
+          SNode holder = _zCursor14.getCurrent();
           ListOperations.addAllElements(result, IPropertyHolder_Behavior.call_getProperties_1200425502495(holder));
         }
       } finally {
-        _zCursor11.release();
+        _zCursor14.release();
       }
     }
     return new SimpleSearchScope(result);
