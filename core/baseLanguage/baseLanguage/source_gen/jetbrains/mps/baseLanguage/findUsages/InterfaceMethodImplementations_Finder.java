@@ -75,10 +75,10 @@ public class InterfaceMethodImplementations_Finder extends BaseFinder {
       // null
       List<SearchResult> implementorsAndAncestorsList = new ArrayList<SearchResult>();
       {
-        ICursor<SearchResult> _zCursor6 = CursorFactory.createCursor(implementors);
+        ICursor<SearchResult> _zCursor5 = CursorFactory.createCursor(implementors);
         try {
-          while (_zCursor6.moveToNext()) {
-            SearchResult implementor = _zCursor6.getCurrent();
+          while (_zCursor5.moveToNext()) {
+            SearchResult implementor = _zCursor5.getCurrent();
             {
               implementorsAndAncestorsList.add(implementor);
               SNode implementorNode = implementor.getNode();
@@ -105,33 +105,33 @@ public class InterfaceMethodImplementations_Finder extends BaseFinder {
             }
           }
         } finally {
-          _zCursor6.release();
+          _zCursor5.release();
         }
       }
       // null
       Set<SNode> implementorsAndAncestorsNodes = new HashSet<SNode>();
       {
-        ICursor<SearchResult> _zCursor7 = CursorFactory.createCursor(implementorsAndAncestorsList);
+        ICursor<SearchResult> _zCursor6 = CursorFactory.createCursor(implementorsAndAncestorsList);
         try {
-          while (_zCursor7.moveToNext()) {
-            SearchResult implementorOrAncestor = _zCursor7.getCurrent();
+          while (_zCursor6.moveToNext()) {
+            SearchResult implementorOrAncestor = _zCursor6.getCurrent();
             implementorsAndAncestorsNodes.add((SNode) implementorOrAncestor.getNode());
           }
         } finally {
-          _zCursor7.release();
+          _zCursor6.release();
         }
       }
       // null
       {
-        ICursor<SNode> _zCursor8 = CursorFactory.createCursor(implementorsAndAncestorsNodes);
+        ICursor<SNode> _zCursor7 = CursorFactory.createCursor(implementorsAndAncestorsNodes);
         try {
-          while (_zCursor8.moveToNext()) {
-            SNode classNode = _zCursor8.getCurrent();
+          while (_zCursor7.moveToNext()) {
+            SNode classNode = _zCursor7.getCurrent();
             {
-              ICursor<SNode> _zCursor9 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "method", true));
+              ICursor<SNode> _zCursor8 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "method", true));
               try {
-                while (_zCursor9.moveToNext()) {
-                  SNode sMethod = _zCursor9.getCurrent();
+                while (_zCursor8.moveToNext()) {
+                  SNode sMethod = _zCursor8.getCurrent();
                   if (SPropertyOperations.getString(sMethod, "name").equals(SPropertyOperations.getString(searchedNode, "name")) && SLinkOperations.getCount(sMethod, "parameter") == SLinkOperations.getCount(searchedNode, "parameter")) {
                     boolean same = true;
                     for (int i = 0; i < SLinkOperations.getCount(sMethod, "parameter"); i = i + 1) {
@@ -147,12 +147,12 @@ public class InterfaceMethodImplementations_Finder extends BaseFinder {
                   }
                 }
               } finally {
-                _zCursor9.release();
+                _zCursor8.release();
               }
             }
           }
         } finally {
-          _zCursor8.release();
+          _zCursor7.release();
         }
       }
     }

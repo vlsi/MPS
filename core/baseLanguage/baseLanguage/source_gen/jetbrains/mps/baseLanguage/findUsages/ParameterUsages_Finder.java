@@ -79,10 +79,10 @@ public class ParameterUsages_Finder extends BaseFinder {
       // null
       List<SearchResult> parameterUsages = new ArrayList<SearchResult>();
       {
-        ICursor<SearchResult> _zCursor10 = CursorFactory.createCursor(overridingMethods);
+        ICursor<SearchResult> _zCursor9 = CursorFactory.createCursor(overridingMethods);
         try {
-          while (_zCursor10.moveToNext()) {
-            SearchResult methodResult = _zCursor10.getCurrent();
+          while (_zCursor9.moveToNext()) {
+            SearchResult methodResult = _zCursor9.getCurrent();
             {
               SNode methodNode = (SNode) methodResult.getNode();
               SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
@@ -110,19 +110,19 @@ public class ParameterUsages_Finder extends BaseFinder {
             }
           }
         } finally {
-          _zCursor10.release();
+          _zCursor9.release();
         }
       }
       // null
       {
-        ICursor<SearchResult> _zCursor11 = CursorFactory.createCursor(parameterUsages);
+        ICursor<SearchResult> _zCursor10 = CursorFactory.createCursor(parameterUsages);
         try {
-          while (_zCursor11.moveToNext()) {
-            SearchResult usage = _zCursor11.getCurrent();
+          while (_zCursor10.moveToNext()) {
+            SearchResult usage = _zCursor10.getCurrent();
             global_results.getSearchResults().add(new SearchResult(new SNodePointer(usage.getNode()), "Parameter Usages"));
           }
         } finally {
-          _zCursor11.release();
+          _zCursor10.release();
         }
       }
     }

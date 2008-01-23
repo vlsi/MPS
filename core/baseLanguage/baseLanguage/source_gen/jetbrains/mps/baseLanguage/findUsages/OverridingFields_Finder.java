@@ -79,10 +79,10 @@ public class OverridingFields_Finder extends BaseFinder {
       }
       // null
       {
-        ICursor<SearchResult> _zCursor4 = CursorFactory.createCursor(results);
+        ICursor<SearchResult> _zCursor3 = CursorFactory.createCursor(results);
         try {
-          while (_zCursor4.moveToNext()) {
-            SearchResult result = _zCursor4.getCurrent();
+          while (_zCursor3.moveToNext()) {
+            SearchResult result = _zCursor3.getCurrent();
             {
               SNode classNode = (SNode) result.getNode();
               Iterable<SNode> fieldsOfSameKind;
@@ -92,22 +92,22 @@ public class OverridingFields_Finder extends BaseFinder {
                 fieldsOfSameKind = SLinkOperations.getTargets(classNode, "staticField", true);
               }
               {
-                ICursor<SNode> _zCursor5 = CursorFactory.createCursor(fieldsOfSameKind);
+                ICursor<SNode> _zCursor4 = CursorFactory.createCursor(fieldsOfSameKind);
                 try {
-                  while (_zCursor5.moveToNext()) {
-                    SNode field = _zCursor5.getCurrent();
+                  while (_zCursor4.moveToNext()) {
+                    SNode field = _zCursor4.getCurrent();
                     if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(searchedNode, "name")) && Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(field, "type", true)).equals(Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(searchedNode, "type", true)))) {
                       global_results.getSearchResults().add(new SearchResult(new SNodePointer(field), "Overriding Fields"));
                     }
                   }
                 } finally {
-                  _zCursor5.release();
+                  _zCursor4.release();
                 }
               }
             }
           }
         } finally {
-          _zCursor4.release();
+          _zCursor3.release();
         }
       }
     }
