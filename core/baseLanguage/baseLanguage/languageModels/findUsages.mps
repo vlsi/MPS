@@ -23,7 +23,6 @@
     <property name="name" value="OverridingMethods"/>
     <property name="description" value="Overriding Methods"/>
     <property name="isVisible" value="true"/>
-    <property name="package" value="checked"/>
     <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
           id="1200309609797">
@@ -651,7 +650,6 @@
     <property name="name" value="ImplementingClasses"/>
     <property name="description" value="Implementing Classes"/>
     <property name="isVisible" value="true"/>
-    <property name="package" value="checked"/>
     <link role="forConcept" targetNodeId="1.1107796713796" resolveInfo="Interface"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
           id="1200310248825">
@@ -977,7 +975,6 @@
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1200310287391">
     <property name="name" value="DerivedInterfaces"/>
     <property name="description" value="Derived Interfaces"/>
-    <property name="package" value="checked"/>
     <property name="isVisible" value="true"/>
     <link role="forConcept" targetNodeId="1.1107796713796" resolveInfo="Interface"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
@@ -1304,7 +1301,6 @@
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1200310473077">
     <property name="name" value="DerivedClasses"/>
     <property name="description" value="Derived Classes"/>
-    <property name="package" value="checked"/>
     <property name="isVisible" value="true"/>
     <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
@@ -1637,7 +1633,6 @@
     <property name="name" value="MethodUsages"/>
     <property name="description" value="Method Usages"/>
     <property name="isVisible" value="true"/>
-    <property name="package" value="checked"/>
     <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
           id="1200317943494">
@@ -2303,7 +2298,6 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1200420731716">
-    <property name="package" value="checked"/>
     <property name="name" value="OverridingFields"/>
     <property name="description" value="Overriding Fields"/>
     <property name="isVisible" value="true"/>
@@ -2717,7 +2711,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1200425321273">
     <property name="isVisible" value="true"/>
-    <property name="package" value="checked"/>
     <property name="name" value="InterfaceMethodImplementations"/>
     <property name="description" value="Interface Method Implementations"/>
     <link role="forConcept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration"/>
@@ -3341,7 +3334,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1200502085335">
     <property name="isVisible" value="true"/>
-    <property name="package" value="checked"/>
     <property name="name" value="ClassAncestors"/>
     <property name="description" value="Ancestors"/>
     <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept"/>
@@ -3470,7 +3462,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1201091722183">
     <property name="isVisible" value="true"/>
-    <property name="package" value="Incomplete"/>
     <property name="name" value="ParameterUsages"/>
     <property name="description" value="Parameter Usages"/>
     <link role="forConcept" targetNodeId="1.1068498886292" resolveInfo="ParameterDeclaration"/>
