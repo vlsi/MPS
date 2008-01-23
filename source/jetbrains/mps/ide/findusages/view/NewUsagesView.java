@@ -6,8 +6,10 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.ConstantFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
@@ -17,8 +19,6 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.view.util.HintDialog;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.ConstantFinder;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
@@ -267,8 +267,15 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
 
   class TabPaneMouseListener extends MouseAdapter {
     public void mousePressed(MouseEvent e) {
-      if (e.isPopupTrigger()) {
-        handlePopup(e);
+      if (e.getButton() == MouseEvent.BUTTON2) {
+        int tabIndex = myTabbedPane.indexAtLocation(e.getX(), e.getY());
+        if (tabIndex != -1) {
+          closeTab(tabIndex);
+        }
+      } else {
+        if (e.isPopupTrigger()) {
+          handlePopup(e);
+        }
       }
     }
 
