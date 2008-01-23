@@ -57,6 +57,7 @@
     <orderEntry type="module" module-name="refactoringLanguage" exported="" />
     <orderEntry type="module" module-name="transformation" exported="" />
     <orderEntry type="module" module-name="jetbrains.mps.core" exported="" />
+    <orderEntry type="module" module-name="collections" exported="" />
     <orderEntryProperties />
   </component>
   <component name="copyright">

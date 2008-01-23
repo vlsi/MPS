@@ -52,11 +52,11 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\baseLanguage\ext\dev\classes" />
-    <entry path="${mps_home}\baseLanguage\ext\collections-runtime\classes" />
+    <entry path="${mps_home}\classes" />
+    <entry path="${mps_home}\runtime\classes" />
   </classPath>
   <runtimeClassPath>
-    <entry path="${mps_home}\baseLanguage\ext\dev\classes" />
+    <entry path="${mps_home}\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
