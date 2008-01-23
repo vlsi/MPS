@@ -6,8 +6,8 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
@@ -26,6 +26,12 @@ public class FilpEqualsIntention_Intention extends BaseIntention implements Inte
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
+    if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
+      return false;
+    }
+    if (SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name") == null) {
+      return false;
+    }
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name").equals("equals") && SLinkOperations.getCount(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter") == 1;
   }
 
