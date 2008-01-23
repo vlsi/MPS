@@ -443,10 +443,13 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201023639937">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201023639938">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201094777018">
+          <property name="value" value="ctx.incrementLabel()" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201095601552">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201095604031">
             <link role="baseMethodDeclaration" targetNodeId="1201015312880" resolveInfo="incrementLabel" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201023639939">
+            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201095601553">
               <link role="variableDeclaration" targetNodeId="1201015860616" resolveInfo="ctx" />
             </node>
           </node>
@@ -814,15 +817,20 @@
                 <link role="variableDeclaration" targetNodeId="1201016970639" resolveInfo="generator" />
               </node>
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201016977360">
-              <link role="baseMethodDeclaration" targetNodeId="16.~SNode.getId():java.lang.String" resolveInfo="getId" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1201016977361">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201016977362">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201016980696">
-                    <link role="variableDeclaration" targetNodeId="1201016954614" resolveInfo="sn" />
-                  </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201016977365">
-                    <link role="classifier" targetNodeId="16.~SNode" resolveInfo="SNode" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201097234079">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201097239222">
+                <property name="value" value="closure_data_" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201097239225">
+                <link role="baseMethodDeclaration" targetNodeId="16.~SNode.getId():java.lang.String" resolveInfo="getId" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1201097239226">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201097239227">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201097239228">
+                      <link role="variableDeclaration" targetNodeId="1201016954614" resolveInfo="sn" />
+                    </node>
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201097239229">
+                      <link role="classifier" targetNodeId="16.~SNode" resolveInfo="SNode" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -860,15 +868,20 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201017007430">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201017018152">
             <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.getSessionObject(java.lang.Object):java.lang.Object" resolveInfo="getSessionObject" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201017023589">
-              <link role="baseMethodDeclaration" targetNodeId="16.~SNode.getId():java.lang.String" resolveInfo="getId" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1201017023590">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201017023591">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201017023592">
-                    <link role="variableDeclaration" targetNodeId="1201016994399" resolveInfo="sn" />
-                  </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201017023593">
-                    <link role="classifier" targetNodeId="16.~SNode" resolveInfo="SNode" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201097289340">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201097292171">
+                <property name="value" value="closure_data_" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201097292172">
+                <link role="baseMethodDeclaration" targetNodeId="16.~SNode.getId():java.lang.String" resolveInfo="getId" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1201097292173">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201097292174">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201097292175">
+                      <link role="variableDeclaration" targetNodeId="1201016994399" resolveInfo="sn" />
+                    </node>
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201097292176">
+                      <link role="classifier" targetNodeId="16.~SNode" resolveInfo="SNode" />
+                    </node>
                   </node>
                 </node>
               </node>

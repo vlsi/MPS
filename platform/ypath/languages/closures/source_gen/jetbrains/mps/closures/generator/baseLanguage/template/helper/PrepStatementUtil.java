@@ -46,6 +46,7 @@ public class PrepStatementUtil {
     PrepStatementUtil.prepLocalVariableDeclaration(SLinkOperations.getTarget(fstmt, "variable", true), ctx, generator);
     ctx.incrementLabel();
     int condLabel = ctx.label;
+    // ctx.incrementLabel()
     ctx.incrementLabel();
     int blockLabel = ctx.label;
     PrepStatementUtil.prepStatementList(SLinkOperations.getTarget(fstmt, "body", true), ctx, generator);
@@ -74,11 +75,11 @@ public class PrepStatementUtil {
   }
 
   public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {
-    generator.getGeneratorSessionContext().putSessionObject(((SNode)sn).getId(), data);
+    generator.getGeneratorSessionContext().putSessionObject("closure_data_" + ((SNode)sn).getId(), data);
   }
 
   public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
-    return generator.getGeneratorSessionContext().getSessionObject(((SNode)sn).getId());
+    return generator.getGeneratorSessionContext().getSessionObject("closure_data_" + ((SNode)sn).getId());
   }
 
   private static class Context {

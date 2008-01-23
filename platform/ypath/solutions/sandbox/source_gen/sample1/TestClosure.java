@@ -61,6 +61,7 @@ public class TestClosure {
             return new _FunctionTypes.YieldingIterator <Integer>() {
 
               private int __CP__ = 0;
+              private int _1_bar;
 
               protected boolean moveToNext() {
 __loop__:
@@ -68,8 +69,24 @@ __loop__:
                   switch (this.__CP__) {
                     case 0:
                     case 1:
+                      this._1_bar = 0;
+                    case 2:
+                      if(!(this._1_bar < 10)) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 3:
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._1_bar = this._1_bar + 1;
                       this.__CP__ = 2;
-                      this.yield((Integer)0);
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      this.yield((Integer)this._1_bar);
                       return true;
                     default:
                       break __loop__;

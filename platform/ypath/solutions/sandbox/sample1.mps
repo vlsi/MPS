@@ -416,13 +416,45 @@
             </node>
             <node role="initializer" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1200832124876">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200832124877">
-                <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1200832124878">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1200842623257">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1200842623258">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="1201092112338">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201092112339">
+                    <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1200832124878">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1200842623257">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201095478192">
+                          <link role="variableDeclaration" targetNodeId="1201092112341" resolveInfo="bar" />
+                        </node>
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1200842625322">
+                          <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201092112341">
+                    <property name="name" value="bar" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1201092114105" />
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201092119068">
                       <property name="value" value="0" />
                     </node>
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1200842625322">
-                      <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1201092123207">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201092124478">
+                      <property name="value" value="10" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201092122525">
+                      <link role="variableDeclaration" targetNodeId="1201092112341" resolveInfo="bar" />
+                    </node>
+                  </node>
+                  <node role="iteration" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1201092128648">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201092130304">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201092131549">
+                        <property name="value" value="1" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201092130221">
+                        <link role="variableDeclaration" targetNodeId="1201092112341" resolveInfo="bar" />
+                      </node>
+                    </node>
+                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201092127459">
+                      <link role="variableDeclaration" targetNodeId="1201092112341" resolveInfo="bar" />
                     </node>
                   </node>
                 </node>
