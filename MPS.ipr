@@ -266,6 +266,11 @@
               <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/classes/jetbrains/teamsys/dnq/runtime/files/entityMetaDataConfiguration.xml" />
             </files>
           </module>
+          <module name="dates">
+            <files>
+              <file url="file://$PROJECT_DIR$/core/baseLanguage/dates/tests_gen/jetbrains/mps/baseLanguage/ext/dates/unittest/tests/datetimeConfiguration.xml" />
+            </files>
+          </module>
         </modules>
       </facet-type>
     </autodetection-disabled>
@@ -890,7 +895,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/agreement/agreement.iml" filepath="$PROJECT_DIR$/app/agreement/agreement.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" group="core/baseLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/dev/baseLanguageExt.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" group="platform/webr/extensions" />
@@ -910,7 +914,8 @@
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" group="core/baseLanguage/csharp" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/runtime/csharp-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/runtime/csharp-runtime.iml" group="core/baseLanguage/csharp" />
-      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/dates-runtime/dates-runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/dates-runtime/dates-runtime.iml" group="baseLanguageExt" />
+      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" filepath="$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" group="core/baseLanguage/dates" />
+      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/dates/runtime/dates-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/dates/runtime/dates-runtime.iml" group="core/baseLanguage/dates" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/dnq.iml" filepath="$PROJECT_DIR$/platform/dnq/dnq.iml" group="platform/dnq/language" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" group="platform/dnq/runtime" />
