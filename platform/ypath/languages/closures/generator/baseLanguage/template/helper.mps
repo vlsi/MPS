@@ -4,14 +4,12 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="20" />
   <import index="14" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="15" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="17" modelUID="java.lang@java_stub" version="-1" />
   <import index="18" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
-  <import index="19" modelUID="jetbrains.mps.closures.structure@java_stub" version="-1" />
   <import index="20" modelUID="jetbrains.mps.closures.structure" version="0" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1200861660719">
     <property name="name" value="PrepStatementUtil" />
