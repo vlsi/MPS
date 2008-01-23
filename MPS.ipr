@@ -909,8 +909,8 @@
       <module fileurl="file://$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" filepath="$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" group="platform/dnq/runtime" />
-      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" group="baseLanguageExt" />
-      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/csharp-runtime/csharp-runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/csharp-runtime/csharp-runtime.iml" group="baseLanguageExt" />
+      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" group="core/baseLanguage/csharp" />
+      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/runtime/csharp-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/runtime/csharp-runtime.iml" group="core/baseLanguage/csharp" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/dates-runtime/dates-runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/dates-runtime/dates-runtime.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/dnq.iml" filepath="$PROJECT_DIR$/platform/dnq/dnq.iml" group="platform/dnq/language" />
