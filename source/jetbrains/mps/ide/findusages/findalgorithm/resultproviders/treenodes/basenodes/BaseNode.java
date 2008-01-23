@@ -68,7 +68,12 @@ public abstract class BaseNode implements IResultProvider {
       monitor.start("find usages", getEstimatedTime(query.getScope()));
     }
 
-    results = doGetResults(query, monitor);
+    try {
+      results = doGetResults(query, monitor);
+    } catch (Throwable t) {
+      LOG.error(t.getMessage(), t);
+      results = new SearchResults();
+    }
 
     //no null pointer exception will occure!!
     if (results.getSearchedNodePointers().contains(null)) {
