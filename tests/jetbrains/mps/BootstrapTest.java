@@ -62,7 +62,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testCollectionsLanguage() {
-    String res = testProject(new File("baseLanguage/ext/dev/baseLanguageExt.mpr"));
+    String res = testProject(new File("core/baseLanguage/collections/collections.mpr"));
     assertTrue(res, res == null);
   }
 
