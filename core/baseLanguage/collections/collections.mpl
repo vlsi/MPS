@@ -36,7 +36,7 @@
       <dependencies>
         <dependency>jetbrains.mps.baseLanguage</dependency>
       </dependencies>
-      <mapping-priorities>
+      <mapping-priorities>classes
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
             <all-local-mappings />
@@ -52,11 +52,11 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\classes" />
-    <entry path="${mps_home}\runtime\classes" />
+    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}\runtime\classes" />
   </classPath>
   <runtimeClassPath>
-    <entry path="${mps_home}\classes" />
+    <entry path="${language_descriptor}\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
