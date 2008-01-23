@@ -127,15 +127,19 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
       MPSModuleRepository.getInstance().unRegisterModules(myOwner);
     }
     myOwner = new MPSModuleOwner() { };
-    for (Library l : getLibraries()) {
-      if (!l.isPredefined()) {
-        MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        for (Library l : getLibraries()) {
+          if (!l.isPredefined()) {
+            MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
+          }
+        }
+        readAndConvert(myOwner);
       }
-    }
-    readAndConvert(myOwner);
+    });
   }
 
-  private void readAndConvert(MPSModuleOwner owner) {
+  private void readAndConvert(final MPSModuleOwner owner) {
     for (IModule m : MPSModuleRepository.getInstance().getModules(owner)) {
       m.readModels();
     }
