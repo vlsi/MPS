@@ -79,7 +79,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     super(operationContext);
     myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
-    myModelDescriptor.addModelCommandListener(myModelListener);
+    if (myModelDescriptor != null) {
+      myModelDescriptor.addModelCommandListener(myModelListener);
+    }
     myLabel = label;
     myNodesCondition = condition;
     
