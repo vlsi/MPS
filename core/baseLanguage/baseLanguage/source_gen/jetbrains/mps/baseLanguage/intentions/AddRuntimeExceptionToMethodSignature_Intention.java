@@ -28,18 +28,18 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    final zClosureContext1 _zClosureContext1 = new zClosureContext1();
+    final zClosureContext2 _zClosureContext2 = new zClosureContext2();
     // check that this is done in a method
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (methodDecl == null) {
       return false;
     }
     // get exception type
-    _zClosureContext1.exceptionType = (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true));
-    if (_zClosureContext1.exceptionType == null) {
+    _zClosureContext2.exceptionType = (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true));
+    if (_zClosureContext2.exceptionType == null) {
       return false;
     }
-    SNode exceptionJavaType = (SNode) SLinkOperations.getTarget(_zClosureContext1.exceptionType, "classifier", false);
+    SNode exceptionJavaType = (SNode) SLinkOperations.getTarget(_zClosureContext2.exceptionType, "classifier", false);
     if (exceptionJavaType == null) {
       return false;
     }
@@ -48,7 +48,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
       return false;
     }
     // check if it's not thrown by a method yet
-    if (!(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(methodDecl, "throwsItem", true), new zPredicate1(null, _zClosureContext1))))) {
+    if (!(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(methodDecl, "throwsItem", true), new zPredicate3(null, _zClosureContext2))))) {
       return false;
     }
     return true;
