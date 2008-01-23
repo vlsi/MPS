@@ -949,7 +949,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" filepath="$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" group="core/baseLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/util/util.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/util/util.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/web-query.iml" filepath="$PROJECT_DIR$/platform/web-query/web-query.iml" group="platform/web-query" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" filepath="$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" group="platform/web-query" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/webr.iml" filepath="$PROJECT_DIR$/platform/webr/webr.iml" group="platform/webr" />
