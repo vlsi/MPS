@@ -29,7 +29,7 @@ public class GlobalScope implements IScope {
   }
 
   public String toString() {
-    return "glogal scope";
+    return "global scope";
   }
 
   public Language getLanguage(@NotNull String languageNamespace) {
