@@ -15,7 +15,6 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import org.jdom.Element;
 
-import java.io.File;
 import java.util.*;
 
 public class LibraryManager extends DefaultExternalizableComponent implements IComponentWithPreferences, IComponentLifecycle {
@@ -88,6 +87,11 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     result.add(new PredefinedLibrary("mps.projects") {
       public String getPath() {
         return PathManager.getProjectsPath()  ;
+      }
+    });
+    result.add(new PredefinedLibrary("mps.baseLanguage.old") {
+      public String getPath() {
+        return PathManager.getBaseLanguagePath_Old()  ;
       }
     });
     result.add(new PredefinedLibrary("mps.baseLanguage") {

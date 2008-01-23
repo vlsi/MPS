@@ -184,10 +184,13 @@ public class PathManager {
     return getHomePath() + File.separator + "app";
   }
 
-  public static String getBaseLanguagePath() {
+  public static String getBaseLanguagePath_Old() {
     return getHomePath() + File.separator + "baseLanguage";
   }
 
+  public static String getBaseLanguagePath() {
+    return getHomePath() + File.separator + "core" + File.separator + "baseLanguage";
+  }
 
   private static String getAbsolutePath(String path) {
     if (path.startsWith("~/") || path.startsWith("~\\")) {
