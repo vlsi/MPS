@@ -12,7 +12,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testBaseLanguageStrings() {
-    String res = testProject(new File("baseLanguage/ext/strings/jetbrains.baseLanguage.strings.mpr"));
+    String res = testProject(new File("core/baseLanguage/strings/strings.mpr"));
     assertTrue(res, res == null);
   }
 
