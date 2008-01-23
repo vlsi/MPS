@@ -30,12 +30,14 @@
       <external-templates />
       <dependencies>
         <dependency>jetbrains.mps.baseLanguage</dependency>
+        <dependency>jetbrains.mps.baseLanguage.ext.csharp</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
   </generators>
   <classPath>
     <entry path="${mps_home}\platform\ypath\classes" />
+    <entry path="${language_descriptor}\runtime\classes" />
   </classPath>
   <runtimeClassPath>
     <entry path="${mps_home}\platform\ypath\classes" />

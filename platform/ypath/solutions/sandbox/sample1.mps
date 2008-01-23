@@ -2,29 +2,10 @@
 <model name="sample1">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
-  </language>
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
-  </language>
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.closures">
     <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-    <languageAspect modelUID="jetbrains.mps.closures.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.closures.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.closures.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.closures.editor" version="-1" />
   </language>
   <maxImportIndex value="5" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
@@ -421,6 +402,75 @@
                 <property name="value" value="fact(5)=" />
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1200832124871">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200832124872">
+            <property name="name" value="foo" />
+            <node role="type" type="jetbrains.mps.closures.structure.FunctionType" id="1200832124873">
+              <node role="resultType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1200832124874">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1200842543854">
+                  <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+                </node>
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1200832124876">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200832124877">
+                <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1200832124878">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1200842623257">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1200842623258">
+                      <property name="value" value="0" />
+                    </node>
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1200842625322">
+                      <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1200831898910">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200831898911">
+            <property name="name" value="seq" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1200831898912">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1200842549330">
+                <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.closures.structure.InvokeFunctionExpression" id="1200831938111">
+              <node role="function" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200832124881">
+                <link role="variableDeclaration" targetNodeId="1200832124872" resolveInfo="foo" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1201048598680">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201048598681">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201048607808">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201048614089">
+                <link role="baseMethodDeclaration" targetNodeId="5.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1201048607809">
+                  <link role="classifier" targetNodeId="4.~System" resolveInfo="System" />
+                  <link role="variableDeclaration" targetNodeId="4.~System.out" resolveInfo="out" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201048620579">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201048621795">
+                    <link role="variableDeclaration" targetNodeId="1201048598684" resolveInfo="i" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201048615160">
+                    <property name="value" value="yielded: " />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201048604332">
+            <link role="variableDeclaration" targetNodeId="1200831898911" resolveInfo="seq" />
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201048598684">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1201048600393" />
           </node>
         </node>
       </node>

@@ -25,36 +25,59 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
       ListOperations.addElement(paramTypes, SLinkOperations.getTarget(param, "type", true));
     }
     List<SNode> allRets = SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getChildren(SLinkOperations.getTarget(closure, "body", true)), new zPredicate(typeof_ClosureLiteral_InferenceRule.this, null)));
-    List<SNode> allStmts = SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getChildren(SLinkOperations.getTarget(closure, "body", true)), new zPredicate1(typeof_ClosureLiteral_InferenceRule.this, null)));
+    List<SNode> allYlds = SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getChildren(SLinkOperations.getTarget(closure, "body", true)), new zPredicate1(typeof_ClosureLiteral_InferenceRule.this, null)));
+    List<SNode> allStmts = SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getChildren(SLinkOperations.getTarget(closure, "body", true)), new zPredicate2(typeof_ClosureLiteral_InferenceRule.this, null)));
     while(!(SequenceOperations.isEmpty(allStmts))) {
       SNode stmt = SequenceOperations.getFirst(allStmts);
       ListOperations.removeElement(allStmts, stmt);
-      ListOperations.addAllElements(allStmts, SequenceOperations.where(SNodeOperations.getChildren(stmt), new zPredicate2(typeof_ClosureLiteral_InferenceRule.this, null)));
-      ListOperations.addAllElements(allRets, SequenceOperations.where(SNodeOperations.getChildren(stmt), new zPredicate3(typeof_ClosureLiteral_InferenceRule.this, null)));
+      ListOperations.addAllElements(allStmts, SequenceOperations.where(SNodeOperations.getChildren(stmt), new zPredicate3(typeof_ClosureLiteral_InferenceRule.this, null)));
+      ListOperations.addAllElements(allRets, SequenceOperations.where(SNodeOperations.getChildren(stmt), new zPredicate4(typeof_ClosureLiteral_InferenceRule.this, null)));
+      ListOperations.addAllElements(allYlds, SequenceOperations.where(SNodeOperations.getChildren(stmt), new zPredicate5(typeof_ClosureLiteral_InferenceRule.this, null)));
     }
-    final SNode LCS_typevar_1199621958531 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    final SNode RLCS_typevar_1199621958531 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    final SNode YLCS_typevar_1200831610156 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     boolean returnsValue = !(SequenceOperations.isEmpty(allRets));
+    boolean yieldsValue = !(SequenceOperations.isEmpty(allYlds));
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(allRets);
       try {
         while(_zCursor.moveToNext()) {
           SNode rs = _zCursor.getCurrent();
-          TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1199621958531), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(rs, "expression", true), "jetbrains.mps.closures.helgins", "1199622037643", true), SLinkOperations.getTarget(rs, "expression", true), null, "jetbrains.mps.closures.helgins", "1199622013511");
+          TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(rs, "expression", true), "jetbrains.mps.closures.helgins", "1199622037643", true), SLinkOperations.getTarget(rs, "expression", true), null, "jetbrains.mps.closures.helgins", "1199622013511");
         }
       } finally {
         _zCursor.release();
       }
     }
+    {
+      ICursor<SNode> _zCursor1 = CursorFactory.createCursor(allYlds);
+      try {
+        while(_zCursor1.moveToNext()) {
+          SNode ys = _zCursor1.getCurrent();
+          TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ys, "expression", true), "jetbrains.mps.closures.helgins", "1200831650975", true), SLinkOperations.getTarget(ys, "expression", true), null, "jetbrains.mps.closures.helgins", "1200831646309");
+        }
+      } finally {
+        _zCursor1.release();
+      }
+    }
     SNode lastStmt = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(closure, "body", true), "statement", true));
     if(SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1199621958531), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStmt, "expression", true), "jetbrains.mps.closures.helgins", "1199622127027", true), SLinkOperations.getTarget(lastStmt, "expression", true), null, "jetbrains.mps.closures.helgins", "1199622121009");
+      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStmt, "expression", true), "jetbrains.mps.closures.helgins", "1199622127027", true), SLinkOperations.getTarget(lastStmt, "expression", true), null, "jetbrains.mps.closures.helgins", "1199622121009");
       returnsValue = true;
     }
+    if(returnsValue && yieldsValue) {
+      if(!(false)) {
+        TypeChecker.getInstance().reportTypeError(closure, "closure must either return or yield value", "jetbrains.mps.closures.helgins", "1200831719690");
+      }
+    } else
     if(returnsValue) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(paramTypes, TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1199621958531)), closure, "jetbrains.mps.closures.helgins", "1199620910047");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200829007706", true), new QuotationClass_().createNode(paramTypes, TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531)), closure, null, "jetbrains.mps.closures.helgins", "1200829005839");
+    } else
+    if(yieldsValue) {
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200831788664", true), new QuotationClass_1().createNode(paramTypes, TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156)), closure, null, "jetbrains.mps.closures.helgins", "1200831788662");
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(paramTypes), closure, "jetbrains.mps.closures.helgins", "1199622253431");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200831808767", true), new QuotationClass_2().createNode(paramTypes), closure, null, "jetbrains.mps.closures.helgins", "1200831808765");
     }
   }
 

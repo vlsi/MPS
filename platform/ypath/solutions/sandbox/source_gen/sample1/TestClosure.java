@@ -4,6 +4,8 @@ package sample1;
 
 import sample1._FunctionTypes._void;
 import sample1._FunctionTypes._int_int;
+import sample1._FunctionTypes._sequence1_Integer;
+import java.util.Iterator;
 
 public class TestClosure {
 
@@ -50,6 +52,43 @@ public class TestClosure {
       }
 
     }.invoke(5));
+    _sequence1_Integer foo = new _FunctionTypes._sequence1_Integer() {
+
+      public Iterable<Integer> invoke() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new _FunctionTypes.YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+                  switch (this.__CP__) {
+                    case 0:
+                    case 1:
+                      this.__CP__ = 2;
+                      this.yield((Integer)0);
+                      return true;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    };
+    Iterable<Integer> seq = foo.invoke();
+    for(int i : seq) {
+      System.out.println("yielded: " + i);
+    }
   }
 
 }
