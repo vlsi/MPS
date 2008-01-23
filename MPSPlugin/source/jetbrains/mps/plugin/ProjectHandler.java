@@ -538,7 +538,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }, ModalityState.NON_MODAL);
   }
 
-  private Module findModule(final String path) {
+  public Module findModule(final String path) {
     VirtualFile file = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(new File(path));
     if (file == null) return null;
 

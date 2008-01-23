@@ -358,9 +358,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
   @Nullable
   public IProjectHandler getProjectHandler() {
-    File ideaProjectFile = getIDEAProjectFile();
-    if (ideaProjectFile == null) return null;
-    String projectPath = ideaProjectFile.getAbsolutePath();
+    File projectFile = getProjectFile().getParentFile();
+    String projectPath = projectFile.getAbsolutePath();
     return MPSPlugin.getInstance().getProjectHandler(projectPath);
   }
 

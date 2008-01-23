@@ -67,12 +67,12 @@ public class RMIHandler {
     public IProjectHandler getProjectHandlerFor(String projectPath) throws RemoteException {
       checkAccess();
 
-      String canonicalProjectPath = FileUtil.getCanonicalPath(projectPath);
       ProjectManager projectManager = ProjectManager.getInstance();
       for (Project p : projectManager.getOpenProjects()) {
         ProjectHandler handler = p.getComponent(ProjectHandler.class);
-        String currentCanonicalProjectPath = FileUtil.getCanonicalPath(handler.getProjectPath());
-        if (canonicalProjectPath.equals(currentCanonicalProjectPath)) return handler;
+        if (handler.findModule(projectPath) != null) {
+          return handler;
+        }
       }
 
       return null;
