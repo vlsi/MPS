@@ -56,9 +56,8 @@ public class FieldUsages_Finder extends BaseFinder {
         List<SearchResult> fieldDeclarationsResult = new ArrayList<SearchResult>();
         try {
           BaseFinder finder_7 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder").newInstance();
-          boolean rightConcept = finder_7.getConcept().equals(searchedNode.getConceptFqName());
-          // TODO
-          rightConcept = true;
+          // TODO: check for right concept
+          boolean rightConcept = true;
           if (!(rightConcept)) {
             FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_7.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
           } else {
@@ -90,9 +89,8 @@ public class FieldUsages_Finder extends BaseFinder {
         List<SearchResult> implementingClasses = new ArrayList<SearchResult>();
         try {
           BaseFinder finder_8 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder").newInstance();
-          boolean rightConcept = finder_8.getConcept().equals(SNodeOperations.getAncestor(searchedNode, "jetbrains.mps.baseLanguage.structure.Interface", false, false).getConceptFqName());
-          // TODO
-          rightConcept = true;
+          // TODO: check for right concept
+          boolean rightConcept = true;
           if (!(rightConcept)) {
             FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_8.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
           } else {
@@ -120,7 +118,6 @@ public class FieldUsages_Finder extends BaseFinder {
           }
         }
       }
-      // null
     }
     return global_results;
   }

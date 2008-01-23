@@ -54,9 +54,8 @@ public class InterfaceMethodImplementations_Finder extends BaseFinder {
       List<SearchResult> implementors = new ArrayList<SearchResult>();
       try {
         BaseFinder finder_10 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder").newInstance();
-        boolean rightConcept = finder_10.getConcept().equals(SNodeOperations.getParent(searchedNode, null, false, false).getConceptFqName());
-        // TODO
-        rightConcept = true;
+        // TODO: check for right concept
+        boolean rightConcept = true;
         if (!(rightConcept)) {
           InterfaceMethodImplementations_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_10.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
         } else {
@@ -85,9 +84,8 @@ public class InterfaceMethodImplementations_Finder extends BaseFinder {
               SNode implementorNode = implementor.getNode();
               try {
                 BaseFinder finder_11 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder").newInstance();
-                boolean rightConcept = finder_11.getConcept().equals(implementorNode.getConceptFqName());
-                // TODO
-                rightConcept = true;
+                // TODO: check for right concept
+                boolean rightConcept = true;
                 if (!(rightConcept)) {
                   InterfaceMethodImplementations_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_11.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
                 } else {
