@@ -71,6 +71,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     if (sampleNode != null) {
       sampleNode = CopyUtil.copy(sampleNode, model);
     }
+    nodeConcept = newNode.getConceptDeclarationAdapter(); // default concrete concept could change nodeConcept
     setupNode((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     SModelUtil_new.createNodeStructure((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope, true);
     return newNode;
