@@ -891,6 +891,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/accounting/accounting.iml" filepath="$PROJECT_DIR$/app/accounting/accounting.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/agreement/agreement.iml" filepath="$PROJECT_DIR$/app/agreement/agreement.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/dev/baseLanguageExt.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/strings/baseLanguage_strings.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/strings/baseLanguage_strings.iml" group="baseLanguageExt" />
@@ -906,8 +907,8 @@
       <module fileurl="file://$CHARISMA_HOME$/charisma-jira-client/charisma-jira-client.iml" filepath="$CHARISMA_HOME$/charisma-jira-client/charisma-jira-client.iml" group="app/charisma" />
       <module fileurl="file://$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" filepath="$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" group="app/charisma" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/collections-runtime/collections-runtime.iml" group="baseLanguageExt" />
-      <module fileurl="file://$PROJECT_DIR$/core/configuration/configuration.iml" filepath="$PROJECT_DIR$/core/configuration/configuration.iml" group="core/configuration" />
-      <module fileurl="file://$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" filepath="$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" group="core/configuration" />
+      <module fileurl="file://$PROJECT_DIR$/core/configuration/configuration.iml" filepath="$PROJECT_DIR$/core/configuration/configuration.iml" group="core/kernel" />
+      <module fileurl="file://$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" filepath="$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" group="baseLanguageExt" />
@@ -924,7 +925,6 @@
       <module fileurl="file://$PROJECT_DIR$/app/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/app/mf/gothic/gothic.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" filepath="$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentionsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentionsLanguage.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/jetbrains.mps.baseLanguage.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/jetbrains.mps.baseLanguage.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/app/mf/lair1/lair1.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" group="platform/dnq/runtime" />
@@ -1014,7 +1014,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#10;snapshots-dir=&#10;" />
+        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />

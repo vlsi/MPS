@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.blTypes" generatorOutputPath="${mps_home}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.baseLanguage.blTypes" generatorOutputPath="${mps_home}\core\baseLanguage\baseLanguage\source_gen" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.baseLanguage.blTypes.structure" />
   </structure>
@@ -20,7 +20,7 @@
   <generators />
   <classPath />
   <runtimeClassPath>
-    <entry path="${mps_home}\languages\baseLanguage\classes" />
+    <entry path="${mps_home}\core\baseLanguage\baseLanguage\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>

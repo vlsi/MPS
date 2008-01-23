@@ -5,50 +5,13 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/core/configurations/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/core/configurations/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/baseLanguage/resolve/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.configuration" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/actionsLanguage/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/constraintsLanguage/solutions/constraintLanguageSandbox/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/core/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/editorLanguage/languages/editorLanguage/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/findUsagesLanguage/languages/findUsagesLanguage/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/helgins/languages/test/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/helgins/solutions/jetbrains.mps.bootstrap.helgins.sandbox/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/intentionsLanguage/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/intentionsLanguage/solutions/sandbox1/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/sharedConcepts/languages/sharedConcepts/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/smodelLanguage/language/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/smodelLanguage/solutions/samples/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/smodelLanguage/solutions/sandbox/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/smodelLanguage/solutions/typetest/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/structureLanguage/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/structureLanguage/solutions/sandbox/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/transformation/test/inputLang/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/transformation/test/inputModels/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/transformation/test/outputLang/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/annotations/languages/annotations/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/annotations/languages/comments/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/annotations/solutions/sandbox/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/editor/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/language/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/languages/blTypes/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/languages/refactoringTest/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/refactoring/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/resolve/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/sandbox/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/solutions/JDK/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/solutions/MPS.Classpath/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/solutions/testLogger/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/baseLanguage/solutions/testLogger2/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/date/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/formulaLanguage/language/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/patternLanguage/languages/patterns/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/patternLanguage/solutions/sandbox/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/projectLanguage/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/languages/xml/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/tools/tomcat/webapps" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -74,7 +37,7 @@
     <orderEntry type="library" name="Tigris SVN" level="project" />
     <orderEntry type="library" name="Eclipse JDT" level="project" />
     <orderEntry type="library" name="Alloy" level="project" />
-    <orderEntry type="module" module-name="jetbrains.mps.baseLanguage" exported="" />
+    <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
     <orderEntry type="module" module-name="baseLanguageExt" />
     <orderEntry type="module" module-name="configuration" exported="" />

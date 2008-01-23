@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.baseLanguage" pluginClass="jetbrains.mps.baseLanguage.plugin.BaseLanguagePlugin"
-          generatorOutputPath="${mps_home}\languages\baseLanguage\source_gen" compileInMPS="false">
+          generatorOutputPath="${mps_home}\core\baseLanguage\baseLanguage\source_gen" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.baseLanguage.structure"/>
   </structure>
@@ -46,10 +46,10 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\languages\baseLanguage\classes"/>
+    <entry path="${mps_home}\core\baseLanguage\baseLanguage\classes"/>
   </classPath>
   <runtimeClassPath>
-    <entry path="${mps_home}\languages\baseLanguage\classes"/>
+    <entry path="${mps_home}\core\baseLanguage\baseLanguage\classes"/>
   </runtimeClassPath>
   <sourcePath/>
   <osgiOptions>
