@@ -6403,7 +6403,6 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1201102619707">
-    <property name="package" value="unimpl"/>
     <property name="name" value="MoveInitializerToConstructor"/>
     <link role="forConcept" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration"/>
     <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock"
