@@ -894,7 +894,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/dev/baseLanguageExt.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" group="baseLanguageExt" />
-      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/platform/businessRules/businessRules.iml" filepath="$PROJECT_DIR$/platform/businessRules/businessRules.iml" group="platform/businessRules" />
@@ -949,6 +948,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" group="platform/dnq/runtime" />
+      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" filepath="$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/util/util.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/util/util.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/web-query.iml" filepath="$PROJECT_DIR$/platform/web-query/web-query.iml" group="platform/web-query" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" filepath="$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" group="platform/web-query" />
