@@ -539,8 +539,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     private void updateChangedProperties(Set<SNode> nodesWithChangedProperties) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-      final List<SNode> allRoots = new ArrayList<SNode>(getSModel().getRoots());
-      Collections.sort(allRoots, new ToStringComparator());
       for (SNode node : nodesWithChangedProperties) {
         SNodeTreeNode treeNode = (SNodeTreeNode) findRootSNodeTreeNode(node);
         if (treeNode == null) continue;
@@ -634,7 +632,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       insertRoots(addedRoots);
     }
 
-    private void insertRoots(Set<SNode> addedRoots) {
+    private void insertRoots(Set<SNode> addedRoots) {      
+      if (addedRoots.isEmpty()) {
+        return;
+      }
+
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       
       final List<SNode> allRoots = new ArrayList<SNode>(getSModel().getRoots());
