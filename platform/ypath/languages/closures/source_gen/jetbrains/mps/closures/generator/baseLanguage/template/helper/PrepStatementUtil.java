@@ -12,7 +12,10 @@ public class PrepStatementUtil {
 
   public static void prepStatementList(SNode slist, ITemplateGenerator generator) {
     PrepStatementUtil.Context ctx = new PrepStatementUtil.Context();
+    int beginLabel = ctx.label;
     PrepStatementUtil.prepStatementList(slist, ctx, generator);
+    int endLabel = ctx.label + 1;
+    PrepStatementUtil.putPrepData(slist, new Integer[]{beginLabel,endLabel}, generator);
   }
 
   private static void prepStatementList(SNode slist, PrepStatementUtil.Context ctx, ITemplateGenerator generator) {
@@ -37,6 +40,7 @@ public class PrepStatementUtil {
     int beginLabel = ctx.label;
     PrepStatementUtil.prepStatementList(SLinkOperations.getTarget(wstmt, "body", true), ctx, generator);
     int endLabel = ctx.label + 1;
+    PrepStatementUtil.putPrepData(SLinkOperations.getTarget(wstmt, "body", true), new Integer[]{beginLabel,endLabel}, generator);
     PrepStatementUtil.putPrepData(wstmt, new Integer[]{beginLabel,endLabel}, generator);
   }
 
@@ -52,7 +56,11 @@ public class PrepStatementUtil {
     PrepStatementUtil.prepStatementList(SLinkOperations.getTarget(fstmt, "body", true), ctx, generator);
     ctx.incrementLabel();
     int postLabel = ctx.label;
+    PrepStatementUtil.putPrepData(SLinkOperations.getTarget(fstmt, "body", true), new Integer[]{blockLabel,postLabel}, generator);
     int endLabel = ctx.label + 1;
+    if((SNodeOperations.getNextSibling(fstmt) != null) && !(StatementListUtil.isControlStatement(SNodeOperations.getNextSibling(fstmt)))) {
+      ctx.incrementLabel();
+    }
     PrepStatementUtil.putPrepData(fstmt, new Integer[]{beginLabel,condLabel,blockLabel,postLabel,endLabel}, generator);
   }
 
@@ -70,7 +78,11 @@ public class PrepStatementUtil {
   public static void prepYieldStatement(SNode ystmt, PrepStatementUtil.Context ctx, ITemplateGenerator generator) {
     ctx.incrementLabel();
     int beginLabel = ctx.label;
+    ctx.incrementLabel();
     int endLabel = ctx.label + 1;
+    if((SNodeOperations.getNextSibling(ystmt) != null) && !(StatementListUtil.isControlStatement(SNodeOperations.getNextSibling(ystmt)))) {
+      ctx.incrementLabel();
+    }
     PrepStatementUtil.putPrepData(ystmt, new Integer[]{beginLabel,endLabel}, generator);
   }
 

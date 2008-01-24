@@ -105,6 +105,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200830948225">
         <property name="text" value="yield" />
+        <link role="styleClass" targetNodeId="3.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1200830953102">
         <link role="relationDeclaration" targetNodeId="1.1200830928149" />
