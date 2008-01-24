@@ -13,11 +13,12 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.ide.IDEProjectFrame;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.util.Map;
@@ -85,11 +86,13 @@ public class SafeDelete extends AbstractLoggableRefactoring {
         return false;
       }
       SearchQuery searchQuery = new SearchQuery(new SNodePointer(node), actionContext.getScope());
-      refactoringContext.setParameter("searchResults", new NodeUsages_Finder().find(searchQuery));
+      IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
+      IAdaptiveProgressMonitor monitor = projectFrame.createAdaptiveProgressMonitor();
+      NodeUsages_Finder finder = new NodeUsages_Finder();
+      refactoringContext.setParameter("searchResults", finder.find(searchQuery));
       List<SearchResult> aliveResults = ((SearchResults)refactoringContext.getParameter("searchResults")).getAliveResults();
       if(!(aliveResults.isEmpty())) {
         int size = aliveResults.size();
-        IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
         String message = size + " usages found. delete anyway?";
         JFrame component = projectFrame.getMainFrame();
         int option = JOptionPane.showConfirmDialog(component, message, "Safe Delete", JOptionPane.YES_NO_OPTION);

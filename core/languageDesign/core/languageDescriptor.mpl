@@ -34,6 +34,7 @@
   </osgiOptions>
   <dependencies>
     <dependency>MPS.Classpath</dependency>
+    <dependency>jetbrains.mps.monitorLanguage</dependency>
   </dependencies>
 </language>
 

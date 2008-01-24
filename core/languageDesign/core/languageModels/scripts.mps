@@ -11,7 +11,8 @@
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
-  <maxImportIndex value="23" />
+  <language namespace="jetbrains.mps.monitorLanguage" />
+  <maxImportIndex value="24" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
   <import index="3" modelUID="java.io@java_stub" version="-1" />
@@ -35,6 +36,7 @@
   <import index="21" modelUID="jetbrains.mps.ide.findusages.model.result@java_stub" version="-1" />
   <import index="22" modelUID="javax.swing@java_stub" version="-1" />
   <import index="23" modelUID="jetbrains.mps.ide.findusages.view@java_stub" version="-1" />
+  <import index="24" modelUID="jetbrains.mps.ide.progress@java_stub" version="-1" />
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198076144993">
     <property name="name" value="MoveNodes" />
     <property name="userFriendlyName" value="Move Nodes" />
@@ -811,18 +813,63 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201178426836">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1201178437166">
-            <node role="lValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1201178426837">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201197192679">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201197192680">
+            <property name="name" value="projectFrame" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201197202311">
+              <link role="classifier" targetNodeId="16.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201197206468">
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201197206469">
+                <link role="classifier" targetNodeId="16.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+              </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201197206470">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.get(java.lang.Class):java.lang.Object" resolveInfo="get" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1201197206471">
+                  <link role="classifier" targetNodeId="16.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+                </node>
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201197206472" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201197044449">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201197044450">
+            <property name="name" value="monitor" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201197223102">
+              <link role="classifier" targetNodeId="24.~IAdaptiveProgressMonitor" resolveInfo="IAdaptiveProgressMonitor" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201197213616">
+              <link role="baseMethodDeclaration" targetNodeId="16.~AbstractProjectFrame.createAdaptiveProgressMonitor():jetbrains.mps.ide.progress.IAdaptiveProgressMonitor" resolveInfo="createAdaptiveProgressMonitor" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201197192685">
+                <link role="variableDeclaration" targetNodeId="1201197192680" resolveInfo="frame" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201198308888">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201198308889">
+            <property name="name" value="finder" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201198308890">
+              <link role="classifier" targetNodeId="19.~NodeUsages_Finder" resolveInfo="NodeUsages_Finder" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201198308891">
+              <link role="baseMethodDeclaration" targetNodeId="19.~NodeUsages_Finder.&lt;init&gt;()" resolveInfo="NodeUsages_Finder" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201198190342">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1201198190343">
+            <node role="lValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1201198190344">
               <link role="argument" targetNodeId="1201178357438" resolveInfo="searchResults" />
             </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201178447591">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201198190345">
               <link role="baseMethodDeclaration" targetNodeId="19.~NodeUsages_Finder.find(jetbrains.mps.ide.findusages.model.searchquery.SearchQuery):jetbrains.mps.ide.findusages.model.result.SearchResults" resolveInfo="find" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201178447592">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201198190346">
                 <link role="variableDeclaration" targetNodeId="1200914856263" resolveInfo="searchQuery" />
               </node>
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201178447593">
-                <link role="baseMethodDeclaration" targetNodeId="19.~NodeUsages_Finder.&lt;init&gt;()" resolveInfo="NodeUsages_Finder" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201198308892">
+                <link role="variableDeclaration" targetNodeId="1201198308889" resolveInfo="finder" />
               </node>
             </node>
           </node>
@@ -858,26 +905,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1200914765077">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200914765078">
-                <property name="name" value="projectFrame" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1200914765079">
-                  <link role="classifier" targetNodeId="16.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
-                </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1200914765080">
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1200914765081">
-                    <link role="classifier" targetNodeId="16.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
-                  </node>
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1200914765082">
-                    <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.get(java.lang.Class):java.lang.Object" resolveInfo="get" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1200914765083">
-                      <link role="classifier" targetNodeId="16.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
-                    </node>
-                    <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1200914765084" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1200933694689">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200933694690">
                 <property name="name" value="message" />
@@ -902,8 +929,8 @@
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1200933704230">
                   <link role="baseMethodDeclaration" targetNodeId="16.~AbstractProjectFrame.getMainFrame():javax.swing.JFrame" resolveInfo="getMainFrame" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200933704231">
-                    <link role="variableDeclaration" targetNodeId="1200914765078" resolveInfo="projectFrame" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201198407061">
+                    <link role="variableDeclaration" targetNodeId="1201197192680" resolveInfo="projectFrame" />
                   </node>
                 </node>
               </node>
