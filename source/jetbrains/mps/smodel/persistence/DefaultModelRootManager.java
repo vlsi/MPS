@@ -140,6 +140,10 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   @NotNull
   public SModelDescriptor createNewModel(@NotNull ModelRoot root, @NotNull SModelUID uid, @NotNull ModelOwner owner) {
+    if (root.getPrefix().length() > 0 && !uid.getLongName().startsWith(root.getPrefix())) {
+      throw new IllegalArgumentException();
+    }
+
     IFile modelFile = createFileForModelUID(root, uid);
     SModelDescriptor result = DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
     IOperationContext operationContext = result.getOperationContext();
