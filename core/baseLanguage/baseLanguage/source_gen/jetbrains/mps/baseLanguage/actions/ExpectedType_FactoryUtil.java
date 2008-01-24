@@ -4,10 +4,7 @@ package jetbrains.mps.baseLanguage.actions;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.constraints.TypeDerivable_Behavior;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.patterns.util.MatchingUtil;
@@ -15,35 +12,13 @@ import jetbrains.mps.patterns.util.MatchingUtil;
 public class ExpectedType_FactoryUtil {
 
   public static boolean canComputeCastType(SNode castExpression) {
-    return SNodeOperations.hasRole(castExpression, "jetbrains.mps.baseLanguage.structure.BaseMethodCall", "actualArgument") || SNodeOperations.hasRole(castExpression, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "initializer") || SNodeOperations.hasRole(castExpression, "jetbrains.mps.baseLanguage.structure.ReturnStatement", "expression");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(castExpression, null, false, false), "jetbrains.mps.baseLanguage.structure.TypeDerivable");
   }
 
   public static SNode createExpectedType(SNode contextNode) {
     SNode castType = null;
-    if(SNodeOperations.hasRole(contextNode, "jetbrains.mps.baseLanguage.structure.BaseMethodCall", "actualArgument")) {
-      SNode methodCall = SNodeOperations.getParent(contextNode, null, false, false);
-      SNode method = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
-      int index = SNodeOperations.getIndexInParent(contextNode);
-      if(index < SLinkOperations.getCount(method, "parameter")) {
-        SNode declaredParm = ListOperations.getElement(SLinkOperations.getTargets(method, "parameter", true), index);
-        castType = SNodeOperations.copyNode(SLinkOperations.getTarget(declaredParm, "type", true));
-      }
-    } else
-    if(SNodeOperations.hasRole(contextNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "initializer")) {
-      castType = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.getParent(contextNode, null, false, false), "type", true));
-    } else
-    if(SNodeOperations.hasRole(contextNode, "jetbrains.mps.baseLanguage.structure.ReturnStatement", "expression")) {
-      SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.structure.ConceptFunction"}, false, false);
-      if(SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-        castType = SNodeOperations.copyNode(SLinkOperations.getTarget(ancestor, "returnType", true));
-      } else
-      {
-        castType = SNodeOperations.copyNode(ConceptFunction_Behavior.call_getExpectedReturnType_1178571276073(ancestor));
-      }
-    } else
-    if(SNodeOperations.hasRole(contextNode, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "rValue")) {
-      SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(contextNode, null, false, false), "lValue", true));
-      castType = SNodeOperations.copyNode(type);
+    if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode, null, false, false), "jetbrains.mps.baseLanguage.structure.TypeDerivable")) {
+      castType = TypeDerivable_Behavior.call_deriveType_1201184092299(SNodeOperations.getParent(contextNode, null, false, false), contextNode);
     }
     return castType;
   }

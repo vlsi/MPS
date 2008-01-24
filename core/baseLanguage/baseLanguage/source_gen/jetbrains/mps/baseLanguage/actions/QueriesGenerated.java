@@ -304,7 +304,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return ListOperations.createList(new Boolean[]{Boolean.TRUE,Boolean.FALSE});
+          return ListOperations.<Boolean>createList(Boolean.TRUE, Boolean.FALSE);
         }
 
       };
@@ -568,7 +568,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          List<SNode> concepts = ListOperations.createList(new SNode[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement"),SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement")});
+          List<SNode> concepts = ListOperations.<SNode>createList(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement"));
           return concepts;
         }
 

@@ -7,9 +7,12 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ReturnStatement extends Statement {
+public class ReturnStatement extends Statement implements TypeDerivable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ReturnStatement";
   public static String EXPRESSION = "expression";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  ReturnStatement(SNode node) {
     super(node);
@@ -30,6 +33,30 @@ public class ReturnStatement extends Statement {
 
   public void setExpression(Expression node) {
     super.setChild(ReturnStatement.EXPRESSION, node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ReturnStatement.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ReturnStatement.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ReturnStatement.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ReturnStatement.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ReturnStatement.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ReturnStatement.VIRTUAL_PACKAGE, value);
   }
 
 }

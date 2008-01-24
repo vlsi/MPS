@@ -9,10 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StaticFieldDeclaration extends VariableDeclaration implements ClassifierMember {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
+  public static String VISIBILITY = "visibility";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String VISIBILITY = "visibility";
 
   public  StaticFieldDeclaration(SNode node) {
     super(node);
@@ -26,6 +26,14 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
     return StaticFieldDeclaration.newInstance(sm, false);
   }
 
+
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(StaticFieldDeclaration.VISIBILITY);
+  }
+
+  public void setVisibility(Visibility node) {
+    super.setChild(StaticFieldDeclaration.VISIBILITY, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(StaticFieldDeclaration.SHORT_DESCRIPTION);
@@ -49,14 +57,6 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
 
   public void setVirtualPackage(String value) {
     this.setProperty(StaticFieldDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public Visibility getVisibility() {
-    return (Visibility)this.getChild(StaticFieldDeclaration.VISIBILITY);
-  }
-
-  public void setVisibility(Visibility node) {
-    super.setChild(StaticFieldDeclaration.VISIBILITY, node);
   }
 
 }

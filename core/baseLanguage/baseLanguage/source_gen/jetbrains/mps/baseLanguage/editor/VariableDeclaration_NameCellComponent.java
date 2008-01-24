@@ -87,7 +87,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
         result = Type_Behavior.call_getVariableSuffixes_1182416669983(nodeType);
       } else
       {
-        result = ListOperations.createList(new String[]{});
+        result = ListOperations.<String>createList();
       }
       // we need this because of smart input
       // DO NOT REMOVE IT

@@ -34,7 +34,7 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint implemen
 
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     List<SNode> methods = SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true);
-    List<SNode> params = ListOperations.createList(new SNode[]{});
+    List<SNode> params = ListOperations.<SNode>createList();
     for(SNode bmd : methods) {
       ListOperations.addAllElements(params, SLinkOperations.getTargets(bmd, "parameter", true));
     }

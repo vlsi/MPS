@@ -84,7 +84,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
         result = Type_Behavior.call_getVariableSuffixes_1182416669983(nodeType);
       } else
       {
-        result = ListOperations.createList(new String[]{});
+        result = ListOperations.<String>createList();
       }
       return result;
     }

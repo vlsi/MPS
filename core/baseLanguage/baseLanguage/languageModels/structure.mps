@@ -28,6 +28,9 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1201184944236">
+      <link role="intfc" targetNodeId="1201183863028" resolveInfo="TypeDerivable" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068499141036">
     <property name="name" value="BaseMethodCall" />
@@ -47,6 +50,9 @@
       <property name="role" value="actualArgument" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1201184076827">
+      <link role="intfc" targetNodeId="1201183863028" resolveInfo="TypeDerivable" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068431790191">
@@ -209,6 +215,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1188211976433">
       <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1201184516476">
+      <link role="intfc" targetNodeId="1201183863028" resolveInfo="TypeDerivable" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068498886296">
@@ -646,6 +655,9 @@
       <property name="role" value="expression" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1201184606978">
+      <link role="intfc" targetNodeId="1201183863028" resolveInfo="TypeDerivable" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068581517677">
@@ -2401,6 +2413,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1200397549879">
     <property name="name" value="_CharConstant_String" />
     <property name="constraint" value="." />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1201183863028">
+    <property name="name" value="TypeDerivable" />
   </node>
 </model>
 
