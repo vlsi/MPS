@@ -885,6 +885,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       }
     };
 
+    final List<String> compilationResults = new ArrayList<String>();
+
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         List<BaseGeneratorConfiguration> configurations = new ArrayList<BaseGeneratorConfiguration>(myProjectDescriptor.getRunConfigurations());
@@ -897,7 +899,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           }
         }
 
+
+
         for (BaseGeneratorConfiguration t : configurations) {
+
+          System.out.println("completed : " + configurations.indexOf(t) + " / " + configurations.size());
+
           GenParameters parms;
           try {
             parms = GeneratorConfigUtil.calculate(MPSProject.this, t);
@@ -917,8 +924,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
                   handler,
                   gm.isSaveTransientModels());
 
-          // during generation all source files was collected, now we may compile them all together
-          generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+          compilationResults.addAll(createCompilationProblemsList(generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR)));
 
           System.out.println("");
           System.out.println("");
@@ -927,7 +933,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       }
     });
 
-    return new TestResult(errors, warnings, createCompilationProblemsList(generationType.getCompilationResults()));
+    return new TestResult(errors, warnings, compilationResults);
   }
 
   private List<String> createCompilationProblemsList(List<CompilationResult> compilationResults) {
