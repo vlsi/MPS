@@ -145,14 +145,54 @@ public class MacroUtil {
     throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null, generator.getGeneratorSessionContext()));
   }
 
-  public static List<SNode> getNewInputNodes(SNode currentInputNode, SNode templateNode, int currentMacroIndex, ITemplateGenerator generator) {
-    try {
-      List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode.getAdapter());
-      NodeMacro nodeMacro = null;
-      if (nodeMacros.size() > currentMacroIndex) {
-        nodeMacro = nodeMacros.get(currentMacroIndex);
-      }
+//  public static List<SNode> getNewInputNodes(SNode currentInputNode, SNode templateNode, int currentMacroIndex, ITemplateGenerator generator) {
+//    try {
+//      List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode.getAdapter());
+//      NodeMacro nodeMacro = null;
+//      if (nodeMacros.size() > currentMacroIndex) {
+//        nodeMacro = nodeMacros.get(currentMacroIndex);
+//      }
+//
+//      if (nodeMacro instanceof CopySrcNodeMacro) {
+//        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcNodeMacro) nodeMacro).getSourceNodeQuery(), false, generator);
+//      } else if (nodeMacro instanceof MapSrcNodeMacro) {
+//        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcNodeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
+//      } else if (nodeMacro instanceof LoopMacro) {
+//        return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((LoopMacro) nodeMacro).getSourceNodesQuery(), generator);
+//      } else if (nodeMacro instanceof CopySrcListMacro) {
+//        return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcListMacro) nodeMacro).getSourceNodesQuery(), generator);
+//      } else if (nodeMacro instanceof MapSrcListMacro) {
+//        return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcListMacro) nodeMacro).getSourceNodesQuery(), generator);
+//      } else if (nodeMacro instanceof SwitchMacro) {
+//        return getSourceNodesForSwitchMacro(currentInputNode, (SwitchMacro) nodeMacro, generator);
+//      } else if (nodeMacro instanceof IncludeMacro) {
+//        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((IncludeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
+//      }
+//
+//      if (nodeMacro != null) {
+//        // old
+//        String sourceQueryAspectMethodName = nodeMacro.getSourceQueryAspectMethodName();
+//        if (sourceQueryAspectMethodName != null) {
+//          String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
+//          Object[] args = new Object[]{currentInputNode, generator};
+//          return (List<SNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+//        }
+//      }
+//
+//      // <default> : propagate  current input node
+//      List<SNode> list = new ArrayList<SNode>(1);
+//      list.add(currentInputNode);
+//      return list;
+//
+//    } catch (GenerationFailedException gfe) {
+//      throw gfe;
+//    } catch (Throwable t) {
+//      throw new GenerationFailedException(new GenerationFailueInfo(t.toString(), currentInputNode, templateNode, null, generator.getGeneratorSessionContext()), t);
+//    }
+//  }
 
+  public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, SNode templateNode, ITemplateGenerator generator) {
+    try {
       if (nodeMacro instanceof CopySrcNodeMacro) {
         return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcNodeMacro) nodeMacro).getSourceNodeQuery(), false, generator);
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
@@ -169,14 +209,12 @@ public class MacroUtil {
         return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((IncludeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
       }
 
-      if (nodeMacro != null) {
-        // old
-        String sourceQueryAspectMethodName = nodeMacro.getSourceQueryAspectMethodName();
-        if (sourceQueryAspectMethodName != null) {
-          String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
-          Object[] args = new Object[]{currentInputNode, generator};
-          return (List<SNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
-        }
+      // old
+      String sourceQueryAspectMethodName = nodeMacro.getSourceQueryAspectMethodName();
+      if (sourceQueryAspectMethodName != null) {
+        String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
+        Object[] args = new Object[]{currentInputNode, generator};
+        return (List<SNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
       }
 
       // <default> : propagate  current input node

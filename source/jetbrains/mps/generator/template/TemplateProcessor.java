@@ -50,7 +50,7 @@ public class TemplateProcessor {
 
       generationTracer.pushMacro(nodeMacro.getNode());
       try {
-        return createOutputNodesForTemplateNodeWithMacro(nodeMacro, templateNode, inputNode, nodeMacrosToSkip, registerTopOutput, generationTracer);
+        return createOutputNodesForTemplateNodeWithMacro(nodeMacro, templateNode, inputNode, nodeMacrosToSkip, registerTopOutput);
       } finally {
         generationTracer.popMacro(nodeMacro.getNode());
       }
@@ -148,7 +148,8 @@ public class TemplateProcessor {
     return outputNodes;
   }
 
-  private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, SNode inputNode, int nodeMacrosToSkip, boolean registerTopOutput, GenerationTracer generationTracer) throws DismissTopMappingRuleException {
+  private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, SNode inputNode, int nodeMacrosToSkip, boolean registerTopOutput) throws DismissTopMappingRuleException {
+    GenerationTracer generationTracer = myGenerator.getGeneratorSessionContext().getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
 
     String mappingName_ = null;
@@ -161,7 +162,7 @@ public class TemplateProcessor {
 
     if (nodeMacro instanceof LoopMacro) {
       // $LOOP$
-      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, templateNode, myGenerator);
       for (SNode newInputNode : newInputNodes) {
         generationTracer.pushInputNode(newInputNode);
         boolean inputChanged = (newInputNode != inputNode);
@@ -180,7 +181,7 @@ public class TemplateProcessor {
 
     } else if (nodeMacro instanceof CopySrcNodeMacro || nodeMacro instanceof CopySrcListMacro) {
       // $COPY-SRC$ / $COPY-SRCL$
-      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, templateNode, myGenerator);
       for (SNode newInputNode : newInputNodes) {
         generationTracer.pushInputNode(newInputNode);
         List<SNode> _outputNodes = copyNodeFromInputNode(mappingName_, templateNode, newInputNode);
@@ -229,7 +230,7 @@ public class TemplateProcessor {
         mapperId = ((MapSrcListMacro) nodeMacro).getSourceNodeMapperId();
       }
 
-      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, templateNode, myGenerator);
       for (SNode newInputNode : newInputNodes) {
         generationTracer.pushInputNode(newInputNode);
         if (mapperId != null || macro_mapperFunction != null) {
@@ -257,7 +258,7 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof SwitchMacro) {
       // $SWITCH$
       TemplateSwitch templateSwitch = ((SwitchMacro) nodeMacro).getTemplateSwitch();
-      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, templateNode, myGenerator);
       for (SNode newInputNode : newInputNodes) {
         generationTracer.pushInputNode(newInputNode);
         RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
@@ -315,7 +316,7 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof IncludeMacro) {
       // $INCLUDE$
       IncludeMacro includeMacro = (IncludeMacro) nodeMacro;
-      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, templateNode, myGenerator);
       for (SNode newInputNode : newInputNodes) {
         generationTracer.pushInputNode(newInputNode);
         TemplateDeclaration includeTemplate = includeMacro.getIncludeTemplate();
@@ -352,7 +353,7 @@ public class TemplateProcessor {
 
     } else {
       // $$
-      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, templateNode, myGenerator);
       for (SNode newInputNode : newInputNodes) {
         generationTracer.pushInputNode(newInputNode);
         boolean inputChanged = (newInputNode != inputNode);
