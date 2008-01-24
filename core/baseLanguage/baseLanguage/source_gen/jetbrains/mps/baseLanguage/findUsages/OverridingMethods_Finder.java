@@ -16,6 +16,7 @@ import jetbrains.mps.ide.findusages.model.result.SearchResult;
 
 import java.util.ArrayList;
 
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -56,17 +57,20 @@ public class OverridingMethods_Finder extends BaseFinder {
       // null
       List<SearchResult> results = new ArrayList<SearchResult>();
       try {
-        BaseFinder finder_ = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
+        BaseFinder _finder = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
+        SNode _node = SNodeOperations.getParent(searchedNode, null, false, false);
+        IScope _scope;
+        _scope = searchQuery.getScope();
         // TODO: check for right concept
         boolean rightConcept = true;
         if (!(rightConcept)) {
-          OverridingMethods_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
+          OverridingMethods_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
         } else {
-          boolean isApplicable = finder_.isApplicable(SNodeOperations.getParent(searchedNode, null, false, false));
+          boolean isApplicable = _finder.isApplicable(null);
           if (!(isApplicable)) {
-            OverridingMethods_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
+            OverridingMethods_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
           } else {
-            SearchResults results_ = finder_.find(new SearchQuery(SNodeOperations.getParent(searchedNode, null, false, false), searchQuery.getScope()));
+            SearchResults results_ = _finder.find(new SearchQuery(_node, _scope));
             for (SearchResult result : results_.getSearchResults()) {
               results.add(result);
             }

@@ -15,6 +15,7 @@ import jetbrains.mps.ide.findusages.model.result.SearchResult;
 
 import java.util.ArrayList;
 
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -57,17 +58,20 @@ public class ParameterUsages_Finder extends BaseFinder {
       List<SearchResult> overridingMethods = new ArrayList<SearchResult>();
       overridingMethods.add(new SearchResult(nodeParentMethod, ""));
       try {
-        BaseFinder finder_12 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder").newInstance();
+        BaseFinder _finder = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder").newInstance();
+        SNode _node = nodeParentMethod;
+        IScope _scope;
+        _scope = searchQuery.getScope();
         // TODO: check for right concept
         boolean rightConcept = true;
         if (!(rightConcept)) {
-          ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_12.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
+          ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
         } else {
-          boolean isApplicable = finder_12.isApplicable(nodeParentMethod);
+          boolean isApplicable = _finder.isApplicable(null);
           if (!(isApplicable)) {
-            ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_12.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
+            ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
           } else {
-            SearchResults results_12 = finder_12.find(new SearchQuery(nodeParentMethod, searchQuery.getScope()));
+            SearchResults results_12 = _finder.find(new SearchQuery(_node, _scope));
             for (SearchResult result : results_12.getSearchResults()) {
               overridingMethods.add(result);
             }
@@ -88,17 +92,20 @@ public class ParameterUsages_Finder extends BaseFinder {
               SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
               global_results.getSearchedNodePointers().add(new SNodePointer(parameterNode));
               try {
-                BaseFinder finder_13 = (BaseFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+                BaseFinder _finder = (BaseFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+                SNode _node = parameterNode;
+                IScope _scope;
+                _scope = searchQuery.getScope();
                 // TODO: check for right concept
                 boolean rightConcept = true;
                 if (!(rightConcept)) {
-                  ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_13.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
+                  ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
                 } else {
-                  boolean isApplicable = finder_13.isApplicable(parameterNode);
+                  boolean isApplicable = _finder.isApplicable(null);
                   if (!(isApplicable)) {
-                    ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_13.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
+                    ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
                   } else {
-                    SearchResults results_13 = finder_13.find(new SearchQuery(parameterNode, searchQuery.getScope()));
+                    SearchResults results_13 = _finder.find(new SearchQuery(_node, _scope));
                     for (SearchResult result : results_13.getSearchResults()) {
                       parameterUsages.add(result);
                     }

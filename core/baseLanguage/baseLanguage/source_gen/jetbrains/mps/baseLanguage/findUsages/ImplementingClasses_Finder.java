@@ -14,6 +14,7 @@ import jetbrains.mps.ide.findusages.model.result.SearchResult;
 
 import java.util.ArrayList;
 
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
@@ -44,17 +45,20 @@ public class ImplementingClasses_Finder extends BaseFinder {
       List<SearchResult> derivedInterfaces = new ArrayList<SearchResult>();
       derivedInterfaces.add(new SearchResult(searchQuery.getNodePointer(), ""));
       try {
-        BaseFinder finder_1 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder").newInstance();
+        BaseFinder _finder = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder").newInstance();
+        SNode _node = searchedNode;
+        IScope _scope;
+        _scope = searchQuery.getScope();
         // TODO: check for right concept
         boolean rightConcept = true;
         if (!(rightConcept)) {
-          ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_1.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
+          ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
         } else {
-          boolean isApplicable = finder_1.isApplicable(searchedNode);
+          boolean isApplicable = _finder.isApplicable(null);
           if (!(isApplicable)) {
-            ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_1.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
+            ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
           } else {
-            SearchResults results_1 = finder_1.find(new SearchQuery(searchedNode, searchQuery.getScope()));
+            SearchResults results_1 = _finder.find(new SearchQuery(_node, _scope));
             for (SearchResult result : results_1.getSearchResults()) {
               derivedInterfaces.add(result);
             }
@@ -68,17 +72,20 @@ public class ImplementingClasses_Finder extends BaseFinder {
       for (SearchResult derivedInterface : derivedInterfaces) {
         global_results.getSearchedNodePointers().add(new SNodePointer(derivedInterface.getNode()));
         try {
-          BaseFinder finder_2 = (BaseFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+          BaseFinder _finder = (BaseFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+          SNode _node = derivedInterface.getNode();
+          IScope _scope;
+          _scope = searchQuery.getScope();
           // TODO: check for right concept
           boolean rightConcept = true;
           if (!(rightConcept)) {
-            ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_2.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
+            ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
           } else {
-            boolean isApplicable = finder_2.isApplicable(derivedInterface.getNode());
+            boolean isApplicable = _finder.isApplicable(null);
             if (!(isApplicable)) {
-              ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_2.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
+              ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
             } else {
-              SearchResults results_2 = finder_2.find(new SearchQuery(derivedInterface.getNode(), searchQuery.getScope()));
+              SearchResults results_2 = _finder.find(new SearchQuery(_node, _scope));
               for (SearchResult result : results_2.getSearchResults()) {
                 derivedInterfacesUsages.add(result);
               }
@@ -97,17 +104,20 @@ public class ImplementingClasses_Finder extends BaseFinder {
             // null
             List<SearchResult> classesResult = new ArrayList<SearchResult>();
             try {
-              BaseFinder finder_3 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
+              BaseFinder _finder = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
+              SNode _node = SNodeOperations.getParent(node, null, false, false);
+              IScope _scope;
+              _scope = searchQuery.getScope();
               // TODO: check for right concept
               boolean rightConcept = true;
               if (!(rightConcept)) {
-                ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_3.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
+                ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
               } else {
-                boolean isApplicable = finder_3.isApplicable(SNodeOperations.getParent(node, null, false, false));
+                boolean isApplicable = _finder.isApplicable(null);
                 if (!(isApplicable)) {
-                  ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_3.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
+                  ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
                 } else {
-                  SearchResults results_3 = finder_3.find(new SearchQuery(SNodeOperations.getParent(node, null, false, false), searchQuery.getScope()));
+                  SearchResults results_3 = _finder.find(new SearchQuery(_node, _scope));
                   for (SearchResult result : results_3.getSearchResults()) {
                     classesResult.add(result);
                   }

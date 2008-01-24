@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.smodel.SNodePointer;
@@ -54,17 +55,20 @@ public class FieldUsages_Finder extends BaseFinder {
       if (SNodeOperations.getAncestor(searchedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
         List<SearchResult> fieldDeclarationsResult = new ArrayList<SearchResult>();
         try {
-          BaseFinder finder_7 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder").newInstance();
+          BaseFinder _finder = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder").newInstance();
+          SNode _node = searchedNode;
+          IScope _scope;
+          _scope = searchQuery.getScope();
           // TODO: check for right concept
           boolean rightConcept = true;
           if (!(rightConcept)) {
-            FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_7.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
+            FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
           } else {
-            boolean isApplicable = finder_7.isApplicable(searchedNode);
+            boolean isApplicable = _finder.isApplicable(null);
             if (!(isApplicable)) {
-              FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_7.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
+              FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
             } else {
-              SearchResults results_7 = finder_7.find(new SearchQuery(searchedNode, searchQuery.getScope()));
+              SearchResults results_7 = _finder.find(new SearchQuery(_node, _scope));
               for (SearchResult result : results_7.getSearchResults()) {
                 fieldDeclarationsResult.add(result);
               }
@@ -91,17 +95,20 @@ public class FieldUsages_Finder extends BaseFinder {
         global_results.getSearchedNodePointers().add(new SNodePointer(fieldDeclaration));
         List<SearchResult> fieldUsagesResult = new ArrayList<SearchResult>();
         try {
-          BaseFinder finder_8 = (BaseFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+          BaseFinder _finder = (BaseFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+          SNode _node = fieldDeclaration;
+          IScope _scope;
+          _scope = searchQuery.getScope();
           // TODO: check for right concept
           boolean rightConcept = true;
           if (!(rightConcept)) {
-            FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_8.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
+            FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
           } else {
-            boolean isApplicable = finder_8.isApplicable(fieldDeclaration);
+            boolean isApplicable = _finder.isApplicable(null);
             if (!(isApplicable)) {
-              FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_8.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
+              FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
             } else {
-              SearchResults results_8 = finder_8.find(new SearchQuery(fieldDeclaration, searchQuery.getScope()));
+              SearchResults results_8 = _finder.find(new SearchQuery(_node, _scope));
               for (SearchResult result : results_8.getSearchResults()) {
                 fieldUsagesResult.add(result);
               }

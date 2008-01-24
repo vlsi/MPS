@@ -2,24 +2,8 @@
 <model name="jetbrains.mps.bootstrap.findUsagesLanguage.structure">
   <persistence version="1"/>
   <refactoringHistory/>
-  <language namespace="jetbrains.mps.bootstrap.structureLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1"/>
-  </language>
-  <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.findUsages" version="-1"/>
-  </language>
+  <language namespace="jetbrains.mps.bootstrap.structureLanguage"/>
+  <language namespace="jetbrains.mps.baseLanguage"/>
   <maxImportIndex value="9"/>
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1"/>
@@ -204,13 +188,13 @@
       <property name="metaClass" value="aggregation"/>
       <property name="role" value="queryNode"/>
       <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="2.1068498886296" resolveInfo="VariableReference"/>
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1200416522066">
       <property name="metaClass" value="aggregation"/>
       <property name="role" value="queryScope"/>
-      <link role="target" targetNodeId="2.1068498886296" resolveInfo="VariableReference"/>
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
           id="1200396324424">
