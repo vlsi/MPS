@@ -30,8 +30,10 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     setAutoExpandable(false);
     myProjectFrame = projectFrame;
     myTracerNode = tracerNode;
-    for (TracerNode childTracerNode : myTracerNode.getChildren()) {
-      add(new GenerationTracerTreeNode(childTracerNode));
+    if (myTracerNode.getDepth() < 1000) {
+      for (TracerNode childTracerNode : myTracerNode.getChildren()) {
+        add(new GenerationTracerTreeNode(childTracerNode));
+      }
     }
     updatePresentation();
   }
