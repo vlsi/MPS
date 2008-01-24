@@ -196,6 +196,7 @@ public class GenerationTracer {
       return;
     }
 
+    System.out.println("showTraceData: input node " + node.getDebugText());
     TracerNode tracerNode = null;
     Set<String> outputModels = myTracingData.keySet();
     for (String outputModel : outputModels) {
@@ -207,6 +208,9 @@ public class GenerationTracer {
         }
       }
     }
+
+    System.out.println("showTraceData: tracer node " + tracerNode);
+    if(tracerNode == null) return;
     myGenerationTracerViewTool.showTraceView(tracerNode);
   }
 
@@ -227,14 +231,20 @@ public class GenerationTracer {
 
   public boolean hasTraceData(SNode node) {
     if (DISABLED) return false;
+    System.out.println("hasTraceData: input node " + node.getDebugText());
 
     Set<String> outputModels = myTracingData.keySet();
     for (String outputModel : outputModels) {
       List<TracerNode> rootTracerNodes = myTracingData.get(outputModel);
       for (TracerNode rootTracerNode : rootTracerNodes) {
-        if (rootTracerNode.find(node) != null) return true;
+        TracerNode tracerNode = rootTracerNode.find(node);
+        if (tracerNode != null) {
+          System.out.println("hasTraceData: tracer node " + tracerNode);
+          return true;
+        }
       }
     }
+    System.out.println("hasTraceData: NO tracer node");
     return false;
   }
 
