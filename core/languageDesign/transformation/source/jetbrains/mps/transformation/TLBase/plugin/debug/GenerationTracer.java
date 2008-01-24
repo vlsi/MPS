@@ -95,6 +95,11 @@ public class GenerationTracer {
     push(new TracerNode(TracerNode.Kind.INPUT, new SNodePointer(node)));
   }
 
+  public void closeInputNode(SNode node) {
+    if (!myActive) return;
+    closeBranch(TracerNode.Kind.INPUT, node);
+  }
+
   public void popInputNode(SNode node) {
     if (!myActive) return;
     pop(TracerNode.Kind.INPUT, node);
@@ -115,9 +120,9 @@ public class GenerationTracer {
     push(new TracerNode(TracerNode.Kind.MACRO, new SNodePointer(node)));
   }
 
-  public void popMacro(SNode node) {
+  public void closeMacro(SNode node) {
     if (!myActive) return;
-    pop(TracerNode.Kind.MACRO, node);
+    closeBranch(TracerNode.Kind.MACRO, node);
   }
 
   public void pushOutputNode(SNode node) {
@@ -149,9 +154,9 @@ public class GenerationTracer {
     push(new TracerNode(TracerNode.Kind.TEMPLATE, new SNodePointer(node)));
   }
 
-  public void popTemplateNode(SNode node) {
+  public void closeTemplateNode(SNode node) {
     if (!myActive) return;
-    pop(TracerNode.Kind.TEMPLATE, node);
+    closeBranch(TracerNode.Kind.TEMPLATE, node);
   }
 
   public Object getMarker() {
@@ -174,11 +179,33 @@ public class GenerationTracer {
     myCurrentTraceNode = tracerNode;
   }
 
-  private void pop(TracerNode.Kind kind, SNode node) {
+  private void closeBranch(Kind kind, SNode node) {
     TracerNode checkNode = myCurrentTraceNode;
     while (checkNode != null) {
-      if (checkNode.getKind() == kind && checkNode.getNodePointer().getNode() == node) {
+      if (checkNode.isThis(kind, node)) {
         myCurrentTraceNode = checkNode.getParent(); // can be null
+        return;
+      }
+      checkNode = checkNode.getParent();
+    }
+
+    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + node.getDebugText());
+    myCurrentTraceNode = null; // reset branch
+  }
+
+  /**
+   * removes node from tree
+   */
+  private void pop(Kind kind, SNode node) {
+    TracerNode checkNode = myCurrentTraceNode;
+    while (checkNode != null) {
+      if (checkNode.isThis(kind, node)) {
+        myCurrentTraceNode = checkNode.getParent(); // can be null
+        if (myCurrentTraceNode != null) {
+          myCurrentTraceNode.removeChild(checkNode);
+        } else {
+          myTracingData.get(myCurrentOutputModelUID).remove(checkNode);
+        }
         return;
       }
       checkNode = checkNode.getParent();
@@ -190,17 +217,9 @@ public class GenerationTracer {
 
   public boolean hasTraceData(SNode node) {
     if (DISABLED) return false;
-    System.out.println("hasTraceData: input node " + node.getDebugText());
-    TracerNode tracerNode = findTracerNode(node);
-    if (tracerNode != null) {
-      System.out.println("hasTraceData: tracer node " + tracerNode);
-    } else {
-      System.out.println("hasTraceData: NO tracer node");
-    }
-
+    TracerNode tracerNode = findTracerNode(Kind.INPUT, node);
     return tracerNode != null;
   }
-
 
   public void showTraceData(SNode node) {
     int index = myGenerationTracerViewTool.getTabIndex(node);
@@ -210,11 +229,20 @@ public class GenerationTracer {
       return;
     }
 
-    System.out.println("showTraceData: input node " + node.getDebugText());
-    TracerNode tracerNode = findTracerNode(node);
-    System.out.println("showTraceData: tracer node " + tracerNode);
-    if (tracerNode == null) return;
+    TracerNode tracerNode = buildTraceTree(node);
     myGenerationTracerViewTool.showTraceView(tracerNode);
+  }
+
+  private TracerNode buildTraceTree(SNode node) {
+    List<TracerNode> tracerNodes = findAllTracerNodes(Kind.INPUT, node);
+    TracerNode resultTracerNode = new TracerNode(tracerNodes.get(0).getKind(), tracerNodes.get(0).getNodePointer());
+    for (TracerNode tracerNode : tracerNodes) {
+      List<TracerNode> childrensCopy = tracerNode.getChildrenCopy();
+      for (TracerNode childCopy : childrensCopy) {
+        resultTracerNode.addChild(childCopy);
+      }
+    }
+    return resultTracerNode;
   }
 
   public boolean hasTracebackData(SNode node) {
@@ -254,6 +282,18 @@ public class GenerationTracer {
     return null;
   }
 
+  private List<TracerNode> findAllTracerNodes(Kind kind, SNode node) {
+    List<TracerNode> result = new ArrayList<TracerNode>();
+    Set<String> outputModels = myTracingData.keySet();
+    for (String outputModel : outputModels) {
+      List<TracerNode> rootTracerNodes = myTracingData.get(outputModel);
+      for (TracerNode rootTracerNode : rootTracerNodes) {
+        rootTracerNode.findAll(kind, node, result);
+      }
+    }
+    return result;
+  }
+
   private TracerNode findTracerNode(Kind kind, SNode node) {
     Set<String> outputModels = myTracingData.keySet();
     for (String outputModel : outputModels) {
@@ -279,13 +319,4 @@ public class GenerationTracer {
     }
     return tracebackNode;
   }
-
-  private TracerNode buildFakeTracerNode(SNode node) {
-    TracerNode tracerNode = new TracerNode(Kind.INPUT, new SNodePointer(node));
-    for (SNode childNode : node.getChildren()) {
-      tracerNode.addChild(buildFakeTracerNode(childNode));
-    }
-    return tracerNode;
-  }
-
 }

@@ -62,12 +62,14 @@ public class TracerNode {
     tracerNode.setParent(this);
   }
 
-  public List<TracerNode> getChildren() {
-    return myChildren;
+  public void removeChild(TracerNode tracerNode) {
+    assert myChildren.contains(tracerNode) : "no such child";
+    myChildren.remove(tracerNode);
+    tracerNode.setParent(null);
   }
 
-  public boolean isControl() {
-    return myKind == Kind.MACRO || myKind == Kind.RULE;
+  public List<TracerNode> getChildren() {
+    return myChildren;
   }
 
   public boolean isThis(Kind kind, SNode node) {
@@ -99,6 +101,16 @@ public class TracerNode {
     return null;
   }
 
+  public void findAll(Kind kind, SNode node, List<TracerNode> result) {
+    if (isThis(kind, node)) {
+      result.add(this);
+    }
+    if (getDepth() > 1000) return;
+    for (TracerNode child : myChildren) {
+      child.findAll(kind, node, result);
+    }
+  }
+
   public int getDepth() {
     int depth = 0;
     TracerNode parent = getParent();
@@ -112,4 +124,16 @@ public class TracerNode {
     return depth;
   }
 
+  public List<TracerNode> getChildrenCopy() {
+    List<TracerNode> result = new ArrayList<TracerNode>();
+    for (TracerNode child : myChildren) {
+      TracerNode childCopy = new TracerNode(child.getKind(), child.getNodePointer());
+      List<TracerNode> children2 = child.getChildrenCopy();
+      for (TracerNode child2 : children2) {
+        childCopy.addChild(child2);
+      }
+      result.add(childCopy);
+    }
+    return result;
+  }
 }

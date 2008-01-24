@@ -227,7 +227,7 @@ public class GeneratorUtil {
           // it's ok, just continue
           generator.setChanged(wasChanged);
         } finally {
-          generator.getGeneratorSessionContext().getGenerationTracer().popInputNode(inputNode);
+          generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
         }
       }
     }
@@ -284,7 +284,7 @@ public class GeneratorUtil {
     try {
       weaveTemplateDeclaration_intern(inputNode, template, outputContextNode, ruleNode, generator);
     } finally {
-      generator.getGeneratorSessionContext().getGenerationTracer().popInputNode(inputNode);
+      generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
     }
   }
 
@@ -439,6 +439,7 @@ public class GeneratorUtil {
         }
         generator.setChanged(true);
 
+        boolean someOutputGenerated = true;
         generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(applicableNode);
         generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
         try {
@@ -466,6 +467,9 @@ public class GeneratorUtil {
                 }
                 template = weaveEach.getTemplate();
                 List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, query, generator);
+                if (queryNodes.isEmpty()) {
+                  someOutputGenerated = false;
+                }
                 for (SNode queryNode : queryNodes) {
                   weaveTemplateDeclaration(queryNode, template, outputContextNode, rule.getNode(), generator);
                 }
@@ -475,7 +479,11 @@ public class GeneratorUtil {
             }
           } // RuleConsequence
         } finally {
-          generator.getGeneratorSessionContext().getGenerationTracer().popInputNode(applicableNode);
+          if (someOutputGenerated) {
+            generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(applicableNode);
+          } else {
+            generator.getGeneratorSessionContext().getGenerationTracer().popInputNode(applicableNode);
+          }
         }
       }
     }

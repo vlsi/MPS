@@ -52,7 +52,7 @@ public class TemplateProcessor {
       try {
         return createOutputNodesForTemplateNodeWithMacro(nodeMacro, templateNode, inputNode, nodeMacrosToSkip, registerTopOutput);
       } finally {
-        generationTracer.popMacro(nodeMacro.getNode());
+        generationTracer.closeMacro(nodeMacro.getNode());
       }
     }
 
@@ -143,7 +143,7 @@ public class TemplateProcessor {
         }
       }
     } finally {
-      generationTracer.popTemplateNode(templateNode);
+      generationTracer.closeTemplateNode(templateNode);
     }
     return outputNodes;
   }
