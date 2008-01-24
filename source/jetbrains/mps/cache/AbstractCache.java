@@ -2,6 +2,7 @@ package jetbrains.mps.cache;
 
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;
@@ -10,7 +11,7 @@ import java.util.*;
  * Igor Alshannikov
  * Aug 28, 2007
  */
-public abstract class AbstractCache implements SModelListener {
+public abstract class AbstractCache extends SModelAdapter {
   private static final Logger LOG = Logger.getLogger(AbstractCache.class);
   private Object myKey;
   private Map<String, DataSet> myDataSets = new HashMap<String, DataSet>();

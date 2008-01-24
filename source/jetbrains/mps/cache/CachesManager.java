@@ -93,7 +93,7 @@ public class CachesManager implements IComponentLifecycle {
   }
 
 
-  private static class ModelEventRouter implements SModelListener {
+  private static class ModelEventRouter extends SModelAdapter {
     private AbstractCache myCache;
 
     public ModelEventRouter(AbstractCache cache) {

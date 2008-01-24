@@ -6,7 +6,6 @@ import java.util.List;
 public interface IFile {
   String getName();
 
-
   IFile getParent();
   List<IFile> list();
   IFile child(String suffix);

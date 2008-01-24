@@ -30,4 +30,6 @@ public interface SModelListener {
   void referenceRemoved(SModelReferenceEvent event);
 
   void loadingStateChanged(SModelDescriptor model, boolean isLoading);
+
+  void modelSaved(SModelSavedEvent event);
 }

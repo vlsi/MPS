@@ -16,9 +16,9 @@
   <import index="5" modelUID="java.io@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="7" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1186475525107">
-    <property name="name" value="AClass" />
+    <property name="name" value="AClssssssssssssssssass" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1186475535905">
-      <property name="name" value="foo" />
+      <property name="name" value="fossso" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1186475535906" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1186475535907" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186475535908">

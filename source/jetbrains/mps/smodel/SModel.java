@@ -13,7 +13,6 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
@@ -397,6 +396,13 @@ public class SModel implements Iterable<SNode> {
       } catch (Exception e) {
         LOG.error(e);
       }
+    }
+  }
+
+  void fireModelSaved() {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.modelSaved(new SModelSavedEvent(this));
     }
   }
 
@@ -1087,8 +1093,6 @@ public class SModel implements Iterable<SNode> {
     }
 
     public void beforeRootRemoved(SModelRootEvent event) {
-//      myEvents.add(event);
-      // ignore because by the time the event arrives, the root is long been removed
     }
 
     public void propertyChanged(SModelPropertyEvent event) {
@@ -1104,7 +1108,6 @@ public class SModel implements Iterable<SNode> {
     }
 
     public void beforeChildRemoved(SModelChildEvent event) {
-      // ignore
     }
 
     public void referenceAdded(SModelReferenceEvent event) {
@@ -1129,11 +1132,16 @@ public class SModel implements Iterable<SNode> {
     public void beforeCommandFinished(@NotNull CommandEvent event) {
     }
 
+    public void modelSaved(SModelSavedEvent event) {
+      myEvents.add(event);
+    }
+
     public void commandFinished(@NotNull CommandEvent event) {
       if (myEvents.size() > 0) {
         fireSModelChangedInCommandEvent(new ArrayList<SModelEvent>(myEvents));
       }
     }
+
   }
 
   @Nullable

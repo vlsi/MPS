@@ -17,6 +17,10 @@ public class SModelEventVisitorAdapter implements SModelEventVisitor {
   public void visitReferenceEvent(SModelReferenceEvent event) {
 
   }
+
+  public void visitSavedEvent(SModelSavedEvent event) {
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
 }
 
 

@@ -431,6 +431,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     SModelRepository.getInstance().markChanged(mySModel, false);
     myModelRootManager.saveModel(this);
     myDiskTimestamp = fileTimestamp();
+
+    mySModel.fireModelSaved();
   }
 
   public boolean needsReloading() {

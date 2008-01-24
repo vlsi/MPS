@@ -3,6 +3,7 @@ package jetbrains.mps.cache;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelAdapter;
 
 import java.util.Set;
 
@@ -10,7 +11,7 @@ import java.util.Set;
  * Igor Alshannikov
  * Sep 6, 2007
  */
-public abstract class DataSet implements SModelListener {
+public abstract class DataSet extends SModelAdapter {
 
   public static enum DefaultNodeChangedProcessing {
     DROP_DATA_SET, DROP_OWNER_CACHE

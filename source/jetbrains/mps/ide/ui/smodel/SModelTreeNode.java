@@ -446,6 +446,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
           final Set<SNode> nodesWithChangedRefs = new LinkedHashSet<SNode>();
 
+          final boolean[] wasSaved = new boolean[1];
+
           for (SModelEvent event : events) {
             event.accept(new SModelEventVisitor() {
               public void visitRootEvent(SModelRootEvent event) {
@@ -480,7 +482,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
               public void visitReferenceEvent(SModelReferenceEvent event) {
                 nodesWithChangedRefs.add(event.getReference().getSourceNode());
+              }
 
+              public void visitSavedEvent(SModelSavedEvent event) {
+                wasSaved[0] = true;
               }
             });
           }
@@ -493,6 +498,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
           updateGenerationRequiredStatus();
 
+          if (wasSaved[0]) {
+            updatePresentation();
+          }
 
           updateAncestorsPresentationInTree();
         }

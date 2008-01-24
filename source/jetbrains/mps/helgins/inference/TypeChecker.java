@@ -312,7 +312,7 @@ public class TypeChecker {
   }
 
   private class MySModelCommandListener extends SModelAdapter implements SModelCommandListener {
-    private SModelEventVisitor myVisitor = new SModelEventVisitor() {
+    private SModelEventVisitor myVisitor = new SModelEventVisitorAdapter() {
       public void visitRootEvent(SModelRootEvent event) {
         Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getRoot());
         if (dependentRoots != null) {
