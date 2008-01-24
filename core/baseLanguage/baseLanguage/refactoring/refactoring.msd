@@ -9,7 +9,6 @@
   <runtimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency>jetbrains.mps.comments</dependency>
     <dependency>jetbrains.mps.annotations</dependency>
   </dependencies>
 </solution>

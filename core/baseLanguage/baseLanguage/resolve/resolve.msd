@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="resolve" extenallyVisible="true">
+<solution name="resolve" extenallyVisible="true" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="jetbrains.mps.baseLanguage.resolve" />
     <modelRoot path="${mps_home}\models" namespacePrefix="" />
@@ -9,8 +9,8 @@
   <languages />
   <classPath />
   <runtimeClassPath />
+  <sourcePath />
   <dependencies>
-    <dependency>jetbrains.mps.comments</dependency>
     <dependency>jetbrains.mps.annotations</dependency>
   </dependencies>
 </solution>

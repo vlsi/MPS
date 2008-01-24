@@ -15,7 +15,6 @@
     <dependency>jetbrains.mps.baseLanguageInternal</dependency>
     <dependency>jetbrains.mps.baseLanguage.strings</dependency>
     <dependency>jetbrains.mps.logging.refactoring</dependency>
-    <dependency>jetbrains.mps.logging.refactoringTest</dependency>
     <dependency>webr.css</dependency>
   </dependencies>
 </solution>

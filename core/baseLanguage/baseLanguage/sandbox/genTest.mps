@@ -75,13 +75,7 @@
         <link role="classifier" targetNodeId="6.~Object" resolveInfo="Object" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1198513873560" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198513873561">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200042525858">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1200042525859">
-            <link role="variableDeclaration" targetNodeId="1198513876860" resolveInfo="t" />
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198513873561" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1198513854277">
       <property name="name" value="a" />
