@@ -83,7 +83,7 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
 
   public EditorCell createItemList(EditorContext context, SNode node) {
     if(this.myItemListHandler_itemList_ == null) {
-      this.myItemListHandler_itemList_ = new ArrayLiteral_Editor._RefNodeListHandler66(node, "item", context);
+      this.myItemListHandler_itemList_ = new ArrayLiteral_Editor._RefNodeListHandler67(node, "item", context);
     }
     EditorCell_Collection editorCell = this.myItemListHandler_itemList_.createCells(context, new CellLayout_Horizontal(), false);
     ArrayLiteral_Editor.setupBasic_ItemList(editorCell, node, context);
@@ -94,9 +94,9 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _RefNodeListHandler66 extends RefNodeListHandler {
+  public static class _RefNodeListHandler67 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler66(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler67(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -140,7 +140,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
   public EditorCell createValueList(EditorContext context, SNode node) {
     if(this.myValueListHandler_valueList_ == null) {
-      this.myValueListHandler_valueList_ = new AnnotationInstance_Editor._RefNodeListHandler65(node, "value", context);
+      this.myValueListHandler_valueList_ = new AnnotationInstance_Editor._RefNodeListHandler66(node, "value", context);
     }
     EditorCell_Collection editorCell = this.myValueListHandler_valueList_.createCells(context, new CellLayout_Horizontal(), false);
     AnnotationInstance_Editor.setupBasic_ValueList(editorCell, node, context);
@@ -233,9 +233,9 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler65 extends RefNodeListHandler {
+  public static class _RefNodeListHandler66 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler65(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler66(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -295,8 +295,8 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      AnnotationInstance_Editor._RefNodeListHandler65.setupBasic_ConstantCell2(editorCell, node, context);
-      AnnotationInstance_Editor._RefNodeListHandler65.setupLabel_ConstantCell2(editorCell, node, context);
+      AnnotationInstance_Editor._RefNodeListHandler66.setupBasic_ConstantCell2(editorCell, node, context);
+      AnnotationInstance_Editor._RefNodeListHandler66.setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

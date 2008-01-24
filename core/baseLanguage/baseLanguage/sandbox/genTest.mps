@@ -2,35 +2,10 @@
 <model name="jetbrains.mps.baseLanguage.sandbox.genTest">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.findUsages" version="-1" />
-  </language>
-  <language namespace="jetbrains.mps.baseLanguageInternal">
-    <languageAspect modelUID="jetbrains.mps.baseLanguageInternal.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguageInternal.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguageInternal.helgins" version="-1" />
-  </language>
-  <language namespace="jetbrains.mps.regexp">
-    <languageAspect modelUID="jetbrains.mps.regexp.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.regexp.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.regexp.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.regexp.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.regexp.constraints" version="-1" />
-  </language>
-  <language namespace="webr.css">
-    <languageAspect modelUID="webr.css.editor" version="-1" />
-    <languageAspect modelUID="webr.css.actions" version="-1" />
-    <languageAspect modelUID="webr.css.structure" version="-1" />
-    <languageAspect modelUID="webr.css.constraints" version="-1" />
-    <languageAspect modelUID="webr.css.intentions" version="-1" />
-  </language>
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguageInternal" />
+  <language namespace="jetbrains.mps.regexp" />
+  <language namespace="webr.css" />
   <maxImportIndex value="6" />
   <import index="5" modelUID="jetbrains.mps.ide.command@java_stub" version="-1" />
   <import index="6" modelUID="java.lang@java_stub" version="-1" />
@@ -74,6 +49,19 @@
                       <link role="variableDeclaration" targetNodeId="1198591054719" resolveInfo="o" />
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201186636928">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1201186636929">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1201186637884">
+              <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1201186637885">
+                <link role="classifier" targetNodeId="1196072461367" resolveInfo="ABC" />
+                <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201186637886" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201186533861">
+                  <link role="classifier" targetNodeId="6.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
             </node>

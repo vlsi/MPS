@@ -28,7 +28,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 public class Annotation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_Component_Visibility7;
-  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component3;
+  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component2;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
   /* package */AbstractCellListHandler myAnnotationMethodListHandler_methodsList_;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
@@ -272,10 +272,10 @@ public class Annotation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_GenericDeclaration_TypeVariables_ComponentCell(EditorContext context, SNode node) {
-    if(this.my_GenericDeclaration_TypeVariables_Component3 == null) {
-      this.my_GenericDeclaration_TypeVariables_Component3 = new _GenericDeclaration_TypeVariables_Component(node);
+    if(this.my_GenericDeclaration_TypeVariables_Component2 == null) {
+      this.my_GenericDeclaration_TypeVariables_Component2 = new _GenericDeclaration_TypeVariables_Component(node);
     }
-    EditorCell componentCell = this.my_GenericDeclaration_TypeVariables_Component3.createEditorCell(context);
+    EditorCell componentCell = this.my_GenericDeclaration_TypeVariables_Component2.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
     Annotation_Editor.setupBasic__GenericDeclaration_TypeVariables_ComponentCell(editorCell, node, context);
@@ -340,7 +340,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList_ == null) {
-      this.myAnnotationListHandler_annotationList_ = new Annotation_Editor._RefNodeListHandler62(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList_ = new Annotation_Editor._RefNodeListHandler63(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
     Annotation_Editor.setupBasic_AnnotationList(editorCell, node, context);
@@ -353,7 +353,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createMethodsList(EditorContext context, SNode node) {
     if(this.myAnnotationMethodListHandler_methodsList_ == null) {
-      this.myAnnotationMethodListHandler_methodsList_ = new Annotation_Editor._RefNodeListHandler63(node, "annotationMethod", context);
+      this.myAnnotationMethodListHandler_methodsList_ = new Annotation_Editor._RefNodeListHandler64(node, "annotationMethod", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationMethodListHandler_methodsList_.createCells(context, new CellLayout_Vertical(), false);
     Annotation_Editor.setupBasic_MethodsList(editorCell, node, context);
@@ -366,7 +366,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList1(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList1_ == null) {
-      this.myAnnotationListHandler_annotationList1_ = new Annotation_Editor._RefNodeListHandler64(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList1_ = new Annotation_Editor._RefNodeListHandler65(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
     Annotation_Editor.setupBasic_AnnotationList1(editorCell, node, context);
@@ -406,9 +406,9 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler62 extends RefNodeListHandler {
+  public static class _RefNodeListHandler63 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler62(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler63(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -449,9 +449,9 @@ public class Annotation_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler63 extends RefNodeListHandler {
+  public static class _RefNodeListHandler64 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler63(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler64(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -507,16 +507,16 @@ public class Annotation_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      Annotation_Editor._RefNodeListHandler63.setupBasic_ConstantCell3(editorCell, node, context);
-      Annotation_Editor._RefNodeListHandler63.setupLabel_ConstantCell3(editorCell, node, context);
+      Annotation_Editor._RefNodeListHandler64.setupBasic_ConstantCell3(editorCell, node, context);
+      Annotation_Editor._RefNodeListHandler64.setupLabel_ConstantCell3(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 
 }
-  public static class _RefNodeListHandler64 extends RefNodeListHandler {
+  public static class _RefNodeListHandler65 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler64(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler65(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

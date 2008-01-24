@@ -1962,6 +1962,12 @@
       <property name="role" value="parameter" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201186121363">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="typeParameter" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1170346941296">
     <property name="name" value="AnonymousClassExpression" />

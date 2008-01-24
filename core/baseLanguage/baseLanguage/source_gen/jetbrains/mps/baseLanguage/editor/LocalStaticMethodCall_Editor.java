@@ -114,7 +114,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new LocalStaticMethodCall_Editor._RefNodeListHandler58(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new LocalStaticMethodCall_Editor._RefNodeListHandler59(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     LocalStaticMethodCall_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -208,9 +208,9 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler58 extends RefNodeListHandler {
+  public static class _RefNodeListHandler59 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler58(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler59(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -273,8 +273,8 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      LocalStaticMethodCall_Editor._RefNodeListHandler58.setupBasic_ConstantCell1(editorCell, node, context);
-      LocalStaticMethodCall_Editor._RefNodeListHandler58.setupLabel_ConstantCell1(editorCell, node, context);
+      LocalStaticMethodCall_Editor._RefNodeListHandler59.setupBasic_ConstantCell1(editorCell, node, context);
+      LocalStaticMethodCall_Editor._RefNodeListHandler59.setupLabel_ConstantCell1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

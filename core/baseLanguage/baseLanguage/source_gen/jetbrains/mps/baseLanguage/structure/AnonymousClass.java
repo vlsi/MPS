@@ -12,6 +12,7 @@ import java.util.List;
 public class AnonymousClass extends ClassConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AnonymousClass";
   public static String PARAMETER = "parameter";
+  public static String TYPE_PARAMETER = "typeParameter";
   public static String CLASSIFIER = "classifier";
 
   public  AnonymousClass(SNode node) {
@@ -45,6 +46,26 @@ public class AnonymousClass extends ClassConcept {
 
   public void insertParameter(Expression prev, Expression node) {
     this.insertChild(prev, AnonymousClass.PARAMETER, node);
+  }
+
+  public int getTypeParametersCount() {
+    return this.getChildCount(AnonymousClass.TYPE_PARAMETER);
+  }
+
+  public Iterator<Type> typeParameters() {
+    return this.children(AnonymousClass.TYPE_PARAMETER);
+  }
+
+  public List<Type> getTypeParameters() {
+    return this.getChildren(AnonymousClass.TYPE_PARAMETER);
+  }
+
+  public void addTypeParameter(Type node) {
+    this.addChild(AnonymousClass.TYPE_PARAMETER, node);
+  }
+
+  public void insertTypeParameter(Type prev, Type node) {
+    this.insertChild(prev, AnonymousClass.TYPE_PARAMETER, node);
   }
 
   public Classifier getClassifier() {
