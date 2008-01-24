@@ -87,7 +87,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> postfixes = ListOperations.createList(new String[]{});
+      List<String> postfixes = ListOperations.<String>createList();
       if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
         ListOperations.addAllElements(postfixes, Type_Behavior.call_getVariableSuffixes_1182416669983(TypeChecker.getInstance().getTypeOf(node)));
       }
