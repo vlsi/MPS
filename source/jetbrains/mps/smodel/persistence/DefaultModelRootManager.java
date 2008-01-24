@@ -17,6 +17,7 @@ import jetbrains.mps.vcs.Merger;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
+import jetbrains.mps.reloading.ReloadUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -52,12 +53,13 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
         ThreadUtils.runInUIThreadNoWait(new Runnable() {
           public void run() {
             NodeReadAccessCaster.blockEvents();
-           try {
-            Merger.merge(file);
-           }
-            finally {
-            NodeReadAccessCaster.unblockEvents();
-          }
+            try {
+              Merger.merge(file);
+            } finally {
+              NodeReadAccessCaster.unblockEvents();
+            }
+
+            ReloadUtils.rebuildProjectPanes();            
             modelDescriptor.reloadFromDisk();
           }
         });
