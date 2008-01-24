@@ -831,6 +831,16 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return false;
   }
 
+  public void removeAccessoryModel(SModelDescriptor sm) {
+    for (Model m : myLanguageDescriptor.getAccessoryModels()) {
+      if (m.getName().equals(sm.getModelUID().toString())) {
+        m.delete();
+      }
+    }
+    setLanguageDescriptor(myLanguageDescriptor);
+    save();
+  }
+
   public String toString() {
     return getLanguageDescriptor().getNamespace();
   }

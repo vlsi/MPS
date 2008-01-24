@@ -183,6 +183,10 @@ public enum LanguageAspect {
     return createNew(l, true);
   }
 
+  public void delete(Language l) {
+    registerInLanguageDescriptor(l.getLanguageDescriptor(), null);
+  }
+
   public SModelDescriptor createNew(Language l, boolean saveDescriptor) {
     assert get(l) == null;
 
