@@ -51,7 +51,12 @@ public class RefactoringContext {
   private Map<SNodeId, Set<FullNodeId>> myNodeIdsToFullNodeIdsCache = new HashMap<SNodeId, Set<FullNodeId>>();
   private boolean myCachesAreUpToDate = false;
   private Serializer mySerializer = new Serializer();
+  //-----------------
+
+
+  //other
   private SearchResults myUsages;
+  private Set<String> myTransientParameters = new HashSet<String>();
   //-----------------
 
   public RefactoringContext() {
@@ -97,6 +102,18 @@ public class RefactoringContext {
 
   public Map<String, Object> getAdditionalParameters() {
     return new HashMap<String, Object>(myAdditionalParametersMap);
+  }
+
+  public void markTransient(String parameterName) {
+    myTransientParameters.add(parameterName);
+  }
+
+  public void markTransient(Collection<String> parameterNames) {
+    myTransientParameters.addAll(parameterNames);
+  }
+
+  public boolean isTransient(String parameterName) {
+    return myTransientParameters.contains(parameterName);
   }
 
   public Object getParameter(String parameterName) {
@@ -351,6 +368,10 @@ public class RefactoringContext {
     {
       Element parametersMapElement = new Element(PARAMETERS_MAP);
       for (Entry<String, Object> entry : myAdditionalParametersMap.entrySet()) {
+        String parameterName = entry.getKey();
+        if (isTransient(parameterName)) {
+          continue;
+        }
         Element entryElement = new Element(ENTRY);
         Element keyElement = new Element(KEY);
         Element valueElement = new Element(VALUE);

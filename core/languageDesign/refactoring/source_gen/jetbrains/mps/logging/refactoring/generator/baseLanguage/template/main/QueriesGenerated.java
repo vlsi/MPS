@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.bootstrap.editorLanguage.constraints.CellKeyMapKeystroke_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.editorLanguage.constraints.CellKeyMapKeystroke_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -20,6 +20,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
+import jetbrains.mps.logging.refactoring.constraints.RequiredAdditionalArgument_Behavior;
 
 public class QueriesGenerated {
 
@@ -33,6 +34,10 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1189763354452(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1201178032543(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1199462157225(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -126,10 +131,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1200668668194(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      Pattern_ pattern_1200935780096 = new Pattern_();
-      SNode coercedNode_1200935780095 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1200935780096);
-      if(coercedNode_1200935780095 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1200935780096.PatternVar;
+      Pattern_ pattern_1201178055486 = new Pattern_();
+      SNode coercedNode_1201178055485 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1201178055486);
+      if(coercedNode_1201178055485 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1201178055486.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -431,6 +436,21 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1199623869841(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "destination", true);
+  }
+
+  public static List sourceNodesQuery_1201177824403(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> result = new ArrayList<SNode>();
+    for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "arguments", true)) {
+      if(RequiredAdditionalArgument_Behavior.call_isTransient_1201174675696(argument)) {
+        ListOperations.addElement(result, argument);
+      }
+    }
+    for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "internalArguments", true)) {
+      if(RequiredAdditionalArgument_Behavior.call_isTransient_1201174675696(argument)) {
+        ListOperations.addElement(result, argument);
+      }
+    }
+    return result;
   }
 
   public static List sourceNodesQuery_1198673830801(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
