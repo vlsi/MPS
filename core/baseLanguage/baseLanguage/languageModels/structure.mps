@@ -2,14 +2,7 @@
 <model name="jetbrains.mps.baseLanguage.structure">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.structureLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
-  </language>
+  <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <maxImportIndex value="38" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="36" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
@@ -67,7 +60,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068390468200">
-    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\field.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\field.png" />
     <property name="name" value="FieldDeclaration" />
     <link role="extends" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1178285346338">
@@ -76,7 +69,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068390468198">
     <property name="name" value="ClassConcept" />
-    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\class.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\class.png" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1107461130800" resolveInfo="Classifier" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107215907103">
@@ -236,7 +229,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123132">
-    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\method.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\method.png" />
     <property name="name" value="BaseMethodDeclaration" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1109283235663">
@@ -1153,7 +1146,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1083245097125">
     <property name="name" value="EnumClass" />
-    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\enum.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\enum.png" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1158696685452">
@@ -1325,7 +1318,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1107796713796">
     <property name="name" value="Interface" />
-    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\interface.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\interface.png" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1107461130800" resolveInfo="Classifier" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107798030877">
@@ -2242,7 +2235,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1188206331916">
     <property name="name" value="Annotation" />
     <property name="rootable" value="true" />
-    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\annotation.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\annotation.png" />
     <link role="extends" targetNodeId="1107796713796" resolveInfo="Interface" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1188206594042">
       <property name="metaClass" value="aggregation" />
