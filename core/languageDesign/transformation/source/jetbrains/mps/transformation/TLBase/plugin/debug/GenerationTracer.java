@@ -188,6 +188,20 @@ public class GenerationTracer {
     myCurrentTraceNode = null; // reset branch
   }
 
+  public boolean hasTraceData(SNode node) {
+    if (DISABLED) return false;
+    System.out.println("hasTraceData: input node " + node.getDebugText());
+    TracerNode tracerNode = findTracerNode(node);
+    if (tracerNode != null) {
+      System.out.println("hasTraceData: tracer node " + tracerNode);
+    } else {
+      System.out.println("hasTraceData: NO tracer node");
+    }
+
+    return tracerNode != null;
+  }
+
+
   public void showTraceData(SNode node) {
     int index = myGenerationTracerViewTool.getTabIndex(node);
     if (index > -1) {
@@ -197,21 +211,16 @@ public class GenerationTracer {
     }
 
     System.out.println("showTraceData: input node " + node.getDebugText());
-    TracerNode tracerNode = null;
-    Set<String> outputModels = myTracingData.keySet();
-    for (String outputModel : outputModels) {
-      List<TracerNode> rootTracerNodes = myTracingData.get(outputModel);
-      for (TracerNode rootTracerNode : rootTracerNodes) {
-        tracerNode = rootTracerNode.find(node);
-        if (tracerNode != null) {
-          break;
-        }
-      }
-    }
-
+    TracerNode tracerNode = findTracerNode(node);
     System.out.println("showTraceData: tracer node " + tracerNode);
-    if(tracerNode == null) return;
+    if (tracerNode == null) return;
     myGenerationTracerViewTool.showTraceView(tracerNode);
+  }
+
+  public boolean hasTracebackData(SNode node) {
+    if (DISABLED) return false;
+    TracerNode tracerNode = findTracerNode(Kind.OUTPUT, node);
+    return tracerNode != null;
   }
 
   public void showTracebackData(SNode node) {
@@ -223,53 +232,36 @@ public class GenerationTracer {
     }
 
     TracerNode tracerNode = buildTracebackTree(node);
-
-    // fake model
-//   TracerNode tracerNode = buildFakeTracerNode(node);
     myGenerationTracerViewTool.showTraceView(tracerNode);
   }
 
-  public boolean hasTraceData(SNode node) {
-    if (DISABLED) return false;
-    System.out.println("hasTraceData: input node " + node.getDebugText());
+  private TracerNode buildTracebackTree(SNode node) {
+    TracerNode tracerNode = findTracerNode(Kind.OUTPUT, node);
+    return buildTracebackTree(tracerNode, 0);
+  }
 
+  private TracerNode findTracerNode(SNode node) {
     Set<String> outputModels = myTracingData.keySet();
     for (String outputModel : outputModels) {
       List<TracerNode> rootTracerNodes = myTracingData.get(outputModel);
       for (TracerNode rootTracerNode : rootTracerNodes) {
         TracerNode tracerNode = rootTracerNode.find(node);
         if (tracerNode != null) {
-          System.out.println("hasTraceData: tracer node " + tracerNode);
-          return true;
+          return tracerNode;
         }
       }
     }
-    System.out.println("hasTraceData: NO tracer node");
-    return false;
+    return null;
   }
 
-  public boolean hasTracebackData(SNode node) {
-    if (DISABLED) return false;
-
+  private TracerNode findTracerNode(Kind kind, SNode node) {
     Set<String> outputModels = myTracingData.keySet();
     for (String outputModel : outputModels) {
       List<TracerNode> rootTracerNodes = myTracingData.get(outputModel);
       for (TracerNode rootTracerNode : rootTracerNodes) {
-        if (rootTracerNode.find(Kind.OUTPUT, node) != null) return true;
-      }
-    }
-    return false;
-//    return !myTracingData.isEmpty();
-  }
-
-  private TracerNode buildTracebackTree(SNode node) {
-    Set<String> outputModels = myTracingData.keySet();
-    for (String outputModel : outputModels) {
-      List<TracerNode> rootTracerNodes = myTracingData.get(outputModel);
-      for (TracerNode rootTracerNode : rootTracerNodes) {
-        TracerNode tracerOutputNode = rootTracerNode.find(Kind.OUTPUT, node);
-        if (tracerOutputNode != null) {
-          return buildTracebackTree(tracerOutputNode, 0);
+        TracerNode tracerNode = rootTracerNode.find(kind, node);
+        if (tracerNode != null) {
+          return tracerNode;
         }
       }
     }
