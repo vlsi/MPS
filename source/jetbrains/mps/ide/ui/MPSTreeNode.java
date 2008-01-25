@@ -16,6 +16,7 @@ import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Comparator;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -86,10 +87,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   public void doubleClick() {
   }
 
-  public void keyPressed(KeyEvent keyEvent) {    
+  public void keyPressed(KeyEvent keyEvent) {
     if (keyEvent.isAltDown() && (
-            (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
-            (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
+      (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
+        (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
       JPopupMenu popupMenu = CommandProcessor.instance().executeLightweightCommand(new Calculable<JPopupMenu>() {
         public JPopupMenu calculate() {
           return getQuickCreatePopupMenu();
@@ -99,7 +100,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
         MPSTree mpsTree = getTree();
         if (mpsTree == null) return;
         Rectangle rectangle = mpsTree.getPathBounds(mpsTree.getSelectionPath());
-        popupMenu.show(mpsTree, rectangle.x + rectangle.width/2, rectangle.y);
+        popupMenu.show(mpsTree, rectangle.x + rectangle.width / 2, rectangle.y);
       }
     }
   }
@@ -165,11 +166,23 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return null;
   }
 
+  @Nullable
+  public final <T> MPSTreeNode findDescendantWith(Object userObject, Comparator<T> comparator) {
+    if (comparator.compare((T) getUserObject(), (T) userObject) == 0) return this;
+    if (isInitialized()) {
+      for (int i = 0; i < getChildCount(); i++) {
+        MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findDescendantWith(userObject);
+        if (result != null) return result;
+      }
+    }
+    return null;
+  }
+
   public int getToggleClickCount() {
     return 2;
   }
 
-  protected void updatePresentation() {    
+  protected void updatePresentation() {
   }
 
   public final Icon getIcon(boolean expanded) {
