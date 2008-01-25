@@ -8,6 +8,8 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import javax.swing.tree.TreeCellRenderer;
+import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -93,6 +95,11 @@ public class TreeFileChooser extends JDialog {
     MPSTree tree = new MPSTree() {
       protected MPSTreeNode rebuild() {
         setRootVisible(false);
+
+        //putClientProperty("JTree.lineStyle", "None");
+
+        setShowsRootHandles(true);
+
         MPSTreeNode root = new TextMPSTreeNode("", null);
 
         File[] rootFiles = File.listRoots();
