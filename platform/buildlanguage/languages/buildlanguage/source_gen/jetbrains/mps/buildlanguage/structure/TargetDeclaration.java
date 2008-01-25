@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 
-public class TargetDeclaration extends BaseConcept implements IProjectComponent, IPropertyHolder {
+public class TargetDeclaration extends BaseConcept implements IProjectComponent, IPropertyHolder, ICommented {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.TargetDeclaration";
   public static String TASK_CALL = "taskCall";
   public static String DEPENDS = "depends";

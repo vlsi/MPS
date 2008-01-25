@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PropertyDeclaration extends BaseConcept implements IProjectComponent {
+public class PropertyDeclaration extends BaseConcept implements IProjectComponent, ICommented {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.PropertyDeclaration";
   public static String TYPE = "type";
   public static String PROPERTY_VALUE = "propertyValue";
