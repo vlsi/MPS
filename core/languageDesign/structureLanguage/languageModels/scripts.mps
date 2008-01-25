@@ -3305,6 +3305,23 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201269223971">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201269226241">
+            <link role="baseMethodDeclaration" targetNodeId="9.~ArrayList.add(java.lang.Object):boolean" resolveInfo="add" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201269223972">
+              <link role="variableDeclaration" targetNodeId="1201266124069" resolveInfo="list" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201269236232">
+              <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201269233495">
+                <link role="baseMethodDeclaration" targetNodeId="5.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getStructureModelDescriptor" />
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1201269229007">
+                  <link role="argument" targetNodeId="1201265952539" resolveInfo="sourceLanguage" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201266139861">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201266139862">
             <property name="name" value="editorModelDescriptor" />

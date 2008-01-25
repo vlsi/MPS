@@ -139,6 +139,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
       }
       ArrayList<SModel> list = new ArrayList<SModel>();
       result.put(((Language)refactoringContext.getParameter("sourceLanguage")), list);
+      list.add(((Language)refactoringContext.getParameter("sourceLanguage")).getStructureModelDescriptor().getSModel());
       SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
       if(editorModelDescriptor != null) {
         list.add(editorModelDescriptor.getSModel());
