@@ -2949,7 +2949,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="18.~ConceptInstances_Finder.&lt;init&gt;()" resolveInfo="ConceptInstances_Finder" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201265842836">
-                <link role="baseMethodDeclaration" targetNodeId="18.~NodeUsages_Finder.&lt;init&gt;()" resolveInfo="NodeUsages_Finder" />
+                <link role="baseMethodDeclaration" targetNodeId="18.~NodeAndDescendantsUsages_Finder.&lt;init&gt;()" resolveInfo="NodeAndDescendantsUsages_Finder" />
               </node>
             </node>
           </node>

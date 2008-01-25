@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
-import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -101,7 +101,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     {
       SNode node = actionContext.getNode();
       SearchQuery searchQuery = new SearchQuery(new SNodePointer(node), actionContext.getScope());
-      IResultProvider resultProvider = TreeBuilder.forFinders(new ConceptInstances_Finder(), new NodeUsages_Finder());
+      IResultProvider resultProvider = TreeBuilder.forFinders(new ConceptInstances_Finder(), new NodeAndDescendantsUsages_Finder());
       IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
       SearchResults searchResults = resultProvider.getResults(searchQuery, projectFrame.createAdaptiveProgressMonitor());
       if(!(searchResults.getAliveResults().isEmpty())) {

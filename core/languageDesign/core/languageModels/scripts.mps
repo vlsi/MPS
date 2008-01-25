@@ -878,11 +878,11 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201261469276">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201261469277">
             <property name="name" value="finder" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201261469278">
-              <link role="classifier" targetNodeId="19.~NodeUsages_Finder" resolveInfo="NodeUsages_Finder" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201275130022">
+              <link role="classifier" targetNodeId="19.~NodeAndDescendantsUsages_Finder" resolveInfo="NodeAndDescendantsUsages_Finder" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201261469279">
-              <link role="baseMethodDeclaration" targetNodeId="19.~NodeUsages_Finder.&lt;init&gt;()" resolveInfo="NodeUsages_Finder" />
+              <link role="baseMethodDeclaration" targetNodeId="19.~NodeAndDescendantsUsages_Finder.&lt;init&gt;()" resolveInfo="NodeAndDescendantsUsages_Finder" />
             </node>
           </node>
         </node>
