@@ -11,6 +11,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.IDEProjectFrame;
@@ -18,23 +19,16 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
 
 public class SafeDelete extends AbstractLoggableRefactoring {
-  public static final String showAffectedNodes = "showAffectedNodes";
-  public static final String searchResults = "searchResults";
 
   private Set<String> myTransientParameters = new HashSet<String>();
 
   public  SafeDelete() {
-    this.myTransientParameters.add("showAffectedNodes");
-    this.myTransientParameters.add("searchResults");
   }
 
   public static String getKeyStroke_static() {
@@ -85,24 +79,6 @@ public class SafeDelete extends AbstractLoggableRefactoring {
       if(node == null) {
         return false;
       }
-      SearchQuery searchQuery = new SearchQuery(new SNodePointer(node), actionContext.getScope());
-      IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
-      IAdaptiveProgressMonitor monitor = projectFrame.createAdaptiveProgressMonitor();
-      NodeUsages_Finder finder = new NodeUsages_Finder();
-      refactoringContext.setParameter("searchResults", finder.find(searchQuery));
-      List<SearchResult> aliveResults = ((SearchResults)refactoringContext.getParameter("searchResults")).getAliveResults();
-      if(!(aliveResults.isEmpty())) {
-        int size = aliveResults.size();
-        String message = size + " usages found. delete anyway?";
-        JFrame component = projectFrame.getMainFrame();
-        int option = JOptionPane.showConfirmDialog(component, message, "Safe Delete", JOptionPane.YES_NO_OPTION);
-        if(option == JOptionPane.YES_OPTION) {
-          refactoringContext.setParameter("showAffectedNodes", true);
-          return true;
-        }
-        return false;
-      }
-      refactoringContext.setParameter("showAffectedNodes", false);
       return true;
     }
   }
@@ -112,10 +88,20 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
-    if(!(((Boolean)refactoringContext.getParameter("showAffectedNodes")))) {
-      return null;
+    {
+      SearchQuery searchQuery = new SearchQuery(new SNodePointer(actionContext.getNode()), actionContext.getScope());
+      IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
+      IAdaptiveProgressMonitor monitor = projectFrame.createAdaptiveProgressMonitor();
+      NodeUsages_Finder finder = new NodeUsages_Finder();
+      SearchResults searchResults = finder.find(searchQuery);
+      List<SearchResult> aliveResults = searchResults.getAliveResults();
+      if(!(aliveResults.isEmpty())) {
+        return searchResults;
+      } else
+      {
+        return null;
+      }
     }
-    return ((SearchResults)refactoringContext.getParameter("searchResults"));
   }
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
