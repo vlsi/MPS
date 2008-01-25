@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class MapOperationExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapOperationExpression";
   public static String EXPRESSION = "expression";
+  public static String MAP_OPERATION = "mapOperation";
 
   public  MapOperationExpression(SNode node) {
     super(node);
@@ -31,6 +32,14 @@ public class MapOperationExpression extends Expression {
 
   public void setExpression(Expression node) {
     super.setChild(MapOperationExpression.EXPRESSION, node);
+  }
+
+  public MapOperation getMapOperation() {
+    return (MapOperation)this.getChild(MapOperationExpression.MAP_OPERATION);
+  }
+
+  public void setMapOperation(MapOperation node) {
+    super.setChild(MapOperationExpression.MAP_OPERATION, node);
   }
 
 }

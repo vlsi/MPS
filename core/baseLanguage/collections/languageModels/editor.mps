@@ -1094,6 +1094,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201216307885">
         <property name="text" value="." />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1201225930830">
+        <link role="relationDeclaration" targetNodeId="1.1201225916438" />
+      </node>
     </node>
   </node>
 </model>
