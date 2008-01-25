@@ -3,9 +3,7 @@ package jetbrains.mps.transformation.TLBase.plugin.debug;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 
 import java.util.*;
@@ -84,7 +82,6 @@ public class GenerationTracer {
 
   public void startTracing(SModel outputModel) {
     if (!myActive) return;
-//    LOG.info("startTracing: " + outputModel.getUID());
     myCurrentOutputModelUID = outputModel.getUID().toString();
     myTracingData.put(myCurrentOutputModelUID, new ArrayList<TracerNode>());
   }
@@ -271,44 +268,34 @@ public class GenerationTracer {
     return buildTracebackTree(tracerNode, 0);
   }
 
-  private TracerNode findTracerNode(SNode node) {
-    Set<String> outputModels = myTracingData.keySet();
-    for (String outputModel : outputModels) {
-      List<TracerNode> rootTracerNodes = myTracingData.get(outputModel);
-      for (TracerNode rootTracerNode : rootTracerNodes) {
-        TracerNode tracerNode = rootTracerNode.find(node);
-        if (tracerNode != null) {
-          return tracerNode;
-        }
-      }
-    }
-    return null;
-  }
-
   private List<TracerNode> findAllTracerNodes(Kind kind, SNode node) {
     List<TracerNode> result = new ArrayList<TracerNode>();
-    Set<String> outputModels = myTracingData.keySet();
-    for (String outputModel : outputModels) {
-      List<TracerNode> rootTracerNodes = myTracingData.get(outputModel);
-      for (TracerNode rootTracerNode : rootTracerNodes) {
-        rootTracerNode.findAll(kind, node, result);
-      }
+    for (TracerNode rootTracerNode : getRootTracerNodes()) {
+      rootTracerNode.findAll(kind, node, result);
     }
     return result;
   }
 
   private TracerNode findTracerNode(Kind kind, SNode node) {
-    Set<String> outputModels = myTracingData.keySet();
-    for (String outputModel : outputModels) {
-      List<TracerNode> rootTracerNodes = myTracingData.get(outputModel);
-      for (TracerNode rootTracerNode : rootTracerNodes) {
-        TracerNode tracerNode = rootTracerNode.find(kind, node);
-        if (tracerNode != null) {
-          return tracerNode;
-        }
+    for (TracerNode rootTracerNode : getRootTracerNodes()) {
+      TracerNode tracerNode = rootTracerNode.find(kind, node);
+      if (tracerNode != null) {
+        return tracerNode;
       }
     }
     return null;
+  }
+
+  private List<TracerNode> getRootTracerNodes() {
+    List<TracerNode> result = new ArrayList<TracerNode>();
+    Set<String> outputModels = myTracingData.keySet();
+    for (String outputModel : outputModels) {
+      if (SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(outputModel)) == null) {
+        continue;
+      }
+      result.addAll(myTracingData.get(outputModel));
+    }
+    return result;
   }
 
   private TracerNode buildTracebackTree(TracerNode tracerNode, int depth) {
