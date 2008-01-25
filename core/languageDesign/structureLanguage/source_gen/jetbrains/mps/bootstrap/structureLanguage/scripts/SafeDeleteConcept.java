@@ -115,15 +115,17 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     {
       SNode node = actionContext.getNode();
       refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor()));
-      SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
-      if(editorModelDescriptor != null) {
-        ConceptEditorDeclaration conceptEditorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node)));
-        conceptEditorDeclaration.delete();
-      }
-      SModelDescriptor constraintsModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getConstraintsModelDescriptor();
-      if(constraintsModelDescriptor != null) {
-        ConceptBehavior conceptBehavior = SModelUtil_new.findBehaviorDeclaration(constraintsModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node)));
-        conceptBehavior.delete();
+      if(((Language)refactoringContext.getParameter("sourceLanguage")) != null) {
+        SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
+        if(editorModelDescriptor != null) {
+          ConceptEditorDeclaration conceptEditorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node)));
+          conceptEditorDeclaration.delete();
+        }
+        SModelDescriptor constraintsModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getConstraintsModelDescriptor();
+        if(constraintsModelDescriptor != null) {
+          ConceptBehavior conceptBehavior = SModelUtil_new.findBehaviorDeclaration(constraintsModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node)));
+          conceptBehavior.delete();
+        }
       }
       SNodeOperations.deleteNode(node);
     }
@@ -132,6 +134,9 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
+      if(((Language)refactoringContext.getParameter("sourceLanguage")) == null) {
+        return result;
+      }
       ArrayList<SModel> list = new ArrayList<SModel>();
       result.put(((Language)refactoringContext.getParameter("sourceLanguage")), list);
       SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
