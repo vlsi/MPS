@@ -512,6 +512,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
       for (SNode node : nodes) {
         SNodeTreeNode treeNode = (SNodeTreeNode) findRootSNodeTreeNode(node);
+        if (treeNode == null) continue;
+
         MPSTreeNode parent = (MPSTreeNode) treeNode.getParent();
 
         treeModel.removeNodeFromParent(treeNode);
