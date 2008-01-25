@@ -18,7 +18,8 @@ public class TracerNode {
     MACRO("MACRO"),
     RULE("RULE"),
     RULE_CONSEQUENCE("RULE_CONSEQUENCE"),
-    SWITCH("SWITCH");
+    SWITCH("SWITCH"),
+    COPY_OPERATION("COPY");
 
     private String myText;
 

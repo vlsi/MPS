@@ -50,7 +50,9 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    SNode node = myTracerNode.getNodePointer().getNode();
+    SNodePointer nodePointer = myTracerNode.getNodePointer();
+    if (nodePointer == null) return;
+    SNode node = nodePointer.getNode();
     if (node == null) {
       LOG.info("clicked node was deleted");
 
@@ -69,9 +71,13 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   protected void updatePresentation() {
     String kind = myTracerNode.getKind().toString();
     SNodePointer nodePointer = myTracerNode.getNodePointer();
-    setIcon(IconManager.getIconFor(nodePointer.getNode()));
-    setText("[" + kind + "] " + nodePointer.toString());
-//    setAdditionalText("additional text");
-    setNodeIdentifier("" + nodePointer.hashCode());
+    if (nodePointer != null) {
+      setIcon(IconManager.getIconFor(nodePointer.getNode()));
+      setText("[" + kind + "] " + nodePointer.toString());
+      setAdditionalText("" + nodePointer.getModelUID());
+      setNodeIdentifier("" + nodePointer.hashCode());
+    } else {
+      setText("[" + kind + "]");
+    }
   }
 }

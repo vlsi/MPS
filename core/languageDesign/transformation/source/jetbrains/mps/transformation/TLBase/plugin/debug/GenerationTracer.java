@@ -1,12 +1,12 @@
 package jetbrains.mps.transformation.TLBase.plugin.debug;
 
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
-import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -24,7 +24,6 @@ public class GenerationTracer {
 
   private MPSProject myProject;
   private boolean myActive = false;
-  private Object myMarker;
 
   private String myCurrentOutputModelUID;
   private TracerNode myCurrentTraceNode;
@@ -110,6 +109,11 @@ public class GenerationTracer {
     push(new TracerNode(TracerNode.Kind.RULE, new SNodePointer(node)));
   }
 
+  public void closeRule(SNode node) {
+    if (!myActive) return;
+    closeBranch(TracerNode.Kind.RULE, node);
+  }
+
   public void pushRuleConsequence(SNode node) {
     if (!myActive) return;
     push(new TracerNode(TracerNode.Kind.RULE_CONSEQUENCE, new SNodePointer(node)));
@@ -149,14 +153,9 @@ public class GenerationTracer {
     closeBranch(Kind.TEMPLATE, node);
   }
 
-  public Object getMarker() {
-    return myMarker;
-  }
-
-  public void dropTrace(Object marker) {
-  }
-
-  public void clearMarker(Object marker) {
+  public void pushCopyOperation() {
+    if (!myActive) return;
+    push(new TracerNode(Kind.COPY_OPERATION, null));
   }
 
   private void push(TracerNode tracerNode) {

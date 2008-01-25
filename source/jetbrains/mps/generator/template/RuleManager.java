@@ -7,13 +7,9 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.generator.GenerationFailedException;
-import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.structure.*;
-import jetbrains.mps.util.QueryMethod;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -114,37 +110,54 @@ public class RuleManager {
     return myAbandonedRootConcepts;
   }
 
-  public void applyReductionRules(SNode inputNode) {
-    INodeAdapter reductionRule;
+  public void applyReductionRules(SNode inputNode, SNode clonedOutputNode) {
+    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
+    try {
+      applyReductionRules_internal(inputNode, clonedOutputNode);
+    } finally {
+      myGenerator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
+    }
+  }
+
+  private void applyReductionRules_internal(SNode inputNode, SNode clonedOutputNode) {
     boolean wasChanged = myGenerator.isChanged();
     try {
-      reductionRule = findReductionRule(inputNode);
+      Reduction_MappingRule reductionRule = findReductionRule(inputNode);
       if (reductionRule != null) {
         myGenerator.setChanged(true);
         List<SNode> outputNodes = GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
-        SNode oldOutputNode = myGenerator.findOutputNodeById(inputNode.getSNodeId());
         if (outputNodes.size() == 1) {
           // output node should be accessible via 'findCopiedNode'
           myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNodes.get(0));
         }
-        oldOutputNode.getParent().replaceChild(oldOutputNode, outputNodes);
+        clonedOutputNode.getParent().replaceChild(clonedOutputNode, outputNodes);
         return;
       }
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
       myGenerator.setChanged(wasChanged);
     }
-    for (SNode childNode : inputNode.getChildren()) {
-      myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(childNode);
-      applyReductionRules(childNode);
+
+    // no reduction rule found
+//    for (SNode childNode : inputNode.getChildren()) {
+//      myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(childNode);
+//      applyReductionRules(childNode);
+//    }
+
+    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
+    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(clonedOutputNode);
+
+    for (SNode childOutputNode : clonedOutputNode.getChildren()) {
+      SNode childInputNode = myGenerator.findInputNodeById(childOutputNode.getSNodeId());
+      applyReductionRules(childInputNode, childOutputNode);
     }
   }
 
-  INodeAdapter findReductionRule(SNode node) {
+  Reduction_MappingRule findReductionRule(SNode node) {
     if (myRuleFinder == null) {
       myRuleFinder = new FastRuleFinder(myReduction_MappingRules);
     }
-    return BaseAdapter.fromNode(myRuleFinder.findReductionRule(node, myGenerator));
+    return (Reduction_MappingRule)BaseAdapter.fromNode(myRuleFinder.findReductionRule(node, myGenerator));
   }
 
 }

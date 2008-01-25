@@ -101,8 +101,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode outputRootNode : copiedOutputRoots) {
       checkMonitorCanceled();
       SNode inputRootNode = findInputNodeById(outputRootNode.getSNodeId());
-      getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputRootNode);
-      myRuleManager.applyReductionRules(inputRootNode);
+      myRuleManager.applyReductionRules(inputRootNode, outputRootNode);
     }
 
     // weaving
@@ -168,15 +167,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return;
     }
     ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-            inputReference.getRole(),
-            outputNode,
-            inputReference.getSourceNode(),
-            inputTargetNode);
+      inputReference.getRole(),
+      outputNode,
+      inputReference.getSourceNode(),
+      inputTargetNode);
     // todo: probably, we can do it without checking if same Id can be found in output model.
     // todo: probably, we can eliminate this method at all and create postponed refs while copiing model
     PostponedReference postponedReference = new PostponedReference(
-            refInfo,
-            this);
+      refInfo,
+      this);
     outputNode.addReference(postponedReference);
   }
 

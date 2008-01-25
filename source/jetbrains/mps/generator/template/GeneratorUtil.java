@@ -550,12 +550,16 @@ public class GeneratorUtil {
     return null;
   }
 
-
-  public static List<SNode> applyReductionRule(SNode inputNode, INodeAdapter reductionRule, TemplateGenerator generator) throws DismissTopMappingRuleException {
-    return applyReductionMappingRule(inputNode, (Reduction_MappingRule) reductionRule, generator);
+  public static List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException {
+    generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
+    try {
+      return applyReductionRule_internal(inputNode, (Reduction_MappingRule) rule, generator);
+    } finally {
+      generator.getGeneratorSessionContext().getGenerationTracer().closeRule(rule.getNode());
+    }
   }
 
-  private static List<SNode> applyReductionMappingRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException {
+  private static List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException {
     SNode reductionTemplateNode = null;
     String mappingName = null;
     RuleConsequence ruleConsequence = rule.getRuleConsequence();
@@ -569,7 +573,6 @@ public class GeneratorUtil {
       mappingName = nodeAndMappingName.o2;
     } else {
       // old
-      generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
       TemplateDeclaration template = rule.getTemplate();
       if (template == null) {
         generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no template");
@@ -596,21 +599,17 @@ public class GeneratorUtil {
     if (mappingName == null) {
       mappingName = rule.getName();
     }
-    return applyReductionRuleTemplateFragment(mappingName, reductionTemplateNode, inputNode, rule, generator);
-  }
 
-  private static List<SNode> applyReductionRuleTemplateFragment(String mappingName, SNode fragmentNode, SNode inputNode, INodeAdapter reductionRule, TemplateGenerator generator) throws DismissTopMappingRuleException {
     try {
-      return TemplateProcessor.createOutputNodesForTemplateNode(mappingName, fragmentNode, inputNode, generator);
+      return TemplateProcessor.createOutputNodesForTemplateNode(mappingName, reductionTemplateNode, inputNode, generator);
     } catch (DismissTopMappingRuleException e) {
       throw e;
     } catch (TemplateProcessingFailureException e) {
-      generator.showErrorMessage(inputNode, fragmentNode, reductionRule.getNode(), "error processing reduction rule");
+      generator.showErrorMessage(inputNode, reductionTemplateNode, rule.getNode(), "error processing reduction rule");
     } catch (Throwable t) {
-      LOG.error(t, BaseAdapter.fromNode(fragmentNode));
-      generator.showErrorMessage(inputNode, fragmentNode, reductionRule.getNode(), "error processing reduction rule");
+      LOG.error(t, BaseAdapter.fromNode(reductionTemplateNode));
+      generator.showErrorMessage(inputNode, reductionTemplateNode, rule.getNode(), "error processing reduction rule");
     }
-    return new ArrayList<SNode>();
+    return new ArrayList<SNode>(1);
   }
-
 }

@@ -187,13 +187,8 @@ public class TemplateProcessor {
       // $COPY-SRC$ / $COPY-SRCL$
       List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
       for (SNode newInputNode : newInputNodes) {
-        generationTracer.pushInputNode(newInputNode);
-        try {
-          List<SNode> _outputNodes = copyNodeFromInputNode(mappingName_, templateNode, newInputNode);
-          if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-        } finally {
-          generationTracer.closeInputNode(newInputNode);
-        }
+        List<SNode> _outputNodes = copyNodeFromInputNode(mappingName_, templateNode, newInputNode);
+        if (_outputNodes != null) outputNodes.addAll(_outputNodes);
       }
       return outputNodes;
 
@@ -393,6 +388,15 @@ public class TemplateProcessor {
   }
 
   private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) {
+    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(templateNode);
+    try {
+      return copyNodeFromInputNode_internal(mappingName, templateNode, inputNode);
+    } finally {
+      myGenerator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(templateNode);
+    }
+  }
+
+  private List<SNode> copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode) {
     List<SNode> outputNodes = tryToReduce(inputNode);
     if (outputNodes != null) {
       if (outputNodes.size() == 1) {
@@ -407,11 +411,13 @@ public class TemplateProcessor {
     }
 
     // no reduction found - do node copying
+    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
     SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(inputNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
     if (outputNode == null) {
       myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode()' cannot create output node");
       return null;
     }
+    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(outputNode);
 
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
@@ -465,20 +471,15 @@ public class TemplateProcessor {
   }
 
   private List<SNode> tryToReduce(SNode inputNode) {
-    INodeAdapter reductionRule;
     boolean wasChanged = myGenerator.isChanged();
-    Object marker = myGenerator.getGeneratorSessionContext().getGenerationTracer().getMarker();
     try {
-      reductionRule = myGenerator.getRuleManager().findReductionRule(inputNode);
+      Reduction_MappingRule reductionRule = myGenerator.getRuleManager().findReductionRule(inputNode);
       if (reductionRule != null) {
         return GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
       }
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
       myGenerator.setChanged(wasChanged);
-      myGenerator.getGeneratorSessionContext().getGenerationTracer().dropTrace(marker);
-    } finally {
-      myGenerator.getGeneratorSessionContext().getGenerationTracer().clearMarker(marker);
     }
     return null;
   }

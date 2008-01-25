@@ -58,6 +58,10 @@ public class SNodePointer {
     return SModelRepository.getInstance().getModelDescriptor(modelUID);
   }
 
+  public SModelUID getModelUID() {
+    return getCurrentModelUID(myModelUID, myTimestamp);
+  }
+
   public String toString() {
     if (getNode() == null) {
       return "[bad pointer] model=" + getCurrentModelUID(myModelUID, myTimestamp) + " node id=" + myNodeId;
