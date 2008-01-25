@@ -3448,6 +3448,7 @@
     <property name="name" value="SafeDeleteLink" />
     <property name="userFriendlyName" value="Safe Delete Link" />
     <link role="applicableConcept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+    <link role="overrides" targetNodeId="7.1200665013408" resolveInfo="SafeDelete" />
     <node role="affectedNodesClause" type="jetbrains.mps.logging.refactoring.structure.AffectedNodesClause" id="1201283678685">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201283678686">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201283679530">

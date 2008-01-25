@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.structureLanguage.scripts;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.core.scripts.SafeDelete;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
@@ -36,7 +37,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public static String getKeyStroke_static() {
-    return "";
+    return SafeDelete.getKeyStroke_static();
   }
 
   public static Class getClass_static() {
@@ -48,7 +49,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
       return true;
     } else
     {
-      return false;
+      return SafeDelete.isApplicableWRTConcept_static(node);
     }
   }
 
@@ -74,7 +75,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public Class getOverridenRefactoringClass() {
-    return null;
+    return SafeDelete.getClass_static();
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
