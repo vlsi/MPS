@@ -24,7 +24,7 @@
   <import index="48" modelUID="jetbrains.mps.baseLanguage.editor@java_stub" version="-1" />
   <import index="51" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="53" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-  <import index="54" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+  <import index="54" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   <import index="56" modelUID="java.awt@java_stub" version="-1" />
   <import index="61" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
   <import index="62" modelUID="jetbrains.mps.project@java_stub" version="-1" />
@@ -3182,7 +3182,7 @@
                           </node>
                           <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract_editedNode" id="1199466506331" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapOperation" id="1199466500560">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MappingOperation" id="1199466500560">
                           <node role="mapper" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock" id="1199466500561">
                             <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1199466500562">
                               <property name="name" value="it" />
@@ -3340,7 +3340,7 @@
                           </node>
                           <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract_editedNode" id="1199470083787" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapOperation" id="1199470083788">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MappingOperation" id="1199470083788">
                           <node role="mapper" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock" id="1199470083789">
                             <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1199470083790">
                               <property name="name" value="it" />

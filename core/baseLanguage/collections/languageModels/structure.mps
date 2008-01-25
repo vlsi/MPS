@@ -7,7 +7,7 @@
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1151688443754">
     <property name="name" value="ListType" />
     <link role="extends" targetNodeId="2.1068431790189" />
@@ -132,7 +132,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1152906680026">
-    <property name="name" value="MapOperation" />
+    <property name="name" value="MappingOperation" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1152907136217">
       <property name="metaClass" value="aggregation" />
