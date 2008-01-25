@@ -6,12 +6,15 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.logging.Logger;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
 abstract class IntelligentNodeMover {
+  private static final Logger LOG = Logger.getLogger(IntelligentNodeMover.class);
+
   private SNode myNode;
 
   IntelligentNodeMover(SNode node) {
@@ -31,6 +34,11 @@ abstract class IntelligentNodeMover {
 
     final AbstractConceptDeclaration acd = parent.getConceptDeclarationAdapter();
     final LinkDeclaration link = SModelUtil_new.findLinkDeclaration(acd, role);
+
+    if (link == null) {
+      LOG.error("Can't find a link " + role + " in concept " + acd.getName());
+      return;
+    }
 
     if (link.getSourceCardinality() != Cardinality._0__n && link.getSourceCardinality() != Cardinality._1__n) {
       return;
