@@ -164,7 +164,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        final SearchResults searchResults = provider.getResults(query, myProjectFrame.createAdaptiveProgressMonitor());
+        SearchResults searchResults = provider.getResults(query, myProjectFrame.createAdaptiveProgressMonitor());
         showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
       }
     });
