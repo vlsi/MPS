@@ -39,7 +39,6 @@ public class ClassAncestors_Finder extends GeneratedFinder {
         results.getSearchResults().add(new SearchResult(new SNodePointer(current), "Ancestor"));
       }
     }
-    return;
   }
 
 }
