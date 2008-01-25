@@ -66,7 +66,7 @@ public class OverridingMethods_Finder extends BaseFinder {
         if (!(rightConcept)) {
           OverridingMethods_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
         } else {
-          boolean isApplicable = _finder.isApplicable(null);
+          boolean isApplicable = _finder.isApplicable(_node);
           if (!(isApplicable)) {
             OverridingMethods_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
           } else {
