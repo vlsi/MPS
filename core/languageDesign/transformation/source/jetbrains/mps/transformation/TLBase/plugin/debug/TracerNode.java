@@ -17,7 +17,8 @@ public class TracerNode {
     TEMPLATE("TEMPLATE"),
     MACRO("MACRO"),
     RULE("RULE"),
-    RULE_CONSEQUENCE("RULE_CONSEQUENCE");
+    RULE_CONSEQUENCE("RULE_CONSEQUENCE"),
+    SWITCH("SWITCH");
 
     private String myText;
 

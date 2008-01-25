@@ -115,6 +115,11 @@ public class GenerationTracer {
     push(new TracerNode(TracerNode.Kind.RULE_CONSEQUENCE, new SNodePointer(node)));
   }
 
+  public void pushSwitch(SNode node) {
+    if (!myActive) return;
+    push(new TracerNode(TracerNode.Kind.SWITCH, new SNodePointer(node)));
+  }
+
   public void pushMacro(SNode node) {
     if (!myActive) return;
     push(new TracerNode(TracerNode.Kind.MACRO, new SNodePointer(node)));
@@ -132,31 +137,16 @@ public class GenerationTracer {
 
   public void pushOutputNodeToReplaceLater(SNode node) {
     if (!myActive) return;
-//    LOG.info("output node to replace later: " + node, node);
   }
 
   public void pushTemplateNode(SNode node) {
     if (!myActive) return;
-
-    // push to nearest NOT OUTPUT node
-    TracerNode checkNode = myCurrentTraceNode;
-    myCurrentTraceNode = null;
-    while (checkNode != null) {
-      if (checkNode.getKind() != TracerNode.Kind.OUTPUT) {
-        myCurrentTraceNode = checkNode;
-        break;
-      }
-      checkNode = checkNode.getParent();
-    }
-    if (myCurrentTraceNode == null) {
-      LOG.errorWithTrace("couldn't find nearest NOT INPUT/OUTPUT node");
-    }
-    push(new TracerNode(TracerNode.Kind.TEMPLATE, new SNodePointer(node)));
+    push(new TracerNode(Kind.TEMPLATE, new SNodePointer(node)));
   }
 
   public void closeTemplateNode(SNode node) {
     if (!myActive) return;
-    closeBranch(TracerNode.Kind.TEMPLATE, node);
+    closeBranch(Kind.TEMPLATE, node);
   }
 
   public Object getMarker() {
@@ -176,7 +166,21 @@ public class GenerationTracer {
     } else {
       myCurrentTraceNode.addChild(tracerNode);
     }
-    myCurrentTraceNode = tracerNode;
+
+    if (myCurrentTraceNode == null) {
+      if (tracerNode.getKind() != Kind.INPUT) {
+        LOG.errorWithTrace("node of kind '" + tracerNode.getKind() + "' can not be root");
+      }
+    } else {
+      if (myCurrentTraceNode.getKind() == Kind.INPUT && tracerNode.getKind() == Kind.INPUT) {
+        System.out.println("strange");
+      }
+    }
+
+    if (tracerNode.getKind() != Kind.OUTPUT) {
+      // OUTPUT node is always leaf (leave 'current' unchanged) 
+      myCurrentTraceNode = tracerNode;
+    }
   }
 
   private void closeBranch(Kind kind, SNode node) {
