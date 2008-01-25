@@ -146,20 +146,34 @@ public class MacroUtil {
 
   public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) {
     try {
-      if (nodeMacro instanceof CopySrcNodeMacro) {
-        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcNodeMacro) nodeMacro).getSourceNodeQuery(), false, generator);
-      } else if (nodeMacro instanceof MapSrcNodeMacro) {
-        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcNodeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
-      } else if (nodeMacro instanceof LoopMacro) {
+      if (nodeMacro instanceof LoopMacro) {
         return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((LoopMacro) nodeMacro).getSourceNodesQuery(), generator);
       } else if (nodeMacro instanceof CopySrcListMacro) {
         return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcListMacro) nodeMacro).getSourceNodesQuery(), generator);
       } else if (nodeMacro instanceof MapSrcListMacro) {
         return getNewInputNodes(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcListMacro) nodeMacro).getSourceNodesQuery(), generator);
-      } else if (nodeMacro instanceof SwitchMacro) {
+      }
+
+      if (nodeMacro instanceof CopySrcNodeMacro) {
+        List<SNode> result = new ArrayList<SNode>(1);
+        SNode newInputNode = getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcNodeMacro) nodeMacro).getSourceNodeQuery(), false, generator);
+        if (newInputNode != null) {
+          result.add(newInputNode);
+        }
+        return result;
+      } else if (nodeMacro instanceof MapSrcNodeMacro) {
+        List<SNode> result = new ArrayList<SNode>(1);
+        SNode newInputNode = getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcNodeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
+        if (newInputNode != null) {
+          result.add(newInputNode);
+        }
+        return result;
+      }
+
+      if (nodeMacro instanceof SwitchMacro) {
         throw new GenerationFailedException(new GenerationFailueInfo("The SwitchMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()));
       } else if (nodeMacro instanceof IncludeMacro) {
-        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((IncludeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
+        throw new GenerationFailedException(new GenerationFailueInfo("The IncludeMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()));
       }
 
       // old
@@ -189,6 +203,8 @@ public class MacroUtil {
     try {
       if (nodeMacro instanceof SwitchMacro) {
         return getNewInputNodeForSwitchMacro(currentInputNode, (SwitchMacro) nodeMacro, generator);
+      } else if (nodeMacro instanceof IncludeMacro) {
+        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((IncludeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
       }
     } catch (GenerationFailedException gfe) {
       throw gfe;
@@ -198,22 +214,17 @@ public class MacroUtil {
     throw new GenerationFailedException(new GenerationFailueInfo("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null, generator.getGeneratorSessionContext()));
   }
 
-  private static List<SNode> getNewInputNode(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, ITemplateGenerator generator) {
-    List<SNode> result = new ArrayList<SNode>(1);
+  private static SNode getNewInputNode(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, ITemplateGenerator generator) {
     if (query == null) {
       if (optionalQuery) {
         // continue with current source node
-        result.add(currentInputNode);
-        return result;
+        return currentInputNode;
       }
       throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null, generator.getGeneratorSessionContext()));
     }
 
     SNode resultNode = GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, query, generator);
-    if (resultNode != null) {
-      result.add(resultNode);
-    }
-    return result;
+    return resultNode;
   }
 
   private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {

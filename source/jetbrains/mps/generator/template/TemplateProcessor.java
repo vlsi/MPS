@@ -329,8 +329,8 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof IncludeMacro) {
       // $INCLUDE$
       IncludeMacro includeMacro = (IncludeMacro) nodeMacro;
-      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
-      for (SNode newInputNode : newInputNodes) {
+      SNode newInputNode = MacroUtil.getNewInputNode(nodeMacro, inputNode, myGenerator);
+      if (newInputNode != null) {
         generationTracer.pushInputNode(newInputNode);
         TemplateDeclaration includeTemplate = includeMacro.getIncludeTemplate();
         if (includeTemplate == null) {
