@@ -17,7 +17,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -110,9 +109,9 @@ public class NewGeneratorDialog extends BaseDialog {
     assert descriptorFile != null;
     String path = descriptorFile.getParent().getCanonicalPath();
     String modelsDir = path +
-            File.separatorChar + "generator" +
-            File.separatorChar + NameUtil.shortNameFromLongName(targetLanguageName) +
-            File.separatorChar + "template";
+      File.separatorChar + "generator" +
+      File.separatorChar + NameUtil.shortNameFromLongName(targetLanguageName) +
+      File.separatorChar + "template";
 
     myTemplateModelsDir.setText(modelsDir);
   }
@@ -166,9 +165,9 @@ public class NewGeneratorDialog extends BaseDialog {
 
     // add "template models" model root
     String templateModelNamePrefix = sourceLanguage.getNamespace() +
-            ".generator." +
-            NameUtil.shortNameFromLongName(targetLanguage.getNamespace()) +
-            ".template";
+      ".generator." +
+      NameUtil.shortNameFromLongName(targetLanguage.getNamespace()) +
+      ".template";
     ModelRoot templateModelsRoot = ModelRoot.newInstance(model);
     templateModelsRoot.setPrefix(templateModelNamePrefix);
 
@@ -198,8 +197,8 @@ public class NewGeneratorDialog extends BaseDialog {
     }
     if (!alreadyOwnsTemplateModel) {
       SModelDescriptor templateModelDescriptor = newGenerator.createModel(
-              new SModelUID(templateModelNamePrefix, "main", SModelStereotype.TEMPLATES),
-              templateModelsRoot);
+        new SModelUID(templateModelNamePrefix, "main", SModelStereotype.TEMPLATES),
+        templateModelsRoot);
 
       SModel templateModel = templateModelDescriptor.getSModel();
       templateModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getTLBase());

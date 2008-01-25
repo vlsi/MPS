@@ -1,5 +1,7 @@
 package jetbrains.mps.vfs;
 
+import jetbrains.mps.util.PathManager;
+
 import java.io.File;
 
 public class FileSystem {
@@ -37,5 +39,7 @@ public class FileSystem {
     return ((FileSystemFile) file).getFile();
   }
 
-
+  public static IFile getDefaultDirectory() {
+    return new FileSystemFile(new File(PathManager.getHomePath()));
+  }
 }

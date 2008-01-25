@@ -11,6 +11,10 @@ import org.jetbrains.annotations.NotNull;
 public class FileSystemFile implements IFile {
   private File myFile;
 
+  public FileSystemFile(@NotNull String file) {
+    this(new File(file));
+  }
+
   public FileSystemFile(@NotNull File file) {
     myFile = file;
   }
@@ -112,7 +116,7 @@ public class FileSystemFile implements IFile {
   }
 
   public Writer openWriter() throws IOException {
-    return new FileWriter(myFile);    
+    return new FileWriter(myFile);
   }
 
   public InputStream openInputStream() throws IOException {

@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Component;
 
 
-public class EditorUtil {  
+public class EditorUtil {
   public static JComponent createSelectIconButton(SNode sourceNode, EditorContext context) {
     final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) BaseAdapter.fromNode(sourceNode);
     final String path = conceptDeclaration.getIconPath();

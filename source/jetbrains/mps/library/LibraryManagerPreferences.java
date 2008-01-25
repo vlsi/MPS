@@ -71,7 +71,7 @@ public class LibraryManagerPreferences implements IPreferencesPage {
 
     if (oldSelection != null) {
       myLibrariesList.setSelectedValue(oldSelection, true);
-    }                                                              
+    }
 
     myManager.update();
   }
@@ -98,7 +98,7 @@ public class LibraryManagerPreferences implements IPreferencesPage {
       JOptionPane.showMessageDialog(myMainPanel, "You can't edit a predefined library", "Error", JOptionPane.ERROR_MESSAGE);
       return;
     }
-    
+
     final JFileChooser chooser = new SmartFileChooser();
     chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
@@ -140,7 +140,7 @@ public class LibraryManagerPreferences implements IPreferencesPage {
   }
 
   public JComponent getComponent() {
-    return myMainPanel;  
+    return myMainPanel;
   }
 
   public boolean validate() {
