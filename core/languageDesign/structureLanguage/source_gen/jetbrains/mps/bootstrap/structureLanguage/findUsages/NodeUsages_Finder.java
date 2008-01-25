@@ -7,9 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
-
 import java.util.Set;
-
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
@@ -36,7 +34,7 @@ public class NodeUsages_Finder extends GeneratedFinder {
 
   public void doFind(SearchQuery searchQuery, SearchResults results) {
     Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(searchQuery.getNodePointer().getNode(), searchQuery.getScope());
-    for (SReference reference : resRefs) {
+    for(SReference reference : resRefs) {
       results.getSearchResults().add(new SearchResult(new SNodePointer(reference.getSourceNode()), "Node Usages"));
     }
     results.getSearchedNodePointers().add(new SNodePointer(searchQuery.getNodePointer().getNode()));

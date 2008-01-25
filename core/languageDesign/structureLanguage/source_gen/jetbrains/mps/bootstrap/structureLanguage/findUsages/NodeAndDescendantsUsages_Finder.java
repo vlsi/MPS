@@ -7,10 +7,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
-
 import java.util.Set;
 import java.util.HashSet;
-
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -39,14 +37,14 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
     Set<SNode> nodes = new HashSet<SNode>();
     results.getSearchedNodePointers().add(new SNodePointer(searchQuery.getNodePointer().getNode()));
     nodes.add(searchQuery.getNodePointer().getNode());
-    for (SNode node : searchQuery.getNodePointer().getNode().allChildren()) {
+    for(SNode node : searchQuery.getNodePointer().getNode().allChildren()) {
       results.getSearchedNodePointers().add(new SNodePointer(node));
       nodes.add(node);
     }
     // null
     Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, searchQuery.getScope(), null);
-    for (SReference reference : resRefs) {
-      if (!(nodes.contains(reference.getSourceNode()))) {
+    for(SReference reference : resRefs) {
+      if(!(nodes.contains(reference.getSourceNode()))) {
         results.getSearchResults().add(new SearchResult(new SNodePointer(reference.getSourceNode()), "Node Descendants Usages"));
       }
     }

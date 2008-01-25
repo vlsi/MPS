@@ -8,9 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
-
 import java.util.List;
-
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.smodel.SNodePointer;
@@ -27,7 +25,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration");
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
   }
 
   public boolean isVisible() {
@@ -36,7 +34,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
 
   public void doFind(SearchQuery searchQuery, SearchResults results) {
     List<SNode> resNodes = FindUsagesManager.getInstance().findInstances(searchQuery.getNodePointer().getNode(), searchQuery.getScope());
-    for (SNode node : resNodes) {
+    for(SNode node : resNodes) {
       results.getSearchResults().add(new SearchResult(new SNodePointer(node), "Concept Instances"));
     }
     results.getSearchedNodePointers().add(new SNodePointer(searchQuery.getNodePointer().getNode()));

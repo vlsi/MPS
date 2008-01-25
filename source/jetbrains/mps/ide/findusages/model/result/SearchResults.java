@@ -38,6 +38,14 @@ public class SearchResults implements IExternalizableComponent {
     return mySearchResults;
   }
 
+  public void remove(SNode node) {
+    for (SearchResult result : new ArrayList<SearchResult>(mySearchResults)) {
+      if (result.getNode() == node) {
+        mySearchResults.remove(result);
+      }
+    }
+  }
+
   public List<SearchResult> getAliveResults() {
     List<SearchResult> alive = new ArrayList<SearchResult>();
     for (SearchResult result : mySearchResults) {
