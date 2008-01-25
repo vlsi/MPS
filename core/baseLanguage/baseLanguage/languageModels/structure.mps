@@ -2423,5 +2423,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1201183863028">
     <property name="name" value="TypeDerivable" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201251689845">
+    <property name="name" value="Test" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+  </node>
 </model>
 
