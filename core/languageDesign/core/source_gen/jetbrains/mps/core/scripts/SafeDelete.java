@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import java.util.Map;
@@ -93,7 +95,8 @@ public class SafeDelete extends AbstractLoggableRefactoring {
       IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
       IAdaptiveProgressMonitor monitor = projectFrame.createAdaptiveProgressMonitor();
       NodeUsages_Finder finder = new NodeUsages_Finder();
-      SearchResults searchResults = finder.find(searchQuery);
+      IResultProvider resultProvider = TreeBuilder.forFinder(finder);
+      SearchResults searchResults = resultProvider.getResults(searchQuery, monitor);
       List<SearchResult> aliveResults = searchResults.getAliveResults();
       if(!(aliveResults.isEmpty())) {
         return searchResults;

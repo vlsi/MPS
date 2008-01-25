@@ -3,7 +3,10 @@ package jetbrains.mps.smodel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -35,27 +38,57 @@ public class GenericRefactoring {
     myRefactoring = refactoring;
   }
 
-  public void execute(@NotNull ActionContext context) {
-    RefactoringContext refactoringContext = new RefactoringContext();
+  public void execute(final @NotNull ActionContext context) {
+    final RefactoringContext refactoringContext = new RefactoringContext();
     boolean success = myRefactoring.askForInfo(context, refactoringContext);
     if (!success) return;
     if (myRefactoring.showsAffectedNodes()) {
-      SearchResults usages = myRefactoring.getAffectedNodes(context, refactoringContext);
-      if (usages != null) {
-        refactoringContext.setUsages(usages);
-        NewRefactoringView.showRefactoringView(this, context, refactoringContext);
-      } else {
-        doExecute(context, refactoringContext);
-      }
+      final SearchResults[] usagesContainer = new SearchResults[]{null};
+
+      Thread thread = new Thread() {
+        public void run() {
+          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+            public void run() {
+              usagesContainer[0] = myRefactoring.getAffectedNodes(context, refactoringContext);
+            }
+          });
+          ThreadUtils.runInUIThreadAndWait(new Runnable() {
+            public void run() {
+              SearchResults usages = usagesContainer[0];
+              if (usages != null) {
+                refactoringContext.setUsages(usages);
+                NewRefactoringView.showRefactoringView(GenericRefactoring.this, context, refactoringContext);
+              } else {
+                doExecute(context, refactoringContext);
+              }
+            }
+          });
+        }
+      };
+      thread.start();
+      /*  try {
+        thread.join();
+      } catch (InterruptedException ex) {
+        
+      }*/
+
+
     } else {
       doExecute(context, refactoringContext);
     }
   }
 
-  public void doExecute(@NotNull ActionContext context, @NotNull RefactoringContext refactoringContext) {
+  public void doExecute(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
     refactoringContext.setRefactoring(myRefactoring);
-    myRefactoring.doRefactor(context, refactoringContext);
+
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        myRefactoring.doRefactor(context, refactoringContext);
+      }
+    });
+
     SModelDescriptor modelDescriptor = context.getModel();
+
     if (modelDescriptor == null) return;
     SModel model = modelDescriptor.getSModel();
 
