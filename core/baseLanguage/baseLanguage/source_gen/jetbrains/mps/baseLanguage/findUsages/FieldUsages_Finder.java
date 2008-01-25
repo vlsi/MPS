@@ -59,7 +59,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
         IScope _scope;
         _scope = searchQuery.getScope();
         // TODO: check for right concept
-        boolean rightConcept = true;
+        boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.VariableDeclaration");
         if (!(rightConcept)) {
           FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
         } else {
@@ -99,7 +99,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
         IScope _scope;
         _scope = searchQuery.getScope();
         // TODO: check for right concept
-        boolean rightConcept = true;
+        boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.core.structure.BaseConcept");
         if (!(rightConcept)) {
           FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
         } else {
