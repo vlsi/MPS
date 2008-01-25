@@ -22,20 +22,19 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeWrapper implements IWrapper {
-  private static final boolean USE_NEW_WRAPPERS = false;
   private static Logger LOG = Logger.getLogger(NodeWrapper.class);
 
   private SNode myNode;
 
   public static NodeWrapper createNodeWrapper(SNode node) {
-    if (USE_NEW_WRAPPERS) {
-      return new NodeWrapper_new(node);
+    if ("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable".equals(node.getConceptFqName())) {
+      return new VariableWrapper(node);
     } else {
       return new NodeWrapper(node);
     }
   }
 
-  public NodeWrapper(SNode node) {
+  protected NodeWrapper(SNode node) {
     if (node == null) {
       LOG.errorWithTrace("a node in wrapper is null");
     }
@@ -47,7 +46,7 @@ public class NodeWrapper implements IWrapper {
   }
 
   public boolean isVariable() {
-    return "jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable".equals(myNode.getConceptFqName());
+    return false;
   }
 
   public boolean isConcrete() {
@@ -78,9 +77,6 @@ public class NodeWrapper implements IWrapper {
   }
 
   public RuntimeTypeVariable getVariable() {
-    if (isVariable()) {
-      return (RuntimeTypeVariable) BaseAdapter.fromNode(myNode);
-    }
     return null;
   }
 

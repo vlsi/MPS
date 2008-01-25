@@ -79,7 +79,7 @@ public class SubtypingManager {
     if (equationManager != null && subRepresentator instanceof NodeWrapper) {
       NodeWrapper subtypeNodeWrapper = (NodeWrapper) subRepresentator;
       SModel typesModel = getRuntimeTypesModel();
-      NodeWrapper representatorCopy = new NodeWrapper(CopyUtil.copy(subtypeNodeWrapper.getNode(), typesModel));
+      NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(subtypeNodeWrapper.getNode(), typesModel));
       subRepresentator = equationManager.expandWrapper(null, representatorCopy, typesModel);
     }
 
