@@ -147,7 +147,8 @@ public class RuleManager {
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(clonedOutputNode);
 
-    for (SNode childOutputNode : clonedOutputNode.getChildren()) {
+    List<SNode> children = new ArrayList<SNode>(clonedOutputNode.getChildren());
+    for (SNode childOutputNode : children) {
       SNode childInputNode = myGenerator.findInputNodeById(childOutputNode.getSNodeId());
       applyReductionRules(childInputNode, childOutputNode);
     }
