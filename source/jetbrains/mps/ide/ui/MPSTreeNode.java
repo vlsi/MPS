@@ -5,6 +5,7 @@ import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.Condition;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -167,8 +168,8 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   @Nullable
-  public final <T> MPSTreeNode findDescendantWith(Object userObject, Comparator<T> comparator) {
-    if (comparator.compare((T) getUserObject(), (T) userObject) == 0) return this;
+  public final <T> MPSTreeNode findDescendantWith(Condition<T> condition) {
+    if (condition.met((T) getUserObject())) return this;
     if (isInitialized()) {
       for (int i = 0; i < getChildCount(); i++) {
         MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findDescendantWith(userObject);
