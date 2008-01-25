@@ -4,11 +4,11 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -20,6 +20,10 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
 
   public  _FocusPolicy_Applicable(SNode node) {
     super(node);
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1198590333973(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -44,10 +48,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   }
 
   private static void setupLabel_FocusPolicyApplicableCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1198590333973(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 
 

@@ -156,6 +156,35 @@ public class EditorContext {
     });
   }
 
+  public void selectBeforeLater(final SNode node) {
+    CommandProcessor.instance().invokeLater(new Runnable() {
+      public void run() {
+        getNodeEditorComponent().selectNode(node);
+        EditorCell cell = getNodeEditorComponent().getSelectedCell();
+
+        if (cell instanceof EditorCell_Label) {
+          EditorCell_Label label = (EditorCell_Label) cell;
+          label.getTextLine().home();
+        }
+      }
+    });
+  }
+
+  public void selectAfterLater(final SNode node) {
+    CommandProcessor.instance().invokeLater(new Runnable() {
+      public void run() {
+        getNodeEditorComponent().selectNode(node);
+        EditorCell cell = getNodeEditorComponent().getSelectedCell();
+
+        if (cell instanceof EditorCell_Label) {
+          EditorCell_Label label = (EditorCell_Label) cell;
+          label.getTextLine().end();
+        }
+
+      }
+    });
+  }
+
   public void selectLaterWRTFocusPolicy(final SNode node) {
     selectLaterWRTFocusPolicy(node, true);
   }
@@ -174,6 +203,8 @@ public class EditorContext {
       }
     });
   }
+
+
 
   public void selectAndSetCaretLater(final SNode node, final int position) {
     CommandProcessor.instance().invokeLater(new Runnable() {

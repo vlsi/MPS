@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -21,6 +21,10 @@ public class _OpenTag extends AbstractCellProvider {
     super(node);
   }
 
+  public static Color _QueryFunction_Color_1177490702142(SNode node, EditorContext editorContext) {
+    return _EditorUtil.grayIfNotSelectable(node);
+  }
+
   private static void setupBasic_CellModel_ModelAccess(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176716878596");
     editorCell.setDrawBorder(true);
@@ -29,10 +33,6 @@ public class _OpenTag extends AbstractCellProvider {
 
   private static void setupLabel_CellModel_ModelAccess(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-  }
-
-  public static Color _QueryFunction_Color_1177490702142(SNode node, EditorContext editorContext) {
-    return _EditorUtil.grayIfNotSelectable(node);
   }
 
 

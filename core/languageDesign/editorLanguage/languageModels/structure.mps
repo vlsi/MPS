@@ -9,7 +9,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.core" />
-  <maxImportIndex value="39" />
+  <maxImportIndex value="40" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
@@ -23,6 +23,7 @@
   <import index="37" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <import index="38" modelUID="javax.swing@java_stub" version="-1" />
   <import index="39" modelUID="java.awt@java_stub" version="-1" />
+  <import index="40" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1071666914219">
     <property name="name" value="ConceptEditorDeclaration" />
     <property name="iconPath" value="${language_descriptor}\icons\editor.png" />
@@ -2697,6 +2698,79 @@
       <property name="role" value="body" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201265905111">
+    <property name="name" value="SelectLaterOperation" />
+    <property name="package" value="SNode" />
+    <link role="extends" targetNodeId="40.1138411891628" resolveInfo="SNodeOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201266028598">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="editorContext" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="4.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201266036224">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="selectLaterParameter" />
+      <link role="target" targetNodeId="1201266127262" resolveInfo="SelectLaterParameter" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201269239863">
+      <property name="value" value="select later" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201269290000">
+      <link role="conceptPropertyDeclaration" targetNodeId="40.1138763241883" resolveInfo="applicable_to_node" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201266127262">
+    <property name="package" value="SNode" />
+    <property name="name" value="SelectLaterParameter" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201266139935">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201268783309">
+    <property name="package" value="SNode" />
+    <property name="name" value="SelectPositionParameter" />
+    <link role="extends" targetNodeId="1201266127262" resolveInfo="SelectLaterParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201268911190">
+      <property name="value" value="position=" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1201268881975">
+      <property name="name" value="position" />
+      <link role="dataType" targetNodeId="1201268793545" resolveInfo="SelectPoisition" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1201268793545">
+    <property name="package" value="SNode" />
+    <property name="name" value="SelectPosition" />
+    <link role="memberDataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1201268793546">
+      <property name="internalValue" value="before" />
+      <property name="externalValue" value="before" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1201268803781">
+      <property name="internalValue" value="after" />
+      <property name="externalValue" value="after" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201270864927">
+    <property name="package" value="SNode" />
+    <property name="name" value="CaretPositionParameter" />
+    <link role="extends" targetNodeId="1201266127262" resolveInfo="SelectLaterParameter" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201270907764">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="position" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="4.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201270898074">
+      <property name="value" value="caret position=" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

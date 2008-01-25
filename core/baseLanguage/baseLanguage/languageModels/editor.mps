@@ -2649,11 +2649,12 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1197547619396">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197547619397">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197547645217">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197547656219">
-                  <link role="baseMethodDeclaration" targetNodeId="21.~EditorContext.selectLater(jetbrains.mps.smodel.SNode):void" resolveInfo="selectLater" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1197547645218" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197547669828">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201270233816">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201270235224">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectLaterOperation" id="1201270237040">
+                    <node role="editorContext" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1201270239933" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201270233817">
                     <link role="variableDeclaration" targetNodeId="1191842879659" resolveInfo="castExpression" />
                   </node>
                 </node>
