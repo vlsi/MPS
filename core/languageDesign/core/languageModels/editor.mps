@@ -6,16 +6,16 @@
       <refactoring refactoringClass="jetbrains.mps.core.scripts.MoveNodes" />
       <moveMap>
         <entry>
-          <key modelUID="jetbrains.mps.core.editor" nodeId="1198258386541" />
-          <value modelUID="jetbrains.mps.baseLanguage.editor" nodeId="1198595398956" />
-        </entry>
-        <entry>
           <key modelUID="jetbrains.mps.core.editor" nodeId="1198258356073" />
           <value modelUID="jetbrains.mps.baseLanguage.editor" nodeId="1198595398954" />
         </entry>
         <entry>
           <key modelUID="jetbrains.mps.core.editor" nodeId="1198258368534" />
           <value modelUID="jetbrains.mps.baseLanguage.editor" nodeId="1198595398955" />
+        </entry>
+        <entry>
+          <key modelUID="jetbrains.mps.core.editor" nodeId="1198258386541" />
+          <value modelUID="jetbrains.mps.baseLanguage.editor" nodeId="1198595398956" />
         </entry>
       </moveMap>
       <conceptFeatureMap />

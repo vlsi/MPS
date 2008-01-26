@@ -11334,15 +11334,10 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197028135780">
         <link role="relationDeclaration" targetNodeId="17.1197027771414" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197030437396">
-        <property name="text" value="new" />
-        <property name="selectable" value="false" />
-        <property name="fontSize" value="8" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197028139380">
         <property name="text" value="." />
         <property name="selectable" value="false" />
-        <property name="layoutConstraint" value="punctuation" />
+        <property name="drawBorder" value="true" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197028151463">
         <link role="relationDeclaration" targetNodeId="17.1197027833540" />

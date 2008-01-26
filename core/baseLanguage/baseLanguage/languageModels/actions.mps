@@ -2932,10 +2932,10 @@
             </node>
           </node>
           <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1197028981050">
-            <property name="text" value="new." />
+            <property name="text" value="." />
           </node>
           <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1197028992560">
-            <property name="text" value="operation" />
+            <property name="text" value="new &quot;.&quot; operation" />
           </node>
         </node>
       </node>

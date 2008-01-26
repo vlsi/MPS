@@ -905,11 +905,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "new.";
+          return ".";
         }
 
         public String getDescriptionText(String pattern) {
-          return "operation";
+          return "new \".\" operation";
         }
 
       });
