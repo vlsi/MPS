@@ -4320,6 +4320,7 @@
     <link role="applicableConcept" targetNodeId="2.1073389214265" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapItem" id="1146852828959">
       <property name="description" value="toggle cell focus policy [attracts focus]/[no attraction]" />
+      <property name="showInPopup" value="true" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1146852828960">
         <property name="keycode" value="VK_F" />
         <property name="modifiers" value="ctrl+shift" />
@@ -4384,6 +4385,7 @@
     </node>
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapItem" id="1146853272056">
       <property name="description" value="toggle cell focus policy [first editable]/[no attraction]" />
+      <property name="showInPopup" value="true" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1146853272057">
         <property name="keycode" value="VK_F" />
         <property name="modifiers" value="ctrl+alt+shift" />
@@ -4448,6 +4450,7 @@
     </node>
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapItem" id="1167849503076">
       <property name="description" value="toggle [selectable]/[not selectable]" />
+      <property name="showInPopup" value="true" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1167849503077">
         <property name="keycode" value="VK_S" />
         <property name="modifiers" value="ctrl+alt" />

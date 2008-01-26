@@ -18,6 +18,12 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -25,12 +31,6 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
-import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyValues;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
@@ -293,6 +293,20 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public static class CellActionMapDeclaration_name_cellMenu extends AbstractCellMenuPart_PropertyValues {
+
+    public  CellActionMapDeclaration_name_cellMenu() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> names = ListOperations.<String>createList();
+      if((SLinkOperations.getTarget(node, "applicableConcept", false) != null)) {
+        ListOperations.addElement(names, SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name") + "_Actions");
+      }
+      return names;
+    }
+
+}
   public static class _Inline37 extends AbstractCellProvider {
 
     public  _Inline37() {
@@ -386,20 +400,6 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createSeparatorCell(EditorContext context) {
       return super.createSeparatorCell(context);
-    }
-
-}
-  public static class CellActionMapDeclaration_name_cellMenu extends AbstractCellMenuPart_PropertyValues {
-
-    public  CellActionMapDeclaration_name_cellMenu() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> names = ListOperations.<String>createList();
-      if((SLinkOperations.getTarget(node, "applicableConcept", false) != null)) {
-        ListOperations.addElement(names, SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name") + "_Actions");
-      }
-      return names;
     }
 
 }

@@ -26,7 +26,7 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
   public static class EditorCellModel_KeyMap_Action0 extends EditorCellKeyMapAction {
 
     public  EditorCellModel_KeyMap_Action0() {
-      this.setShownInPopupMenu(false);
+      this.setShownInPopupMenu(true);
     }
 
     public String getDescriptionText() {
@@ -74,7 +74,7 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
   public static class EditorCellModel_KeyMap_Action1 extends EditorCellKeyMapAction {
 
     public  EditorCellModel_KeyMap_Action1() {
-      this.setShownInPopupMenu(false);
+      this.setShownInPopupMenu(true);
     }
 
     public String getDescriptionText() {
@@ -122,7 +122,7 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
   public static class EditorCellModel_KeyMap_Action2 extends EditorCellKeyMapAction {
 
     public  EditorCellModel_KeyMap_Action2() {
-      this.setShownInPopupMenu(false);
+      this.setShownInPopupMenu(true);
     }
 
     public String getDescriptionText() {
