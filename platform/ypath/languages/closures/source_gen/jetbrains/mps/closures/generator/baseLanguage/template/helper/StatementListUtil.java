@@ -45,6 +45,12 @@ public class StatementListUtil {
     if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForStatement")) {
       return true;
     }
+    if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForeachStatement")) {
+      return true;
+    }
+    if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.SwitchStatement")) {
+      return true;
+    }
     if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
       return true;
     }

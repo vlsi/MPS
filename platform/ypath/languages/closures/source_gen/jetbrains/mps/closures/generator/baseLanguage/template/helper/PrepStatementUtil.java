@@ -55,6 +55,9 @@ public class PrepStatementUtil {
     if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForStatement")) {
       this.prepForStatement(stmt);
     } else
+    if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForeachStatement")) {
+      this.prepForeachStatement(stmt);
+    } else
     if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
       this.prepIfStatement(stmt);
     } else
@@ -71,11 +74,17 @@ public class PrepStatementUtil {
     int beginLabel = this.ctx.label;
     this.ctx.incrementLabel();
     int blockLabel = this.ctx.label;
-    this.prepStatementList(SLinkOperations.getTarget(wstmt, "body", true));
     PrepStatementUtil.putPrepData(SLinkOperations.getTarget(wstmt, "body", true), new Integer[]{blockLabel,beginLabel}, this.generator);
+    this.prepStatementList(SLinkOperations.getTarget(wstmt, "body", true));
     int endLabel = this.ctx.label + 1;
     if((SNodeOperations.getNextSibling(wstmt) != null) && !(StatementListUtil.isControlStatement(SNodeOperations.getNextSibling(wstmt)))) {
       this.ctx.incrementLabel();
+    } else
+    if((SNodeOperations.getNextSibling(wstmt) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(wstmt, null, false, false), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(SNodeOperations.getParent(wstmt, null, false, false), this.generator);
+      if(parentLabels != null) {
+        endLabel = parentLabels[parentLabels.length - 1];
+      }
     }
     PrepStatementUtil.putPrepData(wstmt, new Integer[]{beginLabel,blockLabel,endLabel}, this.generator);
   }
@@ -83,13 +92,19 @@ public class PrepStatementUtil {
   public void prepDoWhileStatement(SNode dwstmt) {
     this.ctx.incrementLabel();
     int beginLabel = this.ctx.label;
-    this.prepStatementList(SLinkOperations.getTarget(dwstmt, "body", true));
     this.ctx.incrementLabel();
     int condLabel = this.ctx.label;
     PrepStatementUtil.putPrepData(SLinkOperations.getTarget(dwstmt, "body", true), new Integer[]{beginLabel,condLabel}, this.generator);
+    this.prepStatementList(SLinkOperations.getTarget(dwstmt, "body", true));
     int endLabel = this.ctx.label + 1;
     if((SNodeOperations.getNextSibling(dwstmt) != null) && !(StatementListUtil.isControlStatement(SNodeOperations.getNextSibling(dwstmt)))) {
       this.ctx.incrementLabel();
+    } else
+    if((SNodeOperations.getNextSibling(dwstmt) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(dwstmt, null, false, false), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(SNodeOperations.getParent(dwstmt, null, false, false), this.generator);
+      if(parentLabels != null) {
+        endLabel = parentLabels[parentLabels.length - 1];
+      }
     }
     PrepStatementUtil.putPrepData(dwstmt, new Integer[]{beginLabel,condLabel,endLabel}, this.generator);
   }
@@ -103,15 +118,45 @@ public class PrepStatementUtil {
     // ctx.incrementLabel()
     this.ctx.incrementLabel();
     int blockLabel = this.ctx.label;
-    this.prepStatementList(SLinkOperations.getTarget(fstmt, "body", true));
     this.ctx.incrementLabel();
     int postLabel = this.ctx.label;
     PrepStatementUtil.putPrepData(SLinkOperations.getTarget(fstmt, "body", true), new Integer[]{blockLabel,postLabel}, this.generator);
+    this.prepStatementList(SLinkOperations.getTarget(fstmt, "body", true));
     int endLabel = this.ctx.label + 1;
     if((SNodeOperations.getNextSibling(fstmt) != null) && !(StatementListUtil.isControlStatement(SNodeOperations.getNextSibling(fstmt)))) {
       this.ctx.incrementLabel();
+    } else
+    if((SNodeOperations.getNextSibling(fstmt) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(fstmt, null, false, false), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(SNodeOperations.getParent(fstmt, null, false, false), this.generator);
+      if(parentLabels != null) {
+        endLabel = parentLabels[parentLabels.length - 1];
+      }
     }
     PrepStatementUtil.putPrepData(fstmt, new Integer[]{beginLabel,condLabel,blockLabel,postLabel,endLabel}, this.generator);
+  }
+
+  public void prepForeachStatement(SNode fstmt) {
+    this.ctx.incrementLabel();
+    int beginLabel = this.ctx.label;
+    this.prepLocalVariableDeclaration(SLinkOperations.getTarget(fstmt, "variable", true));
+    this.ctx.incrementLabel();
+    int condLabel = this.ctx.label;
+    // ctx.incrementLabel()
+    this.ctx.incrementLabel();
+    int blockLabel = this.ctx.label;
+    PrepStatementUtil.putPrepData(SLinkOperations.getTarget(fstmt, "body", true), new Integer[]{blockLabel,condLabel}, this.generator);
+    this.prepStatementList(SLinkOperations.getTarget(fstmt, "body", true));
+    int endLabel = this.ctx.label + 1;
+    if((SNodeOperations.getNextSibling(fstmt) != null) && !(StatementListUtil.isControlStatement(SNodeOperations.getNextSibling(fstmt)))) {
+      this.ctx.incrementLabel();
+    } else
+    if((SNodeOperations.getNextSibling(fstmt) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(fstmt, null, false, false), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(SNodeOperations.getParent(fstmt, null, false, false), this.generator);
+      if(parentLabels != null) {
+        endLabel = parentLabels[parentLabels.length - 1];
+      }
+    }
+    PrepStatementUtil.putPrepData(fstmt, new Integer[]{beginLabel,condLabel,blockLabel,endLabel}, this.generator);
   }
 
   private void prepIfStatement(SNode ifstmt) {
@@ -119,33 +164,33 @@ public class PrepStatementUtil {
     int beginLabel = this.ctx.label;
     this.ctx.incrementLabel();
     int ifTrueLabel = this.ctx.label;
-    this.prepStatementList(SLinkOperations.getTarget(ifstmt, "ifTrue", true));
-    Integer[] trueLabels = new Integer[]{ifTrueLabel,-1};
-    PrepStatementUtil.putPrepData(SLinkOperations.getTarget(ifstmt, "ifTrue", true), trueLabels, this.generator);
     int ifFalseLabel = this.ctx.label + 1;
-    Integer[] falseLabels = null;
     if((SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true) != null)) {
       if(!(StatementListUtil.isControlStatement(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true)))) {
         this.ctx.incrementLabel();
       }
-      if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.StatementList")) {
-        this.prepStatementList(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true));
-        falseLabels = new Integer[]{ifFalseLabel,-1};
-        PrepStatementUtil.putPrepData(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), falseLabels, this.generator);
-      } else
-      {
+      if(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.StatementList"))) {
         this.prepStatement(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true));
       }
     }
-    int endLabel = this.ctx.label + 1;
+    this.ctx.incrementLabel();
+    int endLabel = this.ctx.label;
     if((SNodeOperations.getNextSibling(ifstmt) != null) && !(StatementListUtil.isControlStatement(SNodeOperations.getNextSibling(ifstmt)))) {
       this.ctx.incrementLabel();
+    } else
+    if((SNodeOperations.getNextSibling(ifstmt) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(ifstmt, null, false, false), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(SNodeOperations.getParent(ifstmt, null, false, false), this.generator);
+      if(parentLabels != null) {
+        endLabel = parentLabels[parentLabels.length - 1];
+      }
+    }
+    PrepStatementUtil.putPrepData(SLinkOperations.getTarget(ifstmt, "ifTrue", true), new Integer[]{ifTrueLabel,endLabel}, this.generator);
+    this.prepStatementList(SLinkOperations.getTarget(ifstmt, "ifTrue", true));
+    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      PrepStatementUtil.putPrepData(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), new Integer[]{ifFalseLabel,endLabel}, this.generator);
+      this.prepStatementList(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true));
     }
     PrepStatementUtil.putPrepData(ifstmt, new Integer[]{beginLabel,ifTrueLabel,ifFalseLabel,endLabel}, this.generator);
-    trueLabels[1] = endLabel;
-    if(falseLabels != null) {
-      falseLabels[1] = endLabel;
-    }
   }
 
   private void prepLocalvariableDeclarationStatement(SNode lstmt) {
@@ -162,10 +207,15 @@ public class PrepStatementUtil {
   public void prepYieldStatement(SNode ystmt) {
     this.ctx.incrementLabel();
     int beginLabel = this.ctx.label;
-    this.ctx.incrementLabel();
     int endLabel = this.ctx.label + 1;
     if((SNodeOperations.getNextSibling(ystmt) != null) && !(StatementListUtil.isControlStatement(SNodeOperations.getNextSibling(ystmt)))) {
       this.ctx.incrementLabel();
+    } else
+    if((SNodeOperations.getNextSibling(ystmt) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(ystmt, null, false, false), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      Integer[] parentLabels = (Integer[])PrepStatementUtil.getPrepData(SNodeOperations.getParent(ystmt, null, false, false), this.generator);
+      if(parentLabels != null) {
+        endLabel = parentLabels[parentLabels.length - 1];
+      }
     }
     PrepStatementUtil.putPrepData(ystmt, new Integer[]{beginLabel,endLabel}, this.generator);
   }
