@@ -7126,5 +7126,57 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201372666943">
+    <property name="package" value="property" />
+    <link role="concept" targetNodeId="1.1201372346056" resolveInfo="PropertyImplementation" />
+    <link role="defaultConcreteConcept" targetNodeId="1.1201372606839" resolveInfo="DefaultPropertyImplementation" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201372666944">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201372666945" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201374011082">
+    <property name="package" value="property.defaultImplementation" />
+    <link role="concept" targetNodeId="1.1201373269664" resolveInfo="AccessorPolicy" />
+    <link role="defaultConcreteConcept" targetNodeId="1.1201373970107" resolveInfo="OnlyGetter" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201374011083">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201374011084" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201375204863">
+    <property name="package" value="property" />
+    <link role="concept" targetNodeId="1.1201370618622" resolveInfo="Property" />
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1201386039238">
+      <link role="applicableProperty" targetNodeId="2.1156235010670" resolveInfo="alias" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1201386042317">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201386042318">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201386045297">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201386047674">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1201386051989">
+                <link role="property" targetNodeId="1.1201371481316" resolveInfo="propertyName" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertyGetter_FunctionParm_node" id="1201386045298" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201375204864">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201375204865">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201375213647">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201375312860">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1201375322691">
+              <link role="concept" targetNodeId="1.1146644602865" resolveInfo="PublicVisibility" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201375216931">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1201375221434">
+                <link role="link" targetNodeId="1.1178549979242" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1201375213648" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

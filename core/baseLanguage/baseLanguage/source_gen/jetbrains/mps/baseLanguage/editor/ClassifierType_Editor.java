@@ -137,7 +137,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   public EditorCell createParameterList(EditorContext context, SNode node) {
     if(this.myParameterListHandler_parameterList_ == null) {
-      this.myParameterListHandler_parameterList_ = new ClassifierType_Editor._RefNodeListHandler49(node, "parameter", context);
+      this.myParameterListHandler_parameterList_ = new ClassifierType_Editor._RefNodeListHandler50(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
     ClassifierType_Editor.setupBasic_ParameterList(editorCell, node, context);
@@ -312,9 +312,9 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler49 extends RefNodeListHandler {
+  public static class _RefNodeListHandler50 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler49(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler50(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -151,6 +151,12 @@
       <property name="role" value="staticInnerClassifiers" />
       <link role="target" targetNodeId="1107461130800" resolveInfo="Classifier" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201374247313">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="property" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1201370618622" resolveInfo="Property" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068390468204">
     <property name="name" value="MethodDeclaration" />
@@ -2426,6 +2432,83 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201251689845">
     <property name="name" value="Test" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201370618622">
+    <property name="name" value="Property" />
+    <property name="package" value="property" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201371521209">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="type" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201372378714">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="propertyImplementation" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1201372346056" resolveInfo="PropertyImplementation" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1201371481316">
+      <property name="name" value="propertyName" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1201371390540">
+      <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201372346056">
+    <property name="package" value="property" />
+    <property name="name" value="PropertyImplementation" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201372354479">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201372606839">
+    <property name="package" value="property.defaultImplementation" />
+    <property name="name" value="DefaultPropertyImplementation" />
+    <link role="extends" targetNodeId="1201372346056" resolveInfo="PropertyImplementation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201373662978">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="accessorPolicy" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1201373269664" resolveInfo="AccessorPolicy" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201372777394">
+      <property name="value" value="default" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201373269664">
+    <property name="package" value="property.defaultImplementation" />
+    <property name="name" value="AccessorPolicy" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201373644352">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201373970107">
+    <property name="package" value="property.defaultImplementation" />
+    <property name="name" value="OnlyGetter" />
+    <link role="extends" targetNodeId="1201373269664" resolveInfo="AccessorPolicy" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201373990998">
+      <property name="value" value="getter" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201385106094">
+    <property name="package" value="property" />
+    <property name="name" value="PropertyReference" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201385237847">
+      <property name="role" value="property" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1201370618622" resolveInfo="Property" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1201385118486">
+      <link role="intfc" targetNodeId="1197027803184" resolveInfo="IOperation" />
+    </node>
   </node>
 </model>
 

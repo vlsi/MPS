@@ -342,7 +342,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList_ == null) {
-      this.myAnnotationListHandler_annotationList_ = new StaticFieldDeclaration_Editor._RefNodeListHandler34(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList_ = new StaticFieldDeclaration_Editor._RefNodeListHandler35(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
     StaticFieldDeclaration_Editor.setupBasic_AnnotationList(editorCell, node, context);
@@ -355,7 +355,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList1(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList1_ == null) {
-      this.myAnnotationListHandler_annotationList1_ = new StaticFieldDeclaration_Editor._RefNodeListHandler35(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList1_ = new StaticFieldDeclaration_Editor._RefNodeListHandler36(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
     StaticFieldDeclaration_Editor.setupBasic_AnnotationList1(editorCell, node, context);
@@ -453,9 +453,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler34 extends RefNodeListHandler {
+  public static class _RefNodeListHandler35 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler34(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler35(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -496,9 +496,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler35 extends RefNodeListHandler {
+  public static class _RefNodeListHandler36 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler35(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler36(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

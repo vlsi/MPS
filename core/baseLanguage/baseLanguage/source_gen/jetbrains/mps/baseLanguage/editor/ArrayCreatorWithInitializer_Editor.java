@@ -122,7 +122,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
   public EditorCell createInitValueList(EditorContext context, SNode node) {
     if(this.myInitValueListHandler_initValueList_ == null) {
-      this.myInitValueListHandler_initValueList_ = new ArrayCreatorWithInitializer_Editor._RefNodeListHandler51(node, "initValue", context);
+      this.myInitValueListHandler_initValueList_ = new ArrayCreatorWithInitializer_Editor._RefNodeListHandler52(node, "initValue", context);
     }
     EditorCell_Collection editorCell = this.myInitValueListHandler_initValueList_.createCells(context, new CellLayout_Horizontal(), false);
     ArrayCreatorWithInitializer_Editor.setupBasic_InitValueList(editorCell, node, context);
@@ -162,9 +162,9 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler51 extends RefNodeListHandler {
+  public static class _RefNodeListHandler52 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler51(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler52(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -227,8 +227,8 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ArrayCreatorWithInitializer_Editor._RefNodeListHandler51.setupBasic_ConstantCell2(editorCell, node, context);
-      ArrayCreatorWithInitializer_Editor._RefNodeListHandler51.setupLabel_ConstantCell2(editorCell, node, context);
+      ArrayCreatorWithInitializer_Editor._RefNodeListHandler52.setupBasic_ConstantCell2(editorCell, node, context);
+      ArrayCreatorWithInitializer_Editor._RefNodeListHandler52.setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

@@ -11,11 +11,11 @@ import java.util.List;
 
 public class BaseMethodCall extends Expression implements TypeDerivable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodCall";
-  public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
-  public static String ACTUAL_ARGUMENT = "actualArgument";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
+  public static String ACTUAL_ARGUMENT = "actualArgument";
 
   public  BaseMethodCall(SNode node) {
     super(node);
@@ -29,6 +29,30 @@ public class BaseMethodCall extends Expression implements TypeDerivable {
     return BaseMethodCall.newInstance(sm, false);
   }
 
+
+  public String getShortDescription() {
+    return this.getProperty(BaseMethodCall.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(BaseMethodCall.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(BaseMethodCall.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(BaseMethodCall.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(BaseMethodCall.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(BaseMethodCall.VIRTUAL_PACKAGE, value);
+  }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
     return (BaseMethodDeclaration)this.getReferent(BaseMethodCall.BASE_METHOD_DECLARATION);
@@ -56,30 +80,6 @@ public class BaseMethodCall extends Expression implements TypeDerivable {
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, BaseMethodCall.ACTUAL_ARGUMENT, node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(BaseMethodCall.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(BaseMethodCall.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(BaseMethodCall.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(BaseMethodCall.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(BaseMethodCall.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(BaseMethodCall.VIRTUAL_PACKAGE, value);
   }
 
 }

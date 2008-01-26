@@ -291,7 +291,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList_ == null) {
-      this.myAnnotationListHandler_annotationList_ = new LocalVariableDeclaration_Editor._RefNodeListHandler26(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList_ = new LocalVariableDeclaration_Editor._RefNodeListHandler27(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
     LocalVariableDeclaration_Editor.setupBasic_AnnotationList(editorCell, node, context);
@@ -304,7 +304,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList1(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList1_ == null) {
-      this.myAnnotationListHandler_annotationList1_ = new LocalVariableDeclaration_Editor._RefNodeListHandler27(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList1_ = new LocalVariableDeclaration_Editor._RefNodeListHandler28(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
     LocalVariableDeclaration_Editor.setupBasic_AnnotationList1(editorCell, node, context);
@@ -402,9 +402,9 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler26 extends RefNodeListHandler {
+  public static class _RefNodeListHandler27 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler26(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler27(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -445,9 +445,9 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler27 extends RefNodeListHandler {
+  public static class _RefNodeListHandler28 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler27(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler28(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
