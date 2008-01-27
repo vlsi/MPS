@@ -339,7 +339,14 @@ public class RefactoringContext {
     }
     {
       Element moveMapElement = new Element(MOVE_MAP);
-      for (Entry<FullNodeId, FullNodeId> entry : myMoveMap.entrySet()) {
+      List<Entry<FullNodeId, FullNodeId>> entries = new ArrayList<Entry<FullNodeId, FullNodeId>>(myMoveMap.entrySet());
+        Collections.sort(entries,
+        new Comparator<Entry<FullNodeId, FullNodeId>>() {
+        public int compare(Entry<FullNodeId, FullNodeId> o1, Entry<FullNodeId, FullNodeId> o2) {
+          return o1.getKey().compareTo(o2.getKey()) * 10 + o1.getValue().compareTo(o2.getValue());
+        }
+      });
+      for (Entry<FullNodeId, FullNodeId> entry : entries) {
         Element entryElement = new Element(ENTRY);
         Element keyElement = new Element(KEY);
         Element valueElement = new Element(VALUE);
@@ -353,7 +360,14 @@ public class RefactoringContext {
     }
     {
       Element featureMapElement = new Element(CONCEPT_FEATURE_MAP);
-      for (Entry<ConceptFeature, ConceptFeature> entry : myConceptFeatureMap.entrySet()) {
+      List<Entry<ConceptFeature, ConceptFeature>> entries = new ArrayList<Entry<ConceptFeature, ConceptFeature>>(myConceptFeatureMap.entrySet());
+        Collections.sort(entries,
+        new Comparator<Entry<ConceptFeature, ConceptFeature>>() {
+        public int compare(Entry<ConceptFeature, ConceptFeature> o1, Entry<ConceptFeature, ConceptFeature> o2) {
+          return o1.getKey().compareTo(o2.getKey()) * 10 + o1.getValue().compareTo(o2.getValue());
+        }
+      });
+      for (Entry<ConceptFeature, ConceptFeature> entry : entries) {
         Element entryElement = new Element(ENTRY);
         Element keyElement = new Element(KEY);
         Element valueElement = new Element(VALUE);
@@ -458,7 +472,7 @@ public class RefactoringContext {
     return mySerializer.deserialize(element);
   }
 
-  public static class FullNodeId {
+  public static class FullNodeId implements Comparable<FullNodeId> {
 
     private SNodeId myNodeId;
 
@@ -479,6 +493,12 @@ public class RefactoringContext {
 
     public FullNodeId(Element element) {
       fromElement(element);
+    }
+
+    public int compareTo(FullNodeId o) {
+      int i1 = myNodeId.toString().compareTo(o.myNodeId.toString());
+      int i2 = myModelUID.toString().compareTo(o.myModelUID.toString());
+      return Math.round(Math.signum(i1) + Math.signum(i2)*10);
     }
 
     public SNodeId getNodeId() {
@@ -518,7 +538,7 @@ public class RefactoringContext {
 
   }
 
-  public static class ConceptFeature {
+  public static class ConceptFeature implements Comparable<ConceptFeature> {
     public static final String FEATURE_NAME = "featureName";
     public static final String FEATURE_KIND = "featureKind";
     public static final String CONCEPT_FQ_NAME = "conceptFQName";
@@ -535,6 +555,13 @@ public class RefactoringContext {
 
     public ConceptFeature(Element element) {
       fromElement(element);
+    }
+
+    public int compareTo(ConceptFeature o) {
+      int i1 = myConceptFQName.compareTo(o.myConceptFQName);
+      int i2 = myConceptFeatureKind.compareTo(o.myConceptFeatureKind);
+      int i3 = myFeatureName.compareTo(o.myFeatureName);
+      return Math.round(Math.signum(i1) * 100 + Math.signum(i2) * 10 + Math.signum(i3));
     }
 
     public ConceptFeatureKind getConceptFeatureKind() {
