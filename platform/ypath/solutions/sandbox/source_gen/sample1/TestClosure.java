@@ -61,104 +61,106 @@ public class TestClosure {
             return new _FunctionTypes.YieldingIterator <Integer>() {
 
               private int __CP__ = 0;
-              private int _1_foo;
-              private int _4_bar;
-              private int _11_bar;
-              private int _18_bar;
+              private int _2_foo;
+              private int _5_bar;
+              private int _12_bar;
+              private int _19_bar;
 
               protected boolean moveToNext() {
 __loop__:
                 do {
+__switch__:
                   switch (this.__CP__) {
                     case -1:
                       assert false : "Internal error";
-                    case 4:
-                      this._4_bar = 0;
+                      return false;
                     case 5:
-                      if(!(this._4_bar < 5)) {
-                        this.__CP__ = 10;
+                      this._5_bar = 0;
+                    case 6:
+                      if(!(this._5_bar < 5)) {
+                        this.__CP__ = 11;
                         break;
                       }
+                      this.__CP__ = 7;
+                      break;
+                    case 8:
+                      this._5_bar = this._5_bar + 2;
                       this.__CP__ = 6;
                       break;
-                    case 7:
-                      this._4_bar = this._4_bar + 2;
-                      this.__CP__ = 5;
-                      break;
-                    case 11:
-                      this._11_bar = 6;
                     case 12:
-                      if(!(this._11_bar < 13)) {
-                        this.__CP__ = 18;
+                      this._12_bar = 6;
+                    case 13:
+                      if(!(this._12_bar < 13)) {
+                        this.__CP__ = 19;
                         break;
                       }
+                      this.__CP__ = 14;
+                      break;
+                    case 15:
+                      this._12_bar = this._12_bar + 3;
                       this.__CP__ = 13;
                       break;
-                    case 14:
-                      this._11_bar = this._11_bar + 3;
-                      this.__CP__ = 12;
-                      break;
-                    case 18:
-                      this._18_bar = 13;
                     case 19:
-                      if(!(this._18_bar < 20)) {
-                        this.__CP__ = 23;
+                      this._19_bar = 13;
+                    case 20:
+                      if(!(this._19_bar < 20)) {
+                        this.__CP__ = 24;
                         break;
                       }
+                      this.__CP__ = 21;
+                      break;
+                    case 22:
+                      this._19_bar = this._19_bar + 1;
                       this.__CP__ = 20;
                       break;
-                    case 21:
-                      this._18_bar = this._18_bar + 1;
-                      this.__CP__ = 19;
-                      break;
-                    case 2:
-                      this.__CP__ = 3;
-                      this.yield((Integer)this._1_foo);
-                      return true;
-                    case 8:
-                      this.__CP__ = 9;
-                      this.yield((Integer)this._4_bar);
+                    case 3:
+                      this.__CP__ = 4;
+                      this.yield((Integer)this._2_foo);
                       return true;
                     case 9:
-                      this.__CP__ = 7;
-                      this.yield((Integer)this._4_bar + this._1_foo);
+                      this.__CP__ = 10;
+                      this.yield((Integer)this._5_bar);
                       return true;
-                    case 15:
-                      this.__CP__ = 16;
-                      this.yield((Integer)this._11_bar);
+                    case 10:
+                      this.__CP__ = 8;
+                      this.yield((Integer)this._5_bar + this._2_foo);
                       return true;
                     case 16:
                       this.__CP__ = 17;
-                      this.yield((Integer)this._11_bar + 1);
+                      this.yield((Integer)this._12_bar);
                       return true;
                     case 17:
-                      this.__CP__ = 14;
-                      this.yield((Integer)this._11_bar + this._1_foo);
+                      this.__CP__ = 18;
+                      this.yield((Integer)this._12_bar + 1);
                       return true;
-                    case 22:
-                      this.__CP__ = 21;
-                      this.yield((Integer)this._18_bar);
-                      return true;
-                    case 6:
-                      this.__CP__ = 8;
-                      break;
-                    case 13:
+                    case 18:
                       this.__CP__ = 15;
-                      break;
-                    case 20:
+                      this.yield((Integer)this._12_bar + this._2_foo);
+                      return true;
+                    case 23:
                       this.__CP__ = 22;
+                      this.yield((Integer)this._19_bar);
+                      return true;
+                    case 7:
+                      this.__CP__ = 9;
+                      break;
+                    case 14:
+                      this.__CP__ = 16;
+                      break;
+                    case 21:
+                      this.__CP__ = 23;
                       break;
                     case 0:
-                      this._1_foo = -1;
-                      this.__CP__ = 2;
+                      this._2_foo = -1;
+                      this.__CP__ = 3;
                       break;
-                    case 3:
-                      this._1_foo = 1;
-                      this.__CP__ = 4;
+                    case 4:
+                      this._2_foo = 1;
+                      this.__CP__ = 5;
                       break;
-                    case 10:
-                      this._1_foo = 2;
-                      this.__CP__ = 11;
+                    case 11:
+                      this._2_foo = 2;
+                      this.__CP__ = 12;
                       break;
                     default:
                       break __loop__;
@@ -193,9 +195,11 @@ __loop__:
               protected boolean moveToNext() {
 __loop__:
                 do {
+__switch__:
                   switch (this.__CP__) {
                     case -1:
                       assert false : "Internal error";
+                      return false;
                     case 5:
                       this._5_j = 2;
                     case 6:
@@ -213,7 +217,7 @@ __loop__:
                       this._1_i = 1;
                     case 2:
                       if(!(this._1_i < 10)) {
-                        this.__CP__ = 13;
+                        this.__CP__ = 12;
                         break;
                       }
                       this.__CP__ = 3;
@@ -229,12 +233,12 @@ __loop__:
                       }
                       this.__CP__ = 8;
                       break;
-                    case 12:
+                    case 11:
                       this.__CP__ = 8;
                       this.yield((Integer)this._1_i * this._5_j);
                       return true;
                     case 10:
-                      this.__CP__ = 12;
+                      this.__CP__ = 11;
                       break;
                     case 7:
                       this.__CP__ = 9;
@@ -271,51 +275,53 @@ __loop__:
             return new _FunctionTypes.YieldingIterator <Integer>() {
 
               private int __CP__ = 0;
-              private int _1_i;
-              private int _4_j;
+              private int _2_i;
+              private int _6_j;
 
               protected boolean moveToNext() {
 __loop__:
                 do {
+__switch__:
                   switch (this.__CP__) {
                     case -1:
                       assert false : "Internal error";
-                    case 2:
-                      if(this._1_i > 0) {
-                        this.__CP__ = 3;
+                      return false;
+                    case 3:
+                      if(this._2_i > 0) {
+                        this.__CP__ = 4;
                         break;
                       }
-                      this.__CP__ = 10;
-                      break;
-                    case 6:
-                      if(this._4_j > 0) {
-                        this.__CP__ = 5;
-                        break;
-                      }
-                      this.__CP__ = 9;
-                      break;
-                    case 7:
-                      this.__CP__ = 8;
-                      this.yield((Integer)this._1_i * this._4_j);
-                      return true;
-                    case 5:
-                      this.__CP__ = 7;
+                      this.__CP__ = 12;
                       break;
                     case 8:
-                      this._4_j = this._4_j - 1;
-                      this.__CP__ = 6;
-                      break;
-                    case 3:
-                      this._4_j = 3;
-                      this.__CP__ = 5;
+                      if(this._6_j > 0) {
+                        this.__CP__ = 7;
+                        break;
+                      }
+                      this.__CP__ = 11;
                       break;
                     case 9:
-                      this._1_i = this._1_i - 1;
-                      this.__CP__ = 2;
+                      this.__CP__ = 10;
+                      this.yield((Integer)this._2_i * this._6_j);
+                      return true;
+                    case 7:
+                      this.__CP__ = 9;
+                      break;
+                    case 10:
+                      this._6_j = this._6_j - 1;
+                      this.__CP__ = 8;
+                      break;
+                    case 4:
+                      this._6_j = 3;
+                      this.__CP__ = 7;
+                      break;
+                    case 11:
+                      this._2_i = this._2_i - 1;
+                      this.__CP__ = 3;
                       break;
                     case 0:
-                      this._1_i = 3;
-                      this.__CP__ = 2;
+                      this._2_i = 3;
+                      this.__CP__ = 3;
                       break;
                     default:
                       break __loop__;
@@ -348,9 +354,11 @@ __loop__:
               protected boolean moveToNext() {
 __loop__:
                 do {
+__switch__:
                   switch (this.__CP__) {
                     case -1:
                       assert false : "Internal error";
+                      return false;
                     case 1:
                       this._1_i = 0;
                     case 2:
@@ -403,9 +411,11 @@ __loop__:
               protected boolean moveToNext() {
 __loop__:
                 do {
+__switch__:
                   switch (this.__CP__) {
                     case -1:
                       assert false : "Internal error";
+                      return false;
                     case 1:
                       this._1_i_it = si.iterator();
                     case 2:
@@ -442,6 +452,124 @@ __loop__:
     }.invoke()) {
       System.out.println("i=" + i);
     }
+    seq = new _FunctionTypes._sequence1_Integer() {
+
+      public Iterable<Integer> invoke() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new _FunctionTypes.YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _2_i;
+              private TestClosure.Enm[] _3_consts;
+              private TestClosure.Enm _4_e;
+              private int _8_j;
+              private int _12_r;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 13:
+                      switch (this._4_e) {
+                        case A:
+                          this.__CP__ = 15;
+                          break __switch__;
+                        case B:
+                          this.__CP__ = 16;
+                          break __switch__;
+                        case C:
+                          this.__CP__ = 18;
+                          break __switch__;
+                        default:
+                          this.__CP__ = 22;
+                          break __switch__;
+                      }
+                    case 5:
+                      if(this._2_i >= 0) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this.__CP__ = 26;
+                      break;
+                    case 10:
+                      if(this._8_j > 0) {
+                        this.__CP__ = 9;
+                        break;
+                      }
+                      this.__CP__ = 25;
+                      break;
+                    case 14:
+                      this.__CP__ = 24;
+                      this.yield((Integer)this._12_r);
+                      return true;
+                    case 15:
+                      this._12_r = this._8_j + 10;
+                      this.__CP__ = 14;
+                      break;
+                    case 16:
+                      this._12_r = this._8_j + 100;
+                      this.__CP__ = 14;
+                      break;
+                    case 18:
+                      this._12_r = this._8_j + 1000;
+                      this.__CP__ = 14;
+                      break;
+                    case 22:
+                      assert false;
+                      this.__CP__ = 14;
+                      break;
+                    case 9:
+                      this._12_r = 0;
+                      this.__CP__ = 13;
+                      break;
+                    case 24:
+                      this._8_j = this._8_j - 1;
+                      this.__CP__ = 10;
+                      break;
+                    case 6:
+                      this._4_e = this._3_consts[this._2_i];
+                      this._8_j = 3;
+                      this.__CP__ = 9;
+                      break;
+                    case 25:
+                      this._2_i = this._2_i - 1;
+                      this.__CP__ = 5;
+                      break;
+                    case 0:
+                      this._2_i = 2;
+                      this._3_consts = new TestClosure.Enm[]{TestClosure.Enm.A,TestClosure.Enm.B,TestClosure.Enm.C};
+                      this._4_e = null;
+                      this.__CP__ = 5;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }.invoke();
+    for(int i : seq) {
+      System.out.println("yielded: " + i);
+    }
   }
+
+  public static   enum Enm {
+    A(),
+    B(),
+    C();
+}
 
 }
