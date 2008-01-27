@@ -165,7 +165,7 @@ public class EquationManager {
     String strongString = isWeak ? "" : " strong";
     IErrorReporter errorReporter =
             new EquationErrorReporter(this, "type ", subtypeRepresentator,
-                    " is not" + strongString + " a subtype of ", supertypeRepresentator, "", errorInfo.myRuleModel, errorInfo.myRuleId);
+                    " is not a" + strongString + " subtype of ", supertypeRepresentator, "", errorInfo.myRuleModel, errorInfo.myRuleId);
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
 
     //4debug
