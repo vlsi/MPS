@@ -104,6 +104,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201455608252">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1201455610348">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201455608253" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.PropertyReference" id="1201455612100">
+              <link role="property" targetNodeId="1201454757436" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1198513842826">
