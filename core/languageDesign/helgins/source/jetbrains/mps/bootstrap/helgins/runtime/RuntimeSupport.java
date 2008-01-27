@@ -228,7 +228,7 @@ public class RuntimeSupport {
 
   public void whenConcrete(SNode argument, final Runnable r, String nodeModel, String nodeId) {
     if (argument == null) return;
-    myTypeChecker.getEquationManager().addWhenConcreteEntity(NodeWrapper.createNodeWrapper(argument),
+    myTypeChecker.getEquationManager().addNewWhenConcreteEntity(NodeWrapper.createNodeWrapper(argument),
             new WhenConcreteEntity(r, nodeModel, nodeId));
   }
 

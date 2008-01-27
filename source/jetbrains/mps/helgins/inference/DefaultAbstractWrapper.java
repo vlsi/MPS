@@ -21,6 +21,12 @@ public abstract class DefaultAbstractWrapper implements IWrapper {
     }
   }
 
+  public void fireBecomesDeeplyConcrete(EquationManager equationManager) {
+    for (IWrapperListener listener : new HashSet<IWrapperListener>(myWrapperListeners)) {
+      listener.becomesDeeplyConcrete(this, equationManager);
+    }
+  }
+
   public void addWrapperListener(IWrapperListener wrapperListener) {
     myWrapperListeners.add(wrapperListener);
   }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.typesys_test">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="2" />
@@ -73,6 +74,27 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081051" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1201449247987">
+    <property name="name" value="C2" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1201449256726">
+      <property name="name" value="boo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1201449256727" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201449256728" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201449256729">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201449267038">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201449267072">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201449268997">
+              <property name="value" value="3" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201449267039">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201449247988" />
   </node>
 </model>
 

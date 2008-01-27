@@ -76,7 +76,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
       }, false);
       if (b) {
         if (equationManager != null) {
-          equationManager.addChildEquations(this, wrapper, childEQs, errorInfo);
+          equationManager.addChildEquations(childEQs, errorInfo);
         }
       }
       return b;

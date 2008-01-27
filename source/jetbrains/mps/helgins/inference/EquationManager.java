@@ -251,7 +251,12 @@ public class EquationManager {
     myWhenConcreteEntities.remove(wrapper);
   }
 
-  public void addWhenConcreteEntity(IWrapper wrapper, final WhenConcreteEntity entity) {
+  public void addNewWhenConcreteEntity(IWrapper wrapper, WhenConcreteEntity entity) {
+    addWhenConcreteEntity(wrapper, entity);
+    checkConcrete(wrapper);
+  }
+
+  /*package*/ void addWhenConcreteEntity(IWrapper wrapper, final WhenConcreteEntity entity) {
     IWrapper representator = getRepresentatorWrapper(wrapper);
     final WhenConcreteEntity oldEntity = myWhenConcreteEntities.remove(representator);
     WhenConcreteEntity entityToPut = entity;
@@ -268,22 +273,9 @@ public class EquationManager {
     }
 
     myWhenConcreteEntities.put(representator, entityToPut);
-    checkConcrete(representator);
   }
 
-  /*package*/ void checkConcrete(IWrapper wrapper) {
-    if (wrapper == null) return;
-    // NB: we assume that wrapper is a representator
-    WhenConcreteEntity whenConcreteEntity = getWhenConcreteEntity(wrapper);
-    if (whenConcreteEntity != null) {
-      if (isConcrete(wrapper)) {
-        clearWhenConcreteEntity(wrapper);
-        whenConcreteEntity.run();
-      }
-    }
-  }
-
-  private boolean isConcrete(IWrapper wrapper) {
+  /*package*/ boolean isConcrete(IWrapper wrapper) {
     if (wrapper == null) return false;
     if (wrapper.isVariable()) {
       return false;
@@ -371,13 +363,10 @@ public class EquationManager {
     }
   }
 
-  void addChildEquations(IWrapper parent1, IWrapper parent2, Set<Pair<SNode, SNode>> childEqs, ErrorInfo errorInfo) {
+  void addChildEquations(Set<Pair<SNode, SNode>> childEqs, ErrorInfo errorInfo) {
     for (Pair<SNode, SNode> eq : childEqs) {
       addEquation(NodeWrapper.fromNode(eq.o2), NodeWrapper.fromNode(eq.o1), errorInfo);
     }
-    //parent1 & parent2 are both shallow-concrete, and after child equations they may become fully concrete
-    checkConcrete(parent1);
-    checkConcrete(parent2);
   }
 
   private void processEquation(IWrapper var, IWrapper type, ErrorInfo errorInfo) {
@@ -479,12 +468,6 @@ public class EquationManager {
       for (IWrapper subtype : comparables.keySet()) {
         addInequationComparable(subtype, type, comparables.get(subtype), false);
       }
-    }
-
-    WhenConcreteEntity varConditionWrapper = getWhenConcreteEntity(var);
-    clearWhenConcreteEntity(var);
-    if (varConditionWrapper != null) {
-      addWhenConcreteEntity(type, varConditionWrapper);
     }
   }
 
@@ -923,6 +906,19 @@ public class EquationManager {
     }
 
     return (NodeWrapper) wrapper;
+  }
+
+  /*package*/ void checkConcrete(IWrapper representator) {
+    if (representator == null) return;
+    // NB: we assume that wrapper is a representator
+    if (isConcrete(representator)) {
+      WhenConcreteEntity whenConcreteEntity = getWhenConcreteEntity(representator);
+      if (whenConcreteEntity != null) {
+        clearWhenConcreteEntity(representator);
+        whenConcreteEntity.run();
+      }
+      representator.fireBecomesDeeplyConcrete(this);
+    }
   }
 
 
