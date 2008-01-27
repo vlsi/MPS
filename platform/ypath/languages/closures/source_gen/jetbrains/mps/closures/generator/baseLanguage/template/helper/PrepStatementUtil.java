@@ -137,14 +137,16 @@ public class PrepStatementUtil {
     int ifTrueLabel = this.ctx.incrementLabel();
     int ifFalseLabel = -1;
     if((SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true) != null)) {
-      this.ctx.incrementLabel();
+      if(StatementListUtil.isControlStatement(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+        ifFalseLabel = this.ctx.incrementLabel();
+      }
     }
     int nextLabel = this.calcNextLabel(ifstmt);
     PrepStatementUtil.putPrepData(SLinkOperations.getTarget(ifstmt, "ifTrue", true), new Integer[]{ifTrueLabel,nextLabel}, this.generator);
     this.prepStatementList(SLinkOperations.getTarget(ifstmt, "ifTrue", true));
-    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.StatementList")) {
-      PrepStatementUtil.putPrepData(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), new Integer[]{ifFalseLabel,nextLabel}, this.generator);
-      this.prepStatementList(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true));
+    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+      PrepStatementUtil.putPrepData(SLinkOperations.getTarget(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "statements", true), new Integer[]{ifFalseLabel,nextLabel}, this.generator);
+      this.prepStatementList(SLinkOperations.getTarget(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "statements", true));
     } else
     if((SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true) != null)) {
       this.prepStatement(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), ifFalseLabel);
