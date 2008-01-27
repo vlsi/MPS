@@ -88,6 +88,14 @@
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201386842545" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201453907866">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1201453910180">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201453907867" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.PropertyReference" id="1201453912963">
+              <link role="property" targetNodeId="1201399832337" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1198513842826">
