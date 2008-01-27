@@ -88,6 +88,10 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198587176397">
             <property name="name" value="a" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1198587176398" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1201467800039">
+              <link role="variableDeclaration" targetNodeId="1201384189984" resolveInfo="k2" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201467800040" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201386842544">
