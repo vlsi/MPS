@@ -105,7 +105,7 @@ public class QueriesUtil {
   }
 
   public static List<SNode> conceptAndItsInterfaces(SNode concept) {
-    List<SNode> result = ListOperations.createList(new SNode[]{concept});
+    List<SNode> result = ListOperations.<SNode>createList(concept);
     List<AbstractConceptDeclaration> list = SModelUtil_new.getDirectSuperInterfacesAndTheySupers(((ConceptDeclaration)SNodeOperations.getAdapter(concept)));
     List<SNode> interfaces = BaseAdapter.toNodes(list);
     ListOperations.addAllElements(result, interfaces);
@@ -152,14 +152,14 @@ public class QueriesUtil {
     if((conceptDeclaration == null)) {
       return "jetbrains.mps.core.structure.BaseConcept";
     }
-    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+    return SNodeOperations.getModel(conceptDeclaration).getLongName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
   public static String enumClassFQName(SNode enumDeclaration) {
     if((enumDeclaration == null)) {
       return "jetbrains.mps.core.structure.BaseConcept";
     }
-    return SNodeOperations.getModel(enumDeclaration).toString() + "." + SPropertyOperations.getString(enumDeclaration, "name");
+    return SNodeOperations.getModel(enumDeclaration).getLongName() + "." + SPropertyOperations.getString(enumDeclaration, "name");
   }
 
 }

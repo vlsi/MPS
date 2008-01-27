@@ -1232,7 +1232,7 @@
                 <property name="value" value="." />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198511443434">
-                <link role="baseMethodDeclaration" targetNodeId="2.~SModel.toString():java.lang.String" resolveInfo="toString" />
+                <link role="baseMethodDeclaration" targetNodeId="2.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
                 <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198511443435">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198511443436">
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1198511443437">
@@ -1290,7 +1290,7 @@
                 <property name="value" value="." />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198515237287">
-                <link role="baseMethodDeclaration" targetNodeId="2.~SModel.toString():java.lang.String" resolveInfo="toString" />
+                <link role="baseMethodDeclaration" targetNodeId="2.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
                 <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198515237288">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198515237289">
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1198515237290">
