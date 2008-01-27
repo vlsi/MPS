@@ -30,7 +30,6 @@
       <property name="propertyName" value="k3" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201399832338" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1201399837796" />
-      <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation" id="1201399842734" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1198591047295">
       <property name="name" value="f" />

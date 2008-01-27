@@ -2515,18 +2515,37 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201398722958">
-    <property name="package" value="property.implementation" />
+    <property name="package" value="property.implementation.custom" />
     <property name="name" value="CustomPropertyImplementation" />
     <link role="extends" targetNodeId="1201372346056" resolveInfo="PropertyImplementation" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201400647390">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201402259264">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="getStatementList" />
+      <property name="role" value="propertyGetter" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+      <link role="target" targetNodeId="1201402044357" resolveInfo="PropertyGetter" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201398799209">
       <property name="value" value="custom" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201402044357">
+    <property name="package" value="property.implementation.custom" />
+    <property name="name" value="PropertyGetter" />
+    <link role="extends" targetNodeId="1201402150952" resolveInfo="CustomMethod" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201402150952">
+    <property name="package" value="property.implementation.custom" />
+    <property name="name" value="CustomMethod" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201402189876">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="statementList" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201402162250">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
 </model>
