@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CustomPropertyImplementation extends PropertyImplementation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation";
+  public static String GET_STATEMENT_LIST = "getStatementList";
 
   public  CustomPropertyImplementation(SNode node) {
     super(node);
@@ -20,6 +21,15 @@ public class CustomPropertyImplementation extends PropertyImplementation {
 
   public static CustomPropertyImplementation newInstance(SModel sm) {
     return CustomPropertyImplementation.newInstance(sm, false);
+  }
+
+
+  public StatementList getGetStatementList() {
+    return (StatementList)this.getChild(CustomPropertyImplementation.GET_STATEMENT_LIST);
+  }
+
+  public void setGetStatementList(StatementList node) {
+    super.setChild(CustomPropertyImplementation.GET_STATEMENT_LIST, node);
   }
 
 }

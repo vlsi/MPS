@@ -14,9 +14,7 @@
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1201384189984">
       <property name="name" value="k2" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1201384189985" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201384193706">
-        <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
-      </node>
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1201400374567" />
     </node>
     <node role="property" type="jetbrains.mps.baseLanguage.structure.Property" id="1201382204424">
       <property name="propertyName" value="k" />
