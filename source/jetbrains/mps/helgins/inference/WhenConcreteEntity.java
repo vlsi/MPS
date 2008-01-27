@@ -38,51 +38,6 @@ public class WhenConcreteEntity {
     return myRunnable;
   }
 
-  public boolean isConcrete(IWrapper type, @Nullable EquationManager equationManager) {
-    if (type == null) return false;
-    if (type.isVariable()) {
-      return false;
-    }
-    if (equationManager == null) {
-      return false;
-    }
-
-    //first check
-    if (myWrapperToCheck == null) {
-      myWrapperToCheck = type;
-      for (RuntimeTypeVariable var : type.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
-        if (myVariables == null) {
-          myVariables = new HashSet<SNodePointer>(1);
-        }
-        myVariables.add(new SNodePointer(var.getNode()));
-      }
-    }
-
-    //processing additional variables
-    if (myVariables != null) {
-      for (SNodePointer var : new HashSet<SNodePointer>(myVariables)) {
-        if (var.getNode() == null) {
-          myVariables.remove(var);
-          continue;
-        }
-        IWrapper varRepresentatorWrapper = equationManager.getRepresentatorWrapper(NodeWrapper.createNodeWrapper(var.getNode()));
-        if (varRepresentatorWrapper.isConcrete()) {
-          myVariables.remove(var);
-          for (RuntimeTypeVariable varChild : varRepresentatorWrapper.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
-            myVariables.add(new SNodePointer(varChild.getNode()));
-          }
-        }
-      }
-    }
-
-    if (myVariables != null && !(myVariables.isEmpty())) {
-      return false;
-    } else {
-      myVariables = null;
-      return true;
-    }
-  }
-
   public void run() {
     myRunnable.run();
   }

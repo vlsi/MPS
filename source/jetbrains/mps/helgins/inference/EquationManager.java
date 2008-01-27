@@ -34,6 +34,7 @@ public class EquationManager {
 
   private Map<IWrapper, IWrapper> myEquations = new HashMap<IWrapper, IWrapper>();
   private Map<IWrapper, WhenConcreteEntity> myWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
+  private Map<IWrapper, Set<SNodePointer>> myNonConcreteVars = new HashMap<IWrapper, Set<SNodePointer>>();
 
   private Map<IWrapper, Set> myTypesWithEffects = new HashMap<IWrapper, Set>();
 
@@ -77,6 +78,21 @@ public class EquationManager {
     SNode representator = NodeWrapper.fromWrapper(getRepresentatorWrapper(NodeWrapper.fromNode(type_)));
     if (representator == null) return type_;
     return representator;
+  }
+
+  public Set<SNodePointer> getNonConcreteVariables(IWrapper wrapper) {
+    Set<SNodePointer> result = myNonConcreteVars.get(wrapper);
+    if (result == null) return new HashSet<SNodePointer>();
+    return result;
+  }
+
+  public void addNonConcreteVariable(IWrapper wrapper, SNodePointer variable) {
+    Set<SNodePointer> variables = myNonConcreteVars.get(wrapper);
+    if (variables == null) {
+      variables = new HashSet<SNodePointer>();
+      myNonConcreteVars.put(wrapper, variables);
+    }
+    variables.add(variable);
   }
 
 
@@ -260,10 +276,47 @@ public class EquationManager {
     // NB: we assume that wrapper is a representator
     WhenConcreteEntity whenConcreteEntity = getWhenConcreteEntity(wrapper);
     if (whenConcreteEntity != null) {
-      if (whenConcreteEntity.isConcrete(wrapper, this)) {
+      if (isConcrete(wrapper)) {
         clearWhenConcreteEntity(wrapper);
         whenConcreteEntity.run();
       }
+    }
+  }
+
+  private boolean isConcrete(IWrapper wrapper) {
+    if (wrapper == null) return false;
+    if (wrapper.isVariable()) {
+      return false;
+    }
+    if (!myNonConcreteVars.containsKey(wrapper)) {
+      for (RuntimeTypeVariable var : wrapper.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
+       addNonConcreteVariable(wrapper, new SNodePointer(var.getNode()));
+      }
+    }
+
+    Set<SNodePointer> variables = myNonConcreteVars.get(wrapper);
+    //processing additional variables
+    if (variables != null) {
+      for (SNodePointer var : new HashSet<SNodePointer>(variables)) {
+        if (var.getNode() == null) {
+          variables.remove(var);
+          continue;
+        }
+        IWrapper varRepresentatorWrapper = this.
+          getRepresentatorWrapper(NodeWrapper.createNodeWrapper(var.getNode()));
+        if (varRepresentatorWrapper.isConcrete()) {
+          variables.remove(var);
+          for (RuntimeTypeVariable varChild : varRepresentatorWrapper.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
+            variables.add(new SNodePointer(varChild.getNode()));
+          }
+        }
+      }
+    }
+
+    if (variables != null && !(variables.isEmpty())) {
+      return false;
+    } else {
+      return true;
     }
   }
 
@@ -449,6 +502,8 @@ public class EquationManager {
     myComparableTypesMap.clear();
     myTypesWithEffects.clear();
     myEquations.clear();
+    myWhenConcreteEntities.clear();
+    myNonConcreteVars.clear();
   }
 
   private boolean compareWrappers(IWrapper wrapper1, IWrapper wrapper2, ErrorInfo errorInfo) {
