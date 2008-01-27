@@ -21,7 +21,7 @@ import java.util.Set;
  * Time: 14:15:19
  * To change this template use File | Settings | File Templates.
  */
-public class NodeWrapper implements IWrapper {
+public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
   private static Logger LOG = Logger.getLogger(NodeWrapper.class);
 
   private SNode myNode;
