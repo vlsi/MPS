@@ -65,6 +65,7 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_PropertyNameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201385330666");
+      BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
     }
 
     private static void setupLabel_PropertyNameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

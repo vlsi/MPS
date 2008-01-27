@@ -91,6 +91,12 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201396804977">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1201396804978">
+            <link role="variableDeclaration" targetNodeId="1201384189984" resolveInfo="k2" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201396804979" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201386842544">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201386854095">
             <link role="baseMethodDeclaration" targetNodeId="1198591047295" resolveInfo="f" />

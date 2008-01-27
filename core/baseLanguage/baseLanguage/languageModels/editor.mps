@@ -13505,6 +13505,7 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1201385330666">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="17.1201371481316" resolveInfo="propertyName" />
+          <link role="styleClass" targetNodeId="1198595398954" resolveInfo="Field" />
         </node>
       </node>
     </node>
