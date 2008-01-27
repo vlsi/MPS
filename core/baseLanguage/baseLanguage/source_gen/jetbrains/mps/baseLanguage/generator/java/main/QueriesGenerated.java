@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.constraints.PropertyGetter_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -30,6 +31,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201382944516(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "my_p_" + SPropertyOperations.getString(_context.getNode(), "propertyName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1201403333753(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "_p_get_" + SPropertyOperations.getString(PropertyGetter_Behavior.call_getProperty_1201403176059(_context.getNode()), "propertyName");
   }
 
   public static Object referenceMacro_GetReferent_1201387048833(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -56,7 +61,23 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
 
+  public static SNode sourceNodeQuery_1201403299741(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(PropertyGetter_Behavior.call_getProperty_1201403176059(_context.getNode()), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1201403319146(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(PropertyGetter_Behavior.call_getProperty_1201403176059(_context.getNode()), "visibility", true);
+  }
+
+  public static SNode sourceNodeQuery_1201403149845(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "statementList", true);
+  }
+
   public static SNode weaving_MappingRule_ContextNodeQuery_1201382005522(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getGenerator().findCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1201403410179(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getGenerator().findCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
   }
 
