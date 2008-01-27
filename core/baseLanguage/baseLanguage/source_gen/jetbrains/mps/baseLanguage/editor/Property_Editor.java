@@ -30,6 +30,7 @@ public class Property_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_PropertyNameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201371494411");
+    BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {

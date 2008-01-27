@@ -13462,6 +13462,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1201371494411">
         <link role="relationDeclaration" targetNodeId="17.1201371481316" resolveInfo="propertyName" />
+        <link role="styleClass" targetNodeId="1198595398954" resolveInfo="Field" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201371450623">
         <property name="text" value="{" />
