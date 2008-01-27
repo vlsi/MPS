@@ -13585,6 +13585,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201468861479">
           <property name="text" value="set" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1201476949812">
+          <link role="relationDeclaration" targetNodeId="17.1201476937466" />
+        </node>
       </node>
     </node>
   </node>

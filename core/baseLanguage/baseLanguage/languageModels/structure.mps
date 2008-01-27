@@ -2524,6 +2524,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1201402044357" resolveInfo="PropertyGetter" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201476937466">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="propertySetter" />
+      <link role="target" targetNodeId="1201476912089" resolveInfo="PropertySetter" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201398799209">
       <property name="value" value="custom" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
@@ -2546,6 +2551,15 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201402162250">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201476912089">
+    <property name="package" value="property.implementation.custom" />
+    <property name="name" value="PropertySetter" />
+    <link role="extends" targetNodeId="1201402150952" resolveInfo="CustomMethod" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201476923122">
+      <property name="value" value="setter" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>
