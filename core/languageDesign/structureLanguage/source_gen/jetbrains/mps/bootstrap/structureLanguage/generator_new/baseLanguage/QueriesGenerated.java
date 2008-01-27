@@ -110,7 +110,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1198508092517(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "intfc", false);
-    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+    return SNodeOperations.getModel(conceptDeclaration).getLongName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1189815461294(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -440,7 +440,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1198509740688(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "intfc", false);
-    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+    return SNodeOperations.getModel(conceptDeclaration).getLongName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
