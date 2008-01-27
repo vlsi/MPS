@@ -31,24 +31,24 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
     final zClosureContext2 _zClosureContext2 = new zClosureContext2();
     // check that this is done in a method
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    if (methodDecl == null) {
+    if(methodDecl == null) {
       return false;
     }
     // get exception type
     _zClosureContext2.exceptionType = (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true));
-    if (_zClosureContext2.exceptionType == null) {
+    if(_zClosureContext2.exceptionType == null) {
       return false;
     }
-    SNode exceptionJavaType = (SNode) SLinkOperations.getTarget(_zClosureContext2.exceptionType, "classifier", false);
-    if (exceptionJavaType == null) {
+    SNode exceptionJavaType = (SNode)SLinkOperations.getTarget(_zClosureContext2.exceptionType, "classifier", false);
+    if(exceptionJavaType == null) {
       return false;
     }
     // check it's instance of RuntimeException
-    if (!(ClassConcept_Behavior.call_isDescendant_1199631877012(exceptionJavaType, (SNode) SLinkOperations.getTarget(new QuotationClass_3().createNode(), "classifier", false)))) {
+    if(!(ClassConcept_Behavior.call_isDescendant_1199631877012(exceptionJavaType, (SNode)SLinkOperations.getTarget(new QuotationClass_3().createNode(), "classifier", false)))) {
       return false;
     }
     // check if it's not thrown by a method yet
-    if (!(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(methodDecl, "throwsItem", true), new zPredicate3(null, _zClosureContext2))))) {
+    if(!(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(methodDecl, "throwsItem", true), new zPredicate3(null, _zClosureContext2))))) {
       return false;
     }
     return true;
@@ -56,7 +56,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
 
   public void execute(SNode node, EditorContext editorContext) {
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    SLinkOperations.addChild(methodDecl, "throwsItem", (SNode) TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)));
+    SLinkOperations.addChild(methodDecl, "throwsItem", (SNode)TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)));
   }
 
 }

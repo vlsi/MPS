@@ -27,10 +27,10 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention implem
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null) {
+    if(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null) {
       return false;
     }
-    if (SLinkOperations.getTarget(node, "initializer", true) == null) {
+    if(SLinkOperations.getTarget(node, "initializer", true) == null) {
       return false;
     }
     return true;
@@ -49,7 +49,7 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention implem
     {
       ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "constructor", true));
       try {
-        while (_zCursor1.moveToNext()) {
+        while(_zCursor1.moveToNext()) {
           SNode constr = _zCursor1.getCurrent();
           SLinkOperations.insertChildFirst(SLinkOperations.getTarget(constr, "body", true), "statement", SNodeOperations.copyNode(assignmentStmt));
         }

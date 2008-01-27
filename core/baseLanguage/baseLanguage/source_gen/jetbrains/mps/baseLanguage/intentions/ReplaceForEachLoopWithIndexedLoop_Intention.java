@@ -29,7 +29,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
     boolean array = SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "iterable", true)), "jetbrains.mps.baseLanguage.structure.ArrayType");
-    if (!(array)) {
+    if(!(array)) {
       return false;
     }
     return true;

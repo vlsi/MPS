@@ -121,7 +121,12 @@ public class QueriesGenerated {
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_BreakStatement_1199466283835(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    return SPropertyOperations.hasValue(_context.getSourceNode(), "label", null) && !(SequenceOperations.isEmpty(SequenceOperations.map(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper1(null, null))));
+    if(SPropertyOperations.hasValue(_context.getSourceNode(), "label", null)) {
+      boolean loopsWithLabels = !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zPredicate(null, null))));
+      boolean sstmtsWithLabels = !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false), new zPredicate1(null, null))));
+      return loopsWithLabels || sstmtsWithLabels;
+    }
+    return false;
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ContinueStatement_1199470413669(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
@@ -1283,7 +1288,10 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          return SequenceOperations.toList(SequenceOperations.map(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper(null, null)));
+          List<String> labels = ListOperations.<String>createList();
+          ListOperations.addAllElements(labels, SequenceOperations.map(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper(null, null)));
+          ListOperations.addAllElements(labels, SequenceOperations.map(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false), new zMapper1(null, null)));
+          return labels;
         }
 
       };

@@ -1808,6 +1808,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1163670490218">
     <property name="name" value="SwitchStatement" />
     <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1201381395355">
+      <property name="name" value="label" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1163670766145">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />

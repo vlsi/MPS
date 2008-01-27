@@ -14,6 +14,7 @@ public class SwitchStatement extends Statement {
   public static String EXPRESSION = "expression";
   public static String DEFAULT_BLOCK = "defaultBlock";
   public static String CASE = "case";
+  public static String LABEL = "label";
 
   public  SwitchStatement(SNode node) {
     super(node);
@@ -62,6 +63,14 @@ public class SwitchStatement extends Statement {
 
   public void insertCase(SwitchCase prev, SwitchCase node) {
     this.insertChild(prev, SwitchStatement.CASE, node);
+  }
+
+  public String getLabel() {
+    return this.getProperty(SwitchStatement.LABEL);
+  }
+
+  public void setLabel(String value) {
+    this.setProperty(SwitchStatement.LABEL, value);
   }
 
 }

@@ -32,10 +32,10 @@ public class ClassAncestors_Finder extends GeneratedFinder {
 
   public void doFind(SearchQuery searchQuery, SearchResults results) {
     results.getSearchedNodePointers().add(new SNodePointer(searchQuery.getNode()));
-    SNode current = (SNode) searchQuery.getNode();
-    while (current != null) {
+    SNode current = (SNode)searchQuery.getNode();
+    while(current != null) {
       current = SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false);
-      if (current != null) {
+      if(current != null) {
         results.getSearchResults().add(new SearchResult(new SNodePointer(current), "Ancestor"));
       }
     }
