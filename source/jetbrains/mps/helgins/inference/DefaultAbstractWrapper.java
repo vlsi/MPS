@@ -15,9 +15,9 @@ import java.util.HashSet;
 public abstract class DefaultAbstractWrapper implements IWrapper {
   private Set<IWrapperListener> myWrapperListeners = new WeakSet<IWrapperListener>();
 
-  public void fireRepresentatorSet(IWrapper representator) {
+  public void fireRepresentatorSet(IWrapper representator, EquationManager equationManager) {
     for (IWrapperListener listener : new HashSet<IWrapperListener>(myWrapperListeners)) {
-      listener.representatorSet(this, representator);
+      listener.representatorSet(this, representator, equationManager);
     }
   }
 
@@ -27,5 +27,13 @@ public abstract class DefaultAbstractWrapper implements IWrapper {
 
   public void removeWrapperlistener(IWrapperListener wrapperListener) {
     myWrapperListeners.remove(wrapperListener);
+  }
+
+  public boolean isShallowConcrete() {
+    return false;
+  }
+
+  public IWrapper getShallowConcreteRepresentator() {
+    return null;
   }
 }

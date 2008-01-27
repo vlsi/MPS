@@ -14,6 +14,7 @@ import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 public class VariableWrapper extends NodeWrapper implements IWrapperListener {
 
   private boolean myIsShallowConcrete = false;
+  private IWrapper myShallowConcreteRepresentator = null;
 
   protected VariableWrapper(SNode node) {
     super(node);
@@ -24,15 +25,30 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
     return true;
   }
 
+  public boolean isShallowConcrete() {
+    return myIsShallowConcrete;
+  }
+
+  public IWrapper getShallowConcreteRepresentator() {
+    return myShallowConcreteRepresentator;
+  }
+
   public RuntimeTypeVariable getVariable() {
     return (RuntimeTypeVariable) BaseAdapter.fromNode(getNode());
   }
 
-  public void representatorSet(IWrapper wrapper, IWrapper representator) {
+  public void representatorSet(IWrapper wrapper, IWrapper representator, EquationManager equationManager) {
     wrapper.removeWrapperlistener(this);
     representator.addWrapperListener(this);
-    if (representator.isConcrete()) {
+    /*if (!myIsShallowConcrete && representator.isConcrete()) {
+      //checking concrete
       myIsShallowConcrete = true;
-    }
+      myShallowConcreteRepresentator = representator;
+      SNode parent = getNode().getParent();
+      while (parent != null) {
+        equationManager.checkConcrete(NodeWrapper.createNodeWrapper(parent));
+        parent = parent.getParent();
+      }
+    }*/
   }
 }

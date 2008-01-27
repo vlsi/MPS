@@ -53,6 +53,14 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     return !isVariable();
   }
 
+  public boolean isShallowConcrete() {
+    return true;
+  }
+
+  public IWrapper getShallowConcreteRepresentator() {
+    return this;
+  }
+
   public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo) {
     if (wrapper == null) return false;
     if (wrapper instanceof NodeWrapper) {

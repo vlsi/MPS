@@ -255,7 +255,7 @@ public class EquationManager {
     checkConcrete(representator);
   }
 
-  private void checkConcrete(IWrapper wrapper) {
+  /*package*/ void checkConcrete(IWrapper wrapper) {
     if (wrapper == null) return;
     // NB: we assume that wrapper is a representator
     WhenConcreteEntity whenConcreteEntity = getWhenConcreteEntity(wrapper);
@@ -334,7 +334,7 @@ public class EquationManager {
     if (typeVar instanceof RuntimeErrorType) {
       TypeChecker.getInstance().reportTypeError(errorInfo.getNodeWithError(), new SimpleErrorReporter(((RuntimeErrorType)typeVar).getErrorText(), errorInfo.myRuleModel, errorInfo.myRuleId));
     }
-    var.fireRepresentatorSet(type);
+    var.fireRepresentatorSet(type, this);
   }
 
   private void keepInequationsAndEffects(IWrapper var, IWrapper type) {
@@ -438,7 +438,7 @@ public class EquationManager {
   private void processErrorEquation(IWrapper type, IWrapper error, IErrorReporter errorReporter, SNode nodeToCheck) {
     setParent(error, type); //type
     myTypeChecker.reportTypeError(nodeToCheck, errorReporter);
-    error.fireRepresentatorSet(type);
+    error.fireRepresentatorSet(type, this);
   }
 
   public void clear() {

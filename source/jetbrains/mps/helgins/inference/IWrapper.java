@@ -16,7 +16,9 @@ public interface IWrapper extends IMatcher {
   public boolean isVariable();
   public boolean isConcrete();
   public RuntimeTypeVariable getVariable();
-  public void fireRepresentatorSet(IWrapper representator);
+  public void fireRepresentatorSet(IWrapper representator, EquationManager equationManager);
   public void addWrapperListener(IWrapperListener wrapperListener);
   public void removeWrapperlistener(IWrapperListener wrapperListener);
+  public boolean isShallowConcrete();
+  public IWrapper getShallowConcreteRepresentator();
 }

@@ -8,5 +8,5 @@ package jetbrains.mps.helgins.inference;
  * To change this template use File | Settings | File Templates.
  */
 public interface IWrapperListener {
-  public void representatorSet(IWrapper wrapper, IWrapper representator);
+  public void representatorSet(IWrapper wrapper, IWrapper representator, EquationManager equationManager);
 }
