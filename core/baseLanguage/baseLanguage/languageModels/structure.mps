@@ -2514,5 +2514,14 @@
       <link role="intfc" targetNodeId="1197027803184" resolveInfo="IOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201398722958">
+    <property name="package" value="property.implementation" />
+    <property name="name" value="CustomPropertyImplementation" />
+    <link role="extends" targetNodeId="1201372346056" resolveInfo="PropertyImplementation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201398799209">
+      <property name="value" value="custom" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
