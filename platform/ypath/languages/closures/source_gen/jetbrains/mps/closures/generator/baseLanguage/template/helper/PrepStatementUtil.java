@@ -35,8 +35,9 @@ public class PrepStatementUtil {
 
   private void prepTopStatementList(SNode slist) {
     int beginLabel = this.ctx.label;
-    int endLabel = this.prepStatementList(slist);
+    int endLabel = this.ctx.incrementLabel();
     PrepStatementUtil.putPrepData(slist, new Integer[]{beginLabel,endLabel}, this.generator);
+    this.prepStatementList(slist);
   }
 
   private int prepStatementList(SNode slist) {
@@ -45,7 +46,6 @@ public class PrepStatementUtil {
     for(SNode stmt : SLinkOperations.getTargets(slist, "statement", true)) {
       if(!(labelAutoIncremented) && StatementListUtil.isControlStatement(stmt)) {
         label = this.ctx.incrementLabel();
-        labelAutoIncremented = true;
       }
       labelAutoIncremented = StatementListUtil.isControlStatement(stmt);
       label = this.prepStatement(stmt, label);
