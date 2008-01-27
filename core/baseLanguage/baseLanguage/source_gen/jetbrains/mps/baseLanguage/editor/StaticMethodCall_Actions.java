@@ -36,14 +36,14 @@ public class StaticMethodCall_Actions {
         SNode localStaticMethodCall = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
         SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
         {
-          ICursor<SNode> _zCursor12 = CursorFactory.createCursor(SLinkOperations.getTargets(node, "actualArgument", true));
+          ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(node, "actualArgument", true));
           try {
-            while(_zCursor12.moveToNext()) {
-              SNode actualArgument = _zCursor12.getCurrent();
+            while(_zCursor.moveToNext()) {
+              SNode actualArgument = _zCursor.getCurrent();
               SLinkOperations.addChild(localStaticMethodCall, "actualArgument", actualArgument);
             }
           } finally {
-            _zCursor12.release();
+            _zCursor.release();
           }
         }
       }
