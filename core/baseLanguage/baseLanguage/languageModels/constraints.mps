@@ -7127,7 +7127,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201372666943">
-    <property name="package" value="property" />
+    <property name="package" value="property.implementation" />
     <link role="concept" targetNodeId="1.1201372346056" resolveInfo="PropertyImplementation" />
     <link role="defaultConcreteConcept" targetNodeId="1.1201372606839" resolveInfo="DefaultPropertyImplementation" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201372666944">
@@ -7135,7 +7135,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201374011082">
-    <property name="package" value="property.defaultImplementation" />
+    <property name="package" value="property.implementation.default" />
     <link role="concept" targetNodeId="1.1201373269664" resolveInfo="AccessorPolicy" />
     <link role="defaultConcreteConcept" targetNodeId="1.1201373970107" resolveInfo="OnlyGetter" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201374011083">

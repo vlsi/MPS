@@ -13476,7 +13476,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1201372747873">
-    <property name="package" value="property.defaultImplementation" />
+    <property name="package" value="property.implementation.default" />
     <link role="conceptDeclaration" targetNodeId="17.1201372606839" resolveInfo="DefaultPropertyImplementation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1201372751844">
       <property name="vertical" value="false" />
@@ -13489,7 +13489,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1201373996796">
-    <property name="package" value="property.defaultImplementation" />
+    <property name="package" value="property.implementation.default" />
     <link role="conceptDeclaration" targetNodeId="17.1201373970107" resolveInfo="OnlyGetter" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1201374970335">
       <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />

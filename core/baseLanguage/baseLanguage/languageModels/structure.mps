@@ -2462,7 +2462,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201372346056">
-    <property name="package" value="property" />
+    <property name="package" value="property.implementation" />
     <property name="name" value="PropertyImplementation" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201372354479">
@@ -2470,7 +2470,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201372606839">
-    <property name="package" value="property.defaultImplementation" />
+    <property name="package" value="property.implementation.default" />
     <property name="name" value="DefaultPropertyImplementation" />
     <link role="extends" targetNodeId="1201372346056" resolveInfo="PropertyImplementation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201373662978">
@@ -2485,7 +2485,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201373269664">
-    <property name="package" value="property.defaultImplementation" />
+    <property name="package" value="property.implementation.default" />
     <property name="name" value="AccessorPolicy" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201373644352">
@@ -2493,7 +2493,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201373970107">
-    <property name="package" value="property.defaultImplementation" />
+    <property name="package" value="property.implementation.default" />
     <property name="name" value="OnlyGetter" />
     <link role="extends" targetNodeId="1201373269664" resolveInfo="AccessorPolicy" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201373990998">
