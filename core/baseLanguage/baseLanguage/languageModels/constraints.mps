@@ -7203,5 +7203,30 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201403170636" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201455077343">
+    <property name="package" value="property.implementation.default" />
+    <link role="concept" targetNodeId="1.1201372606839" resolveInfo="DefaultPropertyImplementation" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201455080252">
+      <property name="name" value="getProperty" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201455150342">
+        <link role="concept" targetNodeId="1.1201370618622" resolveInfo="Property" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201455080254">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201455161436">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201455163751">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1201455165738">
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1201455168005">
+                <link role="concept" targetNodeId="1.1201370618622" resolveInfo="Property" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1201455161437" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201455077344">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201455077345" />
+    </node>
+  </node>
 </model>
 

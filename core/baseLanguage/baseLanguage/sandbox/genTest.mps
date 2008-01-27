@@ -33,6 +33,14 @@
         </node>
       </node>
     </node>
+    <node role="property" type="jetbrains.mps.baseLanguage.structure.Property" id="1201454757436">
+      <property name="propertyName" value="k4" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201454757437" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1201454759566" />
+      <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation" id="1201454757439">
+        <node role="accessorPolicy" type="jetbrains.mps.baseLanguage.structure.OnlyGetter" id="1201454757440" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1198591047295">
       <property name="name" value="f" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198591047296" />
