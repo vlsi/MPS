@@ -64,10 +64,10 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\platform\mps-lite\classes" />
+    <entry path="${mps_home}\core\languageDesign\mps-lite\classes" />
   </classPath>
   <runtimeClassPath>
-    <entry path="${mps_home}\platform\mps-lite\classes" />
+    <entry path="${mps_home}\core\languageDesign\mps-lite\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
