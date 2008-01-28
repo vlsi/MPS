@@ -152,6 +152,7 @@
           <module name="MPS" />
           <module name="stwiki-webapp">
             <files>
+              <file url="file://$PROJECT_DIR$/app/stwiki/WEB-INF/web.xml" />
               <file url="file://$PROJECT_DIR$/app/stwiki/exploded/WEB-INF/web.xml" />
             </files>
           </module>
@@ -173,6 +174,11 @@
           <module name="PubMedDB">
             <files>
               <file url="file://$PROJECT_DIR$/app/PubMedDB/WEB-INF/web.xml" />
+            </files>
+          </module>
+          <module name="search-watch">
+            <files>
+              <file url="file://$PROJECT_DIR$/app/search-watch/WEB-INF/web.xml" />
             </files>
           </module>
         </modules>
@@ -942,7 +948,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguage/scriptLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguage/scriptLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguageInternal/scriptLanguageInternal.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguageInternal/scriptLanguageInternal.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/scriptLanguage/runtime/scriptLanguage_runtime.iml" filepath="$PROJECT_DIR$/core/languageDesign/scriptLanguage/runtime/scriptLanguage_runtime.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/app/search-watch/search-watch.iml" filepath="$PROJECT_DIR$/app/search-watch/search-watch.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/sharedConcepts/sharedConcepts.iml" filepath="$PROJECT_DIR$/core/languageDesign/sharedConcepts/sharedConcepts.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/smodelLanguage/smodeLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/smodelLanguage/smodeLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/springframework/springframework.iml" filepath="$PROJECT_DIR$/platform/springframework/springframework.iml" group="platform/spring-framework" />
@@ -1051,10 +1056,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="true" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
@@ -1153,10 +1154,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
@@ -1250,10 +1247,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
@@ -1326,10 +1319,6 @@
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="charisma-app/web/charisma-web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1423,10 +1412,6 @@
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="charisma-app/web/charisma-web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
