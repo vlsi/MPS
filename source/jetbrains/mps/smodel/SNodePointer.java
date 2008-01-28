@@ -79,6 +79,7 @@ public class SNodePointer {
 
   public int hashCode() {
     if (myModelUID == null) return 0;
+    if (myNodeId == null) return 0;
     return myModelUID.hashCode() + myNodeId.hashCode();
   }
 
