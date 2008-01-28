@@ -20,6 +20,13 @@ import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDecl
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
@@ -125,11 +132,19 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public boolean showsAffectedNodes() {
-    return false;
+    return true;
   }
 
   public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return null;
+    {
+      SearchQuery searchQuery = new SearchQuery(new SNodePointer(actionContext.getNode()), actionContext.getScope());
+      IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
+      IAdaptiveProgressMonitor monitor = projectFrame.createAdaptiveProgressMonitor();
+      NodeAndDescendantsUsages_Finder finder = new NodeAndDescendantsUsages_Finder();
+      IResultProvider resultProvider = TreeBuilder.forFinder(finder);
+      SearchResults searchResults = resultProvider.getResults(searchQuery, monitor);
+      return searchResults;
+    }
   }
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
