@@ -35,7 +35,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
   private String myHeader;
   private JComponent myHeaderLabel;
   private JPanel myMainPanel;
-  private @Nullable JFrame myContainingFrame;
+  private @Nullable JDialog myContainingFrame;
 
   public ChooseItemComponent(String header) {
     this(header, false);
