@@ -2,7 +2,9 @@ package jetbrains.mps.transformation.TLBase.plugin.debug;
 
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.icons.IconManager;
 
+import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,13 +105,14 @@ public class TracerNode {
     return null;
   }
 
-  public void findAll(Kind kind, SNode node, List<TracerNode> result) {
+  public void findAllTopmost(Kind kind, SNode node, List<TracerNode> result) {
     if (isThis(kind, node)) {
       result.add(this);
+      return;
     }
     if (getDepth() > 1000) return;
     for (TracerNode child : myChildren) {
-      child.findAll(kind, node, result);
+      child.findAllTopmost(kind, node, result);
     }
   }
 
@@ -137,5 +140,17 @@ public class TracerNode {
       result.add(childCopy);
     }
     return result;
+  }
+
+  public Icon getIcon() {
+    Icon icon = null;
+    if (myNodePointer != null) {
+      icon = IconManager.getIconFor(myNodePointer.getNode());
+    }
+
+    if (icon != null) {
+      return icon;
+    }
+    return jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON;
   }
 }

@@ -53,6 +53,7 @@ public class DelayedChanges {
           validateReferences(child);
 
           myChildToReplace.getParent().replaceChild(myChildToReplace, child);
+          myGenerator.getGeneratorSessionContext().getGenerationTracer().replaceOutputNode(myChildToReplace, child);
         }
       } catch (Throwable t) {
         myGenerator.showErrorMessage(myInputNode, myMapSrcMacro.getNode(), "mapping failed: '" + t.getMessage() + "'");
@@ -75,13 +76,13 @@ public class DelayedChanges {
         // replace
         reference.getSourceNode().removeReference(reference);
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-                reference.getRole(),
-                reference.getSourceNode(),
-                myInputNode,
-                reference.getTargetNode());
+          reference.getRole(),
+          reference.getSourceNode(),
+          myInputNode,
+          reference.getTargetNode());
         PostponedReference postponedReference = new PostponedReference(
-                refInfo,
-                myGenerator);
+          refInfo,
+          myGenerator);
         reference.getSourceNode().addReference(postponedReference);
       }
     }

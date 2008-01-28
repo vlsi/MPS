@@ -8,6 +8,9 @@ import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 
 import java.util.*;
 
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+
 
 /**
  * Igor Alshannikov
@@ -16,28 +19,33 @@ import java.util.*;
 public class GenerationTracer {
   private static Logger LOG = Logger.getLogger(GenerationTracer.class);
   private static final boolean DISABLED = true;
-  private static Map<String, List<TracerNode>> ourLastTracingData;
+  private static Map<String, List<TracerNode>> ourLastTracingDataByInputModel;
+  private static Map<String, List<TracerNode>> ourLastTracingDataByOutputModel;
   private static MPSProject ourLastTracingProject;
 
 
   private MPSProject myProject;
   private boolean myActive = false;
 
-  private String myCurrentOutputModelUID;
+  private List<TracerNode> myCurrentTracingData;
   private TracerNode myCurrentTraceNode;
-  private Map<String, List<TracerNode>> myTracingData = new HashMap<String, List<TracerNode>>();
+  private Map<String, List<TracerNode>> myTracingDataByInputModel;
+  private Map<String, List<TracerNode>> myTracingDataByOutputModel;
 
   private GenerationTracerViewTool myGenerationTracerViewTool;
   private GenerationTracerActions myGenerationTracerActions;
+  private Map<SNode, TracerNode> myOutputNodesToReplaceLater = new HashMap<SNode, TracerNode>();
 
   public GenerationTracer(MPSProject project) {
     if (DISABLED) return;
 
     // recreate state after total reloading in the end of generation
     if (project == ourLastTracingProject) {
-      myTracingData = ourLastTracingData;
+      myTracingDataByInputModel = ourLastTracingDataByInputModel;
+      myTracingDataByOutputModel = ourLastTracingDataByOutputModel;
     }
-    ourLastTracingData = null;
+    ourLastTracingDataByInputModel = null;
+    ourLastTracingDataByOutputModel = null;
     ourLastTracingProject = null;
 
     myProject = project;
@@ -46,6 +54,7 @@ public class GenerationTracer {
 
     // init
     myGenerationTracerViewTool = new GenerationTracerViewTool(projectFrame);
+    myGenerationTracerViewTool.setTracingDataIsAvailable(hasTracingData());
     projectFrame.getToolsPane().add(myGenerationTracerViewTool, false);
     myGenerationTracerActions = new GenerationTracerActions();
     myGenerationTracerActions.addActions();
@@ -55,7 +64,8 @@ public class GenerationTracer {
     if (DISABLED) return;
 
     ourLastTracingProject = myProject;
-    ourLastTracingData = myTracingData;
+    ourLastTracingDataByInputModel = myTracingDataByInputModel;
+    ourLastTracingDataByOutputModel = myTracingDataByOutputModel;
 
     if (myGenerationTracerViewTool != null) {
       myGenerationTracerActions.removeActions();
@@ -70,20 +80,25 @@ public class GenerationTracer {
   public void startTracing() {
     if (DISABLED) return;
     myActive = true;
-    myCurrentOutputModelUID = null;
-    myTracingData = new HashMap<String, List<TracerNode>>();
+    myTracingDataByInputModel = new HashMap<String, List<TracerNode>>();
+    myTracingDataByOutputModel = new HashMap<String, List<TracerNode>>();
+    myCurrentTracingData = null;
+    myCurrentTraceNode = null;
 
-    // todo: if view is open: do clean-up
+    myGenerationTracerViewTool.setTracingDataIsAvailable(false);
   }
 
   public void finishTracing() {
     myActive = false;
+    myGenerationTracerViewTool.setTracingDataIsAvailable(hasTracingData());
   }
 
-  public void startTracing(SModel outputModel) {
+  public void startTracing(SModel inputModel, SModel outputModel) {
     if (!myActive) return;
-    myCurrentOutputModelUID = outputModel.getUID().toString();
-    myTracingData.put(myCurrentOutputModelUID, new ArrayList<TracerNode>());
+    myCurrentTracingData = new ArrayList<TracerNode>();
+    myTracingDataByInputModel.put(inputModel.getUID().toString(), myCurrentTracingData);
+    myTracingDataByOutputModel.put(outputModel.getUID().toString(), myCurrentTracingData);
+    myCurrentTraceNode = null;
   }
 
   public void pushInputNode(SNode node) {
@@ -138,6 +153,22 @@ public class GenerationTracer {
 
   public void pushOutputNodeToReplaceLater(SNode node) {
     if (!myActive) return;
+    if (myCurrentTraceNode == null) {
+      LOG.errorWithTrace("can't define parent tracer node");
+      return;
+    }
+    myOutputNodesToReplaceLater.put(node, myCurrentTraceNode);
+  }
+
+  public void replaceOutputNode(SNode node, SNode newOutputNode) {
+    if (!myActive) return;
+    TracerNode parentTracerNode = myOutputNodesToReplaceLater.get(node);
+    myOutputNodesToReplaceLater.remove(node);
+    if (parentTracerNode == null) {
+      LOG.errorWithTrace("can't define parent tracer node");
+      return;
+    }
+    parentTracerNode.addChild(new TracerNode(Kind.OUTPUT, new SNodePointer(newOutputNode)));
   }
 
   public void pushTemplateNode(SNode node) {
@@ -158,7 +189,7 @@ public class GenerationTracer {
   private void push(TracerNode tracerNode) {
     if (myCurrentTraceNode == null) {
       // new root
-      myTracingData.get(myCurrentOutputModelUID).add(tracerNode);
+      myCurrentTracingData.add(tracerNode);
     } else {
       myCurrentTraceNode.addChild(tracerNode);
     }
@@ -167,14 +198,10 @@ public class GenerationTracer {
       if (tracerNode.getKind() != Kind.INPUT) {
         LOG.errorWithTrace("node of kind '" + tracerNode.getKind() + "' can not be root");
       }
-    } else {
-      if (myCurrentTraceNode.getKind() == Kind.INPUT && tracerNode.getKind() == Kind.INPUT) {
-        System.out.println("strange");
-      }
     }
 
     if (tracerNode.getKind() != Kind.OUTPUT) {
-      // OUTPUT node is always leaf (leave 'current' unchanged) 
+      // OUTPUT node is always leaf (leave 'current' unchanged)
       myCurrentTraceNode = tracerNode;
     }
   }
@@ -204,7 +231,7 @@ public class GenerationTracer {
         if (myCurrentTraceNode != null) {
           myCurrentTraceNode.removeChild(checkNode);
         } else {
-          myTracingData.get(myCurrentOutputModelUID).remove(checkNode);
+          myCurrentTracingData.remove(checkNode);
         }
         return;
       }
@@ -215,26 +242,37 @@ public class GenerationTracer {
     myCurrentTraceNode = null; // reset branch
   }
 
-  public boolean hasTraceData(SNode node) {
-    if (DISABLED) return false;
-    TracerNode tracerNode = findTracerNode(Kind.INPUT, node);
-    return tracerNode != null;
+  private boolean hasTracingData() {
+    if (myTracingDataByInputModel == null || myTracingDataByInputModel.isEmpty()) return false;
+    for (List<TracerNode> list : myTracingDataByInputModel.values()) {
+      if (!list.isEmpty()) return true;
+    }
+    return false;
   }
 
-  public void showTraceData(SNode node) {
-    int index = myGenerationTracerViewTool.getTabIndex(node);
+  public boolean hasTraceInputData(SModel model) {
+    if (DISABLED) return false;
+    return getRootTracerNodes(Kind.INPUT, model) != null;
+  }
+
+  public boolean showTraceInputData(SNode node) {
+    int index = myGenerationTracerViewTool.getTabIndex(Kind.INPUT, node);
     if (index > -1) {
       myGenerationTracerViewTool.selectIndex(index);
       myGenerationTracerViewTool.showTool();
-      return;
+      return true;
     }
 
     TracerNode tracerNode = buildTraceTree(node);
+    if (tracerNode == null) return false;
     myGenerationTracerViewTool.showTraceView(tracerNode);
+    return true;
   }
 
+  @Nullable
   private TracerNode buildTraceTree(SNode node) {
-    List<TracerNode> tracerNodes = findAllTracerNodes(Kind.INPUT, node);
+    List<TracerNode> tracerNodes = findAllTopmostTracerNodes(Kind.INPUT, node);
+    if (tracerNodes.isEmpty()) return null;
     TracerNode resultTracerNode = new TracerNode(tracerNodes.get(0).getKind(), tracerNodes.get(0).getNodePointer());
     for (TracerNode tracerNode : tracerNodes) {
       List<TracerNode> childrensCopy = tracerNode.getChildrenCopy();
@@ -245,57 +283,70 @@ public class GenerationTracer {
     return resultTracerNode;
   }
 
-  public boolean hasTracebackData(SNode node) {
+  public boolean hasTracebackData(SModel model) {
     if (DISABLED) return false;
-    TracerNode tracerNode = findTracerNode(Kind.OUTPUT, node);
-    return tracerNode != null;
+    return getRootTracerNodes(Kind.OUTPUT, model) != null;
   }
 
-  public void showTracebackData(SNode node) {
-    int index = myGenerationTracerViewTool.getTabIndex(node);
+  public boolean showTracebackData(SNode node) {
+    int index = myGenerationTracerViewTool.getTabIndex(Kind.OUTPUT, node);
     if (index > -1) {
       myGenerationTracerViewTool.selectIndex(index);
       myGenerationTracerViewTool.showTool();
-      return;
+      return true;
     }
 
     TracerNode tracerNode = buildTracebackTree(node);
+    if (tracerNode == null) return false;
     myGenerationTracerViewTool.showTraceView(tracerNode);
+    return true;
   }
 
   private TracerNode buildTracebackTree(SNode node) {
     TracerNode tracerNode = findTracerNode(Kind.OUTPUT, node);
+    if (tracerNode == null) return null;
     return buildTracebackTree(tracerNode, 0);
   }
 
-  private List<TracerNode> findAllTracerNodes(Kind kind, SNode node) {
+  @NotNull
+  private List<TracerNode> findAllTopmostTracerNodes(Kind kind, SNode node) {
+    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel());
+    if (rootTracerNodes == null) return new ArrayList<TracerNode>();
+
     List<TracerNode> result = new ArrayList<TracerNode>();
-    for (TracerNode rootTracerNode : getRootTracerNodes()) {
-      rootTracerNode.findAll(kind, node, result);
+    for (TracerNode rootTracerNode : rootTracerNodes) {
+      rootTracerNode.findAllTopmost(kind, node, result);
     }
     return result;
   }
 
+  @Nullable
+  private List<TracerNode> getRootTracerNodes(Kind kind, SModel model) {
+    if (myTracingDataByInputModel == null) return null;
+
+    if (kind == Kind.INPUT) {
+      String inputModelUID = model.getUID().toString();
+      return myTracingDataByInputModel.get(inputModelUID);
+    } else if (kind == Kind.OUTPUT) {
+      String outputModelUID = model.getUID().toString();
+      return myTracingDataByOutputModel.get(outputModelUID);
+    }
+
+    LOG.errorWithTrace("unexpected trace node kind: " + kind);
+    return null;
+  }
+
   private TracerNode findTracerNode(Kind kind, SNode node) {
-    for (TracerNode rootTracerNode : getRootTracerNodes()) {
+    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel());
+    if (rootTracerNodes == null) return null;
+
+    for (TracerNode rootTracerNode : rootTracerNodes) {
       TracerNode tracerNode = rootTracerNode.find(kind, node);
       if (tracerNode != null) {
         return tracerNode;
       }
     }
     return null;
-  }
-
-  private List<TracerNode> getRootTracerNodes() {
-    List<TracerNode> result = new ArrayList<TracerNode>();
-    Set<String> outputModels = myTracingData.keySet();
-    for (String outputModel : outputModels) {
-      if (SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(outputModel)) == null) {
-        continue;
-      }
-      result.addAll(myTracingData.get(outputModel));
-    }
-    return result;
   }
 
   private TracerNode buildTracebackTree(TracerNode tracerNode, int depth) {

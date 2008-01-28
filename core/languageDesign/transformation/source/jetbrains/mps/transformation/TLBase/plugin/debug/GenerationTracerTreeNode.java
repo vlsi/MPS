@@ -72,12 +72,12 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     String kind = myTracerNode.getKind().toString();
     SNodePointer nodePointer = myTracerNode.getNodePointer();
     if (nodePointer != null) {
-      setIcon(IconManager.getIconFor(nodePointer.getNode()));
       setText("[" + kind + "] " + nodePointer.toString());
       setAdditionalText("" + nodePointer.getModelUID());
       setNodeIdentifier("" + nodePointer.hashCode());
     } else {
       setText("[" + kind + "]");
     }
+    setIcon(myTracerNode.getIcon());
   }
 }

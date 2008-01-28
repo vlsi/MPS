@@ -317,7 +317,7 @@ public class GenerationSession implements IGenerationSession {
     }
 
     SModel currentOutputModel = createTransientModel(modelsLongName, module);
-    generationContext.getGenerationTracer().startTracing(currentOutputModel);
+    generationContext.getGenerationTracer().startTracing(currentInputModel, currentOutputModel);
 
     // -----------------------
     // primary mapping
@@ -341,11 +341,11 @@ public class GenerationSession implements IGenerationSession {
       addMessage(MessageKind.INFORMATION, "generating model '" + currentOutputModel.getUID() + "'");
       generationContext.replaceInputModel(currentOutputModel);
       SModel transientModel = createTransientModel(modelsLongName, module);
-      generationContext.getGenerationTracer().startTracing(transientModel);
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
       currentInputModel.setLoading(false);
+      generationContext.getGenerationTracer().startTracing(currentInputModel, transientModel);
       if (!generator.doSecondaryMapping(currentInputModel, transientModel)) {
         addMessage(MessageKind.INFORMATION, "remove empty model '" + transientModel.getUID() + "'");
         SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());

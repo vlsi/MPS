@@ -3,17 +3,13 @@ package jetbrains.mps.transformation.TLBase.plugin.debug;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.findusages.view.icons.Icons;
-import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.smodel.SNode;
 
-import javax.swing.JPanel;
-import javax.swing.Icon;
-import javax.swing.JToolBar;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
 
 /**
  * Igor Alshannikov
@@ -43,15 +39,11 @@ public abstract class GenerationTracerView {
   }
 
   public String getCaption() {
-    return myRootTracerNode.getNodePointer().toString();
+    return "[" + myRootTracerNode.getKind() + "] " + myRootTracerNode.getNodePointer().toString();
   }
 
   public Icon getIcon() {
-    SNode node = myRootTracerNode.getNodePointer().getNode();
-    if (node == null) {
-      return null;
-    }
-    return IconManager.getIconFor(node);
+    return myRootTracerNode.getIcon();
   }
 
   public Component getComponent() {
@@ -67,11 +59,13 @@ public abstract class GenerationTracerView {
     }
 
     private void createButtons() {
-      add(new AnonymButton(Icons.CLOSE_ICON, "Close") {
-        public void action() {
+      JButton button = new JButton(new AbstractAction("", Icons.CLOSE_ICON) {
+        public void actionPerformed(ActionEvent e) {
           close();
         }
       });
+      button.setToolTipText("Close");
+      add(button);
 
       setFloatable(false);
     }
