@@ -34,6 +34,7 @@ public final class BehaviorManager {
   public void clear() {
     myMethods.clear();
     myConstructors.clear();
+    myDefaultConceptNameMethods.clear();
   }
 
   public void initNode(SNode node) {
