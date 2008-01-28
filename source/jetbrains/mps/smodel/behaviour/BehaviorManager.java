@@ -28,6 +28,7 @@ public final class BehaviorManager {
   }
 
   private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
+  private Map<String, Method> myDefaultConceptNameMethods = new HashMap<String, Method>();
   private Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
 
   public void clear() {
@@ -57,9 +58,7 @@ public final class BehaviorManager {
           Class cls = language.getClass(behaviorClass);
           if (cls != null) {
             Method method = cls.getMethod("init", SNode.class);
-
             method.setAccessible(true);
-
             methodsToCall.add(method);
           }
         } catch (NoSuchMethodException e) {
@@ -92,16 +91,24 @@ public final class BehaviorManager {
       Class cls = language.getClass(behaviorClass);
       if (cls != null) {
         try {
-          Method method = cls.getMethod(BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
+          Method method;
+          if (myDefaultConceptNameMethods.containsKey(fqName)) {
+            method = myDefaultConceptNameMethods.get(fqName);
+          } else {
+            method = cls.getMethod(BehaviorConstants.GET_DEFAULT_CONCRETE_CONCEPT_FQ_NAME);
+            myDefaultConceptNameMethods.put(fqName, method);
+          }
           try {
-            result = (String) method.invoke(null);
+            if (method != null) {
+              result = (String) method.invoke(null);
+            }
           } catch (IllegalAccessException e) {
             throw new UnsupportedOperationException();
           } catch (InvocationTargetException e) {
             throw new UnsupportedOperationException();
           }
         } catch (NoSuchMethodException e) {
-          // ignore
+          myDefaultConceptNameMethods.put(fqName, null);
         }
       }
     }
