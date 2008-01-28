@@ -22,18 +22,13 @@ public class ApplicationsTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
-  public void testSearchWatch() {
-    String res = testProject(new File("app/search-watch/search-watch.mpr"));
-    assertTrue(res, res == null);
-  }
-
   public void testProjectHalo() {
     String res = testProject(new File("app/ProjectHalo/ProjectHalo.mpr"));
     assertTrue(res, res == null);
   }
 
   public void testMPSLite() {
-    String res = testProject(new File("platform/mps-lite/mps-lite.mpr"));
+    String res = testProject(new File("core/languageDesign/mps-lite/mps-lite.mpr"));
     assertTrue(res, res == null);
   }
 
