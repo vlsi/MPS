@@ -156,7 +156,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
   public EditorCell createPropertySetterCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("propertySetter");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<none>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createPropertySetterCellinternal(context, node, provider);
