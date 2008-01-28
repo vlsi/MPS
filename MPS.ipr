@@ -891,7 +891,6 @@
       <module fileurl="file://$PROJECT_DIR$/app/complexLanguage/ComplexNumbersLanguage.iml" filepath="$PROJECT_DIR$/app/complexLanguage/ComplexNumbersLanguage.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/MForum/MForum.iml" filepath="$PROJECT_DIR$/app/MForum/MForum.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/platform/mps-lite/MPS-lite.iml" filepath="$PROJECT_DIR$/platform/mps-lite/MPS-lite.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform/panacea/Panacea.iml" filepath="$PROJECT_DIR$/platform/panacea/Panacea.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" group="app" />
@@ -939,6 +938,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/app/mf/lair1/lair1.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/money.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/money.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" group="core/baseLanguage/money" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" filepath="$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" group="app/ParserGenerator" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" group="app/ParserGenerator" />
