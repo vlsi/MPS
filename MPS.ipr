@@ -170,6 +170,11 @@
               <file url="file://$CHARISMA_HOME$/exploded/WEB-INF/web.xml" />
             </files>
           </module>
+          <module name="PubMedDB">
+            <files>
+              <file url="file://$PROJECT_DIR$/app/PubMedDB/WEB-INF/web.xml" />
+            </files>
+          </module>
         </modules>
       </facet-type>
       <facet-type id="jpa">
@@ -885,7 +890,6 @@
       <module fileurl="file://$PROJECT_DIR$/platform/panacea/Panacea.iml" filepath="$PROJECT_DIR$/platform/panacea/Panacea.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" filepath="$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" group="app/PubMedDB" />
-      <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" filepath="$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" group="app/PubMedDB" />
       <module fileurl="file://$PROJECT_DIR$/platform/xml4BL/XML4BL.iml" filepath="$PROJECT_DIR$/platform/xml4BL/XML4BL.iml" group="platform/XML4BL" />
       <module fileurl="file://$PROJECT_DIR$/platform/xml4BL/runtime/XML4BL_Runtime.iml" filepath="$PROJECT_DIR$/platform/xml4BL/runtime/XML4BL_Runtime.iml" group="platform/XML4BL" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/YPath.iml" filepath="$PROJECT_DIR$/platform/ypath/YPath.iml" group="platform/YPath-Panacea" />
@@ -1041,10 +1045,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
@@ -1147,10 +1147,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
@@ -1248,10 +1244,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
@@ -1328,10 +1320,6 @@
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1429,10 +1417,6 @@
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>

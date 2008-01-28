@@ -10,19 +10,7 @@ public class MemoryLeaksTest extends BaseMPSTest {
     assertTrue(testProjectGenerationForLeaks(new File("core/languageDesign/editorLanguage/editorLanguage.mpr")));
   }
 
-  public void testPubMedDBGenerationLeaks() {
-    assertTrue(testProjectGenerationForLeaks(new File("app/PubMedDB/pubMedDB.mpr")));
-  }
-
   public void testSTWikiForLeaks() {
     assertTrue(testProjectGenerationForLeaks(new File("app/stwiki/stwiki.mpr")));
   }
-
-//  public void testCharismaGenerationLeaks() {
-//    assertTrue(TestMain.testProjectGenerationForLeaks(new File("app/charisma/charisma-app/charisma-app.mpr")));
-//  }
-//
-//  public void testWebrProjectReloadingLeaks() {
-//    assertTrue(TestMain.testProjectReloadForLeaks(new File("platform/webr/webr.mpr")));
-//  }
 }
