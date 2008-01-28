@@ -53,7 +53,9 @@ public class QueriesGenerated {
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Statement_1200830875450(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    return (SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) == null);
+    // return statements must be allowed until we find a way to implement early returns
+    // http://www.javac.info
+    return false && (SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) == null);
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterReference_1199622421675(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {

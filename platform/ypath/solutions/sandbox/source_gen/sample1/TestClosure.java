@@ -13,7 +13,7 @@ public class TestClosure {
     _void closure;
     _Integer_from_Integer fib = new _FunctionTypes._Integer_from_Integer() {
 
-      public int invoke(int n) {
+      public Integer invoke(Integer n) {
         return (n <= 1 ?
           n :
           this.invoke(n - 1) + this.invoke(n - 2)
@@ -24,7 +24,7 @@ public class TestClosure {
     System.out.println("fib(8)=" + fib.invoke(8));
     System.out.println("fib(9)=" + new _FunctionTypes._Integer_from_Integer() {
 
-      public int invoke(int n) {
+      public Integer invoke(Integer n) {
         return (n <= 1 ?
           n :
           this.invoke(n - 1) + this.invoke(n - 2)
@@ -34,7 +34,7 @@ public class TestClosure {
     }.invoke(9));
     int calc = new _FunctionTypes._Integer() {
 
-      public int invoke() {
+      public Integer invoke() {
         return 2 + 2;
       }
 
@@ -42,7 +42,7 @@ public class TestClosure {
     System.out.println("2+2=" + calc);
     System.out.println("fact(5)=" + new _FunctionTypes._Integer_from_Integer() {
 
-      public int invoke(int n) {
+      public Integer invoke(Integer n) {
         int res = 1;
         while(n > 1) {
           res = res * n;

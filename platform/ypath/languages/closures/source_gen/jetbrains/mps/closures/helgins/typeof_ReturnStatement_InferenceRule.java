@@ -14,7 +14,9 @@ public class typeof_ReturnStatement_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(final SNode returnStatement) {
-    if((SNodeOperations.getAncestor(returnStatement, "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null)) {
+    // returns must be allowed until we find a way to implement early returns
+    // http://www.javac.info
+    if(false && (SNodeOperations.getAncestor(returnStatement, "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null)) {
       if(!(false)) {
         TypeChecker.getInstance().reportTypeError(returnStatement, "return is not allowed within closure literal", "jetbrains.mps.closures.helgins", "1200829870877");
       }
