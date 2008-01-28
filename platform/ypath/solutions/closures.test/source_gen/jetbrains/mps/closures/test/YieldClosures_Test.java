@@ -4,6 +4,7 @@ package jetbrains.mps.closures.test;
 
 import java.util.List;
 import java.util.Iterator;
+import java.util.Arrays;
 
 public class YieldClosures_Test extends ClosuresBase_Test {
 
@@ -192,7 +193,7 @@ __switch__:
                       this.yield(this._8_j);
                       return true;
                     case 16:
-                      this.__CP__ = 1;
+                      this.__CP__ = 17;
                       this.yield(this._3_i);
                       return true;
                     case 11:
@@ -213,6 +214,10 @@ __switch__:
                     case 0:
                       this._3_i = 3;
                       this.__CP__ = 4;
+                      break;
+                    case 17:
+                      // placeholder
+                      this.__CP__ = 1;
                       break;
                     default:
                       break __loop__;
@@ -339,6 +344,196 @@ __switch__:
                     case 19:
                       // placeholder
                       this.__CP__ = 1;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+  }
+
+  public void test_forStatement() throws Exception {
+    this.assertResultsEqual(new _FunctionTypes._void_from_List_of_Integer() {
+
+      public void invoke(List<Integer> exp) {
+        for(int i = 0 ; i < 3 ; i = i + 1) {
+          for(int j = 0 ; j < 3 ; j = j + 1) {
+            exp.add(i);
+            exp.add(j);
+          }
+        }
+      }
+
+    }, new _FunctionTypes._Iterable_of_Integer() {
+
+      public Iterable<Integer> invoke() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new _FunctionTypes.YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _2_i;
+              private int _6_j;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 6:
+                      this._6_j = 0;
+                    case 7:
+                      if(!(this._6_j < 3)) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 8;
+                      break;
+                    case 9:
+                      this._6_j = this._6_j + 1;
+                      this.__CP__ = 7;
+                      break;
+                    case 2:
+                      this._2_i = 0;
+                    case 3:
+                      if(!(this._2_i < 3)) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._2_i = this._2_i + 1;
+                      this.__CP__ = 3;
+                      break;
+                    case 10:
+                      this.__CP__ = 11;
+                      this.yield(this._2_i);
+                      return true;
+                    case 11:
+                      this.__CP__ = 9;
+                      this.yield(this._6_j);
+                      return true;
+                    case 8:
+                      this.__CP__ = 10;
+                      break;
+                    case 4:
+                      this.__CP__ = 6;
+                      break;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+  }
+
+  public void test_foreachStatement() throws Exception {
+    final List<Integer> data1 = Arrays.asList(new Integer[]{1,2,3,4,5});
+    final List<Integer> data2 = Arrays.asList(new Integer[]{1,2,3,4,5});
+    this.assertResultsEqual(new _FunctionTypes._void_from_List_of_Integer() {
+
+      public void invoke(List<Integer> exp) {
+        for(int i : data1) {
+          exp.add(i);
+          for(int j : data2) {
+            exp.add(j);
+            exp.add(i + j);
+          }
+          exp.add(i * i);
+        }
+      }
+
+    }, new _FunctionTypes._Iterable_of_Integer() {
+
+      public Iterable<Integer> invoke() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new _FunctionTypes.YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _2_i;
+              private Iterator<Integer> _2_i_it;
+              private int _6_j;
+              private Iterator<Integer> _6_j_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 6:
+                      this._6_j_it = data2.iterator();
+                    case 7:
+                      if(!(this._6_j_it.hasNext())) {
+                        this.__CP__ = 11;
+                        break;
+                      }
+                      this._6_j = this._6_j_it.next();
+                      this.__CP__ = 8;
+                      break;
+                    case 2:
+                      this._2_i_it = data1.iterator();
+                    case 3:
+                      if(!(this._2_i_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_i = this._2_i_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this.__CP__ = 6;
+                      this.yield(this._2_i);
+                      return true;
+                    case 9:
+                      this.__CP__ = 10;
+                      this.yield(this._6_j);
+                      return true;
+                    case 10:
+                      this.__CP__ = 7;
+                      this.yield(this._2_i + this._6_j);
+                      return true;
+                    case 11:
+                      this.__CP__ = 3;
+                      this.yield(this._2_i * this._2_i);
+                      return true;
+                    case 8:
+                      this.__CP__ = 9;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 0:
+                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;
