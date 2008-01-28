@@ -27,16 +27,15 @@ public class FocusPolicyUtil {
     EditorCell prevCell = selectedCell;
     EditorCell focusedCell = findCellWhichAttractsFocus(selectedCell, true);
     while (focusedCell != null) {
-      if (focusedCell.getFocusPolicy() == FocusPolicy.FIRST_EDITABLE_CELL) {
-        EditorCell result = EditorUtil.findErrorOrEditableCell(focusedCell);
-        if (result == null) {
-          return focusedCell;
-        } else {
-          return result;
-        }
-      }
       prevCell = focusedCell;
       focusedCell = findCellWhichAttractsFocus(focusedCell, false);
+    }
+
+    if (prevCell.getFocusPolicy() == FocusPolicy.FIRST_EDITABLE_CELL) {
+      EditorCell result = EditorUtil.findErrorOrEditableCell(prevCell);
+      if (result != null) {
+        return result;
+      }
     }
     return prevCell;
   }

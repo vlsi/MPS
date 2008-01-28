@@ -24,8 +24,6 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConceptLinkDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175622789848");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,15 +31,11 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
     editorCell.setLayoutConstraint("punctuation");
-    if(true) {
-    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175622789135");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupLabel_ConceptLinkDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -114,8 +108,6 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175622789850");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
-      if(true) {
-      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

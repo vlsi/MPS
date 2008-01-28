@@ -21,8 +21,6 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
   private static void setupBasic_LinkReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138412361312");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupLabel_LinkReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -72,8 +70,6 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138412361314");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
-      if(true) {
-      }
     }
 
     private static void setupLabel_RoleCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

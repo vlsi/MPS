@@ -17,8 +17,6 @@ public class SModelType_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1143226143282");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
-    if(true) {
-    }
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
