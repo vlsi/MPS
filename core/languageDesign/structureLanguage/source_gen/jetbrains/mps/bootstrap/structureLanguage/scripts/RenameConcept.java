@@ -13,6 +13,13 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder;
+import jetbrains.mps.ide.IDEProjectFrame;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.List;
@@ -89,11 +96,18 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   }
 
   public boolean showsAffectedNodes() {
-    return false;
+    return true;
   }
 
   public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
-    return null;
+    {
+      SNode node = actionContext.getNode();
+      SearchQuery searchQuery = new SearchQuery(new SNodePointer(node), actionContext.getScope());
+      IResultProvider resultProvider = TreeBuilder.forFinders(new ConceptInstances_Finder(), new NodeAndDescendantsUsages_Finder());
+      IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
+      SearchResults searchResults = resultProvider.getResults(searchQuery, projectFrame.createAdaptiveProgressMonitor());
+      return searchResults;
+    }
   }
 
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {

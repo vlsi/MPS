@@ -375,6 +375,107 @@
         <node role="statement" type="jetbrains.mps.logging.refactoring.structure.UpdateModelByDefaultOperation" id="1198088940952" />
       </node>
     </node>
+    <node role="affectedNodesClause" type="jetbrains.mps.logging.refactoring.structure.AffectedNodesClause" id="1201531772166">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201531772167">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201531773375">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201531773376">
+            <property name="name" value="node" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201531773377" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201531773378">
+              <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+              <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201531773379" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201531773380">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201531773381">
+            <property name="name" value="searchQuery" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201531773382">
+              <link role="classifier" targetNodeId="19.~SearchQuery" resolveInfo="SearchQuery" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201531773383">
+              <link role="baseMethodDeclaration" targetNodeId="19.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,jetbrains.mps.smodel.IScope)" resolveInfo="SearchQuery" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201531773384">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201531773385">
+                  <link role="variableDeclaration" targetNodeId="1201531773376" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201531773386">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201531773387" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201531773388">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201531773389">
+            <property name="name" value="resultProvider" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201531773390">
+              <link role="classifier" targetNodeId="23.~IResultProvider" resolveInfo="IResultProvider" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201531773391">
+              <link role="baseMethodDeclaration" targetNodeId="22.~TreeBuilder.forFinders(jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder[]):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="forFinders" />
+              <link role="classConcept" targetNodeId="22.~TreeBuilder" resolveInfo="TreeBuilder" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201531773392">
+                <link role="baseMethodDeclaration" targetNodeId="18.~ConceptInstances_Finder.&lt;init&gt;()" resolveInfo="ConceptInstances_Finder" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201531773393">
+                <link role="baseMethodDeclaration" targetNodeId="18.~NodeAndDescendantsUsages_Finder.&lt;init&gt;()" resolveInfo="NodeAndDescendantsUsages_Finder" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201531773409">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201531773410">
+            <property name="name" value="projectFrame" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201531773411">
+              <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201531773412">
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201531773413">
+                <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+              </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201531773414">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.get(java.lang.Class):java.lang.Object" resolveInfo="get" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1201531773415">
+                  <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+                </node>
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201531773416" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201531773417">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201531773418">
+            <property name="name" value="searchResults" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201531773419">
+              <link role="classifier" targetNodeId="21.~SearchResults" resolveInfo="SearchResults" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201531773420">
+              <link role="baseMethodDeclaration" targetNodeId="23.~IResultProvider.getResults(jetbrains.mps.ide.findusages.model.searchquery.SearchQuery,jetbrains.mps.ide.progress.IAdaptiveProgressMonitor):jetbrains.mps.ide.findusages.model.result.SearchResults" resolveInfo="getResults" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201531773421">
+                <link role="variableDeclaration" targetNodeId="1201531773389" resolveInfo="resultProvider" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201531773422">
+                <link role="variableDeclaration" targetNodeId="1201531773381" resolveInfo="searchQuery" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201531773423">
+                <link role="baseMethodDeclaration" targetNodeId="17.~AbstractProjectFrame.createAdaptiveProgressMonitor():jetbrains.mps.ide.progress.IAdaptiveProgressMonitor" resolveInfo="createAdaptiveProgressMonitor" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201531773424">
+                  <link role="variableDeclaration" targetNodeId="1201531773410" resolveInfo="projectFrame" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201531808774">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201531819433">
+            <link role="variableDeclaration" targetNodeId="1201531773418" resolveInfo="searchResults" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198173570106">
     <property name="name" value="MoveConcepts" />
@@ -1257,6 +1358,107 @@
         <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
       </node>
     </node>
+    <node role="affectedNodesClause" type="jetbrains.mps.logging.refactoring.structure.AffectedNodesClause" id="1201533747260">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201533747261">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533748216">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533748217">
+            <property name="name" value="node" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201533748218" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533748219">
+              <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+              <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201533748220" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533748221">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533748222">
+            <property name="name" value="searchQuery" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533748223">
+              <link role="classifier" targetNodeId="19.~SearchQuery" resolveInfo="SearchQuery" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533748224">
+              <link role="baseMethodDeclaration" targetNodeId="19.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,jetbrains.mps.smodel.IScope)" resolveInfo="SearchQuery" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533748225">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533748226">
+                  <link role="variableDeclaration" targetNodeId="1201533748217" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533748227">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201533748228" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533748229">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533748230">
+            <property name="name" value="resultProvider" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533748231">
+              <link role="classifier" targetNodeId="23.~IResultProvider" resolveInfo="IResultProvider" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201533748232">
+              <link role="baseMethodDeclaration" targetNodeId="22.~TreeBuilder.forFinders(jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder[]):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="forFinders" />
+              <link role="classConcept" targetNodeId="22.~TreeBuilder" resolveInfo="TreeBuilder" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533748233">
+                <link role="baseMethodDeclaration" targetNodeId="18.~ConceptInstances_Finder.&lt;init&gt;()" resolveInfo="ConceptInstances_Finder" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533748234">
+                <link role="baseMethodDeclaration" targetNodeId="18.~NodeAndDescendantsUsages_Finder.&lt;init&gt;()" resolveInfo="NodeAndDescendantsUsages_Finder" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533748235">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533748236">
+            <property name="name" value="projectFrame" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533748237">
+              <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201533748238">
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533748239">
+                <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+              </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533748240">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.get(java.lang.Class):java.lang.Object" resolveInfo="get" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1201533748241">
+                  <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+                </node>
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201533748242" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533748243">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533748244">
+            <property name="name" value="searchResults" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533748245">
+              <link role="classifier" targetNodeId="21.~SearchResults" resolveInfo="SearchResults" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533748246">
+              <link role="baseMethodDeclaration" targetNodeId="23.~IResultProvider.getResults(jetbrains.mps.ide.findusages.model.searchquery.SearchQuery,jetbrains.mps.ide.progress.IAdaptiveProgressMonitor):jetbrains.mps.ide.findusages.model.result.SearchResults" resolveInfo="getResults" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533748247">
+                <link role="variableDeclaration" targetNodeId="1201533748230" resolveInfo="resultProvider" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533748248">
+                <link role="variableDeclaration" targetNodeId="1201533748222" resolveInfo="searchQuery" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533748249">
+                <link role="baseMethodDeclaration" targetNodeId="17.~AbstractProjectFrame.createAdaptiveProgressMonitor():jetbrains.mps.ide.progress.IAdaptiveProgressMonitor" resolveInfo="createAdaptiveProgressMonitor" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533748250">
+                  <link role="variableDeclaration" targetNodeId="1201533748236" resolveInfo="projectFrame" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201533754642">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533765410">
+            <link role="variableDeclaration" targetNodeId="1201533748244" resolveInfo="searchResults" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198587937318">
     <property name="name" value="RenameLink" />
@@ -1578,6 +1780,107 @@
     <node role="updateModelClause" type="jetbrains.mps.logging.refactoring.structure.UpdateModelClause" id="1198588645737">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198588645738">
         <node role="statement" type="jetbrains.mps.logging.refactoring.structure.UpdateModelByDefaultOperation" id="1198588648536" />
+      </node>
+    </node>
+    <node role="affectedNodesClause" type="jetbrains.mps.logging.refactoring.structure.AffectedNodesClause" id="1201533901845">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201533901846">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533903055">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533903056">
+            <property name="name" value="node" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201533903057" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533903058">
+              <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+              <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201533903059" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533903060">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533903061">
+            <property name="name" value="searchQuery" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533903062">
+              <link role="classifier" targetNodeId="19.~SearchQuery" resolveInfo="SearchQuery" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533903063">
+              <link role="baseMethodDeclaration" targetNodeId="19.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,jetbrains.mps.smodel.IScope)" resolveInfo="SearchQuery" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533903064">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533903065">
+                  <link role="variableDeclaration" targetNodeId="1201533903056" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533903066">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201533903067" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533903068">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533903069">
+            <property name="name" value="resultProvider" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533903070">
+              <link role="classifier" targetNodeId="23.~IResultProvider" resolveInfo="IResultProvider" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201533903071">
+              <link role="classConcept" targetNodeId="22.~TreeBuilder" resolveInfo="TreeBuilder" />
+              <link role="baseMethodDeclaration" targetNodeId="22.~TreeBuilder.forFinders(jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder[]):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="forFinders" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533903072">
+                <link role="baseMethodDeclaration" targetNodeId="18.~LinkExamples_Finder.&lt;init&gt;()" resolveInfo="LinkExamples_Finder" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533903073">
+                <link role="baseMethodDeclaration" targetNodeId="18.~NodeAndDescendantsUsages_Finder.&lt;init&gt;()" resolveInfo="NodeAndDescendantsUsages_Finder" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533903074">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533903075">
+            <property name="name" value="projectFrame" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533903076">
+              <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201533903077">
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533903078">
+                <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+              </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533903079">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.get(java.lang.Class):java.lang.Object" resolveInfo="get" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1201533903080">
+                  <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+                </node>
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201533903081" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533903082">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533903083">
+            <property name="name" value="searchResults" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533903084">
+              <link role="classifier" targetNodeId="21.~SearchResults" resolveInfo="SearchResults" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533903085">
+              <link role="baseMethodDeclaration" targetNodeId="23.~IResultProvider.getResults(jetbrains.mps.ide.findusages.model.searchquery.SearchQuery,jetbrains.mps.ide.progress.IAdaptiveProgressMonitor):jetbrains.mps.ide.findusages.model.result.SearchResults" resolveInfo="getResults" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533903086">
+                <link role="variableDeclaration" targetNodeId="1201533903069" resolveInfo="resultProvider" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533903087">
+                <link role="variableDeclaration" targetNodeId="1201533903061" resolveInfo="searchQuery" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533903088">
+                <link role="baseMethodDeclaration" targetNodeId="17.~AbstractProjectFrame.createAdaptiveProgressMonitor():jetbrains.mps.ide.progress.IAdaptiveProgressMonitor" resolveInfo="createAdaptiveProgressMonitor" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533903089">
+                  <link role="variableDeclaration" targetNodeId="1201533903075" resolveInfo="projectFrame" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201533920562">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533920563">
+            <link role="variableDeclaration" targetNodeId="1201533903083" resolveInfo="searchResults" />
+          </node>
+        </node>
       </node>
     </node>
   </node>
@@ -2077,6 +2380,104 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198594003593">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198594003594">
             <link role="variableDeclaration" targetNodeId="1198594003540" resolveInfo="result" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="affectedNodesClause" type="jetbrains.mps.logging.refactoring.structure.AffectedNodesClause" id="1201533945673">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201533945674">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533946597">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533946598">
+            <property name="name" value="node" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201533946599" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533946600">
+              <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+              <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201533946601" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533946602">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533946603">
+            <property name="name" value="searchQuery" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533946604">
+              <link role="classifier" targetNodeId="19.~SearchQuery" resolveInfo="SearchQuery" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533946605">
+              <link role="baseMethodDeclaration" targetNodeId="19.~SearchQuery.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,jetbrains.mps.smodel.IScope)" resolveInfo="SearchQuery" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533946606">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533946607">
+                  <link role="variableDeclaration" targetNodeId="1201533946598" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533946608">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201533946609" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533946610">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533946611">
+            <property name="name" value="resultProvider" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533946612">
+              <link role="classifier" targetNodeId="23.~IResultProvider" resolveInfo="IResultProvider" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201533946613">
+              <link role="classConcept" targetNodeId="22.~TreeBuilder" resolveInfo="TreeBuilder" />
+              <link role="baseMethodDeclaration" targetNodeId="22.~TreeBuilder.forFinders(jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder[]):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="forFinders" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201533946615">
+                <link role="baseMethodDeclaration" targetNodeId="18.~NodeAndDescendantsUsages_Finder.&lt;init&gt;()" resolveInfo="NodeAndDescendantsUsages_Finder" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533946616">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533946617">
+            <property name="name" value="projectFrame" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533946618">
+              <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201533946619">
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533946620">
+                <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+              </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533946621">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.get(java.lang.Class):java.lang.Object" resolveInfo="get" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1201533946622">
+                  <link role="classifier" targetNodeId="17.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
+                </node>
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201533946623" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201533946624">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201533946625">
+            <property name="name" value="searchResults" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201533946626">
+              <link role="classifier" targetNodeId="21.~SearchResults" resolveInfo="SearchResults" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533946627">
+              <link role="baseMethodDeclaration" targetNodeId="23.~IResultProvider.getResults(jetbrains.mps.ide.findusages.model.searchquery.SearchQuery,jetbrains.mps.ide.progress.IAdaptiveProgressMonitor):jetbrains.mps.ide.findusages.model.result.SearchResults" resolveInfo="getResults" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533946628">
+                <link role="variableDeclaration" targetNodeId="1201533946611" resolveInfo="resultProvider" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533946629">
+                <link role="variableDeclaration" targetNodeId="1201533946603" resolveInfo="searchQuery" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201533946630">
+                <link role="baseMethodDeclaration" targetNodeId="17.~AbstractProjectFrame.createAdaptiveProgressMonitor():jetbrains.mps.ide.progress.IAdaptiveProgressMonitor" resolveInfo="createAdaptiveProgressMonitor" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533946631">
+                  <link role="variableDeclaration" targetNodeId="1201533946617" resolveInfo="projectFrame" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201533955946">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201533958073">
+            <link role="variableDeclaration" targetNodeId="1201533946625" resolveInfo="searchResults" />
           </node>
         </node>
       </node>
