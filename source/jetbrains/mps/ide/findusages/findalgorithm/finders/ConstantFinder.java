@@ -3,6 +3,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -15,10 +16,14 @@ public class ConstantFinder extends BaseFinder {
 
   private SearchResults myResults = new SearchResults();
 
-  public ConstantFinder(Collection<SNode> nodes, String categoryName) {
-    for (SNode node : nodes) {
-      myResults.getSearchResults().add(new SearchResult(new SNodePointer(node), categoryName));
-    }
+  public ConstantFinder(final Collection<SNode> nodes, final String categoryName) {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        for (SNode node : nodes) {
+          myResults.getSearchResults().add(new SearchResult(new SNodePointer(node), categoryName));
+        }
+      }
+    });
   }
 
   public ConstantFinder(Collection<SearchResult> searchResults) {

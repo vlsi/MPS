@@ -60,7 +60,7 @@ public abstract class BaseNode implements IResultProvider {
 
   public abstract SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor);
 
-  public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+  public SearchResults getResults(SearchQuery query, final IAdaptiveProgressMonitor monitor) {
     assert !ThreadUtils.isEventDispatchThread();
 
     SearchResults results;
@@ -93,7 +93,12 @@ public abstract class BaseNode implements IResultProvider {
     }
 
     if (isRoot()) {
-      monitor.finish();
+      new Thread() {
+        public void run() {
+          //todo hack
+          monitor.finish();
+        }
+      }.start();
     }
     return results;
   }
