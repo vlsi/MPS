@@ -11,8 +11,7 @@ class ModelAccess {
         return;
       }
 
-//      throw new IllegalModelAccessError("You can read model only inside command. Use lightweight command to read model");
-      new IllegalModelAccessError("You can read model only inside command. Use lightweight command to read model").printStackTrace();
+      throw new IllegalModelAccessError("You can read model only inside command. Use lightweight command to read model");
     }
   }
 }
