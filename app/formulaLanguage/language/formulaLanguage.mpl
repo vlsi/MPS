@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.formulaLanguage" generatorOutputPath="${mps_home}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.formulaLanguage" generatorOutputPath="${mps_home}\app\formulaLanguage\source_gen" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.formulaLanguage.structure" />
   </structure>
@@ -26,7 +26,7 @@
   </generators>
   <classPath />
   <runtimeClassPath>
-    <entry path="${mps_home}\classes" />
+    <entry path="${mps_home}\app\formulaLanguage\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
