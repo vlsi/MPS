@@ -599,10 +599,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       }      
       builder.fillNode(root);
 
-      if (languages.size() + solutions.size() > 0) {
-        myModulesPool = new ProjectModulesPoolTreeNode(getProject());
-        root.add(myModulesPool);
-      }
+      myModulesPool = new ProjectModulesPoolTreeNode(getProject());
+      root.add(myModulesPool);
       return root;
     }
   } // private class MyTree
