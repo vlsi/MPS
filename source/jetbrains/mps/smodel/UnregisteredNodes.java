@@ -49,7 +49,9 @@ import java.util.Map;
   /*package*/ void put(SNode node) {
     if (!node.hasId()) return;
     String key = node.getModel().getUID() + "#" + node.getId();
-    LOG.assertLog(!myMap.containsKey(key), "attempt to put another node with same key: " + key);
+    if (myMap.containsKey(key)) {
+      LOG.assertLog(!myMap.containsKey(key), "attempt to put another node with same key: " + key);
+    }
     myMap.put(key, node);
   }
 
