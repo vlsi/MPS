@@ -40,6 +40,8 @@ public abstract class AbstractModule implements IModule {
   private IClassPathItem myRuntimeClassPathItem;
   private IClassPathItem myJavaStubsClassPathItem;
 
+  private Map<String, Class> myClassesCache = new HashMap<String, Class>();
+
   //
   // IScope
   //
@@ -379,7 +381,13 @@ public abstract class AbstractModule implements IModule {
   }
 
   public Class getClass(String fqName) {
-    return ClassLoaderManager.getInstance().getClassFor(this, fqName);
+    if (myClassesCache.containsKey(fqName)) {
+      return myClassesCache.get(fqName);
+    }
+
+    Class result = ClassLoaderManager.getInstance().getClassFor(this, fqName);
+    myClassesCache.put(fqName, result);
+    return result;
   }
 
   public void reloadStubs() {
@@ -656,6 +664,7 @@ public abstract class AbstractModule implements IModule {
 
   public void invalidateCaches() {
     myScope.invalidateCaches();
+    myClassesCache.clear();    
   }
 
   //TODO: make private (was made visible for usages view to save view scope by Mihail Muhin)
