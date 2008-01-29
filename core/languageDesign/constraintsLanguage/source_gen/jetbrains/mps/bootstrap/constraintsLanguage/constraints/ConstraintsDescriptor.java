@@ -16,6 +16,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new ConceptMethodDeclaration_overridenMethod_ReferentConstraint());
     this.myConstraints.add(new NodePropertyConstraint_applicableProperty_ReferentConstraint());
     this.myConstraints.add(new NodePropertyConstraint_applicableConcept_ReferentConstraint());
+    this.myConstraints.add(new ConceptBehavior_defaultConcreteConcept_ReferentConstraint());
     this.myConstraints.add(new NodeReferentConstraint_applicableLink_ReferentConstraint());
     this.myConstraints.add(new NodeReferentConstraint_applicableConcept_ReferentConstraint());
     this.myConstraints.add(new NodeDefaultSearchScope_referentConcept_ReferentConstraint());
