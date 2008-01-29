@@ -19,7 +19,7 @@ import java.util.HashSet;
  * Time: 18:10:13
  * To change this template use File | Settings | File Templates.
  */
-public class DoubleRuleSet<T extends ComparisonRule_Runtime> {
+public class DoubleRuleSet<T extends IRuleWithTwoApplicableNodes> {
   Map<Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>, Set<T>> myRules =
           new HashMap<Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>, Set<T>>();
 
