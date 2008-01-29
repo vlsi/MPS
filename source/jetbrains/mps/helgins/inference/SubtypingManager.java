@@ -1,9 +1,6 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
-import jetbrains.mps.bootstrap.helgins.runtime.SupertypingRule_Runtime;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.bootstrap.helgins.runtime.ComparisonRule_Runtime;
+import jetbrains.mps.bootstrap.helgins.runtime.*;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.util.*;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
@@ -70,18 +67,9 @@ public class SubtypingManager {
       superRepresentator = equationManager.getRepresentatorWrapper(supertype);
     }
 
-
     //reflexivity:
     if (subRepresentator == superRepresentator) return true;
     if (subRepresentator == null || superRepresentator == null) return false;
-
-    //expand, if contains some vars.
-    if (equationManager != null && subRepresentator instanceof NodeWrapper) {
-      NodeWrapper subtypeNodeWrapper = (NodeWrapper) subRepresentator;
-      SModel typesModel = getRuntimeTypesModel();
-      NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(subtypeNodeWrapper.getNode(), typesModel));
-      subRepresentator = equationManager.expandWrapper(null, representatorCopy, typesModel);
-    }
 
     if (superRepresentator.matchesWith(subRepresentator, equationManager, errorInfo)) {
       return true;

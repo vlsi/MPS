@@ -7,6 +7,7 @@ import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.structure.MeetType;
 import jetbrains.mps.bootstrap.helgins.structure.JoinType;
+import jetbrains.mps.bootstrap.helgins.runtime.EliminationRule_Runtime;
 import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.*;
@@ -153,6 +154,31 @@ public class EquationManager {
       return;
     }
 
+    //expand, if contains some vars.
+    if (subtypeRepresentator instanceof NodeWrapper) {
+      NodeWrapper subtypeNodeWrapper = (NodeWrapper) subtypeRepresentator;
+      SModel typesModel = myTypeChecker.getRuntimeTypesModel();
+      NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(subtypeNodeWrapper.getNode(), typesModel));
+      subtypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
+    }
+    if (supertypeRepresentator instanceof NodeWrapper) {
+      NodeWrapper supertypeNodeWrapper = (NodeWrapper) supertypeRepresentator;
+      SModel typesModel = myTypeChecker.getRuntimeTypesModel();
+      NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(supertypeNodeWrapper.getNode(), typesModel));
+      supertypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
+    }
+
+    //elimination rules:
+    if (subtypeRepresentator instanceof NodeWrapper && supertypeRepresentator instanceof NodeWrapper) {
+      SNode node1 = subtypeRepresentator.getNode();
+      SNode node2 = supertypeRepresentator.getNode();
+      Set<EliminationRule_Runtime> eliminationRules = myTypeChecker.getRulesManager().getEliminationRules(node1, node2);
+      for (EliminationRule_Runtime eliminationRule : eliminationRules) {
+        eliminationRule.processInequation(node1, node2);
+        return;
+      }
+    }
+
     // if subtyping
     if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, errorInfo, isWeak)) {
       return;
@@ -164,8 +190,8 @@ public class EquationManager {
     }
     String strongString = isWeak ? "" : " strong";
     IErrorReporter errorReporter =
-            new EquationErrorReporter(this, "type ", subtypeRepresentator,
-                    " is not a" + strongString + " subtype of ", supertypeRepresentator, "", errorInfo.myRuleModel, errorInfo.myRuleId);
+      new EquationErrorReporter(this, "type ", subtypeRepresentator,
+        " is not a" + strongString + " subtype of ", supertypeRepresentator, "", errorInfo.myRuleModel, errorInfo.myRuleId);
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
 
     //4debug
@@ -238,8 +264,8 @@ public class EquationManager {
     }
     String strongString = isWeak ? "" : " strongly";
     IErrorReporter errorReporter =
-            new EquationErrorReporter(this, "type ", representator1," is not" + strongString + " comparable with ",
-                    representator2, "", errorInfo.myRuleModel, errorInfo.myRuleId);
+      new EquationErrorReporter(this, "type ", representator1," is not" + strongString + " comparable with ",
+        representator2, "", errorInfo.myRuleModel, errorInfo.myRuleId);
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
   }
 
@@ -262,14 +288,14 @@ public class EquationManager {
     WhenConcreteEntity entityToPut = entity;
     if (oldEntity != null) {
       entityToPut = new WhenConcreteEntity(
-              new Runnable() {
-                public void run() {
-                  oldEntity.run();
-                  entity.run();
-                }
-              },
-              oldEntity.getNodeModel(),
-              oldEntity.getNodeId());
+        new Runnable() {
+          public void run() {
+            oldEntity.run();
+            entity.run();
+          }
+        },
+        oldEntity.getNodeModel(),
+        oldEntity.getNodeId());
     }
 
     myWhenConcreteEntities.put(representator, entityToPut);
@@ -282,7 +308,7 @@ public class EquationManager {
     }
     if (!myNonConcreteVars.containsKey(wrapper)) {
       for (RuntimeTypeVariable var : wrapper.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
-       addNonConcreteVariable(wrapper, new SNodePointer(var.getNode()));
+        addNonConcreteVariable(wrapper, new SNodePointer(var.getNode()));
       }
     }
 
@@ -355,8 +381,8 @@ public class EquationManager {
         String ruleModel = errorInfo == null ? null : errorInfo.myRuleModel;
         String ruleId = errorInfo == null ? null : errorInfo.myRuleId;
         errorReporter =
-                new EquationErrorReporter(this, "incompatible types: ",
-                        rhsRepresentator, " and ", lhsRepresentator, "", ruleModel, ruleId);
+          new EquationErrorReporter(this, "incompatible types: ",
+            rhsRepresentator, " and ", lhsRepresentator, "", ruleModel, ruleId);
       }
       processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeWithError);
       return;
@@ -734,7 +760,7 @@ public class EquationManager {
     }
     //  T,S <: c => c = lcs(T,S)
     addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(concreteSubtypes, isWeak),
-            errorInfo);
+      errorInfo);
   }
 
   private void varLessThanType(IWrapper type, boolean isWeak) {
@@ -807,7 +833,7 @@ public class EquationManager {
   }
 
   /*package*/ IWrapper expandWrapper(SNode term, IWrapper representator, SModel typesModel,
-                                 boolean finalExpansion, NodeTypesComponent_new nodeTypesComponent) {
+                                     boolean finalExpansion, NodeTypesComponent_new nodeTypesComponent) {
     if (representator instanceof MeetWrapper) {
       MeetWrapper meetWrapper = (MeetWrapper) representator;
       MeetType meetType = MeetType.newInstance(typesModel);
@@ -862,7 +888,7 @@ public class EquationManager {
     List<SNode> children = new ArrayList<SNode>(wrapper.getNode().getChildren());
     for (SNode child : children) {
       SNode newChild = expandNode(term, NodeWrapper.createNodeWrapper(child),
-              representator, depth + 1, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
+        representator, depth + 1, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
@@ -889,7 +915,7 @@ public class EquationManager {
       SNode oldNode = reference.getTargetNode();
       if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
         SNode newNode = expandNode(term, NodeWrapper.createNodeWrapper(oldNode), representator,
-                depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
+          depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
         referenceReplacement.put(reference, newNode);
       }
     }
