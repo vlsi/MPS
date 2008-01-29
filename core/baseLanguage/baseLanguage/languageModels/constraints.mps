@@ -7145,6 +7145,27 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201375204863">
     <property name="package" value="property" />
     <link role="concept" targetNodeId="1.1201370618622" resolveInfo="Property" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201571498897">
+      <property name="name" value="isDefaultImplementation" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1201571543765" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201571498899">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201571552938">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201571559538">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1201571561556">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1201571563340">
+                <link role="conceptDeclaration" targetNodeId="1.1201372606839" resolveInfo="DefaultPropertyImplementation" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201571554987">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1201571557521">
+                <link role="link" targetNodeId="1.1201372378714" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1201571552939" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1201386039238">
       <link role="applicableProperty" targetNodeId="2.1156235010670" resolveInfo="alias" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1201386042317">

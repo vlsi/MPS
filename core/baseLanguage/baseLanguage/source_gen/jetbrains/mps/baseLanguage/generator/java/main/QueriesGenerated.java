@@ -12,6 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.baseLanguage.constraints.Property_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -23,6 +24,10 @@ public class QueriesGenerated {
     return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "operation", true)), "jetbrains.mps.baseLanguage.structure.PropertyReference");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1201571350771(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "my_p_" + SPropertyOperations.getString(_context.getNode(), "propertyName");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1201570306027(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "_p_get_" + SPropertyOperations.getString(_context.getNode(), "propertyName");
   }
@@ -32,8 +37,16 @@ public class QueriesGenerated {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(node, "mn_property_getter");
   }
 
+  public static boolean ifMacro_Condition_1201570983175(final IOperationContext operationContext, final IfMacroContext _context) {
+    return Property_Behavior.call_isDefaultImplementation_1201571498897(_context.getNode());
+  }
+
   public static boolean ifMacro_Condition_1201570447832(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
+  }
+
+  public static boolean ifMacro_Condition_1201571423789(final IOperationContext operationContext, final IfMacroContext _context) {
+    return Property_Behavior.call_isDefaultImplementation_1201571498897(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1201382862401(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -42,6 +55,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1201386890759(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1201571340778(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
 
   public static SNode sourceNodeQuery_1201570279414(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

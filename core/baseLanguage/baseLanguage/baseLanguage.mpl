@@ -39,16 +39,7 @@
       </models>
       <module />
       <external-templates />
-      <mapping-priorities>
-        <mapping-priority-rule kind="strictly_before">
-          <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.baseLanguage.generator.java.property_default@templates" nodeID="*" />
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.baseLanguage.generator.java.main@templates" nodeID="*" />
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-      </mapping-priorities>
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath>
