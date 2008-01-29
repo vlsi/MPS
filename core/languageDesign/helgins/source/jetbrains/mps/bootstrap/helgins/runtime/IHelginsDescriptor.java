@@ -3,7 +3,6 @@ package jetbrains.mps.bootstrap.helgins.runtime;
 import jetbrains.mps.helgins.inference.util.IDependency_Runtime;
 
 import java.util.Set;
-import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,6 +17,6 @@ public interface IHelginsDescriptor {
   public Set<SubtypingRule_Runtime> getSubtypingRules();
   public Set<SupertypingRule_Runtime> getSupertypingRules();
   public Set<ComparisonRule_Runtime> getComparisonRules();
-  public Set<EliminationRule_Runtime> getEliminationRules();
+  public Set<InequationReplacementRule_Runtime> getEliminationRules();
   public Set<IDependency_Runtime> getDependencies();
 }

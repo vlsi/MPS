@@ -29,7 +29,7 @@ import jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule;
 import jetbrains.mps.bootstrap.helgins.structure.SubtypingRule;
 import jetbrains.mps.bootstrap.helgins.structure.SupertypingRule;
 import jetbrains.mps.bootstrap.helgins.structure.ComparisonRule;
-import jetbrains.mps.bootstrap.helgins.structure.EliminationRule;
+import jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.core.structure.BaseConcept;
@@ -49,7 +49,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1188901620278(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule") || SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.EliminationRule"));
+    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule") || SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule"));
   }
 
   public static boolean baseMappingRule_Condition_1176817835230(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -65,7 +65,7 @@ public class QueriesGenerated {
     if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
       return SLinkOperations.getTarget(parent, "anotherNode", true) == SLinkOperations.getTarget(_context.getNode(), "applicableNode", false);
     }
-    if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.bootstrap.helgins.structure.EliminationRule")) {
+    if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule")) {
       return SLinkOperations.getTarget(parent, "supertypeNode", true) == SLinkOperations.getTarget(_context.getNode(), "applicableNode", false);
     }
     return false;
@@ -156,7 +156,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1201616718535(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode eliminationRule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.EliminationRule", false, false);
+    SNode eliminationRule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule", false, false);
     return (eliminationRule != null);
   }
 
@@ -1460,7 +1460,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1201610301765(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(EliminationRule.class));
+    return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(InequationReplacementRule.class));
   }
 
   public static List sourceNodesQuery_1193740670223(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

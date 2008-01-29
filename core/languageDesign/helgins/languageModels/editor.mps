@@ -3400,7 +3400,7 @@
         <property name="drawBorder" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201608009614">
           <property name="editable" value="false" />
-          <property name="text" value="elimination rule " />
+          <property name="text" value="replacement rule " />
           <property name="drawBorder" value="false" />
           <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
         </node>

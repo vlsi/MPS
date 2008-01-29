@@ -14,7 +14,7 @@ public class check_ErrorInfoExpression_NonTypesystemRule implements NonTypesyste
   }
 
   public void applyRule(final SNode errorInfoExpression) {
-    if(!((SNodeOperations.getAncestor(errorInfoExpression, "jetbrains.mps.bootstrap.helgins.structure.EliminationRule", false, false) != null))) {
+    if(!((SNodeOperations.getAncestor(errorInfoExpression, "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule", false, false) != null))) {
       TypeChecker.getInstance().reportTypeError(errorInfoExpression, "error info expression allowed only inside replacement rules", "jetbrains.mps.bootstrap.helgins.helgins", "1201618438931");
     }
   }

@@ -855,7 +855,7 @@
     <link role="extends" targetNodeId="1195213580585" resolveInfo="AbstractCheckingRule" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201607707634">
-    <property name="name" value="EliminationRule" />
+    <property name="name" value="InequationReplacementRule" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201607798918">

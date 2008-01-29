@@ -10,7 +10,7 @@ import jetbrains.mps.helgins.inference.ErrorInfo;
  * Time: 15:22:08
  * To change this template use File | Settings | File Templates.
  */
-public abstract class EliminationRule_Runtime implements IRuleWithTwoApplicableNodes {
+public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoApplicableNodes {
   public abstract void processInequation(SNode suptype, SNode supertype, ErrorInfo errorInfo);
 
   public boolean isApplicable(SNode subtype, SNode supertype) {

@@ -43,7 +43,7 @@ public class ApplicableNodeReference_applicableNode_ReferentConstraint implement
         SNode appNode2 = SLinkOperations.getTarget(rule, "anotherNode", true);
         ListOperations.addElement(result, appNode2);
       }
-      if(SNodeOperations.isInstanceOf(rule, "jetbrains.mps.bootstrap.helgins.structure.EliminationRule")) {
+      if(SNodeOperations.isInstanceOf(rule, "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule")) {
         SNode appNode2 = SLinkOperations.getTarget(rule, "supertypeNode", true);
         ListOperations.addElement(result, appNode2);
       }

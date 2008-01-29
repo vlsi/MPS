@@ -26,7 +26,7 @@ public class RulesManager {
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
   private RuleSet<SupertypingRule_Runtime> mySupertypingRules = new RuleSet<SupertypingRule_Runtime>();
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
-  private DoubleRuleSet<EliminationRule_Runtime> myEliminationRules = new DoubleRuleSet<EliminationRule_Runtime>();
+  private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
   private DependenciesContainer myDependenciesContainer = new DependenciesContainer();
 
   private static Logger LOG = Logger.getLogger(RulesManager.class);
@@ -42,7 +42,7 @@ public class RulesManager {
     mySubtypingRules.clear();
     mySupertypingRules.clear();
     myComparisonRules.clear();
-    myEliminationRules.clear();
+    myReplacementRules.clear();
     myDependenciesContainer.clear();
   }
 
@@ -64,14 +64,14 @@ public class RulesManager {
         mySubtypingRules.addRuleSetItem(helginsDescriptor.getSubtypingRules());
         mySupertypingRules.addRuleSetItem(helginsDescriptor.getSupertypingRules());
         myComparisonRules.addRuleSetItem(helginsDescriptor.getComparisonRules());
-        myEliminationRules.addRuleSetItem(helginsDescriptor.getEliminationRules());
+        myReplacementRules.addRuleSetItem(helginsDescriptor.getEliminationRules());
         myDependenciesContainer.addDependencies(helginsDescriptor.getDependencies());
         myInferenceRules.makeConsistent();
         myNonTypesystemRules.makeConsistent();
         mySubtypingRules.makeConsistent();
         mySupertypingRules.makeConsistent();
         myComparisonRules.makeConsistent();
-        myEliminationRules.makeConsistent();
+        myReplacementRules.makeConsistent();
         myDependenciesContainer.makeConsistent();
         return true;
       } else {
@@ -128,11 +128,11 @@ public class RulesManager {
     return result;
   }
 
-  public Set<EliminationRule_Runtime> getEliminationRules(final SNode node1, final SNode node2) {
-    Set<EliminationRule_Runtime> result = new HashSet<EliminationRule_Runtime>();
+  public Set<InequationReplacementRule_Runtime> getReplacementRules(final SNode node1, final SNode node2) {
+    Set<InequationReplacementRule_Runtime> result = new HashSet<InequationReplacementRule_Runtime>();
     result.addAll(
-     CollectionUtil.filter(myEliminationRules.getRules(node1, node2), new Condition<EliminationRule_Runtime>() {
-      public boolean met(EliminationRule_Runtime object) {
+     CollectionUtil.filter(myReplacementRules.getRules(node1, node2), new Condition<InequationReplacementRule_Runtime>() {
+      public boolean met(InequationReplacementRule_Runtime object) {
         return object.isApplicable(node1, node2);
       }
     }));
