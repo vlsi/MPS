@@ -174,7 +174,7 @@ public class EquationManager {
       SNode node2 = supertypeRepresentator.getNode();
       Set<EliminationRule_Runtime> eliminationRules = myTypeChecker.getRulesManager().getEliminationRules(node1, node2);
       for (EliminationRule_Runtime eliminationRule : eliminationRules) {
-        eliminationRule.processInequation(node1, node2);
+        eliminationRule.processInequation(node1, node2, errorInfo);
         return;
       }
     }
@@ -191,7 +191,7 @@ public class EquationManager {
     String strongString = isWeak ? "" : " strong";
     IErrorReporter errorReporter =
       new EquationErrorReporter(this, "type ", subtypeRepresentator,
-        " is not a" + strongString + " subtype of ", supertypeRepresentator, "", errorInfo.myRuleModel, errorInfo.myRuleId);
+        " is not a" + strongString + " subtype of ", supertypeRepresentator, "", errorInfo.getRuleModel(), errorInfo.getRuleId());
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
 
     //4debug
@@ -265,7 +265,7 @@ public class EquationManager {
     String strongString = isWeak ? "" : " strongly";
     IErrorReporter errorReporter =
       new EquationErrorReporter(this, "type ", representator1," is not" + strongString + " comparable with ",
-        representator2, "", errorInfo.myRuleModel, errorInfo.myRuleId);
+        representator2, "", errorInfo.getRuleModel(), errorInfo.getRuleId());
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
   }
 
@@ -375,11 +375,11 @@ public class EquationManager {
     if (!compareWrappers(rhsRepresentator, lhsRepresentator, errorInfo)) {
       IErrorReporter errorReporter;
       SNode nodeWithError = errorInfo == null ? null : errorInfo.getNodeWithError();
-      if (errorInfo != null && errorInfo.myErrorString != null) {
-        errorReporter = new SimpleErrorReporter(errorInfo.myErrorString, errorInfo.myRuleModel, errorInfo.myRuleId);
+      if (errorInfo != null && errorInfo.getErrorString() != null) {
+        errorReporter = new SimpleErrorReporter(errorInfo.getErrorString(), errorInfo.getRuleModel(), errorInfo.getRuleId());
       } else {
-        String ruleModel = errorInfo == null ? null : errorInfo.myRuleModel;
-        String ruleId = errorInfo == null ? null : errorInfo.myRuleId;
+        String ruleModel = errorInfo == null ? null : errorInfo.getRuleModel();
+        String ruleId = errorInfo == null ? null : errorInfo.getRuleId();
         errorReporter =
           new EquationErrorReporter(this, "incompatible types: ",
             rhsRepresentator, " and ", lhsRepresentator, "", ruleModel, ruleId);
@@ -400,7 +400,8 @@ public class EquationManager {
     keepInequationsAndEffects(var, type);
     RuntimeTypeVariable typeVar = var.getVariable();
     if (typeVar instanceof RuntimeErrorType) {
-      TypeChecker.getInstance().reportTypeError(errorInfo.getNodeWithError(), new SimpleErrorReporter(((RuntimeErrorType)typeVar).getErrorText(), errorInfo.myRuleModel, errorInfo.myRuleId));
+      TypeChecker.getInstance().reportTypeError(
+        errorInfo.getNodeWithError(), new SimpleErrorReporter(((RuntimeErrorType)typeVar).getErrorText(), errorInfo.getRuleModel(), errorInfo.getRuleId()));
     }
     var.fireRepresentatorSet(type, this);
   }
@@ -944,41 +945,6 @@ public class EquationManager {
         whenConcreteEntity.run();
       }
       representator.fireBecomesDeeplyConcrete(this);
-    }
-  }
-
-
-  public static class ErrorInfo {
-    private String myErrorString;
-    private SNode myNodeWithError;
-
-    private String myRuleModel;
-    private String myRuleId;
-
-    public ErrorInfo(SNode nodeWithError, String errorString) {
-      myErrorString = errorString;
-      myNodeWithError = nodeWithError;
-    }
-
-    public ErrorInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
-      myErrorString = errorString;
-      myNodeWithError = nodeWithError;
-      myRuleModel = ruleModel;
-      myRuleId = ruleId;
-    }
-
-    public String getErrorString() {
-      return myErrorString;
-    }
-
-    public SNode getNodeWithError() {
-      return myNodeWithError;
-    }
-
-    public SNode findRuleNode() {
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(myRuleModel));
-      if (modelDescriptor == null) return null;
-      return modelDescriptor.getSModel().getNodeById(myRuleId);
     }
   }
 

@@ -1,13 +1,12 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
+import jetbrains.mps.helgins.inference.ErrorInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.IMatchModifier;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 

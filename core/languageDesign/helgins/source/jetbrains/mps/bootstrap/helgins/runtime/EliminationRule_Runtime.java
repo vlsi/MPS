@@ -1,6 +1,7 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.helgins.inference.ErrorInfo;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class EliminationRule_Runtime implements IRuleWithTwoApplicableNodes {
-  public abstract void processInequation(SNode suptype, SNode supertype);
+  public abstract void processInequation(SNode suptype, SNode supertype, ErrorInfo errorInfo);
 
   public boolean isApplicable(SNode subtype, SNode supertype) {
     return isApplicableSubtype(subtype) && isApplicableSupertype(supertype);

@@ -1,7 +1,7 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.helgins.inference.*;
-import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
+import jetbrains.mps.helgins.inference.ErrorInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;

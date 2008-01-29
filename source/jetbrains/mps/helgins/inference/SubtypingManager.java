@@ -3,7 +3,7 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.bootstrap.helgins.runtime.*;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.util.*;
-import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
+import jetbrains.mps.helgins.inference.ErrorInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.IMatchingPattern;

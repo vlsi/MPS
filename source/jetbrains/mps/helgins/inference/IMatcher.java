@@ -1,6 +1,6 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
+import jetbrains.mps.helgins.inference.ErrorInfo;
 import org.jetbrains.annotations.Nullable;
 
 /**

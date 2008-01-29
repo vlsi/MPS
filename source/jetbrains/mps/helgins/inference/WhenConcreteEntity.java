@@ -1,14 +1,8 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
-import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.

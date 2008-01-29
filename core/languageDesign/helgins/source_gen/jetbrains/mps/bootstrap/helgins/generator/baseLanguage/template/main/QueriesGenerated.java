@@ -155,6 +155,11 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(rightExpression, "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rightExpression, "normalType", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
   }
 
+  public static boolean baseMappingRule_Condition_1201616718535(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    SNode eliminationRule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.EliminationRule", false, false);
+    return (eliminationRule != null);
+  }
+
   public static boolean baseMappingRule_Condition_1177059616673(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     return rule == null;
