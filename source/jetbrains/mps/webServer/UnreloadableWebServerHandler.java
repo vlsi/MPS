@@ -13,7 +13,8 @@ public class UnreloadableWebServerHandler {
   public enum State {
     STOPPED,
     STOPPING,
-    STARTED;
+    STARTED,
+    STARTING;
   }
 
   public State myState = null;
