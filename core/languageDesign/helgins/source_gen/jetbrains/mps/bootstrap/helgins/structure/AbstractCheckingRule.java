@@ -10,8 +10,8 @@ import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class AbstractCheckingRule extends AbstractRule {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.AbstractCheckingRule";
-  public static String BODY = "body";
   public static String OVERRIDES = "overrides";
+  public static String BODY = "body";
 
   public  AbstractCheckingRule(SNode node) {
     super(node);
@@ -26,20 +26,20 @@ public class AbstractCheckingRule extends AbstractRule {
   }
 
 
-  public StatementList getBody() {
-    return (StatementList)this.getChild(AbstractCheckingRule.BODY);
-  }
-
-  public void setBody(StatementList node) {
-    super.setChild(AbstractCheckingRule.BODY, node);
-  }
-
   public boolean getOverrides() {
     return this.getBooleanProperty(AbstractCheckingRule.OVERRIDES);
   }
 
   public void setOverrides(boolean value) {
     this.setBooleanProperty(AbstractCheckingRule.OVERRIDES, value);
+  }
+
+  public StatementList getBody() {
+    return (StatementList)this.getChild(AbstractCheckingRule.BODY);
+  }
+
+  public void setBody(StatementList node) {
+    super.setChild(AbstractCheckingRule.BODY, node);
   }
 
 }

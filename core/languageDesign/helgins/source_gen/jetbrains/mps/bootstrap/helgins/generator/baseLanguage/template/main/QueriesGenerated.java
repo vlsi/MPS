@@ -474,6 +474,37 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1201609469872(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
+    SNode conceptDecl = SLinkOperations.getTarget(applicableNode, "concept", false);
+    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1201609469912(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
+    SNode patternExpr = SLinkOperations.getTarget(applicableNode, "pattern", true);
+    SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
+    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1201609469964(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true);
+    SNode conceptDecl = SLinkOperations.getTarget(applicableNode, "concept", false);
+    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1201609470004(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true);
+    SNode patternExpr = SLinkOperations.getTarget(applicableNode, "pattern", true);
+    SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
+    return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1201609470053(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode ruleConcept = SNodeOperations.getConceptDeclaration(_context.getNode());
+    return SPropertyOperations.getString(_context.getNode(), "name") + "_" + ruleConcept;
+  }
+
   public static Object referenceMacro_GetReferent_1175002013260(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "pattern", true), "patternClass");
   }
@@ -577,6 +608,10 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1188816571764(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "classForRule").getChild("constructor");
+  }
+
+  public static Object referenceMacro_GetReferent_1201610301750(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "classForRule").getChild("constructor");
   }
 
@@ -790,6 +825,22 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1196961909360(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "patternVarField");
+  }
+
+  public static Object referenceMacro_GetReferent_1201609469670(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "pattern", true), "patternClass");
+  }
+
+  public static Object referenceMacro_GetReferent_1201609469695(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true), "pattern", true), "patternClass");
+  }
+
+  public static Object referenceMacro_GetReferent_1201609469773(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "pattern", true), "patternClass").getChild("constructor");
+  }
+
+  public static Object referenceMacro_GetReferent_1201609469834(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true), "pattern", true), "patternClass").getChild("constructor");
   }
 
   public static boolean ifMacro_Condition_1174998351525(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1024,6 +1075,50 @@ public class QueriesGenerated {
       }
     }
     return false;
+  }
+
+  public static boolean ifMacro_Condition_1201609469683(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  }
+
+  public static boolean ifMacro_Condition_1201609469708(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  }
+
+  public static boolean ifMacro_Condition_1201609469733(final IOperationContext operationContext, final IfMacroContext _context) {
+    return true;
+  }
+
+  public static boolean ifMacro_Condition_1201609469756(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  }
+
+  public static boolean ifMacro_Condition_1201609469793(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  }
+
+  public static boolean ifMacro_Condition_1201609469817(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  }
+
+  public static boolean ifMacro_Condition_1201609469854(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  }
+
+  public static boolean ifMacro_Condition_1201609469900(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  }
+
+  public static boolean ifMacro_Condition_1201609469948(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  }
+
+  public static boolean ifMacro_Condition_1201609469992(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  }
+
+  public static boolean ifMacro_Condition_1201609470040(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
   public static SNode sourceNodeQuery_1174578748617(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1300,6 +1395,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1201609469722(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
   public static List sourceNodesQuery_1174585963726(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList();
     if(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true) != null) {
@@ -1348,6 +1447,10 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1188816571779(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(ComparisonRule.class));
+  }
+
+  public static List sourceNodesQuery_1201610301765(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(ComparisonRule.class));
   }
 

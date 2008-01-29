@@ -14,6 +14,9 @@ public class RulesUtil {
     if((SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.InferenceRule", false, false) != null)) {
       return true;
     }
+    if((SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.EliminationRule", false, false) != null)) {
+      return true;
+    }
     List<SNode> annotations = SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "annotation", true);
     for(SNode annotation : annotations) {
       if(SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_16().createNode(), "classifier", false)) {

@@ -854,5 +854,16 @@
     <property name="iconPath" value="${language_descriptor}\icons\nontypesystem.png" />
     <link role="extends" targetNodeId="1195213580585" resolveInfo="AbstractCheckingRule" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201607707634">
+    <property name="name" value="EliminationRule" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201607798918">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="supertypeNode" />
+      <link role="target" targetNodeId="1174642743670" resolveInfo="ApplicableNodeCondition" />
+    </node>
+  </node>
 </model>
 

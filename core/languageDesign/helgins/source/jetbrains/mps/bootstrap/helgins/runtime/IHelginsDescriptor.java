@@ -18,5 +18,6 @@ public interface IHelginsDescriptor {
   public Set<SubtypingRule_Runtime> getSubtypingRules();
   public Set<SupertypingRule_Runtime> getSupertypingRules();
   public Set<ComparisonRule_Runtime> getComparisonRules();
+  public Set<EliminationRule_Runtime> getEliminationRules();
   public Set<IDependency_Runtime> getDependencies();
 }
