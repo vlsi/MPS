@@ -839,7 +839,8 @@ public class EquationManager {
       MeetWrapper meetWrapper = (MeetWrapper) representator;
       MeetType meetType = MeetType.newInstance(typesModel);
       for (IWrapper wrapper : meetWrapper.getArguments()) {
-        meetType.addArgument((BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter());
+        BaseConcept argument = (BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
+        meetType.addArgument(CopyUtil.copy(argument, meetType.getModel()));
       }
       return NodeWrapper.createNodeWrapper(meetType.getNode());
     }
@@ -847,7 +848,8 @@ public class EquationManager {
       JoinWrapper joinWrapper = (JoinWrapper) representator;
       JoinType joinType = JoinType.newInstance(typesModel);
       for (IWrapper wrapper : joinWrapper.getArguments()) {
-        joinType.addArgument((BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter());
+        BaseConcept argument = (BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
+        joinType.addArgument(CopyUtil.copy(argument, joinType.getModel()));
       }
       return NodeWrapper.createNodeWrapper(joinType.getNode());
     }
