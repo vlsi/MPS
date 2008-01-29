@@ -109,7 +109,7 @@ public class JavaModelUtil_new {
         // compatible to any type
         if (parmTypes[count] != null) continue;
       }
-      if (parmTypes[count] != null &&
+      if (parmTypes[count] != null && parmType.getName() != null &&
               !parmTypes[count].equals(parmType.getName())) {
         return false;
       }
