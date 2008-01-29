@@ -865,5 +865,13 @@
       <link role="target" targetNodeId="1174642743670" resolveInfo="ApplicableNodeCondition" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201618299781">
+    <property name="name" value="ErrorInfoExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201618317923">
+      <property name="value" value="errorInfo" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

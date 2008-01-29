@@ -3472,5 +3472,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1201618326424">
+    <link role="conceptDeclaration" targetNodeId="1.1201618299781" resolveInfo="ErrorInfoExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201618328692">
+      <property name="text" value="errorInfo" />
+      <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 
