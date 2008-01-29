@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.quotation" generatorOutputPath="${mps_home}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.quotation" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.quotation.structure" />
   </structure>
@@ -28,8 +28,12 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
-  <runtimeClassPath />
+  <classPath>
+    <entry path="${language_descriptor}\classes" />
+  </classPath>
+  <runtimeClassPath>
+    <entry path="${language_descriptor}\classes" />
+  </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
