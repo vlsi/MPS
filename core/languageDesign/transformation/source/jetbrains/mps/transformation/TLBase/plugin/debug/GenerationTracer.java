@@ -90,7 +90,9 @@ public class GenerationTracer {
 
   public void finishTracing() {
     myActive = false;
-    myGenerationTracerViewTool.setTracingDataIsAvailable(hasTracingData());
+    if (myGenerationTracerViewTool != null) {
+      myGenerationTracerViewTool.setTracingDataIsAvailable(hasTracingData());
+    }
   }
 
   public void startTracing(SModel inputModel, SModel outputModel) {
