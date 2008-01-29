@@ -2723,6 +2723,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201269290000">
       <link role="conceptPropertyDeclaration" targetNodeId="40.1138763241883" resolveInfo="applicable_to_node" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201606885224">
+      <link role="conceptPropertyDeclaration" targetNodeId="40.1138763325919" resolveInfo="applicable_to_link" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201266127262">
     <property name="package" value="SNode" />
