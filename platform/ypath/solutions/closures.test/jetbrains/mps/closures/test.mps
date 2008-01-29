@@ -1310,7 +1310,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1201615152936" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201615152937" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201615152938">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1201618170851">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1201619018714">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201615158564">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201615158565">
               <property name="name" value="foo" />
@@ -1429,6 +1429,16 @@
               </node>
               <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201618123610">
                 <link role="variableDeclaration" targetNodeId="1201617963119" resolveInfo="fred" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201618997770">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1201618999194">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201619000369">
+                <link role="variableDeclaration" targetNodeId="1201617963119" resolveInfo="fred" />
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201618997771">
+                <link role="variableDeclaration" targetNodeId="1201615158565" resolveInfo="foo" />
               </node>
             </node>
           </node>
