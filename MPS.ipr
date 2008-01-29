@@ -1592,11 +1592,11 @@
     </library>
     <library name="freemarker">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/freemarker/freemarker-2.3.10.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/freemarker/freemarker-2.3.11.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/freemarker/freemarker-2.3.10-src.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/freemarker/freemarker-2.3.11-src.zip!/" />
       </SOURCES>
     </library>
     <library name="Annotations">
