@@ -1,4 +1,4 @@
-package jetbrains.mps.conversion.asm;
+package jetbrains.mps.javastub.asm;
 
 import org.objectweb.asm.tree.AnnotationNode;
 import org.objectweb.asm.Type;

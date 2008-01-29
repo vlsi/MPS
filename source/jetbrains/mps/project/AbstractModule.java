@@ -1,6 +1,6 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
+import jetbrains.mps.javastub.classpath.ClassPathModelRootManager;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;

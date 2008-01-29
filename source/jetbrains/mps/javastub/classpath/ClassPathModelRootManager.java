@@ -1,10 +1,9 @@
-package jetbrains.mps.conversion.classpath;
+package jetbrains.mps.javastub.classpath;
 
-import jetbrains.mps.conversion.ConverterFactory;
-import jetbrains.mps.conversion.IConverter;
+import jetbrains.mps.javastub.ConverterFactory;
+import jetbrains.mps.javastub.IConverter;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
