@@ -7178,31 +7178,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201403170634">
-    <property name="package" value="property.implementation.custom" />
-    <link role="concept" targetNodeId="1.1201402044357" resolveInfo="PropertyGetter" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201403176059">
-      <property name="name" value="getProperty" />
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201403189188">
-        <link role="concept" targetNodeId="1.1201370618622" resolveInfo="Property" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201403176061">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201403194596">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201403196629">
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1201403199366">
-              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1201403204148">
-                <link role="concept" targetNodeId="1.1201370618622" resolveInfo="Property" />
-              </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1201403194597" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201403170635">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201403170636" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201455077343">
     <property name="package" value="property.implementation.default" />
     <link role="concept" targetNodeId="1.1201372606839" resolveInfo="DefaultPropertyImplementation" />
