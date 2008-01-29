@@ -3428,7 +3428,7 @@
           <link role="relationDeclaration" targetNodeId="1.1174648101952" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201608009620">
-          <property name="text" value="," />
+          <property name="text" value="&lt;:" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1201608009621">
           <link role="relationDeclaration" targetNodeId="1.1201607798918" />

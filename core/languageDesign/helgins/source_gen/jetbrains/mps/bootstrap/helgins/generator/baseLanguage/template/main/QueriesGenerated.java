@@ -48,7 +48,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1188901620278(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule"));
+    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule") || SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.EliminationRule"));
   }
 
   public static boolean baseMappingRule_Condition_1176817835230(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -63,6 +63,9 @@ public class QueriesGenerated {
     SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false), null, false, false);
     if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
       return SLinkOperations.getTarget(parent, "anotherNode", true) == SLinkOperations.getTarget(_context.getNode(), "applicableNode", false);
+    }
+    if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.bootstrap.helgins.structure.EliminationRule")) {
+      return SLinkOperations.getTarget(parent, "supertypeNode", true) == SLinkOperations.getTarget(_context.getNode(), "applicableNode", false);
     }
     return false;
   }
