@@ -29,6 +29,7 @@ import jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule;
 import jetbrains.mps.bootstrap.helgins.structure.SubtypingRule;
 import jetbrains.mps.bootstrap.helgins.structure.SupertypingRule;
 import jetbrains.mps.bootstrap.helgins.structure.ComparisonRule;
+import jetbrains.mps.bootstrap.helgins.structure.EliminationRule;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.core.structure.BaseConcept;
@@ -1454,7 +1455,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1201610301765(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(ComparisonRule.class));
+    return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(EliminationRule.class));
   }
 
   public static List sourceNodesQuery_1193740670223(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
