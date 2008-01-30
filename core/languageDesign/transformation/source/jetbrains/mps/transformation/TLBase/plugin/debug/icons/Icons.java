@@ -21,6 +21,7 @@ public class Icons {
   public static final Icon RULE_CONSEQUENCE_ICON = new ImageIcon(Icons.class.getResource("rule-consequence.png"));
   public static final Icon SWITCH_ICON = new ImageIcon(Icons.class.getResource("switch.png"));
   public static final Icon TEMPALTE_ICON = new ImageIcon(Icons.class.getResource("template.png"));
+  public static final Icon MAPPING_SCRIPT_ICON = new ImageIcon(Icons.class.getResource("mapping-script.png"));
 
 
   public static Icon getIcon(TracerNode tracerNode) {
@@ -44,12 +45,14 @@ public class Icons {
     Kind kind = tracerNode.getKind();
     if (kind == Kind.INPUT) return Icons.INPUT_ICON;
     if (kind == Kind.OUTPUT) return Icons.OUTPUT_ICON;
+    if (kind == Kind.APPROXIMATE_OUTPUT) return Icons.OUTPUT_ICON;
     if (kind == Kind.RULE) return Icons.RULE_ICON;
     if (kind == Kind.RULE_CONSEQUENCE) return Icons.RULE_CONSEQUENCE_ICON;
     if (kind == Kind.MACRO) return Icons.MACRO_ICON;
     if (kind == Kind.TEMPLATE) return Icons.TEMPALTE_ICON;
     if (kind == Kind.SWITCH) return Icons.SWITCH_ICON;
     if (kind == Kind.COPY_OPERATION) return Icons.COPY_OPERATION_ICON;
+    if (kind == Kind.MAPPING_SCRIPT) return Icons.MAPPING_SCRIPT_ICON;
     return null;
   }
 

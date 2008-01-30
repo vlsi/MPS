@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
+import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 
 import javax.swing.JPopupMenu;
 
@@ -70,10 +71,14 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   protected void updatePresentation() {
-    String kind = myTracerNode.getKind().toString();
+    Kind kind = myTracerNode.getKind();
     SNodePointer nodePointer = myTracerNode.getNodePointer();
     if (nodePointer != null) {
-      setText(/*"[" + kind + "] " +*/ nodePointer.toString());
+      if (kind == Kind.APPROXIMATE_OUTPUT) {
+        setText("<approximate location> " + nodePointer.toString());
+      } else {
+        setText(nodePointer.toString());
+      }
       setAdditionalText("" + nodePointer.getModelUID());
       setNodeIdentifier("" + nodePointer.hashCode());
     } else {

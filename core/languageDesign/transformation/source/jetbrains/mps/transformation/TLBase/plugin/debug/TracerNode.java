@@ -17,16 +17,16 @@ import java.awt.Graphics;
  */
 public class TracerNode {
   public enum Kind {
-    INPUT("INPUT"),
-    OUTPUT("OUTPUT"),
-    TEMPLATE("TEMPLATE"),
-    MACRO("MACRO"),
-    RULE("RULE"),
-    RULE_CONSEQUENCE("RULE CONSEQUENCE"),
-    SWITCH("SWITCH"),
-    COPY_OPERATION("COPY"),
-    MAPPING_SCRIPT("MAPPING SCRIPT"), 
-    APPROXIMATE_OUTPUT("APPROXIMATE_OUTPUT");
+    INPUT("input"),
+    OUTPUT("output"),
+    TEMPLATE("template"),
+    MACRO("macro"),
+    RULE("rule"),
+    RULE_CONSEQUENCE("rule consequence"),
+    SWITCH("switch"),
+    COPY_OPERATION("copy"),
+    MAPPING_SCRIPT("mapping script"),
+    APPROXIMATE_OUTPUT("approximate output");
 
     private String myText;
 
