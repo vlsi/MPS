@@ -6,7 +6,6 @@
       <sourceFolder url="file://$MODULE_DIR$/core/configurations/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/core/configurations/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.configuration" />
       <excludeFolder url="file://$MODULE_DIR$/core/languageDesign/transformation/test/inputLang/META-INF" />
