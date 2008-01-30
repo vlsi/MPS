@@ -247,8 +247,6 @@ public class GenerationSession implements IGenerationSession {
       boolean wasWarnigns = generator.getWarningCount() > 0;
       status = new GenerationStatus(inputModel, outputModel, context.getTraceMap(), wasErrors, wasWarnigns, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + inputModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
-//      generator.clearErrorsAndWarnings();
-//      generator.reset();
     } catch (GenerationCanceledException gce) {
       throw gce;//rethrow it for not to be caught in the last catch block
     } catch (GenerationFailedException gfe) {
@@ -292,21 +290,34 @@ public class GenerationSession implements IGenerationSession {
     // run pre-processing scripts
     // -----------------------
     List<MappingScript> preMappingScripts = generationContext.getPreMappingScripts();
-    // need to clone input model?
-    for (MappingScript preMappingScript : preMappingScripts) {
-      if (preMappingScript.getScriptKind() == MappingScriptKind.pre_process_input_model) {
-        if (preMappingScript.getModifiesModel()) {
-          SModel currentInputModel_clone = createTransientModel(modelsLongName, module);
-          addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getUID() + "' --> '" + currentInputModel_clone.getUID() + "'");
-          CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, generator.getScope());
-
-          // probably we can forget about former input model here
-          recycleWasteModel(currentInputModel);
-          currentInputModel = currentInputModel_clone;
-          break;
+    if (!preMappingScripts.isEmpty()) {
+      // need to clone input model?
+      boolean needToCloneInputMode = !myDiscardTransients;  // clone model if save transients (needed for tracing)
+      if (!needToCloneInputMode) {
+        for (MappingScript preMappingScript : preMappingScripts) {
+          if (preMappingScript.getScriptKind() == MappingScriptKind.pre_process_input_model) {
+            if (preMappingScript.getModifiesModel()) {
+              needToCloneInputMode = true;
+              break;
+            }
+          }
         }
       }
+      if (needToCloneInputMode) {
+        SModel currentInputModel_clone = createTransientModel(modelsLongName, module);
+        addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getUID() + "' --> '" + currentInputModel_clone.getUID() + "'");
+        CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, generator.getScope());
+
+        if (!myDiscardTransients) { // tracing
+          generationContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);
+        }
+
+        // probably we can forget about former input model here
+        recycleWasteModel(currentInputModel);
+        currentInputModel = currentInputModel_clone;
+      }
     }
+
     for (MappingScript preMappingScript : preMappingScripts) {
       if (preMappingScript.getScriptKind() != MappingScriptKind.pre_process_input_model) {
         addMessage(MessageKind.WARNING, "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getUID() + ") - wrong script kind");
@@ -367,6 +378,17 @@ public class GenerationSession implements IGenerationSession {
     // run post-processing scripts
     // -----------------------
     List<MappingScript> postMappingScripts = generationContext.getPostMappingScripts();
+    if (!postMappingScripts.isEmpty() &&
+      !myDiscardTransients) {  // clone model - needed for tracing
+      SModel currentOutputModel_clone = createTransientModel(modelsLongName, module);
+      addMessage(MessageKind.INFORMATION, "clone model '" + currentOutputModel.getUID() + "' --> '" + currentOutputModel_clone.getUID() + "'");
+      CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone, generator.getScope());
+
+      generationContext.getGenerationTracer().registerPostMappingScripts(currentOutputModel, currentOutputModel_clone, postMappingScripts);
+      currentOutputModel = currentOutputModel_clone;
+    }
+
+
     for (MappingScript postMappingScript : postMappingScripts) {
       if (postMappingScript.getScriptKind() != MappingScriptKind.post_process_output_model) {
         addMessage(MessageKind.WARNING, "skip script '" + postMappingScript + "' (" + postMappingScript.getModel().getUID() + ") - wrong script kind");

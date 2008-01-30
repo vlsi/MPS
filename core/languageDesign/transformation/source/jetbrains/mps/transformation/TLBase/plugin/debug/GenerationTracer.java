@@ -5,6 +5,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
+import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 
 import java.util.*;
 
@@ -18,9 +19,10 @@ import org.jetbrains.annotations.NotNull;
  */
 public class GenerationTracer {
   private static Logger LOG = Logger.getLogger(GenerationTracer.class);
-  private static final boolean DISABLED = false;
+  private static final boolean DISABLED = true;
   private static Map<String, List<TracerNode>> ourLastTracingDataByInputModel;
   private static Map<String, List<TracerNode>> ourLastTracingDataByOutputModel;
+  private static ModelsProcessedByScripts ourLastModelsProcessedByScripts;
   private static MPSProject ourLastTracingProject;
 
 
@@ -31,6 +33,7 @@ public class GenerationTracer {
   private TracerNode myCurrentTraceNode;
   private Map<String, List<TracerNode>> myTracingDataByInputModel;
   private Map<String, List<TracerNode>> myTracingDataByOutputModel;
+  private ModelsProcessedByScripts myModelsProcessedByScripts;
 
   private GenerationTracerViewTool myGenerationTracerViewTool;
   private GenerationTracerActions myGenerationTracerActions;
@@ -43,9 +46,11 @@ public class GenerationTracer {
     if (project == ourLastTracingProject) {
       myTracingDataByInputModel = ourLastTracingDataByInputModel;
       myTracingDataByOutputModel = ourLastTracingDataByOutputModel;
+      myModelsProcessedByScripts = ourLastModelsProcessedByScripts;
     }
     ourLastTracingDataByInputModel = null;
     ourLastTracingDataByOutputModel = null;
+    ourLastModelsProcessedByScripts = null;
     ourLastTracingProject = null;
 
     myProject = project;
@@ -66,6 +71,7 @@ public class GenerationTracer {
     ourLastTracingProject = myProject;
     ourLastTracingDataByInputModel = myTracingDataByInputModel;
     ourLastTracingDataByOutputModel = myTracingDataByOutputModel;
+    ourLastModelsProcessedByScripts = myModelsProcessedByScripts;
 
     if (myGenerationTracerViewTool != null) {
       myGenerationTracerActions.removeActions();
@@ -82,6 +88,7 @@ public class GenerationTracer {
     myActive = true;
     myTracingDataByInputModel = new HashMap<String, List<TracerNode>>();
     myTracingDataByOutputModel = new HashMap<String, List<TracerNode>>();
+    myModelsProcessedByScripts = new ModelsProcessedByScripts();
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
 
@@ -197,7 +204,7 @@ public class GenerationTracer {
     }
 
     if (myCurrentTraceNode == null) {
-      if (tracerNode.getKind() != Kind.INPUT) {
+      if (tracerNode.getKind() != Kind.INPUT && tracerNode.getKind() != Kind.RULE) {
         LOG.errorWithTrace("node of kind '" + tracerNode.getKind() + "' can not be root");
       }
     }
@@ -254,7 +261,10 @@ public class GenerationTracer {
 
   public boolean hasTraceInputData(SModel model) {
     if (DISABLED) return false;
-    return getRootTracerNodes(Kind.INPUT, model) != null;
+    if (getRootTracerNodes(Kind.INPUT, model) != null) {
+      return true;
+    }
+    return myModelsProcessedByScripts.hasInput(model);
   }
 
   public boolean showTraceInputData(SNode node) {
@@ -265,24 +275,58 @@ public class GenerationTracer {
       return true;
     }
 
-    TracerNode tracerNode = buildTraceTree(node);
+    TracerNode tracerNode = buildTraceInputTree(node);
     if (tracerNode == null) return false;
     myGenerationTracerViewTool.showTraceView(tracerNode);
     return true;
   }
 
   @Nullable
-  private TracerNode buildTraceTree(SNode node) {
+  private TracerNode buildTraceInputTree(SNode node) {
     List<TracerNode> tracerNodes = findAllTopmostTracerNodes(Kind.INPUT, node);
-    if (tracerNodes.isEmpty()) return null;
-    TracerNode resultTracerNode = new TracerNode(tracerNodes.get(0).getKind(), tracerNodes.get(0).getNodePointer());
-    for (TracerNode tracerNode : tracerNodes) {
-      List<TracerNode> childrensCopy = tracerNode.getChildrenCopy();
-      for (TracerNode childCopy : childrensCopy) {
-        resultTracerNode.addChild(childCopy);
+    if (!tracerNodes.isEmpty()) {
+      TracerNode resultTracerNode = new TracerNode(tracerNodes.get(0).getKind(), tracerNodes.get(0).getNodePointer());
+      for (TracerNode tracerNode : tracerNodes) {
+        List<TracerNode> childrensCopy = tracerNode.getChildrenCopy();
+        for (TracerNode childCopy : childrensCopy) {
+          resultTracerNode.addChild(childCopy);
+        }
+      }
+      return resultTracerNode;
+    }
+
+    // may be input is processed by scripts?
+    List<MappingScript> mappingScripts = myModelsProcessedByScripts.getScriptsForInput(node.getModel());
+    if (mappingScripts == null) return null;
+    SModelUID uid = myModelsProcessedByScripts.getOutputForInput(node.getModel());
+    if (uid == null) return null;
+    SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
+    if (descriptor == null) return null;
+    SModel outputModel = descriptor.getSModel();
+    SNode inputNode = node;
+    SNode outputNode = null;
+    while (inputNode != null) {
+      outputNode = outputModel.getNodeById(inputNode.getId());
+      if (outputNode != null) break;
+      inputNode = inputNode.getParent();
+    }
+
+    TracerNode inputTracerNode = new TracerNode(Kind.INPUT, new SNodePointer(node));
+    TracerNode tracerNode = inputTracerNode;
+    for (MappingScript mappingScript : mappingScripts) {
+      TracerNode childTracerNode = new TracerNode(Kind.MAPPING_SCRIPT, new SNodePointer(mappingScript.getNode()));
+      tracerNode.addChild(childTracerNode);
+      tracerNode = childTracerNode;
+    }
+    if (outputNode != null) {
+      if (inputNode == node) {
+        tracerNode.addChild(new TracerNode(Kind.OUTPUT, new SNodePointer(outputNode)));
+      } else {
+        tracerNode.addChild(new TracerNode(Kind.APPROXIMATE_OUTPUT, new SNodePointer(outputNode)));
       }
     }
-    return resultTracerNode;
+
+    return inputTracerNode;
   }
 
   public boolean hasTracebackData(SModel model) {
@@ -361,5 +405,67 @@ public class GenerationTracer {
       tracebackNode.addChild(buildTracebackTree(tracerNode.getParent(), depth + 1));
     }
     return tracebackNode;
+  }
+
+  public void registerPreMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<MappingScript> preMappingScripts) {
+    if (!myActive) return;
+    myModelsProcessedByScripts.put(scriptsInputModel, scriptsOutputModel, preMappingScripts);
+  }
+
+  public void registerPostMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<MappingScript> postMappingScripts) {
+    if (!myActive) return;
+    myModelsProcessedByScripts.put(scriptsInputModel, scriptsOutputModel, postMappingScripts);
+  }
+
+  private static class ModelsProcessedByScripts {
+    List<String> myInputModels = new ArrayList<String>();
+    List<String> myOutputModels = new ArrayList<String>();
+    List<List<MappingScript>> myScripts = new ArrayList<List<MappingScript>>();
+
+    public void put(SModel inputModel, SModel outputModel, List<MappingScript> scripts) {
+      myInputModels.add(inputModel.getUID().toString());
+      myOutputModels.add(outputModel.getUID().toString());
+      myScripts.add(scripts);
+    }
+
+    public boolean hasInput(SModel model) {
+      return myInputModels.contains(model.getUID().toString());
+    }
+
+    public boolean hasOutput(SModel model) {
+      return myOutputModels.contains(model.getUID().toString());
+    }
+
+    public List<MappingScript> getScriptsForInput(SModel model) {
+      int i = myInputModels.indexOf(model.getUID().toString());
+      if (i >= 0) {
+        return myScripts.get(i);
+      }
+      return null;
+    }
+
+    public List<MappingScript> getScriptsForOutput(SModel model) {
+      int i = myOutputModels.indexOf(model.getUID().toString());
+      if (i >= 0) {
+        return myScripts.get(i);
+      }
+      return null;
+    }
+
+    public SModelUID getOutputForInput(SModel model) {
+      int i = myInputModels.indexOf(model.getUID().toString());
+      if (i >= 0) {
+        return SModelUID.fromString(myOutputModels.get(i));
+      }
+      return null;
+    }
+
+    public SModelUID getInputForOutput(SModel model) {
+      int i = myOutputModels.indexOf(model.getUID().toString());
+      if (i >= 0) {
+        return SModelUID.fromString(myInputModels.get(i));
+      }
+      return null;
+    }
   }
 }
