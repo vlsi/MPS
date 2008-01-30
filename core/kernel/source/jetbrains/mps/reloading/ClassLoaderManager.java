@@ -294,11 +294,18 @@ public class ClassLoaderManager implements IComponentLifecycle {
     CompositeClassPathItem result = new CompositeClassPathItem();
     result.add(getBaseMPSClassPath());
 
-    if (getMPSSupportClassPath() != null) {
-      result.add(getMPSSupportClassPath());
+    IClassPathItem kernelClassPath = getMPSKernelClassPath();
+    if (kernelClassPath != null) {
+      result.add(kernelClassPath);
     }
 
-    if (getWorkbenchClassPath() != null) {
+    IClassPathItem supportClassPath = getMPSSupportClassPath();
+    if (supportClassPath != null) {
+      result.add(supportClassPath);
+    }
+
+    IClassPathItem workbenchClassPath = getWorkbenchClassPath();
+    if (workbenchClassPath != null) {
       result.add(getWorkbenchClassPath());
     }
 
@@ -325,6 +332,16 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
 
     LOG.error("Can't find mps classpath");                      
+    return null;
+  }
+
+  private IClassPathItem getMPSKernelClassPath() {
+    String supportClasses = PathManager.getHomePath() + File.separator + "core"
+            + File.separator + "kernel" + File.separator + "classes";
+    if (new File(supportClasses).exists()) {
+      return new FileClassPathItem(supportClasses);
+    }
+
     return null;
   }
 

@@ -62,6 +62,7 @@
     <orderEntry type="module" module-name="monitorLanguage" exported="" />
     <orderEntry type="module" module-name="configurations" exported="" />
     <orderEntry type="module" module-name="workbench" exported="" />
+    <orderEntry type="module" module-name="kernel" exported="" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
