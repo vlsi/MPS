@@ -901,6 +901,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/accounting/accounting.iml" filepath="$PROJECT_DIR$/app/accounting/accounting.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/agreement/agreement.iml" filepath="$PROJECT_DIR$/app/agreement/agreement.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/annotations/annotations.iml" filepath="$PROJECT_DIR$/core/languageDesign/annotations/annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" group="platform/dnq/runtime" />
