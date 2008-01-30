@@ -1716,6 +1716,8 @@ public final class SNode {
       LOG.error(e);
     } catch (InstantiationException e) {
       LOG.error(e);
+    } catch (Throwable t) {
+      LOG.error(t);
     }
 
     LOG.error("couldn't find adapter for " + this.getDebugText(), this);
