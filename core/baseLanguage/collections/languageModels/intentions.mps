@@ -11,7 +11,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
-  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1193396656620">
     <property name="name" value="ConvertForEachStatementToForeachStatement" />

@@ -11,7 +11,7 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.smodel.action@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />

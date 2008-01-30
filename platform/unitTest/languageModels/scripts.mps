@@ -8,7 +8,7 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.unitTest.structure" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <node type="jetbrains.mps.ide.scriptLanguage.structure.Script" id="1198168010293">
     <property name="scriptName" value="FixTestMethodReturnType" />
     <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198168010294">

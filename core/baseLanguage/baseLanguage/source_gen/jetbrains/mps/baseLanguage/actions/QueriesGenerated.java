@@ -885,11 +885,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return ".";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "instance member access";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -910,11 +910,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return ".";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "new \".\" operation";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -952,11 +952,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "instanceof";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -978,11 +978,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "=";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "assignment";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -1004,11 +1004,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "[";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "array access";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -1030,11 +1030,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return ".length";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "array length expression";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -1055,11 +1055,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "=";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "initializer";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -1081,11 +1081,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "[]";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "to array type";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -1105,11 +1105,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "<";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "add type parameter";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -1129,11 +1129,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "<";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "add type variable";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -1153,11 +1153,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "<";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "add type parameter";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -1177,7 +1177,7 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "catch";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -1206,7 +1206,7 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "finally";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -1232,11 +1232,11 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "?";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
         public String getDescriptionText(String pattern) {
-          return "ternary operator";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });
@@ -1257,7 +1257,7 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return "{";
+          throw new RuntimeException("NOT IMPLEMENTED");
         }
 
       });

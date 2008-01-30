@@ -25,7 +25,7 @@
   <import index="15" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <import index="16" modelUID="java.lang@java_stub" version="-1" />
   <import index="17" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="18" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="18" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="19" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181704881">
     <link role="concept" targetNodeId="1.1145383075378" />

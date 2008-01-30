@@ -11,7 +11,7 @@
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.quotation" />
   <maxImportIndex value="9" />
-  <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" version="-1" />

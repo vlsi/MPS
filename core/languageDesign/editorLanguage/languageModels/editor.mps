@@ -12,7 +12,7 @@
   <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="12" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="12" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.editorLanguage.editor@java_stub" version="-1" />
   <import index="14" modelUID="java.lang@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />

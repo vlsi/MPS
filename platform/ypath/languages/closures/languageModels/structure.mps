@@ -16,7 +16,7 @@
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1199542442495">
     <property name="name" value="FunctionType" />
     <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />

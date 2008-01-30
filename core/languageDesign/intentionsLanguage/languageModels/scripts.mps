@@ -20,7 +20,7 @@
   <import index="8" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="11" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="12" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <import index="14" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />

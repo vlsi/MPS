@@ -17,7 +17,7 @@
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1189696897907">
     <link role="concept" targetNodeId="1.1189694084608" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1189696897908">

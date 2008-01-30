@@ -19,7 +19,7 @@
   <import index="6" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="10" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="11" modelUID="java.lang@java_stub" version="-1" />
   <import index="12" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" version="-1" />

@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 public class AddAnnotation_Intention extends BaseIntention implements Intention {
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.Annotable";
+    return "jetbrains.mps.baseLanguage.structure.HasAnnotation";
   }
 
   public boolean isErrorIntention() {

@@ -10,7 +10,7 @@
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.ide.scriptLanguage.structure.Script" id="1177432828777">

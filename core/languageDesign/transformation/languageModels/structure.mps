@@ -8,7 +8,7 @@
   <maxImportIndex value="11" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="6" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="7" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <import index="9" modelUID="java.lang@java_stub" version="-1" />

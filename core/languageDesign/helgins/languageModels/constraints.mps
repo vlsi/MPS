@@ -11,7 +11,7 @@
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.helgins.search@java_stub" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="5" modelUID="jetbrains.mps.patterns.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.patterns.util@java_stub" version="-1" />
   <import index="7" modelUID="junit.framework@java_stub" version="-1" />

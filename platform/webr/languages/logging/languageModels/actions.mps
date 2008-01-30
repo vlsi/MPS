@@ -9,7 +9,7 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="webr.logging.structure" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="webr.logging.structure@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1167245922666">
     <property name="name" value="logging_nodeSubstitue" />

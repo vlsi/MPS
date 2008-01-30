@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.structure">
   <persistence version="1" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="Annotable" conceptFQName="jetbrains.mps.baseLanguage.structure.Annotable" featureKind="CONCEPT" />
+          <value featureName="HasAnnotation" conceptFQName="jetbrains.mps.baseLanguage.structure.HasAnnotation" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <maxImportIndex value="38" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="36" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="36" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="37" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068498886294">
     <property name="name" value="AssignmentExpression" />
@@ -2297,7 +2308,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1188208481402">
-    <property name="name" value="Annotable" />
+    <property name="name" value="HasAnnotation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1188208488637">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="annotation" />

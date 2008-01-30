@@ -15,7 +15,7 @@
   <import index="5" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="7" modelUID="java.util@java_stub" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.plugin@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />

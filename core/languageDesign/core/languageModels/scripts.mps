@@ -23,7 +23,7 @@
   <import index="8" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="11" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="12" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
   <import index="14" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />

@@ -13,7 +13,7 @@
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
   <import index="7" modelUID="jetbrains.mpslite.constraints" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="9" modelUID="jetbrains.mps.core.editor" version="0" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1182510959005">
     <link role="conceptDeclaration" targetNodeId="1.1182510906722" />

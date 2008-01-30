@@ -21,7 +21,7 @@
   <import index="17" modelUID="jetbrains.mps.quotation.structure" version="-1" />
   <import index="18" modelUID="jetbrains.mps.quotation.structure@java_stub" version="-1" />
   <import index="19" modelUID="jetbrains.mps.patterns.structure" version="-1" />
-  <import index="20" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="20" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="21" modelUID="java.awt@java_stub" version="-1" />
   <import index="22" modelUID="jetbrains.mps.core.structure@java_stub" version="-1" />
   <import index="23" modelUID="jetbrains.mps.smodel.action@java_stub" version="-1" />

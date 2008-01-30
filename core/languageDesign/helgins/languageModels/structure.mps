@@ -7,7 +7,7 @@
   <language namespace="jetbrains.mps.core" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.patterns.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />

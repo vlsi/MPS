@@ -11,7 +11,7 @@
   <language namespace="jetbrains.mps.transformation.TLBase" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.generator.baseLanguage.template.main@templates" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1200308879248">
     <property name="name" value="AddFindStatementsInFindBlock" />

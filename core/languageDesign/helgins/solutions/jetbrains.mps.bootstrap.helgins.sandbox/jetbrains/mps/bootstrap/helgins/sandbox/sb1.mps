@@ -12,7 +12,7 @@
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="5" modelUID="java.io@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="7" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1186475525107">

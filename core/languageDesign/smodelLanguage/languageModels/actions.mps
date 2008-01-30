@@ -12,7 +12,7 @@
   <language namespace="jetbrains.mps.core" />
   <maxImportIndex value="19" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="7" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="8" modelUID="java.util@java_stub" version="-1" />
   <import index="13" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />

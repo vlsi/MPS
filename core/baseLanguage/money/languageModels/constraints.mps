@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.accounting.money.constraints">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="java.math@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.accounting.money.structure" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1186668310492">
     <link role="concept" targetNodeId="2.1186667651178" />

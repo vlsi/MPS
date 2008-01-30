@@ -21,7 +21,7 @@
   <import index="9" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="10" modelUID="java.lang@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="12" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="12" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <import index="14" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />

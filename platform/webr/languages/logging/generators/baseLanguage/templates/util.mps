@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="webr.logging.generator.baseLanguage.template.util">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.transformation.TLBase" />
   <maxImportIndex value="21" />
-  <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="webr.logging.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="4" modelUID="webr.logging.generator.baseLanguage.template.main@java_stub" version="-1" />
