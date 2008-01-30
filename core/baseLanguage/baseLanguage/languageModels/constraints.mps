@@ -534,14 +534,34 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1181220485422">
                 <property name="name" value="indexOfLT" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1181220485423" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1181220464699">
-                  <link role="baseMethodDeclaration" targetNodeId="13.~String.indexOf(java.lang.String):int" resolveInfo="indexOf" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1181220461562">
-                    <link role="variableDeclaration" targetNodeId="1181220452959" resolveInfo="typeName" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201710885216">
+                  <property name="value" value="-1" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1201710886469">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201710886470">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201710896916">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1201710897656">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201710903596">
+                      <link role="baseMethodDeclaration" targetNodeId="13.~String.indexOf(java.lang.String):int" resolveInfo="indexOf" />
+                      <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201710899960">
+                        <link role="variableDeclaration" targetNodeId="1181220452959" resolveInfo="typeName" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201710904425">
+                        <property name="value" value="&lt;" />
+                      </node>
+                    </node>
+                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201710896917">
+                      <link role="variableDeclaration" targetNodeId="1181220485422" resolveInfo="indexOfLT" />
+                    </node>
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1181220466687">
-                    <property name="value" value="&lt;" />
-                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1201710891232">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1201710892582" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201710890617">
+                  <link role="variableDeclaration" targetNodeId="1181220452959" resolveInfo="typeName" />
                 </node>
               </node>
             </node>
