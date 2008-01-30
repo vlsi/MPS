@@ -474,6 +474,10 @@ public class QueriesGenerated {
     return IOperation_Behavior.call_getOperand_1197028596169(_context.getNode());
   }
 
+  public static SNode sourceNodeQuery_1201654738287(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "key", true);
+  }
+
   public static List sourceNodesQuery_1200500184872(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode creator = SLinkOperations.getTarget(_context.getNode(), "creator", true);
     return SLinkOperations.getTargets(creator, "initValue", true);
