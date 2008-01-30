@@ -2850,6 +2850,18 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1201654801802">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1201654806742">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201654806116">
+                <link role="variableDeclaration" targetNodeId="1197928280896" resolveInfo="map" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ContainsKeyOperation" id="1201654808072">
+                <node role="key" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201654809715">
+                  <property name="value" value="key1" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231582" />
       </node>
