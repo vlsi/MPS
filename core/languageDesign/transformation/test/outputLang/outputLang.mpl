@@ -8,7 +8,9 @@
   <accessoryModels />
   <generators />
   <classPath />
-  <runtimeClassPath />
+  <runtimeClassPath>
+    <entry path="${mps_home}\core\languageDesign\transformation\classes" />
+  </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
