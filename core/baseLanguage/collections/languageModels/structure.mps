@@ -702,6 +702,12 @@
     <property name="package" value="mapType" />
     <property name="name" value="ContainsKeyOperation" />
     <link role="extends" targetNodeId="1201225890326" resolveInfo="MapOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201654602639">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="key" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201306616355">
       <property name="value" value="containsKey" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />

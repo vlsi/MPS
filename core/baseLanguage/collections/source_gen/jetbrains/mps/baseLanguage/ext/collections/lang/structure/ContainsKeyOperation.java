@@ -6,9 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ContainsKeyOperation extends MapOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ContainsKeyOperation";
+  public static String KEY = "key";
 
   public  ContainsKeyOperation(SNode node) {
     super(node);
@@ -20,6 +22,15 @@ public class ContainsKeyOperation extends MapOperation {
 
   public static ContainsKeyOperation newInstance(SModel sm) {
     return ContainsKeyOperation.newInstance(sm, false);
+  }
+
+
+  public Expression getKey() {
+    return (Expression)this.getChild(ContainsKeyOperation.KEY);
+  }
+
+  public void setKey(Expression node) {
+    super.setChild(ContainsKeyOperation.KEY, node);
   }
 
 }
