@@ -3658,7 +3658,7 @@
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201696387536">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201696387537">
-                <property name="value" value="functionType_data_" />
+                <property name="value" value="functionType_prepdata_" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201696387538">
                 <link role="baseMethodDeclaration" targetNodeId="16.~SNode.getId():java.lang.String" resolveInfo="getId" />
@@ -3709,7 +3709,7 @@
             <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.getSessionObject(java.lang.Object):java.lang.Object" resolveInfo="getSessionObject" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201696398753">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201696398754">
-                <property name="value" value="functionType_data_" />
+                <property name="value" value="functionType_prepdata_" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201696398755">
                 <link role="baseMethodDeclaration" targetNodeId="16.~SNode.getId():java.lang.String" resolveInfo="getId" />

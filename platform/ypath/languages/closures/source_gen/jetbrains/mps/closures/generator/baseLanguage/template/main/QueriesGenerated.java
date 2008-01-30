@@ -190,10 +190,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201048297671(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      IMatchingPattern pattern_1201699308293 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1201699308274 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1201699308293);
-      if(coercedNode_1201699308274 != null) {
-        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1201699308274, "elementType", true));
+      IMatchingPattern pattern_1201705626189 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1201705626171 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1201705626189);
+      if(coercedNode_1201705626171 != null) {
+        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1201705626171, "elementType", true));
       }
     }
     return null;
@@ -201,10 +201,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201048260874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      IMatchingPattern pattern_1201699308323 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1201699308305 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1201699308323);
-      if(coercedNode_1201699308305 != null) {
-        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1201699308305, "elementType", true));
+      IMatchingPattern pattern_1201705626218 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1201705626200 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1201705626218);
+      if(coercedNode_1201705626200 != null) {
+        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1201705626200, "elementType", true));
       }
     }
     return null;
@@ -746,18 +746,48 @@ public class QueriesGenerated {
         if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(pdecl, "type", true), "jetbrains.mps.closures.structure.FunctionType")) {
           SNode arg = ListOperations.getElement(args, idx);
           {
-            IMatchingPattern pattern_1201699311648 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.closures.structure.FunctionType");
-            SNode coercedNode_1201699311647 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(arg), pattern_1201699311648);
-            if(coercedNode_1201699311647 != null) {
+            IMatchingPattern pattern_1201705629335 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.closures.structure.FunctionType");
+            SNode coercedNode_1201705629334 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(arg), pattern_1201705629335);
+            if(coercedNode_1201705629334 != null) {
               SNode ptype = SLinkOperations.getTarget(pdecl, "type", true);
-              if(SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.closures.structure.FunctionType") && !(FunctionType_Behavior.call_getSignature_1199633062014(coercedNode_1201699311647).equals(FunctionType_Behavior.call_getSignature_1199633062014(ptype)))) {
-                FunctionTypeUtil.addAdaptableFunctionTypeTarget(coercedNode_1201699311647, ptype, _context.getGenerator());
+              if(SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.closures.structure.FunctionType") && !(FunctionType_Behavior.call_getSignature_1199633062014(coercedNode_1201705629334).equals(FunctionType_Behavior.call_getSignature_1199633062014(ptype)))) {
+                FunctionTypeUtil.addAdaptableFunctionTypeTarget(coercedNode_1201705629334, ptype, _context.getGenerator());
                 FunctionTypeUtil.putPrepData(ListOperations.getElement(args, idx), FunctionType_Behavior.call_getSignature_1199633062014(ptype), _context.getGenerator());
               }
             }
           }
         }
         idx = idx + 1;
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_1201703119163(final IOperationContext operationContext, final MappingScriptContext _context) {
+    List<SNode> aes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+    for(SNode ae : aes) {
+      SNode ltype = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "lValue", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.closures.structure.FunctionType"), true);
+      SNode rtype = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "rValue", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.closures.structure.FunctionType"), true);
+      if((ltype != null) && (rtype != null)) {
+        if(!(FunctionType_Behavior.call_getSignature_1199633062014(ltype).equals(FunctionType_Behavior.call_getSignature_1199633062014(rtype)))) {
+          FunctionTypeUtil.addAdaptableFunctionTypeTarget(rtype, ltype, _context.getGenerator());
+          FunctionTypeUtil.putPrepData(SLinkOperations.getTarget(ae, "rValue", true), FunctionType_Behavior.call_getSignature_1199633062014(ltype), _context.getGenerator());
+        }
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_1201705474278(final IOperationContext operationContext, final MappingScriptContext _context) {
+    List<SNode> vds = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+    for(SNode vd : vds) {
+      if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(vd, "type", true), "jetbrains.mps.closures.structure.FunctionType")) {
+        SNode vdType = SLinkOperations.getTarget(vd, "type", true);
+        SNode initType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(vd, "initializer", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.closures.structure.FunctionType"), true);
+        if((initType != null)) {
+          if(!(FunctionType_Behavior.call_getSignature_1199633062014(vdType).equals(FunctionType_Behavior.call_getSignature_1199633062014(initType)))) {
+            FunctionTypeUtil.addAdaptableFunctionTypeTarget(initType, vdType, _context.getGenerator());
+            FunctionTypeUtil.putPrepData(SLinkOperations.getTarget(vd, "initializer", true), FunctionType_Behavior.call_getSignature_1199633062014(vdType), _context.getGenerator());
+          }
+        }
       }
     }
   }

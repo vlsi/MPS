@@ -66,11 +66,11 @@ public class FunctionTypeUtil {
   }
 
   public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {
-    generator.getGeneratorSessionContext().putSessionObject("functionType_data_" + ((SNode)sn).getId(), data);
+    generator.getGeneratorSessionContext().putSessionObject("functionType_prepdata_" + ((SNode)sn).getId(), data);
   }
 
   public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
-    return generator.getGeneratorSessionContext().getSessionObject("functionType_data_" + ((SNode)sn).getId());
+    return generator.getGeneratorSessionContext().getSessionObject("functionType_prepdata_" + ((SNode)sn).getId());
   }
 
   public static void putPostData(SNode sn, Object data, ITemplateGenerator generator) {

@@ -20,6 +20,8 @@ public class FunctionTypes_Test extends TestCase {
 
     };
     _Integer fun2 = fun1;
+    _Number fun3 = new _FunctionTypes._Integer_to_Number_adapter(fun1);
+    fun3 = new _FunctionTypes._Integer_to_Number_adapter(fun2);
     this.accept_int(fun1);
     this.accept_int(fun2);
     this.accept_Integer(fun2);
