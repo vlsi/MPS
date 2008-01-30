@@ -1796,13 +1796,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // dump cells tree starting from current
     if (keyEvent.getKeyCode() == KeyEvent.VK_D && keyEvent.isControlDown()) {
       if (mySelectedCell != null) {
-        System.out.println("--- Selected cell parents ---");
-        EditorUtil.dumpCellsUp(mySelectedCell, 0);
-        System.out.println("--- Selected cell children ---");
-        EditorUtil.dumpCellsDown(mySelectedCell, 0);
-        System.out.println("--- end dump ---");
-        keyEvent.consume();
-        //        return;
+        CommandProcessor.instance().executeCommand(new Runnable() {
+          public void run() {
+            System.out.println("--- Selected cell parents ---");
+            EditorUtil.dumpCellsUp(mySelectedCell, 0);
+            System.out.println("--- Selected cell children ---");
+            EditorUtil.dumpCellsDown(mySelectedCell, 0);
+            System.out.println("--- end dump ---");
+            keyEvent.consume();
+            //        return;
+          }
+        });
       }
     }
 
