@@ -3,10 +3,13 @@ package jetbrains.mps.transformation.TLBase.plugin.debug;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
+import java.awt.Component;
+import java.awt.Graphics;
 
 /**
  * Igor Alshannikov
@@ -140,17 +143,5 @@ public class TracerNode {
       result.add(childCopy);
     }
     return result;
-  }
-
-  public Icon getIcon() {
-    Icon icon = null;
-    if (myNodePointer != null) {
-      icon = IconManager.getIconFor(myNodePointer.getNode());
-    }
-
-    if (icon != null) {
-      return icon;
-    }
-    return jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON;
   }
 }

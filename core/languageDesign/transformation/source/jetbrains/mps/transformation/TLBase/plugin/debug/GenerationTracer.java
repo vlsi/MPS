@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class GenerationTracer {
   private static Logger LOG = Logger.getLogger(GenerationTracer.class);
-  private static final boolean DISABLED = true;
+  private static final boolean DISABLED = false;
   private static Map<String, List<TracerNode>> ourLastTracingDataByInputModel;
   private static Map<String, List<TracerNode>> ourLastTracingDataByOutputModel;
   private static MPSProject ourLastTracingProject;

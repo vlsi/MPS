@@ -8,6 +8,7 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
 
 import javax.swing.JPopupMenu;
 
@@ -72,12 +73,13 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     String kind = myTracerNode.getKind().toString();
     SNodePointer nodePointer = myTracerNode.getNodePointer();
     if (nodePointer != null) {
-      setText("[" + kind + "] " + nodePointer.toString());
+      setText(/*"[" + kind + "] " +*/ nodePointer.toString());
       setAdditionalText("" + nodePointer.getModelUID());
       setNodeIdentifier("" + nodePointer.hashCode());
     } else {
-      setText("[" + kind + "]");
+      setText("<" + kind + ">");
     }
-    setIcon(myTracerNode.getIcon());
+    setIcon(Icons.getIcon(myTracerNode));
+    setAutoExpandable(getChildCount() == 1);
   }
 }

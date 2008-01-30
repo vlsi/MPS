@@ -2,8 +2,7 @@ package jetbrains.mps.transformation.TLBase.plugin.debug;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -39,11 +38,11 @@ public abstract class GenerationTracerView {
   }
 
   public String getCaption() {
-    return "[" + myRootTracerNode.getKind() + "] " + myRootTracerNode.getNodePointer().toString();
+    return myRootTracerNode.getNodePointer().toString();
   }
 
   public Icon getIcon() {
-    return myRootTracerNode.getIcon();
+    return Icons.getIcon(myRootTracerNode);
   }
 
   public Component getComponent() {
