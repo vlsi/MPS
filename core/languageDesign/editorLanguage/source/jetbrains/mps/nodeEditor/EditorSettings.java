@@ -402,7 +402,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       mySelectionColor = mySelectedColorComponent.getColor();
       myRangeSelectionColor = myRangeSelColorComponent.getColor();
 
-      ReloadUtils.rebuildAllEditors();
+
+      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+        public void run() {
+          ReloadUtils.rebuildAllEditors();
+        }
+      });
     }
 
     private int getBlinkingPeriod() {
