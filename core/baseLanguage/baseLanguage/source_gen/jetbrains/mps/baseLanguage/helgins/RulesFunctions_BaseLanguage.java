@@ -13,6 +13,7 @@ import java.util.Set;
 import jetbrains.mps.cfg.BasicBlock;
 import jetbrains.mps.cfg.IControlFlowGraph;
 import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class RulesFunctions_BaseLanguage {
 
@@ -112,6 +113,32 @@ public class RulesFunctions_BaseLanguage {
       newLastBlocks = new HashSet<BasicBlock>();
     }
     return foundBlocks;
+  }
+
+  public static boolean isWithinStatic(SNode node) {
+    SNode staticAncestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration","jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
+    if(staticAncestor != null) {
+      return true;
+    }
+    SNode statementList = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    SNode prevStatementList = null;
+    while((statementList != null)) {
+      prevStatementList = statementList;
+      statementList = SNodeOperations.getAncestor(statementList, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    }
+    if((prevStatementList != null)) {
+      do {
+        SNode matchedNode_1201700829805 = SNodeOperations.getParent(prevStatementList, null, false, false);
+        {
+          boolean matches_1201700829807 = false;
+          matches_1201700829807 = SModelUtil_new.isAssignableConcept(SNodeOperations.getParent(prevStatementList, null, false, false).getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+          if(matches_1201700829807) {
+            return SLinkOperations.getTarget(matchedNode_1201700829805, "staticInitializer", true) == prevStatementList;
+          }
+        }
+      } while(false);
+    }
+    return false;
   }
 
 }
