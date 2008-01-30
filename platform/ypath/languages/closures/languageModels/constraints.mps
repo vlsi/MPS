@@ -163,6 +163,19 @@
         <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199633062016">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1201696735063">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201696735064">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201696741543">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201696742820">
+                <property name="value" value="???invalid signature???" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1201696737656">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1201696739668" />
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1201696736536" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199635000532">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199635000533">
             <property name="name" value="buf" />
