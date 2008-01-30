@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.regex.samples">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.regexp" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <maxImportIndex value="4" />

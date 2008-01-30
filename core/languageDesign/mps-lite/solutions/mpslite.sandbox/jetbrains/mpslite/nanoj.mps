@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mpslite.nanoj">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mpslite" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.ypath" />

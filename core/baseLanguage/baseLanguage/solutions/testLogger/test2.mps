@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="test2">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1191320001477">
