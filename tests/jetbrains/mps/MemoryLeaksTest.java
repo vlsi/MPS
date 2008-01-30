@@ -1,8 +1,5 @@
 package jetbrains.mps;
 
-import junit.framework.TestCase;
-import jetbrains.mps.ide.TestMain;
-
 import java.io.File;
 
 public class MemoryLeaksTest extends BaseMPSTest {

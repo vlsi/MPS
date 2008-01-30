@@ -22,7 +22,7 @@ public class BaseMPSTest extends TestCase {
   protected String testProject(File project) {
     try {
       Bundle mpsBundle = MPSLauncher.getMPSBundle();
-      Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
+      Class testMain = mpsBundle.loadClass("jetbrains.mps.TestMain");
       Method testMethod = testMain.getMethod("testProject", File.class);
       return (String) testMethod.invoke(null, project);
     } catch (Throwable t) {
@@ -33,7 +33,7 @@ public class BaseMPSTest extends TestCase {
   protected String testProject(File project, String message) {
     try {
       Bundle mpsBundle = MPSLauncher.getMPSBundle();
-      Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
+      Class testMain = mpsBundle.loadClass("jetbrains.mps.TestMain");
       Method testMethod = testMain.getMethod("testProject", File.class, String.class);
       return (String) testMethod.invoke(null, project, message);
     } catch (Throwable t) {
@@ -44,7 +44,7 @@ public class BaseMPSTest extends TestCase {
   protected boolean testProjectGenerationForLeaks(File project) {
     try {
       Bundle mpsBundle = MPSLauncher.getMPSBundle();
-      Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
+      Class testMain = mpsBundle.loadClass("jetbrains.mps.TestMain");
       Method testMethod = testMain.getMethod("testProjectGenerationForLeaks", File.class);
       return (Boolean) testMethod.invoke(null, project);
     } catch (Throwable t) {
@@ -66,7 +66,7 @@ public class BaseMPSTest extends TestCase {
   protected boolean testRefactoringTestEnvironment(File projectDirectory) {
     try {
       Bundle mpsBundle = MPSLauncher.getMPSBundle();
-      Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
+      Class testMain = mpsBundle.loadClass("jetbrains.mps.TestMain");
       Method testMethod = testMain.getMethod("testRefactoringTestEnvironment", File.class);
       return (Boolean) testMethod.invoke(null, projectDirectory);
     } catch (Throwable t) {
@@ -77,7 +77,7 @@ public class BaseMPSTest extends TestCase {
   protected boolean testRefactoringOnProject(File projectDirectory, String refactoringTesterClassName) {
     try {
       Bundle mpsBundle = MPSLauncher.getMPSBundle();
-      Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
+      Class testMain = mpsBundle.loadClass("jetbrains.mps.TestMain");
       Class refactoringTesterClass = mpsBundle.loadClass(refactoringTesterClassName);
       Class iRefactoringTesterClass = mpsBundle.loadClass("jetbrains.mps.refactoring.framework.tests.IRefactoringTester");
       Method testMethod = testMain.getMethod("testRefactoringOnProject", File.class, iRefactoringTesterClass);

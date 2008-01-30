@@ -2,7 +2,7 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
-import jetbrains.mps.ide.MPSActivator;
+import jetbrains.mps.MPSActivator;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
@@ -318,6 +318,16 @@ public class ClassLoaderManager implements IComponentLifecycle {
             + File.separator + "MPSSupport" + File.separator + "classes";
     if (new File(supportClasses).exists()) {
       return new FileClassPathItem(supportClasses);
+    }
+
+    return null;
+  }
+
+  public IClassPathItem getWorkbenchClassPath() {
+    String workbenchClasses = PathManager.getHomePath() + File.separator + "workbench"
+            + File.separator + "classes";
+    if (new File(workbenchClasses).exists()) {
+      return new FileClassPathItem(workbenchClasses);
     }
 
     return null;

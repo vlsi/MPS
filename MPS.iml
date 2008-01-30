@@ -61,6 +61,7 @@
     <orderEntry type="module" module-name="projectLanguage" exported="" />
     <orderEntry type="module" module-name="monitorLanguage" exported="" />
     <orderEntry type="module" module-name="configurations" exported="" />
+    <orderEntry type="module" module-name="workbench" exported="" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
