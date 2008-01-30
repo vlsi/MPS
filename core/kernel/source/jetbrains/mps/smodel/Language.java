@@ -75,7 +75,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
 
   public void rename(String newNamespace, IOperationContext operationContext) {
-    String oldNamespace = getNamespace();
+/*    String oldNamespace = getNamespace();
 
     // update repository
     MPSModuleRepository.getInstance().renameUID(this, newNamespace);
@@ -143,7 +143,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     // save descriptor
     myDescriptorFile = FileSystem.getFile(descriptorFile);
     setLanguageDescriptor(myLanguageDescriptor);
-    save();
+    save();*/
   }
 
   /*package*/ IFile newDescriptorFileByNewName(String newNamespace) {
@@ -529,209 +529,70 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   @NotNull
   public SModelDescriptor getStructureModelDescriptor() {
-    Model structureModel = getLanguageDescriptor().getStructureModel();
-
-    assert structureModel != null;
-
-    SModelUID modelUID = SModelUID.fromString(structureModel.getName());
-    SModelDescriptor structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-    if (structureModelDescriptor == null) {
-      LOG.error("Couldn't get structure model \"" + modelUID + "\"");
-    } else if (!myRegisteredInFindUsagesManager) {
-      myRegisteredInFindUsagesManager = true;
-      //register cache invalidation
-      FindUsagesManager.registerStructureModel(structureModelDescriptor);
-    }
-    assert structureModelDescriptor != null;
-    return structureModelDescriptor;
+    return LanguageAspect.STRUCTURE.get(this);
   }
 
   @Nullable
   public SModelDescriptor getHelginsTypesystemModelDescriptor() {
-    if (getLanguageDescriptor().getHelginsTypesystemModel() != null) {
-      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getHelginsTypesystemModel().getName());
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor == null) {
-        LOG.error("Couldn't get helgins-typesystem model \"" + modelUID + "\"");
-      }
-      return modelDescriptor;
-    }
-    return null;
+    return LanguageAspect.HELGINS_TYPESYSTEM.get(this);
   }
 
   @Nullable
   public SModelDescriptor getCFAModelDescriptor() {
-    if (getLanguageDescriptor().getCfaModel() != null) {
-      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getCfaModel().getName());
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor == null) {
-        LOG.error("Couldn't get cfa model \"" + modelUID + "\"");
-      }
-      return modelDescriptor;
-    }
-    return null;
+    return LanguageAspect.CFA.get(this);
   }
 
   @Nullable
   public SModelDescriptor getActionsModelDescriptor() {
-    if (getLanguageDescriptor().getActionsModel() != null) {
-      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getActionsModel().getName());
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor == null) {
-        LOG.error("Couldn't get actions model \"" + modelUID + "\"");
-      }
-      return modelDescriptor;
-    }
-    return null;
+    return LanguageAspect.ACTIONS.get(this);
   }
 
   @Nullable
   public SModelDescriptor getConstraintsModelDescriptor() {
-    if (getLanguageDescriptor().getConstraintsModel() != null) {
-      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getConstraintsModel().getName());
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor == null) {
-        LOG.error("Couldn't get constraints model \"" + modelUID + "\"");
-      }
-      return modelDescriptor;
-    }
-    return null;
+    return LanguageAspect.CONSTRAINTS.get(this);
   }
 
   @Nullable
   public SModelDescriptor getIntentionsModelDescriptor() {
-    if (getLanguageDescriptor().getIntentionsModel() != null) {
-      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getIntentionsModel().getName());
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor == null) {
-        LOG.error("Couldn't get intentions model \"" + modelUID + "\"");
-      }
-      return modelDescriptor;
-    }
-    return null;
+    return LanguageAspect.INTENTIONS.get(this);
   }
 
   @Nullable
   public SModelDescriptor getFindUsagesModelDescriptor() {
-    if (getLanguageDescriptor().getFindUsagesModel() != null) {
-      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getFindUsagesModel().getName());
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor == null) {
-        LOG.error("Couldn't get find usages model \"" + modelUID + "\"");
-      }
-      return modelDescriptor;
-    }
-    return null;
+    return LanguageAspect.FIND_USAGES.get(this);
   }
 
   @Nullable
   public SModelDescriptor getScriptsModelDescriptor() {
-    if (getLanguageDescriptor().getScriptsModel() != null) {
-      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getScriptsModel().getName());
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor == null) {
-        LOG.error("Couldn't get scripts model \"" + modelUID + "\"");
-      }
-      return modelDescriptor;
-    }
-    return null;
+    return LanguageAspect.SCRIPTS.get(this);
   }
 
   @Nullable
   public SModelDescriptor getDocumentationModelDescriptor() {
-    if (getLanguageDescriptor().getDocumentationModel() != null) {
-      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getDocumentationModel().getName());
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor == null) {
-        LOG.error("Couldn't get scripts model \"" + modelUID + "\"");
-      }
-      return modelDescriptor;
-    }
-    return null;
+    return LanguageAspect.DOCUMENTATION.get(this);
   }
 
   @Nullable
   public SModelDescriptor getEditorModelDescriptor() {
-    return getEditorModelDescriptor(null);
-  }
-
-  @Nullable
-  public String getEditorUID() {
-    return getEditorUID(null);
-  }
-
-  @Nullable
-  public SModelDescriptor getEditorModelDescriptor(String stereotype) {
-    if (stereotype == null) stereotype = SModelStereotype.NONE;
-    String editorUID = getEditorUID(stereotype);
-    if (editorUID == null) {
-      return null;
-    }
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(editorUID), this);
-    if (modelDescriptor == null) {
-      LOG.error("Couldn't get editor model \"" + editorUID + "\"");
-      SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(editorUID), this);
-    }
-    return modelDescriptor;
+    return LanguageAspect.EDITOR.get(this);
   }
 
   @NotNull
   public Set<SModelDescriptor> getEditorDescriptors() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    Iterator<Editor> editors = getLanguageDescriptor().editors();
-    while (editors.hasNext()) {
-      Editor editor = editors.next();
-      SModelDescriptor editorModelDescriptor = getEditorModelDescriptor(editor.getStereotype());
-      if (editorModelDescriptor != null) {
-        result.add(editorModelDescriptor);
-      }
-    }
+    result.add(getEditorModelDescriptor());
     return result;
   }
 
   @NotNull
   public Set<SModelDescriptor> getAspectModelDescriptors() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
-    result.add(structureModelDescriptor);
-    result.addAll(getEditorDescriptors());
-    SModelDescriptor actionsModelDescriptor = getActionsModelDescriptor();
-    if (actionsModelDescriptor != null) result.add(actionsModelDescriptor);
-    SModelDescriptor constraintsModelDescriptor = getConstraintsModelDescriptor();
-    if (constraintsModelDescriptor != null) result.add(constraintsModelDescriptor);
-    SModelDescriptor helginsModelDescriptor = getHelginsTypesystemModelDescriptor();
-    if (helginsModelDescriptor != null) result.add(helginsModelDescriptor);
-    SModelDescriptor scriptsModelDescriptor = getScriptsModelDescriptor();
-    if (scriptsModelDescriptor != null) result.add(scriptsModelDescriptor);
-    SModelDescriptor documentationModelDescriptor = getDocumentationModelDescriptor();
-    if (documentationModelDescriptor != null) result.add(documentationModelDescriptor);
-    SModelDescriptor intentionsModelDescriptor = getIntentionsModelDescriptor();
-    if (intentionsModelDescriptor != null) result.add(intentionsModelDescriptor);
-    SModelDescriptor findUsagesModelDescriptor = getFindUsagesModelDescriptor();
-    if (findUsagesModelDescriptor != null) result.add(findUsagesModelDescriptor);
+    for (LanguageAspect aspect : LanguageAspect.values()) {
+      if (aspect.get(this) != null) {
+        result.add(aspect.get(this));
+      }
+    }
     return result;
-  }
-
-  @Nullable
-  public String getEditorUID(String stereotype) {
-    if (stereotype == null) stereotype = SModelStereotype.NONE;
-    Iterator<Editor> editors = getLanguageDescriptor().editors();
-    while (editors.hasNext()) {
-      Editor currentEditor = editors.next();
-      String currentStereotype = currentEditor.getStereotype();
-      if (currentStereotype == null) currentStereotype = SModelStereotype.NONE;
-      if (currentStereotype.equals(stereotype)) return currentEditor.getEditorModel().getName();
-    }
-    return null;
-  }
-
-  @Nullable
-  public String getEditorStereotype(SModelDescriptor modelDescriptor) {
-    String anUID = modelDescriptor.getModelUID().toString();
-    for (Editor editor : CollectionUtil.iteratorAsIterable(getLanguageDescriptor().editors())) {
-      if (anUID.equals(editor.getEditorModel().getName())) return editor.getStereotype();
-    }
-    return null;
   }
 
   public void invalidateCaches() {
@@ -859,158 +720,23 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public SModelDescriptor createLanguageEditorModel() {
-    ModelRoot modelRoot = null;
-    List<ModelRoot> modelRoots = this.getModelRoots();
-    for (ModelRoot mRoot : modelRoots) {
-      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
-      if (rootManager instanceof DefaultModelRootManager) {
-        modelRoot = mRoot;
-        break;
-      }
-    }
-
-    assert modelRoot != null;
-
-    SModelDescriptor editorModelDescriptor = this.createModel(new SModelUID(this.getModuleUID(), "editor", ""), modelRoot);
-    SModel editorModel = editorModelDescriptor.getSModel();
-    editorModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getEditorLanguage());
-    editorModelDescriptor.save();
-
-    // updateTypesystem language
-    LanguageDescriptor languageDescriptor = this.getLanguageDescriptor();
-    Model _model = Model.newInstance(languageDescriptor.getModel());
-    _model.setName(editorModel.getUID().toString());
-    Editor _editor = Editor.newInstance(languageDescriptor.getModel());
-    _editor.setEditorModel(_model);
-    _editor.setStereotype("");
-    languageDescriptor.addEditor(_editor);
-    this.setLanguageDescriptor(languageDescriptor);
-    this.save();
-
-    return editorModelDescriptor;
+    return LanguageAspect.EDITOR.createNew(this);
   }
 
   public SModelDescriptor createLanguageBehaviorModel() {
-    ModelRoot modelRoot = null;
-    List<ModelRoot> modelRoots = this.getModelRoots();
-    for (ModelRoot mRoot : modelRoots) {
-      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
-      if (rootManager instanceof DefaultModelRootManager) {
-        modelRoot = mRoot;
-        break;
-      }
-    }
-
-    assert modelRoot != null;
-
-    SModelDescriptor behaviorModelDescriptor = this.createModel(new SModelUID(this.getModuleUID(), "constraints", ""), modelRoot);
-    SModel behaviorModel = behaviorModelDescriptor.getSModel();
-    behaviorModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
-    behaviorModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
-    behaviorModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getConstraintsLanguage());
-    behaviorModelDescriptor.save();
-
-    // updateTypesystem language
-    LanguageDescriptor languageDescriptor = this.getLanguageDescriptor();
-    Model _model = Model.newInstance(languageDescriptor.getModel());
-    _model.setName(behaviorModel.getUID().toString());
-    languageDescriptor.setConstraintsModel(_model);
-    this.setLanguageDescriptor(languageDescriptor);
-    this.save();
-
-    return behaviorModelDescriptor;
+    return LanguageAspect.CONSTRAINTS.createNew(this);
   }
 
   public SModelDescriptor createHelginsModel() {
-    ModelRoot modelRoot = null;
-    List<ModelRoot> modelRoots = this.getModelRoots();
-    for (ModelRoot mRoot : modelRoots) {
-      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
-      if (rootManager instanceof DefaultModelRootManager) {
-        modelRoot = mRoot;
-        break;
-      }
-    }
-
-    assert modelRoot != null;
-
-    SModelDescriptor helginsModelDescriptor = this.createModel(new SModelUID(this.getModuleUID(), "helgins", ""), modelRoot);
-    SModel helginsModel = helginsModelDescriptor.getSModel();
-    helginsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
-    helginsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
-    helginsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getConstraintsLanguage());
-    helginsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getHelginsLanguage());
-    helginsModelDescriptor.save();
-
-    // updateTypesystem language
-    LanguageDescriptor languageDescriptor = this.getLanguageDescriptor();
-    Model _model = Model.newInstance(languageDescriptor.getModel());
-    _model.setName(helginsModel.getUID().toString());
-    languageDescriptor.setHelginsTypesystemModel(_model);
-    this.setLanguageDescriptor(languageDescriptor);
-    this.save();
-
-    return helginsModelDescriptor;
+    return LanguageAspect.HELGINS_TYPESYSTEM.createNew(this);
   }
 
   public SModelDescriptor createIntentionsModel() {
-    ModelRoot modelRoot = null;
-    List<ModelRoot> modelRoots = this.getModelRoots();
-    for (ModelRoot mRoot : modelRoots) {
-      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
-      if (rootManager instanceof DefaultModelRootManager) {
-        modelRoot = mRoot;
-        break;
-      }
-    }
-
-    assert modelRoot != null;
-
-    SModelDescriptor intentionsModelDescriptor = this.createModel(new SModelUID(this.getModuleUID(), "intentions", ""), modelRoot);
-    SModel intentionsModel = intentionsModelDescriptor.getSModel();
-    intentionsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
-    intentionsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
-    intentionsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getIntentionsLanguage());
-    intentionsModelDescriptor.save();
-
-    LanguageDescriptor languageDescriptor = this.getLanguageDescriptor();
-    Model _model = Model.newInstance(languageDescriptor.getModel());
-    _model.setName(intentionsModel.getUID().toString());
-    languageDescriptor.setIntentionsModel(_model);
-    this.setLanguageDescriptor(languageDescriptor);
-    this.save();
-
-    return intentionsModelDescriptor;
+    return LanguageAspect.INTENTIONS.createNew(this);
   }
 
   public SModelDescriptor createFindUsagesModel() {
-    ModelRoot modelRoot = null;
-    List<ModelRoot> modelRoots = this.getModelRoots();
-    for (ModelRoot mRoot : modelRoots) {
-      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
-      if (rootManager instanceof DefaultModelRootManager) {
-        modelRoot = mRoot;
-        break;
-      }
-    }
-
-    assert modelRoot != null;
-
-    SModelDescriptor findUsagesModelDescriptor = this.createModel(new SModelUID(this.getModuleUID(), "findUsages", ""), modelRoot);
-    SModel findUsagesModel = findUsagesModelDescriptor.getSModel();
-    findUsagesModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
-    findUsagesModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
-    findUsagesModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getFindUsagesLanguage());
-    findUsagesModelDescriptor.save();
-
-    LanguageDescriptor languageDescriptor = this.getLanguageDescriptor();
-    Model _model = Model.newInstance(languageDescriptor.getModel());
-    _model.setName(findUsagesModel.getUID().toString());
-    languageDescriptor.setFindUsagesModel(_model);
-    this.setLanguageDescriptor(languageDescriptor);
-    this.save();
-
-    return findUsagesModelDescriptor;
+    return LanguageAspect.FIND_USAGES.createNew(this);
   }
 
   private class LanguageEventTranslator extends CommandEventTranslator {
@@ -1115,32 +841,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   private class LanguageModelsAdapter extends SModelsAdapter {
     public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {
-
-      LanguageAspect aspect = getModelAspect(modelDescriptor);
-      Language language = getLanguageFor(modelDescriptor);
-
-      if (aspect != null && language != null) {
-        LanguageDescriptor languageDescriptor = getLanguageDescriptor();
-        if (aspect == LanguageAspect.STRUCTURE) {
-          languageDescriptor.removeChild(languageDescriptor.getStructureModel());
-        } else if (aspect == LanguageAspect.EDITOR) {
-          Iterator<Editor> iterator = languageDescriptor.editors();
-          while (iterator.hasNext()) {
-            Editor editor = iterator.next();
-            String name = editor.getEditorModel().getName();
-            if (EqualUtil.equals(name, modelDescriptor.getModelUID().toString())) {
-              languageDescriptor.removeChild(editor);
-              break;
-            }
-          }
-        } else if (aspect == LanguageAspect.HELGINS_TYPESYSTEM) {
-          languageDescriptor.removeChild(languageDescriptor.getHelginsTypesystemModel());
-        } else if (aspect == LanguageAspect.ACTIONS) {
-          languageDescriptor.removeChild(languageDescriptor.getActionsModel());
-        } else if (aspect == LanguageAspect.CONSTRAINTS) {
-          languageDescriptor.removeChild(languageDescriptor.getConstraintsModel());
-        }
-      }
     }
   } // private class LanguageModelsAdapter
 }

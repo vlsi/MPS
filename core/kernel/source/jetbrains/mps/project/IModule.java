@@ -30,6 +30,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   @NotNull List<SModelDescriptor> getOwnModelDescriptors();
 
+  SModelDescriptor getModelDescriptor(SModelUID uid);
+
   @NotNull List<ModelRoot> getModelRoots();
 
   @NotNull List<ModelRoot> getNonDefaultModelRoots();

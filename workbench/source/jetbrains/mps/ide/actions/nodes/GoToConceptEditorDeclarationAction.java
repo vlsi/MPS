@@ -150,33 +150,6 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
   }
 
   public static SModelDescriptor createConstraintsModel(Language language) {
-    ModelRoot modelRoot = null;
-    List<ModelRoot> modelRoots = language.getModelRoots();
-    for (ModelRoot mRoot : modelRoots) {
-      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
-      if (rootManager instanceof DefaultModelRootManager) {
-        modelRoot = mRoot;
-        break;
-      }
-    }
-
-    assert modelRoot != null;
-
-    SModelDescriptor constraintsModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "constraints", ""), modelRoot);
-    SModel constraintsModel = constraintsModelDescriptor.getSModel();
-    constraintsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getConstraintsLanguage());
-    constraintsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
-    constraintsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
-    constraintsModelDescriptor.save();
-
-
-    LanguageDescriptor languageDescriptor = language.getLanguageDescriptor();
-    Model model = Model.newInstance(languageDescriptor.getModel());
-    model.setName(constraintsModel.getUID().toString());
-    languageDescriptor.setConstraintsModel(model);
-    language.setLanguageDescriptor(languageDescriptor);
-    language.save();
-
-    return constraintsModelDescriptor;
+    return LanguageAspect.CONSTRAINTS.createNew(language);
   }
 }

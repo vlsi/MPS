@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.projectLanguage.structure.Editor;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.structure.Model;
 import jetbrains.mps.util.CollectionUtil;
@@ -11,10 +10,6 @@ import java.util.List;
 
 public enum LanguageAspect {
   STRUCTURE("structure") {
-    protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
-      ld.setStructureModel(m);
-    }
-
     protected List<String> getModelsToImport(Language l) {
       return CollectionUtil.asList();
     }
@@ -22,89 +17,35 @@ public enum LanguageAspect {
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguages.getInstance().getStructureLanguage().getNamespace());
     }
-
-    public SModelDescriptor get(Language l) {
-      return l.getStructureModelDescriptor();
-    }
   },
 
   EDITOR("editor") {
-    protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
-      Editor e = Editor.newInstance(m.getModel());
-      ld.addEditor(e);
-      if (ld.getEditors().size() > 0) {
-        for (Editor ed : ld.getEditors()) {
-          ld.removeChild(ed);
-        }
-      }
-      ld.addEditor(e);
-    }
-
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguages.getInstance().getEditorLanguage().getNamespace());
-    }
-
-    public SModelDescriptor get(Language l) {
-      return l.getEditorModelDescriptor();
     }
   },
 
   ACTIONS("actions") {
-    protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
-      ld.setActionsModel(m);
-    }
-
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguages.getInstance().getActionsLanguage().getNamespace());
-    }
-
-    public SModelDescriptor get(Language l) {
-      return l.getActionsModelDescriptor();
     }
   },
 
   CONSTRAINTS("constraints") {
-    protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
-      ld.setConstraintsModel(m);
-    }
-
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguages.getInstance().getConstraintsLanguage().getNamespace());
-    }
-
-    public SModelDescriptor get(Language l) {
-      return l.getConstraintsModelDescriptor();
     }
   },
 
   HELGINS_TYPESYSTEM("helgins") {
-    protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
-      ld.setHelginsTypesystemModel(m);
-    }
-
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguages.getInstance().getHelginsLanguage().getNamespace());
-    }
-
-
-    public SModelDescriptor get(Language l) {
-      return l.getHelginsTypesystemModelDescriptor();
     }
   },
 
   SCRIPTS("scripts") {
-
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguages.getInstance().getIdeScriptsLanguage().getNamespace());
-    }
-
-
-    protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
-      ld.setScriptsModel(m);
-    }
-
-    public SModelDescriptor get(Language l) {
-      return l.getScriptsModelDescriptor();
     }
   },
 
@@ -112,27 +53,11 @@ public enum LanguageAspect {
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguages.getInstance().getBookLanguage().getNamespace());
     }
-
-    protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
-      ld.setDocumentationModel(m);
-    }
-
-    public SModelDescriptor get(Language l) {
-      return l.getDocumentationModelDescriptor();
-    }
   },
 
   INTENTIONS("intentions") {
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguages.getInstance().getIntentionsLanguage().getNamespace());
-    }
-
-    protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
-      ld.setIntentionsModel(m);
-    }
-
-    public SModelDescriptor get(Language l) {
-      return l.getIntentionsModelDescriptor();
     }
   },
 
@@ -140,40 +65,23 @@ public enum LanguageAspect {
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguages.getInstance().getFindUsagesLanguage().getNamespace());
     }
-
-    protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
-      ld.setFindUsagesModel(m);
-    }
-
-    public SModelDescriptor get(Language l) {
-      return l.getFindUsagesModelDescriptor();
-    }
   },
 
   CFA("cfa") {
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguages.getInstance().getCFALanguage().getNamespace());
     }
-
-    protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
-      ld.setCfaModel(m);
-    }
-
-    public SModelDescriptor get(Language l) {
-      return l.getCFAModelDescriptor();
-    }
   };
 
   private String myName;
-
 
   LanguageAspect(String name) {
     myName = name;
   }
 
-  public abstract SModelDescriptor get(Language l);
-
-  protected abstract void registerInLanguageDescriptor(LanguageDescriptor ld, Model m);
+  public SModelDescriptor get(Language l) {
+    return SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(l.getNamespace() + "." + myName));
+  }
 
   public String getName() {
     return myName;
@@ -181,10 +89,6 @@ public enum LanguageAspect {
 
   public SModelDescriptor createNew(Language l) {
     return createNew(l, true);
-  }
-
-  public void delete(Language l) {
-    registerInLanguageDescriptor(l.getLanguageDescriptor(), null);
   }
 
   public SModelDescriptor createNew(Language l, boolean saveDescriptor) {
@@ -214,7 +118,6 @@ public enum LanguageAspect {
       Model m = Model.newInstance(sm);
       m.setName(model.getModelUID().toString());
 
-      registerInLanguageDescriptor(l.getLanguageDescriptor(), m);
       l.setLanguageDescriptor(l.getLanguageDescriptor());
 
       l.save();
