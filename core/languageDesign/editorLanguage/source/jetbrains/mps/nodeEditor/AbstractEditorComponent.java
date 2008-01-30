@@ -1367,12 +1367,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                 final SNode selectedNode1 = selectedNode;
                 SwingUtilities.invokeLater(new Runnable() {
                   public void run() {
-                    String nodeClasName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
-                    String s = "";
-                    if (herror != null) {
-                      s += "TYPE ERROR: " + herror.reportError() + "\n";
-                    }
-                    JOptionPane.showMessageDialog(getExternalComponent(), s, nodeClasName + " status", JOptionPane.ERROR_MESSAGE);
+                    // String nodeClassName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
+                    String s = herror.reportError();
+                    JOptionPane.showMessageDialog(getExternalComponent(), s, "TYPESYSTEM ERROR", JOptionPane.ERROR_MESSAGE);
                   }
                 });
                 return;
