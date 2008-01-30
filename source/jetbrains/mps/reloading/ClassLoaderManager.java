@@ -291,6 +291,21 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public IClassPathItem getMPSPath() {
+    CompositeClassPathItem result = new CompositeClassPathItem();
+    result.add(getBaseMPSClassPath());
+
+    if (getMPSSupportClassPath() != null) {
+      result.add(getMPSSupportClassPath());
+    }
+
+    if (getWorkbenchClassPath() != null) {
+      result.add(getWorkbenchClassPath());
+    }
+
+    return result;
+  }
+
+  private IClassPathItem getBaseMPSClassPath() {
     String path = getBaseMPSPath();
 
     if (path != null) {
@@ -313,7 +328,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return null;
   }
 
-  public IClassPathItem getMPSSupportPath() {
+  private IClassPathItem getMPSSupportClassPath() {
     String supportClasses = PathManager.getHomePath() + File.separator + "MPSPlugin"
             + File.separator + "MPSSupport" + File.separator + "classes";
     if (new File(supportClasses).exists()) {
@@ -323,7 +338,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return null;
   }
 
-  public IClassPathItem getWorkbenchClassPath() {
+  private IClassPathItem getWorkbenchClassPath() {
     String workbenchClasses = PathManager.getHomePath() + File.separator + "workbench"
             + File.separator + "classes";
     if (new File(workbenchClasses).exists()) {

@@ -32,7 +32,6 @@ public class TextGenerationUtil {
     CompositeClassPathItem item = new CompositeClassPathItem();
     item.add(context.getModule().getModuleWithDependenciesClassPathItem());
     item.add(ClassLoaderManager.getInstance().getMPSPath());
-    item.add(ClassLoaderManager.getInstance().getMPSSupportPath());
     item.add(ClassLoaderManager.getInstance().getRTJar());
 
     JavaCompiler compiler = new JavaCompiler(item);
