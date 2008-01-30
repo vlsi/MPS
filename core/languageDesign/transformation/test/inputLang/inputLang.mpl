@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.transformation.test.inputLang" generatorOutputPath="${mps_home}\source_gen">
-  <structure>
-    <model modelUID="jetbrains.mps.transformation.test.inputLang.structure" />
-  </structure>
-  <editor>
-    <model modelUID="jetbrains.mps.transformation.test.inputLang.editor" />
-  </editor>
+<language namespace="jetbrains.mps.transformation.test.inputLang" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.transformation.test.inputLang" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.transformation.test.inputLang" />
@@ -26,9 +20,8 @@
     </generator>
   </generators>
   <classPath />
-  <runtimeClassPath>
-    <entry path="${mps_home}\classes" />
-  </runtimeClassPath>
+  <runtimeClassPath />
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />
