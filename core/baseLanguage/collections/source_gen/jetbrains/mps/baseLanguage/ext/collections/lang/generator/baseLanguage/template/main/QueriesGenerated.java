@@ -16,6 +16,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.util.QueriesUtil;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
@@ -45,12 +46,16 @@ public class QueriesGenerated {
     return false && SLinkOperations.getCount(_context.getNode(), "parameter") > 0;
   }
 
+  public static boolean baseMappingRule_Condition_1197935213886(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement");
+  }
+
   public static boolean baseMappingRule_Condition_1197933661521(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator");
   }
 
-  public static boolean baseMappingRule_Condition_1197935213886(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement");
+  public static boolean baseMappingRule_Condition_1201654289541(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapOperation");
   }
 
   public static Object propertyMacro_GetPropertyValue_1170958681801(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -441,6 +446,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "valueType", true);
   }
 
+  public static SNode sourceNodeQuery_1201654330589(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "operation", true);
+  }
+
   public static SNode sourceNodeQuery_1197933786467(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "map", true);
   }
@@ -459,6 +468,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197935331791(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rValue", true);
+  }
+
+  public static SNode sourceNodeQuery_1201654487729(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return IOperation_Behavior.call_getOperand_1197028596169(_context.getNode());
   }
 
   public static List sourceNodesQuery_1200500184872(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
