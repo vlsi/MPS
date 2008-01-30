@@ -944,8 +944,8 @@
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" group="app/ParserGenerator" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" group="app/ParserGenerator" />
-      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/patternLanguage/patternLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/patternLanguage/patternLanguage.iml" />
-      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/quotation/quotation.iml" filepath="$PROJECT_DIR$/core/languageDesign/quotation/quotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/patternLanguage/patternLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/patternLanguage/patternLanguage.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/quotation/quotation.iml" filepath="$PROJECT_DIR$/core/languageDesign/quotation/quotation.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/refactoring/refactoringLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/refactoring/refactoringLanguage.iml" group="core/languageDesign/refactoring" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/regexp.iml" filepath="$PROJECT_DIR$/platform/regexp/regexp.iml" group="platform/regexp" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" filepath="$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" group="platform/regexp" />
@@ -1007,7 +1007,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/xmlSchema/webr_xmlSchema.iml" filepath="$PROJECT_DIR$/platform/webr/languages/xmlSchema/webr_xmlSchema.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/wiki/wiki.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/wiki/wiki.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/workbench/workbench.iml" filepath="$PROJECT_DIR$/workbench/workbench.iml" group="workbench" />
-      <module fileurl="file://$PROJECT_DIR$/platform/xml/xml.iml" filepath="$PROJECT_DIR$/platform/xml/xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platform/xml/xml.iml" filepath="$PROJECT_DIR$/platform/xml/xml.iml" group="platform" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
@@ -1070,7 +1070,7 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/webrSamples" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1168,7 +1168,7 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/webrSamples" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1261,7 +1261,7 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/webrSamples" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1336,7 +1336,7 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/webrSamples" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1429,7 +1429,7 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/webrSamples" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>

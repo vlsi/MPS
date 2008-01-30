@@ -87,7 +87,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testXML() {
-    String res = testProject(new File("languages/xml/xml.mpr"));
+    String res = testProject(new File("platform/xml/xml.mpr"));
     assertTrue(res, res == null);
   }
 
