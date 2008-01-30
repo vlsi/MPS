@@ -13,17 +13,18 @@ import java.util.List;
 
 public class Project extends BaseConcept implements INamedConcept, IPropertyHolder {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.Project";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String DEFAULT = "default";
   public static String DEFINITIONS = "definitions";
   public static String BASEDIR = "basedir";
   public static String TARGET = "target";
+  public static String IMPORT_PROJECT = "importProject";
   public static String PATHS = "paths";
   public static String IMPORT_PROPERTIES = "importProperties";
   public static String PROPERTY = "property";
+  public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  Project(SNode node) {
     super(node);
@@ -37,38 +38,6 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     return Project.newInstance(sm, false);
   }
 
-
-  public String getName() {
-    return this.getProperty(Project.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Project.NAME, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(Project.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(Project.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(Project.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(Project.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(Project.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(Project.VIRTUAL_PACKAGE, value);
-  }
 
   public TargetReference getDefault() {
     return (TargetReference)this.getChild(Project.DEFAULT);
@@ -112,6 +81,26 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
 
   public void insertTarget(TargetDeclaration prev, TargetDeclaration node) {
     this.insertChild(prev, Project.TARGET, node);
+  }
+
+  public int getImportProjectsCount() {
+    return this.getChildCount(Project.IMPORT_PROJECT);
+  }
+
+  public Iterator<ImportProject> importProjects() {
+    return this.children(Project.IMPORT_PROJECT);
+  }
+
+  public List<ImportProject> getImportProjects() {
+    return this.getChildren(Project.IMPORT_PROJECT);
+  }
+
+  public void addImportProject(ImportProject node) {
+    this.addChild(Project.IMPORT_PROJECT, node);
+  }
+
+  public void insertImportProject(ImportProject prev, ImportProject node) {
+    this.insertChild(prev, Project.IMPORT_PROJECT, node);
   }
 
   public int getPathsesCount() {
@@ -172,6 +161,38 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
 
   public void insertProperty(PropertyDeclaration prev, PropertyDeclaration node) {
     this.insertChild(prev, Project.PROPERTY, node);
+  }
+
+  public String getName() {
+    return this.getProperty(Project.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Project.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(Project.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(Project.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(Project.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(Project.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(Project.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(Project.VIRTUAL_PACKAGE, value);
   }
 
 }
