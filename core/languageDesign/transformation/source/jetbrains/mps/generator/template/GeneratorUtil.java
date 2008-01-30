@@ -165,6 +165,8 @@ public class GeneratorUtil {
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
           generator.setChanged(wasChanged);
+        } finally {
+          generator.getGeneratorSessionContext().getGenerationTracer().closeRule(createRootRule.getNode());
         }
       }
     }

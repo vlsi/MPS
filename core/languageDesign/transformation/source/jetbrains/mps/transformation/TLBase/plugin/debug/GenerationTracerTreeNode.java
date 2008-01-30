@@ -74,7 +74,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     Kind kind = myTracerNode.getKind();
     SNodePointer nodePointer = myTracerNode.getNodePointer();
     if (nodePointer != null) {
-      if (kind == Kind.APPROXIMATE_OUTPUT) {
+      if (kind == Kind.APPROXIMATE_OUTPUT || kind == Kind.APPROXIMATE_INPUT) {
         setText("<approximate location> " + nodePointer.toString());
       } else {
         setText(nodePointer.toString());

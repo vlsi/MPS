@@ -6,6 +6,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
@@ -331,7 +332,10 @@ public class GenerationTracer {
 
   public boolean hasTracebackData(SModel model) {
     if (DISABLED) return false;
-    return getRootTracerNodes(Kind.OUTPUT, model) != null;
+    if (getRootTracerNodes(Kind.OUTPUT, model) != null) {
+      return true;
+    }
+    return myModelsProcessedByScripts.hasOutput(model);
   }
 
   public boolean showTracebackData(SNode node) {
@@ -349,9 +353,47 @@ public class GenerationTracer {
   }
 
   private TracerNode buildTracebackTree(SNode node) {
-    TracerNode tracerNode = findTracerNode(Kind.OUTPUT, node);
-    if (tracerNode == null) return null;
-    return buildTracebackTree(tracerNode, 0);
+    {
+      TracerNode tracerNode = findTracerNode(Kind.OUTPUT, node);
+      if (tracerNode != null) {
+        return buildTracebackTree(tracerNode, 0);
+      }
+    }
+
+    // may be output is produced by scripts?
+    List<MappingScript> mappingScripts = myModelsProcessedByScripts.getScriptsForOutput(node.getModel());
+    if (mappingScripts == null) return null;
+    SModelUID uid = myModelsProcessedByScripts.getInputForOutput(node.getModel());
+    if (uid == null) return null;
+    SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
+    if (descriptor == null) return null;
+    SModel inputModel = descriptor.getSModel();
+    SNode outputNode = node;
+    SNode inputNode = null;
+    while (outputNode != null) {
+      inputNode = inputModel.getNodeById(outputNode.getId());
+      if (inputNode != null) break;
+      outputNode = outputNode.getParent();
+    }
+
+    TracerNode outputTracerNode = new TracerNode(Kind.OUTPUT, new SNodePointer(node));
+    TracerNode tracerNode = outputTracerNode;
+    List<MappingScript> mappingScripts_reversed = new ArrayList<MappingScript>(mappingScripts);
+    Collections.reverse(mappingScripts_reversed);
+    for (MappingScript mappingScript : mappingScripts_reversed) {
+      TracerNode childTracerNode = new TracerNode(Kind.MAPPING_SCRIPT, new SNodePointer(mappingScript.getNode()));
+      tracerNode.addChild(childTracerNode);
+      tracerNode = childTracerNode;
+    }
+    if (inputNode != null) {
+      if (outputNode == node) {
+        tracerNode.addChild(new TracerNode(Kind.INPUT, new SNodePointer(inputNode)));
+      } else {
+        tracerNode.addChild(new TracerNode(Kind.APPROXIMATE_INPUT, new SNodePointer(inputNode)));
+      }
+    }
+
+    return outputTracerNode;
   }
 
   @NotNull

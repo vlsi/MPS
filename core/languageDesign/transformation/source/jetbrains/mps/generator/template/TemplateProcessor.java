@@ -388,11 +388,11 @@ public class TemplateProcessor {
   }
 
   private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) {
-    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(templateNode);
+    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
     try {
       return copyNodeFromInputNode_internal(mappingName, templateNode, inputNode);
     } finally {
-      myGenerator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(templateNode);
+      myGenerator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
     }
   }
 

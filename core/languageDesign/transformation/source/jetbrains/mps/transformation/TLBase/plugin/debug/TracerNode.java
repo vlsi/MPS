@@ -26,7 +26,8 @@ public class TracerNode {
     SWITCH("switch"),
     COPY_OPERATION("copy"),
     MAPPING_SCRIPT("mapping script"),
-    APPROXIMATE_OUTPUT("approximate output");
+    APPROXIMATE_OUTPUT("approximate output"),
+    APPROXIMATE_INPUT("approximate input");
 
     private String myText;
 

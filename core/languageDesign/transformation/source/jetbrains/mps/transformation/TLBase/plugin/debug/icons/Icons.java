@@ -46,6 +46,7 @@ public class Icons {
     if (kind == Kind.INPUT) return Icons.INPUT_ICON;
     if (kind == Kind.OUTPUT) return Icons.OUTPUT_ICON;
     if (kind == Kind.APPROXIMATE_OUTPUT) return Icons.OUTPUT_ICON;
+    if (kind == Kind.APPROXIMATE_INPUT) return Icons.INPUT_ICON;
     if (kind == Kind.RULE) return Icons.RULE_ICON;
     if (kind == Kind.RULE_CONSEQUENCE) return Icons.RULE_CONSEQUENCE_ICON;
     if (kind == Kind.MACRO) return Icons.MACRO_ICON;
