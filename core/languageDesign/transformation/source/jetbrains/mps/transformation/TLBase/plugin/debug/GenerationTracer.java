@@ -268,12 +268,12 @@ public class GenerationTracer {
     return false;
   }
 
-  public boolean hasTraceInputData(SModel model) {
+  public boolean hasTraceInputData(SModelUID modelUID) {
     if (DISABLED) return false;
-    if (getRootTracerNodes(Kind.INPUT, model) != null) {
+    if (getRootTracerNodes(Kind.INPUT, modelUID) != null) {
       return true;
     }
-    return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasInput(model);
+    return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasInput(modelUID);
   }
 
   public boolean showTraceInputData(SNode node) {
@@ -338,12 +338,12 @@ public class GenerationTracer {
     return inputTracerNode;
   }
 
-  public boolean hasTracebackData(SModel model) {
+  public boolean hasTracebackData(SModelUID modelUID) {
     if (DISABLED) return false;
-    if (getRootTracerNodes(Kind.OUTPUT, model) != null) {
+    if (getRootTracerNodes(Kind.OUTPUT, modelUID) != null) {
       return true;
     }
-    return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasOutput(model);
+    return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasOutput(modelUID);
   }
 
   public boolean showTracebackData(SNode node) {
@@ -406,7 +406,7 @@ public class GenerationTracer {
 
   @NotNull
   private List<TracerNode> findAllTopmostTracerNodes(Kind kind, SNode node) {
-    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel());
+    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel().getUID());
     if (rootTracerNodes == null) return new ArrayList<TracerNode>();
 
     List<TracerNode> result = new ArrayList<TracerNode>();
@@ -417,14 +417,14 @@ public class GenerationTracer {
   }
 
   @Nullable
-  private List<TracerNode> getRootTracerNodes(Kind kind, SModel model) {
+  private List<TracerNode> getRootTracerNodes(Kind kind, SModelUID modelUID) {
     if (myTracingDataByInputModel == null) return null;
 
     if (kind == Kind.INPUT) {
-      String inputModelUID = model.getUID().toString();
+      String inputModelUID = modelUID.toString();
       return myTracingDataByInputModel.get(inputModelUID);
     } else if (kind == Kind.OUTPUT) {
-      String outputModelUID = model.getUID().toString();
+      String outputModelUID = modelUID.toString();
       return myTracingDataByOutputModel.get(outputModelUID);
     }
 
@@ -433,7 +433,7 @@ public class GenerationTracer {
   }
 
   private TracerNode findTracerNode(Kind kind, SNode node) {
-    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel());
+    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel().getUID());
     if (rootTracerNodes == null) return null;
 
     for (TracerNode rootTracerNode : rootTracerNodes) {
@@ -478,12 +478,12 @@ public class GenerationTracer {
       myScripts.add(scripts);
     }
 
-    public boolean hasInput(SModel model) {
-      return myInputModels.contains(model.getUID().toString());
+    public boolean hasInput(SModelUID modelUID) {
+      return myInputModels.contains(modelUID.toString());
     }
 
-    public boolean hasOutput(SModel model) {
-      return myOutputModels.contains(model.getUID().toString());
+    public boolean hasOutput(SModelUID modelUID) {
+      return myOutputModels.contains(modelUID.toString());
     }
 
     public List<MappingScript> getScriptsForInput(SModel model) {

@@ -1,17 +1,20 @@
 package jetbrains.mps.transformation.TLBase.plugin.debug;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
+import jetbrains.mps.project.MPSProject;
 
 import javax.swing.JPopupMenu;
+import java.awt.event.ActionEvent;
 
 /**
  * Igor Alshannikov
@@ -40,6 +43,10 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     updatePresentation();
   }
 
+  public TracerNode getTracerNode() {
+    return myTracerNode;
+  }
+
   public IDEProjectFrame getProjectFrame() {
     if (myProjectFrame != null) {
       return myProjectFrame;
@@ -48,8 +55,83 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   public JPopupMenu getPopupMenu() {
+    if (myTracerNode.getKind() == Kind.INPUT ||
+      myTracerNode.getKind() == Kind.APPROXIMATE_INPUT) {
+      return createPopupMenuForInputNode();
+    }
+    if (myTracerNode.getKind() == Kind.OUTPUT ||
+      myTracerNode.getKind() == Kind.APPROXIMATE_OUTPUT) {
+      return createPopupMenuForOutputNode();
+    }
     return null;
   }
+
+  private JPopupMenu createPopupMenuForInputNode() {
+    MPSProject project = getProjectFrame().getProject();
+    assert project != null;
+    final GenerationTracer tracer = project.getComponentSafe(GenerationTracer.class);
+
+    JPopupMenu result = new JPopupMenu();
+
+    final TracerNode tracerNode = this.getTracerNode();
+    boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().getNode() != null;
+
+    // is traceback shown?
+    GenerationTracerTreeNode rootNode = (GenerationTracerTreeNode) getRoot();
+    TracerNode rootTracerNode = rootNode.getTracerNode();
+    if (rootTracerNode != null && rootTracerNode.getKind() == Kind.OUTPUT) {
+      AbstractActionWithEmptyIcon showTraceAction = new PopupAction("Show Trace") {
+        public void action() {
+          tracer.showTraceInputData(tracerNode.getNodePointer().getNode());
+        }
+      };
+      showTraceAction.setEnabled(enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelUID()));
+      result.add(showTraceAction);
+    }
+
+    AbstractActionWithEmptyIcon showPrevTracebackAction = new PopupAction("Show Prev Step Traceback") {
+      public void action() {
+        tracer.showTracebackData(tracerNode.getNodePointer().getNode());
+      }
+    };
+    showPrevTracebackAction.setEnabled(enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelUID()));
+    result.add(showPrevTracebackAction);
+    return result;
+  }
+
+  private JPopupMenu createPopupMenuForOutputNode() {
+    MPSProject project = getProjectFrame().getProject();
+    assert project != null;
+    final GenerationTracer tracer = project.getComponentSafe(GenerationTracer.class);
+
+    JPopupMenu result = new JPopupMenu();
+
+    final TracerNode tracerNode = this.getTracerNode();
+    boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().getNode() != null;
+
+    // is trace (forward) shown?
+    GenerationTracerTreeNode rootNode = (GenerationTracerTreeNode) getRoot();
+    TracerNode rootTracerNode = rootNode.getTracerNode();
+    if (rootTracerNode != null && (rootTracerNode.getKind() == Kind.INPUT || rootTracerNode.getKind() == Kind.RULE)) {
+      AbstractActionWithEmptyIcon showTracebackAction = new PopupAction("Show Traceback") {
+        public void action() {
+          tracer.showTracebackData(tracerNode.getNodePointer().getNode());
+        }
+      };
+      showTracebackAction.setEnabled(enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelUID()));
+      result.add(showTracebackAction);
+    }
+
+    AbstractActionWithEmptyIcon showNextTraceAction = new PopupAction("Show Next Step Trace") {
+      public void action() {
+        tracer.showTraceInputData(tracerNode.getNodePointer().getNode());
+      }
+    };
+    showNextTraceAction.setEnabled(enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelUID()));
+    result.add(showNextTraceAction);
+    return result;
+  }
+
 
   public void doubleClick() {
     SNodePointer nodePointer = myTracerNode.getNodePointer();
@@ -86,5 +168,21 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     }
     setIcon(Icons.getIcon(myTracerNode));
     setAutoExpandable(getChildCount() == 1);
+  }
+
+  private static abstract class PopupAction extends AbstractActionWithEmptyIcon {
+    protected PopupAction(String name) {
+      super(name);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+        public void run() {
+          action();
+        }
+      });
+    }
+
+    protected abstract void action();
   }
 }
