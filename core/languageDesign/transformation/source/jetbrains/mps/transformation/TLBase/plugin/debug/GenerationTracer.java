@@ -111,6 +111,14 @@ public class GenerationTracer {
     myCurrentTraceNode = null;
   }
 
+  public void discardTracing(SModel inputModel, SModel outputModel) {
+    if (!myActive) return;
+    myTracingDataByInputModel.remove(inputModel.getUID().toString());
+    myTracingDataByOutputModel.remove(outputModel.getUID().toString());
+    myCurrentTracingData = null;
+    myCurrentTraceNode = null;
+  }
+
   public void pushInputNode(SNode node) {
     if (!myActive) return;
     push(new TracerNode(TracerNode.Kind.INPUT, new SNodePointer(node)));
@@ -252,7 +260,7 @@ public class GenerationTracer {
     myCurrentTraceNode = null; // reset branch
   }
 
-  private boolean hasTracingData() {
+  public boolean hasTracingData() {
     if (myTracingDataByInputModel == null || myTracingDataByInputModel.isEmpty()) return false;
     for (List<TracerNode> list : myTracingDataByInputModel.values()) {
       if (!list.isEmpty()) return true;
@@ -265,7 +273,7 @@ public class GenerationTracer {
     if (getRootTracerNodes(Kind.INPUT, model) != null) {
       return true;
     }
-    return myModelsProcessedByScripts.hasInput(model);
+    return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasInput(model);
   }
 
   public boolean showTraceInputData(SNode node) {
@@ -335,7 +343,7 @@ public class GenerationTracer {
     if (getRootTracerNodes(Kind.OUTPUT, model) != null) {
       return true;
     }
-    return myModelsProcessedByScripts.hasOutput(model);
+    return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasOutput(model);
   }
 
   public boolean showTracebackData(SNode node) {

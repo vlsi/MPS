@@ -358,6 +358,8 @@ public class GenerationSession implements IGenerationSession {
       currentInputModel.setLoading(false);
       generationContext.getGenerationTracer().startTracing(currentInputModel, transientModel);
       if (!generator.doSecondaryMapping(currentInputModel, transientModel)) {
+        // nothing has been generated
+        generationContext.getGenerationTracer().discardTracing(currentInputModel, transientModel);
         addMessage(MessageKind.INFORMATION, "remove empty model '" + transientModel.getUID() + "'");
         SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());
         myTransientModelsCount--;
