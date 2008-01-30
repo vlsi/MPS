@@ -7,6 +7,7 @@ import jetbrains.mps.closures.test._FunctionTypes._Integer;
 import jetbrains.mps.closures.test._FunctionTypes._Number;
 import jetbrains.mps.closures.test._FunctionTypes._Integer_from_Integer;
 import jetbrains.mps.closures.test._FunctionTypes._Integer_from_Object;
+import jetbrains.mps.closures.test._FunctionTypes._Integer_from_String;
 import jetbrains.mps.closures.test._FunctionTypes._Number_from_String;
 
 public class FunctionTypes_Test extends TestCase {
@@ -50,6 +51,37 @@ public class FunctionTypes_Test extends TestCase {
   }
 
   public void test_functionTypeAdapter_complex() throws Exception {
+    _Integer_from_Integer fun1 = new _FunctionTypes._Integer_from_Integer() {
+
+      public Integer invoke(Integer i) {
+        return i.intValue();
+      }
+
+    };
+    _Integer_from_Integer fun2 = new _FunctionTypes._Integer_from_Integer() {
+
+      public Integer invoke(Integer i) {
+        return Integer.valueOf(i);
+      }
+
+    };
+    fun1 = fun2;
+    fun2 = fun1;
+    _Integer_from_Object fun3 = new _FunctionTypes._Integer_from_Object() {
+
+      public Integer invoke(Object o) {
+        return o.hashCode();
+      }
+
+    };
+    _Integer_from_String fun4 = new _FunctionTypes._Integer_from_String() {
+
+      public Integer invoke(String s) {
+        return s.length();
+      }
+
+    };
+    fun4 = new _FunctionTypes._Integer_from_Object_to_Integer_from_String_adapter(fun3);
     this.accept_int_from_int(new _FunctionTypes._Integer_from_Integer() {
 
       public Integer invoke(Integer i) {
@@ -57,6 +89,8 @@ public class FunctionTypes_Test extends TestCase {
       }
 
     });
+    this.accept_int_from_int(fun1);
+    this.accept_int_from_int(fun2);
     this.accept_int_from_Integer(new _FunctionTypes._Integer_from_Integer() {
 
       public Integer invoke(Integer i) {
@@ -64,6 +98,17 @@ public class FunctionTypes_Test extends TestCase {
       }
 
     });
+    this.accept_int_from_Integer(fun1);
+    this.accept_int_from_Integer(fun2);
+    this.accept_Integer_from_int(new _FunctionTypes._Integer_from_Integer() {
+
+      public Integer invoke(Integer i) {
+        return i.intValue();
+      }
+
+    });
+    this.accept_Integer_from_int(fun1);
+    this.accept_Integer_from_int(fun2);
     this.accept_Integer_from_Object(new _FunctionTypes._Integer_from_Object() {
 
       public Integer invoke(Object o) {
@@ -71,6 +116,7 @@ public class FunctionTypes_Test extends TestCase {
       }
 
     });
+    this.accept_Integer_from_Object(fun3);
     this.accept_Number_from_String(new _FunctionTypes._Integer_from_String_to_Number_from_String_adapter(new _FunctionTypes._Integer_from_String() {
 
       public Integer invoke(String s) {
@@ -85,6 +131,8 @@ public class FunctionTypes_Test extends TestCase {
       }
 
     }));
+    this.accept_Number_from_String(new _FunctionTypes._Integer_from_Object_to_Number_from_String_adapter(fun3));
+    this.accept_Number_from_String(new _FunctionTypes._Integer_from_String_to_Number_from_String_adapter(fun4));
   }
 
   public void accept_int(_Integer fun) {
@@ -100,6 +148,9 @@ public class FunctionTypes_Test extends TestCase {
   }
 
   public void accept_int_from_Integer(_Integer_from_Integer fun) {
+  }
+
+  public void accept_Integer_from_int(_Integer_from_Integer fun) {
   }
 
   public void accept_Integer_from_Object(_Integer_from_Object fun) {
