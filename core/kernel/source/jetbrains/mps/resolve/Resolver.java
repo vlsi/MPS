@@ -158,7 +158,7 @@ public class Resolver {
     });
     for (SNode node : applicableConcepts) {
       ConceptDeclaration applicableConcept = (ConceptDeclaration) BaseAdapter.fromNode(node);
-      LinkDeclaration smartReference = ChildSubstituteActionsHelper.getSmartReference(applicableConcept, operationContext.getScope());
+      LinkDeclaration smartReference = ChildSubstituteActionsHelper.getSmartReference(applicableConcept);
       if (smartReference == null) continue;
       List<SNode> smartReferenceTargets = getSmartReferenceTargets(applicableConcept, smartReference, parent, operationContext.getScope());
       List<SNode> filteredRefTargets = CollectionUtil.filter(smartReferenceTargets, nameMatchesCondition);

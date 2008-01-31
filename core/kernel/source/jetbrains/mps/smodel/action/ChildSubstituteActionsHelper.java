@@ -234,7 +234,7 @@ public class ChildSubstituteActionsHelper {
                                                                  SNode currentChild,
                                                                  IChildNodeSetter setter,
                                                                  IScope scope) {
-    LinkDeclaration smartRef = getSmartReference(applicableConcept, scope);
+    LinkDeclaration smartRef = getSmartReference(applicableConcept);
     if (smartRef != null) {
       List<INodeSubstituteAction> smartActions = createSmartReferenceActions(applicableConcept, smartRef, parentNode, currentChild, setter, scope);
       if (smartActions != null) {
@@ -281,7 +281,7 @@ public class ChildSubstituteActionsHelper {
    *         3. no ref.links with cardinality '1' is declared (no patten, no customized matching text)
    *         4. several ref.links with cardinality '1' is declared (no patten, no customized matching text)
    */
-  public static LinkDeclaration getSmartReference(ConceptDeclaration referenceDeclaringConcept, IScope scope) {
+  public static LinkDeclaration getSmartReference(ConceptDeclaration referenceDeclaringConcept) {
     // trick : should be no custom 'matching text'
     String expectedReferentRole = null;
     String alias = referenceDeclaringConcept.getNode().getConceptProperty("alias");
@@ -318,7 +318,7 @@ public class ChildSubstituteActionsHelper {
     return null;
   }
 
-  private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode, IScope scope) {
+  private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode) {
     String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true);
     String referenceAlias = referenceNodeConcept.getConceptProperty("alias");
     // handle pattern 'xxx <{_referent_role_}> yyy'
@@ -470,7 +470,7 @@ public class ChildSubstituteActionsHelper {
 
     public String getMatchingText(String pattern) {
       if (myMatchingText == null) {
-        myMatchingText = getSmartMatchingText(myReferenceNodeConcept, (SNode) getParameterObject(), getScope());
+        myMatchingText = getSmartMatchingText(myReferenceNodeConcept, (SNode) getParameterObject());
       }
       return myMatchingText;
     }
