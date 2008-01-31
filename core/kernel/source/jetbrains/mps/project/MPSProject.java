@@ -706,35 +706,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     return null;
   }
 
-
-  @Nullable
-  private Language getLanguage(@NotNull String languageNamespace, boolean suppressWarnings) {
-    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, this);
-    if (language == null) {
-      language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
-    }
-    if (language == null && !suppressWarnings) {
-      LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in: " + this);
-    }
-    return language;
-  }
-
-  private Set<IModule> getAllVisibleModules() {
-    Set<IModule> modules = new HashSet<IModule>();
-    collectModules(this, modules);
-    return modules;
-  }
-
-  private void collectModules(MPSModuleOwner moduleOwner, Set<IModule> modules) {
-    List<IModule> ownedModules = MPSModuleRepository.getInstance().getModules(moduleOwner);
-    for (IModule ownedModule : ownedModules) {
-      if (!modules.contains(ownedModule)) {
-        modules.add(ownedModule);
-        collectModules(ownedModule, modules);
-      }
-    }
-  }
-
   public void addMPSProjectCommandListener(@NotNull IMPSProjectCommandListener listener) {
     myProjectCommandListeners.add(listener);
   }
@@ -978,8 +949,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       return MPSProject.this;
     }
 
-    public Set<IModule> doGetVisibleModules() {
-      return getAllVisibleModules();
+    protected Set<IModule> getInitialModules() {
+      Set<IModule> result = new HashSet<IModule>();
+      result.addAll(getProjectSolutions());
+      result.addAll(getProjectLanguages());
+      result.addAll(getProjectDevKits());
+      return result;
     }
   }
 }             

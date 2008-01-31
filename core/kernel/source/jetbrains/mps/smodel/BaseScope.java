@@ -3,13 +3,16 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Dependency;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
 public abstract class BaseScope implements IScope {
+  private static Logger LOG = Logger.getLogger(BaseScope.class);
 
   private Set<IModule> myVisibleModules;
   private Map<String, Language> myLanguages = new HashMap<String, Language>();
@@ -44,7 +47,7 @@ public abstract class BaseScope implements IScope {
     List<SModelDescriptor> result =
             new ArrayList<SModelDescriptor>(SModelRepository.getInstance().getModelDescriptors(modelName, getModelOwner()));
 
-    for (IModule m : getVisibleModules()) {
+    for (IModule m : getVisibleModules()) { 
       result.addAll(SModelRepository.getInstance().getModelDescriptors(modelName, m));
     }
 
@@ -118,7 +121,8 @@ public abstract class BaseScope implements IScope {
       return myVisibleModules;
     }
 
-    Set<IModule> result = doGetVisibleModules();
+    Set<IModule> initial = getInitialModules();
+    Set<IModule> result = new HashSet<IModule>();
 
     for (IModule m : result) {
       if (m == null) {
@@ -126,9 +130,9 @@ public abstract class BaseScope implements IScope {
       }
     }
 
-    Set<Language> languages = BootstrapLanguages.getInstance().getLanguages();
-    collectModules((Set<IModule>) (Set) (languages));
-    result.addAll(languages);
+    initial.addAll(BootstrapLanguages.getInstance().getLanguages());
+
+    collectModules(initial, result);
 
     myVisibleModules = new HashSet<IModule>(result);
     return result;
@@ -136,17 +140,36 @@ public abstract class BaseScope implements IScope {
 
   protected abstract ModelOwner getModelOwner();
 
-  protected abstract Set<IModule> doGetVisibleModules();
+  protected abstract Set<IModule> getInitialModules();
 
-  public void collectModules(Set<IModule> result) {
+  public void collectModules(Set<IModule> initial, Set<IModule> result) {
+    result.addAll(initial);
+    for (IModule module : initial) {
+      for (Dependency d : module.getDependencies()) {
+        IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(d.getModuleUID());
+        if (dependency != null) {
+          result.add(dependency);
+        } else {
+          LOG.error("Can't find a module " +  d.getModuleUID() + " in " + this);
+        }
+      }
+    }
+
     boolean changed = true;
     while (changed) {
       changed = false;
       for (IModule module : new HashSet<IModule>(result)) {
-        for (IModule m : module.getExplicitlyDependOnModules()) {
-          if (!result.contains(m)) {
-            result.add(m);
-            changed = true;
+        for (Dependency dep : module.getDependencies()) {
+          if (dep.isREExport()) {
+            IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
+            if (dependency != null) {
+              if (!result.contains(dependency)) {
+                result.add(dependency);
+                changed = true;
+              }
+            } else {
+              LOG.error("Can't find a module " +  dep.getModuleUID() + " in " + this);
+            }
           }
         }
       }

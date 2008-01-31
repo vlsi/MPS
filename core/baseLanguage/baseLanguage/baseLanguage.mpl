@@ -25,12 +25,10 @@
     <exportedPackage />
   </osgiOptions>
   <dependencies>
-    <dependency>jetbrains.mps.baseLanguage.ext.collections.lang</dependency>
-    <dependency>jetbrains.mps.patterns</dependency>
-    <dependency>jetbrains.mps.baseLanguage.blTypes</dependency>
-    <dependency>JDK</dependency>
-    <dependency>jetbrains.mps.baseLanguage</dependency>
-    <dependency>jetbrains.mps.baseLanguage</dependency>
+    <dependency reexport="true">jetbrains.mps.baseLanguage.ext.collections.lang</dependency>
+    <dependency reexport="true">jetbrains.mps.patterns</dependency>
+    <dependency reexport="true">jetbrains.mps.baseLanguage.blTypes</dependency>
+    <dependency reexport="true">JDK</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>

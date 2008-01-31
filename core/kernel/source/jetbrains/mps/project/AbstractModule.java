@@ -690,13 +690,9 @@ public abstract class AbstractModule implements IModule {
       return AbstractModule.this;
     }
 
-    public Set<IModule> doGetVisibleModules() {
-      Set<IModule> result = new HashSet<IModule>(getExplicitlyDependOnModules());
-      collectModules(result);
+    protected Set<IModule> getInitialModules() {
+      Set<IModule> result = new HashSet<IModule>();
       result.add(AbstractModule.this);
-      for (Language usedLanguage : getUsedLanguages()) {
-        result.add(usedLanguage);
-      }
       return result;
     }
 
