@@ -8,6 +8,7 @@ import jetbrains.mps.closures.test._FunctionTypes._Iterable_of_Integer;
 import java.util.List;
 import java.util.ArrayList;
 import junit.framework.Assert;
+import java.util.Iterator;
 
 public class ClosuresBase_Test extends TestCase {
 
@@ -19,6 +20,16 @@ public class ClosuresBase_Test extends TestCase {
       testList.add(o);
     }
     Assert.assertEquals(expectedList, testList);
+  }
+
+  public void assertResultsEqual(_Iterable_of_Integer expected, _Iterable_of_Integer test) {
+    Iterator<Integer> expIt = expected.invoke().iterator();
+    Iterator<Integer> testIt = expected.invoke().iterator();
+    while(expIt.hasNext() && testIt.hasNext()) {
+      Assert.assertEquals(expIt.next(), testIt.next());
+    }
+    Assert.assertFalse(expIt.hasNext());
+    Assert.assertFalse(testIt.hasNext());
   }
 
 }

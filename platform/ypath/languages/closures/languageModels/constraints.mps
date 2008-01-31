@@ -304,6 +304,40 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1201778474852">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201778474853">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201778482959">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201778486195">
+                <link role="baseMethodDeclaration" targetNodeId="3.~StringBuffer.append(java.lang.String):java.lang.StringBuffer" resolveInfo="append" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201778482960">
+                  <link role="variableDeclaration" targetNodeId="1199634596257" resolveInfo="buf" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201778495014">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1201778496950">
+                    <link role="conceptMethodDeclaration" targetNodeId="1199633062014" resolveInfo="getSignature" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1201778489333">
+                    <link role="concept" targetNodeId="1.1199542442495" resolveInfo="FunctionType" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201778488738">
+                      <link role="variableDeclaration" targetNodeId="1199633175834" resolveInfo="t" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201778520357" />
+          </node>
+          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201778477939">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1201778478543">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1201778480943">
+                <link role="conceptDeclaration" targetNodeId="1.1199542442495" resolveInfo="FunctionType" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201778476944">
+              <link role="variableDeclaration" targetNodeId="1199633175834" resolveInfo="t" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201436027336">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201436027337">
             <property name="name" value="ct" />
@@ -477,6 +511,9 @@
               <link role="variableDeclaration" targetNodeId="1201436027337" resolveInfo="ct" />
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201778225192">
+          <property name="value" value="TODO: sort children by role" />
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199634883988">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199634883989">

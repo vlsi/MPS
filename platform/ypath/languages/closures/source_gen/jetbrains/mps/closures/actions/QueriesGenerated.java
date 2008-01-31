@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.RTransformPreconditionContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
@@ -15,7 +16,6 @@ import java.util.ArrayList;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
@@ -45,17 +45,18 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1200829970134(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", true, false) != null);
+    // return statements must be allowed until we find a way to implement early returns
+    // http://www.javac.info
+    return false && (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", true, false) != null);
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1201777188086(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    SNode anc = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.ext.collections.lang.structure.ClosureWithInputElement","jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock"}, true, false);
+    return !(SNodeOperations.isInstanceOf(anc, "jetbrains.mps.closures.structure.ClosureLiteral"));
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1199547343806(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.closures.structure.FunctionType");
-  }
-
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Statement_1200830875450(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    // return statements must be allowed until we find a way to implement early returns
-    // http://www.javac.info
-    return false && (SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) == null);
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterReference_1199622421675(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -148,6 +149,11 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1201777172707(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    return result;
+  }
+
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1199547332187(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
@@ -166,11 +172,6 @@ public class QueriesGenerated {
 
       });
     }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Statement_1200830871116(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     return result;
   }
 

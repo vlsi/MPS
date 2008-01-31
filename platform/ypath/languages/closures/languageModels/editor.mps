@@ -47,6 +47,7 @@
         <property name="text" value="(" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1199548058137">
+        <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="1.1199548008404" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1199548063922" />
       </node>
