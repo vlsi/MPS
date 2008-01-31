@@ -551,4 +551,123 @@ __switch__:
     });
   }
 
+  public void test_switchStatement() throws Exception {
+    this.assertResultsEqual(new _FunctionTypes._void_from_List_of_Integer() {
+
+      public void invoke(List<Integer> exp) {
+        for(Fruits fr : Arrays.asList(new Fruits[]{Fruits.APPLES,Fruits.ORANGES,Fruits.CARS})) {
+          switch (fr) {
+            case APPLES:
+              exp.add(1);
+              exp.add(2);
+              // fall through
+            case ORANGES:
+              exp.add(3);
+              break;
+            default:
+              exp.add(-1);
+              break;
+          }
+        }
+      }
+
+    }, new _FunctionTypes._Iterable_of_Integer() {
+
+      public Iterable<Integer> invoke() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new _FunctionTypes.YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private Fruits _2_fr;
+              private Iterator<Fruits> _2_fr_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_fr_it = Arrays.asList(new Fruits[]{Fruits.APPLES,Fruits.ORANGES,Fruits.CARS}).iterator();
+                    case 3:
+                      if(!(this._2_fr_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_fr = this._2_fr_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      switch (this._2_fr) {
+                        case APPLES:
+                          this.__CP__ = 6;
+                          break __switch__;
+                        case ORANGES:
+                          this.__CP__ = 7;
+                          break __switch__;
+                        default:
+                          this.__CP__ = 14;
+                          break __switch__;
+                      }
+                    case 8:
+                      this.__CP__ = 9;
+                      this.yield(1);
+                      return true;
+                    case 9:
+                      this.__CP__ = 10;
+                      this.yield(2);
+                      return true;
+                    case 12:
+                      this.__CP__ = 13;
+                      this.yield(3);
+                      return true;
+                    case 15:
+                      this.__CP__ = 16;
+                      this.yield(-1);
+                      return true;
+                    case 6:
+                      this.__CP__ = 8;
+                      break;
+                    case 10:
+                      // fall through
+                      this.__CP__ = 7;
+                      break;
+                    case 7:
+                      this.__CP__ = 12;
+                      break;
+                    case 13:
+                      this.__CP__ = 3;
+                      break;
+                    case 14:
+                      this.__CP__ = 15;
+                      break;
+                    case 16:
+                      this.__CP__ = 3;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+  }
+
 }

@@ -1196,6 +1196,221 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1201785404994">
+        <property name="methodName" value="switchStatement" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1201785404995" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201785404996">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201785474194">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201785474195">
+              <link role="baseMethodDeclaration" targetNodeId="1201439728642" resolveInfo="assertResultsEqual" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201785474196" />
+              <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1201785477030">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1201785480892">
+                  <property name="name" value="exp" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201785484904">
+                    <link role="classifier" targetNodeId="1.~List" resolveInfo="List" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201785490039">
+                      <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+                    </node>
+                  </node>
+                </node>
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201785477031">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1201785603459">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201785603460">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SwitchStatement" id="1201785597953">
+                        <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="1201785654405">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1201785659939">
+                            <link role="enumConstantDeclaration" targetNodeId="1201785431375" resolveInfo="APPLES" />
+                            <link role="enumClass" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                          </node>
+                          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201785654407">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201785669402">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201785671581">
+                                <link role="baseMethodDeclaration" targetNodeId="1.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+                                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201785669403">
+                                  <link role="variableDeclaration" targetNodeId="1201785480892" resolveInfo="exp" />
+                                </node>
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201785672697">
+                                  <property name="value" value="1" />
+                                </node>
+                              </node>
+                            </node>
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201785675230">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201785679328">
+                                <link role="baseMethodDeclaration" targetNodeId="1.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+                                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201785675231">
+                                  <link role="variableDeclaration" targetNodeId="1201785480892" resolveInfo="exp" />
+                                </node>
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201785680243">
+                                  <property name="value" value="2" />
+                                </node>
+                              </node>
+                            </node>
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201785682633">
+                              <property name="value" value="fall through" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="1201785662498">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1201785666542">
+                            <link role="enumConstantDeclaration" targetNodeId="1201785434465" resolveInfo="ORANGES" />
+                            <link role="enumClass" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                          </node>
+                          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201785662500">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201785714094">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201785716584">
+                                <link role="baseMethodDeclaration" targetNodeId="1.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+                                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201785714095">
+                                  <link role="variableDeclaration" targetNodeId="1201785480892" resolveInfo="exp" />
+                                </node>
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201785717845">
+                                  <property name="value" value="3" />
+                                </node>
+                              </node>
+                            </node>
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1201785721063" />
+                          </node>
+                        </node>
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201785653481">
+                          <link role="variableDeclaration" targetNodeId="1201785603463" resolveInfo="fr" />
+                        </node>
+                        <node role="defaultBlock" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201785597955">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201785722863">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201785724545">
+                              <link role="baseMethodDeclaration" targetNodeId="1.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+                              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201785722864">
+                                <link role="variableDeclaration" targetNodeId="1201785480892" resolveInfo="exp" />
+                              </node>
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201785725627">
+                                <property name="value" value="-1" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1201785776371" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201785603463">
+                      <property name="name" value="fr" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201785605221">
+                        <link role="classifier" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                      </node>
+                    </node>
+                    <node role="iterable" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201785636350">
+                      <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
+                      <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1201785888385">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1201785890542">
+                          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201785893054">
+                            <link role="classifier" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                          </node>
+                          <node role="initValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1201785899799">
+                            <link role="enumConstantDeclaration" targetNodeId="1201785431375" resolveInfo="APPLES" />
+                            <link role="enumClass" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                          </node>
+                          <node role="initValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1201785905323">
+                            <link role="enumConstantDeclaration" targetNodeId="1201785434465" resolveInfo="ORANGES" />
+                            <link role="enumClass" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                          </node>
+                          <node role="initValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1201785908938">
+                            <link role="enumConstantDeclaration" targetNodeId="1201785697549" resolveInfo="CARS" />
+                            <link role="enumClass" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1201785509884">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201785509885">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1201785745576">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201785745577">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SwitchStatement" id="1201785745578">
+                        <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="1201785745579">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1201785745580">
+                            <link role="enumClass" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                            <link role="enumConstantDeclaration" targetNodeId="1201785431375" resolveInfo="APPLES" />
+                          </node>
+                          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201785745581">
+                            <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1201785752357">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201785753018">
+                                <property name="value" value="1" />
+                              </node>
+                            </node>
+                            <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1201785755201">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201785755934">
+                                <property name="value" value="2" />
+                              </node>
+                            </node>
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201785745590">
+                              <property name="value" value="fall through" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="1201785745591">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1201785745592">
+                            <link role="enumClass" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                            <link role="enumConstantDeclaration" targetNodeId="1201785434465" resolveInfo="ORANGES" />
+                          </node>
+                          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201785745593">
+                            <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1201785761337">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201785763355">
+                                <property name="value" value="3" />
+                              </node>
+                            </node>
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1201785745598" />
+                          </node>
+                        </node>
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201785745599">
+                          <link role="variableDeclaration" targetNodeId="1201785745605" resolveInfo="fr" />
+                        </node>
+                        <node role="defaultBlock" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201785745600">
+                          <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1201785767593">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201785769251">
+                              <property name="value" value="-1" />
+                            </node>
+                          </node>
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1201785772456" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201785745605">
+                      <property name="name" value="fr" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201785745606">
+                        <link role="classifier" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                      </node>
+                    </node>
+                    <node role="iterable" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201785745607">
+                      <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
+                      <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1201785922174">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1201785922175">
+                          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201785922176">
+                            <link role="classifier" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                          </node>
+                          <node role="initValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1201785922177">
+                            <link role="enumClass" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                            <link role="enumConstantDeclaration" targetNodeId="1201785431375" resolveInfo="APPLES" />
+                          </node>
+                          <node role="initValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1201785922178">
+                            <link role="enumClass" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                            <link role="enumConstantDeclaration" targetNodeId="1201785434465" resolveInfo="ORANGES" />
+                          </node>
+                          <node role="initValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1201785922179">
+                            <link role="enumClass" targetNodeId="1201785418374" resolveInfo="Fruits" />
+                            <link role="enumConstantDeclaration" targetNodeId="1201785697549" resolveInfo="CARS" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201439738527">
       <link role="classifier" targetNodeId="1201439711541" resolveInfo="Closuresbase_Test" />
@@ -2658,6 +2873,19 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.EnumClass" id="1201785418374">
+    <property name="name" value="Fruits" />
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1201785431375">
+      <property name="name" value="APPLES" />
+    </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1201785434465">
+      <property name="name" value="ORANGES" />
+    </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1201785697549">
+      <property name="name" value="CARS" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201785418375" />
   </node>
 </model>
 

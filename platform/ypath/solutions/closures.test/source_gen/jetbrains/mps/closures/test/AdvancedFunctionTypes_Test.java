@@ -51,6 +51,9 @@ public class AdvancedFunctionTypes_Test extends TestCase {
     __Number fun4;
     fun1 = fun2.invoke();
     fun3 = fun1;
+    // TODO: support for adapters for function that accepts/returns function
+    // fun4 = fun3
+    // fun4 = fun2.invoke()
   }
 
   public void test_acceptsFunction() throws Exception {
