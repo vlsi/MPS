@@ -515,10 +515,15 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   public List<ConceptDeclaration> getConceptDeclarations() {
     return getStructureModelDescriptor().getSModel().allAdapters(ConceptDeclaration.class);
   }
-
-  @NotNull
+  
   public SModelDescriptor getStructureModelDescriptor() {
-    return LanguageAspect.STRUCTURE.get(this);
+    SModelDescriptor result = LanguageAspect.STRUCTURE.get(this);
+
+    if (result == null) {
+      LOG.error("Language has no structure model ", this);
+    }
+
+    return result;
   }
 
   @Nullable
