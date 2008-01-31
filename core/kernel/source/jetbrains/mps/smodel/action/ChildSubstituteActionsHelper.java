@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
@@ -35,7 +36,7 @@ public class ChildSubstituteActionsHelper {
       return true;
     }
   };
-  
+
   public static boolean isDefaultSubstitutableConcept(AbstractConceptDeclaration concept, AbstractConceptDeclaration expectedConcept, IScope scope) {
     return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1199876309336(concept.getNode(), expectedConcept.getNode(), scope);
   }
@@ -199,12 +200,12 @@ public class ChildSubstituteActionsHelper {
 
   /*package*/
   static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(
-          SNode parentNode,
-          SNode currentChild,
-          final AbstractConceptDeclaration childConcept,
-          IChildNodeSetter childSetter,
-          final Condition<SNode> filter,
-          IOperationContext context) {
+    SNode parentNode,
+    SNode currentChild,
+    final AbstractConceptDeclaration childConcept,
+    IChildNodeSetter childSetter,
+    final Condition<SNode> filter,
+    IOperationContext context) {
 
     if (childConcept == null) {
       return Collections.emptyList();
@@ -217,7 +218,7 @@ public class ChildSubstituteActionsHelper {
     List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         return isDefaultSubstitutableConcept((AbstractConceptDeclaration) BaseAdapter.fromNode(object), childConcept, scope) &&
-                filter.met(object);
+          filter.met(object);
       }
     });
 
@@ -234,7 +235,7 @@ public class ChildSubstituteActionsHelper {
                                                                  SNode currentChild,
                                                                  IChildNodeSetter setter,
                                                                  IScope scope) {
-    LinkDeclaration smartRef = getSmartReference(applicableConcept);
+    LinkDeclaration smartRef = ReferenceConceptUtil.getCharacteristicReference(applicableConcept);
     if (smartRef != null) {
       List<INodeSubstituteAction> smartActions = createSmartReferenceActions(applicableConcept, smartRef, parentNode, currentChild, setter, scope);
       if (smartActions != null) {
@@ -248,12 +249,12 @@ public class ChildSubstituteActionsHelper {
   }
 
   private static List<INodeSubstituteAction> createSmartReferenceActions(
-          final ConceptDeclaration referenceNodeConcept,
-          LinkDeclaration smartReference,
-          final SNode parentNode,
-          final SNode currentChild,
-          IChildNodeSetter childSetter,
-          final IScope scope) {
+    final ConceptDeclaration referenceNodeConcept,
+    LinkDeclaration smartReference,
+    final SNode parentNode,
+    final SNode currentChild,
+    IChildNodeSetter childSetter,
+    final IScope scope) {
 
     // try to create referent-search-scope
     SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
@@ -273,66 +274,12 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  /**
-   * @return reference link declaration which is used to populate auto-completion menu with possible referent nodes.
-   *         Smart actions are not applicable if:
-   *         1. matching text is customized (except case when pattern '<{_referent_role_}>' is used).
-   *         2. pattern '<{_referent_role_}>' is used but no ref.link with this role is declared.
-   *         3. no ref.links with cardinality '1' is declared (no patten, no customized matching text)
-   *         4. several ref.links with cardinality '1' is declared (no patten, no customized matching text)
-   */
-  public static LinkDeclaration getSmartReference(ConceptDeclaration referenceDeclaringConcept) {
-    // trick : should be no custom 'matching text'
-    String expectedReferentRole = null;
-    String alias = referenceDeclaringConcept.getNode().getConceptProperty("alias");
-    if (alias != null) {
-      // handle pattern 'xxx <{_referent_role_}> yyy'
-      if (!alias.matches(".*<\\{.+\\}>.*")) {
-        return null;
-      }
-      String[] matches = alias.split("<\\{|\\}>");
-      expectedReferentRole = matches[1];
-    }
-
-    List<LinkDeclaration> links = SModelSearchUtil_new.getReferenceLinkDeclarationsExcludingOverridden(referenceDeclaringConcept);
-    if (expectedReferentRole != null) {
-      for (LinkDeclaration linkDeclaration : links) {
-        if (expectedReferentRole.equals(linkDeclaration.getRole())) {
-          return linkDeclaration;
-        }
-      }
-      LOG.warning("The '" + alias + "' doesn't match any link in " + referenceDeclaringConcept.getDebugText());
-      for (LinkDeclaration linkDeclaration : links) {
-        if (expectedReferentRole.equals(linkDeclaration.getRole())) {
-          return linkDeclaration;
-        }
-      }
-    } else {
-      // if concept has only one REQUIRED reference link...
-      if (links.size() == 1) {
-        if (SModelUtil_new.getGenuineLinkSourceCardinality(links.get(0)) == Cardinality._1) {
-          return links.get(0);
-        }
-      }
-    }
-    return null;
-  }
-
   private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode) {
     String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true);
-    String referenceAlias = referenceNodeConcept.getConceptProperty("alias");
-    // handle pattern 'xxx <{_referent_role_}> yyy'
-    if (referenceAlias == null || !referenceAlias.matches(".*<\\{.+\\}>.*")) {
-
-      return referentMatchingText;
+    if (ReferenceConceptUtil.hasSmartAlias(referenceNodeConcept)) {
+      return ReferenceConceptUtil.getPresentationFromSmartAlias(referenceNodeConcept, referentMatchingText);
     }
-    String[] matches = referenceAlias.split("<\\{|\\}>");
-    matches[1] = referentMatchingText;
-    StringBuffer sb = new StringBuffer();
-    for (String segment : matches) {
-      sb.append(segment);
-    }
-    return sb.toString();
+    return referentMatchingText;
   }
 
   private static List<NodeSubstituteActionsBuilder> getActionsBuilders(SNode parentNode, Language language, AbstractConceptDeclaration childConcept, IOperationContext context) {
@@ -342,7 +289,7 @@ public class ChildSubstituteActionsHelper {
       // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'
       AbstractConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
       if (SModelUtil_new.isAssignableConcept(childConcept, applicableChildConcept) &&
-              satisfiesPrecondition(actionsBuilder, parentNode, childConcept, context)) {
+        satisfiesPrecondition(actionsBuilder, parentNode, childConcept, context)) {
         result.add(actionsBuilder);
       }
     }
@@ -386,10 +333,10 @@ public class ChildSubstituteActionsHelper {
       SModel model = actionsBuilder.getModel();
       try {
         return (Boolean) QueryMethodGenerated.invoke(
-                methodName,
-                context,
-                new NodeSubstitutePreconditionContext(parentNode, concept.getNode()),
-                model);
+          methodName,
+          context,
+          new NodeSubstitutePreconditionContext(parentNode, concept.getNode()),
+          model);
       } catch (Exception e) {
         LOG.error(e);
         return false;

@@ -13,11 +13,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
+import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
@@ -158,7 +158,7 @@ public class Resolver {
     });
     for (SNode node : applicableConcepts) {
       ConceptDeclaration applicableConcept = (ConceptDeclaration) BaseAdapter.fromNode(node);
-      LinkDeclaration smartReference = ChildSubstituteActionsHelper.getSmartReference(applicableConcept);
+      LinkDeclaration smartReference = ReferenceConceptUtil.getCharacteristicReference(applicableConcept);
       if (smartReference == null) continue;
       List<SNode> smartReferenceTargets = getSmartReferenceTargets(applicableConcept, smartReference, parent, operationContext.getScope());
       List<SNode> filteredRefTargets = CollectionUtil.filter(smartReferenceTargets, nameMatchesCondition);
