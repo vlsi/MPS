@@ -3,6 +3,7 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
@@ -10,6 +11,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
 import javax.swing.Icon;
+import javax.swing.JPopupMenu;
+import java.awt.event.ActionEvent;
 
 public class ReferencesTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
@@ -48,6 +51,23 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
                       openEditor(target, getOperationContext()).selectNode(target);
             }
           });
+        }
+
+        @Override
+        public JPopupMenu getPopupMenu() {
+          JPopupMenu result = new JPopupMenu();
+
+          result.add(new AbstractActionWithEmptyIcon("Delete") {
+            public void actionPerformed(ActionEvent e) {
+              CommandProcessor.instance().executeCommand(new Runnable() {
+                public void run() {
+                  myNode.removeReference(ref);
+                }
+              });
+            }
+          });
+
+          return result;
         }
 
         public boolean isLeaf() {
