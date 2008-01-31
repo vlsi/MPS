@@ -46,7 +46,6 @@
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.baseLanguage.ext.collections.lang</extendedLanguage>
   </extendedLanguages>
 </language>
 

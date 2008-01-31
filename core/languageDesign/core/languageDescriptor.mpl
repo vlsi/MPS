@@ -19,8 +19,6 @@
   <dependencies>
     <dependency reexport="true">MPS.Classpath</dependency>
   </dependencies>
-  <extendedLanguages>
-    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
-  </extendedLanguages>
+  <extendedLanguages />
 </language>
 

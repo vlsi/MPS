@@ -11,6 +11,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.refactoring.structure.Refactoring;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.Dependency;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
@@ -254,6 +255,13 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       }
     }
 
+    for (LanguageReference ref : myLanguageDescriptor.getExtendedLanguages()) {
+      if (getNamespace().equals(ref.getName())) {
+        myLanguageDescriptor.removeChild(ref);
+        changed = true;
+      }
+    }
+
     if (changed) {
       save();
     }
@@ -289,6 +297,14 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         fireModuleInitialized();
       }
     }
+  }
+
+  public List<Dependency> getDependencies() {
+    List<Dependency> result = super.getDependencies();
+    for (String language : getExtendedLanguages()) {
+      result.add(new Dependency(language, true));
+    }
+    return result;
   }
 
   private void revalidateGenerators() {
@@ -686,8 +702,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public void save() {
-
-    validateExtends();
     DescriptorsPersistence.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
   }
 

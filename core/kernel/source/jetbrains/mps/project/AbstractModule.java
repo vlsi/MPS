@@ -534,14 +534,26 @@ public abstract class AbstractModule implements IModule {
 
   protected String getRequiredBundlesString() {
     StringBuilder result = new StringBuilder();
-    List<Dependency> requiredBundles = getRequiredBundles();
-    for (int i = 0; i < requiredBundles.size(); i++) {
-      Dependency dep = requiredBundles.get(i);
-      result.append("  ").append(dep.getModuleUID());
-      if (dep.isREExport()) {
+
+    Map<String, Boolean> requiredBundles = new LinkedHashMap<String, Boolean>();
+    for (Dependency dep : getRequiredBundles()) {
+      if (!requiredBundles.containsKey(dep.getModuleUID())) {
+        requiredBundles.put(dep.getModuleUID(), dep.isREExport());
+      } else {
+        boolean oldValue = requiredBundles.get(dep.getModuleUID());
+        requiredBundles.put(dep.getModuleUID(), dep.isREExport() || oldValue);
+      }
+    }
+
+    List<String> bundleUids = new ArrayList<String>(requiredBundles.keySet());
+    for (int i = 0; i < bundleUids.size(); i++) {
+      String uid = bundleUids.get(i);
+      boolean reexport = requiredBundles.get(uid);
+      result.append("  ").append(uid);
+      if (reexport) {
         result.append(";visibility:=reexport");
       }
-      if (i != requiredBundles.size() - 1) {
+      if (i != bundleUids.size() - 1) {
         result.append(",");
       }
       result.append("\n");

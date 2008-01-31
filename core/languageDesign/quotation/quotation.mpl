@@ -37,7 +37,6 @@
     <extendedLanguage>jetbrains.mps.annotations</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
     <extendedLanguage>jetbrains.mps.bootstrap.helgins</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.quotation</extendedLanguage>
   </extendedLanguages>
 </language>
 
