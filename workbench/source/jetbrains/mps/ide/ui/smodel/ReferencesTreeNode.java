@@ -3,6 +3,7 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -39,10 +40,14 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
         }
 
         public void doubleClick() {
-          SNode target = ref.getTargetNode();
-          if (target == null) return;
-          getOperationContext().getComponent(EditorsPane.class).
-                  openEditor(target, getOperationContext()).selectNode(target);
+          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+            public void run() {
+              SNode target = ref.getTargetNode();
+              if (target == null) return;
+              getOperationContext().getComponent(EditorsPane.class).
+                      openEditor(target, getOperationContext()).selectNode(target);
+            }
+          });
         }
 
         public boolean isLeaf() {
