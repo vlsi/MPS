@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="agreementLanguage" compileInMPS="false">
-  <structure>
-    <model modelUID="agreementLanguage.structure" />
-  </structure>
-  <actions>
-    <model modelUID="agreementLanguage.actions" />
-  </actions>
-  <constraints>
-    <model modelUID="agreementLanguage.constraints" />
-  </constraints>
-  <editor>
-    <model modelUID="agreementLanguage.editor" />
-  </editor>
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="agreementLanguage" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="agreementLanguage" />
   </models>
-  <module />
   <accessoryModels>
     <model modelUID="agreementLanguage.declarations" />
   </accessoryModels>
@@ -25,10 +12,9 @@
       <models>
         <modelRoot path="${language_descriptor}\generator" namespacePrefix="agreementLanguage.generator" />
       </models>
-      <module />
       <external-templates />
       <dependencies>
-        <dependency>jetbrains.mps.formulaLanguage#1130266266255</dependency>
+        <dependency reexport="true">jetbrains.mps.formulaLanguage#1130266266255</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
@@ -45,7 +31,7 @@
     <exportedPackage />
   </osgiOptions>
   <dependencies>
-    <dependency>jetbrains.mps.formulaLanguage</dependency>
+    <dependency reexport="true">jetbrains.mps.formulaLanguage</dependency>
   </dependencies>
 </language>
 
