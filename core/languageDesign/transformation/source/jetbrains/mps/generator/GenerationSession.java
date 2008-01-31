@@ -503,8 +503,9 @@ public class GenerationSession implements IGenerationSession {
 
     // add models accessible from the invokation contextshould be accessible from our solution - add all model roots
     IModule invocationModule = myInvocationContext.getModule();
-    uidsToAdd.add(invocationModule.getModuleUID());
-
+    if (invocationModule != null) {
+      uidsToAdd.add(invocationModule.getModuleUID());
+    }
 
     for (String uid : uidsToAdd) {
       ModuleReference mr = ModuleReference.newInstance(sm);
