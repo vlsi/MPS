@@ -453,7 +453,7 @@ public class MPSModuleRepository {
   }
 
   @NotNull
-  public Language getLanguageSafe(@NotNull String namespace) {
+  public Language getLanguageSafe(String namespace) {
     Language result = getLanguage(namespace);
     if (result == null) {
       throw new NullPointerException();
@@ -462,7 +462,7 @@ public class MPSModuleRepository {
   }
 
   @Nullable
-  public Language getLanguage(@NotNull String namespace) {
+  public Language getLanguage(String namespace) {
     List<IModule> modules = myUIDToModulesMap.get(namespace);
     if (modules == null || modules.isEmpty()) return null;
     return modulesAsLanguage(modules);
