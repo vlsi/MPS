@@ -29,36 +29,14 @@ public class NodePresentationUtil {
     }
 
     // all other nodes (not a concept declarations)
-//    return matchingText_internal(nodeAdapter);
-    if (nodeAdapter instanceof BaseConcept) {  // todo: get rid of 'custom alias' - only use 'presentation'
+    if (nodeAdapter instanceof BaseConcept) {
       String customAlias = ((BaseConcept) nodeAdapter).getAlias();
       if (customAlias != null) return customAlias;
     }
+
+    // todo: get rid of 'getPresentation' - only use 'alias'
     return nodeAdapter.getNode().getPresentation();
   }
-
-//  private static String matchingText_internal(INodeAdapter nodeAdapter) {
-//    if (nodeAdapter == null) {
-//      return "<none>";
-//    }
-//
-//    if (nodeAdapter instanceof LinkDeclaration) {  // todo: remove
-//      return ((LinkDeclaration) nodeAdapter).getRole();
-//    }
-//
-//    if (nodeAdapter instanceof BaseConcept) {
-//      String customAlias = ((BaseConcept) nodeAdapter).getAlias();
-//      if (customAlias != null) return customAlias;
-//      if (nodeAdapter instanceof NamedConcept || nodeAdapter instanceof INamedConcept) {
-//        String name = nodeAdapter.getName();
-//        if (name != null) {
-//          return name;
-//        }
-//      }
-//    }
-//
-//    return getAliasOrConceptName(nodeAdapter.getNode());
-//  }
 
   public static String descriptionText(SNode node) {
     return descriptionText(node, false);
@@ -70,7 +48,7 @@ public class NodePresentationUtil {
 
   public static String descriptionText(SNode node, boolean referent_presentation) {
     if (node.getAdapter() instanceof ConceptDeclaration &&
-            !referent_presentation) {
+      !referent_presentation) {
       String description = node.getConceptProperty("short_description");
       if (description != null) {
         return description;

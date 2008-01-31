@@ -66,7 +66,7 @@ public interface INodeAdapter {
 
   boolean hasConceptProperty(String propertyName, IScope scope);
 
-  String getConceptProperty(String propertyName, IScope scope);
+  String getConceptProperty(String propertyName);
 
   String getProperty(@NotNull String propertyName);
 

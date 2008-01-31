@@ -275,7 +275,7 @@ public class ChildSubstituteActionsHelper {
 
   /**
    * @return reference link declaration which is used to populate auto-completion menu with possible referent nodes.
-   *         Smart actions are no applicable if:
+   *         Smart actions are not applicable if:
    *         1. matching text is customized (except case when pattern '<{_referent_role_}>' is used).
    *         2. pattern '<{_referent_role_}>' is used but no ref.link with this role is declared.
    *         3. no ref.links with cardinality '1' is declared (no patten, no customized matching text)
@@ -320,7 +320,7 @@ public class ChildSubstituteActionsHelper {
 
   private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode, IScope scope) {
     String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true);
-    String referenceAlias = referenceNodeConcept.getConceptProperty("alias", scope);
+    String referenceAlias = referenceNodeConcept.getConceptProperty("alias");
     // handle pattern 'xxx <{_referent_role_}> yyy'
     if (referenceAlias == null || !referenceAlias.matches(".*<\\{.+\\}>.*")) {
 

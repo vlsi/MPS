@@ -189,7 +189,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return myNode.hasConceptProperty(propertyName);
   }
 
-  public String getConceptProperty(String propertyName, IScope scope) {
+  public String getConceptProperty(String propertyName) {
     return myNode.getConceptProperty(propertyName);
   }
 

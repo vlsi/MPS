@@ -345,7 +345,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       }
       myOperationContext = myComponent.myOperationContext;
       myRootable = conceptDeclaration.getRootable();
-      myIsAbstract = conceptDeclaration.getConceptProperty("abstract", myOperationContext.getScope()) != null;
+      myIsAbstract = conceptDeclaration.getConceptProperty("abstract") != null;
       myNamespace = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, myOperationContext.getScope()).getNamespace();
       myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
