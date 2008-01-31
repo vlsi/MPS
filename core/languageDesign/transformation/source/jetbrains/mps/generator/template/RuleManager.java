@@ -139,26 +139,19 @@ public class RuleManager {
     }
 
     // no reduction rule found
-//    for (SNode childNode : inputNode.getChildren()) {
-//      myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(childNode);
-//      applyReductionRules(childNode);
-//    }
-
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
-    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(clonedOutputNode);
-
-    List<SNode> children = new ArrayList<SNode>(clonedOutputNode.getChildren());
-    for (SNode childOutputNode : children) {
-      SNode childInputNode = myGenerator.findInputNodeById(childOutputNode.getSNodeId());
+    for (SNode childInputNode : inputNode.getChildren()) {
+      SNode childOutputNode = myGenerator.findOutputNodeById(childInputNode.getSNodeId());
       applyReductionRules(childInputNode, childOutputNode);
     }
+    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(clonedOutputNode);
   }
 
   Reduction_MappingRule findReductionRule(SNode node) {
     if (myRuleFinder == null) {
       myRuleFinder = new FastRuleFinder(myReduction_MappingRules);
     }
-    return (Reduction_MappingRule)BaseAdapter.fromNode(myRuleFinder.findReductionRule(node, myGenerator));
+    return (Reduction_MappingRule) BaseAdapter.fromNode(myRuleFinder.findReductionRule(node, myGenerator));
   }
 
 }

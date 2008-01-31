@@ -165,6 +165,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
       setNodeIdentifier("" + nodePointer.hashCode());
     } else {
       setText("<" + kind + ">");
+      setNodeIdentifier("<" + kind + ">");
     }
     setIcon(Icons.getIcon(myTracerNode));
     setAutoExpandable(getChildCount() == 1);

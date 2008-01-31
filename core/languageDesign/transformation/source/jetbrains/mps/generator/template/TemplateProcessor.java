@@ -57,6 +57,7 @@ public class TemplateProcessor {
     }
 
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
+    generationTracer.pushTemplateNode(templateNode);
     SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
     if (outputNode == null) {
       myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode' cannot create output node");
@@ -125,8 +126,6 @@ public class TemplateProcessor {
     }
 
     // process children
-    generationTracer.pushTemplateNode(templateNode);
-    generationTracer.pushOutputNode(outputNode);
     try {
       for (INodeAdapter templateChildNode : templateChildNodes) {
         List<SNode> outputChildNodes = createOutputNodesForTemplateNode(null, templateChildNode.getNode(), inputNode, 0, false);
@@ -143,6 +142,7 @@ public class TemplateProcessor {
         }
       }
     } finally {
+      generationTracer.pushOutputNode(outputNode);
       generationTracer.closeTemplateNode(templateNode);
     }
     return outputNodes;
@@ -417,7 +417,6 @@ public class TemplateProcessor {
       myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode()' cannot create output node");
       return null;
     }
-    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(outputNode);
 
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
@@ -465,6 +464,7 @@ public class TemplateProcessor {
       }
     }
 
+    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(outputNode);
     outputNodes = new ArrayList<SNode>(1);
     outputNodes.add(outputNode);
     return outputNodes;
