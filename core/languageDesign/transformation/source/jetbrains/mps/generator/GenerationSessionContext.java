@@ -337,11 +337,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       MPSModuleRepository.getInstance().addModule(this, myOwnOnwer);
     }
 
-    @NotNull
-    public List<String> getExplicitlyDependOnModuleUIDs() {
-      List<String> result = new ArrayList<String>();
+    public List<Dependency> getDependencies() {
+      List<Dependency> result = new ArrayList<Dependency>();
       for (IModule dep : myDependOnModules) {
-        result.add(dep.getModuleUID());
+        result.add(new Dependency(dep.getModuleUID(), false));
       }
       return result;
     }
@@ -414,12 +413,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     public String getGeneratorOutputPath() {
       return myInvocationModule.getGeneratorOutputPath();
     }
-
-    @NotNull
-    public List<IModule> getExplicitlyDependOnModules() {
-      return new ArrayList<IModule>(myDependOnModules);
-    }
-
 
     public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
       throw new UnsupportedOperationException();

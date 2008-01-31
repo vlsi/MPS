@@ -36,7 +36,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   @NotNull List<ModelRoot> getNonDefaultModelRoots();
 
-  @NotNull List<String> getExplicitlyDependOnModuleUIDs();
+  List<Dependency> getDependencies(); 
 
   @NotNull List<IModule> getExplicitlyDependOnModules();
 

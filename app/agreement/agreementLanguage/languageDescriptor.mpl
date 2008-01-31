@@ -31,7 +31,7 @@
     <exportedPackage />
   </osgiOptions>
   <dependencies>
-    <dependency reexport="true">jetbrains.mps.formulaLanguage</dependency>
+    <dependency reexport="false">jetbrains.mps.formulaLanguage</dependency>
   </dependencies>
 </language>
 

@@ -171,12 +171,11 @@ public abstract class AbstractModule implements IModule {
     return CollectionUtil.iteratorAsList(getModuleDescriptor().modelRoots());
   }
 
-  @NotNull
-  public List<String> getExplicitlyDependOnModuleUIDs() {
-    List<String> result = new ArrayList<String>();
+  public List<Dependency> getDependencies() {
+    List<Dependency> result = new ArrayList<Dependency>();
     if (getModuleDescriptor() != null) {
-      for (ModuleReference mr : getModuleDescriptor().getDependencys()) {
-        result.add(mr.getName());
+      for (ModuleReference ref : getModuleDescriptor().getDependencys()) {
+        result.add(new Dependency(ref.getName(), ref.getReexport()));
       }
     }
     return result;
@@ -190,12 +189,12 @@ public abstract class AbstractModule implements IModule {
   public List<IModule> getExplicitlyDependOnModules() {
     LinkedList<IModule> result = new LinkedList<IModule>(getOwnModules());
 
-    for (String uid : getExplicitlyDependOnModuleUIDs()) {
-      IModule m = MPSModuleRepository.getInstance().getModuleByUID(uid);
+    for (Dependency dep : getDependencies()) {
+      IModule m = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
       if (m != null) {
         result.add(m);
       } else {
-        LOG.error("Can't load module " + uid + " from " + this);
+        LOG.error("Can't load module " + dep.getModuleUID() + " from " + this);
       }
     }
 
@@ -535,33 +534,39 @@ public abstract class AbstractModule implements IModule {
 
   protected String getRequiredBundlesString() {
     StringBuilder result = new StringBuilder();
-    List<String> requiredBundles = getRequiredBundles();
+    List<Dependency> requiredBundles = getRequiredBundles();
     for (int i = 0; i < requiredBundles.size(); i++) {
-      String m = requiredBundles.get(i);
-      result.append("  ").append(m).append(";visibility:=reexport");
+      Dependency dep = requiredBundles.get(i);
+      result.append("  ").append(dep.getModuleUID());
+      if (dep.isREExport()) {
+        result.append(";visibility:=reexport");
+      }
       if (i != requiredBundles.size() - 1) {
         result.append(",");
       }
       result.append("\n");
     }
+
     return result.toString();
   }
 
-  private List<String> getRequiredBundles() {
-    List<String> result = new ArrayList<String>();
-    result.add("jetbrains.mps");
+  private List<Dependency> getRequiredBundles() {
+    List<Dependency> result = new ArrayList<Dependency>();
+    result.add(new Dependency("jetbrains.mps", false));
+
     for (String s : BootstrapLanguages.getInstance().getLanguagesUIDsUsedInCore()) {
-      result.add(s);
+      result.add(new Dependency(s, false));
     }
+
+    result.addAll(getDependencies());
 
     OSGiOptions osgiOptions = getModuleDescriptor().getOsgiOptions();
     if (osgiOptions != null) {
       for (BundleReference br : osgiOptions.getRequiredBundles()) {
-        result.add(br.getName());
+        result.add(new Dependency(br.getName(), false));
       }
     }
 
-    result.addAll(getExplicitlyDependOnModuleUIDs());
     return result;
   }
 

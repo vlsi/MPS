@@ -4,6 +4,7 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Dependency;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.GeneratorReference;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
@@ -148,13 +149,14 @@ public class Generator extends AbstractModule {
     mySourceLanguage.save();
   }
 
-  @NotNull
-  public List<String> getExplicitlyDependOnModuleUIDs() {
-    List<String> result = super.getExplicitlyDependOnModuleUIDs();
-    if (!result.contains(mySourceLanguage.getNamespace())) {
-      result.add(mySourceLanguage.getNamespace());
+  public List<Dependency> getDependencies() {
+    List<Dependency> result = super.getDependencies();
+    result.add(new Dependency(mySourceLanguage.getNamespace(), false));
+
+    for (String refGenerator : getReferencedGeneratorUIDs()) {
+      result.add(new Dependency(refGenerator, false));
     }
-    result.addAll(getReferencedGeneratorUIDs());
+
     return result;
   }
 
