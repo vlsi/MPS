@@ -452,6 +452,15 @@ public class MPSModuleRepository {
     myFileToModuleMap.put(l.newDescriptorFileByNewName(newUID).getCanonicalPath(), l);
   }
 
+  @NotNull
+  public Language getLanguageSafe(@NotNull String namespace) {
+    Language result = getLanguage(namespace);
+    if (result == null) {
+      throw new NullPointerException();
+    }
+    return result;
+  }
+
   @Nullable
   public Language getLanguage(@NotNull String namespace) {
     List<IModule> modules = myUIDToModulesMap.get(namespace);

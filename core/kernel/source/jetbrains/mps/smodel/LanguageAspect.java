@@ -51,7 +51,7 @@ public enum LanguageAspect {
 
   DOCUMENTATION("documentation") {
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapLanguages.getInstance().getBookLanguage().getNamespace());
+      return CollectionUtil.asList(MPSModuleRepository.getInstance().getLanguageSafe("jetbrains.mps.booksLanguage").getNamespace());
     }
   },
 
