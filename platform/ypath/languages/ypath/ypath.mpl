@@ -1,49 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.ypath" pluginClass="jetbrains.mps.ypath.plugin.YpathPlugin" compileInMPS="false">
-  <structure>
-    <model modelUID="jetbrains.mps.ypath.structure" />
-  </structure>
-  <helginsTypeSystem>
-    <model modelUID="jetbrains.mps.ypath.helgins" />
-  </helginsTypeSystem>
-  <actions>
-    <model modelUID="jetbrains.mps.ypath.actions" />
-  </actions>
-  <constraints>
-    <model modelUID="jetbrains.mps.ypath.constraints" />
-  </constraints>
-  <scripts>
-    <model modelUID="jetbrains.mps.ypath.scripts" />
-  </scripts>
-  <editor>
-    <model modelUID="jetbrains.mps.ypath.editor" />
-  </editor>
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.ypath" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.ypath" />
   </models>
-  <module />
   <accessoryModels>
     <model modelUID="jetbrains.mps.ypath.treepaths" />
     <model modelUID="jetbrains.mps.ypath.internal.generator.helper" />
   </accessoryModels>
-  <intentions>
-    <model modelUID="jetbrains.mps.ypath.intentions" />
-  </intentions>
   <generators>
     <generator generatorUID="ypath#1168438160182" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.ypath.generator.baseLanguage.template" />
       </models>
-      <module />
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
       </external-templates>
       <dependencies>
-        <dependency>jetbrains.mps.baseLanguage</dependency>
-        <dependency>jetbrains.mps.baseLanguageInternal</dependency>
-        <dependency>jetbrains.mps.closures</dependency>
-        <dependency>ypath#1168438160182</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguageInternal</dependency>
+        <dependency reexport="true">jetbrains.mps.closures</dependency>
+        <dependency reexport="true">ypath#1168438160182</dependency>
       </dependencies>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
@@ -113,5 +90,10 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
+  </extendedLanguages>
 </language>
 

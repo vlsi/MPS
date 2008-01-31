@@ -1,41 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.transformation.TLBase" pluginClass="jetbrains.mps.transformation.TLBase.plugin.TemplateLanguagePlugin" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
-  <structure>
-    <model modelUID="jetbrains.mps.transformation.TLBase.structure" />
-  </structure>
-  <helginsTypeSystem>
-    <model modelUID="jetbrains.mps.transformation.TLBase.helgins" />
-  </helginsTypeSystem>
-  <actions>
-    <model modelUID="jetbrains.mps.transformation.TLBase.actions" />
-  </actions>
-  <constraints>
-    <model modelUID="jetbrains.mps.transformation.TLBase.constraints" />
-  </constraints>
-  <scripts>
-    <model modelUID="jetbrains.mps.transformation.TLBase.scripts" />
-  </scripts>
-  <editor>
-    <model modelUID="jetbrains.mps.transformation.TLBase.editor" />
-  </editor>
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.transformation.TLBase" />
   </models>
-  <module />
   <accessoryModels />
-  <intentions>
-    <model modelUID="jetbrains.mps.transformation.TLBase.intentions" />
-  </intentions>
   <generators>
     <generator name="default" generatorUID="jetbrains.mps.transformation.TLBase#1167163152317" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template" />
       </models>
-      <module />
       <external-templates />
       <dependencies>
-        <dependency>jetbrains.mps.baseLanguage</dependency>
-        <dependency>jetbrains.mps.core</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="true">jetbrains.mps.core</dependency>
       </dependencies>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
@@ -68,8 +45,15 @@
     <exportedPackage />
   </osgiOptions>
   <dependencies>
-    <dependency>jetbrains.mps.baseLanguage</dependency>
-    <dependency>jetbrains.mps.bootstrap.smodelLanguage</dependency>
+    <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
+    <dependency reexport="true">jetbrains.mps.bootstrap.smodelLanguage</dependency>
   </dependencies>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.bootstrap.sharedConcepts</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.bootstrap.smodelLanguage</extendedLanguage>
+  </extendedLanguages>
 </language>
 

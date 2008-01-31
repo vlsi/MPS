@@ -1,40 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
-  <structure>
-    <model modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
-  </structure>
-  <helginsTypeSystem>
-    <model modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" />
-  </helginsTypeSystem>
-  <actions>
-    <model modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" />
-  </actions>
-  <constraints>
-    <model modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" />
-  </constraints>
-  <editor>
-    <model modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" />
-  </editor>
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.lang" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.lang" />
   </models>
-  <module />
   <accessoryModels />
-  <intentions>
-    <model modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" />
-  </intentions>
   <generators>
     <generator name="default" generatorUID="jetbrains.mps.baseLanguage.ext.collections.lang#1151699677197" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template" />
       </models>
-      <module />
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
       </external-templates>
       <dependencies>
-        <dependency>jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
       </dependencies>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
@@ -63,5 +43,10 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.baseLanguage.ext.collections.lang</extendedLanguage>
+  </extendedLanguages>
 </language>
 

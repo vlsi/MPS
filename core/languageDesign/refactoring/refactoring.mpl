@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.logging.refactoring" pluginClass="jetbrains.mps.refactoring.plugin.LoggingRefactoringLanguagePlugin" compileInMPS="false">
-  <structure>
-    <model modelUID="jetbrains.mps.logging.refactoring.structure" />
-  </structure>
-  <helginsTypeSystem>
-    <model modelUID="jetbrains.mps.logging.refactoring.helgins" />
-  </helginsTypeSystem>
-  <actions>
-    <model modelUID="jetbrains.mps.logging.refactoring.actions" />
-  </actions>
-  <constraints>
-    <model modelUID="jetbrains.mps.logging.refactoring.constraints" />
-  </constraints>
-  <editor>
-    <model modelUID="jetbrains.mps.logging.refactoring.editor" />
-  </editor>
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.logging.refactoring" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.logging.refactoring" />
   </models>
-  <module />
   <accessoryModels>
     <model modelUID="jetbrains.mps.logging.refactoring.samples" />
   </accessoryModels>
@@ -28,10 +12,9 @@
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.logging.refactoring.generator.baseLanguage.template" />
       </models>
-      <module />
       <external-templates />
       <dependencies>
-        <dependency>jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
@@ -47,5 +30,12 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.baseLanguage.ext.collections.lang</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.bootstrap.editorLanguage</extendedLanguage>
+  </extendedLanguages>
 </language>
 

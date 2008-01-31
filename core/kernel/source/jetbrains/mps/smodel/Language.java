@@ -232,7 +232,36 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   public Language() {
   }
 
+  public List<String> getExtendedLanguages() {
+    List<String> result = new ArrayList<String>();
+    for (LanguageReference ref : myLanguageDescriptor.getExtendedLanguages()) {
+      result.add(ref.getName());
+    }
+    return result;
+  }
+
+  public void validateExtends() {
+    boolean changed = false;
+    for (SModelUID uid : getStructureModelDescriptor().getSModel().getImportedModelUIDs()) {
+      if (uid.getLongName().endsWith(".structure")) {
+        String languageNamespace = uid.getLongName().substring(0, uid.getLongName().length() - ".structure".length());
+        if (!getExtendedLanguages().contains(languageNamespace)) {
+          LanguageReference ref = LanguageReference.newInstance(myLanguageDescriptor.getModel());
+          ref.setName(languageNamespace);
+          myLanguageDescriptor.addExtendedLanguage(ref);
+          changed = true;
+        }
+      }
+    }
+
+    if (changed) {
+      save();
+    }
+  }
+
   public void convert() {
+    validateExtends();
+
     for (Generator g : getGenerators()) {
       g.convert();
     }
@@ -657,6 +686,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public void save() {
+
+    validateExtends();
     DescriptorsPersistence.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
   }
 

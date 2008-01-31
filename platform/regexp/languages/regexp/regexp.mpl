@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.regexp">
-  <structure>
-    <model modelUID="jetbrains.mps.regexp.structure" />
-  </structure>
-  <helginsTypeSystem>
-    <model modelUID="jetbrains.mps.regexp.helgins" />
-  </helginsTypeSystem>
-  <actions>
-    <model modelUID="jetbrains.mps.regexp.actions" />
-  </actions>
-  <constraints>
-    <model modelUID="jetbrains.mps.regexp.constraints" />
-  </constraints>
-  <editor>
-    <model modelUID="jetbrains.mps.regexp.editor" />
-  </editor>
+<language namespace="jetbrains.mps.regexp" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.regexp" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.regexp" />
   </models>
-  <module />
   <accessoryModels>
     <model modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" />
   </accessoryModels>
@@ -28,12 +12,11 @@
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.regexp.generator.baseLanguage.template" />
       </models>
-      <module />
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
       </external-templates>
       <dependencies>
-        <dependency>jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
       </dependencies>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
@@ -57,9 +40,14 @@
   <runtimeClassPath>
     <entry path="${mps_home}\platform\regexp\classes" />
   </runtimeClassPath>
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+  </extendedLanguages>
 </language>
 

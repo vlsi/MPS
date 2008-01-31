@@ -4,18 +4,16 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.closures" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.closures" />
   </models>
-  <module />
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.closures#1199623535494" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.closures.generator.baseLanguage.template" />
       </models>
-      <module />
       <external-templates />
       <dependencies>
-        <dependency>jetbrains.mps.baseLanguage</dependency>
-        <dependency>jetbrains.mps.baseLanguage.ext.csharp</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguage.ext.csharp</dependency>
       </dependencies>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
@@ -48,5 +46,9 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+  </extendedLanguages>
 </language>
 

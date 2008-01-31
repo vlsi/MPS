@@ -33,5 +33,10 @@
   <usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>
   </usedLanguages>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
+  </extendedLanguages>
 </language>
 

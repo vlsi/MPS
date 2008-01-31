@@ -3,7 +3,6 @@
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.core" />
   </models>
-  <module />
   <accessoryModels />
   <generators />
   <classPath>
@@ -18,7 +17,10 @@
     <exportedPackage />
   </osgiOptions>
   <dependencies>
-    <dependency>MPS.Classpath</dependency>
+    <dependency reexport="true">MPS.Classpath</dependency>
   </dependencies>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+  </extendedLanguages>
 </language>
 

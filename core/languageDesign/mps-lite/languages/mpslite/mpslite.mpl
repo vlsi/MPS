@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mpslite" pluginClass="jetbrains.mpslite.MPSLitePlugin" compileInMPS="false">
-  <structure>
-    <model modelUID="jetbrains.mpslite.structure" />
-  </structure>
-  <helginsTypeSystem>
-    <model modelUID="jetbrains.mpslite.helgins" />
-  </helginsTypeSystem>
-  <actions>
-    <model modelUID="jetbrains.mpslite.actions" />
-  </actions>
-  <constraints>
-    <model modelUID="jetbrains.mpslite.constraints" />
-  </constraints>
-  <editor>
-    <model modelUID="jetbrains.mpslite.editor" />
-  </editor>
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mpslite" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mpslite" />
   </models>
-  <module />
   <accessoryModels>
     <model modelUID="jetbrains.mpslite.common" />
     <model modelUID="jetbrains.mpslite.treeAspect" />
@@ -29,13 +13,12 @@
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mpslite.generator.baseLanguage.template" />
       </models>
-      <module />
       <external-templates>
         <generator generatorUID="jetbrains.mps.bootstrap.structureLanguage#1170324972255" />
         <generator generatorUID="jetbrains.mps.bootstrap.editorLanguage#1129914002149" />
       </external-templates>
       <dependencies>
-        <dependency>jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
       </dependencies>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
@@ -75,8 +58,14 @@
     <exportedPackage />
   </osgiOptions>
   <dependencies>
-    <dependency>jetbrains.mps.quotation</dependency>
-    <dependency>jetbrains.mps.ypath</dependency>
+    <dependency reexport="true">jetbrains.mps.quotation</dependency>
+    <dependency reexport="true">jetbrains.mps.ypath</dependency>
   </dependencies>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.ypath</extendedLanguage>
+  </extendedLanguages>
 </language>
 

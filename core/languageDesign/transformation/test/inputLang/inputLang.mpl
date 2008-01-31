@@ -4,17 +4,15 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.transformation.test.inputLang" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.transformation.test.inputLang" />
   </models>
-  <module />
   <accessoryModels />
   <generators>
     <generator name="default" generatorUID="jetbrains.mps.transformation.test.inputLang#1195164860857" targetLanguage="jetbrains.mps.transformation.test.outputLang">
       <models>
         <modelRoot path="${language_descriptor}\generator\outputLang\template" namespacePrefix="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template" />
       </models>
-      <module />
       <external-templates />
       <dependencies>
-        <dependency>jetbrains.mps.transformation.test.outputLang</dependency>
+        <dependency reexport="true">jetbrains.mps.transformation.test.outputLang</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
@@ -28,5 +26,8 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+  </extendedLanguages>
 </language>
 
