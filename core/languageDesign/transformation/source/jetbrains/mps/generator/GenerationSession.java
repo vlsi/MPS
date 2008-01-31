@@ -404,11 +404,9 @@ public class GenerationSession implements IGenerationSession {
   }
 
   private SModel createTransientModel(String longName, ModelOwner modelOwner) {
-    String stereotype_base = "" + myInvocationCount + "_" + myTransientModelsCount/* + "_" + getSessionId()*/;
-    String stereotype = stereotype_base;
-    int count = 1;
+    String stereotype = "" + myInvocationCount + "_" + myTransientModelsCount/* + "_" + getSessionId()*/;
     while (SModelRepository.getInstance().getModelDescriptor(new SModelUID(longName, stereotype)) != null) {
-      stereotype = stereotype_base + "_" + (count++);
+      stereotype += "_";
     }
     SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, longName, stereotype);
     myTransientModelsCount++;
