@@ -11,6 +11,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Equinox" level="project" />
     <orderEntry type="module" module-name="MPS" />
+    <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntryProperties />
   </component>
 </module>

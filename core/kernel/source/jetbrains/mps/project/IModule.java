@@ -40,6 +40,10 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   @NotNull List<IModule> getExplicitlyDependOnModules();
 
+  @NotNull List<String> getUsedLanguagesNamespaces();
+
+  @NotNull List<Language> getUsedLanguages();
+
   @NotNull List<IModule> getDependOnModules();
 
   void registerModelDescriptor(@NotNull SModelDescriptor modelDescriptor);
@@ -63,10 +67,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   void readModels();
 
   IFile getClassesGen();
-
-  Set<IModule> getVisibleModules();
-
-  Set<IModule> getExplicitlyVisibleModules();
 
   void reloadStubs();
 

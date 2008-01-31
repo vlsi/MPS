@@ -202,6 +202,31 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  @NotNull
+  public List<String> getUsedLanguagesNamespaces() {
+    List<String> result = new ArrayList<String>();
+    if (getModuleDescriptor() != null) {
+      for (LanguageReference lr : getModuleDescriptor().getUsedLanguages()) {
+        result.add(lr.getName());
+      }
+    }
+    return result;
+  }
+
+  @NotNull
+  public List<Language> getUsedLanguages() {
+    List<Language> result = new ArrayList<Language>();
+    for (String namespace : getUsedLanguagesNamespaces()) {
+      Language l = MPSModuleRepository.getInstance().getLanguage(namespace);
+      if (l != null) {
+        result.add(l);
+      } else {
+        LOG.error("Can't load language " + l + " from " + this);
+      }
+    }
+    return result;
+  }
+
   /**
    * @return all modules which this immediately depends on, bootstrap languages in their number.
    */
@@ -267,12 +292,6 @@ public abstract class AbstractModule implements IModule {
 
       myInitialized = true;
     }
-  }
-
-  public Set<IModule> getVisibleModules() {
-    Set<IModule> result = getExplicitlyVisibleModules();
-    myScope.collectModules(result);
-    return result;
   }
 
   @NotNull
@@ -345,10 +364,6 @@ public abstract class AbstractModule implements IModule {
 
   protected void fireModuleInitialized() {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
-  }
-
-  public Set<IModule> getExplicitlyVisibleModules() {
-    return new HashSet<IModule>(getExplicitlyDependOnModules());
   }
 
   /**
@@ -457,10 +472,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
-    Set<IModule> module = getAllDependOnModules(IModule.class);
-    module.add(this);
-
-    module.addAll(BootstrapLanguages.getInstance().getLanguages());
+    Set<IModule> module = getScope().getVisibleModules();
 
     CompositeClassPathItem item = new CompositeClassPathItem();
     for (IModule m : module) {
@@ -674,8 +686,12 @@ public abstract class AbstractModule implements IModule {
     }
 
     public Set<IModule> doGetVisibleModules() {
-      Set<IModule> result = AbstractModule.this.getVisibleModules();
+      Set<IModule> result = new HashSet<IModule>(getExplicitlyDependOnModules());
+      collectModules(result);
       result.add(AbstractModule.this);
+      for (Language usedLanguage : getUsedLanguages()) {
+        result.add(usedLanguage);
+      }
       return result;
     }
 

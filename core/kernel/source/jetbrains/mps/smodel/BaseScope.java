@@ -143,7 +143,7 @@ public abstract class BaseScope implements IScope {
     while (changed) {
       changed = false;
       for (IModule module : new HashSet<IModule>(result)) {
-        for (IModule m : module.getExplicitlyVisibleModules()) {
+        for (IModule m : module.getExplicitlyDependOnModules()) {
           if (!result.contains(m)) {
             result.add(m);
             changed = true;
