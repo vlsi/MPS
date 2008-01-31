@@ -11,17 +11,20 @@ import java.awt.Component;
 import java.awt.Graphics;
 
 public class Icons {
-  public static final Icon CLOSE_ICON = new ImageIcon(Icons.class.getResource("close.png"));
+  // view
+  public static final Icon CLOSE = new ImageIcon(Icons.class.getResource("close.png"));
+  public static final Icon AUTOSCROLL_TO_SOURCE = new ImageIcon(Icons.class.getResource("autoscrollToSource.png"));
 
-  public static final Icon INPUT_ICON = new ImageIcon(Icons.class.getResource("input.png"));
-  public static final Icon OUTPUT_ICON = new ImageIcon(Icons.class.getResource("output.png"));
-  public static final Icon RULE_ICON = new ImageIcon(Icons.class.getResource("rule.png"));
-  public static final Icon COPY_OPERATION_ICON = new ImageIcon(Icons.class.getResource("copy-operation.png"));
-  public static final Icon MACRO_ICON = new ImageIcon(Icons.class.getResource("macro.png"));
-  public static final Icon RULE_CONSEQUENCE_ICON = new ImageIcon(Icons.class.getResource("rule-consequence.png"));
-  public static final Icon SWITCH_ICON = new ImageIcon(Icons.class.getResource("switch.png"));
-  public static final Icon TEMPALTE_ICON = new ImageIcon(Icons.class.getResource("template.png"));
-  public static final Icon MAPPING_SCRIPT_ICON = new ImageIcon(Icons.class.getResource("mapping-script.png"));
+  // nodes
+  public static final Icon INPUT = new ImageIcon(Icons.class.getResource("input.png"));
+  public static final Icon OUTPUT = new ImageIcon(Icons.class.getResource("output.png"));
+  public static final Icon RULE = new ImageIcon(Icons.class.getResource("rule.png"));
+  public static final Icon COPY_OPERATION = new ImageIcon(Icons.class.getResource("copy-operation.png"));
+  public static final Icon MACRO = new ImageIcon(Icons.class.getResource("macro.png"));
+  public static final Icon RULE_CONSEQUENCE = new ImageIcon(Icons.class.getResource("rule-consequence.png"));
+  public static final Icon SWITCH = new ImageIcon(Icons.class.getResource("switch.png"));
+  public static final Icon TEMPALTE = new ImageIcon(Icons.class.getResource("template.png"));
+  public static final Icon MAPPING_SCRIPT = new ImageIcon(Icons.class.getResource("mapping-script.png"));
 
 
   public static Icon getIcon(TracerNode tracerNode) {
@@ -43,17 +46,17 @@ public class Icons {
 
   private static Icon getKindIcon(TracerNode tracerNode) {
     Kind kind = tracerNode.getKind();
-    if (kind == Kind.INPUT) return Icons.INPUT_ICON;
-    if (kind == Kind.OUTPUT) return Icons.OUTPUT_ICON;
-    if (kind == Kind.APPROXIMATE_OUTPUT) return Icons.OUTPUT_ICON;
-    if (kind == Kind.APPROXIMATE_INPUT) return Icons.INPUT_ICON;
-    if (kind == Kind.RULE) return Icons.RULE_ICON;
-    if (kind == Kind.RULE_CONSEQUENCE) return Icons.RULE_CONSEQUENCE_ICON;
-    if (kind == Kind.MACRO) return Icons.MACRO_ICON;
-    if (kind == Kind.TEMPLATE) return Icons.TEMPALTE_ICON;
-    if (kind == Kind.SWITCH) return Icons.SWITCH_ICON;
-    if (kind == Kind.COPY_OPERATION) return Icons.COPY_OPERATION_ICON;
-    if (kind == Kind.MAPPING_SCRIPT) return Icons.MAPPING_SCRIPT_ICON;
+    if (kind == Kind.INPUT) return Icons.INPUT;
+    if (kind == Kind.OUTPUT) return Icons.OUTPUT;
+    if (kind == Kind.APPROXIMATE_OUTPUT) return Icons.OUTPUT;
+    if (kind == Kind.APPROXIMATE_INPUT) return Icons.INPUT;
+    if (kind == Kind.RULE) return Icons.RULE;
+    if (kind == Kind.RULE_CONSEQUENCE) return Icons.RULE_CONSEQUENCE;
+    if (kind == Kind.MACRO) return Icons.MACRO;
+    if (kind == Kind.TEMPLATE) return Icons.TEMPALTE;
+    if (kind == Kind.SWITCH) return Icons.SWITCH;
+    if (kind == Kind.COPY_OPERATION) return Icons.COPY_OPERATION;
+    if (kind == Kind.MAPPING_SCRIPT) return Icons.MAPPING_SCRIPT;
     return null;
   }
 

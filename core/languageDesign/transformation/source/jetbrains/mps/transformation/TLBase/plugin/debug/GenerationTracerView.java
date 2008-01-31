@@ -15,7 +15,6 @@ import java.awt.event.ActionEvent;
  * Jan 17, 2008
  */
 public abstract class GenerationTracerView {
-  private IDEProjectFrame myProjectFrame;
 
   private JPanel myPanel;
   private GenerationTracerTree myTree;
@@ -23,7 +22,6 @@ public abstract class GenerationTracerView {
   private TracerNode myRootTracerNode;
 
   public GenerationTracerView(TracerNode tracerNode, IDEProjectFrame projectFrame) {
-    myProjectFrame = projectFrame;
     myRootTracerNode = tracerNode;
     myPanel = new JPanel(new BorderLayout());
     myTree = new GenerationTracerTree(tracerNode, projectFrame);
@@ -51,22 +49,39 @@ public abstract class GenerationTracerView {
 
   public abstract void close();
 
+  private boolean isAutoscrollToSource() {
+    return myTree.isAutoOpen();
+  }
+
+  private void setAutoscrollToSource(boolean b) {
+    myTree.setAutoOpen(b);
+  }
+
+
   private class ActionsToolbar extends MPSToolBar {
     private ActionsToolbar() {
       super(JToolBar.VERTICAL);
       createButtons();
+      setFloatable(false);
     }
 
     private void createButtons() {
-      JButton button = new JButton(new AbstractAction("", Icons.CLOSE_ICON) {
+      JToggleButton autoscrollToSourceButton = new JToggleButton("", isAutoscrollToSource());
+      autoscrollToSourceButton.setAction(new AbstractAction("", Icons.AUTOSCROLL_TO_SOURCE) {
+        public void actionPerformed(ActionEvent e) {
+          setAutoscrollToSource(!isAutoscrollToSource());
+        }
+      });
+      autoscrollToSourceButton.setToolTipText("Autoscroll to Source");
+      add(autoscrollToSourceButton);
+
+      JButton closeButton = new JButton(new AbstractAction("", Icons.CLOSE) {
         public void actionPerformed(ActionEvent e) {
           close();
         }
       });
-      button.setToolTipText("Close");
-      add(button);
-
-      setFloatable(false);
+      closeButton.setToolTipText("Close");
+      add(closeButton);
     }
 
     protected EmptyBorder createBorder() {

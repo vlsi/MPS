@@ -26,18 +26,13 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   private TracerNode myTracerNode;
   private IDEProjectFrame myProjectFrame;
 
-  public GenerationTracerTreeNode(TracerNode tracerNode) {
-    this(tracerNode, null);
-  }
-
   public GenerationTracerTreeNode(TracerNode tracerNode, IDEProjectFrame projectFrame) {
     super(null);
-    setAutoExpandable(false);
     myProjectFrame = projectFrame;
     myTracerNode = tracerNode;
     if (myTracerNode.getDepth() < 1000) {
       for (TracerNode childTracerNode : myTracerNode.getChildren()) {
-        add(new GenerationTracerTreeNode(childTracerNode));
+        add(new GenerationTracerTreeNode(childTracerNode, myProjectFrame));
       }
     }
     updatePresentation();
@@ -45,13 +40,6 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
   public TracerNode getTracerNode() {
     return myTracerNode;
-  }
-
-  public IDEProjectFrame getProjectFrame() {
-    if (myProjectFrame != null) {
-      return myProjectFrame;
-    }
-    return ((GenerationTracerTreeNode) getParent()).getProjectFrame();
   }
 
   public JPopupMenu getPopupMenu() {
@@ -67,7 +55,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   private JPopupMenu createPopupMenuForInputNode() {
-    MPSProject project = getProjectFrame().getProject();
+    MPSProject project = myProjectFrame.getProject();
     assert project != null;
     final GenerationTracer tracer = project.getComponentSafe(GenerationTracer.class);
 
@@ -100,7 +88,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   private JPopupMenu createPopupMenuForOutputNode() {
-    MPSProject project = getProjectFrame().getProject();
+    MPSProject project = myProjectFrame.getProject();
     assert project != null;
     final GenerationTracer tracer = project.getComponentSafe(GenerationTracer.class);
 
@@ -143,9 +131,9 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     }
     NavigationActionProcessor.executeNavigationAction(
       new EditorNavigationCommand(node,
-        getProjectFrame().getEditorsPane().getCurrentEditor(),
-        getProjectFrame().getEditorsPane()),
-      getProjectFrame().getProject(), true);
+        myProjectFrame.getEditorsPane().getCurrentEditor(),
+        myProjectFrame.getEditorsPane()),
+      myProjectFrame.getProject(), true);
   }
 
   public boolean isLeaf() {
