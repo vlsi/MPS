@@ -174,7 +174,20 @@ import org.jdom.Element;
       }
     }
 
-    String targetNodeId = (reference instanceof StaticReference) ? ((StaticReference) reference).getTargetNodeId().toString() : "^";
+
+    String targetNodeId;
+
+    if (reference instanceof StaticReference) {
+      StaticReference staticReference = (StaticReference) reference;
+      if (staticReference.getTargetNodeId() != null) {
+        targetNodeId = staticReference.getTargetNodeId().toString();
+      } else {
+        targetNodeId = "^";
+      }
+    } else {
+      targetNodeId = "^";
+    }
+
     targetNodeId = targetModelInfo + targetNodeId;
     linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
     String resolveInfo = reference.getResolveInfo();
