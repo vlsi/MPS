@@ -194,7 +194,6 @@ public class TemplateProcessor {
 
     } else if (nodeMacro instanceof IfMacro) {
       // $IF$
-      generationTracer.pushInputNode(inputNode);
       List<SNode> _outputNodes = null;
       if (MacroUtil.checkConditionForIfMacro(inputNode, (IfMacro) nodeMacro, myGenerator)) {
         _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, inputNode, nodeMacrosToSkip + 1, false);
@@ -268,11 +267,11 @@ public class TemplateProcessor {
         myGenerator.showErrorMessage(inputNode, nodeMacro.getNode(), "error processing $SWITCH$ - bad TemplateSwitch reference");
         return null;
       }
-      generationTracer.pushSwitch(templateSwitch.getNode());
 
       SNode newInputNode = MacroUtil.getNewInputNode(nodeMacro, inputNode, myGenerator);
       if (newInputNode != null) {
         generationTracer.pushInputNode(newInputNode);
+        generationTracer.pushSwitch(templateSwitch.getNode());
 
         RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
         SNode templateNodeForCase = null;
