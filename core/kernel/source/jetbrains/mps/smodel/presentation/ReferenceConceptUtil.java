@@ -79,4 +79,20 @@ public class ReferenceConceptUtil {
     }
     return sb.toString();
   }
+
+  public static String getPresentation(SNode node) {
+    AbstractConceptDeclaration nodeConcept = node.getConceptDeclarationAdapter();
+    LinkDeclaration characteristicReference = getCharacteristicReference(nodeConcept);
+    if (characteristicReference == null) return null;
+    String genuineRole = SModelUtil_new.getGenuineLinkRole(characteristicReference);
+    SNode referentNode = node.getReferent(genuineRole);
+    String referentPresentation = "<no " + characteristicReference.getRole() + ">";
+    if (referentNode != null) {
+      referentPresentation = referentNode.toString();
+    }
+    if (hasSmartAlias(nodeConcept)) {
+      return getPresentationFromSmartAlias(nodeConcept, referentPresentation);
+    }
+    return referentPresentation;
+  }
 }
