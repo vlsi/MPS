@@ -10,11 +10,6 @@ import jetbrains.mps.baseLanguage.structure.Type;
 
 public class ParamSequenceFeature extends SequenceFeature implements IFeature, IParamFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ParamSequenceFeature";
-  public static String PARAMETER_TYPE = "parameterType";
-  public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
-  public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
-  public static String TO_STRING_FUNCTION = "toStringFunction";
-  public static String CARDINAL = "cardinal";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -22,6 +17,11 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
   public static String ASCENDING = "ascending";
+  public static String PARAMETER_TYPE = "parameterType";
+  public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
+  public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
+  public static String TO_STRING_FUNCTION = "toStringFunction";
+  public static String CARDINAL = "cardinal";
   public static String OPPOSITE = "opposite";
 
   public  ParamSequenceFeature(SNode node) {
@@ -36,6 +36,62 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
     return ParamSequenceFeature.newInstance(sm, false);
   }
 
+
+  public String getName() {
+    return this.getProperty(ParamSequenceFeature.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ParamSequenceFeature.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ParamSequenceFeature.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ParamSequenceFeature.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ParamSequenceFeature.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ParamSequenceFeature.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ParamSequenceFeature.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ParamSequenceFeature.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getWritable() {
+    return this.getBooleanProperty(ParamSequenceFeature.WRITABLE);
+  }
+
+  public void setWritable(boolean value) {
+    this.setBooleanProperty(ParamSequenceFeature.WRITABLE, value);
+  }
+
+  public boolean getDefault() {
+    return this.getBooleanProperty(ParamSequenceFeature.DEFAULT);
+  }
+
+  public void setDefault(boolean value) {
+    this.setBooleanProperty(ParamSequenceFeature.DEFAULT, value);
+  }
+
+  public boolean getAscending() {
+    return this.getBooleanProperty(ParamSequenceFeature.ASCENDING);
+  }
+
+  public void setAscending(boolean value) {
+    this.setBooleanProperty(ParamSequenceFeature.ASCENDING, value);
+  }
 
   public Type getParameterType() {
     return (Type)this.getChild(ParamSequenceFeature.PARAMETER_TYPE);
@@ -107,62 +163,6 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
 
   public void setParamRemoveFunction(ParamFeatureRemoveFun node) {
     this.setRemoveFunction(node);
-  }
-
-  public String getName() {
-    return this.getProperty(ParamSequenceFeature.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ParamSequenceFeature.NAME, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(ParamSequenceFeature.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(ParamSequenceFeature.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(ParamSequenceFeature.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(ParamSequenceFeature.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(ParamSequenceFeature.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(ParamSequenceFeature.VIRTUAL_PACKAGE, value);
-  }
-
-  public boolean getWritable() {
-    return this.getBooleanProperty(ParamSequenceFeature.WRITABLE);
-  }
-
-  public void setWritable(boolean value) {
-    this.setBooleanProperty(ParamSequenceFeature.WRITABLE, value);
-  }
-
-  public boolean getDefault() {
-    return this.getBooleanProperty(ParamSequenceFeature.DEFAULT);
-  }
-
-  public void setDefault(boolean value) {
-    this.setBooleanProperty(ParamSequenceFeature.DEFAULT, value);
-  }
-
-  public boolean getAscending() {
-    return this.getBooleanProperty(ParamSequenceFeature.ASCENDING);
-  }
-
-  public void setAscending(boolean value) {
-    this.setBooleanProperty(ParamSequenceFeature.ASCENDING, value);
   }
 
   public IFeature getOpposite() {
