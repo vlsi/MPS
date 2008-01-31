@@ -249,10 +249,6 @@ public abstract class AbstractModule implements IModule {
   }
 
 
-  protected void readDependOnModules() {
-    MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().moduleRoots(), this);
-  }
-
   public void readModels() {
     if (!myModelsRead) {
       myModelsRead = true;

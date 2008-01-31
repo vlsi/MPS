@@ -46,7 +46,6 @@ public class DevKit extends AbstractModule {
     result.updateRuntimeClassPath();
 
     MPSModuleRepository.getInstance().addModule(result, moduleOwner);
-    result.readDependOnModules();
     return result;
   }
 
@@ -91,7 +90,6 @@ public class DevKit extends AbstractModule {
 
     myDescriptor = descriptor;
 
-    readDependOnModules();
     rereadModels();
 
     updateRuntimeClassPath();
@@ -151,17 +149,6 @@ public class DevKit extends AbstractModule {
   }
 
   public void convert() {
-    ConversionUtil.convert(this, myDescriptor.getModuleRoots());
-
-    boolean changed = false;
-    for (jetbrains.mps.projectLanguage.structure.Language l : myDescriptor.getExportedLanguages()) {
-      l.delete();
-      changed = true;
-    }
-
-    if (changed) {
-      save();
-    }
   }
 
   private void devKitChanged() {

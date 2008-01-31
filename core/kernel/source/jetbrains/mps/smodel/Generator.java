@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.ConversionUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.GeneratorReference;
@@ -30,8 +29,6 @@ public class Generator extends AbstractModule {
   Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
-    // read modules and models
-    readDependOnModules();
   }
 
   public void readModels() {
@@ -198,7 +195,6 @@ public class Generator extends AbstractModule {
   }
 
   public void convert() {
-    ConversionUtil.convert(this, myGeneratorDescriptor.getModuleRoots());
   }
 
   @Nullable

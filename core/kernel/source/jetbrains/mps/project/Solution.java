@@ -54,24 +54,12 @@ public class Solution extends AbstractModule {
     solution.reloadStubs();
 
     MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
-    solution.readDependOnModules();
     return solution;
   }
 
   public void convert() {
-    ConversionUtil.convert(this, mySolutionDescriptor.getModuleRoots());
-    ConversionUtil.convert(this, mySolutionDescriptor.getLanguageRoots());
-
-    if ("sandbox".equalsIgnoreCase(mySolutionDescriptor.getName()) || mySolutionDescriptor.getName() == null) {
-      mySolutionDescriptor.setExternallyVisible(false);
-    }    
   }
 
-
-  protected void readDependOnModules() {
-    super.readDependOnModules();
-    MPSModuleRepository.getInstance().readModuleDescriptors(getSolutionDescriptor().languageRoots(), this);
-  }
 
   public void readModels() {
     if (!isInitialized()) {
@@ -106,7 +94,6 @@ public class Solution extends AbstractModule {
 
     createManifest();
 
-    readDependOnModules();
     rereadModels();
 
     updateRuntimeClassPath();

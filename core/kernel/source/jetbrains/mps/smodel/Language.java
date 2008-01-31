@@ -4,15 +4,12 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
-import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.refactoring.structure.Refactoring;
-import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.ConversionUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
@@ -21,9 +18,6 @@ import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -33,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.rmi.RemoteException;
 import java.util.*;
 
 
@@ -240,8 +233,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public void convert() {
-    ConversionUtil.convert(this, myLanguageDescriptor.getModuleRoots());
-
     for (Generator g : getGenerators()) {
       g.convert();
     }
@@ -249,7 +240,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   private void updateDependenciesAndGenerators() {
     // read modules and models
-    readDependOnModules();
     revalidateGenerators();
   }
 
@@ -323,7 +313,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     createManifest();
 
     //read modules and models
-    readDependOnModules();
     revalidateGenerators();
 
 
