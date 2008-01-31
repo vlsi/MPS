@@ -404,7 +404,13 @@ public class GenerationSession implements IGenerationSession {
   }
 
   private SModel createTransientModel(String longName, ModelOwner modelOwner) {
-    SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, longName, "" + myInvocationCount + "_" + myTransientModelsCount/* + "_" + getSessionId()*/);
+    String stereotype_base = "" + myInvocationCount + "_" + myTransientModelsCount/* + "_" + getSessionId()*/;
+    String stereotype = stereotype_base;
+    int count = 1;
+    while (SModelRepository.getInstance().getModelDescriptor(new SModelUID(longName, stereotype)) != null) {
+      stereotype = stereotype_base + "_" + (count++);
+    }
+    SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, longName, stereotype);
     myTransientModelsCount++;
     transientModel.getSModel().setLoading(true); // we dont need any events to be casted
     return transientModel.getSModel();
