@@ -28,10 +28,6 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
-  <dependencies>
-    <dependency reexport="true">jetbrains.mps.annotations</dependency>
-    <dependency reexport="true">jetbrains.mps.bootstrap.helgins</dependency>
-  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.annotations</extendedLanguage>

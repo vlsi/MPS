@@ -59,7 +59,6 @@
   </osgiOptions>
   <dependencies>
     <dependency reexport="true">jetbrains.mps.quotation</dependency>
-    <dependency reexport="true">jetbrains.mps.ypath</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>

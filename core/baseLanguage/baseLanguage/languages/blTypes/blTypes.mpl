@@ -17,9 +17,6 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
-  <dependencies>
-    <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
-  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>

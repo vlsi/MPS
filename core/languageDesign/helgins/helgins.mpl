@@ -40,11 +40,6 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
-  <dependencies>
-    <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
-    <dependency reexport="true">jetbrains.mps.patterns</dependency>
-    <dependency reexport="true">jetbrains.mps.bootstrap.smodelLanguage</dependency>
-  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>

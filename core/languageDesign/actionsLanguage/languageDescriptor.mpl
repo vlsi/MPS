@@ -38,9 +38,6 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
-  <dependencies>
-    <dependency reexport="true">jetbrains.mps.bootstrap.sharedConcepts</dependency>
-  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
