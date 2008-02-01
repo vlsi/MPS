@@ -7,24 +7,17 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <maxImportIndex value="40" />
   <import index="1" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="29" modelUID="jetbrains.mps.ypath.structure@java_stub" version="-1" />
   <import index="32" modelUID="jetbrains.mps.ypath.constraints" version="-1" />
   <import index="33" modelUID="java.lang@java_stub" version="-1" />
   <import index="34" modelUID="jetbrains.mps.ypath.actions" version="-1" />
-  <import index="35" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-  <import index="36" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="37" modelUID="jetbrains.mps.ypath.runtime@java_stub" version="-1" />
   <import index="38" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="39" modelUID="jetbrains.mps.core.editor" version="0" />
   <import index="40" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1168428570720">
     <link role="conceptDeclaration" targetNodeId="1.1168428529658" />

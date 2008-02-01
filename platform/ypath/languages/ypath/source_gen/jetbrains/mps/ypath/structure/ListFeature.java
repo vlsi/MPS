@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ListFeature extends BaseConcept implements INamedConcept, IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ListFeature";
+  public static String OPPOSITE = "opposite";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -23,7 +24,6 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
   public static String SET_FUNCTION = "setFunction";
   public static String INSERT_FUNCTION = "insertFunction";
   public static String DELETE_FUNCTION = "deleteFunction";
-  public static String OPPOSITE = "opposite";
 
   public  ListFeature(SNode node) {
     super(node);
@@ -37,6 +37,14 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
     return ListFeature.newInstance(sm, false);
   }
 
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(ListFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(ListFeature.OPPOSITE, node);
+  }
 
   public String getName() {
     return this.getProperty(ListFeature.NAME);
@@ -132,14 +140,6 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
 
   public void setDeleteFunction(FeatureDeleteFun node) {
     super.setChild(ListFeature.DELETE_FUNCTION, node);
-  }
-
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(ListFeature.OPPOSITE);
-  }
-
-  public void setOpposite(IFeature node) {
-    super.setReferent(ListFeature.OPPOSITE, node);
   }
 
 }

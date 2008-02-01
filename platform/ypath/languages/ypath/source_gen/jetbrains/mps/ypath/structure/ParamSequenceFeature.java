@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.structure.Type;
 
 public class ParamSequenceFeature extends SequenceFeature implements IFeature, IParamFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ParamSequenceFeature";
+  public static String OPPOSITE = "opposite";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -22,7 +23,6 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
   public static String CARDINAL = "cardinal";
-  public static String OPPOSITE = "opposite";
 
   public  ParamSequenceFeature(SNode node) {
     super(node);
@@ -36,6 +36,14 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
     return ParamSequenceFeature.newInstance(sm, false);
   }
 
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(ParamSequenceFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(ParamSequenceFeature.OPPOSITE, node);
+  }
 
   public String getName() {
     return this.getProperty(ParamSequenceFeature.NAME);
@@ -163,14 +171,6 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
 
   public void setParamRemoveFunction(ParamFeatureRemoveFun node) {
     this.setRemoveFunction(node);
-  }
-
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(ParamSequenceFeature.OPPOSITE);
-  }
-
-  public void setOpposite(IFeature node) {
-    super.setReferent(ParamSequenceFeature.OPPOSITE, node);
   }
 
 }

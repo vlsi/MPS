@@ -13,6 +13,7 @@ import java.util.List;
 
 public class GenericFeature extends BaseConcept implements IGenericFeature, INamedConcept, IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.GenericFeature";
+  public static String OPPOSITE = "opposite";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -22,7 +23,6 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   public static String ASCENDING = "ascending";
   public static String GETTER = "getter";
   public static String FUN_HOLDERS = "funHolders";
-  public static String OPPOSITE = "opposite";
 
   public  GenericFeature(SNode node) {
     super(node);
@@ -36,6 +36,14 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
     return GenericFeature.newInstance(sm, false);
   }
 
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(GenericFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(GenericFeature.OPPOSITE, node);
+  }
 
   public String getName() {
     return this.getProperty(GenericFeature.NAME);
@@ -119,14 +127,6 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
 
   public void insertFunHolders(GenericFeatureFunHolder prev, GenericFeatureFunHolder node) {
     this.insertChild(prev, GenericFeature.FUN_HOLDERS, node);
-  }
-
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(GenericFeature.OPPOSITE);
-  }
-
-  public void setOpposite(IFeature node) {
-    super.setReferent(GenericFeature.OPPOSITE, node);
   }
 
 }

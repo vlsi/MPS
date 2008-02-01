@@ -9,12 +9,9 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.ypath" />
   <language namespace="jetbrains.mps.quotation" />
-  <language namespace="jetbrains.mps.bootstrap.intentionsLanguage" />
-  <language namespace="jetbrains.mps.transformation.TLBase" />
   <maxImportIndex value="21" />
   <import index="1" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -30,12 +27,10 @@
   <import index="13" modelUID="jetbrains.mps.helgins.uiActions@java_stub" version="-1" />
   <import index="14" modelUID="jetbrains.mps.ypath.design@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
-  <import index="16" modelUID="jetbrains.mps.ypath.constraints" version="-1" />
   <import index="17" modelUID="jetbrains.mps.ypath.runtime@java_stub" version="-1" />
   <import index="18" modelUID="jetbrains.mps.ypath.plugin@java_stub" version="-1" />
   <import index="19" modelUID="jetbrains.mps.logging@java_stub" version="-1" />
   <import index="20" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
-  <import index="21" modelUID="jetbrains.mps.generator.newGenerator@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178187486791">
     <link role="concept" targetNodeId="1.1168428529658" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184345381945">

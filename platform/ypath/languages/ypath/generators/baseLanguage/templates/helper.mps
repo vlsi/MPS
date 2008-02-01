@@ -9,20 +9,14 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.ypath" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <language namespace="jetbrains.mps.core" />
-  <language namespace="jetbrains.mps.quotation" />
-  <language namespace="jetbrains.mps.transformation.TLBase" />
   <maxImportIndex value="13" />
   <import index="1" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.ypath.structure" version="12" />
-  <import index="6" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="7" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.helper" version="-1" />
   <import index="9" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.ypath.internal.generator.helper" version="-1" />
   <import index="11" modelUID="jetbrains.mps.ypath.constraints" version="-1" />
   <import index="12" modelUID="jetbrains.mps.ypath.runtime@java_stub" version="-1" />
   <import index="13" modelUID="jetbrains.mps.ypath.actions" version="-1" />

@@ -5,7 +5,6 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.intentionsLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1197704377989">
