@@ -89,4 +89,53 @@ public class CompositeClassPathItem implements IClassPathItem {
     return new ArrayList<IClassPathItem>(myChildren);
   }
 
+  private List<IClassPathItem> flatten() {
+    List<IClassPathItem> result = new ArrayList<IClassPathItem>();
+
+    for (IClassPathItem child : myChildren) {
+      if (child instanceof CompositeClassPathItem) {
+        result.addAll(((CompositeClassPathItem) child).flatten());
+      } else {
+        result.add(child);
+      }
+    }
+
+    return result;
+  }
+
+  public CompositeClassPathItem optimize() {
+    List<IClassPathItem> flattenedItems = flatten();
+    Iterator<IClassPathItem> it = flattenedItems.iterator();
+
+    Set<String> alreadyVisited = new HashSet<String>();
+
+    while (it.hasNext()) {
+      IClassPathItem item = it.next();
+      if (item instanceof FileClassPathItem) {
+        FileClassPathItem fcp = (FileClassPathItem) item;
+        if (alreadyVisited.contains(fcp.getClassPath())) {
+          it.remove();
+        } else {
+          alreadyVisited.add(fcp.getClassPath());
+        }
+      }
+
+      if (item instanceof JarFileClassPathItem) {
+        JarFileClassPathItem jfcp = (JarFileClassPathItem) item;
+        if (alreadyVisited.contains(jfcp.getFile().getAbsolutePath())) {
+          it.remove();
+        } else {
+          alreadyVisited.add(jfcp.getFile().getAbsolutePath());
+        }
+      }
+    }
+
+    CompositeClassPathItem result = new CompositeClassPathItem();
+    for (IClassPathItem item : flattenedItems) {
+      result.add(item);
+    }
+
+    return result;
+  }
+
 }

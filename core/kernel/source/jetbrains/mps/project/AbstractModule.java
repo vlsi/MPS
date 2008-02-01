@@ -181,10 +181,6 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  /**
-   * g @return all modules which this explicitly and immediately depends on,
-   * i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
-   */
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
     LinkedList<IModule> result = new LinkedList<IModule>(getOwnModules());
@@ -195,6 +191,12 @@ public abstract class AbstractModule implements IModule {
         result.add(m);
       } else {
         LOG.error("Can't load module " + dep.getModuleUID() + " from " + this);
+      }
+    }
+
+    for (Language usedLanguage : getUsedLanguages()) {
+      if (!result.contains(usedLanguage)) {
+        result.add(usedLanguage);
       }
     }
 

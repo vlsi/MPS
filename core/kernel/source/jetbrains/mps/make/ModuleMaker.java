@@ -188,13 +188,13 @@ public class ModuleMaker {
 
     CompositeClassPathItem classPathItems = new CompositeClassPathItem();
     for (IModule m : dependOnModules) {
-      classPathItems.add(m.getJavaStubsClassPathItem());
+      classPathItems.add(m.getModuleWithDependenciesClassPathItem());
     }
 
     classPathItems.add(ClassLoaderManager.getInstance().getRTJar());
     classPathItems.add(ClassLoaderManager.getInstance().getMPSPath());
 
-    return classPathItems;
+    return classPathItems.optimize();
   }
 
   private boolean isUpToDate(IModule m) {

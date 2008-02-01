@@ -12,6 +12,7 @@ import jetbrains.mps.logging.refactoring.structure.Refactoring;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Dependency;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
@@ -69,6 +70,18 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   };
   private boolean myRegisteredInFindUsagesManager;
 
+  @NotNull
+  public List<IModule> getExplicitlyDependOnModules() {
+    List<IModule> result = super.getExplicitlyDependOnModules();
+
+    for (Language extendedLanguage : getExtendedLanguages()) {
+      if (!result.contains(extendedLanguage)) {
+        result.add(extendedLanguage);
+      }
+    }
+
+    return result;
+  }
 
   public void rename(String newNamespace, IOperationContext operationContext) {
 /*    String oldNamespace = getNamespace();

@@ -7,6 +7,10 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
     return getTimestamp("");
   }
 
+  public IClassPathItem optimize() {
+    return this;
+  }
+
   private long getTimestamp(String namespace) {
     long result = getClassesTimestamp(namespace);
     Set<String> subpackages = getSubpackages(namespace);
