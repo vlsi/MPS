@@ -731,7 +731,13 @@ public abstract class AbstractModule implements IModule {
     }
 
     protected Set<Language> getInitialUsedLanguages() {
-      return new HashSet<Language>(getUsedLanguages());
+      HashSet<Language> result = new HashSet<Language>(getUsedLanguages());
+
+      if (AbstractModule.this instanceof Language) {
+        result.add((Language) AbstractModule.this);
+      }
+
+      return result;
     }
 
     public String toString() {
