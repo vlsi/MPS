@@ -11,7 +11,6 @@ import java.util.Set;
  * @author Kostik
  */
 public interface IClassPathItem {
-
   @Nullable  byte[] getClass(String name);
   @Nullable URL getResource(String name);
   @NotNull Set<String> getAvailableClasses(String namespace);
