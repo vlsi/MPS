@@ -490,10 +490,16 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
+    addAdditionalModuleWithDependenciesClassPath(item);
+
     return item;
   }
 
-  private IClassPathItem createClassPathItem(String s) {
+  protected void addAdditionalModuleWithDependenciesClassPath(CompositeClassPathItem item) {
+
+  }
+
+  protected IClassPathItem createClassPathItem(String s) {
     File f = new File(s);
     IClassPathItem classPathItem = null;
     if (f.exists()) {

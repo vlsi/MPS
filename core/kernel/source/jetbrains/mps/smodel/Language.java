@@ -18,6 +18,8 @@ import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.reloading.ReloadUtils;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
@@ -889,6 +891,12 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       }
     }
     return null;
+  }
+
+  protected void addAdditionalModuleWithDependenciesClassPath(CompositeClassPathItem item) {
+    for (Language extendedLanguage : getExtendedLanguages()) {
+      item.add(extendedLanguage.getRuntimeClasspath());
+    }
   }
 
   private class LanguageModelsAdapter extends SModelsAdapter {
