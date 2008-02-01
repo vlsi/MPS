@@ -3,6 +3,7 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
@@ -275,12 +276,17 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
 
 
-  protected void paintComponent(Graphics g) {
+  protected void paintComponent(final Graphics g) {
     g.setColor(Color.WHITE);
     g.fillRect(0, 0, getWidth(), getHeight());
-    for (ConceptContainer root : myRoots) {
-      root.paintTree(g);
-    }
+
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        for (ConceptContainer root : myRoots) {
+          root.paintTree(g);
+        }
+      }
+    });
   }
 
   public Dimension getPreferredScrollableViewportSize() {
