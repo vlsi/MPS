@@ -514,6 +514,10 @@
       <property name="role" value="label" />
       <link role="target" targetNodeId="1200923014784" resolveInfo="ConditionalRootLabelDeclaration" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201894456441">
+      <property name="value" value="create root" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167087518662">
     <property name="name" value="CreateRootRule_Condition" />
@@ -630,6 +634,10 @@
     <property name="name" value="Weaving_MappingRule" />
     <property name="package" value="rule" />
     <link role="extends" targetNodeId="1167169308231" resolveInfo="BaseMappingRule" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201894271699">
+      <property name="value" value="weave" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1169595968114">
       <property name="value" value="the 'template' reference is deprecated" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
@@ -664,6 +672,10 @@
     <property name="name" value="Reduction_MappingRule" />
     <property name="package" value="rule" />
     <link role="extends" targetNodeId="1167169308231" resolveInfo="BaseMappingRule" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201894388893">
+      <property name="value" value="reduce" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1169672780802">
       <property name="value" value="link 'template' is replaced with 'ruleConsequence'" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
@@ -693,6 +705,10 @@
       <property name="role" value="template" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1169194658468" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201894345204">
+      <property name="value" value="map" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167756080639">

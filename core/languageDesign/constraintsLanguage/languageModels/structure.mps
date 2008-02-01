@@ -72,13 +72,13 @@
     <property name="package" value="Functions" />
     <property name="name" value="ConstraintFunction_PropertyGetter" />
     <link role="extends" targetNodeId="3.1137021947720" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1161720815712">
-      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
-      <link role="target" targetNodeId="11.1161622878565" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1177671709693">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
       <link role="target" targetNodeId="1147468365020" resolveInfo="PropertyGetter_FunctionParm_node" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1161720815712">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+      <link role="target" targetNodeId="11.1161622878565" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1147468034457">
       <property name="value" value="getter" />

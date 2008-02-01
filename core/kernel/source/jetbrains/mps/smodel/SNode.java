@@ -1,9 +1,10 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
+import jetbrains.mps.core.constraints.BaseConcept_Behavior;
+import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.core.structure.IResolveInfo;
-import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
@@ -223,7 +224,7 @@ public final class SNode {
 
   public SNode getContainingRoot() {
     ModelAccess.assertLegalRead(this);
-    
+
     fireNodeReadAccess();
     if (myParent == null) {
       if (getModel().getRoots().contains(this)) {
@@ -354,8 +355,8 @@ public final class SNode {
     for (SNode child : _children()) {
       String role = child.getRole_();
       if (AttributesRolesUtil.isNodeAttributeRole(role) ||
-              AttributesRolesUtil.isLinkAttributeRole(role) ||
-              AttributesRolesUtil.isPropertyAttributeRole(role)) {
+        AttributesRolesUtil.isLinkAttributeRole(role) ||
+        AttributesRolesUtil.isPropertyAttributeRole(role)) {
         attributes.add(child);
       }
     }
@@ -539,7 +540,7 @@ public final class SNode {
   //
 
   @NotNull
-  public Map<String, String> getProperties() {    
+  public Map<String, String> getProperties() {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
@@ -620,7 +621,7 @@ public final class SNode {
 
   public final String getProperty(@NotNull String propertyName) {
     ModelAccess.assertLegalRead(this);
-    
+
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName, false);
     String propertyValue = getProperty_internal(propertyName);
     NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
@@ -924,7 +925,7 @@ public final class SNode {
     SNode parentOfChild = child.getParent();
     if (parentOfChild != null) {
       throw new RuntimeException(child.getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
-              "Couldn't add it to: " + this.getDebugText());
+        "Couldn't add it to: " + this.getDebugText());
     }
 
     if (child.isRoot()) {
@@ -1333,11 +1334,14 @@ public final class SNode {
   @NotNull
   public String toString() {
     ModelAccess.assertLegalRead(this);
-
     fireNodeReadAccess();
+
     String s = null;
     try {
-      s = BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+      s = getProperty(BaseConcept.ALIAS);
+      if (s == null) {
+        s = BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+      }
     } catch (Throwable t) {
       LOG.error(t, this);
     }
@@ -1442,7 +1446,7 @@ public final class SNode {
 
   public String getLanguageNamespace() {
     ModelAccess.assertLegalRead(this);
-    
+
     fireNodeReadAccess();
     return NameUtil.namespaceFromConceptFQName(myConceptFqName);
   }
@@ -1740,7 +1744,7 @@ public final class SNode {
   public boolean isParent(SNode child) {
     SNode node = child.getParent();
     while (node != null &&
-            node != this) {
+      node != this) {
       node = node.getParent();
     }
     return (node == this);
