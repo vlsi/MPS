@@ -5,6 +5,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Dependency;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.CompositeIterator;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -13,6 +14,8 @@ import java.util.*;
 
 public abstract class BaseScope implements IScope {
   private static Logger LOG = Logger.getLogger(BaseScope.class);
+
+  private boolean myInitialized;
 
   private Set<IModule> myVisibleModules;
   private Map<String, Language> myLanguages = new HashMap<String, Language>();
@@ -71,6 +74,8 @@ public abstract class BaseScope implements IScope {
 
   @Nullable
   public Language getLanguage(@NotNull String languageNamespace) {
+    initialize();    
+
     if (myLanguages.containsKey(languageNamespace)) {
       return myLanguages.get(languageNamespace);
     }
@@ -88,12 +93,8 @@ public abstract class BaseScope implements IScope {
 
   @NotNull
   public List<Language> getVisibleLanguages() {
-    if (myLanguages.isEmpty()) {
-      Set<Language> languages = CollectionUtil.filter(Language.class, getVisibleModules());
-      for (Language l : languages) {
-        myLanguages.put(l.getNamespace(), l);
-      }
-    }
+    initialize();
+
     return new ArrayList<Language>(myLanguages.values());
   }
 
@@ -117,10 +118,36 @@ public abstract class BaseScope implements IScope {
   }
 
   public Set<IModule> getVisibleModules() {
-    if (myVisibleModules != null) {
-      return myVisibleModules;
-    }
+    initialize();
+    return Collections.unmodifiableSet(myVisibleModules);
+  }
 
+  protected abstract ModelOwner getModelOwner();
+
+  protected abstract Set<IModule> getInitialModules();
+
+  protected Set<Language> getInitialUsedLanguages() {
+    return CollectionUtil.filter(Language.class, getInitialModules());    
+  }
+
+  public void invalidateCaches() {
+    myVisibleModules = null;
+    myLanguages.clear();
+    myDescriptors.clear();
+    myModelDescriptors.clear();
+    myInitialized = false;
+  }
+
+  private void initialize() {
+    if (myInitialized) return;
+
+    initializeVisibleLanguages();
+    initializeVisibleModules();
+
+    myInitialized = true;
+  }
+
+  private void initializeVisibleModules() {
     Set<IModule> initial = getInitialModules();
     Set<IModule> result = new HashSet<IModule>();
 
@@ -133,16 +160,10 @@ public abstract class BaseScope implements IScope {
     initial.addAll(BootstrapLanguages.getInstance().getLanguages());
 
     collectModules(initial, result);
-
     myVisibleModules = new HashSet<IModule>(result);
-    return result;
   }
 
-  protected abstract ModelOwner getModelOwner();
-
-  protected abstract Set<IModule> getInitialModules();
-
-  public void collectModules(Set<IModule> initial, Set<IModule> result) {
+  private void collectModules(Set<IModule> initial, Set<IModule> result) {
     result.addAll(initial);
     for (IModule module : initial) {
       for (Dependency d : module.getDependencies()) {
@@ -176,10 +197,26 @@ public abstract class BaseScope implements IScope {
     }
   }
 
-  public void invalidateCaches() {
-    myVisibleModules = null;
-    myLanguages.clear();
-    myDescriptors.clear();
-    myModelDescriptors.clear();
+  private void initializeVisibleLanguages() {
+    Set<Language> languages = new HashSet<Language>();
+    languages.addAll(getInitialUsedLanguages());
+    languages.addAll(BootstrapLanguages.getInstance().getLanguages());
+
+    boolean changed = true;
+    while (changed) {
+      changed = false;
+      for (Language language : new ArrayList<Language>(languages)) {
+        for (Language extendedLanguage : language.getExtendedLanguages()) {
+          if (!languages.contains(extendedLanguage)) {
+            languages.add(extendedLanguage);
+            changed = true;
+          }
+        }
+      }
+    }
+
+    for (Language l : languages) {
+      myLanguages.put(l.getNamespace(), l);
+    }
   }
 }

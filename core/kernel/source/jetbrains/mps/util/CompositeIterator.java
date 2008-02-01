@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class CompositeIterator<T> implements Iterator<T>, Iterable<T>{
   private int myCurrent;
-  private Iterator<T>[] myIterators;
+  private Iterator<? extends T>[] myIterators;
 
-  public CompositeIterator(Iterator<T>... is) {
+  public CompositeIterator(Iterator<? extends T>... is) {
     myIterators = is;
   }
 

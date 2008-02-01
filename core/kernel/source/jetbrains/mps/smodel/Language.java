@@ -233,10 +233,18 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   public Language() {
   }
 
-  public List<String> getExtendedLanguages() {
+  public List<String> getExtendedLanguageNamespaces() {
     List<String> result = new ArrayList<String>();
     for (LanguageReference ref : myLanguageDescriptor.getExtendedLanguages()) {
       result.add(ref.getName());
+    }
+    return result;
+  }
+
+  public List<Language> getExtendedLanguages() {
+    List<Language> result = new ArrayList<Language>();
+    for (String namespace : getExtendedLanguageNamespaces()) {
+      result.add(GlobalScope.getInstance().getLanguage(namespace));
     }
     return result;
   }
@@ -246,7 +254,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     for (SModelUID uid : getStructureModelDescriptor().getSModel().getImportedModelUIDs()) {
       if (uid.getLongName().endsWith(".structure")) {
         String languageNamespace = uid.getLongName().substring(0, uid.getLongName().length() - ".structure".length());
-        if (!getExtendedLanguages().contains(languageNamespace)) {
+        if (!getExtendedLanguageNamespaces().contains(languageNamespace)) {
           LanguageReference ref = LanguageReference.newInstance(myLanguageDescriptor.getModel());
           ref.setName(languageNamespace);
           myLanguageDescriptor.addExtendedLanguage(ref);
@@ -301,7 +309,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
-    for (String language : getExtendedLanguages()) {
+    for (String language : getExtendedLanguageNamespaces()) {
       result.add(new Dependency(language, true));
     }
     return result;
