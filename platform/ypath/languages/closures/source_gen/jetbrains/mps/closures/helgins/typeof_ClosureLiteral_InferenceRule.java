@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.LinkedList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -23,11 +23,11 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
   public void applyRule(final SNode closure) {
     List<SNode> paramTypes = new ArrayList<SNode>();
     for(SNode param : SLinkOperations.getTargets(closure, "parameter", true)) {
-      paramTypes.add(TypeChecker.getInstance().getTypeOf(param));
+      paramTypes.add(SLinkOperations.getTarget(param, "type", true));
     }
     List<SNode> allRets = new ArrayList<SNode>();
     List<SNode> allYlds = new ArrayList<SNode>();
-    List<SNode> allStmts = new LinkedList<SNode>();
+    LinkedList<SNode> allStmts = new LinkedList<SNode>();
     for(SNode c : SNodeOperations.getChildren(SLinkOperations.getTarget(closure, "body", true))) {
       if(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
         allRets.add(c);
@@ -35,22 +35,27 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
       if(SNodeOperations.isInstanceOf(c, "jetbrains.mps.closures.structure.YieldStatement")) {
         allYlds.add(c);
       } else
-      if(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.Statement") && !(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock")) && !(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
-        allStmts.add(c);
+      if(!(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock")) && !(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
+        allStmts.addLast(c);
       }
     }
     while(!(allStmts.isEmpty())) {
-      SNode stmt = allStmts.get(0);
-      allStmts.remove(0);
-      for(SNode c : SNodeOperations.getChildren(stmt)) {
-        if(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
-          allRets.add(c);
-        } else
-        if(SNodeOperations.isInstanceOf(c, "jetbrains.mps.closures.structure.YieldStatement")) {
-          allYlds.add(c);
-        } else
-        if(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.Statement") && !(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock")) && !(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
-          allStmts.add(c);
+      SNode stmt = allStmts.removeFirst();
+      if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
+        allRets.add(stmt);
+      } else
+      if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.closures.structure.YieldStatement")) {
+        allYlds.add(stmt);
+      } else
+      {
+        for(SNode c : SNodeOperations.getChildren(stmt)) {
+          if(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.StatementList")) {
+            for(SNode cstmt : SLinkOperations.getTargets(c, "statement", true)) {
+              if(!(SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock")) && !(SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
+                allStmts.addLast(cstmt);
+              }
+            }
+          }
         }
       }
     }
