@@ -947,6 +947,8 @@
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" group="app/ParserGenerator" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" group="app/ParserGenerator" />
+      <module fileurl="file://$PROJECT_DIR$/app/parsers/parsers.iml" filepath="$PROJECT_DIR$/app/parsers/parsers.iml" group="app/parsers" />
+      <module fileurl="file://$PROJECT_DIR$/app/parsers/runtime/parsers-runtime.iml" filepath="$PROJECT_DIR$/app/parsers/runtime/parsers-runtime.iml" group="app/parsers" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/patternLanguage/patternLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/patternLanguage/patternLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/projectLanguage/projectLanguage.iml" filepath="$PROJECT_DIR$/core/projectLanguage/projectLanguage.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/quotation/quotation.iml" filepath="$PROJECT_DIR$/core/languageDesign/quotation/quotation.iml" group="core/languageDesign" />
@@ -1046,7 +1048,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
