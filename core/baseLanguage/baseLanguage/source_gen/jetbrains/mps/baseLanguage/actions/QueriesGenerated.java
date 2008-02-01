@@ -122,8 +122,8 @@ public class QueriesGenerated {
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_BreakStatement_1199466283835(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
     if(SPropertyOperations.hasValue(_context.getSourceNode(), "label", null)) {
-      boolean loopsWithLabels = !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zPredicate(null, null))));
-      boolean sstmtsWithLabels = !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false), new zPredicate1(null, null))));
+      boolean loopsWithLabels = !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zPredicate1(null, null))));
+      boolean sstmtsWithLabels = !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false), new zPredicate2(null, null))));
       return loopsWithLabels || sstmtsWithLabels;
     }
     return false;
@@ -551,7 +551,9 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          SNode parentFunction = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
+          List<SNode> functions = SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);
+          // skip Closure
+          SNode parentFunction = SequenceOperations.getFirst(SequenceOperations.where(functions, new zPredicate(null, null)));
           return ConceptFunction_Behavior.call_getParameters_1197312191473(parentFunction);
         }
 
