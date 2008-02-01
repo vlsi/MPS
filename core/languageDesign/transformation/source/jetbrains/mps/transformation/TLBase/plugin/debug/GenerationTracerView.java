@@ -5,6 +5,7 @@ import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.transformation.TLBase.plugin.debug.icons.Icons;
 
 import javax.swing.*;
+import javax.swing.JToggleButton.ToggleButtonModel;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -18,6 +19,7 @@ public abstract class GenerationTracerView {
 
   private JPanel myPanel;
   private GenerationTracerTree myTree;
+  JToggleButton myAutoscrollToSourceButton;
 
   private TracerNode myRootTracerNode;
 
@@ -48,13 +50,11 @@ public abstract class GenerationTracerView {
   }
 
   public abstract void close();
+  public abstract void switchAutoscrollToSourceMode();
 
-  private boolean isAutoscrollToSource() {
-    return myTree.isAutoOpen();
-  }
-
-  private void setAutoscrollToSource(boolean b) {
+  public void setAutoscrollToSource(boolean b) {
     myTree.setAutoOpen(b);
+    ((ToggleButtonModel) myAutoscrollToSourceButton.getModel()).setSelected(b);
   }
 
 
@@ -66,14 +66,14 @@ public abstract class GenerationTracerView {
     }
 
     private void createButtons() {
-      JToggleButton autoscrollToSourceButton = new JToggleButton("", isAutoscrollToSource());
-      autoscrollToSourceButton.setAction(new AbstractAction("", Icons.AUTOSCROLL_TO_SOURCE) {
+      myAutoscrollToSourceButton = new JToggleButton();
+      myAutoscrollToSourceButton.setAction(new AbstractAction("", Icons.AUTOSCROLL_TO_SOURCE) {
         public void actionPerformed(ActionEvent e) {
-          setAutoscrollToSource(!isAutoscrollToSource());
+          switchAutoscrollToSourceMode();
         }
       });
-      autoscrollToSourceButton.setToolTipText("Autoscroll to Source");
-      add(autoscrollToSourceButton);
+      myAutoscrollToSourceButton.setToolTipText("Autoscroll to Source");
+      add(myAutoscrollToSourceButton);
 
       JButton closeButton = new JButton(new AbstractAction("", Icons.CLOSE) {
         public void actionPerformed(ActionEvent e) {
