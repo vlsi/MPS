@@ -29,7 +29,7 @@
   <import index="15" modelUID="jetbrains.mps.transformation.TLBase.helgins" version="-1" />
   <import index="16" modelUID="jetbrains.mps.transformation.TLBase.structure@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141231">
-    <property name="package" value="Rule" />
+    <property name="package" value="rule" />
     <link role="concept" targetNodeId="1.1167514355419" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200921917360">
       <property name="name" value="getTemplateType" />
@@ -68,7 +68,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141381">
-    <property name="package" value="Rule" />
+    <property name="package" value="rule" />
     <link role="concept" targetNodeId="1.1167087469898" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141382">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141383" />
@@ -89,7 +89,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182451372358">
-    <property name="package" value="Macro" />
+    <property name="package" value="macro" />
     <link role="concept" targetNodeId="1.1167756080639" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182451414286">
       <property name="name" value="getExpectedReturnType" />
@@ -249,7 +249,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182459901948">
-    <property name="package" value="Macro" />
+    <property name="package" value="macro" />
     <link role="concept" targetNodeId="1.1167770111131" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182459909920">
       <property name="name" value="getExpectedReturnType" />
@@ -486,7 +486,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1200913462620">
-    <property name="package" value="Macro" />
+    <property name="package" value="macro" />
     <link role="concept" targetNodeId="1.1087833466690" resolveInfo="NodeMacro" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201256059880">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
@@ -1002,7 +1002,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1200916921541">
-    <property name="package" value="Template" />
+    <property name="package" value="template" />
     <link role="concept" targetNodeId="1.1095672379244" resolveInfo="TemplateFragment" />
     <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1200916923060">
       <link role="applicableLink" targetNodeId="1.1200916687663" />
@@ -1136,7 +1136,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1200918245282">
-    <property name="package" value="Rule" />
+    <property name="package" value="rule" />
     <link role="concept" targetNodeId="1.1167169308231" resolveInfo="BaseMappingRule" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200921606270">
       <property name="name" value="getTemplateType" />
@@ -1237,7 +1237,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1200921859653">
-    <property name="package" value="Rule" />
+    <property name="package" value="rule" />
     <link role="concept" targetNodeId="1.1167327847730" resolveInfo="Reduction_MappingRule" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200921861203">
       <property name="name" value="getTemplateType" />
@@ -1264,7 +1264,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1200921939141">
-    <property name="package" value="Rule" />
+    <property name="package" value="rule" />
     <link role="concept" targetNodeId="1.1167171569011" resolveInfo="Weaving_MappingRule" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200921940644">
       <property name="name" value="getTemplateType" />
@@ -1291,7 +1291,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201255152155">
-    <property name="package" value="Macro" />
+    <property name="package" value="macro" />
     <link role="concept" targetNodeId="1.1118786554307" resolveInfo="LoopMacro" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201259031432">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
@@ -1338,14 +1338,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201256811886">
-    <property name="package" value="Macro" />
+    <property name="package" value="macro" />
     <link role="concept" targetNodeId="1.1118773211870" resolveInfo="IfMacro" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201256811887">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201256811888" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201258399559">
-    <property name="package" value="Macro" />
+    <property name="package" value="macro" />
     <link role="concept" targetNodeId="1.1114729360583" resolveInfo="CopySrcListMacro" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201258399560">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201258399561" />
@@ -1401,7 +1401,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201258784750">
-    <property name="package" value="Macro" />
+    <property name="package" value="macro" />
     <link role="concept" targetNodeId="1.1114706874351" resolveInfo="CopySrcNodeMacro" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201258786237">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
@@ -1446,7 +1446,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201258940419">
-    <property name="package" value="Macro" />
+    <property name="package" value="macro" />
     <link role="concept" targetNodeId="1.1194565793557" resolveInfo="IncludeMacro" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201258942079">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
@@ -1496,7 +1496,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201259114868">
-    <property name="package" value="Macro" />
+    <property name="package" value="macro" />
     <link role="concept" targetNodeId="1.1133037731736" resolveInfo="MapSrcListMacro" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201259124340">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
@@ -1543,7 +1543,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201259202400">
-    <property name="package" value="Macro" />
+    <property name="package" value="macro" />
     <link role="concept" targetNodeId="1.1112731569622" resolveInfo="SwitchMacro" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201259204106">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
