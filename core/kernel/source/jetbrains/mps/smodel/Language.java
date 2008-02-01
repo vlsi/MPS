@@ -244,7 +244,12 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   public List<Language> getExtendedLanguages() {
     List<Language> result = new ArrayList<Language>();
     for (String namespace : getExtendedLanguageNamespaces()) {
-      result.add(GlobalScope.getInstance().getLanguage(namespace));
+      Language language = GlobalScope.getInstance().getLanguage(namespace);
+      if (language != null) {
+        result.add(language);
+      } else {
+        LOG.error("Can't find a language " + namespace + " which is referenced in " + this);
+      }
     }
     return result;
   }

@@ -204,7 +204,7 @@ public abstract class BaseScope implements IScope {
           continue;
         }
 
-        for (Language extendedLanguage : language.getExtendedLanguages()) {
+        for (Language extendedLanguage : language.getExtendedLanguages()) {                    
           if (!languages.contains(extendedLanguage)) {
             languages.add(extendedLanguage);
             changed = true;
