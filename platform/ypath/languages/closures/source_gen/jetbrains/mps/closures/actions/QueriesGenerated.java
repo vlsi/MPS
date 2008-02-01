@@ -5,7 +5,6 @@ package jetbrains.mps.closures.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.RTransformPreconditionContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
@@ -30,10 +29,6 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_ParameterReference_1199622452307(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null);
-  }
-
-  public static boolean nodeSubstituteActionsBuilder_Precondition_LocalVariableReference_1199641696225(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", true), new zPredicate1(null, null))));
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_ThisExpression_1199651311977(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -80,38 +75,6 @@ public class QueriesGenerated {
             SNode pr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
             SLinkOperations.setTarget(pr, "variableDeclaration", ((SNode)this.getParameterObject()), false);
             return pr;
-          }
-
-          public String getMatchingText(String pattern) {
-            return SPropertyOperations.getString(((SNode)this.getParameterObject()), "name");
-          }
-
-        });
-      }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LocalVariableReference_1199641481621(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", true), new zPredicate(null, null)));
-        }
-
-      };
-      Iterable<SNode> queryResult = (Iterable)calc.calculate();
-      assert queryResult != null;
-      for(SNode item : queryResult) {
-        result.add(new DefaultChildNodeSubstituteAction(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-            SLinkOperations.setTarget(lvr, "variableDeclaration", ((SNode)this.getParameterObject()), false);
-            return lvr;
           }
 
           public String getMatchingText(String pattern) {

@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runtime {
@@ -25,8 +24,7 @@ public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runt
       public void run() {
         SNode ft = TypeChecker.getInstance().getRuntimeSupport().typeOf(cl, "jetbrains.mps.closures.helgins", "1199711616632", true);
         TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(invoke, "jetbrains.mps.closures.helgins", "1199711815333", true), SLinkOperations.getTarget(ft, "resultType", true), invoke, null, "jetbrains.mps.closures.helgins", "1199711813747");
-        int count = SequenceOperations.count(SLinkOperations.getTargets(invoke, "parameter", true));
-        if(!(SequenceOperations.count(SLinkOperations.getTargets(ft, "parameterType", true)) == SequenceOperations.count(SLinkOperations.getTargets(invoke, "parameter", true)))) {
+        if(!(SLinkOperations.getCount(ft, "parameterType") == SLinkOperations.getCount(invoke, "parameter"))) {
           TypeChecker.getInstance().reportTypeError(invoke, "Wrong parameters number", "jetbrains.mps.closures.helgins", "1199711857568");
         }
       }

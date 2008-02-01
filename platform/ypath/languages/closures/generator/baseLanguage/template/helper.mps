@@ -4,8 +4,6 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <language namespace="jetbrains.mps.transformation.TLBase" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <maxImportIndex value="23" />
   <import index="14" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -3849,6 +3847,80 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201646588419" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1201861621557">
+    <property name="name" value="ClosureLiteralUtil" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1201861629066">
+      <property name="name" value="hasYieldStatement" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1201861638525">
+        <property name="name" value="cl" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201861639839">
+          <link role="concept" targetNodeId="20.1199569711397" resolveInfo="ClosureLiteral" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1201861632467" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201861629068" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201861629069">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1201861674028">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201861674029">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1201861689975">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201861689976">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1201861748198">
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1201861763474">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201861768098">
+                      <link role="variableDeclaration" targetNodeId="1201861638525" resolveInfo="cl" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201861766171">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201861766172">
+                        <link role="variableDeclaration" targetNodeId="1201861674032" resolveInfo="desc" />
+                      </node>
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1201861766173">
+                        <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1201861766174">
+                          <link role="concept" targetNodeId="20.1199569711397" resolveInfo="ClosureLiteral" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201861748200">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201861771455">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1201861772806">
+                        <property name="value" value="true" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201861698844">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1201861700540">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1201861702219">
+                    <link role="conceptDeclaration" targetNodeId="20.1200830824066" resolveInfo="YieldStatement" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201861698551">
+                  <link role="variableDeclaration" targetNodeId="1201861674032" resolveInfo="desc" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201861674032">
+            <property name="name" value="desc" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201861675837" />
+          </node>
+          <node role="iterable" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201861681520">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201861681521">
+              <link role="variableDeclaration" targetNodeId="1201861638525" resolveInfo="cl" />
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1201861681522" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201861798344">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1201861799252">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201861621558" />
   </node>
 </model>
 
