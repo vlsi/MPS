@@ -8,9 +8,6 @@
   <sourcePath />
   <usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>
-    <usedLanguages>jetbrains.mps.regexp</usedLanguages>
-    <usedLanguages>jetbrains.mps.regexp</usedLanguages>
-    <usedLanguages>jetbrains.mps.regexp</usedLanguages>
   </usedLanguages>
 </solution>
 

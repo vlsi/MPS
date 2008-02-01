@@ -13,12 +13,6 @@
   <usedLanguages>
     <usedLanguages>jetbrains.mps.closures</usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.closures</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.closures</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.closures</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
   </usedLanguages>
 </solution>
 

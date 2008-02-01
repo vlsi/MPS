@@ -17,9 +17,6 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
   </usedLanguages>
 </solution>
 

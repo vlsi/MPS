@@ -200,6 +200,10 @@ public abstract class BaseScope implements IScope {
     while (changed) {
       changed = false;
       for (Language language : new ArrayList<Language>(languages)) {
+        if (language == null) {
+          continue;
+        }
+
         for (Language extendedLanguage : language.getExtendedLanguages()) {
           if (!languages.contains(extendedLanguage)) {
             languages.add(extendedLanguage);

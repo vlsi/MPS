@@ -14,9 +14,6 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.bootstrap.helgins.test</usedLanguages>
-    <usedLanguages>jetbrains.mps.bootstrap.helgins.test</usedLanguages>
-    <usedLanguages>jetbrains.mps.bootstrap.helgins.test</usedLanguages>
-    <usedLanguages>jetbrains.mps.bootstrap.helgins.test</usedLanguages>
   </usedLanguages>
 </solution>
 

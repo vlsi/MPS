@@ -11,9 +11,6 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.comments</usedLanguages>
-    <usedLanguages>jetbrains.mps.comments</usedLanguages>
-    <usedLanguages>jetbrains.mps.comments</usedLanguages>
-    <usedLanguages>jetbrains.mps.comments</usedLanguages>
   </usedLanguages>
 </solution>
 

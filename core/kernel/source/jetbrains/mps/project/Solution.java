@@ -59,35 +59,6 @@ public class Solution extends AbstractModule {
   }
 
   public void convert() {
-/*
-    List<String> visibleLanguages = new ArrayList<String>();
-    for (Language l : getScope().getVisibleLanguages()) {
-      visibleLanguages.add(l.getNamespace());
-    }
-
-    boolean changed = false;
-    for (SModelDescriptor sm : getOwnModelDescriptors()) {
-      if (sm.getModelUID().toString().equals("jetbrains.mps.charisma.main")) {
-        System.out.println("!!!");
-      }
-
-
-      if (!sm.getStereotype().equals(SModelStereotype.JAVA_STUB) && !ProjectModels.isProjectModel(sm.getModelUID())) {
-        for (String language :  sm.getSModel().getExplicitlyImportedLanguages()) {
-          if (!visibleLanguages.contains(language)) {
-            LanguageReference ref = LanguageReference.newInstance(getModuleDescriptor().getModel());
-            ref.setName(language);
-            getModuleDescriptor().addUsedLanguage(ref);
-            visibleLanguages.add(language);
-            changed = true;
-          }
-        }
-      }
-    }
-
-    if (changed) {
-      save();
-    } */
   }
 
 

@@ -12,11 +12,6 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
   </usedLanguages>
 </solution>
 

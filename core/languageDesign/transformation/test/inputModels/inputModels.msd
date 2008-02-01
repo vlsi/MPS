@@ -11,9 +11,6 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.transformation.test.inputLang</usedLanguages>
-    <usedLanguages>jetbrains.mps.transformation.test.inputLang</usedLanguages>
-    <usedLanguages>jetbrains.mps.transformation.test.inputLang</usedLanguages>
-    <usedLanguages>jetbrains.mps.transformation.test.inputLang</usedLanguages>
   </usedLanguages>
 </solution>
 

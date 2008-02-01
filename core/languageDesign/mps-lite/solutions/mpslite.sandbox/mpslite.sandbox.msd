@@ -14,15 +14,6 @@
     <usedLanguages>jetbrains.mpslite</usedLanguages>
     <usedLanguages>jetbrains.mps.ypath</usedLanguages>
     <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
-    <usedLanguages>jetbrains.mpslite</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
-    <usedLanguages>jetbrains.mpslite</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
-    <usedLanguages>jetbrains.mpslite</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
   </usedLanguages>
 </solution>
 

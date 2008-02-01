@@ -21,18 +21,6 @@
   <usedLanguages>
     <usedLanguages>jetbrains.mps.ypath</usedLanguages>
     <usedLanguages>jetbrains.mps.closures</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.closures</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.closures</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.closures</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.closures</usedLanguages>
   </usedLanguages>
 </solution>
 

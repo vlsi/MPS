@@ -15,9 +15,6 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
   </usedLanguages>
 </solution>
 
