@@ -163,7 +163,7 @@
                         <link role="variableDeclaration" targetNodeId="1201894520466" resolveInfo="sb" />
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201894737563">
-                        <property name="value" value=" \&quot;" />
+                        <property name="value" value=" [" />
                       </node>
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201894737564">
@@ -171,7 +171,7 @@
                     </node>
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201894737565">
-                    <property name="value" value="\&quot;" />
+                    <property name="value" value="]" />
                   </node>
                 </node>
               </node>
@@ -1318,7 +1318,7 @@
                         <link role="variableDeclaration" targetNodeId="1201894226902" resolveInfo="sb" />
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201894226927">
-                        <property name="value" value=" \&quot;" />
+                        <property name="value" value=" [" />
                       </node>
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201894226928">
@@ -1326,7 +1326,7 @@
                     </node>
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201894226929">
-                    <property name="value" value="\&quot;" />
+                    <property name="value" value="]" />
                   </node>
                 </node>
               </node>
