@@ -9,12 +9,16 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
-  <maxImportIndex value="5" />
+  <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <maxImportIndex value="8" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.smodel.action@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
+  <import index="6" modelUID="jetbrains.mps.bootstrap.helgins.helgins" version="-1" />
+  <import index="7" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories" id="1174664633061">
     <property name="name" value="_AbstractEquationStatement_factory" />
     <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory" id="1174664649250">
@@ -544,6 +548,26 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1201875763403">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="8.1138411891628" resolveInfo="SNodeOperation" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1201878705329">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201878705330">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201878706268">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1201879497053">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201879497054">
+                <link role="baseMethodDeclaration" targetNodeId="6.1196177509288" resolveInfo="withinInferenceItem" />
+                <link role="classConcept" targetNodeId="6.1186407270695" resolveInfo="RulesUtil" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1201879497055" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1201879510556">
+        <link role="concept" targetNodeId="1.1176544042499" resolveInfo="Node_TypeOperation" />
       </node>
     </node>
   </node>
