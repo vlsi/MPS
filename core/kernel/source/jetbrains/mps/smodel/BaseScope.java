@@ -156,12 +156,24 @@ public abstract class BaseScope implements IScope {
     Set<Language> usedLanguages = new HashSet<Language>();
     usedLanguages.addAll(getInitialUsedLanguages());
     usedLanguages.addAll(BootstrapLanguages.getInstance().getLanguages());
+    usedLanguages.add(BootstrapLanguages.getInstance().getProjectLanguage());
 
     boolean changed = true;
     while (changed) {
       changed = false;
 
       for (IModule module : new HashSet<IModule>(visibleModules)) {
+        if (module instanceof Language) {
+          Language language = (Language) module;
+          for (Language l : language.getExtendedLanguages()) {
+            if (!visibleModules.contains(l)) {
+              visibleModules.add(l);
+              changed = true;
+            }
+          }
+
+        }
+
         for (Dependency dep : module.getDependencies()) {
           if (dep.isREExport()) {
             IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
@@ -212,21 +224,5 @@ public abstract class BaseScope implements IScope {
     }
     
     myInitialized = true;
-  }
-
-  private void initializeVisibleLanguages() {
-    Set<Language> languages = new HashSet<Language>();
-    languages.addAll(getInitialUsedLanguages());
-    languages.addAll(BootstrapLanguages.getInstance().getLanguages());
-
-    boolean changed = true;
-    while (changed) {
-      changed = false;
-    }
-
-
-    for (Language l : languages) {
-      myLanguages.put(l.getNamespace(), l);
-    }
   }
 }
