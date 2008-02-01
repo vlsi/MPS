@@ -12,8 +12,8 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency>jetbrains.mps.baseLanguage</dependency>
-        <dependency>jetbrains.mps.complex.runtime</dependency>
+        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="true">jetbrains.mps.complex.runtime</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
@@ -26,7 +26,11 @@
     <exportedPackage />
   </osgiOptions>
   <dependencies>
-    <dependency>jetbrains.mps.complex.runtime</dependency>
+    <dependency reexport="true">jetbrains.mps.complex.runtime</dependency>
   </dependencies>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+  </extendedLanguages>
 </language>
 

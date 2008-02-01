@@ -3,13 +3,14 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
-  <module />
-  <languages />
   <classPath />
   <runtimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency>jetbrains.mps.complex</dependency>
+    <dependency reexport="true">jetbrains.mps.complex</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.complex</usedLanguages>
+  </usedLanguages>
 </solution>
 
