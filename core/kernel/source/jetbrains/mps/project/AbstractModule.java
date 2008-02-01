@@ -471,25 +471,39 @@ public abstract class AbstractModule implements IModule {
   }
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
-    Set<IModule> module = getScope().getVisibleModules();
-
     CompositeClassPathItem item = new CompositeClassPathItem();
-    for (IModule m : module) {
+    for (IModule m : getScope().getVisibleModules()) {
       for (String s : ((AbstractModule) m).getClassPath()) {
-        File f = new File(s);
-        if (!f.exists()) {
-          continue;
+        IClassPathItem classPathItem = createClassPathItem(s);
+        if (classPathItem != null) {
+          item.add(classPathItem);
         }
+      }
+    }
 
-        if (f.isDirectory()) {
-          item.add(new FileClassPathItem(s));
-        } else {
-          item.add(new JarFileClassPathItem(s));
+    for (Language l : getScope().getVisibleLanguages()) {
+      for (String s : l.getClassPath()) {
+        IClassPathItem classPathItem = createClassPathItem(s);
+        if (classPathItem != null) {
+          item.add(classPathItem);
         }
       }
     }
 
     return item;
+  }
+
+  private IClassPathItem createClassPathItem(String s) {
+    File f = new File(s);
+    IClassPathItem classPathItem = null;
+    if (f.exists()) {
+      if (f.isDirectory()) {
+        classPathItem = new FileClassPathItem(s);
+      } else {
+        classPathItem = new JarFileClassPathItem(s);
+      }
+    }
+    return classPathItem;
   }
 
   public File getBundleHome() {
@@ -706,6 +720,10 @@ public abstract class AbstractModule implements IModule {
       Set<IModule> result = new HashSet<IModule>();
       result.add(AbstractModule.this);
       return result;
+    }
+
+    protected Set<Language> getInitialUsedLanguages() {
+      return new HashSet<Language>(getUsedLanguages());
     }
 
     public String toString() {
