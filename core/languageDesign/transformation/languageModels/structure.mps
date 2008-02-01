@@ -955,7 +955,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1168559333462">
     <property name="name" value="TemplateDeclarationReference" />
-    <property name="package" value="template" />
+    <property name="package" value="rule.consequence" />
     <link role="extends" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1168559393589">
       <property name="role" value="template" />

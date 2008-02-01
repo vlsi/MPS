@@ -141,7 +141,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1149010775552">
           <property name="drawBorder" value="false" />
-          <property name="noTargetText" value="&lt;choose role&gt;" />
+          <property name="noTargetText" value="&lt;choose property&gt;" />
           <link role="relationDeclaration" targetNodeId="1.1147467295099" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1149010775553">
             <link role="conceptDeclaration" targetNodeId="5.1071489288299" />
@@ -309,7 +309,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1148929692477">
           <property name="drawBorder" value="false" />
-          <property name="noTargetText" value="&lt;choose role&gt;" />
+          <property name="noTargetText" value="&lt;choose reference&gt;" />
           <link role="relationDeclaration" targetNodeId="1.1148687202698" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1148929692478">
             <link role="conceptDeclaration" targetNodeId="5.1071489288298" />
@@ -1093,7 +1093,7 @@
             <property name="vertical" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1178177353916" />
             <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1178177392024">
-              <property name="text" value="&lt;&lt;concept properties&gt;&gt;" />
+              <property name="text" value="&lt;&lt;property constraints&gt;&gt;" />
               <property name="textFgColor" value="lightGray" />
             </node>
           </node>
@@ -1104,7 +1104,7 @@
             <property name="vertical" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1178190787344" />
             <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1178190835146">
-              <property name="text" value="&lt;&lt;concept references&gt;&gt;" />
+              <property name="text" value="&lt;&lt;reference constraints&gt;&gt;" />
               <property name="textFgColor" value="lightGray" />
             </node>
           </node>

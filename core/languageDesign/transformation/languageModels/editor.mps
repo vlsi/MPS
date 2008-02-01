@@ -4458,7 +4458,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1168559415840">
-    <property name="package" value="template" />
+    <property name="package" value="rule.consequence" />
     <link role="conceptDeclaration" targetNodeId="1.1168559333462" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1168559420280">
       <property name="drawBorder" value="false" />
