@@ -3,13 +3,17 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="jetbrains.mps.baseLanguage.refactoring" />
   </models>
-  <module />
-  <languages />
   <classPath />
   <runtimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency>jetbrains.mps.annotations</dependency>
+    <dependency reexport="true">jetbrains.mps.annotations</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.comments</usedLanguages>
+    <usedLanguages>jetbrains.mps.comments</usedLanguages>
+    <usedLanguages>jetbrains.mps.comments</usedLanguages>
+    <usedLanguages>jetbrains.mps.comments</usedLanguages>
+  </usedLanguages>
 </solution>
 

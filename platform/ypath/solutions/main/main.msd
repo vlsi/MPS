@@ -3,8 +3,6 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
-  <module />
-  <languages />
   <classPath>
     <entry path="${mps_home}\platform\ypath\solutions\classes" />
   </classPath>
@@ -13,7 +11,13 @@
   </runtimeClassPath>
   <sourcePath />
   <dependencies>
-    <dependency>jetbrains.mps.ypath</dependency>
+    <dependency reexport="true">jetbrains.mps.ypath</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+  </usedLanguages>
 </solution>
 

@@ -3,14 +3,26 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
-  <module />
-  <languages />
   <classPath />
   <runtimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency>jetbrains.mpslite</dependency>
-    <dependency>jetbrains.mps.nanoj</dependency>
+    <dependency reexport="true">jetbrains.mpslite</dependency>
+    <dependency reexport="true">jetbrains.mps.nanoj</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mpslite</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
+    <usedLanguages>jetbrains.mpslite</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
+    <usedLanguages>jetbrains.mpslite</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
+    <usedLanguages>jetbrains.mpslite</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.nanoj</usedLanguages>
+  </usedLanguages>
 </solution>
 

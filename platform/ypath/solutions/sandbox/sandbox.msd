@@ -3,8 +3,6 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
-  <module />
-  <languages />
   <classPath>
     <entry path="${mps_home}\platform\ypath\solutions\classes" />
   </classPath>
@@ -13,12 +11,28 @@
   </runtimeClassPath>
   <sourcePath />
   <dependencies>
-    <dependency>jetbrains.mps.ypath</dependency>
-    <dependency>jetbrains.mps.closures</dependency>
-    <dependency>ypath.main</dependency>
-    <dependency>ypath.sandbox</dependency>
-    <dependency>ypath.sandbox</dependency>
-    <dependency>ypath.sandbox</dependency>
+    <dependency reexport="true">jetbrains.mps.ypath</dependency>
+    <dependency reexport="true">jetbrains.mps.closures</dependency>
+    <dependency reexport="true">ypath.main</dependency>
+    <dependency reexport="true">ypath.sandbox</dependency>
+    <dependency reexport="true">ypath.sandbox</dependency>
+    <dependency reexport="true">ypath.sandbox</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.closures</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.closures</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.closures</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.closures</usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.closures</usedLanguages>
+  </usedLanguages>
 </solution>
 

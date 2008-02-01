@@ -141,8 +141,8 @@ public abstract class BaseScope implements IScope {
   private void initialize() {
     if (myInitialized) return;
 
-    initializeVisibleLanguages();
     initializeVisibleModules();
+    initializeVisibleLanguages();
 
     myInitialized = true;
   }
@@ -150,12 +150,6 @@ public abstract class BaseScope implements IScope {
   private void initializeVisibleModules() {
     Set<IModule> initial = getInitialModules();
     Set<IModule> result = new HashSet<IModule>();
-
-    for (IModule m : result) {
-      if (m == null) {
-        throw new NullPointerException();
-      }
-    }
 
     initial.addAll(BootstrapLanguages.getInstance().getLanguages());
 
@@ -213,6 +207,10 @@ public abstract class BaseScope implements IScope {
           }
         }
       }
+    }
+
+    for (DevKit dk : CollectionUtil.filter(DevKit.class, myVisibleModules)) {
+      languages.addAll(dk.getExportedLanguages());
     }
 
     for (Language l : languages) {

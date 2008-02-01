@@ -3,14 +3,22 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
-  <module />
-  <languages />
   <classPath />
   <runtimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency>jetbrains.mps.baseLanguage.unitTest</dependency>
-    <dependency>jetbrains.mps.closures</dependency>
+    <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest</dependency>
+    <dependency reexport="true">jetbrains.mps.closures</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.closures</usedLanguages>
+    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
+    <usedLanguages>jetbrains.mps.closures</usedLanguages>
+    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
+    <usedLanguages>jetbrains.mps.closures</usedLanguages>
+    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
+    <usedLanguages>jetbrains.mps.closures</usedLanguages>
+    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
+  </usedLanguages>
 </solution>
 
