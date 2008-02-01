@@ -9,5 +9,6 @@ package jetbrains.mps.helgins.inference;
  */
 public interface IWrapperListener {
   public void representatorSet(IWrapper wrapper, IWrapper representator, EquationManager equationManager);
+  public void weakParentAdded(IWrapper wrapper, IWrapper parent, EquationManager equationManager);
   public void becomesDeeplyConcrete(IWrapper wrapper, EquationManager equationManager);
 }

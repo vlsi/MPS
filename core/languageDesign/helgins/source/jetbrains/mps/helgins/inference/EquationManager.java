@@ -34,6 +34,7 @@ public class EquationManager {
   private Map<IWrapper, Map<IWrapper, ErrorInfo>> myComparableTypesMapStrong = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
 
   private Map<IWrapper, IWrapper> myEquations = new HashMap<IWrapper, IWrapper>();
+  private Map<IWrapper, IWrapper> myWeakEquations = new HashMap<IWrapper, IWrapper>();
   private Map<IWrapper, WhenConcreteEntity> myWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
   private Map<IWrapper, Set<SNodePointer>> myNonConcreteVars = new HashMap<IWrapper, Set<SNodePointer>>();
 
@@ -72,6 +73,15 @@ public class EquationManager {
       }
     }
     return type;
+  }
+
+  public IWrapper getWeakParent(IWrapper type) {
+    IWrapper weakParent = myWeakEquations.get(type);
+    return weakParent;
+  }
+
+  /*package*/ void setWeakParent(IWrapper type, IWrapper parent) {
+    myWeakEquations.put(type, parent);
   }
 
   public SNode getRepresentator(SNode type_) {

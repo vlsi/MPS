@@ -17,6 +17,8 @@ public interface IWrapper extends IMatcher {
   public RuntimeTypeVariable getVariable();
   public void fireRepresentatorSet(IWrapper representator, EquationManager equationManager);
 
+  public void fireWeakParentAdded(IWrapper parent, EquationManager equationManager);
+
   public void fireBecomesDeeplyConcrete(EquationManager equationManager);
 
   public void addWrapperListener(IWrapperListener wrapperListener);

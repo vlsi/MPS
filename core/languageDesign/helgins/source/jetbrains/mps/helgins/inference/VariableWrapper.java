@@ -73,4 +73,7 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
     }
   }
 
+  public void weakParentAdded(IWrapper wrapper, IWrapper parent, EquationManager equationManager) {
+    //todo
+  }
 }

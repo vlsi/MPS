@@ -27,6 +27,12 @@ public abstract class DefaultAbstractWrapper implements IWrapper {
     }
   }
 
+  public void fireWeakParentAdded(IWrapper parent, EquationManager equationManager) {
+    for (IWrapperListener listener : new HashSet<IWrapperListener>(myWrapperListeners)) {
+      listener.weakParentAdded(this, parent, equationManager);
+    }
+  }
+
   public void addWrapperListener(IWrapperListener wrapperListener) {
     myWrapperListeners.add(wrapperListener);
   }
