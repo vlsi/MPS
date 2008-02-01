@@ -5,7 +5,6 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Dependency;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.CompositeIterator;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -141,45 +140,34 @@ public abstract class BaseScope implements IScope {
   private void initialize() {
     if (myInitialized) return;
 
-    initializeVisibleModules();
-    initializeVisibleLanguages();
-
-    myInitialized = true;
-  }
-
-  private void initializeVisibleModules() {
-    Set<IModule> initial = getInitialModules();
-    Set<IModule> result = new HashSet<IModule>();
-
-    initial.addAll(BootstrapLanguages.getInstance().getLanguages());
-
-    collectModules(initial, result);
-    myVisibleModules = new HashSet<IModule>(result);
-  }
-
-  private void collectModules(Set<IModule> initial, Set<IModule> result) {
-    result.addAll(initial);
-    for (IModule module : initial) {
+    Set<IModule> visibleModules = new HashSet<IModule>();    
+    visibleModules.addAll(getInitialModules());
+    for (IModule module : getInitialModules()) {
       for (Dependency d : module.getDependencies()) {
         IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(d.getModuleUID());
         if (dependency != null) {
-          result.add(dependency);
+          visibleModules.add(dependency);
         } else {
           LOG.error("Can't find a module " +  d.getModuleUID() + " in " + this);
         }
       }
     }
 
+    Set<Language> usedLanguages = new HashSet<Language>();
+    usedLanguages.addAll(getInitialUsedLanguages());
+    usedLanguages.addAll(BootstrapLanguages.getInstance().getLanguages());
+
     boolean changed = true;
     while (changed) {
       changed = false;
-      for (IModule module : new HashSet<IModule>(result)) {
+
+      for (IModule module : new HashSet<IModule>(visibleModules)) {
         for (Dependency dep : module.getDependencies()) {
           if (dep.isREExport()) {
             IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
             if (dependency != null) {
-              if (!result.contains(dependency)) {
-                result.add(dependency);
+              if (!visibleModules.contains(dependency)) {
+                visibleModules.add(dependency);
                 changed = true;
               }
             } else {
@@ -188,7 +176,42 @@ public abstract class BaseScope implements IScope {
           }
         }
       }
+
+      for (Language language : new ArrayList<Language>(usedLanguages)) {
+        for (Language extendedLanguage : language.getExtendedLanguages()) {
+          if (!usedLanguages.contains(extendedLanguage)) {
+            usedLanguages.add(extendedLanguage);
+            changed = true;
+          }
+        }
+
+        for (Dependency dep : language.getDependencies()) {
+          IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
+          if (dep.isREExport() && !visibleModules.contains(dependency)) {
+            visibleModules.add(dependency);
+            changed = true;
+          }
+        }
+      }
+
+      for (DevKit dk : CollectionUtil.filter(DevKit.class, visibleModules)) {
+        for (Language l : dk.getExportedLanguages()) {
+          if (!usedLanguages.contains(l)) {
+            usedLanguages.add(l);
+            changed = true;
+          }
+        }
+      }
     }
+
+
+    myVisibleModules = visibleModules;
+    myLanguages = new HashMap<String, Language>();
+    for (Language l : usedLanguages) {
+      myLanguages.put(l.getNamespace(), l);
+    }
+    
+    myInitialized = true;
   }
 
   private void initializeVisibleLanguages() {
@@ -199,23 +222,8 @@ public abstract class BaseScope implements IScope {
     boolean changed = true;
     while (changed) {
       changed = false;
-      for (Language language : new ArrayList<Language>(languages)) {
-        if (language == null) {
-          continue;
-        }
-
-        for (Language extendedLanguage : language.getExtendedLanguages()) {                    
-          if (!languages.contains(extendedLanguage)) {
-            languages.add(extendedLanguage);
-            changed = true;
-          }
-        }
-      }
     }
 
-    for (DevKit dk : CollectionUtil.filter(DevKit.class, myVisibleModules)) {
-      languages.addAll(dk.getExportedLanguages());
-    }
 
     for (Language l : languages) {
       myLanguages.put(l.getNamespace(), l);
