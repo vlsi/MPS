@@ -33,7 +33,7 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
   }
 
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return true;
+    return (PropertyReference_Behavior.call_getClassifier_1201994849767(referenceNode) != null);
   }
 
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
