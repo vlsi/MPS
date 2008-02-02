@@ -1515,20 +1515,6 @@ public final class SNode {
     return resultNodes;
   }
 
-  public INodeAdapter findFirstParent(Class<? extends INodeAdapter>[] classes) {
-    SNode node = this;
-    INodeAdapter parent = BaseAdapter.fromNode(node.getParent());
-    while (parent != null) {
-      for (Class clazz : classes) {
-        if (clazz.isAssignableFrom(parent.getClass())) {
-          return parent;
-        }
-      }
-      parent = parent.getParent();
-    }
-    return null;
-  }
-
   public SNode findParent(Condition<SNode> condition) {
     SNode parent = getParent();
     while (parent != null) {
