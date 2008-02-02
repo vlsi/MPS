@@ -7222,6 +7222,52 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201993599076">
     <property name="package" value="property" />
     <link role="concept" targetNodeId="1.1201385106094" resolveInfo="PropertyReference" />
+    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1201995131114">
+      <link role="applicableLink" targetNodeId="1.1201385237847" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1201995135037">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201995135038">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201995152997">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201995152998">
+              <property name="name" value="classifier" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201995152999">
+                <link role="concept" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201995984310">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1201995986673">
+                  <link role="conceptMethodDeclaration" targetNodeId="1201994849767" resolveInfo="getClassifier" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1201995982106" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201995724066">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201995724067">
+              <property name="name" value="classifiers" />
+              <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1201995736853">
+                <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201995739871">
+                  <link role="concept" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
+                </node>
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201995724070">
+                <link role="baseMethodDeclaration" targetNodeId="10.~ClassifierAndSuperClassifiersCache.getClassifierNodes():java.util.List" resolveInfo="getClassifierNodes" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201995768232">
+                  <link role="baseMethodDeclaration" targetNodeId="10.~ClassifierAndSuperClassifiersCache.getInstance(jetbrains.mps.smodel.SNode):jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache" resolveInfo="getInstance" />
+                  <link role="classConcept" targetNodeId="10.~ClassifierAndSuperClassifiersCache" resolveInfo="ClassifierAndSuperClassifiersCache" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201995768233">
+                    <link role="variableDeclaration" targetNodeId="1201995152998" resolveInfo="classifier" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201995848496">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201995848497">
+              <link role="baseMethodDeclaration" targetNodeId="5.~EmptySearchScope.&lt;init&gt;()" resolveInfo="EmptySearchScope" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201994849767">
       <property name="name" value="getClassifier" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201994905075">
