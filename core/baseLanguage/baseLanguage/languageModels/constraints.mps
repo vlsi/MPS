@@ -7219,5 +7219,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201993599076">
+    <property name="package" value="property" />
+    <link role="concept" targetNodeId="1.1201385106094" resolveInfo="PropertyReference" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201993599077">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201993599078" />
+    </node>
+  </node>
 </model>
 
