@@ -7226,6 +7226,23 @@
       <link role="applicableLink" targetNodeId="1.1201385237847" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1201995135037">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201995135038">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201996734489">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201996734490">
+              <property name="name" value="resultProperties" />
+              <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1201996734491">
+                <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201996734492">
+                  <link role="concept" targetNodeId="1.1201370618622" resolveInfo="Property" />
+                </node>
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1201996734493">
+                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1201996734494">
+                  <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201996734495">
+                    <link role="concept" targetNodeId="1.1201370618622" resolveInfo="Property" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201995724066">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201995724067">
               <property name="name" value="classifiers" />
@@ -7316,7 +7333,20 @@
                             <link role="variable" targetNodeId="1201996325044" resolveInfo="property" />
                           </node>
                         </node>
-                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201996351584" />
+                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201996351584">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201996754891">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1201996757877">
+                              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1201996759224">
+                                <node role="argument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1201996762352">
+                                  <link role="variable" targetNodeId="1201996325044" resolveInfo="property" />
+                                </node>
+                              </node>
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201996754892">
+                                <link role="variableDeclaration" targetNodeId="1201996734490" resolveInfo="resultProperties" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -7324,9 +7354,12 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201995848496">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201995848497">
-              <link role="baseMethodDeclaration" targetNodeId="5.~EmptySearchScope.&lt;init&gt;()" resolveInfo="EmptySearchScope" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201996742700">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201996742701">
+              <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201996749936">
+                <link role="variableDeclaration" targetNodeId="1201996734490" resolveInfo="resultProperties" />
+              </node>
             </node>
           </node>
         </node>

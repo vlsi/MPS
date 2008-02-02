@@ -10,13 +10,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
-import jetbrains.mps.smodel.search.EmptySearchScope;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class PropertyReference_property_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -36,6 +37,7 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
   }
 
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
+    List<SNode> resultProperties = ListOperations.<SNode>createList();
     List<SNode> classifiers = ClassifierAndSuperClassifiersCache.getInstance(PropertyReference_Behavior.call_getClassifier_1201994849767(referenceNode)).getClassifierNodes();
     {
       ICursor<SNode> _zCursor4 = CursorFactory.createCursor(classifiers);
@@ -51,6 +53,7 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
                 while(_zCursor5.moveToNext()) {
                   SNode property = _zCursor5.getCurrent();
                   if(VisibilityUtil.isVisible(enclosingNode, property)) {
+                    ListOperations.addElement(resultProperties, property);
                   }
                 }
               } finally {
@@ -63,7 +66,7 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
         _zCursor4.release();
       }
     }
-    return new EmptySearchScope();
+    return new SimpleSearchScope(resultProperties);
   }
 
   public String getNodeReferentSearchScopeDescription() {
