@@ -11,6 +11,11 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 
 public class PropertyReference_property_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -31,8 +36,33 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
   }
 
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    SNode classifier = PropertyReference_Behavior.call_getClassifier_1201994849767(referenceNode);
-    List<SNode> classifiers = ClassifierAndSuperClassifiersCache.getInstance(classifier).getClassifierNodes();
+    List<SNode> classifiers = ClassifierAndSuperClassifiersCache.getInstance(PropertyReference_Behavior.call_getClassifier_1201994849767(referenceNode)).getClassifierNodes();
+    {
+      ICursor<SNode> _zCursor4 = CursorFactory.createCursor(classifiers);
+      try {
+        while(_zCursor4.moveToNext()) {
+          SNode classifier = _zCursor4.getCurrent();
+          if(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+            SNode classConcept = classifier;
+            List<SNode> properties = SLinkOperations.getTargets(classConcept, "property", true);
+            {
+              ICursor<SNode> _zCursor5 = CursorFactory.createCursor(properties);
+              try {
+                while(_zCursor5.moveToNext()) {
+                  SNode property = _zCursor5.getCurrent();
+                  if(VisibilityUtil.isVisible(enclosingNode, property)) {
+                  }
+                }
+              } finally {
+                _zCursor5.release();
+              }
+            }
+          }
+        }
+      } finally {
+        _zCursor4.release();
+      }
+    }
     return new EmptySearchScope();
   }
 
