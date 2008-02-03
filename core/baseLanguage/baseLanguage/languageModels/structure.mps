@@ -2501,14 +2501,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201373269664">
-    <property name="package" value="property.implementation.default" />
-    <property name="name" value="AccessorPolicy" />
-    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201373644352">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201385106094">
     <property name="package" value="property" />
     <property name="name" value="PropertyReference" />
