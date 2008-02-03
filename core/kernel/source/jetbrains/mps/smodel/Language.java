@@ -388,7 +388,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     //read modules and models
     revalidateGenerators();
 
-
     rereadModels();
 
     updateRuntimeClassPath();

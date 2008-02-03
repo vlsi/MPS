@@ -160,10 +160,13 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       this.add(accessories);
     }
 
-
     for (Generator generator : myLanguage.getGenerators()) {
       MPSTreeNode generatorNode = new GeneratorTreeNode(generator, myProject);
       this.add(generatorNode);
     }
+
+    TextTreeNode allModels = new TextTreeNode("All models");
+    SModelsSubtree.create(allModels, getOperationContext());
+    this.add(allModels);
   }
 }
