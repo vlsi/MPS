@@ -7193,14 +7193,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201372666945" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201374011082">
-    <property name="package" value="property.implementation.default" />
-    <link role="concept" targetNodeId="1.1201373269664" resolveInfo="AccessorPolicy" />
-    <link role="defaultConcreteConcept" targetNodeId="1.1201373970107" resolveInfo="OnlyGetter" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201374011083">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201374011084" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201375204863">
     <property name="package" value="property" />
     <link role="concept" targetNodeId="1.1201370618622" resolveInfo="Property" />
