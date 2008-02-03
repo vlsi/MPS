@@ -13540,6 +13540,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1201373692449">
         <link role="relationDeclaration" targetNodeId="17.1201373662978" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202065379758">
+        <link role="relationDeclaration" targetNodeId="17.1202065356069" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1201373996796">
@@ -13620,6 +13623,22 @@
     <link role="conceptDeclaration" targetNodeId="17.1202003934320" resolveInfo="NewValueParameter" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1202004038437">
       <link role="relationDeclaration" targetNodeId="18.1156235010670" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202065265871">
+    <property name="package" value="property.implementation.default" />
+    <link role="conceptDeclaration" targetNodeId="17.1202065242027" resolveInfo="DefaultGetAccessor" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202065274342">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202065331693">
+        <link role="relationDeclaration" targetNodeId="17.1202065315097" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202065275985">
+        <property name="text" value="get" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202065292940">
+        <property name="text" value=";" />
+      </node>
     </node>
   </node>
 </model>

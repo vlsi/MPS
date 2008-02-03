@@ -2490,6 +2490,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1201373269664" resolveInfo="AccessorPolicy" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202065356069">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="defaultGetAccessor" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1202065242027" resolveInfo="DefaultGetAccessor" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201372777394">
       <property name="value" value="default" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
@@ -2583,6 +2589,16 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1202003981386">
       <property name="value" value="value" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202065242027">
+    <property name="package" value="property.implementation.default" />
+    <property name="name" value="DefaultGetAccessor" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202065315097">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="visibility" />
+      <link role="target" targetNodeId="1146644584814" resolveInfo="Visibility" />
     </node>
   </node>
 </model>

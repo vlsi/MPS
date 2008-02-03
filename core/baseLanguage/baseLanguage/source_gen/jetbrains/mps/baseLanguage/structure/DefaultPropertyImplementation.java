@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class DefaultPropertyImplementation extends PropertyImplementation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation";
   public static String ACCESSOR_POLICY = "accessorPolicy";
+  public static String DEFAULT_GET_ACCESSOR = "defaultGetAccessor";
 
   public  DefaultPropertyImplementation(SNode node) {
     super(node);
@@ -30,6 +31,14 @@ public class DefaultPropertyImplementation extends PropertyImplementation {
 
   public void setAccessorPolicy(AccessorPolicy node) {
     super.setChild(DefaultPropertyImplementation.ACCESSOR_POLICY, node);
+  }
+
+  public DefaultGetAccessor getDefaultGetAccessor() {
+    return (DefaultGetAccessor)this.getChild(DefaultPropertyImplementation.DEFAULT_GET_ACCESSOR);
+  }
+
+  public void setDefaultGetAccessor(DefaultGetAccessor node) {
+    super.setChild(DefaultPropertyImplementation.DEFAULT_GET_ACCESSOR, node);
   }
 
 }
