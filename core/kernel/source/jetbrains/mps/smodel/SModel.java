@@ -1035,6 +1035,13 @@ public class SModel implements Iterable<SNode> {
     public int getUsedVersion() {
       return myUsedVersion;
     }
+
+    public String toString() {
+      return "ImportElement(" +
+        "uid=" + myModelDescriptor + ", " +
+        "referenceId=" + myReferenceID + ", " +
+        "usedVersion=" + myUsedVersion + ")";
+    }
   }
 
   private static class UndoRootAddOrDelete implements IUndoableAction {
