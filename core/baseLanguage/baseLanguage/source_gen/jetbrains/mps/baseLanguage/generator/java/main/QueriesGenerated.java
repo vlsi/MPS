@@ -29,7 +29,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201570306027(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_p_get_" + SPropertyOperations.getString(_context.getNode(), "propertyName");
+    return "_p_get_" + SPropertyOperations.getString(_context.getNode(), "propertyName") + "_" + _context.getNode().getId();
   }
 
   public static Object referenceMacro_GetReferent_1201387048833(final IOperationContext operationContext, final ReferenceMacroContext _context) {
