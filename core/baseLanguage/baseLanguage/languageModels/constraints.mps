@@ -7584,5 +7584,26 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202008650361" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1202077784185">
+    <property name="package" value="property.implementation.default" />
+    <link role="concept" targetNodeId="1.1202077725299" resolveInfo="DefaultSetAccessor" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1202077784186">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202077784187">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202077796213">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202077806407">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1202077810004">
+              <link role="concept" targetNodeId="1.1146644623116" resolveInfo="PrivateVisibility" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202077798340">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1202077800125">
+                <link role="link" targetNodeId="1.1202077744034" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1202077796214" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

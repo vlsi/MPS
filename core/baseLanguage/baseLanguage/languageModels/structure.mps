@@ -2596,5 +2596,16 @@
     <property name="name" value="DefaultGetAccessor" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202077725299">
+    <property name="package" value="property.implementation.default" />
+    <property name="name" value="DefaultSetAccessor" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202077744034">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="visibility" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1146644584814" resolveInfo="Visibility" />
+    </node>
+  </node>
 </model>
 

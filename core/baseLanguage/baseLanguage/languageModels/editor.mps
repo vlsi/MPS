@@ -13638,5 +13638,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202077758004">
+    <property name="package" value="property.implementation.default" />
+    <link role="conceptDeclaration" targetNodeId="17.1202077725299" resolveInfo="DefaultSetAccessor" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202077761084">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202077768793">
+        <link role="relationDeclaration" targetNodeId="17.1202077744034" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202077762758">
+        <property name="text" value="set" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202077764948">
+        <property name="text" value=";" />
+      </node>
+    </node>
+  </node>
 </model>
 
