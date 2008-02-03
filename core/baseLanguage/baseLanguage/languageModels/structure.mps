@@ -2509,15 +2509,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201373970107">
-    <property name="package" value="property.implementation.default" />
-    <property name="name" value="OnlyGetter" />
-    <link role="extends" targetNodeId="1201373269664" resolveInfo="AccessorPolicy" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201373990998">
-      <property name="value" value="getter" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201385106094">
     <property name="package" value="property" />
     <property name="name" value="PropertyReference" />

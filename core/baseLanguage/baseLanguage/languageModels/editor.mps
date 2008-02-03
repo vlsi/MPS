@@ -13545,13 +13545,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1201373996796">
-    <property name="package" value="property.implementation.default" />
-    <link role="conceptDeclaration" targetNodeId="17.1201373970107" resolveInfo="OnlyGetter" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1201374970335">
-      <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1201385314864">
     <property name="package" value="property" />
     <link role="conceptDeclaration" targetNodeId="17.1201385106094" resolveInfo="PropertyReference" />
