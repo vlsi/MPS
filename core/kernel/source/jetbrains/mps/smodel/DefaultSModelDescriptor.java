@@ -277,6 +277,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     if (myIsTestRefactoringMode) {
       System.err.println(this + ": current version of used model " + modelDescriptor + " is " + currentVersion + ", used version is " + usedVersion);
     }
+
     if (currentVersion > usedVersion) {
       if (myIsTestRefactoringMode) {
         System.err.println("updating a model " + this);

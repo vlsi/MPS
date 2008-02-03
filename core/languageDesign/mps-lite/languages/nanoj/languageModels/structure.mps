@@ -4,7 +4,9 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
