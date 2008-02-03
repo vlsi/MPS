@@ -42,6 +42,9 @@
       <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation" id="1201454757439">
         <node role="accessorPolicy" type="jetbrains.mps.baseLanguage.structure.OnlyGetter" id="1201454757440" />
         <node role="defaultGetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultGetAccessor" id="1202077494454" />
+        <node role="defaultSetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultSetAccessor" id="1202078349028">
+          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1202078349029" />
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1198591047295">

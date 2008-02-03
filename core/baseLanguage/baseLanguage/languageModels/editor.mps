@@ -13537,9 +13537,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1201372784551">
         <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1201373692449">
-        <link role="relationDeclaration" targetNodeId="17.1201373662978" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202065379758">
         <link role="relationDeclaration" targetNodeId="17.1202065356069" />
       </node>

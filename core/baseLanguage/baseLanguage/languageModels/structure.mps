@@ -2484,12 +2484,6 @@
     <property name="package" value="property.implementation.default" />
     <property name="name" value="DefaultPropertyImplementation" />
     <link role="extends" targetNodeId="1201372346056" resolveInfo="PropertyImplementation" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201373662978">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="accessorPolicy" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1201373269664" resolveInfo="AccessorPolicy" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202065356069">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="defaultGetAccessor" />

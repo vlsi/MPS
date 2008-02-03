@@ -4,8 +4,12 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
+  </language>
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />

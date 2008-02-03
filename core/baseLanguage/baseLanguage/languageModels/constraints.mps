@@ -7535,21 +7535,9 @@
       <property name="name" value="hasSetter" />
       <link role="overridenMethod" targetNodeId="1202008483266" resolveInfo="hasSetter" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202008570385">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202008588746">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1202008636352">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202008636353">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202008636354">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1202008636355" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1202008636356">
-                  <link role="link" targetNodeId="1.1201373662978" />
-                </node>
-              </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1202008636357">
-                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1202008636358">
-                  <link role="conceptDeclaration" targetNodeId="1.1201373970107" resolveInfo="OnlyGetter" />
-                </node>
-              </node>
-            </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202078471192">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1202078471193">
+            <property name="value" value="true" />
           </node>
         </node>
       </node>
