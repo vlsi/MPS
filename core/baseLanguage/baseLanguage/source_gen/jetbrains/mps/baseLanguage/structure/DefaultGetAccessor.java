@@ -10,7 +10,6 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DefaultGetAccessor extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor";
-  public static String VISIBILITY = "visibility";
 
   public  DefaultGetAccessor(SNode node) {
     super(node);
@@ -22,15 +21,6 @@ public class DefaultGetAccessor extends BaseConcept {
 
   public static DefaultGetAccessor newInstance(SModel sm) {
     return DefaultGetAccessor.newInstance(sm, false);
-  }
-
-
-  public Visibility getVisibility() {
-    return (Visibility)this.getChild(DefaultGetAccessor.VISIBILITY);
-  }
-
-  public void setVisibility(Visibility node) {
-    super.setChild(DefaultGetAccessor.VISIBILITY, node);
   }
 
 }

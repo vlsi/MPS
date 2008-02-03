@@ -13630,9 +13630,6 @@
     <link role="conceptDeclaration" targetNodeId="17.1202065242027" resolveInfo="DefaultGetAccessor" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202065274342">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202065331693">
-        <link role="relationDeclaration" targetNodeId="17.1202065315097" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202065275985">
         <property name="text" value="get" />
       </node>
