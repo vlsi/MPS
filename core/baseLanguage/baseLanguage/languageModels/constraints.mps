@@ -7180,6 +7180,13 @@
     <property name="package" value="property.implementation" />
     <link role="concept" targetNodeId="1.1201372346056" resolveInfo="PropertyImplementation" />
     <link role="defaultConcreteConcept" targetNodeId="1.1201372606839" resolveInfo="DefaultPropertyImplementation" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1202008483266">
+      <property name="name" value="hasSetter" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1202008533207" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202008483268" />
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201372666944">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201372666945" />
     </node>
@@ -7448,6 +7455,62 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1201993599077">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201993599078" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1202008567255">
+    <property name="package" value="property.implementation.default" />
+    <link role="concept" targetNodeId="1.1201372606839" resolveInfo="DefaultPropertyImplementation" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1202008570383">
+      <property name="name" value="hasSetter" />
+      <link role="overridenMethod" targetNodeId="1202008483266" resolveInfo="hasSetter" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202008570385">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202008588746">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1202008636352">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202008636353">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202008636354">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1202008636355" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1202008636356">
+                  <link role="link" targetNodeId="1.1201373662978" />
+                </node>
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1202008636357">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1202008636358">
+                  <link role="conceptDeclaration" targetNodeId="1.1201373970107" resolveInfo="OnlyGetter" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1202008576120" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1202008567256">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202008567257" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1202008650359">
+    <property name="package" value="property.implementation.custom" />
+    <link role="concept" targetNodeId="1.1201398722958" resolveInfo="CustomPropertyImplementation" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1202008652628">
+      <property name="name" value="hasSetter" />
+      <link role="overridenMethod" targetNodeId="1202008483266" resolveInfo="hasSetter" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202008652630">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202008678897">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202008684419">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1202008685625" />
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202008680524">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1202008682699">
+                <link role="link" targetNodeId="1.1201476937466" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1202008678898" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1202008656412" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1202008650360">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202008650361" />
     </node>
   </node>
 </model>
