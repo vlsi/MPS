@@ -2496,6 +2496,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1202065242027" resolveInfo="DefaultGetAccessor" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202078082794">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="defaultSetAccessor" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1202077725299" resolveInfo="DefaultSetAccessor" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201372777394">
       <property name="value" value="default" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />

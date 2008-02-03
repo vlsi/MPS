@@ -13543,6 +13543,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202065379758">
         <link role="relationDeclaration" targetNodeId="17.1202065356069" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202078100030">
+        <link role="relationDeclaration" targetNodeId="17.1202078082794" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1201373996796">

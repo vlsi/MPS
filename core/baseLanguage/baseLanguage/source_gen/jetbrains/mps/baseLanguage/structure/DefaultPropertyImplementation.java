@@ -11,6 +11,7 @@ public class DefaultPropertyImplementation extends PropertyImplementation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation";
   public static String ACCESSOR_POLICY = "accessorPolicy";
   public static String DEFAULT_GET_ACCESSOR = "defaultGetAccessor";
+  public static String DEFAULT_SET_ACCESSOR = "defaultSetAccessor";
 
   public  DefaultPropertyImplementation(SNode node) {
     super(node);
@@ -39,6 +40,14 @@ public class DefaultPropertyImplementation extends PropertyImplementation {
 
   public void setDefaultGetAccessor(DefaultGetAccessor node) {
     super.setChild(DefaultPropertyImplementation.DEFAULT_GET_ACCESSOR, node);
+  }
+
+  public DefaultSetAccessor getDefaultSetAccessor() {
+    return (DefaultSetAccessor)this.getChild(DefaultPropertyImplementation.DEFAULT_SET_ACCESSOR);
+  }
+
+  public void setDefaultSetAccessor(DefaultSetAccessor node) {
+    super.setChild(DefaultPropertyImplementation.DEFAULT_SET_ACCESSOR, node);
   }
 
 }
