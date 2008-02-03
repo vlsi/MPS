@@ -13615,5 +13615,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202003995106">
+    <property name="package" value="property.implementation.custom.setter" />
+    <link role="conceptDeclaration" targetNodeId="17.1202003934320" resolveInfo="NewValueParameter" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1202004038437">
+      <link role="relationDeclaration" targetNodeId="18.1156235010670" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

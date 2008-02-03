@@ -2565,11 +2565,23 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201476912089">
-    <property name="package" value="property.implementation.custom" />
+    <property name="package" value="property.implementation.custom.setter" />
     <property name="name" value="PropertySetter" />
     <link role="extends" targetNodeId="1201402150952" resolveInfo="CustomMethod" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201476923122">
       <property name="value" value="setter" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202003934320">
+    <property name="package" value="property.implementation.custom.setter" />
+    <property name="name" value="NewValueParameter" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1202003972884">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1202003981386">
+      <property name="value" value="newValue" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
   </node>
