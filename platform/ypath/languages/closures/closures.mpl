@@ -39,10 +39,11 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\platform\ypath\classes" />
+    <entry path="${language_descriptor}\runtime\classes" />
   </classPath>
   <runtimeClassPath>
     <entry path="${mps_home}\platform\ypath\classes" />
+    <entry path="${language_descriptor}\runtime\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>

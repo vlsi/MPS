@@ -1633,7 +1633,17 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201439711542" />
-    <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1201439711543" />
+    <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1201439711543">
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1202152060838">
+        <property name="methodName" value="stub" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1202152060839" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202152060840">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202152065976">
+            <property name="value" value="this method exists only to calm down the JUnit complaining about lacking tests" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1201632597646">
     <property name="testCaseName" value="FunctionTypes" />
@@ -2741,6 +2751,28 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201784869842">
             <property name="value" value="fun4 = fun2.invoke()" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202158415198">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202158415893">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202158416939">
+                <link role="variableDeclaration" targetNodeId="1201780023572" resolveInfo="fun3" />
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202158415199">
+                <link role="variableDeclaration" targetNodeId="1201780042113" resolveInfo="fun4" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202158419567">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202158422248">
+              <node role="rValue" type="jetbrains.mps.closures.structure.InvokeFunctionExpression" id="1202158425143">
+                <node role="function" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202158423962">
+                  <link role="variableDeclaration" targetNodeId="1201778608206" resolveInfo="fun2" />
+                </node>
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202158419568">
+                <link role="variableDeclaration" targetNodeId="1201780042113" resolveInfo="fun4" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

@@ -2032,7 +2032,7 @@
     <property name="package" value="type" />
     <link role="extends" targetNodeId="1068431790189" resolveInfo="Type" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1171904025289">
-      <property name="value" value="? extends" />
+      <property name="value" value="? super" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1171903869531">
@@ -2047,7 +2047,7 @@
     <property name="package" value="type" />
     <link role="extends" targetNodeId="1068431790189" resolveInfo="Type" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1171904009708">
-      <property name="value" value="? super" />
+      <property name="value" value="? extends" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1171903916107">
