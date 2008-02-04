@@ -13,8 +13,8 @@ public class typeof_PropertyAntiquotation_InferenceRule implements InferenceRule
   public  typeof_PropertyAntiquotation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true), "jetbrains.mps.quotation.helgins", "1196866830959", true), new QuotationClass_4().createNode(), SLinkOperations.getTarget(argument, "expression", true), null, "jetbrains.mps.quotation.helgins", "1196866840326");
+  public void applyRule(final SNode nodeToCheck) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "expression", true), "jetbrains.mps.quotation.helgins", "1196866830959", true), new QuotationClass_4().createNode(), SLinkOperations.getTarget(nodeToCheck, "expression", true), null, "jetbrains.mps.quotation.helgins", "1196866840326");
   }
 
   public String getApplicableConceptFQName() {

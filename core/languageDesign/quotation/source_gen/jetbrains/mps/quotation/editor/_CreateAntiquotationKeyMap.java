@@ -16,7 +16,7 @@ import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.bootstrap.helgins.structure.ListAntiquotation;
+import jetbrains.mps.quotation.structure.ListAntiquotation;
 import jetbrains.mps.nodeEditor.EditorCell_Component;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;

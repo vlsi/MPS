@@ -292,7 +292,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1196351886675(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList();
+    List<SNode> result = new ArrayList<SNode>();
     if(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true) != null) {
       result.add(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true));
     }

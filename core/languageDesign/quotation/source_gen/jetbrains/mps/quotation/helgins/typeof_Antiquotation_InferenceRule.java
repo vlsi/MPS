@@ -13,8 +13,8 @@ public class typeof_Antiquotation_InferenceRule implements InferenceRule_Runtime
   public  typeof_Antiquotation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true), "jetbrains.mps.quotation.helgins", "1196864206417", true), new QuotationClass_1().createNode(), SLinkOperations.getTarget(argument, "expression", true), null, "jetbrains.mps.quotation.helgins", "1196863846268");
+  public void applyRule(final SNode nodeToCheck) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "expression", true), "jetbrains.mps.quotation.helgins", "1196864206417", true), new QuotationClass_1().createNode(), SLinkOperations.getTarget(nodeToCheck, "expression", true), null, "jetbrains.mps.quotation.helgins", "1196863846268");
   }
 
   public String getApplicableConceptFQName() {

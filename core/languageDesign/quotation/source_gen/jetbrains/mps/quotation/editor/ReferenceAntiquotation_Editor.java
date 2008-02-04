@@ -239,10 +239,10 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
   public EditorCell createCellModel_ModelAccess(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1196350915692(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     ReferenceAntiquotation_Editor.setupBasic_CellModel_ModelAccess(editorCell, node, context);
     ReferenceAntiquotation_Editor.setupLabel_CellModel_ModelAccess(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }
 
@@ -266,10 +266,10 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
   public EditorCell createCellModel_ModelAccess1(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1196350915709(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     ReferenceAntiquotation_Editor.setupBasic_CellModel_ModelAccess1(editorCell, node, context);
     ReferenceAntiquotation_Editor.setupLabel_CellModel_ModelAccess1(editorCell, node, context);
     editorCell.setDefaultText("<no concept>");
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }
 
