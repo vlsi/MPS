@@ -2239,11 +2239,5 @@
       <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202129137138">
-    <link role="conceptDeclaration" targetNodeId="1.1202129131449" resolveInfo="Foo" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202129142093">
-      <property name="text" value="foo" />
-    </node>
-  </node>
 </model>
 

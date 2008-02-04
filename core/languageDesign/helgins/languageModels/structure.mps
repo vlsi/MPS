@@ -814,9 +814,5 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202129131449">
-    <property name="name" value="Foo" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-  </node>
 </model>
 
