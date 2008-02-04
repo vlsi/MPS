@@ -15,6 +15,9 @@
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="true">jetbrains.mps.baseLanguage.ext.csharp</dependency>
       </dependencies>
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+      </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>

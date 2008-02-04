@@ -43,6 +43,9 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+  </usedLanguages>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>

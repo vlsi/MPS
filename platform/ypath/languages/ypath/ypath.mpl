@@ -22,6 +22,11 @@
         <dependency reexport="true">jetbrains.mps.closures</dependency>
         <dependency reexport="true">ypath#1168438160182</dependency>
       </dependencies>
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+        <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+        <usedLanguages>jetbrains.mps.closures</usedLanguages>
+      </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
