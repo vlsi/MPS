@@ -17,10 +17,10 @@ public class ClosuresBase_Test extends TestCase {
   }
 
   public void assertResultsEqual(_void_from_T<? super List<Integer>> expected, _R<? extends Iterable<Integer>> test) {
-    List expectedList = new ArrayList();
+    List<Integer> expectedList = new ArrayList<Integer>();
     expected.invoke(expectedList);
-    List testList = new ArrayList();
-    for(Object o : test.invoke()) {
+    List<Integer> testList = new ArrayList<Integer>();
+    for(Integer o : test.invoke()) {
       testList.add(o);
     }
     Assert.assertEquals(expectedList, testList);
