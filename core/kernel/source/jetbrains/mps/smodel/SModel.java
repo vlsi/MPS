@@ -993,9 +993,7 @@ public class SModel implements Iterable<SNode> {
     ImportElement importElement = getImportElement(sModelUID);
     if (importElement != null) {
       importElement.myUsedVersion = currentVersion;
-    } else {      
-      //todo Cyril is it ok to ignore it?
-    }
+    } 
 
     importElement = getLanguageAspectModelElement(sModelUID);
     if (importElement != null) {
