@@ -26,7 +26,7 @@ public class Property_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_Component_Visibility9;
 
   public static boolean _QueryFunction_NodeCondition_1201399895142(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation");
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"));
   }
 
   private static void setupBasic__Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {

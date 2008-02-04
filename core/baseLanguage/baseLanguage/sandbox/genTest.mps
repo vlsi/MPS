@@ -39,11 +39,10 @@
       <property name="propertyName" value="k4" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201454757437" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1201454759566" />
-      <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation" id="1201454757439">
-        <node role="accessorPolicy" type="jetbrains.mps.baseLanguage.structure.OnlyGetter" id="1201454757440" />
-        <node role="defaultGetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultGetAccessor" id="1202077494454" />
-        <node role="defaultSetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultSetAccessor" id="1202078349028">
-          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1202078349029" />
+      <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation" id="1202095255659">
+        <node role="defaultGetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultGetAccessor" id="1202095255660" />
+        <node role="defaultSetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultSetAccessor" id="1202095255661">
+          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1202095255662" />
         </node>
       </node>
     </node>

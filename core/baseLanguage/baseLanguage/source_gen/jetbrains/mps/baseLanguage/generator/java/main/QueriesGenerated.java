@@ -95,7 +95,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1202008874192(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "visibility", true);
+    return Property_Behavior.call_getSetterVisibility_1202090653454(_context.getNode());
   }
 
   public static List sourceNodesQuery_1201570443454(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -13457,17 +13457,19 @@
       <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1201399895142">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201399895143">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201399936111">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201399950867">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1201399981951">
-                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1201399989906">
-                  <link role="conceptDeclaration" targetNodeId="17.1201372606839" resolveInfo="DefaultPropertyImplementation" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1202095353505">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202095353506">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202095353507">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1202095353508" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1202095353509">
+                    <link role="link" targetNodeId="17.1201372378714" />
+                  </node>
                 </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201399939754">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1201399946429">
-                  <link role="link" targetNodeId="17.1201372378714" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1202095353510">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1202095353511">
+                    <link role="conceptDeclaration" targetNodeId="17.1201398722958" resolveInfo="CustomPropertyImplementation" />
+                  </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1201399936112" />
               </node>
             </node>
           </node>
