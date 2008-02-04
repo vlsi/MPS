@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
-import jetbrains.mps.helgins.uiActions.ConvertQuotationsAction;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -69,45 +68,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     updateLastChange();
 
     checkModelDuplication();
-    addPostLoadRunnable(new IPostLoadRunnable() {
-      public void doPostLoadStuff(final SModelDescriptor descriptor) {
-        if (descriptor.getSModel().hasLanguage("jetbrains.mps.bootstrap.helgins")) {
-          boolean needsRefactoring = false;
-          for (SNode node : descriptor.getSModel().allNodes()) {
-            String conceptFqName = node.getConceptFqName();
-            if (conceptFqName.equals("jetbrains.mps.bootstrap.helgins.structure.Quotation")
-                    || conceptFqName.equals("jetbrains.mps.bootstrap.helgins.structure.Antiquotation")
-                    || conceptFqName.equals("jetbrains.mps.bootstrap.helgins.structure.ListAntiquotation")
-                    || conceptFqName.equals("jetbrains.mps.bootstrap.helgins.structure.ReferenceAntiquotation")) {
-              needsRefactoring = true;
-              break;
-            }
-          }
-          final IOperationContext operationContext = findOperationContext();
-          if (operationContext == null) {
-            //  LOG.warning("no op.context found for conversion");
-            return;
-          }
-          if (needsRefactoring && !IdeMain.isTestMode()) {
-            Runnable command = new Runnable() {
-              public void run() {
-                ConvertQuotationsAction.doConvertQuotations(descriptor, operationContext);
-              }
-            };
-
-            if (CommandProcessor.instance().isInsideUndoableCommand()) {
-              command.run();
-            } else {
-              if (CommandProcessor.instance().isInsideCommand()) {
-                //       LOG.error("error: can't execute undoable command inside a lightweight command");
-              } else {
-                CommandProcessor.instance().executeCommand(command);
-              }
-            }
-          }
-        }
-      }
-    });
   }
 
   private void updateLastChange() {
