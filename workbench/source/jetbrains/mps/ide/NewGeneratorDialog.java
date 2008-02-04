@@ -2,6 +2,8 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ui.SmartFileChooser;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.UseTreeFileChooser;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
@@ -21,7 +23,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class NewGeneratorDialog extends BaseDialog {
-  private static final Logger LOG = Logger.getLogger(NewGeneratorDialog.class);
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 400, 500);
 
   private JPanel myContenetPane = new JPanel();
@@ -88,13 +89,25 @@ public class NewGeneratorDialog extends BaseDialog {
     JButton chooseButton = new JButton(new AbstractAction("...") {
       public void actionPerformed(ActionEvent e) {
         String oldPath = myTemplateModelsDir.getText();
-        SmartFileChooser chooser = new SmartFileChooser();
-        if (oldPath != null && oldPath.length() != 0) {
-          chooser.setSelectedFile(new File(oldPath));
-        }
-        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-          myTemplateModelsDir.setText(chooser.getSelectedFile().getAbsolutePath());
+
+        if (UseTreeFileChooser.get()) {
+          String initialFile = "";
+          if (oldPath != null && oldPath.length() != 0) {
+            initialFile = oldPath;
+          }
+          TreeFileChooser chooser = new TreeFileChooser(TreeFileChooser.MODE_DIRECTORIES, TreeFileChooser.ALL_FILES_FILTER, initialFile, null);
+          if (chooser.getResult() != null) {
+            myTemplateModelsDir.setText(chooser.getResult().getAbsolutePath());
+          }
+        } else {
+          SmartFileChooser chooser = new SmartFileChooser();
+          if (oldPath != null && oldPath.length() != 0) {
+            chooser.setSelectedFile(new File(oldPath));
+          }
+          chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+          if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            myTemplateModelsDir.setText(chooser.getSelectedFile().getAbsolutePath());
+          }
         }
       }
     });

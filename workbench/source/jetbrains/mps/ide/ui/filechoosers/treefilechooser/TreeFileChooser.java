@@ -8,6 +8,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,8 +32,8 @@ public class TreeFileChooser extends JDialog {
   public static final int MODE_DIRECTORIES = 2;
   public static final int MODE_FILES_AND_DIRECTORIES = 3;
 
-  public static final IFileNameFilter ALL_FILES_FILTER = new IFileNameFilter() {
-    public boolean accept(IFile parent, String name) {
+  public static final IFileFilter ALL_FILES_FILTER = new IFileFilter() {
+    public boolean accept(IFile file) {
       return true;
     }
   };
@@ -42,7 +43,7 @@ public class TreeFileChooser extends JDialog {
   /////////////////////////////
 
   private int myMode;
-  private IFileNameFilter myFileFilter;
+  private IFileFilter myFileFilter;
 
   private boolean myIsCancelled = false;
 
@@ -51,25 +52,28 @@ public class TreeFileChooser extends JDialog {
 
   /////////////////////////////
 
+  //TODO: if mode is "dirs only", set additional file filter
+  //TODO:parent
+
   /*
    * If initialFile points to file that does not exists, selection is void
    */
 
-  public TreeFileChooser(@NotNull String initialFile, int mode, IFileNameFilter filter) {
-    this(new FileSystemFile(initialFile), mode, filter);
+  public TreeFileChooser(int mode, IFileFilter filter, @NotNull String initialFile, @Nullable IOperationContext context) {
+    this(mode, filter, new FileSystemFile(initialFile), context);
   }
 
-  public TreeFileChooser(@Nullable IFile initialFile, int mode, IFileNameFilter filter) {
+  public TreeFileChooser(int mode, IFileFilter filter, @Nullable IFile initialFile, @Nullable IOperationContext context) {
     myMode = mode;
     myFileFilter = filter;
 
     constructTree();
-    constructUI();
+    constructUI(context);
 
     setSelectedFile(initialFile);
   }
 
-  private void constructUI() {
+  private void constructUI(@Nullable final IOperationContext context) {
     JScrollPane treePane = new JScrollPane(myTree);
 
     JButton selectButton = new JButton(
@@ -96,10 +100,25 @@ public class TreeFileChooser extends JDialog {
     buttonsPanel.add(selectButton);
     buttonsPanel.add(cancelButton);
 
+    JPanel toolsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
+    if (context != null) {
+      if (context.getModule() != null) {
+        JButton moduleHomeButton = new JButton(new AbstractAction("MH") {
+          public void actionPerformed(ActionEvent e) {
+            assert context != null;
+            setSelectedFile(context.getModule().getDescriptorFile());
+          }
+        });
+        toolsPanel.add(moduleHomeButton);
+      }
+    }
+
     JPanel mainPanel = new JPanel(new BorderLayout());
     mainPanel.setBorder(new EmptyBorder(7, 7, 7, 7));
     mainPanel.add(treePane, BorderLayout.CENTER);
     mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
+    mainPanel.add(toolsPanel, BorderLayout.NORTH);
 
     add(mainPanel);
 
@@ -112,6 +131,8 @@ public class TreeFileChooser extends JDialog {
     setSize(SIZE);
     setResizable(false);
 
+    setModal(true);
+
     setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
   }
 
@@ -122,7 +143,11 @@ public class TreeFileChooser extends JDialog {
 
         File[] rootFiles = File.listRoots();
         for (File rootFile : rootFiles) {
-          root.add(new FileTreeNode(new FileSystemFile(rootFile)));
+          root.add(new FileTreeNode(new FileSystemFile(rootFile)) {
+            protected IFileFilter getFileFilter() {
+              return myFileFilter;
+            }
+          });
         }
 
         return root;

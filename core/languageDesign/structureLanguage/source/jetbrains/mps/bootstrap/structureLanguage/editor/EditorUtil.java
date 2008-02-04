@@ -10,6 +10,10 @@ import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.command.CommandRunnable;
 import jetbrains.mps.ide.ui.SmartFileChooser;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.UseTreeFileChooser;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystemFile;
 
 import javax.swing.*;
 import java.io.File;
@@ -18,7 +22,7 @@ import java.awt.Component;
 
 
 public class EditorUtil {
-  public static JComponent createSelectIconButton(SNode sourceNode, EditorContext context) {
+  public static JComponent createSelectIconButton(SNode sourceNode, final EditorContext context) {
     final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) BaseAdapter.fromNode(sourceNode);
     final String path = conceptDeclaration.getIconPath();
     final Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, context.getScope());
@@ -27,24 +31,44 @@ public class EditorUtil {
     final JButton button = new JButton();
     button.setAction(new AbstractAction("...") {
       public void actionPerformed(ActionEvent e) {
-        final JFileChooser chooser = new SmartFileChooser();
-        if (baseFile != null && baseFile.exists()) {
-          chooser.setSelectedFile(baseFile);
-        }
-
-        Component root = SwingUtilities.getRoot(button);
-        JFrame frame = root instanceof JFrame ? (JFrame) root : null;
-        if (chooser.showDialog(frame, "Select") != JFileChooser.APPROVE_OPTION) return;
-        String selectedPath = FileUtil.getCanonicalPath(chooser.getSelectedFile());
-        final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
-
-        new CommandRunnable() {
-          protected Object onRun() {
-            conceptDeclaration.setIconPath(pathToShow);
-            return null;
+        if (UseTreeFileChooser.get()) {
+          IFile initialFile = null;
+          if (baseFile != null && baseFile.exists()) {
+            initialFile = new FileSystemFile(baseFile);
           }
-        }.run();
 
+          TreeFileChooser chooser = new TreeFileChooser(TreeFileChooser.MODE_FILES, TreeFileChooser.ALL_FILES_FILTER, initialFile, context.getOperationContext());
+
+          Component root = SwingUtilities.getRoot(button);
+          if (chooser.getResult() == null) return;
+          String selectedPath = FileUtil.getCanonicalPath(chooser.getResult().toFile());
+          final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
+
+          new CommandRunnable() {
+            protected Object onRun() {
+              conceptDeclaration.setIconPath(pathToShow);
+              return null;
+            }
+          }.run();
+        } else {
+          final JFileChooser chooser = new SmartFileChooser();
+          if (baseFile != null && baseFile.exists()) {
+            chooser.setSelectedFile(baseFile);
+          }
+
+          Component root = SwingUtilities.getRoot(button);
+          JFrame frame = root instanceof JFrame ? (JFrame) root : null;
+          if (chooser.showDialog(frame, "Select") != JFileChooser.APPROVE_OPTION) return;
+          String selectedPath = FileUtil.getCanonicalPath(chooser.getSelectedFile());
+          final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
+
+          new CommandRunnable() {
+            protected Object onRun() {
+              conceptDeclaration.setIconPath(pathToShow);
+              return null;
+            }
+          }.run();
+        }
       }
     });
     return button;

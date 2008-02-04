@@ -1,17 +1,16 @@
 package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileNameFilter;
 
-import javax.swing.filechooser.FileSystemView;
 import javax.swing.Icon;
-import java.util.List;
+import javax.swing.filechooser.FileSystemView;
 import java.util.Collections;
 import java.util.Comparator;
-import java.io.FilenameFilter;
+import java.util.List;
 
-public class FileTreeNode extends MPSTreeNode {
+public abstract class FileTreeNode extends MPSTreeNode {
   private boolean myInitialized;
 
   public FileTreeNode(IFile file) {
@@ -54,7 +53,11 @@ public class FileTreeNode extends MPSTreeNode {
 
   protected void doInit() {
     if (getAssociatedFile().isDirectory()) {
-      List<IFile> sortedFiles = getAssociatedFile().list();
+      List<IFile> sortedFiles = getAssociatedFile().list(new IFileNameFilter() {
+        public boolean accept(IFile parent, String name) {
+          return getFileFilter().accept(parent.child(name));
+        }
+      });
       Collections.sort(sortedFiles, new Comparator<IFile>() {
         public int compare(IFile f1, IFile f2) {
           if (f1.isDirectory() && !f2.isDirectory()) {
@@ -68,9 +71,15 @@ public class FileTreeNode extends MPSTreeNode {
       });
 
       for (IFile file : sortedFiles) {
-        add(new FileTreeNode(file));
+        add(new FileTreeNode(file) {
+          protected IFileFilter getFileFilter() {
+            return FileTreeNode.this.getFileFilter();
+          }
+        });
       }
     }
     myInitialized = true;
   }
+
+  protected abstract IFileFilter getFileFilter();
 }
