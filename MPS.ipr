@@ -916,9 +916,7 @@
       <module fileurl="file://$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" filepath="$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" group="app/charisma" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" group="core/baseLanguage/collections" />
-      <module fileurl="file://$PROJECT_DIR$/core/configuration/configuration.iml" filepath="$PROJECT_DIR$/core/configuration/configuration.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" filepath="$PROJECT_DIR$/core/configuration/language/configurationLanguage.iml" group="core/kernel" />
-      <module fileurl="file://$PROJECT_DIR$/core/configurations/configurations.iml" filepath="$PROJECT_DIR$/core/configurations/configurations.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" group="core/baseLanguage/csharp" />

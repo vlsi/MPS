@@ -37,7 +37,6 @@
     <orderEntry type="library" name="Alloy" level="project" />
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
-    <orderEntry type="module" module-name="configuration" exported="" />
     <orderEntry type="module" module-name="actionsLanguage" exported="" />
     <orderEntry type="module" module-name="cfaLanguage" exported="" />
     <orderEntry type="module" module-name="constraintsLanguage" exported="" />
@@ -60,7 +59,6 @@
     <orderEntry type="module" module-name="annotations" exported="" />
     <orderEntry type="module" module-name="projectLanguage" exported="" />
     <orderEntry type="module" module-name="monitorLanguage" exported="" />
-    <orderEntry type="module" module-name="configurations" exported="" />
     <orderEntry type="module" module-name="workbench" exported="" />
     <orderEntry type="module" module-name="kernel" exported="" />
     <orderEntryProperties />
