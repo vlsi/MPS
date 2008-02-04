@@ -1,25 +1,24 @@
 package jetbrains.mps.ide.ui;
 
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-import java.awt.event.KeyEvent;
 import java.awt.Color;
-import java.awt.Rectangle;
 import java.awt.Font;
+import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Comparator;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Kostik
@@ -172,9 +171,19 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     if (condition.met((T) getUserObject())) return this;
     if (isInitialized()) {
       for (int i = 0; i < getChildCount(); i++) {
-        MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findDescendantWith(userObject);
+        MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findDescendantWith(condition);
         if (result != null) return result;
       }
+    }
+    return null;
+  }
+
+  @Nullable
+  public final <T> MPSTreeNode findStraightAncestorWith(Condition<T> condition) {
+    if (!isInitialized()) init();
+    for (int i = 0; i < getChildCount(); i++) {
+      MPSTreeNode child = (MPSTreeNode) getChildAt(i);
+      if (condition.met((T) child.getUserObject())) return child;
     }
     return null;
   }

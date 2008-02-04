@@ -1,26 +1,37 @@
 package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileNameFilter;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import javax.swing.tree.TreeCellRenderer;
-import javax.swing.tree.DefaultTreeCellRenderer;
+import javax.swing.tree.TreePath;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class TreeFileChooser extends JDialog {
   public static final int MODE_FILES = 1;
   public static final int MODE_DIRECTORIES = 2;
   public static final int MODE_FILES_AND_DIRECTORIES = 3;
+
+  public static final IFileNameFilter ALL_FILES_FILTER = new IFileNameFilter() {
+    public boolean accept(IFile parent, String name) {
+      return true;
+    }
+  };
 
   public static final Dimension SIZE = new Dimension(300, 400);
 
@@ -28,42 +39,49 @@ public class TreeFileChooser extends JDialog {
 
   private int myMode;
   private IFile mySelectedFile;
+  private IFileNameFilter myFileFilter;
 
   private boolean myIsCancelled = false;
 
+  private MPSTree myTree;
+  private JButton mySelectButton;
+
   /////////////////////////////
 
-  public TreeFileChooser(int mode, String initialFile) {
-    this(mode, new FileSystemFile(initialFile));
+  public TreeFileChooser(String initialFile, int mode, IFileNameFilter filter) {
+    this(new FileSystemFile(initialFile), mode, filter);
   }
 
-  public TreeFileChooser(int mode, IFile initialFile) {
+  public TreeFileChooser(IFile initialFile, int mode, IFileNameFilter filter) {
+    mySelectedFile = initialFile;
     myMode = mode;
+    myFileFilter = filter;
 
+    constructTree();
     constructUI();
 
-    setSelectedFile(initialFile);
+    setSelectedFile(mySelectedFile);
   }
 
   private void constructUI() {
-    MPSTree tree = constructTree();
-    tree.setBorder(new EmptyBorder(3, 5, 3, 5));
-
-    JScrollPane treePane = new JScrollPane(tree);
+    JScrollPane treePane = new JScrollPane(myTree);
 
     JButton selectButton = new JButton(
       new AbstractAction("Select") {
         public void actionPerformed(ActionEvent e) {
           setVisible(false);
+          dispose();
         }
       }
     );
+    mySelectButton = selectButton;
 
     JButton cancelButton = new JButton(
       new AbstractAction("Cancel") {
         public void actionPerformed(ActionEvent e) {
           myIsCancelled = true;
           setVisible(false);
+          dispose();
         }
       }
     );
@@ -91,16 +109,10 @@ public class TreeFileChooser extends JDialog {
     setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
   }
 
-  private MPSTree constructTree() {
-    MPSTree tree = new MPSTree() {
+  private void constructTree() {
+    myTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
-        setRootVisible(false);
-
-        //putClientProperty("JTree.lineStyle", "None");
-
-        setShowsRootHandles(true);
-
-        MPSTreeNode root = new TextMPSTreeNode("", null);
+        TextMPSTreeNode root = new TextMPSTreeNode("", null);
 
         File[] rootFiles = File.listRoots();
         for (File rootFile : rootFiles) {
@@ -110,23 +122,78 @@ public class TreeFileChooser extends JDialog {
         return root;
       }
     };
-    tree.rebuildLater();
-    return tree;
+
+    //myTree.putClientProperty("JTree.lineStyle", "None");
+
+    myTree.setRootVisible(false);
+    myTree.setShowsRootHandles(true);
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        myTree.rebuildNow();
+      }
+    });
+    myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
+
+    setInitialExpansion();
   }
 
   /////////////////////////////
 
+  private void setInitialExpansion() {
+    myTree.collapseAll();
+    myTree.expandRoot();
+  }
+
   /**
-   * Sets selected file and expands tree so that the corresponding node is accessible
+   * Sets selected file and expands myTree so that the corresponding node is accessible
    *
-   * @param file
+   * @param file - if null, collapses all except roots and clears selection
    */
-  private void setSelectedFile(IFile file) {
+  private void setSelectedFile(@Nullable final IFile file) {
     mySelectedFile = file;
 
+    if (file == null) {
+      myTree.clearSelection();
+      setInitialExpansion();
+      return;
+    }
+
+    //get path to this file
+    List<IFile> pathToSelectedFile = new ArrayList<IFile>();
+    IFile tmpFile = file;
+    while (tmpFile != null) {
+      pathToSelectedFile.add(tmpFile);
+      tmpFile = tmpFile.getParent();
+    }
+    Collections.reverse(pathToSelectedFile);
+
+    //find node and expand all the path leading to this node
+    MPSTreeNode fileNode = myTree.getRootNode();
+    for (final IFile pathFile : pathToSelectedFile) {
+      fileNode = fileNode.findStraightAncestorWith(new Condition<IFile>() {
+        public boolean met(IFile visitedFile) {
+          //TODO: this code can fail on register dependant/independatn file naming systems
+          return visitedFile.getName().equalsIgnoreCase(pathFile.getName());
+        }
+      });
+
+      assert fileNode != null;
+    }
+
     //expand
+    myTree.expandPath(new TreePath(fileNode.getPath()));
+
+    //select
+    myTree.selectNode(fileNode);
 
     //update buttons status
+    mySelectButton.setEnabled(canSelectFile(file));
+  }
+
+  private boolean canSelectFile(IFile file) {
+    if (file.isFile() && (myMode == MODE_DIRECTORIES)) return false;
+    if (file.isDirectory() && (myMode == MODE_FILES)) return false;
+    return true;
   }
 
   public IFile getSelectedFile() {
@@ -135,7 +202,6 @@ public class TreeFileChooser extends JDialog {
 
   @Nullable
   public IFile getResult() {
-    return myIsCancelled ? null : mySelectedFile;
+    return myIsCancelled ? null : getSelectedFile();
   }
-
 }

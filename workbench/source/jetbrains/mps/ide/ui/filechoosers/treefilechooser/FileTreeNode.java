@@ -9,9 +9,9 @@ import javax.swing.Icon;
 import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
+import java.io.FilenameFilter;
 
 public class FileTreeNode extends MPSTreeNode {
-
   private boolean myInitialized;
 
   public FileTreeNode(IFile file) {
