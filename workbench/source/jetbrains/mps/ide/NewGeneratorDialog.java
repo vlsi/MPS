@@ -56,9 +56,7 @@ public class NewGeneratorDialog extends BaseDialog {
 
   private void initContentPane() {
     JPanel internalPanel = new JPanel(new GridLayout(0, 1));
-    internalPanel.setBackground(Color.WHITE);
     internalPanel.setBorder(BorderFactory.createEmptyBorder(0, 4, 10, 4));
-    myContenetPane.setBackground(Color.WHITE);
     myContenetPane.setLayout(new BorderLayout());
     myContenetPane.add(internalPanel, BorderLayout.NORTH);
 
