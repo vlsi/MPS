@@ -11147,6 +11147,33 @@
                         </node>
                       </node>
                     </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1201882123576">
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201882123577">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201882140330">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201882144590">
+                            <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                            <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201882140331">
+                              <link role="variableDeclaration" targetNodeId="1196975453813" resolveInfo="result" />
+                            </node>
+                            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201882148057">
+                              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1201882150391">
+                                <link role="conceptProperty" targetNodeId="17.1201882037552" resolveInfo="conceptFunctionName" />
+                              </node>
+                              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1201882146756" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1201882134002">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1201882136026" />
+                        <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1201882128723">
+                          <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1201882132260">
+                            <link role="conceptProperty" targetNodeId="17.1201882037552" resolveInfo="conceptFunctionName" />
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1201882126205" />
+                        </node>
+                      </node>
+                    </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196975453816">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1196975453817">
                         <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />

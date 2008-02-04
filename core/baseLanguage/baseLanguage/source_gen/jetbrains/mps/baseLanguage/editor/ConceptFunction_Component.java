@@ -16,10 +16,10 @@ import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
 import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -179,6 +179,9 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
       public String getText() {
         StringBuilder result = new StringBuilder();
+        if(SConceptPropertyOperations.getString(node, "conceptFunctionName") != null) {
+          result.append(SConceptPropertyOperations.getString(node, "conceptFunctionName"));
+        }
         result.append("(");
         List<SNode> parameters = SLinkOperations.getConceptLinkTargets(node, "applicableConceptFunctionParameter");
         ListOperations.addAllElements(parameters, SLinkOperations.getConceptLinkTargets(node, "conceptFunctionParameter"));

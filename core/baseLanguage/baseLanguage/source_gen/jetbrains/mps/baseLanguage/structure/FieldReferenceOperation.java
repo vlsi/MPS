@@ -10,10 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FieldReferenceOperation extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation";
+  public static String FIELD_DECLARATION = "fieldDeclaration";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String FIELD_DECLARATION = "fieldDeclaration";
 
   public  FieldReferenceOperation(SNode node) {
     super(node);
@@ -27,6 +27,14 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
     return FieldReferenceOperation.newInstance(sm, false);
   }
 
+
+  public FieldDeclaration getFieldDeclaration() {
+    return (FieldDeclaration)this.getReferent(FieldReferenceOperation.FIELD_DECLARATION);
+  }
+
+  public void setFieldDeclaration(FieldDeclaration node) {
+    super.setReferent(FieldReferenceOperation.FIELD_DECLARATION, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(FieldReferenceOperation.SHORT_DESCRIPTION);
@@ -50,14 +58,6 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
 
   public void setVirtualPackage(String value) {
     this.setProperty(FieldReferenceOperation.VIRTUAL_PACKAGE, value);
-  }
-
-  public FieldDeclaration getFieldDeclaration() {
-    return (FieldDeclaration)this.getReferent(FieldReferenceOperation.FIELD_DECLARATION);
-  }
-
-  public void setFieldDeclaration(FieldDeclaration node) {
-    super.setReferent(FieldReferenceOperation.FIELD_DECLARATION, node);
   }
 
 }
