@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.baseLanguage.resolve.test">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.comments" />
   <maxImportIndex value="234" />
   <import index="1" modelUID="jetbrains.mps.resolve@java_stub" version="-1" />
