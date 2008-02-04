@@ -759,12 +759,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       return nodes;
     }
 
-    private String getFullPackage() {      
-      if (getParent() instanceof SModelTreeNode) {
-        return getPackage();
-      }
-
-      return ((PackageNode) getParent()).getFullPackage() + "." + getPackage();
+    private String getFullPackage() {
+      return getPackage();
     }
 
     private String getPackage() {
