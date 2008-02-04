@@ -20,6 +20,7 @@ import jetbrains.mps.refactoring.NewRefactoringView;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.util.Calculable;
 
 import java.util.Map;
 import java.util.List;
@@ -109,7 +110,11 @@ public class GenericRefactoring {
       }
     }
 
-    Map<IModule, List<SModel>> sourceModels = myRefactoring.getModelsToGenerate(context, refactoringContext);
+    Map<IModule, List<SModel>> sourceModels = CommandProcessor.instance().executeLightweightCommand(new Calculable<Map<IModule, List<SModel>>>() {
+      public Map<IModule, List<SModel>> calculate() {
+        return myRefactoring.getModelsToGenerate(context, refactoringContext);
+      }
+    });
     if (!sourceModels.isEmpty()) {
       generateModels(context, sourceModels);
     }
