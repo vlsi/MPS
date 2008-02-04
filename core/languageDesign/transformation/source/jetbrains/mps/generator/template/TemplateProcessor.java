@@ -151,14 +151,7 @@ public class TemplateProcessor {
   private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, SNode inputNode, int nodeMacrosToSkip, boolean registerTopOutput) throws DismissTopMappingRuleException {
     GenerationTracer generationTracer = myGenerator.getGeneratorSessionContext().getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
-
-    String mappingName_ = null;
-    if (nodeMacro.getMappingId() != null) {
-      mappingName_ = nodeMacro.getMappingId();
-    }
-    if (nodeMacro.getMappingLabel() != null) {
-      mappingName_ = nodeMacro.getMappingLabel().getName();
-    }
+    String mappingName = GeneratorUtil.getMappingName(nodeMacro, null);
 
     if (nodeMacro instanceof LoopMacro) {
       // $LOOP$
@@ -168,9 +161,9 @@ public class TemplateProcessor {
         try {
           boolean inputChanged = (newInputNode != inputNode);
           if (inputChanged) {
-            pushInputHistory(inputNode, mappingName_);
+            pushInputHistory(inputNode, mappingName);
           }
-          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
           if (inputChanged) {
             popInputHistory();
@@ -187,7 +180,7 @@ public class TemplateProcessor {
       // $COPY-SRC$ / $COPY-SRCL$
       List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
       for (SNode newInputNode : newInputNodes) {
-        List<SNode> _outputNodes = copyNodeFromInputNode(mappingName_, templateNode, newInputNode);
+        List<SNode> _outputNodes = copyNodeFromInputNode(mappingName, templateNode, newInputNode);
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
       }
       return outputNodes;
@@ -196,7 +189,7 @@ public class TemplateProcessor {
       // $IF$
       List<SNode> _outputNodes = null;
       if (MacroUtil.checkConditionForIfMacro(inputNode, (IfMacro) nodeMacro, myGenerator)) {
-        _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, inputNode, nodeMacrosToSkip + 1, false);
+        _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, nodeMacrosToSkip + 1, false);
       } else {
         // alternative consequence
         RuleConsequence altConsequence = ((IfMacro) nodeMacro).getAlternativeConsequence();
@@ -208,9 +201,9 @@ public class TemplateProcessor {
           }
           SNode altTemplateNode = nodeAndMappingName.o1;
           if (nodeAndMappingName.o2 != null) {
-            mappingName_ = nodeAndMappingName.o2;
+            mappingName = nodeAndMappingName.o2;
           }
-          _outputNodes = createOutputNodesForExternalTemplateNode(mappingName_, altTemplateNode, inputNode, false);
+          _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode, false);
         }
       }
       if (_outputNodes != null) outputNodes.addAll(_outputNodes);
@@ -244,9 +237,9 @@ public class TemplateProcessor {
           } else {
             boolean inputChanged = (newInputNode != inputNode);
             if (inputChanged) {
-              pushInputHistory(inputNode, mappingName_);
+              pushInputHistory(inputNode, mappingName);
             }
-            List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+            List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
             if (_outputNodes != null) outputNodes.addAll(_outputNodes);
             if (inputChanged) {
               popInputHistory();
@@ -283,7 +276,7 @@ public class TemplateProcessor {
           }
           templateNodeForCase = nodeAndMappingName.o1;
           if (nodeAndMappingName.o2 != null) {
-            mappingName_ = nodeAndMappingName.o2;
+            mappingName = nodeAndMappingName.o2;
           }
         } else {
           // for back compatibility
@@ -292,27 +285,22 @@ public class TemplateProcessor {
           if (templateForSwitchCase != null) {
             TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(templateForSwitchCase, newInputNode, nodeMacro.getNode(), myGenerator);
             if (fragment != null) {
+              mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
               templateNodeForCase = fragment.getParent().getNode();
-              if (fragment.getName() != null) {
-                mappingName_ = fragment.getName();
-              }
-              if (fragment.getLabelDeclaration() != null) {
-                mappingName_ = fragment.getLabelDeclaration().getName();
-              }
             }
           }
         }
 
         boolean inputChanged = (newInputNode != inputNode);
         if (inputChanged) {
-          pushInputHistory(inputNode, mappingName_);
+          pushInputHistory(inputNode, mappingName);
         }
         List<SNode> _outputNodes;
         if (templateNodeForCase != null) {
-          _outputNodes = createOutputNodesForExternalTemplateNode(mappingName_, templateNodeForCase, newInputNode, inputChanged);
+          _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateNodeForCase, newInputNode, inputChanged);
         } else {
           // no switch-case found for the inputNode - continue with templateNode under the $switch$
-          _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+          _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
         }
 
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
@@ -342,17 +330,12 @@ public class TemplateProcessor {
           return null;
         }
         SNode templateForInclude = fragment.getParent().getNode();
-        if (fragment.getName() != null) {
-          mappingName_ = fragment.getName();
-        }
-        if (fragment.getLabelDeclaration() != null) {
-          mappingName_ = fragment.getLabelDeclaration().getName();
-        }
+        mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
         boolean inputChanged = (newInputNode != inputNode);
         if (inputChanged) {
-          pushInputHistory(inputNode, mappingName_);
+          pushInputHistory(inputNode, mappingName);
         }
-        List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName_, templateForInclude, newInputNode, inputChanged);
+        List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode, inputChanged);
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         if (inputChanged) {
           popInputHistory();
@@ -370,9 +353,9 @@ public class TemplateProcessor {
       try {
         boolean inputChanged = (newInputNode != inputNode);
         if (inputChanged) {
-          pushInputHistory(inputNode, mappingName_);
+          pushInputHistory(inputNode, mappingName);
         }
-        List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+        List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         if (inputChanged) {
           popInputHistory();

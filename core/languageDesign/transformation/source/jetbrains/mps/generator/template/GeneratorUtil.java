@@ -38,6 +38,46 @@ public class GeneratorUtil {
       n instanceof RootTemplateAnnotation;
   }
 
+  public static String getMappingName(INodeAdapter node, String defaultValue) {
+    String mappingName = null;
+    if (node instanceof CreateRootRule) {
+      ConditionalRootLabelDeclaration mappingLabel = ((CreateRootRule) node).getLabel();
+      if (mappingLabel != null) {
+        mappingName = mappingLabel.getName();
+      } else {
+        mappingName = node.getName();
+      }
+    } else if (node instanceof BaseMappingRule) {
+      MappingLabelDeclaration mappingLabel = ((BaseMappingRule) node).getLabelDeclaration();
+      if (mappingLabel != null) {
+        mappingName = mappingLabel.getName();
+      } else {
+        mappingName = node.getName();
+      }
+    } else if (node instanceof TemplateFragment) {
+      MappingLabelDeclaration mappingLabel = ((TemplateFragment) node).getLabelDeclaration();
+      if (mappingLabel != null) {
+        mappingName = mappingLabel.getName();
+      } else {
+        mappingName = node.getName();
+      }
+    } else if (node instanceof NodeMacro) {
+      MappingLabelDeclaration mappingLabel = ((NodeMacro) node).getMappingLabel();
+      if (mappingLabel != null) {
+        mappingName = mappingLabel.getName();
+      } else {
+        mappingName = ((NodeMacro) node).getMappingId();
+      }
+    } else {
+      LOG.errorWithTrace("unexpected input " + node.getDebugText());
+    }
+
+    if (mappingName == null) {
+      return defaultValue;
+    }
+    return mappingName;
+  }
+
   public static boolean checkPremiseForBaseMappingRule(SNode inputNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule rule, ITemplateGenerator generator) {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept != null) {
@@ -157,11 +197,9 @@ public class GeneratorUtil {
         generator.getGeneratorSessionContext().getGenerationTracer().pushRule(createRootRule.getNode());
         boolean wasChanged = generator.isChanged();
         try {
-          String mappingName = createRootRule.getName();
-          if (createRootRule.getLabel() != null) {
-            mappingName = createRootRule.getLabel().getName();
-          }
-          createRootNodeFromTemplate(mappingName, BaseAdapter.fromAdapter(templateNode), null, generator);
+          createRootNodeFromTemplate(
+            getMappingName(createRootRule, null),
+            BaseAdapter.fromAdapter(templateNode), null, generator);
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
           generator.setChanged(wasChanged);
@@ -214,11 +252,7 @@ public class GeneratorUtil {
           generator.setChanged(true);
           SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
           if (templateNode != null) {
-            String mappingName = rule.getName();
-            if (rule.getLabelDeclaration() != null) {
-              mappingName = rule.getLabelDeclaration().getName();
-            }
-            createRootNodeFromTemplate(mappingName, templateNode, inputNode, generator);
+            createRootNodeFromTemplate(getMappingName(rule, null), templateNode, inputNode, generator);
           } else {
             generator.showErrorMessage(BaseAdapter.fromAdapter(rule), "no template is defined for the rule");
           }
@@ -281,24 +315,24 @@ public class GeneratorUtil {
     return null;
   }
 
-  private static void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, SNode ruleNode, TemplateGenerator generator) {
+  private static void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator) {
     generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
     try {
-      weaveTemplateDeclaration_intern(inputNode, template, outputContextNode, ruleNode, generator);
+      weaveTemplateDeclaration_intern(inputNode, template, outputContextNode, rule, generator);
     } finally {
       generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
     }
   }
 
-  private static void weaveTemplateDeclaration_intern(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, SNode ruleNode, TemplateGenerator generator) {
+  private static void weaveTemplateDeclaration_intern(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator) {
     if (template == null) {
-      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't evaluate weaving rule: no template");
+      generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't evaluate weaving rule: no template");
       return;
     }
 
     List<TemplateFragment> templateFragments = getTemplateFragments(template);
     if (templateFragments.isEmpty()) {
-      generator.showErrorMessage(inputNode, template.getNode(), ruleNode, "nothing to weave: no template fragments found in template");
+      generator.showErrorMessage(inputNode, template.getNode(), rule.getNode(), "nothing to weave: no template fragments found in template");
       return;
     }
 
@@ -324,7 +358,7 @@ public class GeneratorUtil {
       }
     }
 
-    String ruleMappingName = ruleNode.getName();
+    String ruleMappingName = getMappingName(rule, null);
     // for each template fragment create output nodes
     for (TemplateFragment templateFragment : templateFragments) {
       SNode templateFragmentNode = BaseAdapter.fromAdapter(templateFragment.getParent());
@@ -335,30 +369,22 @@ public class GeneratorUtil {
         LOG.error(e);
       }
       if (contextParentNode != null) {
-        String mappingName = null;
-
-        if (templateFragment.getLabelDeclaration() != null) {
-          mappingName = templateFragment.getLabelDeclaration().getName();
-        } else if (templateFragment.getName() != null) {
-          mappingName = templateFragment.getName();
-        } else {
-          mappingName = ruleMappingName;
-        }
-
         try {
-          List<SNode> outputNodesToWeave = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateFragmentNode, inputNode, generator);
+          List<SNode> outputNodesToWeave = TemplateProcessor.createOutputNodesForTemplateNode(
+            getMappingName(templateFragment, ruleMappingName),
+            templateFragmentNode, inputNode, generator);
           String childRole = templateFragmentNode.getRole_();
           for (SNode outputNodeToWeave : outputNodesToWeave) {
             contextParentNode.addChild(childRole, outputNodeToWeave);
           }
         } catch (DismissTopMappingRuleException e) {
-          generator.showErrorMessage(inputNode, templateFragment.getNode(), ruleNode, "dismission of weaving rule is not supported");
+          generator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "dismission of weaving rule is not supported");
         } catch (TemplateProcessingFailureException e) {
-          generator.showErrorMessage(inputNode, templateFragment.getNode(), ruleNode, "error pocessing template fragment");
+          generator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "error pocessing template fragment");
           generator.showInformationMessage(contextParentNode, " -- was output context node:");
         }
       } else {
-        generator.showErrorMessage(inputNode, templateFragment.getNode(), ruleNode, "couldn't define 'context' for template fragment");
+        generator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "couldn't define 'context' for template fragment");
       }
     }
   }
@@ -448,7 +474,7 @@ public class GeneratorUtil {
           // old
           TemplateDeclaration template = rule.getTemplate();
           if (template != null) {
-            weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode(), generator);
+            weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule, generator);
           } else {
             // new
             RuleConsequence ruleConsequence = rule.getRuleConsequence();
@@ -458,7 +484,7 @@ public class GeneratorUtil {
               generator.getGeneratorSessionContext().getGenerationTracer().pushRuleConsequence(ruleConsequence.getNode());
               if (ruleConsequence instanceof TemplateDeclarationReference) {
                 template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-                weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode(), generator);
+                weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule, generator);
 
               } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
                 WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
@@ -473,7 +499,7 @@ public class GeneratorUtil {
                   someOutputGenerated = false;
                 }
                 for (SNode queryNode : queryNodes) {
-                  weaveTemplateDeclaration(queryNode, template, outputContextNode, rule.getNode(), generator);
+                  weaveTemplateDeclaration(queryNode, template, outputContextNode, rule, generator);
                 }
               } else {
                 generator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsapported rule consequence");
@@ -555,7 +581,7 @@ public class GeneratorUtil {
   public static List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException {
     generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
     try {
-      return applyReductionRule_internal(inputNode, (Reduction_MappingRule) rule, generator);
+      return applyReductionRule_internal(inputNode, rule, generator);
     } finally {
       generator.getGeneratorSessionContext().getGenerationTracer().closeRule(rule.getNode());
     }
@@ -563,6 +589,7 @@ public class GeneratorUtil {
 
   private static List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException {
     SNode reductionTemplateNode = null;
+    String ruleMappingName = getMappingName(rule, null);
     String mappingName = null;
     RuleConsequence ruleConsequence = rule.getRuleConsequence();
     if (ruleConsequence != null) {
@@ -572,7 +599,7 @@ public class GeneratorUtil {
         return null;
       }
       reductionTemplateNode = nodeAndMappingName.o1;
-      mappingName = nodeAndMappingName.o2;
+      mappingName = nodeAndMappingName.o2 != null ? nodeAndMappingName.o2 : ruleMappingName;
     } else {
       // old
       TemplateDeclaration template = rule.getTemplate();
@@ -584,22 +611,13 @@ public class GeneratorUtil {
       TemplateFragment fragment = getFragmentFromTemplate(template, inputNode, rule.getNode(), generator);
       if (fragment != null) {
         reductionTemplateNode = fragment.getParent().getNode();
-        if (fragment.getName() != null) {
-          mappingName = fragment.getName();
-        }
-        if (fragment.getLabelDeclaration() != null) {
-          mappingName = fragment.getLabelDeclaration().getName();
-        }
+        mappingName = getMappingName(fragment, ruleMappingName);
       }
     }
 
     if (reductionTemplateNode == null) {
       generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule");
       return new ArrayList<SNode>();
-    }
-
-    if (mappingName == null) {
-      mappingName = rule.getName();
     }
 
     try {
