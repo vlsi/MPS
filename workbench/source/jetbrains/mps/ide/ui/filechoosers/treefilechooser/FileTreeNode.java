@@ -35,7 +35,7 @@ public class FileTreeNode extends MPSTreeNode {
     return myInitialized;
   }
 
-  private IFile getAssociatedFile() {
+  public IFile getAssociatedFile() {
     return (IFile) getUserObject();
   }
 

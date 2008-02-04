@@ -9,9 +9,13 @@ import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
+import javax.swing.tree.TreeSelectionModel;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -38,7 +42,6 @@ public class TreeFileChooser extends JDialog {
   /////////////////////////////
 
   private int myMode;
-  private IFile mySelectedFile;
   private IFileNameFilter myFileFilter;
 
   private boolean myIsCancelled = false;
@@ -48,19 +51,22 @@ public class TreeFileChooser extends JDialog {
 
   /////////////////////////////
 
-  public TreeFileChooser(String initialFile, int mode, IFileNameFilter filter) {
+  /*
+   * If initialFile points to file that does not exists, selection is void
+   */
+
+  public TreeFileChooser(@NotNull String initialFile, int mode, IFileNameFilter filter) {
     this(new FileSystemFile(initialFile), mode, filter);
   }
 
-  public TreeFileChooser(IFile initialFile, int mode, IFileNameFilter filter) {
-    mySelectedFile = initialFile;
+  public TreeFileChooser(@Nullable IFile initialFile, int mode, IFileNameFilter filter) {
     myMode = mode;
     myFileFilter = filter;
 
     constructTree();
     constructUI();
 
-    setSelectedFile(mySelectedFile);
+    setSelectedFile(initialFile);
   }
 
   private void constructUI() {
@@ -127,12 +133,22 @@ public class TreeFileChooser extends JDialog {
 
     myTree.setRootVisible(false);
     myTree.setShowsRootHandles(true);
+
+    myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+
+    myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
+
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         myTree.rebuildNow();
       }
     });
-    myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
+
+    myTree.addTreeSelectionListener(new TreeSelectionListener() {
+      public void valueChanged(TreeSelectionEvent e) {
+        setCorrectButtonsState(e.getPath());
+      }
+    });
 
     setInitialExpansion();
   }
@@ -149,12 +165,11 @@ public class TreeFileChooser extends JDialog {
    *
    * @param file - if null, collapses all except roots and clears selection
    */
-  private void setSelectedFile(@Nullable final IFile file) {
-    mySelectedFile = file;
-
+  public void setSelectedFile(@Nullable final IFile file) {
     if (file == null) {
       myTree.clearSelection();
       setInitialExpansion();
+      setCorrectButtonsState(null);
       return;
     }
 
@@ -187,7 +202,16 @@ public class TreeFileChooser extends JDialog {
     myTree.selectNode(fileNode);
 
     //update buttons status
-    mySelectButton.setEnabled(canSelectFile(file));
+    setCorrectButtonsState(myTree.getSelectionPath());
+  }
+
+  private void setCorrectButtonsState(@Nullable TreePath path) {
+    if (path == null) {
+      mySelectButton.setEnabled(false);
+    } else {
+      IFile file = ((FileTreeNode) path.getLastPathComponent()).getAssociatedFile();
+      mySelectButton.setEnabled(canSelectFile(file));
+    }
   }
 
   private boolean canSelectFile(IFile file) {
@@ -196,8 +220,14 @@ public class TreeFileChooser extends JDialog {
     return true;
   }
 
+  @Nullable
   public IFile getSelectedFile() {
-    return mySelectedFile;
+    TreePath path = myTree.getSelectionPath();
+    if (path == null) {
+      return null;
+    } else {
+      return ((FileTreeNode) path.getLastPathComponent()).getAssociatedFile();
+    }
   }
 
   @Nullable
