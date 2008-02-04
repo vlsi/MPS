@@ -1118,5 +1118,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1201872478819">
+    <property name="package" value="mapType" />
+    <link role="conceptDeclaration" targetNodeId="1.1201872418428" resolveInfo="GetKeysOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1201872488234">
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 
