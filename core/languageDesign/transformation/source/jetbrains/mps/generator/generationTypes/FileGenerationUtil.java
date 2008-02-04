@@ -42,7 +42,7 @@ public class FileGenerationUtil {
 //    sm.setAttribute(LAST_GENERATION_TIME, "" + System.currentTimeMillis());
   }
 
-  public static boolean generationRequired(SModelDescriptor sm) {    
+  public static boolean generationRequired(SModelDescriptor sm) {
     if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) {
       return false;
     }        
@@ -52,6 +52,10 @@ public class FileGenerationUtil {
     }
 
     if (Language.isAccessoryModel(sm)) {
+      return false;
+    }
+
+    if (sm.getSModel().getRoots().size() == 0) {
       return false;
     }
 
