@@ -114,10 +114,18 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201455608252">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1201455610348">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201455608253" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.PropertyReference" id="1201455612100">
-              <link role="property" targetNodeId="1201454757436" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202098648017">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1202098651834">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1202098650114" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.PropertyReference" id="1202098653180">
+                <link role="property" targetNodeId="1201399832337" />
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1201455610348">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201455608253" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.PropertyReference" id="1201455612100">
+                <link role="property" targetNodeId="1201454757436" />
+              </node>
             </node>
           </node>
         </node>
