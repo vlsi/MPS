@@ -1431,9 +1431,15 @@
             <property name="isFinal" value="false" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201439728648">
               <link role="classifier" targetNodeId="1.~List" resolveInfo="List" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202164479615">
+                <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+              </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201439728649">
               <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202164484543">
+                <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+              </node>
             </node>
           </node>
         </node>
@@ -1452,9 +1458,15 @@
             <property name="name" value="testList" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201439728656">
               <link role="classifier" targetNodeId="1.~List" resolveInfo="List" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202164491899">
+                <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+              </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1201439728657">
               <link role="baseMethodDeclaration" targetNodeId="1.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202164497878">
+                <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+              </node>
             </node>
           </node>
         </node>
@@ -1478,9 +1490,9 @@
             </node>
           </node>
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201439728666">
-            <property name="name" value="o" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201439728667">
-              <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202164503597">
+              <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
             </node>
           </node>
         </node>

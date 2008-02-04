@@ -20,8 +20,8 @@ public class ClosuresBase_Test extends TestCase {
     List<Integer> expectedList = new ArrayList<Integer>();
     expected.invoke(expectedList);
     List<Integer> testList = new ArrayList<Integer>();
-    for(Integer o : test.invoke()) {
-      testList.add(o);
+    for(Integer i : test.invoke()) {
+      testList.add(i);
     }
     Assert.assertEquals(expectedList, testList);
   }
