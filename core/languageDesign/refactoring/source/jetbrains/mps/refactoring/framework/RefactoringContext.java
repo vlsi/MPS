@@ -57,6 +57,7 @@ public class RefactoringContext {
   //other
   private SearchResults myUsages;
   private Set<String> myTransientParameters = new HashSet<String>();
+  private boolean myIsLocal = false;
   //-----------------
 
   public RefactoringContext() {
@@ -136,6 +137,14 @@ public class RefactoringContext {
 
   public void setUsages(SearchResults usages) {
     myUsages = usages;
+  }
+
+  public boolean isLocal() {
+    return myIsLocal;
+  }
+
+  public void setLocal(boolean local) {
+    myIsLocal = local;
   }
 
   public SNode moveNodeToNode(SNode sourceNode, String role, SNode targetNode) {

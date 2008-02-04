@@ -148,6 +148,7 @@ public class GenericRefactoring {
   }
 
   private void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
+    if (refactoringContext.isLocal()) return;
     RefactoringHistory refactoringHistory = model.getRefactoringHistory();
     refactoringHistory.addRefactoringContext(refactoringContext);
     model.increaseVersion();

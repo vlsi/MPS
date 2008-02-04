@@ -19,6 +19,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   private ILoggableRefactoring myRefactoring;
   private ActionContext myActionContext;
   private RefactoringContext myRefactoringContext;
+  public JCheckBox myIsLocalCheckBox;
 
   public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, ActionContext actionContext, RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
     super(actionContext.getOperationContext().getMainFrame(), "Input data for refactoring");
@@ -30,6 +31,9 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     myInnerPanel = new JPanel();
     GridLayout layout = new GridLayout(0,1/*myInnerPanel, BoxLayout.PAGE_AXIS*/);
     myInnerPanel.setLayout(layout);
+    myIsLocalCheckBox = new JCheckBox("is local");
+    myIsLocalCheckBox.setSelected(true);
+    myInnerPanel.add(myIsLocalCheckBox);
     for (IChooseComponent component : myComponents) {
       myInnerPanel.add((Component)component);
     }
@@ -57,6 +61,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   public void onOk() {
     try {
       myResult = false;
+      myRefactoringContext.setLocal(myIsLocalCheckBox.isSelected());
       for (IChooseComponent component : myComponents) {
         myRefactoringContext.setParameter(component.getPropertyName(), component.submit());
       }
