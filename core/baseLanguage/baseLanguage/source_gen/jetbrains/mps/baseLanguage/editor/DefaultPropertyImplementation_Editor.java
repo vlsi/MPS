@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -18,6 +19,10 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201372784551");
+  }
+
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202096803350");
   }
 
   private static void setupBasic_DefaultGetAccessorCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,6 +38,9 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_CellModel_ConceptProperty(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_DefaultGetAccessorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -53,8 +61,17 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCellModel_ConceptProperty(context, node));
+    editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
     editorCell.addEditorCell(this.createDefaultGetAccessorCell(context, node));
     editorCell.addEditorCell(this.createDefaultSetAccessorCell(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    DefaultPropertyImplementation_Editor.setupBasic_ConstantCell(editorCell, node, context);
+    DefaultPropertyImplementation_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
