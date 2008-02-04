@@ -157,21 +157,22 @@ public class TemplateProcessor {
       // $LOOP$
       List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
       for (SNode newInputNode : newInputNodes) {
-        generationTracer.pushInputNode(newInputNode);
+        boolean inputChanged = (newInputNode != inputNode);
+        if (inputChanged) {
+          pushInputHistory(inputNode, mappingName);
+          generationTracer.pushInputNode(newInputNode);
+        }
         try {
-          boolean inputChanged = (newInputNode != inputNode);
-          if (inputChanged) {
-            pushInputHistory(inputNode, mappingName);
-          }
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-          if (inputChanged) {
-            popInputHistory();
-          } else if (registerTopOutput) {
+          if (registerTopOutput && !inputChanged) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
           }
         } finally {
-          generationTracer.closeInputNode(newInputNode);
+          if (inputChanged) {
+            popInputHistory();
+            generationTracer.closeInputNode(newInputNode);
+          }
         }
       }
       return outputNodes;
@@ -226,29 +227,31 @@ public class TemplateProcessor {
 
       List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
       for (SNode newInputNode : newInputNodes) {
-        generationTracer.pushInputNode(newInputNode);
+        boolean inputChanged = (newInputNode != inputNode);
+        if (inputChanged) {
+          pushInputHistory(newInputNode, mappingName);
+          generationTracer.pushInputNode(newInputNode);
+        }
         try {
           if (mapperId != null || macro_mapperFunction != null) {
             SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
             generationTracer.pushOutputNodeToReplaceLater(childToReplaceLater);
             outputNodes.add(childToReplaceLater);
             // execute the 'mapper' function later
+            // !!! new input node is in history
             myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(nodeMacro, childToReplaceLater, newInputNode, myGenerator);
           } else {
-            boolean inputChanged = (newInputNode != inputNode);
-            if (inputChanged) {
-              pushInputHistory(inputNode, mappingName);
-            }
             List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
             if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-            if (inputChanged) {
-              popInputHistory();
-            } else if (registerTopOutput) {
+            if (registerTopOutput && !inputChanged) {
               myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
             }
           }
         } finally {
-          generationTracer.closeInputNode(newInputNode);
+          if (inputChanged) {
+            popInputHistory();
+            generationTracer.closeInputNode(newInputNode);
+          }
         }
       }
       return outputNodes;
@@ -262,10 +265,18 @@ public class TemplateProcessor {
       }
 
       SNode newInputNode = MacroUtil.getNewInputNode(nodeMacro, inputNode, myGenerator);
-      if (newInputNode != null) {
-        generationTracer.pushInputNode(newInputNode);
-        generationTracer.pushSwitch(templateSwitch.getNode());
+      if (newInputNode == null) {
+        return outputNodes; // skip template
+      }
 
+      boolean inputChanged = (newInputNode != inputNode);
+      if (inputChanged) {
+        pushInputHistory(inputNode, mappingName);
+        generationTracer.pushInputNode(newInputNode);
+      }
+      generationTracer.pushSwitch(templateSwitch.getNode());
+
+      try {
         RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
         SNode templateNodeForCase = null;
         if (consequenceForCase != null) {
@@ -291,10 +302,6 @@ public class TemplateProcessor {
           }
         }
 
-        boolean inputChanged = (newInputNode != inputNode);
-        if (inputChanged) {
-          pushInputHistory(inputNode, mappingName);
-        }
         List<SNode> _outputNodes;
         if (templateNodeForCase != null) {
           _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateNodeForCase, newInputNode, inputChanged);
@@ -302,68 +309,81 @@ public class TemplateProcessor {
           // no switch-case found for the inputNode - continue with templateNode under the $switch$
           _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
         }
-
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
+        if (registerTopOutput && !inputChanged) {
+          myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
+        }
+      } finally {
         if (inputChanged) {
           popInputHistory();
-        } else if (registerTopOutput) {
-          myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
+          generationTracer.closeInputNode(newInputNode);
         }
       }
       return outputNodes;
 
     } else if (nodeMacro instanceof IncludeMacro) {
       // $INCLUDE$
-      IncludeMacro includeMacro = (IncludeMacro) nodeMacro;
       SNode newInputNode = MacroUtil.getNewInputNode(nodeMacro, inputNode, myGenerator);
-      if (newInputNode != null) {
+      if (newInputNode == null) {
+        return outputNodes; // skip template
+      }
+
+      IncludeMacro includeMacro = (IncludeMacro) nodeMacro;
+      TemplateDeclaration includeTemplate = includeMacro.getIncludeTemplate();
+      if (includeTemplate == null) {
+        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$ : no 'include template'");
+        return null;
+      }
+      TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
+      if (fragment == null) {
+        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$");
+        return null;
+      }
+
+      boolean inputChanged = (newInputNode != inputNode);
+      if (inputChanged) {
+        pushInputHistory(inputNode, mappingName);
         generationTracer.pushInputNode(newInputNode);
-        TemplateDeclaration includeTemplate = includeMacro.getIncludeTemplate();
-        if (includeTemplate == null) {
-          myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$ : no 'include template'");
-          return null;
-        }
-        generationTracer.pushTemplateNode(includeTemplate.getNode());
-        TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
-        if (fragment == null) {
-          myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$");
-          return null;
-        }
+      }
+      generationTracer.pushTemplateNode(includeTemplate.getNode());
+
+      try {
         SNode templateForInclude = fragment.getParent().getNode();
         mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
-        boolean inputChanged = (newInputNode != inputNode);
-        if (inputChanged) {
-          pushInputHistory(inputNode, mappingName);
-        }
         List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode, inputChanged);
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-        if (inputChanged) {
-          popInputHistory();
-        } else if (registerTopOutput) {
+        if (registerTopOutput && !inputChanged) {
           myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
         }
-      } // for (SNode newInputNode : newInputNodes)
+      } finally {
+        if (inputChanged) {
+          popInputHistory();
+          generationTracer.closeInputNode(newInputNode);
+        }
+      }
+
       return outputNodes;
     }
 
     // $$
     List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
     for (SNode newInputNode : newInputNodes) {
-      generationTracer.pushInputNode(newInputNode);
+      boolean inputChanged = (newInputNode != inputNode);
+      if (inputChanged) {
+        pushInputHistory(inputNode, mappingName);
+        generationTracer.pushInputNode(newInputNode);
+      }
       try {
-        boolean inputChanged = (newInputNode != inputNode);
-        if (inputChanged) {
-          pushInputHistory(inputNode, mappingName);
-        }
         List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-        if (inputChanged) {
-          popInputHistory();
-        } else if (registerTopOutput) {
+        if (registerTopOutput && !inputChanged) {
           myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
         }
       } finally {
-        generationTracer.closeInputNode(newInputNode);
+        if (inputChanged) {
+          popInputHistory();
+          generationTracer.closeInputNode(newInputNode);
+        }
       }
     }
     return outputNodes;
