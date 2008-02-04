@@ -10,6 +10,7 @@
   <language namespace="jetbrains.mps.ide.scriptLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.quotation" />
+  <language namespace="jetbrains.mps.core" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="0" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -733,10 +734,10 @@
                   <link role="link" targetNodeId="5.1107880067339" />
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1186712141254">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1186712141255">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1202150366573">
                     <link role="link" targetNodeId="5.1107535924139" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1186712141256">
+                  <node role="leftExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1202150151300">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1186712141257">
                       <link role="classifier" targetNodeId="8.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
                     </node>
@@ -1105,7 +1106,7 @@
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187130019002">
                     <link role="link" targetNodeId="5.1107535924139" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1187130019003">
+                  <node role="leftExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1187130019003">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1187130019004">
                       <link role="classifier" targetNodeId="8.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
                     </node>
@@ -1191,7 +1192,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1187130149395">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1187130161166">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddAllOperation" id="1187130168482">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187130172515">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202150376677">
                   <link role="variableDeclaration" targetNodeId="1187129941474" resolveInfo="arguments" />
                 </node>
               </node>
@@ -1766,7 +1767,7 @@
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187222664514">
                     <link role="link" targetNodeId="5.1107535924139" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1187222664515">
+                  <node role="leftExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1187222664515">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1187222664516">
                       <link role="classifier" targetNodeId="8.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
                     </node>
@@ -2135,7 +2136,7 @@
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187222664665">
                     <link role="link" targetNodeId="5.1107535924139" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1187222664666">
+                  <node role="leftExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1187222664666">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1187222664667">
                       <link role="classifier" targetNodeId="8.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
                     </node>

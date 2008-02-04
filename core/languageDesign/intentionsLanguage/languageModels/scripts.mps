@@ -427,7 +427,7 @@
                         <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1195646946617">
                           <link role="link" targetNodeId="12.1154546997487" />
                         </node>
-                        <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1195646932564">
+                        <node role="leftExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1195646932564">
                           <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference" id="1195646937316">
                             <link role="concept" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
                           </node>
