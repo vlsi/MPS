@@ -108,12 +108,16 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
         SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
         if(editorModelDescriptor != null) {
           refactoringContext.setParameter("conceptEditorDeclaration", SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node))));
-          searchResults.remove(((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")).getNode());
+          if(((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")) != null) {
+            searchResults.remove(((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")).getNode());
+          }
         }
         SModelDescriptor constraintsModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getConstraintsModelDescriptor();
         if(constraintsModelDescriptor != null) {
           refactoringContext.setParameter("conceptBehavior", SModelUtil_new.findBehaviorDeclaration(constraintsModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node))));
-          searchResults.remove(((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")).getNode());
+          if(((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")) != null) {
+            searchResults.remove(((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")).getNode());
+          }
         }
       }
       List<SearchResult> aliveResults = searchResults.getAliveResults();
