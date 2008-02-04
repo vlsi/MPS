@@ -13,7 +13,7 @@ public class typeof_ErrorInfoExpression_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.helgins.helgins", "1201618383367", true), new QuotationClass_21().createNode(), nodeToCheck, null, "jetbrains.mps.bootstrap.helgins.helgins", "1201618387152");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.helgins.helgins", "1201618383367", true), new QuotationClass_20().createNode(), nodeToCheck, null, "jetbrains.mps.bootstrap.helgins.helgins", "1201618387152");
   }
 
   public String getApplicableConceptFQName() {

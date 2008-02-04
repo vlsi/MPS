@@ -13,7 +13,7 @@ public class typeOf_ImmediateSupertypes_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(final SNode immediateSupertypesExpr) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), immediateSupertypesExpr, "jetbrains.mps.bootstrap.helgins.helgins", "1177069172275");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(), immediateSupertypesExpr, "jetbrains.mps.bootstrap.helgins.helgins", "1177069172275");
   }
 
   public String getApplicableConceptFQName() {

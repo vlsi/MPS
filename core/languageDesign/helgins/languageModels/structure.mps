@@ -11,69 +11,6 @@
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.patterns.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174385511721">
-    <property name="name" value="Quotation" />
-    <link role="extends" targetNodeId="2.1068431790191" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1174385607291">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="quotedNode" />
-      <link role="target" targetNodeId="1.1133920641626" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1175003344231">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="modelToCreate" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196870974192">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1174385620730">
-      <property name="value" value="!&lt;quotation&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196955975962">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration" id="1174385717708">
-    <property name="role" value="antiquotation" />
-    <link role="source" targetNodeId="1.1133920641626" />
-    <link role="target" targetNodeId="1174385773334" resolveInfo="Antiquotation" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174385773334">
-    <property name="name" value="Antiquotation" />
-    <link role="extends" targetNodeId="1174386356950" resolveInfo="AbstractAntiquotation" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174386285668">
-    <property name="name" value="ReferenceAntiquotation" />
-    <link role="extends" targetNodeId="1174386356950" resolveInfo="AbstractAntiquotation" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174386356950">
-    <property name="name" value="AbstractAntiquotation" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1174386365404">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="expression" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration" id="1174386451071">
-    <property name="stereotype" value="link" />
-    <property name="role" value="referenceAntiquotation" />
-    <link role="source" targetNodeId="1.1133920641626" />
-    <link role="target" targetNodeId="1174386285668" resolveInfo="ReferenceAntiquotation" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174386518649">
-    <property name="name" value="ListAntiquotation" />
-    <link role="extends" targetNodeId="1174386356950" resolveInfo="AbstractAntiquotation" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration" id="1174386601937">
-    <property name="role" value="listAntiquotation" />
-    <link role="source" targetNodeId="1.1133920641626" />
-    <link role="target" targetNodeId="1174386518649" resolveInfo="ListAntiquotation" />
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174642743670">
     <property name="name" value="ApplicableNodeCondition" />
     <link role="extends" targetNodeId="1.1078489098625" />
@@ -876,6 +813,10 @@
       <property name="value" value="errorInfo" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202129131449">
+    <property name="name" value="Foo" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
   </node>
 </model>
 

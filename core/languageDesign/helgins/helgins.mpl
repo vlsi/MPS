@@ -15,16 +15,8 @@
       <external-templates />
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
-      </dependencies>
-      <mapping-priorities />
-    </generator>
-    <generator generatorUID="jetbrains.mps.bootstrap.helgins#1196355955034" targetLanguage="jetbrains.mps.quotation">
-      <models>
-        <modelRoot path="${language_descriptor}\generator\quotation\template" namespacePrefix="jetbrains.mps.bootstrap.helgins.generator.quotation.template" />
-      </models>
-      <external-templates />
-      <dependencies>
-        <dependency reexport="true">jetbrains.mps.quotation</dependency>
+        <dependency reexport="false">jetbrains.mps.quotation</dependency>
+        <dependency reexport="false">jetbrains.mps.quotation</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
