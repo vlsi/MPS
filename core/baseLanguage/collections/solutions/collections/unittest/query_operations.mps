@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.baseLanguage.ext.collections.unittest.query_operations">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="junit.framework@java_stub" version="-1" />

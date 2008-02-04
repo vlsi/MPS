@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.regexp.examples">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.regexp" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
