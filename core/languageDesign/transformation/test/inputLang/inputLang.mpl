@@ -12,8 +12,11 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency reexport="true">jetbrains.mps.transformation.test.outputLang</dependency>
+        <dependency reexport="false">jetbrains.mps.transformation.test.outputLang</dependency>
       </dependencies>
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.transformation.test.outputLang</usedLanguages>
+      </usedLanguages>
       <mapping-priorities />
     </generator>
   </generators>

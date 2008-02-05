@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.transformation.test.inputLang.structure">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -27,6 +28,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1195169251499">
     <property name="name" value="Option" />
+    <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
     <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     <link role="defaultMember" targetNodeId="1195169251500" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1195169251500">
