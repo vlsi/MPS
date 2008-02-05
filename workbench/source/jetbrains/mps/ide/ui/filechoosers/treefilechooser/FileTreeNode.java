@@ -24,6 +24,7 @@ public abstract class FileTreeNode extends MPSTreeNode {
       filename = file.getAbsolutePath();
     }
     setText(filename);
+    setNodeIdentifier(filename);
 
     FileSystemView fsView = FileSystemView.getFileSystemView();
     Icon icon = fsView.getSystemIcon(file.toFile());
