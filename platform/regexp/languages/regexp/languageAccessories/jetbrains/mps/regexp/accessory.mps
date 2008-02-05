@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.regexp" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.regexp.structure.PredefinedSymbolClasses" id="1174554673597">
@@ -93,7 +94,7 @@
       <property name="name" value="\p{Sc}" />
     </node>
     <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1174555093479">
-      <property name="description" value="any character except one in the Gree block" />
+      <property name="description" value="any character except one in the Greek block" />
       <property name="name" value="\P{InGreek}" />
     </node>
     <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1194467092978">
@@ -107,6 +108,18 @@
     <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1194467120363">
       <property name="name" value="\t" />
       <property name="description" value="tabulation symbol" />
+    </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202213095061">
+      <property name="name" value="\." />
+      <property name="description" value="dot symbol" />
+    </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202213262836">
+      <property name="name" value="\(" />
+      <property name="description" value="open paren symbol" />
+    </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202213274424">
+      <property name="name" value="\)" />
+      <property name="description" value="close paren symbol" />
     </node>
   </node>
   <node type="jetbrains.mps.regexp.structure.Regexps" id="1174662820983">
