@@ -30,8 +30,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private DelayedChanges myDelayedChanges = new DelayedChanges();
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
-  private boolean myChanged = false;
+  private List<Pair<SNode, String>> myCurrentInputHistory;
 
+  private boolean myChanged = false;
   private RuleManager myRuleManager;
 
   public TemplateGenerator(GenerationSessionContext operationContext,
@@ -349,6 +350,25 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     list.addAll(outputNodes);
   }
 
+  public List<Pair<SNode, String>> setInputHistory(List<Pair<SNode, String>> inputHistory) {
+    List<Pair<SNode, String>> oldInputHistory = myCurrentInputHistory;
+    myCurrentInputHistory = inputHistory;
+    return oldInputHistory;
+  }
+
+  public SNode getPreviousInputNodeByMappingName(String mappingName) {
+    if (myCurrentInputHistory == null || mappingName == null) {
+      return null;
+    }
+
+    for (int i = myCurrentInputHistory.size() - 1; i >= 0; i--) {
+      Pair<SNode, String> inputHistoryEntry = myCurrentInputHistory.get(i);
+      if (mappingName.equals(inputHistoryEntry.o2)) {
+        return inputHistoryEntry.o1;
+      }
+    }
+    return null;
+  }
 
   //todo remove this after going to new generator
   private INodeBuilder myCurrentBuilder;

@@ -51,6 +51,8 @@ public interface ITemplateGenerator {
 
   List<SNode> getTopOutputNodesForInputNode(SNode inputNode);
 
+  SNode getPreviousInputNodeByMappingName(String mappingName);
+
   /**
    * @deprecated
    */

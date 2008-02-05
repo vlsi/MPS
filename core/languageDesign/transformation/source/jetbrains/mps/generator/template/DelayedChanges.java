@@ -5,8 +5,10 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
+import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by: Sergey Dmitriev
@@ -17,8 +19,8 @@ public class DelayedChanges {
 
   private ArrayList<ExecuteMapSrcNodeMacroChange> myExecuteMapSrcNodeMacroChanges = new ArrayList<ExecuteMapSrcNodeMacroChange>();
 
-  public void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, TemplateGenerator generator) {
-    myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, inputNode, generator));
+  public void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, List<Pair<SNode, String>> inputHistory, TemplateGenerator generator) {
+    myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, inputNode, inputHistory, generator));
   }
 
   public void doAllChanges() {
@@ -32,16 +34,19 @@ public class DelayedChanges {
     private NodeMacro myMapSrcMacro;
     protected SNode myChildToReplace;
     private SNode myInputNode;
+    private List<Pair<SNode, String>> myInputHistory;
     private TemplateGenerator myGenerator;
 
-    public ExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, TemplateGenerator generator) {
+    public ExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, List<Pair<SNode, String>> inputHistory, TemplateGenerator generator) {
       myMapSrcMacro = mapSrcMacro;
       myChildToReplace = childToReplace;
       myInputNode = inputNode;
+      myInputHistory = inputHistory;
       myGenerator = generator;
     }
 
     public void doChange() {
+      List<Pair<SNode, String>> oldInputHistory = myGenerator.setInputHistory(myInputHistory);
       try {
         SNode child = MacroUtil.executeMapSrcNodeMacro(myInputNode, myMapSrcMacro.getNode(), myChildToReplace.getParent(), myGenerator);
         if (child != null) {
@@ -58,6 +63,8 @@ public class DelayedChanges {
       } catch (Throwable t) {
         myGenerator.showErrorMessage(myInputNode, myMapSrcMacro.getNode(), "mapping failed: '" + t.getMessage() + "'");
         LOG.error(t, myMapSrcMacro.getNode());
+      } finally {
+        myGenerator.setInputHistory(oldInputHistory);
       }
     }
 

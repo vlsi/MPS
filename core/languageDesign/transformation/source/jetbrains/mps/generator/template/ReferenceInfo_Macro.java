@@ -6,19 +6,24 @@ import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.Templ
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
+
+import java.util.List;
 
 /**
  * Created by: Sergey Dmitriev
  * Date: Jan 25, 2007
  */
 public class ReferenceInfo_Macro extends ReferenceInfo {
+  private List<Pair<SNode, String>> myInputHistory;
   private SNode myTemplateReferenceNode;
   private ReferenceMacro myReferenceMacro;
   private String myResolveInfoForDynamicResolve;
 
-  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro refMacro, SNode inputNode, SNode templateReferenceNode) {
+  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro refMacro, SNode inputNode, List<Pair<SNode, String>> inputHistory, SNode templateReferenceNode) {
     super(outputSourceNode, refMacro.getLink().getRole(), inputNode);
+    myInputHistory = inputHistory;
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = refMacro;
   }
@@ -29,10 +34,16 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
-    //todo it should be removed after going to new generator
-    generator.setCurrentBuilder(getOutputSourceNode());
-    SNode outputTargetNode = expandReferenceMacro(generator);
-    generator.setCurrentBuilder(null);
+    List<Pair<SNode, String>> oldInputHistory = generator.setInputHistory(myInputHistory);
+    SNode outputTargetNode;
+    try {
+      //todo it should be removed after going to new generator
+      generator.setCurrentBuilder(getOutputSourceNode());
+      outputTargetNode = expandReferenceMacro(generator);
+      generator.setCurrentBuilder(null);
+    } finally {
+      generator.setInputHistory(oldInputHistory);
+    }
     return outputTargetNode;
   }
 
@@ -57,7 +68,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return getOutputSourceNode().isReferentRequired(getReferenceRole());
   }
 
-  public SNode expandReferenceMacro(ITemplateGenerator generator) {
+  private SNode expandReferenceMacro(ITemplateGenerator generator) {
     String role = myReferenceMacro.getLink().getRole();
 
     // try new query
@@ -72,10 +83,10 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     try {
       Object result;
       result = QueryMethodGenerated.invoke(
-              methodName,
-              generator.getGeneratorSessionContext(),
-              new ReferenceMacroContext(getInputNode(), myTemplateReferenceNode, getOutputSourceNode(), generator.getInputModel(), generator),
-              myReferenceMacro.getModel());
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new ReferenceMacroContext(getInputNode(), myTemplateReferenceNode, getOutputSourceNode(), generator.getInputModel(), generator),
+        myReferenceMacro.getModel());
 
       if (result instanceof SNode) {
         outputTargetNode = (SNode) result;
