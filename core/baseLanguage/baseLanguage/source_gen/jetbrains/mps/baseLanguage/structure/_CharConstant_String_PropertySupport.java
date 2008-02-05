@@ -14,7 +14,7 @@ public class _CharConstant_String_PropertySupport extends PropertySupport {
     {
       testValue = value;
     }
-    return testValue.matches(".");
+    return testValue.matches(".|(\\\\[nrta])");
   }
 
 }

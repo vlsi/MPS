@@ -2442,7 +2442,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1200397549879">
     <property name="name" value="_CharConstant_String" />
-    <property name="constraint" value="." />
+    <property name="constraint" value=".|(\\\\[nrta])" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1201183863028">
     <property name="name" value="TypeDerivable" />
