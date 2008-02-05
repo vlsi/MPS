@@ -5,6 +5,7 @@
   </models>
   <accessoryModels>
     <model modelUID="jetbrains.mps.generator.template@java_stub" />
+    <model modelUID="jetbrains.mps.generator@java_stub" />
   </accessoryModels>
   <generators>
     <generator name="default" generatorUID="jetbrains.mps.transformation.TLBase#1167163152317" targetLanguage="jetbrains.mps.baseLanguage">

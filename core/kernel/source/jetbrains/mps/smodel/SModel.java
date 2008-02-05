@@ -725,12 +725,22 @@ public class SModel implements Iterable<SNode> {
     for (ImportElement importElement : myImports) {
       SModelUID modelUID = importElement.getModelUID();
       SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelUID);
+
+      if (modelDescriptor == null) {
+        for (Language l : getLanguages(scope)) {
+          for (SModelDescriptor accessory : l.getAccessoryModels()) {
+            if (modelUID.equals(accessory.getModelUID())) {
+              modelDescriptor = accessory;
+              break;
+            }
+          }
+        }
+      }
+
       if (modelDescriptor != null) {
         modelsList.add(modelDescriptor);
       } else {
-        scope.getModelDescriptor(modelUID);
         LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelUID + "\" in: \"" + getUID() + "\"");
-        scope.getModelDescriptor(modelUID);
       }
     }
     return modelsList.iterator();
