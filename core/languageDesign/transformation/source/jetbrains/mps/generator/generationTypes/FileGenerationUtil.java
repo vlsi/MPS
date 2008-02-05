@@ -55,9 +55,9 @@ public class FileGenerationUtil {
       return false;
     }
 
-    if (sm.getSModel().getRoots().size() == 0) {
-      return false;
-    }
+//    if (sm.getSModel().getRoots().size() == 0) {
+//      return false;
+//    }
 
     return sm.lastChangeTime() >= getLastGenerationTime(sm);
   }
