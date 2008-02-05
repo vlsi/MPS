@@ -737,6 +737,10 @@ public abstract class AbstractModule implements IModule {
         result.add((Language) AbstractModule.this);
       }
 
+      if (AbstractModule.this instanceof Generator) {
+        result.add(((Generator) AbstractModule.this).getSourceLanguage());
+      }
+
       return result;
     }
 

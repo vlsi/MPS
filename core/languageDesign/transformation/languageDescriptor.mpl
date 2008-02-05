@@ -3,7 +3,9 @@
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.transformation.TLBase" />
   </models>
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="jetbrains.mps.generator.template@java_stub" />
+  </accessoryModels>
   <generators>
     <generator name="default" generatorUID="jetbrains.mps.transformation.TLBase#1167163152317" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
