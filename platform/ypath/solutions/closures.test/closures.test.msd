@@ -4,9 +4,7 @@
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
   <classPath />
-  <runtimeClassPath>
-    <entry path="${mps_home}\platform\ypath\languages\closures\runtime\classes" />
-  </runtimeClassPath>
+  <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest</dependency>

@@ -43,7 +43,7 @@
   </classPath>
   <runtimeClassPath>
     <entry path="${mps_home}\platform\ypath\classes" />
-    <entry path="${language_descriptor}\runtime\classes" />
+    <entry path="${mps_home}\platform\ypath\languages\closures\runtime\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
