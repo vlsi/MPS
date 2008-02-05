@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.complex.actions">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.complex.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1196261383105">
     <property name="name" value="Complex_RightTransform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1196261413060">

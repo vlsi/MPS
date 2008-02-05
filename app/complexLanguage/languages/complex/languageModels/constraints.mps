@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.complex.constraints">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <maxImportIndex value="2" />
-  <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.complex.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1196418686441">
     <link role="concept" targetNodeId="2.1196260832413" resolveInfo="SingleComplexExpression" />
