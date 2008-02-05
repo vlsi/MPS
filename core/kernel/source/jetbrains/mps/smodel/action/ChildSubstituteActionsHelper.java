@@ -400,7 +400,7 @@ public class ChildSubstituteActionsHelper {
   }
 
   private static class SmartRefChildNodeSubstituteAction extends DefaultChildNodeSubstituteAction {
-    String myMatchingText;
+    private String myMatchingText;
     private final SNode myParentNode;
     private final SNode myCurrentChild;
     private final ConceptDeclaration myReferenceNodeConcept;

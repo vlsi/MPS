@@ -65,7 +65,7 @@ public class ReferenceConceptUtil {
   public static boolean hasSmartAlias(AbstractConceptDeclaration concept) {
     String conceptAlias = concept.getConceptProperty("alias");
     // matches pattern 'xxx <{_referent_role_}> yyy' ?
-    return conceptAlias != null && !conceptAlias.matches(".*<\\{.+\\}>.*");
+    return conceptAlias != null && conceptAlias.matches(".*<\\{.+\\}>.*");
   }
 
   public static String getPresentationFromSmartAlias(AbstractConceptDeclaration concept, String referentPresentation) {
