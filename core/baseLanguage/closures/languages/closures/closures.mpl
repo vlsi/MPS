@@ -39,7 +39,7 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}\runtime\classes" />
+    <entry path="${mps_home}\core\baseLanguage\closures\languages\closures\runtime\classes" />
   </classPath>
   <runtimeClassPath>
     <entry path="${mps_home}\core\baseLanguage\closures\classes" />
