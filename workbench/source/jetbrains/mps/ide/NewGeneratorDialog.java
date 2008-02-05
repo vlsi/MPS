@@ -2,19 +2,24 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ui.SmartFileChooser;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.UseTreeFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.UseTreeFileChooser;
+import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
+import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystemFile;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Frame;
+import java.awt.GridLayout;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -89,13 +94,17 @@ public class NewGeneratorDialog extends BaseDialog {
         String oldPath = myTemplateModelsDir.getText();
 
         if (UseTreeFileChooser.get()) {
-          String initialFile = "";
+          TreeFileChooser chooser = new TreeFileChooser();
+
+          chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+
           if (oldPath != null && oldPath.length() != 0) {
-            initialFile = oldPath;
+            chooser.setInitialFile(new FileSystemFile(oldPath));
           }
-          TreeFileChooser chooser = new TreeFileChooser(TreeFileChooser.MODE_DIRECTORIES, TreeFileChooser.ALL_FILES_FILTER, initialFile, null);
-          if (chooser.getResult() != null) {
-            myTemplateModelsDir.setText(chooser.getResult().getAbsolutePath());
+
+          IFile result = chooser.showDialog(null);
+          if (result != null) {
+            myTemplateModelsDir.setText(result.getAbsolutePath());
           }
         } else {
           SmartFileChooser chooser = new SmartFileChooser();

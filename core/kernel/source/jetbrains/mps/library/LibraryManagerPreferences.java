@@ -5,6 +5,7 @@ import jetbrains.mps.ide.ui.SmartFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.UseTreeFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -103,9 +104,12 @@ public class LibraryManagerPreferences implements IPreferencesPage {
 
     String path;
     if (UseTreeFileChooser.get()) {
-      TreeFileChooser chooser = new TreeFileChooser(TreeFileChooser.MODE_DIRECTORIES, TreeFileChooser.ALL_FILES_FILTER, "", null);
-      if (chooser.getResult() == null) return;
-      path = chooser.getResult().getAbsolutePath();
+      TreeFileChooser chooser = new TreeFileChooser();
+      chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+      IFile result = chooser.showDialog(null);
+
+      if (result == null) return;
+      path = result.getAbsolutePath();
     } else {
       final JFileChooser chooser = new SmartFileChooser();
       chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -131,9 +135,11 @@ public class LibraryManagerPreferences implements IPreferencesPage {
 
     String path;
     if (UseTreeFileChooser.get()) {
-      TreeFileChooser chooser = new TreeFileChooser(TreeFileChooser.MODE_DIRECTORIES, TreeFileChooser.ALL_FILES_FILTER, "", null);
-      if (chooser.getResult() == null) return;
-      path = chooser.getResult().getAbsolutePath();
+      TreeFileChooser chooser = new TreeFileChooser();
+      chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+
+      IFile result = chooser.showDialog(null);
+      path = result.getAbsolutePath();
     } else {
       final JFileChooser chooser = new SmartFileChooser();
       chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);

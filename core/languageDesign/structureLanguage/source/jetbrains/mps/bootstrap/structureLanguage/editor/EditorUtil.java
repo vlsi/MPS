@@ -1,24 +1,24 @@
 package jetbrains.mps.bootstrap.structureLanguage.editor;
 
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.ide.command.CommandRunnable;
+import jetbrains.mps.ide.ui.SmartFileChooser;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.UseTreeFileChooser;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.ide.command.CommandRunnable;
-import jetbrains.mps.ide.ui.SmartFileChooser;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.UseTreeFileChooser;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
-import java.io.File;
-import java.awt.event.ActionEvent;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.io.File;
 
 
 public class EditorUtil {
@@ -32,16 +32,20 @@ public class EditorUtil {
     button.setAction(new AbstractAction("...") {
       public void actionPerformed(ActionEvent e) {
         if (UseTreeFileChooser.get()) {
-          IFile initialFile = null;
+          Component root = SwingUtilities.getRoot(button);
+          JFrame frame = root instanceof JFrame ? (JFrame) root : null;
+          TreeFileChooser chooser = new TreeFileChooser();
+
+          chooser.setContext(context.getOperationContext());
+
           if (baseFile != null && baseFile.exists()) {
-            initialFile = new FileSystemFile(baseFile);
+            chooser.setInitialFile(new FileSystemFile(baseFile));
           }
 
-          TreeFileChooser chooser = new TreeFileChooser(TreeFileChooser.MODE_FILES, TreeFileChooser.ALL_FILES_FILTER, initialFile, context.getOperationContext());
+          IFile result = chooser.showDialog(frame);
+          if (result == null) return;
 
-          Component root = SwingUtilities.getRoot(button);
-          if (chooser.getResult() == null) return;
-          String selectedPath = FileUtil.getCanonicalPath(chooser.getResult().toFile());
+          String selectedPath = FileUtil.getCanonicalPath(result.toFile());
           final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
 
           new CommandRunnable() {
