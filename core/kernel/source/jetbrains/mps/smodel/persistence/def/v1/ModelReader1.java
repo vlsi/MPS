@@ -53,22 +53,11 @@ public class ModelReader1 implements IModelReader {
       List<Element> aspectElements = element.getChildren(ModelPersistence.LANGUAGE_ASPECT);
 
       //aspect models versions
-      for (Element aspectElement : aspectElements) {
-        String aspectModelUID = aspectElement.getAttributeValue(ModelPersistence.MODEL_UID);
-        String versionString = aspectElement.getAttributeValue(ModelPersistence.VERSION);
-        int version = -1;
-        if (versionString != null) {
-          try {
-            version = Integer.parseInt(versionString);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-        if (aspectModelUID != null) {
-          model.addLanguageAspectModelVersion(SModelUID.fromString(aspectModelUID), version);
-        }
-      }
+      readLanguageAspects(model, aspectElements);
     }
+    //additional language aspects
+    List<Element> aspectElements = rootElement.getChildren(ModelPersistence.LANGUAGE_ASPECT);
+    readLanguageAspects(model, aspectElements);
 
     // languages engaged on generation
     List languagesEOG = rootElement.getChildren(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
@@ -146,6 +135,24 @@ public class ModelReader1 implements IModelReader {
 
     model.setLoading(false);
     return model;
+  }
+
+  private void readLanguageAspects(SModel model, List<Element> aspectElements) {
+    for (Element aspectElement : aspectElements) {
+      String aspectModelUID = aspectElement.getAttributeValue(ModelPersistence.MODEL_UID);
+      String versionString = aspectElement.getAttributeValue(ModelPersistence.VERSION);
+      int version = -1;
+      if (versionString != null) {
+        try {
+          version = Integer.parseInt(versionString);
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+      }
+      if (aspectModelUID != null) {
+        model.addLanguageAspectModelVersion(SModelUID.fromString(aspectModelUID), version);
+      }
+    }
   }
 
   public SNode readNode(Element nodeElement, SModel model) {

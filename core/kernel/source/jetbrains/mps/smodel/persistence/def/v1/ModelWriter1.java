@@ -31,6 +31,7 @@ public class ModelWriter1 implements IModelWriter {
     rootElement.addContent(history.toElement());
 
     // languages
+    Set<SModelUID> allDirectAspectModelDescriptors = new HashSet<SModelUID>();
     for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace);
@@ -38,6 +39,9 @@ public class ModelWriter1 implements IModelWriter {
       if (l != null) {
         sourceModel.addAspectModelVersions(languageNamespace, l);
         List<SModelDescriptor> aspectModelDescriptors = new ArrayList<SModelDescriptor>(l.getAspectModelDescriptors());
+        for (SModelDescriptor aspectModelDescriptor : aspectModelDescriptors) {
+          allDirectAspectModelDescriptors.add(aspectModelDescriptor.getModelUID());
+        }
         Collections.sort(aspectModelDescriptors, new Comparator<SModelDescriptor>() {
           public int compare(SModelDescriptor o1, SModelDescriptor o2) {
             return o1.toString().compareTo(o2.toString());
@@ -45,16 +49,17 @@ public class ModelWriter1 implements IModelWriter {
         });
         for (SModelDescriptor sModelDescriptor : aspectModelDescriptors) {
           SModelUID uid = sModelDescriptor.getModelUID();
-          int modelVersion = sourceModel.getLanguageAspectModelVersion(uid);
-          if (modelVersion > -1) {
-            Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
-            aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, uid.toString());
-            aspectModelElement.setAttribute(ModelPersistence.VERSION, "" + modelVersion);
-            languageElem.addContent(aspectModelElement);
-          }
+          writeAspect(sourceModel, languageElem, uid);
         }
       }
       rootElement.addContent(languageElem);
+    }
+    for (ImportElement aspectElement : sourceModel.getLanguageAspectModelElements()) {
+      SModelUID modelUID = aspectElement.getModelUID();
+      if (allDirectAspectModelDescriptors.contains(modelUID)) {
+        continue;
+      }
+      writeAspect(sourceModel, rootElement, modelUID);
     }
 
     // languages engaged on generation
@@ -111,6 +116,16 @@ public class ModelWriter1 implements IModelWriter {
     Document document = new Document();
     document.setRootElement(rootElement);
     return document;
+  }
+
+  private void writeAspect(SModel sourceModel, Element parent, SModelUID aspectUID) {
+    int modelVersion = sourceModel.getLanguageAspectModelVersion(aspectUID);
+    if (modelVersion > -1) {
+      Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
+      aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, aspectUID.toString());
+      aspectModelElement.setAttribute(ModelPersistence.VERSION, "" + modelVersion);
+      parent.addContent(aspectModelElement);
+    }
   }
 
   public void saveNode(Element container, SNode node) {

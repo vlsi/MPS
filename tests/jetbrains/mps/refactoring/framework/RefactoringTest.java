@@ -26,7 +26,7 @@ public class RefactoringTest extends BaseMPSTest {
   }
 
   //todo fix a test later
- /* public void testRenameLinkRefactoring_Hierarchy() {
+  /*public void testRenameLinkRefactoring_Hierarchy() {
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.RenameLinkRefactoringTester_Hierarchy"));
   }*/
 

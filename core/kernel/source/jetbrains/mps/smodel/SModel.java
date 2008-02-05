@@ -34,6 +34,8 @@ public class SModel implements Iterable<SNode> {
   private List<SModelListener> myListeners = new ArrayList<SModelListener>();
   private List<SModelCommandListener> myCommandListeners = new ArrayList<SModelCommandListener>();
 
+  private Set<Language> myVersionedLanguages = new HashSet<Language>();
+
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelUID myUID = new SModelUID("unnamed", "");
 
@@ -472,8 +474,15 @@ public class SModel implements Iterable<SNode> {
   }
 
   private void addAspectModelsVersions(Language language) {
+    if (myVersionedLanguages.contains(language)) {
+      return;
+    }
     for (SModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
       addLanguageAspectModelVersion(modelDescriptor.getModelUID(), modelDescriptor.getVersion());
+    }
+    myVersionedLanguages.add(language);
+    for (Language l : language.getExtendedLanguages()) {
+      addAspectModelsVersions(l);
     }
   }
 
@@ -672,6 +681,10 @@ public class SModel implements Iterable<SNode> {
       }
     }
     return null;
+  }
+
+  public List<ImportElement> getLanguageAspectModelElements() {
+    return new ArrayList<ImportElement>(myLanguagesAspectsModelsVersions);
   }
 
 
