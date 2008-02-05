@@ -22,6 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.util.Calculable;
 
+import javax.swing.JOptionPane;
 import java.util.Map;
 import java.util.List;
 
@@ -48,11 +49,23 @@ public class GenericRefactoring {
 
       Thread thread = new Thread() {
         public void run() {
+          final boolean toReturn[] = new boolean[]{false};
           CommandProcessor.instance().executeLightweightCommand(new Runnable() {
             public void run() {
-              usagesContainer[0] = myRefactoring.getAffectedNodes(context, refactoringContext);
+              try {
+                usagesContainer[0] = myRefactoring.getAffectedNodes(context, refactoringContext);
+              } catch (Throwable t) {
+                ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                  public void run() {
+                    int promptResult = JOptionPane.showConfirmDialog(context.getFrame(),
+                      "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
+                    toReturn[0] = promptResult == JOptionPane.NO_OPTION;
+                  }
+                });
+              }
             }
           });
+          if (toReturn[0]) return;
           ThreadUtils.runInUIThreadAndWait(new Runnable() {
             public void run() {
               SearchResults usages = usagesContainer[0];
