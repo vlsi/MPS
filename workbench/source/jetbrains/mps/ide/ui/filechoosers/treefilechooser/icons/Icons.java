@@ -4,6 +4,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class Icons {
+  public static final Icon USER_HOME_ICON = new ImageIcon(Icons.class.getResource("userHome.png"));
   public static final Icon MPS_HOME_ICON = new ImageIcon(Icons.class.getResource("mpsHome.png"));
   public static final Icon PROJECT_HOME_ICON = jetbrains.mps.ide.projectPane.Icons.PROJECT_ICON;
   public static final Icon MODULE_HOME_ICON = new ImageIcon(Icons.class.getResource("moduleHome.png"));
