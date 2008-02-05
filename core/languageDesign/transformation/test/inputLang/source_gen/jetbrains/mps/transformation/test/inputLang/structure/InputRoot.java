@@ -18,6 +18,7 @@ public class InputRoot extends BaseConcept implements INamedConcept {
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String USE_IN_TEST = "useInTest";
 
   public  InputRoot(SNode node) {
     super(node);
@@ -82,6 +83,15 @@ public class InputRoot extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(InputRoot.VIRTUAL_PACKAGE, value);
+  }
+
+  public UseInTest getUseInTest() {
+    String value = super.getProperty(InputRoot.USE_IN_TEST);
+    return UseInTest.parseValue(value);
+  }
+
+  public void setUseInTest(UseInTest value) {
+    super.setProperty(InputRoot.USE_IN_TEST, value.getValueAsString());
   }
 
 }

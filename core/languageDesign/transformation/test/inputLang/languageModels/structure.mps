@@ -9,6 +9,10 @@
     <property name="name" value="InputRoot" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1202243304949">
+      <property name="name" value="useInTest" />
+      <link role="dataType" targetNodeId="1202242680337" resolveInfo="UseInTest" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195169805620">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="inputChild" />
@@ -46,6 +50,24 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1195171080307">
       <property name="name" value="option" />
       <link role="dataType" targetNodeId="1195169251499" resolveInfo="Option" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1202242680337">
+    <property name="name" value="UseInTest" />
+    <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    <link role="defaultMember" targetNodeId="1202242822699" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1202242680338">
+      <property name="internalValue" value="test1" />
+      <property name="externalValue" value="test1" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1202242753917">
+      <property name="internalValue" value="getParentInputTest" />
+      <property name="externalValue" value="getParentInputTest" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1202242822699">
+      <property name="externalValue" value="none" />
+      <property name="internalValue" value="none" />
     </node>
   </node>
 </model>
