@@ -1695,6 +1695,9 @@
         <property name="vertical" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1188473537547" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202228508657">
+        <property name="text" value=")" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1188813215375">

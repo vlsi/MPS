@@ -30,6 +30,10 @@ public class MeetType_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188473560036");
   }
 
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202228508657");
+  }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188473560034");
   }
@@ -38,6 +42,9 @@ public class MeetType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ArgumentList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -53,6 +60,7 @@ public class MeetType_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "MEET ("));
     editorCell.addEditorCell(this.createArgumentList(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
     return editorCell;
   }
 
@@ -60,6 +68,14 @@ public class MeetType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     MeetType_Editor.setupBasic_ConstantCell(editorCell, node, context);
     MeetType_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MeetType_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    MeetType_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
