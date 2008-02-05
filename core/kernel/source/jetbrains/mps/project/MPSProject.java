@@ -949,10 +949,16 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       return MPSProject.this;
     }
 
+
+
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.addAll(getProjectSolutions());
-      result.addAll(getProjectLanguages());
+      for (Language l : getProjectLanguages()) {
+        result.add(l);
+        result.addAll(l.getGenerators());
+      }
+
       result.addAll(getProjectDevKits());
       return result;
     }

@@ -4,6 +4,7 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Dependency;
+import jetbrains.mps.project.MPSProject.ProjectScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
