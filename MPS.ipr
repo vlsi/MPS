@@ -914,6 +914,7 @@
       <module fileurl="file://$CHARISMA_HOME$/charisma-app/charisma-app.iml" filepath="$CHARISMA_HOME$/charisma-app/charisma-app.iml" group="app/charisma" />
       <module fileurl="file://$CHARISMA_HOME$/charisma-jira-client/charisma-jira-client.iml" filepath="$CHARISMA_HOME$/charisma-jira-client/charisma-jira-client.iml" group="app/charisma" />
       <module fileurl="file://$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" filepath="$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" group="app/charisma" />
+      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/closures/Closures.iml" filepath="$PROJECT_DIR$/core/baseLanguage/closures/Closures.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/configuration/configurationLanguage.iml" filepath="$PROJECT_DIR$/core/configuration/configurationLanguage.iml" group="core/kernel" />

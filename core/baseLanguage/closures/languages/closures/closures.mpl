@@ -42,8 +42,8 @@
     <entry path="${language_descriptor}\runtime\classes" />
   </classPath>
   <runtimeClassPath>
-    <entry path="${mps_home}\platform\ypath\classes" />
-    <entry path="${mps_home}\platform\ypath\languages\closures\runtime\classes" />
+    <entry path="${mps_home}\core\baseLanguage\closures\classes" />
+    <entry path="${mps_home}\core\baseLanguage\closures\languages\closures\runtime\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
