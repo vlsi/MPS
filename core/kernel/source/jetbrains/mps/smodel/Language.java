@@ -290,7 +290,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       }
     }
 
-    if (changed) {
+    if (changed && !getDescriptorFile().isReadOnly()) {
       save();
     }
   }
