@@ -40,6 +40,10 @@ public final class SNode {
 
   private static long ourCounter = 0;
 
+  private static Set<Pair<SNode, String>> ourPropertySettersInProgress = new HashSet<Pair<SNode, String>>();
+  private static Set<Pair<SNode, String>> ourPropertyGettersInProgress = new HashSet<Pair<SNode, String>>();
+  private static Set<Pair<SNode, String>> ourSetReferentEventHandlersInProgress = new HashSet<Pair<SNode, String>>();
+
   private String myRoleInParent;
   private SNode myParent;
   private List<SNode> myChildren;
@@ -54,9 +58,6 @@ public final class SNode {
   private SNodeId myId;
 
   private Map<Object, Object> myUserObjects;
-  private Set<String> myPropertySettersInProgress;
-  private Set<String> myPropertyGettersInProgress;
-  private Set<String> mySetReferentEventHandlersInProgress;
 
   private String myConceptFqName;
 
@@ -281,6 +282,8 @@ public final class SNode {
 
   public void putUserObject(@NotNull Object key,
                             @Nullable Object value) {
+    ModelAccess.assertLegalRead(this);
+    
     if (myUserObjects == null) {
       myUserObjects = new HashMap<Object, Object>(2);
     }
@@ -630,18 +633,15 @@ public final class SNode {
 
   private String getProperty_internal(String propertyName) {
     String propertyValue = null;
-    if (myPropertyGettersInProgress == null || !myPropertyGettersInProgress.contains(propertyName)) {
+    if (!ourPropertyGettersInProgress.contains(new Pair<SNode, String>(this, propertyName))) {
       INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
       if (getter != null) {
-        if (myPropertyGettersInProgress == null) {
-          myPropertyGettersInProgress = new HashSet<String>(1);
-        }
-        myPropertyGettersInProgress.add(propertyName);
+        ourPropertyGettersInProgress.add(new Pair<SNode, String>(this, propertyName));
         try {
           Object getterValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
           propertyValue = getterValue == null ? null : String.valueOf(getterValue);
         } finally {
-          myPropertyGettersInProgress.remove(propertyName);
+          ourPropertyGettersInProgress.remove(new Pair<SNode, String>(this, propertyName));
         }
       } else {
         propertyValue = getPersistentProperty(propertyName);
@@ -673,16 +673,16 @@ public final class SNode {
     ModelChange.assertLegalNodeChange(this);
     propertyValue = InternUtil.intern(propertyValue);
     if (usePropertySetter) {
-      if ((myPropertySettersInProgress == null || !myPropertySettersInProgress.contains(propertyName)) && !myModel.isLoading()) {
+      if (!ourPropertySettersInProgress.contains(new Pair<SNode, String>(this, propertyName)) && !myModel.isLoading()) {
         INodePropertySetter setter = ModelConstraintsManager.getInstance().getNodePropertySetter(this, propertyName);
         if (setter != null) {
-          myPropertySettersInProgress = new HashSet<String>(1);
-          myPropertySettersInProgress.add(propertyName);
+          ourPropertySettersInProgress = new HashSet<Pair<SNode, String>>(1);
+          ourPropertySettersInProgress.add(new Pair<SNode, String>(this, propertyName));
           try {
             setter.execPropertySet(this, propertyName, propertyValue, GlobalScope.getInstance());
             return;
           } finally {
-            myPropertySettersInProgress.remove(propertyName);
+            ourPropertySettersInProgress.remove(new Pair<SNode, String>(this, propertyName));
           }
         }
       }
@@ -1059,19 +1059,14 @@ public final class SNode {
 
     if (useHandler && !getModel().isLoading()) {
       // invoke custom referent set event handler
-      if (mySetReferentEventHandlersInProgress == null || !mySetReferentEventHandlersInProgress.contains(role)) {
+      if (!ourSetReferentEventHandlersInProgress.contains(new Pair<SNode, String>(this, role))) {
         INodeReferentSetEventHandler handler = ModelConstraintsManager.getInstance().getNodeReferentSetEventHandler(this, role);
         if (handler != null) {
-          if (mySetReferentEventHandlersInProgress == null)
-            mySetReferentEventHandlersInProgress = new HashSet<String>(1);
-          mySetReferentEventHandlersInProgress.add(role);
+          ourSetReferentEventHandlersInProgress.add(new Pair<SNode, String>(this, role));
           try {
             handler.processReferentSetEvent(this, oldReferent, newReferent, GlobalScope.getInstance());
           } finally {
-            mySetReferentEventHandlersInProgress.remove(role);
-            if (mySetReferentEventHandlersInProgress.isEmpty()) {
-              mySetReferentEventHandlersInProgress = null;
-            }
+            ourSetReferentEventHandlersInProgress.remove(new Pair<SNode, String>(this, role));
           }
         }
       }
