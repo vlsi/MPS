@@ -20,6 +20,7 @@ import jetbrains.mps.refactoring.NewRefactoringView;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.util.Calculable;
 
 import javax.swing.JOptionPane;
@@ -53,7 +54,9 @@ public class GenericRefactoring {
           CommandProcessor.instance().executeLightweightCommand(new Runnable() {
             public void run() {
               try {
-                usagesContainer[0] = myRefactoring.getAffectedNodes(context, refactoringContext);
+                ActionContext newContext = new ActionContext(context);
+                newContext.put(IOperationContext.class, new ProjectOperationContext(context.getOperationContext().getProject()));
+                usagesContainer[0] = myRefactoring.getAffectedNodes(newContext, refactoringContext);
               } catch (Throwable t) {
                 ThreadUtils.runInUIThreadAndWait(new Runnable() {
                   public void run() {
