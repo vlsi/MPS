@@ -12,6 +12,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
 import org.jdom.Element;
 
@@ -155,7 +156,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     return new HashSet<M>(result);
   }
 
-  public IPreferencesPage createPreferencesPage() {
-    return new LibraryManagerPreferences(this);
+  public List<IPreferencesPage> createPreferencesPages() {
+    return CollectionUtil.asList((IPreferencesPage) new LibraryManagerPreferences(this));
   }
 }

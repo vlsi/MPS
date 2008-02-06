@@ -7,6 +7,7 @@ import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.Icon;
 import javax.swing.JCheckBox;
@@ -14,6 +15,7 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,8 +35,8 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
     return ApplicationComponents.getInstance().getComponent(HelginsPreferencesComponent.class);
   }
 
-  public IPreferencesPage createPreferencesPage() {
-    return new MyPreferencesPage();
+  public List<IPreferencesPage> createPreferencesPages() {
+    return CollectionUtil.asList((IPreferencesPage) new MyPreferencesPage());
   }
 
 /*  public boolean isUsesIncrementalAlgorithm() {

@@ -161,8 +161,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     myCheckBeforeCompilation = checkBeforeCompilation;
   }
 
-  public IPreferencesPage createPreferencesPage() {
-    return new GeneratorManagerPreferencesPage(this);
+  public List<IPreferencesPage> createPreferencesPages() {
+    return CollectionUtil.asList((IPreferencesPage) new GeneratorManagerPreferencesPage(this));
   }
 
   public IGenerationType getDefaultModuleGenerationType() {

@@ -10,6 +10,7 @@ import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.component.Dependency;
 
 import javax.swing.*;
@@ -121,8 +122,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     myUseLegacyTypesystem = useLegacyTypesystem;
   }
 
-  public IPreferencesPage createPreferencesPage() {
-    return new MyPreferencesPage();
+  public List<IPreferencesPage> createPreferencesPages() {
+    return CollectionUtil.asList((IPreferencesPage) new MyPreferencesPage());
   }
 
   private abstract static class MyColorComponent extends JPanel {

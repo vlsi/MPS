@@ -9,6 +9,7 @@ import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;
@@ -16,6 +17,8 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
+import java.util.*;
+import java.util.List;
 
 import org.jdom.Element;
 
@@ -161,8 +164,8 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
     return Icons.OUTPUT_VIEW_ICON;
   }
 
-  public IPreferencesPage createPreferencesPage() {
-    return new IPreferencesPage() {
+  public List<IPreferencesPage> createPreferencesPages() {
+    IPreferencesPage page = new IPreferencesPage() {
       private JPanel myComponent = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
       private JTextField myFontSizeField = new JTextField("" + myFontSize);
 
@@ -195,6 +198,7 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
         updateComponent();
       }
     };
+    return CollectionUtil.asList(page);
   }
 
 
