@@ -14,7 +14,6 @@ import java.util.List;
 public class Project extends BaseConcept implements INamedConcept, IPropertyHolder {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.Project";
   public static String DEFAULT = "default";
-  public static String DEFINITIONS = "definitions";
   public static String BASEDIR = "basedir";
   public static String TARGET = "target";
   public static String IMPORT_PROJECT = "importProject";
@@ -45,14 +44,6 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
 
   public void setDefault(TargetReference node) {
     super.setChild(Project.DEFAULT, node);
-  }
-
-  public Definitions getDefinitions() {
-    return (Definitions)this.getChild(Project.DEFINITIONS);
-  }
-
-  public void setDefinitions(Definitions node) {
-    super.setChild(Project.DEFINITIONS, node);
   }
 
   public FileName getBasedir() {
