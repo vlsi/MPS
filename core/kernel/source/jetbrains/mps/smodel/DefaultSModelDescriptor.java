@@ -229,8 +229,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       for (Language language : allLanguages) {
         modelDescriptors.addAll(language.getAspectModelDescriptors());
       }
-      for (SModelUID sModelUID : mySModel.getImportedModelUIDs()) {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelUID);
+      for (SModelDescriptor modelDescriptor : mySModel.allImportedModels(GlobalScope.getInstance())) {
         if (modelDescriptor == null) continue;
         modelDescriptors.add(modelDescriptor);
       }

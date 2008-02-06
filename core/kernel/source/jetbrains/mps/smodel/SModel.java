@@ -734,6 +734,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public List<SModelUID> getImportedModelUIDs() {
+    getLanguages(GlobalScope.getInstance());
     List<SModelUID> uids = new ArrayList<SModelUID>();
     for (ImportElement importElement : myImports) {
       uids.add(importElement.getModelUID());
@@ -742,7 +743,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
-  public List<SModelUID> getAdditionalModelsUIDs() {
+  public List<SModelUID> getAdditionalModelsUIDs() { //todo
     List<SModelUID> uids = new ArrayList<SModelUID>();
     for (ImportElement importElement : myAdditionalModelsVersions) {
       uids.add(importElement.getModelUID());
