@@ -7,6 +7,8 @@ import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -14,6 +16,7 @@ public class TemplateProcessor {
   private TemplateGenerator myGenerator;
   private SModel myOutputModel;
   private List<Pair<SNode, String>> myInputHistory = new ArrayList<Pair<SNode, String>>();
+  private Map<String, SNode> myInputNodesByMappingName = new HashMap<String, SNode>();
 
   public TemplateProcessor(TemplateGenerator generator) {
     myGenerator = generator;
@@ -26,7 +29,7 @@ public class TemplateProcessor {
                                                              SNode inputNode,
                                                              TemplateGenerator generator) throws DismissTopMappingRuleException, TemplateProcessingFailureException {
     TemplateProcessor templateProcessor = new TemplateProcessor(generator);
-    List<Pair<SNode, String>> oldInputHistory = generator.setInputHistory(templateProcessor.myInputHistory);
+    Map<String, SNode> old = generator.setPreviousInputNodesByMappingName(templateProcessor.myInputNodesByMappingName);
     try {
       List<SNode> outputNodels = templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
       if (outputNodels == null) {
@@ -34,7 +37,7 @@ public class TemplateProcessor {
       }
       return outputNodels;
     } finally {
-      generator.setInputHistory(oldInputHistory);
+      generator.setPreviousInputNodesByMappingName(old);
     }
   }
 
@@ -44,6 +47,7 @@ public class TemplateProcessor {
                                                        int nodeMacrosToSkip,
                                                        boolean registerTopOutput) throws DismissTopMappingRuleException {
     GenerationTracer generationTracer = myGenerator.getGeneratorSessionContext().getGenerationTracer();
+    putInputNodeByMappingName(mappingName, inputNode);
 
     int macroCount = 0;
     List<SNode> outputNodes = new ArrayList<SNode>();
@@ -119,7 +123,7 @@ public class TemplateProcessor {
         ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(
           outputNode, (ReferenceMacro) templateChildNode,
           inputNode,
-          getInputHistoryCopy(),
+          new HashMap<String, SNode>(myInputNodesByMappingName),
           templateNode
         );
         PostponedReference postponedReference = new PostponedReference(
@@ -166,7 +170,7 @@ public class TemplateProcessor {
       for (SNode newInputNode : newInputNodes) {
         boolean inputChanged = (newInputNode != inputNode);
         if (inputChanged) {
-          pushInputHistory(inputNode, mappingName);
+          pushInputHistory(inputNode);
           generationTracer.pushInputNode(newInputNode);
         }
         try {
@@ -236,7 +240,7 @@ public class TemplateProcessor {
       for (SNode newInputNode : newInputNodes) {
         boolean inputChanged = (newInputNode != inputNode);
         if (inputChanged) {
-          pushInputHistory(inputNode, mappingName);
+          pushInputHistory(inputNode);
           generationTracer.pushInputNode(newInputNode);
         }
         try {
@@ -245,7 +249,13 @@ public class TemplateProcessor {
             generationTracer.pushOutputNodeToReplaceLater(childToReplaceLater);
             outputNodes.add(childToReplaceLater);
             // execute the 'mapper' function later
-            myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(nodeMacro, childToReplaceLater, newInputNode, getInputHistoryCopy(), myGenerator);
+            putInputNodeByMappingName(mappingName, newInputNode);
+            myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(
+              nodeMacro,
+              childToReplaceLater,
+              newInputNode,
+              new HashMap<String, SNode>(myInputNodesByMappingName),
+              myGenerator);
           } else {
             List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
             if (_outputNodes != null) outputNodes.addAll(_outputNodes);
@@ -277,7 +287,7 @@ public class TemplateProcessor {
 
       boolean inputChanged = (newInputNode != inputNode);
       if (inputChanged) {
-        pushInputHistory(inputNode, mappingName);
+        pushInputHistory(inputNode);
         generationTracer.pushInputNode(newInputNode);
       }
       generationTracer.pushSwitch(templateSwitch.getNode());
@@ -348,7 +358,7 @@ public class TemplateProcessor {
 
       boolean inputChanged = (newInputNode != inputNode);
       if (inputChanged) {
-        pushInputHistory(inputNode, mappingName);
+        pushInputHistory(inputNode);
         generationTracer.pushInputNode(newInputNode);
       }
       generationTracer.pushTemplateNode(includeTemplate.getNode());
@@ -376,7 +386,7 @@ public class TemplateProcessor {
     for (SNode newInputNode : newInputNodes) {
       boolean inputChanged = (newInputNode != inputNode);
       if (inputChanged) {
-        pushInputHistory(inputNode, mappingName);
+        pushInputHistory(inputNode);
         generationTracer.pushInputNode(newInputNode);
       }
       try {
@@ -396,6 +406,7 @@ public class TemplateProcessor {
   }
 
   private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) {
+    putInputNodeByMappingName(mappingName, inputNode);
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
     try {
       return copyNodeFromInputNode_internal(mappingName, templateNode, inputNode);
@@ -497,17 +508,17 @@ public class TemplateProcessor {
                                                                SNode inputNode,
                                                                boolean registerTopOutput) throws DismissTopMappingRuleException {
     TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator);
-    List<Pair<SNode, String>> oldInputHistory = myGenerator.setInputHistory(templateProcessor.myInputHistory);
+    Map<String, SNode> old = myGenerator.setPreviousInputNodesByMappingName(templateProcessor.myInputNodesByMappingName);
     try {
       return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, registerTopOutput);
     } finally {
-      myGenerator.setInputHistory(oldInputHistory);
+      myGenerator.setPreviousInputNodesByMappingName(old);
     }
   }
 
 
-  private void pushInputHistory(SNode oldInputNode, String mappingName) {
-    myInputHistory.add(new Pair<SNode, String>(oldInputNode, mappingName));
+  private void pushInputHistory(SNode oldInputNode) {
+    myInputHistory.add(new Pair<SNode, String>(oldInputNode, null));
   }
 
   private void popInputHistory() {
@@ -517,5 +528,10 @@ public class TemplateProcessor {
   @Nullable
   private List<Pair<SNode, String>> getInputHistoryCopy() {
     return myInputHistory.isEmpty() ? null : new ArrayList<Pair<SNode, String>>(myInputHistory);
+  }
+
+  private void putInputNodeByMappingName(String mappingName, SNode node) {
+    if (mappingName == null || node == null) return;
+    myInputNodesByMappingName.put(mappingName, node);
   }
 }

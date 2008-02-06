@@ -13,12 +13,12 @@ import java.util.List;
 
 public class OutputRoot extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot";
-  public static String OUTPUT_CHILD = "outputChild";
   public static String TEXT = "text";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String OUTPUT_CHILD = "outputChild";
 
   public  OutputRoot(SNode node) {
     super(node);
@@ -32,26 +32,6 @@ public class OutputRoot extends BaseConcept implements INamedConcept {
     return OutputRoot.newInstance(sm, false);
   }
 
-
-  public int getOutputChildsCount() {
-    return this.getChildCount(OutputRoot.OUTPUT_CHILD);
-  }
-
-  public Iterator<OutputNode> outputChilds() {
-    return this.children(OutputRoot.OUTPUT_CHILD);
-  }
-
-  public List<OutputNode> getOutputChilds() {
-    return this.getChildren(OutputRoot.OUTPUT_CHILD);
-  }
-
-  public void addOutputChild(OutputNode node) {
-    this.addChild(OutputRoot.OUTPUT_CHILD, node);
-  }
-
-  public void insertOutputChild(OutputNode prev, OutputNode node) {
-    this.insertChild(prev, OutputRoot.OUTPUT_CHILD, node);
-  }
 
   public String getText() {
     return this.getProperty(OutputRoot.TEXT);
@@ -91,6 +71,26 @@ public class OutputRoot extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(OutputRoot.VIRTUAL_PACKAGE, value);
+  }
+
+  public int getOutputChildsCount() {
+    return this.getChildCount(OutputRoot.OUTPUT_CHILD);
+  }
+
+  public Iterator<OutputNode> outputChilds() {
+    return this.children(OutputRoot.OUTPUT_CHILD);
+  }
+
+  public List<OutputNode> getOutputChilds() {
+    return this.getChildren(OutputRoot.OUTPUT_CHILD);
+  }
+
+  public void addOutputChild(OutputNode node) {
+    this.addChild(OutputRoot.OUTPUT_CHILD, node);
+  }
+
+  public void insertOutputChild(OutputNode prev, OutputNode node) {
+    this.insertChild(prev, OutputRoot.OUTPUT_CHILD, node);
   }
 
 }

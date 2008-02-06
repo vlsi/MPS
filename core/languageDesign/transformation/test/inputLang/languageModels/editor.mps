@@ -74,10 +74,10 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195170144859">
             <property name="text" value="InputNode_A" />
           </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1202253983188">
-            <property name="noTargetText" value="&lt;no text&gt;" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1202327551613">
+            <property name="noTargetText" value="&lt;no name&gt;" />
             <property name="allowEmptyText" value="true" />
-            <link role="relationDeclaration" targetNodeId="1.1202253956358" resolveInfo="text" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195170144862">

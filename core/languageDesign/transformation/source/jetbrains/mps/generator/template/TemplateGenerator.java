@@ -2,14 +2,12 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.GenerationFailedException;
-import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.QueryMethod;
 
 import java.util.*;
 
@@ -30,7 +28,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private DelayedChanges myDelayedChanges = new DelayedChanges();
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
-  private List<Pair<SNode, String>> myCurrentInputHistory;
+  private Map<String, SNode> myCurrentPreviousInputNodesByMappingName;
 
   private boolean myChanged = false;
   private RuleManager myRuleManager;
@@ -350,24 +348,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     list.addAll(outputNodes);
   }
 
-  public List<Pair<SNode, String>> setInputHistory(List<Pair<SNode, String>> inputHistory) {
-    List<Pair<SNode, String>> oldInputHistory = myCurrentInputHistory;
-    myCurrentInputHistory = inputHistory;
-    return oldInputHistory;
+  public Map<String, SNode> setPreviousInputNodesByMappingName(Map<String, SNode> inputNodesByMappingName) {
+    Map<String, SNode> old = myCurrentPreviousInputNodesByMappingName;
+    myCurrentPreviousInputNodesByMappingName = inputNodesByMappingName;
+    return old;
   }
 
   public SNode getPreviousInputNodeByMappingName(String mappingName) {
-    if (myCurrentInputHistory == null || mappingName == null) {
+    if (myCurrentPreviousInputNodesByMappingName == null || mappingName == null) {
       return null;
     }
-
-    for (int i = myCurrentInputHistory.size() - 1; i >= 0; i--) {
-      Pair<SNode, String> inputHistoryEntry = myCurrentInputHistory.get(i);
-      if (mappingName.equals(inputHistoryEntry.o2)) {
-        return inputHistoryEntry.o1;
-      }
-    }
-    return null;
+    return myCurrentPreviousInputNodesByMappingName.get(mappingName);
   }
 
   //todo remove this after going to new generator

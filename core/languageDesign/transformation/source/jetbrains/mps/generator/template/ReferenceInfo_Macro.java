@@ -10,20 +10,21 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by: Sergey Dmitriev
  * Date: Jan 25, 2007
  */
 public class ReferenceInfo_Macro extends ReferenceInfo {
-  private List<Pair<SNode, String>> myInputHistory;
   private SNode myTemplateReferenceNode;
   private ReferenceMacro myReferenceMacro;
   private String myResolveInfoForDynamicResolve;
+  private Map<String, SNode> myInputNodesByMappingName;
 
-  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro refMacro, SNode inputNode, List<Pair<SNode, String>> inputHistory, SNode templateReferenceNode) {
+  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro refMacro, SNode inputNode, Map<String, SNode> inputNodesByMappingName, SNode templateReferenceNode) {
     super(outputSourceNode, refMacro.getLink().getRole(), inputNode);
-    myInputHistory = inputHistory;
+    myInputNodesByMappingName = inputNodesByMappingName;
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = refMacro;
   }
@@ -34,7 +35,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
-    List<Pair<SNode, String>> oldInputHistory = generator.setInputHistory(myInputHistory);
+    Map<String, SNode> old = generator.setPreviousInputNodesByMappingName(myInputNodesByMappingName);
     SNode outputTargetNode;
     try {
       //todo it should be removed after going to new generator
@@ -42,7 +43,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       outputTargetNode = expandReferenceMacro(generator);
       generator.setCurrentBuilder(null);
     } finally {
-      generator.setInputHistory(oldInputHistory);
+      generator.setPreviousInputNodesByMappingName(old);
     }
     return outputTargetNode;
   }

@@ -7,10 +7,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
 public class OutputNode extends BaseConcept {
   public static final String concept = "jetbrains.mps.transformation.test.outputLang.structure.OutputNode";
   public static String TEXT = "text";
+  public static String OUTPUT_CHILD = "outputChild";
 
   public  OutputNode(SNode node) {
     super(node);
@@ -31,6 +34,26 @@ public class OutputNode extends BaseConcept {
 
   public void setText(String value) {
     this.setProperty(OutputNode.TEXT, value);
+  }
+
+  public int getOutputChildsCount() {
+    return this.getChildCount(OutputNode.OUTPUT_CHILD);
+  }
+
+  public Iterator<OutputNode> outputChilds() {
+    return this.children(OutputNode.OUTPUT_CHILD);
+  }
+
+  public List<OutputNode> getOutputChilds() {
+    return this.getChildren(OutputNode.OUTPUT_CHILD);
+  }
+
+  public void addOutputChild(OutputNode node) {
+    this.addChild(OutputNode.OUTPUT_CHILD, node);
+  }
+
+  public void insertOutputChild(OutputNode prev, OutputNode node) {
+    this.insertChild(prev, OutputNode.OUTPUT_CHILD, node);
   }
 
 }
