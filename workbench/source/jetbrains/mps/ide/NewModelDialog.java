@@ -53,8 +53,6 @@ public class NewModelDialog extends BaseDialog {
     myModelRoots.setModel(model);
     completePrefix();
 
-
-
     myContentPane.add(mainPanel, BorderLayout.NORTH);
     myContentPane.add(new JPanel(), BorderLayout.CENTER);
 
