@@ -13,6 +13,8 @@ import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class NewModelDialog extends BaseDialog {
   private IOperationContext myContext;
@@ -43,10 +45,24 @@ public class NewModelDialog extends BaseDialog {
       model.addElement(new ModelRootWrapper(root));
     }
     
+    myModelRoots.addItemListener(new ItemListener() {
+      public void itemStateChanged(ItemEvent e) {
+        completePrefix();
+      }
+    });
     myModelRoots.setModel(model);
+    completePrefix();
+
+
 
     myContentPane.add(mainPanel, BorderLayout.NORTH);
     myContentPane.add(new JPanel(), BorderLayout.CENTER);
+
+  }
+
+  private void completePrefix() {
+    ModelRootWrapper wrapper = (ModelRootWrapper) myModelRoots.getSelectedItem();
+    myModelName.setText(wrapper.myModelRoot.getPrefix());
   }
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
