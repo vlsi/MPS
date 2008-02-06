@@ -47,10 +47,14 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
     myShowAllOnEmptyText = showAllOnEmptyText;
 
     setLayout(new BorderLayout());
-    myHeaderLabel = new JPanel(new BorderLayout(10, 0));
-    myHeaderLabel.add(new JLabel(myHeader), BorderLayout.WEST);
-    myMainPanel = new JPanel(new GridLayout(2, 1));
-    myMainPanel.add(myHeaderLabel);
+    if (myHeader != null) {
+      myMainPanel = new JPanel(new GridLayout(2, 1));
+      myHeaderLabel = new JPanel(new BorderLayout(10, 0));
+      myHeaderLabel.add(new JLabel(myHeader), BorderLayout.WEST);
+      myMainPanel.add(myHeaderLabel);
+    } else {
+      myMainPanel = new JPanel(new GridLayout(1, 1));
+    }
     myMainPanel.add(myTextField = new JTextField(""));
     add(myMainPanel, BorderLayout.NORTH);
     myList.setFocusable(false);

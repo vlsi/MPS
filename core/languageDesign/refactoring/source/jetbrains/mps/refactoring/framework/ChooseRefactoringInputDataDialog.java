@@ -12,7 +12,6 @@ import java.awt.event.ActionEvent;
 
 public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
-  private JPanel myPanel = new JPanel(new BorderLayout());
   private JPanel myInnerPanel;
   private boolean myResult = false;
   private List<IChooseComponent> myComponents;
@@ -27,17 +26,20 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     myActionContext = actionContext;
     myRefactoringContext = refactoringContext;
     myComponents = new ArrayList<IChooseComponent>(components);
-    myPanel.add(new JLabel("Input data for refactoring"), BorderLayout.NORTH);
     myInnerPanel = new JPanel();
-    GridLayout layout = new GridLayout(0,1/*myInnerPanel, BoxLayout.PAGE_AXIS*/);
+    BoxLayout layout = new BoxLayout(myInnerPanel, BoxLayout.Y_AXIS);
     myInnerPanel.setLayout(layout);
     myIsLocalCheckBox = new JCheckBox("is local");
     myIsLocalCheckBox.setSelected(true);
+    GridBagConstraints constraints = new GridBagConstraints();
+    constraints.gridx = GridBagConstraints.HORIZONTAL;
+
+   // layout.setConstraints(myIsLocalCheckBox, constraints);
     myInnerPanel.add(myIsLocalCheckBox);
     for (IChooseComponent component : myComponents) {
+    //  layout.setConstraints((Component) component, (GridBagConstraints) constraints.clone());
       myInnerPanel.add((Component)component);
     }
-    myPanel.add(myInnerPanel, BorderLayout.CENTER);
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
@@ -45,7 +47,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   }
 
   protected JComponent getMainComponent() {
-    return myPanel;
+    return myInnerPanel;
   }
 
   public boolean getResult() {

@@ -11,13 +11,12 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
 
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.ListCellRenderer;
+import javax.swing.*;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 import java.util.*;
 
 import org.jetbrains.annotations.Nullable;
@@ -38,7 +37,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private Condition myCondition = Condition.TRUE_CONDITION;
 
   public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
-    setLayout(new BorderLayout());
+    //setLayout(new BorderLayout());
     myCaption = caption;
     myPropertyName = propertyName;
     myActionContext = actionContext;
@@ -48,12 +47,15 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
 
     myConceptFQName = conceptFQName;
 
-    JPanel panel = new JPanel(new BorderLayout());
-    panel.add(myChooseItemComponent, BorderLayout.NORTH);
-    panel.add(new JScrollPane(myTree), BorderLayout.CENTER);
+    // JPanel panel = new JPanel();
+    BoxLayout layout = new BoxLayout(this, BoxLayout.Y_AXIS);
+    this.setLayout(layout);
+    add(new JLabel(myCaption, SwingConstants.CENTER)/*, BorderLayout.NORTH*/);
+    /*panel.*/add(myChooseItemComponent);
+    /*panel.*/add(new JScrollPane(myTree));
 
-    add(new JLabel(myCaption), BorderLayout.NORTH);
-    add(panel, BorderLayout.CENTER);
+
+    //add(panel, BorderLayout.CENTER);
 
     myTree.setRootVisible(false);
     updateModels(myCondition);
@@ -168,7 +170,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
 
   class MyChooseItemComponent extends ChooseItemComponent<SModelDescriptor> {
     public MyChooseItemComponent() {
-      super("choose model");
+      super(null);
     }
 
     public void askForDispose() {
