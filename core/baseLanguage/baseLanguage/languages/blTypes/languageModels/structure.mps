@@ -4,12 +4,8 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.bootstrap.refactoringLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="4" modelUID="jetbrains.mps.refactoring.common.rename@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1159268590033">
     <property name="iconPath" value="${language_descriptor}\icons\primitive.png" />
     <property name="rootable" value="true" />
