@@ -6,7 +6,6 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -121,7 +120,7 @@ public class GenericRefactoring {
         SModel anotherModel = anotherDescriptor.getSModel();
         if (model != anotherModel
           && !anotherModel.getImportedModelUIDs().contains(model.getUID())
-          && !anotherModel.getLanguageAspectModelsUIDs().contains(model.getUID())) continue;
+          && !anotherModel.getAdditionalModelsUIDs().contains(model.getUID())) continue;
         processModel(anotherModel, model, refactoringContext);
       }
     }

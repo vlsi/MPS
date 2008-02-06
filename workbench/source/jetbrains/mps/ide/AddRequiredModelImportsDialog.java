@@ -113,7 +113,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
       myModel.addNewlyImportedLanguage(language);
     }
     for (String devkit : myDevKits) {
-      myModel.addDevKit(devkit);
+      myModel.addNewlyImportedDevKit(devkit);
     }
     myCanceled = false;
     dispose();
@@ -128,7 +128,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
       myModel.addNewlyImportedLanguage(language);
     }
     for (String devKit : myDevKits) {
-      myModel.addDevKit(devKit);
+      myModel.addNewlyImportedDevKit(devKit);
     }
     myCanceled = false;
     dispose();
