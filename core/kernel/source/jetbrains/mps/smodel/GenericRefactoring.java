@@ -117,10 +117,12 @@ public class GenericRefactoring {
           continue;
         }
         if (!anotherDescriptor.isInitialized()) continue;
+        if (anotherDescriptor.getModelUID().toString().equals("jetbrains.mps.webr.sandbox.dialog")) {
+          System.err.println("oy vey");
+        }
         SModel anotherModel = anotherDescriptor.getSModel();
         if (model != anotherModel
-          && !anotherModel.getImportedModelUIDs().contains(model.getUID())
-          && !anotherModel.getAdditionalModelsUIDs().contains(model.getUID())) continue;
+          && !anotherModel.getDependenciesModels().contains(modelDescriptor)) continue;
         processModel(anotherModel, model, refactoringContext);
       }
     }

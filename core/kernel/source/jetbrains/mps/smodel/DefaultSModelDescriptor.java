@@ -209,31 +209,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
     try {
       mySModel.setLoading(true);
-      Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>();
-
-      //languages and extended languages
-      List<Language> languages = mySModel.getLanguages(GlobalScope.getInstance());
-      Set<Language> allLanguages = new HashSet<Language>();
-      Set<Language> frontier = new HashSet<Language>(languages);
-      Set<Language> newFrontier = new HashSet<Language>();
-      while (!frontier.isEmpty()) {
-        for (Language l : frontier) {
-          if (allLanguages.contains(l)) continue;
-          allLanguages.add(l);
-          newFrontier.addAll(l.getExtendedLanguages());
-        }
-        frontier = newFrontier;
-        newFrontier = new HashSet<Language>();
-      }
-
-      for (Language language : allLanguages) {
-        modelDescriptors.addAll(language.getAspectModelDescriptors());
-      }
-      for (SModelDescriptor modelDescriptor : mySModel.allImportedModels(GlobalScope.getInstance())) {
-        if (modelDescriptor == null) continue;
-        modelDescriptors.add(modelDescriptor);
-      }
-      for (SModelDescriptor modelDescriptor : modelDescriptors) {
+      for (SModelDescriptor modelDescriptor : mySModel.getDependenciesModels()) {
         playUsedModelDescriptorsRefactoring(modelDescriptor);
       }
     } finally {
