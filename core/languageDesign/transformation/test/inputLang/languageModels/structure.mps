@@ -26,6 +26,16 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195169091918">
     <property name="name" value="InputNode" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202254005876">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="inputChild" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1195169091918" resolveInfo="InputNode" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1202253956358">
+      <property name="name" value="text" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1195171040070">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
@@ -62,8 +72,8 @@
       <property name="externalValue" value="test1" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1202242753917">
-      <property name="internalValue" value="getParentInputTest" />
-      <property name="externalValue" value="getParentInputTest" />
+      <property name="internalValue" value="getPrevInputTest" />
+      <property name="externalValue" value="getPrevInputTest" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1202242822699">
       <property name="externalValue" value="none" />

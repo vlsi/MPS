@@ -7,9 +7,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
 public class InputNode extends BaseConcept {
   public static final String concept = "jetbrains.mps.transformation.test.inputLang.structure.InputNode";
+  public static String INPUT_CHILD = "inputChild";
+  public static String TEXT = "text";
 
   public  InputNode(SNode node) {
     super(node);
@@ -21,6 +25,35 @@ public class InputNode extends BaseConcept {
 
   public static InputNode newInstance(SModel sm) {
     return InputNode.newInstance(sm, false);
+  }
+
+
+  public int getInputChildsCount() {
+    return this.getChildCount(InputNode.INPUT_CHILD);
+  }
+
+  public Iterator<InputNode> inputChilds() {
+    return this.children(InputNode.INPUT_CHILD);
+  }
+
+  public List<InputNode> getInputChilds() {
+    return this.getChildren(InputNode.INPUT_CHILD);
+  }
+
+  public void addInputChild(InputNode node) {
+    this.addChild(InputNode.INPUT_CHILD, node);
+  }
+
+  public void insertInputChild(InputNode prev, InputNode node) {
+    this.insertChild(prev, InputNode.INPUT_CHILD, node);
+  }
+
+  public String getText() {
+    return this.getProperty(InputNode.TEXT);
+  }
+
+  public void setText(String value) {
+    this.setProperty(InputNode.TEXT, value);
   }
 
 }

@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 public enum UseInTest {
   test1("test1", "test1"),
-  getParentInputTest("getParentInputTest", "getParentInputTest"),
+  getPrevInputTest("getPrevInputTest", "getPrevInputTest"),
   none("none", "none");
 
   /* package */String myName;
@@ -21,7 +21,7 @@ public enum UseInTest {
   public static List<UseInTest> getConstants() {
     List<UseInTest> list = new LinkedList<UseInTest>();
     list.add(UseInTest.test1);
-    list.add(UseInTest.getParentInputTest);
+    list.add(UseInTest.getPrevInputTest);
     list.add(UseInTest.none);
     return list;
   }
@@ -37,8 +37,8 @@ public enum UseInTest {
     if(value.equals(UseInTest.test1.getValueAsString())) {
       return UseInTest.test1;
     }
-    if(value.equals(UseInTest.getParentInputTest.getValueAsString())) {
-      return UseInTest.getParentInputTest;
+    if(value.equals(UseInTest.getPrevInputTest.getValueAsString())) {
+      return UseInTest.getPrevInputTest;
     }
     if(value.equals(UseInTest.none.getValueAsString())) {
       return UseInTest.none;
