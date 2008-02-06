@@ -146,16 +146,12 @@ public class EquationManager {
     if (NodeWrapper.fromWrapper(subtypeRepresentator) == NodeWrapper.fromWrapper(supertypeRepresentator)) return;
 
     // if one of them is a var
-
-    //todo care about shallow-concrete types
-    // if big problems with helgins replace this with the code like below:
     RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
-    //boolean subtypeContainsVars = subtypeRepresentator != null && subtypeRepresentator.containsVariables(this);
-    // new! but works bad. for MPS-490
-
     RuntimeTypeVariable varSupertype = supertypeRepresentator == null ? null : supertypeRepresentator.getVariable();
+    Set<SNodePointer> vars = myNonConcreteVars.get(subtypeRepresentator);
+    boolean hasNonConcreteVars = vars != null && !vars.isEmpty();
 
-    if (varSubtype != null || varSupertype != null) {
+    if (varSubtype != null /*|| hasNonConcreteVars*/ || varSupertype != null) {
       if (isWeak) {
         addSubtyping(subtypeRepresentator, supertypeRepresentator, errorInfo);
       } else {
