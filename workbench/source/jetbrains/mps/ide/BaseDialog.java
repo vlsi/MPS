@@ -88,6 +88,8 @@ public abstract class BaseDialog extends JDialog {
 
 
   public void showDialog() {
+    LOG.error("Dialogs should be shown in EDT ", new Throwable());
+
     prepareDialog();
     setVisible(true);
   }
