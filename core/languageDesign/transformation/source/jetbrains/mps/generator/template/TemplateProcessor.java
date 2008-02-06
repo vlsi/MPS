@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 public class TemplateProcessor {
   private TemplateGenerator myGenerator;
   private SModel myOutputModel;
-  private List<Pair<SNode, String>> myInputHistory = new ArrayList<Pair<SNode, String>>();
+  private List<SNode> myInputHistory = new ArrayList<SNode>();
   private Map<String, SNode> myInputNodesByMappingName = new HashMap<String, SNode>();
 
   public TemplateProcessor(TemplateGenerator generator) {
@@ -79,8 +79,8 @@ public class TemplateProcessor {
     }
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     if (!myInputHistory.isEmpty()) {
-      for (Pair<SNode, String> nodeAndMappingName : myInputHistory) {
-        myGenerator.addOutputNodeByIndirectInputAndTemplateNode(nodeAndMappingName.o1, templateNode, outputNode);
+      for (SNode historyInputNode : myInputHistory) {
+        myGenerator.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNode, outputNode);
       }
     }
     myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
@@ -518,7 +518,7 @@ public class TemplateProcessor {
 
 
   private void pushInputHistory(SNode oldInputNode) {
-    myInputHistory.add(new Pair<SNode, String>(oldInputNode, null));
+    myInputHistory.add(oldInputNode);
   }
 
   private void popInputHistory() {
@@ -526,8 +526,8 @@ public class TemplateProcessor {
   }
 
   @Nullable
-  private List<Pair<SNode, String>> getInputHistoryCopy() {
-    return myInputHistory.isEmpty() ? null : new ArrayList<Pair<SNode, String>>(myInputHistory);
+  private List<SNode> getInputHistoryCopy() {
+    return myInputHistory.isEmpty() ? null : new ArrayList<SNode>(myInputHistory);
   }
 
   private void putInputNodeByMappingName(String mappingName, SNode node) {

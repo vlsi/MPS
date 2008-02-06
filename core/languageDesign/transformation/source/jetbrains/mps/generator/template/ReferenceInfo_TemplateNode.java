@@ -2,12 +2,9 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by: Sergey Dmitriev
@@ -16,10 +13,10 @@ import org.jetbrains.annotations.Nullable;
 public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   private SNode myTemplateSourceNode;
   private SNode myTemplateTargetNode;
-  private List<Pair<SNode, String>> myInputHistory;
+  private List<SNode> myInputHistory;
 
 
-  public ReferenceInfo_TemplateNode(SNode outputSourceNode, SReference templateReference, SNode inputNode, @Nullable List<Pair<SNode, String>> inputHistory) {
+  public ReferenceInfo_TemplateNode(SNode outputSourceNode, SReference templateReference, SNode inputNode, @Nullable List<SNode> inputHistory) {
     super(outputSourceNode, templateReference.getRole(), inputNode);
     myInputHistory = inputHistory;
     myTemplateSourceNode = templateReference.getSourceNode();
@@ -57,8 +54,8 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
 
     // try to find for indirect input nodes
     if (myInputHistory != null) {
-      for (Pair<SNode, String> nodeAndMappingName : myInputHistory) {
-        outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(nodeAndMappingName.o1, myTemplateTargetNode);
+      for (SNode historyInputNode : myInputHistory) {
+        outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(historyInputNode, myTemplateTargetNode);
         if (outputTargetNode != null) {
           return outputTargetNode;
         }
@@ -95,17 +92,17 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     return outputTargetNode;
   }
 
-  private static SNode findOutputSubnodeByTemplateNode(TemplateGenerator generator, SNode outputNode, SNode templateNode) {
-    if (generator.findTemplateNodeByOutputNode(outputNode) == templateNode) return outputNode;
-    List<SNode> children = outputNode.getChildren();
-    for (SNode childNode : children) {
-      SNode outputTargetNode = findOutputSubnodeByTemplateNode(generator, childNode, templateNode);
-      if (outputTargetNode != null) {
-        return outputTargetNode;
-      }
-    }
-    return null;
-  }
+//  private static SNode findOutputSubnodeByTemplateNode(TemplateGenerator generator, SNode outputNode, SNode templateNode) {
+//    if (generator.findTemplateNodeByOutputNode(outputNode) == templateNode) return outputNode;
+//    List<SNode> children = outputNode.getChildren();
+//    for (SNode childNode : children) {
+//      SNode outputTargetNode = findOutputSubnodeByTemplateNode(generator, childNode, templateNode);
+//      if (outputTargetNode != null) {
+//        return outputTargetNode;
+//      }
+//    }
+//    return null;
+//  }
 
   public String getResolveInfoForDynamicResolve() {
     return myTemplateTargetNode.getResolveInfo();
