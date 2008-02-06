@@ -30,6 +30,30 @@
       <property name="description" value="a non word character [^\w]" />
       <property name="name" value="\W" />
     </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202318346829">
+      <property name="name" value="\b" />
+      <property name="description" value="a word boundary" />
+    </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202318480025">
+      <property name="name" value="\B" />
+      <property name="description" value="a non-word boundary" />
+    </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202318494398">
+      <property name="name" value="\A" />
+      <property name="description" value="the beggining of the input" />
+    </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202318524389">
+      <property name="name" value="\G" />
+      <property name="description" value="the end of the previous match" />
+    </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202318563160">
+      <property name="name" value="\Z" />
+      <property name="description" value="the end of the input but for the final terminator, if any" />
+    </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202318601642">
+      <property name="name" value="\z" />
+      <property name="description" value="the end of the input" />
+    </node>
     <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1174554761307">
       <property name="description" value="a lower case alphabetic character [a-z]" />
       <property name="name" value="\p{Lower}" />
@@ -109,18 +133,6 @@
     <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1194467120363">
       <property name="name" value="\t" />
       <property name="description" value="tabulation symbol" />
-    </node>
-    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202213095061">
-      <property name="name" value="\." />
-      <property name="description" value="dot symbol" />
-    </node>
-    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202213262836">
-      <property name="name" value="\(" />
-      <property name="description" value="open paren symbol" />
-    </node>
-    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1202213274424">
-      <property name="name" value="\)" />
-      <property name="description" value="close paren symbol" />
     </node>
   </node>
   <node type="jetbrains.mps.regexp.structure.Regexps" id="1174662820983">
