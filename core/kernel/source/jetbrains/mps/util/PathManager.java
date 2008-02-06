@@ -320,8 +320,8 @@ public class PathManager {
       return null;
     }
     int length = rootPath.length();
-    if(rootPath.endsWith(File.separator)) {
-      length--;
+    if(rootPath.endsWith(File.separator) || rootPath.endsWith("!")) {
+      length--; 
     }
     String longName = modelPath.substring(length + 1);
     longName = longName.substring(0, longName.lastIndexOf("."));
