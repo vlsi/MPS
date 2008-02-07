@@ -15,6 +15,7 @@
       </external-templates>
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
       </dependencies>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">

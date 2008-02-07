@@ -6,16 +6,15 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.quotation" />
-  <maxImportIndex value="15" />
+  <maxImportIndex value="17" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   <import index="9" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.main@java_stub" version="-1" />
-  <import index="10" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="12" modelUID="java.lang@java_stub" version="-1" />
-  <import index="14" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
+  <import index="17" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170956206132">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1178821527695">
@@ -112,7 +111,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178821802347">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178821802348">
-            <link role="baseMethodDeclaration" targetNodeId="10.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
+            <link role="baseMethodDeclaration" targetNodeId="17.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178821802349">
               <link role="variableDeclaration" targetNodeId="1178821640739" resolveInfo="generator" />
             </node>
@@ -145,8 +144,8 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1178821640739">
         <property name="name" value="generator" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178821649964">
-          <link role="classifier" targetNodeId="10.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202385954843">
+          <link role="classifier" targetNodeId="17.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
         </node>
       </node>
     </node>
@@ -247,7 +246,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178833620973">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178833628636">
-            <link role="baseMethodDeclaration" targetNodeId="10.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
+            <link role="baseMethodDeclaration" targetNodeId="17.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178833620974">
               <link role="variableDeclaration" targetNodeId="1170975981399" resolveInfo="generator" />
             </node>
@@ -276,7 +275,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1170975981399">
         <property name="name" value="generator" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170976002245">
-          <link role="classifier" targetNodeId="10.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
+          <link role="classifier" targetNodeId="17.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546096787" />
@@ -351,7 +350,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178827244122">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178827257414">
-            <link role="baseMethodDeclaration" targetNodeId="10.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
+            <link role="baseMethodDeclaration" targetNodeId="17.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178827244123">
               <link role="variableDeclaration" targetNodeId="1178826373826" resolveInfo="generator" />
             </node>
@@ -385,7 +384,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1178826373826">
         <property name="name" value="generator" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178826387880">
-          <link role="classifier" targetNodeId="10.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
+          <link role="classifier" targetNodeId="17.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
         </node>
       </node>
     </node>
