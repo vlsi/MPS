@@ -13,6 +13,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public  ConstraintsDescriptor() {
     this.myConstraints.add(new ComponentController_name_PropertyConstraint());
+    this.myConstraints.add(new AttributeValue_attribute_ReferentConstraint());
+    this.myConstraints.add(new ComponentInstance_component_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
