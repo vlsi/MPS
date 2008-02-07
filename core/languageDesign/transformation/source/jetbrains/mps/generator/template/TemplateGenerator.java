@@ -361,19 +361,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myCurrentPreviousInputNodesByMappingName.get(mappingName);
   }
 
-  //todo remove this after going to new generator
-  private INodeBuilder myCurrentBuilder;
-
-  //todo remove this after going to new generator
-  public void setCurrentBuilder(SNode snode) {
-    myCurrentBuilder = new SimpleNodeBuilder(this, snode);  //This is hack
-  }
-
-  //todo remove this after going to new generator
-  public INodeBuilder getCurrentBuilder() {
-    return myCurrentBuilder;  //This is hack
-  }
-
   public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) {
     INodeAdapter adapter = getConsequenceForSwitchCase_internal(inputNode, templateSwitch);
     if (adapter instanceof RuleConsequence) {

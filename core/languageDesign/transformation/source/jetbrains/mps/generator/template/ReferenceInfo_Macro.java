@@ -36,16 +36,11 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
     Map<String, SNode> old = generator.setPreviousInputNodesByMappingName(myInputNodesByMappingName);
-    SNode outputTargetNode;
     try {
-      //todo it should be removed after going to new generator
-      generator.setCurrentBuilder(getOutputSourceNode());
-      outputTargetNode = expandReferenceMacro(generator);
-      generator.setCurrentBuilder(null);
+      return expandReferenceMacro(generator);
     } finally {
       generator.setPreviousInputNodesByMappingName(old);
     }
-    return outputTargetNode;
   }
 
   public SNode doResolve_Tricky(TemplateGenerator generator) {
