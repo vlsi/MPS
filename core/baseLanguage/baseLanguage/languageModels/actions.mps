@@ -159,26 +159,6 @@
         </node>
       </node>
     </node>
-    <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory" id="1178291791624">
-      <link role="applicableConcept" targetNodeId="1.1068390468200" />
-      <node role="setupFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction" id="1178291791625">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178291791626">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178291802587">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1178291806622">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1178291803766">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1178291802588" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1178291805287">
-                  <link role="link" targetNodeId="1.1178549979242" />
-                </node>
-              </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1178291808065">
-                <link role="concept" targetNodeId="1.1146644623116" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory" id="1178291583639">
       <link role="applicableConcept" targetNodeId="1.1081236700938" />
       <node role="setupFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction" id="1178291583640">

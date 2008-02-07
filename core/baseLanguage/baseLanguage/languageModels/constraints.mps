@@ -5419,7 +5419,21 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1198838391568" />
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1184160780379">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184160780380" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184160780380">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202207143347">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202207152442">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1202207155608">
+              <link role="concept" targetNodeId="1.1146644602865" resolveInfo="PublicVisibility" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202207145356">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1202207147288">
+                <link role="link" targetNodeId="1.1178549979242" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1202207143348" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1184884307360">

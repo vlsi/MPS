@@ -12,8 +12,8 @@ import java.util.List;
 
 public class AnnotationInstance extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AnnotationInstance";
-  public static String ANNOTATION = "annotation";
   public static String VALUE = "value";
+  public static String ANNOTATION = "annotation";
 
   public  AnnotationInstance(SNode node) {
     super(node);
@@ -27,14 +27,6 @@ public class AnnotationInstance extends BaseConcept {
     return AnnotationInstance.newInstance(sm, false);
   }
 
-
-  public Annotation getAnnotation() {
-    return (Annotation)this.getReferent(AnnotationInstance.ANNOTATION);
-  }
-
-  public void setAnnotation(Annotation node) {
-    super.setReferent(AnnotationInstance.ANNOTATION, node);
-  }
 
   public int getValuesCount() {
     return this.getChildCount(AnnotationInstance.VALUE);
@@ -54,6 +46,14 @@ public class AnnotationInstance extends BaseConcept {
 
   public void insertValue(AnnotationInstanceValue prev, AnnotationInstanceValue node) {
     this.insertChild(prev, AnnotationInstance.VALUE, node);
+  }
+
+  public Annotation getAnnotation() {
+    return (Annotation)this.getReferent(AnnotationInstance.ANNOTATION);
+  }
+
+  public void setAnnotation(Annotation node) {
+    super.setReferent(AnnotationInstance.ANNOTATION, node);
   }
 
 }
