@@ -139,6 +139,10 @@ public class EquationManager {
   }
 
   public void addInequation(IWrapper subType, IWrapper supertype, ErrorInfo errorInfo, boolean isWeak) {
+    addInequation(subType, supertype, errorInfo, isWeak, true);
+  }
+
+  public void addInequation(IWrapper subType, IWrapper supertype, ErrorInfo errorInfo, boolean isWeak, boolean solveOnlyConcrete) {
     IWrapper subtypeRepresentator = getRepresentatorWrapper(subType);
     IWrapper supertypeRepresentator = getRepresentatorWrapper(supertype);
 
@@ -149,9 +153,9 @@ public class EquationManager {
     RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
     RuntimeTypeVariable varSupertype = supertypeRepresentator == null ? null : supertypeRepresentator.getVariable();
     Set<SNodePointer> vars = myNonConcreteVars.get(subtypeRepresentator);
-    boolean hasNonConcreteVars = vars != null && !vars.isEmpty();
+    boolean hasNonConcreteVars = vars != null && !vars.isEmpty() && solveOnlyConcrete;
 
-    if (varSubtype != null /*|| hasNonConcreteVars*/ || varSupertype != null) {
+    if (varSubtype != null || hasNonConcreteVars || varSupertype != null) {
       if (isWeak) {
         addSubtyping(subtypeRepresentator, supertypeRepresentator, errorInfo);
       } else {
@@ -670,7 +674,7 @@ public class EquationManager {
     boolean hasConcreteTypes = true;
 
     // we assume that there are no equations such as T1 :< T2 where T1 and T2 are both concrete
-    while (hasConcreteTypes) {
+    while (hasConcreteTypes) {    //todo infinite loop here if solving only deeply concrete inequations
       hasConcreteTypes = false;
       for (IWrapper type : types) {
         if (type == null) continue;
@@ -680,6 +684,10 @@ public class EquationManager {
           varLessThanType(type, true);
           varLessThanType(type, false);
         } else {
+          typeLessThanConcrete(type, true);
+          typeLessThanConcrete(type, false);
+          concreteLessThanType(type, true);
+          concreteLessThanType(type, false);
           hasConcreteTypes = true;
         }
       }
@@ -730,7 +738,32 @@ public class EquationManager {
     }
   }
 
-  private void typeLessThanVar(IWrapper type, boolean isWeak) {
+  private interface IActionPerformer {
+    public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, ErrorInfo> errorInfoMap, boolean isWeak, ErrorInfo errorInfo);
+  }
+
+  private void typeLessThanVar(IWrapper var, boolean isWeak) {
+    typeLessThanThis(var, isWeak, new IActionPerformer() {
+      public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, ErrorInfo> errorInfoMap, boolean isWeak, ErrorInfo errorInfo) {
+        //  T,S <: c => c = lcs(T,S)
+        addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(concreteSubtypes, isWeak),
+          errorInfo);
+      }
+    });
+  }
+
+  private void typeLessThanConcrete(IWrapper concreteType, boolean isWeak) {
+    typeLessThanThis(concreteType, isWeak, new IActionPerformer() {
+      public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, ErrorInfo> errorInfoMap, boolean isWeak, ErrorInfo errorInfo) {
+        for (IWrapper subtype : concreteSubtypes) {
+          // "T <: S" => T <: S
+          addInequation(subtype, type, errorInfoMap.get(subtype), isWeak, false);
+        }
+      }
+    });
+  }
+
+  private void typeLessThanThis(IWrapper thisType, boolean isWeak, IActionPerformer action) {
     final Map<IWrapper, Map<IWrapper, ErrorInfo>> supertypesToSubtypesMap;
     final Map<IWrapper, Map<IWrapper, ErrorInfo>> subtypesToSupertypesMap;
     if (isWeak) {
@@ -742,12 +775,12 @@ public class EquationManager {
     }
 
 
-    Map<IWrapper, ErrorInfo> subtypes = supertypesToSubtypesMap.get(type);
+    Map<IWrapper, ErrorInfo> subtypes = supertypesToSubtypesMap.get(thisType);
     if (subtypes == null) {
       return;
     }
     if (subtypes.isEmpty()) {
-      supertypesToSubtypesMap.remove(type);
+      supertypesToSubtypesMap.remove(thisType);
       return;
     }
     Set<IWrapper> concreteSubtypes = new HashSet<IWrapper>();
@@ -759,18 +792,41 @@ public class EquationManager {
     }
     if (concreteSubtypes.isEmpty()) return;
 
-    ErrorInfo errorInfo = subtypesToSupertypesMap.get(concreteSubtypes.iterator().next()).get(type);
+    Map<IWrapper, ErrorInfo> errorInfoMap = new HashMap<IWrapper, ErrorInfo>();
+    for (IWrapper concreteSubtype : concreteSubtypes) {
+      ErrorInfo errorInfo = subtypesToSupertypesMap.get(concreteSubtype).get(thisType);
+      errorInfoMap.put(concreteSubtype, errorInfo);
+    }
+    ErrorInfo errorInfo = subtypesToSupertypesMap.get(concreteSubtypes.iterator().next()).get(thisType);
 
     for (IWrapper subtypeNode : concreteSubtypes) {
-      supertypesToSubtypesMap.get(type).remove(subtypeNode);
-      subtypesToSupertypesMap.get(subtypeNode).remove(type);
+      supertypesToSubtypesMap.get(thisType).remove(subtypeNode);
+      subtypesToSupertypesMap.get(subtypeNode).remove(thisType);
     }
-    //  T,S <: c => c = lcs(T,S)
-    addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(concreteSubtypes, isWeak),
-      errorInfo);
+    action.performAction(thisType, concreteSubtypes, errorInfoMap, isWeak, errorInfo);
   }
 
-  private void varLessThanType(IWrapper type, boolean isWeak) {
+  private void varLessThanType(IWrapper var, boolean isWeak) {
+    thisLessThanType(var, isWeak, new IActionPerformer() {
+      public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, ErrorInfo> errorInfoMap, boolean isWeak, ErrorInfo errorInfo) {
+        // c :< T => c = T
+        addEquation(type, concreteSupertypes.iterator().next(), errorInfo);
+      }
+    });
+  }
+
+  private void concreteLessThanType(IWrapper concreteType, boolean isWeak) {
+    thisLessThanType(concreteType, isWeak, new IActionPerformer() {
+      public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, ErrorInfo> errorInfoMap, boolean isWeak, ErrorInfo errorInfo) {
+        for (IWrapper supertype : concreteSupertypes) {
+          // "T <: S" => T <: S
+          addInequation(type, supertype, errorInfoMap.get(supertype), isWeak, false);
+        }
+      }
+    });
+  }
+
+  private void thisLessThanType(IWrapper thisType, boolean isWeak, IActionPerformer actionPerformer) {
     final Map<IWrapper, Map<IWrapper, ErrorInfo>> supertypesToSubtypesMap;
     final Map<IWrapper, Map<IWrapper, ErrorInfo>> subtypesToSupertypesMap;
     if (isWeak) {
@@ -781,12 +837,12 @@ public class EquationManager {
       subtypesToSupertypesMap = mySubtypesToSupertypesMapStrong;
     }
 
-    Map<IWrapper, ErrorInfo> supertypes = subtypesToSupertypesMap.get(type);
+    Map<IWrapper, ErrorInfo> supertypes = subtypesToSupertypesMap.get(thisType);
     if (supertypes == null) {
       return;
     }
     if (supertypes.isEmpty()) {
-      subtypesToSupertypesMap.remove(type);
+      subtypesToSupertypesMap.remove(thisType);
       return;
     }
     Set<IWrapper> concreteSupertypes = new HashSet<IWrapper>();
@@ -798,15 +854,23 @@ public class EquationManager {
     }
     if (concreteSupertypes.isEmpty()) return;
 
+    //todo
+    Map<IWrapper, ErrorInfo> errorInfoMap = new HashMap<IWrapper, ErrorInfo>();
+    for (IWrapper concreteSupertype : concreteSupertypes) {
+      ErrorInfo errorInfo = supertypesToSubtypesMap.get(concreteSupertype).get(thisType);
+      errorInfoMap.put(concreteSupertype, errorInfo);
+    }
+
     IWrapper supertype = concreteSupertypes.iterator().next();
     ErrorInfo errorInfo = supertypes.get(supertype);
+    assert errorInfo == errorInfoMap.get(supertype);
+    errorInfo = errorInfoMap.get(supertype);
 
     for (IWrapper supertypeNode : concreteSupertypes) {
-      subtypesToSupertypesMap.get(type).remove(supertypeNode);
-      supertypesToSubtypesMap.get(supertypeNode).remove(type);
+      subtypesToSupertypesMap.get(thisType).remove(supertypeNode);
+      supertypesToSubtypesMap.get(supertypeNode).remove(thisType);
     }
-    // c :< T => c = T
-    addEquation(type, supertype, errorInfo);
+    actionPerformer.performAction(thisType, concreteSupertypes, errorInfoMap, isWeak, errorInfo);
   }
 
   public Set getEffects(SNode type) {
