@@ -65,7 +65,7 @@ public final class SNode {
 
   public SNode(SModel model, String conceptFqName) {
     myModel = model;
-    myConceptFqName = conceptFqName;
+    myConceptFqName = InternUtil.intern(conceptFqName);
   }
 
   public void changeModel(SModel newModel) {
@@ -1750,7 +1750,7 @@ public final class SNode {
   }
 
   public void setRoleInParent(String newRoleInParent) {//todo add undo
-    myRoleInParent = newRoleInParent;
+    myRoleInParent = InternUtil.intern(newRoleInParent);
   }
 
   public int depth() {
