@@ -14,8 +14,6 @@ public class CompositeClassPathItem implements IClassPathItem {
   private static final Logger LOG = Logger.getLogger(CompositeClassPathItem.class);
 
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
-  private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
-  private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
 
   public void add(IClassPathItem item) {
     assert item != null;
@@ -43,30 +41,22 @@ public class CompositeClassPathItem implements IClassPathItem {
 
   @NotNull
   public Set<String> getAvailableClasses(String namespace) {
-    if (!myClasses.containsKey(namespace)) {
-      Set<String> result = new HashSet<String>(0);
-      for (IClassPathItem item : myChildren) {
-        result.addAll(item.getAvailableClasses(namespace));
-      }
-      myClasses.put(namespace, result);
+    Set<String> result = new HashSet<String>(0);
+    for (IClassPathItem item : myChildren) {
+      result.addAll(item.getAvailableClasses(namespace));
     }
-
-    return Collections.unmodifiableSet(myClasses.get(namespace));
+    return result;
   }
 
   @NotNull
   public Set<String> getSubpackages(String namespace) {
-    if (!mySubpackages.containsKey(namespace)) {
-      Set<String> result = new HashSet<String>(0);
+    Set<String> result = new HashSet<String>(0);
 
-      for (IClassPathItem item : myChildren) {
-        result.addAll(item.getSubpackages(namespace));
-      }
-
-      mySubpackages.put(namespace, result);
+    for (IClassPathItem item : myChildren) {
+      result.addAll(item.getSubpackages(namespace));
     }
 
-    return Collections.unmodifiableSet(mySubpackages.get(namespace));
+    return result;
   }
 
   public long getClassesTimestamp(String namespace) {
