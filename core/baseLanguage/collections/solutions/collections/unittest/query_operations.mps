@@ -834,7 +834,12 @@
                     </node>
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193248556915">
                       <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalYieldStatement" id="1193248556916">
-                        <node role="value" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1193248556917" />
+                        <node role="value" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1202395059786">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1202395059787" />
+                          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202395062879">
+                            <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
