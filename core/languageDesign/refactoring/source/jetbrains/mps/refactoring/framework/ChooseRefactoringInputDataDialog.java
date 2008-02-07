@@ -27,17 +27,20 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     myRefactoringContext = refactoringContext;
     myComponents = new ArrayList<IChooseComponent>(components);
     myInnerPanel = new JPanel();
-    BoxLayout layout = new BoxLayout(myInnerPanel, BoxLayout.Y_AXIS);
+    GridBagLayout layout = new GridBagLayout();
     myInnerPanel.setLayout(layout);
     myIsLocalCheckBox = new JCheckBox("is local");
     myIsLocalCheckBox.setSelected(true);
     GridBagConstraints constraints = new GridBagConstraints();
-    constraints.gridx = GridBagConstraints.HORIZONTAL;
+    constraints.gridx = 0;
+    constraints.gridy = GridBagConstraints.RELATIVE;
+    constraints.gridwidth = 1;
+    constraints.fill = GridBagConstraints.BOTH;
 
-   // layout.setConstraints(myIsLocalCheckBox, constraints);
+    layout.setConstraints(myIsLocalCheckBox, constraints);
     myInnerPanel.add(myIsLocalCheckBox);
     for (IChooseComponent component : myComponents) {
-    //  layout.setConstraints((Component) component, (GridBagConstraints) constraints.clone());
+      layout.setConstraints((Component) component, (GridBagConstraints) constraints.clone());
       myInnerPanel.add((Component)component);
     }
   }
