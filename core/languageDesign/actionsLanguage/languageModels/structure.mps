@@ -519,7 +519,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177333551023">
       <property name="role" value="concept" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1071489090640" />
+      <link role="target" targetNodeId="2.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177333559040">
       <property name="metaClass" value="aggregation" />

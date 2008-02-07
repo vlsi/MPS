@@ -298,4 +298,10 @@ public class NameUtil {
     String prop = Character.toUpperCase(property.charAt(0)) + property.substring(1);
     return "remove" + prop;
   }
+
+  public static String getPropertyNameFromGetterOrSetter(String name) {
+    assert name.startsWith("get") || name.startsWith("set");
+    String propertyName = name.substring(3);
+    return Character.toLowerCase(propertyName.charAt(0)) + propertyName.substring(1);
+  }
 }
