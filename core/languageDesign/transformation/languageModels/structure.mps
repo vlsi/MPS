@@ -196,14 +196,6 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1175152860919">
       <link role="intfc" targetNodeId="2.1169194658468" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1095757900618">
-      <property name="name" value="contextProviderAspectId" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1184373534966">
-      <property name="value" value="'contextProviderAspectId' is deprecated" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1180129508254" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1112730859144">
     <property name="rootable" value="true" />

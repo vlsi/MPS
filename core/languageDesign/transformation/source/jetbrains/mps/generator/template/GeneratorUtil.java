@@ -340,7 +340,7 @@ public class GeneratorUtil {
     boolean allFragmentsWhichUseDefaultContextHaveSameParent = true;
     SNode defaultContext = null;
     for (TemplateFragment templateFragment : templateFragments) {
-      if (templateFragment.getContextProviderAspectId() == null && templateFragment.getContextNodeQuery() == null) { // uses <default context>
+      if (templateFragment.getContextNodeQuery() == null) { // uses <default context>
         SNode fragmentContextNode = BaseAdapter.fromAdapter(templateFragment.getParent().getParent());
         if (defaultContext == null) {
           defaultContext = fragmentContextNode;
@@ -352,7 +352,7 @@ public class GeneratorUtil {
     }
     if (!allFragmentsWhichUseDefaultContextHaveSameParent) {
       for (TemplateFragment templateFragment : templateFragments) {
-        if (templateFragment.getContextProviderAspectId() == null && templateFragment.getContextNodeQuery() == null) { // uses <default context>
+        if (templateFragment.getContextNodeQuery() == null) { // uses <default context>
           generator.showErrorMessage(null, templateFragment.getNode(), null, "template fragment uses <default context>: conflicts with other fragments which use <default context>");
         }
       }
@@ -418,18 +418,6 @@ public class GeneratorUtil {
   private static SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode, TemplateGenerator generator) {
     TemplateFragment fragment = TemplateFragment_AnnotationLink.getTemplateFragment((BaseConcept) templateFragmentNode.getAdapter());
     // has custom context builder provider?
-
-    // old
-    String aspectId = fragment.getContextProviderAspectId();
-    if (aspectId != null) {
-      String methodName = "templateFragment_Context_" + aspectId;
-      Object[] args = new Object[]{templateFragmentNode, new SimpleNodeBuilder(generator, mainContextNode), generator};
-      INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, fragment.getModel());
-      if (nodeBuilder == null) return null;
-      return nodeBuilder.getTargetNode();
-    }
-
-    // new
     TemplateFragment_ContextNodeQuery query = fragment.getContextNodeQuery();
     if (query != null) {
       String methodName = TemplateFunctionMethodName.templateFragment_ContextNodeQuery(query.getNode());
