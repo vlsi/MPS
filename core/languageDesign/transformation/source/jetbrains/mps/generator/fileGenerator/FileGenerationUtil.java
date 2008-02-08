@@ -154,10 +154,13 @@ public class FileGenerationUtil {
     // clear garbage
     List<File> filesToDelete = new ArrayList<File>();
     for (File dir : directories) {
-      for (File outputDirectoryFile : dir.listFiles()) {
-        if (!outputDirectoryFile.isDirectory() && !outputDirectoryFile.isHidden()) {
-          if (!generatedFiles.contains(outputDirectoryFile)) {
-            filesToDelete.add(outputDirectoryFile);
+      File[] files = dir.listFiles();
+      if (files != null) {
+        for (File outputDirectoryFile : files) {
+          if (!outputDirectoryFile.isDirectory() && !outputDirectoryFile.isHidden()) {
+            if (!generatedFiles.contains(outputDirectoryFile)) {
+              filesToDelete.add(outputDirectoryFile);
+            }
           }
         }
       }
