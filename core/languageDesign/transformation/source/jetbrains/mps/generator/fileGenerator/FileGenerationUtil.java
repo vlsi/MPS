@@ -1,9 +1,12 @@
-package jetbrains.mps.generator.generationTypes;
+package jetbrains.mps.generator.fileGenerator;
 
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
+import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
+import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.logging.Logger;
@@ -16,6 +19,8 @@ import jetbrains.mps.util.FileUtil;
 import javax.swing.JOptionPane;
 import java.io.File;
 import java.io.IOException;
+import java.io.Writer;
+import java.io.FileWriter;
 import java.rmi.RemoteException;
 import java.util.*;
 
@@ -26,17 +31,12 @@ public class FileGenerationUtil {
 
   public static long getLastGenerationTime(SModelDescriptor sm) {
     Set<IModule> modules = sm.getModules();
-
     if (modules.size() != 1) {
       LOG.warning("model " + sm.getModelUID() + " has to many owners : " + modules);
     }
-
     IModule module = modules.iterator().next();
-
     String outputPath = module.getGeneratorOutputPath();
-
     String sourcesDir = outputPath + File.separator + sm.getLongName().replace('.', File.separatorChar);
-
     return FileUtil.getNewestFileTime(new File(sourcesDir));
   }
 
@@ -110,7 +110,6 @@ public class FileGenerationUtil {
     }
 
     // generate files and synchronize vcs
-
     Set<File> generatedFiles = new HashSet<File>();
     Set<File> directories = new HashSet<File>();
 
@@ -140,7 +139,7 @@ public class FileGenerationUtil {
     boolean hasErrors = false;
     for (SNode outputNode : status.getOutputModel().getRoots()) {
       try {
-        TextGenerationUtil.TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode, messages);
+        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode, messages);
         hasErrors |= result.hasErrors();
         outputNodeContents.put(outputNode, result.getText());
       } finally {
@@ -200,6 +199,15 @@ public class FileGenerationUtil {
       } catch (IOException e) {
         LOG.error(e);
       }
+    }
+  }
+
+  public static void writeContent(File file, String content) throws IOException {
+    Writer writer = new FileWriter(file);
+    try {
+      writer.write(content);
+    } finally {
+      writer.close();
     }
   }
 }

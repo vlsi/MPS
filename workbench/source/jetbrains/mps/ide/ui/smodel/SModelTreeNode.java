@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.annotations.structure.AttributeConcept;
-import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;

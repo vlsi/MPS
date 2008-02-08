@@ -9,9 +9,6 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
-
-import java.awt.Font;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {

@@ -2,7 +2,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;

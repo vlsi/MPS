@@ -1,8 +1,7 @@
 package jetbrains.mps.generator.fileGenerator;
 
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
@@ -62,7 +61,7 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
         //ok
       }
     }
-    FileGeneratorUtil.writeContent(file, content);
+    FileGenerationUtil.writeContent(file, content);
     return fileCreated ? file : null;
   }
 
