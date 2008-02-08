@@ -165,7 +165,9 @@ public abstract class BaseScope implements IScope {
         if (module instanceof Language) {
           Language language = (Language) module;
           for (Language l : language.getExtendedLanguages()) {
-            if (!visibleModules.contains(l)) {
+            if (l == null){
+              LOG.error("One of extended language of " +  language.getModuleUID() + " in " + this + " is null.");
+            } else if (!visibleModules.contains(l)) {
               visibleModules.add(l);
               changed = true;
             }
@@ -190,7 +192,9 @@ public abstract class BaseScope implements IScope {
 
       for (Language language : new ArrayList<Language>(usedLanguages)) {
         for (Language extendedLanguage : language.getExtendedLanguages()) {
-          if (!usedLanguages.contains(extendedLanguage)) {
+          if(extendedLanguage == null){
+              LOG.error("One of extended language of " +  language.getModuleUID() + " in " + this + " is null.");
+          }else if (!usedLanguages.contains(extendedLanguage)) {
             usedLanguages.add(extendedLanguage);
             changed = true;
           }
@@ -198,7 +202,9 @@ public abstract class BaseScope implements IScope {
 
         for (Dependency dep : language.getDependencies()) {
           IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
-          if (dep.isREExport() && !visibleModules.contains(dependency)) {
+          if (dependency == null){
+              LOG.error("Can not find module " +  dep.getModuleUID() + " in " + this + ".");  
+          } else if (dep.isREExport() && !visibleModules.contains(dependency)) {
             visibleModules.add(dependency);
             changed = true;
           }
@@ -207,7 +213,9 @@ public abstract class BaseScope implements IScope {
 
       for (DevKit dk : CollectionUtil.filter(DevKit.class, visibleModules)) {
         for (Language l : dk.getExportedLanguages()) {
-          if (!usedLanguages.contains(l)) {
+          if (l == null){
+            LOG.error("One of exported language of devkit " +  dk.getModuleUID() + " in " + this + " is null.");
+          } else if (!usedLanguages.contains(l)) {
             usedLanguages.add(l);
             changed = true;
           }
