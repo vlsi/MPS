@@ -10,6 +10,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.event.ComponentAdapter;
 
 public class Sandbox {
 
@@ -41,12 +42,20 @@ public class Sandbox {
     kostik.setLastName("Solomatov");
 
     JFrame frame = new JFrame();
+
+
     frame.setLayout(new GridBagLayout());
     ((JComponent) frame.getContentPane()).setBorder(new EmptyBorder(10, 10, 10, 10));
 
     GridBagConstraints c;
 
-    JLabel nameLabel = new JLabel("Name:");
+    JLabel nameLabel = new JLabel("Name:") {
+      public void addNotify() {
+        super.addNotify();
+      }
+    };
+
+
     c = new GridBagConstraints();
     c.gridx = 0;
     c.gridy = 0;
