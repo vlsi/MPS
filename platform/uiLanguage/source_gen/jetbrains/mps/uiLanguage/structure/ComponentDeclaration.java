@@ -12,7 +12,6 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 
 public class ComponentDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentDeclaration";
-  public static String ROOT = "root";
   public static String EXTENDED_COMPONENT = "extendedComponent";
   public static String MAPPED_TO = "mappedTo";
   public static String MAP_TO = "mapTo";
@@ -22,6 +21,7 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String STUB = "stub";
   public static String ABSTRACT = "abstract";
+  public static String ROOT = "root";
 
   public  ComponentDeclaration(SNode node) {
     super(node);
@@ -35,14 +35,6 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
     return ComponentDeclaration.newInstance(sm, false);
   }
 
-
-  public ComponentInstance getRoot() {
-    return (ComponentInstance)this.getChild(ComponentDeclaration.ROOT);
-  }
-
-  public void setRoot(ComponentInstance node) {
-    super.setChild(ComponentDeclaration.ROOT, node);
-  }
 
   public ComponentDeclaration getExtendedComponent() {
     return (ComponentDeclaration)this.getReferent(ComponentDeclaration.EXTENDED_COMPONENT);
@@ -114,6 +106,14 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
 
   public void setAbstract(boolean value) {
     this.setBooleanProperty(ComponentDeclaration.ABSTRACT, value);
+  }
+
+  public ComponentInstance getRoot() {
+    return (ComponentInstance)this.getChild(ComponentDeclaration.ROOT);
+  }
+
+  public void setRoot(ComponentInstance node) {
+    super.setChild(ComponentDeclaration.ROOT, node);
   }
 
 }
