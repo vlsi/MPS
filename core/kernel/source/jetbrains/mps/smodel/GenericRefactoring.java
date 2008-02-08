@@ -2,7 +2,7 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
@@ -142,7 +142,7 @@ public class GenericRefactoring {
     for (IModule sourceModule : sourceModels.keySet()) {
       IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
       new GeneratorManager().generateModels(sourceModels.get(sourceModule),
-        BootstrapLanguages.getInstance().getBaseLanguage(),
+        BootstrapLanguagesManager.getInstance().getBaseLanguage(),
         operationContext,
         IGenerationType.FILES,
         new IGenerationScript() {

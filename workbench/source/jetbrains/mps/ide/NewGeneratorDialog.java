@@ -221,7 +221,7 @@ public class NewGeneratorDialog extends BaseDialog {
         templateModelsRoot);
 
       SModel templateModel = templateModelDescriptor.getSModel();
-      templateModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getTLBase());
+      templateModel.addNewlyImportedLanguage(BootstrapLanguagesManager.getInstance().getTLBase());
       templateModel.addNewlyImportedLanguage(targetLanguage);
       templateModel.addNewlyImportedLanguage("jetbrains.mps.bootstrap.smodelLanguage");
 

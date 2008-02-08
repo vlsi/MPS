@@ -1,7 +1,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
@@ -194,7 +194,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     List<Language> sourceLanguages = sourceModel.getLanguages(getScope());
     for (Language sourceLanguage : sourceLanguages) {
       // don't try to apply templateLang generator to normal models
-      if (sourceLanguage == BootstrapLanguages.getInstance().getTLBase()) {
+      if (sourceLanguage == BootstrapLanguagesManager.getInstance().getTLBase()) {
         if (!(TemplateLanguageUtil.isTemplatesModel(sourceModel))) {
           continue;
         }

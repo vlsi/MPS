@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
@@ -113,7 +113,7 @@ public class Generator extends AbstractModule {
       Language language = MPSModuleRepository.getInstance().getLanguage(targetLanguageName, this);
 
       if (language == null) {
-        language = MPSModuleRepository.getInstance().getLanguage(targetLanguageName, BootstrapLanguages.getInstance());
+        language = MPSModuleRepository.getInstance().getLanguage(targetLanguageName, BootstrapLanguagesManager.getInstance());
       }
 
       if (language != null) {

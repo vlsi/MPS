@@ -2,7 +2,7 @@ package jetbrains.mps.ide.actions.generate;
 
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationScript;
@@ -24,7 +24,7 @@ public abstract class GenerateCurrentModelAction extends MPSAction {
   public void doExecute(@NotNull ActionContext context) {
     context.get(GeneratorManager.class).generateModelsWithProgressWindow(
       CollectionUtil.asList(context.getModel().getSModel()),
-      BootstrapLanguages.getInstance().getBaseLanguage(),
+      BootstrapLanguagesManager.getInstance().getBaseLanguage(),
       context.getOperationContext(),
       getGenerationType(),
       IGenerationScript.DEFAULT,

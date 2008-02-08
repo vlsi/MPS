@@ -4,7 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -19,7 +19,6 @@ import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.reloading.ReloadUtils;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
@@ -407,13 +406,13 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public boolean structureHaveToBeLoadedFromApplicationClassLoader() {
-    return BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(this);
+    return BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore().contains(this);
   }
 
   protected List<String> getExportedPackages() {
     List<String> result = new ArrayList<String>(super.getExportedPackages());
     List<String> aspects = new ArrayList<String>();
-    if (!BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(this)) {
+    if (!BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore().contains(this)) {
       aspects.add(".structure");
     }
 

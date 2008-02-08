@@ -2,7 +2,7 @@ package jetbrains.mps.javastub.classpath;
 
 import jetbrains.mps.javastub.ConverterFactory;
 import jetbrains.mps.javastub.IConverter;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
@@ -44,7 +44,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = new SModel(modelDescriptor.getModelUID());
     ourTimestamps.put(model.getUID(), timestamp(modelDescriptor));
-    model.addLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
+    model.addLanguage(BootstrapLanguagesManager.getInstance().getBaseLanguage());
     return model;
   }
 

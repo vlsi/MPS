@@ -8,7 +8,7 @@ import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.AbstractProjectFrame;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
@@ -284,7 +284,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
             Future<Boolean> f = generatorManager.generateModelsWithProgressWindow(
               CollectionUtil.asList(model),
-              BootstrapLanguages.getInstance().getBaseLanguage(),
+              BootstrapLanguagesManager.getInstance().getBaseLanguage(),
               //TODO: add assertion or leave this variant
               //Modified by Mihail Muhin - when one model and project.createOperationContext() are passed, it produces NPE
               //models.size() == 1 ? operationContext : ModuleContext.create(model, operationContext.getComponent(AbstractProjectFrame.class), false),

@@ -1,7 +1,7 @@
 package jetbrains.mps.make;
 
 import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.make.MakeScheduleBuilder;
 import jetbrains.mps.logging.Logger;
@@ -9,7 +9,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import org.eclipse.jdt.internal.compiler.ClassFile;
@@ -184,7 +183,7 @@ public class ModuleMaker {
     for (IModule m : modules) {
       dependOnModules.addAll(m.getAllDependOnModules(IModule.class));
     }
-    dependOnModules.addAll(BootstrapLanguages.getInstance().getLanguagesUsedInCore());
+    dependOnModules.addAll(BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore());
 
     CompositeClassPathItem classPathItems = new CompositeClassPathItem();
     for (IModule m : dependOnModules) {

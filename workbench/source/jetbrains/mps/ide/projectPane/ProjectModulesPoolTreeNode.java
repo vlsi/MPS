@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -9,11 +8,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
-import javax.swing.*;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.

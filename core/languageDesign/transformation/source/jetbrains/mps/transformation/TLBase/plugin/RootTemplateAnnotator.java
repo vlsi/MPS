@@ -1,6 +1,6 @@
 package jetbrains.mps.transformation.TLBase.plugin;
 
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -52,7 +52,7 @@ public class RootTemplateAnnotator implements SModelsListener {
 
     public void rootAdded(SModelRootEvent event) {
       SNode newRoot = event.getRoot();
-      if (newRoot.getNodeLanguage() != BootstrapLanguages.getInstance().getTLBase()) {
+      if (newRoot.getNodeLanguage() != BootstrapLanguagesManager.getInstance().getTLBase()) {
         TemplateLanguageUtil.addRootTemplateAnnotation(newRoot);
       }
     }

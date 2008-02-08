@@ -1,7 +1,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.javastub.classpath.ClassPathModelRootManager;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.*;
@@ -57,7 +57,7 @@ public abstract class AbstractModule implements IModule {
 
   @Nullable
   protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
-    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
+    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguagesManager.getInstance());
     if (language != null) return language;
     language = getLanguage_internal(languageNamespace, modulesToSkip, this);
     if (language == null && !suppressWarnings) {
@@ -109,7 +109,7 @@ public abstract class AbstractModule implements IModule {
 
     // add bootstrap languages
     if (Language.class.isAssignableFrom(cls)) {
-      Set<Language> languages = BootstrapLanguages.getInstance().getLanguages();
+      Set<Language> languages = BootstrapLanguagesManager.getInstance().getLanguages();
       for (Language language : languages) {
         //noinspection SuspiciousMethodCalls
         if (!modules.contains(language)) {
@@ -238,7 +238,7 @@ public abstract class AbstractModule implements IModule {
 
   @NotNull
   protected static List<IModule> appendBootstrapLanguages(@NotNull List<IModule> list) {
-    Set<Language> languages = BootstrapLanguages.getInstance().getLanguages();
+    Set<Language> languages = BootstrapLanguagesManager.getInstance().getLanguages();
     for (Language language : languages) {
       if (!list.contains(language)) {
         list.add(language);
@@ -318,7 +318,7 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
-    if (BootstrapLanguages.getInstance().getLanguagesUIDsUsedInCore().contains(getModuleUID())) {
+    if (BootstrapLanguagesManager.getInstance().getLanguagesUIDsUsedInCore().contains(getModuleUID())) {
       result.add(ClassLoaderManager.getInstance().getBaseMPSPath());
     }
 
@@ -588,7 +588,7 @@ public abstract class AbstractModule implements IModule {
     List<Dependency> result = new ArrayList<Dependency>();
     result.add(new Dependency("jetbrains.mps", false));
 
-    for (String s : BootstrapLanguages.getInstance().getLanguagesUIDsUsedInCore()) {
+    for (String s : BootstrapLanguagesManager.getInstance().getLanguagesUIDsUsedInCore()) {
       result.add(new Dependency(s, false));
     }
 

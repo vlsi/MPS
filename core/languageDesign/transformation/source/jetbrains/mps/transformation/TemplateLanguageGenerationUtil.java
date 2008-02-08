@@ -3,7 +3,7 @@ package jetbrains.mps.transformation;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGenerationScript;
 import jetbrains.mps.generator.IGenerationScriptContext;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -38,10 +37,10 @@ public class TemplateLanguageGenerationUtil {
   }
 
   public static GenerationStatus doGenerateTemplateModel(SModelDescriptor sourceModel, IGenerationScriptContext context) throws Exception {
-    Language baseLanguage = BootstrapLanguages.getInstance().getBaseLanguage();
+    Language baseLanguage = BootstrapLanguagesManager.getInstance().getBaseLanguage();
 
     // step 1
-    final Language tLBase = BootstrapLanguages.getInstance().getTLBase();
+    final Language tLBase = BootstrapLanguagesManager.getInstance().getTLBase();
     Generator generator = tLBase.getGeneratorTo(baseLanguage.getNamespace());
     context.getOperationContext().getComponent(MessageView.class).add(new Message(MessageKind.INFORMATION, "Extract query methods"));
     GenerationStatus status = context.doGenerate(sourceModel, baseLanguage, CollectionUtil.iterableAsSet(generator.getOwnMappings()));

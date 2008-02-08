@@ -2,8 +2,6 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
@@ -13,12 +11,10 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
-import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -44,7 +40,7 @@ public class ModelConstraintsManager implements IComponentLifecycle {
 
 
   private ClassLoaderManager myClassLoaderManager;
-  private BootstrapLanguages myBootstrapLanguages;
+  private BootstrapLanguagesManager myBootstrapLanguages;
   private MPSModuleRepository myModuleRepository;
 
   public ModelConstraintsManager() {
@@ -56,7 +52,7 @@ public class ModelConstraintsManager implements IComponentLifecycle {
   }
 
   @Dependency
-  public void setBootstrapLanguages(BootstrapLanguages langs) {
+  public void setBootstrapLanguages(BootstrapLanguagesManager langs) {
     myBootstrapLanguages = langs;
   }
 
