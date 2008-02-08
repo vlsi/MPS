@@ -2,6 +2,7 @@ package jetbrains.mps.generator.fileGenerator;
 
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
@@ -31,8 +32,8 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
       throw new RuntimeException("couldn't generate file for output node: " + outputRootNode.getDebugText());
     }
 
-    String packageName = JavaNameUtil.packageNameForModelUID(inputModel.getUID());
-    File file = new File(outputRootDir, packageName.replace('.', File.separatorChar) + File.separatorChar + outputRootNode.getName() + "." + getExtenstion(BaseAdapter.fromNode(outputRootNode)));
+    File outputDir = FileGenerationUtil.getDefaultOutputDir(inputModel, outputRootDir);
+    File file = new File(outputDir, outputRootNode.getName() + "." + getExtenstion(BaseAdapter.fromNode(outputRootNode)));
 
     if (!file.getParentFile().exists()) {
       file.getParentFile().mkdirs();

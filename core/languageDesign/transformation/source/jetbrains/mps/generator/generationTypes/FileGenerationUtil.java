@@ -3,6 +3,7 @@ package jetbrains.mps.generator.generationTypes;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.logging.Logger;
@@ -63,13 +64,17 @@ public class FileGenerationUtil {
     return sm.lastChangeTime() >= getLastGenerationTime(sm);
   }
 
-  public static void handleOutput(IOperationContext context, SModelDescriptor sm, GenerationStatus status, String outputDir, IMessageHandler messages) {
+  public static void handleOutput(IOperationContext context,
+                                  SModelDescriptor inputModel,
+                                  GenerationStatus status,
+                                  String outputDir,
+                                  IMessageHandler messages) {
     if (outputDir == null) throw new RuntimeException("unspecified output path for file generation.");
 
     if (!status.isOk()) {
       int result = JOptionPane.showConfirmDialog(
         context.getMainFrame(),
-        "Errors while generating model " + sm.getModelUID() + "\n" +
+        "Errors while generating model " + inputModel.getModelUID() + "\n" +
           "Do you want to generate output files?",
         "Generation Finished With Errors",
         JOptionPane.YES_NO_CANCEL_OPTION,
@@ -91,7 +96,7 @@ public class FileGenerationUtil {
       int result = JOptionPane.showConfirmDialog(
         context.getMainFrame(),
         "Code generated form model\n" +
-          sm.getModelUID() + "\n" +
+          inputModel.getModelUID() + "\n" +
           "is not compilable.\n" +
           "Do you still want to generate output files?",
         "Generated Code Is Not Compilable",
@@ -109,7 +114,7 @@ public class FileGenerationUtil {
     Set<File> generatedFiles = new HashSet<File>();
     Set<File> directories = new HashSet<File>();
 
-    generateFiles(status, sm, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
+    generateFiles(status, inputModel, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
 
     IProjectHandler handler = context.getProject().getProjectHandler();
     if (handler != null) {
@@ -120,7 +125,15 @@ public class FileGenerationUtil {
       }
     }
 
+    // always clean-up default output dir.
+    directories.add(getDefaultOutputDir(inputModel.getSModel(), outputRootDirectory));
     cleanUp(context, generatedFiles, directories);
+  }
+
+  public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
+    String packageName = JavaNameUtil.packageNameForModelUID(inputModel.getUID());
+    File file = new File(outputRootDir, packageName.replace('.', File.separatorChar));
+    return file;
   }
 
   public static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents, IMessageHandler messages) {
