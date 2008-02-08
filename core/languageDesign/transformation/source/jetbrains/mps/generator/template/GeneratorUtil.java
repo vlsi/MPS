@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.Nullable;
 
@@ -280,25 +279,8 @@ public class GeneratorUtil {
     }
   }
 
-  private static SNode getContextNodeForWeavingingRule(SNode inputNode, SNode ruleNode, String aspectId, Weaving_MappingRule_ContextNodeQuery query, ITemplateGenerator generator) {
-    // old
-    if (aspectId != null) {
-      try {
-        String methodName = "templateWeavingRule_Context_" + aspectId;
-        Object[] args = new Object[]{inputNode, generator};
-        INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, ruleNode.getModel());
-        if (nodeBuilder == null) {
-          generator.showErrorMessage(inputNode, null, ruleNode, "Query Method returned null");
-          return null;
-        }
-        return nodeBuilder.getTargetNode();
-      } catch (Throwable t) {
-        generator.showErrorMessage(inputNode, null, ruleNode, t.getClass().getName());
-        throw new RuntimeException(t);
-      }
-    }
-
-    // new
+  private static SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule, ITemplateGenerator generator) {
+    Weaving_MappingRule_ContextNodeQuery query = rule.getContextNodeQuery();
     if (query != null) {
       String methodName = TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(query.getNode());
       try {
@@ -308,7 +290,7 @@ public class GeneratorUtil {
           new WeavingMappingRuleContext(inputNode, generator),
           query.getModel());
       } catch (Exception e) {
-        generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule context query");
+        generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't evaluate rule context query");
         LOG.error(e);
       }
     }
@@ -448,7 +430,7 @@ public class GeneratorUtil {
     List<SNode> nodes = generator.getInputModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
       if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), generator)) {
-        SNode outputContextNode = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId(), rule.getContextNodeQuery(), generator);
+        SNode outputContextNode = getContextNodeForWeavingingRule(applicableNode, rule, generator);
         if (outputContextNode == null) {
           generator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
           continue;
