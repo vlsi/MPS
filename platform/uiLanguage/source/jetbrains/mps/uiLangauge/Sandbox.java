@@ -1,11 +1,5 @@
 package jetbrains.mps.uiLangauge;
 
-import org.jdesktop.beansbinding.BeanProperty;
-import org.jdesktop.beansbinding.Property;
-import org.jdesktop.beansbinding.Bindings;
-import org.jdesktop.beansbinding.AutoBinding;
-import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
@@ -100,12 +94,12 @@ public class Sandbox {
     c.weighty = 1;
     frame.add(stuffPanel, c);
 
-    Property name = BeanProperty.create("name");
-    Property text = BeanProperty.create("text");
-
-    AutoBinding autoBinding = Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, nameField, text, kostik, name);
-
-    autoBinding.bind();
+//    Property name = BeanProperty.create("name");
+//    Property text = BeanProperty.create("text");
+//
+//    AutoBinding autoBinding = Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, nameField, text, kostik, name);
+//
+//    autoBinding.bind();
 
 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
