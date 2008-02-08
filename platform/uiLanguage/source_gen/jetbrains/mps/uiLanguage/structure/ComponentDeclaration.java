@@ -15,13 +15,13 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
   public static String EXTENDED_COMPONENT = "extendedComponent";
   public static String MAPPED_TO = "mappedTo";
   public static String MAP_TO = "mapTo";
+  public static String ROOT = "root";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String STUB = "stub";
   public static String ABSTRACT = "abstract";
-  public static String ROOT = "root";
 
   public  ComponentDeclaration(SNode node) {
     super(node);
@@ -58,6 +58,14 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
 
   public void setMapTo(ClassConcept node) {
     super.setReferent(ComponentDeclaration.MAP_TO, node);
+  }
+
+  public ComponentInstance getRoot() {
+    return (ComponentInstance)this.getChild(ComponentDeclaration.ROOT);
+  }
+
+  public void setRoot(ComponentInstance node) {
+    super.setChild(ComponentDeclaration.ROOT, node);
   }
 
   public String getName() {
@@ -106,14 +114,6 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
 
   public void setAbstract(boolean value) {
     this.setBooleanProperty(ComponentDeclaration.ABSTRACT, value);
-  }
-
-  public ComponentInstance getRoot() {
-    return (ComponentInstance)this.getChild(ComponentDeclaration.ROOT);
-  }
-
-  public void setRoot(ComponentInstance node) {
-    super.setChild(ComponentDeclaration.ROOT, node);
   }
 
 }

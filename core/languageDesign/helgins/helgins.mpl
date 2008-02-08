@@ -22,6 +22,7 @@
     </generator>
   </generators>
   <classPath>
+    <entry path="${mps_home}\core\languageDesign\core\classes" />
     <entry path="${language_descriptor}\classes" />
   </classPath>
   <runtimeClassPath>
