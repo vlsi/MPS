@@ -130,16 +130,6 @@
         </node>
       </node>
     </node>
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1196439242497">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1196439242498" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196439242499" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196439242500" />
-    </node>
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1196439234267">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1196439234268" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196439234269" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196439234270" />
-    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196260114547" />
   </node>
 </model>
