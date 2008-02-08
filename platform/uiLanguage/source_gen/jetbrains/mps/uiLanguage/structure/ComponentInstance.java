@@ -12,8 +12,8 @@ import java.util.List;
 
 public class ComponentInstance extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentInstance";
-  public static String COMPONENT = "component";
   public static String CONTENT = "content";
+  public static String COMPONENT = "component";
   public static String COMPONENT_NAME = "componentName";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -31,14 +31,6 @@ public class ComponentInstance extends BaseConcept implements IComponentPart {
     return ComponentInstance.newInstance(sm, false);
   }
 
-
-  public ComponentDeclaration getComponent() {
-    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT);
-  }
-
-  public void setComponent(ComponentDeclaration node) {
-    super.setReferent(ComponentInstance.COMPONENT, node);
-  }
 
   public int getContentsCount() {
     return this.getChildCount(ComponentInstance.CONTENT);
@@ -58,6 +50,14 @@ public class ComponentInstance extends BaseConcept implements IComponentPart {
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, ComponentInstance.CONTENT, node);
+  }
+
+  public ComponentDeclaration getComponent() {
+    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT);
+  }
+
+  public void setComponent(ComponentDeclaration node) {
+    super.setReferent(ComponentInstance.COMPONENT, node);
   }
 
   public String getComponentName() {
