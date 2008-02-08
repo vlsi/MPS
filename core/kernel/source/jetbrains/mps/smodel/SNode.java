@@ -1328,7 +1328,7 @@ public final class SNode {
 
   @NotNull
   public String toString() {
-    ModelAccess.assertLegalRead(this);
+/*    ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
 
     String s = null;
@@ -1344,7 +1344,8 @@ public final class SNode {
       LOG.error("no presentation for node: " + this.getDebugText());
       return super.toString();
     }
-    return s;
+    return s; */
+    return "Node";
   }
 
   @NotNull

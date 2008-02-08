@@ -165,9 +165,7 @@ public abstract class BaseScope implements IScope {
         if (module instanceof Language) {
           Language language = (Language) module;
           for (Language l : language.getExtendedLanguages()) {
-            if (l == null){
-              LOG.error("One of extended language of " +  language.getModuleUID() + " in " + this + " is null.");
-            } else if (!visibleModules.contains(l)) {
+            if (!visibleModules.contains(l)) {
               visibleModules.add(l);
               changed = true;
             }
@@ -202,20 +200,20 @@ public abstract class BaseScope implements IScope {
 
         for (Dependency dep : language.getDependencies()) {
           IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
-          if (dependency == null){
-              LOG.error("Can not find module " +  dep.getModuleUID() + " in " + this + ".");  
-          } else if (dep.isREExport() && !visibleModules.contains(dependency)) {
-            visibleModules.add(dependency);
-            changed = true;
+          if (dependency != null) {
+            if (dep.isREExport() && !visibleModules.contains(dependency)) {
+              visibleModules.add(dependency);
+              changed = true;
+            }
+          } else {
+            LOG.error("Can't load " + dep.getModuleUID() + " from " + language);
           }
         }
       }
 
       for (DevKit dk : CollectionUtil.filter(DevKit.class, visibleModules)) {
         for (Language l : dk.getExportedLanguages()) {
-          if (l == null){
-            LOG.error("One of exported language of devkit " +  dk.getModuleUID() + " in " + this + " is null.");
-          } else if (!usedLanguages.contains(l)) {
+          if (!usedLanguages.contains(l)) {
             usedLanguages.add(l);
             changed = true;
           }

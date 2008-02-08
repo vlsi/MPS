@@ -17,6 +17,7 @@
     <exportedPackage />
   </osgiOptions>
   <dependencies>
+    <dependency reexport="false">jetbrains.mps.bootstrap.structureLanguage</dependency>
     <dependency reexport="true">MPS.Classpath</dependency>
   </dependencies>
   <extendedLanguages />

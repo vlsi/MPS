@@ -36,6 +36,7 @@
     <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage.ext.collections.lang</extendedLanguage>
     <extendedLanguage>jetbrains.mps.bootstrap.editorLanguage</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.bootstrap.findUsagesLanguage</extendedLanguage>
   </extendedLanguages>
 </language>
 
