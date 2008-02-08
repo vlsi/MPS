@@ -169,7 +169,7 @@ public class GenerationSession implements IGenerationSession {
           inputModel1 = status1.getOutputModel().getModelDescriptor();
         }
 
-        return new GenerationStatus(status1.getSourceModel(), status1.getOutputModel(), status1.getTraceMap(), wasErrors, wasWarnings, status1.isCanceled());
+        return new GenerationStatus(status1.getInputModel(), status1.getOutputModel(), status1.getTraceMap(), wasErrors, wasWarnings, status1.isCanceled());
       }
 
       public SModelDescriptor getSourceModelDescriptor() {

@@ -402,9 +402,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                           IMessageHandler messages,
                                           boolean saveTransientModels) {
 
-    List<SModelDescriptor> sourceModels = new ArrayList<SModelDescriptor>();
+    List<SModelDescriptor> inputModels = new ArrayList<SModelDescriptor>();
     for (SModel model : _sourceModels) {
-      sourceModels.add(model.getModelDescriptor());
+      inputModels.add(model.getModelDescriptor());
     }
 
     boolean compile = (
@@ -414,7 +414,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     IModule currentModule = invocationContext.getModule();
     long totalJob = 1000; //todo we need it for build file generation
     if (currentModule != null) {
-      totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, currentModule != null && !currentModule.isCompileInMPS(), sourceModels);
+      totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, currentModule != null && !currentModule.isCompileInMPS(), inputModels);
     }
     progress.startTaskAnyway("generating", null, totalJob);
 
@@ -516,16 +516,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         Logger.addLoggingHandler(generationSession.getLoggingHandler());
         TypeChecker.getInstance().setIncrementalMode(false);
         TypeChecker.getInstance().setGenerationMode(true);
-        for (SModelDescriptor sourceModelDescriptor : sourceModels) {
+        for (SModelDescriptor inputModel : inputModels) {
           progress.addText("");
 
           if (myCheckBeforeCompilation) {
-            progress.addText("Checking model \"" + sourceModelDescriptor.getModelUID() + "\"... ");
-            ModelCheckResult result = new ModelChecker(invocationContext).checkModel(sourceModelDescriptor);
+            progress.addText("Checking model \"" + inputModel.getModelUID() + "\"... ");
+            ModelCheckResult result = new ModelChecker(invocationContext).checkModel(inputModel);
             if (result.hasErrors()) {
               if (JOptionPane.showConfirmDialog(
                 invocationContext.getMainFrame(),
-                "Model's " + sourceModelDescriptor.getModelUID() + " generation finished with errors. Do you want to save generated files?",
+                "Model's " + inputModel.getModelUID() + " generation finished with errors. Do you want to save generated files?",
                 "Generation finished with errors",
                 JOptionPane.YES_NO_OPTION) != JOptionPane.YES_OPTION) {
                 continue;
@@ -533,20 +533,20 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             }
           }
 
-          String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
+          String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
           progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
-          status = generationSession.generateModel(sourceModelDescriptor, targetLanguage, script);
+          status = generationSession.generateModel(inputModel, targetLanguage, script);
           if (isDumpStatistics()) {
             Statistics.dumpAll();
           }
 
           checkMonitorCanceled(progress);
           if (status.getOutputModel() != null) {
-            generationType.handleOutput(invocationContext, sourceModelDescriptor, status, progress, outputFolder, messages);
+            generationType.handleOutput(invocationContext, inputModel, status, progress, outputFolder, messages);
           } else {
             //marks as generated models without applicable generators
-            FileGenerationUtil.updateLastGenerationTime(sourceModelDescriptor);
+            FileGenerationUtil.updateLastGenerationTime(inputModel);
           }
           generationSession.discardTransients();
           progress.finishTask(taskName);

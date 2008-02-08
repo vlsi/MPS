@@ -4,24 +4,21 @@ import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.SModel;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Oct 24, 2005
- * Time: 6:04:52 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Oct 24, 2005
  */
 public class GenerationStatus extends Status {
   private SModel myOutputModel;
-  private SModel mySourceModel;
+  private SModel myInputModel;
   private boolean myCanceled;
   private boolean myWarnings;
   private TraceMap myTraceMap;
 
-  public GenerationStatus(SModel sourceModel, SModel outputModel, TraceMap traceMap, boolean errors, boolean warnings, boolean canceled) {
+  public GenerationStatus(SModel inputModel, SModel outputModel, TraceMap traceMap, boolean errors, boolean warnings, boolean canceled) {
     super(errors ? Code.ERROR : Code.OK, null);
     myCanceled = canceled;
     myOutputModel = outputModel;
-    mySourceModel = sourceModel;
+    myInputModel = inputModel;
     myWarnings = warnings;
     myTraceMap = traceMap;
   }
@@ -46,8 +43,8 @@ public class GenerationStatus extends Status {
     return myTraceMap;
   }
 
-  public SModel getSourceModel() {
-    return mySourceModel;
+  public SModel getInputModel() {
+    return myInputModel;
   }
 
   public static class ERROR extends GenerationStatus {
