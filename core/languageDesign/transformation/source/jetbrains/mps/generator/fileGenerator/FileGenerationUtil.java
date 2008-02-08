@@ -27,7 +27,7 @@ import java.util.*;
 public class FileGenerationUtil {
   public static final Logger LOG = Logger.getLogger(FileGenerationUtil.class);
 
-  private static String LAST_GENERATION_TIME = "lastGenerationTime";
+//  private static String LAST_GENERATION_TIME = "lastGenerationTime";
 
   public static long getLastGenerationTime(SModelDescriptor sm) {
     Set<IModule> modules = sm.getModules();
@@ -40,7 +40,7 @@ public class FileGenerationUtil {
     return FileUtil.getNewestFileTime(new File(sourcesDir));
   }
 
-  public static void updateLastGenerationTime(SModelDescriptor sm) {
+  public static void updateLastGenerationTime(SModel sm) {
 //    sm.setAttribute(LAST_GENERATION_TIME, "" + System.currentTimeMillis());
   }
 
@@ -65,7 +65,6 @@ public class FileGenerationUtil {
   }
 
   public static void handleOutput(IOperationContext context,
-                                  SModelDescriptor inputModel,
                                   GenerationStatus status,
                                   String outputDir,
                                   IMessageHandler messages) {
@@ -74,7 +73,7 @@ public class FileGenerationUtil {
     if (!status.isOk()) {
       int result = JOptionPane.showConfirmDialog(
         context.getMainFrame(),
-        "Errors while generating model " + inputModel.getModelUID() + "\n" +
+        "Errors while generating model " + status.getInputModel().getUID() + "\n" +
           "Do you want to generate output files?",
         "Generation Finished With Errors",
         JOptionPane.YES_NO_CANCEL_OPTION,
@@ -96,7 +95,7 @@ public class FileGenerationUtil {
       int result = JOptionPane.showConfirmDialog(
         context.getMainFrame(),
         "Code generated form model\n" +
-          inputModel.getModelUID() + "\n" +
+          status.getInputModel().getUID() + "\n" +
           "is not compilable.\n" +
           "Do you still want to generate output files?",
         "Generated Code Is Not Compilable",
@@ -113,7 +112,7 @@ public class FileGenerationUtil {
     Set<File> generatedFiles = new HashSet<File>();
     Set<File> directories = new HashSet<File>();
 
-    generateFiles(status, inputModel, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
+    generateFiles(status, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
 
     IProjectHandler handler = context.getProject().getProjectHandler();
     if (handler != null) {
@@ -125,7 +124,7 @@ public class FileGenerationUtil {
     }
 
     // always clean-up default output dir.
-    directories.add(getDefaultOutputDir(inputModel.getSModel(), outputRootDirectory));
+    directories.add(getDefaultOutputDir(status.getInputModel(), outputRootDirectory));
     cleanUp(context, generatedFiles, directories);
   }
 
@@ -179,8 +178,8 @@ public class FileGenerationUtil {
     }
   }
 
-  public static void generateFiles(GenerationStatus status, SModelDescriptor sm, File outputRootDirectory, GeneratorManager gm, Map<SNode, String> outputNodeContents, Set<File> generatedFiles, Set<File> directories) {
-    updateLastGenerationTime(sm);
+  public static void generateFiles(GenerationStatus status, File outputRootDirectory, GeneratorManager gm, Map<SNode, String> outputNodeContents, Set<File> generatedFiles, Set<File> directories) {
+    updateLastGenerationTime(status.getInputModel());
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       try {
         SNode originalInputNode = null;

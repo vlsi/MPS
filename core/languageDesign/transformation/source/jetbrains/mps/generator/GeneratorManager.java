@@ -393,7 +393,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   /**
    * @return false if canceled
    */
-  private boolean generateModels_internal(List<SModel> _sourceModels,
+  private boolean generateModels_internal(List<SModel> _inputModels,
                                           Language targetLanguage,
                                           IOperationContext invocationContext,
                                           IGenerationType generationType,
@@ -403,7 +403,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                           boolean saveTransientModels) {
 
     List<SModelDescriptor> inputModels = new ArrayList<SModelDescriptor>();
-    for (SModel model : _sourceModels) {
+    for (SModel model : _inputModels) {
       inputModels.add(model.getModelDescriptor());
     }
 
@@ -484,7 +484,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
         if (myCompileSourceLanguageModules && needCompileSourceLanguageModules) {
           //todo get rid of
-          for (Language l : getPossibleSourceLanguages(_sourceModels, invocationContext.getScope())) {
+          for (Language l : getPossibleSourceLanguages(_inputModels, invocationContext.getScope())) {
             progress.addText("compiling " + l + "'s  module...");
             compilationResult = projectHandler.buildModule(l.getSourceDir().getPath());
             progress.addText("" + compilationResult);
@@ -543,10 +543,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
           checkMonitorCanceled(progress);
           if (status.getOutputModel() != null) {
-            generationType.handleOutput(invocationContext, inputModel, status, progress, outputFolder, messages);
+            generationType.handleOutput(invocationContext, status, progress, outputFolder, messages);
           } else {
             //marks as generated models without applicable generators
-            FileGenerationUtil.updateLastGenerationTime(inputModel);
+            FileGenerationUtil.updateLastGenerationTime(inputModel.getSModel());
           }
           generationSession.discardTransients();
           progress.finishTask(taskName);
