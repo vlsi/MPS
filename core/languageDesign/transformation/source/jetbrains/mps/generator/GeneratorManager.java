@@ -30,8 +30,8 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
+import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
 
@@ -543,21 +543,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
           checkMonitorCanceled(progress);
           if (status.getOutputModel() != null) {
-            boolean generateText = true;
-            if (!status.isOk() && generationType instanceof GenerateFilesGenerationType) {
-              int result = JOptionPane.showConfirmDialog(invocationContext.getMainFrame(), "Generation finished with errors. Do you want to have text files generated?");
-              if (result != JOptionPane.YES_OPTION) {
-                generateText = false;
-              }
-
-              if (result == JOptionPane.CANCEL_OPTION) {
-                return false;
-              }
-            }
-
-            if (generateText) {
-              generationType.handleOutput(invocationContext, sourceModelDescriptor, status, progress, outputFolder, messages);
-            }
+            generationType.handleOutput(invocationContext, sourceModelDescriptor, status, progress, outputFolder, messages);
           } else {
             //marks as generated models without applicable generators
             FileGenerationUtil.updateLastGenerationTime(sourceModelDescriptor);

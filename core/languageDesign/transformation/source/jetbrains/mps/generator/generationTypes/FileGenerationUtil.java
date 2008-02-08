@@ -1,21 +1,22 @@
 package jetbrains.mps.generator.generationTypes;
 
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.util.FileUtil;
 
 import javax.swing.JOptionPane;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
 import java.rmi.RemoteException;
+import java.util.*;
 
 public class FileGenerationUtil {
   public static final Logger LOG = Logger.getLogger(FileGenerationUtil.class);
@@ -45,7 +46,7 @@ public class FileGenerationUtil {
   public static boolean generationRequired(SModelDescriptor sm) {
     if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) {
       return false;
-    }        
+    }
 
     if (sm.getModelFile() == null) {
       return false;
@@ -63,34 +64,59 @@ public class FileGenerationUtil {
   }
 
   public static void handleOutput(IOperationContext context, SModelDescriptor sm, GenerationStatus status, String outputDir, IMessageHandler messages) {
-    if (outputDir == null) throw new RuntimeException("Unspecified output path. Please specify one.");
+    if (outputDir == null) throw new RuntimeException("unspecified output path for file generation.");
+
+    if (!status.isOk()) {
+      int result = JOptionPane.showConfirmDialog(
+        context.getMainFrame(),
+        "Errors while generating model " + sm.getModelUID() + "\n" +
+          "Do you want to generate output files?",
+        "Generation Finished With Errors",
+        JOptionPane.YES_NO_CANCEL_OPTION,
+        JOptionPane.WARNING_MESSAGE);
+
+      if (result == JOptionPane.CANCEL_OPTION) {
+        throw new GenerationCanceledException();
+      }
+      if (result == JOptionPane.NO_OPTION) {
+        return;
+      }
+    }
 
     File outputRootDirectory = new File(outputDir);
     GeneratorManager gm = context.getProject().getComponentSafe(GeneratorManager.class);
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
     if (generateText(context, status, outputNodeContents, messages)) {
+      int result = JOptionPane.showConfirmDialog(
+        context.getMainFrame(),
+        "Code generated form model\n" +
+          sm.getModelUID() + "\n" +
+          "is not compilable.\n" +
+          "Do you still want to generate output files?",
+        "Generated Code Is Not Compilable",
+        JOptionPane.YES_NO_CANCEL_OPTION,
+        JOptionPane.WARNING_MESSAGE);
 
-      System.out.println("model = " + sm.getModelUID());
-
-      int yesNo = JOptionPane.showConfirmDialog(context.getMainFrame(), "Generated code isn't compilable." + "" +
-              "Are you sure that you want generate file from it?", "Generated Code Isn't Compilable", JOptionPane.YES_NO_OPTION);
-
-      if (yesNo == JOptionPane.NO_OPTION) return;
+      if (result == JOptionPane.CANCEL_OPTION) {
+        throw new GenerationCanceledException();
+      }
+      if (result == JOptionPane.NO_OPTION) return;
     }
+
+    // generate files and synchronize vcs
 
     Set<File> generatedFiles = new HashSet<File>();
     Set<File> directories = new HashSet<File>();
 
     generateFiles(status, sm, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
 
-
     IProjectHandler handler = context.getProject().getProjectHandler();
     if (handler != null) {
       try {
         handler.addFilesToVCS(new ArrayList<File>(generatedFiles));
       } catch (RemoteException e) {
-        e.printStackTrace();
+        GenerateFilesGenerationType.LOG.error(e);
       }
     }
 
@@ -128,8 +154,8 @@ public class FileGenerationUtil {
     if (projectHandler != null) {
       try {
         projectHandler.deleteFilesAndRemoveFromVCS(filesToDelete);
-      } catch(RemoteException ex) {
-        GenerateFilesGenerationType.LOG.error(ex);
+      } catch (RemoteException ex) {
+        LOG.error(ex);
       }
     } else {
       for (File file : filesToDelete) {
@@ -148,7 +174,7 @@ public class FileGenerationUtil {
         }
         IFileGenerator fileGenerator = gm.chooseFileGenerator(outputRootNode, originalInputNode);
         if (fileGenerator == null) {
-          GenerateFilesGenerationType.LOG.error("Couldn't find file generator for output node: " + outputRootNode.getDebugText());
+          LOG.error("couldn't find file generator for output node: " + outputRootNode.getDebugText());
           gm.chooseFileGenerator(outputRootNode, originalInputNode);
         } else {
           File generatedFile = fileGenerator.generateFile(outputRootNode, originalInputNode, status.getSourceModel(), outputNodeContents.get(outputRootNode), outputRootDirectory);
@@ -159,7 +185,7 @@ public class FileGenerationUtil {
           }
         }
       } catch (IOException e) {
-        GenerateFilesGenerationType.LOG.error(e);
+        LOG.error(e);
       }
     }
   }

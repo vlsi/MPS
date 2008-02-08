@@ -220,10 +220,10 @@ public class GenerationSession implements IGenerationSession {
       if (!checkGenerationStep(generationStepController)) {
         throw new GenerationCanceledException();
       }
-      if (generationStepController.getCurrentMappings().isEmpty()) {
-        addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator avalable");
-        return new GenerationStatus(inputModel, null, null, false, false, false);
-      }
+//      if (generationStepController.getCurrentMappings().isEmpty()) {
+//        addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator avalable");
+//        return new GenerationStatus(inputModel, null, null, false, false, false);
+//      }
       printGenerationStepData(generationStepController, inputModel);
 
     } else {
