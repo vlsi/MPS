@@ -94,10 +94,7 @@ public class Sandbox {
     Property name = BeanProperty.create("name");
     Property text = BeanProperty.create("text");
 
-
     AutoBinding autoBinding = Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, nameField, text, kostik, name);
-
-    
 
     autoBinding.bind();
 
