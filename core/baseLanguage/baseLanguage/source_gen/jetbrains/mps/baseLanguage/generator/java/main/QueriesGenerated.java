@@ -13,7 +13,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.baseLanguage.constraints.Property_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.baseLanguage.constraints.PropertyImplementation_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -73,7 +72,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1202008840753(final IOperationContext operationContext, final IfMacroContext _context) {
-    return PropertyImplementation_Behavior.call_hasSetter_1202008483266(SLinkOperations.getTarget(_context.getNode(), "propertyImplementation", true));
+    return Property_Behavior.call_hasSetter_1202595424897(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1201382862401(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

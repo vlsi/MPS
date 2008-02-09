@@ -7440,6 +7440,25 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1202595424897">
+      <property name="name" value="hasSetter" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1202595429016" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202595424899">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202595513017">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202595519570">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1202595521105">
+              <link role="conceptMethodDeclaration" targetNodeId="1202008483266" resolveInfo="hasSetter" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202595515223">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1202595517710">
+                <link role="link" targetNodeId="1.1201372378714" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1202595513018" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1201386039238">
       <link role="applicableProperty" targetNodeId="2.1156235010670" resolveInfo="alias" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1201386042317">
@@ -7476,6 +7495,26 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1201993599076">
     <property name="package" value="property" />
     <link role="concept" targetNodeId="1.1201385106094" resolveInfo="PropertyReference" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1202595610107">
+      <property name="name" value="isLValue" />
+      <link role="overridenMethod" targetNodeId="1202595004827" resolveInfo="isLValue" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202595610109">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202595622075">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202595629831">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1202595630818">
+              <link role="conceptMethodDeclaration" targetNodeId="1202595424897" resolveInfo="hasSetter" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202595626155">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1202595628049">
+                <link role="link" targetNodeId="1.1201385237847" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1202595622076" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1202595615047" />
+    </node>
     <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1201995131114">
       <link role="applicableLink" targetNodeId="1.1201385237847" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1201995135037">
