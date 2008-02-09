@@ -2549,7 +2549,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201476912089">
-    <property name="package" value="property.implementation.custom.setter" />
+    <property name="package" value="property.implementation.custom.set" />
     <property name="name" value="SetAccessor" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202593336291">
@@ -2564,7 +2564,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202003934320">
-    <property name="package" value="property.implementation.custom.setter" />
+    <property name="package" value="property.implementation.custom.set" />
     <property name="name" value="ValueParameter" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1202003972884">

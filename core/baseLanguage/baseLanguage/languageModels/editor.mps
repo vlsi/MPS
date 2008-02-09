@@ -13615,7 +13615,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202003995106">
-    <property name="package" value="property.implementation.custom.setter" />
+    <property name="package" value="property.implementation.custom.set" />
     <link role="conceptDeclaration" targetNodeId="17.1202003934320" resolveInfo="NewValueParameter" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1202576424794">
       <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
@@ -13651,7 +13651,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202592948527">
-    <property name="package" value="property.implementation.custom.setter" />
+    <property name="package" value="property.implementation.custom.set" />
     <link role="conceptDeclaration" targetNodeId="17.1201476912089" resolveInfo="SetAccessor" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202592951654">
       <property name="vertical" value="true" />
