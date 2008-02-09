@@ -2539,7 +2539,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201402044357">
     <property name="package" value="property.implementation.custom" />
-    <property name="name" value="PropertyGetter" />
+    <property name="name" value="GetAccessor" />
     <link role="extends" targetNodeId="1201402150952" resolveInfo="CustomMethod" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201402150952">

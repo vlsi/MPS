@@ -12,10 +12,10 @@ import java.util.List;
 public class BaseMethodCall extends Expression implements TypeDerivable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodCall";
   public static String ACTUAL_ARGUMENT = "actualArgument";
+  public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
 
   public  BaseMethodCall(SNode node) {
     super(node);
@@ -50,6 +50,14 @@ public class BaseMethodCall extends Expression implements TypeDerivable {
     this.insertChild(prev, BaseMethodCall.ACTUAL_ARGUMENT, node);
   }
 
+  public BaseMethodDeclaration getBaseMethodDeclaration() {
+    return (BaseMethodDeclaration)this.getReferent(BaseMethodCall.BASE_METHOD_DECLARATION);
+  }
+
+  public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
+    super.setReferent(BaseMethodCall.BASE_METHOD_DECLARATION, node);
+  }
+
   public String getShortDescription() {
     return this.getProperty(BaseMethodCall.SHORT_DESCRIPTION);
   }
@@ -72,14 +80,6 @@ public class BaseMethodCall extends Expression implements TypeDerivable {
 
   public void setVirtualPackage(String value) {
     this.setProperty(BaseMethodCall.VIRTUAL_PACKAGE, value);
-  }
-
-  public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodCall.BASE_METHOD_DECLARATION);
-  }
-
-  public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
-    super.setReferent(BaseMethodCall.BASE_METHOD_DECLARATION, node);
   }
 
 }

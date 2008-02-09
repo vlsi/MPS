@@ -24,7 +24,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201399832338" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1201399837796" />
       <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation" id="1201402497668">
-        <node role="propertyGetter" type="jetbrains.mps.baseLanguage.structure.PropertyGetter" id="1201402506359">
+        <node role="propertyGetter" type="jetbrains.mps.baseLanguage.structure.GetAccessor" id="1201402506359">
           <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201402506360">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201402570611">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1201402570612">
@@ -221,7 +221,7 @@
         <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
       </node>
       <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation" id="1201491375576">
-        <node role="propertyGetter" type="jetbrains.mps.baseLanguage.structure.PropertyGetter" id="1201491375577">
+        <node role="propertyGetter" type="jetbrains.mps.baseLanguage.structure.GetAccessor" id="1201491375577">
           <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201491375578">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201491394755">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1201491394756">

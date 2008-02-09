@@ -25,11 +25,11 @@ public class CustomPropertyImplementation extends PropertyImplementation {
   }
 
 
-  public PropertyGetter getPropertyGetter() {
-    return (PropertyGetter)this.getChild(CustomPropertyImplementation.PROPERTY_GETTER);
+  public GetAccessor getPropertyGetter() {
+    return (GetAccessor)this.getChild(CustomPropertyImplementation.PROPERTY_GETTER);
   }
 
-  public void setPropertyGetter(PropertyGetter node) {
+  public void setPropertyGetter(GetAccessor node) {
     super.setChild(CustomPropertyImplementation.PROPERTY_GETTER, node);
   }
 
