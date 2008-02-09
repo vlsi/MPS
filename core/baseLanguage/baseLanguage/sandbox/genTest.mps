@@ -34,7 +34,7 @@
             </node>
           </node>
         </node>
-        <node role="propertySetter" type="jetbrains.mps.baseLanguage.structure.PropertySetter" id="1202575438682">
+        <node role="propertySetter" type="jetbrains.mps.baseLanguage.structure.SetAccessor" id="1202575438682">
           <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202575438683">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202577427290">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202577428293">

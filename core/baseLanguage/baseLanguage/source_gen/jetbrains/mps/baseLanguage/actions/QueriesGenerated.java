@@ -91,7 +91,7 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1202576295767(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.PropertySetter", false, false) != null);
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.SetAccessor", false, false) != null);
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(final IOperationContext operationContext, final RTransformPreconditionContext _context) {

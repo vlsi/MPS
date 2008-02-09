@@ -2558,7 +2558,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201476912089">
     <property name="package" value="property.implementation.custom.setter" />
-    <property name="name" value="PropertySetter" />
+    <property name="name" value="SetAccessor" />
     <link role="extends" targetNodeId="1201402150952" resolveInfo="CustomMethod" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201476923122">
       <property name="value" value="setter" />

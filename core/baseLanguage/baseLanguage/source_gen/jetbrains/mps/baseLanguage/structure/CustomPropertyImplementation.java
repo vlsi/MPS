@@ -33,11 +33,11 @@ public class CustomPropertyImplementation extends PropertyImplementation {
     super.setChild(CustomPropertyImplementation.PROPERTY_GETTER, node);
   }
 
-  public PropertySetter getPropertySetter() {
-    return (PropertySetter)this.getChild(CustomPropertyImplementation.PROPERTY_SETTER);
+  public SetAccessor getPropertySetter() {
+    return (SetAccessor)this.getChild(CustomPropertyImplementation.PROPERTY_SETTER);
   }
 
-  public void setPropertySetter(PropertySetter node) {
+  public void setPropertySetter(SetAccessor node) {
     super.setChild(CustomPropertyImplementation.PROPERTY_SETTER, node);
   }
 
