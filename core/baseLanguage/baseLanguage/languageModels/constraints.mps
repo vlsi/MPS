@@ -6499,6 +6499,21 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1202595004827">
+      <property name="name" value="isLValue" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1202595010838" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202595004829">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202595032136">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202595034341">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1202595035688">
+              <link role="conceptProperty" targetNodeId="1.1197029536315" resolveInfo="lvalue" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1202595032137" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197028593980">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197028593981" />
     </node>
@@ -6512,8 +6527,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197029557236">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197029569025">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197029585130">
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1197029588717">
-              <link role="conceptProperty" targetNodeId="1.1197029536315" resolveInfo="lvalue" />
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1202595047267">
+              <link role="conceptMethodDeclaration" targetNodeId="1202595004827" resolveInfo="isLValue" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197029575942">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1197029583287">
