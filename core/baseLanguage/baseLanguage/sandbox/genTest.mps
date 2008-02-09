@@ -36,12 +36,12 @@
         </node>
         <node role="propertySetter" type="jetbrains.mps.baseLanguage.structure.PropertySetter" id="1202575438682">
           <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202575438683">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202576394084">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202576396087">
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ValueParameter" id="1202576398575" />
-                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1202576394085">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202577427290">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202577428293">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ValueParameter" id="1202577429874" />
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1202577427291">
                   <link role="variableDeclaration" targetNodeId="1201384189984" resolveInfo="k2" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1202576394086" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1202577427292" />
                 </node>
               </node>
             </node>
