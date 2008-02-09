@@ -27,8 +27,6 @@ import java.util.*;
 public class FileGenerationUtil {
   public static final Logger LOG = Logger.getLogger(FileGenerationUtil.class);
 
-//  private static String LAST_GENERATION_TIME = "lastGenerationTime";
-
   public static long getLastGenerationTime(SModelDescriptor sm) {
     Set<IModule> modules = sm.getModules();
     if (modules.size() != 1) {
@@ -38,10 +36,6 @@ public class FileGenerationUtil {
     String outputPath = module.getGeneratorOutputPath();
     String sourcesDir = outputPath + File.separator + sm.getLongName().replace('.', File.separatorChar);
     return FileUtil.getNewestFileTime(new File(sourcesDir));
-  }
-
-  public static void updateLastGenerationTime(SModel sm) {
-//    sm.setAttribute(LAST_GENERATION_TIME, "" + System.currentTimeMillis());
   }
 
   public static boolean generationRequired(SModelDescriptor sm) {
@@ -178,8 +172,13 @@ public class FileGenerationUtil {
     }
   }
 
+  public static void cleanUpDefaultOutputDir(GenerationStatus status, String outputDir, IOperationContext context) {
+    Set<File> directories = new HashSet<File>(1);
+    directories.add(getDefaultOutputDir(status.getInputModel(), new File(outputDir)));
+    cleanUp(context, new HashSet<File>(0), directories);
+  }
+
   public static void generateFiles(GenerationStatus status, File outputRootDirectory, GeneratorManager gm, Map<SNode, String> outputNodeContents, Set<File> generatedFiles, Set<File> directories) {
-    updateLastGenerationTime(status.getInputModel());
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       try {
         SNode originalInputNode = null;

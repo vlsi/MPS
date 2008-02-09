@@ -48,8 +48,8 @@ public class GenerationStatus extends Status {
   }
 
   public static class ERROR extends GenerationStatus {
-    public ERROR(SModel sourceModel) {
-      super(sourceModel, null, null, true, false, false);
+    public ERROR(SModel inputModel) {
+      super(inputModel, null, null, true, false, false);
     }
   }
 }
