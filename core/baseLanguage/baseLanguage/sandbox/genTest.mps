@@ -263,6 +263,38 @@
         </node>
       </node>
     </node>
+    <node role="property" type="jetbrains.mps.baseLanguage.structure.Property" id="1202597112605">
+      <property name="propertyName" value="str4" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1202597112606" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202597115440">
+        <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
+      </node>
+      <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation" id="1202597120847">
+        <node role="propertyGetter" type="jetbrains.mps.baseLanguage.structure.GetAccessor" id="1202597120848">
+          <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202597120849">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202597128757">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1202597128758">
+                <link role="variableDeclaration" targetNodeId="1201491386251" resolveInfo="str1" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1202597128759" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="propertySetter" type="jetbrains.mps.baseLanguage.structure.SetAccessor" id="1202597132994">
+          <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202597132995">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202597137277">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202597138249">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ValueParameter" id="1202597139252" />
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1202597137278">
+                  <link role="variableDeclaration" targetNodeId="1201491386251" resolveInfo="str1" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1202597137279" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201491319991" />
   </node>
 </model>
