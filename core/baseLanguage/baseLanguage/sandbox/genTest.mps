@@ -205,7 +205,24 @@
       <property name="name" value="f1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1201491415305" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201491415306" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201491415307" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201491415307">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202596643592">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202596658521">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1202596665572">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1202596663305" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.PropertyReference" id="1202596668824">
+                <link role="property" targetNodeId="1201491346663" />
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1202596653487">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1202596643593" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.PropertyReference" id="1202596656801">
+                <link role="property" targetNodeId="1202596626162" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1201491386251">
       <property name="name" value="str1" />
@@ -230,6 +247,19 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="property" type="jetbrains.mps.baseLanguage.structure.Property" id="1202596626162">
+      <property name="propertyName" value="str3" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1202596626163" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202596630810">
+        <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
+      </node>
+      <node role="propertyImplementation" type="jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation" id="1202596626165">
+        <node role="defaultGetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultGetAccessor" id="1202596626166" />
+        <node role="defaultSetAccessor" type="jetbrains.mps.baseLanguage.structure.DefaultSetAccessor" id="1202596626167">
+          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1202596626168" />
         </node>
       </node>
     </node>
