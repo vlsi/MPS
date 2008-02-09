@@ -2540,26 +2540,24 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201402044357">
     <property name="package" value="property.implementation.custom" />
     <property name="name" value="GetAccessor" />
-    <link role="extends" targetNodeId="1201402150952" resolveInfo="CustomMethod" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201402150952">
-    <property name="package" value="property.implementation.custom" />
-    <property name="name" value="CustomMethod" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201402189876">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202593363480">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="statementList" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201402162250">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1201476912089">
     <property name="package" value="property.implementation.custom.setter" />
     <property name="name" value="SetAccessor" />
-    <link role="extends" targetNodeId="1201402150952" resolveInfo="CustomMethod" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202593336291">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="statementList" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201476923122">
       <property name="value" value="setter" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />

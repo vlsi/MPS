@@ -13665,7 +13665,7 @@
           <property name="selectable" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202592951658">
-          <link role="relationDeclaration" targetNodeId="17.1201402189876" />
+          <link role="relationDeclaration" targetNodeId="17.1202593336291" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202592951659">
@@ -13688,7 +13688,7 @@
           <property name="selectable" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202592973932">
-          <link role="relationDeclaration" targetNodeId="17.1201402189876" />
+          <link role="relationDeclaration" targetNodeId="17.1202593363480" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202592973933">
