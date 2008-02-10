@@ -55,6 +55,10 @@ public abstract class BaseDialog extends JDialog {
     setSize(myDialogDimensions.myWidth, myDialogDimensions.myHeight);
   }
 
+  protected BaseDialog(Frame owner) throws HeadlessException {
+    this(owner, null);
+  }
+
   public void setDefaultButton(JButton button) {
     getRootPane().setDefaultButton(button);
   }
