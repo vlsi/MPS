@@ -140,38 +140,52 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
   }
 
   public void findUsages(final ActionContext context) {
+    final SNode[] semanticNode = new SNode[1];
+    final SNode[] operationNode = new SNode[1];
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        SNode semanticNode = context.getNode();
-        SNode operationNode = EditorUtil.getOperationNodeWRTReference(context, semanticNode);
+        semanticNode[0] = context.getNode();
+        operationNode[0] = EditorUtil.getOperationNodeWRTReference(context, semanticNode[0]);
+      }
+    });
 
-        FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultOptions, operationNode, context);
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultOptions, operationNode[0], context);
         findUsagesDialog.showDialog();
+
         if (!findUsagesDialog.isCancelled()) {
-          FindUsagesOptions options = findUsagesDialog.getResult();
-          myDefaultOptions = options;
+          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+            public void run() {
+              FindUsagesOptions options = findUsagesDialog.getResult();
+              myDefaultOptions = options;
 
-          IResultProvider provider = options.getOption(FindersOptions.class).getResult(operationNode, context);
-          SearchQuery query = options.getOption(QueryOptions.class).getResult(operationNode, context);
-          ViewOptions viewOptions = options.getOption(ViewOptions.class);
+              IResultProvider provider = options.getOption(FindersOptions.class).getResult(operationNode[0], context);
+              SearchQuery query = options.getOption(QueryOptions.class).getResult(operationNode[0], context);
+              ViewOptions viewOptions = options.getOption(ViewOptions.class);
 
-          findUsages(provider, query, true, viewOptions.myShowOneResult, viewOptions.myNewTab);
+              findUsages(provider, query, true, viewOptions.myShowOneResult, viewOptions.myNewTab);
+            }
+          });
         }
       }
     });
   }
 
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    new Thread() {
       public void run() {
-        SearchResults searchResults = provider.getResults(query, myProjectFrame.createAdaptiveProgressMonitor());
-        showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            SearchResults searchResults = provider.getResults(query, myProjectFrame.createAdaptiveProgressMonitor());
+            showResults(searchResults, showOne, newTab, provider, query, isRerunnable);
+          }
+        });
       }
-    });
+    }.start();
   }
 
   public void showResults(final SearchQuery query, final SearchResults searchResults) {
-
     new Thread() {
       public void run() {
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
@@ -186,7 +200,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
   private void showResults(final SearchResults searchResults, boolean showOne, boolean newTab, IResultProvider provider, SearchQuery query, boolean isRerunnable) {
     int resCount = searchResults.getSearchResults().size();
     if (resCount == 0) {
-      SwingUtilities.invokeLater(new Runnable() {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
           new HintDialog(myProjectFrame.getMainFrame(), "Not found", "No usages for that node").showDialog();
         }
