@@ -1,13 +1,13 @@
 package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
 
-import javax.swing.filechooser.FileSystemView;
+import javax.swing.JComponent;
+import javax.swing.JOptionPane;
 import java.awt.Frame;
 
 public class TreeFileChooser {
@@ -48,6 +48,7 @@ public class TreeFileChooser {
 
   @Nullable
   public IFile showDialog(Frame owner) {
+    if (owner == null) owner = JOptionPane.getRootFrame();
     setAdditionalModeFilter(myMode);
     TreeFileChooserDialog dialog = new TreeFileChooserDialog(owner, myMode, myFileFilter, myContext, myInitialSelectedFile);
     dialog.setVisible(true);
@@ -56,6 +57,16 @@ public class TreeFileChooser {
     } else {
       return dialog.getSelectedFile();
     }
+  }
+
+  @Nullable
+  public IFile showDialog(JComponent owner) {
+    return showDialog(JOptionPane.getFrameForComponent(owner));
+  }
+
+  @Nullable
+  public IFile showDialog() {
+    return showDialog((Frame) null);
   }
 
   private void setAdditionalModeFilter(int mode) {

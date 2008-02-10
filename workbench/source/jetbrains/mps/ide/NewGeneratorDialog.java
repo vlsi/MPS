@@ -102,7 +102,7 @@ public class NewGeneratorDialog extends BaseDialog {
             chooser.setInitialFile(new FileSystemFile(oldPath));
           }
 
-          IFile result = chooser.showDialog(null);
+          IFile result = chooser.showDialog();
           if (result != null) {
             myTemplateModelsDir.setText(result.getAbsolutePath());
           }

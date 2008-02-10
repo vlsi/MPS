@@ -106,7 +106,7 @@ public class LibraryManagerPreferences implements IPreferencesPage {
     if (UseTreeFileChooser.get()) {
       TreeFileChooser chooser = new TreeFileChooser();
       chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-      IFile result = chooser.showDialog(JOptionPane.getFrameForComponent(myMainPanel));
+      IFile result = chooser.showDialog(myMainPanel);
 
       if (result == null) return;
       path = result.getAbsolutePath();
@@ -138,7 +138,7 @@ public class LibraryManagerPreferences implements IPreferencesPage {
       TreeFileChooser chooser = new TreeFileChooser();
       chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
 
-      IFile result = chooser.showDialog(JOptionPane.getFrameForComponent(myMainPanel));
+      IFile result = chooser.showDialog(myMainPanel);
       path = result.getAbsolutePath();
     } else {
       final JFileChooser chooser = new SmartFileChooser();
