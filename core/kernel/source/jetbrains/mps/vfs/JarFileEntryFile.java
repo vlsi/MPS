@@ -20,7 +20,7 @@ public class JarFileEntryFile implements IFile {
     myEntryPath = path;
   }
 
-  public String getName() {    
+  public String getName() {
     String result = myEntryPath;
 
     if (result.endsWith("/")) {
@@ -38,8 +38,12 @@ public class JarFileEntryFile implements IFile {
     return myJarFileData.getFile();
   }
 
-  public IFile getParent() {    
+  public IFile getParent() {
     return new JarFileEntryFile(myJarFileData, myJarFileData.getParentDirectory(myEntryPath));
+  }
+
+  public IFile getAbsoluteParent() {
+    return getParent();
   }
 
   public List<IFile> list() {

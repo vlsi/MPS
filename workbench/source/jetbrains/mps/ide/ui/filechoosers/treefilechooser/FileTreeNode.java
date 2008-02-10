@@ -5,10 +5,19 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.plaf.IconUIResource;
+import javax.swing.plaf.synth.SynthContext;
+import javax.swing.text.IconView;
 import javax.swing.filechooser.FileSystemView;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.awt.Graphics;
+import java.awt.Component;
+import java.awt.Image;
+
+import sun.swing.plaf.synth.SynthIcon;
 
 public abstract class FileTreeNode extends MPSTreeNode {
   private boolean myInitialized;
@@ -19,15 +28,25 @@ public abstract class FileTreeNode extends MPSTreeNode {
     setAssociatedFile(file);
 
     String filename = file.getName();
-    if (filename.equals("")) {
-      //disk case
+    boolean isDisk = isDiskNode();
+
+    if (isDisk) {
       filename = file.getAbsolutePath();
     }
-    setText(filename);
+
     setNodeIdentifier(filename);
 
     FileSystemView fsView = FileSystemView.getFileSystemView();
     Icon icon = fsView.getSystemIcon(file.toFile());
+
+    String caption = filename;
+    if (!isDisk) {
+      if (file.toFile().isHidden()) {
+        caption = "<html><font color='gray'>" + caption + "</font></html>";
+        //todo: set new icon
+      }
+    }
+    setText(caption);
     setIcon(icon);
   }
 
@@ -37,6 +56,10 @@ public abstract class FileTreeNode extends MPSTreeNode {
 
   public IFile getAssociatedFile() {
     return (IFile) getUserObject();
+  }
+
+  public boolean isDiskNode() {
+    return getAssociatedFile().getName().equals("");
   }
 
   public boolean isLeaf() {

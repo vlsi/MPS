@@ -3,6 +3,7 @@ package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,7 +26,7 @@ public class TreeFileChooser {
   private int myMode = MODE_FILES;
   private IFileFilter myFileFilter = ALL_FILES_FILTER;
   private IOperationContext myContext = null;
-  private IFile myInitialSelectedFile = new FileSystemFile(FileSystemView.getFileSystemView().getDefaultDirectory());
+  private IFile myInitialSelectedFile = new FileSystemFile(PathManager.getHomePath());
 
   /////////////////////////////
 
