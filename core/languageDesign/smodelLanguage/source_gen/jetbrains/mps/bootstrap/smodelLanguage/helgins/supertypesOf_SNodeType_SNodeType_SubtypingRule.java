@@ -20,7 +20,7 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
   }
 
   public List<SNode> getSubOrSuperTypes(SNode type) {
-    List<SNode> list = ListOperations.createList(new SNode[]{});
+    List<SNode> list = ListOperations.<SNode>createList();
     SNode concept = SLinkOperations.getTarget(type, "concept", false);
     // DO NOT TOUCH THIS. CONCEPT MIGHT BE A TYPE VARIABLE
     if(concept != null && SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {

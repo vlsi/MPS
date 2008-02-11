@@ -19,7 +19,7 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
   }
 
   public List<SNode> getSubOrSuperTypes(SNode type) {
-    List<SNode> supertypes = ListOperations.createList(new SNode[]{});
+    List<SNode> supertypes = ListOperations.<SNode>createList();
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
     if(elementConcept != null) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(elementConcept);
