@@ -12,11 +12,11 @@ import jetbrains.mps.baseLanguage.structure.Type;
 
 public class AttributeDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.AttributeDeclaration";
-  public static String TYPE = "type";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String TYPE = "type";
 
   public  AttributeDeclaration(SNode node) {
     super(node);
@@ -30,14 +30,6 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept {
     return AttributeDeclaration.newInstance(sm, false);
   }
 
-
-  public Type getType() {
-    return (Type)this.getChild(AttributeDeclaration.TYPE);
-  }
-
-  public void setType(Type node) {
-    super.setChild(AttributeDeclaration.TYPE, node);
-  }
 
   public String getName() {
     return this.getProperty(AttributeDeclaration.NAME);
@@ -69,6 +61,14 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(AttributeDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public Type getType() {
+    return (Type)this.getChild(AttributeDeclaration.TYPE);
+  }
+
+  public void setType(Type node) {
+    super.setChild(AttributeDeclaration.TYPE, node);
   }
 
 }
