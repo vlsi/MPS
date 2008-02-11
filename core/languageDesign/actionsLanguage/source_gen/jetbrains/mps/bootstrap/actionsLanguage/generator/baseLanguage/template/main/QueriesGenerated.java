@@ -75,7 +75,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1177399369144(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode concept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false);
     if((concept == null)) {
-      _context.getGenerator().showErrorMessage(_context.getNode(), _context.getTemplateNode(), "concept is null");
+      _context.getGenerator().showErrorMessage(_context.getNode(), _context.getTemplateNode(), "output concept is null");
     }
     return NameUtil.nodeFQName(concept);
   }
