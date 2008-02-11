@@ -991,7 +991,7 @@
           <property name="selectable" value="false" />
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196347270775">
-            <property name="text" value="(output:" />
+            <property name="text" value="(output concept:" />
             <property name="textFgColor" value="DARK_BLUE" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1196347250694">
@@ -1010,26 +1010,6 @@
             <property name="text" value=")" />
             <property name="textFgColor" value="DARK_BLUE" />
           </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1196347757213">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196347757214">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196347772395">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1196347777796">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1196347778815" />
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196347775088">
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1196347776076">
-                      <link role="property" targetNodeId="3.1169194664001" resolveInfo="name" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196347772725">
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1196347774181">
-                        <link role="link" targetNodeId="1.1177333551023" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1196347772396" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177324036617">
@@ -1047,25 +1027,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177336274122">
         <property name="selectable" value="false" />
         <property name="text" value=" " />
-      </node>
-    </node>
-    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196347802036">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196347802787">
-        <property name="text" value="output concept:" />
-        <property name="textFgColor" value="DARK_BLUE" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1196347811884">
-        <property name="noTargetText" value="&lt;no concept&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1177333551023" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1196347811885">
-          <link role="conceptDeclaration" targetNodeId="2.1071489090640" resolveInfo="ConceptDeclaration" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1196347811886">
-            <property name="readOnly" value="true" />
-            <property name="textFgColor" value="DARK_MAGENTA" />
-            <link role="relationDeclaration" targetNodeId="3.1169194664001" resolveInfo="name" />
-          </node>
-        </node>
       </node>
     </node>
   </node>

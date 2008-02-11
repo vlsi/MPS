@@ -2419,6 +2419,7 @@
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="3.1068431790189" resolveInfo="Type" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1196933393846">
+        <link role="concept" targetNodeId="1.1138055754698" resolveInfo="SNodeType" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart" id="1196933395254">
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196933400119">
             <link role="concept" targetNodeId="14.1169125787135" resolveInfo="AbstractConceptDeclaration" />
