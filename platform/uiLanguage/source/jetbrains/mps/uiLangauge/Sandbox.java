@@ -2,6 +2,7 @@ package jetbrains.mps.uiLangauge;
 
 
 import jetbrains.mps.uiLanguage.sandbox.PersonEditor;
+import jetbrains.mps.uiLanguage.samples.actions.ActionsSample;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,7 +15,8 @@ public class Sandbox {
   public static void main(String[] args) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        new PersonEditor();
+//        new PersonEditor();
+        new ActionsSample();
       }
     });    
   }

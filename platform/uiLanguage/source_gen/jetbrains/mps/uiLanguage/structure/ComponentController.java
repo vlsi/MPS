@@ -15,11 +15,11 @@ public class ComponentController extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentController";
   public static String ATTRIBUTE = "attribute";
   public static String COMPONENT_METHOD = "componentMethod";
+  public static String COMPONENT = "component";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String COMPONENT = "component";
 
   public  ComponentController(SNode node) {
     super(node);
@@ -74,6 +74,14 @@ public class ComponentController extends BaseConcept implements INamedConcept {
     this.insertChild(prev, ComponentController.COMPONENT_METHOD, node);
   }
 
+  public ComponentDeclaration getComponent() {
+    return (ComponentDeclaration)this.getReferent(ComponentController.COMPONENT);
+  }
+
+  public void setComponent(ComponentDeclaration node) {
+    super.setReferent(ComponentController.COMPONENT, node);
+  }
+
   public String getName() {
     return this.getProperty(ComponentController.NAME);
   }
@@ -104,14 +112,6 @@ public class ComponentController extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ComponentController.VIRTUAL_PACKAGE, value);
-  }
-
-  public ComponentDeclaration getComponent() {
-    return (ComponentDeclaration)this.getReferent(ComponentController.COMPONENT);
-  }
-
-  public void setComponent(ComponentDeclaration node) {
-    super.setReferent(ComponentController.COMPONENT, node);
   }
 
 }

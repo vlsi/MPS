@@ -13,11 +13,11 @@ import java.util.List;
 public class ComponentInstance extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentInstance";
   public static String CONTENT = "content";
+  public static String COMPONENT_DECLARATION = "componentDeclaration";
   public static String COMPONENT_NAME = "componentName";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String COMPONENT_DECLARATION = "componentDeclaration";
 
   public  ComponentInstance(SNode node) {
     super(node);
@@ -52,6 +52,14 @@ public class ComponentInstance extends BaseConcept implements IComponentPart {
     this.insertChild(prev, ComponentInstance.CONTENT, node);
   }
 
+  public ComponentDeclaration getComponentDeclaration() {
+    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
+  }
+
+  public void setComponentDeclaration(ComponentDeclaration node) {
+    super.setReferent(ComponentInstance.COMPONENT_DECLARATION, node);
+  }
+
   public String getComponentName() {
     return this.getProperty(ComponentInstance.COMPONENT_NAME);
   }
@@ -82,14 +90,6 @@ public class ComponentInstance extends BaseConcept implements IComponentPart {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ComponentInstance.VIRTUAL_PACKAGE, value);
-  }
-
-  public ComponentDeclaration getComponentDeclaration() {
-    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
-  }
-
-  public void setComponentDeclaration(ComponentDeclaration node) {
-    super.setReferent(ComponentInstance.COMPONENT_DECLARATION, node);
   }
 
 }
