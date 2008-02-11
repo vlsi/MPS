@@ -1323,7 +1323,12 @@ public final class SNode {
   }
 
   public String getPresentation() {
-    return BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+    try {
+      return BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+    } catch (Throwable t) {
+      LOG.error(t);
+      return "[can't calculate presentation : " + t.getMessage() + "]";
+    }
   }
 
   @NotNull

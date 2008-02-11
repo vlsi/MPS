@@ -170,12 +170,12 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
     SNode node = getSNode();
     if (node != null) {
-      String nodeString = node.toString();
+      String nodeString = node.getPresentation();
       output.append(nodeString);
       if (myRole != null) {
-        String matchingText = NodePresentationUtil.matchingText(node);
-        if (matchingText != null && !matchingText.equals(nodeString)) {
-          output.append(" [").append(matchingText).append("]");
+        String presentation = node.getPresentation();
+        if (presentation != null && !presentation.equals(nodeString)) {
+          output.append(" [").append(presentation).append("]");
         }
       }
     }
