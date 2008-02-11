@@ -16,6 +16,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new AttributeValue_attribute_ReferentConstraint());
     this.myConstraints.add(new ComponentInstance_componentDeclaration_ReferentConstraint());
     this.myConstraints.add(new AttributeReferenceOperation_attribute_ReferentConstraint());
+    this.myConstraints.add(new ComponentReference_component_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

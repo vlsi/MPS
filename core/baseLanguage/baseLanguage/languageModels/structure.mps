@@ -2394,6 +2394,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197028107093">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1202746118835">
+      <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" resolveInfo="lvalue" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1197027803184">
     <property name="package" value="operationExpression" />
