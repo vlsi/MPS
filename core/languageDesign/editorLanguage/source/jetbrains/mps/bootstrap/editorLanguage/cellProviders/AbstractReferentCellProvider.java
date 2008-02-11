@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.logging.Logger;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,6 +21,9 @@ import jetbrains.mps.smodel.SReference;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractReferentCellProvider extends CellProviderWithRole {
+
+  public static final Logger LOG = Logger.getLogger(AbstractReferentCellProvider.class);
+
   protected LinkDeclaration myLinkDeclaration;
   protected String myGenuineRole;
   protected LinkDeclaration myGenuineLinkDeclaration;
@@ -37,7 +41,19 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   public void setRole(Object role) {
     myLinkDeclaration = getSNode().getLinkDeclaration(role.toString());
 
+    if (myLinkDeclaration == null) {
+      LOG.error("Can't find a link declaration " + role.toString() + " in " + getSNode());
+      getSNode().getLinkDeclaration(role.toString());
+      return;
+    }
+
     myGenuineLinkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
+
+    if (myGenuineLinkDeclaration == null) {
+      LOG.error("Can't find a link declaration for " + myLinkDeclaration);
+      return;
+    }
+
     myGenuineRole = myGenuineLinkDeclaration.getRole();
 
     myIsAggregation = myGenuineLinkDeclaration.getMetaClass() == LinkMetaclass.aggregation;

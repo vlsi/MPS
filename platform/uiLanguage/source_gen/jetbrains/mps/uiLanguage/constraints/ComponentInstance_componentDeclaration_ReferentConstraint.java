@@ -9,24 +9,24 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
-public class AttributeValue_attribute_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
+public class ComponentInstance_componentDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  AttributeValue_attribute_ReferentConstraint() {
+  public  ComponentInstance_componentDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.uiLanguage.structure.AttributeValue", "attribute", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.uiLanguage.structure.AttributeValue", "attribute");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration");
   }
 
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
@@ -34,12 +34,9 @@ public class AttributeValue_attribute_ReferentConstraint implements IModelConstr
   }
 
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    SNode instance = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.uiLanguage.structure.ComponentInstance", true, false);
-    List<SNode> result = new ArrayList<SNode>();
-    if(instance != null) {
-      ListOperations.addAllElements(result, ComponentDeclaration_Behavior.call_getAttributes_1202392603201(SLinkOperations.getTarget(instance, "componentDeclaration", false)));
-    }
-    return new SimpleSearchScope(result);
+    List<SNode> components = new ArrayList<SNode>();
+    ListOperations.addAllElements(components, SequenceOperations.where(SModelOperations.getRootsIncludingImported(model, scope, "jetbrains.mps.uiLanguage.structure.ComponentDeclaration"), new zPredicate2(null, null)));
+    return new SimpleSearchScope(components);
   }
 
   public String getNodeReferentSearchScopeDescription() {
