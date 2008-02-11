@@ -345,7 +345,11 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       myList.addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
           repaintPopupMenu();
-          updatePatternEditor();
+          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+            public void run() {
+              updatePatternEditor(); 
+            }
+          });
         }
 
         public void mouseClicked(MouseEvent e) {
