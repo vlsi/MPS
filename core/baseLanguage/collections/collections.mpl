@@ -14,9 +14,11 @@
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
       </external-templates>
       <dependencies>
-        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
       </dependencies>
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+      </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
