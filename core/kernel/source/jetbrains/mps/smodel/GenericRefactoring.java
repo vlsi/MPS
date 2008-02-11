@@ -142,7 +142,7 @@ public class GenericRefactoring {
     for (IModule sourceModule : sourceModels.keySet()) {
       IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
       new GeneratorManager().generateModels(sourceModels.get(sourceModule),
-        BootstrapLanguagesManager.getInstance().getBaseLanguage(),
+        null,
         operationContext,
         IGenerationType.FILES,
         new IGenerationScript() {
