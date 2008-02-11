@@ -12,16 +12,16 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 
 public class ComponentDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentDeclaration";
-  public static String EXTENDED_COMPONENT = "extendedComponent";
-  public static String MAPPED_TO = "mappedTo";
-  public static String MAP_TO = "mapTo";
-  public static String ROOT = "root";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String STUB = "stub";
   public static String ABSTRACT = "abstract";
+  public static String EXTENDED_COMPONENT = "extendedComponent";
+  public static String MAPPED_TO = "mappedTo";
+  public static String MAP_TO = "mapTo";
+  public static String ROOT = "root";
 
   public  ComponentDeclaration(SNode node) {
     super(node);
@@ -35,38 +35,6 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
     return ComponentDeclaration.newInstance(sm, false);
   }
 
-
-  public ComponentDeclaration getExtendedComponent() {
-    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.EXTENDED_COMPONENT);
-  }
-
-  public void setExtendedComponent(ComponentDeclaration node) {
-    super.setReferent(ComponentDeclaration.EXTENDED_COMPONENT, node);
-  }
-
-  public ClassConcept getMappedTo() {
-    return (ClassConcept)this.getReferent(ComponentDeclaration.MAPPED_TO);
-  }
-
-  public void setMappedTo(ClassConcept node) {
-    super.setReferent(ComponentDeclaration.MAPPED_TO, node);
-  }
-
-  public ClassConcept getMapTo() {
-    return (ClassConcept)this.getReferent(ComponentDeclaration.MAP_TO);
-  }
-
-  public void setMapTo(ClassConcept node) {
-    super.setReferent(ComponentDeclaration.MAP_TO, node);
-  }
-
-  public ComponentInstance getRoot() {
-    return (ComponentInstance)this.getChild(ComponentDeclaration.ROOT);
-  }
-
-  public void setRoot(ComponentInstance node) {
-    super.setChild(ComponentDeclaration.ROOT, node);
-  }
 
   public String getName() {
     return this.getProperty(ComponentDeclaration.NAME);
@@ -114,6 +82,38 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
 
   public void setAbstract(boolean value) {
     this.setBooleanProperty(ComponentDeclaration.ABSTRACT, value);
+  }
+
+  public ComponentDeclaration getExtendedComponent() {
+    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.EXTENDED_COMPONENT);
+  }
+
+  public void setExtendedComponent(ComponentDeclaration node) {
+    super.setReferent(ComponentDeclaration.EXTENDED_COMPONENT, node);
+  }
+
+  public ClassConcept getMappedTo() {
+    return (ClassConcept)this.getReferent(ComponentDeclaration.MAPPED_TO);
+  }
+
+  public void setMappedTo(ClassConcept node) {
+    super.setReferent(ComponentDeclaration.MAPPED_TO, node);
+  }
+
+  public ClassConcept getMapTo() {
+    return (ClassConcept)this.getReferent(ComponentDeclaration.MAP_TO);
+  }
+
+  public void setMapTo(ClassConcept node) {
+    super.setReferent(ComponentDeclaration.MAP_TO, node);
+  }
+
+  public ComponentInstance getRoot() {
+    return (ComponentInstance)this.getChild(ComponentDeclaration.ROOT);
+  }
+
+  public void setRoot(ComponentInstance node) {
+    super.setChild(ComponentDeclaration.ROOT, node);
   }
 
 }

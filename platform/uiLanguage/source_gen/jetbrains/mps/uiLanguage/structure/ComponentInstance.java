@@ -12,12 +12,12 @@ import java.util.List;
 
 public class ComponentInstance extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentInstance";
-  public static String COMPONENT = "component";
-  public static String CONTENT = "content";
   public static String COMPONENT_NAME = "componentName";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String COMPONENT = "component";
+  public static String CONTENT = "content";
 
   public  ComponentInstance(SNode node) {
     super(node);
@@ -31,34 +31,6 @@ public class ComponentInstance extends BaseConcept implements IComponentPart {
     return ComponentInstance.newInstance(sm, false);
   }
 
-
-  public ComponentDeclaration getComponent() {
-    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT);
-  }
-
-  public void setComponent(ComponentDeclaration node) {
-    super.setReferent(ComponentInstance.COMPONENT, node);
-  }
-
-  public int getContentsCount() {
-    return this.getChildCount(ComponentInstance.CONTENT);
-  }
-
-  public Iterator<IComponentPart> contents() {
-    return this.children(ComponentInstance.CONTENT);
-  }
-
-  public List<IComponentPart> getContents() {
-    return this.getChildren(ComponentInstance.CONTENT);
-  }
-
-  public void addContent(IComponentPart node) {
-    this.addChild(ComponentInstance.CONTENT, node);
-  }
-
-  public void insertContent(IComponentPart prev, IComponentPart node) {
-    this.insertChild(prev, ComponentInstance.CONTENT, node);
-  }
 
   public String getComponentName() {
     return this.getProperty(ComponentInstance.COMPONENT_NAME);
@@ -90,6 +62,34 @@ public class ComponentInstance extends BaseConcept implements IComponentPart {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ComponentInstance.VIRTUAL_PACKAGE, value);
+  }
+
+  public ComponentDeclaration getComponent() {
+    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT);
+  }
+
+  public void setComponent(ComponentDeclaration node) {
+    super.setReferent(ComponentInstance.COMPONENT, node);
+  }
+
+  public int getContentsCount() {
+    return this.getChildCount(ComponentInstance.CONTENT);
+  }
+
+  public Iterator<IComponentPart> contents() {
+    return this.children(ComponentInstance.CONTENT);
+  }
+
+  public List<IComponentPart> getContents() {
+    return this.getChildren(ComponentInstance.CONTENT);
+  }
+
+  public void addContent(IComponentPart node) {
+    this.addChild(ComponentInstance.CONTENT, node);
+  }
+
+  public void insertContent(IComponentPart prev, IComponentPart node) {
+    this.insertChild(prev, ComponentInstance.CONTENT, node);
   }
 
 }
