@@ -73,7 +73,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1177399369144(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false));
+    SNode concept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false);
+    if((concept == null)) {
+      _context.getGenerator().showErrorMessage(_context.getNode(), _context.getTemplateNode(), "concept is null");
+    }
+    return NameUtil.nodeFQName(concept);
   }
 
   public static Object propertyMacro_GetPropertyValue_1177404507235(final IOperationContext operationContext, final PropertyMacroContext _context) {
