@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class MigrationScriptPart_Instance extends BaseConcept {
+  public static final String concept = "jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance";
   public static String DESCRIPTION = "description";
   public static String AFFECTED_INSTANCE_PREDICATE = "affectedInstancePredicate";
   public static String AFFECTED_INSTANCE_UPDATER = "affectedInstanceUpdater";
@@ -20,7 +21,7 @@ public class MigrationScriptPart_Instance extends BaseConcept {
   }
 
   public static MigrationScriptPart_Instance newInstance(SModel sm, boolean init) {
-    return (MigrationScriptPart_Instance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MigrationScriptPart_Instance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MigrationScriptPart_Instance newInstance(SModel sm) {

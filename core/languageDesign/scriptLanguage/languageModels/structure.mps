@@ -11,7 +11,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1172272794406">
     <property name="rootable" value="true" />
     <property name="name" value="Script" />
-    <link role="extends" targetNodeId="1.1133920641626" />
+    <link role="extends" targetNodeId="2.1068390468198" resolveInfo="ClassConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1172287476293">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="statementList" />

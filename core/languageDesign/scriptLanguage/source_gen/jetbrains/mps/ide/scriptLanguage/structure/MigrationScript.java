@@ -12,8 +12,12 @@ import java.util.Iterator;
 import java.util.List;
 
 public class MigrationScript extends BaseConcept implements INamedConcept {
+  public static final String concept = "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript";
   public static String TITLE = "title";
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String PART = "part";
 
   public  MigrationScript(SNode node) {
@@ -21,7 +25,7 @@ public class MigrationScript extends BaseConcept implements INamedConcept {
   }
 
   public static MigrationScript newInstance(SModel sm, boolean init) {
-    return (MigrationScript)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.scriptLanguage.MigrationScript", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MigrationScript)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.scriptLanguage.structure.MigrationScript", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MigrationScript newInstance(SModel sm) {
@@ -43,6 +47,30 @@ public class MigrationScript extends BaseConcept implements INamedConcept {
 
   public void setName(String value) {
     this.setProperty(MigrationScript.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(MigrationScript.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(MigrationScript.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(MigrationScript.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(MigrationScript.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(MigrationScript.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(MigrationScript.VIRTUAL_PACKAGE, value);
   }
 
   public int getPartsCount() {

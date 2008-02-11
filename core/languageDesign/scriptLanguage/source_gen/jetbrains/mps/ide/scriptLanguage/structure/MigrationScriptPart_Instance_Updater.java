@@ -9,13 +9,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MigrationScriptPart_Instance_Updater extends ConceptFunction {
+  public static final String concept = "jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater";
 
   public  MigrationScriptPart_Instance_Updater(SNode node) {
     super(node);
   }
 
   public static MigrationScriptPart_Instance_Updater newInstance(SModel sm, boolean init) {
-    return (MigrationScriptPart_Instance_Updater)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance_Updater", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MigrationScriptPart_Instance_Updater)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MigrationScriptPart_Instance_Updater newInstance(SModel sm) {
