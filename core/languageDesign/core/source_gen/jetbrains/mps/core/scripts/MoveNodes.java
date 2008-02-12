@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperati
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.smodel.SNodePointer;
@@ -27,6 +27,7 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
@@ -120,7 +121,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       }
       return true;
     }
-    if(((Object)refactoringContext.getParameter("target")) instanceof SModel) {
+    if(((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
       for(SNode node : actionContext.getNodes()) {
         if(!(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
           return false;
@@ -152,9 +153,9 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       List<SNode> nodes = (List<SNode>)actionContext.getNodes();
       SModel targetModel = null;
       List<SNode> movedNodes = null;
-      if(((Object)refactoringContext.getParameter("target")) instanceof SModel) {
-        movedNodes = refactoringContext.moveNodesToModel(nodes, (SModel)((Object)refactoringContext.getParameter("target")));
-        targetModel = (SModel)((Object)refactoringContext.getParameter("target"));
+      if(((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
+        targetModel = ((SModelDescriptor)((Object)refactoringContext.getParameter("target"))).getSModel();
+        movedNodes = refactoringContext.moveNodesToModel(nodes, targetModel);
       }
       if(((Object)refactoringContext.getParameter("target")) instanceof SNode) {
         movedNodes = refactoringContext.moveNodesToNode(nodes, ListOperations.getElement(nodes, 0).getRole_(), (SNode)((Object)refactoringContext.getParameter("target")));

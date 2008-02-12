@@ -443,8 +443,8 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1198077803140">
-            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198077811081">
-              <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
+            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202822847908">
+              <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198077802014">
               <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
@@ -491,6 +491,26 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198082954071">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198082954072">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202822983443">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202822986304">
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202822983444">
+                  <link role="variableDeclaration" targetNodeId="1199555206076" resolveInfo="targetModel" />
+                </node>
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1202822987261">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1202822987262">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1202822987263">
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202822987264">
+                        <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+                      </node>
+                      <node role="expression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1202822987265">
+                        <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199627188714">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1199627190357">
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199627188715">
@@ -500,34 +520,16 @@
                   <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199627194736">
                     <link role="variableDeclaration" targetNodeId="1198082944517" resolveInfo="nodes" />
                   </node>
-                  <node role="destination" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1199627194737">
-                    <node role="expression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1199627194738">
-                      <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
-                    </node>
-                    <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1199627194739" />
+                  <node role="destination" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202822993439">
+                    <link role="variableDeclaration" targetNodeId="1199555206076" resolveInfo="targetModel" />
                   </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199555224270">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1199555225897">
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1199555228228">
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199555228229">
-                    <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
-                  </node>
-                  <node role="expression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1199555230591">
-                    <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
-                  </node>
-                </node>
-                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199555224271">
-                  <link role="variableDeclaration" targetNodeId="1199555206076" resolveInfo="targetModel" />
                 </node>
               </node>
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1198083001642">
-            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198083004661">
-              <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
+            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202822858676">
+              <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198082991405">
               <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
