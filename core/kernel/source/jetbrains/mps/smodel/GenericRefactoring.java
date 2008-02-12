@@ -108,21 +108,25 @@ public class GenericRefactoring {
     if (modelDescriptor == null) return;
     SModel model = modelDescriptor.getSModel();
 
-    if (myRefactoring.doesUpdateModel()) {
-      writeIntoLog(model, refactoringContext);
-      refactoringContext.computeCaches();
-      for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
-        String stereotype = anotherDescriptor.getStereotype();
-        if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
-          continue;
+    SearchResults usages = refactoringContext.getUsages();
+    if (usages == null || !refactoringContext.isLocal()) {
+      if (myRefactoring.doesUpdateModel()) {
+        writeIntoLog(model, refactoringContext);
+        refactoringContext.computeCaches();
+        for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
+          String stereotype = anotherDescriptor.getStereotype();
+          if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
+            continue;
+          }
+          if (!anotherDescriptor.isInitialized()) continue;
+          SModel anotherModel = anotherDescriptor.getSModel();
+          if (model != anotherModel
+            && !anotherModel.getDependenciesModels().contains(modelDescriptor)) continue;
+          processModel(anotherModel, model, refactoringContext);
         }
-        if (!anotherDescriptor.isInitialized()) continue;
-        if (anotherDescriptor.getModelUID().toString().equals("jetbrains.mps.webr.sandbox.dialog")) {
-          System.err.println("oy vey");
-        }
-        SModel anotherModel = anotherDescriptor.getSModel();
-        if (model != anotherModel
-          && !anotherModel.getDependenciesModels().contains(modelDescriptor)) continue;
+      }
+    } else {
+      for (SModel anotherModel : usages.getModelsWithResults()) {
         processModel(anotherModel, model, refactoringContext);
       }
     }

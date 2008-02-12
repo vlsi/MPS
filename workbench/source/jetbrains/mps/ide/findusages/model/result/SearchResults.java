@@ -5,6 +5,7 @@ import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SModel;
 import org.jdom.Element;
 
 import java.util.ArrayList;
@@ -36,6 +37,17 @@ public class SearchResults implements IExternalizableComponent {
 
   public List<SearchResult> getSearchResults() {
     return mySearchResults;
+  }
+
+  public Set<SModel> getModelsWithResults() {
+    Set<SModel> result = new HashSet<SModel>();
+    for (SearchResult searchResult : mySearchResults) {
+      SNode node = searchResult.getNode();
+      if (node != null) {
+        result.add(node.getModel());
+      }
+    }
+    return result;
   }
 
   public void remove(SNode node) {
