@@ -16,17 +16,19 @@ public class SequenceFunctionTypes_Test extends ClosuresBase_Test {
     FunctionTypes._R<? extends Iterable<Integer>> fun2 = null;
     fun1 = fun2;
     fun2 = fun1;
+    final Iterable<Integer> seq = new SequenceWithSupplier<Integer>(new zValueSupplier(null, null));
     fun1 = new FunctionTypes._R <Iterable<Integer>>() {
 
       public Iterable<Integer> invoke() {
-        return new SequenceWithSupplier<Integer>(new zValueSupplier(null, null));
+        return seq;
       }
 
     };
+    final List<Integer> list = ListOperations.<Integer>createList(Integer.valueOf(1));
     fun1 = new FunctionTypes._R <List<Integer>>() {
 
       public List<Integer> invoke() {
-        return ListOperations.<Integer>createList(Integer.valueOf(1));
+        return list;
       }
 
     };
@@ -128,10 +130,11 @@ __switch__:
   }
 
   public void test_resultsReturnSequence() throws Exception {
+    final Iterable<Integer> seq = new SequenceWithSupplier<Integer>(new zValueSupplier1(null, null));
     this.assertResultsEqual(new FunctionTypes._R <Iterable<Integer>>() {
 
       public Iterable<Integer> invoke() {
-        return new SequenceWithSupplier<Integer>(new zValueSupplier1(null, null));
+        return seq;
       }
 
     }, new FunctionTypes._R <Iterable<Integer>>() {

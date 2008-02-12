@@ -390,5 +390,14 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202838192004">
+    <link role="conceptDeclaration" targetNodeId="1.1202838164916" resolveInfo="InternalThisExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202838194600">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202838200789">
+        <property name="text" value="_this" />
+      </node>
+    </node>
+  </node>
 </model>
 

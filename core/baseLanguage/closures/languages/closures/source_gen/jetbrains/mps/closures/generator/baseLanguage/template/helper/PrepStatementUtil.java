@@ -32,6 +32,14 @@ public class PrepStatementUtil {
     return generator.getGeneratorSessionContext().getSessionObject("closure_data_" + ((SNode)sn).getId());
   }
 
+  public static void setFlag(SNode sn, ITemplateGenerator generator) {
+    generator.getGeneratorSessionContext().putSessionObject("flag_" + ((SNode)sn).getId(), Boolean.TRUE);
+  }
+
+  public static Object getFlag(SNode sn, ITemplateGenerator generator) {
+    return generator.getGeneratorSessionContext().getSessionObject("flag_" + ((SNode)sn).getId());
+  }
+
 
   private void prepTopStatementList(SNode slist) {
     int beginLabel = this.ctx.label;

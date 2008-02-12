@@ -4,6 +4,10 @@ package jetbrains.mps.closures.generator.baseLanguage.template.helper;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class ClosureLiteralUtil {
 
@@ -16,6 +20,21 @@ public class ClosureLiteralUtil {
       }
     }
     return false;
+  }
+
+  public static List<SNode> collectNonFinalVariableDeclarations(SNode cl) {
+    List<SNode> vrefs = new ArrayList<SNode>();
+    for(SNode desc : SNodeOperations.getDescendants(cl, null, false)) {
+      if(SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference") && cl == SNodeOperations.getAncestor(desc, "jetbrains.mps.closures.structure.ClosureLiteral", false, false)) {
+        SNode vd = SLinkOperations.getTarget(desc, "variableDeclaration", false);
+        if(cl != SNodeOperations.getAncestor(vd, "jetbrains.mps.closures.structure.ClosureLiteral", false, false)) {
+          if(!(SPropertyOperations.getBoolean(vd, "isFinal")) && (SNodeOperations.isInstanceOf(vd, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") || SNodeOperations.isInstanceOf(vd, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+            vrefs.add(SLinkOperations.getTarget(desc, "variableDeclaration", false));
+          }
+        }
+      }
+    }
+    return vrefs;
   }
 
 }
