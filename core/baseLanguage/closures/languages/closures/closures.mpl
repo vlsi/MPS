@@ -39,17 +39,20 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\core\baseLanguage\closures\languages\closures\runtime\classes" />
+    <entry path="${language_descriptor}\runtime\classes" />
   </classPath>
   <runtimeClassPath>
     <entry path="${mps_home}\core\baseLanguage\closures\classes" />
-    <entry path="${mps_home}\core\baseLanguage\closures\languages\closures\runtime\classes" />
+    <entry path="${language_descriptor}\runtime\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
+  <dependencies>
+    <dependency reexport="false">jetbrains.mps.bootstrap.cfaLanguage</dependency>
+  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
