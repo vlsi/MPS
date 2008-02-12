@@ -11,14 +11,14 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 
-public class ComponentInstance extends BaseConcept implements IComponentPart, INamedConcept {
+public class ComponentInstance extends BaseConcept implements IComponentPart, IComponentInstance, INamedConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentInstance";
+  public static String COMPONENT_DECLARATION = "componentDeclaration";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String NAME = "name";
   public static String CONTENT = "content";
-  public static String COMPONENT_DECLARATION = "componentDeclaration";
 
   public  ComponentInstance(SNode node) {
     super(node);
@@ -32,6 +32,14 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IN
     return ComponentInstance.newInstance(sm, false);
   }
 
+
+  public ComponentDeclaration getComponentDeclaration() {
+    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
+  }
+
+  public void setComponentDeclaration(ComponentDeclaration node) {
+    super.setReferent(ComponentInstance.COMPONENT_DECLARATION, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(ComponentInstance.SHORT_DESCRIPTION);
@@ -83,14 +91,6 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IN
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, ComponentInstance.CONTENT, node);
-  }
-
-  public ComponentDeclaration getComponentDeclaration() {
-    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
-  }
-
-  public void setComponentDeclaration(ComponentDeclaration node) {
-    super.setReferent(ComponentInstance.COMPONENT_DECLARATION, node);
   }
 
 }
