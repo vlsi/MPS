@@ -44,14 +44,13 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     if (myLinkDeclaration == null) {
       LOG.error("Can't find a link declaration " + role.toString() + " in " + getSNode());
       getSNode().getLinkDeclaration(role.toString());
-      return;
     }
 
     myGenuineLinkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
 
     if (myGenuineLinkDeclaration == null) {
       LOG.error("Can't find a link declaration for " + myLinkDeclaration);
-      return;
+      SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
     }
 
     myGenuineRole = myGenuineLinkDeclaration.getRole();
