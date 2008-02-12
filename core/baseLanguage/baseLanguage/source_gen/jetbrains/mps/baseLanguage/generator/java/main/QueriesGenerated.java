@@ -75,10 +75,6 @@ public class QueriesGenerated {
     return Property_Behavior.call_hasSetter_1202595424897(_context.getNode());
   }
 
-  public static SNode sourceNodeQuery_1201382862401(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return null;
-  }
-
   public static SNode sourceNodeQuery_1201386890759(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
