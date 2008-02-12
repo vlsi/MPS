@@ -92,6 +92,7 @@
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068581242874" resolveInfo="ParameterReference" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1199622544820">
+        <link role="concept" targetNodeId="4.1068581242874" resolveInfo="ParameterReference" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart" id="1199622547881">
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199622558805">
             <link role="concept" targetNodeId="4.1068498886292" resolveInfo="ParameterDeclaration" />
