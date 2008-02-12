@@ -20,11 +20,8 @@ public class GeneratorLogger {
   private int myErrorsCount;
   private HashSet<SNode> myFailedRules = new HashSet<SNode>();
 
-  public GeneratorLogger(IMessageHandler messageHandler) {
+  public GeneratorLogger(IMessageHandler messageHandler, IOperationContext operationContext) {
     myMessageHandler = messageHandler;
-  }
-
-  public void setOperationContext(IOperationContext operationContext) {
     myOperationContext = operationContext;
   }
 
@@ -84,4 +81,8 @@ public class GeneratorLogger {
     return myWarningsCount;
   }
 
+  public void clearErrorsAndWarnings() {
+    myErrorsCount = 0;
+    myWarningsCount = 0;
+  }
 }

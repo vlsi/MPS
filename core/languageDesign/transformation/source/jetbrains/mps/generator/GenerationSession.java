@@ -46,7 +46,6 @@ public class GenerationSession implements IGenerationSession {
   private boolean myDiscardTransients;
   private IAdaptiveProgressMonitor myProgressMonitor;
   private IMessageHandler myMessagesHandler;
-  private GeneratorLogger myGeneratorLogger;
   private ILoggingHandler myLoggingHandler;
 
   private String mySessionId;
@@ -74,7 +73,6 @@ public class GenerationSession implements IGenerationSession {
         }
       }
     };
-    myGeneratorLogger = new GeneratorLogger(myMessagesHandler);
   }
 
   public ILoggingHandler getLoggingHandler() {
@@ -238,8 +236,7 @@ public class GenerationSession implements IGenerationSession {
     setGenerationSessionContext(context);
 
     // -- replace generator
-    myGeneratorLogger.setOperationContext(context);
-    ITemplateGenerator generator = new TemplateGenerator(context, myProgressMonitor, myGeneratorLogger);
+    ITemplateGenerator generator = new TemplateGenerator(context, myProgressMonitor, new GeneratorLogger(myMessagesHandler, context));
     GenerationStatus status;
     try {
       SModel outputModel = generateModel(inputModel, generator);

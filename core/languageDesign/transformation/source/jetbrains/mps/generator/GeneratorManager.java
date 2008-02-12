@@ -509,7 +509,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
 
       //++ generation
-      GenerationStatus status = null;
+//      GenerationStatus status = null;
+      boolean generationOK = true;
+      boolean generationERROR = false;
       Statistics.setEnabled(Statistics.TPL, isDumpStatistics());
       IGenerationSession generationSession = new GenerationSession(invocationContext, saveTransientModels, progress, messages);
       try {
@@ -536,7 +538,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
           progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
-          status = generationSession.generateModel(inputModel, targetLanguage, script);
+          GenerationStatus status = generationSession.generateModel(inputModel, targetLanguage, script);
+          generationOK = generationOK && status.isOk();
+          generationERROR = generationERROR || status.isError();
           if (isDumpStatistics()) {
             Statistics.dumpAll();
           }
@@ -582,7 +586,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
       checkMonitorCanceled(progress);
       progress.addText("");
-      if (status == null || status.isOk()) {
+      if (generationOK) {
         IModule module = currentModule;
         if (module != null && (!myCompileOnGeneration || !(ideaPresent || module.isCompileInMPS()))
           || !generationType.requiresCompilationInIDEAfterGeneration()) {
@@ -631,13 +635,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         }
 
         progress.addText("generation completed successfully");
-
         messages.handle(new Message(MessageKind.INFORMATION, "generation completed successfully"));
         progress.finishSomehow();
-      } else if (status.isError()) {
+      } else if (generationERROR) {
         progress.addText("generation finished with errors");
         messages.handle(new Message(MessageKind.WARNING, "generation finished with errors"));
-
         progress.finishSomehow();
       }
 
