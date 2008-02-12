@@ -999,6 +999,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075287750850">
     <property name="name" value="StaticMethodDeclaration_Editor" />
+    <property name="package" value="staticMethod" />
     <link role="conceptDeclaration" targetNodeId="17.1081236700938" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1075287750849">
       <property name="name" value="methodBox" />
@@ -1583,6 +1584,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075308772515">
     <property name="name" value="StaticMethodCall_Editor" />
+    <property name="package" value="staticMethod" />
     <link role="conceptDeclaration" targetNodeId="17.1081236700937" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1081149310028">
       <property name="vertical" value="false" />
@@ -7665,6 +7667,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1172058463645">
+    <property name="package" value="staticMethod" />
     <link role="conceptDeclaration" targetNodeId="17.1172058436953" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1172058688093">
       <property name="drawBorder" value="false" />

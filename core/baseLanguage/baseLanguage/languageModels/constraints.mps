@@ -3099,6 +3099,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141104">
+    <property name="package" value="staticMethod" />
     <link role="concept" targetNodeId="1.1172058436953" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141105">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141106" />
@@ -3524,6 +3525,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141301">
+    <property name="package" value="staticMethod" />
     <link role="concept" targetNodeId="1.1081236700937" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184945458101">
       <property name="name" value="eval" />

@@ -985,6 +985,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1081236700937">
     <property name="name" value="StaticMethodCall" />
+    <property name="package" value="staticMethod" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107217617707">
       <property name="value" value=".&lt;static method&gt;" />
@@ -1009,6 +1010,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1081236700938">
     <property name="name" value="StaticMethodDeclaration" />
+    <property name="package" value="staticMethod" />
     <link role="extends" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1178289092936">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
@@ -2075,6 +2077,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1172058436953">
     <property name="name" value="LocalStaticMethodCall" />
+    <property name="package" value="staticMethod" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1172058436955">
       <property name="value" value="local static method invocation" />
