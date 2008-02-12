@@ -88,10 +88,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "newNode", true);
   }
 
-  public static List sourceNodesQuery_1202770334479(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "staticMethod", true);
-  }
-
   public static List sourceNodesQuery_1177464931683(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "part", true);
   }

@@ -186,7 +186,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
 
   public EditorCell createPartList(EditorContext context, SNode node) {
     if(this.myPartListHandler_partList_ == null) {
-      this.myPartListHandler_partList_ = new MigrationScript_Editor._RefNodeListHandler1(node, "part", context);
+      this.myPartListHandler_partList_ = new MigrationScript_Editor._RefNodeListHandler(node, "part", context);
     }
     EditorCell_Collection editorCell = this.myPartListHandler_partList_.createCells(context, new CellLayout_Vertical(), false);
     MigrationScript_Editor.setupBasic_PartList(editorCell, node, context);
@@ -255,9 +255,9 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler1 extends RefNodeListHandler {
+  public static class _RefNodeListHandler extends RefNodeListHandler {
 
-    public  _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
