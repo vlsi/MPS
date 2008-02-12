@@ -197,6 +197,10 @@ public class ModuleMaker {
   }
 
   private boolean isUpToDate(IModule m) {
+    if (m.isPackaged()) {
+      return true;
+    }
+
     if (!isClassesUpToDate(m)) {
       return false;
     }

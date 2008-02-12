@@ -93,4 +93,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   void save();
 
   void convert();
+
+  boolean isPackaged();
 }

@@ -50,6 +50,10 @@ public abstract class AbstractModule implements IModule {
 
   }
 
+  public boolean isPackaged() {
+    return getDescriptorFile().isReadOnly();
+  }
+
   @NotNull
   public String getModuleUID() {
     return toString();

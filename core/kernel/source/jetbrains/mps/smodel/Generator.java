@@ -32,6 +32,10 @@ public class Generator extends AbstractModule {
     myGeneratorDescriptor = generatorDescriptor;
   }
 
+  public boolean isPackaged() {
+    return getSourceLanguage().isPackaged();
+  }
+
   public void readModels() {
     if (!isInitialized()) {
       super.readModels();
