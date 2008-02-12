@@ -5,6 +5,7 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
@@ -23,10 +24,12 @@ public class TreeFileChooser {
 
   /////////////////////////////
 
+  @NotNull
+  private static IFile ourInitialSelectedFile = new FileSystemFile(PathManager.getHomePath());
+
   private int myMode = MODE_FILES;
   private IFileFilter myFileFilter = ALL_FILES_FILTER;
   private IOperationContext myContext = null;
-  private IFile myInitialSelectedFile = new FileSystemFile(PathManager.getHomePath());
 
   /////////////////////////////
 
@@ -43,14 +46,14 @@ public class TreeFileChooser {
   }
 
   public void setInitialFile(IFile file) {
-    myInitialSelectedFile = file;
+    ourInitialSelectedFile = file;
   }
 
   @Nullable
   public IFile showDialog(Frame owner) {
     if (owner == null) owner = JOptionPane.getRootFrame();
     setAdditionalModeFilter(myMode);
-    TreeFileChooserDialog dialog = new TreeFileChooserDialog(owner, myMode, myFileFilter, myContext, myInitialSelectedFile);
+    TreeFileChooserDialog dialog = new TreeFileChooserDialog(owner, myMode, myFileFilter, myContext, ourInitialSelectedFile);
     dialog.setVisible(true);
     if (dialog.isCancelled()) {
       return null;
@@ -61,7 +64,11 @@ public class TreeFileChooser {
 
   @Nullable
   public IFile showDialog(JComponent owner) {
-    return showDialog(JOptionPane.getFrameForComponent(owner));
+    IFile result = showDialog(JOptionPane.getFrameForComponent(owner));
+    if (result != null) {
+      ourInitialSelectedFile = result;
+    }
+    return result;
   }
 
   @Nullable
