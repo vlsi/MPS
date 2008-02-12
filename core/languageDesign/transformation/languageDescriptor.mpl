@@ -12,11 +12,17 @@
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template" />
       </models>
-      <external-templates />
+      <external-templates>
+        <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+      </external-templates>
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="true">jetbrains.mps.core</dependency>
+        <dependency reexport="false">jetbrains.mps.baseLanguageInternal</dependency>
       </dependencies>
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+      </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
