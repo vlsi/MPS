@@ -9,7 +9,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.HintDialog;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.ConstantFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;

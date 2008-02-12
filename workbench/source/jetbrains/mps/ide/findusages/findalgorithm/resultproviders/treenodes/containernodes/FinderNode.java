@@ -2,6 +2,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.con
 
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseLeaf;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
@@ -29,7 +30,11 @@ public class FinderNode extends BaseLeaf {
   }
 
   public String getTaskName() {
-    return myFinder.getDescription();
+    if (myFinder instanceof GeneratedFinder) {
+      return ((GeneratedFinder) myFinder).getDescription();
+    } else {
+      return myFinder.getClass().getName();
+    }
   }
 
   public String getTaskKind() {

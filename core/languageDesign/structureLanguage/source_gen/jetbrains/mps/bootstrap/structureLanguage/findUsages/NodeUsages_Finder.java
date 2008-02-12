@@ -7,7 +7,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
+
 import java.util.Set;
+
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
@@ -16,25 +18,29 @@ import jetbrains.mps.smodel.SNodePointer;
 public class NodeUsages_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder");
 
-  public String getConcept() {
-    return "jetbrains.mps.core.structure.BaseConcept";
+  public boolean isVisible() {
+    return true;
   }
 
   public String getDescription() {
     return "Node Usages";
   }
 
-  public boolean isApplicable(SNode node) {
-    return true;
+  public String getLongDescription() {
+    return "Find all occurences of this node\nregardless to the meaning of the occurence";
   }
 
-  public boolean isVisible() {
+  public String getConcept() {
+    return "jetbrains.mps.core.structure.BaseConcept";
+  }
+
+  public boolean isApplicable(SNode node) {
     return true;
   }
 
   public void doFind(SearchQuery searchQuery, SearchResults results) {
     Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(searchQuery.getNodePointer().getNode(), searchQuery.getScope());
-    for(SReference reference : resRefs) {
+    for (SReference reference : resRefs) {
       results.getSearchResults().add(new SearchResult(new SNodePointer(reference.getSourceNode()), "Node Usages"));
     }
     results.getSearchedNodePointers().add(new SNodePointer(searchQuery.getNodePointer().getNode()));

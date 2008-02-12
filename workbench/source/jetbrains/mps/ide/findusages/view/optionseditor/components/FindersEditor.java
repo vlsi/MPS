@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
 import jetbrains.mps.ide.action.ActionContext;
@@ -24,18 +25,18 @@ public class FindersEditor extends BaseEditor<FindersOptions> {
         BorderFactory.createTitledBorder("Finders"),
         BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
-    Set<BaseFinder> availableFinders = FindUsagesManager.getInstance().getAvailableFinders(node);
+    Set<GeneratedFinder> availableFinders = FindUsagesManager.getInstance().getAvailableFinders(node);
 
-    List<BaseFinder> sortedFinders = new ArrayList<BaseFinder>(availableFinders);
-    Collections.sort(sortedFinders, new Comparator<BaseFinder>() {
-      public int compare(BaseFinder o1, BaseFinder o2) {
+    List<GeneratedFinder> sortedFinders = new ArrayList<GeneratedFinder>(availableFinders);
+    Collections.sort(sortedFinders, new Comparator<GeneratedFinder>() {
+      public int compare(GeneratedFinder o1, GeneratedFinder o2) {
         return o1.getDescription().compareToIgnoreCase(o2.getDescription());
       }
     });
 
     List<String> correctEnabledFinders = new ArrayList<String>();
 
-    for (final BaseFinder finder : sortedFinders) {
+    for (final GeneratedFinder finder : sortedFinders) {
       boolean isEnabled = false;
 
       for (String enabledFinderName : myOptions.getFindersClassNames()) {
@@ -61,6 +62,7 @@ public class FindersEditor extends BaseEditor<FindersOptions> {
           }
         }
       });
+      finderCheckBox.setToolTipText(finder.getLongDescription());
 
       myPanel.add(finderCheckBox);
     }

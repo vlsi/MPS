@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.findUsagesLanguage.constraints.FinderDeclaration_
 import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
@@ -18,7 +19,7 @@ import java.util.*;
 public class FindUsagesManager implements IExternalizableComponent {
   private static final Logger LOG = Logger.getLogger(FindUsagesManager.class);
 
-  private Map<String, Set<BaseFinder>> myFinders = new HashMap<String, Set<BaseFinder>>();
+  private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
 
   public static FindUsagesManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(FindUsagesManager.class);
@@ -28,15 +29,15 @@ public class FindUsagesManager implements IExternalizableComponent {
 
   }
 
-  public Set<BaseFinder> getAvailableFinders(final SNode node) {
+  public Set<GeneratedFinder> getAvailableFinders(final SNode node) {
     return
-      (Set<BaseFinder>) CommandProcessor.instance().executeLightweightCommand(new Calculable<Object>() {
+      (Set<GeneratedFinder>) CommandProcessor.instance().executeLightweightCommand(new Calculable<Object>() {
         public Object calculate() {
-          Set<BaseFinder> result = new HashSet<BaseFinder>();
+          Set<GeneratedFinder> result = new HashSet<GeneratedFinder>();
 
           for (String conceptFQName : myFinders.keySet()) {
             if (node.isInstanceOfConcept(conceptFQName)) {
-              for (BaseFinder finder : Collections.unmodifiableSet(myFinders.get(conceptFQName))) {
+              for (GeneratedFinder finder : Collections.unmodifiableSet(myFinders.get(conceptFQName))) {
                 try {
                   if (finder.isVisible()) {
                     if (finder.isApplicable(node)) {
@@ -54,9 +55,9 @@ public class FindUsagesManager implements IExternalizableComponent {
       });
   }
 
-  public BaseFinder getFinderByClassName(String className) {
-    for (Set<BaseFinder> finders : myFinders.values()) {
-      for (BaseFinder finder : finders) {
+  public GeneratedFinder getFinderByClassName(String className) {
+    for (Set<GeneratedFinder> finders : myFinders.values()) {
+      for (GeneratedFinder finder : finders) {
         if (finder.getClass().getName().equals(className)) {
           return finder;
         }
@@ -79,11 +80,11 @@ public class FindUsagesManager implements IExternalizableComponent {
 
             if (cls != null) {
               Object finder = cls.newInstance();
-              Set<BaseFinder> finders = myFinders.get(conceptName);
+              Set<GeneratedFinder> finders = myFinders.get(conceptName);
               if (finders == null) {
-                finders = new HashSet<BaseFinder>();
+                finders = new HashSet<GeneratedFinder>();
               }
-              finders.add((BaseFinder) finder);
+              finders.add((GeneratedFinder) finder);
               myFinders.put(conceptName, finders);
             } else {
               LOG.warning("Finder is registered but isn't compiled " + NameUtil.nodeFQName(finderDeclaration), finderDeclaration);
