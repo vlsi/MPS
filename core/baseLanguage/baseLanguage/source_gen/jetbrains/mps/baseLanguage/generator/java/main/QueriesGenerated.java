@@ -108,7 +108,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1201570443454(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1202009493962(_context.getNode()), "propertyGetter", true), "statementList", true), "statement", true);
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1202009493962(_context.getNode()), "getAccessor", true), "statementList", true), "statement", true);
   }
 
   public static List sourceNodesQuery_1202009237531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

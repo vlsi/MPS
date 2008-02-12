@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CustomPropertyImplementation extends PropertyImplementation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation";
-  public static String PROPERTY_GETTER = "propertyGetter";
+  public static String GET_ACCESSOR = "getAccessor";
   public static String PROPERTY_SETTER = "propertySetter";
 
   public  CustomPropertyImplementation(SNode node) {
@@ -25,12 +25,12 @@ public class CustomPropertyImplementation extends PropertyImplementation {
   }
 
 
-  public GetAccessor getPropertyGetter() {
-    return (GetAccessor)this.getChild(CustomPropertyImplementation.PROPERTY_GETTER);
+  public GetAccessor getGetAccessor() {
+    return (GetAccessor)this.getChild(CustomPropertyImplementation.GET_ACCESSOR);
   }
 
-  public void setPropertyGetter(GetAccessor node) {
-    super.setChild(CustomPropertyImplementation.PROPERTY_GETTER, node);
+  public void setGetAccessor(GetAccessor node) {
+    super.setChild(CustomPropertyImplementation.GET_ACCESSOR, node);
   }
 
   public SetAccessor getPropertySetter() {

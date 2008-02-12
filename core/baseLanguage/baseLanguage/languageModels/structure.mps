@@ -2529,7 +2529,7 @@
     <link role="extends" targetNodeId="1201372346056" resolveInfo="PropertyImplementation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201402259264">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="propertyGetter" />
+      <property name="role" value="getAccessor" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1201402044357" resolveInfo="PropertyGetter" />
     </node>
