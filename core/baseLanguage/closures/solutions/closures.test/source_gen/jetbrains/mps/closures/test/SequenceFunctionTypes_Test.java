@@ -24,11 +24,10 @@ public class SequenceFunctionTypes_Test extends ClosuresBase_Test {
       }
 
     };
-    final List<Integer> list = ListOperations.<Integer>createList(Integer.valueOf(1));
     fun1 = new FunctionTypes._R <List<Integer>>() {
 
       public List<Integer> invoke() {
-        return list;
+        return ListOperations.<Integer>createList(Integer.valueOf(1));
       }
 
     };

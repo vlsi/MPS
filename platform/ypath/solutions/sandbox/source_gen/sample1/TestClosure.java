@@ -15,7 +15,7 @@ public class TestClosure {
       public Integer invoke(Integer n) {
         return (n <= 1 ?
           n :
-          this.invoke(n - 1) + this.invoke(n - 2)
+          invoke(n - 1) + invoke(n - 2)
         );
       }
 
@@ -26,7 +26,7 @@ public class TestClosure {
       public Integer invoke(Integer n) {
         return (n <= 1 ?
           n :
-          this.invoke(n - 1) + this.invoke(n - 2)
+          invoke(n - 1) + invoke(n - 2)
         );
       }
 
