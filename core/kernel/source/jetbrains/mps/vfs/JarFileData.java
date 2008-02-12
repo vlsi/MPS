@@ -44,7 +44,7 @@ public class JarFileData {
   }
 
   boolean exists(String path) {
-    return myEntries.get(path) != null;
+    return (myEntries.get(path) != null) || (mySubDirectories.get(path) != null);
   }
 
   boolean isDirectory(String path) {
