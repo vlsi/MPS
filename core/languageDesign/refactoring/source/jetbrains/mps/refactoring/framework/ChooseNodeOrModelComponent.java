@@ -7,6 +7,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ChooseItemComponent;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
@@ -30,6 +31,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private IOperationContext myOperationContext;
   private ActionContext myActionContext;
   private Set<SModelDescriptor> myModels = new HashSet<SModelDescriptor>();
+  private SModelDescriptor myModel = null;
   boolean myMayBeModel;
   boolean myMayBeNode;
   boolean myReturnLoadedModels = false;
@@ -106,18 +108,25 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   }
 
   private final class MyTree extends MPSTree {
+    {
+      setShowsRootHandles(true);
+    }
+
+    public boolean isRootVisible() {
+      return true;
+    }
+
     protected MPSTreeNode rebuild() {
-      TextTreeNode root = new TextTreeNode("root");
-
-      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>(myModels);
-      Collections.sort(models, new ToStringComparator());
-
-      for (SModelDescriptor modelDescriptor : models) {
+      MPSTreeNode root;
+      if (myModel != null) {
         Condition<SNode> nodeCondition = Condition.FALSE_CONDITION;
         if (myMayBeNode) {
           nodeCondition = myCondition;
         }
-        root.add(new SModelTreeNode(modelDescriptor, null, myOperationContext, nodeCondition));
+        root = new SModelTreeNode(myModel, null, myOperationContext, nodeCondition);
+      } else {
+        root = new TextTreeNode("no model is selected");
+        root.setIcon(Icons.DEFAULT_ICON);
       }
 
       return root;
@@ -177,7 +186,8 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     }
 
     public void doChoose(SModelDescriptor sModelDescriptor) {
-      myTree.selectNode(myTree.findNodeWith(sModelDescriptor));
+      myModel = sModelDescriptor;
+      myTree.rebuildNow();//selectNode(myTree.findNodeWith(sModelDescriptor));
     }
 
     public void rebuild() {
