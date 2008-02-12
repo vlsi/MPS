@@ -199,10 +199,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201048260874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      IMatchingPattern pattern_1202778790008 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1202778789990 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1202778790008);
-      if(coercedNode_1202778789990 != null) {
-        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1202778789990, "elementType", true));
+      IMatchingPattern pattern_1202781449704 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1202781449686 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1202781449704);
+      if(coercedNode_1202781449686 != null) {
+        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1202781449686, "elementType", true));
       }
     }
     return null;
@@ -623,8 +623,9 @@ public class QueriesGenerated {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
     SNode type = SLinkOperations.getTarget(mds.get(0), "returnType", true);
     if(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      List<SNode> psib = SNodeOperations.getPrevSiblings(SLinkOperations.getTarget(type, "typeVariableDeclaration", false), false);
       List<SNode> ptypes = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
-      return ClassifierTypeUtil.copyTypeRecursively(ptypes.get(0));
+      return ClassifierTypeUtil.copyTypeRecursively(ptypes.get(psib.size()));
     }
     return type;
   }
@@ -765,14 +766,13 @@ public class QueriesGenerated {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
     int idx = 1;
     List<SNode> ptypes = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
-    int pidx = 1;
     List<SNode> res = new ArrayList<SNode>();
     for(SNode pdecl : SLinkOperations.getTargets(mds.get(0), "parameter", true)) {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
       SNode ptype = SLinkOperations.getTarget(pdecl, "type", true);
       if(SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-        SLinkOperations.setTarget(pd, "type", ClassifierTypeUtil.copyTypeRecursively(ptypes.get(pidx)), true);
-        pidx = pidx + 1;
+        List<SNode> psib = SNodeOperations.getPrevSiblings(SLinkOperations.getTarget(ptype, "typeVariableDeclaration", false), false);
+        SLinkOperations.setTarget(pd, "type", ClassifierTypeUtil.copyTypeRecursively(ptypes.get(psib.size())), true);
       } else
       {
         SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(ptype), true);

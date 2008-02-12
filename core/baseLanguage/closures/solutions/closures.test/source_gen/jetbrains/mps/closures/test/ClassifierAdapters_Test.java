@@ -5,6 +5,10 @@ package jetbrains.mps.closures.test;
 import junit.framework.TestCase;
 import jetbrains.mps.closures.runtime.FunctionTypes;
 import junit.framework.Assert;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class ClassifierAdapters_Test extends TestCase {
 
@@ -21,16 +25,28 @@ public class ClassifierAdapters_Test extends TestCase {
   }
 
   public void test_functionTypeAsInterface() throws Exception {
-    // TODO fix when MPS-772 is fixed 
     FunctionTypes._R_from_T<? extends String, ? super Integer> cls = new FunctionTypes._R_from_T <String, Integer>() {
 
       public String invoke(Integer foo) {
-        return "Done: ";
+        return "Done: " + foo;
       }
 
     };
     Worker wrk = new _Adapters._R_from_T_to_Worker_adapter(cls);
     Assert.assertEquals("Done: 4321", wrk.doWork(4321));
+  }
+
+  public void test_functionTypeAsComparator() throws Exception {
+    List<Integer> list = new ArrayList<Integer>();
+    list.addAll(Arrays.asList(new Integer[]{4,3,5,1,2}));
+    Collections.sort(list, new _Adapters._R_from_S_and_T_to_Comparator_adapter(new FunctionTypes._R_from_S_and_T <Integer, Object, Object>() {
+
+      public Integer invoke(Object a, Object b) {
+        return a.hashCode() - b.hashCode();
+      }
+
+    }));
+    Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,4,5}), list);
   }
 
 }
