@@ -905,6 +905,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
             for (File f : files) {
               VirtualFile vf = lfs.refreshAndFindFileByIoFile(f);
               ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(myProject);
+              if (vf == null) {
+                continue;
+              }
               FilePath fp = PeerFactory.getInstance().getVcsContextFactory().createFilePathOn(vf);
               AbstractVcs vcs = vcsManager.getVcsFor(vf);
               if (vcs != null) {
