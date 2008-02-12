@@ -36,7 +36,11 @@ public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1202760124070(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     List<SNode> adapters = FunctionTypeUtil.getAllAdaptableClassifierTypes(_context.getGenerator());
-    return adapters != null && adapters.size() > 0;
+    if(adapters != null && adapters.size() > 0) {
+      _context.getGenerator().getGeneratorSessionContext().putSessionObject("need_weaving_class_for_ClassifierType_adapter", Boolean.TRUE);
+      return true;
+    }
+    return false;
   }
 
   public static boolean createRootRule_Condition_1201781414993(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -131,16 +135,16 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1201783366634(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if(_context.getGenerator().getGeneratorSessionContext().getSessionObject("done_weaving_class_for_ClassifierType_adapter") == null) {
-      _context.getGenerator().getGeneratorSessionContext().putSessionObject("done_weaving_class_for_ClassifierType_adapter", Boolean.TRUE);
+    if(_context.getGenerator().getGeneratorSessionContext().getSessionObject("need_weaving_class_for_ClassifierType_adapter") != null) {
+      _context.getGenerator().getGeneratorSessionContext().putSessionObject("need_weaving_class_for_ClassifierType_adapter", null);
       return true;
     }
     return false;
   }
 
   public static boolean baseMappingRule_Condition_1201789577252(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if(_context.getGenerator().getGeneratorSessionContext().getSessionObject("done_weaving_class_for_ClassifierType_adapter") == null) {
-      _context.getGenerator().getGeneratorSessionContext().putSessionObject("done_weaving_class_for_ClassifierType_adapter", Boolean.TRUE);
+    if(_context.getGenerator().getGeneratorSessionContext().getSessionObject("need_weaving_class_for_ClassifierType_adapter") != null) {
+      _context.getGenerator().getGeneratorSessionContext().putSessionObject("need_weaving_class_for_ClassifierType_adapter", null);
       return true;
     }
     return false;
@@ -220,10 +224,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201048260874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      IMatchingPattern pattern_1202822369191 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1202822369173 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1202822369191);
-      if(coercedNode_1202822369173 != null) {
-        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1202822369173, "elementType", true));
+      IMatchingPattern pattern_1202830515800 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1202830515782 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1202830515800);
+      if(coercedNode_1202830515782 != null) {
+        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1202830515782, "elementType", true));
       }
     }
     return null;
