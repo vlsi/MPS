@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,6 +18,9 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
 
   public List<SNode> getSubOrSuperTypes(SNode type) {
     SNode subOrSuperType = getSubOrSuperType(type);
+    if (subOrSuperType == null) {
+      return new ArrayList<SNode>(0);
+    }
     return CollectionUtil.asList(subOrSuperType);
   }
 

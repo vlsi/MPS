@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -25,7 +26,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
 
   private SNode myNode;
 
-  public static NodeWrapper createNodeWrapper(SNode node) {
+  public static NodeWrapper createNodeWrapper(@NotNull SNode node) {
     if ("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable".equals(node.getConceptFqName())) {
       return new VariableWrapper(node);
     } else {
