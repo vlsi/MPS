@@ -1467,5 +1467,14 @@
       <link role="target" targetNodeId="1200923014784" resolveInfo="ConditionalRootLabelDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202776937179">
+    <property name="package" value="rule.consequence" />
+    <property name="name" value="AbandonInput_RuleConsequence" />
+    <link role="extends" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1202776989353">
+      <property name="value" value="&lt;nothing&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

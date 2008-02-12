@@ -1586,7 +1586,7 @@
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1168560005632">
               <property name="drawBorder" value="false" />
-              <property name="noTargetText" value="&lt;default&gt;" />
+              <property name="noTargetText" value="&lt;ignore switch&gt;" />
               <link role="relationDeclaration" targetNodeId="1.1168558750579" />
             </node>
           </node>

@@ -27,6 +27,9 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart" id="1177412906732">
         <link role="conceptToRemove" targetNodeId="1.1177093525992" />
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart" id="1202777025214">
+        <link role="conceptToRemove" targetNodeId="1.1202776937179" resolveInfo="AbandonInput_RuleConsequence" />
+      </node>
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1195244204581">
         <link role="concept" targetNodeId="1.1169569792945" resolveInfo="WeaveEach_RuleConsequence" />
       </node>
