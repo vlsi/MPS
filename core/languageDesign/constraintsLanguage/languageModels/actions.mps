@@ -135,6 +135,7 @@
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068431790191" resolveInfo="Expression" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1201274391813">
+        <link role="concept" targetNodeId="4.1138055978872" resolveInfo="SNodeOperationExpression" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart" id="1201274408288">
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201274511769">
             <link role="concept" targetNodeId="1.1177673300966" resolveInfo="ConceptMethodDeclaration" />
