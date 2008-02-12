@@ -24,6 +24,7 @@ public class ModuleMaker {
   private static Logger LOG = Logger.getLogger(ModuleMaker.class);
 
   private static final String JAVA_SUFFIX = ".java";
+  private static final String CLASS_SUFFIX = ".class";
 
   private Map<String, IModule> myContainingModules = new HashMap<String, IModule>();
   private Map<IModule, Boolean> myClassesUpToDateStatus = new HashMap<IModule, Boolean>();
@@ -236,5 +237,32 @@ public class ModuleMaker {
     boolean result = classesTimeStamp >= sourcesTimeStamp;
     myClassesUpToDateStatus.put(m, result);
     return result;
+  }
+
+  private static boolean isAllClassesPresented(File sourcedir, File classdir){
+    File[] sourcefiles = sourcedir.listFiles();
+
+    for (File src : sourcefiles){
+      if (src.isFile() && src.getAbsolutePath().endsWith(JAVA_SUFFIX)){
+        String srcname = src.getName().substring(0, src.getName().lastIndexOf(".") + 1);
+        String classname = classdir.getAbsolutePath() + File.separator + srcname + CLASS_SUFFIX;
+        File dst = new File(classname);
+
+        if (!dst.exists()){
+          return false;
+        }
+      } else if (src.isDirectory()){
+        String dstname = classdir.getAbsolutePath() + File.separator + src.getName();
+        File dst = new File(dstname);
+
+        if (!dst.exists()){
+          return false;
+        }
+
+        isAllClassesPresented(src, dst);
+      }
+    }
+
+    return true;
   }
 }
