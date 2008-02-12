@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class ClassifierAdapters_Test extends TestCase {
 
@@ -36,16 +37,33 @@ public class ClassifierAdapters_Test extends TestCase {
     Assert.assertEquals("Done: 4321", wrk.doWork(4321));
   }
 
-  public void test_functionTypeAsComparator() throws Exception {
+  public void test_closureLiteralAsInterface() throws Exception {
+    Worker wrk = new Worker() {
+
+      public String doWork(Integer foo) {
+        return "Done: " + foo;
+      }
+
+    };
+    Assert.assertEquals("Done: 4321", wrk.doWork(4321));
+  }
+
+  public void test_closureLiteralAsComparator() throws Exception {
     List<Integer> list = new ArrayList<Integer>();
     list.addAll(Arrays.asList(new Integer[]{4,3,5,1,2}));
-    Collections.sort(list, new _Adapters._R_from_S_and_T_to_Comparator_adapter(new FunctionTypes._R_from_S_and_T <Integer, Object, Object>() {
+    // ===================================================================
+    // The following is a hack!
+    // In reality we could only substitute an interface that has a single method.
+    // This example works only because java.util.Comparator defines compare() before equals()
+    // Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything
+    // ===================================================================
+    Collections.sort(list, new Comparator <Object>() {
 
-      public Integer invoke(Object a, Object b) {
+      public int compare(Object a, Object b) {
         return a.hashCode() - b.hashCode();
       }
 
-    }));
+    });
     Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,4,5}), list);
   }
 

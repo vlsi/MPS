@@ -34,6 +34,7 @@
         </node>
       </node>
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1199547401535">
+        <link role="concept" targetNodeId="1.1199547238293" resolveInfo="InvokeFunctionExpression" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleRightTransformMenuPart" id="1199547403272">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_Handler" id="1199547403273">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199547403274">

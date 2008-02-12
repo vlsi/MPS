@@ -6,17 +6,18 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.closures.constraints.FunctionType_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import java.util.List;
+import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import java.util.ArrayList;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.Collections;
 import java.util.Iterator;
 import java.text.Collator;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.core.constraints.INamedConcept_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.Comparator;
 
 public class FunctionTypeUtil {
@@ -39,6 +40,27 @@ public class FunctionTypeUtil {
       tname
     );
     return aname + "_to_" + tname + "_adapter";
+  }
+
+  public static SNode getAdaptableTarget(SNode expr, ITemplateGenerator generator) {
+    if(SNodeOperations.isInstanceOf(expr, "jetbrains.mps.closures.structure.ClosureLiteral")) {
+      SNode trg = FunctionTypeUtil.getAdaptableClosureLiteralTarget(expr, generator);
+      if(trg != null) {
+        return trg;
+      }
+    }
+    SNode ntype = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    assert ntype != null;
+    List<SNode> targets = FunctionTypeUtil.getAdaptableClassifierTypeTargets(ntype, generator);
+    String trgFQname = (String)FunctionTypeUtil.getPrepData(expr, generator);
+    SNode trg = null;
+    for(SNode ct : targets) {
+      if(trgFQname.equals(INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(ct, "classifier", false)))) {
+        trg = ct;
+        break;
+      }
+    }
+    return trg;
   }
 
   public static List<SNode> getAllFunctionTypes(SModel sourceModel) {
@@ -98,6 +120,26 @@ public class FunctionTypeUtil {
 
   public static List<SNode> getAdaptableClassifierTypeTargets(SNode adaptable, ITemplateGenerator generator) {
     return (List<SNode>)generator.getGeneratorSessionContext().getSessionObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(adaptable, "classifier", false)));
+  }
+
+  public static void addAdaptableClosureLiteralTarget(SNode literal, SNode target, ITemplateGenerator generator) {
+    List<SNode> allAdaptable = FunctionTypeUtil.getAllAdaptableClosureLiterals(generator);
+    if(allAdaptable == null) {
+      allAdaptable = new ArrayList<SNode>();
+      generator.getGeneratorSessionContext().putSessionObject("all_adaptable_literals", allAdaptable);
+    }
+    allAdaptable.add(literal);
+    SNode trgCopy = SNodeOperations.copyNode(target);
+    generator.getGeneratorSessionContext().putSessionObject("literal_target_" + ((SNode)literal).getId(), trgCopy);
+    ((SNode)trgCopy).putUserObject("literal", literal);
+  }
+
+  public static List<SNode> getAllAdaptableClosureLiterals(ITemplateGenerator generator) {
+    return (List<SNode>)generator.getGeneratorSessionContext().getSessionObject("all_adaptable_literals");
+  }
+
+  public static SNode getAdaptableClosureLiteralTarget(SNode literal, ITemplateGenerator generator) {
+    return (SNode)generator.getGeneratorSessionContext().getSessionObject("literal_target_" + ((SNode)literal).getId());
   }
 
   public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {

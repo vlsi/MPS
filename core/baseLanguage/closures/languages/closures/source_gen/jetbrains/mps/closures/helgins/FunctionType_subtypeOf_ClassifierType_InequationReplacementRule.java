@@ -20,6 +20,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
 
   public void processInequation(SNode subtype, SNode supertype, ErrorInfo errorInfo) {
     SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);
+    String errorMsg = "";
     if(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
       if(methods != null && methods.size() == 1) {
@@ -44,10 +45,19 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
             }
           }
           return;
+        } else
+        {
+          errorMsg = ": wrong parameter number";
         }
+      } else
+      {
+        errorMsg = ": interface must have only one method";
       }
+    } else
+    {
+      errorMsg = ": not an interface";
     }
-    TypeChecker.getInstance().reportTypeError(errorInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1180102203531(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1180102203531(supertype), "jetbrains.mps.closures.helgins", "1202742336483");
+    TypeChecker.getInstance().reportTypeError(errorInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1180102203531(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1180102203531(supertype) + errorMsg, "jetbrains.mps.closures.helgins", "1202742336483");
   }
 
   public boolean isWeak() {

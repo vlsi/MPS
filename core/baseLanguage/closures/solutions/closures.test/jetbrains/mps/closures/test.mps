@@ -3070,8 +3070,56 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1202822564646">
+        <property name="methodName" value="closureLiteralAsInterface" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1202822564647" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202822564648">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1202822578133">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1202822578134">
+              <property name="name" value="wrk" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202822578135">
+                <link role="classifier" targetNodeId="1202741884865" resolveInfo="Worker" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202822583244">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1202822587634">
+                  <property name="name" value="foo" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202822590160">
+                    <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+                  </node>
+                </node>
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202822583245">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202822596489">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1202822599526">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1202822601538">
+                        <link role="variableDeclaration" targetNodeId="1202822587634" resolveInfo="foo" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1202822596490">
+                        <property name="value" value="Done: " />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1202822609626">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1202822609627">
+              <property name="value" value="Done: 4321" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1202822609628">
+              <link role="baseMethodDeclaration" targetNodeId="1202741897838" resolveInfo="doWork" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1202822609629">
+                <property name="value" value="4321" />
+              </node>
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202822609630">
+                <link role="variableDeclaration" targetNodeId="1202822578134" resolveInfo="wrk" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1202780473356">
-        <property name="methodName" value="functionTypeAsComparator" />
+        <property name="methodName" value="closureLiteralAsComparator" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1202780473357" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202780473358">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1202780487398">
@@ -3124,6 +3172,24 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822776252">
+            <property name="value" value="===================================================================" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822630624">
+            <property name="value" value="The following is a hack!" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822637628">
+            <property name="value" value="In reality we could only substitute an interface that has a single method." />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822675277">
+            <property name="value" value="This example works only because java.util.Comparator defines compare() before equals()" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822704115">
+            <property name="value" value="Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822785733">
+            <property name="value" value="===================================================================" />
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202780592476">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1202780595738">
