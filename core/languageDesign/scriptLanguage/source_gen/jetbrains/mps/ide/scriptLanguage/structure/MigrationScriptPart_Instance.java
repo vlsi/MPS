@@ -11,10 +11,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class MigrationScriptPart_Instance extends BaseConcept {
   public static final String concept = "jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance";
-  public static String AFFECTED_INSTANCE_CONCEPT = "affectedInstanceConcept";
   public static String DESCRIPTION = "description";
   public static String AFFECTED_INSTANCE_PREDICATE = "affectedInstancePredicate";
   public static String AFFECTED_INSTANCE_UPDATER = "affectedInstanceUpdater";
+  public static String AFFECTED_INSTANCE_CONCEPT = "affectedInstanceConcept";
 
   public  MigrationScriptPart_Instance(SNode node) {
     super(node);
@@ -28,14 +28,6 @@ public class MigrationScriptPart_Instance extends BaseConcept {
     return MigrationScriptPart_Instance.newInstance(sm, false);
   }
 
-
-  public AbstractConceptDeclaration getAffectedInstanceConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(MigrationScriptPart_Instance.AFFECTED_INSTANCE_CONCEPT);
-  }
-
-  public void setAffectedInstanceConcept(AbstractConceptDeclaration node) {
-    super.setReferent(MigrationScriptPart_Instance.AFFECTED_INSTANCE_CONCEPT, node);
-  }
 
   public String getDescription() {
     return this.getProperty(MigrationScriptPart_Instance.DESCRIPTION);
@@ -59,6 +51,14 @@ public class MigrationScriptPart_Instance extends BaseConcept {
 
   public void setAffectedInstanceUpdater(MigrationScriptPart_Instance_Updater node) {
     super.setChild(MigrationScriptPart_Instance.AFFECTED_INSTANCE_UPDATER, node);
+  }
+
+  public AbstractConceptDeclaration getAffectedInstanceConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(MigrationScriptPart_Instance.AFFECTED_INSTANCE_CONCEPT);
+  }
+
+  public void setAffectedInstanceConcept(AbstractConceptDeclaration node) {
+    super.setReferent(MigrationScriptPart_Instance.AFFECTED_INSTANCE_CONCEPT, node);
   }
 
 }
