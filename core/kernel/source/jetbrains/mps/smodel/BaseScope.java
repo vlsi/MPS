@@ -41,6 +41,15 @@ public abstract class BaseScope implements IScope {
       }
     }
 
+    for (Language l : getVisibleLanguages()) {
+      for (SModelDescriptor accessory : l.getAccessoryModels()) {
+        if (modelUID.equals(accessory.getModelUID())) {
+          myDescriptors.put(modelUID, accessory);
+          return accessory;
+        }
+      }
+    }
+         
     return null;
   }
 
