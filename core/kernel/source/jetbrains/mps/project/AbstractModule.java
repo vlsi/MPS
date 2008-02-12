@@ -419,7 +419,7 @@ public abstract class AbstractModule implements IModule {
   private void updateClassPathItem() {
     CompositeClassPathItem result = new CompositeClassPathItem();
     for (String s : getClassPath()) {
-      File file = new File(s);
+     IFile file = FileSystem.getFile(s);
       if (!file.exists()) {
         LOG.error("Can't load class path item " + s + " in " + this);
       } else {
@@ -506,7 +506,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected IClassPathItem createClassPathItem(String s) {
-    File f = new File(s);
+    IFile f = FileSystem.getFile(s);
     IClassPathItem classPathItem = null;
     if (f.exists()) {
       if (f.isDirectory()) {
@@ -620,7 +620,7 @@ public abstract class AbstractModule implements IModule {
     for (int i = 0; i < getRuntimeClassPathItems().size(); i++) {
       String s = getRuntimeClassPathItems().get(i);
 
-      if (new File(s).isDirectory()) {
+      if (FileSystem.getFile(s).isDirectory()) {
         s += "/";
       }
 
