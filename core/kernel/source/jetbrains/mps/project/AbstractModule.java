@@ -377,7 +377,7 @@ public abstract class AbstractModule implements IModule {
   public void updateRuntimeClassPath() {
     CompositeClassPathItem result = new CompositeClassPathItem();
     for (String s : getRuntimeClassPathItems()) {
-      if (!new File(s).exists()) {
+      if (!FileSystem.getFile(s).exists()) {
         if (!s.equals(getClassesGen().getPath())) {
           LOG.error("Classpath item doesn't exist " + s);
         }
@@ -386,7 +386,7 @@ public abstract class AbstractModule implements IModule {
 
       if (s.equals(ClassLoaderManager.getInstance().getBaseMPSPath())) {
         result.add(ClassLoaderManager.getInstance().getMPSPath());
-      } else if (new File(s).isDirectory()) {
+      } else if (FileSystem.getFile(s).isDirectory()) {
         result.add(new FileClassPathItem(s));
       } else {
         result.add(new JarFileClassPathItem(s));
