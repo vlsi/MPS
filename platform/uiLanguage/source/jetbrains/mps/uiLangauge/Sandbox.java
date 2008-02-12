@@ -1,8 +1,8 @@
 package jetbrains.mps.uiLangauge;
 
 
-import jetbrains.mps.uiLanguage.sandbox.PersonEditor;
 import jetbrains.mps.uiLanguage.samples.actions.ActionsSample;
+import jetbrains.mps.uiLanguage.samples.personEditor.PersonEditor;
 import jetbrains.mps.uiLanguage.checkbox.CheckBoxDemo;
 
 import javax.swing.*;
@@ -17,7 +17,7 @@ public class Sandbox {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        new CheckBoxDemo();
+        new PersonEditor();
       }
     });    
   }
