@@ -5576,7 +5576,7 @@
     <property name="package" value="rule.consequence" />
     <link role="conceptDeclaration" targetNodeId="1.1202776937179" resolveInfo="AbandonInput_RuleConsequence" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202781010672">
-      <property name="text" value="&lt;nothing&gt;" />
+      <property name="text" value="&lt;abandon input&gt;" />
       <property name="fontStyle" value="BOLD" />
     </node>
   </node>

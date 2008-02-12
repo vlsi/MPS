@@ -489,7 +489,7 @@ public class GeneratorUtil {
 
 
   @Nullable
-  /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException {
+  /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException {
     if (ruleConsequence == null) {
       generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
       return null;
@@ -511,6 +511,9 @@ public class GeneratorUtil {
         generator.showInformationMessage(inputNode, "Top rule dismissed with no message");
       }
       throw new DismissTopMappingRuleException();
+
+    } else if (ruleConsequence instanceof AbandonInput_RuleConsequence) {
+      throw new AbandonRuleInputException();
 
     } else if (ruleConsequence instanceof TemplateDeclarationReference) {
       TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
@@ -552,12 +555,14 @@ public class GeneratorUtil {
     generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
     try {
       return applyReductionRule_internal(inputNode, rule, generator);
+    } catch (AbandonRuleInputException e) {
+      return new ArrayList<SNode>(1);
     } finally {
       generator.getGeneratorSessionContext().getGenerationTracer().closeRule(rule.getNode());
     }
   }
 
-  private static List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException {
+  private static List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException {
     SNode reductionTemplateNode = null;
     String ruleMappingName = getMappingName(rule, null);
     String mappingName = null;

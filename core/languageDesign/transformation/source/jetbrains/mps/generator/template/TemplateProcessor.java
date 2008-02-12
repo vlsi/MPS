@@ -4,13 +4,12 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
-
-import org.jetbrains.annotations.Nullable;
 
 public class TemplateProcessor {
   private TemplateGenerator myGenerator;
@@ -206,16 +205,20 @@ public class TemplateProcessor {
         // alternative consequence
         RuleConsequence altConsequence = ((IfMacro) nodeMacro).getAlternativeConsequence();
         if (altConsequence != null) {
-          Pair<SNode, String> nodeAndMappingName = GeneratorUtil.getTemplateNodeFromRuleConsequence(altConsequence, inputNode, nodeMacro.getNode(), myGenerator);
-          if (nodeAndMappingName == null) {
-            myGenerator.showErrorMessage(inputNode, null, nodeMacro.getNode(), "error processing $IF$/alternative");
-            return null;
+          try {
+            Pair<SNode, String> nodeAndMappingName = GeneratorUtil.getTemplateNodeFromRuleConsequence(altConsequence, inputNode, nodeMacro.getNode(), myGenerator);
+            if (nodeAndMappingName == null) {
+              myGenerator.showErrorMessage(inputNode, null, nodeMacro.getNode(), "error processing $IF$/alternative");
+              return null;
+            }
+            SNode altTemplateNode = nodeAndMappingName.o1;
+            if (nodeAndMappingName.o2 != null) {
+              mappingName = nodeAndMappingName.o2;
+            }
+            _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode, false);
+          } catch (AbandonRuleInputException e) {
+            // it's ok. just ignore
           }
-          SNode altTemplateNode = nodeAndMappingName.o1;
-          if (nodeAndMappingName.o2 != null) {
-            mappingName = nodeAndMappingName.o2;
-          }
-          _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode, false);
         }
       }
       if (_outputNodes != null) outputNodes.addAll(_outputNodes);
@@ -291,7 +294,6 @@ public class TemplateProcessor {
         generationTracer.pushInputNode(newInputNode);
       }
       generationTracer.pushSwitch(templateSwitch.getNode());
-
       try {
         RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
         SNode templateNodeForCase = null;
@@ -329,6 +331,8 @@ public class TemplateProcessor {
         if (registerTopOutput && !inputChanged) {
           myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
         }
+      } catch (AbandonRuleInputException e) {
+        // it's ok. just ignore.
       } finally {
         if (inputChanged) {
           popInputHistory();
