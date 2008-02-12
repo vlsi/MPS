@@ -13,9 +13,6 @@
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
       </external-templates>
-      <dependencies>
-        <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
-      </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
