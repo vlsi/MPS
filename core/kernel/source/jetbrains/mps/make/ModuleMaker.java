@@ -242,24 +242,24 @@ public class ModuleMaker {
   private static boolean isAllClassesPresented(File sourcedir, File classdir){
     File[] sourcefiles = sourcedir.listFiles();
 
-    for (File src : sourcefiles){
-      if (src.isFile() && src.getAbsolutePath().endsWith(JAVA_SUFFIX)){
-        String srcname = src.getName().substring(0, src.getName().lastIndexOf(".") + 1);
-        String classname = classdir.getAbsolutePath() + File.separator + srcname + CLASS_SUFFIX;
-        File dst = new File(classname);
+    for (File source : sourcefiles){
+      if (source.isFile() && source.getAbsolutePath().endsWith(JAVA_SUFFIX)){
+        String sourceName = source.getName().substring(0, source.getName().lastIndexOf(".") + 1);
+        String className = classdir.getAbsolutePath() + File.separator + sourceName + CLASS_SUFFIX;
+        File destination = new File(className);
 
-        if (!dst.exists()){
+        if (!destination.exists()){
           return false;
         }
-      } else if (src.isDirectory()){
-        String dstname = classdir.getAbsolutePath() + File.separator + src.getName();
-        File dst = new File(dstname);
+      } else if (source.isDirectory()){
+        String destinationName = classdir.getAbsolutePath() + File.separator + source.getName();
+        File destination = new File(destinationName);
 
-        if (!dst.exists()){
+        if (!destination.exists()){
           return false;
         }
 
-        isAllClassesPresented(src, dst);
+        isAllClassesPresented(source, destination);
       }
     }
 
