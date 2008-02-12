@@ -8,12 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.quotation.structure.Antiquotation_AnnotationLink;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink;
 import jetbrains.mps.quotation.structure.AbstractAntiquotation;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.patterns.structure.AsPattern_AnnotationLink;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.INodeAdapter;
@@ -31,6 +28,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration;
 import jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class QueriesGenerated {
 
@@ -52,6 +50,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1190931376940(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "nodeToMatch_" + _context.getNode().getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1202825939894(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getNode().getConceptFqName();
   }
 
   public static Object propertyMacro_GetPropertyValue_1190931377077(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -119,10 +121,6 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1190931377016(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode antiquotation = _context.getNode().getAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION);
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(antiquotation, "antiquotations");
-  }
-
-  public static Object referenceMacro_GetReferent_1190931377055(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SModelUtil_new.getAdapterClassConceptForConceptDeclaration((ConceptDeclaration)BaseAdapter.fromNode(SNodeOperations.getConceptDeclaration(_context.getNode())), GlobalScope.getInstance()).getNode();
   }
 
   public static Object referenceMacro_GetReferent_1190931377156(final IOperationContext operationContext, final ReferenceMacroContext _context) {
