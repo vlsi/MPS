@@ -7,7 +7,8 @@ import java.util.LinkedList;
 
 public enum Option {
   option_default("option_default", "option_default"),
-  option_1("option_1", "option_1");
+  option_1("option_1", "option_1"),
+  drop_it("drop it", "drop_it");
 
   /* package */String myName;
   /* package */String myValue;
@@ -21,6 +22,7 @@ public enum Option {
     List<Option> list = new LinkedList<Option>();
     list.add(Option.option_default);
     list.add(Option.option_1);
+    list.add(Option.drop_it);
     return list;
   }
 
@@ -37,6 +39,9 @@ public enum Option {
     }
     if(value.equals(Option.option_1.getValueAsString())) {
       return Option.option_1;
+    }
+    if(value.equals(Option.drop_it.getValueAsString())) {
+      return Option.drop_it;
     }
     return Option.getDefault();
   }

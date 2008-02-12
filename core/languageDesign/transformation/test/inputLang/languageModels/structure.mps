@@ -52,6 +52,10 @@
       <property name="externalValue" value="option_1" />
       <property name="internalValue" value="option_1" />
     </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1202780730330">
+      <property name="externalValue" value="drop it" />
+      <property name="internalValue" value="drop_it" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195171011194">
     <property name="name" value="InputNode_A" />

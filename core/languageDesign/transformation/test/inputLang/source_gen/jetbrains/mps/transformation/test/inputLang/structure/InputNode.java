@@ -13,11 +13,11 @@ import java.util.List;
 
 public class InputNode extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.transformation.test.inputLang.structure.InputNode";
+  public static String INPUT_CHILD = "inputChild";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String INPUT_CHILD = "inputChild";
 
   public  InputNode(SNode node) {
     super(node);
@@ -31,6 +31,26 @@ public class InputNode extends BaseConcept implements INamedConcept {
     return InputNode.newInstance(sm, false);
   }
 
+
+  public int getInputChildsCount() {
+    return this.getChildCount(InputNode.INPUT_CHILD);
+  }
+
+  public Iterator<InputNode> inputChilds() {
+    return this.children(InputNode.INPUT_CHILD);
+  }
+
+  public List<InputNode> getInputChilds() {
+    return this.getChildren(InputNode.INPUT_CHILD);
+  }
+
+  public void addInputChild(InputNode node) {
+    this.addChild(InputNode.INPUT_CHILD, node);
+  }
+
+  public void insertInputChild(InputNode prev, InputNode node) {
+    this.insertChild(prev, InputNode.INPUT_CHILD, node);
+  }
 
   public String getName() {
     return this.getProperty(InputNode.NAME);
@@ -62,26 +82,6 @@ public class InputNode extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(InputNode.VIRTUAL_PACKAGE, value);
-  }
-
-  public int getInputChildsCount() {
-    return this.getChildCount(InputNode.INPUT_CHILD);
-  }
-
-  public Iterator<InputNode> inputChilds() {
-    return this.children(InputNode.INPUT_CHILD);
-  }
-
-  public List<InputNode> getInputChilds() {
-    return this.getChildren(InputNode.INPUT_CHILD);
-  }
-
-  public void addInputChild(InputNode node) {
-    this.addChild(InputNode.INPUT_CHILD, node);
-  }
-
-  public void insertInputChild(InputNode prev, InputNode node) {
-    this.insertChild(prev, InputNode.INPUT_CHILD, node);
   }
 
 }

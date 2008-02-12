@@ -5572,5 +5572,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202780999264">
+    <property name="package" value="rule.consequence" />
+    <link role="conceptDeclaration" targetNodeId="1.1202776937179" resolveInfo="AbandonInput_RuleConsequence" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202781010672">
+      <property name="text" value="&lt;nothing&gt;" />
+      <property name="fontStyle" value="BOLD" />
+    </node>
+  </node>
 </model>
 

@@ -13,12 +13,12 @@ import java.util.List;
 
 public class InputRoot extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.transformation.test.inputLang.structure.InputRoot";
+  public static String INPUT_CHILD = "inputChild";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String USE_IN_TEST = "useInTest";
-  public static String INPUT_CHILD = "inputChild";
 
   public  InputRoot(SNode node) {
     super(node);
@@ -32,6 +32,26 @@ public class InputRoot extends BaseConcept implements INamedConcept {
     return InputRoot.newInstance(sm, false);
   }
 
+
+  public int getInputChildsCount() {
+    return this.getChildCount(InputRoot.INPUT_CHILD);
+  }
+
+  public Iterator<InputNode> inputChilds() {
+    return this.children(InputRoot.INPUT_CHILD);
+  }
+
+  public List<InputNode> getInputChilds() {
+    return this.getChildren(InputRoot.INPUT_CHILD);
+  }
+
+  public void addInputChild(InputNode node) {
+    this.addChild(InputRoot.INPUT_CHILD, node);
+  }
+
+  public void insertInputChild(InputNode prev, InputNode node) {
+    this.insertChild(prev, InputRoot.INPUT_CHILD, node);
+  }
 
   public String getName() {
     return this.getProperty(InputRoot.NAME);
@@ -72,26 +92,6 @@ public class InputRoot extends BaseConcept implements INamedConcept {
 
   public void setUseInTest(UseInTest value) {
     super.setProperty(InputRoot.USE_IN_TEST, value.getValueAsString());
-  }
-
-  public int getInputChildsCount() {
-    return this.getChildCount(InputRoot.INPUT_CHILD);
-  }
-
-  public Iterator<InputNode> inputChilds() {
-    return this.children(InputRoot.INPUT_CHILD);
-  }
-
-  public List<InputNode> getInputChilds() {
-    return this.getChildren(InputRoot.INPUT_CHILD);
-  }
-
-  public void addInputChild(InputNode node) {
-    this.addChild(InputRoot.INPUT_CHILD, node);
-  }
-
-  public void insertInputChild(InputNode prev, InputNode node) {
-    this.insertChild(prev, InputRoot.INPUT_CHILD, node);
   }
 
 }
