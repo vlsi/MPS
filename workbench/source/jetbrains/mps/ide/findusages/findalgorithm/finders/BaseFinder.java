@@ -20,9 +20,5 @@ public abstract class BaseFinder implements IExternalizableComponent {
 
   }
 
-  public SearchResults findMany() {
-    return new SearchResults();//todo:implement
-  }
-
   public abstract SearchResults find(SearchQuery query);
 }
