@@ -11,8 +11,5 @@
   <dependencies>
     <dependency reexport="true">jetbrains.mps.annotations</dependency>
   </dependencies>
-  <usedLanguages>
-    <usedLanguages>jetbrains.mps.comments</usedLanguages>
-  </usedLanguages>
 </solution>
 
