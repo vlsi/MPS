@@ -239,19 +239,24 @@ public class ModuleMaker {
     return result;
   }
 
-  private static boolean isAllClassesPresented(File sourcedir, File classdir){
+  /*package private*/ static boolean isAllClassesPresented(File sourcedir, File classdir, String sourceSuffix, String destinationSuffix){
     File[] sourcefiles = sourcedir.listFiles();
 
     for (File source : sourcefiles){
-      if (source.isFile() && source.getAbsolutePath().endsWith(JAVA_SUFFIX)){
-        String sourceName = source.getName().substring(0, source.getName().lastIndexOf(".") + 1);
-        String className = classdir.getAbsolutePath() + File.separator + sourceName + CLASS_SUFFIX;
-        File destination = new File(className);
+      if (source.isFile()){
+        String destinationName;
+        if (source.getAbsolutePath().endsWith(sourceSuffix)){
+          String sourceName = source.getName().substring(0, source.getName().lastIndexOf("."));
+          destinationName = classdir.getAbsolutePath() + File.separator + sourceName + destinationSuffix;
+        } else {
+          destinationName = classdir.getAbsolutePath() + File.separator + source.getName();
+        }
+        File destination = new File(destinationName);
 
         if (!destination.exists()){
           return false;
         }
-      } else if (source.isDirectory()){
+      } else {
         String destinationName = classdir.getAbsolutePath() + File.separator + source.getName();
         File destination = new File(destinationName);
 
@@ -259,7 +264,7 @@ public class ModuleMaker {
           return false;
         }
 
-        isAllClassesPresented(source, destination);
+        isAllClassesPresented(source, destination, sourceSuffix, destinationSuffix);
       }
     }
 
