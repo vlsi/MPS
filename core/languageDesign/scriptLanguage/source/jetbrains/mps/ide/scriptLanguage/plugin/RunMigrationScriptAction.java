@@ -8,9 +8,9 @@ import jetbrains.mps.refactoring.CompositeRefactoring;
 import jetbrains.mps.refactoring.IRefactoring;
 import jetbrains.mps.refactoring.ObsoleteRefactoringContext;
 import jetbrains.mps.refactoring.common.RefactoringAction;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.logging.Logger;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -24,8 +24,10 @@ import java.lang.reflect.InvocationTargetException;
  * Date: Apr 24, 2007
  */
 public class RunMigrationScriptAction extends RefactoringAction {
+  public static final Logger LOG = Logger.getLogger(RunMigrationScriptAction.class);
+
   private static final String SMODEL_UID = "SMODEL_UID";
-private MigrationScript myScript;
+  private MigrationScript myScript;
   private BaseMigrationScript myScriptInstance;
 
   public RunMigrationScriptAction(MigrationScript script) {
@@ -37,12 +39,22 @@ private MigrationScript myScript;
   public void doExecute(@NotNull ActionContext actionContext) {
     String fqClassName = ScriptNameUtil.getMigrationScriptFqClassName(myScript.getNode());
     Class<BaseMigrationScript> aClass;
-    try {
-      aClass = (Class<BaseMigrationScript>) Class.forName(fqClassName);
-    } catch (ClassNotFoundException e) {
+    String languageNamespace = NameUtil.namespaceFromLongName(fqClassName);
+    languageNamespace = languageNamespace.substring(0, languageNamespace.length() - ".scripts".length());
+    Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+
+    if (l == null) {
+      LOG.error("Can't find a language " + languageNamespace);
+      return;
+    }
+
+    aClass = l.getClass(fqClassName);
+
+    if (aClass == null) {
       JOptionPane.showMessageDialog(actionContext.get(IOperationContext.class).getMainFrame(), "class " + fqClassName + " not found", "", JOptionPane.ERROR_MESSAGE);
       return;
     }
+
     try {
       Constructor<BaseMigrationScript> constructor = aClass.getConstructor(IOperationContext.class);
       myScriptInstance = constructor.newInstance(actionContext.getOperationContext());
