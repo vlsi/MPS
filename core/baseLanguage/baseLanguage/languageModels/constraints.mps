@@ -3108,6 +3108,45 @@
       <link role="applicableLink" targetNodeId="1.1172058436957" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1172059496350">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1172059496351">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1202868832216">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1202868832217">
+              <property name="name" value="staticMethodContainer" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1202868832218">
+                <link role="concept" targetNodeId="1.1202867553531" resolveInfo="IStaticMethodContainer" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202868832219">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1202868832220" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1202868832221">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1202868832222">
+                    <link role="concept" targetNodeId="1.1202867553531" resolveInfo="IStaticMethodContainer" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1202868871896">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202868871897">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1202868911012">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1202868913514">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202868935172">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202868935173">
+                      <link role="variableDeclaration" targetNodeId="1202868832217" resolveInfo="staticMethodContainer" />
+                    </node>
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList" id="1202868935174">
+                      <link role="link" targetNodeId="1.1202867702844" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202868876166">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1202868877451" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202868873900">
+                <link role="variableDeclaration" targetNodeId="1202868832217" resolveInfo="staticMethodContainer" />
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1189556848980">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1189556848981">
               <property name="name" value="clazz" />
@@ -3124,7 +3163,7 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1190321150103">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202868702619">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1190321153136">
               <link role="baseMethodDeclaration" targetNodeId="32.~StaticMethodCall_StaticMethodScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.ClassConcept,jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall)" resolveInfo="StaticMethodCall_StaticMethodScope" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1190321203150">
@@ -3148,8 +3187,13 @@
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1172059848179">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1172059848180" />
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1172059848181">
-                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1172059848182">
-                    <link role="concept" targetNodeId="1.1068390468198" />
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList" id="1202868731980">
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference" id="1202868736721">
+                      <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                    </node>
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference" id="1202868768426">
+                      <link role="concept" targetNodeId="1.1202867553531" resolveInfo="IStaticMethodContainer" />
+                    </node>
                   </node>
                 </node>
               </node>
