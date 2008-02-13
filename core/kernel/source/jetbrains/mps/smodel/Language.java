@@ -727,26 +727,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return getLanguageDescriptor().modelRoots().next();
   }
 
-  public SModelDescriptor createLanguageEditorModel() {
-    return LanguageAspect.EDITOR.createNew(this);
-  }
-
-  public SModelDescriptor createLanguageBehaviorModel() {
-    return LanguageAspect.CONSTRAINTS.createNew(this);
-  }
-
-  public SModelDescriptor createHelginsModel() {
-    return LanguageAspect.HELGINS_TYPESYSTEM.createNew(this);
-  }
-
-  public SModelDescriptor createIntentionsModel() {
-    return LanguageAspect.INTENTIONS.createNew(this);
-  }
-
-  public SModelDescriptor createFindUsagesModel() {
-    return LanguageAspect.FIND_USAGES.createNew(this);
-  }
-
   private class LanguageEventTranslator extends CommandEventTranslator {
     public void languageChanged() {
       markCurrentCommandsDirty();

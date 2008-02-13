@@ -113,7 +113,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         if (languageEditorFinal == null) {
-          languageFinal.createLanguageEditorModel();
+          LanguageAspect.EDITOR.createNew(languageFinal);
           createEditorDeclaration((ConceptDeclaration) node.getAdapter(), languageFinal.getEditorModelDescriptor(), scope);
         } else {
           createEditorDeclaration((ConceptDeclaration) node.getAdapter(), languageEditorFinal, scope);

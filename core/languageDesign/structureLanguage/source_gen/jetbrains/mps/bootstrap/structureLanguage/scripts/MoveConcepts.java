@@ -164,7 +164,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       if(!(SequenceOperations.isEmpty(editors))) {
         SModelDescriptor targetEditorModelDescriptor = targetLanguage.getEditorModelDescriptor();
         if(targetEditorModelDescriptor == null) {
-          targetEditorModelDescriptor = targetLanguage.createLanguageEditorModel();
+          targetEditorModelDescriptor = LanguageAspect.EDITOR.createNew(targetLanguage);
         }
         SModel editorModel = targetEditorModelDescriptor.getSModel();
         refactoringContext.moveNodesToModel(editors, editorModel);
@@ -174,7 +174,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       if(!(SequenceOperations.isEmpty(behaviors))) {
         SModelDescriptor targetConstraintsModelDescriptor = targetLanguage.getConstraintsModelDescriptor();
         if(targetConstraintsModelDescriptor == null) {
-          targetConstraintsModelDescriptor = targetLanguage.createLanguageBehaviorModel();
+          targetConstraintsModelDescriptor = LanguageAspect.CONSTRAINTS.createNew(targetLanguage);
         }
         SModel constraintsModel = targetConstraintsModelDescriptor.getSModel();
         refactoringContext.moveNodesToModel(behaviors, constraintsModel);
