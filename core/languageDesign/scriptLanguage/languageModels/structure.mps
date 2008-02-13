@@ -25,9 +25,6 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1172273958036">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1202868080768">
-      <link role="intfc" targetNodeId="2.1202867553531" resolveInfo="IStaticMethodContainer" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177456461148">
       <property name="value" value="generic script" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
