@@ -15,75 +15,40 @@ public abstract class BaseScope implements IScope {
   private static Logger LOG = Logger.getLogger(BaseScope.class);
 
   private boolean myInitialized;
+  private boolean myInitializationInProgress;
 
   private Set<IModule> myVisibleModules;
   private Map<String, Language> myLanguages = new HashMap<String, Language>();
-  private Map<SModelUID, SModelDescriptor> myDescriptors = new HashMap<SModelUID, SModelDescriptor>();
-  private List<SModelDescriptor> myModelDescriptors = new ArrayList<SModelDescriptor>();
 
+  private Map<SModelUID, SModelDescriptor> myDescriptors = new HashMap<SModelUID, SModelDescriptor>();
+  
   @Nullable
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
-    if (myDescriptors.containsKey(modelUID)) {
-      return myDescriptors.get(modelUID);
-    }
-
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, getModelOwner());
-    if (modelDescriptor != null) {
-      myDescriptors.put(modelUID, modelDescriptor);
-      return modelDescriptor;
-    }
-
-    for (IModule m : getVisibleModules()) {
-      modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, m);
-      if (modelDescriptor != null) {
-        myDescriptors.put(modelUID, modelDescriptor);
-        return modelDescriptor;
-      }
-    }
-
-    return null;
+    initialize();
+    return myDescriptors.get(modelUID);
   }
 
   @NotNull
   public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName) {
-    List<SModelDescriptor> result =
-            new ArrayList<SModelDescriptor>(SModelRepository.getInstance().getModelDescriptors(modelName, getModelOwner()));
 
-    for (IModule m : getVisibleModules()) { 
-      result.addAll(SModelRepository.getInstance().getModelDescriptors(modelName, m));
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    for (SModelUID uid : myDescriptors.keySet()) {
+      if (modelName.equals(uid.getLongName())) {
+        result.add(myDescriptors.get(uid));
+      }
     }
-
     return result;
   }
 
   @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
-    if (myModelDescriptors.isEmpty()) {
-      Set<SModelDescriptor> sms = new HashSet<SModelDescriptor>();
-      sms.addAll(SModelRepository.getInstance().getModelDescriptors(getModelOwner()));
-
-      for (IModule m : getVisibleModules()) {
-        sms.addAll(m.getOwnModelDescriptors());
-      }
-      myModelDescriptors.addAll(sms);
-    }
-
-    return Collections.unmodifiableList(myModelDescriptors);
+    return new ArrayList<SModelDescriptor>(myDescriptors.values());
   }
 
   @Nullable
   public Language getLanguage(@NotNull String languageNamespace) {
-    initialize();    
-
-    if (myLanguages.containsKey(languageNamespace)) {
-      return myLanguages.get(languageNamespace);
-    }
-
-    for (Language l : getVisibleLanguages()) {
-      if (languageNamespace.equals(l.getNamespace())) return l;
-    }
-
-    return null;
+    initialize();
+    return myLanguages.get(languageNamespace);
   }
 
   public boolean isVisibleLanguage(@NotNull String languageNamespace) {
@@ -93,7 +58,6 @@ public abstract class BaseScope implements IScope {
   @NotNull
   public List<Language> getVisibleLanguages() {
     initialize();
-
     return new ArrayList<Language>(myLanguages.values());
   }
 
@@ -133,12 +97,14 @@ public abstract class BaseScope implements IScope {
     myVisibleModules = null;
     myLanguages.clear();
     myDescriptors.clear();
-    myModelDescriptors.clear();
     myInitialized = false;
   }
 
   private void initialize() {
     if (myInitialized) return;
+    if (myInitializationInProgress) return;
+
+    myInitializationInProgress = true;
 
     Set<IModule> visibleModules = new HashSet<IModule>();    
     visibleModules.addAll(getInitialModules());
@@ -221,13 +187,25 @@ public abstract class BaseScope implements IScope {
       }
     }
 
-
     myVisibleModules = visibleModules;
     myLanguages = new HashMap<String, Language>();
     for (Language l : usedLanguages) {
       myLanguages.put(l.getNamespace(), l);
     }
-    
+
+    for (IModule module : visibleModules) {
+      for (SModelDescriptor sm : module.getOwnModelDescriptors()) {
+        myDescriptors.put(sm.getModelUID(), sm);
+      }
+    }
+
+    for (Language l : usedLanguages) {
+      for (SModelDescriptor accessory : l.getAccessoryModels()) {
+        myDescriptors.put(accessory.getModelUID(), accessory);
+      }
+    }
+
+    myInitializationInProgress = false;
     myInitialized = true;
   }
 }
