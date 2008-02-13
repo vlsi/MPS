@@ -1225,6 +1225,16 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1191250519549">
     <property name="name" value="B" />
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1202938848288">
+      <property name="name" value="myInt" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1202938848289" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1202938851400" />
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1202938667674">
+      <property name="name" value="CONST" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1202938667675" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1202938671021" />
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1191250519550" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1191250519551">
       <property name="name" value="foo" />
@@ -1265,6 +1275,33 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191250519565">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1191250519566">
             <property name="value" value="239" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202938542095">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1202938552191">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202938542096">
+              <link role="variableDeclaration" targetNodeId="1191250519548" resolveInfo="m1" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202938559897">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1202938563071">
+            <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202938559898">
+              <link role="variableDeclaration" targetNodeId="1191250519548" resolveInfo="m1" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202938653652">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202939341520">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1202939344023">
+              <property name="value" value="10" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1202938658954">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1202938653653" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1202938863479">
+                <link role="fieldDeclaration" targetNodeId="1202938848288" resolveInfo="myInt" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

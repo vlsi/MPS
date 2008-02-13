@@ -133,6 +133,9 @@ public class Generator extends AbstractModule {
     return null;
   }
 
+  /**
+   * @deprecated
+   */
   public String getTargetLanguageName() {
     jetbrains.mps.projectLanguage.structure.Language targetLanguage = myGeneratorDescriptor.getTargetLanguage();
     if (targetLanguage != null) {
