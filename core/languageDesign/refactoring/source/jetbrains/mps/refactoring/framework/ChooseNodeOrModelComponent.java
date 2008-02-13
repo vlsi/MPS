@@ -73,7 +73,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   }
 
   public JComponent getComponentToFocus() {
-    return myChooseItemComponent;
+    return myChooseItemComponent.getTextField();
   }
 
   public void setCondition(Condition<Object> condition) {
