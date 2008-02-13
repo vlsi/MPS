@@ -780,7 +780,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return null;
   }
 
-
   public static LanguageAspect getModelAspect(SModelDescriptor sm) {
     Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(sm);
     for (ModelOwner modelOwner : owners) {

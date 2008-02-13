@@ -50,11 +50,17 @@ public class Solution extends AbstractModule {
     solution.mySolutionDescriptor = solutionDescriptor;
     solution.myDescriptorFile = descriptorFile;
 
-    solution.updateRuntimeClassPath();
-    solution.reloadStubs();
+    solution.reload();
 
     MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
     return solution;
+  }
+
+  protected void reload() {
+    createManifest();
+    rereadModels();
+    updateRuntimeClassPath();
+    reloadStubs();
   }
 
   public void convert() {
@@ -92,11 +98,7 @@ public class Solution extends AbstractModule {
 
     mySolutionDescriptor = newDescriptor;
 
-    createManifest();
-
-    rereadModels();
-
-    updateRuntimeClassPath();
+    reload();
 
     ReloadUtils.reloadAll(true, true, false);
 
@@ -180,7 +182,10 @@ public class Solution extends AbstractModule {
 
   protected List<String> getExportedPackages() {
     List<String> result = new ArrayList<String>(super.getExportedPackages());
-    collectPackages(result, "");
+    for (SModelDescriptor sm : getOwnModelDescriptors()) {
+      if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) continue;
+      result.add(sm.getLongName());
+    }
     return result;
   }
 }
