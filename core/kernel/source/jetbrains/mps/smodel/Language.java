@@ -69,7 +69,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   };
   private boolean myRegisteredInFindUsagesManager;
 
-  @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
     List<IModule> result = super.getExplicitlyDependOnModules();
 
@@ -188,9 +187,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return MPSModuleRepository.getInstance().getLanguage(s);
   }
 
-  @NotNull
-  public static Language newInstance(@NotNull IFile descriptorFile,
-                                     @NotNull MPSModuleOwner moduleOwner) {
+  public static Language newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
     SModel model = ProjectModels.createDescriptorFor(language).getSModel();
     model.setLoading(true);
@@ -209,9 +206,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   @NotNull
-  public static Language createLanguage(@NotNull String languageNamespace,
-                                        @NotNull File descriptorFile,
-                                        @NotNull MPSModuleOwner moduleOwner) {
+  public static Language createLanguage(String languageNamespace, File descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
     SModel descriptorModel = ProjectModels.createDescriptorFor(language).getSModel();
     descriptorModel.setLoading(true);
@@ -465,13 +460,12 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return getStructureModelDescriptor().getVersion();
   }
 
-  @NotNull
   public ModuleDescriptor getModuleDescriptor() {
     return myLanguageDescriptor;
   }
 
 
-  public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     if (moduleDescriptor instanceof LanguageDescriptor) {
       setLanguageDescriptor((LanguageDescriptor) moduleDescriptor);
     } else {
@@ -479,12 +473,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
   }
 
-  @NotNull
   public LanguageDescriptor getLanguageDescriptor() {
     return myLanguageDescriptor;
   }
 
-  @Nullable
   public String getLanguagePluginClass() {
     return getLanguageDescriptor().getLanguagePluginClass();
   }
@@ -497,12 +489,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 //    myUpdateLastGenerationTimeCalled = true;
   }
 
-  @NotNull
   public List<Generator> getGenerators() {
     return new ArrayList<Generator>(myGenerators);
   }
 
-  public Generator getGeneratorTo(@NotNull String targetLanguageName) {
+  public Generator getGeneratorTo(String targetLanguageName) {
     for (Generator generator : myGenerators) {
       if (targetLanguageName.equals(generator.getTargetLanguageName())) {
         return generator;
@@ -511,19 +502,16 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return null;
   }
 
-  @NotNull
   public String getModuleUID() {
     return getNamespace();
   }
 
-  @NotNull
   public String getNamespace() {
-        String result = getLanguageDescriptor().getNamespace();
-        assert result != null;
-        return result;
-      }
+    String result = getLanguageDescriptor().getNamespace();
+    assert result != null;
+    return result;
+  }
 
-  @NotNull
   public File getSourceDir() {
     File sourceDir = new File(myDescriptorFile.getParent().toFile(), "source_gen");
     if (getLanguageDescriptor().getLanguageGenPath() != null) {
@@ -535,7 +523,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return sourceDir;
   }
 
-  @Nullable
   public String getGeneratorOutputPath() {
     String generatorOutputPath = myLanguageDescriptor.getLanguageGenPath();
     if (generatorOutputPath == null) {
@@ -553,36 +540,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
 
-  private long getLastChangeTime() {
-    long result = 0;
-    SModelRepository repository = SModelRepository.getInstance();
-    result = Math.max(result, repository.getLastChangeTime(getStructureModelDescriptor()));
-
-
-    SModelDescriptor editorModel = getEditorModelDescriptor();
-    if (editorModel != null) {
-      result = Math.max(result, repository.getLastChangeTime(editorModel));
-    }
-
-    SModelDescriptor actionsModel = getActionsModelDescriptor();
-    if (actionsModel != null) {
-      result = Math.max(result, repository.getLastChangeTime(actionsModel));
-    }
-
-    SModelDescriptor constraintsModel = getConstraintsModelDescriptor();
-    if (constraintsModel != null) {
-      result = Math.max(result, repository.getLastChangeTime(constraintsModel));
-    }
-
-    SModelDescriptor typesystemModel = getHelginsTypesystemModelDescriptor();
-    if (typesystemModel != null) {
-      result = Math.max(result, repository.getLastChangeTime(typesystemModel));
-    }
-
-    return result;
-  }
-
-  @NotNull
   public List<ConceptDeclaration> getConceptDeclarations() {
     return getStructureModelDescriptor().getSModel().allAdapters(ConceptDeclaration.class);
   }
@@ -597,59 +554,48 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return result;
   }
 
-  @Nullable
   public SModelDescriptor getHelginsTypesystemModelDescriptor() {
     return LanguageAspect.HELGINS_TYPESYSTEM.get(this);
   }
 
-  @Nullable
   public SModelDescriptor getCFAModelDescriptor() {
     return LanguageAspect.CFA.get(this);
   }
 
-  @Nullable
   public SModelDescriptor getActionsModelDescriptor() {
     return LanguageAspect.ACTIONS.get(this);
   }
 
-  @Nullable
   public SModelDescriptor getConstraintsModelDescriptor() {
     return LanguageAspect.CONSTRAINTS.get(this);
   }
 
-  @Nullable
   public SModelDescriptor getIntentionsModelDescriptor() {
     return LanguageAspect.INTENTIONS.get(this);
   }
 
-  @Nullable
   public SModelDescriptor getFindUsagesModelDescriptor() {
     return LanguageAspect.FIND_USAGES.get(this);
   }
 
-  @Nullable
   public SModelDescriptor getScriptsModelDescriptor() {
     return LanguageAspect.SCRIPTS.get(this);
   }
 
-  @Nullable
   public SModelDescriptor getDocumentationModelDescriptor() {
     return LanguageAspect.DOCUMENTATION.get(this);
   }
 
-  @Nullable
   public SModelDescriptor getEditorModelDescriptor() {
     return LanguageAspect.EDITOR.get(this);
   }
 
-  @NotNull
   public Set<SModelDescriptor> getEditorDescriptors() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     result.add(getEditorModelDescriptor());
     return result;
   }
 
-  @NotNull
   public Set<SModelDescriptor> getAspectModelDescriptors() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
@@ -666,7 +612,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     myParentsNamesMap.clear();
   }
 
-  @Nullable
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
@@ -683,7 +628,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return myNameToConceptCache.get(conceptName);
   }
 
-  @NotNull
   public Set<String> getParentNames(String conceptFqName) {
     if (myParentsNamesMap.containsKey(conceptFqName)) {
       //return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
@@ -731,7 +675,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     DescriptorsPersistence.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
   }
 
-  @NotNull
   public List<SModelDescriptor> getAccessoryModels() {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
     Iterator<Model> accessoryModels = getLanguageDescriptor().accessoryModels();
@@ -745,7 +688,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return result;
   }
 
-  public boolean isAccessoryModel(@NotNull SModelUID modelUID) {
+  public boolean isAccessoryModel(SModelUID modelUID) {
     Iterator<Model> accessoryModels = getLanguageDescriptor().accessoryModels();
     while (accessoryModels.hasNext()) {
       Model model = accessoryModels.next();
@@ -771,11 +714,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return getLanguageDescriptor().getNamespace();
   }
 
-  public void addLanguageCommandListener(@NotNull LanguageCommandListener listener) {
+  public void addLanguageCommandListener(LanguageCommandListener listener) {
     myCommandListeners.add(listener);
   }
 
-  public void removeLanguageCommandListener(@NotNull LanguageCommandListener listener) {
+  public void removeLanguageCommandListener(LanguageCommandListener listener) {
     myCommandListeners.remove(listener);
   }
 

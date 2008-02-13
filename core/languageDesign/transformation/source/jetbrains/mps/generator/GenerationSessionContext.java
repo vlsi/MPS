@@ -359,12 +359,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       }
     }
 
-    @NotNull
     public List<ModelRoot> getNonDefaultModelRoots() {
       return Collections.emptyList();
     }
 
-    @NotNull
     public ModuleDescriptor getModuleDescriptor() {
       return myModuleDescriptor;
     }
@@ -405,7 +403,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
 
 
-    @NotNull
     public String getModuleUID() {
       return "TransientModule" + System.identityHashCode(this);
     }
@@ -414,7 +411,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       return myInvocationModule.getGeneratorOutputPath();
     }
 
-    public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+    public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
       throw new UnsupportedOperationException();
     }
 

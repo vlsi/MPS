@@ -20,39 +20,39 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public interface IModule extends ModelOwner, MPSModuleOwner {
-  @NotNull String getModuleUID();
+  String getModuleUID();
 
-  <T extends IModule> Set<T> getAllDependOnModules(@NotNull Class<T> cls);
+  <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls);
 
-  @NotNull List<SModelDescriptor> getOwnModelDescriptors();
+  List<SModelDescriptor> getOwnModelDescriptors();
 
-  @NotNull List<ModelRoot> getModelRoots();
+  List<ModelRoot> getModelRoots();
 
-  @NotNull List<ModelRoot> getNonDefaultModelRoots();
+  List<ModelRoot> getNonDefaultModelRoots();
 
   List<Dependency> getDependencies(); 
 
-  @NotNull List<IModule> getExplicitlyDependOnModules();
+  List<IModule> getExplicitlyDependOnModules();
 
-  @NotNull List<String> getUsedLanguagesNamespaces();
+  List<String> getUsedLanguagesNamespaces();
 
-  @NotNull List<Language> getUsedLanguages();
+  List<Language> getUsedLanguages();
 
-  @NotNull List<IModule> getDependOnModules();
+  List<IModule> getDependOnModules();
 
-  void registerModelDescriptor(@NotNull SModelDescriptor modelDescriptor);
+  void registerModelDescriptor(SModelDescriptor modelDescriptor);
 
-  void unRegisterModelDescriptor(@NotNull SModelDescriptor modelDescriptor);
+  void unRegisterModelDescriptor(SModelDescriptor modelDescriptor);
 
-  @NotNull SModelDescriptor createModel(@NotNull SModelUID uid, @NotNull ModelRoot root);
+  SModelDescriptor createModel(SModelUID uid, ModelRoot root);
 
   IFile getDescriptorFile();
 
   ModuleDescriptor getModuleDescriptor();
 
-  void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor);
+  void setModuleDescriptor(ModuleDescriptor moduleDescriptor);
 
-  @Nullable String getGeneratorOutputPath();
+  String getGeneratorOutputPath();
 
   IScope getScope();
 

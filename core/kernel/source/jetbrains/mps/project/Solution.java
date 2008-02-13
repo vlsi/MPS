@@ -28,17 +28,16 @@ import java.util.*;
 public class Solution extends AbstractModule {
   private static Logger LOG = Logger.getLogger(Solution.class);
 
-  private @NotNull SolutionDescriptor mySolutionDescriptor;
-  private @NotNull List<SolutionCommandListener> myCommandListeners = new LinkedList<SolutionCommandListener>();
-  private @NotNull SolutionEventTranslator myEventTranslator = new SolutionEventTranslator();
+  private SolutionDescriptor mySolutionDescriptor;
+  private List<SolutionCommandListener> myCommandListeners = new LinkedList<SolutionCommandListener>();
+  private SolutionEventTranslator myEventTranslator = new SolutionEventTranslator();
 
   // -------------------------------------------------------------------
 
   private Solution() {
   }
 
-  public static Solution newInstance(@NotNull IFile descriptorFile,
-                                     @NotNull MPSModuleOwner moduleOwner) {
+  public static Solution newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
     SModel model = ProjectModels.createDescriptorFor(solution).getSModel();
     model.setLoading(true);
@@ -73,7 +72,7 @@ public class Solution extends AbstractModule {
     }
   }
 
-  public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     if (moduleDescriptor instanceof SolutionDescriptor) {
       setSolutionDescriptor((SolutionDescriptor) moduleDescriptor);
     } else {
@@ -81,7 +80,7 @@ public class Solution extends AbstractModule {
     }
   }
 
-  public void setSolutionDescriptor(@NotNull SolutionDescriptor newDescriptor) {
+  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
     // release languages and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Solution.this);
 
@@ -114,21 +113,19 @@ public class Solution extends AbstractModule {
     DescriptorsPersistence.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
   }
 
-  @NotNull
   public SolutionDescriptor getSolutionDescriptor() {
     return mySolutionDescriptor;
   }
 
-  @NotNull
   public ModuleDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
   }
 
-  public void addSolutionCommandListener(@NotNull SolutionCommandListener listener) {
+  public void addSolutionCommandListener(SolutionCommandListener listener) {
     myCommandListeners.add(listener);
   }
 
-  public void removeSolutionCommandListener(@NotNull SolutionCommandListener listener) {
+  public void removeSolutionCommandListener(SolutionCommandListener listener) {
     myCommandListeners.remove(listener);
   }
 
@@ -145,7 +142,6 @@ public class Solution extends AbstractModule {
     }
   }
 
-  @NotNull
   public String toString() {
     String text = mySolutionDescriptor.getName();
     if (text == null || text.length() == 0) {
@@ -158,7 +154,6 @@ public class Solution extends AbstractModule {
     return mySolutionDescriptor.getExternallyVisible();
   }
 
-  @NotNull
   public String getModuleUID() {
     if (isExternallyVisible() && mySolutionDescriptor.getName() != null) {
       return mySolutionDescriptor.getName();

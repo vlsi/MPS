@@ -50,7 +50,6 @@ public class Generator extends AbstractModule {
     MPSModuleRepository.getInstance().unRegisterModules(Generator.this);
   }
 
-  @NotNull
   public List<SModelDescriptor> getOwnTemplateModels() {
     List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : getOwnModelDescriptors()) {
@@ -61,7 +60,6 @@ public class Generator extends AbstractModule {
     return templateModels;
   }
 
-  @NotNull
   public List<MappingConfiguration> getOwnMappings() {
     List<SModelDescriptor> list = getOwnTemplateModels();
     List<MappingConfiguration> mappings = new ArrayList<MappingConfiguration>();
@@ -71,13 +69,12 @@ public class Generator extends AbstractModule {
     return mappings;
   }
 
-  @NotNull
   public ModuleDescriptor getModuleDescriptor() {
     return myGeneratorDescriptor;
   }
 
 
-  public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     LOG.error(new UnsupportedOperationException());
   }
 
@@ -90,7 +87,6 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().getNamespace() + "/" + (name == null ? "<no name>" : name);
   }
 
-  @NotNull
   public String getModuleUID() {
     String uid = myGeneratorDescriptor.getGeneratorUID();
     if (uid == null) {
@@ -100,17 +96,14 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor.getGeneratorUID();
   }
 
-  @NotNull
   public static String generateGeneratorUID(Language sourceLanguage) {
     return sourceLanguage.getModuleUID() + "#" + SNode.generateUniqueId();
   }
 
-  @NotNull
   public Language getSourceLanguage() {
     return mySourceLanguage;
   }
 
-  @Nullable
   public Language getTargetLanguage() {
     String targetLanguageName = getTargetLanguageName();
     if (targetLanguageName != null) {
@@ -138,12 +131,10 @@ public class Generator extends AbstractModule {
     return null;
   }
 
-  @NotNull
   public String toString() {
     return getAlias();
   }
 
-  @NotNull
   public GeneratorDescriptor getGeneratorDescriptor() {
     return myGeneratorDescriptor;
   }
@@ -173,7 +164,6 @@ public class Generator extends AbstractModule {
 
   }
 
-  @NotNull
   public List<Generator> getReferencedGenerators() {
     List<Generator> result = new ArrayList<Generator>();
     for (String guid : getReferencedGeneratorUIDs()) {
@@ -203,12 +193,10 @@ public class Generator extends AbstractModule {
   public void convert() {
   }
 
-  @Nullable
   public String getGeneratorOutputPath() {
     return mySourceLanguage.getGeneratorOutputPath();
   }
 
-  @Nullable
   public IFile getClassesGen() {
     return mySourceLanguage.getClassesGen();
   }

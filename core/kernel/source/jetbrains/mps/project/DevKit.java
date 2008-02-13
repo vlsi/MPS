@@ -25,7 +25,7 @@ import java.util.List;
 public class DevKit extends AbstractModule {
   private static Logger LOG = Logger.getLogger(DevKit.class);
 
-  public static DevKit newInstance(@NotNull IFile descriptorFile, @NotNull MPSModuleOwner moduleOwner) {
+  public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     DevKit result = new DevKit();
 
     SModel model = ProjectModels.createDescriptorFor(result).getSModel();
@@ -63,13 +63,12 @@ public class DevKit extends AbstractModule {
     return myDescriptorFile;
   }
 
-  @NotNull
   public DevKitDescriptor getModuleDescriptor() {
     return myDescriptor;
   }
 
 
-  public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     if (moduleDescriptor instanceof DevKitDescriptor) {
       setDevKitDescriptor((DevKitDescriptor) moduleDescriptor);
     } else {
@@ -77,7 +76,6 @@ public class DevKit extends AbstractModule {
     }
   }
 
-  @Nullable
   public String getGeneratorOutputPath() {
     return null;
   }
@@ -172,7 +170,6 @@ public class DevKit extends AbstractModule {
     return getName();
   }
 
-  @Nullable
   public String getDevKitPluginClass() {
     return myDescriptor.getDevKitPlugin();
   }
