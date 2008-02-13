@@ -56,8 +56,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
       public void run() {
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
-            List<SModelDescriptor> modelDescriptors = GlobalScope.getInstance().getModelDescriptors(namespace);
-            for (SModelDescriptor descriptor : modelDescriptors) {
+            for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
+              if (!namespace.equals(descriptor.getModelUID().getLongName())) continue;
               if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
 
               SNode node = descriptor.getSModel().getNodeById(id);
@@ -80,9 +80,9 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void showAspectMethodUsages(final String namespace, final String name) throws RemoteException {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        List<SModelDescriptor> modelDescriptors = GlobalScope.getInstance().getModelDescriptors(namespace);
         final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
-        for (final SModelDescriptor descriptor : modelDescriptors) {
+        for (final SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
+          if (!namespace.equals(descriptor.getModelUID().getLongName())) continue;          
           if (!descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
             applicableModelDescriptors.add(descriptor.getSModel());
           }

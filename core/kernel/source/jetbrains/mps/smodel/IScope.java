@@ -19,8 +19,6 @@ import jetbrains.mps.project.IModule;
 public interface IScope {
   @Nullable SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID);
   
-  @NotNull List<SModelDescriptor> getModelDescriptors(@NotNull String modelName);
-
   @NotNull List<SModelDescriptor> getModelDescriptors();
 
   @Nullable Language getLanguage(@NotNull String languageNamespace);

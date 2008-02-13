@@ -31,15 +31,6 @@ public class ModelScope implements IScope {
   }
 
   @NotNull
-  public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName) {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    if (myScope.getModelDescriptors(modelName).contains(myModelDescriptor)) {
-      result.add(myModelDescriptor);
-    }
-    return result;
-  }
-
-  @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     if (myScope.getModelDescriptors().contains(myModelDescriptor)) {
