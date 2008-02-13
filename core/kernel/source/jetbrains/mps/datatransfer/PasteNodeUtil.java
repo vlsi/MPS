@@ -47,7 +47,7 @@ public class PasteNodeUtil {
   }
 
   public static void pasteAsRoot(SNode pasteNode, SModel model) {
-      model.addRoot(pasteNode);
+    model.addRoot(pasteNode);
   }
 
   public static boolean canPasteAsRoot(SNode pasteNode, IOperationContext operationContext) {
@@ -61,17 +61,16 @@ public class PasteNodeUtil {
     int status = canPaste_internal(pasteTarget, pasteNode, operationContext, role_, invoker);
 
     if (status == PASTE_TO_TARGET) {
-      pasteToTarget(pasteTarget, pasteNode, null, role_, false, operationContext);
+      pasteToTarget(pasteTarget, pasteNode, null, role_, false);
     } else if (status == PASTE_TO_PARENT) {
-      pasteToParent(pasteTarget, pasteNode, role_, false, operationContext);
+      pasteToParent(pasteTarget, pasteNode, role_, false);
     } else if (status == PASTE_TO_ROOT) {
       pasteNode.getModel().addRoot(pasteNode);
     }
   }
 
 
-
-  private static int canPaste_internal(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext,  String role, Object invoker) {
+  private static int canPaste_internal(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, String role, Object invoker) {
     ProjectPane projectPane = operationContext.getComponent(ProjectPane.class);
     if (pasteTarget.getModel() != pasteNode.getModel()) {
       return PASTE_N_A;
@@ -80,7 +79,7 @@ public class PasteNodeUtil {
     String role_ = role != null ? role : pasteTarget.getRole_();
 
     boolean canPasteToRoot = canPasteToRoot(pasteTarget, pasteNode, operationContext);
-    boolean canPasteToTarget = canPasteToTarget(pasteTarget, pasteNode, role_, operationContext);
+    boolean canPasteToTarget = canPasteToTarget(pasteTarget, pasteNode, role_);
 
     //priorities differ wrt invoker
     if (projectPane != null && invoker == projectPane) {
@@ -100,7 +99,7 @@ public class PasteNodeUtil {
       }*/
     }
 
-    if (canPasteToParent(pasteTarget, pasteNode, role_, operationContext)) {
+    if (canPasteToParent(pasteTarget, pasteNode, role_)) {
       return PASTE_TO_PARENT;
     }
     return PASTE_N_A;
@@ -112,15 +111,15 @@ public class PasteNodeUtil {
     return (pasteTarget.getParent() == null && conceptDeclaration.getRootable());
   }
 
-  private static boolean canPasteToTarget(SNode pasteTarget, SNode pasteNode, String role, IOperationContext operationContext) {
-    return pasteToTarget_internal(pasteTarget, pasteNode, null, role, false, false, operationContext);
+  private static boolean canPasteToTarget(SNode pasteTarget, SNode pasteNode, String role) {
+    return pasteToTarget_internal(pasteTarget, pasteNode, null, role, false, false);
   }
 
-  private static void pasteToTarget(SNode pasteTarget, SNode pasteNode, SNode anchorNode, String role, boolean pasteBefore, IOperationContext operationContext) {
-    pasteToTarget_internal(pasteTarget, pasteNode, anchorNode, role, pasteBefore, true, operationContext);
+  private static void pasteToTarget(SNode pasteTarget, SNode pasteNode, SNode anchorNode, String role, boolean pasteBefore) {
+    pasteToTarget_internal(pasteTarget, pasteNode, anchorNode, role, pasteBefore, true);
   }
 
-  private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, String role, final boolean pasteBefore, boolean reallyPaste, final IOperationContext operationContext) {
+  private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, String role, final boolean pasteBefore, boolean reallyPaste) {
     AbstractConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclarationAdapter();
     AbstractConceptDeclaration pasteNodeType = pasteNode.getConceptDeclarationAdapter();
     final LinkDeclaration linkDeclaration = findMetalink(pasteTargetType, pasteNodeType, role);
@@ -138,37 +137,35 @@ public class PasteNodeUtil {
           } else {
             pasteTarget.setReferent(linkDeclaration.getRole(), pasteNode);
           }
-        //Add resolving here!
-
-
-      //  Resolver.resolveAllReferences(pasteNode, operationContext);
-
+          //Add resolving here!
+          //  Resolver.resolveAllReferences(pasteNode, operationContext);
         }
       });
     }
     return true;
   }
 
-  private static boolean canPasteToParent(SNode anchorNode, SNode pasteNode, String role, IOperationContext operationContext) {
-    return pasteToParent_internal(anchorNode, pasteNode, role, false, false, operationContext);
+  private static boolean canPasteToParent(SNode anchorNode, SNode pasteNode, String role) {
+    return pasteToParent_internal(anchorNode, pasteNode, role, false, false);
   }
 
-  private static void pasteToParent(SNode pasteTarget, SNode pasteNode, String role, boolean pasteBefore, IOperationContext operationContext) {
-    pasteToParent_internal(pasteTarget, pasteNode, role, pasteBefore, true, operationContext);
+  private static void pasteToParent(SNode pasteTarget, SNode pasteNode, String role, boolean pasteBefore) {
+    pasteToParent_internal(pasteTarget, pasteNode, role, pasteBefore, true);
   }
 
   private static class NodeAndRole {
     public String myRole;
     public SNode myNode;
-    public NodeAndRole (SNode node, String role) {
+
+    public NodeAndRole(SNode node, String role) {
       this.myRole = role;
       this.myNode = node;
     }
   }
 
-  private static boolean pasteToParent_internal(SNode anchorNode, SNode pasteNode, String role, boolean pasteBefore, boolean reallyPaste, IOperationContext operationContext) {
+  private static boolean pasteToParent_internal(SNode anchorNode, SNode pasteNode, String role, boolean pasteBefore, boolean reallyPaste) {
     SNode actualPasteTarget;
-    NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, pasteNode, role, operationContext);
+    NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, pasteNode, role);
     if (!reallyPaste) {
       return (nodeAndRole != null && nodeAndRole.myNode != null);
     }
@@ -178,18 +175,18 @@ public class PasteNodeUtil {
     if (actualPasteTarget == null) {
       return false;
     }
-    PasteNodeUtil.pasteToTarget(actualPasteTarget, pasteNode, actualAnchorNode, actualRole, pasteBefore, operationContext);
+    PasteNodeUtil.pasteToTarget(actualPasteTarget, pasteNode, actualAnchorNode, actualRole, pasteBefore);
     return true;
   }
 
-  private static NodeAndRole defineActualAnchorNode(SNode anchorNode, SNode pasteNode, String firstRole, IOperationContext operationContext) {
+  private static NodeAndRole defineActualAnchorNode(SNode anchorNode, SNode pasteNode, String firstRole) {
     String role = firstRole;
     while (anchorNode != null) {
       SNode container = anchorNode.getParent();
       if (container == null) {
         break;
       }
-      if (PasteNodeUtil.canPasteToTarget(container, pasteNode, role, operationContext)) {
+      if (PasteNodeUtil.canPasteToTarget(container, pasteNode, role)) {
         return new NodeAndRole(anchorNode, role);
       }
       anchorNode = container;
@@ -199,9 +196,9 @@ public class PasteNodeUtil {
   }
 
   private static LinkDeclaration findMetalink(AbstractConceptDeclaration sourceConcept, AbstractConceptDeclaration targetConcept, String role) {
-    for (LinkDeclaration link: new ConceptAndSuperConceptsScope(sourceConcept).getAdapters(LinkDeclaration.class)) {
+    for (LinkDeclaration link : new ConceptAndSuperConceptsScope(sourceConcept).getAdapters(LinkDeclaration.class)) {
       if (SModelUtil_new.isAssignableConcept(targetConcept, link.getTarget()) &&
-              (role == null || link.getRole().equals(role))) {
+        (role == null || link.getRole().equals(role))) {
         return link;
       }
     }
@@ -215,7 +212,7 @@ public class PasteNodeUtil {
     if (role != null) return role;
 
 //    LOG.warning("PASTE: tagret cell's user object 'ROLE' is null. Trying to get cell's role in the old manner");
-     /*If target cell represents some empty collection, target cell's node is not a member of that collection,
+    /*If target cell represents some empty collection, target cell's node is not a member of that collection,
       but its future members' parent. Hence, if we consider that node as an anchor
       and hence its role as role-in-parent for the node we want to paste - we'll not be able
       to paste our node as a child of that very target node.
@@ -223,7 +220,7 @@ public class PasteNodeUtil {
       But we want to process such case, too. Hence we search for the first collection which contains
       our target cell and has not-null handler (i.e. not-null cell nodes role).
     */
-    EditorCell_Collection actualCollection = (targetCell instanceof EditorCell_Collection)? (EditorCell_Collection) targetCell : targetCell.getParent();
+    EditorCell_Collection actualCollection = (targetCell instanceof EditorCell_Collection) ? (EditorCell_Collection) targetCell : targetCell.getParent();
     if (actualCollection != null) role = actualCollection.getCellNodesRole();
     while (actualCollection != null && role == null) {
       actualCollection = actualCollection.getParent();
@@ -239,15 +236,15 @@ public class PasteNodeUtil {
   }
 
 
-  public static boolean canPasteRelative(SNode anchorNode, SNode pasteNode, IOperationContext operationContext) {
-    return canPasteToParent(anchorNode, pasteNode, anchorNode.getRole_(), operationContext);
+  public static boolean canPasteRelative(SNode anchorNode, SNode pasteNode) {
+    return canPasteToParent(anchorNode, pasteNode, anchorNode.getRole_());
   }
 
-  public static void pasteRelative(SNode anchorNode, SNode pasteNode, boolean pasteBefore, IOperationContext operationContext) {
+  public static void pasteRelative(SNode anchorNode, SNode pasteNode, boolean pasteBefore) {
     if (anchorNode.getParent() == null) {
       anchorNode.getModel().addRoot(pasteNode);
     } else {
-      pasteToParent(anchorNode, pasteNode, anchorNode.getRole_(), pasteBefore, operationContext);
+      pasteToParent(anchorNode, pasteNode, anchorNode.getRole_(), pasteBefore);
     }
   }
 }

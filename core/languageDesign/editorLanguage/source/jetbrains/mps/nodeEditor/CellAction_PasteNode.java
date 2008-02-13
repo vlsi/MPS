@@ -64,7 +64,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     PasteNodeUtil.paste(selectedCell, anchor, operationContext, editorsPane);
     for (int i = 1; i < pasteNodes.size(); i++) {
       SNode node = pasteNodes.get(i);
-      PasteNodeUtil.pasteRelative(anchor, node, false, operationContext);
+      PasteNodeUtil.pasteRelative(anchor, node, false);
       anchor = node;
     }
 
