@@ -62,19 +62,33 @@ public abstract class BaseScope implements IScope {
       result.addAll(SModelRepository.getInstance().getModelDescriptors(modelName, m));
     }
 
+    for (Language l : getVisibleLanguages()) {
+      for (SModelDescriptor accessory : l.getAccessoryModels()) {
+        if (accessory.getModelUID().getLongName().equals(modelName)) {
+          result.add(accessory);
+        }
+      }
+    }
+
     return result;
   }
 
   @NotNull
   public List<SModelDescriptor> getModelDescriptors() {    
     if (myModelDescriptors.isEmpty()) {
-      Set<SModelDescriptor> sms = new HashSet<SModelDescriptor>();      
-      sms.addAll(SModelRepository.getInstance().getModelDescriptors(getModelOwner()));
+      Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+      result.addAll(SModelRepository.getInstance().getModelDescriptors(getModelOwner()));
 
       for (IModule m : getVisibleModules()) {
-        sms.addAll(m.getOwnModelDescriptors());
+        result.addAll(m.getOwnModelDescriptors());
       }
-      myModelDescriptors.addAll(sms);
+
+
+      for (Language l : getVisibleLanguages()) {
+        result.addAll(l.getAccessoryModels());
+      }
+
+      myModelDescriptors.addAll(result);
     }
 
     return Collections.unmodifiableList(myModelDescriptors);
