@@ -144,7 +144,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
         for (int i = 0; i < reloadList.length; i++) {
           bundles[i] = myOSGIBundles.get(reloadList[i]);
         }
-        refreshBundles(bundles);
+        refreshBundles(bundles, true);
       }
 
       if (!toRemove.isEmpty()) {
@@ -155,11 +155,12 @@ public class ClassLoaderManager implements IComponentLifecycle {
             Bundle bundle = myOSGIBundles.get(unloadList[i]);
             bundles[i] = bundle;
             bundle.uninstall();
+            myOSGIBundles.remove(unloadList[i]);
           } catch (BundleException e) {
             LOG.error(e);
           }
         }
-        refreshBundles(bundles);
+        refreshBundles(bundles, false);
       }
 
       if (!toAdd.isEmpty()) {
@@ -211,9 +212,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
     LOG.debug("Updating class path");
 
     if (changeModule == null) {
-      refreshBundles(myOSGIBundles.values().toArray(new Bundle[0]));
+      refreshBundles(myOSGIBundles.values().toArray(new Bundle[0]), true);
     } else {
-      refreshBundles(new Bundle[] { myOSGIBundles.get(changeModule.getModuleUID())});
+      refreshBundles(new Bundle[] { myOSGIBundles.get(changeModule.getModuleUID())}, true);
     }
 
     if (changeModule == null) {
@@ -229,16 +230,18 @@ public class ClassLoaderManager implements IComponentLifecycle {
     LOG.debug("Done");
   }
 
-  private void refreshBundles(Bundle[] bundles) {
+  private void refreshBundles(Bundle[] bundles, boolean update) {
     if (bundles.length == 0) {
       return;
     }
 
-    for (Bundle b : bundles) {
-      try {
-        b.update();
-      } catch (Throwable t) {
-        LOG.error(t);
+    if (update) {
+      for (Bundle b : bundles) {
+        try {
+          b.update();
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
       }
     }
 
