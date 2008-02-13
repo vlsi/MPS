@@ -29,19 +29,8 @@ public abstract class BaseScope implements IScope {
   }
 
   @NotNull
-  public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName) {
-
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    for (SModelUID uid : myDescriptors.keySet()) {
-      if (modelName.equals(uid.getLongName())) {
-        result.add(myDescriptors.get(uid));
-      }
-    }
-    return result;
-  }
-
-  @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
+    initialize();
     return new ArrayList<SModelDescriptor>(myDescriptors.values());
   }
 
