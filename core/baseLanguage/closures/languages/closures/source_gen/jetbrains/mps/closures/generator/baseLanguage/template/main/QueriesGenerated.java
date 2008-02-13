@@ -223,10 +223,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201048260874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      IMatchingPattern pattern_1202928265070 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1202928265052 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1202928265070);
-      if(coercedNode_1202928265052 != null) {
-        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1202928265052, "elementType", true));
+      IMatchingPattern pattern_1202929540199 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1202929540181 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1202929540199);
+      if(coercedNode_1202929540181 != null) {
+        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1202929540181, "elementType", true));
       }
     }
     return null;
@@ -1001,7 +1001,6 @@ public class QueriesGenerated {
       List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false), "parameter", true);
       if(args.size() != pdecls.size()) {
         _context.getGenerator().showWarningMessage(bmc, "Actual arguments count != parameter declarations count");
-        continue;
       }
       int idx = 0;
       for(SNode pdecl : pdecls) {
@@ -1014,7 +1013,7 @@ public class QueriesGenerated {
           pdtype :
           null
         );
-        if((pdFType != null) || (pdCType != null)) {
+        if(((pdFType != null) || (pdCType != null)) && idx < args.size()) {
           SNode arg = args.get(idx);
           SNode argtype = TypeChecker.getInstance().getTypeOf(arg);
           SNode argFType = (SNodeOperations.isInstanceOf(argtype, "jetbrains.mps.closures.structure.FunctionType") ?
