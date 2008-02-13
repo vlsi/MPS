@@ -81,79 +81,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return result;
   }
 
-  public void rename(String newNamespace, IOperationContext operationContext) {
-/*    String oldNamespace = getNamespace();
-
-    // update repository
-    MPSModuleRepository.getInstance().renameUID(this, newNamespace);
-
-    // set new namespace
-    myLanguageDescriptor.setNamespace(newNamespace);
-
-    // rename model roots
-    String oldLanguageModelsRoot = myDescriptorFile.getParent().child(LANGUAGE_MODELS).getAbsolutePath();
-    String oldLanguageAccesoriesRoot = myDescriptorFile.getParent().child(LANGUAGE_ACCESSORIES).getAbsolutePath();
-    for (ModelRoot modelRoot : myLanguageDescriptor.getModelRoots()) {
-      if (modelRoot.getPath().equals(oldLanguageModelsRoot)) {
-        modelRoot.delete();
-      }
-      if (modelRoot.getPath().equals(oldLanguageAccesoriesRoot)) {
-        modelRoot.delete();
-      }
-    }
-
-
-    IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
-    if (projectHandler != null) {
-      try {
-        projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(myDescriptorFile.toFile()));
-      } catch (RemoteException e) {
-        LOG.error(e);
-      }
-    } else {
-      myDescriptorFile.delete();
-    }
-
-    File descriptorFile = newDescriptorFileByNewName(newNamespace).toFile();
-
-    SModel descriptorModel = myLanguageDescriptor.getModel();
-    ModelRoot languageModelRoot = ModelRoot.newInstance(descriptorModel);
-    languageModelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_MODELS).getAbsolutePath());
-    languageModelRoot.setPrefix(newNamespace);
-    myLanguageDescriptor.addModelRoot(languageModelRoot);
-    ModelRoot accessoryModelRoot = ModelRoot.newInstance(descriptorModel);
-    accessoryModelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
-    accessoryModelRoot.setPrefix(newNamespace);
-    myLanguageDescriptor.addModelRoot(accessoryModelRoot);
-
-    // rename language models
-    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getStructureModel(), languageModelRoot, operationContext);
-    Model editorModel = null;
-    for (Editor editor : myLanguageDescriptor.getEditors()) {
-      if (editor.getStereotype() == null || editor.getStereotype().equals(SModelStereotype.NONE)) {
-        editorModel = editor.getEditorModel();
-        break;
-      }
-    }
-    renameLanguageModel(oldNamespace, newNamespace, editorModel, languageModelRoot, operationContext);
-    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getActionsModel(), languageModelRoot, operationContext);
-    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getConstraintsModel(), languageModelRoot, operationContext);
-    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getHelginsTypesystemModel(), languageModelRoot, operationContext);
-    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getScriptsModel(), languageModelRoot, operationContext);
-
-    for (Model m : myLanguageDescriptor.getAccessoryModels()) {
-      renameLanguageModel(oldNamespace, newNamespace, m, languageModelRoot, operationContext);
-    }
-
-    SModelRepository.getInstance().saveAll();
-
-    // save descriptor
-    myDescriptorFile = FileSystem.getFile(descriptorFile);
-    setLanguageDescriptor(myLanguageDescriptor);
-    save();*/
-  }
-
-  /*package*/ IFile newDescriptorFileByNewName(String newNamespace) {
+  IFile newDescriptorFileByNewName(String newNamespace) {
     IFile dir = myDescriptorFile.getParent();
     String oldShortFileName = NameUtil.shortNameFromLongName(myDescriptorFile.getAbsolutePath());
     String newPathSuffix = NameUtil.shortNameFromLongName(newNamespace);
@@ -162,21 +90,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       newPathSuffix = newPathSuffix + File.separatorChar + newPathSuffix;
     }
     return dir.child(newPathSuffix + MPSModuleRepository.LANGUAGE_EXT);
-  }
-
-  private void renameLanguageModel(String oldNamespace, String newNamespace, Model model, ModelRoot newRoot, IOperationContext operationContext) {
-    if (model == null) return;
-    String name = model.getName();
-    if (name.startsWith(oldNamespace)) {
-      String newName = newNamespace + name.substring(oldNamespace.length(), name.length());
-      model.setName(newName);
-      SModelUID modelUID = SModelUID.fromString(name);
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor == null) {
-        LOG.error("Couldn't get model \"" + modelUID + "\"");
-      }
-      new RenameModelRefactoring(modelDescriptor, operationContext, newName, newRoot).run();
-    }
   }
 
   public String marshall() {
@@ -390,7 +303,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     ReloadUtils.reloadAll(true, true, false);
 
     registerAspectListener();
-    updateLastGenerationTime();
 
     ReloadUtils.rebuildAllEditors();
     ReloadUtils.rebuildProjectPanes();
@@ -481,14 +393,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return getLanguageDescriptor().getLanguagePluginClass();
   }
 
-  public void updateLastGenerationTime() {
-//    long lastGenerationTime = FileUtil.getNewestFileTime(
-//            new File(getSourceDir().getAbsolutePath() + File.separator + getNamespace().replace('.', File.separatorChar)));
-//    long lastChangeTime = getLastChangeTime();
-//    myUpToDate = lastGenerationTime >= lastChangeTime;
-//    myUpdateLastGenerationTimeCalled = true;
-  }
-
   public List<Generator> getGenerators() {
     return new ArrayList<Generator>(myGenerators);
   }
@@ -530,15 +434,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
     return generatorOutputPath;
   }
-
-
-  public boolean isUpToDate() {
-    if (!myUpdateLastGenerationTimeCalled) {
-      updateLastGenerationTime();
-    }
-    return myUpToDate;
-  }
-
 
   public List<ConceptDeclaration> getConceptDeclarations() {
     return getStructureModelDescriptor().getSModel().allAdapters(ConceptDeclaration.class);
