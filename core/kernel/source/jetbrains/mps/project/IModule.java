@@ -22,10 +22,6 @@ import java.util.Set;
 public interface IModule extends ModelOwner, MPSModuleOwner {
   @NotNull String getModuleUID();
 
-  @NotNull List<Language> getOwnLanguages();
-
-  @NotNull List<IModule> getOwnModules();
-
   <T extends IModule> Set<T> getAllDependOnModules(@NotNull Class<T> cls);
 
   @NotNull List<SModelDescriptor> getOwnModelDescriptors();

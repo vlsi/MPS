@@ -816,16 +816,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
   }
 
-  @NotNull
-  public List<Language> getOwnLanguages() {
-    List<Language> languages = super.getOwnLanguages();
-    if (!languages.contains(this)) {
-      languages.add(this);
-    }
-    return languages;
-  }
-
-
   public Set<ILoggableRefactoring> getRefactorings() {
     Set<ILoggableRefactoring> result = new HashSet<ILoggableRefactoring>();
     SModelDescriptor scriptsModelDescriptor = getScriptsModelDescriptor();

@@ -42,10 +42,6 @@ public abstract class AbstractModule implements IModule {
 
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
 
-  //
-  // IScope
-  //
-
   public void convert() {
 
   }
@@ -58,50 +54,6 @@ public abstract class AbstractModule implements IModule {
   public String getModuleUID() {
     return toString();
   }
-
-  @Nullable
-  protected Language getLanguage(@NotNull String languageNamespace, @NotNull Set<IModule> modulesToSkip, boolean suppressWarnings) {
-    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguagesManager.getInstance());
-    if (language != null) return language;
-    language = getLanguage_internal(languageNamespace, modulesToSkip, this);
-    if (language == null && !suppressWarnings) {
-      LOG.errorWithTrace("couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
-    }
-    return language;
-  }
-
-  @Nullable
-  private static Language getLanguage_internal(String languageNamespace, Set<IModule> processedModules, IModule dependentModule) {
-    processedModules.add(dependentModule);
-    if (dependentModule instanceof Language && dependentModule.getModuleUID().equals(languageNamespace)) {
-      return (Language) dependentModule;
-    }
-    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, dependentModule);
-    if (language != null) {
-      return language;
-    }
-
-    List<IModule> dependOnModules = dependentModule.getDependOnModules();
-    for (IModule module : dependOnModules) {
-      if (!(processedModules.contains(module))) {
-        language = getLanguage_internal(languageNamespace, processedModules, module);
-        if (language != null) break;
-      }
-    }
-    return language;
-  }
-
-  @NotNull
-  public List<Language> getOwnLanguages() {
-    return new LinkedList<Language>(MPSModuleRepository.getInstance().getLanguages(this));
-  }
-
-
-  @NotNull
-  public final List<IModule> getOwnModules() {
-    return new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));
-  }
-
 
   /**
    * @return all depends-on modules recursively + bootstrap languages
@@ -158,15 +110,10 @@ public abstract class AbstractModule implements IModule {
     return getDescriptorFile().getParent().child("classes_gen");
   }
 
-  //
-  // AbstractModule
-  //
   @NotNull
   public final List<ModelRoot> getModelRoots() {
     List<ModelRoot> result = new ArrayList<ModelRoot>();
-
     result.addAll(getNonDefaultModelRoots());
-
     return result;
   }
 
@@ -187,7 +134,7 @@ public abstract class AbstractModule implements IModule {
 
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
-    LinkedList<IModule> result = new LinkedList<IModule>(getOwnModules());
+    LinkedList<IModule> result = new LinkedList<IModule>();
 
     for (Dependency dep : getDependencies()) {
       IModule m = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
@@ -702,18 +649,14 @@ public abstract class AbstractModule implements IModule {
     File bundleHome = getBundleHome();
 
     assert bundleHome != null;
-
     if (bundleHome.isFile()) { //i.e. packaged      
       return;
     }
 
-
     File metaInfDir = new File(bundleHome, "META-INF");
-
     metaInfDir.mkdir();
 
     File manifest = new File(metaInfDir, "MANIFEST.MF");
-
     FileUtil.write(manifest, manifestContents);
   }
 
