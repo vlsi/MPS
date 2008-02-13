@@ -21,7 +21,7 @@ public class BootstrapTest extends BaseMPSTest {
   public void testStructureLanguage() {
     String res = testProject(new File("core/languageDesign/structureLanguage/structureLanguage.mpr"));
     assertTrue(res, res == null);
-  }
+  }                                                           
 
   public void testEditorLanguage() {
     String res = testProject(new File("core/languageDesign/editorLanguage/editorLanguage.mpr"));
