@@ -42,6 +42,18 @@ public abstract class AbstractModule implements IModule {
 
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
 
+  
+  protected void reload() {
+    MPSModuleRepository.getInstance().unRegisterModules(this);
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+
+    rereadModels();
+    updateRuntimeClassPath();
+    reloadStubs();
+
+    createManifest();
+  }
+
   public void convert() {
 
   }
@@ -455,7 +467,7 @@ public abstract class AbstractModule implements IModule {
     return null;
   }
 
-  public String generateManifest() {
+  protected String generateManifest() {
     StringBuilder result = new StringBuilder();
     result.append("Manifest-Version: 1.0\n");
     result.append("Bundle-ManifestVersion: 2\n");
@@ -618,7 +630,7 @@ public abstract class AbstractModule implements IModule {
     });
   }
 
-  public void createManifest() {
+  protected void createManifest() {
     String manifestContents = generateManifest();
 
     File bundleHome = getBundleHome();

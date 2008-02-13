@@ -179,8 +179,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
       return; //i.e. transient module
     }
 
-    module.createManifest();
-
     try {
       Bundle bundle = myBundleContext.installBundle("reference:file:/" + module.getBundleHome());
 

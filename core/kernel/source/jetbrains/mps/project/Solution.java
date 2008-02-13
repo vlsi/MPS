@@ -56,17 +56,6 @@ public class Solution extends AbstractModule {
     return solution;
   }
 
-  protected void reload() {
-    MPSModuleRepository.getInstance().unRegisterModules(Solution.this);
-    SModelRepository.getInstance().unRegisterModelDescriptors(Solution.this);
-    
-    rereadModels();
-    updateRuntimeClassPath();
-    reloadStubs();
-
-    createManifest();
-  }
-
   public void convert() {
   }
 

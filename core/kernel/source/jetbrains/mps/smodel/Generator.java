@@ -33,10 +33,6 @@ public class Generator extends AbstractModule {
     reload();
   }
 
-  protected void reload() {
-    rereadModels();
-  }
-
   public boolean isPackaged() {
     return getSourceLanguage().isPackaged();
   }
