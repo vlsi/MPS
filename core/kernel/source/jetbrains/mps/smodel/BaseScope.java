@@ -41,15 +41,6 @@ public abstract class BaseScope implements IScope {
       }
     }
 
-    for (Language l : getVisibleLanguages()) {
-      for (SModelDescriptor accessory : l.getAccessoryModels()) {
-        if (modelUID.equals(accessory.getModelUID())) {
-          myDescriptors.put(modelUID, accessory);
-          return accessory;
-        }
-      }
-    }
-         
     return null;
   }
 
@@ -62,33 +53,19 @@ public abstract class BaseScope implements IScope {
       result.addAll(SModelRepository.getInstance().getModelDescriptors(modelName, m));
     }
 
-    for (Language l : getVisibleLanguages()) {
-      for (SModelDescriptor accessory : l.getAccessoryModels()) {
-        if (accessory.getModelUID().getLongName().equals(modelName)) {
-          result.add(accessory);
-        }
-      }
-    }
-
     return result;
   }
 
   @NotNull
-  public List<SModelDescriptor> getModelDescriptors() {    
+  public List<SModelDescriptor> getModelDescriptors() {
     if (myModelDescriptors.isEmpty()) {
-      Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-      result.addAll(SModelRepository.getInstance().getModelDescriptors(getModelOwner()));
+      Set<SModelDescriptor> sms = new HashSet<SModelDescriptor>();
+      sms.addAll(SModelRepository.getInstance().getModelDescriptors(getModelOwner()));
 
       for (IModule m : getVisibleModules()) {
-        result.addAll(m.getOwnModelDescriptors());
+        sms.addAll(m.getOwnModelDescriptors());
       }
-
-
-      for (Language l : getVisibleLanguages()) {
-        result.addAll(l.getAccessoryModels());
-      }
-
-      myModelDescriptors.addAll(result);
+      myModelDescriptors.addAll(sms);
     }
 
     return Collections.unmodifiableList(myModelDescriptors);
