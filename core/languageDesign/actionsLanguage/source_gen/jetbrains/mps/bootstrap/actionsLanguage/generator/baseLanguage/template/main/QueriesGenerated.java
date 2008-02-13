@@ -14,6 +14,7 @@ import jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitut
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
@@ -142,6 +143,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197457082670(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "removeRTActionsByCondition_" + _context.getNode().getId();
+  }
+
+  public static Object referenceMacro_GetReferent_1202914532639(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", false, false), "applicableConcept", false);
   }
 
   public static boolean ifMacro_Condition_1178782034640(final IOperationContext operationContext, final IfMacroContext _context) {

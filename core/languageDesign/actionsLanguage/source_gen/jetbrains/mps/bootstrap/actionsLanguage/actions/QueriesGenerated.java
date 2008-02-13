@@ -19,8 +19,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.Condition;
 
 public class QueriesGenerated {
 
@@ -148,6 +148,7 @@ public class QueriesGenerated {
         continue;
       }
       final SNode concept = (SNode)current.getParameterObject();
+      SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart");
       Condition cond = new Condition() {
 
         public boolean met(Object object) {
@@ -155,7 +156,7 @@ public class QueriesGenerated {
         }
 
       };
-      if(cond.met(null)) {
+      if(SConceptOperations.isAssignableFrom(applicableConcept, concept) && cond.met(null)) {
         actions.remove();
       }
     }
@@ -169,6 +170,7 @@ public class QueriesGenerated {
         continue;
       }
       final SNode concept = (SNode)current.getParameterObject();
+      SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart");
       Condition cond = new Condition() {
 
         public boolean met(Object object) {
@@ -176,7 +178,7 @@ public class QueriesGenerated {
         }
 
       };
-      if(cond.met(null)) {
+      if(SConceptOperations.isAssignableFrom(applicableConcept, concept) && cond.met(null)) {
         actions.remove();
       }
     }

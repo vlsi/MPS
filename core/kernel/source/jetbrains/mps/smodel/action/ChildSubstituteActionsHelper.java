@@ -113,24 +113,15 @@ public class ChildSubstituteActionsHelper {
       resultActions.addAll(invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context));
     }
 
-    // need create default actions?
     if (!containsLegacyQueries(primaryBuilders) && !containsRemoveDefaults(primaryBuilders)) {
-      // yes, if 'primary' language
-      // doesn't define actions for that target, or it does but
-      // those actions don't ban 'default actions' explicitly and don't contain legacy queries
-
-      // action builders might be defined for sub-concepts of childConcept (i.e. link target)
-      // if so, we have to
-      // add those actions to result and
-      // exculde those sub-concept from 'applicable concepts' to avoid duplication
       List<NodeSubstituteActionsBuilder> buildersFromSubconcepts = new ArrayList<NodeSubstituteActionsBuilder>();
       List<Language> languages = parentNode.getModel().getLanguages(scope);
       for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(languages)) {
         AbstractConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
         if (applicableConcept == null) continue;
         if (applicableConcept == childConcept) continue;
-        // applicable, if builder's applicable-concept is sub-concept of the childConcept
-        if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept)) {
+        if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept) ||
+          SModelUtil_new.isAssignableConcept(childConcept, applicableConcept)) {
           // check precondition tricking builder by passing builder's own applicable-concept as child-concept
           if (satisfiesPrecondition(actionsBuilder, parentNode, applicableConcept, context)) {
             buildersFromSubconcepts.add(actionsBuilder);

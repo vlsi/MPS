@@ -747,6 +747,7 @@ public class QueriesGenerated {
         continue;
       }
       final SNode concept = (SNode)current.getParameterObject();
+      SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation");
       Condition cond = new Condition() {
 
         public boolean met(Object object) {
@@ -794,7 +795,7 @@ public class QueriesGenerated {
         }
 
       };
-      if(cond.met(null)) {
+      if(SConceptOperations.isAssignableFrom(applicableConcept, concept) && cond.met(null)) {
         actions.remove();
       }
     }

@@ -1142,6 +1142,7 @@ public class QueriesGenerated {
         continue;
       }
       final SNode concept = (SNode)current.getParameterObject();
+      SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperation");
       Condition cond = new Condition() {
 
         public boolean met(Object object) {
@@ -1149,7 +1150,7 @@ public class QueriesGenerated {
         }
 
       };
-      if(cond.met(null)) {
+      if(SConceptOperations.isAssignableFrom(applicableConcept, concept) && cond.met(null)) {
         actions.remove();
       }
     }
@@ -1163,6 +1164,7 @@ public class QueriesGenerated {
         continue;
       }
       final SNode concept = (SNode)current.getParameterObject();
+      SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperation");
       Condition cond = new Condition() {
 
         public boolean met(Object object) {
@@ -1170,7 +1172,7 @@ public class QueriesGenerated {
         }
 
       };
-      if(cond.met(null)) {
+      if(SConceptOperations.isAssignableFrom(applicableConcept, concept) && cond.met(null)) {
         actions.remove();
       }
     }
