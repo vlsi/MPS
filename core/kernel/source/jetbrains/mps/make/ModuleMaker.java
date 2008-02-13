@@ -169,6 +169,8 @@ public class ModuleMaker {
   }
 
   private static void copyFiles(File source, File destination, FilenameFilter filenameFilter) {
+    if (source.getName().equals(".svn") && source.isDirectory()) return;
+
     File[] children = source.listFiles(filenameFilter);
 
     for (File child : children){
