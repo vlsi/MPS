@@ -7,6 +7,8 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -54,15 +56,26 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
   public IResultProvider getResult(SNode node, ActionContext context) {
     List<BaseFinder> finders = new ArrayList<BaseFinder>();
     for (String finderClassName : myFindersClassNames) {
-      try {
-        BaseFinder finder = (BaseFinder) Class.forName(finderClassName).newInstance();
-        finders.add(finder);
-      } catch (InstantiationException e) {
-        LOG.error("Can't find finder " + finderClassName);
-      } catch (IllegalAccessException e) {
-        e.printStackTrace();
-      } catch (ClassNotFoundException e) {
-        e.printStackTrace();
+      String languageNamespacePlusFindUsages = NameUtil.namespaceFromLongName(finderClassName);
+      assert languageNamespacePlusFindUsages.endsWith(".findUsages");
+      String languageNamespace = languageNamespacePlusFindUsages.substring(0, languageNamespacePlusFindUsages.length() - ".findUsages".length());
+      Language l = context.getScope().getLanguage(languageNamespace);
+
+      if (l == null) {
+        LOG.error("Can't find a language " + l);
+        continue;
+      }
+
+      Class finderClass = l.getClass(finderClassName);
+      if (finderClass != null) {
+        try {
+          BaseFinder finder = (BaseFinder) finderClass.newInstance();
+          finders.add(finder);
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+      } else {
+        LOG.error("Can't find a class " + finderClassName + " in " + languageNamespace);
       }
     }
     return TreeBuilder.forFinders(finders);
