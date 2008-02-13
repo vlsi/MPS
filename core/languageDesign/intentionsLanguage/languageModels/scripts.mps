@@ -12,6 +12,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.quotation" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
@@ -224,10 +225,14 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1195564934464">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195564934465">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195580684792">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1195580684793">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~Language.createIntentionsModel():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createIntentionsModel" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1195582480231">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202936409792">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1202936417515">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~LanguageAspect.createNew(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createNew" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1202936414309">
+                    <link role="enumConstantDeclaration" targetNodeId="5.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
+                    <link role="enumClass" targetNodeId="5.~LanguageAspect" resolveInfo="LanguageAspect" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202936419141">
                     <link role="variableDeclaration" targetNodeId="1195582361964" resolveInfo="language" />
                   </node>
                 </node>
