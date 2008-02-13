@@ -58,8 +58,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   void dispose();
 
-  void readModels();
-
   IFile getClassesGen();
 
   void reloadStubs();

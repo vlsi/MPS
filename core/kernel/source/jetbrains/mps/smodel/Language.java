@@ -215,7 +215,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
   }
 
-  public void readModels() {
+  protected void readModels() {
     if (!isInitialized()) {
       super.readModels();
 

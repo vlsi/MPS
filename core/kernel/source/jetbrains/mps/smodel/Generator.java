@@ -41,7 +41,7 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().isPackaged();
   }
 
-  public void readModels() {
+  protected void readModels() {
     if (!isInitialized()) {
       super.readModels();
       if (isInitialized()) {

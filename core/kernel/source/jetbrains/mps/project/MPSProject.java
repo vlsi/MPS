@@ -99,7 +99,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         readModules();
 
         ReloadUtils.reloadAll(true, false);
-        readModelsFromModules();
 
         for (IModule m : getModules()) {
           m.convert();
@@ -207,12 +206,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     return result;
   }
 
-  private void readModelsFromModules() {
-    for (IModule m : getModules()) {
-      m.readModels();
-    }
-  }
-
   public void setProjectDescriptor(final @NotNull ProjectDescriptor newDescriptor) {
     // release languages/solutions and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner) MPSProject.this);
@@ -227,7 +220,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     readModules();
     ReloadUtils.reloadAll(true);
-    readModelsFromModules();
 
     myEventTranslator.projectChanged();
   }

@@ -71,7 +71,7 @@ public class Solution extends AbstractModule {
   }
 
 
-  public void readModels() {
+  protected void readModels() {
     if (!isInitialized()) {
       super.readModels();
 

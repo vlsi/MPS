@@ -120,7 +120,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
         MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner);
       }
     }
-    readAndConvert(myPredefinedLibrariesOwner);
+    convert(myPredefinedLibrariesOwner);
   }
 
   public void update() {
@@ -135,18 +135,14 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
             MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
           }
         }
-        readAndConvert(myOwner);
+        convert(myOwner);
       }
     });
   }
 
-  private void readAndConvert(final MPSModuleOwner owner) {
-    for (IModule m : MPSModuleRepository.getInstance().getModules(owner)) {
-      m.readModels();
-    }
+  private void convert(final MPSModuleOwner owner) {
     for (IModule m : MPSModuleRepository.getInstance().getModules(owner)) {
       m.convert();
-//      m.createManifest();
     }
   }
 
