@@ -18,6 +18,7 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.FilenameFilter;
 import java.util.*;
 
 public class ModuleMaker {
@@ -145,7 +146,40 @@ public class ModuleMaker {
       }
     }
 
+    for (IModule module : modules){
+      copyResources(module, JAVA_SUFFIX);
+    }
+
     return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
+  }
+
+  private static void copyResources(IModule module, final String sourceSuffix) {
+    File destination = module.getClassesGen().toFile();
+
+    FilenameFilter filenameFilter = new FilenameFilter() {
+      public boolean accept(File dir, String name) {
+        return !name.endsWith(sourceSuffix);
+      }
+    };
+
+    for (String source : module.getSourcePaths()){
+      File sourceFile = new File(source);
+      copyFiles(sourceFile, destination, filenameFilter);
+    }
+  }
+
+  private static void copyFiles(File source, File destination, FilenameFilter filenameFilter) {
+    File[] children = source.listFiles(filenameFilter);
+
+    for (File child : children){
+      File destinationChild = new File(destination + File.separator + child.getName());
+      if (child.isFile()){
+        FileUtil.copyFile(child, destinationChild);
+      } else {
+        destinationChild.mkdir();
+        copyFiles(child, destinationChild, filenameFilter);
+      }
+    }
   }
 
   private String getName(char[][] compoundName) {
@@ -235,6 +269,11 @@ public class ModuleMaker {
     }
 
     boolean result = classesTimeStamp >= sourcesTimeStamp;
+    if (result){
+      for (String s : m.getSourcePaths()) {
+        result = isAllClassesPresented(new File(s), classesGen, JAVA_SUFFIX, CLASS_SUFFIX);
+      }
+    }
     myClassesUpToDateStatus.put(m, result);
     return result;
   }
