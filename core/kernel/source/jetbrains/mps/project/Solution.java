@@ -57,6 +57,9 @@ public class Solution extends AbstractModule {
   }
 
   protected void reload() {
+    MPSModuleRepository.getInstance().unRegisterModules(Solution.this);
+    SModelRepository.getInstance().unRegisterModelDescriptors(Solution.this);
+    
     createManifest();
     rereadModels();
     updateRuntimeClassPath();
@@ -92,11 +95,9 @@ public class Solution extends AbstractModule {
 
     assert modelDescriptor != null;
 
-    MPSModuleRepository.getInstance().unRegisterModules(Solution.this);
-    SModelRepository.getInstance().unRegisterModelDescriptors(Solution.this);
-    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Solution.this);
-
     mySolutionDescriptor = newDescriptor;
+
+    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Solution.this);
 
     reload();
 
