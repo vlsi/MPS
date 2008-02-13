@@ -407,7 +407,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result = ListOperations.createList(new String[]{});
+      List<String> result = ListOperations.<String>createList();
       if(SPropertyOperations.hasValue(node, "metaClass", "aggregation", null)) {
         for(Cardinality c : Cardinality.getConstants()) {
           ListOperations.addElement(result, c.getValueAsString());
@@ -427,7 +427,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> postfixes = ListOperations.createList(new String[]{});
+      List<String> postfixes = ListOperations.<String>createList();
       if((SLinkOperations.getTarget(node, "target", false) != null)) {
         String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "target", false), "name"));
         ListOperations.addAllElements(postfixes, NameUtil.splitByCamels(name));

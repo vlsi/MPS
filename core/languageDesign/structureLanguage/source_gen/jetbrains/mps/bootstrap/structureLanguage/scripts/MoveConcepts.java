@@ -31,6 +31,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.HashMap;
@@ -38,7 +39,6 @@ import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.LanguageAspect;
 
 public class MoveConcepts extends AbstractLoggableRefactoring {
   public static final String targetModel = "targetModel";

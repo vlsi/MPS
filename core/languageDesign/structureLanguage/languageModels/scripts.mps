@@ -990,9 +990,13 @@
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198523148218">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198523148219">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1198523148220">
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198523148221">
-                      <link role="baseMethodDeclaration" targetNodeId="5.~Language.createLanguageEditorModel():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createLanguageEditorModel" />
-                      <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523148222">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1202935683096">
+                      <link role="baseMethodDeclaration" targetNodeId="5.~LanguageAspect.createNew(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createNew" />
+                      <node role="instance" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1202935679374">
+                        <link role="enumConstantDeclaration" targetNodeId="5.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                        <link role="enumClass" targetNodeId="5.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202935690659">
                         <link role="variableDeclaration" targetNodeId="1198521036393" resolveInfo="targetLanguage" />
                       </node>
                     </node>
@@ -1066,9 +1070,13 @@
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198523135255">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198523135256">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1198523135257">
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198523135258">
-                      <link role="baseMethodDeclaration" targetNodeId="5.~Language.createLanguageBehaviorModel():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createLanguageBehaviorModel" />
-                      <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523135259">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1202935713118">
+                      <link role="baseMethodDeclaration" targetNodeId="5.~LanguageAspect.createNew(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createNew" />
+                      <node role="instance" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1202935710147">
+                        <link role="enumConstantDeclaration" targetNodeId="5.~LanguageAspect.CONSTRAINTS" resolveInfo="CONSTRAINTS" />
+                        <link role="enumClass" targetNodeId="5.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202935734697">
                         <link role="variableDeclaration" targetNodeId="1198521036393" resolveInfo="targetLanguage" />
                       </node>
                     </node>
