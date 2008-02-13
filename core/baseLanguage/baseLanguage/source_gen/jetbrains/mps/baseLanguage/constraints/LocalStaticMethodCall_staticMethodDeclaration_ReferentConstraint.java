@@ -10,8 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall;
 
@@ -29,14 +27,10 @@ public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint im
   }
 
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return (SNodeOperations.getAncestorWhereConceptInList(enclosingNode, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept","jetbrains.mps.baseLanguage.structure.IStaticMethodContainer"}, false, false) != null);
+    return (SNodeOperations.getAncestorWhereConceptInList(enclosingNode, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept"}, false, false) != null);
   }
 
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    SNode staticMethodContainer = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.IStaticMethodContainer", false, false);
-    if((staticMethodContainer != null)) {
-      return new SimpleSearchScope(SLinkOperations.getTargets(staticMethodContainer, "staticMethod", true));
-    }
     SNode clazz = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     return new StaticMethodCall_StaticMethodScope(((ClassConcept)SNodeOperations.getAdapter(clazz)), ((LocalStaticMethodCall)SNodeOperations.getAdapter(referenceNode)));
   }
