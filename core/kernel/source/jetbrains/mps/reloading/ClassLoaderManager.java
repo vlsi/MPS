@@ -234,6 +234,14 @@ public class ClassLoaderManager implements IComponentLifecycle {
       return;
     }
 
+    for (Bundle b : bundles) {
+      try {
+        b.update();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+
     final Lock lock = new ReentrantLock();
     final Condition refreshCompleted = lock.newCondition();
     lock.lock();

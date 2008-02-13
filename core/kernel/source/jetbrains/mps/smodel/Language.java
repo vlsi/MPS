@@ -114,8 +114,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   protected void reload() {
-    MPSModuleRepository.getInstance().unRegisterModules(Language.this);
-    SModelRepository.getInstance().unRegisterModelDescriptors(Language.this);
+    MPSModuleRepository.getInstance().unRegisterModules(this);
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
 
     for (Generator generator : getGenerators()) {
       generator.dispose();
@@ -125,6 +125,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     updateRuntimeClassPath();
     reloadStubs();
     revalidateGenerators();
+
+    SModelRepository.getInstance().registerModelDescriptor(myLanguageDescriptor.getModel().getModelDescriptor(), this);
 
     createManifest();
   }
@@ -276,7 +278,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     reload();
 
-    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Language.this);
     ReloadUtils.reloadAll(true, true, false);
 
     registerAspectListener();

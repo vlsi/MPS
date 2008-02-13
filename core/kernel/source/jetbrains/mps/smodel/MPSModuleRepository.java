@@ -325,7 +325,7 @@ public class MPSModuleRepository {
     return toBeRemoved;
   }
 
-  private void removeModule(@NotNull IModule module) {
+  public void removeModule(@NotNull IModule module) {
     IFile descriptorFile = module.getDescriptorFile();
 
     Set<MPSModuleOwner> toRemove = new HashSet<MPSModuleOwner>();

@@ -5,12 +5,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Dependency;
-import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
-import jetbrains.mps.projectLanguage.structure.GeneratorReference;
-import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
+import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.reloading.ReloadUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -46,9 +45,19 @@ public class Generator extends AbstractModule {
     }
   }
 
+  public SModelDescriptor createModel(SModelUID uid, ModelRoot root) {
+    SModelDescriptor result = super.createModel(uid, root);
+
+    LanguageDescriptor oldDescriptor = getSourceLanguage().getLanguageDescriptor();
+    getSourceLanguage().setLanguageDescriptor(oldDescriptor);
+
+    return result;
+  }
+
   public void dispose() {
     SModelRepository.getInstance().unRegisterModelDescriptors(Generator.this);
     MPSModuleRepository.getInstance().unRegisterModules(Generator.this);
+    MPSModuleRepository.getInstance().removeModule(this);
   }
 
   public List<SModelDescriptor> getOwnTemplateModels() {
