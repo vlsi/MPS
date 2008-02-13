@@ -185,14 +185,20 @@ public abstract class BaseAdapter implements INodeAdapter {
     myNode.addPrevSibling(a.getNode());
   }
 
+  /**
+   * @deprecated
+   */
   public boolean hasConceptProperty(String propertyName, IScope scope) {
+    return myNode.hasConceptProperty(propertyName);
+  }
+
+  public boolean hasConceptProperty(String propertyName) {
     return myNode.hasConceptProperty(propertyName);
   }
 
   public String getConceptProperty(String propertyName) {
     return myNode.getConceptProperty(propertyName);
   }
-
 
   public String getProperty(@NotNull String propertyName) {
     return myNode.getProperty(propertyName);
@@ -435,7 +441,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return getNode().toString();
   }
 
-  
+
   public static <T extends INodeAdapter> List<T> toAdapters(List<? extends SNode> list) {
     List<T> result = new ArrayList<T>();
     for (SNode node : list) {
@@ -562,15 +568,15 @@ public abstract class BaseAdapter implements INodeAdapter {
 
     if (lookupHierarchy) {
       return (List) new ConceptAndSuperConceptsScope(conceptDeclaration).
-              getAdapters(new Condition<INodeAdapter>() {
-                public boolean met(INodeAdapter n) {
-                  if (n instanceof ConceptLink) {
-                    ConceptLinkDeclaration conceptLinkDeclaration = ((ConceptLink) n).getConceptLinkDeclaration();
-                    return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
-                  }
-                  return false;
-                }
-              });
+        getAdapters(new Condition<INodeAdapter>() {
+          public boolean met(INodeAdapter n) {
+            if (n instanceof ConceptLink) {
+              ConceptLinkDeclaration conceptLinkDeclaration = ((ConceptLink) n).getConceptLinkDeclaration();
+              return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
+            }
+            return false;
+          }
+        });
     }
 
     List<ConceptLink> result = new ArrayList<ConceptLink>();

@@ -56,7 +56,7 @@ public interface INodeAdapter {
   <BA extends INodeAdapter> List<BA> allChildren(Condition<BA> c);
 
   @NotNull
-          <E extends INodeAdapter> List<E> getSubnodes(Condition<INodeAdapter> condition);
+  <E extends INodeAdapter> List<E> getSubnodes(Condition<INodeAdapter> condition);
 
   void delete();
 
@@ -64,7 +64,12 @@ public interface INodeAdapter {
 
   void addPrevSibling(INodeAdapter a);
 
+  /**
+   * @deprecated
+   */
   boolean hasConceptProperty(String propertyName, IScope scope);
+
+  boolean hasConceptProperty(String propertyName);
 
   String getConceptProperty(String propertyName);
 
@@ -91,7 +96,7 @@ public interface INodeAdapter {
   List<INodeAdapter> getChildren();
 
   @NotNull
-          <N extends INodeAdapter> List<N> getChildren(Class<N> cls);
+    <N extends INodeAdapter> List<N> getChildren(Class<N> cls);
 
   <T extends INodeAdapter> List<T> getChildren(@NotNull String role);
 

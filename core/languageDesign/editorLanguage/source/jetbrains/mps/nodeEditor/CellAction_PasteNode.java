@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.datatransfer.PasteNodeUtil;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
+import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.EditorsPane;
@@ -50,10 +51,10 @@ public class CellAction_PasteNode extends EditorCellAction {
     Set<String> necessaryLanguages = pasteNodeData.getNecessaryLanguages();
     Set<SModelUID> necessaryImports = pasteNodeData.getNecessaryImports();
     if (!CopyPasteUtil.addImportsAndLanguagesToModel(model,
-            modelProperties,
-            necessaryLanguages,
-            necessaryImports,
-            context.getOperationContext())) return;
+      modelProperties,
+      necessaryLanguages,
+      necessaryImports,
+      context.getOperationContext())) return;
 
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
@@ -64,7 +65,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     PasteNodeUtil.paste(selectedCell, anchor, operationContext, editorsPane);
     for (int i = 1; i < pasteNodes.size(); i++) {
       SNode node = pasteNodes.get(i);
-      PasteNodeUtil.pasteRelative(anchor, node, false);
+      PasteNodeUtil.pasteRelative(anchor, node, PastePlaceHint.AFTER_ANCHOR);
       anchor = node;
     }
 

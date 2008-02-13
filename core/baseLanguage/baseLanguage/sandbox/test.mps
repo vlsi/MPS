@@ -1269,14 +1269,6 @@
         </node>
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1202932804365">
-      <property name="name" value="foo1" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1202932804366" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1202932804367" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202932804368">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1202932814994" />
-      </node>
-    </node>
   </node>
 </model>
 

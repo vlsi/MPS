@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.datatransfer.PasteNodeUtil;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
+import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
 
@@ -22,10 +23,10 @@ import java.util.Set;
 public class CellAction_PasteNodeRelative extends EditorCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_PasteNodeRelative.class);
 
-  private boolean myPasteBefore;
+  PastePlaceHint myPastePlaceHint;
 
   public CellAction_PasteNodeRelative(boolean pasteBefore) {
-    myPasteBefore = pasteBefore;
+    myPastePlaceHint = pasteBefore ? PastePlaceHint.BEFORE_ANCHOR : PastePlaceHint.AFTER_ANCHOR;
   }
 
   public boolean canExecute(EditorContext context) {
@@ -33,7 +34,6 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     if (selectedCell == null) {
       return false;
     }
-    IOperationContext operationContext = context.getOperationContext();
     SNode anchorNode = selectedCell.getSNode();
     List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(anchorNode.getModel());
     if (pasteNodes == null) {
@@ -61,11 +61,11 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
 
-    PasteNodeUtil.pasteRelative(anchorNode, pasteNodes.get(0), myPasteBefore);
+    PasteNodeUtil.pasteRelative(anchorNode, pasteNodes.get(0), myPastePlaceHint);
     anchorNode = pasteNodes.get(0);
     for (int i = 1; i < pasteNodes.size(); i++) {
       SNode node = pasteNodes.get(i);
-      PasteNodeUtil.pasteRelative(anchorNode, node, false);
+      PasteNodeUtil.pasteRelative(anchorNode, node, PastePlaceHint.AFTER_ANCHOR);
       anchorNode = node;
     }
 
