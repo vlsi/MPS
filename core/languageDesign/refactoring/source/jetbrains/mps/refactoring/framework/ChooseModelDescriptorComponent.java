@@ -6,6 +6,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.JPanel;
+import javax.swing.JComponent;
 import java.awt.BorderLayout;
 
 /**
@@ -37,5 +38,9 @@ public class ChooseModelDescriptorComponent extends JPanel implements IChooseCom
 
   public void setCondition(Condition<SModelDescriptor> condition) {
     myChooseNodeOrModelComponent.setCondition((Condition) condition);
+  }
+
+  public JComponent getComponentToFocus() {
+    return myChooseNodeOrModelComponent.getComponentToFocus();
   }
 }

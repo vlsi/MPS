@@ -1,6 +1,7 @@
 package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.ide.BaseDialog;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 
@@ -18,6 +19,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   private ILoggableRefactoring myRefactoring;
   private ActionContext myActionContext;
   private RefactoringContext myRefactoringContext;
+  private JComponent myFirstComponent = null;
   public JCheckBox myIsLocalCheckBox;
 
   public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, ActionContext actionContext, RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
@@ -40,7 +42,11 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
       layout.setConstraints(myIsLocalCheckBox, constraints);
       myInnerPanel.add(myIsLocalCheckBox);
     }
+    myFirstComponent = null;
     for (IChooseComponent component : myComponents) {
+      if (myFirstComponent == null && component instanceof JComponent) {
+        myFirstComponent = (JComponent) component;
+      }
       layout.setConstraints((Component) component, (GridBagConstraints) constraints.clone());
       myInnerPanel.add((Component)component);
     }
@@ -61,6 +67,34 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   protected void prepareDialog() {
     super.prepareDialog();
     pack();
+    if (myFirstComponent != null) {
+      final FocusTraversalPolicy policy = this.getFocusTraversalPolicy();
+      this.setFocusTraversalPolicy(new FocusTraversalPolicy() {
+        public Component getComponentAfter(Container aContainer, Component aComponent) {
+          return policy.getComponentAfter(aContainer, aComponent);
+        }
+
+        public Component getComponentBefore(Container aContainer, Component aComponent) {
+          return policy.getComponentBefore(aContainer, aComponent);
+        }
+
+        public Component getFirstComponent(Container aContainer) {
+          return ((IChooseComponent)myFirstComponent).getComponentToFocus();
+        }
+
+        public Component getLastComponent(Container aContainer) {
+          return myIsLocalCheckBox;
+        }
+
+        public Component getDefaultComponent(Container aContainer) {
+          return ((IChooseComponent)myFirstComponent).getComponentToFocus();
+        }
+
+        public Component getInitialComponent(Window window) {
+          return ((IChooseComponent)myFirstComponent).getComponentToFocus();
+        }
+      });
+    }
   }
 
   @Button(position = 0, name = "OK", defaultButton = true)

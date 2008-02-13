@@ -72,6 +72,10 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     myReturnLoadedModels = useLoadedModels;
   }
 
+  public JComponent getComponentToFocus() {
+    return myChooseItemComponent;
+  }
+
   public void setCondition(Condition<Object> condition) {
     myCondition = condition;
     Condition modelCondition = Condition.TRUE_CONDITION;

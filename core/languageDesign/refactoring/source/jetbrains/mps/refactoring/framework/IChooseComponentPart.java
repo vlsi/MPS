@@ -2,6 +2,8 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.util.Condition;
 
+import javax.swing.JComponent;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -13,4 +15,5 @@ public interface IChooseComponentPart<T> {
   public T submit() throws InvalidInputValueException;
   public void setInitialValue(T initialValue);
   public void setCondition(Condition<T> condition);
+  public JComponent getComponentToFocus();
 }

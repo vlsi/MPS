@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.JPanel;
+import javax.swing.JComponent;
 import java.awt.BorderLayout;
 
 /**
@@ -37,5 +38,9 @@ public class ChooseModelComponent extends JPanel implements IChooseComponent<SMo
 
   public void setCondition(Condition<SModel> condition) {
     myChooseNodeOrModelComponent.setCondition((Condition) condition);
+  }
+
+  public JComponent getComponentToFocus() {
+    return myChooseNodeOrModelComponent.getComponentToFocus();
   }
 }

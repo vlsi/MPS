@@ -5,6 +5,7 @@ import jetbrains.mps.util.Condition;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
@@ -19,6 +20,10 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
     setLayout(new GridLayout(1, 2));
     add(new JLabel(caption), BorderLayout.NORTH);
     add(myTextField);
+  }
+
+  public JComponent getComponentToFocus() {
+    return myTextField;
   }
 
   public ChooseStringComponent(String caption, String propetyName, Condition condition) {

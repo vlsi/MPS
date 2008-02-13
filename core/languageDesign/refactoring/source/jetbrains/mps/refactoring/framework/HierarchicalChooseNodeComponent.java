@@ -9,10 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 import javax.swing.tree.TreePath;
 import java.util.HashSet;
 import java.util.Set;
@@ -53,6 +50,10 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
         // if (myTreeNode != null) myHierarchyTree.selectNode(myTreeNode);
       }
     });
+  }
+
+  public JComponent getComponentToFocus() {
+    return myHierarchyTree;
   }
 
   public void setCondition(Condition<SNode> condition) {
