@@ -98,11 +98,6 @@ public abstract class AbstractModule implements IModule {
     return modelDescriptors;
   }
 
-  public SModelDescriptor getModelDescriptor(SModelUID uid) {
-    return SModelRepository.getInstance().getModelDescriptor(uid, this);
-  }
-
-
   public IFile getClassesGen() {
     if (getDescriptorFile() == null) {
       return null;
