@@ -16,18 +16,15 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
-import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
@@ -44,14 +41,13 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private static final String LANGUAGE_MODELS = "languageModels";
 
   private LanguageDescriptor myLanguageDescriptor;
-  private List<Generator> myGenerators;
+  private List<Generator> myGenerators = new ArrayList<Generator>();
   private HashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new HashMap<String, AbstractConceptDeclaration>();
   private List<LanguageCommandListener> myCommandListeners = new ArrayList<LanguageCommandListener>();
   private LanguageEventTranslator myEventTranslator = new LanguageEventTranslator();
   private SModelsListener myModelsListener = new LanguageModelsAdapter();
   private boolean myUpToDate = true;
 
-  private boolean myUpdateLastGenerationTimeCalled = false;
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
 
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
@@ -67,7 +63,71 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       }
     }
   };
-  private boolean myRegisteredInFindUsagesManager;
+
+
+  public static Language newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    Language language = new Language();
+    SModel model = ProjectModels.createDescriptorFor(language).getSModel();
+    model.setLoading(true);
+    LanguageDescriptor languageDescriptor = DescriptorsPersistence.loadLanguageDescriptor(descriptorFile, model);
+    language.myDescriptorFile = descriptorFile;
+    language.myLanguageDescriptor = languageDescriptor;
+
+    language.reload();
+
+    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
+
+    return language;
+  }
+
+  @NotNull
+  public static Language createLanguage(String languageNamespace, File descriptorFile, MPSModuleOwner moduleOwner) {
+    Language language = new Language();
+    SModel descriptorModel = ProjectModels.createDescriptorFor(language).getSModel();
+    descriptorModel.setLoading(true);
+    LanguageDescriptor languageDescriptor = LanguageDescriptor.newInstance(descriptorModel);
+    descriptorModel.addRoot(languageDescriptor);
+    languageDescriptor.setNamespace(languageNamespace);
+
+    // default descriptorModel roots
+    ModelRoot modelRoot = ModelRoot.newInstance(descriptorModel);
+    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_MODELS).getAbsolutePath());
+    modelRoot.setPrefix(languageNamespace);
+    languageDescriptor.addModelRoot(modelRoot);
+    modelRoot = ModelRoot.newInstance(descriptorModel);
+    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
+    modelRoot.setPrefix(languageNamespace);
+    languageDescriptor.addModelRoot(modelRoot);
+
+    language.myDescriptorFile = FileSystem.getFile(descriptorFile);
+    language.myLanguageDescriptor = languageDescriptor;
+
+    language.reload();
+
+    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
+
+    return language;
+  }
+
+  private Language() {
+
+  }
+
+  protected void reload() {
+    MPSModuleRepository.getInstance().unRegisterModules(Language.this);
+    SModelRepository.getInstance().unRegisterModelDescriptors(Language.this);
+
+    for (Generator generator : getGenerators()) {
+      generator.dispose();
+    }
+
+    rereadModels();
+    updateRuntimeClassPath();
+    reloadStubs();
+    revalidateGenerators();
+
+    createManifest();
+  }
 
   public List<IModule> getExplicitlyDependOnModules() {
     List<IModule> result = super.getExplicitlyDependOnModules();
@@ -98,61 +158,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public Language unmarshall(String s, IOperationContext operationContext) {
     return MPSModuleRepository.getInstance().getLanguage(s);
-  }
-
-  public static Language newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    Language language = new Language();
-    SModel model = ProjectModels.createDescriptorFor(language).getSModel();
-    model.setLoading(true);
-    LanguageDescriptor languageDescriptor = DescriptorsPersistence.loadLanguageDescriptor(descriptorFile, model);
-    language.myDescriptorFile = descriptorFile;
-    language.myLanguageDescriptor = languageDescriptor;
-
-    language.updateRuntimeClassPath();
-    language.reloadStubs();
-
-    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
-
-    language.updateDependenciesAndGenerators();
-
-    return language;
-  }
-
-  @NotNull
-  public static Language createLanguage(String languageNamespace, File descriptorFile, MPSModuleOwner moduleOwner) {
-    Language language = new Language();
-    SModel descriptorModel = ProjectModels.createDescriptorFor(language).getSModel();
-    descriptorModel.setLoading(true);
-    LanguageDescriptor languageDescriptor = LanguageDescriptor.newInstance(descriptorModel);
-    descriptorModel.addRoot(languageDescriptor);
-    languageDescriptor.setNamespace(languageNamespace);
-
-    // default descriptorModel roots
-    ModelRoot modelRoot = ModelRoot.newInstance(descriptorModel);
-    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_MODELS).getAbsolutePath());
-    modelRoot.setPrefix(languageNamespace);
-    languageDescriptor.addModelRoot(modelRoot);
-    modelRoot = ModelRoot.newInstance(descriptorModel);
-    modelRoot.setPath(new File(descriptorFile.getParentFile(), LANGUAGE_ACCESSORIES).getAbsolutePath());
-    modelRoot.setPrefix(languageNamespace);
-    languageDescriptor.addModelRoot(modelRoot);
-
-    language.myDescriptorFile = FileSystem.getFile(descriptorFile);
-    language.myLanguageDescriptor = languageDescriptor;
-
-    language.updateRuntimeClassPath();
-    language.reloadStubs();
-
-    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
-
-    language.updateDependenciesAndGenerators();
-    return language;
-  }
-
-  // made public for unmarshalling purposes, invoked via reflection
-  // do not use directly.
-  @UseCarefully
-  public Language() {
   }
 
   public List<String> getExtendedLanguageNamespaces() {
@@ -210,21 +215,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
   }
 
-  private void updateDependenciesAndGenerators() {
-    // read modules and models
-    revalidateGenerators();
-  }
-
   public void readModels() {
     if (!isInitialized()) {
       super.readModels();
 
       if (isInitialized()) {
-        List<SModelDescriptor> accessoryModels = getAccessoryModels();
-        for (SModelDescriptor accessoryModel : accessoryModels) {
-          SModelRepository.getInstance().addOwnerForDescriptor(accessoryModel, this);
-        }
-
         CommandProcessor.instance().addCommandListener(myEventTranslator);
         SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
         registerAspectListener();
@@ -243,7 +238,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   private void revalidateGenerators() {
-    myGenerators = new LinkedList<Generator>();
+    myGenerators.clear();
     Iterator<GeneratorDescriptor> generators = getLanguageDescriptor().generators();
     while (generators.hasNext()) {
       GeneratorDescriptor generatorDescriptor = generators.next();
@@ -273,33 +268,18 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     myNotFoundRefactorings.clear();
   }
 
-  public void setLanguageDescriptor(final @NotNull LanguageDescriptor newDescriptor) {
+  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
     // release modules and models (except descriptor model)
     unRegisterAspectListener();
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
 
     assert modelDescriptor != null;
 
-    MPSModuleRepository.getInstance().unRegisterModules(Language.this);
-    SModelRepository.getInstance().unRegisterModelDescriptors(Language.this);
-    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Language.this);
-
-    for (Generator generator : getGenerators()) {
-      generator.dispose();
-    }
-
     myLanguageDescriptor = newDescriptor;
 
-    createManifest();
+    reload();
 
-    //read modules and models
-    revalidateGenerators();
-
-    rereadModels();
-
-    updateRuntimeClassPath();
-    reloadStubs();
-
+    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Language.this);
     ReloadUtils.reloadAll(true, true, false);
 
     registerAspectListener();
@@ -349,8 +329,12 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private List<String> getGeneratorsPacks() {
     List<String> result = new ArrayList<String>();
 
-    collectPackages(result, getModuleUID() + ".generator");
-    collectPackages(result, getModuleUID() + ".generator_new");
+    for (Generator g : getGenerators()) {
+      for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
+        result.add(sm.getLongName());
+      }
+    }
+
     return result;
   }
 

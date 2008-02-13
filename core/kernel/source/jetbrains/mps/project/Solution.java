@@ -60,10 +60,11 @@ public class Solution extends AbstractModule {
     MPSModuleRepository.getInstance().unRegisterModules(Solution.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(Solution.this);
     
-    createManifest();
     rereadModels();
     updateRuntimeClassPath();
     reloadStubs();
+
+    createManifest();
   }
 
   public void convert() {
@@ -97,9 +98,9 @@ public class Solution extends AbstractModule {
 
     mySolutionDescriptor = newDescriptor;
 
-    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Solution.this);
-
     reload();
+
+    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Solution.this);
 
     ReloadUtils.reloadAll(true, true, false);
 

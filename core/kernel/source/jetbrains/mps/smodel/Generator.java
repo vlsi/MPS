@@ -30,6 +30,11 @@ public class Generator extends AbstractModule {
   Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
+    reload();
+  }
+
+  protected void reload() {
+    rereadModels();
   }
 
   public boolean isPackaged() {
