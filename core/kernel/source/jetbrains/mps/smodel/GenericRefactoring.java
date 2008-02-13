@@ -108,11 +108,11 @@ public class GenericRefactoring {
     if (modelDescriptor == null) return;
     SModel model = modelDescriptor.getSModel();
 
+    refactoringContext.computeCaches();
     SearchResults usages = refactoringContext.getUsages();
-    if (usages == null || !refactoringContext.isLocal()) {
+    if (!refactoringContext.isLocal() || usages == null) {
       if (myRefactoring.doesUpdateModel()) {
         writeIntoLog(model, refactoringContext);
-        refactoringContext.computeCaches();
         for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
           String stereotype = anotherDescriptor.getStereotype();
           if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
@@ -126,8 +126,10 @@ public class GenericRefactoring {
         }
       }
     } else {
-      for (SModel anotherModel : usages.getModelsWithResults()) {
-        processModel(anotherModel, model, refactoringContext);
+      if (myRefactoring.doesUpdateModel()) {
+        for (SModel anotherModel : usages.getModelsWithResults()) {
+          processModel(anotherModel, model, refactoringContext);
+        }
       }
     }
 

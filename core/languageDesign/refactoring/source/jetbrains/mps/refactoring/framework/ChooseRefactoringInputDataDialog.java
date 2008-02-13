@@ -28,17 +28,18 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     myComponents = new ArrayList<IChooseComponent>(components);
     myInnerPanel = new JPanel();
     GridBagLayout layout = new GridBagLayout();
-    myInnerPanel.setLayout(layout);
-    myIsLocalCheckBox = new JCheckBox("is local");
-    myIsLocalCheckBox.setSelected(true);
     GridBagConstraints constraints = new GridBagConstraints();
     constraints.gridx = 0;
     constraints.gridy = GridBagConstraints.RELATIVE;
     constraints.gridwidth = 1;
     constraints.fill = GridBagConstraints.BOTH;
-
-    layout.setConstraints(myIsLocalCheckBox, constraints);
-    myInnerPanel.add(myIsLocalCheckBox);
+    myInnerPanel.setLayout(layout);
+    if (myRefactoring.doesUpdateModel()) {
+      myIsLocalCheckBox = new JCheckBox("is local");
+      myIsLocalCheckBox.setSelected(true);
+      layout.setConstraints(myIsLocalCheckBox, constraints);
+      myInnerPanel.add(myIsLocalCheckBox);
+    }
     for (IChooseComponent component : myComponents) {
       layout.setConstraints((Component) component, (GridBagConstraints) constraints.clone());
       myInnerPanel.add((Component)component);
@@ -66,7 +67,9 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   public void onOk() {
     try {
       myResult = false;
-      myRefactoringContext.setLocal(myIsLocalCheckBox.isSelected());
+      if (myRefactoring.doesUpdateModel()) {
+        myRefactoringContext.setLocal(myIsLocalCheckBox.isSelected());
+      }
       for (IChooseComponent component : myComponents) {
         myRefactoringContext.setParameter(component.getPropertyName(), component.submit());
       }
