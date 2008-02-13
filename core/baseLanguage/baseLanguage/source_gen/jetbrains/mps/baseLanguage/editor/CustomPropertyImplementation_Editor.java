@@ -33,7 +33,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201468861479");
   }
 
-  private static void setupBasic_PropertySetterCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_SetAccessorCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201476949812");
   }
 
@@ -55,7 +55,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_PropertySetterCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_SetAccessorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -81,7 +81,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell1(context, node, "set"));
-    editorCell.addEditorCell(this.createPropertySetterCell(context, node));
+    editorCell.addEditorCell(this.createSetAccessorCell(context, node));
     return editorCell;
   }
 
@@ -141,25 +141,25 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createPropertySetterCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createSetAccessorCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    CustomPropertyImplementation_Editor.setupBasic_PropertySetterCell(editorCell, node, context);
+    CustomPropertyImplementation_Editor.setupBasic_SetAccessorCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CustomPropertyImplementation_Editor.setupLabel_PropertySetterCell((EditorCell_Label)editorCell, node, context);
+      CustomPropertyImplementation_Editor.setupLabel_SetAccessorCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createPropertySetterCell(EditorContext context, SNode node) {
+  public EditorCell createSetAccessorCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("propertySetter");
+    provider.setRole("setAccessor");
     provider.setNoTargetText("<none>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createPropertySetterCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createSetAccessorCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

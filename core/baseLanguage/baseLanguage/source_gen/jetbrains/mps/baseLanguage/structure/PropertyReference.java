@@ -10,10 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyReference extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.PropertyReference";
-  public static String PROPERTY = "property";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String PROPERTY = "property";
 
   public  PropertyReference(SNode node) {
     super(node);
@@ -27,14 +27,6 @@ public class PropertyReference extends BaseConcept implements IOperation {
     return PropertyReference.newInstance(sm, false);
   }
 
-
-  public Property getProperty() {
-    return (Property)this.getReferent(PropertyReference.PROPERTY);
-  }
-
-  public void setProperty(Property node) {
-    super.setReferent(PropertyReference.PROPERTY, node);
-  }
 
   public String getShortDescription() {
     return this.getProperty(PropertyReference.SHORT_DESCRIPTION);
@@ -58,6 +50,14 @@ public class PropertyReference extends BaseConcept implements IOperation {
 
   public void setVirtualPackage(String value) {
     this.setProperty(PropertyReference.VIRTUAL_PACKAGE, value);
+  }
+
+  public Property getProperty() {
+    return (Property)this.getReferent(PropertyReference.PROPERTY);
+  }
+
+  public void setProperty(Property node) {
+    super.setReferent(PropertyReference.PROPERTY, node);
   }
 
 }

@@ -2535,7 +2535,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1201476937466">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="propertySetter" />
+      <property name="role" value="setAccessor" />
       <link role="target" targetNodeId="1201476912089" resolveInfo="PropertySetter" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201398799209">
