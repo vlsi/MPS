@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.bootstrap.editorLanguage.constraints.BaseEditorComponent_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -75,12 +76,12 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyValues", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyPostfixHints", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     return result;
@@ -90,7 +91,7 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReferentPrimary", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     return result;
@@ -100,22 +101,22 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceChild_Group", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceChild_Item", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceChild_CustomChildConcept", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceChildPrimary", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     return result;
@@ -440,30 +441,33 @@ public class QueriesGenerated {
     }
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      Calculable calc = new Calculable() {
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(concept)))) {
+        Calculable calc = new Calculable() {
 
-        public Object calculate() {
-          SNode container = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.BaseEditorComponent", true, false);
-          return BaseEditorComponent_Behavior.call_getApplicableComponents_1199449552893(container, operationContext.getScope());
+          public Object calculate() {
+            SNode container = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.BaseEditorComponent", true, false);
+            return BaseEditorComponent_Behavior.call_getApplicableComponents_1199449552893(container, operationContext.getScope());
+          }
+
+        };
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        assert queryResult != null;
+        for(SNode item : queryResult) {
+          result.add(new DefaultChildNodeSubstituteAction(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+              SNode component = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component", null);
+              SLinkOperations.setTarget(component, "editorComponent", ((SNode)this.getParameterObject()), false);
+              return component;
+            }
+
+            public String getMatchingText(String pattern) {
+              return "#" + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name") + "#";
+            }
+
+          });
         }
-
-      };
-      Iterable<SNode> queryResult = (Iterable)calc.calculate();
-      assert queryResult != null;
-      for(SNode item : queryResult) {
-        result.add(new DefaultChildNodeSubstituteAction(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode component = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component", null);
-            SLinkOperations.setTarget(component, "editorComponent", ((SNode)this.getParameterObject()), false);
-            return component;
-          }
-
-          public String getMatchingText(String pattern) {
-            return "#" + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name") + "#";
-          }
-
-        });
       }
     }
     return result;
@@ -473,29 +477,32 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem", operationContext.getScope());
-      Calculable calc = new Calculable() {
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(concept)))) {
+        Calculable calc = new Calculable() {
 
-        public Object calculate() {
-          return CellActionId.getConstants();
+          public Object calculate() {
+            return CellActionId.getConstants();
+          }
+
+        };
+        Iterable<CellActionId> queryResult = (Iterable)calc.calculate();
+        assert queryResult != null;
+        for(CellActionId item : queryResult) {
+          result.add(new DefaultChildNodeSubstituteAction(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+              SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem", _context.getCurrentTargetNode());
+              SPropertyOperations.set(newNode, "actionId", ((CellActionId)this.getParameterObject()).getValue());
+              return newNode;
+            }
+
+            public String getMatchingText(String pattern) {
+              return ((CellActionId)this.getParameterObject()).getName();
+            }
+
+          });
         }
-
-      };
-      Iterable<CellActionId> queryResult = (Iterable)calc.calculate();
-      assert queryResult != null;
-      for(CellActionId item : queryResult) {
-        result.add(new DefaultChildNodeSubstituteAction(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem", _context.getCurrentTargetNode());
-            SPropertyOperations.set(newNode, "actionId", ((CellActionId)this.getParameterObject()).getValue());
-            return newNode;
-          }
-
-          public String getMatchingText(String pattern) {
-            return ((CellActionId)this.getParameterObject()).getName();
-          }
-
-        });
       }
     }
     return result;

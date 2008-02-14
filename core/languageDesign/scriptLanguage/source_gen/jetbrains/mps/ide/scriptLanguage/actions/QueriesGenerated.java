@@ -15,15 +15,15 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1185457769594(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _parameterObject) {
-    return (SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mps.ide.scriptLanguage.structure.Script", true, false) != null);
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1185457769594(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.ide.scriptLanguage.structure.Script", true, false) != null);
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1185457754240(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _parameterObject) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1185457754240(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ide.scriptLanguage.structure.ActionContextReference", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _parameterObject.getParentNode(), _parameterObject.getCurrentTargetNode(), _parameterObject.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
     return result;

@@ -10,6 +10,7 @@ import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -215,7 +216,7 @@ public class ChildSubstituteActionsHelper {
 
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     for (SNode applicableConcept : applicableConcepts) {
-      actions.addAll(createDefaultActions((ConceptDeclaration) BaseAdapter.fromNode(applicableConcept), parentNode, currentChild, childSetter, scope));
+      actions.addAll(createDefaultActions((ConceptDeclaration) BaseAdapter.fromNode(applicableConcept), parentNode, currentChild, childSetter, context));
     }
 
     return actions;
@@ -225,7 +226,9 @@ public class ChildSubstituteActionsHelper {
                                                                  SNode parentNode,
                                                                  SNode currentChild,
                                                                  IChildNodeSetter setter,
-                                                                 IScope scope) {
+                                                                 IOperationContext operationContext) {
+    IScope scope = operationContext.getScope();
+
     LinkDeclaration smartRef = ReferenceConceptUtil.getCharacteristicReference(applicableConcept);
     if (smartRef != null) {
       List<INodeSubstituteAction> smartActions = createSmartReferenceActions(applicableConcept, smartRef, parentNode, currentChild, setter, scope);
@@ -235,7 +238,12 @@ public class ChildSubstituteActionsHelper {
         return Collections.emptyList();
       }
     } else {
-      return CollectionUtil.asList((INodeSubstituteAction) new DefaultChildNodeSubstituteAction(BaseAdapter.fromAdapter(applicableConcept), parentNode, currentChild, setter, scope));
+      String conceptFqName = NameUtil.nodeFQName(applicableConcept);
+      if (BehaviorManager.getInstance().isApplicableInContext(conceptFqName, operationContext, parentNode)) {
+        return CollectionUtil.asList((INodeSubstituteAction) new DefaultChildNodeSubstituteAction(BaseAdapter.fromAdapter(applicableConcept), parentNode, currentChild, setter, scope));
+      } else {
+        return new ArrayList<INodeSubstituteAction>();
+      }
     }
   }
 

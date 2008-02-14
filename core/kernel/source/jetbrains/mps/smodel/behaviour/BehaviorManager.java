@@ -4,10 +4,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.CanCreateContext;
 import jetbrains.mps.util.NameUtil;
 
 import java.lang.reflect.InvocationTargetException;
@@ -104,9 +102,11 @@ public final class BehaviorManager {
               result = (String) method.invoke(null);
             }
           } catch (IllegalAccessException e) {
-            throw new UnsupportedOperationException();
+            LOG.error(e);
+            myDefaultConceptNameMethods.put(fqName, null);
           } catch (InvocationTargetException e) {
-            throw new UnsupportedOperationException();
+            LOG.error(e);
+            myDefaultConceptNameMethods.put(fqName, null);
           }
         } catch (NoSuchMethodException e) {
           myDefaultConceptNameMethods.put(fqName, null);
@@ -114,6 +114,33 @@ public final class BehaviorManager {
       }
     }
     return result;
+  }
+
+  public boolean isApplicableInContext(String fqName, IOperationContext context, SNode parentNode) {
+    IScope scope = context.getScope();
+
+    String behaviorClass = behaviorClassByConceptFqName(fqName);
+    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
+    Language language = scope.getLanguage(namespace);
+    if (language != null) {
+      Class cls = language.getClass(behaviorClass);
+      if (cls != null) {
+        try {
+          Method m = cls.getMethod(BehaviorConstants.CAN_CREATE_METHOD_NAME, IOperationContext.class, CanCreateContext.class);
+
+          try {
+            return (Boolean) m.invoke(null, context, new CanCreateContext(parentNode));
+          } catch (IllegalAccessException e) {
+            LOG.error(e);
+          } catch (InvocationTargetException e) {
+            LOG.error(e);
+          }
+        } catch (NoSuchMethodException e) {          
+        }
+      }
+    }
+
+    return true;
   }
 
   private String behaviorClassByConceptFqName(String fqName) {
