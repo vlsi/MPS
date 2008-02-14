@@ -189,10 +189,6 @@ public class GenerationSession implements IGenerationSession {
       }
     }); // script.doGenerate()
 
-//    if (status.isError() || status.hasWarnings()) {
-//      // if ERROR - keep transient models: we need them to navigate to from error messages
-//      myDiscardTransients = false;
-//    }
 
     return status;
   }
