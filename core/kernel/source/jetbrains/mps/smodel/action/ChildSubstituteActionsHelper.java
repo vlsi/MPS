@@ -174,12 +174,10 @@ public class ChildSubstituteActionsHelper {
       while (it.hasNext()) {
         INodeSubstituteAction action = it.next();
         if (!(action.getParameterObject() instanceof SNode)) {
-          it.remove();
           continue;
         }
         SNode parameterObject = (SNode) action.getParameterObject();
         if (!(parameterObject.getAdapter() instanceof AbstractConceptDeclaration)) {
-          it.remove();
           continue;
         }
         if (!BehaviorManager.getInstance().canHaveAChild(parentNode,  parameterObject, context)) {
