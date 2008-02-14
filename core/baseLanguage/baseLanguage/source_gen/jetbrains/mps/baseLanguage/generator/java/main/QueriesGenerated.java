@@ -22,7 +22,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1202097921504(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode lValue = SLinkOperations.getTarget(_context.getNode(), "lValue", true);
-    return SNodeOperations.isInstanceOf(lValue, "jetbrains.mps.baseLanguage.structure.OperationExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lValue, "operation", true), "jetbrains.mps.baseLanguage.structure.PropertyReference");
+    return SNodeOperations.isInstanceOf(lValue, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lValue, "operation", true), "jetbrains.mps.baseLanguage.structure.PropertyReference");
   }
 
   public static boolean baseMappingRule_Condition_1201386765715(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
