@@ -1089,7 +1089,7 @@
             <link role="styleClass" targetNodeId="11.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202989789065">
-            <property name="noTargetText" value="&lt;no can create block&gt;" />
+            <property name="noTargetText" value="&lt;no can be a child block&gt;" />
             <link role="relationDeclaration" targetNodeId="1.1202989765072" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202989778152">
@@ -1100,6 +1100,7 @@
             <link role="styleClass" targetNodeId="11.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1203001310813">
+            <property name="noTargetText" value="&lt;no can be a parent block&gt;" />
             <link role="relationDeclaration" targetNodeId="1.1203001290417" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203001313051">

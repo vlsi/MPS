@@ -14,7 +14,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.quotation" />
   <maxImportIndex value="18" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel.constraints@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -1261,27 +1261,6 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1202990245106">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202990245107" />
-    </node>
-    <node role="canCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanCreate" id="1202990284286">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202990284287">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202990305505">
-          <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1202990305506" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202990336117">
-          <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_childConcept" id="1202990336118" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202990331002">
-          <node role="expression" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1202990331003" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202990332411">
-          <node role="expression" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1202990332412" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1202990349403">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1202990350265">
-            <property name="value" value="true" />
-          </node>
-        </node>
-      </node>
     </node>
   </node>
 </model>

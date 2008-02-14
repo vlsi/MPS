@@ -169,6 +169,19 @@ public class ChildSubstituteActionsHelper {
       }
     }
 
+    if (childSetter instanceof DefaultChildNodeSetter) {
+      Iterator<INodeSubstituteAction> it = resultActions.iterator();
+      while (it.hasNext()) {
+        INodeSubstituteAction action = it.next();
+        if (!(action.getParameterObject() instanceof SNode)) continue;
+        SNode parameterObject = (SNode) action.getParameterObject();
+        if (!(parameterObject.getAdapter() instanceof AbstractConceptDeclaration)) continue;
+        if (!BehaviorManager.getInstance().canHaveAChild(parentNode,  parameterObject, context)) {
+          it.remove();
+        }
+      }
+    }
+
     return resultActions;
   }
 

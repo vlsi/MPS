@@ -17,11 +17,8 @@
     </node>
     <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1202993195947">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202993195948">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1202993198387">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1202993201468">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1202993202315" />
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1202993200748" />
-          </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203006052670">
+          <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1203006053563" />
         </node>
       </node>
     </node>

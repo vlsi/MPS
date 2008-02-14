@@ -587,7 +587,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   public EditorCell createCanBeAChildCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("canBeAChild");
-    provider.setNoTargetText("<no can create block>");
+    provider.setNoTargetText("<no can be a child block>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createCanBeAChildCellinternal(context, node, provider);
@@ -616,7 +616,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   public EditorCell createCanBeAParentCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("canBeAParent");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no can be a parent block>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createCanBeAParentCellinternal(context, node, provider);

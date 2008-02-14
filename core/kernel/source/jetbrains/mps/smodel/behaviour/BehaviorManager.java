@@ -51,7 +51,6 @@ public final class BehaviorManager {
 
     List<Method> methodsToCall = new ArrayList<Method>();
 
-
     if (myConstructors.containsKey(conceptFqName)) {
       methodsToCall = myConstructors.get(conceptFqName);
     } else {
@@ -192,7 +191,7 @@ public final class BehaviorManager {
       }
     }
 
-    return false;
+    return true;
   }
 
   private String behaviorClassByConceptFqName(String fqName) {
