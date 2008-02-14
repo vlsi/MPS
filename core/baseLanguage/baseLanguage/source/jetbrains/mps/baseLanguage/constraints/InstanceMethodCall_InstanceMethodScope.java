@@ -19,14 +19,12 @@ public class InstanceMethodCall_InstanceMethodScope extends VisibleClassifierMem
     super(instanceType.getClassifier(), methodCall.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
     myInstanceType = instanceType;
     myMethodCall = methodCall;
-
   }
 
-  public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, InstanceMethodCallOperation methodCallOperation) {
-    super(instanceType.getClassifier(), methodCallOperation.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
+  public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, OperationExpression methodCallOperationExpression) {
+    super(instanceType.getClassifier(), methodCallOperationExpression.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
     myInstanceType = instanceType;
-    myMethodCall = methodCallOperation;
-
+    myMethodCall = (BaseMethodCall) methodCallOperationExpression.getOperation();
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
