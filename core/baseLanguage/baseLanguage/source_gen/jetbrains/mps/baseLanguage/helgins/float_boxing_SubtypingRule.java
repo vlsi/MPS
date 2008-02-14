@@ -13,7 +13,7 @@ public class float_boxing_SubtypingRule extends SubtypingRule_Runtime implements
   }
 
   public SNode getSubOrSuperType(SNode floatType) {
-    return new QuotationClass_64().createNode();
+    return new QuotationClass_69().createNode();
   }
 
   public String getApplicableConceptFQName() {
