@@ -65,6 +65,7 @@ public class DoubleRuleSet<T extends IRuleWithTwoApplicableNodes> {
           }
           conceptDeclaration2 = conceptDeclaration2.getExtends();
         }
+        conceptDeclaration2 = (ConceptDeclaration) c2;
         conceptDeclaration1 = conceptDeclaration1.getExtends();
       }
     }
