@@ -31,6 +31,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
+import jetbrains.mps.baseLanguage.constraints.ClassConcept_Behavior;
 
 public class QueriesGenerated {
 
@@ -223,10 +224,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201048260874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      IMatchingPattern pattern_1202929540199 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1202929540181 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1202929540199);
-      if(coercedNode_1202929540181 != null) {
-        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1202929540181, "elementType", true));
+      IMatchingPattern pattern_1202990032113 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1202990032095 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1202990032113);
+      if(coercedNode_1202990032095 != null) {
+        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1202990032095, "elementType", true));
       }
     }
     return null;
@@ -1121,12 +1122,12 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1202836874171(final IOperationContext operationContext, final MappingScriptContext _context) {
     for(SNode te : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ThisExpression")) {
-      if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(te, null, false, false), "jetbrains.mps.baseLanguage.structure.FieldReference")) {
+      if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(te, null, false, false), "jetbrains.mps.baseLanguage.structure.FieldReference") && (SLinkOperations.getTarget(te, "classConcept", false) == null)) {
+        SNode thisCC = SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
         SNode fr = SNodeOperations.getParent(te, null, false, false);
-        SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-        SNode cc = SNodeOperations.getParent(SLinkOperations.getTarget(fr, "variableDeclaration", false), null, false, false);
-        if(cc != SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) && (SLinkOperations.getTarget(te, "classConcept", false) == null)) {
-          _context.getGenerator().getGeneratorSessionContext().putSessionObject("remove_this_" + ((SNode)te).getId(), cc);
+        SNode fieldCC = SNodeOperations.getParent(SLinkOperations.getTarget(fr, "variableDeclaration", false), null, false, false);
+        if(fieldCC != thisCC && !(ClassConcept_Behavior.call_isDescendant_1199631877012(thisCC, fieldCC))) {
+          _context.getGenerator().getGeneratorSessionContext().putSessionObject("remove_this_" + ((SNode)te).getId(), fieldCC);
         }
       }
     }
