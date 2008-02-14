@@ -159,19 +159,19 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "commonInitializer", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177335419476(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1203026970108(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "canSubstitute", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177335619232(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1203026970132(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "canSubstitute", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177336393312(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1203026970156(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "descriptionText", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177336442294(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1203026970180(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "matchingText", true) != null;
   }
 
@@ -239,19 +239,19 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "commonInitializer", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1177332016999(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1203026970093(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handler", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1177331967800(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1203026970121(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canSubstitute", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1177336383605(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1203026970147(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "descriptionText", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1177336437649(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1203026970171(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "matchingText", true), "body", true);
   }
 

@@ -13,14 +13,16 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.Condition;
 
 public class QueriesGenerated {
@@ -95,23 +97,26 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       AbstractConceptDeclaration outputConcept = SModelUtil_new.findAbstractConceptDeclaration("?output concept is not specified?", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.actionsLanguage.structure.Substitute_SimpleString", null);
-          SPropertyOperations.set(result, "text", pattern);
-          return result;
-        }
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.actionsLanguage.structure.Substitute_SimpleString", null);
+            SPropertyOperations.set(result, "text", pattern);
+            return result;
+          }
 
-        public String getDescriptionText(String pattern) {
-          return "simple text";
-        }
+          public String getDescriptionText(String pattern) {
+            return "simple text";
+          }
 
-        public String getMatchingText(String pattern) {
-          return pattern;
-        }
+          public String getMatchingText(String pattern) {
+            return pattern;
+          }
 
-      });
+        });
+      }
     }
     return result;
   }
@@ -120,23 +125,26 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       AbstractConceptDeclaration outputConcept = SModelUtil_new.findAbstractConceptDeclaration("?output concept is not specified?", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString", null);
-          SPropertyOperations.set(result, "text", pattern);
-          return result;
-        }
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString", null);
+            SPropertyOperations.set(result, "text", pattern);
+            return result;
+          }
 
-        public String getDescriptionText(String pattern) {
-          return "simple text";
-        }
+          public String getDescriptionText(String pattern) {
+            return "simple text";
+          }
 
-        public String getMatchingText(String pattern) {
-          return pattern;
-        }
+          public String getMatchingText(String pattern) {
+            return pattern;
+          }
 
-      });
+        });
+      }
     }
     return result;
   }
