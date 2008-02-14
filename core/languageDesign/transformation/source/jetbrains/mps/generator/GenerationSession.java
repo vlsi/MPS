@@ -21,6 +21,7 @@ import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleReference;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
+import jetbrains.mps.projectLanguage.structure.LanguageReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
@@ -454,6 +455,7 @@ public class GenerationSession implements IGenerationSession {
       transientModules.add(context.getModule());
     }
 
+
     // collect all transient models
     List<SModelDescriptor> transientModels = new LinkedList<SModelDescriptor>();
     for (IModule module : transientModules) {
@@ -485,12 +487,12 @@ public class GenerationSession implements IGenerationSession {
     addModelRoot("", solutionDir, solutionDescriptor);
 
     // for all languages that really used add the LanguageRoot to the solution descriptor
-
     Set<String> uidsToAdd = new LinkedHashSet<String>();
+    Set<String> usedLanguages = new LinkedHashSet<String>();
 
     SModel sm = solutionDescriptor.getModel();
     for (SModelDescriptor descriptor : transientModels) {
-      uidsToAdd.addAll(descriptor.getSModel().getLanguageNamespaces(GlobalScope.getInstance()));
+      usedLanguages.addAll(descriptor.getSModel().getExplicitlyImportedLanguages());
       uidsToAdd.addAll(descriptor.getSModel().getDevKitNamespaces());
     }
 
@@ -512,6 +514,12 @@ public class GenerationSession implements IGenerationSession {
       ModuleReference mr = ModuleReference.newInstance(sm);
       mr.setName(uid);
       solutionDescriptor.addDependency(mr);
+    }
+
+    for (String language : usedLanguages) {
+      LanguageReference ref = LanguageReference.newInstance(sm);
+      ref.setName(language);
+      solutionDescriptor.addUsedLanguage(ref);
     }
 
     // discard all transient modules (and models)
