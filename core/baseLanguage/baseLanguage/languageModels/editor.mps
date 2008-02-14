@@ -11447,7 +11447,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1197028249488">
     <property name="package" value="dotExpression" />
-    <property name="name" value="OperationExpression_Actions_DeleteOperation" />
+    <property name="name" value="DotExpression_Actions_DeleteOperation" />
     <link role="applicableConcept" targetNodeId="17.1197027756228" resolveInfo="OperationExpression" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1197028333989">
       <property name="actionId" value="delete_action_id" />

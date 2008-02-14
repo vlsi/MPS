@@ -28,7 +28,7 @@ public class DotExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_OperationCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197028151463");
-    OperationExpression_Actions_DeleteOperation.setCellActions(editorCell, node, context);
+    DotExpression_Actions_DeleteOperation.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
