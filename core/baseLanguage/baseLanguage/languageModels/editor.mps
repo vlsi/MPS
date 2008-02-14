@@ -13765,6 +13765,7 @@
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
         <property name="attractsFocus" value="1" />
+        <property name="fontStyle" value="PLAIN" />
         <node role="focusPolicyApplicable" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1202948938339">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202948938340">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202948938341">
