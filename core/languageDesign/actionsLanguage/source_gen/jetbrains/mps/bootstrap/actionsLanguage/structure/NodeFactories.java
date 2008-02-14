@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeFactories extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories";
-  public static String NODE_FACTORY = "nodeFactory";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String NODE_FACTORY = "nodeFactory";
 
   public  NodeFactories(SNode node) {
     super(node);
@@ -29,14 +29,6 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
     return NodeFactories.newInstance(sm, false);
   }
 
-
-  public NodeFactory getNodeFactory() {
-    return (NodeFactory)this.getChild(NodeFactories.NODE_FACTORY);
-  }
-
-  public void setNodeFactory(NodeFactory node) {
-    super.setChild(NodeFactories.NODE_FACTORY, node);
-  }
 
   public String getName() {
     return this.getProperty(NodeFactories.NAME);
@@ -68,6 +60,14 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(NodeFactories.VIRTUAL_PACKAGE, value);
+  }
+
+  public NodeFactory getNodeFactory() {
+    return (NodeFactory)this.getChild(NodeFactories.NODE_FACTORY);
+  }
+
+  public void setNodeFactory(NodeFactory node) {
+    super.setChild(NodeFactories.NODE_FACTORY, node);
   }
 
 }

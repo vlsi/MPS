@@ -16,13 +16,15 @@ import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -70,7 +72,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1152144005896(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", operationContext.getScope());
       Calculable calc = new Calculable() {
 
         public Object calculate() {
@@ -118,44 +120,50 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1178286508713(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(concept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", _context.getCurrentTargetNode());
-          SPropertyOperations.set(direction, "value", "" + (true));
-          return direction;
-        }
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", _context.getCurrentTargetNode());
+            SPropertyOperations.set(direction, "value", "" + (true));
+            return direction;
+          }
 
-        public String getDescriptionText(String pattern) {
-          return "Sort in ascending order";
-        }
+          public String getDescriptionText(String pattern) {
+            return "Sort in ascending order";
+          }
 
-        public String getMatchingText(String pattern) {
-          return "asc";
-        }
+          public String getMatchingText(String pattern) {
+            return "asc";
+          }
 
-      });
+        });
+      }
     }
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(concept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", _context.getCurrentTargetNode());
-          SPropertyOperations.set(direction, "value", "" + (false));
-          return direction;
-        }
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", _context.getCurrentTargetNode());
+            SPropertyOperations.set(direction, "value", "" + (false));
+            return direction;
+          }
 
-        public String getDescriptionText(String pattern) {
-          return "Sort in descending order";
-        }
+          public String getDescriptionText(String pattern) {
+            return "Sort in descending order";
+          }
 
-        public String getMatchingText(String pattern) {
-          return "desc";
-        }
+          public String getMatchingText(String pattern) {
+            return "desc";
+          }
 
-      });
+        });
+      }
     }
     return result;
   }
@@ -168,7 +176,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_1201315808525(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("null", operationContext.getScope());
       Calculable calc = new Calculable() {
 
         public Object calculate() {
@@ -189,7 +197,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1151703707960(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("null", operationContext.getScope());
       result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
@@ -231,7 +239,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197932848431(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("null", operationContext.getScope());
       result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {

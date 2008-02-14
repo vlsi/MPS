@@ -12,7 +12,7 @@ import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
 import jetbrains.mps.util.Calculable;
@@ -71,8 +72,8 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TypeClause_1185801400389(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", operationContext.getScope());
-      ConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", operationContext.getScope());
+      AbstractConceptDeclaration wrappedConcept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
@@ -96,7 +97,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1201875763403(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation", operationContext.getScope());
+      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation", operationContext.getScope()));
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
@@ -106,7 +107,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1175609466956(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("null", operationContext.getScope());
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
