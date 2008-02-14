@@ -2855,7 +2855,7 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1201654801802">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1201654806742">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1201654806742">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201654806116">
                 <link role="variableDeclaration" targetNodeId="1197928280896" resolveInfo="map" />
               </node>
