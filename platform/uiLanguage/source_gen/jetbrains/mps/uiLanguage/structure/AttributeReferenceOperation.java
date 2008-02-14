@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AttributeReferenceOperation extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation";
-  public static String ATTRIBUTE = "attribute";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String ATTRIBUTE = "attribute";
 
   public  AttributeReferenceOperation(SNode node) {
     super(node);
@@ -28,14 +28,6 @@ public class AttributeReferenceOperation extends BaseConcept implements IOperati
     return AttributeReferenceOperation.newInstance(sm, false);
   }
 
-
-  public AttributeDeclaration getAttribute() {
-    return (AttributeDeclaration)this.getReferent(AttributeReferenceOperation.ATTRIBUTE);
-  }
-
-  public void setAttribute(AttributeDeclaration node) {
-    super.setReferent(AttributeReferenceOperation.ATTRIBUTE, node);
-  }
 
   public String getShortDescription() {
     return this.getProperty(AttributeReferenceOperation.SHORT_DESCRIPTION);
@@ -59,6 +51,14 @@ public class AttributeReferenceOperation extends BaseConcept implements IOperati
 
   public void setVirtualPackage(String value) {
     this.setProperty(AttributeReferenceOperation.VIRTUAL_PACKAGE, value);
+  }
+
+  public AttributeDeclaration getAttribute() {
+    return (AttributeDeclaration)this.getReferent(AttributeReferenceOperation.ATTRIBUTE);
+  }
+
+  public void setAttribute(AttributeDeclaration node) {
+    super.setReferent(AttributeReferenceOperation.ATTRIBUTE, node);
   }
 
 }
