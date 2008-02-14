@@ -3,7 +3,9 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="agreementLanguage.structure" version="-1" />
@@ -16,6 +18,7 @@
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1111784312737" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197675900933">
+        <link role="concept" targetNodeId="1.1111792102248" resolveInfo="Quantity" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemSubstitutePart" id="1197675911184">
           <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_Substitute_Handler" id="1197675911185">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197675911186">
