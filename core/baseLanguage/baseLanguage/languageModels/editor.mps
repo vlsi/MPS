@@ -13723,5 +13723,69 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202948896126">
+    <property name="package" value="operationExpression" />
+    <link role="conceptDeclaration" targetNodeId="17.1202948039474" resolveInfo="InstanceMethodCallOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202948902315">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1202948938317">
+        <property name="noTargetText" value="&lt;no method&gt;" />
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1202948736718" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1202948938318">
+          <link role="conceptDeclaration" targetNodeId="17.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1202948938319">
+            <property name="drawBorder" value="false" />
+            <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202948938335">
+        <property name="drawBorder" value="false" />
+        <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1202948938336">
+        <property name="separatorText" value="," />
+        <property name="vertical" value="false" />
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1068499141038" />
+        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202948938337">
+          <property name="editable" value="true" />
+          <property name="selectable" value="true" />
+          <property name="drawBorder" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202948938338">
+        <property name="editable" value="false" />
+        <property name="text" value=")" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="true" />
+        <property name="attractsFocus" value="1" />
+        <node role="focusPolicyApplicable" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1202948938339">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202948938340">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202948938341">
+              <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1202948938342">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202948938343">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1202948938344">
+                    <link role="link" targetNodeId="17.1068580123134" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202948938345">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1202949152591">
+                      <link role="link" targetNodeId="17.1202948736718" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1202948938347" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsEmptyOperation" id="1202948938348" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

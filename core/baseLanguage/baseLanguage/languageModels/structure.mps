@@ -2597,5 +2597,24 @@
       <link role="target" targetNodeId="1146644584814" resolveInfo="Visibility" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202948039474">
+    <property name="package" value="operationExpression" />
+    <property name="name" value="InstanceMethodCallOperation" />
+    <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1202948091038">
+      <link role="intfc" targetNodeId="1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202948736718">
+      <property name="targetCardinality" value="0..n" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="instanceMethodDeclaration" />
+      <link role="specializedLink" targetNodeId="1068499141037" />
+      <link role="target" targetNodeId="1068580123165" resolveInfo="InstanceMethodDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1202948805797">
+      <property name="value" value="instance method call" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
 </model>
 

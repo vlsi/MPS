@@ -40,6 +40,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new AnnotationInstanceValue_key_ReferentConstraint());
     this.myConstraints.add(new FieldReferenceOperation_fieldDeclaration_ReferentConstraint());
     this.myConstraints.add(new PropertyReference_property_ReferentConstraint());
+    this.myConstraints.add(new InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint());
     this.myConstraints.add(new Classifier_DefaultSearchScope());
     this.myConstraints.add(new ClassConcept_DefaultSearchScope());
     this.myConstraints.add(new Interface_DefaultSearchScope());
