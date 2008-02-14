@@ -20,7 +20,9 @@ public class NewModelDialog extends BaseDialog {
   private IOperationContext myContext;
   private JPanel myContentPane = new JPanel(new BorderLayout());
   private JTextField myModelName = new JTextField();
+  private JComboBox myModelStereotype = new JComboBox();
   private JComboBox myModelRoots = new JComboBox();
+
 
   public NewModelDialog(IOperationContext context) throws HeadlessException {
     super(context.getMainFrame(), "New Model");
@@ -29,13 +31,24 @@ public class NewModelDialog extends BaseDialog {
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(100, 100, 300, 200);
+    return new DialogDimensions(100, 100, 400, 500);
   }
 
   private void initContentPane() {
     JPanel mainPanel = new JPanel(new GridLayout(0, 1));
     mainPanel.add(new JLabel("Model Name:"));
     mainPanel.add(myModelName);
+
+
+    mainPanel.add(new JLabel("Stereotype:"));
+
+    myModelStereotype.setEditable(true);
+    myModelStereotype.setModel(new DefaultComboBoxModel(new Object[] {
+      "",
+      "templates"
+    }));
+
+    mainPanel.add(myModelStereotype);
 
     mainPanel.add(new JLabel("Model Root:"));
     mainPanel.add(myModelRoots);
@@ -71,8 +84,9 @@ public class NewModelDialog extends BaseDialog {
       return;
     }
 
-    if (SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(myModelName.getText())) != null) {
-      setErrorText("Model with a name " + myModelName.getText() + " is already exists");
+    SModelUID modelUID = new SModelUID(myModelName.getText(), myModelStereotype.getSelectedItem().toString());
+    if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
+      setErrorText("Model with an uid " + myModelName.getText() + " is already exists");
       return;
     }
 
@@ -82,7 +96,7 @@ public class NewModelDialog extends BaseDialog {
       return;
     }
 
-    SModelDescriptor model = myContext.getModule().createModel(SModelUID.fromString(myModelName.getText()), wrapper.myModelRoot);
+    SModelDescriptor model = myContext.getModule().createModel(modelUID, wrapper.myModelRoot);
 
     new ModelPropertiesDialog(model, myContext).showDialog();
 
