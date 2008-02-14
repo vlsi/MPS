@@ -386,7 +386,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123158">
     <property name="name" value="FieldReference" />
-    <property name="package" value="oldOperationExpression" />
+    <property name="package" value="oldDotExpression" />
     <link role="extends" targetNodeId="1068498886296" resolveInfo="VariableReference" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107216539974">
       <property name="value" value=".&lt;field&gt;" />
@@ -445,7 +445,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123163">
     <property name="name" value="InstanceMethodCall" />
-    <property name="package" value="oldOperationExpression" />
+    <property name="package" value="oldDotExpression" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107216670785">
       <property name="value" value=".&lt;method&gt;" />
@@ -2120,7 +2120,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1173176849460">
     <property name="name" value="ArrayLengthExpression" />
-    <property name="package" value="oldOperationExpression" />
+    <property name="package" value="oldDotExpression" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1173176867072">
       <property name="metaClass" value="aggregation" />

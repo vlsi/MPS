@@ -3277,7 +3277,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141241">
-    <property name="package" value="oldOperationExpression" />
+    <property name="package" value="oldDotExpression" />
     <link role="concept" targetNodeId="1.1068580123163" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1185034069547">
       <property name="name" value="eval" />
@@ -4049,7 +4049,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141404">
-    <property name="package" value="oldOperationExpression" />
+    <property name="package" value="oldDotExpression" />
     <link role="concept" targetNodeId="1.1068580123158" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141405">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141406" />
