@@ -19,7 +19,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202917370603">
         <property name="text" value="MPS layout" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202918262652" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202918262652">
+        <property name="selectable" value="false" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202917388293">
         <property name="selectable" value="false" />
         <property name="vertical" value="false" />
@@ -29,6 +31,7 @@
           <link role="relationDeclaration" targetNodeId="1.1202917118869" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202917455205">
             <property name="text" value="&lt;groups&gt;" />
+            <link role="styleClass" targetNodeId="1203012208595" resolveInfo="hint" />
           </node>
         </node>
       </node>
@@ -54,7 +57,9 @@
           <link role="relationDeclaration" targetNodeId="1.1202917075789" resolveInfo="basedir" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202917966227" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202917966227">
+        <property name="selectable" value="false" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202917834478">
         <property name="selectable" value="false" />
         <property name="vertical" value="false" />
@@ -65,10 +70,13 @@
           <link role="relationDeclaration" targetNodeId="1.1202917033163" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202917846124">
             <property name="text" value="&lt;groups&gt;" />
+            <link role="styleClass" targetNodeId="1203012208595" resolveInfo="hint" />
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202917935327" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202917935327">
+        <property name="selectable" value="false" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202917870082">
         <property name="selectable" value="false" />
         <property name="vertical" value="false" />
@@ -79,6 +87,7 @@
           <link role="relationDeclaration" targetNodeId="1.1202917324595" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202918069768">
             <property name="text" value="&lt;atoms&gt;" />
+            <link role="styleClass" targetNodeId="1203012208595" resolveInfo="hint" />
           </node>
         </node>
       </node>
@@ -96,6 +105,15 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1202918492019">
         <link role="relationDeclaration" targetNodeId="1.1202917307828" resolveInfo="basedir" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1203012198750">
+    <property name="name" value="MPSLayoutStyles" />
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1203012208595">
+      <property name="name" value="hint" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1203012217846">
+        <property name="color" value="lightGray" />
       </node>
     </node>
   </node>

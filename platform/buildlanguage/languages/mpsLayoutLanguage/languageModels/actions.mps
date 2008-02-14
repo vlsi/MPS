@@ -8,8 +8,11 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
+  <language namespace="jetbrains.mps.baseLanguage.strings" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
-  <maxImportIndex value="1" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.mpsLayoutLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.strings.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguageInternal.structure" version="-1" />
 </model>
 
