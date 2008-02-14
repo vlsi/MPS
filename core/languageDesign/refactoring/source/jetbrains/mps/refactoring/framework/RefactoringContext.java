@@ -270,7 +270,13 @@ public class RefactoringContext {
       if (exactConceptFeatures != null) {
         allConceptFeatures.addAll(exactConceptFeatures);
       }
-      Language l = node.getNodeLanguage();
+      Language l;
+      try {
+        l = node.getNodeLanguage();
+      } catch (IllegalStateException ex) {
+        LOG.error(ex);
+        continue;
+      }
       for (String parentConceptFQName : l.getParentNames(conceptFQName)) {
         Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(parentConceptFQName);
         if (conceptFeatures != null) {

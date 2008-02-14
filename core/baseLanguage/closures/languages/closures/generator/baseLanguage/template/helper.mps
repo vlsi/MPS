@@ -8,6 +8,7 @@
   <language namespace="jetbrains.mps.transformation.TLBase" />
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.core" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <maxImportIndex value="26" />
   <import index="14" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="15" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />

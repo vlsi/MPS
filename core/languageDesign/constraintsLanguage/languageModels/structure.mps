@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.constraintsLanguage.structure">
   <persistence version="1" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="overridenMethod" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" featureKind="REFERENCE" />
+          <value featureName="overriddenMethod" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structureConceptMethodDeclaration" featureKind="REFERENCE" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.core" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -472,7 +483,7 @@
     <property name="name" value="ConceptMethodDeclaration" />
     <link role="extends" targetNodeId="3.1068580123132" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177755346718">
-      <property name="role" value="overridenMethod" />
+      <property name="role" value="overriddenMethod" />
       <link role="target" targetNodeId="1177673300966" resolveInfo="ConceptMethodDeclaration" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1177676055874">

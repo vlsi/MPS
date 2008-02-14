@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.bootstrap.helgins.constraints">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
@@ -1453,7 +1455,7 @@
     <link role="concept" targetNodeId="1.1179479408386" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1188476088508">
       <property name="name" value="getPresentation" />
-      <link role="overridenMethod" targetNodeId="12.1180102203531" />
+      <link role="overriddenMethod" targetNodeId="12.1180102203531" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188476088510">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1188476144289">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1188476144290">
@@ -1547,7 +1549,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1188476348398">
       <property name="name" value="getPresentation" />
-      <link role="overridenMethod" targetNodeId="12.1180102203531" />
+      <link role="overriddenMethod" targetNodeId="12.1180102203531" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188476348400">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1188476355167">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1188476355168">

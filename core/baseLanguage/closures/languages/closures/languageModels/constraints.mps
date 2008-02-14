@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.closures.constraints">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.quotation" />
@@ -27,7 +29,7 @@
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199542742224">
       <property name="isPrivate" value="false" />
       <property name="name" value="getPresentation" />
-      <link role="overridenMethod" targetNodeId="2.1180102203531" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="2.1180102203531" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199542742226">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199542811925">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199542811926">
@@ -146,7 +148,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199543142958">
       <property name="name" value="getClassExpression" />
-      <link role="overridenMethod" targetNodeId="5.1194035415601" resolveInfo="getClassExpression" />
+      <link role="overriddenMethod" targetNodeId="5.1194035415601" resolveInfo="getClassExpression" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199543142960">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199543277913">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1199543277914">

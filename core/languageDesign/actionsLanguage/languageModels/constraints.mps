@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.bootstrap.actionsLanguage.constraints">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
@@ -209,7 +211,7 @@
     <link role="concept" targetNodeId="1.1177498227294" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199892745867">
       <property name="name" value="usesParameterObjectFor" />
-      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <link role="overriddenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199892745869">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199892756088">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199892756089">
@@ -246,7 +248,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179449936074">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="9.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="9.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179449936076">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1179450164320">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179450164321">
@@ -305,7 +307,7 @@
     <link role="concept" targetNodeId="1.1177337890340" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179453359684">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="9.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="9.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179453359686">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1179453383819">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179453383820">
@@ -449,7 +451,7 @@
     <link role="concept" targetNodeId="1.1177339225103" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199888832753">
       <property name="name" value="usesParameterObjectFor" />
-      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <link role="overriddenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199888832755">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199888852909">
           <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199888854398">
@@ -492,7 +494,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179454169679">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="9.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="9.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179454169681">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1179454257535">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179454257536">
@@ -551,7 +553,7 @@
     <link role="concept" targetNodeId="1.1179456248444" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199890100515">
       <property name="name" value="usesParameterObjectFor" />
-      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <link role="overriddenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199890100517">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199890116124">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199890347116">
@@ -569,7 +571,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179505886253">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="9.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="9.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179505886255">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1179505955567">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179505955568">
@@ -610,7 +612,7 @@
     <link role="concept" targetNodeId="1.1177508842676" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1180123466512">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="9.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="9.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180123466514">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1180123605984">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1180123605985">
@@ -687,7 +689,7 @@
     <link role="concept" targetNodeId="1.1177402571666" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199892143628">
       <property name="name" value="usesParameterObjectFor" />
-      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <link role="overriddenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199892143630">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199892164201">
           <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199892165894">
@@ -743,7 +745,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1180139329541">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="9.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="9.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180139329543">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1180139381086">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1180139381087">
@@ -802,7 +804,7 @@
     <link role="concept" targetNodeId="1.1177327570013" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199888357226">
       <property name="name" value="usesParameterObjectFor" />
-      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <link role="overriddenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199888357228">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199888361779">
           <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199888363502">
@@ -845,7 +847,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1180143207860">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="9.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="9.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180143207862">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1180143246053">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1180143246054">
@@ -904,7 +906,7 @@
     <link role="concept" targetNodeId="1.1177509289232" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199893077505">
       <property name="name" value="usesParameterObjectFor" />
-      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <link role="overriddenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199893077507">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199893081446">
           <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199893083722">
@@ -960,7 +962,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182823441479">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="9.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="9.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182823441481">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1182823490673">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1182823490674">
@@ -1019,7 +1021,7 @@
     <link role="concept" targetNodeId="1.1177526592562" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199893131863">
       <property name="name" value="usesParameterObjectFor" />
-      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <link role="overriddenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199893131865">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199893168630">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199893168631">
@@ -1075,7 +1077,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182823836840">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="9.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="9.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182823836842">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1182824001353">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1182824001354">
@@ -1123,7 +1125,7 @@
     <link role="concept" targetNodeId="1.1177413954598" resolveInfo="QueryFunction_RemoveBy_Condition" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199890993405">
       <property name="name" value="usesParameterObjectFor" />
-      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <link role="overriddenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199890993407">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199891006356">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1199891009235">
@@ -1157,7 +1159,7 @@
     <link role="concept" targetNodeId="1.1177498071304" resolveInfo="QueryFunction_RightTransform_String" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199892794995">
       <property name="name" value="usesParameterObjectFor" />
-      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <link role="overriddenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199892794997">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199892801422">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199892801423">

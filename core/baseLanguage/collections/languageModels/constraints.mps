@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.baseLanguage.ext.collections.lang.constraints">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
@@ -23,7 +25,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198891824010">
       <property name="name" value="getPresentation" />
-      <link role="overridenMethod" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198891824012">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198892042041">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198892025501">
@@ -55,7 +57,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1186061352090">
       <property name="name" value="getVariableSuffixes" />
-      <link role="overridenMethod" targetNodeId="8.1182416669983" />
+      <link role="overriddenMethod" targetNodeId="8.1182416669983" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061352092">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1186061366134">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1186061366135">
@@ -138,7 +140,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1187947134659">
       <property name="name" value="getAbstractCreator" />
-      <link role="overridenMethod" targetNodeId="8.1187945523562" />
+      <link role="overriddenMethod" targetNodeId="8.1187945523562" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187947134661">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1187947158876">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187947158877">
@@ -196,7 +198,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198892760259">
       <property name="name" value="getPresentation" />
-      <link role="overridenMethod" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198892760261">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198892873240">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198892777046">
@@ -228,7 +230,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1186061132398">
       <property name="name" value="getVariableSuffixes" />
-      <link role="overridenMethod" targetNodeId="8.1182416669983" />
+      <link role="overriddenMethod" targetNodeId="8.1182416669983" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061132400">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1186061158201">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1186061158202">
@@ -311,7 +313,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1187947295437">
       <property name="name" value="getAbstractCreator" />
-      <link role="overridenMethod" targetNodeId="8.1187945523562" />
+      <link role="overriddenMethod" targetNodeId="8.1187945523562" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187947295439">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1187947330646">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1198892856016">
@@ -436,7 +438,7 @@
     <link role="concept" targetNodeId="1.1197683403723" resolveInfo="MapType" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198892067162">
       <property name="name" value="getPresentation" />
-      <link role="overridenMethod" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="9.1180102203531" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198892067164">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198892594775">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198892594776">
@@ -486,7 +488,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197928398416">
       <property name="name" value="getAbstractCreator" />
-      <link role="overridenMethod" targetNodeId="8.1187945523562" resolveInfo="getAbstractCreator" />
+      <link role="overriddenMethod" targetNodeId="8.1187945523562" resolveInfo="getAbstractCreator" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197928398418">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197928435409">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197928435410">

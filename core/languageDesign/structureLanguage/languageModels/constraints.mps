@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.bootstrap.structureLanguage.constraints">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
@@ -19,7 +21,7 @@
   <import index="8" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="9" modelUID="java.lang@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints@java_stub" version="-1" />
-  <import index="14" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
+  <import index="14" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <import index="17" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
@@ -1251,7 +1253,7 @@
     <link role="concept" targetNodeId="1.1071489288298" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199063473952">
       <property name="name" value="getPresentation" />
-      <link role="overridenMethod" targetNodeId="22.1180102203531" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="22.1180102203531" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199063473954">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199063503107">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199063504578">
@@ -1538,7 +1540,7 @@
     <link role="concept" targetNodeId="1.1082978164219" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182473436982">
       <property name="name" value="toBaseLanguageType" />
-      <link role="overridenMethod" targetNodeId="1182472765133" resolveInfo="toBaseLanguageType" />
+      <link role="overriddenMethod" targetNodeId="1182472765133" resolveInfo="toBaseLanguageType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182473436984">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1182473494675">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1182473494676">
@@ -1682,7 +1684,7 @@
     <link role="concept" targetNodeId="1.1083243159079" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182472952533">
       <property name="name" value="toBaseLanguageType" />
-      <link role="overridenMethod" targetNodeId="1182472765133" resolveInfo="toBaseLanguageType" />
+      <link role="overriddenMethod" targetNodeId="1182472765133" resolveInfo="toBaseLanguageType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182472952535">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1182473131943">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1182473159066">
@@ -1748,7 +1750,7 @@
     <link role="concept" targetNodeId="1.1082978499127" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182473378643">
       <property name="name" value="toBaseLanguageType" />
-      <link role="overridenMethod" targetNodeId="1182472765133" resolveInfo="toBaseLanguageType" />
+      <link role="overriddenMethod" targetNodeId="1182472765133" resolveInfo="toBaseLanguageType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182473378645">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1182473388803">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196795981715">

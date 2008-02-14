@@ -11,6 +11,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.quotation" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <maxImportIndex value="47" />
   <import index="1" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />

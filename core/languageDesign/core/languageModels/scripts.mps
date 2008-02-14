@@ -11,7 +11,9 @@
   <language namespace="jetbrains.mps.logging.refactoring" />
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.core" />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.monitorLanguage" />
   <maxImportIndex value="26" />
@@ -26,7 +28,7 @@
   <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <import index="11" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="12" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
+  <import index="12" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
   <import index="14" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />

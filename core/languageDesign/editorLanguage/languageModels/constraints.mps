@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.bootstrap.editorLanguage.constraints">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
@@ -683,7 +685,7 @@
     <link role="concept" targetNodeId="1.1165270999881" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179773569680">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="13.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="13.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179773569682">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1179773692626">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1179773769226">
@@ -784,7 +786,7 @@
     <link role="concept" targetNodeId="1.1165270662927" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179777761215">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="13.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="13.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179777761217">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1179777859555">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179777859556">
@@ -864,7 +866,7 @@
     <link role="concept" targetNodeId="1.1165339307433" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179781307736">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="13.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="13.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179781307738">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1179781323779">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1179781323780">
@@ -965,7 +967,7 @@
     <link role="concept" targetNodeId="1.1163613035599" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1180022177962">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="13.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="13.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180022177964">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1180022266014">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1180022266015">

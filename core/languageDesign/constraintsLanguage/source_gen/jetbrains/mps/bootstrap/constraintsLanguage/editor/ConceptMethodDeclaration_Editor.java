@@ -4,14 +4,14 @@ package jetbrains.mps.bootstrap.constraintsLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -24,9 +24,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -35,66 +32,13 @@ import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
 
 public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
-
-  public static boolean _QueryFunction_NodeCondition_1177755613626(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isPrivate");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177755613633(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isPrivate"));
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177755613641(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isVirtual");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177758934224(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177755665241(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "overridenMethod", false) != null;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177758985554(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177759001115(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177758971749(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177758958929(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177760244173(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177755751557(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isPrivate")) && SLinkOperations.getTarget(node, "overridenMethod", false) == null;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177755728221(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isVirtual")) && (SLinkOperations.getTarget(node, "overridenMethod", false) == null);
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177758876012(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isVirtual");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177755844974(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isVirtual")) && !(SPropertyOperations.getBoolean(node, "isPrivate"));
-  }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755613625");
@@ -146,7 +90,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755630515");
   }
 
-  private static void setupBasic_OverridenMethodReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_OverriddenMethodReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755650425");
   }
 
@@ -241,7 +185,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755559399");
   }
 
-  private static void setupBasic_OverridenMethodReferenceCell1(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_OverriddenMethodReferenceCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177755570354");
   }
 
@@ -292,7 +236,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
 
-  private static void setupLabel_OverridenMethodReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_OverriddenMethodReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell9(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -334,7 +278,63 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell17(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_OverridenMethodReferenceCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_OverriddenMethodReferenceCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177755613626(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isPrivate");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177755613633(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isPrivate"));
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177755613641(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isVirtual");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177758934224(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177755665241(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "overriddenMethod", false) != null;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177758985554(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177759001115(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177758971749(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177758958929(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177760244173(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177755751557(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isPrivate")) && SLinkOperations.getTarget(node, "overriddenMethod", false) == null;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177755728221(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isVirtual")) && (SLinkOperations.getTarget(node, "overriddenMethod", false) == null);
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177758876012(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isVirtual");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177755844974(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isVirtual")) && !(SPropertyOperations.getBoolean(node, "isPrivate"));
   }
 
 
@@ -380,7 +380,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell7(context, node, "  "));
     editorCell.addEditorCell(this.createConstantCell8(context, node, "overrides"));
-    editorCell.addEditorCell(this.createOverridenMethodReferenceCell(context, node));
+    editorCell.addEditorCell(this.createOverriddenMethodReferenceCell(context, node));
     return editorCell;
   }
 
@@ -483,7 +483,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell17(context, node, "overrides"));
-    editorCell.addEditorCell(this.createOverridenMethodReferenceCell1(context, node));
+    editorCell.addEditorCell(this.createOverriddenMethodReferenceCell1(context, node));
     return editorCell;
   }
 
@@ -718,25 +718,25 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createOverridenMethodReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createOverriddenMethodReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline7());
     EditorCell editorCell = provider.createEditorCell(context);
-    ConceptMethodDeclaration_Editor.setupBasic_OverridenMethodReferenceCell(editorCell, node, context);
+    ConceptMethodDeclaration_Editor.setupBasic_OverriddenMethodReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ConceptMethodDeclaration_Editor.setupLabel_OverridenMethodReferenceCell((EditorCell_Label)editorCell, node, context);
+      ConceptMethodDeclaration_Editor.setupLabel_OverriddenMethodReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createOverridenMethodReferenceCell(EditorContext context, SNode node) {
+  public EditorCell createOverriddenMethodReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("overridenMethod");
+    provider.setRole("overriddenMethod");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createOverridenMethodReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createOverriddenMethodReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
@@ -863,25 +863,25 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createOverridenMethodReferenceCell1internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createOverriddenMethodReferenceCell1internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline8());
     EditorCell editorCell = provider.createEditorCell(context);
-    ConceptMethodDeclaration_Editor.setupBasic_OverridenMethodReferenceCell1(editorCell, node, context);
+    ConceptMethodDeclaration_Editor.setupBasic_OverriddenMethodReferenceCell1(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ConceptMethodDeclaration_Editor.setupLabel_OverridenMethodReferenceCell1((EditorCell_Label)editorCell, node, context);
+      ConceptMethodDeclaration_Editor.setupLabel_OverriddenMethodReferenceCell1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createOverridenMethodReferenceCell1(EditorContext context, SNode node) {
+  public EditorCell createOverriddenMethodReferenceCell1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("overridenMethod");
+    provider.setRole("overriddenMethod");
     provider.setNoTargetText("<no overriden method>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createOverridenMethodReferenceCell1internal(context, node, provider);
+    EditorCell cellWithRole = this.createOverriddenMethodReferenceCell1internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
@@ -892,45 +892,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class ConceptMethodDeclaration_component_cellMenu implements ISubstituteInfoPart {
-
-    /* package */ConceptMethodDeclaration_Visibility myComponent;
-
-    public  ConceptMethodDeclaration_component_cellMenu() {
-      this.myComponent = new ConceptMethodDeclaration_Visibility();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class ConceptMethodDeclaration_component_cellMenu1 implements ISubstituteInfoPart {
-
-    /* package */ConceptMethodDeclaration_Visibility myComponent;
-
-    public  ConceptMethodDeclaration_component_cellMenu1() {
-      this.myComponent = new ConceptMethodDeclaration_Visibility();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class ConceptMethodDeclaration_component_cellMenu2 implements ISubstituteInfoPart {
-
-    /* package */ConceptMethodDeclaration_Menu myComponent;
-
-    public  ConceptMethodDeclaration_component_cellMenu2() {
-      this.myComponent = new ConceptMethodDeclaration_Menu();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
   public static class _Inline7 extends AbstractCellProvider {
 
     public  _Inline7() {
@@ -1101,6 +1062,45 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       ConceptMethodDeclaration_Editor._RefNodeListHandler6.setupLabel_ConstantCell5(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
+    }
+
+}
+  public static class ConceptMethodDeclaration_component_cellMenu implements ISubstituteInfoPart {
+
+    /* package */ConceptMethodDeclaration_Visibility myComponent;
+
+    public  ConceptMethodDeclaration_component_cellMenu() {
+      this.myComponent = new ConceptMethodDeclaration_Visibility();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+
+}
+  public static class ConceptMethodDeclaration_component_cellMenu1 implements ISubstituteInfoPart {
+
+    /* package */ConceptMethodDeclaration_Visibility myComponent;
+
+    public  ConceptMethodDeclaration_component_cellMenu1() {
+      this.myComponent = new ConceptMethodDeclaration_Visibility();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+
+}
+  public static class ConceptMethodDeclaration_component_cellMenu2 implements ISubstituteInfoPart {
+
+    /* package */ConceptMethodDeclaration_Menu myComponent;
+
+    public  ConceptMethodDeclaration_component_cellMenu2() {
+      this.myComponent = new ConceptMethodDeclaration_Menu();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
     }
 
 }

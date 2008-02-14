@@ -9,6 +9,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.ypath" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <maxImportIndex value="13" />
   <import index="1" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />

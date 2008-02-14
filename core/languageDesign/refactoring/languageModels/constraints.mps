@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.logging.refactoring.constraints">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
@@ -114,7 +116,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197984913388">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="7.1178571276073" resolveInfo="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="7.1178571276073" resolveInfo="getExpectedReturnType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197984913390">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197985146313">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197985146314">
@@ -163,7 +165,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198599776488">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="7.1178571276073" resolveInfo="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="7.1178571276073" resolveInfo="getExpectedReturnType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198599776490">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198599792361">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198599865164">

@@ -8,6 +8,7 @@
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />

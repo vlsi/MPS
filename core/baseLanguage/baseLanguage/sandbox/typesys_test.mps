@@ -10,6 +10,7 @@
   </language>
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.core" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="java.util@java_stub" version="-1" />

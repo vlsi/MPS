@@ -16,6 +16,7 @@
   <language namespace="jetbrains.mps.closures">
     <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   </language>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="java.util@java_stub" version="-1" />
   <import index="2" modelUID="org.w3c.dom@java_stub" version="-1" />

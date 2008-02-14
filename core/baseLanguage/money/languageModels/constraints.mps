@@ -2,7 +2,9 @@
 <model name="jetbrains.accounting.money.constraints">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <maxImportIndex value="4" />
@@ -35,7 +37,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1187947883380">
       <property name="name" value="getAbstractCreator" />
-      <link role="overridenMethod" targetNodeId="4.1187945523562" />
+      <link role="overriddenMethod" targetNodeId="4.1187945523562" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187947883382">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1187947965112">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187947965113">

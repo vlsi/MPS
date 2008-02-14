@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.transformation.TLBase.constraints">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
@@ -35,7 +37,7 @@
     <link role="concept" targetNodeId="1.1167514355419" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200921917360">
       <property name="name" value="getTemplateType" />
-      <link role="overridenMethod" targetNodeId="1200921606270" resolveInfo="getTemplateType" />
+      <link role="overriddenMethod" targetNodeId="1200921606270" resolveInfo="getTemplateType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200921917362">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1200921920677">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200921934215">
@@ -202,7 +204,7 @@
     <link role="concept" targetNodeId="1.1167756080639" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182451414286">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="3.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="3.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182451414288">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1182451619401">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1182451619402">
@@ -362,7 +364,7 @@
     <link role="concept" targetNodeId="1.1167770111131" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182459909920">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="3.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="3.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182459909922">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1182459995008">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1182459995009">
@@ -547,7 +549,7 @@
     <link role="concept" targetNodeId="1.1198101033452" resolveInfo="TypeOrStringType" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198105077931">
       <property name="name" value="getPresentation" />
-      <link role="overridenMethod" targetNodeId="12.1180102203531" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="12.1180102203531" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198105077933">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198105115625">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1198105125285">
@@ -1504,7 +1506,7 @@
     <link role="concept" targetNodeId="1.1167327847730" resolveInfo="Reduction_MappingRule" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200921861203">
       <property name="name" value="getTemplateType" />
-      <link role="overridenMethod" targetNodeId="1200921606270" resolveInfo="getTemplateType" />
+      <link role="overriddenMethod" targetNodeId="1200921606270" resolveInfo="getTemplateType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200921861205">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1200921864910">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200921869667">
@@ -1531,7 +1533,7 @@
     <link role="concept" targetNodeId="1.1167171569011" resolveInfo="Weaving_MappingRule" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200921940644">
       <property name="name" value="getTemplateType" />
-      <link role="overridenMethod" targetNodeId="1200921606270" resolveInfo="getTemplateType" />
+      <link role="overriddenMethod" targetNodeId="1200921606270" resolveInfo="getTemplateType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200921940646">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1200921944586">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200921948437">
@@ -1558,7 +1560,7 @@
     <link role="concept" targetNodeId="1.1118786554307" resolveInfo="LoopMacro" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201259031432">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
-      <link role="overridenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
+      <link role="overriddenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201259031434">
         <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1201259044858">
           <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1201259054883">
@@ -1615,7 +1617,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201258402078">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
-      <link role="overridenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
+      <link role="overriddenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201258402080">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201258509001">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201258509002">
@@ -1668,7 +1670,7 @@
     <link role="concept" targetNodeId="1.1114706874351" resolveInfo="CopySrcNodeMacro" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201258786237">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
-      <link role="overridenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
+      <link role="overriddenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1201258788569" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201258803381">
         <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1201258856784">
@@ -1713,7 +1715,7 @@
     <link role="concept" targetNodeId="1.1194565793557" resolveInfo="IncludeMacro" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201258942079">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
-      <link role="overridenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
+      <link role="overriddenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201258942081">
         <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1201258968825">
           <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1201258977745">
@@ -1763,7 +1765,7 @@
     <link role="concept" targetNodeId="1.1133037731736" resolveInfo="MapSrcListMacro" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201259124340">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
-      <link role="overridenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
+      <link role="overriddenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201259124342">
         <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1201259156255">
           <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1201259156256">
@@ -1810,7 +1812,7 @@
     <link role="concept" targetNodeId="1.1112731569622" resolveInfo="SwitchMacro" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201259204106">
       <property name="name" value="getInputNodeTypeInsideOfMacro" />
-      <link role="overridenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
+      <link role="overriddenMethod" targetNodeId="1201256059880" resolveInfo="getInputNodeTypeInsideOfMacro" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201259204108">
         <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1201259213033">
           <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1201259213034">

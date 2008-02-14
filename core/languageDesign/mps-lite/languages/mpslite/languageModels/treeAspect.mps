@@ -13,6 +13,7 @@
   </language>
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.core" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mpslite.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mpslite.constraints" version="-1" />

@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.ypath.constraints">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
@@ -35,7 +37,7 @@
     <link role="concept" targetNodeId="1.1168428529658" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184345381945">
       <property name="name" value="getPresentation" />
-      <link role="overridenMethod" targetNodeId="12.1180102203531" />
+      <link role="overriddenMethod" targetNodeId="12.1180102203531" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184345381947">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1184345477702">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1184345509453">
@@ -67,7 +69,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1187948042730">
       <property name="name" value="getAbstractCreator" />
-      <link role="overridenMethod" targetNodeId="10.1187945523562" />
+      <link role="overriddenMethod" targetNodeId="10.1187945523562" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187948042732">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1187948064253">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187948064254">
@@ -333,7 +335,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179573502028">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179573502030">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179573516536">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196779275834">
@@ -974,7 +976,7 @@
     <link role="concept" targetNodeId="1.1168428668253" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179573615575">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179573615577">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179573626907">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1179573678364">
@@ -1223,7 +1225,7 @@
     <link role="concept" targetNodeId="1.1183978641483" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1183979240563">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183979240565">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1183979305634">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1183979305635">
@@ -1270,7 +1272,7 @@
     <link role="concept" targetNodeId="1.1183978693009" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1183979546076">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183979546078">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1183979553590">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196779275867">
@@ -1291,7 +1293,7 @@
     <link role="concept" targetNodeId="1.1184064321014" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184064349509">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184064349511">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1184064495278">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1184064495279">
@@ -2106,7 +2108,7 @@
     <link role="concept" targetNodeId="1.1184593387281" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184593649703">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184593649705">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1184606695480">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1184606695481">
@@ -2179,7 +2181,7 @@
     <link role="concept" targetNodeId="1.1184603621091" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184606210586">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184606210588">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1184606221879">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196779275893">
@@ -2200,7 +2202,7 @@
     <link role="concept" targetNodeId="1.1184659771596" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184661019991">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184661019993">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1184661036493">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196779275895">
@@ -4803,7 +4805,7 @@
     <link role="concept" targetNodeId="1.1190798501119" resolveInfo="GenericParamFeature" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1191842732090">
       <property name="name" value="isSingleCardinality" />
-      <link role="overridenMethod" targetNodeId="1191862685760" resolveInfo="isSingleCardinality" />
+      <link role="overriddenMethod" targetNodeId="1191862685760" resolveInfo="isSingleCardinality" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1191842732092">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1191842788199">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1191843226223">
@@ -4852,7 +4854,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1191868340719">
       <property name="name" value="getterExpression" />
-      <link role="overridenMethod" targetNodeId="1191865774161" resolveInfo="getterExpression" />
+      <link role="overriddenMethod" targetNodeId="1191865774161" resolveInfo="getterExpression" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1191868340721">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1192792266676">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1192792276191">
@@ -4921,7 +4923,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194808638282">
       <property name="name" value="replaceStatement" />
-      <link role="overridenMethod" targetNodeId="1194808495467" resolveInfo="replaceExpression" />
+      <link role="overriddenMethod" targetNodeId="1194808495467" resolveInfo="replaceExpression" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194808638284">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1194810683795">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1194810690533">
@@ -5008,7 +5010,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195432387690">
       <property name="name" value="removeStatement" />
-      <link role="overridenMethod" targetNodeId="1195432050864" resolveInfo="removeExpression" />
+      <link role="overriddenMethod" targetNodeId="1195432050864" resolveInfo="removeExpression" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195432387692">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195432485909">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1195432491836">
@@ -5086,7 +5088,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195432394152">
       <property name="name" value="insertStatement" />
-      <link role="overridenMethod" targetNodeId="1195432326179" resolveInfo="insertExpression" />
+      <link role="overriddenMethod" targetNodeId="1195432326179" resolveInfo="insertExpression" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195432394154">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195432541476">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1195432546252">
@@ -5259,7 +5261,7 @@
     <link role="concept" targetNodeId="1.1194182910610" resolveInfo="WritePathType" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194183928008">
       <property name="name" value="getPresentation" />
-      <link role="overridenMethod" targetNodeId="12.1180102203531" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="12.1180102203531" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194183928010">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1194183960490">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1194183966661">
@@ -6411,7 +6413,7 @@
     <link role="concept" targetNodeId="1.1196857052853" resolveInfo="GFGetterFun" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196866059469">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866059470">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196866059471">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196866059472">
@@ -6434,7 +6436,7 @@
     <link role="concept" targetNodeId="1.1196856873176" resolveInfo="GFCardinalFun" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196866086572">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866086573">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196866086574">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196866086575">
@@ -6455,7 +6457,7 @@
     <link role="concept" targetNodeId="1.1196858018384" resolveInfo="GFInserterFun" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196866107698">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866107699">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196866107700">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196866107701">
@@ -6478,7 +6480,7 @@
     <link role="concept" targetNodeId="1.1196858411075" resolveInfo="GFRemoverFun" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196866131107">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866131108">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196866131109">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196866131110">
@@ -6501,7 +6503,7 @@
     <link role="concept" targetNodeId="1.1196858724203" resolveInfo="GFReplacerFun" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196866149965">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
+      <link role="overriddenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866149966">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196866149967">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196866149968">
@@ -6524,7 +6526,7 @@
     <link role="concept" targetNodeId="1.1196865276807" resolveInfo="GenericFeature" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196899704217">
       <property name="name" value="isSingleCardinality" />
-      <link role="overridenMethod" targetNodeId="1191862685760" resolveInfo="isSingleCardinality" />
+      <link role="overriddenMethod" targetNodeId="1191862685760" resolveInfo="isSingleCardinality" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196899704218">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196899704219">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1196899734743">
@@ -6542,7 +6544,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196899704237">
       <property name="name" value="getterExpression" />
-      <link role="overridenMethod" targetNodeId="1191865774161" resolveInfo="getterExpression" />
+      <link role="overriddenMethod" targetNodeId="1191865774161" resolveInfo="getterExpression" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196899704238">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196899704239">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1196899704240">
@@ -6582,7 +6584,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196899704264">
       <property name="name" value="replaceStatement" />
-      <link role="overridenMethod" targetNodeId="1194808495467" resolveInfo="replaceStatement" />
+      <link role="overriddenMethod" targetNodeId="1194808495467" resolveInfo="replaceStatement" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196899704265">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196899704266">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1196900572844" />
@@ -6624,7 +6626,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196899704296">
       <property name="name" value="removeStatement" />
-      <link role="overridenMethod" targetNodeId="1195432050864" resolveInfo="removeStatement" />
+      <link role="overriddenMethod" targetNodeId="1195432050864" resolveInfo="removeStatement" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196899704297">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196899704298">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1196900594274" />
@@ -6660,7 +6662,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196899704325">
       <property name="name" value="insertStatement" />
-      <link role="overridenMethod" targetNodeId="1195432326179" resolveInfo="insertStatement" />
+      <link role="overriddenMethod" targetNodeId="1195432326179" resolveInfo="insertStatement" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196899704326">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196899704327">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1196900602808" />

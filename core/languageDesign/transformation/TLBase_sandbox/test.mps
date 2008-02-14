@@ -12,6 +12,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="java.util@java_stub" version="-1" />

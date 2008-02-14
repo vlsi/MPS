@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.bootstrap.constraintsLanguage.constraints">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
@@ -12,7 +14,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.quotation" />
   <maxImportIndex value="18" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel.constraints@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -750,7 +752,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199987480717">
       <property name="name" value="getMembers" />
-      <link role="overridenMethod" targetNodeId="17.1194952456574" resolveInfo="getMembers" />
+      <link role="overriddenMethod" targetNodeId="17.1194952456574" resolveInfo="getMembers" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199987480719">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199987504498">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199987504499">
@@ -1150,7 +1152,7 @@
     <link role="concept" targetNodeId="1.1147467790433" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182475726044">
       <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="17.1178571276073" />
+      <link role="overriddenMethod" targetNodeId="17.1178571276073" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182475726046">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1182475788358">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1182475788359">

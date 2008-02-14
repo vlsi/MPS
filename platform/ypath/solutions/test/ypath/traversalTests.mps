@@ -12,6 +12,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.ypath" />
   <language namespace="jetbrains.mps.quotation" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="org.w3c.dom@java_stub" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
