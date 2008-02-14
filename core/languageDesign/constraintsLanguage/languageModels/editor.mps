@@ -9,7 +9,7 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="13" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="-1" />
@@ -1096,6 +1096,16 @@
             <link role="relationDeclaration" targetNodeId="1.1202989765072" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202989778152">
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203001305478">
+            <property name="text" value="can be a parent" />
+            <link role="styleClass" targetNodeId="11.1186415544875" resolveInfo="KeyWord" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1203001310813">
+            <link role="relationDeclaration" targetNodeId="1.1203001290417" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203001313051">
             <property name="selectable" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177672247973">

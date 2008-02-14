@@ -6,6 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
+import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 import jetbrains.mps.util.NameUtil;
 
 import java.lang.reflect.InvocationTargetException;
@@ -25,9 +26,8 @@ public final class BehaviorManager {
     return ourInstance;
   }
 
-  private Map<String, Method> myDefaultConceptNameMethods = new HashMap<String, Method>();
   private Map<String, Method> myCanBeAChildMethods = new HashMap<String, Method>();
-
+  private Map<String, Method> myDefaultConceptNameMethods = new HashMap<String, Method>();
 
   private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
   private Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
@@ -35,6 +35,7 @@ public final class BehaviorManager {
   public void clear() {
     myMethods.clear();
     myConstructors.clear();
+    myCanBeAChildMethods.clear();
     myDefaultConceptNameMethods.clear();
   }
 
