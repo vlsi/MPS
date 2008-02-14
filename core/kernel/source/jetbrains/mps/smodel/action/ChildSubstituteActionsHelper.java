@@ -270,7 +270,13 @@ public class ChildSubstituteActionsHelper {
       }
     } else {
       String conceptFqName = NameUtil.nodeFQName(applicableConcept);
-      if (BehaviorManager.getInstance().isApplicableInContext(conceptFqName, operationContext, parentNode)) {
+      SNode link = null;
+      if (setter instanceof DefaultChildNodeSetter) {
+        DefaultChildNodeSetter defaultSetter = (DefaultChildNodeSetter) setter;
+        link = defaultSetter.getLinkDeclaration().getNode();
+      }
+
+      if (BehaviorManager.getInstance().isApplicableInContext(conceptFqName, operationContext, parentNode, link)) {
         return CollectionUtil.asList((INodeSubstituteAction) new DefaultChildNodeSubstituteAction(BaseAdapter.fromAdapter(applicableConcept), parentNode, currentChild, setter, scope));
       } else {
         return new ArrayList<INodeSubstituteAction>();

@@ -121,7 +121,7 @@ public final class BehaviorManager {
     return result;
   }
 
-  public boolean isApplicableInContext(String fqName, IOperationContext context, SNode parentNode) {
+  public boolean isApplicableInContext(String fqName, IOperationContext context, SNode parentNode, SNode link) {
     IScope scope = context.getScope();
 
     String behaviorClass = behaviorClassByConceptFqName(fqName);
@@ -141,7 +141,7 @@ public final class BehaviorManager {
 
           try {
             if (m != null) {
-              return (Boolean) m.invoke(null, context, new CanBeAChildContext(parentNode));
+              return (Boolean) m.invoke(null, context, new CanBeAChildContext(parentNode, link));
             }
           } catch (IllegalAccessException e) {
             LOG.error(e);
