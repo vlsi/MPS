@@ -192,14 +192,6 @@ public abstract class AbstractModule implements IModule {
     return list;
   }
 
-  public void registerModelDescriptor(SModelDescriptor modelDescriptor) {
-    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
-  }
-
-  public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor) {
-    SModelRepository.getInstance().unRegisterModelDescriptor(modelDescriptor, this);
-  }
-
   public SModelDescriptor createModel(SModelUID uid, ModelRoot root) {
     IModelRootManager manager = ModelRootsUtil.getManagerFor(root);
 

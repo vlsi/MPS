@@ -34,9 +34,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   List<Language> getUsedLanguages();
   List<IModule> getDependOnModules();
 
-  void registerModelDescriptor(SModelDescriptor modelDescriptor);
-  void unRegisterModelDescriptor(SModelDescriptor modelDescriptor);
-
   SModelDescriptor createModel(SModelUID uid, ModelRoot root);
 
   IFile getDescriptorFile();
@@ -57,7 +54,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   IClassPathItem getJavaStubsClassPathItem();
   IClassPathItem getModuleWithDependenciesClassPathItem();
-
 
   boolean isCompileInMPS();
   void invalidateCaches();
