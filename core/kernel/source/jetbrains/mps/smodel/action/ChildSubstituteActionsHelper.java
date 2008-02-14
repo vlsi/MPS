@@ -189,7 +189,6 @@ public class ChildSubstituteActionsHelper {
         }
 
         if (conceptNode == null) {
-          it.remove();
           continue;
         }
 
