@@ -10,7 +10,7 @@ public class GenerateTextFromCurrentModelAction extends GenerateCurrentModelActi
 
   @NotNull
   public String getKeyStroke() {
-    return "control shift F10";
+    return "shift F10";
   }
 
   public IGenerationType getGenerationType() {

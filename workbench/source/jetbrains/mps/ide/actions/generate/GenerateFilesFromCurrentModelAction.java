@@ -10,7 +10,7 @@ public class GenerateFilesFromCurrentModelAction extends GenerateCurrentModelAct
 
   @NotNull
   public String getKeyStroke() {
-    return "control shift F9";
+    return "shift F9";
   }
 
   public IGenerationType getGenerationType() {
