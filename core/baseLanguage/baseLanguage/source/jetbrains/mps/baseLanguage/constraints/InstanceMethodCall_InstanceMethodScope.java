@@ -13,12 +13,19 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
  */
 public class InstanceMethodCall_InstanceMethodScope extends VisibleClassifierMembersScope {
   private ClassifierType myInstanceType;
-  private InstanceMethodCall myMethodCall;
+  private BaseMethodCall myMethodCall;
 
   public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, InstanceMethodCall methodCall) {
     super(instanceType.getClassifier(), methodCall.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
     myInstanceType = instanceType;
     myMethodCall = methodCall;
+
+  }
+
+  public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, InstanceMethodCallOperation methodCallOperation) {
+    super(instanceType.getClassifier(), methodCallOperation.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
+    myInstanceType = instanceType;
+    myMethodCall = methodCallOperation;
 
   }
 
