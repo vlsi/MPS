@@ -11,10 +11,13 @@ import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -22,14 +25,12 @@ import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.util.NameUtil;
 
 public class QueriesGenerated {
 
@@ -40,25 +41,28 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1197638405388(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.Expression", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(concept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.Expression", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
-        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          int value = Integer.parseInt(pattern);
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.nanoj.structure.NumberExpression", null);
-          SPropertyOperations.set(result, "number", "" + (value));
-          return result;
-        }
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            int value = Integer.parseInt(pattern);
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.nanoj.structure.NumberExpression", null);
+            SPropertyOperations.set(result, "number", "" + (value));
+            return result;
+          }
 
-        public boolean hasSubstitute() {
-          return true;
-        }
+          public boolean hasSubstitute() {
+            return true;
+          }
 
-        public boolean canSubstitute_internal(String pattern) {
-          return _PrecompiledPatterns.REGEXP.matcher(pattern).matches();
-        }
+          public boolean canSubstitute_internal(String pattern) {
+            return _PrecompiledPatterns.REGEXP.matcher(pattern).matches();
+          }
 
-      });
+        });
+      }
     }
     return result;
   }
@@ -66,8 +70,8 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1197638405422(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.Statement", operationContext.getScope());
-      ConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.LocalVariableDeclaration", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.Statement", operationContext.getScope());
+      AbstractConceptDeclaration wrappedConcept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.LocalVariableDeclaration", operationContext.getScope());
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
@@ -91,8 +95,8 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1197638405443(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.Statement", operationContext.getScope());
-      ConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.Expression", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.Statement", operationContext.getScope());
+      AbstractConceptDeclaration wrappedConcept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.Expression", operationContext.getScope());
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
@@ -116,8 +120,8 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LocalVariableDeclaration_1197638405464(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.LocalVariableDeclaration", operationContext.getScope());
-      ConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.Type", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.LocalVariableDeclaration", operationContext.getScope());
+      AbstractConceptDeclaration wrappedConcept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.Type", operationContext.getScope());
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
@@ -141,8 +145,8 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterDeclaration_1197638405485(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.ParameterDeclaration", operationContext.getScope());
-      ConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.Type", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.ParameterDeclaration", operationContext.getScope());
+      AbstractConceptDeclaration wrappedConcept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.Type", operationContext.getScope());
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
@@ -166,8 +170,8 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_FieldDeclaration_1197638405506(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.FieldDeclaration", operationContext.getScope());
-      ConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.Type", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.FieldDeclaration", operationContext.getScope());
+      AbstractConceptDeclaration wrappedConcept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.Type", operationContext.getScope());
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
@@ -191,7 +195,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ExpressionDotOperation_1197638405562(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.ClassAccess", operationContext.getScope());
+      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.nanoj.structure.ClassAccess", operationContext.getScope()));
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
@@ -201,7 +205,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197638405527(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("null", operationContext.getScope());
       result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
@@ -239,7 +243,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197638405577(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("null", operationContext.getScope());
       Calculable calculable = new Calculable() {
 
         public Object calculate() {

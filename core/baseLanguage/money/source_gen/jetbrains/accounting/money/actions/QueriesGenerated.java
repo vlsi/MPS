@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -19,20 +19,20 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class QueriesGenerated {
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1187360495057(final IOperationContext operationContext, final RTActionsBuilderContext _parameterObject) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1187360495057(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), "jetbrains.accounting.money.structure.MoneyType")) {
-            SNode mgcmc = SModelOperations.createNewNode(_parameterObject.getModel(), "jetbrains.accounting.money.structure.MoneyGetCurrencyMethodCall", null);
-            SNodeOperations.replaceWithAnother(_parameterObject.getSourceNode(), mgcmc);
-            SLinkOperations.setTarget(mgcmc, "instance", _parameterObject.getSourceNode(), true);
+          if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.accounting.money.structure.MoneyType")) {
+            SNode mgcmc = SModelOperations.createNewNode(_context.getModel(), "jetbrains.accounting.money.structure.MoneyGetCurrencyMethodCall", null);
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
+            SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
             return mgcmc;
           }
-          return _parameterObject.getSourceNode();
+          return _context.getSourceNode();
         }
 
         public String getMatchingText(String pattern) {
@@ -46,17 +46,17 @@ public class QueriesGenerated {
       });
     }
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), "jetbrains.accounting.money.structure.MoneyType")) {
-            SNode mgcmc = SModelOperations.createNewNode(_parameterObject.getModel(), "jetbrains.accounting.money.structure.MoneyIsZeroMethodCall", null);
-            SNodeOperations.replaceWithAnother(_parameterObject.getSourceNode(), mgcmc);
-            SLinkOperations.setTarget(mgcmc, "instance", _parameterObject.getSourceNode(), true);
+          if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.accounting.money.structure.MoneyType")) {
+            SNode mgcmc = SModelOperations.createNewNode(_context.getModel(), "jetbrains.accounting.money.structure.MoneyIsZeroMethodCall", null);
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
+            SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
             return mgcmc;
           }
-          return _parameterObject.getSourceNode();
+          return _context.getSourceNode();
         }
 
         public String getMatchingText(String pattern) {
@@ -70,17 +70,17 @@ public class QueriesGenerated {
       });
     }
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), "jetbrains.accounting.money.structure.MoneyType")) {
-            SNode mgcmc = SModelOperations.createNewNode(_parameterObject.getModel(), "jetbrains.accounting.money.structure.MoneyGetAmountMethodCall", null);
-            SNodeOperations.replaceWithAnother(_parameterObject.getSourceNode(), mgcmc);
-            SLinkOperations.setTarget(mgcmc, "instance", _parameterObject.getSourceNode(), true);
+          if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.accounting.money.structure.MoneyType")) {
+            SNode mgcmc = SModelOperations.createNewNode(_context.getModel(), "jetbrains.accounting.money.structure.MoneyGetAmountMethodCall", null);
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
+            SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
             return mgcmc;
           }
-          return _parameterObject.getSourceNode();
+          return _context.getSourceNode();
         }
 
         public String getMatchingText(String pattern) {
