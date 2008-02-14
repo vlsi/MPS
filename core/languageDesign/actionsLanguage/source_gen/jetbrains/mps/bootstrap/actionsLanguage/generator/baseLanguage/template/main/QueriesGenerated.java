@@ -69,7 +69,7 @@ public class QueriesGenerated {
     SNode outputConcept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false);
     if(outputConcept == null) {
       _context.getGenerator().showWarningMessage(SNodeOperations.getParent(_context.getNode(), null, false, false), "output concept is not specified");
-      return "?no output concept specified?";
+      return "?output concept is not specified?";
     }
     return NameUtil.nodeFQName(outputConcept);
   }
@@ -81,7 +81,8 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1177399369144(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode concept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false);
     if((concept == null)) {
-      _context.getGenerator().showErrorMessage(_context.getNode(), _context.getTemplateNode(), "missing output concept");
+      _context.getGenerator().showErrorMessage(_context.getNode(), _context.getTemplateNode(), "output concept is not specified");
+      return "?output concept is not specified?";
     }
     return NameUtil.nodeFQName(concept);
   }
