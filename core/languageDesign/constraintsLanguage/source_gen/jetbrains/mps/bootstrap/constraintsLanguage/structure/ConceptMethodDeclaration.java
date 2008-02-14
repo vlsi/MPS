@@ -10,10 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptMethodDeclaration extends BaseMethodDeclaration {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration";
+  public static String OVERRIDEN_METHOD = "overridenMethod";
   public static String IS_VIRTUAL = "isVirtual";
   public static String IS_PRIVATE = "isPrivate";
   public static String IS_ABSTRACT = "isAbstract";
-  public static String OVERRIDEN_METHOD = "overridenMethod";
 
   public  ConceptMethodDeclaration(SNode node) {
     super(node);
@@ -27,6 +27,14 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration {
     return ConceptMethodDeclaration.newInstance(sm, false);
   }
 
+
+  public ConceptMethodDeclaration getOverridenMethod() {
+    return (ConceptMethodDeclaration)this.getReferent(ConceptMethodDeclaration.OVERRIDEN_METHOD);
+  }
+
+  public void setOverridenMethod(ConceptMethodDeclaration node) {
+    super.setReferent(ConceptMethodDeclaration.OVERRIDEN_METHOD, node);
+  }
 
   public boolean getIsVirtual() {
     return this.getBooleanProperty(ConceptMethodDeclaration.IS_VIRTUAL);
@@ -50,14 +58,6 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration {
 
   public void setIsAbstract(boolean value) {
     this.setBooleanProperty(ConceptMethodDeclaration.IS_ABSTRACT, value);
-  }
-
-  public ConceptMethodDeclaration getOverridenMethod() {
-    return (ConceptMethodDeclaration)this.getReferent(ConceptMethodDeclaration.OVERRIDEN_METHOD);
-  }
-
-  public void setOverridenMethod(ConceptMethodDeclaration node) {
-    super.setReferent(ConceptMethodDeclaration.OVERRIDEN_METHOD, node);
   }
 
 }

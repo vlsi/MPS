@@ -1038,12 +1038,12 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177670628052">
           <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1201037081234">
-            <property name="selectable" value="false" />
-          </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1201037112829">
             <property name="selectable" value="false" />
             <property name="vertical" value="true" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202990058463">
+              <property name="selectable" value="false" />
+            </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1201037127396">
               <property name="selectable" value="false" />
               <property name="vertical" value="false" />
@@ -1082,6 +1082,20 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202989779529">
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202989780594">
+            <property name="text" value="can create" />
+            <link role="styleClass" targetNodeId="11.1186415544875" resolveInfo="KeyWord" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202989789065">
+            <property name="noTargetText" value="&lt;no can create block&gt;" />
+            <link role="relationDeclaration" targetNodeId="1.1202989765072" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202989778152">
+            <property name="selectable" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177672247973">
             <link role="relationDeclaration" targetNodeId="1.1177672163851" />

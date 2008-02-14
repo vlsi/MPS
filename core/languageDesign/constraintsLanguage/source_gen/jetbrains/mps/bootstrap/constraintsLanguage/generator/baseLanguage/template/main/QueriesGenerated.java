@@ -270,6 +270,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "searchScopeCanCreate", true) == null;
   }
 
+  public static boolean ifMacro_Condition_1202990166610(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "canCreate", true) != null;
+  }
+
   public static boolean ifMacro_Condition_1201044836362(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false) != null);
   }
@@ -332,6 +336,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1194605404279(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return Type_Behavior.call_getClassExpression_1194035415601(SLinkOperations.getTarget(_context.getNode(), "type", true));
+  }
+
+  public static SNode sourceNodeQuery_1202990149752(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canCreate", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1177676686820(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

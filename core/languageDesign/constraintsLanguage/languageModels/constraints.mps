@@ -1236,5 +1236,51 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182475723887" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1202990245105">
+    <property name="package" value="Functions" />
+    <link role="concept" targetNodeId="1.1202989531578" resolveInfo="ConstraintFunction_CanCreate" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1202990247171">
+      <property name="name" value="usesParameterObjectFor" />
+      <link role="overridenMethod" targetNodeId="17.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202990247173">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1202990251708">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1202990252570">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1202990250393">
+        <property name="name" value="parameter" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1202990250394">
+          <link role="concept" targetNodeId="12.1107135704075" resolveInfo="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1202990250395" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1202990245106">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202990245107" />
+    </node>
+    <node role="canCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanCreate" id="1202990284286">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202990284287">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202990305505">
+          <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1202990305506" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202990336117">
+          <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_childConcept" id="1202990336118" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202990331002">
+          <node role="expression" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1202990331003" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202990332411">
+          <node role="expression" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1202990332412" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1202990349403">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1202990350265">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
