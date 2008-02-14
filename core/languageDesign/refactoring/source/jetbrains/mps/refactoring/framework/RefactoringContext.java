@@ -196,7 +196,7 @@ public class RefactoringContext {
       node.delete();
     }
     targetModel.validateLanguagesAndImports();
-   // targetModel.addImportedModel(sourceModel.getUID());
+    // targetModel.addImportedModel(sourceModel.getUID());
     myCachesAreUpToDate = false;
     return targetNodes;
   }
@@ -249,9 +249,12 @@ public class RefactoringContext {
 
       //updating concept features' names
       String conceptFQName = node.getConceptFqName();
-      Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
-      if (conceptFeatures != null) {
-        for (ConceptFeature conceptFeature : conceptFeatures) {
+
+
+      //only this concept
+      Set<ConceptFeature> exactConceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
+      if (exactConceptFeatures != null) {
+        for (ConceptFeature conceptFeature : exactConceptFeatures) {
           ConceptFeature newConceptFeature = myConceptFeatureMap.get(conceptFeature);
           ConceptFeatureKind kind = conceptFeature.getConceptFeatureKind();
 
@@ -259,40 +262,59 @@ public class RefactoringContext {
             String newConceptFQName = newConceptFeature.getConceptFQName();
             node.setConceptFqName(newConceptFQName);
           }
+        }
+      }
 
-          if (kind == ConceptFeatureKind.REFERENCE) {
-            String oldRole = conceptFeature.getFeatureName();
-            String newRole = newConceptFeature.getFeatureName();
-            for (SReference reference : node.getReferences()) {
-              if (reference.getRole().equals(oldRole)) {
-                reference.setRole(newRole);
-              }
-            }
-            for (SNode linkAttribute : node.getLinkAttributesForLinkRole(oldRole)) {
-              String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRole_());
-              linkAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromLinkAttributeRole(linkAttributeRole, newRole));
+      //this concept and parents
+      Set<ConceptFeature> allConceptFeatures = new HashSet<ConceptFeature>();
+      if (exactConceptFeatures != null) {
+        allConceptFeatures.addAll(exactConceptFeatures);
+      }
+      Language l = node.getNodeLanguage();
+      for (String parentConceptFQName : l.getParentNames(conceptFQName)) {
+        Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(parentConceptFQName);
+        if (conceptFeatures != null) {
+          allConceptFeatures.addAll(conceptFeatures);
+        }
+      }
+
+
+      for (ConceptFeature conceptFeature : allConceptFeatures) {
+        ConceptFeature newConceptFeature = myConceptFeatureMap.get(conceptFeature);
+        ConceptFeatureKind kind = conceptFeature.getConceptFeatureKind();
+
+        if (kind == ConceptFeatureKind.REFERENCE) {
+          String oldRole = conceptFeature.getFeatureName();
+          String newRole = newConceptFeature.getFeatureName();
+          for (SReference reference : node.getReferences()) {
+            if (reference.getRole().equals(oldRole)) {
+              reference.setRole(newRole);
             }
           }
+          for (SNode linkAttribute : node.getLinkAttributesForLinkRole(oldRole)) {
+            String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRole_());
+            linkAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromLinkAttributeRole(linkAttributeRole, newRole));
+          }
+        }
 
-          if (kind == ConceptFeatureKind.CHILD) {
-            String oldRole = conceptFeature.getFeatureName();
-            String newRole = newConceptFeature.getFeatureName();
-            for (SNode child : node.getChildren()) {
-              String childRole = child.getRole_();
-              if (childRole != null && childRole.equals(oldRole)) {
-                child.setRoleInParent(newRole);
-              }
+        if (kind == ConceptFeatureKind.CHILD) {
+          String oldRole = conceptFeature.getFeatureName();
+          String newRole = newConceptFeature.getFeatureName();
+          for (SNode child : node.getChildren()) {
+            String childRole = child.getRole_();
+            if (childRole != null && childRole.equals(oldRole)) {
+              child.setRoleInParent(newRole);
             }
           }
+        }
 
-          if (kind == ConceptFeatureKind.PROPERTY) {
-            String oldName = conceptFeature.getFeatureName();
-            String newName = newConceptFeature.getFeatureName();
-            node.changePropertyName(oldName, newName);
-            for (SNode propertyAttribute : node.getPropertyAttributesForPropertyName(oldName)) {
-              String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRole_());
-              propertyAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
-            }
+        if (kind == ConceptFeatureKind.PROPERTY) {
+          String oldName = conceptFeature.getFeatureName();
+          String newName = newConceptFeature.getFeatureName();
+          node.changePropertyName(oldName, newName);
+          for (SNode propertyAttribute : node.getPropertyAttributesForPropertyName(oldName)) {
+            String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRole_());
+            propertyAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
           }
         }
       }
@@ -349,12 +371,12 @@ public class RefactoringContext {
     {
       Element moveMapElement = new Element(MOVE_MAP);
       List<Entry<FullNodeId, FullNodeId>> entries = new ArrayList<Entry<FullNodeId, FullNodeId>>(myMoveMap.entrySet());
-        Collections.sort(entries,
+      Collections.sort(entries,
         new Comparator<Entry<FullNodeId, FullNodeId>>() {
-        public int compare(Entry<FullNodeId, FullNodeId> o1, Entry<FullNodeId, FullNodeId> o2) {
-          return o1.getKey().compareTo(o2.getKey()) * 10 + o1.getValue().compareTo(o2.getValue());
-        }
-      });
+          public int compare(Entry<FullNodeId, FullNodeId> o1, Entry<FullNodeId, FullNodeId> o2) {
+            return o1.getKey().compareTo(o2.getKey()) * 10 + o1.getValue().compareTo(o2.getValue());
+          }
+        });
       for (Entry<FullNodeId, FullNodeId> entry : entries) {
         Element entryElement = new Element(ENTRY);
         Element keyElement = new Element(KEY);
@@ -370,12 +392,12 @@ public class RefactoringContext {
     {
       Element featureMapElement = new Element(CONCEPT_FEATURE_MAP);
       List<Entry<ConceptFeature, ConceptFeature>> entries = new ArrayList<Entry<ConceptFeature, ConceptFeature>>(myConceptFeatureMap.entrySet());
-        Collections.sort(entries,
+      Collections.sort(entries,
         new Comparator<Entry<ConceptFeature, ConceptFeature>>() {
-        public int compare(Entry<ConceptFeature, ConceptFeature> o1, Entry<ConceptFeature, ConceptFeature> o2) {
-          return o1.getKey().compareTo(o2.getKey()) * 10 + o1.getValue().compareTo(o2.getValue());
-        }
-      });
+          public int compare(Entry<ConceptFeature, ConceptFeature> o1, Entry<ConceptFeature, ConceptFeature> o2) {
+            return o1.getKey().compareTo(o2.getKey()) * 10 + o1.getValue().compareTo(o2.getValue());
+          }
+        });
       for (Entry<ConceptFeature, ConceptFeature> entry : entries) {
         Element entryElement = new Element(ENTRY);
         Element keyElement = new Element(KEY);
@@ -426,7 +448,7 @@ public class RefactoringContext {
       String className = refactoringElement.getAttributeValue(REFACTORING_CLASS);
       try {
         String namespace = NameUtil.namespaceFromLongName(
-                NameUtil.namespaceFromLongName(className));//remove ".scripts.%ClassName%"
+          NameUtil.namespaceFromLongName(className));//remove ".scripts.%ClassName%"
         Language l = MPSModuleRepository.getInstance().getLanguage(namespace);
         if (l == null) {
           LOG.errorWithTrace("can't find a language " + namespace);
