@@ -1087,7 +1087,7 @@
             <property name="selectable" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202989780594">
-            <property name="text" value="can create" />
+            <property name="text" value="can be a child" />
             <link role="styleClass" targetNodeId="11.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1202989789065">

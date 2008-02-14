@@ -18,16 +18,16 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior";
   public static String CONSTRUCTOR = "constructor";
   public static String DEFAULT_SCOPE = "defaultScope";
-  public static String CAN_CREATE = "canCreate";
+  public static String CAN_BE_A_CHILD = "canBeAChild";
   public static String PROPERTIES = "properties";
   public static String REFERENCES = "references";
   public static String METHOD = "method";
-  public static String CONCEPT = "concept";
-  public static String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String CONCEPT = "concept";
+  public static String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
 
   public  ConceptBehavior(SNode node) {
     super(node);
@@ -58,12 +58,12 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
     super.setChild(ConceptBehavior.DEFAULT_SCOPE, node);
   }
 
-  public ConstraintFunction_CanCreate getCanCreate() {
-    return (ConstraintFunction_CanCreate)this.getChild(ConceptBehavior.CAN_CREATE);
+  public ConstraintFunction_CanBeAChild getCanBeAChild() {
+    return (ConstraintFunction_CanBeAChild)this.getChild(ConceptBehavior.CAN_BE_A_CHILD);
   }
 
-  public void setCanCreate(ConstraintFunction_CanCreate node) {
-    super.setChild(ConceptBehavior.CAN_CREATE, node);
+  public void setCanBeAChild(ConstraintFunction_CanBeAChild node) {
+    super.setChild(ConceptBehavior.CAN_BE_A_CHILD, node);
   }
 
   public int getPropertiesesCount() {
@@ -126,22 +126,6 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
     this.insertChild(prev, ConceptBehavior.METHOD, node);
   }
 
-  public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
-  }
-
-  public void setConcept(AbstractConceptDeclaration node) {
-    super.setReferent(ConceptBehavior.CONCEPT, node);
-  }
-
-  public ConceptDeclaration getDefaultConcreteConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT);
-  }
-
-  public void setDefaultConcreteConcept(ConceptDeclaration node) {
-    super.setReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT, node);
-  }
-
   public String getName() {
     return this.getProperty(ConceptBehavior.NAME);
   }
@@ -172,6 +156,22 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConceptBehavior.VIRTUAL_PACKAGE, value);
+  }
+
+  public AbstractConceptDeclaration getConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
+  }
+
+  public void setConcept(AbstractConceptDeclaration node) {
+    super.setReferent(ConceptBehavior.CONCEPT, node);
+  }
+
+  public ConceptDeclaration getDefaultConcreteConcept() {
+    return (ConceptDeclaration)this.getReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT);
+  }
+
+  public void setDefaultConcreteConcept(ConceptDeclaration node) {
+    super.setReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT, node);
   }
 
 }

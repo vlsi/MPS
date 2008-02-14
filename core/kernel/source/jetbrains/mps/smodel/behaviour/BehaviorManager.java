@@ -5,7 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.constraints.CanCreateContext;
+import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.util.NameUtil;
 
 import java.lang.reflect.InvocationTargetException;
@@ -25,8 +25,11 @@ public final class BehaviorManager {
     return ourInstance;
   }
 
-  private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
   private Map<String, Method> myDefaultConceptNameMethods = new HashMap<String, Method>();
+  private Map<String, Method> myCanBeAChildMethods = new HashMap<String, Method>();
+
+
+  private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
   private Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
 
   public void clear() {
@@ -126,16 +129,25 @@ public final class BehaviorManager {
       Class cls = language.getClass(behaviorClass);
       if (cls != null) {
         try {
-          Method m = cls.getMethod(BehaviorConstants.CAN_CREATE_METHOD_NAME, IOperationContext.class, CanCreateContext.class);
+          Method m;
+          if (myCanBeAChildMethods.containsKey(fqName)) {
+            m = myCanBeAChildMethods.get(fqName);
+          } else {
+            m = cls.getMethod(BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
+            myCanBeAChildMethods.put(fqName, m);
+          }
 
           try {
-            return (Boolean) m.invoke(null, context, new CanCreateContext(parentNode));
+            if (m != null) {
+              return (Boolean) m.invoke(null, context, new CanBeAChildContext(parentNode));
+            }
           } catch (IllegalAccessException e) {
             LOG.error(e);
           } catch (InvocationTargetException e) {
             LOG.error(e);
           }
-        } catch (NoSuchMethodException e) {          
+        } catch (NoSuchMethodException e) {
+          myCanBeAChildMethods.put(fqName, null);
         }
       }
     }

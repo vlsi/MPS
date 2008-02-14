@@ -3,10 +3,10 @@ package jetbrains.mps.smodel.constraints;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 
-public class CanCreateContext {
+public class CanBeAChildContext {
   private SNode myParentNode;
 
-  public CanCreateContext(SNode parentNode) {
+  public CanBeAChildContext(SNode parentNode) {
     myParentNode = parentNode;
   }
 

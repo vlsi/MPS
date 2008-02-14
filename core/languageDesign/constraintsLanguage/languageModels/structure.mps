@@ -442,7 +442,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202989765072">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="canCreate" />
+      <property name="role" value="canBeAChild" />
       <link role="target" targetNodeId="1202989531578" resolveInfo="ConstraintFunction_CanCreate" />
     </node>
   </node>
@@ -506,7 +506,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202989531578">
     <property name="package" value="Functions" />
-    <property name="name" value="ConstraintFunction_CanCreate" />
+    <property name="name" value="ConstraintFunction_CanBeAChild" />
     <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1202989590205">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />

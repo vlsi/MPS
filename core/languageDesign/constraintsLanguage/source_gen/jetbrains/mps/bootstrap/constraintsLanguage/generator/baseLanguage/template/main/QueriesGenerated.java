@@ -16,8 +16,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.NodePropertyConstraint_Behavior;
-import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
+import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -150,6 +150,10 @@ public class QueriesGenerated {
     return "PARAMETERS_" + _context.getNode().getId();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1202992934826(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME;
+  }
+
   public static Object propertyMacro_GetPropertyValue_1201044963790(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false));
   }
@@ -271,7 +275,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1202990166610(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "canCreate", true) != null;
+    return SLinkOperations.getTarget(_context.getNode(), "canBeAChild", true) != null;
   }
 
   public static boolean ifMacro_Condition_1201044836362(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -339,7 +343,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1202990149752(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canCreate", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canBeAChild", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1177676686820(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
