@@ -9,15 +9,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemberContainer {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior";
-  public static String CONCEPT = "concept";
-  public static String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
+  public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String CONSTRUCTOR = "constructor";
   public static String DEFAULT_SCOPE = "defaultScope";
   public static String CAN_BE_A_CHILD = "canBeAChild";
@@ -25,10 +27,8 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   public static String PROPERTIES = "properties";
   public static String REFERENCES = "references";
   public static String METHOD = "method";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String CONCEPT = "concept";
+  public static String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
 
   public  ConceptBehavior(SNode node) {
     super(node);
@@ -43,20 +43,36 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
 
-  public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
+  public String getName() {
+    return this.getProperty(ConceptBehavior.NAME);
   }
 
-  public void setConcept(AbstractConceptDeclaration node) {
-    super.setReferent(ConceptBehavior.CONCEPT, node);
+  public void setName(String value) {
+    this.setProperty(ConceptBehavior.NAME, value);
   }
 
-  public ConceptDeclaration getDefaultConcreteConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT);
+  public String getShortDescription() {
+    return this.getProperty(ConceptBehavior.SHORT_DESCRIPTION);
   }
 
-  public void setDefaultConcreteConcept(ConceptDeclaration node) {
-    super.setReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT, node);
+  public void setShortDescription(String value) {
+    this.setProperty(ConceptBehavior.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ConceptBehavior.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ConceptBehavior.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ConceptBehavior.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ConceptBehavior.VIRTUAL_PACKAGE, value);
   }
 
   public ConceptConstructorDeclaration getConstructor() {
@@ -151,36 +167,20 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
     this.insertChild(prev, ConceptBehavior.METHOD, node);
   }
 
-  public String getName() {
-    return this.getProperty(ConceptBehavior.NAME);
+  public AbstractConceptDeclaration getConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
   }
 
-  public void setName(String value) {
-    this.setProperty(ConceptBehavior.NAME, value);
+  public void setConcept(AbstractConceptDeclaration node) {
+    super.setReferent(ConceptBehavior.CONCEPT, node);
   }
 
-  public String getShortDescription() {
-    return this.getProperty(ConceptBehavior.SHORT_DESCRIPTION);
+  public ConceptDeclaration getDefaultConcreteConcept() {
+    return (ConceptDeclaration)this.getReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT);
   }
 
-  public void setShortDescription(String value) {
-    this.setProperty(ConceptBehavior.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(ConceptBehavior.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(ConceptBehavior.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(ConceptBehavior.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(ConceptBehavior.VIRTUAL_PACKAGE, value);
+  public void setDefaultConcreteConcept(ConceptDeclaration node) {
+    super.setReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT, node);
   }
 
 }

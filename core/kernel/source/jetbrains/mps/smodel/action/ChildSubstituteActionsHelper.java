@@ -170,6 +170,8 @@ public class ChildSubstituteActionsHelper {
     }
 
     if (childSetter instanceof DefaultChildNodeSetter) {
+      DefaultChildNodeSetter settter = (DefaultChildNodeSetter) childSetter;
+
       Iterator<INodeSubstituteAction> it = resultActions.iterator();
       while (it.hasNext()) {
         INodeSubstituteAction action = it.next();
@@ -192,7 +194,7 @@ public class ChildSubstituteActionsHelper {
           continue;
         }
 
-        if (!BehaviorManager.getInstance().canHaveAChild(parentNode, conceptNode, context)) {
+        if (!BehaviorManager.getInstance().canHaveAChild(parentNode, conceptNode, settter.myLinkDeclaration.getNode(), context)) {
           it.remove();
         }
       }

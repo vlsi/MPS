@@ -157,7 +157,7 @@ public final class BehaviorManager {
     return true;
   }
 
-  public boolean canHaveAChild(SNode parentNode, SNode childConcept, IOperationContext context) {
+  public boolean canHaveAChild(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
     IScope scope = context.getScope();
     String fqName = parentNode.getConceptFqName();
     String behaviorClass = behaviorClassByConceptFqName(fqName);
@@ -178,7 +178,7 @@ public final class BehaviorManager {
 
           try {
             if (m != null) {
-              return (Boolean) m.invoke(null, context, new CanBeAParentContext(parentNode, childConcept));
+              return (Boolean) m.invoke(null, context, new CanBeAParentContext(parentNode, childConcept, link));
             }
           } catch (IllegalAccessException e) {
             LOG.error(e);
