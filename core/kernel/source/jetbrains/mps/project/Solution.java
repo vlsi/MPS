@@ -177,6 +177,7 @@ public class Solution extends AbstractModule {
       if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) continue;
       result.add(sm.getLongName());
     }
+    collectPackages(result, "");
     return result;
   }
 }
