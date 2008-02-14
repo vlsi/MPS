@@ -7,7 +7,7 @@
   <language namespace="jetbrains.mps.bootstrap.intentionsLanguage" />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />

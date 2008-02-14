@@ -7,9 +7,9 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1194281818853">
     <property name="name" value="MakeVirtual" />
     <link role="forConcept" targetNodeId="1.1177673300966" resolveInfo="ConceptMethodDeclaration" />

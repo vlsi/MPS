@@ -12,7 +12,7 @@
   <language namespace="jetbrains.mps.ide.scriptLanguage" />
   <language namespace="jetbrains.mps.logging.refactoring" />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   </language>
   <maxImportIndex value="23" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -27,7 +27,7 @@
   <import index="10" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="12" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
-  <import index="13" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  <import index="13" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <import index="14" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure@java_stub" version="-1" />

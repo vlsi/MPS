@@ -275,6 +275,11 @@ public class RefactoringContext {
         l = node.getNodeLanguage();
       } catch (IllegalStateException ex) {
         LOG.error(ex);
+        try {
+          node.getNodeLanguage();
+        } catch (Throwable t) {
+
+        }
         continue;
       }
       for (String parentConceptFQName : l.getParentNames(conceptFQName)) {

@@ -7,7 +7,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.intentionsLanguage" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="webr.logging.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />

@@ -3,7 +3,7 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
@@ -22,7 +22,7 @@
   <import index="7" modelUID="jetbrains.mps.bootstrap.smodelLanguage@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="11" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
-  <import index="12" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  <import index="12" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <import index="15" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <import index="16" modelUID="java.lang@java_stub" version="-1" />
