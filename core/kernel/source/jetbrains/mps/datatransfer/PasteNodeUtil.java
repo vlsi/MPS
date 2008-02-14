@@ -78,11 +78,11 @@ public class PasteNodeUtil {
 
     String role_ = role != null ? role : pasteTarget.getRole_();
 
-    boolean canPasteToRoot = canPasteToRoot(pasteTarget, pasteNode, operationContext);
+    boolean canPasteToRoot = canPasteToRoot(pasteTarget, pasteNode);
     boolean canPasteToTarget = canPasteToTarget(pasteTarget, pasteNode, role_);
 
-    //priorities differ wrt invoker
     if (projectPane != null && invoker == projectPane) {
+      // project pane
       if (canPasteToRoot) {
         return PASTE_TO_ROOT;
       }
@@ -91,12 +91,10 @@ public class PasteNodeUtil {
         return PASTE_TO_TARGET;
       }
     } else {
+      // editor pane
       if (canPasteToTarget) {
         return PASTE_TO_TARGET;
       }
-/*      if (canPasteToRoot) {
-        return PASTE_TO_ROOT;
-      }*/
     }
 
     if (canPasteToParent(pasteTarget, pasteNode, role_)) {
@@ -105,10 +103,11 @@ public class PasteNodeUtil {
     return PASTE_N_A;
   }
 
-  private static boolean canPasteToRoot(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext) {
+  private static boolean canPasteToRoot(SNode pasteTarget, SNode pasteNode) {
     if (pasteNode == null) return false;
-    final ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(pasteNode.getConceptFqName(), operationContext.getScope());
-    return (pasteTarget.getParent() == null && conceptDeclaration.getRootable());
+    final AbstractConceptDeclaration conceptDeclaration = pasteNode.getConceptDeclarationAdapter();
+    return (pasteTarget.getParent() == null &&
+      (conceptDeclaration instanceof ConceptDeclaration && ((ConceptDeclaration) conceptDeclaration).getRootable()));
   }
 
   private static boolean canPasteToTarget(SNode pasteTarget, SNode pasteNode, String role) {
