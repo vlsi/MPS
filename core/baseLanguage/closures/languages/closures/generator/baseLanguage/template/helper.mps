@@ -307,9 +307,87 @@
                 </node>
               </node>
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1202834425013">
-              <link role="classifier" targetNodeId="17.~Boolean" resolveInfo="Boolean" />
-              <link role="variableDeclaration" targetNodeId="17.~Boolean.TRUE" resolveInfo="TRUE" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203004396121">
+              <link role="variableDeclaration" targetNodeId="1203004377159" resolveInfo="flag" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203005405107">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203005405108">
+            <property name="name" value="allFlagged" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203005405109">
+              <link role="classifier" targetNodeId="21.~List" resolveInfo="List" />
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1203005405110" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1203005405111">
+              <link role="baseMethodDeclaration" targetNodeId="1203005358300" resolveInfo="getAllFlagged" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203005405112">
+                <link role="variableDeclaration" targetNodeId="1202834361671" resolveInfo="generator" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203005416462">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203005416463">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203005426832">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1203005430164">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1203005431936">
+                  <link role="baseMethodDeclaration" targetNodeId="21.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+                  <node role="typeParameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1203005435417" />
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203005426833">
+                  <link role="variableDeclaration" targetNodeId="1203005405108" resolveInfo="allFlagged" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203005448441">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203005448993">
+                <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putSessionObject(java.lang.Object,java.lang.Object):void" resolveInfo="putSessionObject" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203005448994">
+                  <link role="baseMethodDeclaration" targetNodeId="15.~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203005448995">
+                    <link role="variableDeclaration" targetNodeId="1202834361671" resolveInfo="generator" />
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203005448996">
+                  <property name="value" value="all_flagged" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203005458456">
+                  <link role="variableDeclaration" targetNodeId="1203005405108" resolveInfo="allFlagged" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1203005423774">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1203005424597" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203005417872">
+              <link role="variableDeclaration" targetNodeId="1203005405108" resolveInfo="allFlagged" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203005478160">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203005478161">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203005498059">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203005501560">
+                <link role="baseMethodDeclaration" targetNodeId="21.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203005498060">
+                  <link role="variableDeclaration" targetNodeId="1203005405108" resolveInfo="allFlagged" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203005503346">
+                  <link role="variableDeclaration" targetNodeId="1202834361667" resolveInfo="sn" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1203005483002">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203005486684">
+              <link role="baseMethodDeclaration" targetNodeId="21.~List.contains(java.lang.Object):boolean" resolveInfo="contains" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203005484078">
+                <link role="variableDeclaration" targetNodeId="1203005405108" resolveInfo="allFlagged" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203005489349">
+                <link role="variableDeclaration" targetNodeId="1202834361667" resolveInfo="sn" />
+              </node>
             </node>
           </node>
         </node>
@@ -322,6 +400,12 @@
         <property name="name" value="generator" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202834361672">
           <link role="classifier" targetNodeId="15.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1203004377159">
+        <property name="name" value="flag" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203004381302">
+          <link role="classifier" targetNodeId="17.~Object" resolveInfo="Object" />
         </node>
       </node>
     </node>
@@ -370,6 +454,42 @@
         <property name="name" value="generator" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202834361692">
           <link role="classifier" targetNodeId="15.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1203005358300">
+      <property name="name" value="getAllFlagged" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1203005358301">
+        <property name="name" value="generator" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203005358302">
+          <link role="classifier" targetNodeId="15.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203005358303">
+        <link role="classifier" targetNodeId="21.~List" resolveInfo="List" />
+        <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1203005358304" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203005358305" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203005358306">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203005358307">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203005358308">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203005358309">
+              <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.getSessionObject(java.lang.Object):java.lang.Object" resolveInfo="getSessionObject" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203005358310">
+                <link role="baseMethodDeclaration" targetNodeId="15.~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203005358311">
+                  <link role="variableDeclaration" targetNodeId="1203005358301" resolveInfo="generator" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203005358312">
+                <property name="value" value="all_flagged" />
+              </node>
+            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203005358313">
+              <link role="classifier" targetNodeId="21.~List" resolveInfo="List" />
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1203005358314" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

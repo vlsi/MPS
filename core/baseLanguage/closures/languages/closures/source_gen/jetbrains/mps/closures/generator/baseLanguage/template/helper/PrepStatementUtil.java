@@ -4,9 +4,10 @@ package jetbrains.mps.closures.generator.baseLanguage.template.helper;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class PrepStatementUtil {
@@ -32,12 +33,24 @@ public class PrepStatementUtil {
     return generator.getGeneratorSessionContext().getSessionObject("closure_data_" + ((SNode)sn).getId());
   }
 
-  public static void setFlag(SNode sn, ITemplateGenerator generator) {
-    generator.getGeneratorSessionContext().putSessionObject("flag_" + ((SNode)sn).getId(), Boolean.TRUE);
+  public static void setFlag(SNode sn, ITemplateGenerator generator, Object flag) {
+    generator.getGeneratorSessionContext().putSessionObject("flag_" + ((SNode)sn).getId(), flag);
+    List<SNode> allFlagged = PrepStatementUtil.getAllFlagged(generator);
+    if(allFlagged == null) {
+      allFlagged = new ArrayList<SNode>();
+      generator.getGeneratorSessionContext().putSessionObject("all_flagged", allFlagged);
+    }
+    if(!(allFlagged.contains(sn))) {
+      allFlagged.add(sn);
+    }
   }
 
   public static Object getFlag(SNode sn, ITemplateGenerator generator) {
     return generator.getGeneratorSessionContext().getSessionObject("flag_" + ((SNode)sn).getId());
+  }
+
+  public static List<SNode> getAllFlagged(ITemplateGenerator generator) {
+    return (List<SNode>)generator.getGeneratorSessionContext().getSessionObject("all_flagged");
   }
 
 
