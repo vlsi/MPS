@@ -2379,8 +2379,8 @@
     <property name="name" value="IMemberContainer" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197027756228">
-    <property name="name" value="OperationExpression" />
-    <property name="package" value="operationExpression" />
+    <property name="name" value="DotExpression" />
+    <property name="package" value="dotExpression" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197027771414">
       <property name="metaClass" value="aggregation" />
@@ -2402,14 +2402,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1197027803184">
-    <property name="package" value="operationExpression" />
+    <property name="package" value="dotExpression" />
     <property name="name" value="IOperation" />
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration" id="1197029536315">
       <property name="name" value="lvalue" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197029447546">
-    <property name="package" value="operationExpression" />
+    <property name="package" value="dotExpression" />
     <property name="name" value="FieldReferenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197029500499">
       <property name="sourceCardinality" value="1" />
@@ -2594,7 +2594,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202948039474">
-    <property name="package" value="operationExpression" />
+    <property name="package" value="dotExpression" />
     <property name="name" value="InstanceMethodCallOperation" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1202948091038">

@@ -14,7 +14,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.structure.OperationExpression;
+import jetbrains.mps.baseLanguage.structure.DotExpression;
 
 public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -41,7 +41,7 @@ public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConst
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode instance = SLinkOperations.getTarget(enclosingNode, "operand", true);
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    return new InstanceMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(classifierType)), ((OperationExpression)SNodeOperations.getAdapter(enclosingNode)));
+    return new InstanceMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(classifierType)), ((DotExpression)SNodeOperations.getAdapter(enclosingNode)));
   }
 
   public String getNodeReferentSearchScopeDescription() {

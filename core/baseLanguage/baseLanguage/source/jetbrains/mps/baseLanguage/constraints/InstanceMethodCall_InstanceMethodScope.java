@@ -21,10 +21,10 @@ public class InstanceMethodCall_InstanceMethodScope extends VisibleClassifierMem
     myMethodCall = methodCall;
   }
 
-  public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, OperationExpression methodCallOperationExpression) {
-    super(instanceType.getClassifier(), methodCallOperationExpression.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
+  public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, DotExpression methodCallDotExpression) {
+    super(instanceType.getClassifier(), methodCallDotExpression.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
     myInstanceType = instanceType;
-    myMethodCall = (BaseMethodCall) methodCallOperationExpression.getOperation();
+    myMethodCall = (BaseMethodCall) methodCallDotExpression.getOperation();
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {

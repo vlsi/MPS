@@ -439,7 +439,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1197031199065(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.OperationExpression", operationContext.getScope());
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", operationContext.getScope());
       SNode childConcept = (SNode)_context.getChildConcept();
       if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(concept)))) {
         Calculable calc = new Calculable() {
@@ -457,7 +457,7 @@ public class QueriesGenerated {
           result.add(new DefaultChildNodeSubstituteAction(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.OperationExpression", _context.getCurrentTargetNode());
+              SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", _context.getCurrentTargetNode());
               SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", ((SNode)this.getParameterObject()), false);
               SLinkOperations.setTarget(operationExpression, "operand", SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisExpression", null), true);
               return operationExpression;
@@ -934,11 +934,11 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197028841767(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.OperationExpression", operationContext.getScope());
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", operationContext.getScope());
       result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode operationExpression = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.OperationExpression");
+          SNode operationExpression = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.DotExpression");
           SLinkOperations.setTarget(operationExpression, "operand", _context.getSourceNode(), true);
           return operationExpression;
         }

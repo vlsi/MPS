@@ -4,7 +4,9 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.patterns" />
@@ -11425,7 +11427,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197028127400">
-    <property name="package" value="operationExpression" />
+    <property name="package" value="dotExpression" />
     <link role="conceptDeclaration" targetNodeId="17.1197027756228" resolveInfo="OperationExpression" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197028132708">
       <property name="vertical" value="false" />
@@ -11444,7 +11446,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1197028249488">
-    <property name="package" value="operationExpression" />
+    <property name="package" value="dotExpression" />
     <property name="name" value="OperationExpression_Actions_DeleteOperation" />
     <link role="applicableConcept" targetNodeId="17.1197027756228" resolveInfo="OperationExpression" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1197028333989">
@@ -11470,7 +11472,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197029656878">
-    <property name="package" value="operationExpression" />
+    <property name="package" value="dotExpression" />
     <link role="conceptDeclaration" targetNodeId="17.1197029447546" resolveInfo="FieldReferenceOperation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197029661551">
       <link role="relationDeclaration" targetNodeId="17.1197029500499" />
@@ -13725,7 +13727,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202948896126">
-    <property name="package" value="operationExpression" />
+    <property name="package" value="dotExpression" />
     <link role="conceptDeclaration" targetNodeId="17.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202948902315">
       <property name="vertical" value="false" />

@@ -33,15 +33,15 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
   }
 
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    if(!(SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.baseLanguage.structure.OperationExpression"))) {
+    if(!(SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return false;
     }
-    return (OperationExpression_Behavior.call_getClassifier_1201997214164(enclosingNode) != null);
+    return (DotExpression_Behavior.call_getClassifier_1201997214164(enclosingNode) != null);
   }
 
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     List<SNode> resultProperties = ListOperations.<SNode>createList();
-    SNode opClassifier = OperationExpression_Behavior.call_getClassifier_1201997214164(enclosingNode);
+    SNode opClassifier = DotExpression_Behavior.call_getClassifier_1201997214164(enclosingNode);
     List<SNode> classifiers = ClassifierAndSuperClassifiersCache.getInstance(opClassifier).getClassifierNodes();
     {
       ICursor<SNode> _zCursor4 = CursorFactory.createCursor(classifiers);

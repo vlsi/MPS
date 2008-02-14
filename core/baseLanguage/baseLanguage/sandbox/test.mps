@@ -1278,7 +1278,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202938542095">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1202938552191">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1202938552191">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202938542096">
               <link role="variableDeclaration" targetNodeId="1191250519548" resolveInfo="m1" />
             </node>
@@ -1296,7 +1296,7 @@
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1202939344023">
               <property name="value" value="10" />
             </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.OperationExpression" id="1202938658954">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1202938658954">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1202938653653" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1202938863479">
                 <link role="fieldDeclaration" targetNodeId="1202938848288" resolveInfo="myInt" />
