@@ -2597,15 +2597,5 @@
       <link role="target" targetNodeId="1146644584814" resolveInfo="Visibility" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1202867553531">
-    <property name="package" value="staticMethod" />
-    <property name="name" value="IStaticMethodContainer" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202867702844">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="staticMethod" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1081236700938" resolveInfo="StaticMethodDeclaration" />
-    </node>
-  </node>
 </model>
 

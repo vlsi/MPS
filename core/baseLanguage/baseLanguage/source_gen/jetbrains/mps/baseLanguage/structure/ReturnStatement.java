@@ -9,10 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ReturnStatement extends Statement implements TypeDerivable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ReturnStatement";
-  public static String EXPRESSION = "expression";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String EXPRESSION = "expression";
 
   public  ReturnStatement(SNode node) {
     super(node);
@@ -26,14 +26,6 @@ public class ReturnStatement extends Statement implements TypeDerivable {
     return ReturnStatement.newInstance(sm, false);
   }
 
-
-  public Expression getExpression() {
-    return (Expression)this.getChild(ReturnStatement.EXPRESSION);
-  }
-
-  public void setExpression(Expression node) {
-    super.setChild(ReturnStatement.EXPRESSION, node);
-  }
 
   public String getShortDescription() {
     return this.getProperty(ReturnStatement.SHORT_DESCRIPTION);
@@ -57,6 +49,14 @@ public class ReturnStatement extends Statement implements TypeDerivable {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ReturnStatement.VIRTUAL_PACKAGE, value);
+  }
+
+  public Expression getExpression() {
+    return (Expression)this.getChild(ReturnStatement.EXPRESSION);
+  }
+
+  public void setExpression(Expression node) {
+    super.setChild(ReturnStatement.EXPRESSION, node);
   }
 
 }
