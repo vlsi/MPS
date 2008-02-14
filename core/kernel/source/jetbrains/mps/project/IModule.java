@@ -25,23 +25,16 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls);
 
   List<SModelDescriptor> getOwnModelDescriptors();
-
   List<ModelRoot> getModelRoots();
-
   List<ModelRoot> getNonDefaultModelRoots();
 
   List<Dependency> getDependencies(); 
-
   List<IModule> getExplicitlyDependOnModules();
-
   List<String> getUsedLanguagesNamespaces();
-
   List<Language> getUsedLanguages();
-
   List<IModule> getDependOnModules();
 
   void registerModelDescriptor(SModelDescriptor modelDescriptor);
-
   void unRegisterModelDescriptor(SModelDescriptor modelDescriptor);
 
   SModelDescriptor createModel(SModelUID uid, ModelRoot root);
@@ -49,38 +42,29 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   IFile getDescriptorFile();
 
   ModuleDescriptor getModuleDescriptor();
-
   void setModuleDescriptor(ModuleDescriptor moduleDescriptor);
 
   String getGeneratorOutputPath();
+  IFile getClassesGen();
+  File getBundleHome();
 
   IScope getScope();
 
-  void dispose();
-
-  IFile getClassesGen();
-
-  void reloadStubs();
-
   List<String> getRuntimePackages();
-
   List<String> getSourcePaths();
 
   Class getClass(String fqName);
 
   IClassPathItem getJavaStubsClassPathItem();
-
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
-  File getBundleHome();
 
   boolean isCompileInMPS();
-
   void invalidateCaches();
-
+  void reloadStubs();
   void save();
-
   void convert();
-
   boolean isPackaged();
+
+  void dispose();
 }
