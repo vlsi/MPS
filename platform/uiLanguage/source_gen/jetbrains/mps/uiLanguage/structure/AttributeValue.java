@@ -11,11 +11,11 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AttributeValue extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.AttributeValue";
-  public static String VALUE = "value";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String ATTRIBUTE = "attribute";
+  public static String VALUE = "value";
 
   public  AttributeValue(SNode node) {
     super(node);
@@ -29,14 +29,6 @@ public class AttributeValue extends BaseConcept implements IComponentPart {
     return AttributeValue.newInstance(sm, false);
   }
 
-
-  public Expression getValue() {
-    return (Expression)this.getChild(AttributeValue.VALUE);
-  }
-
-  public void setValue(Expression node) {
-    super.setChild(AttributeValue.VALUE, node);
-  }
 
   public String getShortDescription() {
     return this.getProperty(AttributeValue.SHORT_DESCRIPTION);
@@ -68,6 +60,14 @@ public class AttributeValue extends BaseConcept implements IComponentPart {
 
   public void setAttribute(AttributeDeclaration node) {
     super.setReferent(AttributeValue.ATTRIBUTE, node);
+  }
+
+  public Expression getValue() {
+    return (Expression)this.getChild(AttributeValue.VALUE);
+  }
+
+  public void setValue(Expression node) {
+    super.setChild(AttributeValue.VALUE, node);
   }
 
 }

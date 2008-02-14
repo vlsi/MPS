@@ -12,7 +12,6 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 
 public class ComponentDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentDeclaration";
-  public static String ROOT = "root";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -23,6 +22,7 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
   public static String EXTENDED_COMPONENT = "extendedComponent";
   public static String MAPPED_TO = "mappedTo";
   public static String MAP_TO = "mapTo";
+  public static String ROOT = "root";
 
   public  ComponentDeclaration(SNode node) {
     super(node);
@@ -36,14 +36,6 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
     return ComponentDeclaration.newInstance(sm, false);
   }
 
-
-  public IComponentInstance getRoot() {
-    return (IComponentInstance)this.getChild(ComponentDeclaration.ROOT);
-  }
-
-  public void setRoot(IComponentInstance node) {
-    super.setChild(ComponentDeclaration.ROOT, node);
-  }
 
   public String getName() {
     return this.getProperty(ComponentDeclaration.NAME);
@@ -123,6 +115,14 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
 
   public void setMapTo(ClassConcept node) {
     super.setReferent(ComponentDeclaration.MAP_TO, node);
+  }
+
+  public IComponentInstance getRoot() {
+    return (IComponentInstance)this.getChild(ComponentDeclaration.ROOT);
+  }
+
+  public void setRoot(IComponentInstance node) {
+    super.setChild(ComponentDeclaration.ROOT, node);
   }
 
 }

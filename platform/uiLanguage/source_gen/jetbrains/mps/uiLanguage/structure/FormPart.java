@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FormPart extends BaseConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.FormPart";
-  public static String CONTENT = "content";
   public static String LABEL = "label";
+  public static String CONTENT = "content";
 
   public  FormPart(SNode node) {
     super(node);
@@ -26,20 +26,20 @@ public class FormPart extends BaseConcept {
   }
 
 
-  public IComponentPart getContent() {
-    return (IComponentPart)this.getChild(FormPart.CONTENT);
-  }
-
-  public void setContent(IComponentPart node) {
-    super.setChild(FormPart.CONTENT, node);
-  }
-
   public String getLabel() {
     return this.getProperty(FormPart.LABEL);
   }
 
   public void setLabel(String value) {
     this.setProperty(FormPart.LABEL, value);
+  }
+
+  public IComponentPart getContent() {
+    return (IComponentPart)this.getChild(FormPart.CONTENT);
+  }
+
+  public void setContent(IComponentPart node) {
+    super.setChild(FormPart.CONTENT, node);
   }
 
 }
