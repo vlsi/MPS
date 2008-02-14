@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.action.ActionQueryMethodName;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -66,7 +66,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1177331479810(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false));
+    SNode outputConcept = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "concept", false);
+    if(outputConcept == null) {
+      _context.getGenerator().showWarningMessage(SNodeOperations.getParent(_context.getNode(), null, false, false), "output concept is not specified");
+      return "?no output concept specified?";
+    }
+    return NameUtil.nodeFQName(outputConcept);
   }
 
   public static Object propertyMacro_GetPropertyValue_1177340188447(final IOperationContext operationContext, final PropertyMacroContext _context) {
