@@ -27,6 +27,7 @@ public final class BehaviorManager {
   }
 
   private Map<String, Method> myCanBeAChildMethods = new HashMap<String, Method>();
+  private Map<String, Method> myCanBeAParentMethods = new HashMap<String, Method>();
   private Map<String, Method> myDefaultConceptNameMethods = new HashMap<String, Method>();
 
   private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
@@ -36,6 +37,7 @@ public final class BehaviorManager {
     myMethods.clear();
     myConstructors.clear();
     myCanBeAChildMethods.clear();
+    myCanBeAParentMethods.clear();
     myDefaultConceptNameMethods.clear();
   }
 
@@ -154,6 +156,43 @@ public final class BehaviorManager {
     }
 
     return true;
+  }
+
+  public boolean canHaveAChild(SNode parentNode, SNode childConcept, IOperationContext context) {
+    IScope scope = context.getScope();
+    String fqName = parentNode.getConceptFqName();
+    String behaviorClass = behaviorClassByConceptFqName(fqName);
+    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
+    Language language = scope.getLanguage(namespace);
+
+    if (language != null) {
+      Class cls = language.getClass(behaviorClass);
+      if (cls != null) {
+        try {
+          Method m;
+          if (myCanBeAParentMethods.containsKey(fqName)) {
+            m = myCanBeAParentMethods.get(fqName);
+          } else {
+            m = cls.getMethod(BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
+            myCanBeAParentMethods.put(fqName, m);
+          }
+
+          try {
+            if (m != null) {
+              return (Boolean) m.invoke(null, context, new CanBeAParentContext(parentNode, childConcept));
+            }
+          } catch (IllegalAccessException e) {
+            LOG.error(e);
+          } catch (InvocationTargetException e) {
+            LOG.error(e);
+          }
+        } catch (NoSuchMethodException e) {
+          myCanBeAParentMethods.put(fqName, null);
+        }
+      }
+    }
+
+    return false;
   }
 
   private String behaviorClassByConceptFqName(String fqName) {

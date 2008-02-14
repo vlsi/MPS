@@ -1039,12 +1039,12 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177670628052">
           <property name="vertical" value="true" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202990058463">
+            <property name="selectable" value="false" />
+          </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1201037112829">
             <property name="selectable" value="false" />
             <property name="vertical" value="true" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202990058463">
-              <property name="selectable" value="false" />
-            </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1201037127396">
               <property name="selectable" value="false" />
               <property name="vertical" value="false" />
@@ -1083,9 +1083,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202989779529">
-            <property name="selectable" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202989780594">
             <property name="text" value="can be a child" />
