@@ -2223,7 +2223,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1181949581633">
-    <property name="package" value="Operations.Concept" />
+    <property name="package" value="operation.concept" />
     <link role="conceptDeclaration" targetNodeId="1.1181949435690" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1181949592869">
       <property name="vertical" value="false" />
@@ -2248,7 +2248,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1181952939921">
-    <property name="package" value="Operations.Concept" />
+    <property name="package" value="operation.concept" />
     <link role="conceptDeclaration" targetNodeId="1.1181952871644" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1182506828314">
       <property name="vertical" value="false" />
@@ -2276,7 +2276,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1182279746815">
-    <property name="package" value="Operations.Concept" />
+    <property name="package" value="operation.concept" />
     <link role="conceptDeclaration" targetNodeId="1.1182279509750" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1182279799230">
       <property name="vertical" value="false" />
@@ -2302,7 +2302,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1182511080941">
-    <property name="package" value="Operations.Model" />
+    <property name="package" value="operation.model" />
     <link role="conceptDeclaration" targetNodeId="1.1182511038748" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1182511083881">
       <property name="vertical" value="false" />

@@ -649,7 +649,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141098">
-    <property name="package" value="Operations.Node" />
+    <property name="package" value="operation.node" />
     <link role="concept" targetNodeId="1.1144195091934" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141099">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141100" />
@@ -733,7 +733,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141390">
-    <property name="package" value="Operations.Property" />
+    <property name="package" value="operation.property" />
     <link role="concept" targetNodeId="1.1138676077309" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141391">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141392" />
@@ -861,7 +861,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1179409416623">
-    <property name="package" value="Operations.Node" />
+    <property name="package" value="operation.node" />
     <link role="concept" targetNodeId="1.1179409122411" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179412972990">
       <property name="name" value="isVirtualMethodCall" />
@@ -1306,7 +1306,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1187949898603">
-    <property name="package" value="Operations.featureAccess" />
+    <property name="package" value="operation.featureAccess" />
     <link role="concept" targetNodeId="1.1138056022639" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1187949900517">
       <property name="name" value="getVariableExpectedName" />
@@ -1335,7 +1335,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1187949943385">
-    <property name="package" value="Operations.featureAccess" />
+    <property name="package" value="operation.featureAccess" />
     <link role="concept" targetNodeId="1.1138056143562" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1187949946021">
       <property name="name" value="getVariableExpectedName" />
@@ -1364,7 +1364,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1187949997814">
-    <property name="package" value="Operations.featureAccess" />
+    <property name="package" value="operation.featureAccess" />
     <link role="concept" targetNodeId="1.1138056282393" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1187949999471">
       <property name="name" value="getVariableExpectedName" />
@@ -1393,7 +1393,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1187950034647">
-    <property name="package" value="Operations.featureAccess" />
+    <property name="package" value="operation.featureAccess" />
     <link role="concept" targetNodeId="1.1145994841052" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1187950034648">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187950034649" />
@@ -1422,7 +1422,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1187950061022">
-    <property name="package" value="Operations.featureAccess" />
+    <property name="package" value="operation.featureAccess" />
     <link role="concept" targetNodeId="1.1175618182947" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1187950061023">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187950061024" />
