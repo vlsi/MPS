@@ -45,7 +45,7 @@ public class ComponentReference_component_ReferentConstraint implements IModelCo
     }
     List<SNode> result = new ArrayList<SNode>();
     if(componentDeclaration != null) {
-      ListOperations.addAllElements(result, SequenceOperations.where(SNodeOperations.getDescendants(componentDeclaration, "jetbrains.mps.uiLanguage.structure.ComponentInstance", false), new zPredicate3(null, null)));
+      ListOperations.addAllElements(result, SequenceOperations.where(SNodeOperations.getDescendants(componentDeclaration, "jetbrains.mps.uiLanguage.structure.ComponentInstance", false), new zPredicate2(null, null)));
     }
     return new SimpleSearchScope(result);
   }

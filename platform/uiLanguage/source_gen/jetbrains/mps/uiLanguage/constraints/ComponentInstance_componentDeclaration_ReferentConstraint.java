@@ -35,7 +35,7 @@ public class ComponentInstance_componentDeclaration_ReferentConstraint implement
 
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     List<SNode> components = new ArrayList<SNode>();
-    ListOperations.addAllElements(components, SequenceOperations.where(SModelOperations.getRootsIncludingImported(model, scope, "jetbrains.mps.uiLanguage.structure.ComponentDeclaration"), new zPredicate2(null, null)));
+    ListOperations.addAllElements(components, SequenceOperations.where(SModelOperations.getRootsIncludingImported(model, scope, "jetbrains.mps.uiLanguage.structure.ComponentDeclaration"), new zPredicate1(null, null)));
     return new SimpleSearchScope(components);
   }
 

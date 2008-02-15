@@ -17,9 +17,8 @@ public class Sandbox {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         new ListsDemo();
-
       }
-    });    
+    });
   }
 }
     
