@@ -2,21 +2,17 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Igor Alshannikov
- * Mar 29, 2005
- */
+import javax.swing.Icon;
+
 public interface INodeSubstituteAction {
   SNode getSourceNode();
-
   SNode getOutputConcept();
   
   String getMatchingText(String pattern);
-
   String getDescriptionText(String pattern);
+  Icon getIconFor(String pattern);
 
   boolean canSubstituteStrictly(String pattern);
-
   boolean canSubstitute(String pattern);
 
   SNode doSubstitute(String pattern);

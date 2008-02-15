@@ -516,18 +516,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     private void setupThis(JList list, Object value, boolean isSelected) {
       INodeSubstituteAction action = (INodeSubstituteAction) value;
-
-      if (action.getOutputConcept() instanceof SNode) {
-        SNode node = (SNode) action.getOutputConcept();
-        if (!(node.getAdapter() instanceof AbstractConceptDeclaration)) {
-          myLeft.setIcon(IconManager.getIconFor(node));
-        } else {
-          myLeft.setIcon(null);
-        }
-      } else {
-        myLeft.setIcon(null);
-      }
-
+      myLeft.setIcon(action.getIconFor(getPatternEditor().getPattern()));
       try {
         myLeft.setText(action.getMatchingText(getPatternEditor().getPattern()));
       } catch (Throwable t) {

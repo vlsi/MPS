@@ -7,6 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -19,6 +20,7 @@ import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.*;
 
+import javax.swing.Icon;
 import java.util.*;
 
 /**
@@ -444,6 +446,10 @@ public class ChildSubstituteActionsHelper {
         myMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode);
       }
       return myMatchingText;
+    }
+
+    public Icon getIconFor(String pattern) {
+      return IconManager.getIconFor(myReferentNode);
     }
 
     public String getDescriptionText(String pattern) {

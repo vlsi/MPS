@@ -5,6 +5,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.ide.icons.IconManager;
+
+import javax.swing.Icon;
 
 /**
  * Igor Alshannikov
@@ -23,6 +26,10 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     if (SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.reference) {
       throw new RuntimeException("Only reference links are allowed here.");
     }
+  }
+
+  public Icon getIconFor(String pattern) {
+    return IconManager.getIconFor(myCurrentReferent);
   }
 
   public String getMatchingText(String pattern) {

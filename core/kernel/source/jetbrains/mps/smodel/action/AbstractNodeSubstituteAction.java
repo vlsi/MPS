@@ -5,7 +5,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.ide.ChooseItemComponent;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+
+import javax.swing.Icon;
 
 /**
  * Igor Alshannikov
@@ -36,6 +40,10 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   protected AbstractNodeSubstituteAction() {
     mySourceNode = null;
     myParameterObject = null;
+  }
+
+  public Icon getIconFor(String pattern) {
+    return IconManager.getIconFor((ConceptDeclaration) getOutputConcept().getAdapter());
   }
 
   public SNode getSourceNode() {

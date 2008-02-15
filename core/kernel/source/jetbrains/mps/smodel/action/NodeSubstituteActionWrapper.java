@@ -2,6 +2,8 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
 
+import javax.swing.Icon;
+
 /**
  * Igor Alshannikov
  * Jan 30, 2006
@@ -17,9 +19,12 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
     return mySubstituteAction.getSourceNode();
   }
 
-
   public SNode getOutputConcept() {
     return mySubstituteAction.getOutputConcept();
+  }
+
+  public Icon getIconFor(String pattern) {
+    return mySubstituteAction.getIconFor(pattern);
   }
 
   public String getMatchingText(String pattern) {
