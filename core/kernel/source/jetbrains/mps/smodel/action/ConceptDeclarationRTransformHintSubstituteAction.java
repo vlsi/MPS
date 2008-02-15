@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 /**
-   * Provides default matchingText and descriptionText based on the given concept declaration.
+ * Provides default matchingText and descriptionText based on the given concept declaration.
  * {@link #doSubstitute(String)} instantiates new node of type {@link T}, takes parent of source node
  * and substitutes sourceNode with newly created node, invokes {@link #setSourceToNewInstance(String, jetbrains.mps.core.structure.BaseConcept, jetbrains.mps.core.structure.BaseConcept)}.
  * T is a type of node adapter to create
@@ -25,10 +25,6 @@ public abstract class ConceptDeclarationRTransformHintSubstituteAction<S extends
     super(null, sourceNode);
     myConceptDeclaration = conceptDeclaration;
     myMatchingTextConceptProperty = BaseConcept.CPR_Alias;
-  }
-
-  public ConceptDeclarationRTransformHintSubstituteAction(Class<T> conceptClass, IScope scope, SNode sourceNode) {
-    this(SModelUtil_new.findConceptDeclaration(conceptClass, scope), sourceNode);
   }
 
   public String getMatchingTextConceptProperty() {
