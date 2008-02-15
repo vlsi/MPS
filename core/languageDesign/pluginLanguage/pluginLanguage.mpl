@@ -6,7 +6,20 @@
                namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage"/>
   </models>
   <accessoryModels/>
-  <generators/>
+  <generators>
+    <generator generatorUID="jetbrains.mps.bootstrap.pluginLanguage#1203080439937"
+               targetLanguage="jetbrains.mps.baseLanguage">
+      <models>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template"
+                   namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template"/>
+      </models>
+      <external-templates/>
+      <dependencies>
+        <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
+      </dependencies>
+      <mapping-priorities/>
+    </generator>
+  </generators>
   <classPath/>
   <runtimeClassPath>
     <entry path="${language_descriptor}\classes"/>

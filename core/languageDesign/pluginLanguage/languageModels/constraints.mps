@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="jetbrains.mps.bootstrap.pluginLanguage.constraints">
+  <persistence version="1"/>
+  <refactoringHistory/>
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage"/>
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage"/>
+  <maxImportIndex value="7"/>
+  <import index="1" modelUID="jetbrains.mps.core.constraints" version="-1"/>
+  <import index="2" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1"/>
+  <import index="3" modelUID="jetbrains.mps.core.structure" version="-1"/>
+  <import index="4" modelUID="java.lang@java_stub" version="-1"/>
+  <import index="5" modelUID="jetbrains.mps.util@java_stub" version="-1"/>
+  <import index="6" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" version="-1"/>
+  <import index="7" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="-1"/>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1203086933326">
+    <property name="package" value="Actions"/>
+    <link role="concept" targetNodeId="7.1203071646776" resolveInfo="Action"/>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration"
+          id="1203086933327">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203086933328"/>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration"
+          id="1203086959942">
+      <property name="name" value="getGeneratedName"/>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203086959943">
+        <link role="classifier" targetNodeId="4.~String" resolveInfo="String"/>
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203086959944">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203086959945">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203086959946">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203086959947">
+              <link role="classConcept" targetNodeId="5.~NameUtil" resolveInfo="NameUtil"/>
+              <link role="baseMethodDeclaration"
+                    targetNodeId="5.~NameUtil.toValidIdentifier(java.lang.String):java.lang.String"
+                    resolveInfo="toValidIdentifier"/>
+              <node role="actualArgument"
+                    type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203086959948">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess"
+                      id="1203087369040">
+                  <link role="property" targetNodeId="3.1169194664001" resolveInfo="name"/>
+                </node>
+                <node role="leftExpression"
+                      type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression"
+                      id="1203086959950"/>
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203086959951">
+              <property name="value" value="_Action"/>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+</model>
+
