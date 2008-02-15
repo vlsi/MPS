@@ -108,7 +108,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203087874735">
     <property name="package" value="Actions.Configuration"/>
-    <property name="name" value="ActionConfiguration"/>
+    <property name="name" value="ActionConfigurationDeclaration"/>
     <property name="rootable" value="true"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
@@ -118,10 +118,17 @@
       <property name="sourceCardinality" value="0..n"/>
       <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroup"/>
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1203092458687">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="modifier"/>
+      <property name="sourceCardinality" value="0..n"/>
+      <link role="target" targetNodeId="1203092361741" resolveInfo="AbstractModificationStatement"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203087890642">
     <property name="package" value="Actions.Configuration"/>
-    <property name="name" value="ActionGroup"/>
+    <property name="name" value="ActionGroupDeclaration"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1203087991474">
@@ -144,6 +151,47 @@
       <property name="role" value="action"/>
       <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1203071646776" resolveInfo="ActionDeclaration"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203091393695">
+    <property name="package" value="Actions.Configuration.GroupModification"/>
+    <property name="name" value="ExtentionModificationStatement"/>
+    <link role="extends" targetNodeId="1203092361741" resolveInfo="AbstractModificationStatement"/>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1203091561773">
+      <property name="role" value="extendByGroup"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203092361741">
+    <property name="package" value="Actions.Configuration.GroupModification"/>
+    <property name="name" value="AbstractModificationStatement"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1203092736097">
+      <property name="role" value="modifiedGroup"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1203092383554">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473854053" resolveInfo="abstract"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1203093956181">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203092602996">
+    <property name="package" value="Actions.Configuration.GroupModification"/>
+    <property name="name" value="AddSubgroupModificationStatement"/>
+    <link role="extends" targetNodeId="1203092361741" resolveInfo="AbstractModificationStatement"/>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1203092819005">
+      <property name="role" value="addedGroup"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration"/>
     </node>
   </node>
 </model>
