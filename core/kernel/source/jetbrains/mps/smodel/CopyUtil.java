@@ -17,29 +17,37 @@ public final class CopyUtil {
     return copy(nodes, new HashMap<SNode, SNode>());
   }
 
+  public static List<SNode> copy(List<SNode> nodes) {
+    return copy(nodes, new HashMap<SNode, SNode>());
+  }
+
   public static List<SNode> copy(List<SNode> nodes, Map<SNode, SNode> mapping) {
     List<SNode> result = clone(nodes, mapping);
     addReferences(nodes, mapping, true);
     return result;
   }
 
-/*
-  public static List<SNode> copyAndPreserveId(List<SNode> nodes, SModel targetModel) {
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    List<SNode> result = clone(nodes, mapping);
-    for (SNode sourceNode : mapping.keySet()) {
-      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+  /*
+    public static List<SNode> copyAndPreserveId(List<SNode> nodes, SModel targetModel) {
+      HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+      List<SNode> result = clone(nodes, mapping);
+      for (SNode sourceNode : mapping.keySet()) {
+        mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+      }
+      addReferences(nodes, mapping, true);
+      return result;
     }
-    addReferences(nodes, mapping, true);
-    return result;
-  }
 
-*/
+  */
   public static <BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {
-    return (BA) copy(node.getNode(), new HashMap<SNode, SNode>(), true).getAdapter();
+    return (BA) copy(node.getNode()).getAdapter();
   }
 
   public static SNode copy(SNode node, SModel targetModel) {
+    return copy(node);
+  }
+
+  public static SNode copy(SNode node) {
     return copy(node, new HashMap<SNode, SNode>(), true);
   }
 

@@ -23,7 +23,7 @@ public class CloneModelUtil {
   }
 
   public static SModel cloneModel(SModel model, SModel modelCopy, IScope scope) {
-    for (SNode root : CopyUtil.copy(model.getRoots(), modelCopy)) {
+    for (SNode root : CopyUtil.copy(model.getRoots())) {
       modelCopy.addRoot(root);
     }
     return modelCopy;
