@@ -13,13 +13,14 @@ import java.util.List;
 
 public class ComponentController extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentController";
-  public static String ATTRIBUTE = "attribute";
-  public static String COMPONENT_METHOD = "componentMethod";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String COMPONENT = "component";
+  public static String CONSTRUCTOR = "constructor";
+  public static String ATTRIBUTE = "attribute";
+  public static String COMPONENT_METHOD = "componentMethod";
 
   public  ComponentController(SNode node) {
     super(node);
@@ -33,46 +34,6 @@ public class ComponentController extends BaseConcept implements INamedConcept {
     return ComponentController.newInstance(sm, false);
   }
 
-
-  public int getAttributesCount() {
-    return this.getChildCount(ComponentController.ATTRIBUTE);
-  }
-
-  public Iterator<AttributeDeclaration> attributes() {
-    return this.children(ComponentController.ATTRIBUTE);
-  }
-
-  public List<AttributeDeclaration> getAttributes() {
-    return this.getChildren(ComponentController.ATTRIBUTE);
-  }
-
-  public void addAttribute(AttributeDeclaration node) {
-    this.addChild(ComponentController.ATTRIBUTE, node);
-  }
-
-  public void insertAttribute(AttributeDeclaration prev, AttributeDeclaration node) {
-    this.insertChild(prev, ComponentController.ATTRIBUTE, node);
-  }
-
-  public int getComponentMethodsCount() {
-    return this.getChildCount(ComponentController.COMPONENT_METHOD);
-  }
-
-  public Iterator<ComponentMethodDeclaration> componentMethods() {
-    return this.children(ComponentController.COMPONENT_METHOD);
-  }
-
-  public List<ComponentMethodDeclaration> getComponentMethods() {
-    return this.getChildren(ComponentController.COMPONENT_METHOD);
-  }
-
-  public void addComponentMethod(ComponentMethodDeclaration node) {
-    this.addChild(ComponentController.COMPONENT_METHOD, node);
-  }
-
-  public void insertComponentMethod(ComponentMethodDeclaration prev, ComponentMethodDeclaration node) {
-    this.insertChild(prev, ComponentController.COMPONENT_METHOD, node);
-  }
 
   public String getName() {
     return this.getProperty(ComponentController.NAME);
@@ -112,6 +73,54 @@ public class ComponentController extends BaseConcept implements INamedConcept {
 
   public void setComponent(ComponentDeclaration node) {
     super.setReferent(ComponentController.COMPONENT, node);
+  }
+
+  public ComponentConstructor getConstructor() {
+    return (ComponentConstructor)this.getChild(ComponentController.CONSTRUCTOR);
+  }
+
+  public void setConstructor(ComponentConstructor node) {
+    super.setChild(ComponentController.CONSTRUCTOR, node);
+  }
+
+  public int getAttributesCount() {
+    return this.getChildCount(ComponentController.ATTRIBUTE);
+  }
+
+  public Iterator<AttributeDeclaration> attributes() {
+    return this.children(ComponentController.ATTRIBUTE);
+  }
+
+  public List<AttributeDeclaration> getAttributes() {
+    return this.getChildren(ComponentController.ATTRIBUTE);
+  }
+
+  public void addAttribute(AttributeDeclaration node) {
+    this.addChild(ComponentController.ATTRIBUTE, node);
+  }
+
+  public void insertAttribute(AttributeDeclaration prev, AttributeDeclaration node) {
+    this.insertChild(prev, ComponentController.ATTRIBUTE, node);
+  }
+
+  public int getComponentMethodsCount() {
+    return this.getChildCount(ComponentController.COMPONENT_METHOD);
+  }
+
+  public Iterator<ComponentMethodDeclaration> componentMethods() {
+    return this.children(ComponentController.COMPONENT_METHOD);
+  }
+
+  public List<ComponentMethodDeclaration> getComponentMethods() {
+    return this.getChildren(ComponentController.COMPONENT_METHOD);
+  }
+
+  public void addComponentMethod(ComponentMethodDeclaration node) {
+    this.addChild(ComponentController.COMPONENT_METHOD, node);
+  }
+
+  public void insertComponentMethod(ComponentMethodDeclaration prev, ComponentMethodDeclaration node) {
+    this.insertChild(prev, ComponentController.COMPONENT_METHOD, node);
   }
 
 }
