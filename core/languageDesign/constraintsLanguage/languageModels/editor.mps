@@ -1041,7 +1041,6 @@
           <property name="vertical" value="true" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202990058463">
             <property name="selectable" value="false" />
-            <property name="nullText" value="&lt;none&gt;" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1201037112829">
             <property name="selectable" value="false" />

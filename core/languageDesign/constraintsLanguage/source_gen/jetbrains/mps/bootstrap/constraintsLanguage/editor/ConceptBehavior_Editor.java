@@ -445,7 +445,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConceptBehavior_Editor.setupBasic_ConstantCell3(editorCell, node, context);
     ConceptBehavior_Editor.setupLabel_ConstantCell3(editorCell, node, context);
-    editorCell.setDefaultText("<none>");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
