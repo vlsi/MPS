@@ -52,7 +52,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
 import jetbrains.mps.baseLanguage.constraints.QueriesUtil;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
-import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 
@@ -884,19 +883,18 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1138168906052(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", operationContext.getScope());
-      for(final AbstractConceptDeclaration abstractConcept : SModelUtil_new.getSubconcepts(concept, _context.getModel(), operationContext.getScope())) {
-        if(!(abstractConcept instanceof ConceptDeclaration)) {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation");
+      for(final SNode subconcept : SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope())) {
+        if(!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration"))) {
           continue;
         }
-        if(abstractConcept.hasConceptProperty(BaseConcept.CPR_Abstract, operationContext.getScope())) {
+        if(SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
           continue;
         }
-        final ConceptDeclaration currentConcept = (ConceptDeclaration)abstractConcept;
-        result.add(new AbstractRTransformHintSubstituteAction(currentConcept.getNode(), _context.getSourceNode()) {
+        result.add(new AbstractRTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
-            SNode result = SModelUtil_new.instantiateConceptDeclaration(currentConcept, _context.getModel()).getNode();
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "leftExpression", _context.getSourceNode(), true);
             if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(result, null, false, false), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {

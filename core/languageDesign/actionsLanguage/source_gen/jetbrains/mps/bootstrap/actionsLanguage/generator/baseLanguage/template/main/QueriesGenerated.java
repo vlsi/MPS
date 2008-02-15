@@ -135,10 +135,6 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "concept", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1182820930213(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "concept", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1196434222023(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "text");
   }
@@ -153,6 +149,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1202914532639(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", false, false), "applicableConcept", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1203068874715(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "concept", false);
   }
 
   public static boolean ifMacro_Condition_1178782034640(final IOperationContext operationContext, final IfMacroContext _context) {
