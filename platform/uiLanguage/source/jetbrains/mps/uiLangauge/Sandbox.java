@@ -10,11 +10,14 @@ import jetbrains.mps.uiLanguage.samples.lists.ListsDemo;
 
 import javax.swing.*;
 
+import org.jdesktop.swingbinding.SwingBindings;
+
 public class Sandbox {
   public static void main(String[] args) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         new ListsDemo();
+
       }
     });    
   }
