@@ -33,6 +33,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDe
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
 
 public class QueriesGenerated {
@@ -1054,9 +1055,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "scope", true);
   }
 
-  public static List sourceNodesQuery_1171415960010(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode op = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "nodeOperation", true);
-    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((SNodeOperation)SNodeOperations.getAdapter(op)));
+  public static List sourceNodesQuery_1203118690610(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetAncestorOperation)SNodeOperations.getAdapter(_context.getNode())));
   }
 
   public static List sourceNodesQuery_1173119412081(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
