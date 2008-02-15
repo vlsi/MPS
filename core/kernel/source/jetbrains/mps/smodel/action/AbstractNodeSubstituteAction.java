@@ -17,6 +17,11 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   private SNode mySourceNode;
   private Object myParameterObject;
 
+  protected AbstractNodeSubstituteAction(SNode outputConcept, SNode sourceNode) {
+    myParameterObject = outputConcept;
+    mySourceNode = sourceNode;
+  }
+
   protected AbstractNodeSubstituteAction(Object parameterObject, SNode sourceNode) {
     mySourceNode = sourceNode;
     myParameterObject = parameterObject;
