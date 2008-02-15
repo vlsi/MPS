@@ -2,7 +2,6 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.actionsLanguage.structure.*;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
@@ -439,11 +438,13 @@ public class ChildSubstituteActionsHelper {
     private String myMatchingText;
     private final SNode myParentNode;
     private final SNode myCurrentChild;
+    private final SNode myReferentNode;
     private final ConceptDeclaration myReferenceNodeConcept;
     private final LinkDeclaration myReferenceLink_final;
 
     public SmartRefChildNodeSubstituteAction(SNode referentNode, SNode parentNode, SNode currentChild, IChildNodeSetter childSetter, IScope scope, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLink_final) {
       super(referentNode, parentNode, currentChild, childSetter, scope);
+      myReferentNode = referentNode;
       myParentNode = parentNode;
       myCurrentChild = currentChild;
       myReferenceNodeConcept = referenceNodeConcept;
@@ -453,13 +454,13 @@ public class ChildSubstituteActionsHelper {
 
     public String getMatchingText(String pattern) {
       if (myMatchingText == null) {
-        myMatchingText = getSmartMatchingText(myReferenceNodeConcept, (SNode) getParameterObject());
+        myMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode);
       }
       return myMatchingText;
     }
 
     public String getDescriptionText(String pattern) {
-      BaseConcept parameterNode = (BaseConcept) BaseAdapter.fromNode((SNode) getParameterObject());
+      BaseConcept parameterNode = (BaseConcept) BaseAdapter.fromNode(myReferentNode);
       String result = NodePresentationUtil.descriptionText(parameterNode, true);
       if (parameterNode.getShortDescription() == null) {
         return "^" + result;
@@ -468,10 +469,14 @@ public class ChildSubstituteActionsHelper {
       return "^" + result;
     }
 
+    public Object getParameterObject() {
+      return myReferenceNodeConcept;
+    }
+
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
       SNode childNode = SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) myReferenceNodeConcept, model).getNode();
       String referentRole = SModelUtil_new.getGenuineLinkRole(myReferenceLink_final);
-      childNode.setReferent(referentRole, (SNode) parameterObject);
+      childNode.setReferent(referentRole, myReferentNode);
       NodeFactoryManager.setupNode(myReferenceNodeConcept, childNode, myCurrentChild, myParentNode, model, getScope());
       return childNode;
     }
