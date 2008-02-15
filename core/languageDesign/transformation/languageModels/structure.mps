@@ -881,6 +881,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1167951666158">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203115785373">
+      <property name="value" value="link 'outputSourceNodeConcept' is deprecated" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1170898673630" resolveInfo="deprecated_415" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167951910403">
     <property name="name" value="SourceSubstituteMacro_SourceNodesQuery" />
