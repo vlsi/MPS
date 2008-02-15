@@ -816,7 +816,7 @@
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1144961290133">
           <property name="drawBorder" value="false" />
-          <property name="text" value="right-transform hint substitute actions" />
+          <property name="text" value="right-transform actions" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1144961290134">
           <property name="allowEmptyText" value="true" />
@@ -1468,7 +1468,7 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177498639115">
-            <property name="text" value="do substitute" />
+            <property name="text" value="do transform" />
             <property name="textFgColor" value="DARK_BLUE" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177498639116">
@@ -1579,8 +1579,8 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177508996238">
-            <property name="text" value="handler" />
             <property name="textFgColor" value="DARK_BLUE" />
+            <property name="text" value="do transform" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177508996239">
             <property name="selectable" value="false" />
