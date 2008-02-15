@@ -95,7 +95,7 @@ public class ModelsProgressUtil {
       long totalCompilationTime = compilationInIDEATime + refreshingFSTime + reloadingTime;
       generationTime = generationTime + totalCompilationTime;
     } else {
-      generationTime = generationTime + reloadingTime; // only re-load classes
+      //generationTime = generationTime; // only re-load classes
     }
     return generationTime;
   }
