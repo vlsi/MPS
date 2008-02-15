@@ -43,7 +43,11 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   }
 
   public Icon getIconFor(String pattern) {
-    return IconManager.getIconFor((ConceptDeclaration) getOutputConcept().getAdapter());
+    if (getOutputConcept() != null && getOutputConcept().getAdapter() instanceof ConceptDeclaration) {
+      return IconManager.getIconFor((ConceptDeclaration) getOutputConcept().getAdapter());
+    }
+
+    return null;
   }
 
   public SNode getSourceNode() {
