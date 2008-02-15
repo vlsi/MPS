@@ -13,6 +13,8 @@ public final class CopyUtil {
   private CopyUtil() {
   }
 
+  @Deprecated
+  // copy(List<SNode>) should be used
   public static List<SNode> copy(List<SNode> nodes, SModel targetModel) {
     return copy(nodes, new HashMap<SNode, SNode>());
   }
@@ -39,10 +41,20 @@ public final class CopyUtil {
     }
 
   */
+
+
+  @Deprecated
+  // copy(BA) should be used
   public static <BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {
     return (BA) copy(node.getNode()).getAdapter();
   }
 
+  public static <BA extends BaseAdapter> BA copy(BA node) {
+    return (BA) copy(node.getNode()).getAdapter();
+  }
+
+  @Deprecated
+  // copy(SNode) should be used
   public static SNode copy(SNode node, SModel targetModel) {
     return copy(node);
   }
