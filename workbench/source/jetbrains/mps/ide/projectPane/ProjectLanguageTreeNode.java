@@ -88,16 +88,14 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   private void populate() {
     IOperationContext operationContext = getOperationContext();
 
-    // language aspects
-
-    SModelDescriptor structureModelDescriptor = myLanguage.getStructureModelDescriptor();
-
-    if (structureModelDescriptor != null) {
-      this.add(new SModelTreeNode(structureModelDescriptor, null, operationContext, false));
+    // language aspect
+    for (LanguageAspect aspect : LanguageAspect.values()) {
+      if (aspect.get(getLanguage()) != null) {
+        add(new SModelTreeNode(aspect.get(getLanguage()), null, operationContext, false));
+      }
     }
 
     // language accessory models
-
     if (myLanguage.getAccessoryModels().size() > 0) {
       TextTreeNode accessories = new TextTreeNode("accessories") {
         {
