@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 
 import java.util.ArrayList;
@@ -9,8 +8,10 @@ import java.util.List;
 import java.util.Map;
 
 
-public class CopyUtil {
-  private static final Logger LOG = Logger.getLogger(CopyUtil.class);
+public final class CopyUtil {
+
+  private CopyUtil() {
+  }
 
   public static List<SNode> copy(List<SNode> nodes, SModel targetModel) {
     return copy(nodes, targetModel, new HashMap<SNode, SNode>());
@@ -61,15 +62,20 @@ public class CopyUtil {
   }
 
   private static SNode clone(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
-    SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), null/*targetModel*/, GlobalScope.getInstance(), false);
-    assert result != null;
-    mapping.put(node, result);
+    SNode result;
+    if (node == null) {
+      result = null;
+    } else {
+      result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), null/*targetModel*/, GlobalScope.getInstance(), false);
+      assert result != null;
+      mapping.put(node, result);
 
-    result.putProperties(node);
+      result.putProperties(node);
 
-    for (String role : node.getChildRoles(copyAttributes)) {
-      for (SNode child : node.getChildren(role)) {
-        result.addChild(role, clone(child, targetModel, mapping, copyAttributes));
+      for (String role : node.getChildRoles(copyAttributes)) {
+        for (SNode child : node.getChildren(role)) {
+          result.addChild(role, clone(child, targetModel, mapping, copyAttributes));
+        }
       }
     }
 
@@ -86,6 +92,9 @@ public class CopyUtil {
 
   private static void addReferences(List<? extends SNode> sourceNodes, Map<SNode, SNode> mapping, boolean copyAttributes) {
     for (SNode node : sourceNodes) {
+      if (node == null) {
+        continue;
+      }
       SNode target = mapping.get(node);
 
       for (SReference ref : node.getReferences()) {
@@ -94,11 +103,11 @@ public class CopyUtil {
           if (ref instanceof StaticReference) {//copy a broken static reference
             StaticReference staticReference = (StaticReference) ref;
             target.addReference(new StaticReference(
-                    staticReference.getRole(),
-                    staticReference.getSourceNode(),
-                    staticReference.getTargetModelUID(),
-                    staticReference.getTargetNodeId(),
-                    staticReference.getResolveInfo()));
+              staticReference.getRole(),
+              staticReference.getSourceNode(),
+              staticReference.getTargetModelUID(),
+              staticReference.getTargetNodeId(),
+              staticReference.getResolveInfo()));
           }
         } else if (mapping.containsKey(targetNode)) {
           target.setReferent(ref.getRole(), mapping.get(targetNode), false);
