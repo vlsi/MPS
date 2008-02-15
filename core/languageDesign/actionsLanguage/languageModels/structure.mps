@@ -911,6 +911,11 @@
       <property name="role" value="descriptionText" />
       <link role="target" targetNodeId="1196433731217" resolveInfo="IRightTransform_String" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203073759687">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="icon" />
+      <link role="target" targetNodeId="1203073706921" resolveInfo="QueryFunction_RightTransform_Icon" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177498207384">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="handler" />
@@ -1010,6 +1015,11 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="descriptionText" />
       <link role="target" targetNodeId="1196433731217" resolveInfo="IRightTransform_String" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203074270008">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="icon" />
+      <link role="target" targetNodeId="1203073706921" resolveInfo="QueryFunction_RightTransform_Icon" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177508966300">
       <property name="metaClass" value="aggregation" />
@@ -1592,6 +1602,40 @@
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203073162544">
       <link role="intfc" targetNodeId="1196434661488" resolveInfo="ISubstitute_String" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203073706921">
+    <property name="package" value="queryFunctions" />
+    <property name="name" value="QueryFunction_RightTransform_Icon" />
+    <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1203073706922">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="5.1161622753914" resolveInfo="ConceptFunctionParameter_operationContext" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1203073706923">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1177497140107" resolveInfo="ConceptFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1203073706924">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1177337833147" resolveInfo="ConceptFunctionParameter_parameterObject" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1203073706925">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1177327274449" resolveInfo="ConceptFunctionParameter_pattern" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1203073706926">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203073722527">
+        <link role="classifier" targetNodeId="9.~Icon" resolveInfo="Icon" />
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203073706928">
+      <property name="value" value="icon" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203073706929">
+      <link role="intfc" targetNodeId="1196433731217" resolveInfo="IRightTransform_String" />
     </node>
   </node>
 </model>

@@ -94,7 +94,6 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     // language aspects
 
     SModelDescriptor structureModelDescriptor = myLanguage.getStructureModelDescriptor();
-
     if (structureModelDescriptor != null) {
       this.add(new SModelTreeNode(structureModelDescriptor, null, operationContext, false));
     }

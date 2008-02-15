@@ -211,12 +211,20 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "descriptionText", true) != null;
   }
 
+  public static boolean ifMacro_Condition_1203073872725(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "icon", true) != null;
+  }
+
   public static boolean ifMacro_Condition_1177514488331(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "matchingText", true), "body", true) != null;
   }
 
   public static boolean ifMacro_Condition_1177514494000(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "descriptionText", true), "body", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1203074384106(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "icon", true), "body", true) != null;
   }
 
   public static SNode sourceNodeQuery_1172253302099(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -335,6 +343,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "descriptionText", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1203073876261(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "icon", true), "body", true);
+  }
+
   public static SNode sourceNodeQuery_1177510051563(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "query", true), "body", true);
   }
@@ -361,6 +373,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1177514456119(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "descriptionText", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1203074405261(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "icon", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1177528022223(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
