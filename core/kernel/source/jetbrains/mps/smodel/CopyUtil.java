@@ -14,15 +14,16 @@ public final class CopyUtil {
   }
 
   public static List<SNode> copy(List<SNode> nodes, SModel targetModel) {
-    return copy(nodes, targetModel, new HashMap<SNode, SNode>());
+    return copy(nodes, new HashMap<SNode, SNode>());
   }
 
-  public static List<SNode> copy(List<SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
+  public static List<SNode> copy(List<SNode> nodes, Map<SNode, SNode> mapping) {
     List<SNode> result = clone(nodes, mapping);
     addReferences(nodes, mapping, true);
     return result;
   }
 
+/*
   public static List<SNode> copyAndPreserveId(List<SNode> nodes, SModel targetModel) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> result = clone(nodes, mapping);
@@ -33,12 +34,13 @@ public final class CopyUtil {
     return result;
   }
 
+*/
   public static <BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {
-    return (BA) copy(node.getNode(), targetModel, new HashMap<SNode, SNode>(), true).getAdapter();
+    return (BA) copy(node.getNode(), new HashMap<SNode, SNode>(), true).getAdapter();
   }
 
   public static SNode copy(SNode node, SModel targetModel) {
-    return copy(node, targetModel, new HashMap<SNode, SNode>(), true);
+    return copy(node, new HashMap<SNode, SNode>(), true);
   }
 
   public static SNode copyAndPreserveId(SNode node, SModel targetModel) {
@@ -54,6 +56,14 @@ public final class CopyUtil {
   }
 
   public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
+    SNode result = clone(node, mapping, copyAttributes);
+    List<SNode> nodes = new ArrayList<SNode>();
+    nodes.add(node);
+    addReferences(nodes, mapping, copyAttributes);
+    return result;
+  }
+
+  public static SNode copy(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     SNode result = clone(node, mapping, copyAttributes);
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(node);

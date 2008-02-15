@@ -156,7 +156,7 @@ public class RefactoringContext {
 
   public List<SNode> moveNodesToNode(List<SNode> sourceNodes, String role, SNode targetNode) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    List<SNode> targetNodes = CopyUtil.copy(sourceNodes, targetNode.getModel(), mapping);
+    List<SNode> targetNodes = CopyUtil.copy(sourceNodes, mapping);
     for (SNode node : targetNodes) {
       targetNode.addChild(role, node);
     }
@@ -184,7 +184,7 @@ public class RefactoringContext {
     }
 //    SModel sourceModel = sourceNodes.get(0).getModel();
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    List<SNode> targetNodes = CopyUtil.copy(sourceNodes, targetModel, mapping);
+    List<SNode> targetNodes = CopyUtil.copy(sourceNodes, mapping);
     for (SNode node : targetNodes) {
       targetModel.addRoot(node);
     }
