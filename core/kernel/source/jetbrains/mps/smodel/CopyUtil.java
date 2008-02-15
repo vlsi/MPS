@@ -13,12 +13,6 @@ public final class CopyUtil {
   private CopyUtil() {
   }
 
-  @Deprecated
-  // copy(List<SNode>) should be used
-  public static List<SNode> copy(List<SNode> nodes, SModel targetModel) {
-    return copy(nodes, new HashMap<SNode, SNode>());
-  }
-
   public static List<SNode> copy(List<SNode> nodes) {
     return copy(nodes, new HashMap<SNode, SNode>());
   }
