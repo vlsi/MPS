@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
  * Time: Nov 25, 2003 7:27:37 PM
  */
 public class PasteNodeUtil {
-  private static final Logger LOG = Logger.getLogger(PasteNodeUtil.class);
+//  private static final Logger LOG = Logger.getLogger(PasteNodeUtil.class);
 
   private static final int PASTE_N_A = 0;
   private static final int PASTE_TO_TARGET = 1;
@@ -51,7 +51,7 @@ public class PasteNodeUtil {
   }
 
   public static boolean canPasteAsRoot(SNode pasteNode, IOperationContext operationContext) {
-    final ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(pasteNode.getConceptFqName(), operationContext.getScope());
+    final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) SModelUtil_new.findAbstractConceptDeclaration(pasteNode.getConceptFqName(), operationContext.getScope());
     return conceptDeclaration.getRootable();
   }
 

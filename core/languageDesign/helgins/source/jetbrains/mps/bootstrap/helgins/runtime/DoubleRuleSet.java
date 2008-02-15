@@ -25,9 +25,9 @@ public class DoubleRuleSet<T extends IRuleWithTwoApplicableNodes> {
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
-      ConceptDeclaration concept1 = SModelUtil_new.findConceptDeclaration(
+      AbstractConceptDeclaration concept1 = SModelUtil_new.findAbstractConceptDeclaration(
               rule.getApplicableConceptFQName1(), GlobalScope.getInstance());
-      ConceptDeclaration concept2 = SModelUtil_new.findConceptDeclaration(
+      AbstractConceptDeclaration concept2 = SModelUtil_new.findAbstractConceptDeclaration(
               rule.getApplicableConceptFQName2(), GlobalScope.getInstance());
       Pair<AbstractConceptDeclaration, AbstractConceptDeclaration> pair = new Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>(concept1, concept2);
       Set<T> existingRules = myRules.get(pair);

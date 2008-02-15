@@ -31,7 +31,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   private static Logger LOG = Logger.getLogger(NodeFactoryManager.class);
 
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
-    ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
+    AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findAbstractConceptDeclaration(conceptFqName, scope);
     return createNode(conceptDeclaration, sampleNode, enclosingNode, model, scope);
   }
 
@@ -117,7 +117,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     if (setupFunction == null) return;
 
     String methodName = ActionQueryMethodName.nodeFactory_NodeSetupFunction(factory);
-    Object[] args = new Object[]{newNode, sampleNode, enclosingNode, model};
+//    Object[] args = new Object[]{newNode, sampleNode, enclosingNode, model};
     try {
       //todo pass IOperationContext here somehow
       QueryMethodGenerated.invoke(methodName, null, new NodeSetupContext(newNode, sampleNode, enclosingNode, model), factory.getModel());

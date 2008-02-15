@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.scriptLanguage.runtime;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
@@ -47,7 +48,7 @@ public abstract class AbstractMigrationRefactoring extends DefaultRefactoring {
   public Set<SNode> searchAffectedInstances(IAdaptiveProgressMonitor monitor) {
     FindUsagesManager usages = ApplicationComponents.getInstance().getComponentSafe(FindUsagesManager.class);
     IScope scope = GlobalScope.getInstance();
-    ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(getFqNameOfConceptToSearchInstances(), scope);
+    AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findAbstractConceptDeclaration(getFqNameOfConceptToSearchInstances(), scope);
     Set<SNode> instances = usages.findInstances(conceptDeclaration, scope, monitor);
     HashSet<SNode> affectedInstances = new HashSet<SNode>();
 

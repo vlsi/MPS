@@ -183,7 +183,7 @@ public class DiffBuilder {
   }
 
   private boolean isToManyCardinality(String fqName, String role) {
-    LinkDeclaration ld = SModelUtil_new.findLinkDeclaration(SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance()), role);
+    LinkDeclaration ld = SModelUtil_new.findLinkDeclaration(SModelUtil_new.findAbstractConceptDeclaration(fqName, GlobalScope.getInstance()), role);
     if (ld == null) {
       return false;
     }

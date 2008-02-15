@@ -23,7 +23,7 @@ public class RuleSet<T extends Rule_Runtime> {
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(rule.getApplicableConceptFQName(), GlobalScope.getInstance());
+      AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration(rule.getApplicableConceptFQName(), GlobalScope.getInstance());
       Set<T> existingRules = myRules.get(concept);
       if (existingRules == null) {
         existingRules = new HashSet<T>(2);

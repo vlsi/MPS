@@ -3,6 +3,7 @@ package jetbrains.mps.plugin;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.IEditor;
@@ -101,7 +102,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void showConceptNode(final String fqName) throws RemoteException {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance());
+        AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration(fqName, GlobalScope.getInstance());
         IDEProjectFrame projectWindow = getProjectWindow();
         projectWindow.getEditorsPane().openEditor(concept.getNode(), new ProjectOperationContext(projectWindow.getProject()));
         FrameUtil.activateFrame(getMainFrame());
