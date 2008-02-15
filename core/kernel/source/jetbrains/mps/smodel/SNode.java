@@ -1452,7 +1452,7 @@ public final class SNode {
   }
 
   @UseCarefully
-  public void setConceptFqName(String conceptFQName) {
+  void setConceptFqName(String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
     myAdapter = null;
   }

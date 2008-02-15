@@ -4,10 +4,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -260,7 +260,7 @@ public class RefactoringContext {
 
           if (kind == ConceptFeatureKind.CONCEPT) {
             String newConceptFQName = newConceptFeature.getConceptFQName();
-            node.setConceptFqName(newConceptFQName);
+            HackSNodeUtil.setConceptFqName(node, newConceptFQName);
           }
         }
       }
