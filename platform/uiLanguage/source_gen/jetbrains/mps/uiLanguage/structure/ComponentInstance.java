@@ -17,8 +17,8 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String NAME = "name";
-  public static String COMPONENT_DECLARATION = "componentDeclaration";
   public static String CONTENT = "content";
+  public static String COMPONENT_DECLARATION = "componentDeclaration";
 
   public  ComponentInstance(SNode node) {
     super(node);
@@ -65,14 +65,6 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
     this.setProperty(ComponentInstance.NAME, value);
   }
 
-  public ComponentDeclaration getComponentDeclaration() {
-    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
-  }
-
-  public void setComponentDeclaration(ComponentDeclaration node) {
-    super.setReferent(ComponentInstance.COMPONENT_DECLARATION, node);
-  }
-
   public int getContentsCount() {
     return this.getChildCount(ComponentInstance.CONTENT);
   }
@@ -91,6 +83,14 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, ComponentInstance.CONTENT, node);
+  }
+
+  public ComponentDeclaration getComponentDeclaration() {
+    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
+  }
+
+  public void setComponentDeclaration(ComponentDeclaration node) {
+    super.setReferent(ComponentInstance.COMPONENT_DECLARATION, node);
   }
 
 }
