@@ -67,4 +67,20 @@ public class ClassifierAdapters_Test extends TestCase {
     Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,4,5}), list);
   }
 
+  public void test_foo() throws Exception {
+    this.acceptWorker(new Worker() {
+
+      public String doWork(Integer i) {
+        return String.valueOf(i);
+      }
+
+    });
+  }
+
+  public void acceptWorker(Worker one, Worker two) {
+  }
+
+  public void acceptWorker(Worker one) {
+  }
+
 }

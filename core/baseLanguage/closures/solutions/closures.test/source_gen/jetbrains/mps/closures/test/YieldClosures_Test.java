@@ -455,8 +455,8 @@ __switch__:
   }
 
   public void test_foreachStatement() throws Exception {
-    final List<Integer> data1 = Arrays.asList(new Integer[]{1,2,3,4,5});
-    final List<Integer> data2 = Arrays.asList(new Integer[]{1,2,3,4,5});
+    final List<Integer> data1 = (List<Integer>)Arrays.asList(1, 2, 3, 4, 5);
+    final List<Integer> data2 = (List<Integer>)Arrays.asList(1, 2, 3, 4, 5);
     this.assertResultsEqual(new FunctionTypes._void_from_T <List<Integer>>() {
 
       public void invoke(List<Integer> exp) {

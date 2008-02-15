@@ -41,9 +41,11 @@ public class ExternalReferences_Test extends TestCase {
     Worker wrk = new Worker() {
 
       public int field;
+      public int foo;
 
-      public String doWork(Integer d) {
-        this.field = d;
+      public String doWork(Integer foo) {
+        this.foo = foo;
+        this.field = this.foo;
         return new FunctionTypes._R <String>() {
 
           public String invoke() {

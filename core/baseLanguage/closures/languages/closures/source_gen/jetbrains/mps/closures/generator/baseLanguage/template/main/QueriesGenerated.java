@@ -239,10 +239,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201048260874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      IMatchingPattern pattern_1203009405333 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1203009405315 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1203009405333);
-      if(coercedNode_1203009405315 != null) {
-        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1203009405315, "elementType", true));
+      IMatchingPattern pattern_1203078442204 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1203078442186 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1203078442204);
+      if(coercedNode_1203078442186 != null) {
+        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1203078442186, "elementType", true));
       }
     }
     return null;
@@ -1014,7 +1014,7 @@ public class QueriesGenerated {
       List<SNode> args = SLinkOperations.getTargets(bmc, "actualArgument", true);
       List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false), "parameter", true);
       if(args.size() != pdecls.size()) {
-        _context.getGenerator().showWarningMessage(bmc, "Actual arguments count != parameter declarations count");
+        _context.getGenerator().showInformationMessage(bmc, "Actual arguments count != parameter declarations count");
       }
       int idx = 0;
       for(SNode pdecl : pdecls) {

@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runtime {
@@ -26,6 +27,23 @@ public class typeof_InvokeExpression_InferenceRule implements InferenceRule_Runt
         TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(invoke, "jetbrains.mps.closures.helgins", "1199711815333", true), SLinkOperations.getTarget(ft, "resultType", true), invoke, null, "jetbrains.mps.closures.helgins", "1199711813747");
         if(!(SLinkOperations.getCount(ft, "parameterType") == SLinkOperations.getCount(invoke, "parameter"))) {
           TypeChecker.getInstance().reportTypeError(invoke, "Wrong parameters number", "jetbrains.mps.closures.helgins", "1199711857568");
+        }
+        {
+          SNode pt;
+          SNode p;
+          Iterator<SNode> pt_iterator = SLinkOperations.getTargets(ft, "parameterType", true).iterator();
+          Iterator<SNode> p_iterator = SLinkOperations.getTargets(invoke, "parameter", true).iterator();
+          while(true) {
+            if(!(pt_iterator.hasNext())) {
+              break;
+            }
+            if(!(p_iterator.hasNext())) {
+              break;
+            }
+            pt = pt_iterator.next();
+            p = p_iterator.next();
+            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(p, "jetbrains.mps.closures.helgins", "1202920161360", true), pt, p, null, "jetbrains.mps.closures.helgins", "1202920161358");
+          }
         }
       }
 

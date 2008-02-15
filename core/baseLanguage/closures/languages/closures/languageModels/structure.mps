@@ -66,6 +66,10 @@
       <property name="role" value="parameter" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="specializedLink" targetNodeId="1202930845056" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1202930684841">
+      <link role="intfc" targetNodeId="1202930661036" resolveInfo="IInvokeExpression" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1199569711397">
@@ -103,6 +107,7 @@
       <property name="role" value="parameter" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="specializedLink" targetNodeId="1202930845056" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1199711286575">
       <property name="value" value="invoke" />
@@ -114,6 +119,9 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1199711398755">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1202930680799">
+      <link role="intfc" targetNodeId="1202930661036" resolveInfo="IInvokeExpression" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200830824066">
@@ -128,6 +136,40 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1200830918832">
       <property name="value" value="yield" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1202910652072">
+    <property name="name" value="IInputProvider" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202926716631">
+    <property name="name" value="InputType" />
+    <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202926751344">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="parameterType" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202930411670">
+    <property name="name" value="InvokeInput" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202930424839">
+      <property name="role" value="invoke" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1202930661036" resolveInfo="IInvokeExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1202930661036">
+    <property name="name" value="IInvokeExpression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202930845056">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="parameter" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1202931048635">
+      <link role="intfc" targetNodeId="1202910652072" resolveInfo="IInputProvider" />
     </node>
   </node>
 </model>

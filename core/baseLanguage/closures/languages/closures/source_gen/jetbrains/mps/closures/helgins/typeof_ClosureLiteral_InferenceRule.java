@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import java.util.LinkedList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import java.util.LinkedList;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -23,7 +23,14 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
   public void applyRule(final SNode closure) {
     List<SNode> paramTypes = new ArrayList<SNode>();
     for(SNode param : SLinkOperations.getTargets(closure, "parameter", true)) {
-      paramTypes.add(SLinkOperations.getTarget(param, "type", true));
+      if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
+        final SNode pt_typevar_1203031819477 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(pt_typevar_1203031819477), TypeChecker.getInstance().getRuntimeSupport().typeOf(param, "jetbrains.mps.closures.helgins", "1203031834114", true), param, null, "jetbrains.mps.closures.helgins", "1203031828846");
+        paramTypes.add(TypeChecker.getInstance().getEquationManager().getRepresentator(pt_typevar_1203031819477));
+      } else
+      {
+        paramTypes.add(SLinkOperations.getTarget(param, "type", true));
+      }
     }
     List<SNode> allRets = new ArrayList<SNode>();
     List<SNode> allYlds = new ArrayList<SNode>();
