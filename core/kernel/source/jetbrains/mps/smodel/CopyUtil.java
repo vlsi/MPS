@@ -43,7 +43,7 @@ public final class CopyUtil {
     return copy(node, new HashMap<SNode, SNode>(), true);
   }
 
-  public static SNode copyAndPreserveId(SNode node, SModel targetModel) {
+  public static SNode copyAndPreserveId(SNode node) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SNode result = clone(node, mapping, true);
     for (SNode sourceNode : mapping.keySet()) {
