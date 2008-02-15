@@ -30,6 +30,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138055978872">
     <property name="name" value="SNodeOperationExpression" />
+    <property name="package" value="operation" />
     <link role="extends" targetNodeId="2.1068431790191" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1138056667223">
       <property name="targetCardinality" value="1" />
@@ -132,6 +133,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138411891628">
     <property name="name" value="SNodeOperation" />
+    <property name="package" value="operation" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1144104376918">
       <property name="metaClass" value="aggregation" />

@@ -1186,6 +1186,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1187949777121">
+    <property name="package" value="operation" />
     <link role="concept" targetNodeId="1.1138055978872" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1187949779930">
       <property name="name" value="getVariableExpectedName" />
@@ -1246,6 +1247,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1187949798135">
+    <property name="package" value="operation" />
     <link role="concept" targetNodeId="1.1138411891628" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1200920411564">
       <property name="name" value="getLeftExpression" />

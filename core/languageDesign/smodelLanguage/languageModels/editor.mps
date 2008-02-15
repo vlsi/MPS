@@ -36,6 +36,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1138063757082">
+    <property name="package" value="operation" />
     <link role="conceptDeclaration" targetNodeId="1.1138055978872" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1138063769790">
       <property name="vertical" value="false" />
@@ -130,6 +131,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1138412002490">
+    <property name="package" value="operation" />
     <link role="conceptDeclaration" targetNodeId="1.1138411891628" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1138412005946">
       <property name="drawBorder" value="false" />
