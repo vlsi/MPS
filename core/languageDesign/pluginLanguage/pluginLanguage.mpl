@@ -12,6 +12,10 @@
     <entry path="${language_descriptor}\classes"/>
   </runtimeClassPath>
   <sourcePath/>
+  <osgiOptions>
+    <requiredBundles/>
+    <exportedPackage/>
+  </osgiOptions>
   <extendedLanguages/>
 </language>
 

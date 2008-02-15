@@ -304,7 +304,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     aspects.addAll(CollectionUtil.asList(
       ".editor", ".actions", ".constraints",
-      ".intentions", ".findUsages", ".builder", ".scripts",
+      ".intentions", ".findUsages", ".plugins", ".builder", ".scripts",
       ".helgins", ".plugin", ".textGen",
       ".textPresentation", ".design", ".util", ".runtime", ".cfa"
     ));
@@ -424,7 +424,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   public List<ConceptDeclaration> getConceptDeclarations() {
     return getStructureModelDescriptor().getSModel().allAdapters(ConceptDeclaration.class);
   }
-  
+
   public SModelDescriptor getStructureModelDescriptor() {
     SModelDescriptor result = LanguageAspect.STRUCTURE.get(this);
 
@@ -457,6 +457,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public SModelDescriptor getFindUsagesModelDescriptor() {
     return LanguageAspect.FIND_USAGES.get(this);
+  }
+
+  public SModelDescriptor getPluginModelDescriptor() {
+    return LanguageAspect.PLUGIN.get(this);
   }
 
   public SModelDescriptor getScriptsModelDescriptor() {

@@ -65,6 +65,12 @@ public enum LanguageAspect {
     }
   },
 
+  PLUGIN("plugin") {
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getPluginLanguage().getNamespace());
+    }
+  },
+
   CFA("cfa") {
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getCFALanguage().getNamespace());
@@ -107,7 +113,7 @@ public enum LanguageAspect {
     for (String modelUID : getModelsToImport(l)) {
       model.getSModel().addImportedModel(SModelUID.fromString(modelUID));
     }
-    
+
     model.getSModel().addImportedModel(l.getStructureModelDescriptor().getModelUID());
 
     model.save();
@@ -130,7 +136,7 @@ public enum LanguageAspect {
 
   protected List<String> getModelsToImport(Language l) {
     return CollectionUtil.asList(
-            l.getStructureModelDescriptor().getModelUID().toString()
+      l.getStructureModelDescriptor().getModelUID().toString()
     );
   }
 
