@@ -175,12 +175,20 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "matchingText", true) != null;
   }
 
+  public static boolean ifMacro_Condition_1203073315188(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "icon", true) != null;
+  }
+
   public static boolean ifMacro_Condition_1201900835343(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "matchingText", true) != null;
   }
 
   public static boolean ifMacro_Condition_1201900835367(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "descriptionText", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1203073021643(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "icon", true) != null;
   }
 
   public static boolean ifMacro_Condition_1198600310110(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -255,6 +263,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "matchingText", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1203073328859(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "icon", true), "body", true);
+  }
+
   public static SNode sourceNodeQuery_1177353800103(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "query", true), "body", true);
   }
@@ -281,6 +293,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1201900835356(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "descriptionText", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1203073040158(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "icon", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1177405091687(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

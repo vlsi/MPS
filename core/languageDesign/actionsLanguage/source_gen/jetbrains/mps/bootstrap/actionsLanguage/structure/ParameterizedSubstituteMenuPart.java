@@ -14,6 +14,7 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
   public static String QUERY = "query";
   public static String MATCHING_TEXT = "matchingText";
   public static String DESCRIPTION_TEXT = "descriptionText";
+  public static String ICON = "icon";
   public static String HANDLER = "handler";
 
   public  ParameterizedSubstituteMenuPart(SNode node) {
@@ -59,6 +60,14 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
 
   public void setDescriptionText(QueryFunction_ParameterizedSubstitute_String node) {
     super.setChild(ParameterizedSubstituteMenuPart.DESCRIPTION_TEXT, node);
+  }
+
+  public QueryFunction_ParameterizedSubstitute_Icon getIcon() {
+    return (QueryFunction_ParameterizedSubstitute_Icon)this.getChild(ParameterizedSubstituteMenuPart.ICON);
+  }
+
+  public void setIcon(QueryFunction_ParameterizedSubstitute_Icon node) {
+    super.setChild(ParameterizedSubstituteMenuPart.ICON, node);
   }
 
   public QueryFunction_ParameterizedSubstitute_Handler getHandler() {

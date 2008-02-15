@@ -11,6 +11,7 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemSubstitutePart";
   public static String MATCHING_TEXT = "matchingText";
   public static String DESCRIPTION_TEXT = "descriptionText";
+  public static String ICON = "icon";
   public static String CAN_SUBSTITUTE = "canSubstitute";
   public static String HANDLER = "handler";
 
@@ -41,6 +42,14 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
 
   public void setDescriptionText(ISubstitute_String node) {
     super.setChild(SimpleItemSubstitutePart.DESCRIPTION_TEXT, node);
+  }
+
+  public QueryFunction_SubstituteIcon getIcon() {
+    return (QueryFunction_SubstituteIcon)this.getChild(SimpleItemSubstitutePart.ICON);
+  }
+
+  public void setIcon(QueryFunction_SubstituteIcon node) {
+    super.setChild(SimpleItemSubstitutePart.ICON, node);
   }
 
   public QueryFunction_CanSubstitute getCanSubstitute() {
