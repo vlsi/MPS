@@ -55,14 +55,6 @@ public final class CopyUtil {
     return result;
   }
 
-  public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
-    SNode result = clone(node, mapping, copyAttributes);
-    List<SNode> nodes = new ArrayList<SNode>();
-    nodes.add(node);
-    addReferences(nodes, mapping, copyAttributes);
-    return result;
-  }
-
   public static SNode copy(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     SNode result = clone(node, mapping, copyAttributes);
     List<SNode> nodes = new ArrayList<SNode>();

@@ -19,7 +19,7 @@ public class HUtil {
 
   public static SNode copyIfNecessary ( SNode node, SModel model ) {
      if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
-        return CopyUtil.copy (node, model, new HashMap<SNode, SNode>(), false) ;
+        return CopyUtil.copy (node, new HashMap<SNode, SNode>(), false) ;
      } else {
         return node ;
      }
