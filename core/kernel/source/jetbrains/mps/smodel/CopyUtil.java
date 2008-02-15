@@ -18,14 +18,14 @@ public final class CopyUtil {
   }
 
   public static List<SNode> copy(List<SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
-    List<SNode> result = clone(nodes, targetModel, mapping);
+    List<SNode> result = clone(nodes, mapping);
     addReferences(nodes, mapping, true);
     return result;
   }
 
   public static List<SNode> copyAndPreserveId(List<SNode> nodes, SModel targetModel) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    List<SNode> result = clone(nodes, targetModel, mapping);
+    List<SNode> result = clone(nodes, mapping);
     for (SNode sourceNode : mapping.keySet()) {
       mapping.get(sourceNode).setId(sourceNode.getSNodeId());
     }
@@ -43,7 +43,7 @@ public final class CopyUtil {
 
   public static SNode copyAndPreserveId(SNode node, SModel targetModel) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    SNode result = clone(node, targetModel, mapping, true);
+    SNode result = clone(node, mapping, true);
     for (SNode sourceNode : mapping.keySet()) {
       mapping.get(sourceNode).setId(sourceNode.getSNodeId());
     }
@@ -54,14 +54,14 @@ public final class CopyUtil {
   }
 
   public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
-    SNode result = clone(node, targetModel, mapping, copyAttributes);
+    SNode result = clone(node, mapping, copyAttributes);
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(node);
     addReferences(nodes, mapping, copyAttributes);
     return result;
   }
 
-  private static SNode clone(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
+  private static SNode clone(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     SNode result;
     if (node == null) {
       result = null;
@@ -74,7 +74,7 @@ public final class CopyUtil {
 
       for (String role : node.getChildRoles(copyAttributes)) {
         for (SNode child : node.getChildren(role)) {
-          result.addChild(role, clone(child, targetModel, mapping, copyAttributes));
+          result.addChild(role, clone(child, mapping, copyAttributes));
         }
       }
     }
@@ -82,10 +82,10 @@ public final class CopyUtil {
     return result;
   }
 
-  private static List<SNode> clone(List<? extends SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
+  private static List<SNode> clone(List<? extends SNode> nodes, Map<SNode, SNode> mapping) {
     List<SNode> results = new ArrayList<SNode>();
     for (SNode node : nodes) {
-      results.add(clone(node, targetModel, mapping, true));
+      results.add(clone(node, mapping, true));
     }
     return results;
   }
