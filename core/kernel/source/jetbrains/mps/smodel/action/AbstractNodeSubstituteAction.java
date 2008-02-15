@@ -22,6 +22,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     mySourceNode = sourceNode;
   }
 
+  @Deprecated
   protected AbstractNodeSubstituteAction(Object parameterObject, SNode sourceNode) {
     mySourceNode = sourceNode;
     myParameterObject = parameterObject;
