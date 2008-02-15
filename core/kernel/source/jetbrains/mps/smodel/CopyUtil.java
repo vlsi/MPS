@@ -42,7 +42,6 @@ public final class CopyUtil {
 
   */
 
-
   @Deprecated
   // copy(BA) should be used
   public static <BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {
