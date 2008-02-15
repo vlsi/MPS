@@ -10,6 +10,8 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Calculable;
+import jetbrains.mps.ide.command.CommandProcessor;
 import org.jdom.Element;
 
 import java.util.*;
@@ -38,14 +40,19 @@ public class IntentionsManager implements IExternalizableComponent {
 
   }
 
-  public Set<Intention> getAvailableIntentions(SNode node, EditorContext context) {
+  public Set<Intention> getAvailableIntentions(final SNode node, final EditorContext context) {
     Set<Intention> result = new HashSet<Intention>();
 
     for (String conceptFQName : myIntentions.keySet()) {
       if (node.isInstanceOfConcept(conceptFQName)) {
-        for (Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFQName))) {
+        for (final Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFQName))) {
           try {
-            if (intention.isApplicable(node, context)) {
+            boolean isApplicable = CommandProcessor.instance().executeLightweightCommand(new Calculable<Boolean>() {
+              public Boolean calculate() {
+                return intention.isApplicable(node, context);
+              }
+            });
+            if (isApplicable) {
               result.add(intention);
             }
           } catch (Throwable t) {
