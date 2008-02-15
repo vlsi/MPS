@@ -6,19 +6,11 @@ import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.generator.template.WeavingMappingRuleContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class QueriesGenerated {
 
-  public static List sourceNodesQuery_1203085506227(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static List sourceNodesQuery_1203086494299(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "content", true);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1203085660161(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.uiLanguage.structure.ComponentDeclaration", false, false);
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(component, "bindMethod");
   }
 
 }
