@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -419,7 +418,7 @@ public class SNodeOperations {
             role == null || role.length() == 0) {
       return false;
     }
-    AbstractConceptDeclaration expectedConcept = SModelUtil_new.findAbstractConceptDeclaration(conceptOfParentFqName, GlobalScope.getInstance());
+    AbstractConceptDeclaration expectedConcept = SModelUtil_new.findConceptDeclaration(conceptOfParentFqName, GlobalScope.getInstance());
     if (expectedConcept == null) return false;
 
     SNode nodeParent = node.getParent();

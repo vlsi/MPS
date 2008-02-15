@@ -2,7 +2,6 @@ package jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -25,7 +24,7 @@ public class SModelOperations {
       return model.getRoots();
     }
     GlobalScope scope = GlobalScope.getInstance();
-    AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration(conceptFqName, scope);
+    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
     if (concept == null) return new ArrayList<SNode>();
 
     List<SNode> list = new ArrayList<SNode>();
@@ -44,7 +43,7 @@ public class SModelOperations {
       return model.allRootsIncludingImported(scope);
     }
 
-    AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration(conceptFqName, scope);
+    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
     if (concept == null) return Collections.EMPTY_LIST;
 
     List<SNode> list = new ArrayList<SNode>();
@@ -67,7 +66,7 @@ public class SModelOperations {
       });
     }
 
-    final AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration(conceptFqName, scope);
+    final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
     if (concept == null) return Collections.EMPTY_LIST;
 
     return model.allNodesIncludingImported(scope, new Condition<SNode>() {
@@ -82,7 +81,7 @@ public class SModelOperations {
     if (conceptFqName == null) {
       return (List<SNode>) model.allNodes();
     }
-    final AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (concept == null) return new ArrayList<SNode>();
 
     return model.allNodes(new Condition<SNode>() {

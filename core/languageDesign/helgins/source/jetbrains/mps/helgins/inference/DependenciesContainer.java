@@ -25,7 +25,7 @@ public class DependenciesContainer {
 
     public void addDependencies(Set<IDependency_Runtime> dependencies) {
       for (IDependency_Runtime dependency : dependencies) {
-        AbstractConceptDeclaration concept = SModelUtil_new.findAbstractConceptDeclaration(dependency.getTargetConceptFQName(), GlobalScope.getInstance());
+        AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(dependency.getTargetConceptFQName(), GlobalScope.getInstance());
         Set<IDependency_Runtime> existingRules = myDependencies.get(concept);
         if (existingRules == null) {
           existingRules = new HashSet<IDependency_Runtime>();

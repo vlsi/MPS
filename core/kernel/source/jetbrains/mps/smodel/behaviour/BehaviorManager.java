@@ -248,7 +248,7 @@ public final class BehaviorManager {
       AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
       superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
     } else {
-      AbstractConceptDeclaration callerConcept = SModelUtil_new.findAbstractConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
+      AbstractConceptDeclaration callerConcept = SModelUtil_new.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
       superConcepts = SModelUtil_new.getConceptAndSuperConcepts(callerConcept);
       superConcepts.remove(callerConcept);
     }

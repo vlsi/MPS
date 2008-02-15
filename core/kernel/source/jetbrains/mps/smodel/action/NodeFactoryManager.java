@@ -31,7 +31,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   private static Logger LOG = Logger.getLogger(NodeFactoryManager.class);
 
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
-    AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findAbstractConceptDeclaration(conceptFqName, scope);
+    AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
     return createNode(conceptDeclaration, sampleNode, enclosingNode, model, scope);
   }
 

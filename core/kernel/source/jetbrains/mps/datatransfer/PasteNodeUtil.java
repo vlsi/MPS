@@ -3,7 +3,6 @@ package jetbrains.mps.datatransfer;
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.smodel.IOperationContext;
@@ -51,7 +50,7 @@ public class PasteNodeUtil {
   }
 
   public static boolean canPasteAsRoot(SNode pasteNode, IOperationContext operationContext) {
-    final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) SModelUtil_new.findAbstractConceptDeclaration(pasteNode.getConceptFqName(), operationContext.getScope());
+    final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) SModelUtil_new.findConceptDeclaration(pasteNode.getConceptFqName(), operationContext.getScope());
     return conceptDeclaration.getRootable();
   }
 

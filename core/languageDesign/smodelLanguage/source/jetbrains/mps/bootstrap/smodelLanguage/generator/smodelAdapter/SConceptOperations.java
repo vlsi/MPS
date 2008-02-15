@@ -1,7 +1,6 @@
 package jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
@@ -51,7 +50,7 @@ public final class SConceptOperations {
 
 
   public static SNode findConceptDeclaration(String conceptFqName) {
-    return BaseAdapter.fromAdapter(SModelUtil_new.findAbstractConceptDeclaration(conceptFqName, GlobalScope.getInstance()));
+    return BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance()));
   }
 
   public static List<SNode> getDirectSuperConcepts(SNode conceptDeclarationNode) {
