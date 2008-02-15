@@ -16,7 +16,7 @@
   <import index="6" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" version="-1"/>
   <import index="7" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="-1"/>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1203086933326">
-    <property name="package" value="Actions"/>
+    <property name="package" value="Actions.Action"/>
     <link role="concept" targetNodeId="7.1203071646776" resolveInfo="Action"/>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration"
           id="1203086933327">

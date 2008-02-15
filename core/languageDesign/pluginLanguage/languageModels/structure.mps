@@ -12,7 +12,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071646776">
     <property name="name" value="ActionDeclaration"/>
     <property name="rootable" value="true"/>
-    <property name="package" value="Actions"/>
+    <property name="package" value="Actions.Action"/>
     <property name="iconPath" value="${mps_home}\"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
@@ -61,7 +61,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203082695294">
     <property name="name" value="IsApplicableBlock"/>
-    <property name="package" value="Actions"/>
+    <property name="package" value="Actions.Action"/>
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1203082808306">
@@ -77,7 +77,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203082903663">
     <property name="name" value="ConceptFunctionParameter_ActionContext"/>
-    <property name="package" value="Actions"/>
+    <property name="package" value="Actions.Action"/>
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1203082943508">
@@ -92,7 +92,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203083511112">
     <property name="name" value="ExecuteBlock"/>
-    <property name="package" value="Actions"/>
+    <property name="package" value="Actions.Action"/>
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1203083511113">
@@ -104,6 +104,46 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
             resolveInfo="applicableConceptFunctionParameter"/>
       <link role="target" targetNodeId="1203082903663" resolveInfo="ConceptFunctionParameter_ActionContext"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203087874735">
+    <property name="package" value="Actions.Configuration"/>
+    <property name="name" value="ActionConfiguration"/>
+    <property name="rootable" value="true"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1203088188973">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="groups"/>
+      <property name="sourceCardinality" value="0..n"/>
+      <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroup"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203087890642">
+    <property name="package" value="Actions.Configuration"/>
+    <property name="name" value="ActionGroup"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1203087991474">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="reference"/>
+      <property name="sourceCardinality" value="0..n"/>
+      <link role="target" targetNodeId="1203088046679" resolveInfo="ActionReference"/>
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1203088222865">
+      <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203088046679">
+    <property name="package" value="Actions.Configuration"/>
+    <property name="name" value="ActionReference"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1203088061055">
+      <property name="role" value="action"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="1203071646776" resolveInfo="ActionDeclaration"/>
     </node>
   </node>
 </model>
