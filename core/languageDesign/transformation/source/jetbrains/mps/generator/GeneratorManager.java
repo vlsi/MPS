@@ -454,10 +454,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       (myCompileOnGeneration && generationType.requiresCompilationInIDEAfterGeneration())
         || (myCompileBeforeGeneration && generationType.requiresCompilationInIDEABeforeGeneration()));
     long totalJob = 0;
+    Map<IModule, Long> modulesToGenerationTimes = new HashMap<IModule, Long>();
+    Map<IModule, Long> modulesToResidualTimes = new HashMap<IModule, Long>();
     for (Pair<IModule, List<SModelDescriptor>> pair : moduleSequence) { //todo
       IModule module = pair.o1;
       if (module != null) {
-        totalJob += ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, module != null && !module.isCompileInMPS(), pair.o2);
+        long jobTime = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, module != null && !module.isCompileInMPS(), pair.o2);
+        long generationTime = ModelsProgressUtil.estimateTotalGenerationJobMillis(false, false, pair.o2);
+        totalJob += jobTime;
+        modulesToGenerationTimes.put(module, jobTime);
+        modulesToResidualTimes.put(module, jobTime - generationTime);
       }
     }
     if (totalJob == 0) {
@@ -499,7 +505,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : moduleSequence) {
         IModule currentModule = moduleAndDescriptors.o1;
         IOperationContext invocationContext = modulesToContexts.get(currentModule);
-        progress.startTask("generating in module "+currentModule);
+        Long estimated = modulesToGenerationTimes.get(currentModule);
+        if (estimated == null) {
+          estimated = (long) 1000;
+        }
+        progress.startTask("generating in module "+currentModule, estimated);
         String outputFolder = currentModule != null ? currentModule.getGeneratorOutputPath() : null;
         if (outputFolder != null && !new File(outputFolder).exists()) {
           new File(outputFolder).mkdirs();
