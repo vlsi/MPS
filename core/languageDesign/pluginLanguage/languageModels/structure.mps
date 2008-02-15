@@ -10,5 +10,18 @@
   </language>
   <maxImportIndex value="1"/>
   <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="-1"/>
+  <visible index="2" modelUID="jetbrains.mps.core.structure"/>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071646776">
+    <property name="name" value="ProjectPaneAction"/>
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept"/>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071663527">
+    <property name="name" value="EditorTab"/>
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept"/>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071677434">
+    <property name="name" value="Tool"/>
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept"/>
+  </node>
 </model>
 
