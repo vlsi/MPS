@@ -18,8 +18,8 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
   }
 
 
-  public Object getParameterObject() {
-    return mySubstituteAction.getParameterObject();
+  public SNode getOutputConcept() {
+    return mySubstituteAction.getOutputConcept();
   }
 
   public String getMatchingText(String pattern) {

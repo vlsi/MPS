@@ -261,10 +261,10 @@ public class QueriesGenerated {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
-      if(!(current.getParameterObject() instanceof SNode)) {
+      if(!(current.getOutputConcept() instanceof SNode)) {
         continue;
       }
-      final SNode concept = (SNode)current.getParameterObject();
+      final SNode concept = (SNode)current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation");
       Condition cond = new Condition() {
 

@@ -502,17 +502,17 @@ public class QueriesGenerated {
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         assert queryResult != null;
-        for(SNode item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+        for(final SNode item : queryResult) {
+          result.add(new DefaultChildNodeSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode component = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component", null);
-              SLinkOperations.setTarget(component, "editorComponent", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(component, "editorComponent", (item), false);
               return component;
             }
 
             public String getMatchingText(String pattern) {
-              return "#" + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name") + "#";
+              return "#" + SPropertyOperations.getString((item), "name") + "#";
             }
 
           });
@@ -537,17 +537,17 @@ public class QueriesGenerated {
         };
         Iterable<CellActionId> queryResult = (Iterable)calc.calculate();
         assert queryResult != null;
-        for(CellActionId item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+        for(final CellActionId item : queryResult) {
+          result.add(new DefaultChildNodeSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem", _context.getCurrentTargetNode());
-              SPropertyOperations.set(newNode, "actionId", ((CellActionId)this.getParameterObject()).getValue());
+              SPropertyOperations.set(newNode, "actionId", (item).getValue());
               return newNode;
             }
 
             public String getMatchingText(String pattern) {
-              return ((CellActionId)this.getParameterObject()).getName();
+              return (item).getName();
             }
 
           });

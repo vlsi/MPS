@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 public interface INodeSubstituteAction {
   SNode getSourceNode();
 
-  Object getParameterObject();
+  SNode getOutputConcept();
   
   String getMatchingText(String pattern);
 

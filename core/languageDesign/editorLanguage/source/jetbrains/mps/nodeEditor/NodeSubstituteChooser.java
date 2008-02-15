@@ -2,15 +2,12 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.WindowsUtil;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 import javax.swing.*;
@@ -19,8 +16,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import java.util.List;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
 
 /**
  * Author: Sergey Dmitriev.
@@ -522,8 +517,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     private void setupThis(JList list, Object value, boolean isSelected) {
       INodeSubstituteAction action = (INodeSubstituteAction) value;
 
-      if (action.getParameterObject() instanceof SNode) {
-        SNode node = (SNode) action.getParameterObject();
+      if (action.getOutputConcept() instanceof SNode) {
+        SNode node = (SNode) action.getOutputConcept();
         if (!(node.getAdapter() instanceof AbstractConceptDeclaration)) {
           myLeft.setIcon(IconManager.getIconFor(node));
         } else {

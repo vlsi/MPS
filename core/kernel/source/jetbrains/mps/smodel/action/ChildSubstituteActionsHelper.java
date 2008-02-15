@@ -175,20 +175,7 @@ public class ChildSubstituteActionsHelper {
       while (it.hasNext()) {
         INodeSubstituteAction action = it.next();
 
-        SNode conceptNode = null;
-
-        if (action.getParameterObject() instanceof AbstractConceptDeclaration) {
-          AbstractConceptDeclaration acd = (AbstractConceptDeclaration) action.getParameterObject();
-          conceptNode = acd.getNode();
-        }
-
-        if (action.getParameterObject() instanceof SNode) {
-          SNode node = (SNode) action.getParameterObject();
-          if (node.getAdapter() instanceof AbstractConceptDeclaration) {
-            conceptNode = node;
-          }
-        }
-
+        SNode conceptNode = action.getOutputConcept();
         if (conceptNode == null) {
           continue;
         }
@@ -397,7 +384,7 @@ public class ChildSubstituteActionsHelper {
       Iterator<INodeSubstituteAction> it = actions.iterator();
       while (it.hasNext()) {
         INodeSubstituteAction action = it.next();
-        Object parameterObject = action.getParameterObject();
+        Object parameterObject = action.getOutputConcept();
         if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
           if (conceptsToRemove.contains(((SNode) parameterObject))) {
             it.remove();
@@ -469,8 +456,8 @@ public class ChildSubstituteActionsHelper {
       return "^" + result;
     }
 
-    public Object getParameterObject() {
-      return myReferenceNodeConcept;
+    public SNode getOutputConcept() {
+      return myReferenceNodeConcept.getNode();
     }
 
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {

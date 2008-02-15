@@ -124,7 +124,7 @@ public class QueriesGenerated {
         result.add(new AbstractRTransformHintSubstituteAction(parameter, _context.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)this.getParameterObject())), null);
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)this.getOutputConcept())), null);
             SNode statement = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
             if(statement == null) {
               return null;

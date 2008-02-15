@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.ide.ChooseItemComponent;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 /**
  * Igor Alshannikov
@@ -35,8 +36,14 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return mySourceNode;
   }
 
-  public Object getParameterObject() {
-    return myParameterObject;
+  public SNode getOutputConcept() {
+    if (myParameterObject instanceof SNode) {
+      return (SNode) myParameterObject;
+    }
+    if (myParameterObject instanceof AbstractConceptDeclaration) {
+      return ((AbstractConceptDeclaration) myParameterObject).getNode();
+    }
+    return null;
   }
 
   public String getMatchingText(String pattern) {
@@ -54,7 +61,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (myParameterObject instanceof INodeAdapter) {
       return NodePresentationUtil.matchingText(((INodeAdapter) myParameterObject).getNode(), referent_presentation);
     }
-    return "" + getParameterObject();
+    return "" + getOutputConcept();
   }
 
   protected String getDescriptionText(String pattern, boolean referent_presentation) {

@@ -68,7 +68,7 @@ import java.util.*;
     //remove with remove concept
     for (Iterator<INodeSubstituteAction> it = resultActions.iterator(); it.hasNext();) {
       INodeSubstituteAction action = it.next();
-      Object parameterObject = action.getParameterObject();
+      Object parameterObject = action.getOutputConcept();
       if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
         if (conceptsToRemove.contains(((SNode) parameterObject))) {
           it.remove();

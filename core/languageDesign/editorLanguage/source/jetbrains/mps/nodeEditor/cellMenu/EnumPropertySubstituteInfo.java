@@ -27,18 +27,17 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
   public List<INodeSubstituteAction> createActions() {
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     EnumerationDataTypeDeclaration dataType = (EnumerationDataTypeDeclaration) myPropertyDeclaration.getDataType();
-    Iterator<EnumerationMemberDeclaration> iterator = dataType.members();
-    while (iterator.hasNext()) {
-      EnumerationMemberDeclaration memberDeclaration = iterator.next();
+
+    for (final EnumerationMemberDeclaration memberDeclaration : dataType.getMembers()) {
       actions.add(new AbstractNodeSubstituteAction(memberDeclaration, myNode) {
         public String getMatchingText(String pattern) {
-          return ((EnumerationMemberDeclaration) getParameterObject()).getExternalValue();
+          return memberDeclaration.getExternalValue();
         }
 
         public SNode doSubstitute(String pattern) {
           String propertyName = myPropertyDeclaration.getName();
           assert propertyName != null;
-          getSourceNode().setProperty(propertyName, ((EnumerationMemberDeclaration) getParameterObject()).getInternalValue());
+          getSourceNode().setProperty(propertyName, memberDeclaration.getInternalValue());
           return null;
         }
       });

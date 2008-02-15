@@ -226,8 +226,8 @@ public class Resolver {
         DefaultReferentNodeSubstituteAction action2 = (DefaultReferentNodeSubstituteAction) o2;
         SModel model1 = null;
         SModel model2 = null;
-        if (action1.getParameterObject() instanceof SNode) model1 = ((SNode) action1.getParameterObject()).getModel();
-        if (action2.getParameterObject() instanceof SNode) model2 = ((SNode) action2.getParameterObject()).getModel();
+        if (action1.getOutputConcept() instanceof SNode) model1 = ((SNode) action1.getOutputConcept()).getModel();
+        if (action2.getOutputConcept() instanceof SNode) model2 = ((SNode) action2.getOutputConcept()).getModel();
         if (model1 == sourceNode.getModel()) return 1;
         if (model2 == sourceNode.getModel()) return -1;
         return 0;

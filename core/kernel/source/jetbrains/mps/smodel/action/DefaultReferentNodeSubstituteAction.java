@@ -34,7 +34,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   }
 
   public SNode doSubstitute(String pattern) {
-    SNode parameterNode = (SNode) getParameterObject();
+    SNode parameterNode = (SNode) getOutputConcept();
     if (myCurrentReferent != parameterNode) {
       if (!SModelUtil_new.isAcceptableTarget(myLinkDeclaration, parameterNode)) {
         throw new RuntimeException("Couldn't set referent node: " + parameterNode.getDebugText());

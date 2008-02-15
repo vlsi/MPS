@@ -77,12 +77,12 @@ public class QueriesGenerated {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode pr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
-              SLinkOperations.setTarget(pr, "variableDeclaration", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(pr, "variableDeclaration", ((SNode)this.getOutputConcept()), false);
               return pr;
             }
 
             public String getMatchingText(String pattern) {
-              return SPropertyOperations.getString(((SNode)this.getParameterObject()), "name");
+              return SPropertyOperations.getString(((SNode)this.getOutputConcept()), "name");
             }
 
           });

@@ -261,7 +261,7 @@ public class QueriesGenerated {
             while(true) {
               if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(target, null, false, false), "jetbrains.mps.nanoj.structure.BinaryExpression")) {
                 SNode concept = SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(target, null, false, false));
-                if(SConceptPropertyOperations.getInteger(((SNode)this.getParameterObject()), "priority") < SConceptPropertyOperations.getInteger(concept, "priority")) {
+                if(SConceptPropertyOperations.getInteger(((SNode)this.getOutputConcept()), "priority") < SConceptPropertyOperations.getInteger(concept, "priority")) {
                   target = SNodeOperations.getParent(target, null, false, false);
                 } else
                 {
@@ -272,14 +272,14 @@ public class QueriesGenerated {
                 break;
               }
             }
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)this.getParameterObject())), null);
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)this.getOutputConcept())), null);
             SNodeOperations.replaceWithAnother(target, result);
             SLinkOperations.setTarget(result, "leftPart", target, true);
             return result;
           }
 
           public String getMatchingText(String text) {
-            return SConceptPropertyOperations.getString(((SNode)this.getParameterObject()), "sign");
+            return SConceptPropertyOperations.getString(((SNode)this.getOutputConcept()), "sign");
           }
 
           public String getDescriptionText(String text) {

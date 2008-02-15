@@ -192,7 +192,7 @@ public class QueriesGenerated {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess", null);
-              SLinkOperations.setTarget(newNode, "property", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(newNode, "property", ((SNode)this.getOutputConcept()), false);
               return newNode;
             }
 
@@ -273,7 +273,7 @@ public class QueriesGenerated {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess", null);
-              SLinkOperations.setTarget(newNode, "link", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(newNode, "link", ((SNode)this.getOutputConcept()), false);
               return newNode;
             }
 
@@ -299,12 +299,12 @@ public class QueriesGenerated {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccessAsNode", null);
-              SLinkOperations.setTarget(newNode, "link", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(newNode, "link", ((SNode)this.getOutputConcept()), false);
               return newNode;
             }
 
             public String getMatchingText(String pattern) {
-              return SPropertyOperations.getString(((SNode)this.getParameterObject()), "role") + "/node";
+              return SPropertyOperations.getString(((SNode)this.getOutputConcept()), "role") + "/node";
             }
 
           });
@@ -329,7 +329,7 @@ public class QueriesGenerated {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess", null);
-              SLinkOperations.setTarget(newNode, "link", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(newNode, "link", ((SNode)this.getOutputConcept()), false);
               return newNode;
             }
 
@@ -355,12 +355,12 @@ public class QueriesGenerated {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList", null);
-              SLinkOperations.setTarget(newNode, "link", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(newNode, "link", ((SNode)this.getOutputConcept()), false);
               return newNode;
             }
 
             public String getMatchingText(String pattern) {
-              return SPropertyOperations.getString(((SNode)this.getParameterObject()), "role") + "/list";
+              return SPropertyOperations.getString(((SNode)this.getOutputConcept()), "role") + "/list";
             }
 
           });
@@ -432,7 +432,7 @@ public class QueriesGenerated {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess", _context.getCurrentTargetNode());
-              SLinkOperations.setTarget(newNode, "conceptProperty", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(newNode, "conceptProperty", ((SNode)this.getOutputConcept()), false);
               return newNode;
             }
 
@@ -459,7 +459,7 @@ public class QueriesGenerated {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess", null);
-              SLinkOperations.setTarget(newNode, "conceptLinkDeclaration", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(newNode, "conceptLinkDeclaration", ((SNode)this.getOutputConcept()), false);
               return newNode;
             }
 
@@ -490,16 +490,16 @@ public class QueriesGenerated {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType", null);
-              SLinkOperations.setTarget(result, "concept", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(result, "concept", ((SNode)this.getOutputConcept()), false);
               return result;
             }
 
             public String getMatchingText(String pattern) {
-              return "snode<" + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name") + ">";
+              return "snode<" + SPropertyOperations.getString(((SNode)this.getOutputConcept()), "name") + ">";
             }
 
             public String getDescriptionText(String pattern) {
-              return SNodeOperations.getModel(((SNode)this.getParameterObject())).getUID().getCompactPresentation();
+              return SNodeOperations.getModel(((SNode)this.getOutputConcept())).getUID().getCompactPresentation();
             }
 
           });
@@ -529,12 +529,12 @@ public class QueriesGenerated {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewNodeOperation", null);
-              SLinkOperations.setTarget(result, "concept", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(result, "concept", ((SNode)this.getOutputConcept()), false);
               return result;
             }
 
             public String getMatchingText(String pattern) {
-              return "new node(" + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name");
+              return "new node(" + SPropertyOperations.getString(((SNode)this.getOutputConcept()), "name");
             }
 
           });
@@ -560,12 +560,12 @@ public class QueriesGenerated {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
               SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewRootNodeOperation", null);
-              SLinkOperations.setTarget(result, "concept", ((SNode)this.getParameterObject()), false);
+              SLinkOperations.setTarget(result, "concept", ((SNode)this.getOutputConcept()), false);
               return result;
             }
 
             public String getMatchingText(String pattern) {
-              return "new root node(" + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name");
+              return "new root node(" + SPropertyOperations.getString(((SNode)this.getOutputConcept()), "name");
             }
 
           });
@@ -742,10 +742,10 @@ public class QueriesGenerated {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
-      if(!(current.getParameterObject() instanceof SNode)) {
+      if(!(current.getOutputConcept() instanceof SNode)) {
         continue;
       }
-      final SNode concept = (SNode)current.getParameterObject();
+      final SNode concept = (SNode)current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation");
       Condition cond = new Condition() {
 
