@@ -40,7 +40,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201868689728(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "quotedNode1_" + _context.getNode().getId();
+    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("quotedNode1_");
   }
 
   public static Object propertyMacro_GetPropertyValue_1196351886787(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -76,7 +76,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201868659573(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "quotedNode1_" + _context.getNode().getId();
+    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("quotedNode1_");
   }
 
   public static Object propertyMacro_GetPropertyValue_1196860193017(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -88,7 +88,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201866124841(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "quotedNode_" + _context.getNode().getId();
+    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("quotedNode_");
   }
 
   public static Object propertyMacro_GetPropertyValue_1201866023916(final IOperationContext operationContext, final PropertyMacroContext _context) {
