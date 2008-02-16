@@ -3680,8 +3680,8 @@
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203167997213">
                               <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
                               <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203167997214">
-                                <link role="variableDeclaration" targetNodeId="1203167997224" resolveInfo="in" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203171539289">
+                                <link role="variableDeclaration" targetNodeId="1203168401343" resolveInfo="i" />
                               </node>
                             </node>
                           </node>
