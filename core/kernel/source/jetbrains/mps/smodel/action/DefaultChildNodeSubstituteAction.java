@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.*;
 
 /**
@@ -12,8 +13,20 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   private IScope myScope;
   private IChildNodeSetter mySetter;
 
+  /**
+   * @deprecated  - ambiguity
+   */
   public DefaultChildNodeSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
+    // parameter object is always output concept?
     super(parameterObject, parentNode);
+    myCurrentChild = currentChild;
+    myScope = scope;
+    mySetter = setter;
+  }
+
+  public DefaultChildNodeSubstituteAction(AbstractConceptDeclaration outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
+    // parameter object is always output concept?
+    super(BaseAdapter.fromAdapter(outputConcept), parameterObject, parentNode);
     myCurrentChild = currentChild;
     myScope = scope;
     mySetter = setter;
