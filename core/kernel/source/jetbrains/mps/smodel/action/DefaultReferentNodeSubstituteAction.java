@@ -13,24 +13,22 @@ import javax.swing.Icon;
  * Igor Alshannikov
  * Mar 29, 2005
  */
-public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteAction implements INodeSubstituteAction {
+public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteAction {
   private SNode myCurrentReferent;
-  private IScope myScope;
   private LinkDeclaration myLinkDeclaration;
 
-  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
-    super(parameterNode, referenceNode);
+  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration) {
+    super(null, parameterNode, referenceNode);
     myCurrentReferent = currentReferent;
-    myScope = scope;
     myLinkDeclaration = linkDeclaration;
     if (SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.reference) {
       throw new RuntimeException("Only reference links are allowed here.");
     }
   }
 
-  public Icon getIconFor(String pattern) {
-    return IconManager.getIconFor(myCurrentReferent);
-  }
+//  public Icon getIconFor(String pattern) {
+//    return IconManager.getIconFor(myCurrentReferent);
+//  }
 
   public String getMatchingText(String pattern) {
     return getMatchingText(pattern, true);
@@ -41,7 +39,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   }
 
   public SNode doSubstitute(String pattern) {
-    SNode parameterNode = (SNode) getOutputConcept();
+    SNode parameterNode = (SNode) getParameterObject();
     if (myCurrentReferent != parameterNode) {
       if (!SModelUtil_new.isAcceptableTarget(myLinkDeclaration, parameterNode)) {
         throw new RuntimeException("Couldn't set referent node: " + parameterNode.getDebugText());

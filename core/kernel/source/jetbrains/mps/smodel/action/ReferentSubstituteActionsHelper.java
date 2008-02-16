@@ -13,6 +13,7 @@ import jetbrains.mps.util.Condition;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ArrayList;
 
 /*package*/ class ReferentSubstituteActionsHelper {
   private static final Logger LOG = Logger.getLogger(ReferentSubstituteActionsHelper.class);
@@ -50,9 +51,9 @@ import java.util.List;
       }
     });
 
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
+    List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     for (SNode node : nodes) {
-      actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration, scope));
+      actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration));
     }
     return actions;
   }

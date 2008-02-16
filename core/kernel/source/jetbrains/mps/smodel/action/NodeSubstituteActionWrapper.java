@@ -23,6 +23,10 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
     return mySubstituteAction.getOutputConcept();
   }
 
+  public Object getParameterObject() {
+    return mySubstituteAction.getParameterObject();
+  }
+
   public Icon getIconFor(String pattern) {
     return mySubstituteAction.getIconFor(pattern);
   }

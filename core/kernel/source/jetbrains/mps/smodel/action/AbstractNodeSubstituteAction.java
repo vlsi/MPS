@@ -20,31 +20,42 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
   private SNode mySourceNode;
   private Object myParameterObject;
+  private SNode myOutputConcept;    // todo: this class is still too abstract to have 'output concept'
 
+  @Deprecated
   protected AbstractNodeSubstituteAction(SNode outputConcept, SNode sourceNode) {
     myParameterObject = outputConcept;
+    if (outputConcept != null && outputConcept.getAdapter() instanceof AbstractConceptDeclaration) {
+      myOutputConcept = outputConcept;
+    }
     mySourceNode = sourceNode;
   }
 
   @Deprecated
   protected AbstractNodeSubstituteAction(Object parameterObject, SNode sourceNode) {
-    mySourceNode = sourceNode;
     myParameterObject = parameterObject;
+    if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
+      myOutputConcept = (SNode) parameterObject;
+    }
+    mySourceNode = sourceNode;
   }
 
-  protected AbstractNodeSubstituteAction(SNode sourceNode) {
+  protected AbstractNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode sourceNode) {
+    assert outputConcept == null || outputConcept.getAdapter() instanceof AbstractConceptDeclaration;
+    myOutputConcept = outputConcept;
+    myParameterObject = parameterObject;
     mySourceNode = sourceNode;
-    myParameterObject = null;
   }
 
   protected AbstractNodeSubstituteAction() {
-    mySourceNode = null;
-    myParameterObject = null;
   }
 
   public Icon getIconFor(String pattern) {
     if (getOutputConcept() != null && getOutputConcept().getAdapter() instanceof ConceptDeclaration) {
       return IconManager.getIconFor((ConceptDeclaration) getOutputConcept().getAdapter());
+    }
+    if (getParameterObject() instanceof SNode) {
+      return IconManager.getIconFor((SNode) getParameterObject());
     }
 
     return null;
@@ -55,13 +66,18 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   }
 
   public SNode getOutputConcept() {
-    if (myParameterObject instanceof SNode) {
-      return (SNode) myParameterObject;
-    }
-    if (myParameterObject instanceof AbstractConceptDeclaration) {
-      return ((AbstractConceptDeclaration) myParameterObject).getNode();
-    }
-    return null;
+//    if (myParameterObject instanceof SNode) {
+//      return (SNode) myParameterObject;
+//    }
+//    if (myParameterObject instanceof AbstractConceptDeclaration) {
+//      return ((AbstractConceptDeclaration) myParameterObject).getNode();
+//    }
+//    return null;
+    return myOutputConcept;
+  }
+
+  public final Object getParameterObject() {
+    return myParameterObject;
   }
 
   public String getMatchingText(String pattern) {
@@ -79,7 +95,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (myParameterObject instanceof INodeAdapter) {
       return NodePresentationUtil.matchingText(((INodeAdapter) myParameterObject).getNode(), referent_presentation);
     }
-    return "" + getOutputConcept();
+    return "" + myParameterObject;
   }
 
   protected String getDescriptionText(String pattern, boolean referent_presentation) {
@@ -115,7 +131,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (matchingText.charAt(0) != pattern.charAt(0)) return false;
 
     if (matchingText.matches(ChooseItemComponent.getExactItemPatternBuilder(pattern).toString() + ".*")) {
-      return true;      
+      return true;
     }
 
     return matchingText.toUpperCase().startsWith(pattern.toUpperCase());
