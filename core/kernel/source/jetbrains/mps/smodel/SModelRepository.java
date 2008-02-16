@@ -331,18 +331,26 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void modelChanged(@NotNull SModel model) {
-    markChanged(model, true);
+    markChanged(model);
   }
 
   public void modelChangedDramatically(@NotNull SModel model) {
+    markChanged(model);
+  }
+
+  private void markChanged(@NotNull SModel model, boolean changed) {
+    SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(model.getUID());
+    if (modelDescriptor != null) { //i.e project model
+      markChanged(modelDescriptor, changed);
+    }
+  }
+
+  public void markChanged(@NotNull SModel model) {
     markChanged(model, true);
   }
 
-  public void markChanged(@NotNull SModel model, boolean b) {
-    SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(model.getUID());
-    if (modelDescriptor != null) { //i.e project model
-      markChanged(modelDescriptor, b);
-    }
+  public void markUnchanged(@NotNull SModel model) {
+    markChanged(model, false);
   }
 
   public void renameUID(SModelDescriptor modelDescriptor, SModelUID newModelUID) {

@@ -163,7 +163,7 @@ public class ModelPersistence {
 
     try {
       JDOMUtil.writeDocument(document, file);
-      SModelRepository.getInstance().markChanged(model, false);
+      SModelRepository.getInstance().markUnchanged(model);
     } catch (IOException e) {
       LOG.error(e);
     }

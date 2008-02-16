@@ -37,7 +37,7 @@ public final class RefactoringUtil {
           referenceMacros.add((ReferenceMacro) linkAttribute.getAdapter());
         }
       }
-      modelRepository.markChanged(node.getModel(), true);
+      modelRepository.markChanged(node.getModel());
     }
     return referenceMacros;
   }

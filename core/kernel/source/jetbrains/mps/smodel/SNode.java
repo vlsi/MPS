@@ -1455,6 +1455,7 @@ public final class SNode {
   void setConceptFqName(String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
     myAdapter = null;
+    SModelRepository.getInstance().markChanged(getModel());
   }
 
   public boolean isInstanceOfConcept(AbstractConceptDeclaration concept) {

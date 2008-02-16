@@ -379,7 +379,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public void save() {
     if (mySModel == null) return;
-    SModelRepository.getInstance().markChanged(mySModel, false);
+    SModelRepository.getInstance().markUnchanged(mySModel);
     myModelRootManager.saveModel(this);
     myDiskTimestamp = fileTimestamp();
 

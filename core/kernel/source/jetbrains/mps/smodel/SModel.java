@@ -1026,7 +1026,7 @@ public class SModel implements Iterable<SNode> {
       myLanguagesEngagedOnGeneration.add(languageNamespace);
       // don't send event but mark model as changed
       if (!isLoading()) {
-        SModelRepository.getInstance().markChanged(this, true);
+        SModelRepository.getInstance().markChanged(this);
       }
     }
   }
@@ -1036,7 +1036,7 @@ public class SModel implements Iterable<SNode> {
       myLanguagesEngagedOnGeneration.remove(languageNamespace);
       // don't send event but mark model as changed
       if (!isLoading()) {
-        SModelRepository.getInstance().markChanged(this, true);
+        SModelRepository.getInstance().markChanged(this);
       }
     }
   }

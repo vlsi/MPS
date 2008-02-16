@@ -167,7 +167,7 @@ public class GenericRefactoring {
   private void processModel(SModel model, SModel usedModel, RefactoringContext refactoringContext) {
     myRefactoring.updateModel(model, refactoringContext);
     model.updateImportedModelUsedVersion(usedModel.getUID(), usedModel.getVersion());
-    SModelRepository.getInstance().markChanged(model, true);
+    SModelRepository.getInstance().markChanged(model);
   }
 
   private void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
