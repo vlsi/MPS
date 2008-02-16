@@ -23,15 +23,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   private SNode myOutputConcept;    // todo: this class is still too abstract to have 'output concept'
 
   @Deprecated
-  protected AbstractNodeSubstituteAction(SNode outputConcept, SNode sourceNode) {
-    myParameterObject = outputConcept;
-    if (outputConcept != null && outputConcept.getAdapter() instanceof AbstractConceptDeclaration) {
-      myOutputConcept = outputConcept;
-    }
-    mySourceNode = sourceNode;
-  }
-
-  @Deprecated
   protected AbstractNodeSubstituteAction(Object parameterObject, SNode sourceNode) {
     myParameterObject = parameterObject;
     if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {

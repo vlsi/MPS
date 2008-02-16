@@ -7,7 +7,7 @@ public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
   private String myPropertyValue;
 
   public PropertySubstituteAction(SNode sourceNode, String propertyName, String propertyValue) {
-    super(null, sourceNode);
+    super(null, null, sourceNode);
     myPropertyName = propertyName;
     myPropertyValue = propertyValue;
   }

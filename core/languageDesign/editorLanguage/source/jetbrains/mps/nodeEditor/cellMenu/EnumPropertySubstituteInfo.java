@@ -29,7 +29,7 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
     EnumerationDataTypeDeclaration dataType = (EnumerationDataTypeDeclaration) myPropertyDeclaration.getDataType();
 
     for (final EnumerationMemberDeclaration memberDeclaration : dataType.getMembers()) {
-      actions.add(new AbstractNodeSubstituteAction(memberDeclaration, myNode) {
+      actions.add(new AbstractNodeSubstituteAction(null, memberDeclaration, myNode) {
         public String getMatchingText(String pattern) {
           return memberDeclaration.getExternalValue();
         }

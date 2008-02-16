@@ -3,14 +3,12 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.smodel.SNode;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Mar 29, 2005
- * Time: 2:06:58 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Mar 29, 2005
  */
 public abstract class AbstractRTransformHintSubstituteAction extends AbstractNodeSubstituteAction {
   public AbstractRTransformHintSubstituteAction(Object parameterNode, SNode sourceNode) {
+    // parameter object is always output concept?
     super(parameterNode, sourceNode);
   }
 

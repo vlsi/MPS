@@ -28,7 +28,7 @@ public abstract class PropertyWithPostfixHintSubstituteInfo extends AbstractNode
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     List<String> postfixes = getPostfixes();
    for (final String postfix : postfixes) {
-      actions.add(new AbstractNodeSubstituteAction(postfix, myNode) {
+      actions.add(new AbstractNodeSubstituteAction(null, postfix, myNode) {
         public String getMatchingText(String pattern) {
           int index = pattern.length() - 1;
           String patternPostfix = pattern.substring(index);

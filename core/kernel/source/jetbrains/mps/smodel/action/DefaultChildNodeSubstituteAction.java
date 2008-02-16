@@ -25,7 +25,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
 
   public SNode doSubstitute(String pattern) {
     SNode parentNode = getSourceNode();
-    SNode newChild = createChildNode(getOutputConcept(), parentNode.getModel(), pattern);
+    SNode newChild = createChildNode(getParameterObject(), parentNode.getModel(), pattern);
     if (newChild != null) {
       return mySetter.execute(parentNode, myCurrentChild, newChild, getScope());
     }
@@ -41,5 +41,5 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
       throw new RuntimeException("Couldn't create child node. Parameter object: " + (getOutputConcept()).getDebugText());
     }
     return NodeFactoryManager.createNode(conceptDeclaration, myCurrentChild, getSourceNode(), model, getScope());
-  } 
+  }
 }

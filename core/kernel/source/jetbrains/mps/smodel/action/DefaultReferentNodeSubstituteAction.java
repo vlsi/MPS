@@ -26,10 +26,6 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     }
   }
 
-//  public Icon getIconFor(String pattern) {
-//    return IconManager.getIconFor(myCurrentReferent);
-//  }
-
   public String getMatchingText(String pattern) {
     return getMatchingText(pattern, true);
   }
