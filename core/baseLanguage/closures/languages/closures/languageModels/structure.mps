@@ -172,5 +172,17 @@
       <link role="intfc" targetNodeId="1202910652072" resolveInfo="IInputProvider" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203252195462">
+    <property name="name" value="UnboundClosureParameterDeclaration" />
+    <link role="extends" targetNodeId="2.1068498886292" resolveInfo="ParameterDeclaration" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203252795723">
+      <property name="value" value="? &lt;name&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203252807607">
+      <property name="value" value="unbound closure parameter declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
 </model>
 

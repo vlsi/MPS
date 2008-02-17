@@ -2343,5 +2343,39 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203020119727" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1203252287088">
+    <link role="concept" targetNodeId="1.1203252195462" resolveInfo="ClosureParameterDeclaration" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1203252287089">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203252287090">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203252342244">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203252350336">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1203252353531">
+              <link role="concept" targetNodeId="6.1171903607971" resolveInfo="WildCardType" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203252345132">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203252347395">
+                <link role="link" targetNodeId="6.1068431790188" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203252342245" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1203252309367">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203252309368">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203252320403">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203252322459">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1203252323392">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1203252326553">
+                <link role="conceptDeclaration" targetNodeId="1.1199569711397" resolveInfo="ClosureLiteral" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" id="1203252320404" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
