@@ -1320,20 +1320,20 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202774119656">
                       <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202774119657">
                         <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1202774119658">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1202774119659">
+                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1203250967791">
                             <link role="baseMethodDeclaration" targetNodeId="1202774154486" resolveInfo="copyTypeRecursively" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1202774609064">
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1203250971087">
                               <link role="baseMethodDeclaration" targetNodeId="1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
-                              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202774610524">
-                                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1202774610525">
+                              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203250972462">
+                                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203250972463">
                                   <link role="link" targetNodeId="1.1199542457201" />
                                 </node>
-                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1202774610526">
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203250972464">
                                   <link role="variableDeclaration" targetNodeId="1202774119716" resolveInfo="ft" />
                                 </node>
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1202774119663">
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1203251008992">
                               <property name="value" value="true" />
                             </node>
                           </node>
@@ -1385,15 +1385,15 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202774119682">
                       <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202774119683">
                         <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1202774119684">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1202774119685">
+                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1203250983732">
                             <link role="baseMethodDeclaration" targetNodeId="1202774154486" resolveInfo="copyTypeRecursively" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1202774618906">
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1203250987276">
                               <link role="baseMethodDeclaration" targetNodeId="1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202774620728">
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203250988099">
                                 <link role="variableDeclaration" targetNodeId="1202774119694" resolveInfo="pt" />
                               </node>
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1202774119687">
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1203250991160">
                               <property name="value" value="false" />
                             </node>
                           </node>

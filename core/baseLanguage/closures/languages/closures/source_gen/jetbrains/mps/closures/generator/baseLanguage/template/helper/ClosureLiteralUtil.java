@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 
 public class ClosureLiteralUtil {
 
@@ -35,6 +36,16 @@ public class ClosureLiteralUtil {
       }
     }
     return vrefs;
+  }
+
+  public static void addAdaptableClosureLiteralTarget(SNode literal, SNode target, ITemplateGenerator generator) {
+    SNode trgCopy = SNodeOperations.copyNode(target);
+    generator.getGeneratorSessionContext().putSessionObject("literal_target_" + ((SNode)literal).getId(), trgCopy);
+    ((SNode)trgCopy).putUserObject("literal", literal);
+  }
+
+  public static SNode getAdaptableClosureLiteralTarget(SNode literal, ITemplateGenerator generator) {
+    return (SNode)generator.getGeneratorSessionContext().getSessionObject("literal_target_" + ((SNode)literal).getId());
   }
 
 }
