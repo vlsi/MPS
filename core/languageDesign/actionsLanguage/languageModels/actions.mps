@@ -273,9 +273,6 @@
               </node>
             </node>
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.Substitute_SimpleString" id="1196932924800">
-            <property name="text" value="simple text" />
-          </node>
         </node>
       </node>
     </node>

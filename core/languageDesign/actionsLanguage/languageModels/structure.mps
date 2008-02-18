@@ -1775,9 +1775,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1177327274449" resolveInfo="ConceptFunctionParameter_pattern" />
     </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203073162544">
-      <link role="intfc" targetNodeId="1196434661488" resolveInfo="ISubstitute_String" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203073706921">
     <property name="package" value="queryFunctions" />
