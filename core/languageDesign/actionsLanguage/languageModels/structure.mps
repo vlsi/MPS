@@ -152,6 +152,12 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203347873675">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="variable" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1203347547493" resolveInfo="RightTransformVariableDeclaration" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138079416598">
     <property name="rootable" value="true" />
@@ -1817,7 +1823,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="initializerBlock" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1179456248444" resolveInfo="QueryFunction_SubstituteVariableInitializer" />
+      <link role="target" targetNodeId="1203347609566" resolveInfo="QueryFunction_RTVariableInitializer" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1203347547495">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
@@ -1842,6 +1848,16 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1203347642231">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1177497140107" resolveInfo="ConceptFunctionParameter_sourceNode" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203348041101">
+    <property name="name" value="RightTransformVariableReference" />
+    <link role="extends" targetNodeId="3.1068498886296" resolveInfo="VariableReference" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203348041102">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="rightTransformVariableDeclaration" />
+      <link role="specializedLink" targetNodeId="3.1068581517664" />
+      <link role="target" targetNodeId="1203347547493" resolveInfo="RightTransformVariableDeclaration" />
     </node>
   </node>
 </model>

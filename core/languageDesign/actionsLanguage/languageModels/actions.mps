@@ -277,5 +277,46 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1203347984603">
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1203348278737">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="2.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
+      <node role="variable" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformVariableDeclaration" id="1203348282254">
+        <property name="name" value="sss" />
+        <node role="initializerBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RTVariableInitializer" id="1203348282255">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203348282256">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203348285259">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203349156238">
+                <property name="value" value="abc" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203349152659">
+          <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1203348302556">
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleRightTransformMenuPart" id="1203348303714">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_Handler" id="1203348303715">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203348303716">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203348389875">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1203348389876" />
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1203349313340">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203349313341">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203349316170">
+                <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformVariableReference" id="1203349316171">
+                  <link role="variableDeclaration" targetNodeId="1203348282254" resolveInfo="sss" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
