@@ -326,6 +326,10 @@ public class MPSModuleRepository {
   }
 
   public void removeModule(@NotNull IModule module) {
+    if (!myModuleToOwnersMap.containsKey(module)) {
+      return;
+    }
+
     IFile descriptorFile = module.getDescriptorFile();
 
     Set<MPSModuleOwner> toRemove = new HashSet<MPSModuleOwner>();
