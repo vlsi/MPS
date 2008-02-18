@@ -941,6 +941,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/findUsagesLanguage/findUsagesLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/findUsagesLanguage/findUsagesLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/formulaLanguage/formulaLanguage.iml" filepath="$PROJECT_DIR$/app/formulaLanguage/formulaLanguage.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/app/functional/functional.iml" filepath="$PROJECT_DIR$/app/functional/functional.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/app/mf/gothic/gothic.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" filepath="$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentionsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentionsLanguage.iml" group="core/languageDesign" />
@@ -1057,7 +1058,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
