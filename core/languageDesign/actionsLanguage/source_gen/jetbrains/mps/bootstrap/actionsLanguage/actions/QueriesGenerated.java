@@ -111,10 +111,6 @@ public class QueriesGenerated {
             return "simple text";
           }
 
-          public String getMatchingText(String pattern) {
-            return pattern;
-          }
-
         });
       }
     }

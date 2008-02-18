@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorCell;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
@@ -18,8 +18,6 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
 import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -31,6 +29,14 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   public  ConceptFunction_Component(SNode node) {
     super(node);
+  }
+
+  public static Color _QueryFunction_Color_1196975453900(SNode node, EditorContext editorContext) {
+    return Color.white;
+  }
+
+  public static Color _QueryFunction_Color_1196975453904(SNode node, EditorContext editorContext) {
+    return new Color(238, 238, 238);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -85,14 +91,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   }
 
   private static void setupLabel_BodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Color _QueryFunction_Color_1196975453900(SNode node, EditorContext editorContext) {
-    return Color.white;
-  }
-
-  public static Color _QueryFunction_Color_1196975453904(SNode node, EditorContext editorContext) {
-    return new Color(238, 238, 238);
   }
 
 
@@ -183,8 +181,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
           result.append(SConceptPropertyOperations.getString(node, "conceptFunctionName"));
         }
         result.append("(");
-        List<SNode> parameters = SLinkOperations.getConceptLinkTargets(node, "applicableConceptFunctionParameter");
-        ListOperations.addAllElements(parameters, SLinkOperations.getConceptLinkTargets(node, "conceptFunctionParameter"));
+        List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1197312191473(node);
         boolean isFirst = true;
         for(SNode cfp : parameters) {
           if(!(isFirst)) {

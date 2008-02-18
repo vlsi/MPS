@@ -214,13 +214,6 @@
           <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.Substitute_SimpleString" id="1196932814497">
             <property name="text" value="simple text" />
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SubstituteString" id="1196932822170">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196932822171">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196932823625">
-                <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1196932823626" />
-              </node>
-            </node>
-          </node>
         </node>
       </node>
     </node>
