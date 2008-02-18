@@ -163,6 +163,7 @@ public class ModuleMaker {
     };
 
     for (String source : module.getSourcePaths()){
+      if (source == null) continue;      
       File sourceFile = new File(source);
       copyFiles(sourceFile, destination, filenameFilter);
     }
