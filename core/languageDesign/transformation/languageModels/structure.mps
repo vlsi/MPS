@@ -128,6 +128,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1175152822399">
       <link role="intfc" targetNodeId="2.1169194658468" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203350682564">
+      <link role="intfc" targetNodeId="6.1194952169813" resolveInfo="IMemberContainer" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1167514678247">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="rootMappingRule" />
