@@ -26,6 +26,14 @@ public class InstanceMethodCallOperation extends BaseMethodCall implements IOper
   }
 
 
+  public InstanceMethodDeclaration getInstanceMethodDeclaration() {
+    return (InstanceMethodDeclaration)this.getBaseMethodDeclaration();
+  }
+
+  public void setInstanceMethodDeclaration(InstanceMethodDeclaration node) {
+    this.setBaseMethodDeclaration(node);
+  }
+
   public String getShortDescription() {
     return this.getProperty(InstanceMethodCallOperation.SHORT_DESCRIPTION);
   }
@@ -48,14 +56,6 @@ public class InstanceMethodCallOperation extends BaseMethodCall implements IOper
 
   public void setVirtualPackage(String value) {
     this.setProperty(InstanceMethodCallOperation.VIRTUAL_PACKAGE, value);
-  }
-
-  public InstanceMethodDeclaration getInstanceMethodDeclaration() {
-    return (InstanceMethodDeclaration)this.getBaseMethodDeclaration();
-  }
-
-  public void setInstanceMethodDeclaration(InstanceMethodDeclaration node) {
-    this.setBaseMethodDeclaration(node);
   }
 
 }

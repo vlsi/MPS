@@ -13,11 +13,11 @@ import java.util.List;
 
 public class GenericDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.GenericDeclaration";
+  public static String TYPE_VARIABLE_DECLARATION = "typeVariableDeclaration";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String TYPE_VARIABLE_DECLARATION = "typeVariableDeclaration";
 
   public  GenericDeclaration(SNode node) {
     super(node);
@@ -31,6 +31,26 @@ public class GenericDeclaration extends BaseConcept implements INamedConcept {
     return GenericDeclaration.newInstance(sm, false);
   }
 
+
+  public int getTypeVariableDeclarationsCount() {
+    return this.getChildCount(GenericDeclaration.TYPE_VARIABLE_DECLARATION);
+  }
+
+  public Iterator<TypeVariableDeclaration> typeVariableDeclarations() {
+    return this.children(GenericDeclaration.TYPE_VARIABLE_DECLARATION);
+  }
+
+  public List<TypeVariableDeclaration> getTypeVariableDeclarations() {
+    return this.getChildren(GenericDeclaration.TYPE_VARIABLE_DECLARATION);
+  }
+
+  public void addTypeVariableDeclaration(TypeVariableDeclaration node) {
+    this.addChild(GenericDeclaration.TYPE_VARIABLE_DECLARATION, node);
+  }
+
+  public void insertTypeVariableDeclaration(TypeVariableDeclaration prev, TypeVariableDeclaration node) {
+    this.insertChild(prev, GenericDeclaration.TYPE_VARIABLE_DECLARATION, node);
+  }
 
   public String getName() {
     return this.getProperty(GenericDeclaration.NAME);
@@ -62,26 +82,6 @@ public class GenericDeclaration extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(GenericDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public int getTypeVariableDeclarationsCount() {
-    return this.getChildCount(GenericDeclaration.TYPE_VARIABLE_DECLARATION);
-  }
-
-  public Iterator<TypeVariableDeclaration> typeVariableDeclarations() {
-    return this.children(GenericDeclaration.TYPE_VARIABLE_DECLARATION);
-  }
-
-  public List<TypeVariableDeclaration> getTypeVariableDeclarations() {
-    return this.getChildren(GenericDeclaration.TYPE_VARIABLE_DECLARATION);
-  }
-
-  public void addTypeVariableDeclaration(TypeVariableDeclaration node) {
-    this.addChild(GenericDeclaration.TYPE_VARIABLE_DECLARATION, node);
-  }
-
-  public void insertTypeVariableDeclaration(TypeVariableDeclaration prev, TypeVariableDeclaration node) {
-    this.insertChild(prev, GenericDeclaration.TYPE_VARIABLE_DECLARATION, node);
   }
 
 }

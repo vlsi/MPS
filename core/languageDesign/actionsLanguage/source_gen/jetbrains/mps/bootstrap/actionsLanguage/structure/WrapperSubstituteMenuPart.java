@@ -10,9 +10,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.WrapperSubstituteMenuPart";
-  public static String WRAPPED_CONCEPT = "wrappedConcept";
-  public static String RETURN_SMALL_PART = "returnSmallPart";
   public static String WRAPPER_BLOCK = "wrapperBlock";
+  public static String RETURN_SMALL_PART = "returnSmallPart";
+  public static String WRAPPED_CONCEPT = "wrappedConcept";
 
   public  WrapperSubstituteMenuPart(SNode node) {
     super(node);
@@ -27,12 +27,12 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   }
 
 
-  public ConceptDeclaration getWrappedConcept() {
-    return (ConceptDeclaration)this.getReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT);
+  public QueryFunction_SubstituteWrapper getWrapperBlock() {
+    return (QueryFunction_SubstituteWrapper)this.getChild(WrapperSubstituteMenuPart.WRAPPER_BLOCK);
   }
 
-  public void setWrappedConcept(ConceptDeclaration node) {
-    super.setReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT, node);
+  public void setWrapperBlock(QueryFunction_SubstituteWrapper node) {
+    super.setChild(WrapperSubstituteMenuPart.WRAPPER_BLOCK, node);
   }
 
   public boolean getReturnSmallPart() {
@@ -43,12 +43,12 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
     this.setBooleanProperty(WrapperSubstituteMenuPart.RETURN_SMALL_PART, value);
   }
 
-  public QueryFunction_SubstituteWrapper getWrapperBlock() {
-    return (QueryFunction_SubstituteWrapper)this.getChild(WrapperSubstituteMenuPart.WRAPPER_BLOCK);
+  public ConceptDeclaration getWrappedConcept() {
+    return (ConceptDeclaration)this.getReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT);
   }
 
-  public void setWrapperBlock(QueryFunction_SubstituteWrapper node) {
-    super.setChild(WrapperSubstituteMenuPart.WRAPPER_BLOCK, node);
+  public void setWrappedConcept(ConceptDeclaration node) {
+    super.setReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT, node);
   }
 
 }
