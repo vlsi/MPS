@@ -827,8 +827,9 @@
               <property name="selectable" value="false" />
               <property name="text" value="  " />
             </node>
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203347887708">
-              <property name="text" value="todo" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1203349535962">
+              <property name="noTargetText" value="&lt;no common initializer&gt;" />
+              <link role="relationDeclaration" targetNodeId="1.1203349520492" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203347865268">
