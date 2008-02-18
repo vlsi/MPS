@@ -34,9 +34,6 @@ public class Solution extends AbstractModule {
 
   // -------------------------------------------------------------------
 
-  private Solution() {
-  }
-
   public static Solution newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
     SModel model = ProjectModels.createDescriptorFor(solution).getSModel();
@@ -47,13 +44,18 @@ public class Solution extends AbstractModule {
     } else {
       solutionDescriptor = SolutionDescriptor.newInstance(model);
     }
-    solution.mySolutionDescriptor = solutionDescriptor;
     solution.myDescriptorFile = descriptorFile;
+    solution.mySolutionDescriptor = solutionDescriptor;
 
     solution.reload();
 
     MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
     return solution;
+  }
+
+  protected void reload() {
+    super.reload();
+    SModelRepository.getInstance().registerModelDescriptor(mySolutionDescriptor.getModel().getModelDescriptor(), this);
   }
 
   public void convert() {
@@ -80,14 +82,9 @@ public class Solution extends AbstractModule {
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
-    // release languages and models (except descriptor model)
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Solution.this);
-
     mySolutionDescriptor = newDescriptor;
 
     reload();
-
-    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Solution.this);
 
     ReloadUtils.reloadAll(true, true, false);
 

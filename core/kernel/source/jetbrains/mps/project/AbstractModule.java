@@ -51,7 +51,7 @@ public abstract class AbstractModule implements IModule {
     updateRuntimeClassPath();
     reloadStubs();
 
-    createManifest();
+    createManifest();    
   }
 
   public void convert() {
@@ -602,7 +602,7 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  public void addModuleImprot(final String moduleUID) {
+  public void addModuleImport(final String moduleUID) {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         ModuleDescriptor md = getModuleDescriptor();

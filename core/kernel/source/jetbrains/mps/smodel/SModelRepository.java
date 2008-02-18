@@ -288,12 +288,10 @@ public class SModelRepository extends SModelAdapter {
     return myUIDToModelDescriptorMap.get(model.getUID());
   }
 
-  @Nullable
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
     return myUIDToModelDescriptorMap.get(modelUID);
   }
 
-  @Nullable
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID, @NotNull ModelOwner owner) {
     SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
     if (descriptor == null) {
@@ -306,7 +304,6 @@ public class SModelRepository extends SModelAdapter {
     return null;
   }
 
-  @NotNull
   public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName, @NotNull ModelOwner owner) {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor descriptor : getModelDescriptors(owner)) {
