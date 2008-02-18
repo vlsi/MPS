@@ -1054,7 +1054,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195229652882">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195229660990">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195229661695">
-                <property name="value" value="? super ???" />
+                <property name="value" value="? extends ???" />
               </node>
             </node>
           </node>
@@ -1074,7 +1074,7 @@
                     </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195229681952">
-                    <property name="value" value="? super " />
+                    <property name="value" value="? extends " />
                   </node>
                 </node>
               </node>
@@ -1113,7 +1113,7 @@
                   </node>
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195229589687">
-                  <property name="value" value="? extends " />
+                  <property name="value" value="? super " />
                 </node>
               </node>
             </node>
@@ -1131,7 +1131,7 @@
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195229602502">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195229604551">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195229605194">
-                  <property name="value" value="? extends ???" />
+                  <property name="value" value="? super ???" />
                 </node>
               </node>
             </node>

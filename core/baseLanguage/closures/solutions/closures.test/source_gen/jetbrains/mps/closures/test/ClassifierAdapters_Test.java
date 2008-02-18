@@ -106,6 +106,62 @@ __switch__:
     }
   }
 
+  public void test_genericInterfaceAdapter() throws Exception {
+    Generator<Integer> g = new Generator <Integer>() {
+
+      public Iterable<Integer> generate() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 3;
+                      this.yield(1);
+                      return true;
+                    case 3:
+                      this.__CP__ = 4;
+                      this.yield(2);
+                      return true;
+                    case 4:
+                      this.__CP__ = 1;
+                      this.yield(3);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    };
+    Integer exp = 1;
+    for(Integer i : g.generate()) {
+      Assert.assertEquals(exp, i);
+      exp = exp + 1;
+    }
+    Assert.assertEquals(exp, (Integer)4);
+  }
+
   public void test_closureLiteralAsComparator() throws Exception {
     List<Integer> list = new ArrayList<Integer>();
     list.addAll(Arrays.asList(new Integer[]{4,3,5,1,2}));
@@ -115,7 +171,7 @@ __switch__:
     // This example works only because java.util.Comparator defines compare() before equals()
     // Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything
     // ===================================================================
-    Collections.sort(list, new Comparator() {
+    Collections.sort(list, new Comparator <Object>() {
 
       public int compare(Object a, Object b) {
         return a.hashCode() - b.hashCode();

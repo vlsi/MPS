@@ -10,6 +10,7 @@ import java.util.Collections;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
+import jetbrains.mps.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -26,9 +27,9 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
         SNode md = methods.get(0);
         List<SNode> paramTypes = new ArrayList<SNode>();
         for(SNode p : SLinkOperations.getTargets(md, "parameter", true)) {
-          paramTypes.add(SLinkOperations.getTarget(p, "type", true));
+          paramTypes.add(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));
         }
-        SNode resType = SLinkOperations.getTarget(md, "returnType", true);
+        SNode resType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), ct);
         supertypes = Collections.singletonList(new QuotationClass_4().createNode(paramTypes, resType));
       }
     }

@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.closures.constraints.ClassifierTypeUtil;
 import java.util.Iterator;
 import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -26,7 +27,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       if(methods != null && methods.size() == 1) {
         SNode md = methods.get(0);
         if(SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), SLinkOperations.getTarget(md, "returnType", true), errorInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202742499735");
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), errorInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202742499735");
           {
             SNode fpt;
             SNode mpt;
@@ -41,7 +42,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
               }
               fpt = fpt_iterator.next();
               mpt = mpt_iterator.next();
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(mpt, "type", true), fpt, errorInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202746383183");
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), fpt, errorInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202746383183");
             }
           }
           return;

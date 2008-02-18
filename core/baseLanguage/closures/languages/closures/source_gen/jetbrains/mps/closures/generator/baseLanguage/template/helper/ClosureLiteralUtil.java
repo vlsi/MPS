@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import java.util.Map;
+import jetbrains.mps.closures.constraints.FunctionType_Behavior;
+import java.util.HashMap;
 
 public class ClosureLiteralUtil {
 
@@ -39,13 +44,58 @@ public class ClosureLiteralUtil {
   }
 
   public static void addAdaptableClosureLiteralTarget(SNode literal, SNode target, ITemplateGenerator generator) {
-    SNode trgCopy = SNodeOperations.copyNode(target);
+    SNode trgCopy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SLinkOperations.setTarget(trgCopy, "classifier", SLinkOperations.getTarget(target, "classifier", false), false);
+    ClosureLiteralUtil.matchParameters(trgCopy, TypeChecker.getInstance().getTypeOf(literal));
     generator.getGeneratorSessionContext().putSessionObject("literal_target_" + ((SNode)literal).getId(), trgCopy);
     ((SNode)trgCopy).putUserObject("literal", literal);
   }
 
   public static SNode getAdaptableClosureLiteralTarget(SNode literal, ITemplateGenerator generator) {
     return (SNode)generator.getGeneratorSessionContext().getSessionObject("literal_target_" + ((SNode)literal).getId());
+  }
+
+  private static void matchParameters(SNode ctNoParams, SNode ft) {
+    Map<String, SNode> map = null;
+    List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
+    if(imds.size() > 0) {
+      SNode method = imds.get(0);
+      if((SLinkOperations.getTarget(method, "returnType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+        map = ClosureLiteralUtil.matchType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft), map);
+      }
+      List<SNode> ptypes = FunctionType_Behavior.call_getNormalizedParameterTypes_1201526194584(ft);
+      int idx = 0;
+      for(SNode pd : SLinkOperations.getTargets(method, "parameter", true)) {
+        map = ClosureLiteralUtil.matchType(SLinkOperations.getTarget(pd, "type", true), ptypes.get(idx), map);
+        idx = idx + 1;
+      }
+    }
+    ((SNode)ctNoParams).putUserObject("typeMap", map);
+    for(SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "typeVariableDeclaration", true)) {
+      SLinkOperations.addChild(ctNoParams, "parameter", map.get(SPropertyOperations.getString(tvar, "name")));
+    }
+  }
+
+  private static Map<String, SNode> matchType(SNode matching, SNode realType, Map<String, SNode> map) {
+    if(SNodeOperations.isInstanceOf(matching, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      (map = ClosureLiteralUtil.getMap(map)).put(SPropertyOperations.getString(SLinkOperations.getTarget(matching, "typeVariableDeclaration", false), "name"), realType);
+    } else
+    if(SNodeOperations.isInstanceOf(matching, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      int idx = 0;
+      List<SNode> mptypes = SLinkOperations.getTargets(matching, "parameter", true);
+      List<SNode> rptypes = SLinkOperations.getTargets(realType, "parameter", true);
+      for(int i = 0 ; i < mptypes.size() && i < rptypes.size() ; i = i + 1) {
+        map = ClosureLiteralUtil.matchType(mptypes.get(i), rptypes.get(i), ClosureLiteralUtil.getMap(map));
+      }
+    }
+    return map;
+  }
+
+  private static Map<String, SNode> getMap(Map<String, SNode> map) {
+    if(map == null) {
+      map = new HashMap<String, SNode>();
+    }
+    return map;
   }
 
 }
