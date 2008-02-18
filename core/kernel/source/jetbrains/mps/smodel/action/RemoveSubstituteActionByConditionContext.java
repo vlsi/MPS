@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 
 import java.util.Iterator;
 
@@ -21,11 +22,15 @@ public class RemoveSubstituteActionByConditionContext {
     return myActions;
   }
 
+  public SModel getModel() {
+    return myParentNode.getModel();
+  }
+
   public SNode getParentNode() {
     return myParentNode;
   }
 
-  public SNode getCurrentChild() {
+  public SNode getCurrentTargetNode() {
     return myCurrentChild;
   }
 

@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class NodeSubstituteActionsFactoryContext {
@@ -14,6 +15,10 @@ public class NodeSubstituteActionsFactoryContext {
     myCurrentTargetNode = currentTargetNode;
     myChildConcept = childConcept;
     myChildSetter = childSetter;
+  }
+
+  public SModel getModel() {
+    return myParentNode.getModel();
   }
 
   public SNode getParentNode() {

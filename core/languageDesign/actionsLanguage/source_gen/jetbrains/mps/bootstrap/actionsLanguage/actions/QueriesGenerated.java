@@ -153,10 +153,7 @@ public class QueriesGenerated {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
-      if(!(current.getOutputConcept() instanceof SNode)) {
-        continue;
-      }
-      final SNode concept = (SNode)current.getOutputConcept();
+      final SNode concept = current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart");
       Condition cond = new Condition() {
 
@@ -175,10 +172,7 @@ public class QueriesGenerated {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
-      if(!(current.getOutputConcept() instanceof SNode)) {
-        continue;
-      }
-      final SNode concept = (SNode)current.getOutputConcept();
+      final SNode concept = current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart");
       Condition cond = new Condition() {
 
