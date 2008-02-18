@@ -2,6 +2,8 @@ package jetbrains.mps.plugin;
 
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IDEProjectFrame;
@@ -138,12 +140,12 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
             break;
           }
         }
+
         if (m == null) {
           LOG.error("Can't find a method " + classFqName + "." + methodName);
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-
         getProjectWindow().findUsages(m.getNode(), GlobalScope.getInstance());
       }
     });

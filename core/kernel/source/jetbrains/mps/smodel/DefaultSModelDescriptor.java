@@ -451,12 +451,11 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<SReference>();
 
     Set<String> strings = new HashSet<String>();
-
     for (SNode node : nodes) {
       if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
-        strings.add(node.getId());
+        strings.add(quoteSpecialXMLCharacters(node.getId()));
       }
-    }
+    }    
 
     if (!myModelRootManager.containsSomeString(this, strings)) return new HashSet<SReference>();
     getSModel();
@@ -467,6 +466,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       }
     }
     return result;
+  }
+
+  private String quoteSpecialXMLCharacters(String s) {
+    return s.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
   }
 
   public boolean hasImportedModel(SModelDescriptor modelDescriptor) {
