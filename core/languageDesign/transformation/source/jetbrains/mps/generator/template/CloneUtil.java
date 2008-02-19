@@ -22,9 +22,10 @@ public class CloneUtil {
   }
 
   public static SNode clone(SNode inputNode, SModel outputModel, IScope scope) {
-    SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(inputNode.getConceptFqName(), outputModel, scope, false);
-    assert outputNode != null;
-    // keep old Id
+    // new SNode() uses intern. It's a very expensive operation and we know that when we copy node, concept fq name
+    // is already interned. So we don't intern anything. DO NOT replace this stuff with instantiateStuff
+    SNode outputNode = new SNode(outputModel, inputNode.getConceptFqName(), false);
+
     outputNode.setId(inputNode.getSNodeId());
     outputNode.putProperties(inputNode);
     for (SReference reference : inputNode.getReferences()) {

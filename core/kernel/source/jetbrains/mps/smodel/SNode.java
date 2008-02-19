@@ -63,9 +63,17 @@ public final class SNode {
 
   private BaseAdapter myAdapter;
 
-  public SNode(SModel model, String conceptFqName) {
+  public SNode(SModel model, String conceptFqName, boolean callIntern) {
     myModel = model;
-    myConceptFqName = InternUtil.intern(conceptFqName);
+    if (callIntern) {
+      myConceptFqName = InternUtil.intern(conceptFqName);
+    } else {
+      myConceptFqName = conceptFqName;
+    }
+  }
+
+  public SNode(SModel model, String conceptFqName) {
+    this(model, conceptFqName, true);
   }
 
   public void changeModel(SModel newModel) {
