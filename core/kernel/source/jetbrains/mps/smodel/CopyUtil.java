@@ -81,8 +81,7 @@ public final class CopyUtil {
     if (node == null) {
       result = null;
     } else {
-      result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), null/*targetModel*/, GlobalScope.getInstance(), false);
-      assert result != null;
+      result = new SNode(node.getModel(), node.getConceptFqName(), false);
       mapping.put(node, result);
 
       result.putProperties(node);
