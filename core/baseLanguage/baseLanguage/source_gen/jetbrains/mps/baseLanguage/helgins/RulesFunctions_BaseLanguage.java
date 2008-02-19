@@ -67,7 +67,7 @@ public class RulesFunctions_BaseLanguage {
             SNode tvr = child;
             SNode tvd = SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false);
             int index = SequenceOperations.indexOf(SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true), tvd);
-            SNode actualParam = (index < actualParams.size() ?
+            SNode actualParam = (index < actualParams.size() && index >= 0 ?
               actualParams.get(index) :
               new QuotationClass_31().createNode()
             );

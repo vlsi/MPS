@@ -32,6 +32,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerEl
 public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_Component_Visibility3;
+  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component3;
   /* package */AbstractCellProvider myBaseMethodDeclaration_NameCellComponent1;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
   /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
@@ -40,6 +41,10 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public static boolean _QueryFunction_NodeCondition_1188210533001(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1203413131109(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
 
   public static boolean _QueryFunction_NodeCondition_1164890626616(SNode node, EditorContext editorContext, IScope scope) {
@@ -61,6 +66,11 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080826270968");
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic__GenericDeclaration_TypeVariables_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1203413131108");
     editorCell.setDrawBorder(false);
   }
 
@@ -288,6 +298,9 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.create_Component_VisibilityCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "static"));
+    if(StaticMethodDeclaration_Editor._QueryFunction_NodeCondition_1203413131109(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.create_GenericDeclaration_TypeVariables_ComponentCell(context, node));
+    }
     editorCell.addEditorCell(this.createReturnType(context, node));
     editorCell.addEditorCell(this.createBaseMethodDeclaration_NameCellComponentCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
@@ -353,6 +366,17 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
     StaticMethodDeclaration_Editor.setupBasic__Component_VisibilityCell(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell create_GenericDeclaration_TypeVariables_ComponentCell(EditorContext context, SNode node) {
+    if(this.my_GenericDeclaration_TypeVariables_Component3 == null) {
+      this.my_GenericDeclaration_TypeVariables_Component3 = new _GenericDeclaration_TypeVariables_Component(node);
+    }
+    EditorCell componentCell = this.my_GenericDeclaration_TypeVariables_Component3.createEditorCell(context);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.addEditorCell(componentCell);
+    StaticMethodDeclaration_Editor.setupBasic__GenericDeclaration_TypeVariables_ComponentCell(editorCell, node, context);
     return editorCell;
   }
 

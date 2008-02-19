@@ -4320,6 +4320,15 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1202990098458">
     <property name="name" value="Child_Test" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1203413590289">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203413590290" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203413590291" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203413590292" />
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1203413597072">
+        <property name="name" value="T" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1202996185485">
       <property name="name" value="testFoo" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1202996185486" />

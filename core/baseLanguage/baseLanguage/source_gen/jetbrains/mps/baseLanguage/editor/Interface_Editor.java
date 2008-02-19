@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 public class Interface_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_Component_Visibility6;
-  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component1;
+  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component4;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
   /* package */AbstractCellListHandler myExtendedInterfaceListHandler_extendedInterfaceList_;
   /* package */AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
@@ -328,10 +328,10 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_GenericDeclaration_TypeVariables_ComponentCell(EditorContext context, SNode node) {
-    if(this.my_GenericDeclaration_TypeVariables_Component1 == null) {
-      this.my_GenericDeclaration_TypeVariables_Component1 = new _GenericDeclaration_TypeVariables_Component(node);
+    if(this.my_GenericDeclaration_TypeVariables_Component4 == null) {
+      this.my_GenericDeclaration_TypeVariables_Component4 = new _GenericDeclaration_TypeVariables_Component(node);
     }
-    EditorCell componentCell = this.my_GenericDeclaration_TypeVariables_Component1.createEditorCell(context);
+    EditorCell componentCell = this.my_GenericDeclaration_TypeVariables_Component4.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
     Interface_Editor.setupBasic__GenericDeclaration_TypeVariables_ComponentCell(editorCell, node, context);

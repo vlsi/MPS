@@ -5515,5 +5515,55 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1203413213560">
+    <property name="name" value="make_generic" />
+    <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1203413213561">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203413213562">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203413245112">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203413245113">
+            <property name="value" value="Add type variable" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1203413213563">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203413213564">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203413265342">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1203413285022">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203413285595">
+              <property name="value" value="0" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203413278934">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_GetCountOperation" id="1203413281864" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203413271709">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1203413276380">
+                  <link role="link" targetNodeId="1.1109279881614" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1203413265343" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1203413213565">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203413213566">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203413291659">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203413298568">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation" id="1203413302737">
+              <link role="concept" targetNodeId="1.1109279763828" resolveInfo="TypeVariableDeclaration" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203413292954">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1203413295405">
+                <link role="link" targetNodeId="1.1109279881614" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1203413291660" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
