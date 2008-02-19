@@ -1,6 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.bootstrap.helgins.structure.RuntimeListVariable;
 import jetbrains.mps.helgins.inference.ErrorInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.IMatchModifier;
@@ -13,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -61,7 +63,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     return this;
   }
 
-  public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo) {
+  public boolean matchesWith(IWrapper wrapper, final @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo) {
     if (wrapper == null) return false;
     if (wrapper instanceof NodeWrapper) {
       final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
@@ -70,8 +72,40 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
           return BaseAdapter.isInstance(node1, RuntimeTypeVariable.class) || BaseAdapter.isInstance(node2, RuntimeTypeVariable.class);
         }
 
+        public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
+          return (!nodes1.isEmpty() && BaseAdapter.isInstance(nodes1.get(0), RuntimeListVariable.class))
+            || (!nodes2.isEmpty() && BaseAdapter.isInstance(nodes2.get(0), RuntimeListVariable.class));
+        }
+
         public void performAction(SNode node1, SNode node2) {
           childEQs.add(new Pair<SNode, SNode>(node1, node2));
+        }
+
+        public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
+          if (equationManager == null) return;
+          if (!nodes1.isEmpty() && BaseAdapter.isInstance(nodes1.get(0), RuntimeListVariable.class)) {
+            SNode var = nodes1.get(0);
+            SNode parent = var.getParent();
+            String role = var.getRole_();
+            if (role == null) return;
+            parent.removeChild(var);
+            for (SNode node : nodes2) {
+              SNode runtimeTypesVariable = equationManager.getTypeChecker().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+              parent.addChild(role, runtimeTypesVariable);
+              childEQs.add(new Pair<SNode, SNode>(runtimeTypesVariable, node));
+            }
+          } else if (!nodes2.isEmpty() && BaseAdapter.isInstance(nodes2.get(0), RuntimeListVariable.class)) {
+            SNode var = nodes2.get(0);
+            SNode parent = var.getParent();
+            String role = var.getRole_();
+            if (role == null) return;
+            parent.removeChild(var);
+            for (SNode node : nodes1) {
+              SNode runtimeTypesVariable = equationManager.getTypeChecker().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+              parent.addChild(role, runtimeTypesVariable);
+              childEQs.add(new Pair<SNode, SNode>(runtimeTypesVariable, node));
+            }
+          }
         }
       }, false);
       if (b) {

@@ -18,6 +18,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new LinkPatternVariableReference_patternVarDecl_ReferentConstraint());
     this.myConstraints.add(new ApplicableNodeReference_applicableNode_ReferentConstraint());
     this.myConstraints.add(new ConceptReference_concept_ReferentConstraint());
+    this.myConstraints.add(new ListVarReference_listVarDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

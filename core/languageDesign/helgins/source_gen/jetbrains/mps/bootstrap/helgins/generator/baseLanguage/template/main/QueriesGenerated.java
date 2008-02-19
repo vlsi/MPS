@@ -451,6 +451,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name") + "_" + ruleConcept;
   }
 
+  public static Object propertyMacro_GetPropertyValue_1203434652399(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object referenceMacro_GetReferent_1175002013260(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "pattern", true), "patternClass");
   }
@@ -707,6 +711,10 @@ public class QueriesGenerated {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true), "pattern", true), "patternClass").getChild("constructor");
   }
 
+  public static Object referenceMacro_GetReferent_1203434823199(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_context.getNode(), "listVarDeclaration", false), "listVar");
+  }
+
   public static boolean ifMacro_Condition_1174998351525(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
@@ -925,6 +933,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1201609470040(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  }
+
+  public static boolean ifMacro_Condition_1203436323673(final IOperationContext operationContext, final IfMacroContext _context) {
+    return true;
   }
 
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

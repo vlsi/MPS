@@ -673,8 +673,7 @@ public class EquationManager {
     Set<IWrapper> types = subtypingGraphVertices();
     boolean hasConcreteTypes = true;
 
-    // we assume that there are no equations such as T1 :< T2 where T1 and T2 are both concrete
-    while (hasConcreteTypes) {    //todo infinite loop here if solving only deeply concrete inequations
+    while (hasConcreteTypes) {    
       hasConcreteTypes = false;
       for (IWrapper type : types) {
         if (type == null) continue;

@@ -62,7 +62,10 @@ public class MatchingUtil {
     for (String role : childRoles) {
       List<SNode> children1 = node1.getChildren(role);
       List<SNode> children2 = node2.getChildren(role);
-
+      if (matchModifier.acceptList(children1, children2)) {
+        matchModifier.performGroupAction(children1, children2);
+        continue;
+      }
       Iterator<SNode> childrenIterator = children1.iterator();
       for (SNode child2 : children2) {
         SNode child1 = childrenIterator.hasNext() ? childrenIterator.next() : null;

@@ -1633,5 +1633,24 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1203432913915">
+    <link role="concept" targetNodeId="1.1203432734351" resolveInfo="ListVarReference" />
+    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1203432915652">
+      <link role="applicableLink" targetNodeId="1.1203432751071" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1203432920340">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203432920341">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203432926941">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1203432929301">
+              <link role="baseMethodDeclaration" targetNodeId="3.~ListVarScope.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="ListVarScope" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1203432934536" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1203432913916">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203432913917" />
+    </node>
+  </node>
 </model>
 

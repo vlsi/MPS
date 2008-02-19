@@ -2,6 +2,8 @@ package jetbrains.mps.patterns.util;
 
 import jetbrains.mps.smodel.SNode;
 
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -11,14 +13,23 @@ import jetbrains.mps.smodel.SNode;
  */
 public interface IMatchModifier {
   public boolean accept(SNode node1, SNode node2);
+  public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2);
   public void performAction(SNode node1, SNode node2);
+  public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2);
   
   public static final IMatchModifier DEFAULT = new IMatchModifier() {
     public boolean accept(SNode node1, SNode node2) {
       return false;
     }
 
+    public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
+      return false;
+    }
+
     public void performAction(SNode node1, SNode node2) {
+    }
+
+    public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
     }
   };
 }
