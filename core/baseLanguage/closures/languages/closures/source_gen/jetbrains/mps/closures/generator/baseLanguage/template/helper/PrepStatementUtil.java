@@ -135,9 +135,9 @@ public class PrepStatementUtil {
     int blockLabel = this.ctx.incrementLabel();
     int postLabel = this.ctx.incrementLabel();
     PrepStatementUtil.putPrepData(SLinkOperations.getTarget(fstmt, "body", true), new Integer[]{blockLabel,postLabel}, this.generator);
-    this.prepStatementList(SLinkOperations.getTarget(fstmt, "body", true));
     int nextLabel = this.calcNextLabel(fstmt);
     PrepStatementUtil.putPrepData(fstmt, new Integer[]{beginLabel,postLabel,blockLabel,condLabel,nextLabel}, this.generator);
+    this.prepStatementList(SLinkOperations.getTarget(fstmt, "body", true));
     return nextLabel;
   }
 
@@ -231,7 +231,7 @@ public class PrepStatementUtil {
     String lbl = SPropertyOperations.getString(cstmt, "label");
     SNode node = cstmt;
     while(((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, false, false)) != null)) {
-      if(lbl == SPropertyOperations.getString(node, "label")) {
+      if(lbl == SPropertyOperations.getString(node, "label") || (lbl != null && lbl.equals(SPropertyOperations.getString(node, "label")))) {
         Integer[] labels = (Integer[])PrepStatementUtil.getPrepData(node, this.generator);
         conLabel = labels[1];
         break;

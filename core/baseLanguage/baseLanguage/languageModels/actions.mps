@@ -4700,6 +4700,7 @@
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1081855346303" resolveInfo="BreakStatement" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1199465929524">
+        <link role="concept" targetNodeId="1.1081855346303" resolveInfo="BreakStatement" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart" id="1199465932534">
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199465935656">
             <link role="classifier" targetNodeId="20.~String" resolveInfo="String" />
@@ -4864,6 +4865,16 @@
               </node>
             </node>
           </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1203381380906">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203381380907">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203381381947">
+                <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1203381403738" />
+              </node>
+            </node>
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1203381557795">
+            <property name="text" value="declared label" />
+          </node>
         </node>
       </node>
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitutePreconditionFunction" id="1199466283835">
@@ -4999,6 +5010,7 @@
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1082113931046" resolveInfo="ContinueStatement" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1199470435359">
+        <link role="concept" targetNodeId="1.1082113931046" resolveInfo="ContinueStatement" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart" id="1199470435360">
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199470435361">
             <link role="classifier" targetNodeId="20.~String" resolveInfo="String" />
@@ -5079,6 +5091,16 @@
                 <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1199470435399" />
               </node>
             </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1203381300955">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203381300956">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203381332319">
+                <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1203381332320" />
+              </node>
+            </node>
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1203381542526">
+            <property name="text" value="declared label" />
           </node>
         </node>
       </node>

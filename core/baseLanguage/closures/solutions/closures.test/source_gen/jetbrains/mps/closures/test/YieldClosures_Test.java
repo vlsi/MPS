@@ -553,6 +553,122 @@ __switch__:
     });
   }
 
+  public void test_dmitriev() throws Exception {
+    this.assertResultsEqual(new FunctionTypes._void_from_T <List<Integer>>() {
+
+      public void invoke(List<Integer> exp) {
+        int a = 0;
+        for(int i = 0 ; i < 10 ; i = i + 1) {
+          for(int j = 0 ; j < 10 ; j = j + 1) {
+            if(i + j < 5) {
+              continue;
+            }
+            if(i < j) {
+              a = a + i + j;
+              exp.add(a);
+            }
+          }
+        }
+      }
+
+    }, new FunctionTypes._R <Iterable<Integer>>() {
+
+      public Iterable<Integer> invoke() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _3_a;
+              private int _8_j;
+              private int _4_i;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 8:
+                      this._8_j = 0;
+                    case 9:
+                      if(!(this._8_j < 10)) {
+                        this.__CP__ = 7;
+                        break;
+                      }
+                      this.__CP__ = 10;
+                      break;
+                    case 11:
+                      this._8_j = this._8_j + 1;
+                      this.__CP__ = 9;
+                      break;
+                    case 4:
+                      this._4_i = 0;
+                    case 5:
+                      if(!(this._4_i < 10)) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this.__CP__ = 6;
+                      break;
+                    case 7:
+                      this._4_i = this._4_i + 1;
+                      this.__CP__ = 5;
+                      break;
+                    case 12:
+                      if(this._4_i + this._8_j < 5) {
+                        this.__CP__ = 13;
+                        break;
+                      }
+                      this.__CP__ = 14;
+                      break;
+                    case 14:
+                      if(this._4_i < this._8_j) {
+                        this.__CP__ = 16;
+                        break;
+                      }
+                      this.__CP__ = 11;
+                      break;
+                    case 18:
+                      this.__CP__ = 11;
+                      this.yield(this._3_a);
+                      return true;
+                    case 13:
+                      this.__CP__ = 11;
+                      break;
+                    case 16:
+                      this._3_a = this._3_a + this._4_i + this._8_j;
+                      this.__CP__ = 18;
+                      break;
+                    case 10:
+                      this.__CP__ = 12;
+                      break;
+                    case 6:
+                      this.__CP__ = 8;
+                      break;
+                    case 0:
+                      this._3_a = 0;
+                      this.__CP__ = 4;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+  }
+
   public void test_switchStatement() throws Exception {
     this.assertResultsEqual(new FunctionTypes._void_from_T <List<Integer>>() {
 

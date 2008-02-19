@@ -1325,7 +1325,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_BreakStatement_1199465912028(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement", operationContext.getScope());
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -1346,6 +1346,14 @@ public class QueriesGenerated {
             return _context.getSourceNode();
           }
 
+          public String getMatchingText(String text) {
+            return (item);
+          }
+
+          public String getDescriptionText(String text) {
+            return "declared label";
+          }
+
         });
       }
     }
@@ -1355,7 +1363,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_ContinueStatement_1199470401054(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement", operationContext.getScope());
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -1371,6 +1379,14 @@ public class QueriesGenerated {
           public SNode doSubstitute(String pattern) {
             SPropertyOperations.set(_context.getSourceNode(), "label", (item));
             return _context.getSourceNode();
+          }
+
+          public String getMatchingText(String text) {
+            return (item);
+          }
+
+          public String getDescriptionText(String text) {
+            return "declared label";
           }
 
         });
