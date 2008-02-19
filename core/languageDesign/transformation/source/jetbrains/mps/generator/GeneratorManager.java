@@ -331,7 +331,15 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                                           final Language targetLanguage,
                                                           final IGenerationType generationType,
                                                           final IGenerationScript script,
-                                                          boolean closeOnExit) {
+                                                          boolean closeOnExit) {    
+    if (sourceModels.isEmpty()) {
+      return myExecutorService.submit(new Callable<Boolean>() {
+        public Boolean call() throws Exception {
+          return true;
+        }
+      });
+    }
+
     final IOperationContext invocationContext = sourceModels.get(0).o2;
     final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
     final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
