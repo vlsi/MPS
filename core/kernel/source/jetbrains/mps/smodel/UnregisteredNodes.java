@@ -40,7 +40,8 @@ import java.util.Map;
    */
   void clear(SModelUID uid) {
     for (String key : new HashSet<String>(myMap.keySet())) {
-      if (key.startsWith(uid.toString() + "#")) {
+      String uidString = uid.toString();
+      if (key.startsWith(uidString) && key.startsWith("#", uidString.length())) {
         myMap.remove(key);
       }
     }
