@@ -24,10 +24,6 @@ import java.util.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-/**
- * Author: Sergey Dmitriev
- * Created Jan 29, 2004
- */
 public class SModelRepository extends SModelAdapter {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
@@ -40,6 +36,7 @@ public class SModelRepository extends SModelAdapter {
   private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
 
   private Map<SModelDescriptor, Set<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, Set<ModelOwner>>();
+  private Map<ModelOwner, Set<SModelDescriptor>> myOwnerToModelMap = new HashMap<ModelOwner, Set<SModelDescriptor>>();
 
 
   private MPSModuleRepository myModuleRepository;
@@ -187,10 +184,19 @@ public class SModelRepository extends SModelAdapter {
     if (owners == null) {
       owners = new HashSet<ModelOwner>();
       myModelToOwnerMap.put(modelDescriptor, owners);
-      myUIDToModelDescriptorMap.put(modelDescriptor.getModelUID(), modelDescriptor);
     }
-    myModelsWithNoOwners.remove(modelDescriptor);
     owners.add(owner);
+
+    Set<SModelDescriptor> descriptors = myOwnerToModelMap.get(owner);
+    if (descriptors == null) {
+      descriptors = new HashSet<SModelDescriptor>();
+      myOwnerToModelMap.put(owner, descriptors);
+    }
+    descriptors.add(modelDescriptor);
+
+    myUIDToModelDescriptorMap.put(modelDescriptor.getModelUID(), modelDescriptor);
+    myModelsWithNoOwners.remove(modelDescriptor);
+
     fireRepositoryChanged();
   }
 
@@ -204,6 +210,7 @@ public class SModelRepository extends SModelAdapter {
     SModelDescriptor registeredModel = myUIDToModelDescriptorMap.get(modelUID);
     LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
             "Another model \"" + modelUID + "\" is already registered!");
+
     Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     LOG.assertLog(owners == null ||
             !owners.contains(owner),
@@ -214,6 +221,14 @@ public class SModelRepository extends SModelAdapter {
       owners = new HashSet<ModelOwner>();
       myModelToOwnerMap.put(modelDescriptor, owners);
     }
+
+    Set<SModelDescriptor> descriptors = myOwnerToModelMap.get(owner);
+    if (descriptors == null) {
+      descriptors = new HashSet<SModelDescriptor>();
+      myOwnerToModelMap.put(owner, descriptors);
+    }
+    descriptors.add(modelDescriptor);
+
     myModelsWithNoOwners.remove(modelDescriptor);
     owners.add(owner);
     modelDescriptor.addWeakModelListener(this);
@@ -229,9 +244,14 @@ public class SModelRepository extends SModelAdapter {
       if (modelOwners.isEmpty()) {
         myModelsWithNoOwners.add(modelDescriptor);
       }
+    }
 
-      // DO NOT REMOVE MODEL FROM REPOSITORY EVEN IF NO MORE OWNERS
-      // THE REPOSITORY IS CLEANED UP AFTER COMMAND IS COMPLETED
+    Set<SModelDescriptor> ownModels = myOwnerToModelMap.get(owner);
+    if (ownModels != null) {
+      ownModels.remove(modelDescriptor);
+      if (ownModels.isEmpty()) {
+        myOwnerToModelMap.remove(owner);
+      }
     }
 
     fireRepositoryChanged();
@@ -247,15 +267,26 @@ public class SModelRepository extends SModelAdapter {
         if (modelOwners.isEmpty()) {
           myModelsWithNoOwners.add(modelDescriptor);
         }
-        // DO NOT REMOVE MODEL FROM REPOSITORY EVEN IF NO MORE OWNERS
-        // THE REPOSITORY IS CLEANED UP AFTER COMMAND IS COMPLETED
       }
     }
+    myOwnerToModelMap.remove(owner);
 
     fireRepositoryChanged();
   }
 
   public void removeModelDescriptor(@NotNull SModelDescriptor modelDescriptor) {
+    Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
+    if (owners != null) {
+      for (ModelOwner owner : owners) {
+        Set<SModelDescriptor> models = myOwnerToModelMap.get(owner);
+        models.remove(modelDescriptor);
+        if (models.isEmpty()) {
+          myOwnerToModelMap.remove(owner);
+        }
+      }
+    }
+    myModelToOwnerMap.remove(modelDescriptor);
+
     myModelDescriptors.remove(modelDescriptor);
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
@@ -318,15 +349,11 @@ public class SModelRepository extends SModelAdapter {
 
   @NotNull
   public List<SModelDescriptor> getModelDescriptors(@NotNull ModelOwner modelOwner) {
-    List<SModelDescriptor> list = new ArrayList<SModelDescriptor>();
-    for (Map.Entry<SModelUID, SModelDescriptor> entry : myUIDToModelDescriptorMap.entrySet()) {
-      SModelDescriptor descriptor = entry.getValue();
-      Set<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
-      if (modelOwners.contains(modelOwner)) {
-        list.add(descriptor);
-      }
+    Set<SModelDescriptor> result = myOwnerToModelMap.get(modelOwner);
+    if (result == null) {
+      return new ArrayList<SModelDescriptor>();
     }
-    return list;
+    return new ArrayList<SModelDescriptor>(result);
   }
 
   public void modelChanged(@NotNull SModel model) {
