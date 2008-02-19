@@ -1251,6 +1251,43 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141372">
     <link role="concept" targetNodeId="1.1071489288298" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1203463866634">
+      <property name="name" value="getGenuineLink" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1203463876397">
+        <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203463866636">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203463906121">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1203463913384">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1203463916610" />
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203463910644" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203463906123">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203463918677">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1203463920808" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203463975641">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203463975642">
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1203463975643">
+              <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+            </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203463975644">
+              <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203463975645">
+                <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.getGenuineLinkDeclaration(jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration):jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" resolveInfo="getGenuineLinkDeclaration" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203463975646">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203463982997" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1203463975648" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199063473952">
       <property name="name" value="getPresentation" />
       <link role="overriddenMethod" targetNodeId="22.1180102203531" resolveInfo="getPresentation" />
