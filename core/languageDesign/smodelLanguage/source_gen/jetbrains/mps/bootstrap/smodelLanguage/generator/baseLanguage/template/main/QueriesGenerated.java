@@ -14,12 +14,12 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util.Querie
 import jetbrains.mps.bootstrap.smodelLanguage.constraints.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -177,10 +177,8 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1170467024360(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // <expr>.<property-access>.<operation>
-    // <operation> : our input node
-    SNode noe1 = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
-    SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
+    SNode operation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode op = operation;
     return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
 
@@ -339,9 +337,8 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1170698439209(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
-    SNode noe1 = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
-    SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
+    SNode operation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode op = operation;
     return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
 
@@ -354,10 +351,8 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1170700859294(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // <expr>.<property-access>.<operation>
-    // <operation> : our input node
-    SNode noe1 = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
-    SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
+    SNode operation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode op = operation;
     return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
 
@@ -371,19 +366,15 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1170635425166(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // <expr>.<property-access>.<operation>
-    // <operation> : our input node
-    SNode noe1 = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
-    SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
+    SNode operation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode op = operation;
     return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1170635043273(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // <expr>.<property-access>.<operation>
-    // <operation> : our input node
-    SNode noe1 = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
-    SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
+    SNode operation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode op = operation;
     return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
 
@@ -599,11 +590,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1170466610811(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr>.<property-access>.<operation>
-    // <operation> : our input node
-    // <expt> : expression to copy
-    SNode noe1 = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
-    return SLinkOperations.getTarget(noe2, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1170633505954(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -764,10 +751,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1170698414312(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
-    // <expt> : expression to copy
-    SNode noe1 = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
-    return SLinkOperations.getTarget(noe2, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1170698496990(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -776,11 +760,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1170700844444(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr>.<property-access>.<operation>
-    // <operation> : our input node
-    // <expt> : expression to copy
-    SNode noe1 = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
-    return SLinkOperations.getTarget(noe2, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1170700882912(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -793,11 +773,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1170635406441(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr>.<property-access>.<operation>
-    // <operation> : our input node
-    // <expt> : expression to copy
-    SNode noe1 = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
-    return SLinkOperations.getTarget(noe2, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1170635509830(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -806,11 +782,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1170635027047(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr>.<property-access>.<operation>
-    // <operation> : our input node
-    // <expt> : expression to copy
-    SNode noe1 = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
-    return SLinkOperations.getTarget(noe2, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1170635069296(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
