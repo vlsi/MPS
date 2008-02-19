@@ -34,11 +34,13 @@ public class SModelRepository extends SModelAdapter {
   private Set<SModelDescriptor> myModelDescriptors = new HashSet<SModelDescriptor>();
   private Map<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
   private Map<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
-  private Map<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
   private Set<SModelDescriptor> myModelsWithNoOwners = new HashSet<SModelDescriptor>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
   private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
   private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
+
+  private Map<SModelDescriptor, Set<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, Set<ModelOwner>>();
+
 
   private MPSModuleRepository myModuleRepository;
 
@@ -181,7 +183,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void addOwnerForDescriptor(@NotNull SModelDescriptor modelDescriptor, @NotNull ModelOwner owner) {
-    HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
+    Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     if (owners == null) {
       owners = new HashSet<ModelOwner>();
       myModelToOwnerMap.put(modelDescriptor, owners);
@@ -193,7 +195,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public boolean isRegisteredModelDescriptor(@NotNull SModelDescriptor modelDescriptor, @NotNull ModelOwner owner) {
-    HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
+    Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     return owners != null && owners.contains(owner);
   }
 
@@ -202,7 +204,7 @@ public class SModelRepository extends SModelAdapter {
     SModelDescriptor registeredModel = myUIDToModelDescriptorMap.get(modelUID);
     LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
             "Another model \"" + modelUID + "\" is already registered!");
-    HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
+    Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     LOG.assertLog(owners == null ||
             !owners.contains(owner),
             "Another model \"" + modelUID + "\" is already registered!");
@@ -221,7 +223,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void unRegisterModelDescriptor(@NotNull SModelDescriptor modelDescriptor, @NotNull ModelOwner owner) {
-    HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
+    Set<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
     if (modelOwners != null && modelOwners.contains(owner)) {
       modelOwners.remove(owner);
       if (modelOwners.isEmpty()) {
@@ -238,7 +240,7 @@ public class SModelRepository extends SModelAdapter {
   public void unRegisterModelDescriptors(@NotNull ModelOwner owner) {
     for (SModelUID uid : new HashMap<SModelUID, SModelDescriptor>(myUIDToModelDescriptorMap).keySet()) {
       SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(uid);
-      HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
+      Set<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
       if (modelOwners != null) {
         modelOwners.remove(owner);
 
@@ -268,7 +270,7 @@ public class SModelRepository extends SModelAdapter {
   public void removeUnusedDescriptors() {
     List<SModelDescriptor> descriptorsToRemove = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor descriptor : new ArrayList<SModelDescriptor>(myModelsWithNoOwners)) {
-      HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
+      Set<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
       if (modelOwners == null || modelOwners.isEmpty()) {
         descriptorsToRemove.add(descriptor);
       } else {
@@ -297,7 +299,7 @@ public class SModelRepository extends SModelAdapter {
     if (descriptor == null) {
       return null;
     }
-    HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
+    Set<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
     if (modelOwners.contains(owner)) {
       return descriptor;
     }
@@ -319,7 +321,7 @@ public class SModelRepository extends SModelAdapter {
     List<SModelDescriptor> list = new ArrayList<SModelDescriptor>();
     for (Map.Entry<SModelUID, SModelDescriptor> entry : myUIDToModelDescriptorMap.entrySet()) {
       SModelDescriptor descriptor = entry.getValue();
-      HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
+      Set<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
       if (modelOwners.contains(modelOwner)) {
         list.add(descriptor);
       }
@@ -357,7 +359,7 @@ public class SModelRepository extends SModelAdapter {
     myModelDescriptors.remove(modelDescriptor);
     Long aLong = myChangedModels.get(modelDescriptor);
     myChangedModels.remove(modelDescriptor);
-    HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
+    Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     myModelToOwnerMap.remove(modelDescriptor);
     boolean contains2 = myModelsWithNoOwners.contains(modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
@@ -487,13 +489,13 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public boolean hasOwners(@NotNull SModelDescriptor modelDescriptor) {
-    HashSet<ModelOwner> set = myModelToOwnerMap.get(modelDescriptor);
+    Set<ModelOwner> set = myModelToOwnerMap.get(modelDescriptor);
     return !(set == null || set.isEmpty());
   }
 
   @NotNull
   public Set<ModelOwner> getOwners(@NotNull SModelDescriptor modelDescriptor) {
-    HashSet<ModelOwner> set = myModelToOwnerMap.get(modelDescriptor);
+    Set<ModelOwner> set = myModelToOwnerMap.get(modelDescriptor);
     if (set == null) return new HashSet<ModelOwner>();
     return new HashSet<ModelOwner>(set);
   }
