@@ -43,7 +43,7 @@ public class DevKit extends AbstractModule {
     result.myDescriptor = devKitDescriptor;
     result.myDescriptorFile = descriptorFile;
 
-    result.updateRuntimeClassPath();
+    result.reload();
 
     MPSModuleRepository.getInstance().addModule(result, moduleOwner);
     return result;
@@ -88,10 +88,8 @@ public class DevKit extends AbstractModule {
 
     myDescriptor = descriptor;
 
-    rereadModels();
+    reload();
 
-    updateRuntimeClassPath();
-    
     devKitChanged();
   }
 
