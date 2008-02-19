@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.projectLanguage.structure.Model;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
+import jetbrains.mps.ide.BootstrapModule;
 
 import java.util.List;
 
@@ -13,37 +14,37 @@ public enum LanguageAspect {
     }
 
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getStructureLanguage().getNamespace());
+      return CollectionUtil.asList(BootstrapModule.STRUCTURE.getUID());
     }
   },
 
   EDITOR("editor") {
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getEditorLanguage().getNamespace());
+      return CollectionUtil.asList(BootstrapModule.EDITOR.getUID());
     }
   },
 
   ACTIONS("actions") {
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getActionsLanguage().getNamespace());
+      return CollectionUtil.asList(BootstrapModule.ACTIONS.getUID());
     }
   },
 
   CONSTRAINTS("constraints") {
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getConstraintsLanguage().getNamespace());
+      return CollectionUtil.asList(BootstrapModule.CONSTRAINTS.getUID());
     }
   },
 
   HELGINS_TYPESYSTEM("helgins") {
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getHelginsLanguage().getNamespace());
+      return CollectionUtil.asList(BootstrapModule.HELGINS.getUID());
     }
   },
 
   SCRIPTS("scripts") {
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getIdeScriptsLanguage().getNamespace());
+      return CollectionUtil.asList(BootstrapModule.IDESCRIPT.getUID());
     }
   },
 
@@ -55,25 +56,25 @@ public enum LanguageAspect {
 
   INTENTIONS("intentions") {
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getIntentionsLanguage().getNamespace());
+      return CollectionUtil.asList(BootstrapModule.INTENTION.getUID());
     }
   },
 
   FIND_USAGES("findUsages") {
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getFindUsagesLanguage().getNamespace());
+      return CollectionUtil.asList(BootstrapModule.FIND_USAGES.getUID());
     }
   },
 
   PLUGIN("plugin") {
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getPluginLanguage().getNamespace());
+      return CollectionUtil.asList(BootstrapModule.PLUGIN.getUID());
     }
   },
 
   CFA("cfa") {
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapLanguagesManager.getInstance().getCFALanguage().getNamespace());
+      return CollectionUtil.asList(BootstrapModule.CFA.getUID());
     }
   };
 
@@ -106,9 +107,9 @@ public enum LanguageAspect {
       model.getSModel().addLanguage(lang);
     }
 
-    model.getSModel().addLanguage(BootstrapLanguagesManager.getInstance().getCollectionsLanguage().getNamespace());
-    model.getSModel().addLanguage(BootstrapLanguagesManager.getInstance().getSModelLanguage().getNamespace());
-    model.getSModel().addLanguage(BootstrapLanguagesManager.getInstance().getBaseLanguage().getNamespace());
+    model.getSModel().addLanguage(BootstrapModule.COLLECTIONS.getUID());
+    model.getSModel().addLanguage(BootstrapModule.SMODEL.getUID());
+    model.getSModel().addLanguage(BootstrapModule.BASE_LANGUAGE.getUID());
 
     for (String modelUID : getModelsToImport(l)) {
       model.getSModel().addImportedModel(SModelUID.fromString(modelUID));
