@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BinaryRegexp extends Regexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.BinaryRegexp";
   public static String LEFT = "left";
   public static String RIGHT = "right";
 
@@ -16,22 +17,28 @@ public class BinaryRegexp extends Regexp {
   }
 
   public static BinaryRegexp newInstance(SModel sm, boolean init) {
-    return (BinaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.BinaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BinaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.BinaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static BinaryRegexp newInstance(SModel sm) {
     return BinaryRegexp.newInstance(sm, false);
   }
 
+
   public Regexp getLeft() {
     return (Regexp)this.getChild(BinaryRegexp.LEFT);
   }
+
   public void setLeft(Regexp node) {
     super.setChild(BinaryRegexp.LEFT, node);
   }
+
   public Regexp getRight() {
     return (Regexp)this.getChild(BinaryRegexp.RIGHT);
   }
+
   public void setRight(Regexp node) {
     super.setChild(BinaryRegexp.RIGHT, node);
   }
+
 }

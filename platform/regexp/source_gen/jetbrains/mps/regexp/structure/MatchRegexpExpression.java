@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MatchRegexpExpression extends Expression implements RegexpUsingConstruction {
+  public static final String concept = "jetbrains.mps.regexp.structure.MatchRegexpExpression";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String INPUT_EXPRESSION = "inputExpression";
   public static String REGEXP = "regexp";
 
@@ -17,22 +21,52 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
   }
 
   public static MatchRegexpExpression newInstance(SModel sm, boolean init) {
-    return (MatchRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.MatchRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static MatchRegexpExpression newInstance(SModel sm) {
     return MatchRegexpExpression.newInstance(sm, false);
+  }
+
+
+  public String getShortDescription() {
+    return this.getProperty(MatchRegexpExpression.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(MatchRegexpExpression.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(MatchRegexpExpression.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(MatchRegexpExpression.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(MatchRegexpExpression.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(MatchRegexpExpression.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getInputExpression() {
     return (Expression)this.getChild(MatchRegexpExpression.INPUT_EXPRESSION);
   }
+
   public void setInputExpression(Expression node) {
     super.setChild(MatchRegexpExpression.INPUT_EXPRESSION, node);
   }
+
   public RegexpExpression getRegexp() {
     return (RegexpExpression)this.getChild(MatchRegexpExpression.REGEXP);
   }
+
   public void setRegexp(RegexpExpression node) {
     super.setChild(MatchRegexpExpression.REGEXP, node);
   }
+
 }

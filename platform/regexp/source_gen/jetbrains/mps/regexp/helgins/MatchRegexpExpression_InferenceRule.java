@@ -12,8 +12,8 @@ public class MatchRegexpExpression_InferenceRule implements InferenceRule_Runtim
   public  MatchRegexpExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_7().createNode(), argument, "jetbrains.mps.regexp.helgins", "1179358945232");
+  public void applyRule(final SNode matchRegexpExpression) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_7().createNode(), matchRegexpExpression, "jetbrains.mps.regexp.helgins", "1179358945232");
   }
 
   public String getApplicableConceptFQName() {

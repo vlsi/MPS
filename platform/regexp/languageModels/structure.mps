@@ -697,5 +697,23 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203415418648">
+    <property name="package" value="Regexps" />
+    <property name="name" value="UnicodeCharacterRegexp" />
+    <link role="extends" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1203415499835">
+      <property name="name" value="code" />
+      <link role="dataType" targetNodeId="1203415512996" resolveInfo="FourDigits" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203415558957">
+      <property name="value" value="\uhhhh" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1203415512996">
+    <property name="package" value="Regexps" />
+    <property name="name" value="FourDigits" />
+    <property name="constraint" value="\\d\\d\\d\\d" />
+  </node>
 </model>
 

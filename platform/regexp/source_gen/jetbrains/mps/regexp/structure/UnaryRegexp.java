@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class UnaryRegexp extends Regexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.UnaryRegexp";
   public static String REGEXP = "regexp";
 
   public  UnaryRegexp(SNode node) {
@@ -15,16 +16,20 @@ public class UnaryRegexp extends Regexp {
   }
 
   public static UnaryRegexp newInstance(SModel sm, boolean init) {
-    return (UnaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.UnaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.UnaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static UnaryRegexp newInstance(SModel sm) {
     return UnaryRegexp.newInstance(sm, false);
   }
 
+
   public Regexp getRegexp() {
     return (Regexp)this.getChild(UnaryRegexp.REGEXP);
   }
+
   public void setRegexp(Regexp node) {
     super.setChild(UnaryRegexp.REGEXP, node);
   }
+
 }

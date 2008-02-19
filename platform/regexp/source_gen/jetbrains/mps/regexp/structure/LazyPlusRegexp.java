@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LazyPlusRegexp extends UnaryRegexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.LazyPlusRegexp";
 
   public  LazyPlusRegexp(SNode node) {
     super(node);
   }
 
   public static LazyPlusRegexp newInstance(SModel sm, boolean init) {
-    return (LazyPlusRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.LazyPlusRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LazyPlusRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.LazyPlusRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LazyPlusRegexp newInstance(SModel sm) {
     return LazyPlusRegexp.newInstance(sm, false);
   }
+
 }

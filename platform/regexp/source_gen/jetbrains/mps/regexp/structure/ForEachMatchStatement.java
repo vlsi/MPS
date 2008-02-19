@@ -11,6 +11,10 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class ForEachMatchStatement extends Statement implements RegexpUsingConstruction {
+  public static final String concept = "jetbrains.mps.regexp.structure.ForEachMatchStatement";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String EXPR = "expr";
   public static String BODY = "body";
   public static String REGEXP = "regexp";
@@ -20,28 +24,60 @@ public class ForEachMatchStatement extends Statement implements RegexpUsingConst
   }
 
   public static ForEachMatchStatement newInstance(SModel sm, boolean init) {
-    return (ForEachMatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.ForEachMatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForEachMatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.ForEachMatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ForEachMatchStatement newInstance(SModel sm) {
     return ForEachMatchStatement.newInstance(sm, false);
+  }
+
+
+  public String getShortDescription() {
+    return this.getProperty(ForEachMatchStatement.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ForEachMatchStatement.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ForEachMatchStatement.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ForEachMatchStatement.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ForEachMatchStatement.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ForEachMatchStatement.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getExpr() {
     return (Expression)this.getChild(ForEachMatchStatement.EXPR);
   }
+
   public void setExpr(Expression node) {
     super.setChild(ForEachMatchStatement.EXPR, node);
   }
+
   public StatementList getBody() {
     return (StatementList)this.getChild(ForEachMatchStatement.BODY);
   }
+
   public void setBody(StatementList node) {
     super.setChild(ForEachMatchStatement.BODY, node);
   }
+
   public RegexpExpression getRegexp() {
     return (RegexpExpression)this.getChild(ForEachMatchStatement.REGEXP);
   }
+
   public void setRegexp(RegexpExpression node) {
     super.setChild(ForEachMatchStatement.REGEXP, node);
   }
+
 }

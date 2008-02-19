@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SeqRegexp extends BinaryRegexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.SeqRegexp";
 
   public  SeqRegexp(SNode node) {
     super(node);
   }
 
   public static SeqRegexp newInstance(SModel sm, boolean init) {
-    return (SeqRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.SeqRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SeqRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.SeqRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SeqRegexp newInstance(SModel sm) {
     return SeqRegexp.newInstance(sm, false);
   }
+
 }

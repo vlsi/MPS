@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class FromNToMTimesRegexp extends UnaryRegexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.FromNToMTimesRegexp";
   public static String N = "n";
   public static String M = "m";
 
@@ -16,22 +17,28 @@ public class FromNToMTimesRegexp extends UnaryRegexp {
   }
 
   public static FromNToMTimesRegexp newInstance(SModel sm, boolean init) {
-    return (FromNToMTimesRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.FromNToMTimesRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FromNToMTimesRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.FromNToMTimesRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static FromNToMTimesRegexp newInstance(SModel sm) {
     return FromNToMTimesRegexp.newInstance(sm, false);
   }
 
+
   public int getN() {
     return this.getIntegerProperty(FromNToMTimesRegexp.N);
   }
+
   public void setN(int value) {
     this.setIntegerProperty(FromNToMTimesRegexp.N, value);
   }
+
   public int getM() {
     return this.getIntegerProperty(FromNToMTimesRegexp.M);
   }
+
   public void setM(int value) {
     this.setIntegerProperty(FromNToMTimesRegexp.M, value);
   }
+
 }

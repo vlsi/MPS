@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class QuestionRegexp extends UnaryRegexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.QuestionRegexp";
 
   public  QuestionRegexp(SNode node) {
     super(node);
   }
 
   public static QuestionRegexp newInstance(SModel sm, boolean init) {
-    return (QuestionRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.QuestionRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QuestionRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.QuestionRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static QuestionRegexp newInstance(SModel sm) {
     return QuestionRegexp.newInstance(sm, false);
   }
+
 }

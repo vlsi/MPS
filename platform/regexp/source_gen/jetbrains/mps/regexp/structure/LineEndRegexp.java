@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LineEndRegexp extends Regexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.LineEndRegexp";
 
   public  LineEndRegexp(SNode node) {
     super(node);
   }
 
   public static LineEndRegexp newInstance(SModel sm, boolean init) {
-    return (LineEndRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.LineEndRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LineEndRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.LineEndRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LineEndRegexp newInstance(SModel sm) {
     return LineEndRegexp.newInstance(sm, false);
   }
+
 }

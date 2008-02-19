@@ -13,8 +13,8 @@ public class ReplaceWithRegexpExpression_InferenceRule implements InferenceRule_
   public  ReplaceWithRegexpExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183634"), new QuotationClass_3().createNode(), SLinkOperations.getTarget(argument, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183633");
+  public void applyRule(final SNode rr) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(rr, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183634", true), new QuotationClass_3().createNode(), SLinkOperations.getTarget(rr, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183633");
   }
 
   public String getApplicableConceptFQName() {

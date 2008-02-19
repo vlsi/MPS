@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NegativeLookAheadRegexp extends LookRegexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.NegativeLookAheadRegexp";
 
   public  NegativeLookAheadRegexp(SNode node) {
     super(node);
   }
 
   public static NegativeLookAheadRegexp newInstance(SModel sm, boolean init) {
-    return (NegativeLookAheadRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.NegativeLookAheadRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NegativeLookAheadRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.NegativeLookAheadRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static NegativeLookAheadRegexp newInstance(SModel sm) {
     return NegativeLookAheadRegexp.newInstance(sm, false);
   }
+
 }

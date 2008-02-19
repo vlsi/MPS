@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NegativeSymbolClassRegexp extends SymbolClassRegexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.NegativeSymbolClassRegexp";
 
   public  NegativeSymbolClassRegexp(SNode node) {
     super(node);
   }
 
   public static NegativeSymbolClassRegexp newInstance(SModel sm, boolean init) {
-    return (NegativeSymbolClassRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.NegativeSymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NegativeSymbolClassRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.NegativeSymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static NegativeSymbolClassRegexp newInstance(SModel sm) {
     return NegativeSymbolClassRegexp.newInstance(sm, false);
   }
+
 }

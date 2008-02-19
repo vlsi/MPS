@@ -5,8 +5,11 @@ package jetbrains.mps.regexp.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface RegexpUsingConstruction extends INodeAdapter {
+  public static final String concept = "jetbrains.mps.regexp.structure.RegexpUsingConstruction";
   public static String REGEXP = "regexp";
 
   public RegexpExpression getRegexp();
+
   public void setRegexp(RegexpExpression node);
+
 }

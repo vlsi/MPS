@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PositiveSymbolClassRegexp extends SymbolClassRegexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.PositiveSymbolClassRegexp";
 
   public  PositiveSymbolClassRegexp(SNode node) {
     super(node);
   }
 
   public static PositiveSymbolClassRegexp newInstance(SModel sm, boolean init) {
-    return (PositiveSymbolClassRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.PositiveSymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PositiveSymbolClassRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.PositiveSymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static PositiveSymbolClassRegexp newInstance(SModel sm) {
     return PositiveSymbolClassRegexp.newInstance(sm, false);
   }
+
 }

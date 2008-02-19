@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DotRegexp extends Regexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.DotRegexp";
 
   public  DotRegexp(SNode node) {
     super(node);
   }
 
   public static DotRegexp newInstance(SModel sm, boolean init) {
-    return (DotRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.DotRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DotRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.DotRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static DotRegexp newInstance(SModel sm) {
     return DotRegexp.newInstance(sm, false);
   }
+
 }

@@ -9,7 +9,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MatchParensRegexp extends Regexp implements INamedConcept {
+  public static final String concept = "jetbrains.mps.regexp.structure.MatchParensRegexp";
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String REGEXP = "regexp";
 
   public  MatchParensRegexp(SNode node) {
@@ -17,22 +21,52 @@ public class MatchParensRegexp extends Regexp implements INamedConcept {
   }
 
   public static MatchParensRegexp newInstance(SModel sm, boolean init) {
-    return (MatchParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.MatchParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static MatchParensRegexp newInstance(SModel sm) {
     return MatchParensRegexp.newInstance(sm, false);
   }
 
+
   public String getName() {
     return this.getProperty(MatchParensRegexp.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(MatchParensRegexp.NAME, value);
   }
+
+  public String getShortDescription() {
+    return this.getProperty(MatchParensRegexp.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(MatchParensRegexp.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(MatchParensRegexp.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(MatchParensRegexp.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(MatchParensRegexp.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(MatchParensRegexp.VIRTUAL_PACKAGE, value);
+  }
+
   public Regexp getRegexp() {
     return (Regexp)this.getChild(MatchParensRegexp.REGEXP);
   }
+
   public void setRegexp(Regexp node) {
     super.setChild(MatchParensRegexp.REGEXP, node);
   }
+
 }

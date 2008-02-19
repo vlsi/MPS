@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IntervalSymbolClassPart extends SymbolClassPart {
+  public static final String concept = "jetbrains.mps.regexp.structure.IntervalSymbolClassPart";
   public static String START = "start";
   public static String END = "end";
 
@@ -16,22 +17,28 @@ public class IntervalSymbolClassPart extends SymbolClassPart {
   }
 
   public static IntervalSymbolClassPart newInstance(SModel sm, boolean init) {
-    return (IntervalSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.IntervalSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntervalSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.IntervalSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static IntervalSymbolClassPart newInstance(SModel sm) {
     return IntervalSymbolClassPart.newInstance(sm, false);
   }
 
+
   public String getStart() {
     return this.getProperty(IntervalSymbolClassPart.START);
   }
+
   public void setStart(String value) {
     this.setProperty(IntervalSymbolClassPart.START, value);
   }
+
   public String getEnd() {
     return this.getProperty(IntervalSymbolClassPart.END);
   }
+
   public void setEnd(String value) {
     this.setProperty(IntervalSymbolClassPart.END, value);
   }
+
 }

@@ -9,15 +9,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ReplaceBlock extends Closure {
+  public static final String concept = "jetbrains.mps.regexp.structure.ReplaceBlock";
 
   public  ReplaceBlock(SNode node) {
     super(node);
   }
 
   public static ReplaceBlock newInstance(SModel sm, boolean init) {
-    return (ReplaceBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.ReplaceBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReplaceBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.ReplaceBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ReplaceBlock newInstance(SModel sm) {
     return ReplaceBlock.newInstance(sm, false);
   }
+
 }

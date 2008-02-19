@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PositiveLookAheadRegexp extends LookRegexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.PositiveLookAheadRegexp";
 
   public  PositiveLookAheadRegexp(SNode node) {
     super(node);
   }
 
   public static PositiveLookAheadRegexp newInstance(SModel sm, boolean init) {
-    return (PositiveLookAheadRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.PositiveLookAheadRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PositiveLookAheadRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.PositiveLookAheadRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static PositiveLookAheadRegexp newInstance(SModel sm) {
     return PositiveLookAheadRegexp.newInstance(sm, false);
   }
+
 }

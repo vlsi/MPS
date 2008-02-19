@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LookRegexp extends Regexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.LookRegexp";
   public static String REGEXP = "regexp";
 
   public  LookRegexp(SNode node) {
@@ -15,16 +16,20 @@ public class LookRegexp extends Regexp {
   }
 
   public static LookRegexp newInstance(SModel sm, boolean init) {
-    return (LookRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.LookRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LookRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.LookRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LookRegexp newInstance(SModel sm) {
     return LookRegexp.newInstance(sm, false);
   }
 
+
   public Regexp getRegexp() {
     return (Regexp)this.getChild(LookRegexp.REGEXP);
   }
+
   public void setRegexp(Regexp node) {
     super.setChild(LookRegexp.REGEXP, node);
   }
+
 }

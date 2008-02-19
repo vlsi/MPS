@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ParensRegexp extends Regexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.ParensRegexp";
   public static String EXPR = "expr";
 
   public  ParensRegexp(SNode node) {
@@ -15,16 +16,20 @@ public class ParensRegexp extends Regexp {
   }
 
   public static ParensRegexp newInstance(SModel sm, boolean init) {
-    return (ParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.ParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.ParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ParensRegexp newInstance(SModel sm) {
     return ParensRegexp.newInstance(sm, false);
   }
 
+
   public Regexp getExpr() {
     return (Regexp)this.getChild(ParensRegexp.EXPR);
   }
+
   public void setExpr(Regexp node) {
     super.setChild(ParensRegexp.EXPR, node);
   }
+
 }

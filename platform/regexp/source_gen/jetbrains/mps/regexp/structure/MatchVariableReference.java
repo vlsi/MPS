@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MatchVariableReference extends Expression {
+  public static final String concept = "jetbrains.mps.regexp.structure.MatchVariableReference";
   public static String MATCH = "match";
 
   public  MatchVariableReference(SNode node) {
@@ -16,16 +17,20 @@ public class MatchVariableReference extends Expression {
   }
 
   public static MatchVariableReference newInstance(SModel sm, boolean init) {
-    return (MatchVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.MatchVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.MatchVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static MatchVariableReference newInstance(SModel sm) {
     return MatchVariableReference.newInstance(sm, false);
   }
 
+
   public MatchParensRegexp getMatch() {
     return (MatchParensRegexp)this.getReferent(MatchVariableReference.MATCH);
   }
+
   public void setMatch(MatchParensRegexp node) {
     super.setReferent(MatchVariableReference.MATCH, node);
   }
+
 }

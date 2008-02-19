@@ -1183,5 +1183,19 @@
       <property name="text" value="regexp" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203415591718">
+    <property name="package" value="Regexps" />
+    <link role="conceptDeclaration" targetNodeId="1.1203415418648" resolveInfo="UnicodeCharacterRegexp" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1203415597463">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203415599657">
+        <property name="text" value="\u" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1203415604492">
+        <property name="layoutConstraint" value="punctuation" />
+        <link role="relationDeclaration" targetNodeId="1.1203415499835" resolveInfo="code" />
+      </node>
+    </node>
+  </node>
 </model>
 

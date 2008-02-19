@@ -12,7 +12,11 @@ import java.util.Iterator;
 import java.util.List;
 
 public class PredefinedSymbolClasses extends BaseConcept implements INamedConcept {
+  public static final String concept = "jetbrains.mps.regexp.structure.PredefinedSymbolClasses";
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String SYMBOL_CLASS = "symbolClass";
 
   public  PredefinedSymbolClasses(SNode node) {
@@ -20,31 +24,64 @@ public class PredefinedSymbolClasses extends BaseConcept implements INamedConcep
   }
 
   public static PredefinedSymbolClasses newInstance(SModel sm, boolean init) {
-    return (PredefinedSymbolClasses)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.PredefinedSymbolClasses", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PredefinedSymbolClasses)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.PredefinedSymbolClasses", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static PredefinedSymbolClasses newInstance(SModel sm) {
     return PredefinedSymbolClasses.newInstance(sm, false);
   }
 
+
   public String getName() {
     return this.getProperty(PredefinedSymbolClasses.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(PredefinedSymbolClasses.NAME, value);
   }
+
+  public String getShortDescription() {
+    return this.getProperty(PredefinedSymbolClasses.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(PredefinedSymbolClasses.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(PredefinedSymbolClasses.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(PredefinedSymbolClasses.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(PredefinedSymbolClasses.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(PredefinedSymbolClasses.VIRTUAL_PACKAGE, value);
+  }
+
   public int getSymbolClassesCount() {
     return this.getChildCount(PredefinedSymbolClasses.SYMBOL_CLASS);
   }
+
   public Iterator<PredefinedSymbolClassDeclaration> symbolClasses() {
     return this.children(PredefinedSymbolClasses.SYMBOL_CLASS);
   }
+
   public List<PredefinedSymbolClassDeclaration> getSymbolClasses() {
     return this.getChildren(PredefinedSymbolClasses.SYMBOL_CLASS);
   }
+
   public void addSymbolClass(PredefinedSymbolClassDeclaration node) {
     this.addChild(PredefinedSymbolClasses.SYMBOL_CLASS, node);
   }
+
   public void insertSymbolClass(PredefinedSymbolClassDeclaration prev, PredefinedSymbolClassDeclaration node) {
     this.insertChild(prev, PredefinedSymbolClasses.SYMBOL_CLASS, node);
   }
+
 }

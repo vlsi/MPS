@@ -9,15 +9,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class RegexpExpression extends Expression {
+  public static final String concept = "jetbrains.mps.regexp.structure.RegexpExpression";
 
   public  RegexpExpression(SNode node) {
     super(node);
   }
 
   public static RegexpExpression newInstance(SModel sm, boolean init) {
-    return (RegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.RegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.RegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static RegexpExpression newInstance(SModel sm) {
     return RegexpExpression.newInstance(sm, false);
   }
+
 }

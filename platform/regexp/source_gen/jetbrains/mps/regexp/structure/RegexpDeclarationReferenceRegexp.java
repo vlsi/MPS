@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class RegexpDeclarationReferenceRegexp extends Regexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.RegexpDeclarationReferenceRegexp";
   public static String REGEXP = "regexp";
 
   public  RegexpDeclarationReferenceRegexp(SNode node) {
@@ -15,16 +16,20 @@ public class RegexpDeclarationReferenceRegexp extends Regexp {
   }
 
   public static RegexpDeclarationReferenceRegexp newInstance(SModel sm, boolean init) {
-    return (RegexpDeclarationReferenceRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.RegexpDeclarationReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RegexpDeclarationReferenceRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.RegexpDeclarationReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static RegexpDeclarationReferenceRegexp newInstance(SModel sm) {
     return RegexpDeclarationReferenceRegexp.newInstance(sm, false);
   }
 
+
   public RegexpDeclaration getRegexp() {
     return (RegexpDeclaration)this.getReferent(RegexpDeclarationReferenceRegexp.REGEXP);
   }
+
   public void setRegexp(RegexpDeclaration node) {
     super.setReferent(RegexpDeclarationReferenceRegexp.REGEXP, node);
   }
+
 }

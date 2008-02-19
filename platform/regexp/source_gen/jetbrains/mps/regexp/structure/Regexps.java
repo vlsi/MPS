@@ -12,7 +12,11 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Regexps extends BaseConcept implements INamedConcept {
+  public static final String concept = "jetbrains.mps.regexp.structure.Regexps";
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String REGEXP = "regexp";
 
   public  Regexps(SNode node) {
@@ -20,31 +24,64 @@ public class Regexps extends BaseConcept implements INamedConcept {
   }
 
   public static Regexps newInstance(SModel sm, boolean init) {
-    return (Regexps)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.Regexps", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Regexps)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.Regexps", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Regexps newInstance(SModel sm) {
     return Regexps.newInstance(sm, false);
   }
 
+
   public String getName() {
     return this.getProperty(Regexps.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(Regexps.NAME, value);
   }
+
+  public String getShortDescription() {
+    return this.getProperty(Regexps.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(Regexps.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(Regexps.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(Regexps.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(Regexps.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(Regexps.VIRTUAL_PACKAGE, value);
+  }
+
   public int getRegexpsCount() {
     return this.getChildCount(Regexps.REGEXP);
   }
+
   public Iterator<RegexpDeclaration> regexps() {
     return this.children(Regexps.REGEXP);
   }
+
   public List<RegexpDeclaration> getRegexps() {
     return this.getChildren(Regexps.REGEXP);
   }
+
   public void addRegexp(RegexpDeclaration node) {
     this.addChild(Regexps.REGEXP, node);
   }
+
   public void insertRegexp(RegexpDeclaration prev, RegexpDeclaration node) {
     this.insertChild(prev, Regexps.REGEXP, node);
   }
+
 }

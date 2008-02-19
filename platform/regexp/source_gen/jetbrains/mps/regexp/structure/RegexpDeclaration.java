@@ -10,8 +10,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class RegexpDeclaration extends BaseConcept implements INamedConcept {
+  public static final String concept = "jetbrains.mps.regexp.structure.RegexpDeclaration";
   public static String DESCRIPTION = "description";
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String REGEXP = "regexp";
 
   public  RegexpDeclaration(SNode node) {
@@ -19,28 +23,60 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public static RegexpDeclaration newInstance(SModel sm, boolean init) {
-    return (RegexpDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.RegexpDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RegexpDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.RegexpDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static RegexpDeclaration newInstance(SModel sm) {
     return RegexpDeclaration.newInstance(sm, false);
   }
 
+
   public String getDescription() {
     return this.getProperty(RegexpDeclaration.DESCRIPTION);
   }
+
   public void setDescription(String value) {
     this.setProperty(RegexpDeclaration.DESCRIPTION, value);
   }
+
   public String getName() {
     return this.getProperty(RegexpDeclaration.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(RegexpDeclaration.NAME, value);
   }
+
+  public String getShortDescription() {
+    return this.getProperty(RegexpDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(RegexpDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(RegexpDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(RegexpDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(RegexpDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(RegexpDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
   public Regexp getRegexp() {
     return (Regexp)this.getChild(RegexpDeclaration.REGEXP);
   }
+
   public void setRegexp(Regexp node) {
     super.setChild(RegexpDeclaration.REGEXP, node);
   }
+
 }

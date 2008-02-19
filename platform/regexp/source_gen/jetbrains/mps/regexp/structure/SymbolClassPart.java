@@ -9,15 +9,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SymbolClassPart extends BaseConcept {
+  public static final String concept = "jetbrains.mps.regexp.structure.SymbolClassPart";
 
   public  SymbolClassPart(SNode node) {
     super(node);
   }
 
   public static SymbolClassPart newInstance(SModel sm, boolean init) {
-    return (SymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.SymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.SymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SymbolClassPart newInstance(SModel sm) {
     return SymbolClassPart.newInstance(sm, false);
   }
+
 }

@@ -13,8 +13,8 @@ public class MatchRegexpStatement_InferenceRule implements InferenceRule_Runtime
   public  MatchRegexpStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183616"), new QuotationClass_1().createNode(), SLinkOperations.getTarget(argument, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183615");
+  public void applyRule(final SNode mrs) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(mrs, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183616", true), new QuotationClass_1().createNode(), SLinkOperations.getTarget(mrs, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183615");
   }
 
   public String getApplicableConceptFQName() {

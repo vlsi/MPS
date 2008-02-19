@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class OrRegexp extends BinaryRegexp {
+  public static final String concept = "jetbrains.mps.regexp.structure.OrRegexp";
 
   public  OrRegexp(SNode node) {
     super(node);
   }
 
   public static OrRegexp newInstance(SModel sm, boolean init) {
-    return (OrRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.OrRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OrRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.regexp.structure.OrRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static OrRegexp newInstance(SModel sm) {
     return OrRegexp.newInstance(sm, false);
   }
+
 }
