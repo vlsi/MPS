@@ -204,6 +204,10 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
+    return new LinkedHashSet<SModelDescriptor>();
+  }
+
   public IFile getDescriptorFile() {
     return myDescriptorFile;
   }

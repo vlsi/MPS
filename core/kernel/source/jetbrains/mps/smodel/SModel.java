@@ -11,6 +11,7 @@ import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Condition;
@@ -834,6 +835,11 @@ public class SModel implements Iterable<SNode> {
       if (importedModel != sourceModel && !list.contains(importedModel)) {
         list.add(importedModel);
       }
+    }
+
+    IModule module = getModelDescriptor().getModule();
+    if (module != null) {
+      list.addAll(module.getImplicitlyImportedModelsFor(getModelDescriptor()));
     }
 
     return list;

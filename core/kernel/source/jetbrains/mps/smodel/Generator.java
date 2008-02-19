@@ -16,6 +16,8 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.LinkedHashSet;
 
 /**
  * @author Kostik
@@ -212,5 +214,22 @@ public class Generator extends AbstractModule {
 
   public IFile getClassesGen() {
     return mySourceLanguage.getClassesGen();
+  }
+
+  public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
+    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
+    result.add(getSourceLanguage().getStructureModelDescriptor());
+    if (getSourceLanguage().getConstraintsModelDescriptor() != null) {
+      result.add(getSourceLanguage().getConstraintsModelDescriptor());
+    }
+
+    for (Language langauge : getSourceLanguage().getExtendedLanguages()) {
+      result.add(langauge.getStructureModelDescriptor());
+      if (langauge.getConstraintsModelDescriptor() != null) {
+        result.add(langauge.getConstraintsModelDescriptor());
+      }
+    }
+
+    return result;
   }
 }

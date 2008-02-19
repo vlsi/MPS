@@ -435,6 +435,33 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return result;
   }
 
+  public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
+    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
+
+    LanguageAspect aspect = Language.getModelAspect(sm);
+
+    if (aspect != LanguageAspect.STRUCTURE) {
+      result.add(getStructureModelDescriptor());
+    }
+
+    if (aspect != LanguageAspect.CONSTRAINTS && getConstraintsModelDescriptor() != null) {
+      result.add(getConstraintsModelDescriptor());
+    }
+
+    for (Language extended : getExtendedLanguages()) {
+      result.add(LanguageAspect.STRUCTURE.get(extended));
+      if (LanguageAspect.CONSTRAINTS.get(extended) != null) {
+        result.add(LanguageAspect.CONSTRAINTS.get(extended));
+      }
+      
+      if (aspect != null && aspect.get(extended) != null) {
+        result.add(aspect.get(extended));
+      }
+    }
+
+    return result;
+  }
+
   public SModelDescriptor getHelginsTypesystemModelDescriptor() {
     return LanguageAspect.HELGINS_TYPESYSTEM.get(this);
   }
