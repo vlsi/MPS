@@ -863,23 +863,23 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1172323662440(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return QueriesUtil.getLeftExpression(_context.getNode());
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1179350705044(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return QueriesUtil.getLeftExpression(_context.getNode());
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1180457793777(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return QueriesUtil.getLeftExpression(_context.getNode());
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1180459657838(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return QueriesUtil.getLeftExpression(_context.getNode());
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1181954535083(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return QueriesUtil.getLeftExpression(_context.getNode());
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1182506994281(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -891,7 +891,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1182281034369(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return QueriesUtil.getLeftExpression(_context.getNode());
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1195668022197(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -899,11 +899,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1172329130127(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return QueriesUtil.getLeftExpression(_context.getNode());
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1172422071590(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return QueriesUtil.getLeftExpression(_context.getNode());
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1172422081544(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -923,7 +923,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1175621385813(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return QueriesUtil.getLeftExpression(_context.getNode());
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1176109882196(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
