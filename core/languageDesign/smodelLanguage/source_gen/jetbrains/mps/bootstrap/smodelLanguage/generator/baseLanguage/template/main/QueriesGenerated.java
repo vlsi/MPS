@@ -19,9 +19,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation;
+import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess;
@@ -34,7 +34,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation;
-import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
+import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation;
 
 public class QueriesGenerated {
@@ -348,10 +348,8 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1170698820249(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
-    SNode noe1 = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    SNode noe2 = SLinkOperations.getTarget(noe1, "leftExpression", true);
-    SNode op = SLinkOperations.getTarget(noe2, "nodeOperation", true);
-    return _QueriesUtil.get_SPropertyAccess_enum_defaultValue(op);
+    SNode operation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    return _QueriesUtil.get_SPropertyAccess_enum_defaultValue(operation);
   }
 
   public static Object propertyMacro_GetPropertyValue_1170700859294(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -622,8 +620,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1169051323267(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr-to-copy> . link-access . set-new-child-op
-    SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "leftExpression", true);
-    return SLinkOperations.getTarget(lexpr1, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1169056862270(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -632,8 +629,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1169057396154(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr-to-copy> . linklist-access . add-new-child-op
-    SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "leftExpression", true);
-    return SLinkOperations.getTarget(lexpr1, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1169071189829(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -654,8 +650,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1169058187694(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr-to-copy> . linklist-access . add-child-op
-    SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "leftExpression", true);
-    return SLinkOperations.getTarget(lexpr1, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1169058238859(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -664,8 +659,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1169058619143(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr-to-copy> . linklist-access . insert-child-first-op
-    SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "leftExpression", true);
-    return SLinkOperations.getTarget(lexpr1, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1169058688355(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -674,8 +668,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1169056377509(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr-to-copy> . link-access . delete-op
-    SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "leftExpression", true);
-    return SLinkOperations.getTarget(lexpr1, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1170443842431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -692,8 +685,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1169055764567(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr-to-copy> . link-access . set-target-op
-    SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "leftExpression", true);
-    return SLinkOperations.getTarget(lexpr1, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1169055881310(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -754,8 +746,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1169069851562(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr-to-copy> . linklist-access . count-op
-    SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "leftExpression", true);
-    return SLinkOperations.getTarget(lexpr1, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1170441968236(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -892,8 +883,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1172319274605(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // <expr-to-copy> . linklist-access . add-child-op
-    SNode lexpr1 = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "leftExpression", true);
-    return SLinkOperations.getTarget(lexpr1, "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1172319321668(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1060,9 +1050,8 @@ public class QueriesGenerated {
     return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetAncestorOperation)SNodeOperations.getAdapter(_context.getNode())));
   }
 
-  public static List sourceNodesQuery_1173119412081(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode op = SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "nodeOperation", true);
-    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((SNodeOperation)SNodeOperations.getAdapter(op)));
+  public static List sourceNodesQuery_1203457991461(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetDescendantsOperation)SNodeOperations.getAdapter(_context.getNode())));
   }
 
   public static List sourceNodesQuery_1203119702930(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
