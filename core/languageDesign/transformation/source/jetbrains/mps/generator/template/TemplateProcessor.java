@@ -67,11 +67,11 @@ public class TemplateProcessor {
 
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
     generationTracer.pushTemplateNode(templateNode);
-    SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
-    if (outputNode == null) {
-      myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode' cannot create output node");
-      return null;
-    }
+    SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false); 
+//    if (outputNode == null) {
+//      myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode' cannot create output node");
+//      return null;
+//    }
     outputNodes.add(outputNode);
     if (registerTopOutput) {
       myGenerator.addTopOutputNodeByInputNode(inputNode, outputNode);
