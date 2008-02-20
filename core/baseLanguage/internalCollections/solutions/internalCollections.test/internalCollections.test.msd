@@ -8,6 +8,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">jetbrains.mps.baseLanguage.unitTest</dependency>
+    <dependency reexport="false">jetbrains.mps.internal.collections</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>

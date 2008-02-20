@@ -12,11 +12,11 @@ import java.util.List;
 
 public class InvokeFunctionExpression extends Expression implements IInvokeExpression {
   public static final String concept = "jetbrains.mps.closures.structure.InvokeFunctionExpression";
+  public static String FUNCTION = "function";
+  public static String PARAMETER = "parameter";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String FUNCTION = "function";
-  public static String PARAMETER = "parameter";
 
   public  InvokeFunctionExpression(SNode node) {
     super(node);
@@ -30,30 +30,6 @@ public class InvokeFunctionExpression extends Expression implements IInvokeExpre
     return InvokeFunctionExpression.newInstance(sm, false);
   }
 
-
-  public String getShortDescription() {
-    return this.getProperty(InvokeFunctionExpression.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(InvokeFunctionExpression.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(InvokeFunctionExpression.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(InvokeFunctionExpression.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(InvokeFunctionExpression.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(InvokeFunctionExpression.VIRTUAL_PACKAGE, value);
-  }
 
   public Expression getFunction() {
     return (Expression)this.getChild(InvokeFunctionExpression.FUNCTION);
@@ -81,6 +57,30 @@ public class InvokeFunctionExpression extends Expression implements IInvokeExpre
 
   public void insertParameter(Expression prev, Expression node) {
     this.insertChild(prev, InvokeFunctionExpression.PARAMETER, node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(InvokeFunctionExpression.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(InvokeFunctionExpression.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(InvokeFunctionExpression.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(InvokeFunctionExpression.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(InvokeFunctionExpression.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(InvokeFunctionExpression.VIRTUAL_PACKAGE, value);
   }
 
 }

@@ -15,11 +15,11 @@ import java.util.List;
 
 public class ClosureLiteral extends Expression implements IStatementListContainer {
   public static final String concept = "jetbrains.mps.closures.structure.ClosureLiteral";
+  public static String BODY = "body";
+  public static String PARAMETER = "parameter";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String BODY = "body";
-  public static String PARAMETER = "parameter";
 
   public  ClosureLiteral(SNode node) {
     super(node);
@@ -33,30 +33,6 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
     return ClosureLiteral.newInstance(sm, false);
   }
 
-
-  public String getShortDescription() {
-    return this.getProperty(ClosureLiteral.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(ClosureLiteral.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(ClosureLiteral.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(ClosureLiteral.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(ClosureLiteral.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(ClosureLiteral.VIRTUAL_PACKAGE, value);
-  }
 
   public StatementList getBody() {
     return (StatementList)this.getChild(ClosureLiteral.BODY);
@@ -84,6 +60,30 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
 
   public void insertParameter(ParameterDeclaration prev, ParameterDeclaration node) {
     this.insertChild(prev, ClosureLiteral.PARAMETER, node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ClosureLiteral.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ClosureLiteral.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ClosureLiteral.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ClosureLiteral.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ClosureLiteral.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ClosureLiteral.VIRTUAL_PACKAGE, value);
   }
 
 }

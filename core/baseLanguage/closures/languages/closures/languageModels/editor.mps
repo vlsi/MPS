@@ -131,5 +131,24 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203505244614">
+    <link role="conceptDeclaration" targetNodeId="1.1202926716631" resolveInfo="InputType" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1203505249361">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203505251754">
+        <property name="text" value="INPUT" />
+        <link role="styleClass" targetNodeId="3.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203505266876">
+        <property name="text" value="&lt;" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1203505272003">
+        <link role="relationDeclaration" targetNodeId="1.1202926751344" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203505269556">
+        <property name="text" value="&gt;" />
+      </node>
+    </node>
+  </node>
 </model>
 

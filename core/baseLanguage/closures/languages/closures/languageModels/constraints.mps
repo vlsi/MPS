@@ -2456,6 +2456,7 @@
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1202926780487">
       <property name="name" value="getPresentation" />
       <link role="overridenMethod" targetNodeId="2.1180102203531" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="2.1180102203531" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202926780489">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1202926792684">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1202926792685">
@@ -2466,7 +2467,7 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1202926796883">
               <link role="baseMethodDeclaration" targetNodeId="3.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1202926798890">
-                <property name="value" value="&lt;" />
+                <property name="value" value="INPUT &lt;" />
               </node>
             </node>
           </node>
@@ -2545,7 +2546,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202926785163">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203507068351">
         <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
       </node>
     </node>
