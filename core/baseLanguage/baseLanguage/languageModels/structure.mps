@@ -2325,6 +2325,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1188214482800">
     <property name="name" value="AnnotationInstanceExpression" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1203508323358" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1188214506790">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="annotationInstance" />

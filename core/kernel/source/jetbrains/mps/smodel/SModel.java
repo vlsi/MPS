@@ -810,12 +810,12 @@ public class SModel implements Iterable<SNode> {
 
   public List<SModelDescriptor> allImportedModels(IScope scope) {
     SModelDescriptor sourceModel = getModelDescriptor();
-    List<SModelDescriptor> list = new ArrayList<SModelDescriptor>();
+    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
     List<Language> languages = getLanguages(scope);
     for (Language language : languages) {
       for (SModelDescriptor accessoryModels : language.getAccessoryModels()) {
-        if (accessoryModels != sourceModel && !list.contains(accessoryModels)) {
-          list.add(accessoryModels);
+        if (accessoryModels != sourceModel && !result.contains(accessoryModels)) {
+          result.add(accessoryModels);
         }
       }
     }
@@ -823,8 +823,8 @@ public class SModel implements Iterable<SNode> {
     List<DevKit> devkits = getDevkits(scope);
     for (DevKit dk : devkits) {
       for (SModelDescriptor dkModel : dk.getExportedModelDescriptors()) {
-        if (dkModel != sourceModel && !list.contains(dkModel)) {
-          list.add(dkModel);
+        if (dkModel != sourceModel && !result.contains(dkModel)) {
+          result.add(dkModel);
         }
       }
     }
@@ -832,19 +832,19 @@ public class SModel implements Iterable<SNode> {
     Iterator<SModelDescriptor> imports = importedModels(scope);
     while (imports.hasNext()) {
       SModelDescriptor importedModel = imports.next();
-      if (importedModel != sourceModel && !list.contains(importedModel)) {
-        list.add(importedModel);
+      if (importedModel != sourceModel && !result.contains(importedModel)) {
+        result.add(importedModel);
       }
     }
 
     if (getModelDescriptor() != null) {
       IModule module = getModelDescriptor().getModule();
       if (module != null) {
-        list.addAll(module.getImplicitlyImportedModelsFor(getModelDescriptor()));
+        result.addAll(module.getImplicitlyImportedModelsFor(getModelDescriptor()));
       }
     }
 
-    return list;
+    return new ArrayList<SModelDescriptor>(result);
   }
 
   @NotNull
