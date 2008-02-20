@@ -1288,6 +1288,35 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1203470470631">
+      <property name="name" value="getGenuineRole" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203470481527">
+        <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203470470633">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203470507501">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1203470507502">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1203470507503" />
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203470507504" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203470507505">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203470507506">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1203470507507" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203470513298">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203470533203">
+            <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.getGenuineLinkRole(jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration):java.lang.String" resolveInfo="getGenuineLinkRole" />
+            <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
+            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203470568995">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1203470570924" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203470565958" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199063473952">
       <property name="name" value="getPresentation" />
       <link role="overriddenMethod" targetNodeId="22.1180102203531" resolveInfo="getPresentation" />
