@@ -384,12 +384,11 @@ public class MPSModuleRepository {
           @NotNull IFile dir,
           @NotNull MPSModuleOwner owner) {
     String dirName = dir.getName();
-    if (hasModuleExtension(dirName) && dir.isFile()) {
-      readModuleDescriptor_internal(dir, owner, getModuleExtension(dirName));
-    }
-
     List<IFile> files = dir.list();
     if (files == null) { //i.e it isn't a directory
+      if (hasModuleExtension(dirName)) {
+        readModuleDescriptor_internal(dir, owner, getModuleExtension(dirName));
+      }
       return;
     }
 
