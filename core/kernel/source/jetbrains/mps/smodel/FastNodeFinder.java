@@ -5,17 +5,19 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.util.WeakSet;
 
 import java.lang.ref.WeakReference;
 import java.util.*;
+
 
 public class FastNodeFinder {
   private SModelDescriptor myModelDescriptor;
   private long myStructuralState;
   private boolean myInitialized;
 
-  private WeakHashMap<AbstractConceptDeclaration, List<WeakReference<SNode>>> myNodesAll = new WeakHashMap<AbstractConceptDeclaration, List<WeakReference<SNode>>>();
-  private WeakHashMap<AbstractConceptDeclaration, List<WeakReference<SNode>>> myNodesNoInheritance = new WeakHashMap<AbstractConceptDeclaration, List<WeakReference<SNode>>>();
+  private WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> myNodesAll = new WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>>();
+  private WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> myNodesNoInheritance = new WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>>();
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
@@ -53,19 +55,26 @@ public class FastNodeFinder {
       initCache();
     }
 
-    WeakHashMap<AbstractConceptDeclaration, List<WeakReference<SNode>>> map = myNodesNoInheritance;
+    WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> map = myNodesNoInheritance;
     if (includeInherited) {
       map = myNodesAll;
     }
 
     if (map.containsKey(concept)) {
       final List<SNode> result = new ArrayList<SNode>();
-      for (WeakReference<SNode> n : map.get(concept)) {
-        SNode node = n.get();
+      for (SNode n : map.get(concept)) {
+        SNode node = n;
         if (node != null) {
           result.add(node);
         }
       }
+
+      Collections.sort(result, new Comparator<SNode>() {
+        public int compare(SNode o1, SNode o2) {
+          return o1.getId().compareTo(o2.getId());
+        }
+      });
+
       return result;
     }
 
@@ -78,13 +87,13 @@ public class FastNodeFinder {
     }
 
     AbstractConceptDeclaration concept = root.getConceptDeclarationAdapter();
-    getNodes_noInheritance(concept).add(new WeakReference<SNode>(root));
+    getNodes_noInheritance(concept).add(root);
 
     result.clear();
     collectParents(concept, result);
 
     for (AbstractConceptDeclaration acd : result) {
-      getNodes_all(acd).add(new WeakReference<SNode>(root));
+      getNodes_all(acd).add(root);
     }
   }
 
@@ -116,21 +125,22 @@ public class FastNodeFinder {
     }
   }
 
-  private List<WeakReference<SNode>> getNodes_noInheritance(AbstractConceptDeclaration concept) {
-    List<WeakReference<SNode>> list = myNodesNoInheritance.get(concept);
+  private WeakSet<SNode> getNodes_noInheritance(AbstractConceptDeclaration concept) {
+    WeakSet<SNode> list = myNodesNoInheritance.get(concept);
     if (list == null) {
-      list = new ArrayList<WeakReference<SNode>>(2);
+      list = new WeakSet<SNode>(2);
       myNodesNoInheritance.put(concept, list);
     }
     return list;
   }
 
-  private List<WeakReference<SNode>> getNodes_all(AbstractConceptDeclaration concept) {
-    List<WeakReference<SNode>> list = myNodesAll.get(concept);
+  private WeakSet<SNode> getNodes_all(AbstractConceptDeclaration concept) {
+    WeakSet<SNode> list = myNodesAll.get(concept);
     if (list == null) {
-      list = new ArrayList<WeakReference<SNode>>(2);
+      list = new WeakSet<SNode>(2);
       myNodesAll.put(concept, list);
     }
     return list;
   }
 }
+
