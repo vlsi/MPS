@@ -383,12 +383,8 @@ public class MPSModuleRepository {
   public void readModuleDescriptors(
           @NotNull IFile dir,
           @NotNull MPSModuleOwner owner) {
-    if (dir.getName().equals(".svn")) { //skip svn
-      return;
-    }
-
     String dirName = dir.getName();
-    if ((hasModuleExtension(dirName)) && dir.isFile()) {
+    if (hasModuleExtension(dirName) && dir.isFile()) {
       readModuleDescriptor_internal(dir, owner, getModuleExtension(dirName));
     }
 
@@ -411,6 +407,7 @@ public class MPSModuleRepository {
     }
     List<IFile> dirs = dir.list();
     for (IFile childDir : dirs) {
+      if (childDir.getName().endsWith(".svn")) continue;      
       if (childDir.isDirectory()) {
         readModuleDescriptors(childDir, owner);
       }
