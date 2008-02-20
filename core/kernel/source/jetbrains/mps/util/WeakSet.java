@@ -10,7 +10,6 @@ public class WeakSet<T> extends AbstractSet<T> {
 
   public WeakSet(int size) {
     myWeakHashMap = new WeakHashMap<T, T>(size);
-
   }
 
   public WeakSet() {
