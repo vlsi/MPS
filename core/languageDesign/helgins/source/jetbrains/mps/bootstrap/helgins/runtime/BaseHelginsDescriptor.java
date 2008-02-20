@@ -1,9 +1,12 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.helgins.inference.util.IDependency_Runtime;
+import jetbrains.mps.helgins.inference.IVariableProvider;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,6 +23,7 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
   protected Set<ComparisonRule_Runtime> myComparisonRules = new HashSet<ComparisonRule_Runtime>();
   protected Set<InequationReplacementRule_Runtime> myInequationReplacementRules = new HashSet<InequationReplacementRule_Runtime>();
   protected Set<IDependency_Runtime> myDependencies = new HashSet<IDependency_Runtime>();
+  protected Map<String, IVariableProvider> myVariableProviders = new HashMap<String, IVariableProvider>();
 
   public Set<InferenceRule_Runtime> getInferenceRules() {
     return new HashSet<InferenceRule_Runtime>(this.myInferenceRules);
@@ -47,5 +51,9 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
 
   public Set<InequationReplacementRule_Runtime> getEliminationRules() {
     return new HashSet<InequationReplacementRule_Runtime>(this.myInequationReplacementRules);
+  }
+
+  public Map<String, IVariableProvider> getVariableProviders() {
+    return new HashMap<String, IVariableProvider>(this.myVariableProviders);
   }
 }

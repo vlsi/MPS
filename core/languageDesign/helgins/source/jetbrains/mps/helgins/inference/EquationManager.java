@@ -34,7 +34,7 @@ public class EquationManager {
   private Map<IWrapper, Map<IWrapper, ErrorInfo>> myComparableTypesMapStrong = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
 
   private Map<IWrapper, IWrapper> myEquations = new HashMap<IWrapper, IWrapper>();
-  private Map<IWrapper, IWrapper> myWeakEquations = new HashMap<IWrapper, IWrapper>();
+  private Map<SNode, SNode> myRegisteredVariables = new HashMap<SNode, SNode>();
   private Map<IWrapper, WhenConcreteEntity> myWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
   private Map<IWrapper, Set<SNodePointer>> myNonConcreteVars = new HashMap<IWrapper, Set<SNodePointer>>();
 
@@ -75,15 +75,6 @@ public class EquationManager {
     return type;
   }
 
-  public IWrapper getWeakParent(IWrapper type) {
-    IWrapper weakParent = myWeakEquations.get(type);
-    return weakParent;
-  }
-
-  /*package*/ void setWeakParent(IWrapper type, IWrapper parent) {
-    myWeakEquations.put(type, parent);
-  }
-
   public SNode getRepresentator(SNode type_) {
     if (type_ == null) return null;
     SNode representator = NodeWrapper.fromWrapper(getRepresentatorWrapper(NodeWrapper.fromNode(type_)));
@@ -105,6 +96,33 @@ public class EquationManager {
     }
     variables.add(variable);
   }
+
+  public SNode registerVariable(SNode node) {
+    SNode runtimeTypesVariable = myTypeChecker.getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    myRegisteredVariables.put(node, runtimeTypesVariable);
+    return runtimeTypesVariable;
+  }
+
+  public SNode getRegisteredVariable(SNode node) {
+    return myRegisteredVariables.get(node);
+  }
+
+  private SNode prepareType(SNode node) {
+    SNode variable = myTypeChecker.getRulesManager().provideVariable(node);
+    if (variable != null) {
+      return variable;
+    } else {
+      for (SNode child : new ArrayList<SNode>(node.getChildren())) {
+        SNode newChild = prepareType(child);
+        if (newChild != child) {
+          node.replaceChild(child, newChild);
+        }
+      }
+      return node;
+    }
+  }
+
+
 
 
   public void addInequation(SNode subType, SNode supertype, SNode nodeToCheck) {
@@ -524,6 +542,7 @@ public class EquationManager {
     myEquations.clear();
     myWhenConcreteEntities.clear();
     myNonConcreteVars.clear();
+    myRegisteredVariables.clear();
   }
 
   private boolean compareWrappers(IWrapper wrapper1, IWrapper wrapper2, ErrorInfo errorInfo) {
@@ -853,7 +872,6 @@ public class EquationManager {
     }
     if (concreteSupertypes.isEmpty()) return;
 
-    //todo
     Map<IWrapper, ErrorInfo> errorInfoMap = new HashMap<IWrapper, ErrorInfo>();
     for (IWrapper concreteSupertype : concreteSupertypes) {
       ErrorInfo errorInfo = supertypesToSubtypesMap.get(concreteSupertype).get(thisType);

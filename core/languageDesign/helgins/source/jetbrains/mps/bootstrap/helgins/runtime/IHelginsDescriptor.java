@@ -1,8 +1,10 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.helgins.inference.util.IDependency_Runtime;
+import jetbrains.mps.helgins.inference.IVariableProvider;
 
 import java.util.Set;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,4 +21,5 @@ public interface IHelginsDescriptor {
   public Set<ComparisonRule_Runtime> getComparisonRules();
   public Set<InequationReplacementRule_Runtime> getEliminationRules();
   public Set<IDependency_Runtime> getDependencies();
+  public Map<String, IVariableProvider> getVariableProviders();
 }
