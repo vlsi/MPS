@@ -578,7 +578,12 @@ public class QueriesGenerated {
           List<SNode> functions = SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);
           // skip Closure
           SNode parentFunction = SequenceOperations.getFirst(SequenceOperations.where(functions, new zPredicate(null, null)));
-          return ConceptFunction_Behavior.call_getParameters_1197312191473(parentFunction);
+          if(parentFunction != null) {
+            return ConceptFunction_Behavior.call_getParameters_1197312191473(parentFunction);
+          } else
+          {
+            return ListOperations.<SNode>createList();
+          }
         }
 
       };
