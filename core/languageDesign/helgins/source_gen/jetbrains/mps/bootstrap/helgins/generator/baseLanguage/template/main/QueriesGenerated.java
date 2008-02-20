@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.bootstrap.helgins.structure.InferenceRule;
 import jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule;
@@ -1054,7 +1055,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1176544954241(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "leftExpression", true);
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1176545125101(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
