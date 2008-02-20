@@ -11,8 +11,8 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AttributeValue extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.AttributeValue";
-  public static String VALUE = "value";
   public static String ATTRIBUTE = "attribute";
+  public static String VALUE = "value";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
@@ -30,20 +30,20 @@ public class AttributeValue extends BaseConcept implements IComponentPart {
   }
 
 
-  public Expression getValue() {
-    return (Expression)this.getChild(AttributeValue.VALUE);
-  }
-
-  public void setValue(Expression node) {
-    super.setChild(AttributeValue.VALUE, node);
-  }
-
   public AttributeDeclaration getAttribute() {
     return (AttributeDeclaration)this.getReferent(AttributeValue.ATTRIBUTE);
   }
 
   public void setAttribute(AttributeDeclaration node) {
     super.setReferent(AttributeValue.ATTRIBUTE, node);
+  }
+
+  public Expression getValue() {
+    return (Expression)this.getChild(AttributeValue.VALUE);
+  }
+
+  public void setValue(Expression node) {
+    super.setChild(AttributeValue.VALUE, node);
   }
 
   public String getShortDescription() {
