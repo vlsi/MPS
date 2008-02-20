@@ -15,6 +15,11 @@ public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myOperationParameters_Component6;
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851696");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851697");
     editorCell.setDrawBorder(false);
@@ -22,11 +27,6 @@ public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_OperationParameters_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851698");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851696");
     editorCell.setDrawBorder(false);
   }
 

@@ -4,13 +4,13 @@ package jetbrains.mps.bootstrap.smodelLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
@@ -32,8 +32,8 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
 
-  public static boolean _QueryFunction_NodeCondition_1201515637070(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false), "parameter") == 0;
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179409334055");
   }
 
   private static void setupBasic_ConceptMethodDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -55,10 +55,6 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179409334055");
-  }
-
   private static void setupLabel_ConceptMethodDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -69,6 +65,10 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1201515637070(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false), "parameter") == 0;
   }
 
 
@@ -120,7 +120,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptMethodDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Node_ConceptMethodCall_Editor._Inline30());
+    provider.setAuxiliaryCellProvider(new Node_ConceptMethodCall_Editor._Inline29());
     EditorCell editorCell = provider.createEditorCell(context);
     Node_ConceptMethodCall_Editor.setupBasic_ConceptMethodDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -147,9 +147,9 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline30 extends AbstractCellProvider {
+  public static class _Inline29 extends AbstractCellProvider {
 
-    public  _Inline30() {
+    public  _Inline29() {
       super();
     }
 
@@ -173,9 +173,9 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      Node_ConceptMethodCall_Editor._Inline30.setupBasic_NameCell(editorCell, node, context);
+      Node_ConceptMethodCall_Editor._Inline29.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Node_ConceptMethodCall_Editor._Inline30.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        Node_ConceptMethodCall_Editor._Inline29.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

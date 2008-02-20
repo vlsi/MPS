@@ -20,6 +20,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144102070906");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144102074314");
     editorCell.setDrawBorder(false);
@@ -27,11 +32,6 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144102087113");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144102070906");
     editorCell.setDrawBorder(false);
   }
 
@@ -68,7 +68,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new OperationParm_Concept_Editor._Inline13());
+    provider.setAuxiliaryCellProvider(new OperationParm_Concept_Editor._Inline11());
     EditorCell editorCell = provider.createEditorCell(context);
     OperationParm_Concept_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -95,9 +95,9 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline13 extends AbstractCellProvider {
+  public static class _Inline11 extends AbstractCellProvider {
 
-    public  _Inline13() {
+    public  _Inline11() {
       super();
     }
 
@@ -123,9 +123,9 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      OperationParm_Concept_Editor._Inline13.setupBasic_NameCell(editorCell, node, context);
+      OperationParm_Concept_Editor._Inline11.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        OperationParm_Concept_Editor._Inline13.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        OperationParm_Concept_Editor._Inline11.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

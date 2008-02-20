@@ -33,7 +33,7 @@ public class SPropertyAccess_Editor extends DefaultNodeEditor {
 
   public EditorCell createPropertyReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new SPropertyAccess_Editor._Inline());
+    provider.setAuxiliaryCellProvider(new SPropertyAccess_Editor._Inline3());
     EditorCell editorCell = provider.createEditorCell(context);
     SPropertyAccess_Editor.setupBasic_PropertyReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -60,9 +60,9 @@ public class SPropertyAccess_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline extends AbstractCellProvider {
+  public static class _Inline3 extends AbstractCellProvider {
 
-    public  _Inline() {
+    public  _Inline3() {
       super();
     }
 
@@ -89,9 +89,9 @@ public class SPropertyAccess_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      SPropertyAccess_Editor._Inline.setupBasic_NameCell(editorCell, node, context);
+      SPropertyAccess_Editor._Inline3.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SPropertyAccess_Editor._Inline.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        SPropertyAccess_Editor._Inline3.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

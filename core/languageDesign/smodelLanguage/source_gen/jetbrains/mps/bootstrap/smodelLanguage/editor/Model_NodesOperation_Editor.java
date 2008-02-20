@@ -19,6 +19,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class Model_NodesOperation_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171323979878");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171323979879");
     editorCell.setDrawBorder(false);
@@ -31,11 +36,6 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171323979883");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171323979878");
     editorCell.setDrawBorder(false);
   }
 
@@ -85,7 +85,7 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Model_NodesOperation_Editor._Inline22());
+    provider.setAuxiliaryCellProvider(new Model_NodesOperation_Editor._Inline21());
     EditorCell editorCell = provider.createEditorCell(context);
     Model_NodesOperation_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -112,9 +112,9 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline22 extends AbstractCellProvider {
+  public static class _Inline21 extends AbstractCellProvider {
 
-    public  _Inline22() {
+    public  _Inline21() {
       super();
     }
 
@@ -140,9 +140,9 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      Model_NodesOperation_Editor._Inline22.setupBasic_NameCell(editorCell, node, context);
+      Model_NodesOperation_Editor._Inline21.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Model_NodesOperation_Editor._Inline22.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        Model_NodesOperation_Editor._Inline21.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

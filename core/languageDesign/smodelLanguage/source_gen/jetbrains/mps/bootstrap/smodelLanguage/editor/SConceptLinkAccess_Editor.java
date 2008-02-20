@@ -21,6 +21,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175622789135");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConceptLinkDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175622789848");
     editorCell.setDrawBorder(false);
@@ -31,11 +36,6 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
     editorCell.setLayoutConstraint("punctuation");
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175622789135");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConceptLinkDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -71,7 +71,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptLinkDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new SConceptLinkAccess_Editor._Inline27());
+    provider.setAuxiliaryCellProvider(new SConceptLinkAccess_Editor._Inline25());
     EditorCell editorCell = provider.createEditorCell(context);
     SConceptLinkAccess_Editor.setupBasic_ConceptLinkDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -98,9 +98,9 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline27 extends AbstractCellProvider {
+  public static class _Inline25 extends AbstractCellProvider {
 
-    public  _Inline27() {
+    public  _Inline25() {
       super();
     }
 
@@ -127,9 +127,9 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      SConceptLinkAccess_Editor._Inline27.setupBasic_NameCell(editorCell, node, context);
+      SConceptLinkAccess_Editor._Inline25.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SConceptLinkAccess_Editor._Inline27.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        SConceptLinkAccess_Editor._Inline25.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

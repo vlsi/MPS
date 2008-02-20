@@ -20,6 +20,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class SNodeListType_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145383245679");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145383245680");
     editorCell.setDrawBorder(false);
@@ -32,19 +37,14 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ElementConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145383273157");
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145383245687");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145383245679");
+  private static void setupBasic_ElementConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145383273157");
     editorCell.setDrawBorder(false);
   }
 
@@ -56,10 +56,10 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ElementConceptReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ElementConceptReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -106,7 +106,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
 
   public EditorCell createElementConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new SNodeListType_Editor._Inline16());
+    provider.setAuxiliaryCellProvider(new SNodeListType_Editor._Inline14());
     EditorCell editorCell = provider.createEditorCell(context);
     SNodeListType_Editor.setupBasic_ElementConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -133,9 +133,9 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline16 extends AbstractCellProvider {
+  public static class _Inline14 extends AbstractCellProvider {
 
-    public  _Inline16() {
+    public  _Inline14() {
       super();
     }
 
@@ -161,9 +161,9 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      SNodeListType_Editor._Inline16.setupBasic_NameCell(editorCell, node, context);
+      SNodeListType_Editor._Inline14.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SNodeListType_Editor._Inline16.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        SNodeListType_Editor._Inline14.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

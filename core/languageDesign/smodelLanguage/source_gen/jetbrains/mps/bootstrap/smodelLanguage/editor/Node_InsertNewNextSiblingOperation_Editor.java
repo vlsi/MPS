@@ -19,13 +19,13 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139859072592");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139859068528");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139859121222");
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139859072592");
     editorCell.setDrawBorder(false);
   }
 
@@ -34,8 +34,8 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139859068528");
+  private static void setupBasic_ConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139859121222");
     editorCell.setDrawBorder(false);
   }
 
@@ -43,11 +43,11 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
     editorCell.setEditable(true);
   }
 
-  private static void setupLabel_ConceptReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
+  }
+
+  private static void setupLabel_ConceptReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -85,7 +85,7 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
 
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Node_InsertNewNextSiblingOperation_Editor._Inline8());
+    provider.setAuxiliaryCellProvider(new Node_InsertNewNextSiblingOperation_Editor._Inline4());
     EditorCell editorCell = provider.createEditorCell(context);
     Node_InsertNewNextSiblingOperation_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -112,9 +112,9 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
     return cellWithRole;
   }
 
-  public static class _Inline8 extends AbstractCellProvider {
+  public static class _Inline4 extends AbstractCellProvider {
 
-    public  _Inline8() {
+    public  _Inline4() {
       super();
     }
 
@@ -140,9 +140,9 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      Node_InsertNewNextSiblingOperation_Editor._Inline8.setupBasic_NameCell(editorCell, node, context);
+      Node_InsertNewNextSiblingOperation_Editor._Inline4.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Node_InsertNewNextSiblingOperation_Editor._Inline8.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        Node_InsertNewNextSiblingOperation_Editor._Inline4.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -20,8 +20,24 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class ConceptRefExpression_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172424084370");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172424087044");
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172424091843");
+    editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.PLAIN);
+  }
+
+  private static void setupBasic_ConceptDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172424124986");
     editorCell.setDrawBorder(false);
   }
 
@@ -32,32 +48,16 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("punctuation");
   }
 
-  private static void setupBasic_ConceptDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172424124986");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172424091843");
-    editorCell.setDrawBorder(false);
-    editorCell.setFontType(MPSFonts.PLAIN);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172424084370");
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConceptDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -86,14 +86,6 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ConceptRefExpression_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    ConceptRefExpression_Editor.setupLabel_ConstantCell1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConceptRefExpression_Editor.setupBasic_ConstantCell2(editorCell, node, context);
@@ -102,9 +94,17 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ConceptRefExpression_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    ConceptRefExpression_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createConceptDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ConceptRefExpression_Editor._Inline26());
+    provider.setAuxiliaryCellProvider(new ConceptRefExpression_Editor._Inline24());
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptRefExpression_Editor.setupBasic_ConceptDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -131,9 +131,9 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline26 extends AbstractCellProvider {
+  public static class _Inline24 extends AbstractCellProvider {
 
-    public  _Inline26() {
+    public  _Inline24() {
       super();
     }
 
@@ -159,9 +159,9 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ConceptRefExpression_Editor._Inline26.setupBasic_NameCell(editorCell, node, context);
+      ConceptRefExpression_Editor._Inline24.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ConceptRefExpression_Editor._Inline26.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ConceptRefExpression_Editor._Inline24.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

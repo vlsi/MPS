@@ -24,6 +24,11 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myConceptListHandler_conceptList_;
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154547198372");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154547202185");
     editorCell.setDrawBorder(false);
@@ -36,11 +41,6 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154547244033");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154547198372");
     editorCell.setDrawBorder(false);
   }
 

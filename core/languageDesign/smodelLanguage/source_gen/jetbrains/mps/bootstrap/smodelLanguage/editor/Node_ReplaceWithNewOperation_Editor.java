@@ -19,6 +19,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139868035538");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139868035539");
     editorCell.setDrawBorder(false);
@@ -31,11 +36,6 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139868035543");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139868035538");
     editorCell.setDrawBorder(false);
   }
 
@@ -85,7 +85,7 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Node_ReplaceWithNewOperation_Editor._Inline9());
+    provider.setAuxiliaryCellProvider(new Node_ReplaceWithNewOperation_Editor._Inline5());
     EditorCell editorCell = provider.createEditorCell(context);
     Node_ReplaceWithNewOperation_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -112,9 +112,9 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline9 extends AbstractCellProvider {
+  public static class _Inline5 extends AbstractCellProvider {
 
-    public  _Inline9() {
+    public  _Inline5() {
       super();
     }
 
@@ -140,9 +140,9 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      Node_ReplaceWithNewOperation_Editor._Inline9.setupBasic_NameCell(editorCell, node, context);
+      Node_ReplaceWithNewOperation_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Node_ReplaceWithNewOperation_Editor._Inline9.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        Node_ReplaceWithNewOperation_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

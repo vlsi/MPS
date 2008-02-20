@@ -21,16 +21,14 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1143235366832");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1143235366831");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177700827128");
-    editorCell.setSelectable(false);
-    editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.setLayoutConstraint("punctuation");
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1143235366832");
+    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -48,22 +46,21 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177700754756");
   }
 
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177700827128");
+    editorCell.setSelectable(false);
+    editorCell.setFontType(MPSFonts.PLAIN);
+    editorCell.setLayoutConstraint("punctuation");
+  }
+
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177700842881");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1143235366831");
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
-  }
-
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConceptReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -73,6 +70,9 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_PrototypeNodeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -107,18 +107,18 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    Model_CreateNewNodeOperation_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    Model_CreateNewNodeOperation_Editor.setupLabel_ConstantCell1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Model_CreateNewNodeOperation_Editor.setupBasic_ConstantCell2(editorCell, node, context);
     Model_CreateNewNodeOperation_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    Model_CreateNewNodeOperation_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    Model_CreateNewNodeOperation_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -133,7 +133,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Model_CreateNewNodeOperation_Editor._Inline12());
+    provider.setAuxiliaryCellProvider(new Model_CreateNewNodeOperation_Editor._Inline10());
     EditorCell editorCell = provider.createEditorCell(context);
     Model_CreateNewNodeOperation_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -189,9 +189,9 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline12 extends AbstractCellProvider {
+  public static class _Inline10 extends AbstractCellProvider {
 
-    public  _Inline12() {
+    public  _Inline10() {
       super();
     }
 
@@ -217,9 +217,9 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      Model_CreateNewNodeOperation_Editor._Inline12.setupBasic_NameCell(editorCell, node, context);
+      Model_CreateNewNodeOperation_Editor._Inline10.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Model_CreateNewNodeOperation_Editor._Inline12.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        Model_CreateNewNodeOperation_Editor._Inline10.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

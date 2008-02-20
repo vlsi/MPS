@@ -20,6 +20,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class SNodeType_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138405907970");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138405916830");
     editorCell.setDrawBorder(false);
@@ -39,11 +44,6 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138406102625");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138405907970");
     editorCell.setDrawBorder(false);
   }
 
@@ -105,7 +105,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new SNodeType_Editor._Inline3());
+    provider.setAuxiliaryCellProvider(new SNodeType_Editor._Inline());
     EditorCell editorCell = provider.createEditorCell(context);
     SNodeType_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -132,9 +132,9 @@ public class SNodeType_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline3 extends AbstractCellProvider {
+  public static class _Inline extends AbstractCellProvider {
 
-    public  _Inline3() {
+    public  _Inline() {
       super();
     }
 
@@ -160,9 +160,9 @@ public class SNodeType_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      SNodeType_Editor._Inline3.setupBasic_NameCell(editorCell, node, context);
+      SNodeType_Editor._Inline.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SNodeType_Editor._Inline3.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        SNodeType_Editor._Inline.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -18,6 +18,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145404664303");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_LeftExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145404664304");
     editorCell.setDrawBorder(false);
@@ -30,11 +35,6 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
     SemanticDowncastExpression_Symbol_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145404664303");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_LeftExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

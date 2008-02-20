@@ -20,6 +20,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140138178976");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_LeftExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140138184899");
     editorCell.setDrawBorder(false);
@@ -35,11 +40,6 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140138237889");
     editorCell.setDrawBorder(false);
     SNodeTypeCastExpression_Concept_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140138178976");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_LeftExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -107,7 +107,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new SNodeTypeCastExpression_Editor._Inline10());
+    provider.setAuxiliaryCellProvider(new SNodeTypeCastExpression_Editor._Inline8());
     EditorCell editorCell = provider.createEditorCell(context);
     SNodeTypeCastExpression_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -134,9 +134,9 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline10 extends AbstractCellProvider {
+  public static class _Inline8 extends AbstractCellProvider {
 
-    public  _Inline10() {
+    public  _Inline8() {
       super();
     }
 
@@ -162,9 +162,9 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      SNodeTypeCastExpression_Editor._Inline10.setupBasic_NameCell(editorCell, node, context);
+      SNodeTypeCastExpression_Editor._Inline8.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SNodeTypeCastExpression_Editor._Inline10.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        SNodeTypeCastExpression_Editor._Inline8.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -21,6 +21,11 @@ import java.awt.Color;
 
 public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144195449093");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144195458203");
     editorCell.setDrawBorder(false);
@@ -28,6 +33,11 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptOfParentReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144195585868");
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144195656233");
     editorCell.setDrawBorder(false);
   }
 
@@ -42,29 +52,19 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144195656233");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144195449093");
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConceptOfParentReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_LinkInParentReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -94,14 +94,6 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    Node_IsRoleOperation_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    Node_IsRoleOperation_Editor.setupLabel_ConstantCell1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Node_IsRoleOperation_Editor.setupBasic_ConstantCell2(editorCell, node, context);
@@ -110,9 +102,17 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    Node_IsRoleOperation_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    Node_IsRoleOperation_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createConceptOfParentReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Node_IsRoleOperation_Editor._Inline14());
+    provider.setAuxiliaryCellProvider(new Node_IsRoleOperation_Editor._Inline12());
     EditorCell editorCell = provider.createEditorCell(context);
     Node_IsRoleOperation_Editor.setupBasic_ConceptOfParentReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -141,7 +141,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createLinkInParentReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Node_IsRoleOperation_Editor._Inline15());
+    provider.setAuxiliaryCellProvider(new Node_IsRoleOperation_Editor._Inline13());
     EditorCell editorCell = provider.createEditorCell(context);
     Node_IsRoleOperation_Editor.setupBasic_LinkInParentReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -168,9 +168,9 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline14 extends AbstractCellProvider {
+  public static class _Inline12 extends AbstractCellProvider {
 
-    public  _Inline14() {
+    public  _Inline12() {
       super();
     }
 
@@ -196,9 +196,9 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      Node_IsRoleOperation_Editor._Inline14.setupBasic_NameCell(editorCell, node, context);
+      Node_IsRoleOperation_Editor._Inline12.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Node_IsRoleOperation_Editor._Inline14.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        Node_IsRoleOperation_Editor._Inline12.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -222,9 +222,9 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline15 extends AbstractCellProvider {
+  public static class _Inline13 extends AbstractCellProvider {
 
-    public  _Inline15() {
+    public  _Inline13() {
       super();
     }
 
@@ -251,9 +251,9 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      Node_IsRoleOperation_Editor._Inline15.setupBasic_RoleCell(editorCell, node, context);
+      Node_IsRoleOperation_Editor._Inline13.setupBasic_RoleCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Node_IsRoleOperation_Editor._Inline15.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
+        Node_IsRoleOperation_Editor._Inline13.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -20,15 +20,20 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class EnumMemberReference_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146158270588");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146158256146");
     editorCell.setDrawBorder(false);
-    editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_EnumMemberReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146158258594");
     editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146158270588");
+    editorCell.setDrawBorder(false);
+    editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -37,16 +42,11 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146158256146");
-    editorCell.setDrawBorder(false);
+  private static void setupLabel_EnumMemberReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
-  }
-
-  private static void setupLabel_EnumMemberReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -88,7 +88,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createEnumMemberReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumMemberReference_Editor._Inline4());
+    provider.setAuxiliaryCellProvider(new EnumMemberReference_Editor._Inline16());
     EditorCell editorCell = provider.createEditorCell(context);
     EnumMemberReference_Editor.setupBasic_EnumMemberReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -115,9 +115,9 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline4 extends AbstractCellProvider {
+  public static class _Inline16 extends AbstractCellProvider {
 
-    public  _Inline4() {
+    public  _Inline16() {
       super();
     }
 
@@ -144,9 +144,9 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      EnumMemberReference_Editor._Inline4.setupBasic_ExternalValueCell(editorCell, node, context);
+      EnumMemberReference_Editor._Inline16.setupBasic_ExternalValueCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        EnumMemberReference_Editor._Inline4.setupLabel_ExternalValueCell((EditorCell_Label)editorCell, node, context);
+        EnumMemberReference_Editor._Inline16.setupLabel_ExternalValueCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

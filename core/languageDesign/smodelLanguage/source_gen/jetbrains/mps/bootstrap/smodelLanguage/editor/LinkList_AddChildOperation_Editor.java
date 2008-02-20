@@ -16,13 +16,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139870427664");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139870427663");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ParameterCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139870441857");
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139870427664");
     editorCell.setDrawBorder(false);
   }
 
@@ -31,8 +31,8 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139870427663");
+  private static void setupBasic_ParameterCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139870441857");
     editorCell.setDrawBorder(false);
   }
 
@@ -40,11 +40,11 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
     editorCell.setEditable(true);
   }
 
-  private static void setupLabel_ParameterCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
+  }
+
+  private static void setupLabel_ParameterCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 

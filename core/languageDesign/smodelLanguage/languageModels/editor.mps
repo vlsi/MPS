@@ -8,7 +8,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
-  <maxImportIndex value="9" />
+  <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -17,6 +17,7 @@
   <import index="7" modelUID="java.lang@java_stub" version="-1" />
   <import index="8" modelUID="java.io@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <import index="10" modelUID="jetbrains.mps.bootstrap.sharedConcepts.editor" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1138063451695">
     <link role="conceptDeclaration" targetNodeId="1.1138056022639" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1138412409274">
@@ -2315,6 +2316,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182511093572">
         <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1182511100904">
         <property name="noTargetText" value="&lt;no scope&gt;" />
@@ -2330,11 +2332,13 @@
           <link role="conceptDeclaration" targetNodeId="3.1169125787135" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182511125130">
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+            <link role="styleClass" targetNodeId="10.1203541385314" resolveInfo="concept_reference" />
           </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182511096027">
         <property name="text" value=")" />
+        <property name="fontStyle" value="PLAIN" />
       </node>
     </node>
   </node>
