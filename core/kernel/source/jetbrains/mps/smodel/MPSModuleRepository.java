@@ -388,12 +388,7 @@ public class MPSModuleRepository {
       readModuleDescriptor_internal(dir, owner, getModuleExtension(dirName));
     }
 
-    List<IFile> files = dir.list(new IFileNameFilter() {
-      public boolean accept(IFile parent, String name) {
-        return hasModuleExtension(name) || name.endsWith(MPS_ARCHIVE);
-      }
-    });
-
+    List<IFile> files = dir.list();
     if (files == null) { //i.e it isn't a directory
       return;
     }
@@ -401,16 +396,14 @@ public class MPSModuleRepository {
     for (IFile file : files) {
       if (hasModuleExtension(file.getName())) {
         readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()));
-      } else {
+      } else if (file.getName().endsWith(MPS_ARCHIVE)) {
         readModuleDescriptors(FileSystem.getJarFileRoot(file.toFile()), owner);
       }
     }
-    List<IFile> dirs = dir.list();
+    List<IFile> dirs = files;
     for (IFile childDir : dirs) {
       if (childDir.getName().endsWith(".svn")) continue;      
-      if (childDir.isDirectory()) {
-        readModuleDescriptors(childDir, owner);
-      }
+      readModuleDescriptors(childDir, owner);
     }
   }
 

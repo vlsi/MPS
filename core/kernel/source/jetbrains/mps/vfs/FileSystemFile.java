@@ -89,7 +89,12 @@ public class FileSystemFile implements IFile {
   public List<IFile> list() {
     List<IFile> result = new ArrayList<IFile>();
 
-    for (File f : myFile.listFiles()) {
+    File[] files = myFile.listFiles();
+    if (files == null) {
+      return null;
+    }
+
+    for (File f : files) {
       result.add(new FileSystemFile(f));
     }
 
