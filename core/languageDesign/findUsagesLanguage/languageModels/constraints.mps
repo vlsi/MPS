@@ -9,6 +9,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1" />

@@ -14,6 +14,7 @@
     </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />

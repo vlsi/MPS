@@ -4,6 +4,7 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   <maxImportIndex value="25" />
   <import index="25" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1078489098625">
