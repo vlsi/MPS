@@ -52,8 +52,5 @@
       <property name="nullText" value="&lt;abstract concept&gt;" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1197980680536">
-    <property name="name" value="BaseStyleSheet" />
-  </node>
 </model>
 
