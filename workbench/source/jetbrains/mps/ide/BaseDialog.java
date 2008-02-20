@@ -90,7 +90,6 @@ public abstract class BaseDialog extends JDialog {
     if (myDialogDimensions == null) myDialogDimensions = getDefaultDimensionSettings();
   }
 
-
   public void showDialog() {
     if (!ThreadUtils.isEventDispatchThread()) {
       LOG.error("Dialogs should be shown in EDT ", new Throwable());
@@ -197,7 +196,6 @@ public abstract class BaseDialog extends JDialog {
   }
 
   protected abstract JComponent getMainComponent();
-
 
   @Target(ElementType.METHOD)
   @Retention(RetentionPolicy.RUNTIME)

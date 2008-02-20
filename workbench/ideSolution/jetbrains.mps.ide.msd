@@ -8,6 +8,7 @@
   <sourcePath />
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
+    <usedLanguages>jetbrains.mps.ide.uiLanguage</usedLanguages>
   </usedLanguages>
 </solution>
 
