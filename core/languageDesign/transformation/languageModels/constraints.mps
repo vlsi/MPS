@@ -1000,6 +1000,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200913462622" />
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1200914495113">
     <link role="concept" targetNodeId="1.1200913690460" resolveInfo="Node_FindOutputNode" />
     <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1200914496991">
@@ -1017,16 +1018,10 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1200914980471">
                   <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200915028065">
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1200915030474" />
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200914989791">
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1200914992716">
-                        <link role="link" targetNodeId="14.1138056667223" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1200914985148">
-                        <link role="concept" targetNodeId="14.1138055978872" resolveInfo="SNodeOperationExpression" />
-                        <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200914980473">
-                          <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1200914980474" />
-                          <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1200914980475" />
-                        </node>
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200914980473">
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1200914980474" />
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1203471468396">
+                        <link role="conceptMethodDeclaration" targetNodeId="2v.1200920411564" resolveInfo="getLeftExpression" />
                       </node>
                     </node>
                   </node>
