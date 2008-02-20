@@ -48,7 +48,7 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
 
   public void setShowOnlyStrong(boolean showOnlyStrong) {
     myShowOnlyStrong = showOnlyStrong;
-    rebuildNow();                                                                    
+    rebuildLater();                                                                    
   }
 
   public boolean doubleClick(final HierarchyTreeNode<INodeAdapter> hierarchyTreeNode) {
