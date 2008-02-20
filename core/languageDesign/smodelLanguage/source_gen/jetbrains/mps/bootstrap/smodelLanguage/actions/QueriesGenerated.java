@@ -66,8 +66,11 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1196936366507(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    SNode expression = _context.getParentNode();
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expression, "leftExpression", true)), new QuotationClass_().createNode());
+    SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
+    if(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+      leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
+    }
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(leftExpression), new QuotationClass_().createNode());
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1203538524079(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -543,7 +546,7 @@ public class QueriesGenerated {
           result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewNodeOperation", null);
+              SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewNodeOperation", null);
               SLinkOperations.setTarget(result, "concept", (item), false);
               return result;
             }
@@ -564,7 +567,7 @@ public class QueriesGenerated {
 
           public Object calculate() {
             List<SNode> concepts = SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(_context.getParentNode()), operationContext.getScope(), "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration");
-            return SequenceOperations.where(concepts, new zPredicate2(null, null));
+            return SequenceOperations.toList(SequenceOperations.where(concepts, new zPredicate2(null, null)));
           }
 
         };
@@ -574,7 +577,7 @@ public class QueriesGenerated {
           result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewRootNodeOperation", null);
+              SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewRootNodeOperation", null);
               SLinkOperations.setTarget(result, "concept", (item), false);
               return result;
             }
