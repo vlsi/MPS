@@ -5,7 +5,32 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.ide.uiLanguage" />
   </models>
   <accessoryModels />
-  <generators />
+  <generators>
+    <generator generatorUID="jetbrains.mps.ide.uiLanguage#1203519930689" targetLanguage="jetbrains.mps.baseLanguage">
+      <models>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template" />
+      </models>
+      <external-templates>
+        <generator generatorUID="jetbrains.mps.uiLanguage#1202393863737" />
+      </external-templates>
+      <dependencies>
+        <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
+      </dependencies>
+      <mapping-priorities>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template.main@templates" nodeID="*" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="jetbrains.mps.uiLanguage#1202393863737" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
+    </generator>
+  </generators>
   <classPath />
   <runtimeClassPath>
     <entry path="${language_descriptor}\classes" />

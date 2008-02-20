@@ -19,8 +19,8 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203518609462">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="contentComponent" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3v.1202387945296" resolveInfo="ComponentInstance" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="3v.1202817076568" resolveInfo="IComponentInstance" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203518568532">
       <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />

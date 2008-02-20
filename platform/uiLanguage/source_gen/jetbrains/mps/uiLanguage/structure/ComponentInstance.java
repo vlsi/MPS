@@ -13,12 +13,12 @@ import java.util.List;
 
 public class ComponentInstance extends BaseConcept implements IComponentPart, IComponentInstance, INamedConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentInstance";
+  public static String CONTENT = "content";
   public static String COMPONENT_DECLARATION = "componentDeclaration";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String NAME = "name";
-  public static String CONTENT = "content";
 
   public  ComponentInstance(SNode node) {
     super(node);
@@ -32,6 +32,26 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
     return ComponentInstance.newInstance(sm, false);
   }
 
+
+  public int getContentsCount() {
+    return this.getChildCount(ComponentInstance.CONTENT);
+  }
+
+  public Iterator<IComponentPart> contents() {
+    return this.children(ComponentInstance.CONTENT);
+  }
+
+  public List<IComponentPart> getContents() {
+    return this.getChildren(ComponentInstance.CONTENT);
+  }
+
+  public void addContent(IComponentPart node) {
+    this.addChild(ComponentInstance.CONTENT, node);
+  }
+
+  public void insertContent(IComponentPart prev, IComponentPart node) {
+    this.insertChild(prev, ComponentInstance.CONTENT, node);
+  }
 
   public ComponentDeclaration getComponentDeclaration() {
     return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
@@ -71,26 +91,6 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
 
   public void setName(String value) {
     this.setProperty(ComponentInstance.NAME, value);
-  }
-
-  public int getContentsCount() {
-    return this.getChildCount(ComponentInstance.CONTENT);
-  }
-
-  public Iterator<IComponentPart> contents() {
-    return this.children(ComponentInstance.CONTENT);
-  }
-
-  public List<IComponentPart> getContents() {
-    return this.getChildren(ComponentInstance.CONTENT);
-  }
-
-  public void addContent(IComponentPart node) {
-    this.addChild(ComponentInstance.CONTENT, node);
-  }
-
-  public void insertContent(IComponentPart prev, IComponentPart node) {
-    this.insertChild(prev, ComponentInstance.CONTENT, node);
   }
 
 }
