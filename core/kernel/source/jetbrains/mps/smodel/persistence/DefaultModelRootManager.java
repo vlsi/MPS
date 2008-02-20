@@ -114,22 +114,20 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
   private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, IFile dir, ModelRoot modelRoot, ModelOwner owner) {
-    if (!dir.isDirectory()) {
-      return;
-    }
-    List<IFile> files = dir.list(new IFileNameFilter() {
-      public boolean accept(IFile d, String name) {
-        return name.endsWith(".mps");
-      }
-    });
+    if (dir.getName().endsWith(".svn")) return;
+    if (!dir.isDirectory()) return;
+
+    List<IFile> files = dir.list();
     for (IFile file : files) {
+      if (!file.getName().endsWith(".mps")) continue;      
       SModelUID modelUID = PathManager.getModelUID(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
       SModelDescriptor modelDescriptor = getInstance(this, modelRoot, file.getAbsolutePath(), modelUID, owner);
       LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       modelDescriptors.add(modelDescriptor);
     }
-    List<IFile> dirs = dir.list();
-    for (IFile childDir : dirs) {
+    for (IFile childDir : files) {
+      
+
       if (childDir.isDirectory()) {
         readModelDescriptors(modelDescriptors, childDir, modelRoot, owner);
       }
