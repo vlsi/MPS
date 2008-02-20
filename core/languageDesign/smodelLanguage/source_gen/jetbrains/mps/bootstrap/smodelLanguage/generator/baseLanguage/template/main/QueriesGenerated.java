@@ -17,6 +17,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.LinkDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation;
@@ -205,7 +206,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1169054268385(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    // expr . link-access . op
+    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
+    SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(link);
     return SPropertyOperations.getString(genuineLink, "role");
   }
 
@@ -279,21 +283,27 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1169056436910(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    // expr . link-access . op
+    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
+    SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(link);
     return SPropertyOperations.getString(genuineLink, "role");
   }
 
   public static Object propertyMacro_GetPropertyValue_1169055820374(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    // expr . link-access . op
+    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
+    SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(link);
     return SPropertyOperations.getString(genuineLink, "role");
   }
 
   public static Object propertyMacro_GetPropertyValue_1169055966769(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode genuineLink = QueriesUtil.linkOpExpression_genuineLink(SNodeOperations.getParent(_context.getNode(), null, false, false));
-    if(SPropertyOperations.hasValue(genuineLink, "metaClass", "aggregation", null)) {
-      return "true";
-    }
-    return "false";
+    // expr . link-access . op
+    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
+    SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(link);
+    return SPropertyOperations.hasValue(genuineLink, "metaClass", "aggregation", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1170443309771(final IOperationContext operationContext, final PropertyMacroContext _context) {
