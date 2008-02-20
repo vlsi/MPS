@@ -28,6 +28,7 @@ import jetbrains.mps.bootstrap.helgins.structure.ComparisonRule;
 import jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.helgins.dependencies.DependenciesCollector;
 import java.util.Map;
 import jetbrains.mps.util.Pair;
@@ -253,6 +254,11 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1203530035708(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
+    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1193741165504(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode rule = SNodeOperations.getParent(_context.getNode(), null, false, false);
     SNode conceptDeclaration;
@@ -456,6 +462,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1203531487305(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("VariableProvider");
+  }
+
   public static Object referenceMacro_GetReferent_1175002013260(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "pattern", true), "patternClass");
   }
@@ -560,6 +570,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1201610301750(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "classForRule").getChild("constructor");
+  }
+
+  public static Object referenceMacro_GetReferent_1203530166954(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "providerForItem").getChild("constructor");
   }
 
   public static Object referenceMacro_GetReferent_1176559690823(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1198,6 +1212,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1203531622138(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "provider", true), "body", true);
+  }
+
   public static List sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "judgement", true);
   }
@@ -1224,6 +1242,15 @@ public class QueriesGenerated {
 
   public static List sourceNodesQuery_1201610301765(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(InequationReplacementRule.class));
+  }
+
+  public static List sourceNodesQuery_1203529514730(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> variableProviders = SModelOperations.getRoots(_context.getSourceModel(), "jetbrains.mps.bootstrap.helgins.structure.VariableProviders");
+    List<SNode> result = new ArrayList<SNode>();
+    for(SNode varProviders : variableProviders) {
+      ListOperations.addAllElements(result, SLinkOperations.getTargets(varProviders, "item", true));
+    }
+    return result;
   }
 
   public static List sourceNodesQuery_1193740670223(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
