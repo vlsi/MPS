@@ -422,8 +422,8 @@ public class SubtypingManager {
   }
 
   public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, boolean isWeak) {
-    if (pattern.match(subtype)) return subtype;
     if (subtype == null) return null;
+    if (pattern.match(subtype)) return subtype;
     CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
     boolean success = searchInSupertypes(NodeWrapper.createNodeWrapper(subtype), coersionMatcher, null, null, isWeak);
     if (!success) return null;
