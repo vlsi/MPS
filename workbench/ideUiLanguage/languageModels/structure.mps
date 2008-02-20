@@ -22,8 +22,33 @@
       <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="3v.1202817076568" resolveInfo="IComponentInstance" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203521951304">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="button" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1203521811049" resolveInfo="IDEDialogButton" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203518568532">
       <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <visible index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203521811049">
+    <property name="name" value="IDEDialogButton" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203521845072">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="handler" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="4v.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1203521833757">
+      <property name="name" value="isDefault" />
+      <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1203521840008">
+      <property name="name" value="text" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
   </node>
 </model>

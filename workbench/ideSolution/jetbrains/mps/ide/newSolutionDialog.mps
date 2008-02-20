@@ -11,6 +11,14 @@
   <visible index="2" modelUID="jetbrains.mps.uiLanguage.components" />
   <node type="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" id="1203518884137">
     <property name="name" value="NewSolutionDialog" />
+    <node role="button" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton" id="1203522007986">
+      <property name="text" value="OK" />
+      <property name="isDefault" value="true" />
+    </node>
+    <node role="button" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton" id="1203522018896">
+      <property name="text" value="Cancel" />
+      <property name="isDefault" value="true" />
+    </node>
     <node role="contentComponent" type="jetbrains.mps.uiLanguage.structure.Form" id="1203519577407">
       <node role="part" type="jetbrains.mps.uiLanguage.structure.FormPart" id="1203519578033">
         <property name="label" value="Name" />

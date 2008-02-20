@@ -2,6 +2,7 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 
 import javax.swing.*;
 import java.awt.*;
@@ -79,7 +80,10 @@ public abstract class BaseDialog extends JDialog {
     saveDimensionSettings(myDialogDimensions.myLeft, myDialogDimensions.myTop, myDialogDimensions.myWidth, myDialogDimensions.myHeight, this.getClass());
   }
 
-  public abstract DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings();
+  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
+    Dimension size = getPreferredSize();
+    return new DialogDimensions(100, 200, size.width, size.height);
+  }
 
   protected static DialogDimensionsSettings.DialogDimensions getDimensionSettings(Class<? extends BaseDialog> cls) {
     return ApplicationComponents.getInstance().getComponentSafe(DialogDimensionsSettings.class).getDimensionSettings(cls);
@@ -131,7 +135,6 @@ public abstract class BaseDialog extends JDialog {
   protected String getButtonsPosition() {
     return BorderLayout.EAST;
   }
-
 
   protected void setErrorText(String errorText) {
     if (errorText != null) {
