@@ -45,11 +45,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1161715685433(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
-    return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(leftExpression);
-  }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1179529852529(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
@@ -88,7 +83,7 @@ public class QueriesGenerated {
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189083(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(_context.getSourceNode());
+    return QueriesUtil.isExpression_appropriateFor_ourOperations(_context.getSourceNode());
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189126(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
@@ -97,7 +92,7 @@ public class QueriesGenerated {
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535648215(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    return ActionUtil_smodel.isExpression_appropriateFor_SemanticDowncast(_context.getSourceNode());
+    return QueriesUtil.isExpression_appropriateFor_SemanticDowncast(_context.getSourceNode());
   }
 
   public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -119,51 +114,6 @@ public class QueriesGenerated {
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1138413233760(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    final SNode leftExpressionType;
-    final Boolean leftIsModel;
-    final Boolean leftIsNode;
-    final Boolean leftIsConcept;
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true));
-        }
-
-      };
-      leftExpressionType = (SNode)calc.calculate();
-    }
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType"), false) != null;
-        }
-
-      };
-      leftIsModel = (Boolean)calc.calculate();
-    }
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false) != null;
-        }
-
-      };
-      leftIsNode = (Boolean)calc.calculate();
-    }
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false) != null;
-        }
-
-      };
-      leftIsConcept = (Boolean)calc.calculate();
-    }
-    // TODO: The initializer doesn't work for 'remove by condition' action
     return result;
   }
 
@@ -759,51 +709,6 @@ public class QueriesGenerated {
   }
 
   public static void removeActionsByCondition_1180467401112(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
-    final SNode leftExpressionType;
-    final Boolean leftIsModel;
-    final Boolean leftIsNode;
-    final Boolean leftIsConcept;
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true));
-        }
-
-      };
-      leftExpressionType = (SNode)calc.calculate();
-    }
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType"), false) != null;
-        }
-
-      };
-      leftIsModel = (Boolean)calc.calculate();
-    }
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false) != null;
-        }
-
-      };
-      leftIsNode = (Boolean)calc.calculate();
-    }
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false) != null;
-        }
-
-      };
-      leftIsConcept = (Boolean)calc.calculate();
-    }
-    // TODO: The initializer doesn't work for 'remove by condition' action
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
@@ -816,11 +721,18 @@ public class QueriesGenerated {
             return false;
           }
           SNode parameterOp = (SNode)concept;
-          SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
+          SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
+          if(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+            leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
+          }
+          SNode leftOperation = SLinkOperations.getTarget(leftExpression, "operation", true);
           if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-            SNode nodeOperation = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
-            if(SNodeOperations.isInstanceOf(nodeOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
-              SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(nodeOperation, "property", false), "dataType", false);
+            leftOperation = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+          }
+          // ---
+          if(leftOperation != null) {
+            if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
+              SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(leftOperation, "property", false), "dataType", false);
               if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration")) {
                 return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_enum_property"));
               } else
@@ -828,13 +740,13 @@ public class QueriesGenerated {
                 return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_simple_property"));
               }
             }
-            if(SNodeOperations.isInstanceOf(nodeOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess")) {
+            if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess")) {
               return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_concept_property"));
             }
-            if(SNodeOperations.isInstanceOf(nodeOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
+            if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
               return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link"));
             }
-            if(SNodeOperations.isInstanceOf(nodeOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
+            if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
               return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_linkList"));
             }
           }

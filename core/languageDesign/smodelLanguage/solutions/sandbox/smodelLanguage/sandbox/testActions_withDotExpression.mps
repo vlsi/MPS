@@ -153,6 +153,9 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203550812071">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1203550812072" />
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203539917365" />
