@@ -197,12 +197,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1168986509277(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode link = SLinkOperations.getTarget(_context.getNode(), "link", false);
-    link = SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
-    if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
-      return "true";
-    }
-    return "false";
+    SNode link = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(SLinkOperations.getTarget(_context.getNode(), "link", false));
+    return SPropertyOperations.hasValue(link, "metaClass", "aggregation", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1169054268385(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -236,7 +232,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1169057619361(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    // expr . link-list-access . op
+    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
+    SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(link);
     return SPropertyOperations.getString(genuineLink, "role");
   }
 
@@ -273,12 +272,18 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1169058210501(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    // expr . link-list-access . op
+    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
+    SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(link);
     return SPropertyOperations.getString(genuineLink, "role");
   }
 
   public static Object propertyMacro_GetPropertyValue_1169058658826(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    // expr . link-list-access . op
+    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
+    SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(link);
     return SPropertyOperations.getString(genuineLink, "role");
   }
 
@@ -328,7 +333,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1169069895463(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    // expr . link-list-access . op
+    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
+    SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(link);
     return SPropertyOperations.getString(genuineLink, "role");
   }
 
@@ -437,7 +445,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1172244978178(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode genuineLink = QueriesUtil.linkListOpExpression_genuineLink(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    // expr . link-list-access . op
+    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
+    SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(link);
     return SPropertyOperations.getString(genuineLink, "role");
   }
 
