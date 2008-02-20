@@ -9,7 +9,7 @@ package jetbrains.mps.internal.collections.runtime;
  */
 public abstract class Sequence<S,T> {
     
-    public static <U> Sequence <U,U> fromIterable (Iterable<U> iterable) {
+    public static <U> Sequence <?,U> fromIterable (Iterable<U> iterable) {
         return new BasicSequence<U> (iterable);
     }
     
