@@ -31,7 +31,7 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createTypeVariableDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new TypeVariableReference_Editor._Inline14());
+    provider.setAuxiliaryCellProvider(new TypeVariableReference_Editor._Inline7());
     EditorCell editorCell = provider.createEditorCell(context);
     TypeVariableReference_Editor.setupBasic_TypeVariableDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -58,9 +58,9 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline14 extends AbstractCellProvider {
+  public static class _Inline7 extends AbstractCellProvider {
 
-    public  _Inline14() {
+    public  _Inline7() {
       super();
     }
 
@@ -85,9 +85,9 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      TypeVariableReference_Editor._Inline14.setupBasic_NameCell(editorCell, node, context);
+      TypeVariableReference_Editor._Inline7.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        TypeVariableReference_Editor._Inline14.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        TypeVariableReference_Editor._Inline7.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

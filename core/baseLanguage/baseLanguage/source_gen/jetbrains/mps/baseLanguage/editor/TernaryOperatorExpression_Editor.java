@@ -16,6 +16,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668947305");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConditionCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668952186");
     editorCell.setDrawBorder(false);
@@ -39,11 +44,6 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_IfFalseCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668962067");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163668947305");
     editorCell.setDrawBorder(false);
   }
 

@@ -16,6 +16,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CharConstant_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1200397593367");
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1200397594526");
     BaseLanguageStyle_StyleSheet.STRING_LITERAL.apply(editorCell);
@@ -29,10 +33,6 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1200397598655");
     BaseLanguageStyle_StyleSheet.STRING_LITERAL.apply(editorCell);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1200397593367");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

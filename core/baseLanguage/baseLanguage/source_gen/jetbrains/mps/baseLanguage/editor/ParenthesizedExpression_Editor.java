@@ -16,6 +16,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010409");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010410");
     editorCell.setDrawBorder(false);
@@ -34,11 +39,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new CloseParenthesis_KeyMap());
-  }
-
-  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010409");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

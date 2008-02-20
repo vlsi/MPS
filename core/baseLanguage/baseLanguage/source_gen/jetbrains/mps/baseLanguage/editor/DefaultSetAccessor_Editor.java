@@ -16,8 +16,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class DefaultSetAccessor_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202077768793");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202077761084");
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -28,17 +28,17 @@ public class DefaultSetAccessor_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202077764948");
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202077761084");
-  }
-
-  private static void setupLabel_VisibilityCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202077768793");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_VisibilityCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 

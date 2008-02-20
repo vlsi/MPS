@@ -17,6 +17,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SwitchCase_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163670711192");
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163670713648");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163670716711");
     editorCell.setDrawBorder(false);
@@ -32,8 +43,8 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163670713648");
+  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163670739981");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
@@ -46,17 +57,6 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_BodyCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163670745145");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163670739981");
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1163670711192");
     editorCell.setDrawBorder(false);
   }
 
@@ -81,6 +81,17 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
     return this.createColumnCell(context, node);
   }
 
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    SwitchCase_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createRowCell1(context, node));
+    return editorCell;
+  }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     SwitchCase_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -101,17 +112,6 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell2(context, node, "  "));
     editorCell.addEditorCell(this.createBodyCell(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    SwitchCase_Editor.setupBasic_ColumnCell(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
     return editorCell;
   }
 

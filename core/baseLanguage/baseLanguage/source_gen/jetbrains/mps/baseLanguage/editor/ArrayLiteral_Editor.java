@@ -23,29 +23,29 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myItemListHandler_itemList_;
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188220212300");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188220210986");
   }
 
-  private static void setupBasic_ItemList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188220217555");
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188220212300");
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188220214099");
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188220210986");
+  private static void setupBasic_ItemList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188220217555");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ItemList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ItemList(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -83,7 +83,7 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
 
   public EditorCell createItemList(EditorContext context, SNode node) {
     if(this.myItemListHandler_itemList_ == null) {
-      this.myItemListHandler_itemList_ = new ArrayLiteral_Editor._RefNodeListHandler68(node, "item", context);
+      this.myItemListHandler_itemList_ = new ArrayLiteral_Editor._RefNodeListHandler63(node, "item", context);
     }
     EditorCell_Collection editorCell = this.myItemListHandler_itemList_.createCells(context, new CellLayout_Horizontal(), false);
     ArrayLiteral_Editor.setupBasic_ItemList(editorCell, node, context);
@@ -94,9 +94,9 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _RefNodeListHandler68 extends RefNodeListHandler {
+  public static class _RefNodeListHandler63 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler68(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler63(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

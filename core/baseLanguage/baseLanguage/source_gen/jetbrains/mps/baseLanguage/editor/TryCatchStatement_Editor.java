@@ -27,6 +27,17 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myCatchClauseListHandler_catchClauseList_;
 
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164880022438");
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164880031472");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164880033959");
     editorCell.setDrawBorder(false);
@@ -37,8 +48,8 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164880031472");
+  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164880052763");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
@@ -54,21 +65,9 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164880052763");
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupBasic_CatchClauseList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903583459");
     editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164911197639");
-    editorCell.setDrawBorder(false);
-    editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 
   private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -77,9 +76,10 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164880022438");
+  private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164911197639");
     editorCell.setDrawBorder(false);
+    editorCell.setRightTransformAnchorTag("default_RTransform");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -105,6 +105,19 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
+  }
+
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    TryCatchStatement_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.createCatchClauseList(context, node));
+    editorCell.addEditorCell(this.createRowCell2(context, node));
+    return editorCell;
   }
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -136,19 +149,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
-    return editorCell;
-  }
-
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    TryCatchStatement_Editor.setupBasic_ColumnCell(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.addEditorCell(this.createCatchClauseList(context, node));
-    editorCell.addEditorCell(this.createRowCell2(context, node));
     return editorCell;
   }
 
@@ -186,7 +186,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createCatchClauseList(EditorContext context, SNode node) {
     if(this.myCatchClauseListHandler_catchClauseList_ == null) {
-      this.myCatchClauseListHandler_catchClauseList_ = new TryCatchStatement_Editor._RefNodeListHandler54(node, "catchClause", context);
+      this.myCatchClauseListHandler_catchClauseList_ = new TryCatchStatement_Editor._RefNodeListHandler30(node, "catchClause", context);
     }
     EditorCell_Collection editorCell = this.myCatchClauseListHandler_catchClauseList_.createCells(context, new CellLayout_Vertical(), false);
     TryCatchStatement_Editor.setupBasic_CatchClauseList(editorCell, node, context);
@@ -226,9 +226,9 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler54 extends RefNodeListHandler {
+  public static class _RefNodeListHandler30 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler54(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler30(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

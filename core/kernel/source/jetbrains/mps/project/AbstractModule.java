@@ -208,6 +208,10 @@ public abstract class AbstractModule implements IModule {
     return new LinkedHashSet<SModelDescriptor>();
   }
 
+  public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
+    return new LinkedHashSet<Language>();
+  }
+
   public IFile getDescriptorFile() {
     return myDescriptorFile;
   }

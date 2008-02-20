@@ -16,6 +16,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class NotExpression_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081929706295");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081930071608");
     editorCell.setDrawBorder(false);
@@ -32,11 +37,6 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     NotExpression_Parens_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081929706295");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

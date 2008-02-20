@@ -65,7 +65,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode g;
-      g = new QuotationClass_1().createNode(FieldDeclaration_Behavior.call_getGetterName_1184160785366(node), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), node);
+      g = new QuotationClass_().createNode(FieldDeclaration_Behavior.call_getGetterName_1184160785366(node), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), node);
       SLinkOperations.addChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "method", g);
     }
 
@@ -115,7 +115,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode s;
-      s = new QuotationClass_2().createNode(FieldDeclaration_Behavior.call_getSetterName_1184160800181(node), node, SPropertyOperations.getString(node, "name"), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)));
+      s = new QuotationClass_1().createNode(FieldDeclaration_Behavior.call_getSetterName_1184160800181(node), node, SPropertyOperations.getString(node, "name"), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)));
       SLinkOperations.addChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "method", s);
     }
 

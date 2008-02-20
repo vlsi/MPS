@@ -16,6 +16,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175599366");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ArrayCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175602450");
     editorCell.setDrawBorder(false);
@@ -34,11 +39,6 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175610988");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173175599366");
     editorCell.setDrawBorder(false);
   }
 

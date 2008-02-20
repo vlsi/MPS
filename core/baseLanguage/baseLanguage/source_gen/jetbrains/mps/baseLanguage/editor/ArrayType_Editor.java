@@ -16,6 +16,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ArrayType_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1113208366980");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ComponentTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1113208455587");
     editorCell.setDrawBorder(false);
@@ -25,11 +30,6 @@ public class ArrayType_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1113208455588");
     editorCell.setDrawBorder(false);
     ArrayType_Brackets_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1113208366980");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ComponentTypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

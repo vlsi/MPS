@@ -17,6 +17,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class UpperBoundType_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171903933830");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171903933831");
     editorCell.setDrawBorder(false);
@@ -29,11 +34,6 @@ public class UpperBoundType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_BoundCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171903933833");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171903933830");
     editorCell.setDrawBorder(false);
   }
 

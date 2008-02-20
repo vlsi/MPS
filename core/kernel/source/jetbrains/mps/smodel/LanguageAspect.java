@@ -6,6 +6,7 @@ import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.BootstrapModule;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public enum LanguageAspect {
   STRUCTURE("structure") {
@@ -50,7 +51,7 @@ public enum LanguageAspect {
 
   DOCUMENTATION("documentation") {
     protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(MPSModuleRepository.getInstance().getLanguageSafe("jetbrains.mps.booksLanguage").getNamespace());
+      return CollectionUtil.asList("jetbrains.mps.booksLanguage");
     }
   },
 
@@ -103,13 +104,9 @@ public enum LanguageAspect {
 
     SModelDescriptor model = l.createModel(getModuleUID(l), l.getModelRoots().get(0));
 
-    for (String lang : getLanguagesToImport(l)) {
+    for (String lang : getAllLanguagesToImport(l)) {
       model.getSModel().addLanguage(lang);
     }
-
-    model.getSModel().addLanguage(BootstrapModule.COLLECTIONS.getUID());
-    model.getSModel().addLanguage(BootstrapModule.SMODEL.getUID());
-    model.getSModel().addLanguage(BootstrapModule.BASE_LANGUAGE.getUID());
 
     for (String modelUID : getModelsToImport(l)) {
       model.getSModel().addImportedModel(SModelUID.fromString(modelUID));
@@ -129,6 +126,15 @@ public enum LanguageAspect {
     }
 
     return model;
+  }
+
+  public List<String> getAllLanguagesToImport(Language l) {
+    List<String> result = new ArrayList<String>(getLanguagesToImport(l));
+    result.addAll(getLanguagesToImport(l));
+    result.add(BootstrapModule.COLLECTIONS.getUID());
+    result.add(BootstrapModule.SMODEL.getUID());
+    result.add(BootstrapModule.BASE_LANGUAGE.getUID());
+    return result;
   }
 
   protected List<String> getLanguagesToImport(Language l) {

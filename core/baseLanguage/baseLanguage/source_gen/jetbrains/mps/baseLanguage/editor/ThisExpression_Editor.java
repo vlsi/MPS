@@ -21,11 +21,25 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class ThisExpression_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_CellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182954960781");
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182954963748");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new ThisExpression_KeyMap());
+  }
+
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182954969191");
+  }
+
+  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182954970616");
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ClassConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -38,21 +52,12 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(false);
   }
 
-  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182954970616");
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182954969191");
-  }
-
-  private static void setupBasic_CellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182954960781");
-  }
-
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.setEditable(true);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  }
+
+  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
@@ -62,11 +67,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
-  }
-
-  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
 
   public static boolean _QueryFunction_NodeCondition_1182954960782(SNode node, EditorContext editorContext, IScope scope) {
@@ -112,14 +112,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ThisExpression_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    ThisExpression_Editor.setupLabel_ConstantCell1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ThisExpression_Editor.setupBasic_ConstantCell2(editorCell, node, context);
@@ -128,9 +120,17 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    ThisExpression_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    ThisExpression_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createClassConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline5());
+    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline21());
     EditorCell editorCell = provider.createEditorCell(context);
     ThisExpression_Editor.setupBasic_ClassConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -157,9 +157,9 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline5 extends AbstractCellProvider {
+  public static class _Inline21 extends AbstractCellProvider {
 
-    public  _Inline5() {
+    public  _Inline21() {
       super();
     }
 
@@ -183,9 +183,9 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ThisExpression_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
+      ThisExpression_Editor._Inline21.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ThisExpression_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ThisExpression_Editor._Inline21.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -13,26 +13,21 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class DoWhileStatement_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_LabelCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199468161441");
-    AbstractLoopStatement_Label_Actions.setCellActions(editorCell, node, context);
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177666726272");
+    editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199468161442");
-    editorCell.setSelectable(false);
-  }
-
-  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199468161440");
-    editorCell.setSelectable(false);
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177666726273");
+    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -45,8 +40,8 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177666726273");
+  private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177666726278");
     editorCell.setDrawBorder(false);
   }
 
@@ -61,8 +56,8 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177666726278");
+  private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177666726281");
     editorCell.setDrawBorder(false);
   }
 
@@ -90,14 +85,28 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177666726281");
-    editorCell.setDrawBorder(false);
+  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199468161440");
+    editorCell.setSelectable(false);
   }
 
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177666726272");
-    editorCell.setDrawBorder(false);
+  private static void setupBasic_LabelCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199468161441");
+    AbstractLoopStatement_Label_Actions.setCellActions(editorCell, node, context);
+  }
+
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199468161442");
+    editorCell.setSelectable(false);
+  }
+
+  private static void setupBasic_ColumnCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199468175669");
+  }
+
+  private static void setupBasic_RowCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199468175670");
+    editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
@@ -111,22 +120,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_LabelCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199468175673");
-  }
-
-  private static void setupBasic_RowCell4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199468175670");
-    editorCell.setSelectable(false);
-  }
-
-  private static void setupBasic_ColumnCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199468175669");
-  }
-
-  private static void setupLabel_LabelCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
   }
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -158,6 +151,13 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell7(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_LabelCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.setEditable(false);
+  }
+
   private static void setupLabel_ConstantCell8(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
   }
@@ -182,14 +182,15 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return this.createColumnCell1(context, node);
   }
 
-  public EditorCell createRowCell1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    DoWhileStatement_Editor.setupBasic_RowCell1(editorCell, node, context);
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    DoWhileStatement_Editor.setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createLabelCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
+    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createRowCell2(context, node));
+    editorCell.addEditorCell(this.createRowCell3(context, node));
     return editorCell;
   }
 
@@ -232,27 +233,14 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    DoWhileStatement_Editor.setupBasic_ColumnCell(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell2(context, node));
-    editorCell.addEditorCell(this.createRowCell3(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createRowCell4(EditorContext context, SNode node) {
+  public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    DoWhileStatement_Editor.setupBasic_RowCell4(editorCell, node, context);
+    DoWhileStatement_Editor.setupBasic_RowCell1(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell8(context, node, "label"));
-    editorCell.addEditorCell(this.createConstantCell9(context, node, ":"));
-    editorCell.addEditorCell(this.createLabelCell1(context, node));
+    editorCell.addEditorCell(this.createLabelCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
     return editorCell;
   }
 
@@ -266,11 +254,15 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    DoWhileStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    DoWhileStatement_Editor.setupLabel_ConstantCell(editorCell, node, context);
-    editorCell.setDefaultText("");
+  public EditorCell createRowCell4(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    DoWhileStatement_Editor.setupBasic_RowCell4(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell8(context, node, "label"));
+    editorCell.addEditorCell(this.createConstantCell9(context, node, ":"));
+    editorCell.addEditorCell(this.createLabelCell1(context, node));
     return editorCell;
   }
 
@@ -330,6 +322,14 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    DoWhileStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
+    DoWhileStatement_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     DoWhileStatement_Editor.setupBasic_ConstantCell8(editorCell, node, context);
@@ -344,35 +344,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     DoWhileStatement_Editor.setupLabel_ConstantCell9(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-  public EditorCell createLabelCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    DoWhileStatement_Editor.setupBasic_LabelCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      DoWhileStatement_Editor.setupLabel_LabelCell((EditorCell_Label)editorCell, node, context);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createLabelCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("label");
-    provider.setNoTargetText("");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createLabelCellinternal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
   }
 
   public EditorCell createBodyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -423,6 +394,35 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConditionCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if(attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createLabelCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    DoWhileStatement_Editor.setupBasic_LabelCell(editorCell, node, context);
+    if(editorCell instanceof EditorCell_Label) {
+      DoWhileStatement_Editor.setupLabel_LabelCell((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createLabelCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("label");
+    provider.setNoTargetText("");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createLabelCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

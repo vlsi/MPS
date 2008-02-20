@@ -20,9 +20,18 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class RemarkStatement_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168623087575");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168623096233");
     editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_CellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197651363305");
   }
 
   private static void setupBasic_ValueCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -34,15 +43,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_ValueCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197651366849");
     editorCell.setFontType(MPSFonts.BOLD_ITALIC);
-  }
-
-  private static void setupBasic_CellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197651363305");
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168623087575");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

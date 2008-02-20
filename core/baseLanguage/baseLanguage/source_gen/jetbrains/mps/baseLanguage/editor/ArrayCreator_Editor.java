@@ -15,16 +15,16 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ArrayCreator_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184951038630");
+  }
+
   private static void setupBasic_ComponentTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184951056679");
   }
 
   private static void setupBasic_DimensionExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184952981434");
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184951038630");
   }
 
   private static void setupLabel_ComponentTypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

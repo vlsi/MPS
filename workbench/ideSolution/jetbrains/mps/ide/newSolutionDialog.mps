@@ -18,6 +18,7 @@
     <node role="button" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton" id="1203522018896">
       <property name="text" value="Cancel" />
       <property name="isDefault" value="true" />
+      <node role="handler" type="jetbrains.mps.ide.uiLanguage.structure.ThisDialogExpression" id="1203525212322" />
     </node>
     <node role="contentComponent" type="jetbrains.mps.uiLanguage.structure.Form" id="1203519577407">
       <node role="part" type="jetbrains.mps.uiLanguage.structure.FormPart" id="1203519578033">
@@ -45,6 +46,19 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1203525215511">
+    <property name="name" value="Helper" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1203525219858">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203525220159" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203525219860" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203525219861">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203525224504">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1203525224505" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203525215512" />
   </node>
 </model>
 

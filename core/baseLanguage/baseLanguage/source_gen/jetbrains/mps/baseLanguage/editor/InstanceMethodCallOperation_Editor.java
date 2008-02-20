@@ -34,6 +34,10 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202948902315");
+  }
+
   private static void setupBasic_InstanceMethodDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202948938317");
     editorCell.setDrawBorder(false);
@@ -58,10 +62,6 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     if(InstanceMethodCallOperation_Editor._QueryFunction_NodeCondition_1202948938339(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202948902315");
   }
 
   private static void setupLabel_InstanceMethodDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

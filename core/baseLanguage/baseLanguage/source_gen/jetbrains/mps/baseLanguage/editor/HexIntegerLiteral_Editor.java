@@ -17,6 +17,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class HexIntegerLiteral_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179360865364");
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179360866850");
     editorCell.setFontType(MPSFonts.PLAIN);
@@ -25,10 +29,6 @@ public class HexIntegerLiteral_Editor extends DefaultNodeEditor {
   private static void setupBasic_ValueCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179360871462");
     editorCell.setLayoutConstraint("punctuation");
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179360865364");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -28,6 +28,11 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myInitValueListHandler_initValueList_;
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154543006078");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ComponentTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154543009938");
     editorCell.setDrawBorder(false);
@@ -54,11 +59,6 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154543071509");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1154543006078");
     editorCell.setDrawBorder(false);
   }
 
@@ -122,7 +122,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
   public EditorCell createInitValueList(EditorContext context, SNode node) {
     if(this.myInitValueListHandler_initValueList_ == null) {
-      this.myInitValueListHandler_initValueList_ = new ArrayCreatorWithInitializer_Editor._RefNodeListHandler52(node, "initValue", context);
+      this.myInitValueListHandler_initValueList_ = new ArrayCreatorWithInitializer_Editor._RefNodeListHandler27(node, "initValue", context);
     }
     EditorCell_Collection editorCell = this.myInitValueListHandler_initValueList_.createCells(context, new CellLayout_Horizontal(), false);
     ArrayCreatorWithInitializer_Editor.setupBasic_InitValueList(editorCell, node, context);
@@ -162,9 +162,9 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler52 extends RefNodeListHandler {
+  public static class _RefNodeListHandler27 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler52(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler27(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -227,8 +227,8 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ArrayCreatorWithInitializer_Editor._RefNodeListHandler52.setupBasic_ConstantCell2(editorCell, node, context);
-      ArrayCreatorWithInitializer_Editor._RefNodeListHandler52.setupLabel_ConstantCell2(editorCell, node, context);
+      ArrayCreatorWithInitializer_Editor._RefNodeListHandler27.setupBasic_ConstantCell2(editorCell, node, context);
+      ArrayCreatorWithInitializer_Editor._RefNodeListHandler27.setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

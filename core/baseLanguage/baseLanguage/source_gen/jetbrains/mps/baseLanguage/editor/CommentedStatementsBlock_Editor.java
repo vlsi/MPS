@@ -23,8 +23,21 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myStatementListHandler_statementList_;
 
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326571087");
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326606089");
+  }
+
+  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326622077");
+  }
+
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326628328");
+    editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -37,20 +50,11 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     editorCell.setCellBackgroundColor(Color.lightGray);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326628328");
-    editorCell.setSelectable(false);
-  }
-
-  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326622077");
-  }
-
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326571087");
-  }
-
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(Color.gray);
+  }
+
+  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.gray);
   }
 
@@ -60,24 +64,9 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private static void setupLabel_StatementList(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(Color.gray);
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
-  }
-
-  public EditorCell createRowCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    CommentedStatementsBlock_Editor.setupBasic_RowCell(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
-    editorCell.addEditorCell(this.createStatementList(context, node));
-    return editorCell;
   }
 
   public EditorCell createColumnCell(EditorContext context, SNode node) {
@@ -92,18 +81,21 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createRowCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    CommentedStatementsBlock_Editor.setupBasic_RowCell(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
+    editorCell.addEditorCell(this.createStatementList(context, node));
+    return editorCell;
+  }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     CommentedStatementsBlock_Editor.setupBasic_ConstantCell(editorCell, node, context);
     CommentedStatementsBlock_Editor.setupLabel_ConstantCell(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    CommentedStatementsBlock_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    CommentedStatementsBlock_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -116,9 +108,17 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    CommentedStatementsBlock_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    CommentedStatementsBlock_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createStatementList(EditorContext context, SNode node) {
     if(this.myStatementListHandler_statementList_ == null) {
-      this.myStatementListHandler_statementList_ = new CommentedStatementsBlock_Editor._RefNodeListHandler62(node, "statement", context);
+      this.myStatementListHandler_statementList_ = new CommentedStatementsBlock_Editor._RefNodeListHandler40(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myStatementListHandler_statementList_.createCells(context, new CellLayout_Vertical(), false);
     CommentedStatementsBlock_Editor.setupBasic_StatementList(editorCell, node, context);
@@ -129,9 +129,9 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _RefNodeListHandler62 extends RefNodeListHandler {
+  public static class _RefNodeListHandler40 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler62(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler40(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

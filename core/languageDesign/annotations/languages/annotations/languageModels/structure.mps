@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.annotations.structure">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1136027476087">

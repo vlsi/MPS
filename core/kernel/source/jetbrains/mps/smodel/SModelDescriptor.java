@@ -99,10 +99,8 @@ public interface SModelDescriptor {
   void putUserObject(String key, Object value);
   void removeUserObject(String key);
 
-  @Nullable
   IOperationContext getOperationContext();
 
-  @Nullable
   IModule getModule();
 
   Set<IModule> getModules();

@@ -18,6 +18,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class GenericNewExpression_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_ExpressionBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145553172764");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145553172765");
     editorCell.setSelectable(true);
@@ -27,11 +32,6 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CreatorCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145553197247");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_ExpressionBox(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145553172764");
     editorCell.setDrawBorder(false);
   }
 

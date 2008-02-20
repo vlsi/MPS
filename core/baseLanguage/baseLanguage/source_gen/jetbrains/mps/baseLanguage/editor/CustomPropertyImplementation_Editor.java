@@ -17,16 +17,16 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201399244393");
+  }
+
   private static void setupBasic_GetAccessorCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202861604000");
   }
 
   private static void setupBasic_SetAccessorCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202861925586");
-  }
-
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201399244393");
   }
 
   private static void setupLabel_GetAccessorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

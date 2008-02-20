@@ -17,6 +17,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class DotExpression_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197028132708");
+  }
+
   private static void setupBasic_OperandCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197028135780");
   }
@@ -29,10 +33,6 @@ public class DotExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_OperationCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197028151463");
     DotExpression_Actions_DeleteOperation.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197028132708");
   }
 
   private static void setupLabel_OperandCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

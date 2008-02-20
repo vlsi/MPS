@@ -18,10 +18,15 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class BlockStatement_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144224544543");
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291654779");
     editorCell.setDrawBorder(false);
-    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
+  }
+
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291719344");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -35,23 +40,15 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291719344");
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291721269");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1119291654779");
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144224544543");
     editorCell.setDrawBorder(false);
-  }
-
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -61,6 +58,9 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean _QueryFunction_NodeCondition_1145916598814(SNode node, EditorContext editorContext, IScope scope) {
@@ -80,19 +80,6 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     return this.createColumnCell(context, node);
   }
 
-  public EditorCell createRowCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    BlockStatement_Editor.setupBasic_RowCell(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    if(BlockStatement_Editor._QueryFunction_NodeCondition_1145916692407(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
-    }
-    editorCell.addEditorCell(this.createStatementsCell(context, node));
-    return editorCell;
-  }
-
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     BlockStatement_Editor.setupBasic_ColumnCell(editorCell, node, context);
@@ -109,11 +96,16 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    BlockStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    BlockStatement_Editor.setupLabel_ConstantCell(editorCell, node, context);
-    editorCell.setDefaultText("");
+  public EditorCell createRowCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    BlockStatement_Editor.setupBasic_RowCell(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    if(BlockStatement_Editor._QueryFunction_NodeCondition_1145916692407(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
+    }
+    editorCell.addEditorCell(this.createStatementsCell(context, node));
     return editorCell;
   }
 
@@ -129,6 +121,14 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     BlockStatement_Editor.setupBasic_ConstantCell2(editorCell, node, context);
     BlockStatement_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    BlockStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
+    BlockStatement_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

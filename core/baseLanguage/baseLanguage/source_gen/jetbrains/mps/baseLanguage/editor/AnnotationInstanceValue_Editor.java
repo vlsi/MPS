@@ -19,6 +19,10 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188214582614");
+  }
+
   private static void setupBasic_KeyReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188214583881");
   }
@@ -29,10 +33,6 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ValueCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188214613860");
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188214582614");
   }
 
   private static void setupLabel_KeyReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

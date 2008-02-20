@@ -573,7 +573,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public List<Language> getLanguages(@NotNull IScope scope) {
-    ArrayList<Language> languages = new ArrayList<Language>();
+    Set<Language> languages = new LinkedHashSet<Language>();
 
     for (String languageNamespace : myLanguages) {
       Language language = scope.getLanguage(languageNamespace);
@@ -586,6 +586,7 @@ public class SModel implements Iterable<SNode> {
                 "\"\nAdd this language to the LANGUAGES section of the project properties");
         }
       }
+
     }
 
     for (String dk : getDevKitNamespaces()) {
@@ -600,11 +601,13 @@ public class SModel implements Iterable<SNode> {
       }
     }
 
-//    if (languages.isEmpty()) {
-//      LOG.error("Model \"" + getUID() + "\" has no languages !!!");
-//    }
+    if (getModelDescriptor() != null && getModelDescriptor().getModule() != null) {
+      IModule module = getModelDescriptor().getModule();      
+      languages.addAll(module.getImplicitlyImportedLanguages(getModelDescriptor()));
+    }
 
-    return languages;
+    
+    return new ArrayList<Language>(languages);
   }
 
   public List<DevKit> getDevkits(@NotNull IScope scope) {

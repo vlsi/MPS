@@ -36,6 +36,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   SModelDescriptor createModel(SModelUID uid, ModelRoot root);  
   Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
+  Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
 
   IFile getDescriptorFile();
 

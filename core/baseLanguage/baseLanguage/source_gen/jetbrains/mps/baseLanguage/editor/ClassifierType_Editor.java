@@ -31,6 +31,16 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
 
+  private static void setupBasic_CellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140569118323");
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140569207250");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ClassifierReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140569208432");
     editorCell.setDrawBorder(false);
@@ -53,18 +63,8 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140569207250");
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupBasic_ClassifierReferenceCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145473161607");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_CellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140569118323");
     editorCell.setDrawBorder(false);
   }
 
@@ -137,7 +137,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   public EditorCell createParameterList(EditorContext context, SNode node) {
     if(this.myParameterListHandler_parameterList_ == null) {
-      this.myParameterListHandler_parameterList_ = new ClassifierType_Editor._RefNodeListHandler50(node, "parameter", context);
+      this.myParameterListHandler_parameterList_ = new ClassifierType_Editor._RefNodeListHandler24(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
     ClassifierType_Editor.setupBasic_ParameterList(editorCell, node, context);
@@ -150,7 +150,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   public EditorCell createClassifierReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClassifierType_Editor._Inline16());
+    provider.setAuxiliaryCellProvider(new ClassifierType_Editor._Inline11());
     EditorCell editorCell = provider.createEditorCell(context);
     ClassifierType_Editor.setupBasic_ClassifierReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -179,7 +179,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   public EditorCell createClassifierReferenceCell1internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClassifierType_Editor._Inline17());
+    provider.setAuxiliaryCellProvider(new ClassifierType_Editor._Inline15());
     EditorCell editorCell = provider.createEditorCell(context);
     ClassifierType_Editor.setupBasic_ClassifierReferenceCell1(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -206,9 +206,9 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline16 extends AbstractCellProvider {
+  public static class _Inline11 extends AbstractCellProvider {
 
-    public  _Inline16() {
+    public  _Inline11() {
       super();
     }
 
@@ -233,9 +233,9 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ClassifierType_Editor._Inline16.setupBasic_NameCell(editorCell, node, context);
+      ClassifierType_Editor._Inline11.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ClassifierType_Editor._Inline16.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ClassifierType_Editor._Inline11.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -259,9 +259,9 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline17 extends AbstractCellProvider {
+  public static class _Inline15 extends AbstractCellProvider {
 
-    public  _Inline17() {
+    public  _Inline15() {
       super();
     }
 
@@ -286,9 +286,9 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ClassifierType_Editor._Inline17.setupBasic_NameCell(editorCell, node, context);
+      ClassifierType_Editor._Inline15.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ClassifierType_Editor._Inline17.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ClassifierType_Editor._Inline15.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -312,9 +312,9 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler50 extends RefNodeListHandler {
+  public static class _RefNodeListHandler24 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler50(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler24(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

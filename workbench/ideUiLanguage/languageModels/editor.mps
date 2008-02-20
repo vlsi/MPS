@@ -12,6 +12,7 @@
   <import index="1" modelUID="jetbrains.mps.ide.uiLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203518651855">
+    <property name="package" value="IDEDIalog" />
     <link role="conceptDeclaration" targetNodeId="1.1203518545029" resolveInfo="IDEDialog" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1203518653716">
       <property name="vertical" value="true" />
@@ -55,6 +56,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203521859026">
+    <property name="package" value="IDEDIalog" />
     <link role="conceptDeclaration" targetNodeId="1.1203521811049" resolveInfo="IDEDialogButton" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1203521862231">
       <property name="vertical" value="true" />
@@ -94,6 +96,15 @@
           <link role="relationDeclaration" targetNodeId="1.1203521845072" />
         </node>
       </node>
+    </node>
+  </node>
+  <visible index="2" modelUID="jetbrains.mps.baseLanguage.editor" />
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203524317943">
+    <property name="package" value="IDEDIalog" />
+    <link role="conceptDeclaration" targetNodeId="1.1203524171865" resolveInfo="ThisDialogExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203524320586">
+      <property name="text" value="this" />
+      <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
     </node>
   </node>
 </model>

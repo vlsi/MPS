@@ -15,12 +15,12 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ClsCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182160175805");
-  }
-
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182160175804");
+  }
+
+  private static void setupBasic_ClsCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182160175805");
   }
 
   private static void setupLabel_ClsCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

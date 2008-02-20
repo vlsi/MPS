@@ -15,16 +15,16 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201372751844");
+  }
+
   private static void setupBasic_DefaultGetAccessorCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202065379758");
   }
 
   private static void setupBasic_DefaultSetAccessorCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202078100030");
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1201372751844");
   }
 
   private static void setupLabel_DefaultGetAccessorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -27,6 +27,12 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     super(node);
   }
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140573670191");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140573670192");
     editorCell.setSelectable(false);
@@ -40,12 +46,6 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140573670194");
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1140573670191");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
@@ -98,7 +98,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   public EditorCell createTypeVariableDeclarationList(EditorContext context, SNode node) {
     if(this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ == null) {
-      this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ = new _GenericDeclaration_TypeVariables_Component._RefNodeListHandler49(node, "typeVariableDeclaration", context);
+      this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ = new _GenericDeclaration_TypeVariables_Component._RefNodeListHandler25(node, "typeVariableDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_.createCells(context, new CellLayout_Horizontal(), false);
     _GenericDeclaration_TypeVariables_Component.setupBasic_TypeVariableDeclarationList(editorCell, node, context);
@@ -109,9 +109,9 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return editorCell;
   }
 
-  public static class _RefNodeListHandler49 extends RefNodeListHandler {
+  public static class _RefNodeListHandler25 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler49(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler25(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -19,6 +19,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1116615268507");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ClassifierReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1116615277650");
     editorCell.setDrawBorder(false);
@@ -26,11 +31,6 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1116615336905");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1116615268507");
     editorCell.setDrawBorder(false);
   }
 
@@ -67,7 +67,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createClassifierReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClassifierClassExpression_Editor._Inline15());
+    provider.setAuxiliaryCellProvider(new ClassifierClassExpression_Editor._Inline8());
     EditorCell editorCell = provider.createEditorCell(context);
     ClassifierClassExpression_Editor.setupBasic_ClassifierReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -94,9 +94,9 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline15 extends AbstractCellProvider {
+  public static class _Inline8 extends AbstractCellProvider {
 
-    public  _Inline15() {
+    public  _Inline8() {
       super();
     }
 
@@ -121,9 +121,9 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ClassifierClassExpression_Editor._Inline15.setupBasic_NameCell(editorCell, node, context);
+      ClassifierClassExpression_Editor._Inline8.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ClassifierClassExpression_Editor._Inline15.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ClassifierClassExpression_Editor._Inline8.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

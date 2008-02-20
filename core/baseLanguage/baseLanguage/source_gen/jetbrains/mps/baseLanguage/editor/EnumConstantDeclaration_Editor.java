@@ -29,6 +29,11 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085485112428");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085485112429");
     editorCell.setDrawBorder(false);
@@ -47,11 +52,6 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085485112432");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085485112428");
     editorCell.setDrawBorder(false);
   }
 
@@ -104,7 +104,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new EnumConstantDeclaration_Editor._RefNodeListHandler43(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new EnumConstantDeclaration_Editor._RefNodeListHandler11(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     EnumConstantDeclaration_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -144,9 +144,9 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler43 extends RefNodeListHandler {
+  public static class _RefNodeListHandler11 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler43(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler11(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -209,8 +209,8 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      EnumConstantDeclaration_Editor._RefNodeListHandler43.setupBasic_ConstantCell1(editorCell, node, context);
-      EnumConstantDeclaration_Editor._RefNodeListHandler43.setupLabel_ConstantCell1(editorCell, node, context);
+      EnumConstantDeclaration_Editor._RefNodeListHandler11.setupBasic_ConstantCell1(editorCell, node, context);
+      EnumConstantDeclaration_Editor._RefNodeListHandler11.setupLabel_ConstantCell1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

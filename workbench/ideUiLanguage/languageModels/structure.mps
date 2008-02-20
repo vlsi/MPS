@@ -15,6 +15,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203518545029">
     <property name="name" value="IDEDialog" />
     <property name="rootable" value="true" />
+    <property name="package" value="IDEDIalog" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203518609462">
       <property name="metaClass" value="aggregation" />
@@ -35,6 +36,7 @@
   <visible index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203521811049">
     <property name="name" value="IDEDialogButton" />
+    <property name="package" value="IDEDIalog" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203521845072">
       <property name="metaClass" value="aggregation" />
@@ -49,6 +51,19 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1203521840008">
       <property name="name" value="text" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203524171865">
+    <property name="package" value="IDEDIalog" />
+    <property name="name" value="ThisDialogExpression" />
+    <link role="extends" targetNodeId="4v.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203524183087">
+      <property name="value" value="this" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203524190999">
+      <property name="value" value="this dialog" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
 </model>

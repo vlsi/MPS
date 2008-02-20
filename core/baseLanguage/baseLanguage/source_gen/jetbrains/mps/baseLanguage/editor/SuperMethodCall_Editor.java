@@ -34,13 +34,13 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1091709481299");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1091709481298");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1101210485458");
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1091709481299");
     editorCell.setDrawBorder(false);
   }
 
@@ -54,11 +54,6 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ActualArgumentList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138337224101");
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1091709481305");
     editorCell.setDrawBorder(false);
@@ -67,16 +62,18 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1091709481298");
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1101210485458");
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_ActualArgumentList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138337224101");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-  }
-
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_InstanceMethodDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -85,10 +82,13 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ActualArgumentList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ActualArgumentList(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean _QueryFunction_NodeCondition_1198529264929(SNode node, EditorContext editorContext, IScope scope) {
@@ -126,14 +126,6 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    SuperMethodCall_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    SuperMethodCall_Editor.setupLabel_ConstantCell1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     SuperMethodCall_Editor.setupBasic_ConstantCell2(editorCell, node, context);
@@ -150,9 +142,17 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    SuperMethodCall_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    SuperMethodCall_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new SuperMethodCall_Editor._RefNodeListHandler34(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new SuperMethodCall_Editor._RefNodeListHandler22(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     SuperMethodCall_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -165,7 +165,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createInstanceMethodDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new SuperMethodCall_Editor._Inline8());
+    provider.setAuxiliaryCellProvider(new SuperMethodCall_Editor._Inline6());
     EditorCell editorCell = provider.createEditorCell(context);
     SuperMethodCall_Editor.setupBasic_InstanceMethodDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -192,9 +192,9 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline8 extends AbstractCellProvider {
+  public static class _Inline6 extends AbstractCellProvider {
 
-    public  _Inline8() {
+    public  _Inline6() {
       super();
     }
 
@@ -219,9 +219,9 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      SuperMethodCall_Editor._Inline8.setupBasic_NameCell(editorCell, node, context);
+      SuperMethodCall_Editor._Inline6.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SuperMethodCall_Editor._Inline8.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        SuperMethodCall_Editor._Inline6.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -245,9 +245,9 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler34 extends RefNodeListHandler {
+  public static class _RefNodeListHandler22 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler34(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler22(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -310,8 +310,8 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      SuperMethodCall_Editor._RefNodeListHandler34.setupBasic_ConstantCell3(editorCell, node, context);
-      SuperMethodCall_Editor._RefNodeListHandler34.setupLabel_ConstantCell3(editorCell, node, context);
+      SuperMethodCall_Editor._RefNodeListHandler22.setupBasic_ConstantCell3(editorCell, node, context);
+      SuperMethodCall_Editor._RefNodeListHandler22.setupLabel_ConstantCell3(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
