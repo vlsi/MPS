@@ -837,9 +837,11 @@ public class SModel implements Iterable<SNode> {
       }
     }
 
-    IModule module = getModelDescriptor().getModule();
-    if (module != null) {
-      list.addAll(module.getImplicitlyImportedModelsFor(getModelDescriptor()));
+    if (getModelDescriptor() != null) {
+      IModule module = getModelDescriptor().getModule();
+      if (module != null) {
+        list.addAll(module.getImplicitlyImportedModelsFor(getModelDescriptor()));
+      }
     }
 
     return list;
