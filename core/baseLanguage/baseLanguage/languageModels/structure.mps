@@ -2430,7 +2430,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1199653749349">
-    <property name="name" value="IStatementListContainer" />
+    <property name="name" value="ConcepIStatementListContainer" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200397529627">
     <property name="name" value="CharConstant" />

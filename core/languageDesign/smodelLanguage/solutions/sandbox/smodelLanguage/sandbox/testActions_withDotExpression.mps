@@ -154,7 +154,9 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203550812071">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1203550812072" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203551860370">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1203550812072" />
+          </node>
         </node>
       </node>
     </node>

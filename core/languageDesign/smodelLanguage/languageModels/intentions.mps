@@ -495,5 +495,40 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1203552540436">
+    <property name="name" value="Replace_IsAssignableFrom" />
+    <property name="isErrorIntention" value="true" />
+    <link role="forConcept" targetNodeId="1.1172421306145" resolveInfo="Concept_IsAssignableFromOperation" />
+    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1203552540437">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203552540438">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203552614552">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203552614553">
+            <property name="value" value="replace with 'isSuberConceptOf'" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1203552540439">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203552540440">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203552655163">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1203552655164">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1203552540441">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203552540442">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203553855633">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203553859604">
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1203553859605">
+              <link role="concept" targetNodeId="1.1180028149140" resolveInfo="Concept_IsSuperConceptOfOperation" />
+            </node>
+            <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1203553859606" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
