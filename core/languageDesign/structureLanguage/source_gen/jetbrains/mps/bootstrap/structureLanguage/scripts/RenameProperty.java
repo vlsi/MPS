@@ -107,7 +107,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
       SModel model = actionContext.getNode().getModel();
       Language language = Language.getLanguageFor(model.getModelDescriptor());
       if(language != null) {
-        List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(language.getAspectModelDescriptors())), new zSelector6(null, null)));
+        List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(language.getAspectModelDescriptors())), new zSelector5(null, null)));
         result.put(language, aspectList);
       }
       return result;

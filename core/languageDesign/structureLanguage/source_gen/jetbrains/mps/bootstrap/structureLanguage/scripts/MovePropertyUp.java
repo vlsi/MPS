@@ -12,7 +12,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
@@ -92,7 +93,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
       if(concept == null) {
         return false;
       }
-      return ((SNode)refactoringContext.getParameter("targetConcept")) != concept && AbstractConceptDeclaration_Behavior.call_isAssignableFrom_1198080700262(((SNode)refactoringContext.getParameter("targetConcept")), concept);
+      return ((SNode)refactoringContext.getParameter("targetConcept")) != concept && SConceptOperations.isSuperConceptOf(((SNode)refactoringContext.getParameter("targetConcept")), NameUtil.nodeFQName(concept));
     }
   }
 
