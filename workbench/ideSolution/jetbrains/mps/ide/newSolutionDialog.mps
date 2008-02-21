@@ -7,10 +7,11 @@
   </language>
   <language namespace="jetbrains.mps.uiLanguage" />
   <language namespace="jetbrains.mps.ide.uiLanguage" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="java.io@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.common" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.uiLanguage.components" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1203592850595">
     <property name="name" value="NewSolutionDialog" />
@@ -94,26 +95,29 @@
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="1203593910897">
     <link role="component" targetNodeId="1203592850595" resolveInfo="NewSolutionDialog" />
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203593912273">
-      <property name="name" value="testMethod" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203593913480" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203593912275">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203606726359">
-          <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression" id="1203606726360" />
+    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203608542333">
+      <property name="name" value="createNewSolution" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1203608557260">
+        <property name="name" value="solutionName" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203608558543">
+          <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
         </node>
       </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1203608561247">
+        <property name="name" value="solutionDescriptorFile" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203608563562">
+          <link role="classifier" targetNodeId="2.~File" resolveInfo="File" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203608548586">
+        <link role="classifier" targetNodeId="4.~Solution" resolveInfo="Solution" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203608542335" />
     </node>
     <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203599983021">
       <property name="name" value="onOk" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203599984696" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203599983023">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203607667551">
-          <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1203607667552">
-            <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203607668991">
-              <property name="value" value="2+2!" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203606974763">
           <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression" id="1203606974764" />
         </node>
@@ -123,38 +127,13 @@
       <property name="name" value="onCancel" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203599987700" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203599986637">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203600041394">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203600045399">
-            <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203600041395">
-              <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
-              <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203600049088">
-              <property name="value" value="OnCancel" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203606976985">
           <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression" id="1203606976986" />
         </node>
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.uiLanguage.structure.ComponentConstructor" id="1203593931549">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203593931550">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203593944786">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203593954695">
-            <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203593944787">
-              <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
-              <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203593955493">
-              <property name="value" value="Hello" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203593931550" />
     </node>
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1203602979314">
       <property name="name" value="solutionName" />
@@ -166,6 +145,16 @@
       <property name="name" value="solutionPath" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203602986897">
         <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+      </node>
+    </node>
+    <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1203608417492">
+      <property name="name" value="compileInMPS" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1203608423968" />
+    </node>
+    <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1203608445166">
+      <property name="name" value="project" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203608452906">
+        <link role="classifier" targetNodeId="4.~MPSProject" resolveInfo="MPSProject" />
       </node>
     </node>
   </node>
