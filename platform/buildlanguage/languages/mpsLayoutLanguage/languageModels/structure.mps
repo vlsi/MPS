@@ -38,12 +38,15 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1202918276966">
-      <property name="value" value="MPS" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
-    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203013693138">
       <link role="intfc" targetNodeId="1203013653398" resolveInfo="ILayoutComponent" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203614726444">
+      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203614596836">
+      <property name="value" value="layout" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202916998084">
@@ -129,11 +132,11 @@
       <property name="value" value="jar" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203598440112">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="entry" />
-      <link role="target" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1203619962416">
+      <link role="conceptPropertyDeclaration" targetNodeId="1203619938976" resolveInfo="cleanAfterTheJob" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203617962317">
+      <link role="intfc" targetNodeId="1203617883391" resolveInfo="ICompositComponent" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203598512427">
@@ -143,16 +146,13 @@
       <property name="value" value="folder" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203598681688">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="entry" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203602106051">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="source" />
       <link role="target" targetNodeId="1203601915645" resolveInfo="Source" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203617926238">
+      <link role="intfc" targetNodeId="1203617883391" resolveInfo="ICompositComponent" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203599702327">
@@ -189,6 +189,18 @@
       <property name="role" value="right" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1203601915645" resolveInfo="Source" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1203617883391">
+    <property name="name" value="ICompositComponent" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration" id="1203619938976">
+      <property name="name" value="cleanAfterTheJob" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203617897549">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="entri" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
     </node>
   </node>
 </model>
