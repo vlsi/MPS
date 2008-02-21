@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
-import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
@@ -604,22 +603,6 @@ public class QueriesGenerated {
           });
         }
       }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SNodeOperation_1138669164825(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return SNodeOperations.getParent(_context.getSourceNode(), null, false, false);
-        }
-
-      };
-      SNode node = (SNode)calc.calculate();
-      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _context.getTransformationTag(), operationContext));
     }
     return result;
   }

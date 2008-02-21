@@ -439,23 +439,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1138079717967">
     <property name="name" value="snodeOperation" />
     <property name="package" value="rightTransform" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1138669164825">
-      <property name="description" value="delegate to parent (SNodeOperationExpression)" />
-      <property name="useNewActions" value="true" />
-      <link role="applicableConcept" targetNodeId="1.1138411891628" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart" id="1180112896209">
-        <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_NodeQuery" id="1180112896210">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180112896211">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180112905791">
-              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1180115509900">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1180115515854" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1180112905792" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1144103719164">
       <property name="description" value="add operation param: expr.op -&gt; expr.op&lt; .. &gt;" />
       <property name="useNewActions" value="true" />
