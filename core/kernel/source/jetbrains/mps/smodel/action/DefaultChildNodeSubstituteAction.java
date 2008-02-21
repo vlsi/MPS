@@ -51,7 +51,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     if (parameterNodeAdapter instanceof ConceptDeclaration) {
       conceptDeclaration = (ConceptDeclaration) parameterNodeAdapter;
     } else {
-      throw new RuntimeException("Couldn't create child node. Parameter object: " + (getOutputConcept()).getDebugText());
+      throw new RuntimeException("Couldn't create child node. Parameter object: " + getParameterObject());
     }
     return NodeFactoryManager.createNode(conceptDeclaration, myCurrentChild, getSourceNode(), model, getScope());
   }
