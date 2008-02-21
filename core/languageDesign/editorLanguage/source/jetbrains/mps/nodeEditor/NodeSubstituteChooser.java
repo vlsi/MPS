@@ -454,8 +454,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         setSize(deviceBounds.width, getSize().height + myList.getFontMetrics(myList.getFont()).getHeight());
       }
 
-      if (newLocation.x < 0) {
-        newLocation.x = 0;
+      if (newLocation.x < deviceBounds.x) {
+        newLocation.x = deviceBounds.x;
       }
 
       if (getWidth() + newLocation.x > deviceBounds.width + deviceBounds.x) {
