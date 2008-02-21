@@ -143,9 +143,6 @@ public class ModelWriter1 implements IModelWriter {
     }
     Element element = new Element(theElementName);
     DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, node.getRole_());
-//    // todo: save node's concept fQName
-//    String oldStructureClassName = NameUtil.removeStructureFromFqName(node.getConceptFqName());
-//    element.setAttribute(ModelPersistence.TYPE, oldStructureClassName);
     element.setAttribute(ModelPersistence.TYPE, node.getConceptFqName());
     element.setAttribute(ModelPersistence.ID, node.getId());
 
