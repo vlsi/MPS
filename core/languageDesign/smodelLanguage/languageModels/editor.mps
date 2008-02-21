@@ -16,7 +16,7 @@
   <import index="5" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
   <import index="7" modelUID="java.lang@java_stub" version="-1" />
   <import index="8" modelUID="java.io@java_stub" version="-1" />
-  <import index="9" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <import index="9" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="10" modelUID="jetbrains.mps.bootstrap.sharedConcepts.editor" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1138063451695">
     <link role="conceptDeclaration" targetNodeId="1.1138056022639" />
@@ -1511,6 +1511,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1171315915309">
         <property name="noTargetText" value="&lt;all&gt;" />
         <property name="drawBorder" value="false" />
+        <property name="attractsFocus" value="1" />
         <link role="relationDeclaration" targetNodeId="1.1171315804605" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1171315915310">
           <link role="conceptDeclaration" targetNodeId="3.1169125787135" />

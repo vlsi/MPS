@@ -13,8 +13,8 @@ import java.util.List;
 
 public class ComponentInstance extends BaseConcept implements IComponentPart, IComponentInstance, INamedConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentInstance";
-  public static String COMPONENT_DECLARATION = "componentDeclaration";
   public static String CONTENT = "content";
+  public static String COMPONENT_DECLARATION = "componentDeclaration";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
@@ -32,14 +32,6 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
     return ComponentInstance.newInstance(sm, false);
   }
 
-
-  public ComponentDeclaration getComponentDeclaration() {
-    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
-  }
-
-  public void setComponentDeclaration(ComponentDeclaration node) {
-    super.setReferent(ComponentInstance.COMPONENT_DECLARATION, node);
-  }
 
   public int getContentsCount() {
     return this.getChildCount(ComponentInstance.CONTENT);
@@ -59,6 +51,14 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, ComponentInstance.CONTENT, node);
+  }
+
+  public ComponentDeclaration getComponentDeclaration() {
+    return (ComponentDeclaration)this.getReferent(ComponentInstance.COMPONENT_DECLARATION);
+  }
+
+  public void setComponentDeclaration(ComponentDeclaration node) {
+    super.setReferent(ComponentInstance.COMPONENT_DECLARATION, node);
   }
 
   public String getShortDescription() {

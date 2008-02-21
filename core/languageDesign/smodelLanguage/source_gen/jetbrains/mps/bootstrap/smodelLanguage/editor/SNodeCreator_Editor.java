@@ -42,7 +42,6 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1181943477555");
-    editorCell.setSelectable(true);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
