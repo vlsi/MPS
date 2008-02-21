@@ -23,6 +23,7 @@ public class EquationManager {
 
   private static Logger LOG = Logger.getLogger(EquationManager.class);
 
+  private static final boolean PREPARE_TYPES = false;
   private TypeChecker myTypeChecker;
 
   private Map<IWrapper, Map<IWrapper, ErrorInfo>> mySubtypesToSupertypesMap = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
@@ -107,13 +108,21 @@ public class EquationManager {
     return myRegisteredVariables.get(node);
   }
 
-  private SNode prepareType(SNode node) {
+  private SNode prepareType(SNode node)  {
+    SNode nodeToPrepare = node;
+    if (node.getParent() != null) {
+      nodeToPrepare = CopyUtil.copy(node);
+    }
+    return prepareType_internal(nodeToPrepare);
+  }
+
+  private SNode prepareType_internal(SNode node) {
     SNode variable = myTypeChecker.getRulesManager().provideVariable(node);
     if (variable != null) {
       return variable;
     } else {
       for (SNode child : new ArrayList<SNode>(node.getChildren())) {
-        SNode newChild = prepareType(child);
+        SNode newChild = prepareType_internal(child);
         if (newChild != child) {
           node.replaceChild(child, newChild);
         }
@@ -163,6 +172,15 @@ public class EquationManager {
   public void addInequation(IWrapper subType, IWrapper supertype, ErrorInfo errorInfo, boolean isWeak, boolean solveOnlyConcrete) {
     IWrapper subtypeRepresentator = getRepresentatorWrapper(subType);
     IWrapper supertypeRepresentator = getRepresentatorWrapper(supertype);
+
+    if (PREPARE_TYPES) {
+      if (subType == subtypeRepresentator && subType != null && subType.isConcrete()) {
+        subtypeRepresentator.setNode(prepareType(subtypeRepresentator.getNode()));
+      }
+      if (supertype == supertypeRepresentator && supertype != null && supertype.isConcrete()) {
+        supertypeRepresentator.setNode(prepareType(supertypeRepresentator.getNode()));
+      }
+    }
 
     // no equation needed
     if (NodeWrapper.fromWrapper(subtypeRepresentator) == NodeWrapper.fromWrapper(supertypeRepresentator)) return;
@@ -381,6 +399,14 @@ public class EquationManager {
   public void addEquation(IWrapper lhs, IWrapper rhs, ErrorInfo errorInfo) {
     IWrapper lhsRepresentator = getRepresentatorWrapper(lhs);
     IWrapper rhsRepresentator = getRepresentatorWrapper(rhs);
+    if (PREPARE_TYPES) {
+      if (lhs == lhsRepresentator && lhs != null && lhs.isConcrete()) {
+        lhsRepresentator.setNode(prepareType(lhsRepresentator.getNode()));
+      }
+      if (rhs == rhsRepresentator && rhs != null && rhs.isConcrete()) {
+        rhsRepresentator.setNode(prepareType(rhsRepresentator.getNode()));
+      }
+    }
 
     // no equation needed
     if (EqualUtil.equals(rhsRepresentator, lhsRepresentator)) return;
@@ -692,7 +718,7 @@ public class EquationManager {
     Set<IWrapper> types = subtypingGraphVertices();
     boolean hasConcreteTypes = true;
 
-    while (hasConcreteTypes) {    
+    while (hasConcreteTypes) {
       hasConcreteTypes = false;
       for (IWrapper type : types) {
         if (type == null) continue;

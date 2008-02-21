@@ -43,6 +43,10 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     myNode = node;
   }
 
+  public void setNode(SNode node) {
+    myNode = node;
+  }
+
   public SNode getNode() {
     return myNode;
   }

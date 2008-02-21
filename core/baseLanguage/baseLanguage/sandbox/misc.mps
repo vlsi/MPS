@@ -223,5 +223,38 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193757114044" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1203611141026">
+    <property name="name" value="C" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1203611169278">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203611169279" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203611169280" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203611169281">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203611185319">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203611185320">
+            <property name="name" value="set" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203611185321">
+              <link role="classifier" targetNodeId="3.~Set" resolveInfo="Set" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203611193824">
+                <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203611199388">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203611203361">
+            <link role="baseMethodDeclaration" targetNodeId="3.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203611199389">
+              <link role="variableDeclaration" targetNodeId="1203611185320" resolveInfo="set" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203611218362">
+              <property name="value" value="" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203611141027" />
+  </node>
 </model>
 

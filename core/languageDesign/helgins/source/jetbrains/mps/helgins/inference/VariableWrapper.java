@@ -27,6 +27,10 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
     return true;
   }
 
+  public void setNode(SNode node) {
+    throw new UnsupportedOperationException();
+  }
+
   public boolean isShallowConcrete() {
     return myIsShallowConcrete;
   }
