@@ -120,7 +120,7 @@ import org.jdom.Element;
     }
 
     if (this.getExtResolveInfo() == null) {
-      return SReference.create(this.getRole(),
+      return new StaticReference(this.getRole(),
               this.getSourceNode(),
               importedModelUID,
               SNodeId.fromString(this.getTargetId()),
@@ -131,7 +131,7 @@ import org.jdom.Element;
     String resolveInfo = ExternalResolver.getHumanFriendlyString(extResolveInfo);
     SNodeId targetId = ERI2IDConverter.convert(this.getSourceNode(), this.getRole(), extResolveInfo);
     if (targetId != null) {
-      return SReference.create(this.getRole(),
+      return new StaticReference(this.getRole(),
               this.getSourceNode(),
               importedModelUID,
               targetId,
@@ -142,7 +142,7 @@ import org.jdom.Element;
     if (resolveInfo == null) {
       resolveInfo = this.getResolveInfo();
     }
-    return SReference.create(this.getRole(),
+    return new StaticReference(this.getRole(),
             this.getSourceNode(),
             importedModelUID,
             null,

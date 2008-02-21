@@ -160,7 +160,7 @@ public class CopyPasteUtil {
         if (oldTargetNode != null) {
           newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else if (sourceReference.getResolveInfo() != null) {
-          newReference = SReference.create(sourceReference.getRole(), newSourceNode, null, null, sourceReference.getResolveInfo());
+          newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, sourceReference.getResolveInfo());
         } else {
           continue;
         }
@@ -188,7 +188,7 @@ public class CopyPasteUtil {
         } else {
           String resolveInfo = oldTargetNode == null ? sourceReference.getResolveInfo() : oldTargetNode.getName(); // todo: getRefName()
           if (resolveInfo != null) {
-            newReference = SReference.create(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
+            newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
             referencesRequireResolve.add(newReference);
           } else if (oldTargetNode != null) {
             newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);

@@ -68,11 +68,7 @@ public abstract class SReference {
   }
 
   public static SReference create(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId targetNodeId) {
-    return create(role, sourceNode, targetModelUID, targetNodeId, null);
-  }
-
-  public static SReference create(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId targetNodeId, String resolveInfo) {
-    return new StaticReference(role, sourceNode, targetModelUID, targetNodeId, resolveInfo);
+    return new StaticReference(role, sourceNode, targetModelUID, targetNodeId, null);
   }
 
 
