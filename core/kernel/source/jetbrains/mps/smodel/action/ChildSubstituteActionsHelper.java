@@ -161,13 +161,15 @@ public class ChildSubstituteActionsHelper {
 
     // apply all filters
     for (NodeSubstituteActionsBuilder builder : allBuilders) {
-      AbstractConceptDeclaration applicableConcept = builder.getApplicableConcept();
-      // try to apply only if childConcept (link target) is sub-concept of builder's applicableConcept
-      // otherwise builder's filter can't handle context of node insertion correctly
-      // case: 'Quotation' can have any node as child, but some filters can treat the 'quotation' as incorrect parent.
-      if (SModelUtil_new.isAssignableConcept(childConcept, applicableConcept)) {
-        resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept.getNode(), context);
-      }
+      // it seems ok to apply all filters.
+      // the 'applicable concept' is checked in generated code
+////      AbstractConceptDeclaration applicableConcept = builder.getApplicableConcept();
+////      // try to apply only if childConcept (link target) is sub-concept of builder's applicableConcept
+////      // otherwise builder's filter can't handle context of node insertion correctly
+////      // case: 'Quotation' can have any node as child, but some filters can treat the 'quotation' as incorrect parent.
+////      if (SModelUtil_new.isAssignableConcept(childConcept, applicableConcept)) {
+////      }
+      resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept.getNode(), context);
     }
 
     if (childSetter instanceof DefaultChildNodeSetter) {

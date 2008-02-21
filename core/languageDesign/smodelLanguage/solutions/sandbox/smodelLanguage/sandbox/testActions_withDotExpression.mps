@@ -158,6 +158,13 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1203550812072" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203557147438">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203557150956">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203557147439">
+              <link role="variableDeclaration" targetNodeId="1203540025197" resolveInfo="cf" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203539917365" />

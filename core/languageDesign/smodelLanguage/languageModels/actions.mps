@@ -37,25 +37,6 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveByConditionPart" id="1180467401112">
         <node role="condition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RemoveBy_Condition" id="1180467401113">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180467401114">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1180539393909">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180539393910">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1180539437033">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1180539438909">
-                    <property name="value" value="false" />
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1180539414669">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1180539414670">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSubConceptOfOperation" id="1180539414671">
-                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1180539414672">
-                      <link role="conceptDeclaration" targetNodeId="1.1138411891628" />
-                    </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_concept" id="1180539414673" />
-                </node>
-              </node>
-            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1180539443584">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1180539443585">
                 <property name="name" value="parameterOp" />

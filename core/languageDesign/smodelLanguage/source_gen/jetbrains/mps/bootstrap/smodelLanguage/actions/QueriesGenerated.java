@@ -735,9 +735,6 @@ public class QueriesGenerated {
       Condition cond = new Condition() {
 
         public boolean met(Object object) {
-          if(!(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation"))) {
-            return false;
-          }
           SNode parameterOp = (SNode)concept;
           SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
           if(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
@@ -786,7 +783,7 @@ public class QueriesGenerated {
         }
 
       };
-      if(SConceptOperations.isAssignableFrom(applicableConcept, concept) && cond.met(concept)) {
+      if(SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
         actions.remove();
       }
     }
