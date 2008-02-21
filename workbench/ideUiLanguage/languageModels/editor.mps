@@ -114,5 +114,19 @@
       <link role="styleClass" targetNodeId="3v.1186415544875" resolveInfo="KeyWord" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203607543068">
+    <property name="package" value="IDEDialog" />
+    <link role="conceptDeclaration" targetNodeId="1.1203607523033" resolveInfo="ReportErrorExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1203607545085">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203607547931">
+        <property name="text" value="reportError" />
+        <link role="styleClass" targetNodeId="3v.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1203607551918">
+        <link role="relationDeclaration" targetNodeId="1.1203607530566" />
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -107,15 +107,10 @@
       <property name="name" value="onOk" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203599984696" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203599983023">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203600031495">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203600036235">
-            <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203600031496">
-              <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
-              <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203600036892">
-              <property name="value" value="OnOkay" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203607667551">
+          <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" id="1203607667552">
+            <node role="errorText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203607668991">
+              <property name="value" value="2+2!" />
             </node>
           </node>
         </node>

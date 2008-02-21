@@ -137,7 +137,7 @@ public class NewSolutionDialogContentPane extends JPanel {
   }
 
   public void onOk() {
-    System.out.println("OnOkay");
+    myThis.getDialog().setErrorText("2+2!");
     myThis.getDialog().dispose();
   }
 

@@ -88,6 +88,11 @@ public class QueriesGenerated {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(contextComponent, "dialogAttribute");
   }
 
+  public static Object referenceMacro_GetReferent_1203607703422(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode contextComponent = DialogUtil.getContextComponent(_context.getNode());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(contextComponent, "dialogAttribute");
+  }
+
   public static boolean ifMacro_Condition_1203596134290(final IOperationContext operationContext, final IfMacroContext _context) {
     return ComponentDeclaration_Behavior.call_getConstructor_1203080456035(_context.getNode()) != null;
   }
@@ -114,6 +119,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1203600954272(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1203607719721(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "errorText", true);
   }
 
   public static List sourceNodesQuery_1203593881811(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

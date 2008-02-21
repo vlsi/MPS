@@ -67,5 +67,20 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203607523033">
+    <property name="package" value="IDEDialog" />
+    <property name="name" value="ReportErrorExpression" />
+    <link role="extends" targetNodeId="4v.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203607530566">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="errorText" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="4v.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203607538286">
+      <property name="value" value="reportError" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

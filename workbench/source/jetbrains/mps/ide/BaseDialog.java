@@ -149,7 +149,7 @@ public abstract class BaseDialog extends JDialog {
     return BorderLayout.EAST;
   }
 
-  protected void setErrorText(String errorText) {
+  public void setErrorText(String errorText) {
     if (errorText != null) {
       StringTokenizer tokenizer = new StringTokenizer(errorText, "\n");
       errorText = "";
