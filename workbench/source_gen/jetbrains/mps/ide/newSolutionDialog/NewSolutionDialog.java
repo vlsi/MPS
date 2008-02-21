@@ -31,18 +31,22 @@ public class NewSolutionDialog extends BaseDialog {
   }
 
   public String getSolutionName() {
+    this.getMainComponent();
     return this.myContentPane.getSolutionName();
   }
 
   public String getSolutionPath() {
+    this.getMainComponent();
     return this.myContentPane.getSolutionPath();
   }
 
   public void setSolutionName(String newValue) {
+    this.getMainComponent();
     this.myContentPane.setSolutionName(newValue);
   }
 
   public void setSolutionPath(String newValue) {
+    this.getMainComponent();
     this.myContentPane.setSolutionPath(newValue);
   }
 
