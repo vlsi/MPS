@@ -27,7 +27,7 @@ public class RulesFunctions_BaseLanguage {
   public static void comparisonOp(SNode binOp) {
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176897133366", true), SLinkOperations.getTarget(new QuotationClass_26().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176897142200");
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176897185028", true), SLinkOperations.getTarget(new QuotationClass_27().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176897185023");
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_28().createNode(), binOp, "jetbrains.mps.baseLanguage.helgins", "1176897196207");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(binOp, "jetbrains.mps.baseLanguage.helgins", "1203512292516", true), new QuotationClass_28().createNode(), binOp, null, "jetbrains.mps.baseLanguage.helgins", "1203512292514");
   }
 
   @InferenceMethod()
@@ -44,7 +44,7 @@ public class RulesFunctions_BaseLanguage {
         TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), new Runnable() {
 
           public void run() {
-            TypeChecker.getInstance().getRuntimeSupport().givetype(Queries.getBinaryOperationType(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265)), binOp, "jetbrains.mps.baseLanguage.helgins", "1185963109700");
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(binOp, "jetbrains.mps.baseLanguage.helgins", "1203512296348", true), Queries.getBinaryOperationType(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265)), binOp, null, "jetbrains.mps.baseLanguage.helgins", "1203512296346");
           }
 
         }, "jetbrains.mps.baseLanguage.helgins", "1185963100352");
@@ -64,7 +64,7 @@ public class RulesFunctions_BaseLanguage {
       return returnType;
     }
     {
-      Pattern_1 pattern_1181217694220 = new Pattern_1(genericClassifier);
+      Pattern_8 pattern_1181217694220 = new Pattern_8(genericClassifier);
       SNode coercedNode_1181217694219 = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_1181217694220);
       if(coercedNode_1181217694219 != null) {
         List<SNode> actualParams = pattern_1181217694220.PatternVar;
@@ -94,10 +94,11 @@ public class RulesFunctions_BaseLanguage {
     return returnType;
   }
 
+  @InferenceMethod()
   public static void inference_matchConcreteTypesWithTypeVariables(SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
     if((genericClassifier != null) && mmap != null) {
       {
-        Pattern_2 pattern_1203433053192 = new Pattern_2(genericClassifier);
+        Pattern_9 pattern_1203433053192 = new Pattern_9(genericClassifier);
         SNode coercedNode_1203433035924 = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_1203433053192);
         if(coercedNode_1203433035924 != null) {
           List<SNode> actualParams = pattern_1203433053192.PatternVar3;
@@ -117,6 +118,7 @@ public class RulesFunctions_BaseLanguage {
     }
   }
 
+  @InferenceMethod()
   public static Map<SNode, List<SNode>> inference_equateParametersAndReturnType(SNode bmc) {
     Map<SNode, List<SNode>> mmap = null;
     {
@@ -150,6 +152,7 @@ public class RulesFunctions_BaseLanguage {
     return mmap;
   }
 
+  @InferenceMethod()
   public static void inference_equateMatchingTypeVariables(Map<SNode, List<SNode>> mmap) {
     if(mmap != null) {
       for(Map.Entry<SNode, List<SNode>> e : mmap.entrySet()) {
@@ -165,6 +168,7 @@ public class RulesFunctions_BaseLanguage {
     }
   }
 
+  @InferenceMethod()
   private static Pair<SNode, Map<SNode, List<SNode>>> inference_matchTypeWithTypeVariables(SNode type, Map<SNode, List<SNode>> mmap) {
     SNode resType = SNodeOperations.copyNode(type);
     if(SNodeOperations.isInstanceOf(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
@@ -179,6 +183,7 @@ public class RulesFunctions_BaseLanguage {
     return new Pair<SNode, Map<SNode, List<SNode>>>(resType, mmap);
   }
 
+  @InferenceMethod()
   private static Map<SNode, List<SNode>> inference_mapTypeVariables(SNode type, Map<SNode, List<SNode>> mmap) {
     if(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203431658168 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);

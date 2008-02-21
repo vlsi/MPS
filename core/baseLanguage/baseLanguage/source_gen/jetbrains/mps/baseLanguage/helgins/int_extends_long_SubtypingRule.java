@@ -13,7 +13,7 @@ public class int_extends_long_SubtypingRule extends SubtypingRule_Runtime implem
   }
 
   public SNode getSubOrSuperType(SNode intType) {
-    return new QuotationClass_57().createNode();
+    return new QuotationClass_52().createNode();
   }
 
   public String getApplicableConceptFQName() {
