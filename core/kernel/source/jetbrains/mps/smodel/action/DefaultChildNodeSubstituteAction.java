@@ -12,6 +12,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   private SNode myCurrentChild;
   private IScope myScope;
   private IChildNodeSetter mySetter;
+  Throwable myCreationPoint = new Throwable();
 
   /**
    * @deprecated  - ambiguity
@@ -47,7 +48,14 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
 
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
     ConceptDeclaration conceptDeclaration = null;
-    INodeAdapter parameterNodeAdapter = BaseAdapter.fromNode((SNode) getOutputConcept());
+
+    INodeAdapter parameterNodeAdapter = null;
+    if (getParameterObject() instanceof SNode) {
+      parameterNodeAdapter = BaseAdapter.fromNode((SNode) getParameterObject());
+    } else if (getParameterObject() instanceof ConceptDeclaration) {
+      parameterNodeAdapter = (INodeAdapter) getParameterObject();
+    }
+
     if (parameterNodeAdapter instanceof ConceptDeclaration) {
       conceptDeclaration = (ConceptDeclaration) parameterNodeAdapter;
     } else {
