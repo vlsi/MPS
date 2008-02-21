@@ -768,7 +768,7 @@ public class QueriesGenerated {
         }
 
       };
-      if(SConceptOperations.isAssignableFrom(applicableConcept, concept) && cond.met(null)) {
+      if(SConceptOperations.isAssignableFrom(applicableConcept, concept) && cond.met(concept)) {
         actions.remove();
       }
     }
