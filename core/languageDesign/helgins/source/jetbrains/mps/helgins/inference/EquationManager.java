@@ -105,7 +105,11 @@ public class EquationManager {
   }
 
   public SNode getRegisteredVariable(SNode node) {
-    return myRegisteredVariables.get(node);
+    SNode var = myRegisteredVariables.get(node);
+    if (var == null) {
+      var = registerVariable(node);
+    }
+    return var;
   }
 
   private SNode prepareType(SNode node)  {
@@ -175,10 +179,10 @@ public class EquationManager {
 
     if (PREPARE_TYPES) {
       if (subType == subtypeRepresentator && subType != null && subType.isConcrete()) {
-        subtypeRepresentator.setNode(prepareType(subtypeRepresentator.getNode()));
+        subtypeRepresentator = NodeWrapper.createNodeWrapper(prepareType(subtypeRepresentator.getNode()));
       }
       if (supertype == supertypeRepresentator && supertype != null && supertype.isConcrete()) {
-        supertypeRepresentator.setNode(prepareType(supertypeRepresentator.getNode()));
+        supertypeRepresentator = NodeWrapper.createNodeWrapper(prepareType(supertypeRepresentator.getNode()));
       }
     }
 
@@ -401,10 +405,10 @@ public class EquationManager {
     IWrapper rhsRepresentator = getRepresentatorWrapper(rhs);
     if (PREPARE_TYPES) {
       if (lhs == lhsRepresentator && lhs != null && lhs.isConcrete()) {
-        lhsRepresentator.setNode(prepareType(lhsRepresentator.getNode()));
+        lhsRepresentator = NodeWrapper.createNodeWrapper(prepareType(lhsRepresentator.getNode()));
       }
       if (rhs == rhsRepresentator && rhs != null && rhs.isConcrete()) {
-        rhsRepresentator.setNode(prepareType(rhsRepresentator.getNode()));
+        rhsRepresentator = NodeWrapper.createNodeWrapper(prepareType(rhsRepresentator.getNode()));
       }
     }
 

@@ -28,6 +28,4 @@ public interface IWrapper extends IMatcher {
   public boolean isShallowConcrete();
 
   public IWrapper getShallowConcreteRepresentator();
-
-  public void setNode(SNode node);
 }
