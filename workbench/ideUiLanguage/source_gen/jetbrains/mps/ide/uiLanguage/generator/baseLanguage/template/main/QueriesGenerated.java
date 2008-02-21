@@ -10,9 +10,11 @@ import jetbrains.mps.uiLanguage.constraints.ThisComponentExpression_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.uiLanguage.constraints.DialogUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.uiLanguage.constraints.ComponentDeclaration_Behavior;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -79,6 +81,11 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1203604432239(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "root", true), "stretch");
+  }
+
+  public static Object referenceMacro_GetReferent_1203607249398(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode contextComponent = DialogUtil.getContextComponent(_context.getNode());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(contextComponent, "dialogAttribute");
   }
 
   public static boolean ifMacro_Condition_1203596134290(final IOperationContext operationContext, final IfMacroContext _context) {

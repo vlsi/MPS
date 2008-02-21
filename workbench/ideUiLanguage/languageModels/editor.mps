@@ -105,5 +105,14 @@
       </node>
     </node>
   </node>
+  <visible index="3" modelUID="jetbrains.mps.baseLanguage.editor" />
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203606607647">
+    <property name="package" value="IDEDialog" />
+    <link role="conceptDeclaration" targetNodeId="1.1203606241544" resolveInfo="DisposeDialogExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203606609555">
+      <property name="text" value="disposeDialog" />
+      <link role="styleClass" targetNodeId="3v.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 

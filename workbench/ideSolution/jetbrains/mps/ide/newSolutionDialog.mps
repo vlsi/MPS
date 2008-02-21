@@ -97,7 +97,11 @@
     <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203593912273">
       <property name="name" value="testMethod" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203593913480" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203593912275" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203593912275">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203606726359">
+          <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression" id="1203606726360" />
+        </node>
+      </node>
     </node>
     <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203599983021">
       <property name="name" value="onOk" />
@@ -114,6 +118,9 @@
               <property name="value" value="OnOkay" />
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203606974763">
+          <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression" id="1203606974764" />
         </node>
       </node>
     </node>
@@ -132,6 +139,9 @@
               <property name="value" value="OnCancel" />
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203606976985">
+          <node role="expression" type="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression" id="1203606976986" />
         </node>
       </node>
     </node>

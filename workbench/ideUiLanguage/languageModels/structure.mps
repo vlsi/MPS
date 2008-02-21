@@ -58,5 +58,14 @@
       <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203606241544">
+    <property name="package" value="IDEDialog" />
+    <property name="name" value="DisposeDialogExpression" />
+    <link role="extends" targetNodeId="4v.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203606266719">
+      <property name="value" value="dispose" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

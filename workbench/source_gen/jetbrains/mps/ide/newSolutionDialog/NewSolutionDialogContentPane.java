@@ -23,6 +23,7 @@ public class NewSolutionDialogContentPane extends JPanel {
   private PathField myComponent3;
   private String mySolutionName;
   private String mySolutionPath;
+  private NewSolutionDialog myDialog;
   public List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
 
   public  NewSolutionDialogContentPane() {
@@ -109,6 +110,10 @@ public class NewSolutionDialogContentPane extends JPanel {
     return this.mySolutionPath;
   }
 
+  public NewSolutionDialog getDialog() {
+    return this.myDialog;
+  }
+
   public void setSolutionName(String newValue) {
     String oldValue = this.mySolutionName;
     this.mySolutionName = newValue;
@@ -121,15 +126,24 @@ public class NewSolutionDialogContentPane extends JPanel {
     this.firePropertyChange("solutionPath", oldValue, newValue);
   }
 
+  public void setDialog(NewSolutionDialog newValue) {
+    NewSolutionDialog oldValue = this.myDialog;
+    this.myDialog = newValue;
+    this.firePropertyChange("dialog", oldValue, newValue);
+  }
+
   public void testMethod() {
+    myThis.getDialog().dispose();
   }
 
   public void onOk() {
     System.out.println("OnOkay");
+    myThis.getDialog().dispose();
   }
 
   public void onCancel() {
     System.out.println("OnCancel");
+    myThis.getDialog().dispose();
   }
 
 }
