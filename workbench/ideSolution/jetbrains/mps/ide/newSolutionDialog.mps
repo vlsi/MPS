@@ -7,9 +7,10 @@
   </language>
   <language namespace="jetbrains.mps.uiLanguage" />
   <language namespace="jetbrains.mps.ide.uiLanguage" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="java.io@java_stub" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.ide.common" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.uiLanguage.components" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1203592850595">
     <property name="name" value="NewSolutionDialog" />
@@ -38,12 +39,18 @@
           <property name="label" value="Solution Name:" />
           <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1203592875973">
             <link role="componentDeclaration" targetNodeId="2v.1202464198724" resolveInfo="TextField" />
+            <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1203602047061">
+              <link role="attribute" targetNodeId="2v.1202818338918" resolveInfo="columns" />
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203602052390">
+                <property name="value" value="40" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="part" type="jetbrains.mps.uiLanguage.structure.FormPart" id="1203592877973">
           <property name="label" value="Solution Path:" />
-          <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1203592885360">
-            <link role="componentDeclaration" targetNodeId="2v.1202464198724" resolveInfo="TextField" />
+          <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1203601850025">
+            <link role="componentDeclaration" targetNodeId="3.1203601634745" resolveInfo="PathField" />
           </node>
         </node>
       </node>

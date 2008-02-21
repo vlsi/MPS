@@ -4,24 +4,52 @@ package jetbrains.mps.ide.newSolutionDialog;
 
 import jetbrains.mps.ide.BaseDialog;
 import java.awt.Frame;
+import jetbrains.mps.ide.DialogDimensionsSettings;
 import javax.swing.JComponent;
 
 public class NewSolutionDialog extends BaseDialog {
 
+  public NewSolutionDialogContentPane myContentPane;
+
   public  NewSolutionDialog(Frame frame) {
-    super(frame, "Dialog");
+    super(frame, "NewSolutionDialog");
+  }
+
+  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensionsSettings.DialogDimensions(100, 100, 640, 480);
   }
 
   public JComponent getMainComponent() {
-    return new NewSolutionDialog_DialogContentPane();
+    if(this.myContentPane == null) {
+      this.myContentPane = new NewSolutionDialogContentPane();
+    }
+    return this.myContentPane;
+  }
+
+  public String getTestAttribute1() {
+    return this.myContentPane.getTestAttribute1();
+  }
+
+  public Boolean getTestAttribute2() {
+    return this.myContentPane.getTestAttribute2();
+  }
+
+  public void setTestAttribute1(String newValue) {
+    this.myContentPane.setTestAttribute1(newValue);
+  }
+
+  public void setTestAttribute2(Boolean newValue) {
+    this.myContentPane.setTestAttribute2(newValue);
   }
 
   @BaseDialog.Button(name = "OK", position = 0, defaultButton = true)
   public void buttonMethod() {
+    myContentPane.onOk();
   }
 
-  @BaseDialog.Button(name = "Cancel", position = 1, defaultButton = true)
+  @BaseDialog.Button(name = "Cancel", position = 1, defaultButton = false)
   public void buttonMethod1() {
+    myContentPane.onCancel();
   }
 
 }
