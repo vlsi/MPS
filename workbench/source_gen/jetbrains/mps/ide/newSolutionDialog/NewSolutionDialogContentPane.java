@@ -9,85 +9,31 @@ import jetbrains.mps.ide.common.PathField;
 import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
 import java.util.ArrayList;
-import java.awt.GridBagLayout;
-import jetbrains.mps.uiLanguage.runtime.ValueWrapper;
-import java.awt.GridBagConstraints;
+import java.awt.GridLayout;
+import org.jdesktop.beansbinding.Property;
+import org.jdesktop.beansbinding.BeanProperty;
+import org.jdesktop.beansbinding.Bindings;
 
 public class NewSolutionDialogContentPane extends JPanel {
 
   public NewSolutionDialogContentPane myThis;
   private JLabel myComponent;
-  private JLabel myComponent1;
-  private JTextField myComponent2;
+  private JTextField myComponent1;
+  private JLabel myComponent2;
   private PathField myComponent3;
-  private JPanel myComponent4;
-  private String myTestAttribute1;
-  private Boolean myTestAttribute2;
+  private String mySolutionName;
+  private String mySolutionPath;
   public List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
 
   public  NewSolutionDialogContentPane() {
     this.myThis = this;
     System.out.println("Hello");
     NewSolutionDialogContentPane component = this;
-    component.setLayout(new GridBagLayout());
-    component.add(this.createComponent(), new ValueWrapper <GridBagConstraints>() {
-
-      public GridBagConstraints value() {
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 0;
-        c.gridy = 0;
-        c.anchor = GridBagConstraints.FIRST_LINE_START;
-        return c;
-      }
-
-    }.value());
-    component.add(this.createComponent1(), new ValueWrapper <GridBagConstraints>() {
-
-      public GridBagConstraints value() {
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 0;
-        c.gridy = 1;
-        c.anchor = GridBagConstraints.FIRST_LINE_START;
-        return c;
-      }
-
-    }.value());
-    component.add(this.createComponent2(), new ValueWrapper <GridBagConstraints>() {
-
-      public GridBagConstraints value() {
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 1;
-        c.gridy = 0;
-        c.anchor = GridBagConstraints.FIRST_LINE_START;
-        c.weightx = 1;
-        return c;
-      }
-
-    }.value());
-    component.add(this.createComponent3(), new ValueWrapper <GridBagConstraints>() {
-
-      public GridBagConstraints value() {
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 1;
-        c.gridy = 1;
-        c.anchor = GridBagConstraints.FIRST_LINE_START;
-        c.weightx = 1;
-        return c;
-      }
-
-    }.value());
-    component.add(this.createComponent4(), new ValueWrapper <GridBagConstraints>() {
-
-      public GridBagConstraints value() {
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 0;
-        c.gridy = 2;
-        c.gridwidth = 2;
-        c.weighty = 1;
-        return c;
-      }
-
-    }.value());
+    component.setLayout(new GridLayout(4, 1));
+    component.add(this.createComponent());
+    component.add(this.createComponent1());
+    component.add(this.createComponent2());
+    component.add(this.createComponent3());
   }
 
   public void addNotify() {
@@ -101,6 +47,24 @@ public class NewSolutionDialogContentPane extends JPanel {
   }
 
   private void bind() {
+    {
+      Object sourceObject = myThis;
+      Property sourceProperty = BeanProperty.create("solutionName");
+      Object targetObject = this.myComponent1;
+      Property targetProperty = BeanProperty.create("text");
+      AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
+      binding.bind();
+      this.myBindings.add(binding);
+    }
+    {
+      Object sourceObject = myThis;
+      Property sourceProperty = BeanProperty.create("solutionPath");
+      Object targetObject = this.myComponent3;
+      Property targetProperty = BeanProperty.create("path");
+      AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
+      binding.bind();
+      this.myBindings.add(binding);
+    }
   }
 
   private void unbind() {
@@ -112,21 +76,20 @@ public class NewSolutionDialogContentPane extends JPanel {
   private JLabel createComponent() {
     JLabel component = new JLabel();
     this.myComponent = component;
-    component.setText("Solution Name:");
+    component.setText("Name:");
     return component;
   }
 
-  private JLabel createComponent1() {
-    JLabel component = new JLabel();
-    this.myComponent1 = component;
-    component.setText("Solution Path:");
-    return component;
-  }
-
-  private JTextField createComponent2() {
+  private JTextField createComponent1() {
     JTextField component = new JTextField();
+    this.myComponent1 = component;
+    return component;
+  }
+
+  private JLabel createComponent2() {
+    JLabel component = new JLabel();
     this.myComponent2 = component;
-    component.setColumns(40);
+    component.setText("Solution Path:");
     return component;
   }
 
@@ -136,30 +99,24 @@ public class NewSolutionDialogContentPane extends JPanel {
     return component;
   }
 
-  private JPanel createComponent4() {
-    JPanel component = new JPanel();
-    this.myComponent4 = component;
-    return component;
+  public String getSolutionName() {
+    return this.mySolutionName;
   }
 
-  public String getTestAttribute1() {
-    return this.myTestAttribute1;
+  public String getSolutionPath() {
+    return this.mySolutionPath;
   }
 
-  public Boolean getTestAttribute2() {
-    return this.myTestAttribute2;
+  public void setSolutionName(String newValue) {
+    String oldValue = this.mySolutionName;
+    this.mySolutionName = newValue;
+    this.firePropertyChange("solutionName", oldValue, newValue);
   }
 
-  public void setTestAttribute1(String newValue) {
-    String oldValue = this.myTestAttribute1;
-    this.myTestAttribute1 = newValue;
-    this.firePropertyChange("testAttribute1", oldValue, newValue);
-  }
-
-  public void setTestAttribute2(Boolean newValue) {
-    Boolean oldValue = this.myTestAttribute2;
-    this.myTestAttribute2 = newValue;
-    this.firePropertyChange("testAttribute2", oldValue, newValue);
+  public void setSolutionPath(String newValue) {
+    String oldValue = this.mySolutionPath;
+    this.mySolutionPath = newValue;
+    this.firePropertyChange("solutionPath", oldValue, newValue);
   }
 
   public void testMethod() {

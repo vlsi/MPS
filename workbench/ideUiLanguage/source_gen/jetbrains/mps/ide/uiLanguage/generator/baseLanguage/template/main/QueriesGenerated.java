@@ -77,6 +77,10 @@ public class QueriesGenerated {
     return NameUtil.getSetterName(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1203604432239(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "root", true), "stretch");
+  }
+
   public static boolean ifMacro_Condition_1203596134290(final IOperationContext operationContext, final IfMacroContext _context) {
     return ComponentDeclaration_Behavior.call_getConstructor_1203080456035(_context.getNode()) != null;
   }

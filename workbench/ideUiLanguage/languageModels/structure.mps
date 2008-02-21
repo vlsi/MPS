@@ -18,6 +18,10 @@
     <property name="name" value="IDEDialog" />
     <property name="package" value="IDEDialog" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1203603964664">
+      <property name="name" value="stretch" />
+      <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203592622362">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="contentPane" />

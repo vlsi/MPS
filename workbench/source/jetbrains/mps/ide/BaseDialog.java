@@ -103,13 +103,26 @@ public abstract class BaseDialog extends JDialog {
     setVisible(true);
   }
 
+  public boolean stretchMainComponent() {
+    return true;
+  }
+
   protected void prepareDialog() {
     ((JComponent) getContentPane()).setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
 
     setLayout(new BorderLayout());
 
     JPanel panel1 = new JPanel(new BorderLayout());
-    panel1.add(getMainComponent(), BorderLayout.CENTER);
+
+    if (stretchMainComponent()) {
+      panel1.add(getMainComponent(), BorderLayout.CENTER);
+    } else {
+      JPanel wrapper = new JPanel(new BorderLayout());
+      wrapper.add(new JPanel(), BorderLayout.CENTER);
+      wrapper.add(getMainComponent(), BorderLayout.NORTH);
+      panel1.add(wrapper, BorderLayout.CENTER);
+    }
+    
     JPanel buttonsPanel = new JPanel(new BorderLayout());
     buttonsPanel.setBorder(BorderFactory.createEmptyBorder(4, 0, 0, 0));
     JButton[] buttons = createButtons();

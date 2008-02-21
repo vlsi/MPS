@@ -14,12 +14,13 @@ import jetbrains.mps.uiLanguage.structure.IComponentPart;
 
 public class IDEDialog extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.ide.uiLanguage.structure.IDEDialog";
-  public static String CONTENT_PANE = "contentPane";
-  public static String BUTTON = "button";
-  public static String CONTENT = "content";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String STRETCH = "stretch";
+  public static String CONTENT_PANE = "contentPane";
+  public static String BUTTON = "button";
+  public static String CONTENT = "content";
 
   public  IDEDialog(SNode node) {
     super(node);
@@ -33,6 +34,38 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
     return IDEDialog.newInstance(sm, false);
   }
 
+
+  public String getShortDescription() {
+    return this.getProperty(IDEDialog.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(IDEDialog.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(IDEDialog.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(IDEDialog.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(IDEDialog.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(IDEDialog.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getStretch() {
+    return this.getBooleanProperty(IDEDialog.STRETCH);
+  }
+
+  public void setStretch(boolean value) {
+    this.setBooleanProperty(IDEDialog.STRETCH, value);
+  }
 
   public IComponentInstance getContentPane() {
     return (IComponentInstance)this.getChild(IDEDialog.CONTENT_PANE);
@@ -80,30 +113,6 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, IDEDialog.CONTENT, node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(IDEDialog.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(IDEDialog.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(IDEDialog.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(IDEDialog.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(IDEDialog.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(IDEDialog.VIRTUAL_PACKAGE, value);
   }
 
 }

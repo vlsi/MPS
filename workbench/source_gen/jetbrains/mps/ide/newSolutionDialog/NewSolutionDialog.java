@@ -26,20 +26,24 @@ public class NewSolutionDialog extends BaseDialog {
     return this.myContentPane;
   }
 
-  public String getTestAttribute1() {
-    return this.myContentPane.getTestAttribute1();
+  public boolean stretchMainComponent() {
+    return false;
   }
 
-  public Boolean getTestAttribute2() {
-    return this.myContentPane.getTestAttribute2();
+  public String getSolutionName() {
+    return this.myContentPane.getSolutionName();
   }
 
-  public void setTestAttribute1(String newValue) {
-    this.myContentPane.setTestAttribute1(newValue);
+  public String getSolutionPath() {
+    return this.myContentPane.getSolutionPath();
   }
 
-  public void setTestAttribute2(Boolean newValue) {
-    this.myContentPane.setTestAttribute2(newValue);
+  public void setSolutionName(String newValue) {
+    this.myContentPane.setSolutionName(newValue);
+  }
+
+  public void setSolutionPath(String newValue) {
+    this.myContentPane.setSolutionPath(newValue);
   }
 
   @BaseDialog.Button(name = "OK", position = 0, defaultButton = true)
