@@ -16,8 +16,9 @@ import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
@@ -104,8 +105,8 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
       ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
       List<LinkDeclaration> linkDeclarations = superConceptsScope.getLinkDeclarationsExcludingOverridden();
-      Iterable<SNode> childLinkDeclarations = SequenceOperations.select(SequenceOperations.where(linkDeclarations, new zPredicate(null, null)), new zSelector(null, null));
-      Iterable<String> childLinksRoles = SequenceOperations.select(childLinkDeclarations, new zSelector1(null, null));
+      Iterable<SNode> childLinkDeclarations = SequenceOperations.select(SequenceOperations.where(linkDeclarations, new zPredicate(null, null)), new zSelector1(null, null));
+      Iterable<String> childLinksRoles = SequenceOperations.select(childLinkDeclarations, new zSelector(null, null));
       for(SNode node : actionContext.getNodes()) {
         String childRole = node.getRole_();
         if(!(SequenceOperations.contains(childLinksRoles, childRole))) {
@@ -113,7 +114,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         }
         for(SNode linkDeclaration : childLinkDeclarations) {
           if(SPropertyOperations.getString(linkDeclaration, "role").equals(childRole)) {
-            if(!(AbstractConceptDeclaration_Behavior.call_isAssignableFrom_1198080700262(SLinkOperations.getTarget(linkDeclaration, "target", false), SNodeOperations.getConceptDeclaration(node)))) {
+            if(!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, "target", false), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))))) {
               return false;
             }
           }
