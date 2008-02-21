@@ -109,17 +109,17 @@ import org.jdom.Element;
 
     if (this.getTargetId().equals("^")) {
       return new DynamicReference(
-              this.getRole(),
-              this.getSourceNode(),
-              importedModelUID,
-              this.getResolveInfo());
+        this.getRole(),
+        this.getSourceNode(),
+        importedModelUID,
+        this.getResolveInfo());
     }
     return new StaticReference(
-            this.getRole(),
-            this.getSourceNode(),
-            importedModelUID,
-            SNodeId.fromString(this.getTargetId()),
-            this.getResolveInfo());
+      this.getRole(),
+      this.getSourceNode(),
+      importedModelUID,
+      SNodeId.fromString(this.getTargetId()),
+      this.getResolveInfo());
   }
 
   public void createReferenceInModel(SModel model, VisibleModelElements visibleModelElements) {
@@ -163,20 +163,23 @@ import org.jdom.Element;
         targetModelInfo = reference.getTargetModelUID().toString() + "#";
       } else {
         SModelUID targetModelUID = reference.getTargetModelUID();
-        SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
-        if (importElement != null) {
-          int importIndex = importElement.getReferenceID();
-          targetModelInfo = importIndex + ".";
+        if (targetModelUID != null) {
+          SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
+          if (importElement != null) {
+            int importIndex = importElement.getReferenceID();
+            targetModelInfo = importIndex + ".";
+          } else {
+            int visibleIndex = visibleModelElements.getVisibleModelIndex(targetModelUID);
+            targetModelInfo = visibleIndex + "v.";
+          }
         } else {
-          int visibleIndex = visibleModelElements.getVisibleModelIndex(targetModelUID);
-          targetModelInfo = visibleIndex + "v.";
+          LOG.error("external reference '" + reference.getRole() + "' has no target model info", reference.getSourceNode());
+          LOG.errorWithTrace("-- was reference " + reference + " in " + reference.getSourceNode().getDebugText());
         }
       }
     }
 
-
     String targetNodeId;
-
     if (reference instanceof StaticReference) {
       StaticReference staticReference = (StaticReference) reference;
       if (staticReference.getTargetNodeId() != null) {
