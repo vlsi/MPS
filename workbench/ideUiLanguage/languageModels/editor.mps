@@ -128,5 +128,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203610520597">
+    <property name="package" value="IDEDialog" />
+    <link role="conceptDeclaration" targetNodeId="1.1203610466731" resolveInfo="DialogExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203610523146">
+      <property name="text" value="dialog" />
+      <link role="styleClass" targetNodeId="3v.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 

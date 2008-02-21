@@ -93,6 +93,11 @@ public class QueriesGenerated {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(contextComponent, "dialogAttribute");
   }
 
+  public static Object referenceMacro_GetReferent_1203610749607(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode contextComponent = DialogUtil.getContextComponent(_context.getNode());
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(contextComponent, "dialogAttribute");
+  }
+
   public static boolean ifMacro_Condition_1203596134290(final IOperationContext operationContext, final IfMacroContext _context) {
     return ComponentDeclaration_Behavior.call_getConstructor_1203080456035(_context.getNode()) != null;
   }

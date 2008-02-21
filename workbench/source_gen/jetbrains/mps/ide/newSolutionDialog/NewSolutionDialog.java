@@ -6,6 +6,8 @@ import jetbrains.mps.ide.BaseDialog;
 import java.awt.Frame;
 import jetbrains.mps.ide.DialogDimensionsSettings;
 import javax.swing.JComponent;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 
 public class NewSolutionDialog extends BaseDialog {
 
@@ -41,6 +43,21 @@ public class NewSolutionDialog extends BaseDialog {
     return this.myContentPane.getSolutionPath();
   }
 
+  public boolean getCompileInMPS() {
+    this.getMainComponent();
+    return this.myContentPane.getCompileInMPS();
+  }
+
+  public MPSProject getProject() {
+    this.getMainComponent();
+    return this.myContentPane.getProject();
+  }
+
+  public Solution getResult() {
+    this.getMainComponent();
+    return this.myContentPane.getResult();
+  }
+
   public void setSolutionName(String newValue) {
     this.getMainComponent();
     this.myContentPane.setSolutionName(newValue);
@@ -49,6 +66,21 @@ public class NewSolutionDialog extends BaseDialog {
   public void setSolutionPath(String newValue) {
     this.getMainComponent();
     this.myContentPane.setSolutionPath(newValue);
+  }
+
+  public void setCompileInMPS(boolean newValue) {
+    this.getMainComponent();
+    this.myContentPane.setCompileInMPS(newValue);
+  }
+
+  public void setProject(MPSProject newValue) {
+    this.getMainComponent();
+    this.myContentPane.setProject(newValue);
+  }
+
+  public void setResult(Solution newValue) {
+    this.getMainComponent();
+    this.myContentPane.setResult(newValue);
   }
 
   @BaseDialog.Button(name = "OK", position = 0, defaultButton = true)
