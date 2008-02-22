@@ -530,5 +530,39 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1203638968182">
+    <property name="name" value="Replace_SNodeOperationExpression" />
+    <link role="forConcept" targetNodeId="1.1138055978872" resolveInfo="SNodeOperationExpression" />
+    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1203638968183">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203638968184">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203639029111">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203639029112">
+            <property name="value" value="replace with 'DotExpression'" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1203638968185">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203638968186">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203639059613">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1203639059614">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1203638968187">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203638968188">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203639077053">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203639078149">
+            <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1203639077054" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1203639082588">
+              <link role="concept" targetNodeId="2.1197027756228" resolveInfo="DotExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
