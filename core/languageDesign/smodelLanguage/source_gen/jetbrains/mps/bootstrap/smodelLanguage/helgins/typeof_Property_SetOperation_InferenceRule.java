@@ -4,6 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.DataTypeUtil;
@@ -18,7 +19,7 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
 
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
-    SNode propertyAccessOp = SLinkOperations.getTarget(RulesUtil.leftExpression(op), "nodeOperation", true);
+    SNode propertyAccessOp = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(propertyAccessOp, "property", false), "dataType", false);
     if(!((dataType != null))) {
       TypeChecker.getInstance().reportTypeError(op, "couldn't define accessed property datatype", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295963");

@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Runtime {
@@ -14,7 +15,7 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
 
   public void applyRule(final SNode node) {
     RulesUtil.checkAppliedCorrectly_generic(node);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(RulesUtil.leftExpression(node), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057852494", true), node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057852493");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710439120", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperation_Behavior.call_getLeftExpression_1200920411564(node), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057852494", true), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710439118");
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057865109", true), new QuotationClass_54().createNode(), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057869956");
   }
 

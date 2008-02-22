@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -22,7 +23,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
     if(!((conceptPropertyDecl != null))) {
       TypeChecker.getInstance().reportTypeError(op, "no concept property", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060067253");
     }
-    SNode leftExpression = RulesUtil.leftExpression(op);
+    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
     final SNode LeftType_typevar_1186059933158 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059945864", true), TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059950336");
     TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158), new Runnable() {
@@ -55,13 +56,13 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
     }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060002359");
     // ==========
     if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration")) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_19().createNode(), op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059822677");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710663195", true), new QuotationClass_19().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710663193");
     } else
     if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.IntegerConceptPropertyDeclaration")) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_20().createNode(), op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059822687");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710667949", true), new QuotationClass_20().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710667947");
     } else
     if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration")) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_21().createNode(), op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059822697");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710671344", true), new QuotationClass_21().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710671342");
     } else
     {
       TypeChecker.getInstance().reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059822707");

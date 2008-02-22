@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
@@ -18,8 +19,8 @@ public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceR
 
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_7().createNode(), op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059232793");
-    SNode propertyAccessOp = SLinkOperations.getTarget(RulesUtil.leftExpression(op), "nodeOperation", true);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710488664", true), new QuotationClass_7().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710488662");
+    SNode propertyAccessOp = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(propertyAccessOp, "property", false), "dataType", false);
     if(!((dataType != null))) {
       TypeChecker.getInstance().reportTypeError(op, "couldn't define accessed property datatype", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059218089");
