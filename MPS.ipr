@@ -1927,6 +1927,7 @@
   <UsedPathMacros>
     <macro name="CHARISMA_HOME" />
     <macro name="MPS_HOME" />
+    <macro name="TEMPLATE" />
   </UsedPathMacros>
 </project>
 
