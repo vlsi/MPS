@@ -108,7 +108,7 @@ public class RulesFunctions_BaseLanguage {
               List<SNode> nodes = mmap.get(tvd);
               if(nodes != null) {
                 SNode tvar = ListOperations.getElement(nodes, 0);
-                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(tvar, "jetbrains.mps.baseLanguage.helgins", "1203433373793", true), actualParams.get(idx), tvar, null, "jetbrains.mps.baseLanguage.helgins", "1203433378489");
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(tvar, actualParams.get(idx), tvar, null, "jetbrains.mps.baseLanguage.helgins", "1203433378489");
               }
             }
             idx = idx + 1;
