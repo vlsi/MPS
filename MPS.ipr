@@ -897,9 +897,9 @@
       <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/BuildLanguage.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/BuildLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/closures/Closures.iml" filepath="$PROJECT_DIR$/core/baseLanguage/closures/Closures.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/closures/languages/closures/runtime/Closures-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/closures/languages/closures/runtime/Closures-runtime.iml" group="core/baseLanguage" />
+      <module fileurl="file://$PROJECT_DIR$/app/complexLanguage/ComplexNumbersLanguage.iml" filepath="$PROJECT_DIR$/app/complexLanguage/ComplexNumbersLanguage.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/internalCollections/InternalCollections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/internalCollections/InternalCollections.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/internalCollections/languages/collections/runtime/InternalCollections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/internalCollections/languages/collections/runtime/InternalCollections-runtime.iml" group="core/baseLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/app/complexLanguage/ComplexNumbersLanguage.iml" filepath="$PROJECT_DIR$/app/complexLanguage/ComplexNumbersLanguage.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/MForum/MForum.iml" filepath="$PROJECT_DIR$/app/MForum/MForum.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
@@ -1061,7 +1061,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1930,7 +1930,6 @@
   <UsedPathMacros>
     <macro name="CHARISMA_HOME" />
     <macro name="MPS_HOME" />
-    <macro name="TEMPLATE" />
   </UsedPathMacros>
 </project>
 

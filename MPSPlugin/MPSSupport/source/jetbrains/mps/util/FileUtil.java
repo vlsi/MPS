@@ -172,6 +172,10 @@ public class FileUtil {
       target = to;
     }
 
+    if (!to.getParentFile().exists()) {
+      to.getParentFile().mkdirs();
+    }
+
     OutputStream os = new FileOutputStream(target);
 
     ReadUtil.read(bytes, is);

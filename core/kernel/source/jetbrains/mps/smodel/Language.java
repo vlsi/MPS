@@ -28,6 +28,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.*;
+import java.lang.reflect.Constructor;
 
 
 /**
@@ -689,7 +690,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
           }
           continue;
         }
-        result.add(cls.getConstructor().newInstance());
+        Constructor<ILoggableRefactoring> constructor = cls.getConstructor();
+        constructor.setAccessible(false);
+        result.add(constructor.newInstance());
       } catch (Throwable t) {
         LOG.error(t);
       }
