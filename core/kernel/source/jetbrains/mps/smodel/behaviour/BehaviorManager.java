@@ -20,7 +20,18 @@ public final class BehaviorManager {
   private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
 
   private static BehaviorManager ourInstance = new BehaviorManager();
+  private static Map<Class, Object> ourDefaultValue = new HashMap<Class, Object>();
 
+  static {
+    ourDefaultValue.put(Byte.class, (byte) 0);
+    ourDefaultValue.put(Short.class, (short) 0);
+    ourDefaultValue.put(Integer.class, (int) 0);
+    ourDefaultValue.put(Long.class, (long) 0);
+    ourDefaultValue.put(Float.class, (float) 0);
+    ourDefaultValue.put(Double.class, (double) 0);
+    ourDefaultValue.put(Boolean.class, false);
+    ourDefaultValue.put(Void.class, null);
+  }
 
   public static BehaviorManager getInstance() {
     return ourInstance;
@@ -42,7 +53,9 @@ public final class BehaviorManager {
   }
 
   public void initNode(SNode node) {
-    assert node != null;
+    if (node == null) {
+      return;
+    }
 
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
     Language language = node.getLanguage(GlobalScope.getInstance());
@@ -242,7 +255,14 @@ public final class BehaviorManager {
   }
 
   private <T> T _invokeInternal(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    assert node != null;
+    if (node == null) {
+      if (returnType.isPrimitive()) {
+        return (T) ourDefaultValue.get(returnType);
+      } else {
+        return null;
+      }
+    }
+
     List<AbstractConceptDeclaration> superConcepts;
     if (callerConceptFqName == null) {
       AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
