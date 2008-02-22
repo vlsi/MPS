@@ -82,7 +82,10 @@ public class QueriesGenerated {
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189083(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    return QueriesUtil.isExpression_appropriateFor_ourOperations(_context.getSourceNode());
+    /*
+      return QueriesUtil.isExpression_appropriateFor_ourOperations(_context.getSourceNode());
+    */
+    return false;
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189126(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
@@ -474,7 +477,7 @@ public class QueriesGenerated {
           result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
             public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType", null);
+              SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType", null);
               SLinkOperations.setTarget(result, "concept", (item), false);
               return result;
             }
