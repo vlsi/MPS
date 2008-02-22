@@ -118,7 +118,7 @@
               <node role="actualArgument"
                     type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203686329590">
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess"
-                      id="1203686333828">
+                      id="1203689181796">
                   <link role="property" targetNodeId="3.1169194664001" resolveInfo="name"/>
                 </node>
                 <node role="leftExpression"
