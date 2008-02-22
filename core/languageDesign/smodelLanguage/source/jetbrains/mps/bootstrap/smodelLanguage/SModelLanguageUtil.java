@@ -1,6 +1,8 @@
 package jetbrains.mps.bootstrap.smodelLanguage;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.baseLanguage.structure.DotExpression;
+import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.AbstractOperationParameter;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression;
@@ -38,18 +40,24 @@ public class SModelLanguageUtil {
     return null;
   }
 
-  public static PropertyDeclaration getPropertyDeclarationFromLeft_SPropertyAccess(SNodeOperation operation) {
-    INodeAdapter parentExpression = operation.getParent();
-    if (parentExpression instanceof SNodeOperationExpression) {
-      Expression leftExpression = ((SNodeOperationExpression) parentExpression).getLeftExpression();
-      if (leftExpression instanceof SNodeOperationExpression) {
-        SNodeOperation leftOp = ((SNodeOperationExpression) leftExpression).getNodeOperation();
-        if (leftOp instanceof SPropertyAccess) {
-          return ((SPropertyAccess) leftOp).getProperty();
-        }
-      }
+  private static PropertyDeclaration getPropertyDeclarationFromLeft_SPropertyAccess(SNodeOperation operation) {
+    Expression leftExpression = null;
+    if (operation.getParent() instanceof SNodeOperationExpression) {
+      leftExpression = ((SNodeOperationExpression) operation.getParent()).getLeftExpression();
+    } else if (operation.getParent() instanceof DotExpression) {
+      leftExpression = ((DotExpression) operation.getParent()).getOperand();
+    }
+
+    IOperation leftOp = null;
+    if (leftExpression instanceof SNodeOperationExpression) {
+      leftOp = ((SNodeOperationExpression) leftExpression).getNodeOperation();
+    } else if (leftExpression instanceof DotExpression) {
+      leftOp = ((DotExpression) leftExpression).getOperation();
+    }
+
+    if (leftOp instanceof SPropertyAccess) {
+      return ((SPropertyAccess) leftOp).getProperty();
     }
     return null;
   }
-
 }
