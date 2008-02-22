@@ -20,6 +20,11 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class PropertyDeclaration_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082985570613");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082985570614");
     editorCell.setDrawBorder(false);
@@ -34,11 +39,6 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_DataTypeReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1106002077142");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082985570613");
     editorCell.setDrawBorder(false);
   }
 
@@ -108,7 +108,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createDataTypeReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new PropertyDeclaration_Editor._Inline());
+    provider.setAuxiliaryCellProvider(new PropertyDeclaration_Editor._Inline5());
     EditorCell editorCell = provider.createEditorCell(context);
     PropertyDeclaration_Editor.setupBasic_DataTypeReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -135,9 +135,9 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline extends AbstractCellProvider {
+  public static class _Inline5 extends AbstractCellProvider {
 
-    public  _Inline() {
+    public  _Inline5() {
       super();
     }
 
@@ -162,9 +162,9 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      PropertyDeclaration_Editor._Inline.setupBasic_NameCell(editorCell, node, context);
+      PropertyDeclaration_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        PropertyDeclaration_Editor._Inline.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        PropertyDeclaration_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

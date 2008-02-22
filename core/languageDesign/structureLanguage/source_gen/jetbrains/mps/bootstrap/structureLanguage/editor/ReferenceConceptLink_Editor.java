@@ -20,6 +20,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105738878701");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ReferenceConceptLinkDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739062907");
     editorCell.setDrawBorder(false);
@@ -32,11 +37,6 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_TargetReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1141943896680");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105738878701");
     editorCell.setDrawBorder(false);
   }
 
@@ -76,7 +76,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 
   public EditorCell createReferenceConceptLinkDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline10());
+    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline3());
     EditorCell editorCell = provider.createEditorCell(context);
     ReferenceConceptLink_Editor.setupBasic_ReferenceConceptLinkDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -105,7 +105,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 
   public EditorCell createTargetReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline11());
+    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline8());
     EditorCell editorCell = provider.createEditorCell(context);
     ReferenceConceptLink_Editor.setupBasic_TargetReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -132,9 +132,9 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline10 extends AbstractCellProvider {
+  public static class _Inline3 extends AbstractCellProvider {
 
-    public  _Inline10() {
+    public  _Inline3() {
       super();
     }
 
@@ -161,9 +161,9 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ReferenceConceptLink_Editor._Inline10.setupBasic_NameCell(editorCell, node, context);
+      ReferenceConceptLink_Editor._Inline3.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ReferenceConceptLink_Editor._Inline10.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ReferenceConceptLink_Editor._Inline3.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -187,9 +187,9 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline11 extends AbstractCellProvider {
+  public static class _Inline8 extends AbstractCellProvider {
 
-    public  _Inline11() {
+    public  _Inline8() {
       super();
     }
 
@@ -214,9 +214,9 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ReferenceConceptLink_Editor._Inline11.setupBasic_NameCell(editorCell, node, context);
+      ReferenceConceptLink_Editor._Inline8.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ReferenceConceptLink_Editor._Inline11.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ReferenceConceptLink_Editor._Inline8.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -18,6 +18,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727152859");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727152860");
     editorCell.setDrawBorder(false);
@@ -26,11 +31,6 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727152861");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727152859");
     editorCell.setDrawBorder(false);
   }
 

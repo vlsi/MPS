@@ -18,6 +18,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105726994976");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727034368");
     editorCell.setDrawBorder(false);
@@ -26,11 +31,6 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
 
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727076103");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105726994976");
     editorCell.setDrawBorder(false);
   }
 

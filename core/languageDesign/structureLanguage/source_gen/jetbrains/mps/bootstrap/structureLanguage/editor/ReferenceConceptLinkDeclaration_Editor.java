@@ -20,6 +20,11 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532689744");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532689745");
     editorCell.setDrawBorder(false);
@@ -39,11 +44,6 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_TargetTypeReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532689748");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532689744");
     editorCell.setDrawBorder(false);
   }
 
@@ -127,7 +127,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createTargetTypeReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ReferenceConceptLinkDeclaration_Editor._Inline9());
+    provider.setAuxiliaryCellProvider(new ReferenceConceptLinkDeclaration_Editor._Inline7());
     EditorCell editorCell = provider.createEditorCell(context);
     ReferenceConceptLinkDeclaration_Editor.setupBasic_TargetTypeReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -154,9 +154,9 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline9 extends AbstractCellProvider {
+  public static class _Inline7 extends AbstractCellProvider {
 
-    public  _Inline9() {
+    public  _Inline7() {
       super();
     }
 
@@ -181,9 +181,9 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ReferenceConceptLinkDeclaration_Editor._Inline9.setupBasic_NameCell(editorCell, node, context);
+      ReferenceConceptLinkDeclaration_Editor._Inline7.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ReferenceConceptLinkDeclaration_Editor._Inline9.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ReferenceConceptLinkDeclaration_Editor._Inline7.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -20,6 +20,11 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class StringConceptProperty_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727525373");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_StringConceptPropertyDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727610549");
     editorCell.setDrawBorder(false);
@@ -35,11 +40,6 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105731706157");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
-  }
-
-  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727525373");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_StringConceptPropertyDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -79,7 +79,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
 
   public EditorCell createStringConceptPropertyDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new StringConceptProperty_Editor._Inline8());
+    provider.setAuxiliaryCellProvider(new StringConceptProperty_Editor._Inline2());
     EditorCell editorCell = provider.createEditorCell(context);
     StringConceptProperty_Editor.setupBasic_StringConceptPropertyDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -135,9 +135,9 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline8 extends AbstractCellProvider {
+  public static class _Inline2 extends AbstractCellProvider {
 
-    public  _Inline8() {
+    public  _Inline2() {
       super();
     }
 
@@ -164,9 +164,9 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      StringConceptProperty_Editor._Inline8.setupBasic_NameCell(editorCell, node, context);
+      StringConceptProperty_Editor._Inline2.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        StringConceptProperty_Editor._Inline8.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        StringConceptProperty_Editor._Inline2.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

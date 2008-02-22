@@ -33,7 +33,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
 
   public EditorCell createBooleanConceptPropertyDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new BooleanConceptProperty_Editor._Inline7());
+    provider.setAuxiliaryCellProvider(new BooleanConceptProperty_Editor._Inline9());
     EditorCell editorCell = provider.createEditorCell(context);
     BooleanConceptProperty_Editor.setupBasic_BooleanConceptPropertyDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -60,9 +60,9 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline7 extends AbstractCellProvider {
+  public static class _Inline9 extends AbstractCellProvider {
 
-    public  _Inline7() {
+    public  _Inline9() {
       super();
     }
 
@@ -89,9 +89,9 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      BooleanConceptProperty_Editor._Inline7.setupBasic_NameCell(editorCell, node, context);
+      BooleanConceptProperty_Editor._Inline9.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        BooleanConceptProperty_Editor._Inline7.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        BooleanConceptProperty_Editor._Inline9.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

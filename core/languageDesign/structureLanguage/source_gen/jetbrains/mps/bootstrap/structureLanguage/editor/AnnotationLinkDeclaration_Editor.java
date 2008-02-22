@@ -18,6 +18,11 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608637030");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608640829");
     editorCell.setDrawBorder(false);
@@ -26,6 +31,11 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608660300");
     editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664341");
     editorCell.setDrawBorder(false);
   }
 
@@ -69,16 +79,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608664341");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1149608637030");
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -114,6 +114,18 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return this.createColumnCell(context, node);
   }
 
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    AnnotationLinkDeclaration_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell(context, node, "annotation link declaration"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
+    editorCell.addEditorCell(this.createRowCell(context, node));
+    return editorCell;
+  }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     AnnotationLinkDeclaration_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -128,18 +140,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTargetReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell4(context, node, "stereotype:"));
     editorCell.addEditorCell(this.createStereotypeCell(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    AnnotationLinkDeclaration_Editor.setupBasic_ColumnCell(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "annotation link declaration"));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "  "));
-    editorCell.addEditorCell(this.createRowCell(context, node));
     return editorCell;
   }
 
@@ -243,7 +243,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createSourceReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline14());
+    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline10());
     EditorCell editorCell = provider.createEditorCell(context);
     AnnotationLinkDeclaration_Editor.setupBasic_SourceReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -272,7 +272,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createTargetReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline15());
+    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline11());
     EditorCell editorCell = provider.createEditorCell(context);
     AnnotationLinkDeclaration_Editor.setupBasic_TargetReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -328,9 +328,9 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline14 extends AbstractCellProvider {
+  public static class _Inline10 extends AbstractCellProvider {
 
-    public  _Inline14() {
+    public  _Inline10() {
       super();
     }
 
@@ -355,9 +355,9 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      AnnotationLinkDeclaration_Editor._Inline14.setupBasic_NameCell(editorCell, node, context);
+      AnnotationLinkDeclaration_Editor._Inline10.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        AnnotationLinkDeclaration_Editor._Inline14.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        AnnotationLinkDeclaration_Editor._Inline10.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -381,9 +381,9 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline15 extends AbstractCellProvider {
+  public static class _Inline11 extends AbstractCellProvider {
 
-    public  _Inline15() {
+    public  _Inline11() {
       super();
     }
 
@@ -408,9 +408,9 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      AnnotationLinkDeclaration_Editor._Inline15.setupBasic_NameCell(editorCell, node, context);
+      AnnotationLinkDeclaration_Editor._Inline11.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        AnnotationLinkDeclaration_Editor._Inline15.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        AnnotationLinkDeclaration_Editor._Inline11.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

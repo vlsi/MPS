@@ -12,18 +12,15 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <maxImportIndex value="29" />
+  <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="6" modelUID="java.lang@java_stub" version="-1" />
-  <import index="7" modelUID="java.util@java_stub" version="-1" />
   <import index="13" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="14" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="16" modelUID="java.io@java_stub" version="-1" />
-  <import index="26" modelUID="javax.swing@java_stub" version="-1" />
-  <import index="27" modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor@java_stub" version="-1" />
   <import index="28" modelUID="jetbrains.mps.bootstrap.structureLanguage.editor@java_stub" version="-1" />
   <import index="29" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1082979388796">
@@ -457,6 +454,7 @@
             <property name="drawBorder" value="false" />
             <property name="noTargetText" value="&lt;no name&gt;" />
             <property name="readOnly" value="true" />
+            <property name="textFgColor" value="DARK_MAGENTA" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
           </node>
         </node>
@@ -825,6 +823,7 @@
                   <property name="drawBorder" value="false" />
                   <property name="noTargetText" value="&lt;no name&gt;" />
                   <property name="readOnly" value="true" />
+                  <property name="textFgColor" value="DARK_MAGENTA" />
                   <link role="relationDeclaration" targetNodeId="2.1169194664001" />
                 </node>
               </node>
@@ -2242,6 +2241,7 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1199633082146">
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
+          <property name="textFgColor" value="DARK_MAGENTA" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
         </node>
       </node>
