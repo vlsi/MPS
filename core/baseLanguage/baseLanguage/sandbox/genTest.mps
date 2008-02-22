@@ -297,5 +297,38 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201491319991" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1203676475130">
+    <property name="name" value="NOTWORKING" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1203676480632">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203676480633" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203676480634" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203676480635">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203676484512">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203676484513">
+            <property name="name" value="o" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203676484514">
+              <link role="classifier" targetNodeId="6.~Object" resolveInfo="Object" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203676485860">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203676502164">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203676487549">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203676485861">
+                <link role="variableDeclaration" targetNodeId="1203676484513" resolveInfo="o" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203676488583">
+                <link role="baseMethodDeclaration" targetNodeId="6.~Object.toString():java.lang.String" resolveInfo="toString" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203676503541">
+              <link role="baseMethodDeclaration" targetNodeId="6.~String.toString():java.lang.String" resolveInfo="toString" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203676475131" />
+  </node>
 </model>
 

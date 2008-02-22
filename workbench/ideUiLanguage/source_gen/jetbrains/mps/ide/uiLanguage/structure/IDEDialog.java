@@ -14,6 +14,7 @@ import jetbrains.mps.uiLanguage.structure.IComponentPart;
 
 public class IDEDialog extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.ide.uiLanguage.structure.IDEDialog";
+  public static String TITLE = "title";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
@@ -34,6 +35,14 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
     return IDEDialog.newInstance(sm, false);
   }
 
+
+  public String getTitle() {
+    return this.getProperty(IDEDialog.TITLE);
+  }
+
+  public void setTitle(String value) {
+    this.setProperty(IDEDialog.TITLE, value);
+  }
 
   public String getShortDescription() {
     return this.getProperty(IDEDialog.SHORT_DESCRIPTION);

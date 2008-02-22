@@ -22,6 +22,10 @@
       <property name="name" value="stretch" />
       <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1203680944573">
+      <property name="name" value="title" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203592622362">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="contentPane" />

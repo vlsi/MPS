@@ -30,6 +30,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.FileUtil;
 
 public class NewSolutionDialogContentPane extends JPanel {
 
@@ -48,6 +49,8 @@ public class NewSolutionDialogContentPane extends JPanel {
 
   public  NewSolutionDialogContentPane() {
     this.myThis = this;
+    myThis.setSolutionPath("");
+    myThis.setSolutionName("NewSolution");
     NewSolutionDialogContentPane component = this;
     component.setLayout(new GridLayout(4, 1));
     component.add(this.createComponent());
@@ -149,6 +152,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     String oldValue = this.mySolutionName;
     this.mySolutionName = newValue;
     this.firePropertyChange("solutionName", oldValue, newValue);
+    myThis.updateSolutionPath();
   }
 
   public void setSolutionPath(String newValue) {
@@ -167,6 +171,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     MPSProject oldValue = this.myProject;
     this.myProject = newValue;
     this.firePropertyChange("project", oldValue, newValue);
+    myThis.updateSolutionPath();
   }
 
   public void setResult(Solution newValue) {
@@ -257,6 +262,17 @@ public class NewSolutionDialogContentPane extends JPanel {
     SLinkOperations.addChild(solutionDescriptor, "modelRoot", modelRoot);
     DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, ((SolutionDescriptor)SNodeOperations.getAdapter(solutionDescriptor)));
     return myThis.getProject().addProjectSolution(solutionDescriptorFile.toFile());
+  }
+
+  public void updateSolutionPath() {
+    if(myThis.getProject() == null) {
+      return;
+    }
+    String path = FileUtil.getCanonicalPath(myThis.getProject().getProjectFile().getParentFile());
+    String prefix = path + File.separator + "solutions" + File.separator;
+    if(myThis.getSolutionPath().length() == 0 || myThis.getSolutionPath().startsWith(prefix)) {
+      myThis.setSolutionPath(prefix + myThis.getSolutionName());
+    }
   }
 
 }
