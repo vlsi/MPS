@@ -1502,6 +1502,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void scrollToCell(EditorCell cell) {
+    if (getVisibleRect().isEmpty()) return;
+
     EditorCell largestVerticalBigCell = findLargestBigCellFittingOnTheScreenVertically(cell);
 
     int viewportWidth = myScrollPane.getViewport().getWidth();
