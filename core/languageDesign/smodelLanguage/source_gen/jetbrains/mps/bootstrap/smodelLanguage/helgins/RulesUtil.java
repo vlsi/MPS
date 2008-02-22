@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.helgins.dependencies.InferenceMethod;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
@@ -27,6 +28,7 @@ public class RulesUtil {
     return null;
   }
 
+  @InferenceMethod()
   public static void checkAppliedCorrectly_generic(final SNode op) {
     if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(op), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
       // don't check - it is red anyway
