@@ -46,8 +46,9 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1138056299645">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203640402687">
+      <property name="value" value="not the 'DotExpression'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1193783916915" resolveInfo="deprecated_next_after_470" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138056022639">

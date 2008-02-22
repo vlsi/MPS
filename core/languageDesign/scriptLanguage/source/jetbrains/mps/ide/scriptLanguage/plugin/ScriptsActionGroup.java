@@ -10,7 +10,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -34,7 +34,14 @@ public class ScriptsActionGroup extends ActionGroup {
 
     setEnabled(true);
     try {
-      List<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
+      List<Language> languages = new ArrayList(GlobalScope.getInstance().getVisibleLanguages());
+      Collections.sort(
+        languages,
+        new Comparator<Language>() {
+          public int compare(Language o1, Language o2) {
+            return o1.getNamespace().compareTo(o2.getNamespace());
+          }
+        });
       for (Language language : languages) {
         addLanguageScriptsGroup(language);
       }
