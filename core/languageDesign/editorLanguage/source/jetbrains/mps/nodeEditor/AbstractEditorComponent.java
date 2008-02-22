@@ -1518,23 +1518,28 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       x0 = caretX - 2 * charWidth;
       width = 4 * charWidth;
     } else {
-      EditorCell bigCell = cell.getContainingBigCell();
-      if (bigCell != null && bigCell.getWidth() < viewportWidth) {
-        x0 = bigCell.getX();
-        width = bigCell.getWidth();
-      } else {
-        x0 = cell.getX();
-        width = cell.getWidth();
-      }
+      x0 = cell.getX();
+      width = cell.getWidth();
     }
 
-    int x1 = Math.max(0, x0 + width - viewportWidth);
-    scrollRectToVisible(
-      expandRectangleOneLine(
-        new Rectangle(
-          x1, largestVerticalBigCell.getY(),
-          x0 - x1 + width, largestVerticalBigCell.getHeight()
-        )));
+    Rectangle visibleRect = getVisibleRect();
+    boolean adjustVertically = !visibleRect.contains(new Rectangle(x0, visibleRect.y, width, visibleRect.height));
+    if (adjustVertically) {
+      int x1 = Math.max(0, x0 + width - viewportWidth);
+      scrollRectToVisible(
+        expandRectangleOneLine(
+          new Rectangle(
+            x1, largestVerticalBigCell.getY(),
+            x0 - x1 + width, largestVerticalBigCell.getHeight()
+          )));
+    } else {
+      scrollRectToVisible(
+        expandRectangleOneLine(
+          new Rectangle(
+            x0, largestVerticalBigCell.getY(),
+            width, largestVerticalBigCell.getHeight()
+          )));
+    }
   }
 
   private EditorCell findLargestBigCellFittingOnTheScreenVertically(EditorCell cell) {
