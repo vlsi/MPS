@@ -2,9 +2,7 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.command.CommandRunnable;
-import jetbrains.mps.ide.ui.SmartFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.UseTreeFileChooser;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.Language;
@@ -31,48 +29,28 @@ public class EditorUtil {
     final JButton button = new JButton();
     button.setAction(new AbstractAction("...") {
       public void actionPerformed(ActionEvent e) {
-        if (UseTreeFileChooser.get()) {
-          Component root = SwingUtilities.getRoot(button);
-          JFrame frame = root instanceof JFrame ? (JFrame) root : null;
-          TreeFileChooser chooser = new TreeFileChooser();
+        Component root = SwingUtilities.getRoot(button);
+        JFrame frame = root instanceof JFrame ? (JFrame) root : null;
+        TreeFileChooser chooser = new TreeFileChooser();
 
-          chooser.setContext(context.getOperationContext());
+        chooser.setContext(context.getOperationContext());
 
-          if (baseFile != null && baseFile.exists()) {
-            chooser.setInitialFile(new FileSystemFile(baseFile));
-          }
-
-          IFile result = chooser.showDialog(frame);
-          if (result == null) return;
-
-          String selectedPath = FileUtil.getCanonicalPath(result.toFile());
-          final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
-
-          new CommandRunnable() {
-            protected Object onRun() {
-              conceptDeclaration.setIconPath(pathToShow);
-              return null;
-            }
-          }.run();
-        } else {
-          final JFileChooser chooser = new SmartFileChooser();
-          if (baseFile != null && baseFile.exists()) {
-            chooser.setSelectedFile(baseFile);
-          }
-
-          Component root = SwingUtilities.getRoot(button);
-          JFrame frame = root instanceof JFrame ? (JFrame) root : null;
-          if (chooser.showDialog(frame, "Select") != JFileChooser.APPROVE_OPTION) return;
-          String selectedPath = FileUtil.getCanonicalPath(chooser.getSelectedFile());
-          final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
-
-          new CommandRunnable() {
-            protected Object onRun() {
-              conceptDeclaration.setIconPath(pathToShow);
-              return null;
-            }
-          }.run();
+        if (baseFile != null && baseFile.exists()) {
+          chooser.setInitialFile(new FileSystemFile(baseFile));
         }
+
+        IFile result = chooser.showDialog(frame);
+        if (result == null) return;
+
+        String selectedPath = FileUtil.getCanonicalPath(result.toFile());
+        final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
+
+        new CommandRunnable() {
+          protected Object onRun() {
+            conceptDeclaration.setIconPath(pathToShow);
+            return null;
+          }
+        }.run();
       }
     });
     return button;

@@ -1,9 +1,7 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.ui.SmartFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.UseTreeFileChooser;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
@@ -12,8 +10,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -93,28 +91,17 @@ public class NewGeneratorDialog extends BaseDialog {
       public void actionPerformed(ActionEvent e) {
         String oldPath = myTemplateModelsDir.getText();
 
-        if (UseTreeFileChooser.get()) {
-          TreeFileChooser chooser = new TreeFileChooser();
+        TreeFileChooser chooser = new TreeFileChooser();
 
-          chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+        chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
 
-          if (oldPath != null && oldPath.length() != 0) {
-            chooser.setInitialFile(new FileSystemFile(oldPath));
-          }
+        if (oldPath != null && oldPath.length() != 0) {
+          chooser.setInitialFile(new FileSystemFile(oldPath));
+        }
 
-          IFile result = chooser.showDialog();
-          if (result != null) {
-            myTemplateModelsDir.setText(result.getAbsolutePath());
-          }
-        } else {
-          SmartFileChooser chooser = new SmartFileChooser();
-          if (oldPath != null && oldPath.length() != 0) {
-            chooser.setSelectedFile(new File(oldPath));
-          }
-          chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-          if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-            myTemplateModelsDir.setText(chooser.getSelectedFile().getAbsolutePath());
-          }
+        IFile result = chooser.showDialog();
+        if (result != null) {
+          myTemplateModelsDir.setText(result.getAbsolutePath());
         }
       }
     });

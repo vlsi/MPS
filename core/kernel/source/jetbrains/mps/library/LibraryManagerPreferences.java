@@ -1,20 +1,18 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.ide.preferences.IPreferencesPage;
-import jetbrains.mps.ide.ui.SmartFileChooser;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.UseTreeFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
 import java.awt.Component;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
 public class LibraryManagerPreferences implements IPreferencesPage {
   private LibraryManager myManager;
@@ -103,23 +101,12 @@ public class LibraryManagerPreferences implements IPreferencesPage {
     }
 
     String path;
-    if (UseTreeFileChooser.get()) {
-      TreeFileChooser chooser = new TreeFileChooser();
-      chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-      IFile result = chooser.showDialog(myMainPanel);
+    TreeFileChooser chooser = new TreeFileChooser();
+    chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+    IFile result = chooser.showDialog(myMainPanel);
 
-      if (result == null) return;
-      path = result.getAbsolutePath();
-    } else {
-      final JFileChooser chooser = new SmartFileChooser();
-      chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-
-      if (chooser.showDialog(myMainPanel, "Select") != JFileChooser.APPROVE_OPTION) {
-        return;
-      }
-
-      path = chooser.getSelectedFile().getAbsolutePath();
-    }
+    if (result == null) return;
+    path = result.getAbsolutePath();
 
     l.setPath(path);
 
@@ -134,22 +121,13 @@ public class LibraryManagerPreferences implements IPreferencesPage {
     }
 
     String path;
-    if (UseTreeFileChooser.get()) {
-      TreeFileChooser chooser = new TreeFileChooser();
-      chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+    TreeFileChooser chooser = new TreeFileChooser();
+    chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
 
-      IFile result = chooser.showDialog(myMainPanel);
-      path = result.getAbsolutePath();
-    } else {
-      final JFileChooser chooser = new SmartFileChooser();
-      chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+    IFile result = chooser.showDialog(myMainPanel);
 
-      if (chooser.showDialog(myMainPanel, "Select") != JFileChooser.APPROVE_OPTION) {
-        return;
-      }
-
-      path = chooser.getSelectedFile().getAbsolutePath();
-    }
+    if (result == null) return;
+    path = result.getAbsolutePath();
 
     myManager.newLibrary(name).setPath(path);
     updateModel();
