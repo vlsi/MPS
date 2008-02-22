@@ -26,8 +26,29 @@
   <import index="12" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" version="-1" />
   <import index="14" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
+  <visible index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141332">
     <link role="concept" targetNodeId="1.1158700725281" />
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1203639314052">
+      <link role="applicableProperty" targetNodeId="2v.1156235010670" resolveInfo="alias" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1203639318521">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203639318522">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203639331891">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203639339972">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203639346319">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1203639345006" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203639363384">
+                  <link role="link" targetNodeId="1.1158700943156" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203639331892">
+                <property name="value" value="factory for " />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141333">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141334" />
     </node>
