@@ -12,6 +12,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.quotation" />
+  <language namespace="jetbrains.teamsys.dnq" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="125" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
@@ -232,23 +233,21 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203611169281">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203611185319">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203611185320">
-            <property name="name" value="set" />
+            <property name="name" value="map" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203611185321">
-              <link role="classifier" targetNodeId="3.~Set" resolveInfo="Set" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203611193824">
-                <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+              <link role="classifier" targetNodeId="3.~Map" resolveInfo="Map" />
+              <node role="parameter" type="jetbrains.teamsys.dnq.structure.PersistentClassType" id="1203695502915" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203695532419">
+                <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
               </node>
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203611199388">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203611203361">
-            <link role="baseMethodDeclaration" targetNodeId="3.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
+            <link role="baseMethodDeclaration" targetNodeId="3.~Map.keySet():java.util.Set" resolveInfo="keySet" />
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203611199389">
               <link role="variableDeclaration" targetNodeId="1203611185320" resolveInfo="set" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203611218362">
-              <property name="value" value="" />
             </node>
           </node>
         </node>
