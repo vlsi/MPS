@@ -20,10 +20,10 @@ public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRu
 
       public void run() {
         if(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new QuotationClass_1().createNode(), false, false)) {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(expr, "concept", false)), expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061696726");
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712082190", true), new QuotationClass_().createNode(SLinkOperations.getTarget(expr, "concept", false)), expr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712082188");
         } else
         {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(SLinkOperations.getTarget(expr, "concept", false)), expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061696740");
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712085350", true), new QuotationClass_2().createNode(SLinkOperations.getTarget(expr, "concept", false)), expr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712085348");
         }
       }
 

@@ -15,7 +15,7 @@ public class typeof_Node_GetDescendantsOperation_InferenceRule implements Infere
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
     RulesUtil.checkOpParameters_generic(op);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_SNodeListType_fromOpParameter(op), op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178318142624");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712006154", true), RulesUtil.get_SNodeListType_fromOpParameter(op), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712006152");
   }
 
   public String getApplicableConceptFQName() {

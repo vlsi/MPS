@@ -40,7 +40,7 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
     }
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(op, "property", false), "dataType", false);
     if(dataType != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(DataTypeDeclaration_Behavior.call_toBaseLanguageType_1182472765133(dataType), op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182474193368");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712090792", true), DataTypeDeclaration_Behavior.call_toBaseLanguageType_1182472765133(dataType), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712090790");
     }
   }
 

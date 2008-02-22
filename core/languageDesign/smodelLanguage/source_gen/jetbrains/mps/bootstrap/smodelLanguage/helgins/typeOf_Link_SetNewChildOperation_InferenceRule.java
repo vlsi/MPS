@@ -31,7 +31,7 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule implements Inference
         }
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_48().createNode(resultConcept), node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492106");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711957380", true), new QuotationClass_48().createNode(resultConcept), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711957378");
   }
 
   public String getApplicableConceptFQName() {
