@@ -47,10 +47,14 @@
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1138056667223" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203639997364">
+        <property name="text" value="!" />
+        <property name="textFgColor" value="red" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1138063769792">
         <property name="drawBorder" value="false" />
         <property name="text" value="." />
-        <property name="selectable" value="false" />
+        <property name="selectable" value="true" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1138412455559">
         <property name="attractsFocus" value="2" />
