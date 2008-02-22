@@ -98,7 +98,7 @@ public class EquationManager {
     variables.add(variable);
   }
 
-  public SNode registerVariable(SNode node) {
+  private SNode registerVariable(SNode node) {
     SNode runtimeTypesVariable = myTypeChecker.getRuntimeSupport().createNewRuntimeTypesVariable(false);
     myRegisteredVariables.put(node, runtimeTypesVariable);
     return runtimeTypesVariable;
@@ -128,7 +128,13 @@ public class EquationManager {
       for (SNode child : new ArrayList<SNode>(node.getChildren())) {
         SNode newChild = prepareType_internal(child);
         if (newChild != child) {
-          node.replaceChild(child, newChild);
+          if (newChild.getParent() != null) {
+            SNode newVariable = myTypeChecker.getRuntimeSupport().createNewRuntimeTypesVariable(false);
+            addEquation(newChild, newVariable, (SNode) null);
+            node.replaceChild(child, newVariable);
+          } else {
+            node.replaceChild(child, newChild);
+          }
         }
       }
       return node;
