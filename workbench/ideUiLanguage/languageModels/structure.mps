@@ -67,7 +67,7 @@
     <property name="name" value="DisposeDialogExpression" />
     <link role="extends" targetNodeId="4v.1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203606266719">
-      <property name="value" value="dispose" />
+      <property name="value" value="disposeDialog" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>

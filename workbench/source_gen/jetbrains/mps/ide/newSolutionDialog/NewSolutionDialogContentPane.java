@@ -21,7 +21,6 @@ import jetbrains.mps.util.DirectoryUtil;
 import java.awt.Frame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.vfs.FileSystem;
-import java.io.IOException;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -216,7 +215,7 @@ public class NewSolutionDialogContentPane extends JPanel {
         return;
       }
     }
-    final File descriptorFile = myThis.createNewSolutionDescriptorFile(descriptorPath);
+    final File descriptorFile = myThis.prepareToCreateNewSolutionDescriptorFile(descriptorPath);
     if(descriptorFile == null) {
       myThis.getDialog().setErrorText("Can't create " + descriptorPath);
       return;
@@ -235,19 +234,13 @@ public class NewSolutionDialogContentPane extends JPanel {
     myThis.getDialog().dispose();
   }
 
-  public File createNewSolutionDescriptorFile(String path) {
+  public File prepareToCreateNewSolutionDescriptorFile(String path) {
     File solutionDescriptorFile = new File(path);
-    try {
-      File dir = solutionDescriptorFile.getParentFile();
-      if(!(dir.exists())) {
-        dir.mkdirs();
-      }
-      solutionDescriptorFile.createNewFile();
-      return solutionDescriptorFile;
-    } catch (IOException e) {
-      e.printStackTrace();
+    File dir = solutionDescriptorFile.getParentFile();
+    if(!(dir.exists())) {
+      dir.mkdirs();
     }
-    return null;
+    return solutionDescriptorFile;
   }
 
   public Solution createNewSolution(String solutionName, IFile solutionDescriptorFile) {
