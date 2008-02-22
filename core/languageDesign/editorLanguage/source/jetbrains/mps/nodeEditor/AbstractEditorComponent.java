@@ -1484,9 +1484,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       mySelectedCell.setSelected(true);
     }
     if (mySelectedCell != null) {
-      EditorCell cell = getDeepestSelectedCell();
       if (scrollToCell) {
-        scrollToCell(cell);
+        scrollToCell(newSelectedCell);
       }
     }
     repaint();
