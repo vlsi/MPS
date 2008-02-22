@@ -53,7 +53,7 @@ public class ClassifierTypeUtil {
   }
 
   public static boolean isFunctionTypeClassifier(SNode classifier) {
-    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_3().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_7().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
       if(ice == classifier) {
         return true;
       }
@@ -62,7 +62,7 @@ public class ClassifierTypeUtil {
   }
 
   public static boolean isFunctionTypeClassifierReturningValue(SNode classifier) {
-    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_4().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_8().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
       if(ice == classifier) {
         String cname = SPropertyOperations.getString(classifier, "name");
         int ldi = cname.lastIndexOf(".");
@@ -82,19 +82,19 @@ public class ClassifierTypeUtil {
     return ClassifierTypeUtil.resolveType(SNodeOperations.copyNode(type), ptypes, vars);
   }
 
-  private static SNode resolveType(SNode type, List<SNode> declTypes, List<SNode> vars) {
-    if(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") && declTypes.size() > 0) {
+  private static SNode resolveType(SNode type, List<SNode> actTypes, List<SNode> vars) {
+    if(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") && actTypes.size() > 0) {
       int idx = 0;
       for(SNode tvd : vars) {
-        if(SPropertyOperations.getString(tvd, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(type, "typeVariableDeclaration", false), "name"))) {
-          return SNodeOperations.copyNode(declTypes.get(idx));
+        if(tvd == SLinkOperations.getTarget(type, "typeVariableDeclaration", false) && idx < actTypes.size()) {
+          return SNodeOperations.copyNode(actTypes.get(idx));
         }
         idx = idx + 1;
       }
     } else
     if(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       for(SNode pt : SLinkOperations.getTargets(type, "parameter", true)) {
-        SNode rt = ClassifierTypeUtil.resolveType(pt, declTypes, vars);
+        SNode rt = ClassifierTypeUtil.resolveType(pt, actTypes, vars);
         if(pt != rt) {
           SNodeOperations.replaceWithAnother(pt, rt);
         }
@@ -116,14 +116,14 @@ public class ClassifierTypeUtil {
         covariantParam = false;
       }
       return (covariant || ClassifierTypeUtil.isFunctionTypeClassifier(SLinkOperations.getTarget(type, "classifier", false)) ?
-        new QuotationClass_5().createNode(copy) :
-        new QuotationClass_6().createNode(copy)
+        new QuotationClass_3().createNode(copy) :
+        new QuotationClass_4().createNode(copy)
       );
     } else
     {
       return (covariant ?
-        new QuotationClass_7().createNode(SNodeOperations.copyNode(type)) :
-        new QuotationClass_8().createNode(SNodeOperations.copyNode(type))
+        new QuotationClass_5().createNode(SNodeOperations.copyNode(type)) :
+        new QuotationClass_6().createNode(SNodeOperations.copyNode(type))
       );
     }
   }

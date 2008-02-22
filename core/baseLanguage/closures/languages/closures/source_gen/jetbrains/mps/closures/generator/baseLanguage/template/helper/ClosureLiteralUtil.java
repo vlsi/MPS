@@ -13,6 +13,12 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.Map;
 import jetbrains.mps.closures.constraints.FunctionType_Behavior;
+import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.LinkedList;
+import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import java.util.HashMap;
 
 public class ClosureLiteralUtil {
@@ -58,10 +64,17 @@ public class ClosureLiteralUtil {
   private static void matchParameters(SNode ctNoParams, SNode ft) {
     Map<String, SNode> map = null;
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
+    SNode absRetCT = null;
     if(imds.size() > 0) {
       SNode method = imds.get(0);
       if((SLinkOperations.getTarget(method, "returnType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-        map = ClosureLiteralUtil.matchType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft), map);
+        /*
+          map = ClosureLiteralUtil.matchType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft), map);
+        */
+        map = ClosureLiteralUtil.matchReturnType(SLinkOperations.getTarget(method, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft), map);
+        if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          absRetCT = SNodeOperations.copyNode(SLinkOperations.getTarget(method, "returnType", true));
+        }
       }
       List<SNode> ptypes = FunctionType_Behavior.call_getNormalizedParameterTypes_1201526194584(ft);
       int idx = 0;
@@ -71,18 +84,56 @@ public class ClosureLiteralUtil {
       }
     }
     ((SNode)ctNoParams).putUserObject("typeMap", map);
+    if((absRetCT != null)) {
+      SNodeOperations.getModel(SLinkOperations.getTarget(absRetCT, "classifier", false));
+      SNode ftResCT = FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft);
+      String adapterName = JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(absRetCT, "classifier", false), "name")) + JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(ftResCT, "classifier", false), "name")) + "Adapter";
+      for(SNode cls : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(absRetCT, "classifier", false)), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+        if(adapterName.equals(JavaNameUtil.shortName(SPropertyOperations.getString(cls, "name")))) {
+          SNode newRetCT = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+          SLinkOperations.setTarget(newRetCT, "classifier", cls, false);
+          /*
+            for(SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(absRetCT, "classifier", false), "typeVariableDeclaration", true)) {
+              SLinkOperations.addChild(newRetCT, "parameter", map.get(SPropertyOperations.getString(tvar, "name")));
+            }
+          */
+          ((SNode)ctNoParams).putUserObject("returnType", newRetCT);
+          break;
+        }
+      }
+    }
     for(SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "typeVariableDeclaration", true)) {
       SLinkOperations.addChild(ctNoParams, "parameter", map.get(SPropertyOperations.getString(tvar, "name")));
     }
   }
 
-  private static Map<String, SNode> matchType(SNode matching, SNode realType, Map<String, SNode> map) {
-    if(SNodeOperations.isInstanceOf(matching, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      (map = ClosureLiteralUtil.getMap(map)).put(SPropertyOperations.getString(SLinkOperations.getTarget(matching, "typeVariableDeclaration", false), "name"), realType);
+  public static Map<String, SNode> matchReturnType(SNode absType, SNode realType, Map<String, SNode> map) {
+    Set<String> visited = new HashSet<String>();
+    LinkedList<SNode> queue = new LinkedList<SNode>();
+    queue.addLast(realType);
+    while(!(queue.isEmpty())) {
+      SNode candidate = queue.removeFirst();
+      if(!(visited.contains(BaseConcept_Behavior.call_getPresentation_1180102203531(candidate)))) {
+        if(SNodeOperations.getConceptDeclaration(absType) == SNodeOperations.getConceptDeclaration(candidate) && (!(SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) || SLinkOperations.getTarget(absType, "classifier", false) == SLinkOperations.getTarget(candidate, "classifier", false))) {
+          map = ClosureLiteralUtil.matchType(absType, candidate, map);
+          return map;
+        }
+        visited.add(BaseConcept_Behavior.call_getPresentation_1180102203531(candidate));
+        for(SNode superType : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(candidate)) {
+          queue.addLast(superType);
+        }
+      }
+    }
+    return map;
+  }
+
+  private static Map<String, SNode> matchType(SNode absType, SNode realType, Map<String, SNode> map) {
+    if(SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      (map = ClosureLiteralUtil.getMap(map)).put(SPropertyOperations.getString(SLinkOperations.getTarget(absType, "typeVariableDeclaration", false), "name"), realType);
     } else
-    if(SNodeOperations.isInstanceOf(matching, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+    if(SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       int idx = 0;
-      List<SNode> mptypes = SLinkOperations.getTargets(matching, "parameter", true);
+      List<SNode> mptypes = SLinkOperations.getTargets(absType, "parameter", true);
       List<SNode> rptypes = SLinkOperations.getTargets(realType, "parameter", true);
       for(int i = 0 ; i < mptypes.size() && i < rptypes.size() ; i = i + 1) {
         map = ClosureLiteralUtil.matchType(mptypes.get(i), rptypes.get(i), ClosureLiteralUtil.getMap(map));
