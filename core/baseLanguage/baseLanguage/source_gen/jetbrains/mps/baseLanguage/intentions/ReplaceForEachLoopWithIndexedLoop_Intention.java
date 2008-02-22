@@ -29,7 +29,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
     boolean array = SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "iterable", true)), "jetbrains.mps.baseLanguage.structure.ArrayType");
-    if(!(array)) {
+    if (!(array)) {
       return false;
     }
     return true;
@@ -46,7 +46,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
     // null
     _zClosureContext.forVariableDeclaration = SLinkOperations.setNewChild(forStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SPropertyOperations.set(_zClosureContext.forVariableDeclaration, "name", "i");
-    SLinkOperations.setTarget(_zClosureContext.forVariableDeclaration, "type", new QuotationClass_2().createNode(), true);
+    SLinkOperations.setTarget(_zClosureContext.forVariableDeclaration, "type", new QuotationClass_5().createNode(), true);
     SLinkOperations.setNewChild(_zClosureContext.forVariableDeclaration, "initializer", "jetbrains.mps.baseLanguage.structure.IntegerConstant");
     SPropertyOperations.set(SLinkOperations.getTarget(_zClosureContext.forVariableDeclaration, "initializer", true), "value", "" + (0));
     // null
@@ -65,7 +65,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
     SPropertyOperations.set(SLinkOperations.getTarget(SLinkOperations.getTarget(iterationExpr, "rValue", true), "rightExpression", true), "value", "" + (1));
     // null
     _zClosureContext.fake_node = node;
-    SequenceOperations.forEach(SequenceOperations.where(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), null, false), new zPredicate(null, _zClosureContext)), new zForEach(null, _zClosureContext));
+    SequenceOperations.forEach(SequenceOperations.where(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), null, false), new zPredicate2(null, _zClosureContext)), new zForEach(null, _zClosureContext));
     SLinkOperations.setTarget(forStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
     // null
     SNodeOperations.replaceWithAnother(node, forStatement);

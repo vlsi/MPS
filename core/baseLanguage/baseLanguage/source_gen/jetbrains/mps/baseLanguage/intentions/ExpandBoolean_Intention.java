@@ -25,10 +25,10 @@ public class ExpandBoolean_Intention extends BaseIntention implements Intention 
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    if(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "variableDeclaration", false), "type", true), "jetbrains.mps.baseLanguage.structure.BooleanType"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "variableDeclaration", false), "type", true), "jetbrains.mps.baseLanguage.structure.BooleanType"))) {
       return false;
     }
-    if(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) == null) {
+    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) == null) {
       return false;
     }
     return true;
@@ -49,9 +49,9 @@ public class ExpandBoolean_Intention extends BaseIntention implements Intention 
     // null
     _zClosureContext1.fake_node = node;
     Iterable<SNode> refs;
-    refs = SequenceOperations.where(SNodeOperations.getDescendants(SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true)), null, false), new zPredicate1(null, _zClosureContext1));
+    refs = SequenceOperations.where(SNodeOperations.getDescendants(SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true)), null, false), new zPredicate3(null, _zClosureContext1));
     SequenceOperations.forEach(refs, new zForEach1(null, _zClosureContext1));
-    refs = SequenceOperations.where(SNodeOperations.getDescendants(SequenceOperations.getFirst(SLinkOperations.getTargets(ifFalse, "statement", true)), null, false), new zPredicate2(null, _zClosureContext1));
+    refs = SequenceOperations.where(SNodeOperations.getDescendants(SequenceOperations.getFirst(SLinkOperations.getTargets(ifFalse, "statement", true)), null, false), new zPredicate4(null, _zClosureContext1));
     SequenceOperations.forEach(refs, new zForEach2(null, _zClosureContext1));
     // null
     SNodeOperations.deleteNode(statementNode);
