@@ -19,6 +19,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class PatternCondition_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643009469");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_PatternCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643011893");
     editorCell.setDrawBorder(false);
@@ -33,11 +38,6 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643021631");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643009469");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_PatternCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

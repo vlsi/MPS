@@ -14,8 +14,8 @@ public class typeOf_TypeOfExpression_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode typeOfExpression) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(typeOfExpression, "term", true), "jetbrains.mps.bootstrap.helgins.helgins", "1178192158210", true), new QuotationClass_2().createNode(), SLinkOperations.getTarget(typeOfExpression, "term", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1178192184638");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(typeOfExpression, "jetbrains.mps.bootstrap.helgins.helgins", "1198582744237", true), new QuotationClass_3().createNode(), typeOfExpression, null, "jetbrains.mps.bootstrap.helgins.helgins", "1198582744235");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(typeOfExpression, "term", true), "jetbrains.mps.bootstrap.helgins.helgins", "1178192158210", true), new QuotationClass_3().createNode(), SLinkOperations.getTarget(typeOfExpression, "term", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1178192184638");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(typeOfExpression, "jetbrains.mps.bootstrap.helgins.helgins", "1198582744237", true), new QuotationClass_4().createNode(), typeOfExpression, null, "jetbrains.mps.bootstrap.helgins.helgins", "1198582744235");
   }
 
   public String getApplicableConceptFQName() {

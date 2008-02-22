@@ -14,7 +14,7 @@ public class typeOf_AssertStatement_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(final SNode assertStatement) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "condition", true), "jetbrains.mps.bootstrap.helgins.helgins", "1178271601478", true), new QuotationClass_8().createNode(), SLinkOperations.getTarget(assertStatement, "condition", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1178271610359");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "condition", true), "jetbrains.mps.bootstrap.helgins.helgins", "1178271601478", true), new QuotationClass_1().createNode(), SLinkOperations.getTarget(assertStatement, "condition", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1178271610359");
   }
 
   public String getApplicableConceptFQName() {
