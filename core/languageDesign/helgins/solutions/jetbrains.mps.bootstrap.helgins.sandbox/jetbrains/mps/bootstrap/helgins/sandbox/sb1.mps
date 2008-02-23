@@ -3,7 +3,9 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.patterns" />
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.core" />

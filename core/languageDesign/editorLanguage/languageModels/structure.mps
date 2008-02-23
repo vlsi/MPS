@@ -4,7 +4,9 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
@@ -24,7 +26,7 @@
   <import index="37" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <import index="38" modelUID="javax.swing@java_stub" version="-1" />
   <import index="39" modelUID="java.awt@java_stub" version="-1" />
-  <import index="40" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="40" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1071666914219">
     <property name="name" value="ConceptEditorDeclaration" />
     <property name="iconPath" value="${language_descriptor}\icons\editor.png" />

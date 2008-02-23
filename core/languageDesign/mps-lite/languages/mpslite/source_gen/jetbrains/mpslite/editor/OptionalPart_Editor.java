@@ -22,30 +22,22 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myPartListHandler_partList_;
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197379451915");
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197379452667");
     MPSLite_Style_StyleSheet.M_P_S_LITE_OPTIONAL_PART.apply(editorCell);
-    if(true) {
-    }
   }
 
   private static void setupBasic_PartList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197379457060");
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197379459421");
     MPSLite_Style_StyleSheet.M_P_S_LITE_OPTIONAL_PART.apply(editorCell);
-    if(true) {
-    }
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197379451915");
-    if(true) {
-    }
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -10,7 +10,7 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class Node_InsertNextSiblingOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation";
-  public static String PARAMETER = "parameter";
+  public static String INSERTED_NODE = "insertedNode";
 
   public  Node_InsertNextSiblingOperation(SNode node) {
     super(node);
@@ -25,12 +25,12 @@ public class Node_InsertNextSiblingOperation extends SNodeOperation {
   }
 
 
-  public Expression getParameter() {
-    return (Expression)this.getChild(Node_InsertNextSiblingOperation.PARAMETER);
+  public Expression getInsertedNode() {
+    return (Expression)this.getChild(Node_InsertNextSiblingOperation.INSERTED_NODE);
   }
 
-  public void setParameter(Expression node) {
-    super.setChild(Node_InsertNextSiblingOperation.PARAMETER, node);
+  public void setInsertedNode(Expression node) {
+    super.setChild(Node_InsertNextSiblingOperation.INSERTED_NODE, node);
   }
 
 }

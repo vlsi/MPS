@@ -4,7 +4,9 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
@@ -19,7 +21,7 @@
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.helgins.helgins" version="-1" />
   <import index="7" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories" id="1174664633061">
     <property name="name" value="_AbstractEquationStatement_factory" />
     <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory" id="1174664649250">

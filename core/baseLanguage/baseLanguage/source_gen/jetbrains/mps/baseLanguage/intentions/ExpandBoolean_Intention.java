@@ -25,10 +25,10 @@ public class ExpandBoolean_Intention extends BaseIntention implements Intention 
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "variableDeclaration", false), "type", true), "jetbrains.mps.baseLanguage.structure.BooleanType"))) {
+    if(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "variableDeclaration", false), "type", true), "jetbrains.mps.baseLanguage.structure.BooleanType"))) {
       return false;
     }
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) == null) {
+    if(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) == null) {
       return false;
     }
     return true;

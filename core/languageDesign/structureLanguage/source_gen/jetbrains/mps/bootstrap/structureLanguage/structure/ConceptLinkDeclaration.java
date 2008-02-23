@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration";
+  public static String TARGET_TYPE = "targetType";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String TARGET_TYPE = "targetType";
 
   public  ConceptLinkDeclaration(SNode node) {
     super(node);
@@ -29,6 +29,14 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
     return ConceptLinkDeclaration.newInstance(sm, false);
   }
 
+
+  public ConceptDeclaration getTargetType() {
+    return (ConceptDeclaration)this.getReferent(ConceptLinkDeclaration.TARGET_TYPE);
+  }
+
+  public void setTargetType(ConceptDeclaration node) {
+    super.setReferent(ConceptLinkDeclaration.TARGET_TYPE, node);
+  }
 
   public String getName() {
     return this.getProperty(ConceptLinkDeclaration.NAME);
@@ -60,14 +68,6 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConceptLinkDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public ConceptDeclaration getTargetType() {
-    return (ConceptDeclaration)this.getReferent(ConceptLinkDeclaration.TARGET_TYPE);
-  }
-
-  public void setTargetType(ConceptDeclaration node) {
-    super.setReferent(ConceptLinkDeclaration.TARGET_TYPE, node);
   }
 
 }

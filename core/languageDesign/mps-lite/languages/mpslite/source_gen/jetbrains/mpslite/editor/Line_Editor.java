@@ -21,19 +21,15 @@ public class Line_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myLinePartListHandler_linePartList_;
 
-  private static void setupBasic_LinePartList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511258456");
-    editorCell.setDrawBorder(false);
-    if(true) {
-    }
-    editorCell.addKeyMap(new _Line_Actions());
-  }
-
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511256407");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
+  }
+
+  private static void setupBasic_LinePartList(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511258456");
+    editorCell.setDrawBorder(false);
+    editorCell.addKeyMap(new _Line_Actions());
   }
 
   private static void setupLabel_LinePartList(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -56,7 +52,7 @@ public class Line_Editor extends DefaultNodeEditor {
 
   public EditorCell createLinePartList(EditorContext context, SNode node) {
     if(this.myLinePartListHandler_linePartList_ == null) {
-      this.myLinePartListHandler_linePartList_ = new Line_Editor._RefNodeListHandler1(node, "linePart", context);
+      this.myLinePartListHandler_linePartList_ = new Line_Editor._RefNodeListHandler(node, "linePart", context);
     }
     EditorCell_Collection editorCell = this.myLinePartListHandler_linePartList_.createCells(context, new CellLayout_Horizontal(), false);
     Line_Editor.setupBasic_LinePartList(editorCell, node, context);
@@ -67,9 +63,9 @@ public class Line_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _RefNodeListHandler1 extends RefNodeListHandler {
+  public static class _RefNodeListHandler extends RefNodeListHandler {
 
-    public  _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

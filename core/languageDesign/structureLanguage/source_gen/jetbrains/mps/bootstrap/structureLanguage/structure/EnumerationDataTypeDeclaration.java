@@ -12,9 +12,9 @@ import java.util.List;
 public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration";
   public static String MEMBER = "member";
-  public static String MEMBER_IDENTIFIER_POLICY = "memberIdentifierPolicy";
   public static String MEMBER_DATA_TYPE = "memberDataType";
   public static String DEFAULT_MEMBER = "defaultMember";
+  public static String MEMBER_IDENTIFIER_POLICY = "memberIdentifierPolicy";
 
   public  EnumerationDataTypeDeclaration(SNode node) {
     super(node);
@@ -49,15 +49,6 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
     this.insertChild(prev, EnumerationDataTypeDeclaration.MEMBER, node);
   }
 
-  public EnumerationMemberIdentifierPolicy getMemberIdentifierPolicy() {
-    String value = super.getProperty(EnumerationDataTypeDeclaration.MEMBER_IDENTIFIER_POLICY);
-    return EnumerationMemberIdentifierPolicy.parseValue(value);
-  }
-
-  public void setMemberIdentifierPolicy(EnumerationMemberIdentifierPolicy value) {
-    super.setProperty(EnumerationDataTypeDeclaration.MEMBER_IDENTIFIER_POLICY, value.getValueAsString());
-  }
-
   public PrimitiveDataTypeDeclaration getMemberDataType() {
     return (PrimitiveDataTypeDeclaration)this.getReferent(EnumerationDataTypeDeclaration.MEMBER_DATA_TYPE);
   }
@@ -72,6 +63,15 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
 
   public void setDefaultMember(EnumerationMemberDeclaration node) {
     super.setReferent(EnumerationDataTypeDeclaration.DEFAULT_MEMBER, node);
+  }
+
+  public EnumerationMemberIdentifierPolicy getMemberIdentifierPolicy() {
+    String value = super.getProperty(EnumerationDataTypeDeclaration.MEMBER_IDENTIFIER_POLICY);
+    return EnumerationMemberIdentifierPolicy.parseValue(value);
+  }
+
+  public void setMemberIdentifierPolicy(EnumerationMemberIdentifierPolicy value) {
+    super.setProperty(EnumerationDataTypeDeclaration.MEMBER_IDENTIFIER_POLICY, value.getValueAsString());
   }
 
 }

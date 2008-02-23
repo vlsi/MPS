@@ -13,24 +13,30 @@ import java.util.List;
     SNode nodeObject2 = (SNode)SLinkOperations.getTarget(ifStatement, "condition", true);
     SNode nodeObject3 = SLinkOperations.getTarget(ifStatement, "condition", true);
   }
+
   /* package */void cast_SNode_to_snode(SNode node) {
     SNode snode1 = node;
     SNode snode2 = (SNode)node;
   }
+
   /* package */void upcast_snode(SNode snode) {
     SNode ifStatement = (SNode)snode;
     SNode ifStatement1 = snode;
   }
+
   /* package */void cast_children_to_snodes(SNode statementList) {
     List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
   }
+
   /* package */void cast_snodes_to_List(List<SNode> statements) {
     List list1 = statements;
     List<SNode> list2 = statements;
   }
+
   /* package */void cast_children_to_List(SNode statements) {
     List list1 = SLinkOperations.getTargets(statements, "statement", true);
     List<SNode> list2 = SLinkOperations.getTargets(statements, "statement", true);
     List<SNode> list3 = (List<SNode>)SLinkOperations.getTargets(statements, "statement", true);
   }
+
 }

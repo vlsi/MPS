@@ -3,7 +3,9 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.core" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
@@ -12,7 +14,7 @@
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.patterns.structure" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174642743670">
     <property name="name" value="ApplicableNodeCondition" />
     <link role="extends" targetNodeId="1.1078489098625" />

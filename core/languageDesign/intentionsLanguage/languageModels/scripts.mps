@@ -3,7 +3,9 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
@@ -26,7 +28,7 @@
   <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="11" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="12" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="12" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <import index="14" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1195563712320">

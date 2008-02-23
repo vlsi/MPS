@@ -8,7 +8,9 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.quotation" />
@@ -29,7 +31,7 @@
   <import index="11" modelUID="jetbrains.mps.transformation.TLBase.constraints" version="-1" />
   <import index="12" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="13" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="14" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="14" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="15" modelUID="jetbrains.mps.transformation.TLBase.helgins" version="-1" />
   <import index="16" modelUID="jetbrains.mps.transformation.TLBase.structure@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141231">

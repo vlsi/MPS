@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.smodelLanguage.structure">
   <persistence version="1" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="parameter" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" featureKind="CHILD" />
+          <value featureName="insertedNode" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structureNode_InsertNextSiblingOperation" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="5" />
@@ -525,7 +538,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1143224066849">
       <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1" />
-      <property name="role" value="parameter" />
+      <property name="role" value="insertedNode" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>

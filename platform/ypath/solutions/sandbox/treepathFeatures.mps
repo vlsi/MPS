@@ -8,7 +8,9 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.ypath" />
   <language namespace="jetbrains.mps.core" />
@@ -26,7 +28,7 @@
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="7" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter@java_stub" version="-1" />
-  <import index="12" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="12" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="13" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="14" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />

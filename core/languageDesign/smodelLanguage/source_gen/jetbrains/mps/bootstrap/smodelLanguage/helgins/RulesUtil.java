@@ -123,6 +123,7 @@ public class RulesUtil {
     return false;
   }
 
+  @InferenceMethod()
   public static boolean checkOpParameters_generic(SNode op) {
     boolean noProblem = true;
     List<SNode> applicableParmConcepts = SLinkOperations.getConceptLinkTargets(op, "applicableParameter");

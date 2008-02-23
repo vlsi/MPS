@@ -15,27 +15,32 @@ import java.util.List;
     SNodeOperations.deleteNode(condition);
     SLinkOperations.deleteChild(ifStatement, "condition");
   }
+
   /* package */void accessToChildNode_2(SNode ifStatement, SNode newCondition) {
     SLinkOperations.setTarget(ifStatement, "condition", newCondition, true);
     SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNodeOperations.replaceWithAnother(condition, newCondition);
   }
+
   /* package */void accessToChildNode_3(SNode ifStatement1, SNode ifStatement2) {
     SLinkOperations.setTarget(ifStatement1, "condition", SNodeOperations.copyNode(SLinkOperations.getTarget(ifStatement2, "condition", true)), true);
     SNode condition = SLinkOperations.getTarget(ifStatement1, "condition", true);
     SNodeOperations.replaceWithAnother(condition, SNodeOperations.copyNode(SLinkOperations.getTarget(ifStatement2, "condition", true)));
   }
+
   /* package */void accessToChildNode_4(SNode ifStatement) {
     SNode newCondition1 = SLinkOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.Expression");
     SNode newCondition2 = SLinkOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.EqualsExpression");
     SNode newCondition3 = SNodeOperations.replaceWithNewChild(newCondition1, "jetbrains.mps.baseLanguage.structure.NotExpression");
   }
+
   /* package */void accessToReferentNode_1(SNode methodCall, SNode method) {
     SNode oldMethod = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
     String oldMethopdName = SPropertyOperations.getString(oldMethod, "name");
     oldMethopdName = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "name");
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
   }
+
   /* package */void accessToParentNode_1(SNode expression) {
     SNode parent_IfStatement = null;
     SNode mayBe_IfStatement = SNodeOperations.getParent(expression, null, false, false);
@@ -47,22 +52,29 @@ import java.util.List;
       mayBe_IfStatement = SNodeOperations.getParent(mayBe_IfStatement, null, false, false);
     }
   }
+
   /* package */void accessToParentNode_2(SNode expression) {
     SNode declaringClass = SNodeOperations.getParent(SLinkOperations.getTarget(expression, "baseMethodDeclaration", false), null, false, false);
   }
+
   /* package */void accessToParentNode_3(SNode node) {
     SNode root = SNodeOperations.getContainingRoot(node);
   }
+
   /* package */void accessToAncestorNode_1(SNode expression) {
     SNode parent_IfStatement = SNodeOperations.getAncestor(expression, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false);
   }
+
   /* package */void accessToAncestorNode_2(SNode expression) {
     SNode parent_If_or_WhileStatement = SNodeOperations.getAncestorWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, false, false);
   }
+
   /* package */void accessToAncestorNodes_1(SNode expression) {
     List<SNode> allAncestorStatements = SNodeOperations.getAncestors(expression, "jetbrains.mps.baseLanguage.structure.Statement", true);
   }
+
   /* package */void accessToAncestorNodes_2(SNode expression) {
     List<SNode> allAncestor_If_or_WhileStatements = SNodeOperations.getAncestorsWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, true);
   }
+
 }

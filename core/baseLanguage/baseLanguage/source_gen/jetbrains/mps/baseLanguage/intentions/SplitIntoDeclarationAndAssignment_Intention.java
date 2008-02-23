@@ -34,7 +34,7 @@ public class SplitIntoDeclarationAndAssignment_Intention extends BaseIntention i
     SLinkOperations.setTarget(assignment, "rValue", SLinkOperations.getTarget(node, "initializer", true), true);
     SNode local = SLinkOperations.setNewChild(assignment, "lValue", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
     SLinkOperations.setTarget(local, "variableDeclaration", node, false);
-    SNodeOperations.insertNextSiblingChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), eStatement);
+    SNodeOperations.insertNextSiblingChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false));
   }
 
 }

@@ -13,6 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
     String text = "alias is " + SConceptPropertyOperations.getString(node, "alias");
     int length = SConceptPropertyOperations.getString(node, "alias").length();
   }
+
   /* package */void booleanConceptProperty(SNode node) {
     boolean isAbstract = false;
     if(SConceptPropertyOperations.getBoolean(node, "abstract")) {
@@ -20,4 +21,5 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
     }
     boolean isAbstract2 = SConceptPropertyOperations.getBoolean(node, "abstract");
   }
+
 }

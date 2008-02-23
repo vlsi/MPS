@@ -12,13 +12,16 @@ import java.util.List;
     SNode next1 = SNodeOperations.getNextSibling(statement);
     SNode next2 = SNodeOperations.getNextSibling(statement);
     SNode next3 = SNodeOperations.insertNewNextSiblingChild(statement, "jetbrains.mps.baseLanguage.structure.IfStatement");
-    SNodeOperations.insertNextSiblingChild(statement, SNodeOperations.copyNode(next3));
+    SNodeOperations.insertNextSiblingChild(statement);
   }
+
   /* package */void nextSiblings(SNode statement) {
     List<SNode> nextSiblings_exclusive = SNodeOperations.getNextSiblings(statement, false);
     List<SNode> nextSiblings_inclusive = SNodeOperations.getNextSiblings(statement, true);
   }
+
   /* package */void allSiblings(SNode statement) {
     List<SNode> siblings_inclusive = SNodeOperations.getAllSiblings(statement, true);
   }
+
 }

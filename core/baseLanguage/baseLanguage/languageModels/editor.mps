@@ -3,7 +3,9 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
@@ -9881,7 +9883,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191845514975">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191845519474">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1191845527902">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191845556818">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191845556818">
                   <link role="variableDeclaration" targetNodeId="1191845549738" resolveInfo="ifStatement" />
                 </node>
               </node>
@@ -9969,7 +9971,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191845655043">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191845655044">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1191845655045">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191845655046">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191845655046">
                   <link role="variableDeclaration" targetNodeId="1191845655038" resolveInfo="ifStatement" />
                 </node>
               </node>
@@ -10072,7 +10074,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191845708457">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191845708458">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1191845708459">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191845708460">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191845708460">
                   <link role="variableDeclaration" targetNodeId="1191845708452" resolveInfo="ifStatement" />
                 </node>
               </node>
@@ -10160,7 +10162,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191846252135">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191846252136">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1191846252137">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846252138">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846252138">
                   <link role="variableDeclaration" targetNodeId="1191846252130" resolveInfo="whileStatement" />
                 </node>
               </node>
@@ -10248,7 +10250,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191846303854">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191846303855">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1191846303856">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846303857">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846303857">
                   <link role="variableDeclaration" targetNodeId="1191846303849" resolveInfo="whileStatement" />
                 </node>
               </node>
@@ -10341,7 +10343,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191852804698">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191852804699">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1191852804700">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191852804701">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191852804701">
                   <link role="variableDeclaration" targetNodeId="1191852804693" resolveInfo="forStatement" />
                 </node>
               </node>
@@ -10434,7 +10436,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191846395067">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191846395068">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1191846395069">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846395070">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846395070">
                   <link role="variableDeclaration" targetNodeId="1191846395062" resolveInfo="whileStatement" />
                 </node>
               </node>
@@ -10535,7 +10537,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191846543445">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191846543446">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1191846543447">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846543448">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846543448">
                   <link role="variableDeclaration" targetNodeId="1191846543440" resolveInfo="tryCatchStatement" />
                 </node>
               </node>
@@ -10623,7 +10625,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191846698190">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191846698191">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1191846698192">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846698193">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846698193">
                   <link role="variableDeclaration" targetNodeId="1191846698185" resolveInfo="tryStatement" />
                 </node>
               </node>
@@ -10737,7 +10739,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191846758716">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191846758717">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1191846758718">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846758719">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846758719">
                   <link role="variableDeclaration" targetNodeId="1191846758711" resolveInfo="tryStatement" />
                 </node>
               </node>
@@ -10825,7 +10827,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191846851225">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191846851226">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1191846851227">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846851228">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191846851228">
                   <link role="variableDeclaration" targetNodeId="1191846851220" resolveInfo="synchronizedStatement" />
                 </node>
               </node>
@@ -10921,7 +10923,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197487560125">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197487560126">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1197487560127">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197487560128">
+                <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197487560128">
                   <link role="variableDeclaration" targetNodeId="1197487560120" resolveInfo="blockStatement" />
                 </node>
               </node>

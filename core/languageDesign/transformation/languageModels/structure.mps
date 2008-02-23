@@ -3,7 +3,9 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
@@ -14,7 +16,7 @@
   <import index="7" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <import index="9" modelUID="java.lang@java_stub" version="-1" />
-  <import index="11" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="11" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />
     <property name="package" value="macro" />

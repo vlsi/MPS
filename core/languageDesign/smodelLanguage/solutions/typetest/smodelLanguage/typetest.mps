@@ -3,7 +3,9 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
@@ -971,7 +973,7 @@
               <link role="variableDeclaration" targetNodeId="1173307422767" resolveInfo="node" />
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1173386414619">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1173386436983">
+              <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1173386436983">
                 <link role="variableDeclaration" targetNodeId="1173385711362" resolveInfo="prev1" />
               </node>
             </node>
@@ -983,7 +985,7 @@
               <link role="variableDeclaration" targetNodeId="1173307422767" resolveInfo="node" />
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1173386915553">
-              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1173386927884">
+              <node role="insertedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1173386927884">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1173386926117">
                   <link role="variableDeclaration" targetNodeId="1173385619019" resolveInfo="next2" />
                 </node>

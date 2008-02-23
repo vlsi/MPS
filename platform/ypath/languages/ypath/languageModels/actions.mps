@@ -5,7 +5,9 @@
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
@@ -23,7 +25,7 @@
   <import index="38" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
   <import index="39" modelUID="jetbrains.mps.ypath.constraints" version="-1" />
   <import index="40" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="45" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="45" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="46" modelUID="jetbrains.mps.ypath.runtime@java_stub" version="-1" />
   <import index="47" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1168462842641">

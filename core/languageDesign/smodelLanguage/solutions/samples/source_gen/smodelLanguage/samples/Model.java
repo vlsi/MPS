@@ -15,17 +15,21 @@ import jetbrains.mps.smodel.IScope;
     SNode new_stmt = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SNode new_class = SModelOperations.createNewRootNode(model, "jetbrains.mps.baseLanguage.structure.ClassConcept", null);
   }
+
   /* package */void roots_access_1(SModel model) {
     List<SNode> roots1 = SModelOperations.getRoots(model, null);
     List<SNode> roots2 = SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    Iterable<SNode> roots3 = SequenceOperations.where(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new zPredicate2(Model.this, null));
+    Iterable<SNode> roots3 = SequenceOperations.where(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new zPredicate1(Model.this, null));
   }
+
   /* package */void roots_access_2(SModel model, IScope scope) {
     SModelOperations.getRootsIncludingImported(model, scope, "jetbrains.mps.baseLanguage.structure.IfStatement");
   }
+
   /* package */void nodes_access_1(SModel model) {
     List<SNode> nodes1 = SModelOperations.getNodes(model, null);
     List<SNode> nodes2 = SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    Iterable<SNode> nodes3 = SequenceOperations.where(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new zPredicate3(Model.this, null));
+    Iterable<SNode> nodes3 = SequenceOperations.where(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new zPredicate2(Model.this, null));
   }
+
 }

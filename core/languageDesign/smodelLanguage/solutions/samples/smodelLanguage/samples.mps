@@ -2,7 +2,9 @@
 <model name="smodelLanguage.samples">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
@@ -1632,7 +1634,7 @@
               <link role="variableDeclaration" targetNodeId="1145583677356" />
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" id="1145583839085">
-              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1145583848338">
+              <node role="insertedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1145583848338">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1145583846306">
                   <link role="variableDeclaration" targetNodeId="1145583822375" />
                 </node>

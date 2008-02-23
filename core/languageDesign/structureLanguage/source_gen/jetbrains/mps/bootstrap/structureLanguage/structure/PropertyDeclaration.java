@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration";
+  public static String DATA_TYPE = "dataType";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String DATA_TYPE = "dataType";
 
   public  PropertyDeclaration(SNode node) {
     super(node);
@@ -29,6 +29,14 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
     return PropertyDeclaration.newInstance(sm, false);
   }
 
+
+  public DataTypeDeclaration getDataType() {
+    return (DataTypeDeclaration)this.getReferent(PropertyDeclaration.DATA_TYPE);
+  }
+
+  public void setDataType(DataTypeDeclaration node) {
+    super.setReferent(PropertyDeclaration.DATA_TYPE, node);
+  }
 
   public String getName() {
     return this.getProperty(PropertyDeclaration.NAME);
@@ -60,14 +68,6 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(PropertyDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public DataTypeDeclaration getDataType() {
-    return (DataTypeDeclaration)this.getReferent(PropertyDeclaration.DATA_TYPE);
-  }
-
-  public void setDataType(DataTypeDeclaration node) {
-    super.setReferent(PropertyDeclaration.DATA_TYPE, node);
   }
 
 }

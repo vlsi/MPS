@@ -11,10 +11,12 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 /* package */class ListOfNodes {
 
   /* package */void newList(SNode e1, SNode e2) {
-    List<SNode> list = ListOperations.createList(new SNode[]{e1,e2});
+    List<SNode> list = ListOperations.<SNode>createList(e1, e2);
   }
+
   /* package */void first(SNode sl) {
     SequenceOperations.getFirst(SLinkOperations.getTargets(sl, "statement", true));
-    Iterable<SNode> nodes = SequenceOperations.where(SLinkOperations.getTargets(sl, "statement", true), new zPredicate1(ListOfNodes.this, null));
+    Iterable<SNode> nodes = SequenceOperations.where(SLinkOperations.getTargets(sl, "statement", true), new zPredicate3(ListOfNodes.this, null));
   }
+
 }

@@ -16,11 +16,13 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
     boolean ok_safely = SPropertyOperations.hasValue(clazz, "name", "Sample");
     boolean ok_in_java = SPropertyOperations.getString(clazz, "name") == "Sample";
   }
+
   /* package */void stringProperty2(SNode clazz1, SNode clazz2) {
     SPropertyOperations.set(clazz1, "name", "Sample");
     SPropertyOperations.set(clazz2, "name", SPropertyOperations.getString(clazz1, "name"));
     boolean ok = SPropertyOperations.getString(clazz1, "name") == SPropertyOperations.getString(clazz2, "name");
   }
+
   /* package */void booleanProperty(SNode boolConst) {
     boolean isTrue = false;
     if(SPropertyOperations.getBoolean(boolConst, "value")) {
@@ -30,6 +32,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
     boolean isTrue3 = SPropertyOperations.getBoolean(boolConst, "value") && true;
     SPropertyOperations.set(boolConst, "value", "" + (!(SPropertyOperations.getBoolean(boolConst, "value"))));
   }
+
   /* package */void integerProperty(SNode intConst) {
     int i = SPropertyOperations.getInteger(intConst, "value");
     int i2 = SPropertyOperations.getInteger(intConst, "value") + 10;
@@ -37,12 +40,14 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
       SPropertyOperations.set(intConst, "value", "" + (SPropertyOperations.getInteger(intConst, "value") - 100));
     }
   }
+
   /* package */void enumProperty_string(SNode link) {
     String s = SPropertyOperations.getString_def(link, "sourceCardinality", "0..1");
     boolean ok1 = SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") == s;
     SPropertyOperations.set(link, "sourceCardinality", "0..n");
     boolean ok2 = SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1");
   }
+
   /* package */void enumProperty2_string(SNode link1, SNode link2) {
     if(SPropertyOperations.getString_def(link1, "metaClass", null) != SPropertyOperations.getString_def(link2, "metaClass", null)) {
       SPropertyOperations.set(link1, "metaClass", SPropertyOperations.getString_def(link2, "metaClass", null));
@@ -52,10 +57,12 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
       boolean ok2 = SPropertyOperations.hasValue(link2, "metaClass", "aggregation", null);
     }
   }
+
   /* package */void enumProperty3_integer(SNode cellModel) {
     int i = SPropertyOperations.getInteger_def(cellModel, "attractsFocus", "0");
     if(SPropertyOperations.hasValue(cellModel, "attractsFocus", "0", "0")) {
       SPropertyOperations.set(cellModel, "attractsFocus", "2");
     }
   }
+
 }

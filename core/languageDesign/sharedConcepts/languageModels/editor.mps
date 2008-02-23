@@ -6,6 +6,7 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1203541329669">
     <property name="name" value="SharedStyles" />

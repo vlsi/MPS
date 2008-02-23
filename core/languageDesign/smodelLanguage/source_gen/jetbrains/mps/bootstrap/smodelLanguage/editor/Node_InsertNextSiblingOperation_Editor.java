@@ -27,7 +27,7 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ParameterCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_InsertedNodeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1143224155413");
     editorCell.setDrawBorder(false);
     if(true) {
@@ -44,7 +44,7 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
     editorCell.setEditable(true);
   }
 
-  private static void setupLabel_ParameterCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_InsertedNodeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -63,7 +63,7 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "add next-sibling ("));
-    editorCell.addEditorCell(this.createParameterCell(context, node));
+    editorCell.addEditorCell(this.createInsertedNodeCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
     return editorCell;
   }
@@ -84,25 +84,25 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createParameterCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createInsertedNodeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    Node_InsertNextSiblingOperation_Editor.setupBasic_ParameterCell(editorCell, node, context);
+    Node_InsertNextSiblingOperation_Editor.setupBasic_InsertedNodeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Node_InsertNextSiblingOperation_Editor.setupLabel_ParameterCell((EditorCell_Label)editorCell, node, context);
+      Node_InsertNextSiblingOperation_Editor.setupLabel_InsertedNodeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createParameterCell(EditorContext context, SNode node) {
+  public EditorCell createInsertedNodeCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("parameter");
+    provider.setRole("insertedNode");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createParameterCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createInsertedNodeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

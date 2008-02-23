@@ -6,7 +6,9 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
@@ -26,7 +28,7 @@
   <import index="12" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <import index="14" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
-  <import index="15" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="15" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="16" modelUID="java.io@java_stub" version="-1" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <import index="18" modelUID="jetbrains.mps.core.constraints" version="-1" />

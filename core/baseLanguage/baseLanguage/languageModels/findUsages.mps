@@ -6,7 +6,9 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.core" />
@@ -19,7 +21,7 @@
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
   <import index="6" modelUID="jetbrains.mps.ide.findusages.model.result@java_stub" version="-1" />
   <import index="7" modelUID="java.util@java_stub" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="9" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <import index="10" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1200309609796">

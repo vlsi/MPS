@@ -12,9 +12,11 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
     boolean b = SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement");
     boolean b2 = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
   }
+
   /* package */void checkRoleAndTypeOfDirectParent(SNode node) {
     boolean b = SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "condition");
   }
+
   /* package */boolean checkIsNull(SNode node) {
     if((node == null)) {
     } else
@@ -22,4 +24,5 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
     }
     return (node == null) || (node != null);
   }
+
 }
