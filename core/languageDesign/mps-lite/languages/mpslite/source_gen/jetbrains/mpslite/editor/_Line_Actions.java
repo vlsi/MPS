@@ -61,7 +61,7 @@ public class _Line_Actions extends EditorCellKeyMap {
       SNode currentLine = SNodeOperations.getParent(part, null, false, false);
       SModel model = SNodeOperations.getModel(node);
       SNode newLine = SModelOperations.createNewNode(model, "jetbrains.mpslite.structure.Line", null);
-      SNodeOperations.insertNextSiblingChild(currentLine);
+      SNodeOperations.insertNextSiblingChild(currentLine, newLine);
       for(SNode p : SNodeOperations.getNextSiblings(part, false)) {
         SNodeOperations.getParent(p, null, false, false).removeChild(p);
         SLinkOperations.addChild(newLine, "linePart", p);

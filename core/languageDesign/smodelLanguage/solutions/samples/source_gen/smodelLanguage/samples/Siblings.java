@@ -12,7 +12,7 @@ import java.util.List;
     SNode next1 = SNodeOperations.getNextSibling(statement);
     SNode next2 = SNodeOperations.getNextSibling(statement);
     SNode next3 = SNodeOperations.insertNewNextSiblingChild(statement, "jetbrains.mps.baseLanguage.structure.IfStatement");
-    SNodeOperations.insertNextSiblingChild(statement);
+    SNodeOperations.insertNextSiblingChild(statement, SNodeOperations.copyNode(next3));
   }
 
   /* package */void nextSiblings(SNode statement) {
