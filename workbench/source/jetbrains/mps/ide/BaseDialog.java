@@ -122,7 +122,7 @@ public abstract class BaseDialog extends JDialog {
       wrapper.add(getMainComponent(), BorderLayout.NORTH);
       panel1.add(wrapper, BorderLayout.CENTER);
     }
-    
+
     JPanel buttonsPanel = new JPanel(new BorderLayout());
     buttonsPanel.setBorder(BorderFactory.createEmptyBorder(4, 0, 0, 0));
     JButton[] buttons = createButtons();
@@ -140,7 +140,7 @@ public abstract class BaseDialog extends JDialog {
       public void actionPerformed(ActionEvent e) {
         dispose();
       }
-    }, KeyStroke.getKeyStroke("ESCAPE"), JComponent.WHEN_IN_FOCUSED_WINDOW);
+    }, KeyStroke.getKeyStroke("ESCAPE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     setDefaultCloseOperation(DISPOSE_ON_CLOSE);
   }
