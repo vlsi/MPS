@@ -428,6 +428,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return null;
   }
 
+  protected final boolean canBeOpened() {
+    return false;
+  }
+
   private class MyModelListener implements SModelCommandListener {
     public MyModelListener() {
     }

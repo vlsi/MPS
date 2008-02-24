@@ -283,4 +283,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       ((MPSTreeNode) getParent()).updateAncestorsPresentationInTree();
     }
   }
+
+  protected boolean canBeOpened() {
+    return true;
+  }
+
 }

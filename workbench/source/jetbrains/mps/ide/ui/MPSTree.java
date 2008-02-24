@@ -5,6 +5,7 @@ import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.tooltip.TreeToolTipHandler;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
@@ -246,10 +247,11 @@ public abstract class MPSTree extends JTree {
     TreePath path = getPathForLocation(e.getX(), e.getY());
     if (path == null) return;
 
-    if (path.getLastPathComponent() instanceof MPSTreeNode && (e.getClickCount() == 2 ||
+    Object lastPathComponent = path.getLastPathComponent();
+    if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened() && (e.getClickCount() == 2 ||
             (e.getClickCount() == 1 && myAutoOpen))) {
       setSelectionPath(path);
-      MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+      MPSTreeNode node = (MPSTreeNode) lastPathComponent;
       node.doubleClick();
       e.consume();
     } else if (e.getButton() == MouseEvent.BUTTON3) {
