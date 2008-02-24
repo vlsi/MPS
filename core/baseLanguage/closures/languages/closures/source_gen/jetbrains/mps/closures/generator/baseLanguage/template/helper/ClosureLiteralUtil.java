@@ -85,7 +85,6 @@ public class ClosureLiteralUtil {
     }
     ((SNode)ctNoParams).putUserObject("typeMap", map);
     if((absRetCT != null)) {
-      SNodeOperations.getModel(SLinkOperations.getTarget(absRetCT, "classifier", false));
       SNode ftResCT = FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(ft);
       String adapterName = JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(absRetCT, "classifier", false), "name")) + JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(ftResCT, "classifier", false), "name")) + "Adapter";
       for(SNode cls : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(absRetCT, "classifier", false)), "jetbrains.mps.baseLanguage.structure.Classifier")) {
