@@ -65,4 +65,9 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   }
 
   public abstract IModule getModule();
+
+  protected final boolean canBeOpened() {
+    return false;
+  }
+
 }

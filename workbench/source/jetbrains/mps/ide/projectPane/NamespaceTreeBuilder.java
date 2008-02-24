@@ -99,7 +99,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
     }
   }
 
-  private static class NamespaceNode extends TextTreeNode {
+  private static final class NamespaceNode extends TextTreeNode {
     private String myName;
 
     public NamespaceNode(String name) {
@@ -110,6 +110,10 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
     private void setName(String newName) {
       myName = newName;
       setText(newName);
+    }
+
+    protected boolean canBeOpened() {
+      return false;
     }
 
     private NamespaceNode getSubnamespace(List<String> pathElements) {
