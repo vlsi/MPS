@@ -1526,8 +1526,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     Rectangle visibleRect = getVisibleRect();
-    boolean adjustVertically = !visibleRect.contains(new Rectangle(x0, visibleRect.y, width, visibleRect.height));
-    if (adjustVertically) {
+    boolean adjustHorizontally = !visibleRect.contains(new Rectangle(x0, visibleRect.y, width, visibleRect.height));
+    if (adjustHorizontally) {
       int x1 = Math.max(0, x0 + width - viewportWidth);
       scrollRectToVisible(
         expandRectangleOneLine(
