@@ -22,7 +22,6 @@
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
   <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1"/>
   <import index="12" modelUID="jetbrains.mps.vfs@java_stub" version="-1"/>
-  <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1"/>
   <import index="14" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203083734526">
     <property name="package" value="Actions.Action"/>
@@ -338,7 +337,7 @@
         <property name="vertical" value="false"/>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1203083894881">
-          <property name="text" value="Keystroke:"/>
+          <property name="text" value="keystroke:"/>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
               id="1203083909133">
@@ -354,7 +353,7 @@
         <property name="vertical" value="false"/>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1203084003686">
-          <property name="text" value="Action"/>
+          <property name="text" value="action"/>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
               id="1203084014501">
@@ -365,22 +364,12 @@
             id="1203084043052">
         <property name="selectable" value="false"/>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-            id="1203084067257">
-        <property name="text" value="IsApplicable block"/>
-        <property name="selectable" value="false"/>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1203084108636">
         <link role="relationDeclaration" targetNodeId="1.1203083196627"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1203084113263">
-        <property name="selectable" value="false"/>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-            id="1203084122687">
-        <property name="text" value="Execute block"/>
         <property name="selectable" value="false"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
@@ -450,14 +439,14 @@
       <property name="vertical" value="true"/>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1203088382897">
-        <property name="text" value="Action configuration"/>
+        <property name="text" value="action configuration"/>
         <property name="selectable" value="false"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1203092417961"/>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1203092421994">
-        <property name="text" value="Groups:"/>
+        <property name="text" value="groups:"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
             id="1203088845650">
@@ -481,7 +470,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1203092444591">
-        <property name="text" value="Modifiers:"/>
+        <property name="text" value="modifiers:"/>
         <property name="selectable" value="false"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
@@ -654,20 +643,12 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1203852309092"/>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-            id="1203852389708">
-        <property name="text" value="show node"/>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1203852424075">
         <link role="relationDeclaration" targetNodeId="1.1203852126300"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1203852378635"/>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-            id="1203852318033">
-        <property name="text" value="create node"/>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1203852329914">
         <property name="noTargetText" value="&lt;can't create node from this tab&gt;"/>
@@ -728,20 +709,12 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1203852433969"/>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-            id="1203852433970">
-        <property name="text" value="show nodes"/>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1203852433971">
         <link role="relationDeclaration" targetNodeId="1.1203852083094"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1203852433972"/>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-            id="1203852433973">
-        <property name="text" value="create node"/>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1203852433974">
         <property name="noTargetText" value="&lt;can't create node from this tab&gt;"/>
