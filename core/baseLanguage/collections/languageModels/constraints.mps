@@ -401,8 +401,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197471523277">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197471528435">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197471535005">
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1197471536368">
-              <link role="link" targetNodeId="1.1151701835028" />
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1203973919064">
+              <link role="conceptMethodDeclaration" targetNodeId="1203966722225" resolveInfo="getOperand" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197471532266">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1197471533832">

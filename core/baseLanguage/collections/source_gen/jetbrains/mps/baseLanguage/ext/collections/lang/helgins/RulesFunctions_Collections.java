@@ -4,8 +4,9 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.ext.collections.lang.constraints.SequenceOperationExpression_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.dependencies.InferenceMethod;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 
@@ -15,7 +16,7 @@ public class RulesFunctions_Collections {
     SNode input = null;
     SNode parent = SNodeOperations.getParent(op, null, false, false);
     if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
-      input = SLinkOperations.getTarget(parent, "leftExpression", true);
+      input = SequenceOperationExpression_Behavior.call_getOperand_1203966722225(parent);
     } else
     {
       TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184783963366");

@@ -18,6 +18,7 @@
   <import index="12" modelUID="java.lang@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
   <import index="17" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
+  <visible index="2" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170956206132">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1178821527695">
@@ -198,8 +199,8 @@
                       <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1173887258692" />
                     </node>
                   </node>
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1173887273351">
-                    <link role="link" targetNodeId="8.1151701835028" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1203973182920">
+                    <link role="conceptMethodDeclaration" targetNodeId="2v.1203966722225" resolveInfo="getOperand" />
                   </node>
                 </node>
               </node>

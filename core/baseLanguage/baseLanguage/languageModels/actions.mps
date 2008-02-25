@@ -16,7 +16,7 @@
   <language namespace="jetbrains.mps.regexp" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <maxImportIndex value="39" />
+  <maxImportIndex value="40" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" version="-1" />
@@ -25,15 +25,12 @@
   <import index="20" modelUID="java.lang@java_stub" version="-1" />
   <import index="21" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <import index="22" modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" version="-1" />
-  <import index="27" modelUID="jetbrains.mps.baseLanguage@java_stub" version="-1" />
   <import index="28" modelUID="jetbrains.mps.baseLanguage.search@java_stub" version="-1" />
   <import index="30" modelUID="jetbrains.mps.smodel.presentation@java_stub" version="-1" />
-  <import index="31" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="32" modelUID="jetbrains.mps.baseLanguage.editor@java_stub" version="-1" />
   <import index="35" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <import index="36" modelUID="jetbrains.mps.patterns.util@java_stub" version="-1" />
   <import index="38" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
-  <import index="39" modelUID="jetbrains.mps.ide.projectPane@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1138168268784">
     <property name="name" value="binaryOperations" />
     <property name="package" value="rightTransform" />
@@ -2989,6 +2986,19 @@
           </node>
           <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1197028992560">
             <property name="text" value="new &quot;.&quot; operation" />
+          </node>
+        </node>
+      </node>
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitutePreconditionFunction" id="1203976965118">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203976965119">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203976966173">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203976966174">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203976966175">
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1203976966176" />
+                <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1203976966177" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1203976966178" />
+            </node>
           </node>
         </node>
       </node>
