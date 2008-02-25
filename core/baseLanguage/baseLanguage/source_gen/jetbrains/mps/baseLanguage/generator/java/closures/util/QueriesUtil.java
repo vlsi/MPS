@@ -25,7 +25,7 @@ public class QueriesUtil {
       ClassConcept adapter = (ClassConcept)SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope());
       enclosingClass = adapter.getNode();
     }
-    SModel outputModel = generator.getTargetModel();
+    SModel outputModel = generator.getOutputModel();
     SNode outputClassType = SModelOperations.createNewNode(outputModel, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(outputClassType, "classifier", enclosingClass, false);
     {
