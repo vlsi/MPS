@@ -1,10 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.*;
@@ -36,21 +34,20 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import javax.swing.event.PopupMenuListener;
-import javax.swing.event.PopupMenuEvent;
 import javax.swing.border.LineBorder;
+import javax.swing.event.PopupMenuEvent;
+import javax.swing.event.PopupMenuListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.lang.ref.WeakReference;
 import java.util.*;
 import java.util.List;
-import java.lang.ref.WeakReference;
 
 
 /**
@@ -481,6 +478,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     selectNode(current[0]);
   }
 
+/*
   private SNode findLeftNode(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
     if (includeThis && current.isInstanceOfConcept(acd)) {
       return current;
@@ -496,6 +494,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     return null;
   }
+*/
 
   public SNode getEditedNode() {
     if (myNodePointer != null) {
@@ -1364,7 +1363,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             while (selectedNode != null) {
               final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
               if (herror != null) {
-                final SNode selectedNode1 = selectedNode;
+//                final SNode selectedNode1 = selectedNode;
                 SwingUtilities.invokeLater(new Runnable() {
                   public void run() {
                     // String nodeClassName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
@@ -1526,25 +1525,29 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     Rectangle visibleRect = getVisibleRect();
-    boolean adjustHorizontally = !visibleRect.contains(new Rectangle(x0, visibleRect.y, width, visibleRect.height));
-    if (adjustHorizontally) {
-      int x1 = Math.max(0, x0 + width - viewportWidth);
-      scrollRectToVisible(
-        expandRectangleOneLine(
-          new Rectangle(
-            x1, largestVerticalBigCell.getY(),
-            x0 - x1 + width, largestVerticalBigCell.getHeight()
-          )));
-    } else {
-      scrollRectToVisible(
-        expandRectangleOneLine(
-          new Rectangle(
-            x0, largestVerticalBigCell.getY(),
-            width, largestVerticalBigCell.getHeight()
-          )));
+    Rectangle rectangle = new Rectangle(x0, visibleRect.y, width, visibleRect.height);
+    if (!rectangle.isEmpty()) {
+      boolean adjustHorizontally = !visibleRect.contains(rectangle);
+      if (adjustHorizontally) {
+        int x1 = Math.max(0, x0 + width - viewportWidth);
+        scrollRectToVisible(
+          expandRectangleOneLine(
+            new Rectangle(
+              x1, largestVerticalBigCell.getY(),
+              x0 - x1 + width, largestVerticalBigCell.getHeight()
+            )));
+      } else {
+        scrollRectToVisible(
+          expandRectangleOneLine(
+            new Rectangle(
+              x0, largestVerticalBigCell.getY(),
+              width, largestVerticalBigCell.getHeight()
+            )));
+      }
     }
   }
 
+/*
   private EditorCell findLargestBigCellFittingOnTheScreenVertically(EditorCell cell) {
     int thresholdHeight = myScrollPane.getViewport().getHeight();
 
@@ -1567,6 +1570,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
   }
+*/
 
   private Rectangle expandRectangleOneLine(Rectangle r) {
     Font defaultFont = ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).getDefaultEditorFont();
