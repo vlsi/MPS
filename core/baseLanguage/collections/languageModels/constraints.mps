@@ -580,22 +580,22 @@
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203966927769">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203966925252">
                 <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203966924900" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203966926918">
-                  <link role="link" targetNodeId="1.1151701835028" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203978653805">
+                  <link role="link" targetNodeId="4.1197027771414" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1203966929092" />
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203966932383">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203966932369" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203966934064">
-                <link role="link" targetNodeId="1.1151701835028" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203978657421">
+                <link role="link" targetNodeId="4.1197027771414" />
               </node>
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203966935917">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203966935910" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203966938214">
-                <link role="link" targetNodeId="4.1197027771414" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203978660533">
+                <link role="link" targetNodeId="1.1151701835028" />
               </node>
             </node>
           </node>

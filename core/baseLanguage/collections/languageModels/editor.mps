@@ -69,7 +69,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1203973816618">
         <property name="vertical" value="true" />
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1203973831042">
-          <link role="relationDeclaration" targetNodeId="1.1151701835028" />
+          <link role="relationDeclaration" targetNodeId="3.1197027771414" />
         </node>
         <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1203973816620">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203973816621">
@@ -77,8 +77,8 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203973826406">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203973824364">
                   <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1203973824351" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203973826057">
-                    <link role="link" targetNodeId="1.1151701835028" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203978670305">
+                    <link role="link" targetNodeId="3.1197027771414" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1203973827700" />
@@ -87,7 +87,7 @@
           </node>
         </node>
         <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1203973835915">
-          <link role="relationDeclaration" targetNodeId="3.1197027771414" />
+          <link role="relationDeclaration" targetNodeId="1.1151701835028" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1151702156292">

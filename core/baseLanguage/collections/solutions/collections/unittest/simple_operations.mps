@@ -1172,6 +1172,79 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193924842300" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1203978489854">
+      <property name="name" value="test_3" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203978489855" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203978489856" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203978489857">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203978505890">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203978505891">
+            <property name="name" value="li" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1203978505892">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203978509692">
+                <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203978517442">
+              <link role="baseMethodDeclaration" targetNodeId="2.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
+              <link role="classConcept" targetNodeId="2.~Arrays" resolveInfo="Arrays" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203978518925">
+                <property name="value" value="1" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203978525405">
+                <property name="value" value="2" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203978526406">
+                <property name="value" value="3" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203978527118">
+                <property name="value" value="4" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203978528830">
+                <property name="value" value="5" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203980123611">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203980123612">
+            <property name="name" value="lo" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1203980123613">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203980123614">
+                <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1203980123615">
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1203980123616" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1203980123617" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1203980123618">
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DistinctOperation" id="1203980123619" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1203980123620" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1203980123621">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ConcatOperation" id="1203980123622">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203980123623">
+                      <link role="variableDeclaration" targetNodeId="1203978505891" resolveInfo="ll" />
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1203980123624" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203980123625">
+                    <link role="variableDeclaration" targetNodeId="1203978505891" resolveInfo="ll" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1203980132963">
+          <node role="expected" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203980134258">
+            <link role="variableDeclaration" targetNodeId="1203978505891" resolveInfo="li" />
+          </node>
+          <node role="actual" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203980138053">
+            <link role="variableDeclaration" targetNodeId="1203980123612" resolveInfo="lo" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1171392114612">
       <link role="classifier" targetNodeId="3.~TestCase" resolveInfo="TestCase" />
     </node>

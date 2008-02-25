@@ -51,10 +51,6 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression") && (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getParentNode(), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapType"), true) != null);
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_IOperation_1203973974098(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression") && (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getParentNode(), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), true) != null);
-  }
-
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1161719130431(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getSourceNode());
     SNode sequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), false);
@@ -199,27 +195,6 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_1203973962964(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation", operationContext.getScope());
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation"), SNodeOperations.getModel(_context.getParentNode()), operationContext.getScope());
-        }
-
-      };
-      Iterable queryResult = (Iterable)calc.calculate();
-      assert queryResult != null;
-      for(Object item : queryResult) {
-        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-        result.addAll(defaultActions);
-      }
-    }
-    return result;
-  }
-
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1151703707960(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
@@ -229,7 +204,7 @@ public class QueriesGenerated {
         public SNode doSubstitute(String pattern) {
           SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "leftExpression", _context.getSourceNode(), true);
+          SLinkOperations.setTarget(result, "operand", _context.getSourceNode(), true);
           return result;
         }
 
