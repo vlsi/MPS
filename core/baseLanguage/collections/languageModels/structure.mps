@@ -39,7 +39,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1151701773464">
     <property name="name" value="SequenceOperationExpression" />
-    <link role="extends" targetNodeId="2.1068431790191" />
+    <link role="extends" targetNodeId="2.1197027756228" resolveInfo="DotExpression" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1151701835028">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
@@ -50,7 +50,8 @@
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="operation" />
-      <link role="target" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
+      <link role="specializedLink" targetNodeId="2.1197027833540" />
+      <link role="target" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1200099720700">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
@@ -61,6 +62,9 @@
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1151702039690">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203971063232">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1151702311717">
