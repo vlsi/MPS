@@ -206,7 +206,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       ConceptDeclaration parentConcept = concept;
       ConceptContainer prevConceptContainer = null;
       while (parentConcept != null && parentConcept != SModelUtil_new.getBaseConcept() &&
-              !(mySkipAncestors && parentConcept.getModel() != structureModel)) {
+        !(mySkipAncestors && parentConcept.getModel() != structureModel)) {
         ConceptContainer newConceptContainer = processed.get(parentConcept);
         if (newConceptContainer == null) {
           newConceptContainer = new ConceptContainer(parentConcept, this, parentConcept.getModel() != structureModel);
@@ -225,15 +225,21 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
   private void relayout() {
     if (myRoots.isEmpty()) return;
-    int y = 0;
-    int x = 0;
-    int maxWidth = 0;
-    for (ConceptContainer root : myRoots) {
-      root.updateSubtreeWidth();
-      maxWidth = Math.max(maxWidth, root.getSubtreeWidth());
-    }
-    myHeight = relayoutChildren(myRoots, x, y, true);
-    myWidth = maxWidth;
+
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        int y = 0;
+        int x = 0;
+        int maxWidth = 0;
+        for (ConceptContainer root : myRoots) {
+          root.updateSubtreeWidth();
+          maxWidth = Math.max(maxWidth, root.getSubtreeWidth());
+        }
+        myHeight = relayoutChildren(myRoots, x, y, true);
+        myWidth = maxWidth;
+      }
+    });
+
   }
 
   private int relayoutChildren(List<ConceptContainer> currentChildren, int x, int y, boolean vertical) {
@@ -271,7 +277,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     JViewport viewport = (JViewport) parent;
     Rectangle viewRect = viewport.getViewRect();
     return new Dimension(Math.max(viewRect.width, myWidth),
-            Math.max(viewRect.height, myHeight));
+      Math.max(viewRect.height, myHeight));
   }
 
 
@@ -334,8 +340,8 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     private java.util.List<ConceptContainer> myChildren = new ArrayList<ConceptContainer>();
     private ConceptContainer myParent;
     private Font myFont =
-            ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).
-                    getDefaultEditorFont().deriveFont(Font.PLAIN, 12f);
+      ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).
+        getDefaultEditorFont().deriveFont(Font.PLAIN, 12f);
     private LanguageHierarchiesComponent myComponent;
     private java.util.List<MouseListener> myMouseListeners = new ArrayList<MouseListener>();
     private IOperationContext myOperationContext;
