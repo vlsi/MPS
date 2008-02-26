@@ -1547,31 +1547,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-/*
-  private EditorCell findLargestBigCellFittingOnTheScreenVertically(EditorCell cell) {
-    int thresholdHeight = myScrollPane.getViewport().getHeight();
-
-    EditorCell result = cell;
-    EditorCell current = cell;
-
-    while (true) {
-      if (current.isBigCell()) {
-        result = current;
-      }
-
-      current = current.getParent();
-
-      if (current == null) {
-        return result;
-      }
-
-      if (current.getHeight() > thresholdHeight) {
-        return result;
-      }
-    }
-  }
-*/
-
   private Rectangle expandRectangleOneLine(Rectangle r) {
     Font defaultFont = ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).getDefaultEditorFont();
     FontMetrics fontMetrics = getFontMetrics(defaultFont);
