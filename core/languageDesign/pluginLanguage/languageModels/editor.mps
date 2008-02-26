@@ -596,6 +596,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
           id="1203852161071">
       <property name="vertical" value="true"/>
+      <property name="usesFolding" value="true"/>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
             id="1203852194938">
         <property name="selectable" value="false"/>
@@ -603,27 +604,11 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1203852200577">
           <property name="text" value="single-tabbed editor tab"/>
+          <property name="textBgColor" value="orange"/>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
               id="1203852213283">
           <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-              id="1203852943669">
-          <property name="text" value="for concept"/>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell"
-              id="1203852951565">
-          <link role="relationDeclaration" targetNodeId="1.1203852624930"/>
-          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent"
-                id="1203852951566">
-            <link role="conceptDeclaration" targetNodeId="7.1169125787135" resolveInfo="AbstractConceptDeclaration"/>
-            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
-                  id="1203852955437">
-              <property name="readOnly" value="true"/>
-              <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
-            </node>
-          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
@@ -662,6 +647,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
           id="1203852433961">
       <property name="vertical" value="true"/>
+      <property name="usesFolding" value="true"/>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
             id="1203852433962">
         <property name="selectable" value="false"/>
@@ -669,27 +655,11 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1203852433963">
           <property name="text" value="multitabbed editor tab"/>
+          <property name="textBgColor" value="orange"/>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
               id="1203852433964">
           <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-              id="1203852690655">
-          <property name="text" value="for concept"/>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell"
-              id="1203852929452">
-          <link role="relationDeclaration" targetNodeId="1.1203852624930"/>
-          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent"
-                id="1203852929453">
-            <link role="conceptDeclaration" targetNodeId="7.1169125787135" resolveInfo="AbstractConceptDeclaration"/>
-            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
-                  id="1203852933636">
-              <property name="readOnly" value="true"/>
-              <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
-            </node>
-          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
@@ -714,6 +684,13 @@
         <link role="relationDeclaration" targetNodeId="1.1203852083094"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1203872985188"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+            id="1203872987831">
+        <property name="noTargetText" value="&lt;get tab text from snode's name&gt;"/>
+        <link role="relationDeclaration" targetNodeId="1.1203852102915"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1203852433972"/>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1203852433974">
@@ -721,6 +698,50 @@
         <link role="relationDeclaration" targetNodeId="1.1203851845428"/>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203866102571">
+    <property name="package" value="EditorTab"/>
+    <link role="conceptDeclaration" targetNodeId="1.1203866019489" resolveInfo="TabbedEditor"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+          id="1203866128718">
+      <property name="vertical" value="true"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1203866131970">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1203866134691">
+          <property name="text" value="tabbed editor for concept"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell"
+              id="1203866151631">
+          <link role="relationDeclaration" targetNodeId="1.1203866062022"/>
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent"
+                id="1203866151632">
+            <link role="conceptDeclaration" targetNodeId="7.1169125787135" resolveInfo="AbstractConceptDeclaration"/>
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+                  id="1203866155415">
+              <property name="readOnly" value="true"/>
+              <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1203866161120"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList"
+            id="1203866168638">
+        <property name="vertical" value="true"/>
+        <property name="usesFolding" value="false"/>
+        <property name="separatorText" value=" "/>
+        <link role="relationDeclaration" targetNodeId="1.1203866063460"/>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203881489388">
+    <link role="conceptDeclaration" targetNodeId="1.1203866635736" resolveInfo="FakePlugin"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+          id="1203881493812"/>
   </node>
 </model>
 

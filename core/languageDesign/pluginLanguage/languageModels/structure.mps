@@ -52,7 +52,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071663527">
     <property name="name" value="SingletabbedEditorTab"/>
     <property name="package" value="EditorTab"/>
-    <property name="rootable" value="true"/>
+    <property name="rootable" value="false"/>
     <link role="extends" targetNodeId="1203851787677" resolveInfo="AbstractEditorTab"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1203852126300">
@@ -69,7 +69,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203080649866">
     <property name="name" value="ProjectPane"/>
-    <property name="package" value="tasks"/>
+    <property name="package" value="ProjectPane"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203082695294">
@@ -135,6 +135,11 @@
     <property name="name" value="ActionConfigurationDeclaration"/>
     <property name="rootable" value="true"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1203866277391">
+      <property name="value" value="Action Configuration"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1203088188973">
       <property name="metaClass" value="aggregation"/>
@@ -278,7 +283,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203780151140">
     <property name="package" value="EditorTab"/>
     <property name="name" value="MultitabbedEditorTab"/>
-    <property name="rootable" value="true"/>
+    <property name="rootable" value="false"/>
     <link role="extends" targetNodeId="1203851787677" resolveInfo="AbstractEditorTab"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1203852083094">
@@ -297,14 +302,8 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203851787677">
     <property name="package" value="EditorTab"/>
     <property name="name" value="AbstractEditorTab"/>
-    <property name="rootable" value="true"/>
+    <property name="rootable" value="false"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1203852624930">
-      <property name="role" value="forConcept"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="8.1169125787135" resolveInfo="AbstractConceptDeclaration"/>
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1203851845428">
       <property name="metaClass" value="aggregation"/>
@@ -418,6 +417,30 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203853034639">
     <property name="package" value="EditorTab.Methods"/>
     <property name="name" value="ConceptFunctionParameter_node"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203866019489">
+    <property name="package" value="EditorTab"/>
+    <property name="name" value="TabbedEditorDeclaration"/>
+    <property name="rootable" value="true"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1203866063460">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="tabs"/>
+      <property name="sourceCardinality" value="0..n"/>
+      <link role="target" targetNodeId="1203851787677" resolveInfo="AbstractEditorTab"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1203866062022">
+      <property name="role" value="forConcept"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="8.1169125787135" resolveInfo="AbstractConceptDeclaration"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203866635736">
+    <property name="name" value="FakePlugin"/>
+    <property name="rootable" value="true"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
   </node>
 </model>
