@@ -205,5 +205,18 @@
       <link role="target" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204015075559">
+    <property name="name" value="Copy" />
+    <link role="extends" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204015133936">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="source" />
+      <link role="target" targetNodeId="1203601915645" resolveInfo="Source" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204015144550">
+      <property name="value" value="copy" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
