@@ -189,7 +189,7 @@ public class SModelRepository extends SModelAdapter {
 
     Set<SModelDescriptor> descriptors = myOwnerToModelMap.get(owner);
     if (descriptors == null) {
-      descriptors = new HashSet<SModelDescriptor>();
+      descriptors = new LinkedHashSet<SModelDescriptor>();
       myOwnerToModelMap.put(owner, descriptors);
     }
     descriptors.add(modelDescriptor);
@@ -224,7 +224,7 @@ public class SModelRepository extends SModelAdapter {
 
     Set<SModelDescriptor> descriptors = myOwnerToModelMap.get(owner);
     if (descriptors == null) {
-      descriptors = new HashSet<SModelDescriptor>();
+      descriptors = new LinkedHashSet<SModelDescriptor>();
       myOwnerToModelMap.put(owner, descriptors);
     }
     descriptors.add(modelDescriptor);

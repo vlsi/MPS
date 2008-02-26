@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.lang.ref.SoftReference;
 
 /**
  * @author Kostik
@@ -50,7 +51,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange ;
   private IFile myModelFile;
-  private FastNodeFinder myFastNodeFinder;
+
+  private SoftReference<FastNodeFinder> myFastNodeFinder = new SoftReference<FastNodeFinder>(null);
   private List<IPostLoadRunnable> myPostLoadRunnables = new ArrayList<IPostLoadRunnable>(2);
   private Throwable myInitializationStackTrace;
 
@@ -397,10 +399,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return mySModel != null;
   }
 
-  public void refresh() {
+  public void refresh() {      
     if (isInitialized()) {
       long start = System.currentTimeMillis();
-      myFastNodeFinder = null;
+      myFastNodeFinder = new SoftReference<FastNodeFinder>(null);
       myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
       myModelListeners.addAll(mySModel.getModelListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
@@ -422,7 +424,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   public void replaceModel(SModel newModel) {
     if (newModel == mySModel) return;
     if (isInitialized()) {
-      myFastNodeFinder = null;
+      myFastNodeFinder = new SoftReference<FastNodeFinder>(null);
       myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
       myModelListeners.addAll(mySModel.getModelListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
@@ -591,10 +593,12 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   public FastNodeFinder getFastNodeFinder() {
-    if (myFastNodeFinder == null) {
-      myFastNodeFinder = new FastNodeFinder(this);
+    FastNodeFinder result = myFastNodeFinder.get();
+    if (result == null) {
+      result = new FastNodeFinder(this);
+      myFastNodeFinder = new SoftReference(result);
     }
-    return myFastNodeFinder;
+    return result;
   }
 
   private void addInstances(SNode current, AbstractConceptDeclaration concept, Set<SNode> result, IScope scope) {
