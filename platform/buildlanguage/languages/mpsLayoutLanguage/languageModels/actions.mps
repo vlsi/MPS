@@ -466,14 +466,17 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203607679500">
                   <property name="name" value="modules" />
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203607679501">
-                    <link role="classifier" targetNodeId="5.~Set" resolveInfo="Set" />
+                    <link role="classifier" targetNodeId="5.~List" resolveInfo="List" />
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203607700081">
                       <link role="classifier" targetNodeId="8.~IModule" resolveInfo="IModule" />
                     </node>
                   </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203607720149">
-                    <link role="baseMethodDeclaration" targetNodeId="9.~IScope.getVisibleModules():java.util.Set" resolveInfo="getVisibleModules" />
-                    <node role="instance" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1203607713614" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204028157426">
+                    <link role="baseMethodDeclaration" targetNodeId="9.~MPSModuleRepository.getAllModules():java.util.List" resolveInfo="getAllModules" />
+                    <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204028157427">
+                      <link role="baseMethodDeclaration" targetNodeId="9.~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolveInfo="getInstance" />
+                      <link role="classConcept" targetNodeId="9.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
+                    </node>
                   </node>
                 </node>
               </node>
