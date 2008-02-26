@@ -10,7 +10,7 @@ public class EditorsFinderManager {
   private static final Logger LOG = Logger.getLogger(EditorsFinderManager.class);
 
   private static Map<String, IGeneralizingEntityEditorFinder> ourLanguageNamespacesToGEEditorFinders = new HashMap<String, IGeneralizingEntityEditorFinder>();  
-  private static Map<String, INodeEditor> ourCachedEditors = new HashMap<String, INodeEditor>();
+  private static Map<String, Class> ourCachedEditors = new HashMap<String, Class>();
 
   public static INodeEditor loadEditor(EditorContext context, SNode node) {
     IGeneralizingEntityEditorFinder finder = getGEFinder(node);
@@ -19,11 +19,19 @@ public class EditorsFinderManager {
     }
 
     if (ourCachedEditors.containsKey(node.getConceptFqName())) {
-      return ourCachedEditors.get(node.getConceptFqName());
+      Class resultClass = ourCachedEditors.get(node.getConceptFqName());
+      try {
+        return (INodeEditor) resultClass.newInstance();
+      } catch (InstantiationException e) {
+        LOG.error(e);
+      } catch (IllegalAccessException e) {
+        LOG.error(e);
+      }
+      return new DefaultNodeEditor();        
     }
 
-    INodeEditor result = finder.findEditor(node, context);    
-    ourCachedEditors.put(node.getConceptFqName(), result);
+    INodeEditor result = finder.findEditor(node, context);
+    ourCachedEditors.put(node.getConceptFqName(), result == null ? null : result.getClass());
     return result;
   }
 
