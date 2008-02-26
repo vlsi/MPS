@@ -21,9 +21,9 @@ public interface IWrapper extends IMatcher {
 
   public void fireBecomesDeeplyConcrete(EquationManager equationManager);
 
-  public void addWrapperListener(IWrapperListener wrapperListener);
+  public void addWrapperListener(IWrapperListener wrapperListener, EquationManager equationManager);
 
-  public void removeWrapperlistener(IWrapperListener wrapperListener);
+  public void removeWrapperlistener(IWrapperListener wrapperListener, EquationManager equationManager);
 
   public boolean isShallowConcrete();
 

@@ -481,19 +481,6 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     myModelDescriptorsWithListener.clear();
   }
 
-  public Set getEffects(SNode type) {
-    return myEquationManager.getEffects(type);
-  }
-
-  public boolean hasEffect(SNode type, Object effect) {
-    Set set = getEffects(type);
-    return set != null && set.contains(effect);
-  }
-
-  public void addEffect(SNode type, Object effect) {
-    myEquationManager.addEffect(NodeWrapper.createNodeWrapper(type), effect);
-  }
-
   public void clearListeners() {
     removeOurListener();
   }

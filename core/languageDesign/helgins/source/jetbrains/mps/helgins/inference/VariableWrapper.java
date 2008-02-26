@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.EqualUtil;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,9 +19,12 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
   private boolean myIsShallowConcrete = false;
   private IWrapper myShallowConcreteRepresentator = null;
 
-  protected VariableWrapper(SNode node) {
+  protected VariableWrapper(SNode node, EquationManager equationManager) {
     super(node);
-    addWrapperListener(this);
+    if (equationManager == null) {
+      LOG.error("equationManager in constructor is null");
+    }
+    addWrapperListener(this, equationManager);
   }
 
   public boolean isVariable() {
@@ -40,8 +44,8 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
   }
 
   public void representatorSet(IWrapper wrapper, IWrapper representator, EquationManager equationManager) {
-    wrapper.removeWrapperlistener(this);
-    representator.addWrapperListener(this);
+    wrapper.removeWrapperlistener(this, equationManager);
+    representator.addWrapperListener(this, equationManager);
 
     WhenConcreteEntity varConditionWrapper = equationManager.getWhenConcreteEntity(this);
     equationManager.clearWhenConcreteEntity(this);
@@ -55,17 +59,17 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
       equationManager.checkConcrete(representator);
       SNode parent = getNode().getParent();
       while (parent != null) {
-        equationManager.checkConcrete(NodeWrapper.createNodeWrapper(parent));
+        equationManager.checkConcrete(NodeWrapper.createNodeWrapper(parent, equationManager));
         parent = parent.getParent();
       }
     }
   }
 
   public void becomesDeeplyConcrete(IWrapper wrapper, EquationManager equationManager) {
-    if (wrapper == myShallowConcreteRepresentator) {//must be always true
+    if (EqualUtil.equals(wrapper, myShallowConcreteRepresentator)) {//must be always true
       SNode parent = getNode().getParent();
       while (parent != null) {
-        equationManager.checkConcrete(NodeWrapper.createNodeWrapper(parent));
+        equationManager.checkConcrete(NodeWrapper.createNodeWrapper(parent, equationManager));
         parent = parent.getParent();
       }
     } else {

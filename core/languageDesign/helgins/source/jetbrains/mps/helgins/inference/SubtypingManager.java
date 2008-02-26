@@ -48,7 +48,8 @@ public class SubtypingManager {
   public boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
     if (subtype == supertype) return true;
     if (subtype == null || supertype == null) return false;
-    return isSubtype(NodeWrapper.createNodeWrapper(subtype), NodeWrapper.createNodeWrapper(supertype), null, null, isWeak);
+    return isSubtype(NodeWrapper.createNodeWrapper(subtype, null),
+      NodeWrapper.createNodeWrapper(supertype, null), null, null, isWeak);
   }
 
   public boolean isSubtype(IWrapper subtype, IWrapper supertype, EquationManager equationManager, ErrorInfo errorInfo) {
@@ -127,7 +128,8 @@ public class SubtypingManager {
     if (descendants == null) return false;
     descendants.removeStructurally(superRepresentator.getNode());
     for (SNode descendant : descendants) {
-      if (subRepresentator.matchesWith(NodeWrapper.createNodeWrapper(descendant), equationManager, errorInfo)) {
+      if (subRepresentator.matchesWith(NodeWrapper.createNodeWrapper(descendant, equationManager),
+        equationManager, errorInfo)) {
         return true;
       }
     }
@@ -155,7 +157,8 @@ public class SubtypingManager {
         }
       });
       for (SNode ancestor : ancestorsSorted) {
-        if (superRepresentator.matchesWith(NodeWrapper.createNodeWrapper(ancestor), equationManager, errorInfo)) {
+        if (superRepresentator.matchesWith(NodeWrapper.createNodeWrapper(ancestor, equationManager),
+          equationManager, errorInfo)) {
           return true;
         }
       }
@@ -207,7 +210,7 @@ public class SubtypingManager {
       if (subtypingRule_runtimes != null) {
         for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
           List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(node);
-          result.addAll(toWrappers(new HashSet<SNode>(supertypes)));
+          result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));
         }
       }
     }
@@ -245,7 +248,7 @@ public class SubtypingManager {
       if (supertypingRule_runtimes != null) {
         for (SupertypingRule_Runtime supertypingRule : supertypingRule_runtimes) {
           List<SNode> subtypes = supertypingRule.getSubOrSuperTypes(node);
-          result.addAll(toWrappers(new HashSet<SNode>(subtypes)));
+          result.addAll(toWrappers(new HashSet<SNode>(subtypes), null));
         }
       }
     }
@@ -253,20 +256,20 @@ public class SubtypingManager {
     return result;
   }
 
-  public IWrapper leastCommonSupertype(Set<IWrapper> types, boolean isWeak) {
+  public IWrapper leastCommonSupertype(Set<IWrapper> types, boolean isWeak, EquationManager equationManager) {
     Set<IWrapper> lcss = leastCommonSupertypesWrappers(types, isWeak);
     if (lcss.size() != 1) {
       RuntimeErrorType type = RuntimeErrorType.newInstance(myTypeChecker.getRuntimeTypesModel());
       type.setErrorText("uncomparable types");
-      return NodeWrapper.fromNode(BaseAdapter.fromAdapter(type));
+      return NodeWrapper.fromNode(BaseAdapter.fromAdapter(type), equationManager);
     }
     return lcss.iterator().next();
   }
 
-  public static Set<IWrapper> toWrappers(Set<SNode> nodes) {
+  public static Set<IWrapper> toWrappers(Set<SNode> nodes, final EquationManager equationManager) {
     return CollectionUtil.map(nodes, new Mapper<SNode, IWrapper>() {
       public IWrapper map(SNode sNode) {
-        return NodeWrapper.fromNode(sNode);
+        return NodeWrapper.fromNode(sNode, equationManager);
       }
     });
   }
@@ -281,7 +284,7 @@ public class SubtypingManager {
   }
 
   public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
-    return toNodes(leastCommonSupertypesWrappers(toWrappers(types), isWeak));
+    return toNodes(leastCommonSupertypesWrappers(toWrappers(types, null), isWeak));
   }
 
   public Set<IWrapper> leastCommonSupertypesWrappers(Set<IWrapper> types, boolean isWeak) {
@@ -421,17 +424,17 @@ public class SubtypingManager {
     return result_; //commonSupertypes;
   }
 
-  public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, boolean isWeak) {
+  public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, boolean isWeak, EquationManager equationManager) {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
     CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
-    boolean success = searchInSupertypes(NodeWrapper.createNodeWrapper(subtype), coersionMatcher, null, null, isWeak);
+    boolean success = searchInSupertypes(NodeWrapper.createNodeWrapper(subtype, equationManager), coersionMatcher, null, null, isWeak);
     if (!success) return null;
     return coersionMatcher.getResult();
   }
 
-  public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern) {
-    return coerceSubtyping(subtype, pattern, true);
+  public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, EquationManager equationManager) {
+    return coerceSubtyping(subtype, pattern, true, equationManager);
   }
 
   public boolean isComparableWRTRules(IWrapper wrapper1, IWrapper wrapper2, EquationManager equationManager, ErrorInfo errorInfo, boolean isWeak) {
@@ -452,11 +455,6 @@ public class SubtypingManager {
     }
 
     return false;
-  }
-
-  public <T extends BaseAdapter> T getCoercedSupertypeByAdapterClass(SNode subtype, Class<T> aClass) {
-    IMatchingPattern pattern = HUtil.createMatchingPatternByConceptFQName(NameUtil.conceptFQNameByAdapterClass(aClass));
-    return (T) BaseAdapter.fromNode(coerceSubtyping(subtype, pattern));
   }
 
   public SModel getRuntimeTypesModel() {

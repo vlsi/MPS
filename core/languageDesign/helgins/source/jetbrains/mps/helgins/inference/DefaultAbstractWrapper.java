@@ -13,32 +13,35 @@ import java.util.HashSet;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class DefaultAbstractWrapper implements IWrapper {
-  private Set<IWrapperListener> myWrapperListeners = new WeakSet<IWrapperListener>();
+
+  private Set<IWrapperListener> getWrapperListeners(EquationManager equationManager) {
+    return equationManager.getWrapperListeners(this);
+  }
 
   public void fireRepresentatorSet(IWrapper representator, EquationManager equationManager) {
-    for (IWrapperListener listener : new HashSet<IWrapperListener>(myWrapperListeners)) {
+    for (IWrapperListener listener : new HashSet<IWrapperListener>(getWrapperListeners(equationManager))) {
       listener.representatorSet(this, representator, equationManager);
     }
   }
 
   public void fireBecomesDeeplyConcrete(EquationManager equationManager) {
-    for (IWrapperListener listener : new HashSet<IWrapperListener>(myWrapperListeners)) {
+    for (IWrapperListener listener : new HashSet<IWrapperListener>(getWrapperListeners(equationManager))) {
       listener.becomesDeeplyConcrete(this, equationManager);
     }
   }
 
   public void fireWeakParentAdded(IWrapper parent, EquationManager equationManager) {
-    for (IWrapperListener listener : new HashSet<IWrapperListener>(myWrapperListeners)) {
+    for (IWrapperListener listener : new HashSet<IWrapperListener>(getWrapperListeners(equationManager))) {
       listener.weakParentAdded(this, parent, equationManager);
     }
   }
 
-  public void addWrapperListener(IWrapperListener wrapperListener) {
-    myWrapperListeners.add(wrapperListener);
+  public void addWrapperListener(IWrapperListener wrapperListener, EquationManager equationManager) {
+    getWrapperListeners(equationManager).add(wrapperListener);
   }
 
-  public void removeWrapperlistener(IWrapperListener wrapperListener) {
-    myWrapperListeners.remove(wrapperListener);
+  public void removeWrapperlistener(IWrapperListener wrapperListener, EquationManager equationManager) {
+    getWrapperListeners(equationManager).remove(wrapperListener);
   }
 
   public boolean isShallowConcrete() {

@@ -28,9 +28,9 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
 
   private SNode myNode;
 
-  public static NodeWrapper createNodeWrapper(@NotNull SNode node) {
+  public static NodeWrapper createNodeWrapper(@NotNull SNode node, EquationManager equationManager) {
     if ("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable".equals(node.getConceptFqName())) {
-      return new VariableWrapper(node);
+      return new VariableWrapper(node, equationManager);
     } else {
       return new NodeWrapper(node);
     }
@@ -151,8 +151,8 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     return lhs.getNode();
   }
 
-  public static NodeWrapper fromNode(SNode node) {
+  public static NodeWrapper fromNode(SNode node, EquationManager equationManager) {
     if (node == null) return null;
-    return NodeWrapper.createNodeWrapper(node);
+    return NodeWrapper.createNodeWrapper(node, equationManager);
   }
 }

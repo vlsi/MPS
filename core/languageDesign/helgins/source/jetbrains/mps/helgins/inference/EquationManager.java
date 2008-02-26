@@ -12,6 +12,8 @@ import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: User
@@ -39,7 +41,7 @@ public class EquationManager {
   private Map<IWrapper, WhenConcreteEntity> myWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
   private Map<IWrapper, Set<SNodePointer>> myNonConcreteVars = new HashMap<IWrapper, Set<SNodePointer>>();
 
-  private Map<IWrapper, Set> myTypesWithEffects = new HashMap<IWrapper, Set>();
+  private Map<IWrapper, Set<IWrapperListener>> myWrapperListeners = new HashMap<IWrapper, Set<IWrapperListener>>();
 
   public EquationManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
@@ -78,9 +80,19 @@ public class EquationManager {
 
   public SNode getRepresentator(SNode type_) {
     if (type_ == null) return null;
-    SNode representator = NodeWrapper.fromWrapper(getRepresentatorWrapper(NodeWrapper.fromNode(type_)));
+    SNode representator = NodeWrapper.fromWrapper(getRepresentatorWrapper(NodeWrapper.fromNode(type_, this)));
     if (representator == null) return type_;
     return representator;
+  }
+
+  @NotNull
+    /*package*/ Set<IWrapperListener> getWrapperListeners(IWrapper wrapper) {
+    Set<IWrapperListener> listeners = myWrapperListeners.get(wrapper);
+    if (listeners == null) {
+      listeners = new WeakSet<IWrapperListener>();
+      myWrapperListeners.put(wrapper, listeners);
+    }
+    return listeners;
   }
 
   public Set<SNodePointer> getNonConcreteVariables(IWrapper wrapper) {
@@ -145,19 +157,19 @@ public class EquationManager {
 
 
   public void addInequation(SNode subType, SNode supertype, SNode nodeToCheck) {
-    addInequation(NodeWrapper.fromNode(subType), NodeWrapper.fromNode(supertype), nodeToCheck, true);
+    addInequation(NodeWrapper.fromNode(subType, this), NodeWrapper.fromNode(supertype, this), nodeToCheck, true);
   }
 
   public void addInequation(SNode subType, SNode supertype, ErrorInfo errorInfo) {
-    addInequation(NodeWrapper.fromNode(subType), NodeWrapper.fromNode(supertype), errorInfo, true);
+    addInequation(NodeWrapper.fromNode(subType, this), NodeWrapper.fromNode(supertype, this), errorInfo, true);
   }
 
   public void addInequation(SNode subType, SNode supertype, SNode nodeToCheck, boolean isWeak) {
-    addInequation(NodeWrapper.fromNode(subType), NodeWrapper.fromNode(supertype), new ErrorInfo(nodeToCheck, null), isWeak);
+    addInequation(NodeWrapper.fromNode(subType, this), NodeWrapper.fromNode(supertype, this), new ErrorInfo(nodeToCheck, null), isWeak);
   }
 
   public void addInequation(SNode subType, SNode supertype, ErrorInfo errorInfo, boolean isWeak) {
-    addInequation(NodeWrapper.fromNode(subType), NodeWrapper.fromNode(supertype), errorInfo, isWeak);
+    addInequation(NodeWrapper.fromNode(subType, this), NodeWrapper.fromNode(supertype, this), errorInfo, isWeak);
   }
 
   //--------------------
@@ -185,10 +197,10 @@ public class EquationManager {
 
     if (PREPARE_TYPES) {
       if (subType == subtypeRepresentator && subType != null && subType.isConcrete()) {
-        subtypeRepresentator = NodeWrapper.createNodeWrapper(prepareType(subtypeRepresentator.getNode()));
+        subtypeRepresentator = NodeWrapper.createNodeWrapper(prepareType(subtypeRepresentator.getNode()), this);
       }
       if (supertype == supertypeRepresentator && supertype != null && supertype.isConcrete()) {
-        supertypeRepresentator = NodeWrapper.createNodeWrapper(prepareType(supertypeRepresentator.getNode()));
+        supertypeRepresentator = NodeWrapper.createNodeWrapper(prepareType(supertypeRepresentator.getNode()), this);
       }
     }
 
@@ -214,13 +226,13 @@ public class EquationManager {
     if (subtypeRepresentator instanceof NodeWrapper) {
       NodeWrapper subtypeNodeWrapper = (NodeWrapper) subtypeRepresentator;
       SModel typesModel = myTypeChecker.getRuntimeTypesModel();
-      NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(subtypeNodeWrapper.getNode(), typesModel));
+      NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(subtypeNodeWrapper.getNode(), typesModel), this);
       subtypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
     }
     if (supertypeRepresentator instanceof NodeWrapper) {
       NodeWrapper supertypeNodeWrapper = (NodeWrapper) supertypeRepresentator;
       SModel typesModel = myTypeChecker.getRuntimeTypesModel();
-      NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(supertypeNodeWrapper.getNode(), typesModel));
+      NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(supertypeNodeWrapper.getNode(), typesModel), this);
       supertypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
     }
 
@@ -255,19 +267,19 @@ public class EquationManager {
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck) {
-    addInequationComparable(NodeWrapper.fromNode(type1), NodeWrapper.fromNode(type2), nodeToCheck, true);
+    addInequationComparable(NodeWrapper.fromNode(type1, this), NodeWrapper.fromNode(type2, this), nodeToCheck, true);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, ErrorInfo errorInfo) {
-    addInequationComparable(NodeWrapper.fromNode(type1), NodeWrapper.fromNode(type2), errorInfo, true);
+    addInequationComparable(NodeWrapper.fromNode(type1, this), NodeWrapper.fromNode(type2, this), errorInfo, true);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck, boolean isWeak) {
-    addInequationComparable(NodeWrapper.fromNode(type1), NodeWrapper.fromNode(type2), new ErrorInfo(nodeToCheck, null), isWeak);
+    addInequationComparable(NodeWrapper.fromNode(type1, this), NodeWrapper.fromNode(type2, this), new ErrorInfo(nodeToCheck, null), isWeak);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, ErrorInfo errorInfo, boolean isWeak) {
-    addInequationComparable(NodeWrapper.fromNode(type1), NodeWrapper.fromNode(type2), errorInfo, isWeak);
+    addInequationComparable(NodeWrapper.fromNode(type1, this), NodeWrapper.fromNode(type2, this), errorInfo, isWeak);
   }
 
   //---------------------
@@ -377,7 +389,7 @@ public class EquationManager {
           continue;
         }
         IWrapper varRepresentatorWrapper = this.
-          getRepresentatorWrapper(NodeWrapper.createNodeWrapper(var.getNode()));
+          getRepresentatorWrapper(NodeWrapper.createNodeWrapper(var.getNode(), this));
         if (varRepresentatorWrapper.isConcrete()) {
           variables.remove(var);
           for (RuntimeTypeVariable varChild : varRepresentatorWrapper.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
@@ -395,7 +407,7 @@ public class EquationManager {
   }
 
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck) {
-    addEquation(NodeWrapper.fromNode(lhs), NodeWrapper.fromNode(rhs), new ErrorInfo(nodeToCheck, null));
+    addEquation(NodeWrapper.fromNode(lhs, this), NodeWrapper.fromNode(rhs, this), new ErrorInfo(nodeToCheck, null));
   }
 
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck, String errorString) {
@@ -403,7 +415,7 @@ public class EquationManager {
   }
 
   public void addEquation(SNode lhs, SNode rhs, ErrorInfo errorInfo) {
-    addEquation(NodeWrapper.fromNode(lhs), NodeWrapper.fromNode(rhs), errorInfo);
+    addEquation(NodeWrapper.fromNode(lhs, this), NodeWrapper.fromNode(rhs, this), errorInfo);
   }
 
   public void addEquation(IWrapper lhs, IWrapper rhs, ErrorInfo errorInfo) {
@@ -411,10 +423,10 @@ public class EquationManager {
     IWrapper rhsRepresentator = getRepresentatorWrapper(rhs);
     if (PREPARE_TYPES) {
       if (lhs == lhsRepresentator && lhs != null && lhs.isConcrete()) {
-        lhsRepresentator = NodeWrapper.createNodeWrapper(prepareType(lhsRepresentator.getNode()));
+        lhsRepresentator = NodeWrapper.createNodeWrapper(prepareType(lhsRepresentator.getNode()), this);
       }
       if (rhs == rhsRepresentator && rhs != null && rhs.isConcrete()) {
-        rhsRepresentator = NodeWrapper.createNodeWrapper(prepareType(rhsRepresentator.getNode()));
+        rhsRepresentator = NodeWrapper.createNodeWrapper(prepareType(rhsRepresentator.getNode()), this);
       }
     }
 
@@ -455,7 +467,7 @@ public class EquationManager {
 
   void addChildEquations(Set<Pair<SNode, SNode>> childEqs, ErrorInfo errorInfo) {
     for (Pair<SNode, SNode> eq : childEqs) {
-      addEquation(NodeWrapper.fromNode(eq.o2), NodeWrapper.fromNode(eq.o1), errorInfo);
+      addEquation(NodeWrapper.fromNode(eq.o2, this), NodeWrapper.fromNode(eq.o1, this), errorInfo);
     }
   }
 
@@ -471,14 +483,6 @@ public class EquationManager {
   }
 
   private void keepInequationsAndEffects(IWrapper var, IWrapper type) {
-
-    if (myTypesWithEffects.get(var) != null) {
-      Set effects = myTypesWithEffects.get(var);
-      myTypesWithEffects.remove(var);
-      for (Object effect : effects) {
-        addEffect(type, effect);
-      }
-    }
 
     if (mySubtypesToSupertypesMap.get(var) != null) {
       Map<IWrapper,ErrorInfo> supertypes = mySubtypesToSupertypesMap.get(var);
@@ -574,10 +578,10 @@ public class EquationManager {
     mySubtypesToSupertypesMapStrong.clear();
     mySupertypesToSubtypesMapStrong.clear();
     myComparableTypesMap.clear();
-    myTypesWithEffects.clear();
     myEquations.clear();
     myWhenConcreteEntities.clear();
     myNonConcreteVars.clear();
+    myWrapperListeners.clear();
     myRegisteredVariables.clear();
   }
 
@@ -800,7 +804,7 @@ public class EquationManager {
     typeLessThanThis(var, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, ErrorInfo> errorInfoMap, boolean isWeak, ErrorInfo errorInfo) {
         //  T,S <: c => c = lcs(T,S)
-        addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(concreteSubtypes, isWeak),
+        addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(concreteSubtypes, isWeak, EquationManager.this),
           errorInfo);
       }
     });
@@ -926,23 +930,6 @@ public class EquationManager {
     actionPerformer.performAction(thisType, concreteSupertypes, errorInfoMap, isWeak, errorInfo);
   }
 
-  public Set getEffects(SNode type) {
-    return getEffects(NodeWrapper.createNodeWrapper(type));
-  }
-
-  public Set getEffects(IWrapper type) {
-    return myTypesWithEffects.get(type);
-  }
-
-  public void addEffect(IWrapper type, Object effect) {
-    Set set = myTypesWithEffects.get(type);
-    if (set == null) {
-      set = new HashSet();
-      myTypesWithEffects.put(type, set);
-    }
-    set.add(effect);
-  }
-
   /*package*/ IWrapper expandWrapper(SNode term, IWrapper type, SModel typesModel) {
     return expandWrapper(term, type, typesModel, false, null);
   }
@@ -950,7 +937,7 @@ public class EquationManager {
   /*package*/ SNode expandType(SNode term, SNode type, SModel typesModel,
                                boolean finalExpansion, NodeTypesComponent_new nodeTypesComponent)  {
     if (type == null) return null;
-    NodeWrapper wrapper = NodeWrapper.createNodeWrapper(type);
+    NodeWrapper wrapper = NodeWrapper.createNodeWrapper(type, this);
     IWrapper representator;
     representator = this.getRepresentatorWrapper(wrapper);
     return expandWrapper(term, representator, typesModel, finalExpansion, nodeTypesComponent).getNode();
@@ -965,7 +952,7 @@ public class EquationManager {
         BaseConcept argument = (BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
         meetType.addArgument(CopyUtil.copy(argument, meetType.getModel()));
       }
-      return NodeWrapper.createNodeWrapper(meetType.getNode());
+      return NodeWrapper.createNodeWrapper(meetType.getNode(), this);
     }
     if (representator instanceof JoinWrapper) {
       JoinWrapper joinWrapper = (JoinWrapper) representator;
@@ -974,7 +961,7 @@ public class EquationManager {
         BaseConcept argument = (BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
         joinType.addArgument(CopyUtil.copy(argument, joinType.getModel()));
       }
-      return NodeWrapper.createNodeWrapper(joinType.getNode());
+      return NodeWrapper.createNodeWrapper(joinType.getNode(), this);
     }
     return expandNode(term, representator, representator, 0, new HashSet<IWrapper>(), typesModel, finalExpansion, nodeTypesComponent);
   }
@@ -992,7 +979,7 @@ public class EquationManager {
           //recursion!!
           RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
           error.setErrorText("recursion types not allowed");
-          return NodeWrapper.createNodeWrapper(error.getNode());
+          return NodeWrapper.createNodeWrapper(error.getNode(), this);
         }
         variablesMet.add(wrapper);
         wrapper1 = expandNode(term, type, type, 0, variablesMet, typesModel, finalExpansion, nodeTypesComponent);
@@ -1013,7 +1000,7 @@ public class EquationManager {
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
     List<SNode> children = new ArrayList<SNode>(wrapper.getNode().getChildren());
     for (SNode child : children) {
-      SNode newChild = expandNode(term, NodeWrapper.createNodeWrapper(child),
+      SNode newChild = expandNode(term, NodeWrapper.createNodeWrapper(child, this),
         representator, depth + 1, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
@@ -1024,7 +1011,7 @@ public class EquationManager {
       if (child.getParent() == null) {
         RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
         error.setErrorText("recursion types not allowed");
-        return NodeWrapper.createNodeWrapper(error.getNode());
+        return NodeWrapper.createNodeWrapper(error.getNode(), this);
       }
       SNode parent = child.getParent();
       assert parent != null;
@@ -1040,7 +1027,7 @@ public class EquationManager {
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
       if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
-        SNode newNode = expandNode(term, NodeWrapper.createNodeWrapper(oldNode), representator,
+        SNode newNode = expandNode(term, NodeWrapper.createNodeWrapper(oldNode, this), representator,
           depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
         referenceReplacement.put(reference, newNode);
       }
