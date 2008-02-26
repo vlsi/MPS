@@ -2093,7 +2093,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         rebuildEditorContent(events);
 
 
-        if (!hasFocus()) {
+        if (!hasFocus() && !myLightBulb.isVisible()) {
           return;
         }
 
