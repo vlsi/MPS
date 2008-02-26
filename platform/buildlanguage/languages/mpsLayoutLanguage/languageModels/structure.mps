@@ -218,5 +218,16 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204018553150">
+    <property name="name" value="Zip" />
+    <link role="extends" targetNodeId="1203598417283" resolveInfo="Jar" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204018566542">
+      <property name="value" value="zip" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1204019333901">
+      <link role="conceptPropertyDeclaration" targetNodeId="1203619938976" resolveInfo="cleanAfterTheJob" />
+    </node>
+  </node>
 </model>
 
