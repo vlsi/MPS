@@ -47,6 +47,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068499141036">
     <property name="name" value="BaseMethodCall" />
+    <property name="package" value="method" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1137987266052">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
@@ -174,6 +175,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068390468204">
     <property name="name" value="MethodDeclaration" />
     <property name="rootable" value="true" />
+    <property name="package" value="method" />
     <link role="extends" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1158696727750">
       <property name="value" value="freestanding method" />
@@ -182,6 +184,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068498886292">
     <property name="name" value="ParameterDeclaration" />
+    <property name="package" value="method" />
     <link role="extends" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198103547463">
       <property name="value" value="parameter" />
@@ -259,6 +262,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123132">
     <property name="iconPath" value="${language_descriptor}\icons\method.png" />
     <property name="name" value="BaseMethodDeclaration" />
+    <property name="package" value="method" />
     <link role="extends" targetNodeId="1109279851642" resolveInfo="GenericDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1109283235663">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
@@ -388,7 +392,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123158">
     <property name="name" value="FieldReference" />
-    <property name="package" value="oldDotExpression" />
+    <property name="package" value="dotExpression_old" />
     <link role="extends" targetNodeId="1068498886296" resolveInfo="VariableReference" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107216539974">
       <property name="value" value=".&lt;field&gt;" />
@@ -447,7 +451,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123163">
     <property name="name" value="InstanceMethodCall" />
-    <property name="package" value="oldDotExpression" />
+    <property name="package" value="dotExpression_old" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107216670785">
       <property name="value" value=".&lt;method&gt;" />
@@ -474,6 +478,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123165">
     <property name="name" value="InstanceMethodDeclaration" />
+    <property name="package" value="method" />
     <link role="extends" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1178608670077">
       <property name="name" value="isAbstract" />
@@ -568,6 +573,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068581242868">
     <property name="name" value="MethodCall" />
+    <property name="package" value="method" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107217192964">
       <property name="value" value="&lt;{methodDeclaration}&gt;" />
@@ -603,6 +609,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068581242872">
     <property name="name" value="NewExpression" />
+    <property name="package" value="method" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107217304393">
       <property name="value" value="new" />
@@ -627,6 +634,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068581242874">
     <property name="name" value="ParameterReference" />
+    <property name="package" value="method" />
     <link role="extends" targetNodeId="1068498886296" resolveInfo="VariableReference" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107217381435">
       <property name="value" value="&lt;{parameterDeclaration}&gt;" />
@@ -2122,7 +2130,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1173176849460">
     <property name="name" value="ArrayLengthExpression" />
-    <property name="package" value="oldDotExpression" />
+    <property name="package" value="dotExpression_old" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1173176867072">
       <property name="metaClass" value="aggregation" />
@@ -2597,7 +2605,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202948039474">
-    <property name="package" value="dotExpression" />
+    <property name="package" value="method" />
     <property name="name" value="InstanceMethodCallOperation" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1202948091038">

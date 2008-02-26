@@ -1306,6 +1306,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181704925">
+    <property name="package" value="method" />
     <link role="concept" targetNodeId="1.1068580123132" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195229803120">
       <property name="name" value="getPresentation" />
@@ -2824,6 +2825,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181705035">
+    <property name="package" value="method" />
     <link role="concept" targetNodeId="1.1068390468204" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181705036">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181705037" />
@@ -3280,7 +3282,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141241">
-    <property name="package" value="oldDotExpression" />
+    <property name="package" value="dotExpression_old" />
     <link role="concept" targetNodeId="1.1068580123163" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1185034069547">
       <property name="name" value="eval" />
@@ -3988,6 +3990,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141395">
+    <property name="package" value="method" />
     <link role="concept" targetNodeId="1.1068581242872" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194438246162">
       <property name="name" value="getInstanceType" />
@@ -4052,7 +4055,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141404">
-    <property name="package" value="oldDotExpression" />
+    <property name="package" value="dotExpression_old" />
     <link role="concept" targetNodeId="1.1068580123158" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141405">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141406" />
@@ -4237,6 +4240,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141413">
+    <property name="package" value="method" />
     <link role="concept" targetNodeId="1.1068581242874" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141414">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141415" />
@@ -4325,6 +4329,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141422">
+    <property name="package" value="method" />
     <link role="concept" targetNodeId="1.1068581242868" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141423">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141424" />
@@ -5508,6 +5513,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1185033836491">
+    <property name="package" value="method" />
     <link role="concept" targetNodeId="1.1068499141036" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1185033838760">
       <property name="name" value="getActualArguments" />
@@ -6850,6 +6856,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1199560612324">
+    <property name="package" value="method" />
     <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1199560612325">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199560612326" />
@@ -7778,7 +7785,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1202949801225">
-    <property name="package" value="dotExpression" />
+    <property name="package" value="method" />
     <link role="concept" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1202952327483">
       <property name="name" value="getInstanceType" />

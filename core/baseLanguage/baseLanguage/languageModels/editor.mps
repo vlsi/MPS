@@ -534,7 +534,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1074887681312">
     <property name="name" value="FieldReference_Editor" />
-    <property name="package" value="oldDotExpression" />
+    <property name="package" value="dotExpression_old" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123158" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1080138219829">
       <property name="editable" value="true" />
@@ -787,6 +787,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075233459437">
     <property name="name" value="InstanceMethodDeclaration_Editor" />
+    <property name="package" value="method" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123165" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1075233459438">
       <property name="name" value="methodBox" />
@@ -1349,6 +1350,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075302295734">
     <property name="name" value="ParameterDeclaration_Editor" />
+    <property name="package" value="method" />
     <link role="conceptDeclaration" targetNodeId="17.1068498886292" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1188212252090">
       <property name="vertical" value="true" />
@@ -1555,7 +1557,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075307690078">
     <property name="name" value="InstanceMethodCall_Editor" />
-    <property name="package" value="oldDotExpression" />
+    <property name="package" value="dotExpression_old" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123163" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1075307690079">
       <property name="name" value="expressionBox" />
@@ -1843,6 +1845,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075374525819">
     <property name="name" value="NewExpression_Editor" />
+    <property name="package" value="method" />
     <link role="conceptDeclaration" targetNodeId="17.1068581242872" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1075374525820">
       <property name="name" value="expressionBox" />
@@ -2389,6 +2392,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075308772517">
     <property name="name" value="MethodCall_Editor" />
+    <property name="package" value="method" />
     <link role="conceptDeclaration" targetNodeId="17.1068581242868" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1075308772516">
       <property name="name" value="expressionBox" />
@@ -2453,6 +2457,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075287750843">
     <property name="name" value="MethodDeclaration_Editor" />
+    <property name="package" value="method" />
     <link role="conceptDeclaration" targetNodeId="17.1068390468204" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1075287750844">
       <property name="name" value="methodBox" />
@@ -7943,7 +7948,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1173176876902">
-    <property name="package" value="oldDotExpression" />
+    <property name="package" value="dotExpression_old" />
     <link role="conceptDeclaration" targetNodeId="17.1173176849460" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1173176909123">
       <property name="drawBorder" value="false" />
@@ -13786,7 +13791,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1202948896126">
-    <property name="package" value="dotExpression" />
+    <property name="package" value="method" />
     <link role="conceptDeclaration" targetNodeId="17.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1202948902315">
       <property name="vertical" value="false" />
