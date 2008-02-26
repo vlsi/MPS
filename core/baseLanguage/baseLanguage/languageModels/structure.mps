@@ -53,12 +53,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1137987266052">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068499141037">
-      <property name="targetCardinality" value="0..n" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="baseMethodDeclaration" />
-      <link role="target" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
-    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1201184076827">
       <link role="intfc" targetNodeId="1201183863028" resolveInfo="TypeDerivable" />
     </node>
@@ -2630,7 +2624,12 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
-    
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068499141037">
+      <property name="targetCardinality" value="0..n" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="baseMethodDeclaration" />
+      <link role="target" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
+    </node>
   </node>
 </model>
 
