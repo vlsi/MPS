@@ -540,17 +540,17 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203607869941">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203607881744">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1203607882669">
-                    <node role="value" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1203607886062" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203607872365">
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1203607878462">
-                      <link role="property" targetNodeId="1.1203607480207" resolveInfo="modulelUID" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203607869942">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204026848675">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204026845611">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203607869942">
                       <link role="variableDeclaration" targetNodeId="1203607851824" resolveInfo="newNode" />
                     </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1203607878462">
+                      <link role="property" targetNodeId="1.1203607480207" resolveInfo="modulelUID" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1203607882669">
+                    <node role="value" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1203607886062" />
                   </node>
                 </node>
               </node>
