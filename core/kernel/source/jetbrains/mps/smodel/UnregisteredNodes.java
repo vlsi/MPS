@@ -34,6 +34,10 @@ import java.util.Map;
     });
   }
 
+  void clear() {
+    myMap.clear();
+  }
+
   /**
    * We need this method to make generation economical with memory during generation
    * Do not remove it
