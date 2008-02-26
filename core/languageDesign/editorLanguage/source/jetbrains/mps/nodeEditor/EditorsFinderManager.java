@@ -5,12 +5,14 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 public class EditorsFinderManager {
   private static final Logger LOG = Logger.getLogger(EditorsFinderManager.class);
 
   private static Map<String, IGeneralizingEntityEditorFinder> ourLanguageNamespacesToGEEditorFinders = new HashMap<String, IGeneralizingEntityEditorFinder>();  
-  private static Map<String, Class> ourCachedEditors = new HashMap<String, Class>();
+  private static Map<String, Constructor> ourCachedEditors = new HashMap<String, Constructor>();
 
   public static INodeEditor loadEditor(EditorContext context, SNode node) {
     IGeneralizingEntityEditorFinder finder = getGEFinder(node);
@@ -19,19 +21,34 @@ public class EditorsFinderManager {
     }
 
     if (ourCachedEditors.containsKey(node.getConceptFqName())) {
-      Class resultClass = ourCachedEditors.get(node.getConceptFqName());
+      Constructor constructor = ourCachedEditors.get(node.getConceptFqName());
       try {
-        return (INodeEditor) resultClass.newInstance();
+        return (INodeEditor) constructor.newInstance();
       } catch (InstantiationException e) {
         LOG.error(e);
       } catch (IllegalAccessException e) {
+        LOG.error(e);
+      } catch (InvocationTargetException e) {
         LOG.error(e);
       }
       return new DefaultNodeEditor();        
     }
 
     INodeEditor result = finder.findEditor(node, context);
-    ourCachedEditors.put(node.getConceptFqName(), result == null ? null : result.getClass());
+
+    if (result == null) {
+      ourCachedEditors.put(node.getConceptFqName(), null);
+    } else {
+      try {
+        Constructor c = result.getClass().getConstructor();
+        c.setAccessible(true);
+        ourCachedEditors.put(node.getConceptFqName(), c);
+      } catch (NoSuchMethodException e) {
+        LOG.error(e);
+        return new DefaultNodeEditor();
+      }
+
+    }
     return result;
   }
 
