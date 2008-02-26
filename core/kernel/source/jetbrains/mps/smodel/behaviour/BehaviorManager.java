@@ -37,8 +37,8 @@ public final class BehaviorManager {
     return ourInstance;
   }
 
-  private Map<String, Method> myCanBeAChildMethods = new HashMap<String, Method>();
-  private Map<String, Method> myCanBeAParentMethods = new HashMap<String, Method>();
+  private Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
+  private Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
   private Map<String, Method> myDefaultConceptNameMethods = new HashMap<String, Method>();
 
   private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
@@ -47,8 +47,8 @@ public final class BehaviorManager {
   public void clear() {
     myMethods.clear();
     myConstructors.clear();
-    myCanBeAChildMethods.clear();
-    myCanBeAParentMethods.clear();
+    myCanBeChildMethods.clear();
+    myCanBeParentMethods.clear();
     myDefaultConceptNameMethods.clear();
   }
 
@@ -135,39 +135,62 @@ public final class BehaviorManager {
   }
 
   public boolean isApplicableInContext(String fqName, IOperationContext context, SNode parentNode, SNode link) {
+    Method method = getCanBeChildMethod(fqName, context);
+    if (method != null) {
+      try {
+        return (Boolean) method.invoke(null, context, new CanBeAChildContext(parentNode, link));
+      } catch (IllegalAccessException e) {
+        LOG.error(e);
+      } catch (InvocationTargetException e) {
+        LOG.error(e);
+      }
+    }
+    return true;
+  }
+
+  private Method getCanBeChildMethod(String conceptFqName, IOperationContext context) {
+    if (myCanBeChildMethods.containsKey(conceptFqName)) {
+      return myCanBeChildMethods.get(conceptFqName);
+    }
+
     IScope scope = context.getScope();
+    AbstractConceptDeclaration topConcept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
 
-    String behaviorClass = behaviorClassByConceptFqName(fqName);
-    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
-    Language language = scope.getLanguage(namespace);
-    if (language != null) {
-      Class cls = language.getClass(behaviorClass);
-      if (cls != null) {
-        try {
-          Method m;
-          if (myCanBeAChildMethods.containsKey(fqName)) {
-            m = myCanBeAChildMethods.get(fqName);
-          } else {
-            m = cls.getMethod(BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
-            myCanBeAChildMethods.put(fqName, m);
-          }
+    if (topConcept == null) {
+      LOG.error("Can't find a concept " + conceptFqName);
+      myCanBeChildMethods.put(conceptFqName, null);
+      return null;
+    }
 
-          try {
-            if (m != null) {
-              return (Boolean) m.invoke(null, context, new CanBeAChildContext(parentNode, link));
-            }
-          } catch (IllegalAccessException e) {
-            LOG.error(e);
-          } catch (InvocationTargetException e) {
-            LOG.error(e);
-          }
-        } catch (NoSuchMethodException e) {
-          myCanBeAChildMethods.put(fqName, null);
-        }
+    List<AbstractConceptDeclaration> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
+
+    for (AbstractConceptDeclaration concept : conceptAndSuperConcepts) {                  
+      String fqName = NameUtil.nodeFQName(concept);
+      String namespace = NameUtil.namespaceFromConcept(concept);
+      Language language = scope.getLanguage(namespace);
+      if (language == null) {
+        LOG.error("Can't find a language " + namespace);
+        continue;
+      }
+                                                     
+      String behaviorClassName = behaviorClassByConceptFqName(fqName);
+      Class behaviorClass = language.getClass(behaviorClassName);
+      
+      if (behaviorClass == null) {
+        continue;
+      }
+
+      try {
+        Method method = behaviorClass.getMethod(BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);        
+        myCanBeChildMethods.put(conceptFqName, method);
+        return method;
+      } catch (NoSuchMethodException e) {
+        //it's ok
       }
     }
 
-    return true;
+    myCanBeChildMethods.put(conceptFqName, null);
+    return null;
   }
 
   public boolean canHaveAChild(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
@@ -182,11 +205,11 @@ public final class BehaviorManager {
       if (cls != null) {
         try {
           Method m;
-          if (myCanBeAParentMethods.containsKey(fqName)) {
-            m = myCanBeAParentMethods.get(fqName);
+          if (myCanBeParentMethods.containsKey(fqName)) {
+            m = myCanBeParentMethods.get(fqName);
           } else {
             m = cls.getMethod(BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
-            myCanBeAParentMethods.put(fqName, m);
+            myCanBeParentMethods.put(fqName, m);
           }
 
           try {
@@ -199,7 +222,7 @@ public final class BehaviorManager {
             LOG.error(e);
           }
         } catch (NoSuchMethodException e) {
-          myCanBeAParentMethods.put(fqName, null);
+          myCanBeParentMethods.put(fqName, null);
         }
       }
     }
