@@ -1,6 +1,7 @@
 package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.baseLanguage.structure.BaseMethodCall;
+import jetbrains.mps.baseLanguage.structure.IMethodCall;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.Parser;
@@ -183,7 +184,7 @@ public class CopyPasteUtil {
       } else {//otherwise it points out of our node's subtree
         // prefer resolveInfo over direct reference
         // todo: ?. Method call is exception - it can't be resolved just by name.
-        if (BaseAdapter.isInstance(newSourceNode, BaseMethodCall.class) && oldTargetNode != null) {
+        if (BaseAdapter.isInstance(newSourceNode, IMethodCall.class) && oldTargetNode != null) {
           newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {
           String resolveInfo = oldTargetNode == null ? sourceReference.getResolveInfo() : oldTargetNode.getName(); // todo: getRefName()
