@@ -248,7 +248,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203602073283">
     <link role="conceptDeclaration" targetNodeId="1.1203601915645" resolveInfo="Source" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1203602078144">
-      <property name="editable" value="false" />
       <link role="relationDeclaration" targetNodeId="1.1203601923911" resolveInfo="path" />
     </node>
   </node>
