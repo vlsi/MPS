@@ -1,6 +1,5 @@
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.baseLanguage.structure.BaseMethodCall;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
 import jetbrains.mps.logging.Logger;
