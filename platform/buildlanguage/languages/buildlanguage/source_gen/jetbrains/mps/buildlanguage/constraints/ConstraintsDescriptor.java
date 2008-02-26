@@ -21,7 +21,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new Reference_declaration_ReferentConstraint());
     this.myConstraints.add(new PathReference_call_ReferentConstraint());
     this.myConstraints.add(new TagetReferencePropertyValueExpression_declaration_ReferentConstraint());
-    this.myConstraints.add(new ImportProject_project_ReferentConstraint());
     this.myConstraints.add(new GenericCall_DefaultSearchScope());
   }
 
