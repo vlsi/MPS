@@ -739,6 +739,10 @@
               id="1203866134691">
           <property name="text" value="tabbed editor"/>
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+              id="1204042958520">
+          <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1204038495739"/>

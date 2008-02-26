@@ -430,6 +430,10 @@
       <property name="value" value="function parameter"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="short_description"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1204043065072">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203866019489">
     <property name="package" value="EditorTab"/>
@@ -460,6 +464,10 @@
           id="1204041422684">
       <property name="value" value="Tabbed editor"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1204042945159">
+      <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203866635736">
@@ -507,6 +515,10 @@
           id="1204041809546">
       <property name="value" value="function parameter"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="short_description"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1204043077997">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
     </node>
   </node>
 </model>
