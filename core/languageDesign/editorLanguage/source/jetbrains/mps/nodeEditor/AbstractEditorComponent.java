@@ -5,6 +5,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -2253,7 +2254,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void showIntentionsMenu() {
     EditorCell cell = getSelectedCell();
 
-    IntentionsMenu intentionsMenu = new IntentionsMenu();
+    IntentionsMenu intentionsMenu = new IntentionsMenu(myOperationContext.getComponent(IDEProjectFrame.class));
 
     intentionsMenu.init(cell.getSNode(), getEditorContext(), getAvailableIntentions());
 
