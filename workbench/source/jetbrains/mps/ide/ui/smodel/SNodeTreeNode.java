@@ -69,7 +69,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     setText(caclulateNodeTextPresentation());
-    setAutoExpandable(myNode.isRoot());
+    setAutoExpandable(!myNode.isRoot());
   }
 
   public SModelTreeNode getSModelModelTreeNode() {
