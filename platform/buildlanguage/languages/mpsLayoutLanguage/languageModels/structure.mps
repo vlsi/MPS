@@ -178,7 +178,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203603490707">
-    <property name="name" value="CompositSource" />
+    <property name="name" value="CompositeSource" />
     <link role="extends" targetNodeId="1203601915645" resolveInfo="Source" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203605077185">
       <property name="metaClass" value="aggregation" />
@@ -194,7 +194,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1203617883391">
-    <property name="name" value="ICompositComponent" />
+    <property name="name" value="ICompositeComponent" />
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration" id="1203619938976">
       <property name="name" value="cleanAfterTheJob" />
     </node>
