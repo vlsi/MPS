@@ -13,6 +13,7 @@
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="module" module-name="pluginLanguage" />
+    <orderEntry type="module" module-name="kernel" />
     <orderEntryProperties />
   </component>
 </module>

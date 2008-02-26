@@ -377,6 +377,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return getLanguageDescriptor().getLanguagePluginClass();
   }
 
+  public String getGeneratedPluginClass() {
+    return getLanguageDescriptor().getNamespace() + "." + "GeneratedPlugin";
+  }
+
   public List<Generator> getGenerators() {
     return new ArrayList<Generator>(myGenerators);
   }
@@ -454,7 +458,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       if (LanguageAspect.CONSTRAINTS.get(extended) != null) {
         result.add(LanguageAspect.CONSTRAINTS.get(extended));
       }
-      
+
       if (aspect != null && aspect.get(extended) != null) {
         result.add(aspect.get(extended));
       }
