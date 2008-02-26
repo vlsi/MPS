@@ -750,6 +750,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204056557209">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204056569918">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204056559805">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204056557210">
+                <link role="variableDeclaration" targetNodeId="1203973384286" resolveInfo="g" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204056565432">
+                <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204056784285">
+              <link role="baseMethodDeclaration" targetNodeId="3v.~GenerationSessionContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1204056813289">
+                <link role="classifier" targetNodeId="3v.~IGenerationType" resolveInfo="IGenerationType" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203973337092" />

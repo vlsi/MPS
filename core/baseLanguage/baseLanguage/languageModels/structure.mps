@@ -2598,9 +2598,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202948039474">
     <property name="package" value="method" />
     <property name="name" value="InstanceMethodCallOperation" />
-    <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1202948091038">
       <link role="intfc" targetNodeId="1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204055469575">
+      <link role="intfc" targetNodeId="1204053956946" resolveInfo="IMethodCall" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202948736718">
       <property name="targetCardinality" value="0..n" />

@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
  */
 public class InstanceMethodCall_InstanceMethodScope extends VisibleClassifierMembersScope {
   private ClassifierType myInstanceType;
-  private BaseMethodCall myMethodCall;
+  private IMethodCall myMethodCall;
 
   public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, InstanceMethodCall methodCall) {
     super(instanceType.getClassifier(), methodCall.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
@@ -24,7 +24,7 @@ public class InstanceMethodCall_InstanceMethodScope extends VisibleClassifierMem
   public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, DotExpression methodCallDotExpression) {
     super(instanceType.getClassifier(), methodCallDotExpression.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
     myInstanceType = instanceType;
-    myMethodCall = (BaseMethodCall) methodCallDotExpression.getOperation();
+    myMethodCall = (IMethodCall) methodCallDotExpression.getOperation();
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
