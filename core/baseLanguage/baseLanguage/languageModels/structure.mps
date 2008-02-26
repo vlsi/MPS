@@ -14,6 +14,7 @@
     </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <maxImportIndex value="38" />
@@ -58,15 +59,11 @@
       <property name="role" value="baseMethodDeclaration" />
       <link role="target" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068499141038">
-      <property name="targetCardinality" value="1" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="actualArgument" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
-    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1201184076827">
       <link role="intfc" targetNodeId="1201183863028" resolveInfo="TypeDerivable" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204053975900">
+      <link role="intfc" targetNodeId="1204053956946" resolveInfo="IMethodCall" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068431790191">
@@ -2622,6 +2619,18 @@
       <property name="value" value="instance method call" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1204053956946">
+    <property name="package" value="method" />
+    <property name="name" value="IMethodCall" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1068499141038">
+      <property name="targetCardinality" value="1" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="actualArgument" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    
   </node>
 </model>
 

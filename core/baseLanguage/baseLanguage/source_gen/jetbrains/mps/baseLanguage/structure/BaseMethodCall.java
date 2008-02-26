@@ -9,12 +9,12 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 
-public class BaseMethodCall extends Expression implements TypeDerivable {
+public class BaseMethodCall extends Expression implements TypeDerivable, IMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodCall";
+  public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static String ACTUAL_ARGUMENT = "actualArgument";
 
   public  BaseMethodCall(SNode node) {
@@ -29,6 +29,14 @@ public class BaseMethodCall extends Expression implements TypeDerivable {
     return BaseMethodCall.newInstance(sm, false);
   }
 
+
+  public BaseMethodDeclaration getBaseMethodDeclaration() {
+    return (BaseMethodDeclaration)this.getReferent(BaseMethodCall.BASE_METHOD_DECLARATION);
+  }
+
+  public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
+    super.setReferent(BaseMethodCall.BASE_METHOD_DECLARATION, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(BaseMethodCall.SHORT_DESCRIPTION);
@@ -52,14 +60,6 @@ public class BaseMethodCall extends Expression implements TypeDerivable {
 
   public void setVirtualPackage(String value) {
     this.setProperty(BaseMethodCall.VIRTUAL_PACKAGE, value);
-  }
-
-  public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodCall.BASE_METHOD_DECLARATION);
-  }
-
-  public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
-    super.setReferent(BaseMethodCall.BASE_METHOD_DECLARATION, node);
   }
 
   public int getActualArgumentsCount() {

@@ -635,5 +635,124 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1194442994996" />
   </node>
+  <visible index="2" modelUID="jetbrains.mps.generator.template@java_stub" />
+  <visible index="3" modelUID="jetbrains.mps.generator@java_stub" />
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1203973337091">
+    <property name="name" value="bug_MethodCallType" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1203973355327">
+      <property name="name" value="a" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203973355328" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203973355329" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203973355330">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203973384285">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203973384286">
+            <property name="name" value="g" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203973384287">
+              <link role="classifier" targetNodeId="2v.~TemplateGenerator" resolveInfo="TemplateGenerator" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203974476620">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203974476621">
+            <property name="name" value="c" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203974476622">
+              <link role="classifier" targetNodeId="3v.~GenerationSessionContext" resolveInfo="GenerationSessionContext" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203974492108">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203974492126">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203974492109">
+              <link role="variableDeclaration" targetNodeId="1203974476621" resolveInfo="c" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203974500253">
+              <link role="baseMethodDeclaration" targetNodeId="3v.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203973473054">
+          <property name="value" value="replacement FieldReference -&gt; InstanceMethodCall works fine in all cases" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203973598181">
+          <property name="value" value="operand: InstanceMethodCall" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203973429013">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1203973444473">
+            <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203973440472">
+              <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203973429014">
+                <link role="variableDeclaration" targetNodeId="1203973384286" resolveInfo="g" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203973745792">
+          <property name="value" value="operand: DotExpression with InstanceMethodCallOperation" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203973384288">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203973384289">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203973384290">
+              <link role="variableDeclaration" targetNodeId="1203973384286" resolveInfo="g" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1203973384291">
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203973384292">
+                <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203973884227">
+          <property name="value" value="------" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203973785137">
+          <property name="value" value="choosing of IOperation never work" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203973856499">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203973914276">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203973867083">
+              <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203973856500">
+                <link role="variableDeclaration" targetNodeId="1203973384286" resolveInfo="g" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203973925873">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203973929125">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203973925890">
+              <link role="variableDeclaration" targetNodeId="1203973384286" resolveInfo="g" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203974221647">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203973935580">
+                <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203974519941">
+                <link role="baseMethodDeclaration" targetNodeId="3v.~GenerationSessionContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getInvocationContext" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203977328844">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977342396">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977331689">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203977328845">
+                <link role="variableDeclaration" targetNodeId="1203973384286" resolveInfo="g" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203977338504">
+                <link role="baseMethodDeclaration" targetNodeId="2v.~TemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204055114189">
+              <link role="baseMethodDeclaration" targetNodeId="3v.~GenerationSessionContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1204055132520">
+                <link role="classifier" targetNodeId="3v.~IGenerationType" resolveInfo="IGenerationType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203973337092" />
+  </node>
 </model>
 
