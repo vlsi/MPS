@@ -5,7 +5,9 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
+  </language>
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.internalCollections.test" version="-1" />
   <import index="2" modelUID="jetbrains.mps.internal.collections.runtime@java_stub" version="-1" />
