@@ -13,6 +13,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.ide.command.CommandProcessor;
 import org.jdom.Element;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -26,6 +27,7 @@ public class IntentionsManager implements IExternalizableComponent {
 
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
 
+  private Map<Intention, SNode> myNodesByIntentions = new HashMap<Intention, SNode>();
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
   private Set<String> myDisabledIntentionsClassNames = new HashSet<String>();
   private Set<Intention> myDisabledIntentionsCache = new HashSet<Intention>();
@@ -127,6 +129,7 @@ public class IntentionsManager implements IExternalizableComponent {
 
   public void reload() {
     myIntentions.clear();
+    myNodesByIntentions.clear();
     myIntentionsLanguages.clear();
     invalidateCaches();
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
@@ -147,6 +150,7 @@ public class IntentionsManager implements IExternalizableComponent {
               }
               intentions.add((Intention) intention);
               myIntentions.put(conceptName, intentions);
+              myNodesByIntentions.put((Intention) intention, intentionDeclaration.getNode());
               myIntentionsLanguages.put(cls, l);
             } else {
               LOG.warning("Intention is registered but isn't compiled " + NameUtil.nodeFQName(intentionDeclaration), intentionDeclaration);
@@ -186,5 +190,10 @@ public class IntentionsManager implements IExternalizableComponent {
       disabledXML.addContent(intentionXML);
     }
     element.addContent(disabledXML);
+  }
+
+  @Nullable
+  public SNode getNodeByIntention(Intention intention) {
+    return myNodesByIntentions.get(intention);
   }
 }
