@@ -24,6 +24,8 @@ import org.jdom.Element;
  */
 public class MessageView extends DefaultTool implements IExternalizableComponent {
 
+  private static int MESSAGES_COUNT = 1000;
+
   private static final String SHOW_INFORMATION = "showInformation";
   private static final String SHOW_ERRORS = "showErrors";
   private static final String SHOW_WARNINGS = "showWarnings";
@@ -230,11 +232,13 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
   private void rebuildModel() {
     myModel.clear();
+    List<Message> messagesToAdd = new ArrayList<Message>();
     for (Message m : myMessages) {
       if (isVisible(m)) {
-        myModel.addElement(m);
+        messagesToAdd.add(m);
       }
     }
+    myModel.copyInto(messagesToAdd.toArray());
   }
 
   public void clear() {
