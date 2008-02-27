@@ -15,6 +15,7 @@ import java.util.HashSet;
 public abstract class DefaultAbstractWrapper implements IWrapper {
 
   private Set<IWrapperListener> getWrapperListeners(EquationManager equationManager) {
+    if (equationManager == null) return new HashSet<IWrapperListener>();
     return equationManager.getWrapperListeners(this);
   }
 
