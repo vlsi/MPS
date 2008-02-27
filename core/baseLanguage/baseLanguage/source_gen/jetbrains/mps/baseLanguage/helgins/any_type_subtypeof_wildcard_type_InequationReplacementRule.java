@@ -29,7 +29,7 @@ public class any_type_subtypeof_wildcard_type_InequationReplacementRule extends 
   }
 
   public String getApplicableSubtypeConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.Type";
+    return "jetbrains.mps.core.structure.BaseConcept";
   }
 
   public String getApplicableSupertypeConceptFQName() {

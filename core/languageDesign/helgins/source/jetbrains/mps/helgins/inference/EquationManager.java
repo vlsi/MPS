@@ -207,12 +207,22 @@ public class EquationManager {
     // no equation needed
     if (NodeWrapper.fromWrapper(subtypeRepresentator) == NodeWrapper.fromWrapper(supertypeRepresentator)) return;
 
-    // if one of them is a var
+    //elimination rules:
+    if (subtypeRepresentator instanceof NodeWrapper && supertypeRepresentator instanceof NodeWrapper) {
+      SNode node1 = subtypeRepresentator.getNode();
+      SNode node2 = supertypeRepresentator.getNode();
+      Set<InequationReplacementRule_Runtime> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(node1, node2);
+      for (InequationReplacementRule_Runtime inequationReplacementRule : inequationReplacementRules) {
+        inequationReplacementRule.processInequation(node1, node2, errorInfo);
+        return;
+      }
+    }
+
+     // if one of them is a var
     RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
     RuntimeTypeVariable varSupertype = supertypeRepresentator == null ? null : supertypeRepresentator.getVariable();
     Set<SNodePointer> vars = myNonConcreteVars.get(subtypeRepresentator);
     boolean hasNonConcreteVars = vars != null && !vars.isEmpty() && solveOnlyConcrete;
-
     if (varSubtype != null || hasNonConcreteVars || varSupertype != null) {
       if (isWeak) {
         addSubtyping(subtypeRepresentator, supertypeRepresentator, errorInfo);
@@ -230,24 +240,13 @@ public class EquationManager {
       subtypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
     }
     if (supertypeRepresentator instanceof NodeWrapper) {
-     /* if ("IMapper<i,j>".equals(supertypeRepresentator.toString())) {
+      /* if ("IMapper<i,j>".equals(supertypeRepresentator.toString())) {
         System.err.println("BINGO!!");
       }*/
       NodeWrapper supertypeNodeWrapper = (NodeWrapper) supertypeRepresentator;
       SModel typesModel = myTypeChecker.getRuntimeTypesModel();
       NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(supertypeNodeWrapper.getNode(), typesModel), this);
       supertypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
-    }
-
-    //elimination rules:
-    if (subtypeRepresentator instanceof NodeWrapper && supertypeRepresentator instanceof NodeWrapper) {
-      SNode node1 = subtypeRepresentator.getNode();
-      SNode node2 = supertypeRepresentator.getNode();
-      Set<InequationReplacementRule_Runtime> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(node1, node2);
-      for (InequationReplacementRule_Runtime inequationReplacementRule : inequationReplacementRules) {
-        inequationReplacementRule.processInequation(node1, node2, errorInfo);
-        return;
-      }
     }
 
     // if subtyping

@@ -33,33 +33,47 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204116102810">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204116112458">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204116104077">
-              <link role="classConcept" targetNodeId="2.~Sequence" resolveInfo="Sequence" />
-              <link role="baseMethodDeclaration" targetNodeId="2.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204116104078">
-                <link role="variableDeclaration" targetNodeId="1204034707886" resolveInfo="seq" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204116130363">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204129866598">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204129876819">
+            <link role="baseMethodDeclaration" targetNodeId="2.~Sequence.where(jetbrains.mps.internal.collections.runtime.IWhereFilter):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="where" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204129876820">
               <link role="baseMethodDeclaration" targetNodeId="2.~Sequence.map(jetbrains.mps.internal.collections.runtime.IMapper):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="map" />
-              <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204116134117">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204116134118">
-                  <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1204116134119">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204116134120">
+              <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204129876821">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204129876822">
+                  <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1204129876823">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204129876824">
                       <link role="baseMethodDeclaration" targetNodeId="3.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
                       <link role="classConcept" targetNodeId="3.~String" resolveInfo="String" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204116134121">
-                        <link role="variableDeclaration" targetNodeId="1204116134122" resolveInfo="it2" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204129876825">
+                        <link role="variableDeclaration" targetNodeId="1204129876826" resolveInfo="it2" />
                       </node>
                     </node>
                   </node>
                 </node>
-                <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1204116134122">
+                <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1204129876826">
                   <property name="name" value="it2" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204116134123" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204129876827" />
                 </node>
+              </node>
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204129876828">
+                <link role="baseMethodDeclaration" targetNodeId="2.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
+                <link role="classConcept" targetNodeId="2.~Sequence" resolveInfo="Sequence" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204129882144">
+                  <link role="variableDeclaration" targetNodeId="1204034707886" resolveInfo="seq" />
+                </node>
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204129876830">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204129876831">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204129876832">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204129876833">
+                    <property name="value" value="false" />
+                  </node>
+                </node>
+              </node>
+              <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1204129876834">
+                <property name="name" value="it3" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204129876835" />
               </node>
             </node>
           </node>
