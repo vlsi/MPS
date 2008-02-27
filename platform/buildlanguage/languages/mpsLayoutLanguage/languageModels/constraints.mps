@@ -474,7 +474,38 @@
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1203431279688">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203431279689" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203431279689">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204116173336">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204116182951">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204116174385">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204116173337" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204116178513">
+                <link role="property" targetNodeId="2v.1204114229489" resolveInfo="basedir" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1204116184250">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204116185314">
+                <property name="value" value="." />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204116153345">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204116159923">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204116154780">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204116153346" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204116158313">
+                <link role="property" targetNodeId="2v.1204116114324" resolveInfo="setBasedir" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1204116161457">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204116164052">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1203601711523">

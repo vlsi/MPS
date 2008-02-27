@@ -22,6 +22,12 @@
     <property name="name" value="MPSLayout" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204115898932">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="configuration" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1204115658627" resolveInfo="Configuration" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203599325709">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="component" />
@@ -42,6 +48,10 @@
       <property name="name" value="basedir" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204116114324">
+      <property name="name" value="setBasedir" />
+      <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1203013653398">
     <property name="name" value="ILayoutComponent" />
@@ -49,6 +59,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203598300291">
     <property name="name" value="AbstractProjectComponent" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204116468206">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="configuration" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1204115822363" resolveInfo="ConfigurationReference" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203598340325">
       <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -199,6 +215,22 @@
       <property name="role" value="module" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1203599702327" resolveInfo="Module" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204115658627">
+    <property name="name" value="Configuration" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204115671003">
+      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204115822363">
+    <property name="name" value="ConfigurationReference" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204115847973">
+      <property name="role" value="configuration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1204115658627" resolveInfo="Configuration" />
     </node>
   </node>
 </model>
