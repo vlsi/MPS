@@ -14,7 +14,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
 
 import org.jdom.Element;
@@ -23,6 +23,8 @@ import org.jdom.Element;
  * @author Kostik
  */
 public class MessageView extends DefaultTool implements IExternalizableComponent {
+  private static final int MAX_MESSAGES_SIZE = 3000;
+
   private static final String SHOW_INFORMATION = "showInformation";
   private static final String SHOW_ERRORS = "showErrors";
   private static final String SHOW_WARNINGS = "showWarnings";
@@ -64,7 +66,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
   };
 
 
-  private List<Message> myMessages = new ArrayList<Message>();
+  private Queue<Message> myMessages = new LinkedList<Message>();
   private DefaultListModel myModel = new DefaultListModel();
   private JList myList = new JList(myModel);
   private ToolsPane myToolsPane;
@@ -88,6 +90,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
 
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
+    
 
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -250,10 +253,18 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
   public void add(final Message message) {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
+        if (myMessages.size() >= MAX_MESSAGES_SIZE) {
+          Message toRemove = myMessages.remove();
+          if (isVisible(toRemove)) {
+            myModel.removeElement(toRemove);
+          }
+        }
+
         if (isVisible(message)) {
           myModel.addElement(message);
-        }
+        }                        
         myMessages.add(message);
+
         show(false);
       }
     });
