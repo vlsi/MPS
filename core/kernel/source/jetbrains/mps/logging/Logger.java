@@ -7,17 +7,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Level;
+
 /**
  * @author Kostik
  */
 public class Logger {
   private static Map<String, Logger> ourLoggers = new HashMap<String, Logger>();
   private static List<ILoggingHandler> ourLoggingHandlers = new ArrayList<ILoggingHandler>();
+  private static boolean ourInfoAndWarningsDisabled = false;
 
   static {
     addLoggingHandler(new Log4jLogginHandler());
   }
 
+  /**
+   * @param "FATAL", "ERROR", "WARN" ...
+   */
+  public static String setThreshold(String threshhold) {
+    Level wasThresholdLevel = org.apache.log4j.Logger.getRootLogger().getLoggerRepository().getThreshold();
+    String wasThreshhold = wasThresholdLevel.toString();
+    Level newThreshholdLevel = Level.toLevel(threshhold);
+    org.apache.log4j.Logger.getRootLogger().getLoggerRepository().setThreshold(newThreshholdLevel);
+    return wasThreshhold;
+  }
 
   public static synchronized Logger getLogger(Class cls) {
     return getLogger(cls.getName());
@@ -26,7 +39,7 @@ public class Logger {
   public static synchronized Logger getLogger(String name) {
     if (!ourLoggers.containsKey(name)) {
       ourLoggers.put(name, new Logger(name));
-    }         
+    }
     return ourLoggers.get(name);
   }
 
@@ -61,9 +74,9 @@ public class Logger {
 
   private static synchronized void error(LogEntry e) {
     for (ILoggingHandler lh : ourLoggingHandlers) {
-          lh.error(e);
+      lh.error(e);
     }
-  }   
+  }
 
   private static synchronized void fatal(LogEntry e) {
     for (ILoggingHandler lh : ourLoggingHandlers) {

@@ -60,6 +60,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   private static final String COMPILE_ON_GENERATION = "compile-on-generation";
   private static final String COMPILE_SOURCE_LANGUAGES_MODULES = "compile-source-languages-modules";
   private static final String CHECK_BEFORE_COMPILATION = "check-before-compilation";
+  private static final String SHOW_ERRORS_ONLY = "show-errors-only";
 
   private boolean myCompileBeforeGeneration = false;
   private boolean myCompileOnGeneration = true;
@@ -67,6 +68,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   private boolean myDumpStatistics = false;
   private boolean myCompileSourceLanguageModules = false;
   private boolean myCheckBeforeCompilation = false;
+  private boolean myShowErrorsOnly;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
 
   private ExecutorService myExecutorService = Executors.newCachedThreadPool();
@@ -101,6 +103,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     if (element.getAttribute(CHECK_BEFORE_COMPILATION) != null) {
       myCheckBeforeCompilation = Boolean.parseBoolean(element.getAttributeValue(CHECK_BEFORE_COMPILATION));
     }
+    if (element.getAttribute(SHOW_ERRORS_ONLY) != null) {
+      myShowErrorsOnly = Boolean.parseBoolean(element.getAttributeValue(SHOW_ERRORS_ONLY));
+    }
   }
 
   public void write(Element element, MPSProject project) {
@@ -110,6 +115,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     element.setAttribute(DUMP_STATISTICS, "" + myDumpStatistics);
     element.setAttribute(COMPILE_SOURCE_LANGUAGES_MODULES, "" + myCompileSourceLanguageModules);
     element.setAttribute(CHECK_BEFORE_COMPILATION, "" + myCheckBeforeCompilation);
+    element.setAttribute(SHOW_ERRORS_ONLY, "" + myShowErrorsOnly);
   }
 
   public boolean isCompileBeforeGeneration() {
@@ -134,6 +140,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   public void setSaveTransientModels(boolean saveTransientModels) {
     mySaveTransientModels = saveTransientModels;
+  }
+
+  public boolean isShowErrorsOnly() {
+    return myShowErrorsOnly;
+  }
+
+  public void setShowErrorsOnly(boolean showErrorsOnly) {
+    myShowErrorsOnly = showErrorsOnly;
   }
 
   public boolean isDumpStatistics() {
@@ -310,6 +324,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
     return result;
   }
+
   public Future<Boolean> generateModelsWithProgressWindow(final List<SModel> sourceModels,
                                                           final Language targetLanguage,
                                                           final IOperationContext invocationContext,
@@ -331,7 +346,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                                           final Language targetLanguage,
                                                           final IGenerationType generationType,
                                                           final IGenerationScript script,
-                                                          boolean closeOnExit) {    
+                                                          boolean closeOnExit) {
     if (sourceModels.isEmpty()) {
       return myExecutorService.submit(new Callable<Boolean>() {
         public Boolean call() throws Exception {
@@ -492,7 +507,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     messages.handle(new Message(MessageKind.INFORMATION, generationType.getStartText()));
 
 
-
     boolean ideaPresent = projectHandler != null;
     boolean reloadClasses = true;
     boolean compileBefore = false;
@@ -517,7 +531,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         if (estimated == null) {
           estimated = (long) 1000;
         }
-        progress.startTask("generating in module "+currentModule, estimated);
+        progress.startTask("generating in module " + currentModule, estimated);
         String outputFolder = currentModule != null ? currentModule.getGeneratorOutputPath() : null;
         if (outputFolder != null && !new File(outputFolder).exists()) {
           new File(outputFolder).mkdirs();
@@ -598,8 +612,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 //      GenerationStatus status = null;
 
         Statistics.setEnabled(Statistics.TPL, isDumpStatistics());
+        String wasLoggingThreshold = null;
         IGenerationSession generationSession = new GenerationSession(invocationContext, saveTransientModels, progress, messages);
         try {
+          if (isShowErrorsOnly()) {
+            wasLoggingThreshold = Logger.setThreshold("ERROR");
+          }
           Logger.addLoggingHandler(generationSession.getLoggingHandler());
           TypeChecker.getInstance().setIncrementalMode(false);
           TypeChecker.getInstance().setGenerationMode(true);
@@ -633,7 +651,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             checkMonitorCanceled(progress);
             if (status.getOutputModel() != null) {
               generationType.handleOutput(status, outputFolder, invocationContext, progress, messages);
-            } else if(!(status.isCanceled() || status.isError())) {
+            } else if (!(status.isCanceled() || status.isError())) {
               // nothig has been generated (no generators found)
               generationType.handleEmptyOutput(status, outputFolder, invocationContext, progress, messages);
             }
@@ -656,6 +674,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             }
           }
         } finally {
+          if (wasLoggingThreshold != null) {
+            Logger.setThreshold(wasLoggingThreshold);
+          }
           generationSession.discardTransients();
           Logger.removeLoggingHandler(generationSession.getLoggingHandler());
           TypeChecker.getInstance().setIncrementalMode(true);

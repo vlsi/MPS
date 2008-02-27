@@ -15,12 +15,18 @@ public class InstanceMethodCall_InstanceMethodScope extends VisibleClassifierMem
   private ClassifierType myInstanceType;
   private IMethodCall myMethodCall;
 
+  /**
+   * @todo this scope doesn't need 2nd parm
+   */
   public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, InstanceMethodCall methodCall) {
     super(instanceType.getClassifier(), methodCall.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
     myInstanceType = instanceType;
     myMethodCall = methodCall;
   }
 
+  /**
+   * @todo this scope doesn't need 2nd parm
+   */
   public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, DotExpression methodCallDotExpression) {
     super(instanceType.getClassifier(), methodCallDotExpression.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
     myInstanceType = instanceType;

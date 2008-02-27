@@ -23,6 +23,7 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
   private JCheckBox myCompileSourceLanguagesModules = new JCheckBox("Compile source languages' modules before generation");
   private JCheckBox myCheckBeforeGeneration = new JCheckBox("Check before generation");
   private JCheckBox myCompileInMPS = new JCheckBox("Compile In MPS");
+  private JCheckBox myShowErrorsOnlyCheckBox = new JCheckBox("Don't show info and warning messages, only errors");
   private GeneratorManager myGeneratorManager;
 
   public GeneratorManagerPreferencesPage(GeneratorManager generatorManager) {
@@ -33,6 +34,7 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
     myDumpQueriesStatisticsCheckBox.setSelected(myGeneratorManager.isDumpStatistics());
     myCompileSourceLanguagesModules.setSelected(myGeneratorManager.isCompileSourceLanguageModules());
     myCheckBeforeGeneration.setSelected(myGeneratorManager.isCheckBeforeCompilation());
+    myShowErrorsOnlyCheckBox.setSelected(myGeneratorManager.isShowErrorsOnly());
 
     JPanel optionsPanel = new JPanel(new GridLayout(6, 1));
     optionsPanel.add(myCompileInIdeaBeforeGeneration);
@@ -42,6 +44,7 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
     optionsPanel.add(myCompileSourceLanguagesModules);
     optionsPanel.add(myCheckBeforeGeneration);
     optionsPanel.add(myCompileInMPS);
+    optionsPanel.add(myShowErrorsOnlyCheckBox);
 
     myPage = new JPanel(new BorderLayout());
     myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -71,5 +74,6 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
     myGeneratorManager.setDumpStatistics(myDumpQueriesStatisticsCheckBox.isSelected());
     myGeneratorManager.setCompileSourceLanguageModules(myCompileSourceLanguagesModules.isSelected());
     myGeneratorManager.setCheckBeforeCompilation(myCheckBeforeGeneration.isSelected());
+    myGeneratorManager.setShowErrorsOnly(myShowErrorsOnlyCheckBox.isSelected());
   }
 }
