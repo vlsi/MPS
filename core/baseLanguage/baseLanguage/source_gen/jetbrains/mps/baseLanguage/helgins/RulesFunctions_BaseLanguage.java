@@ -25,9 +25,9 @@ public class RulesFunctions_BaseLanguage {
 
   @InferenceMethod()
   public static void comparisonOp(SNode binOp) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176897133366", true), SLinkOperations.getTarget(new QuotationClass_26().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176897142200");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176897185028", true), SLinkOperations.getTarget(new QuotationClass_27().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176897185023");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(binOp, "jetbrains.mps.baseLanguage.helgins", "1203512292516", true), new QuotationClass_28().createNode(), binOp, null, "jetbrains.mps.baseLanguage.helgins", "1203512292514");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176897133366", true), SLinkOperations.getTarget(new QuotationClass_25().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176897142200");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176897185028", true), SLinkOperations.getTarget(new QuotationClass_26().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176897185023");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(binOp, "jetbrains.mps.baseLanguage.helgins", "1203512292516", true), new QuotationClass_27().createNode(), binOp, null, "jetbrains.mps.baseLanguage.helgins", "1203512292514");
   }
 
   @InferenceMethod()
@@ -36,8 +36,8 @@ public class RulesFunctions_BaseLanguage {
     final SNode leftExpressionType_typevar_1185962769627 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1185962985524", true), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1185962983223");
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1185963005725", true), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1185963003424");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908856117");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), SLinkOperations.getTarget(new QuotationClass_30().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908902743");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), SLinkOperations.getTarget(new QuotationClass_28().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908856117");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908902743");
     TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), new Runnable() {
 
       public void run() {
@@ -75,7 +75,7 @@ public class RulesFunctions_BaseLanguage {
             int index = SequenceOperations.indexOf(SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true), tvd);
             SNode actualParam = (index < actualParams.size() && index >= 0 ?
               actualParams.get(index) :
-              new QuotationClass_31().createNode()
+              new QuotationClass_30().createNode()
             );
             if(returnType == tvr) {
               returnType = SNodeOperations.copyNode(actualParam, TypeChecker.getInstance().getRuntimeTypesModel());
@@ -119,13 +119,13 @@ public class RulesFunctions_BaseLanguage {
   }
 
   @InferenceMethod()
-  public static Map<SNode, List<SNode>> inference_equateParametersAndReturnType(SNode bmc) {
+  public static Map<SNode, List<SNode>> inference_equateParametersAndReturnType(SNode mc, SNode returnType) {
     Map<SNode, List<SNode>> mmap = null;
     {
       SNode arg;
       SNode param;
-      Iterator<SNode> arg_iterator = SLinkOperations.getTargets(bmc, "actualArgument", true).iterator();
-      Iterator<SNode> param_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false), "parameter", true).iterator();
+      Iterator<SNode> arg_iterator = SLinkOperations.getTargets(mc, "actualArgument", true).iterator();
+      Iterator<SNode> param_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true).iterator();
       while(true) {
         if(!(arg_iterator.hasNext())) {
           break;
@@ -143,11 +143,11 @@ public class RulesFunctions_BaseLanguage {
         }
       }
     }
-    if(!(SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.NewExpression"))) {
-      Pair<SNode, Map<SNode, List<SNode>>> pair = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(SLinkOperations.getTarget(SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false), "returnType", true), mmap);
+    if(returnType != null) {
+      Pair<SNode, Map<SNode, List<SNode>>> pair = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(returnType, mmap);
       SNode matchedType = pair.o1;
       mmap = pair.o2;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(bmc, "jetbrains.mps.baseLanguage.helgins", "1203441371361", true), matchedType, bmc, null, "jetbrains.mps.baseLanguage.helgins", "1203441371359");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(mc, "jetbrains.mps.baseLanguage.helgins", "1203441371361", true), matchedType, mc, null, "jetbrains.mps.baseLanguage.helgins", "1203441371359");
     }
     return mmap;
   }

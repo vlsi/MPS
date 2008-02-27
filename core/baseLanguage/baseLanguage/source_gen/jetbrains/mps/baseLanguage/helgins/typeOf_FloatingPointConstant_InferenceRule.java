@@ -13,7 +13,7 @@ public class typeOf_FloatingPointConstant_InferenceRule implements InferenceRule
   }
 
   public void applyRule(final SNode floatConst) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_49().createNode(), floatConst, "jetbrains.mps.baseLanguage.helgins", "1176907782194");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_48().createNode(), floatConst, "jetbrains.mps.baseLanguage.helgins", "1176907782194");
   }
 
   public String getApplicableConceptFQName() {

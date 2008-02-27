@@ -14,7 +14,7 @@ public class typeOf_NullLiteral_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode nullLiteral) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(new QuotationClass_32().createNode(), "descriptor", false), nullLiteral, "jetbrains.mps.baseLanguage.helgins", "1176897916813");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(new QuotationClass_31().createNode(), "descriptor", false), nullLiteral, "jetbrains.mps.baseLanguage.helgins", "1176897916813");
   }
 
   public String getApplicableConceptFQName() {

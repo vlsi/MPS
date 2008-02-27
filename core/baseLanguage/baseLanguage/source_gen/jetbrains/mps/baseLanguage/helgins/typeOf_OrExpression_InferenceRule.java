@@ -14,9 +14,9 @@ public class typeOf_OrExpression_InferenceRule implements InferenceRule_Runtime 
   }
 
   public void applyRule(final SNode orExpr) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(orExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176901341532", true), new QuotationClass_41().createNode(), SLinkOperations.getTarget(orExpr, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176901360178");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(orExpr, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176901371535", true), new QuotationClass_42().createNode(), SLinkOperations.getTarget(orExpr, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176901371532");
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_43().createNode(), orExpr, "jetbrains.mps.baseLanguage.helgins", "1176901392839");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(orExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176901341532", true), new QuotationClass_40().createNode(), SLinkOperations.getTarget(orExpr, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176901360178");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(orExpr, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176901371535", true), new QuotationClass_41().createNode(), SLinkOperations.getTarget(orExpr, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176901371532");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_42().createNode(), orExpr, "jetbrains.mps.baseLanguage.helgins", "1176901392839");
   }
 
   public String getApplicableConceptFQName() {
