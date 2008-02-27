@@ -12,6 +12,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.intentions.IntentionsManager;
 
 import javax.swing.*;
+import javax.swing.plaf.metal.MetalBorders.ToolBarBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuKeyEvent;
@@ -21,6 +24,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 
 public abstract class FindersEditor extends BaseEditor<FindersOptions> {
   public FindersEditor(FindersOptions defaultOptions, final SNode node, ActionContext context) {
@@ -44,6 +50,8 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
     });
 
     List<String> correctEnabledFinders = new ArrayList<String>();
+
+    //List<JToolBar> finderHolders = new ArrayList<JToolBar>();
 
     for (final GeneratedFinder finder : sortedFinders) {
       boolean isEnabled = false;
@@ -81,6 +89,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       });
 
       JButton goToFinderButton = new JButton("->");
+      goToFinderButton.setFocusable(false);
       goToFinderButton.setToolTipText("Go to finder declaration");
       goToFinderButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
@@ -93,15 +102,30 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
         finderCheckBox.setToolTipText(htmlTooltipText);
       }
 
-      //JPanel finderPanel = new JPanel(new BorderLayout());
-      //finderPanel.add(finderCheckBox, BorderLayout.WEST);
-      //finderPanel.add(goToFinderButton, BorderLayout.EAST);
+      JToolBar finderHolder = new JToolBar(JToolBar.HORIZONTAL);
+      finderHolder.add(finderCheckBox);
+      finderHolder.add(goToFinderButton);
+      finderHolder.setBorder(new EmptyBorder(0, 0, 0, 0));
+      finderHolder.setFloatable(false);
+      finderHolder.setAlignmentX(JToolBar.LEFT_ALIGNMENT);
+      finderHolder.setBackground(myPanel.getBackground());
 
-      //myPanel.add(finderPanel);
-      myPanel.add(finderCheckBox);
+      myPanel.add(finderHolder);
+      //finderHolders.add(finderHolder);
+      //myPanel.add(finderCheckBox);
     }
 
-    //JLabel hintLabel = new JLabel("<html><small><b>ctrl+b</b> to go to finder declaration</small></html>");
+    /*
+    int maxwidth = 0;
+    for (JToolBar finderHolder : finderHolders) {
+      maxwidth = Math.max(maxwidth, (int)Math.round(finderHolder.getSize().getWidth()));
+    }
+    for (JToolBar finderHolder : finderHolders) {
+      finderHolder.setPreferredSize(new Dimension(maxwidth,finderHolder.getPreferredSize().height));
+    }
+    */
+
+    //JLabel hintLabel = new JLabel("<html><small><font color=black><b>ctrl+b</b> to go to finder declaration</font></small></html>");
     //myPanel.add(hintLabel);
 
     myOptions.setFindersClassNames(correctEnabledFinders);

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.BoxLayout;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -58,9 +59,9 @@ public class FindUsagesDialog extends BaseDialog {
 
     myQueryEditor.getComponent().setBorder(new EmptyBorder(7, 3, 3, 3));
 
-    JPanel centerPanel = new JPanel(new GridLayout(1, 2));
-    centerPanel.add(myFindersEditor.getComponent());
-    centerPanel.add(myViewOptionsEditor.getComponent());
+    JPanel centerPanel = new JPanel(new BorderLayout());
+    centerPanel.add(myFindersEditor.getComponent(), BorderLayout.CENTER);
+    centerPanel.add(myViewOptionsEditor.getComponent(), BorderLayout.EAST);
 
     myPanel = new JPanel(new BorderLayout());
     myPanel.add(centerPanel, BorderLayout.CENTER);
