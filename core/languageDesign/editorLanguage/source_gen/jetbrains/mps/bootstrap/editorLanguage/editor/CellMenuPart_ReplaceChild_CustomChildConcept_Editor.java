@@ -18,13 +18,24 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1165281194159");
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1165281194157");
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1165281194158");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1165281194159");
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1165281194160");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
@@ -52,17 +63,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1165281194160");
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1165281194157");
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
@@ -85,6 +85,17 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return this.createColumnCell(context, node);
   }
 
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    CellMenuPart_ReplaceChild_CustomChildConcept_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createRowCell1(context, node));
+    return editorCell;
+  }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     CellMenuPart_ReplaceChild_CustomChildConcept_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -105,17 +116,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     editorCell.addEditorCell(this.createConstantCell2(context, node, "concept of child"));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ":"));
     editorCell.addEditorCell(this.createChildConceptFunctionCell(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    CellMenuPart_ReplaceChild_CustomChildConcept_Editor.setupBasic_ColumnCell(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
     return editorCell;
   }
 

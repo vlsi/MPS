@@ -18,12 +18,6 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
-import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyValues;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -31,10 +25,27 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myItemListHandler_itemList_;
+
+  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139532930463");
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139532930464");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139532930465");
@@ -46,14 +57,14 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139532930464");
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139532930469");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139532930469");
+  private static void setupBasic_CellsLayoutPanel(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139532930470");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
@@ -66,12 +77,6 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ApplicableConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139532930472");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_CellsLayoutPanel(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139532930470");
-    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
@@ -95,11 +100,6 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ItemList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139532930478");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139532930463");
     editorCell.setDrawBorder(false);
   }
 
@@ -135,6 +135,22 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return this.createNodeBox(context, node);
   }
 
+  public EditorCell createNodeBox(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    CellActionMapDeclaration_Editor.setupBasic_NodeBox(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, ""));
+    editorCell.addEditorCell(this.createCellsLayoutPanel(context, node));
+    editorCell.addEditorCell(this.createConstantCell3(context, node, ""));
+    editorCell.addEditorCell(this.createConstantCell4(context, node, "actions:"));
+    editorCell.addEditorCell(this.createConstantCell5(context, node, ""));
+    editorCell.addEditorCell(this.createItemList(context, node));
+    return editorCell;
+  }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     CellActionMapDeclaration_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -154,22 +170,6 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell2(context, node, "applicable concept:"));
     editorCell.addEditorCell(this.createApplicableConceptReferenceCell(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createNodeBox(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    CellActionMapDeclaration_Editor.setupBasic_NodeBox(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, ""));
-    editorCell.addEditorCell(this.createCellsLayoutPanel(context, node));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, ""));
-    editorCell.addEditorCell(this.createConstantCell4(context, node, "actions:"));
-    editorCell.addEditorCell(this.createConstantCell5(context, node, ""));
-    editorCell.addEditorCell(this.createItemList(context, node));
     return editorCell;
   }
 
@@ -266,7 +266,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createApplicableConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellActionMapDeclaration_Editor._Inline37());
+    provider.setAuxiliaryCellProvider(new CellActionMapDeclaration_Editor._Inline5());
     EditorCell editorCell = provider.createEditorCell(context);
     CellActionMapDeclaration_Editor.setupBasic_ApplicableConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -293,23 +293,9 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class CellActionMapDeclaration_name_cellMenu extends AbstractCellMenuPart_PropertyValues {
+  public static class _Inline5 extends AbstractCellProvider {
 
-    public  CellActionMapDeclaration_name_cellMenu() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> names = ListOperations.<String>createList();
-      if((SLinkOperations.getTarget(node, "applicableConcept", false) != null)) {
-        ListOperations.addElement(names, SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name") + "_Actions");
-      }
-      return names;
-    }
-
-}
-  public static class _Inline37 extends AbstractCellProvider {
-
-    public  _Inline37() {
+    public  _Inline5() {
       super();
     }
 
@@ -334,9 +320,9 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      CellActionMapDeclaration_Editor._Inline37.setupBasic_NameCell(editorCell, node, context);
+      CellActionMapDeclaration_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        CellActionMapDeclaration_Editor._Inline37.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        CellActionMapDeclaration_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -400,6 +386,20 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createSeparatorCell(EditorContext context) {
       return super.createSeparatorCell(context);
+    }
+
+}
+  public static class CellActionMapDeclaration_name_cellMenu extends AbstractCellMenuPart_PropertyValues {
+
+    public  CellActionMapDeclaration_name_cellMenu() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> names = ListOperations.<String>createList();
+      if((SLinkOperations.getTarget(node, "applicableConcept", false) != null)) {
+        ListOperations.addElement(names, SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name") + "_Actions");
+      }
+      return names;
     }
 
 }

@@ -24,6 +24,11 @@ import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 
 public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1136923542661");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1136923542662");
     editorCell.setSelectable(false);
@@ -49,11 +54,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1136923542666");
     editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1136923542661");
     editorCell.setDrawBorder(false);
   }
 
@@ -179,16 +179,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class CellKeyMapKeystroke_modifiers_cellMenu extends AbstractCellMenuPart_PropertyValues {
-
-    public  CellKeyMapKeystroke_modifiers_cellMenu() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListOperations.<String>createList(EditorCellKeyMap.KEY_MODIFIERS_NONE, EditorCellKeyMap.KEY_MODIFIERS_CTRL, EditorCellKeyMap.KEY_MODIFIERS_ALT, EditorCellKeyMap.KEY_MODIFIERS_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_ALT_SHIFT);
-    }
-
-}
   public static class CellKeyMapKeystroke_keycode_cellMenu extends AbstractCellMenuPart_PropertyValues {
 
     public  CellKeyMapKeystroke_keycode_cellMenu() {
@@ -198,6 +188,16 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
       List<String> keycodes = ListOperations.<String>createList(EditorCellKeyMap.KEY_CODE_DIGIT, EditorCellKeyMap.KEY_CODE_LETTER, EditorCellKeyMap.KEY_CODE_LETTER_OR_DIGIT, EditorCellKeyMap.KEY_CODE_SPACE, EditorCellKeyMap.KEY_CODE_CHAR);
       ListOperations.addAllElements(keycodes, EditorCellKeyMap.getVirtualKeycodes());
       return keycodes;
+    }
+
+}
+  public static class CellKeyMapKeystroke_modifiers_cellMenu extends AbstractCellMenuPart_PropertyValues {
+
+    public  CellKeyMapKeystroke_modifiers_cellMenu() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return ListOperations.<String>createList(EditorCellKeyMap.KEY_MODIFIERS_NONE, EditorCellKeyMap.KEY_MODIFIERS_CTRL, EditorCellKeyMap.KEY_MODIFIERS_ALT, EditorCellKeyMap.KEY_MODIFIERS_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_ALT_SHIFT);
     }
 
 }

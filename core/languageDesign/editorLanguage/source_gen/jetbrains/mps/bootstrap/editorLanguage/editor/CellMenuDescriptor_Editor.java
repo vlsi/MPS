@@ -24,6 +24,11 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myCellMenuPartListHandler_cellMenuPartList_;
 
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164826331320");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164826341494");
     editorCell.setDrawBorder(false);
@@ -31,11 +36,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CellMenuPartList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164826358683");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164826331320");
     editorCell.setDrawBorder(false);
   }
 

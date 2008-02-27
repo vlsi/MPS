@@ -32,7 +32,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
 
   public EditorCell createPropertyDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Property_Editor._Inline42());
+    provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Property_Editor._Inline30());
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuComponentFeature_Property_Editor.setupBasic_PropertyDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -59,9 +59,9 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public static class _Inline42 extends AbstractCellProvider {
+  public static class _Inline30 extends AbstractCellProvider {
 
-    public  _Inline42() {
+    public  _Inline30() {
       super();
     }
 
@@ -86,9 +86,9 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      CellMenuComponentFeature_Property_Editor._Inline42.setupBasic_NameCell(editorCell, node, context);
+      CellMenuComponentFeature_Property_Editor._Inline30.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        CellMenuComponentFeature_Property_Editor._Inline42.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        CellMenuComponentFeature_Property_Editor._Inline30.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

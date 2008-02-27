@@ -1259,6 +1259,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.bootstrap.sharedConcepts.editor" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1079007237531">
     <property name="name" value="EditorComponentDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="2.1078938745671" />
@@ -1319,9 +1320,9 @@
               <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1106261017482">
                 <link role="conceptDeclaration" targetNodeId="8.1169125787135" />
                 <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1106261028890">
-                  <property name="drawBorder" value="true" />
                   <property name="readOnly" value="true" />
                   <link role="relationDeclaration" targetNodeId="3.1169194664001" />
+                  <link role="styleClass" targetNodeId="2v.1203541385314" resolveInfo="ReferenceOnConcept" />
                 </node>
               </node>
             </node>
