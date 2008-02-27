@@ -63,8 +63,8 @@ public class DerivedClasses_Finder extends GeneratedFinder {
           if (!(isApplicable)) {
             DerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
           } else {
-            SearchResults results_4 = _finder.find(new SearchQuery(_node, _scope));
-            for (SearchResult result : results_4.getSearchResults()) {
+            SearchResults results_5 = _finder.find(new SearchQuery(_node, _scope));
+            for (SearchResult result : results_5.getSearchResults()) {
               nodeUsagesRes.add(result);
             }
           }

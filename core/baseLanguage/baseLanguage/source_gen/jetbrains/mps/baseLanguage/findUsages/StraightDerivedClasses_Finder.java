@@ -59,8 +59,8 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
         if (!(isApplicable)) {
           StraightDerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
         } else {
-          SearchResults results_16 = _finder.find(new SearchQuery(_node, _scope));
-          for (SearchResult result : results_16.getSearchResults()) {
+          SearchResults results_18 = _finder.find(new SearchQuery(_node, _scope));
+          for (SearchResult result : results_18.getSearchResults()) {
             nodeUsagesRes.add(result);
           }
         }

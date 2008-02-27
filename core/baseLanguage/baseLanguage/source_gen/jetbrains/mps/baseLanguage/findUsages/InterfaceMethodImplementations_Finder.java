@@ -68,8 +68,8 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
         if (!(isApplicable)) {
           InterfaceMethodImplementations_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
         } else {
-          SearchResults results_11 = _finder.find(new SearchQuery(_node, _scope));
-          for (SearchResult result : results_11.getSearchResults()) {
+          SearchResults results_12 = _finder.find(new SearchQuery(_node, _scope));
+          for (SearchResult result : results_12.getSearchResults()) {
             implementors.add(result);
           }
         }
@@ -100,8 +100,8 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
                 if (!(isApplicable)) {
                   InterfaceMethodImplementations_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
                 } else {
-                  SearchResults results_12 = _finder.find(new SearchQuery(_node, _scope));
-                  for (SearchResult result : results_12.getSearchResults()) {
+                  SearchResults results_13 = _finder.find(new SearchQuery(_node, _scope));
+                  for (SearchResult result : results_13.getSearchResults()) {
                     implementorsAndAncestorsList.add(result);
                   }
                 }

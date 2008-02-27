@@ -69,8 +69,8 @@ public class FieldUsages_Finder extends GeneratedFinder {
           if (!(isApplicable)) {
             FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
           } else {
-            SearchResults results_8 = _finder.find(new SearchQuery(_node, _scope));
-            for (SearchResult result : results_8.getSearchResults()) {
+            SearchResults results_9 = _finder.find(new SearchQuery(_node, _scope));
+            for (SearchResult result : results_9.getSearchResults()) {
               fieldDeclarationsResult.add(result);
             }
           }
@@ -108,8 +108,8 @@ public class FieldUsages_Finder extends GeneratedFinder {
           if (!(isApplicable)) {
             FieldUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
           } else {
-            SearchResults results_9 = _finder.find(new SearchQuery(_node, _scope));
-            for (SearchResult result : results_9.getSearchResults()) {
+            SearchResults results_10 = _finder.find(new SearchQuery(_node, _scope));
+            for (SearchResult result : results_10.getSearchResults()) {
               fieldUsagesResult.add(result);
             }
           }

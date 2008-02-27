@@ -70,11 +70,11 @@ public class OverridingFields_Finder extends GeneratedFinder {
         if (!(isApplicable)) {
           OverridingFields_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
         } else {
-          SearchResults results_10 = _finder.find(new SearchQuery(_node, _scope));
-          for (SNodePointer nodePointer : results_10.getSearchedNodePointers()) {
+          SearchResults results_11 = _finder.find(new SearchQuery(_node, _scope));
+          for (SNodePointer nodePointer : results_11.getSearchedNodePointers()) {
             ListOperations.addElement(nodes, nodePointer.getNode());
           }
-          for (SearchResult result : results_10.getSearchResults()) {
+          for (SearchResult result : results_11.getSearchResults()) {
             derivedClassesResults.add(result);
           }
         }

@@ -72,8 +72,8 @@ public class ParameterUsages_Finder extends GeneratedFinder {
         if (!(isApplicable)) {
           ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
         } else {
-          SearchResults results_13 = _finder.find(new SearchQuery(_node, _scope));
-          for (SearchResult result : results_13.getSearchResults()) {
+          SearchResults results_14 = _finder.find(new SearchQuery(_node, _scope));
+          for (SearchResult result : results_14.getSearchResults()) {
             overridingMethods.add(result);
           }
         }
@@ -105,8 +105,8 @@ public class ParameterUsages_Finder extends GeneratedFinder {
                 if (!(isApplicable)) {
                   ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
                 } else {
-                  SearchResults results_14 = _finder.find(new SearchQuery(_node, _scope));
-                  for (SearchResult result : results_14.getSearchResults()) {
+                  SearchResults results_15 = _finder.find(new SearchQuery(_node, _scope));
+                  for (SearchResult result : results_15.getSearchResults()) {
                     parameterUsages.add(result);
                   }
                 }
