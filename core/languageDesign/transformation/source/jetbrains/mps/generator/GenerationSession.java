@@ -69,6 +69,7 @@ public class GenerationSession implements IGenerationSession {
     if (myLoggingHandler == null) {
       myLoggingHandler = new LoggingHandlerAdapter() {
         public void addLogEntry(LogEntry e) {
+          if (myCurrentContext == null) return; // test mode?
           Object o = e.getHintObject();
           if (o instanceof SNode) {
             myCurrentContext.addTransientModelToKeep(((SNode) o).getModel());
@@ -78,7 +79,6 @@ public class GenerationSession implements IGenerationSession {
               myCurrentContext.addTransientModelToKeep(node.getModel());
             }
           }
-
         }
       };
     }
