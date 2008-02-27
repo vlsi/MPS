@@ -1230,6 +1230,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184959749711">
       <property name="name" value="getClass" />
+      <property name="isVirtual" value="true" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184959753000">
         <link role="classifier" targetNodeId="13.~Class" resolveInfo="Class" />
       </node>
