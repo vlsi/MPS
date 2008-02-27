@@ -40,9 +40,9 @@
       </node>
       <node role="button" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton" id="1204026688952">
         <property name="text" value="Cancel" />
-        <node role="handler" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027105812">
-          <node role="operand" type="jetbrains.mps.uiLanguage.structure.ThisComponentExpression" id="1204027105592" />
-          <node role="operation" type="jetbrains.mps.uiLanguage.structure.ComponentMethodCallOperation" id="1204027107111">
+        <node role="handler" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204117533899">
+          <node role="operand" type="jetbrains.mps.uiLanguage.structure.ThisComponentExpression" id="1204117533554" />
+          <node role="operation" type="jetbrains.mps.uiLanguage.structure.ComponentMethodCallOperation" id="1204117535119">
             <link role="baseMethodDeclaration" targetNodeId="1204027087626" resolveInfo="onCancel" />
           </node>
         </node>
