@@ -3652,6 +3652,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141336">
+    <property name="package" value="method" />
     <link role="concept" targetNodeId="1.1073063089578" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141337">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141338" />

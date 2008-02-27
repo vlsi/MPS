@@ -3038,6 +3038,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1081792356328">
     <property name="name" value="SuperMethodCall_Editor" />
+    <property name="package" value="method" />
     <link role="conceptDeclaration" targetNodeId="17.1073063089578" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1091709481298">
       <property name="vertical" value="false" />
