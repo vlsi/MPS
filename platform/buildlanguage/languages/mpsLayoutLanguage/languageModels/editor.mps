@@ -408,7 +408,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.EditorComponentDeclaration" id="1204116610828">
-    <property name="name" value="ConfigurationReferences_editorComponent" />
+    <property name="name" value="ConfigurationReferencesEditorComponent" />
     <link role="conceptDeclaration" targetNodeId="1.1203598300291" resolveInfo="AbstractProjectComponent" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204129100200">
       <property name="vertical" value="false" />
