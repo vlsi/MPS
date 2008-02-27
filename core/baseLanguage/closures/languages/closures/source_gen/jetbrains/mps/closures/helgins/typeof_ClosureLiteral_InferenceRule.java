@@ -91,26 +91,30 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
       }
     } else
     if(returnsValue) {
-      {
-        IMatchingPattern pattern_1201519259737 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-        SNode coercedNode_1201519251382 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), pattern_1201519259737);
-        if(coercedNode_1201519251382 != null) {
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), coercedNode_1201519251382, closure, null, "jetbrains.mps.closures.helgins", "1201519323502");
+      /*
+        {
+          IMatchingPattern pattern_1201519259737 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+          SNode coercedNode_1201519251382 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), pattern_1201519259737);
+          if(coercedNode_1201519251382 != null) {
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531), coercedNode_1201519251382, closure, null, "jetbrains.mps.closures.helgins", "1201519323502");
+          }
         }
-      }
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200829007706", true), new QuotationClass_().createNode(paramTypes, TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531)), closure, null, "jetbrains.mps.closures.helgins", "1200829005839");
+      */
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200829007706", true), new QuotationClass_1().createNode(paramTypes, TypeChecker.getInstance().getEquationManager().getRepresentator(RLCS_typevar_1199621958531)), closure, null, "jetbrains.mps.closures.helgins", "1200829005839");
     } else
     if(yieldsValue) {
-      {
-        IMatchingPattern pattern_1201519344629 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-        SNode coercedNode_1201519339952 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156), pattern_1201519344629);
-        if(coercedNode_1201519339952 != null) {
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156), coercedNode_1201519339952, closure, null, "jetbrains.mps.closures.helgins", "1201519354283");
+      /*
+        {
+          IMatchingPattern pattern_1201519344629 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+          SNode coercedNode_1201519339952 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156), pattern_1201519344629);
+          if(coercedNode_1201519339952 != null) {
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156), coercedNode_1201519339952, closure, null, "jetbrains.mps.closures.helgins", "1201519354283");
+          }
         }
-      }
+      */
       SNode st = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType", null);
       SLinkOperations.setTarget(st, "elementType", TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1200831610156), true);
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1201866101391", true), new QuotationClass_1().createNode(paramTypes, st), closure, null, "jetbrains.mps.closures.helgins", "1201866101389");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1201866101391", true), new QuotationClass_3().createNode(paramTypes, st), closure, null, "jetbrains.mps.closures.helgins", "1201866101389");
     } else
     {
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(closure, "jetbrains.mps.closures.helgins", "1200831808767", true), new QuotationClass_2().createNode(paramTypes), closure, null, "jetbrains.mps.closures.helgins", "1200831808765");

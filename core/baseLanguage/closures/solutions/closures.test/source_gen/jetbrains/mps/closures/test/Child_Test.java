@@ -7,6 +7,10 @@ import junit.framework.Assert;
 
 public class Child_Test extends Parent_Test {
 
+  public static  <T>void foo() {
+  }
+
+
   public void testFoo() {
     this.setFoo(7);
     final int foo = 11;

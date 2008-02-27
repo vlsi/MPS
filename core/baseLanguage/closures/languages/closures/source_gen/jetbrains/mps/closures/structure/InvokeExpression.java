@@ -10,12 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 
-public class InvokeExpression extends Expression implements IInvokeExpression {
+public class InvokeExpression extends Expression {
   public static final String concept = "jetbrains.mps.closures.structure.InvokeExpression";
   public static String PARAMETER = "parameter";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  InvokeExpression(SNode node) {
     super(node);
@@ -48,30 +45,6 @@ public class InvokeExpression extends Expression implements IInvokeExpression {
 
   public void insertParameter(Expression prev, Expression node) {
     this.insertChild(prev, InvokeExpression.PARAMETER, node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(InvokeExpression.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(InvokeExpression.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(InvokeExpression.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(InvokeExpression.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(InvokeExpression.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(InvokeExpression.VIRTUAL_PACKAGE, value);
   }
 
 }
