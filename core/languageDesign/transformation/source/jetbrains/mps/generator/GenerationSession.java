@@ -62,18 +62,7 @@ public class GenerationSession implements IGenerationSession {
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
     mySessionId = "" + System.currentTimeMillis();
-    myMessagesHandler = new IMessageHandler() {
-      public void handle(Message msg) {
-        messagesHandler.handle(msg);
-        Object o = msg.getHintObject();
-        if (o instanceof NodeWithContext) {
-          SNode node = ((NodeWithContext) o).getNode();
-          if (node != null) {
-            myCurrentContext.addTransientModelToKeep(node.getModel());
-          }
-        }
-      }
-    };
+    myMessagesHandler = messagesHandler;
   }
 
   public ILoggingHandler getLoggingHandler() {
