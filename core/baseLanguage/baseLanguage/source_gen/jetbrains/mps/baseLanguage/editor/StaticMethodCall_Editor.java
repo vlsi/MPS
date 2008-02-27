@@ -26,7 +26,7 @@ import jetbrains.mps.bootstrap.editorLanguage.generator.internal.PrimaryReferent
 
 public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myBaseMethodCall_actualArgumentList;
+  /* package */AbstractCellProvider myIMethodCall_actualArguments;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081149310028");
@@ -49,7 +49,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     StaticMethodCall_Actions.setCellActions(editorCell, node, context);
   }
 
-  private static void setupBasic_BaseMethodCall_actualArgumentListCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_IMethodCall_actualArgumentsCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173991610903");
     editorCell.setDrawBorder(false);
   }
@@ -77,18 +77,18 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createClassConceptReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
     editorCell.addEditorCell(this.createStaticMethodDeclarationReferenceCell(context, node));
-    editorCell.addEditorCell(this.createBaseMethodCall_actualArgumentListCell(context, node));
+    editorCell.addEditorCell(this.createIMethodCall_actualArgumentsCell(context, node));
     return editorCell;
   }
 
-  public EditorCell createBaseMethodCall_actualArgumentListCell(EditorContext context, SNode node) {
-    if(this.myBaseMethodCall_actualArgumentList == null) {
-      this.myBaseMethodCall_actualArgumentList = new BaseMethodCall_actualArgumentList(node);
+  public EditorCell createIMethodCall_actualArgumentsCell(EditorContext context, SNode node) {
+    if(this.myIMethodCall_actualArguments == null) {
+      this.myIMethodCall_actualArguments = new IMethodCall_actualArguments(node);
     }
-    EditorCell componentCell = this.myBaseMethodCall_actualArgumentList.createEditorCell(context);
+    EditorCell componentCell = this.myIMethodCall_actualArguments.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
-    StaticMethodCall_Editor.setupBasic_BaseMethodCall_actualArgumentListCell(editorCell, node, context);
+    StaticMethodCall_Editor.setupBasic_IMethodCall_actualArgumentsCell(editorCell, node, context);
     return editorCell;
   }
 

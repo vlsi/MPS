@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.baseLanguage.editor.BaseMethodCall_actualArgumentList;
+import jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
@@ -20,7 +20,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 
 public class InternalNewExpression_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myBaseMethodCall_actualArgumentList1;
+  /* package */AbstractCellProvider myIMethodCall_actualArguments1;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173996492632");
@@ -37,7 +37,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_BaseMethodCall_actualArgumentListCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_IMethodCall_actualArgumentsCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173996742260");
     editorCell.setDrawBorder(false);
   }
@@ -192,7 +192,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "]"));
     editorCell.addEditorCell(this.createConstantCell2(context, node, "new"));
     editorCell.addEditorCell(this.createFqClassNameCell(context, node));
-    editorCell.addEditorCell(this.createBaseMethodCall_actualArgumentListCell(context, node));
+    editorCell.addEditorCell(this.createIMethodCall_actualArgumentsCell(context, node));
     return editorCell;
   }
 
@@ -219,14 +219,14 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createBaseMethodCall_actualArgumentListCell(EditorContext context, SNode node) {
-    if(this.myBaseMethodCall_actualArgumentList1 == null) {
-      this.myBaseMethodCall_actualArgumentList1 = new BaseMethodCall_actualArgumentList(node);
+  public EditorCell createIMethodCall_actualArgumentsCell(EditorContext context, SNode node) {
+    if(this.myIMethodCall_actualArguments1 == null) {
+      this.myIMethodCall_actualArguments1 = new IMethodCall_actualArguments(node);
     }
-    EditorCell componentCell = this.myBaseMethodCall_actualArgumentList1.createEditorCell(context);
+    EditorCell componentCell = this.myIMethodCall_actualArguments1.createEditorCell(context);
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.addEditorCell(componentCell);
-    InternalNewExpression_Editor.setupBasic_BaseMethodCall_actualArgumentListCell(editorCell, node, context);
+    InternalNewExpression_Editor.setupBasic_IMethodCall_actualArgumentsCell(editorCell, node, context);
     return editorCell;
   }
 

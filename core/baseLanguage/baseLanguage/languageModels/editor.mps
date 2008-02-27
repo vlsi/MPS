@@ -8014,14 +8014,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.EditorComponentDeclaration" id="1173990860683">
-    <property name="name" value="BaseMethodCall_actualArgumentList" />
-    <link role="conceptDeclaration" targetNodeId="17.1068499141036" />
+    <property name="name" value="IMethodCall_actualArguments" />
+    <link role="conceptDeclaration" targetNodeId="17.1204053956946" resolveInfo="IMethodCall" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1173990937233">
       <property name="drawBorder" value="false" />
       <property name="selectable" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1173990956438">
-        <property name="drawBorder" value="false" />
         <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1173990956439">
         <property name="separatorText" value="," />
@@ -8037,9 +8037,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1173990956441">
         <property name="editable" value="false" />
         <property name="text" value=")" />
-        <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
         <property name="attractsFocus" value="1" />
+        <property name="fontStyle" value="PLAIN" />
         <node role="focusPolicyApplicable" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198529046862">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198529046863">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198681960152">
