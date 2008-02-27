@@ -15,6 +15,7 @@
   </language>
   <language namespace="jetbrains.mps.transformation.TLBase" />
   <language namespace="jetbrains.mps.quotation" />
+  <language namespace="jetbrains.mps.baseLanguage.strings" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="java.util@java_stub" version="-1" />

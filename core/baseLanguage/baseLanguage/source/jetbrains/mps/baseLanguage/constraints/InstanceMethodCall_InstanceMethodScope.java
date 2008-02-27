@@ -24,7 +24,10 @@ public class InstanceMethodCall_InstanceMethodScope extends VisibleClassifierMem
   public InstanceMethodCall_InstanceMethodScope(ClassifierType instanceType, DotExpression methodCallDotExpression) {
     super(instanceType.getClassifier(), methodCallDotExpression.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
     myInstanceType = instanceType;
-    myMethodCall = (IMethodCall) methodCallDotExpression.getOperation();
+    IOperation operation = methodCallDotExpression.getOperation();
+    if (operation instanceof IMethodCall) {
+      myMethodCall = (IMethodCall) operation;
+    }
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {

@@ -22,7 +22,7 @@ public abstract class AbstractSearchScope implements ISearchScope {
     }
   };
 
-  public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
+  public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration targetConcept) {
     // not supported by default
     return null;
   }
