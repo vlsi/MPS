@@ -93,6 +93,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203598417283">
     <property name="name" value="Jar" />
     <link role="extends" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204123547263">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="delete" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1204122781510" resolveInfo="Delete" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203598789102">
       <property name="value" value="jar" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
@@ -231,6 +237,21 @@
       <property name="role" value="configuration" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1204115658627" resolveInfo="Configuration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204122781510">
+    <property name="name" value="Delete" />
+    <link role="extends" targetNodeId="1204123091967" resolveInfo="PostProcessingTask" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204122861469">
+      <property name="name" value="path" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204123091967">
+    <property name="name" value="PostProcessingTask" />
+    <link role="extends" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1204123098625">
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
 </model>
