@@ -15,7 +15,6 @@ import org.apache.log4j.Level;
 public class Logger {
   private static Map<String, Logger> ourLoggers = new HashMap<String, Logger>();
   private static List<ILoggingHandler> ourLoggingHandlers = new ArrayList<ILoggingHandler>();
-  private static boolean ourInfoAndWarningsDisabled = false;
 
   static {
     addLoggingHandler(new Log4jLogginHandler());
@@ -84,11 +83,20 @@ public class Logger {
     }
   }
 
+  //--------------------------
+  // Logger instance
+  //--------------------------
+
   private String myFqName;
 
   private Logger(String fqName) {
     myFqName = fqName;
   }
+
+  private org.apache.log4j.Logger getLog4jLogger() {
+    return org.apache.log4j.Logger.getLogger(myFqName);
+  }
+
 
   public void info(String message) {
     info(message, null);
@@ -103,7 +111,9 @@ public class Logger {
   }
 
   public void info(String message, Throwable t, Object hintObject) {
-    info(new LogEntry(myFqName, message, t, hintObject));
+    if (getLog4jLogger().isEnabledFor(org.apache.log4j.Level.INFO)) {
+      info(new LogEntry(myFqName, message, t, hintObject));
+    }
   }
 
   public void warning(String message) {
@@ -119,7 +129,9 @@ public class Logger {
   }
 
   public void warning(String message, Throwable t, Object hintObject) {
-    warning(new LogEntry(myFqName, message, t, hintObject));
+    if (getLog4jLogger().isEnabledFor(org.apache.log4j.Level.WARN)) {
+      warning(new LogEntry(myFqName, message, t, hintObject));
+    }
   }
 
   public void debug(String message) {
@@ -135,7 +147,9 @@ public class Logger {
   }
 
   public void debug(String message, Throwable t, Object hintObject) {
-    debug(new LogEntry(myFqName, message, t, hintObject));
+    if (getLog4jLogger().isEnabledFor(org.apache.log4j.Level.DEBUG)) {
+      debug(new LogEntry(myFqName, message, t, hintObject));
+    }
   }
 
   public void error(String message) {
@@ -148,11 +162,6 @@ public class Logger {
 
   public void error(Throwable t, Object hintObject) {
     error(t.getClass().getName() + (t.getMessage() != null ? " : " + t.getMessage() : ""), t, hintObject);
-//    if (t.getMessage() != null) {
-//      error("Exception : " + t.getMessage(), t, hintObject);
-//    } else {
-//      error("Exception : " + t.getClass().getName(), t, hintObject);
-//    }
   }
 
   public void error(String message, Throwable t) {
@@ -164,7 +173,9 @@ public class Logger {
   }
 
   public void error(String message, Throwable t, Object hintObject) {
-    error(new LogEntry(myFqName, message, t, hintObject));
+    if (getLog4jLogger().isEnabledFor(org.apache.log4j.Level.ERROR)) {
+      error(new LogEntry(myFqName, message, t, hintObject));
+    }
   }
 
   public void errorWithTrace(String message) {
@@ -184,7 +195,9 @@ public class Logger {
   }
 
   public void fatal(String message, Throwable t, Object hintObject) {
-    fatal(new LogEntry(myFqName, message, t, hintObject));
+    if (getLog4jLogger().isEnabledFor(org.apache.log4j.Level.FATAL)) {
+      fatal(new LogEntry(myFqName, message, t, hintObject));
+    }
   }
 
   public void assertLog(boolean condition) {
