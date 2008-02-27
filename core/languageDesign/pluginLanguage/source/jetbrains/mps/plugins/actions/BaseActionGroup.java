@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.plugins.actions;
+package jetbrains.mps.plugins.actions;
 
 import jetbrains.mps.ide.action.ActionGroup;
 
