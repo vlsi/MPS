@@ -23,7 +23,7 @@ import org.jdom.Element;
  * @author Kostik
  */
 public class MessageView extends DefaultTool implements IExternalizableComponent {
-  private static final int MAX_MESSAGES_SIZE = 3000;
+  private static final int MAX_MESSAGES_SIZE = 30000;
 
   private static final String SHOW_INFORMATION = "showInformation";
   private static final String SHOW_ERRORS = "showErrors";
@@ -99,11 +99,6 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
 
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
-    myList.addComponentListener(new ComponentAdapter() {
-      public void componentResized(ComponentEvent e) {
-        myList.setFixedCellWidth(myList.getWidth());
-      }
-    });
 
     ToolTipManager.sharedInstance().registerComponent(myList);
 
@@ -249,13 +244,20 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
   private void rebuildModel() {
     myModel.clear();
+    myList.setFixedCellWidth(myList.getWidth());
     List<Message> messagesToAdd = new ArrayList<Message>();
+    int width = 0;
     for (Message m : myMessages) {
       if (isVisible(m)) {
+        width = Math.max(width, getMessageWidth(m));
         messagesToAdd.add(m);
       }
     }
-    myModel.copyInto(messagesToAdd.toArray());
+    myList.setFixedCellWidth(width);
+
+    for (Message m : messagesToAdd) {
+      myModel.addElement(m);
+    }
   }
 
   public void clear() {
@@ -263,6 +265,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
       public void run() {
         myModel.clear();
         myMessages.clear();
+        myList.setFixedCellWidth(myList.getWidth());
       }
     });
   }
@@ -282,9 +285,21 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
         }                        
         myMessages.add(message);
 
+        int width = getMessageWidth(message);
+        if (width > myList.getFixedCellWidth()) {
+          myList.setFixedCellWidth(width);
+        }
+
+
         show(false);
       }
     });
+  }
+
+  private int getMessageWidth(Message message) {
+    Component renderer = myList.getCellRenderer().getListCellRendererComponent(myList, message, 0, false, false);
+    int width = renderer.getPreferredSize().width;
+    return width;
   }
 
   public JComponent getComponent() {
