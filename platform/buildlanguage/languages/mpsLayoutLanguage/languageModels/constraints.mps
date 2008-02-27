@@ -50,10 +50,40 @@
       <property name="name" value="getPath" />
       <link role="overriddenMethod" targetNodeId="1203431163273" resolveInfo="getPath" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203431282225">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203431382033">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203431392246">
-            <link role="baseMethodDeclaration" targetNodeId="3.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
-            <link role="classConcept" targetNodeId="3.~PathManager" resolveInfo="PathManager" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204114329268">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204114329269">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204114737664">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204114739291">
+                <link role="classConcept" targetNodeId="3.~PathManager" resolveInfo="PathManager" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204114344220">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204114332526">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204114331258" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204114339999">
+                <link role="property" targetNodeId="2v.1204114229489" resolveInfo="basedir" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204114348395">
+              <link role="baseMethodDeclaration" targetNodeId="7.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204114349804">
+                <property name="value" value="$MPS_HOME$" />
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1204114369872">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204114369873">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204114746185">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204114749548">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204114749549" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204114749550">
+                    <link role="property" targetNodeId="2v.1204114229489" resolveInfo="basedir" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
