@@ -148,6 +148,11 @@
             id="1200306708889">
         <link role="relationDeclaration" targetNodeId="1.1200306472989"/>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1204129117461">
+        <property name="text" value=";"/>
+        <property name="selectable" value="false"/>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1200242594265">
@@ -163,6 +168,11 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1200242609958">
         <link role="relationDeclaration" targetNodeId="1.1200242582311"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1204129094052">
+        <property name="text" value=";"/>
+        <property name="selectable" value="false"/>
       </node>
     </node>
   </node>
