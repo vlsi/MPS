@@ -155,4 +155,10 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     if (node == null) return null;
     return NodeWrapper.createNodeWrapper(node, equationManager);
   }
+
+  public String toString() {
+    SNode node = getNode();
+    if (node == null) return "<no node>";
+    return node.toString();
+  }
 }

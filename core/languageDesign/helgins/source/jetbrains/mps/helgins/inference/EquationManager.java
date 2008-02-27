@@ -230,6 +230,9 @@ public class EquationManager {
       subtypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
     }
     if (supertypeRepresentator instanceof NodeWrapper) {
+     /* if ("IMapper<i,j>".equals(supertypeRepresentator.toString())) {
+        System.err.println("BINGO!!");
+      }*/
       NodeWrapper supertypeNodeWrapper = (NodeWrapper) supertypeRepresentator;
       SModel typesModel = myTypeChecker.getRuntimeTypesModel();
       NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(supertypeNodeWrapper.getNode(), typesModel), this);
@@ -1017,10 +1020,10 @@ public class EquationManager {
       assert parent != null;
       String roleInParent = child.getRole_();
       assert roleInParent != null;
-      parent.removeChild(child);
       SNode childReplacement = childrenReplacement.get(child);
       childReplacement = CopyUtil.copy(childReplacement, parent.getModel());
-      parent.addChild(roleInParent, childReplacement);
+      parent.replaceChild(child, childReplacement);
+      //parent.addChild(roleInParent, childReplacement);
     }
     Map<SReference, SNode> referenceReplacement = new HashMap<SReference, SNode>();
     List<SReference> references = new ArrayList<SReference>(wrapper.getNode().getReferences());
