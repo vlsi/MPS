@@ -68,7 +68,16 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
   private Queue<Message> myMessages = new LinkedList<Message>();
   private DefaultListModel myModel = new DefaultListModel();
-  private JList myList = new JList(myModel);
+  private JList myList = new JList(myModel) {
+    public String getToolTipText(MouseEvent event) {
+      int index = myList.locationToIndex(event.getPoint());
+      if (index == -1) {
+        return null;
+      }
+      Message message = (Message) myModel.get(index);
+      return "<html><p>" + message.getText() + "</p>";
+    }
+  };
   private ToolsPane myToolsPane;
 
   public MessageView(ToolsPane toolsPane) {
@@ -90,6 +99,14 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
 
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
+    myList.addComponentListener(new ComponentAdapter() {
+      public void componentResized(ComponentEvent e) {
+        myList.setFixedCellWidth(myList.getWidth());
+      }
+    });
+
+    ToolTipManager.sharedInstance().registerComponent(myList);
+
     
 
     myList.registerKeyboardAction(new AbstractAction() {
