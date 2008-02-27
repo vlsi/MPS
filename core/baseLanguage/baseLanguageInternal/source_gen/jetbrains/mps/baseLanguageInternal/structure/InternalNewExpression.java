@@ -11,8 +11,8 @@ import jetbrains.mps.baseLanguage.structure.Type;
 
 public class InternalNewExpression extends BaseMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression";
-  public static String FQ_CLASS_NAME = "fqClassName";
   public static String TYPE = "type";
+  public static String FQ_CLASS_NAME = "fqClassName";
 
   public  InternalNewExpression(SNode node) {
     super(node);
@@ -27,20 +27,20 @@ public class InternalNewExpression extends BaseMethodCall {
   }
 
 
-  public String getFqClassName() {
-    return this.getProperty(InternalNewExpression.FQ_CLASS_NAME);
-  }
-
-  public void setFqClassName(String value) {
-    this.setProperty(InternalNewExpression.FQ_CLASS_NAME, value);
-  }
-
   public Type getType() {
     return (Type)this.getChild(InternalNewExpression.TYPE);
   }
 
   public void setType(Type node) {
     super.setChild(InternalNewExpression.TYPE, node);
+  }
+
+  public String getFqClassName() {
+    return this.getProperty(InternalNewExpression.FQ_CLASS_NAME);
+  }
+
+  public void setFqClassName(String value) {
+    this.setProperty(InternalNewExpression.FQ_CLASS_NAME, value);
   }
 
 }

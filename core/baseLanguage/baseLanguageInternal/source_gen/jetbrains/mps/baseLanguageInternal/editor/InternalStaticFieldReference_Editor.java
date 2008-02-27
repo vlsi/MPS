@@ -17,8 +17,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_FqClassNameCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173995481086");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173995375435");
     editorCell.setDrawBorder(false);
   }
 
@@ -27,21 +27,21 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
+  private static void setupBasic_FqClassNameCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173995481086");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_FieldNameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173995486322");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173995375435");
-    editorCell.setDrawBorder(false);
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_FqClassNameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
-  }
-
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_FieldNameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

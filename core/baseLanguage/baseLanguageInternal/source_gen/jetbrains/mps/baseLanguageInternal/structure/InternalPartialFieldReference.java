@@ -12,10 +12,10 @@ import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class InternalPartialFieldReference extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference";
-  public static String FIELD_NAME = "fieldName";
   public static String FIELD_TYPE = "fieldType";
   public static String INSTANCE_TYPE = "instanceType";
   public static String INSTANCE = "instance";
+  public static String FIELD_NAME = "fieldName";
 
   public  InternalPartialFieldReference(SNode node) {
     super(node);
@@ -29,14 +29,6 @@ public class InternalPartialFieldReference extends Expression {
     return InternalPartialFieldReference.newInstance(sm, false);
   }
 
-
-  public String getFieldName() {
-    return this.getProperty(InternalPartialFieldReference.FIELD_NAME);
-  }
-
-  public void setFieldName(String value) {
-    this.setProperty(InternalPartialFieldReference.FIELD_NAME, value);
-  }
 
   public Type getFieldType() {
     return (Type)this.getChild(InternalPartialFieldReference.FIELD_TYPE);
@@ -60,6 +52,14 @@ public class InternalPartialFieldReference extends Expression {
 
   public void setInstance(Expression node) {
     super.setChild(InternalPartialFieldReference.INSTANCE, node);
+  }
+
+  public String getFieldName() {
+    return this.getProperty(InternalPartialFieldReference.FIELD_NAME);
+  }
+
+  public void setFieldName(String value) {
+    this.setProperty(InternalPartialFieldReference.FIELD_NAME, value);
   }
 
 }

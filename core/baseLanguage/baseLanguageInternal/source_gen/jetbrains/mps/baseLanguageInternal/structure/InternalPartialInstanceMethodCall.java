@@ -13,10 +13,10 @@ import java.util.List;
 
 public class InternalPartialInstanceMethodCall extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall";
-  public static String METHOD_NAME = "methodName";
   public static String RETURN_TYPE = "returnType";
   public static String INSTANCE = "instance";
   public static String ACTUAL_ARGUMENT = "actualArgument";
+  public static String METHOD_NAME = "methodName";
 
   public  InternalPartialInstanceMethodCall(SNode node) {
     super(node);
@@ -30,14 +30,6 @@ public class InternalPartialInstanceMethodCall extends Expression {
     return InternalPartialInstanceMethodCall.newInstance(sm, false);
   }
 
-
-  public String getMethodName() {
-    return this.getProperty(InternalPartialInstanceMethodCall.METHOD_NAME);
-  }
-
-  public void setMethodName(String value) {
-    this.setProperty(InternalPartialInstanceMethodCall.METHOD_NAME, value);
-  }
 
   public Type getReturnType() {
     return (Type)this.getChild(InternalPartialInstanceMethodCall.RETURN_TYPE);
@@ -73,6 +65,14 @@ public class InternalPartialInstanceMethodCall extends Expression {
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, InternalPartialInstanceMethodCall.ACTUAL_ARGUMENT, node);
+  }
+
+  public String getMethodName() {
+    return this.getProperty(InternalPartialInstanceMethodCall.METHOD_NAME);
+  }
+
+  public void setMethodName(String value) {
+    this.setProperty(InternalPartialInstanceMethodCall.METHOD_NAME, value);
   }
 
 }
