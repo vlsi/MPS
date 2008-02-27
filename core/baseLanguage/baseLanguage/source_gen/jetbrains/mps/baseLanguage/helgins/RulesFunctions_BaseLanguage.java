@@ -11,6 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import java.util.List;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import java.util.Iterator;
 import jetbrains.mps.util.Pair;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class RulesFunctions_BaseLanguage {
+  public static boolean TRACE_METHOD_TYPES = false;
 
   @InferenceMethod()
   public static void comparisonOp(SNode binOp) {
@@ -108,6 +110,9 @@ public class RulesFunctions_BaseLanguage {
               List<SNode> nodes = mmap.get(tvd);
               if(nodes != null) {
                 SNode tvar = ListOperations.getElement(nodes, 0);
+                if(RulesFunctions_BaseLanguage.TRACE_METHOD_TYPES) {
+                  System.out.println("-2- " + BaseConcept_Behavior.call_getPresentation_1180102203531(tvar) + " :==: " + BaseConcept_Behavior.call_getPresentation_1180102203531(ListOperations.getElement(nodes, 0)));
+                }
                 TypeChecker.getInstance().getRuntimeSupport().createEquation(tvar, actualParams.get(idx), null, null, "jetbrains.mps.baseLanguage.helgins", "1203433378489");
               }
             }
@@ -139,6 +144,9 @@ public class RulesFunctions_BaseLanguage {
           Pair<SNode, Map<SNode, List<SNode>>> pair = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(SLinkOperations.getTarget(param, "type", true), mmap);
           SNode matchedType = pair.o1;
           mmap = pair.o2;
+          if(RulesFunctions_BaseLanguage.TRACE_METHOD_TYPES) {
+            System.out.println("-1- TYPEOF(" + BaseConcept_Behavior.call_getPresentation_1180102203531(arg) + ") :<=: " + BaseConcept_Behavior.call_getPresentation_1180102203531(matchedType));
+          }
           TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.baseLanguage.helgins", "1203441371331", true), matchedType, arg, null, "jetbrains.mps.baseLanguage.helgins", "1203441371327");
         }
       }
@@ -147,6 +155,9 @@ public class RulesFunctions_BaseLanguage {
       Pair<SNode, Map<SNode, List<SNode>>> pair = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(returnType, mmap);
       SNode matchedType = pair.o1;
       mmap = pair.o2;
+      if(RulesFunctions_BaseLanguage.TRACE_METHOD_TYPES) {
+        System.out.println("-1- TYPEOF(" + BaseConcept_Behavior.call_getPresentation_1180102203531(mc) + ") :==: " + BaseConcept_Behavior.call_getPresentation_1180102203531(matchedType));
+      }
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(mc, "jetbrains.mps.baseLanguage.helgins", "1203441371361", true), matchedType, mc, null, "jetbrains.mps.baseLanguage.helgins", "1203441371359");
     }
     return mmap;
@@ -159,10 +170,27 @@ public class RulesFunctions_BaseLanguage {
         List<SNode> nodes = e.getValue();
         SNode prev = null;
         for(SNode tvar : nodes) {
-          if(prev != null) {
+          if(prev != null && prev != tvar) {
+            if(RulesFunctions_BaseLanguage.TRACE_METHOD_TYPES) {
+              System.out.println("-3- " + BaseConcept_Behavior.call_getPresentation_1180102203531(prev) + " :==: " + BaseConcept_Behavior.call_getPresentation_1180102203531(tvar));
+            }
             TypeChecker.getInstance().getRuntimeSupport().createEquation(prev, tvar, null, null, "jetbrains.mps.baseLanguage.helgins", "1203452876024");
           }
           prev = tvar;
+        }
+        if(RulesFunctions_BaseLanguage.TRACE_METHOD_TYPES) {
+          if((prev != null)) {
+            final SNode var = prev;
+            final SNode prevVar_typevar_1204114618000 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000), prev, null, null, "jetbrains.mps.baseLanguage.helgins", "1204114618001");
+            TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000), new Runnable() {
+
+              public void run() {
+                System.out.println("-4- " + BaseConcept_Behavior.call_getPresentation_1180102203531(var) + " :==: " + BaseConcept_Behavior.call_getPresentation_1180102203531(TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000)));
+              }
+
+            }, "jetbrains.mps.baseLanguage.helgins", "1204114618006");
+          }
         }
       }
     }
