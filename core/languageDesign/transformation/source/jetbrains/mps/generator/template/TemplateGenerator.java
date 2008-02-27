@@ -34,9 +34,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private RuleManager myRuleManager;
 
   public TemplateGenerator(GenerationSessionContext operationContext,
-                           IAdaptiveProgressMonitor progressMonitor,
-                           GeneratorLogger generatorLogger) {
-    super(operationContext, progressMonitor, generatorLogger);
+                           IAdaptiveProgressMonitor progressMonitor) {
+    super(operationContext, progressMonitor);
   }
 
   public GenerationSessionContext getGeneratorSessionContext() {

@@ -19,11 +19,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private GeneratorLogger myLogger;
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
-                                      IAdaptiveProgressMonitor progressMonitor,
-                                      GeneratorLogger generatorLogger) {
+                                      IAdaptiveProgressMonitor progressMonitor) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
-    myLogger = generatorLogger;
+    myLogger = new GeneratorLogger(operationContext);
   }
 
   public IOperationContext getOperationContext() {

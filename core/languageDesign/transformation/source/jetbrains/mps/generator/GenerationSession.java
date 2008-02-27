@@ -82,12 +82,14 @@ public class GenerationSession implements IGenerationSession {
         public void addLogEntry(LogEntry e) {
           Object o = e.getHintObject();
           if (o instanceof SNode) {
-            if (myCurrentContext != null) {
-              myCurrentContext.addTransientModelToKeep(((SNode) o).getModel());
-            } else {
-              LOG.error("current context is null");
+            myCurrentContext.addTransientModelToKeep(((SNode) o).getModel());
+          } else if (o instanceof NodeWithContext) {
+            SNode node = ((NodeWithContext) o).getNode();
+            if (node != null) {
+              myCurrentContext.addTransientModelToKeep(node.getModel());
             }
           }
+
         }
       };
     }
@@ -233,7 +235,7 @@ public class GenerationSession implements IGenerationSession {
     setGenerationSessionContext(context);
 
     // -- replace generator
-    ITemplateGenerator generator = new TemplateGenerator(context, myProgressMonitor, new GeneratorLogger(myMessagesHandler, context));
+    ITemplateGenerator generator = new TemplateGenerator(context, myProgressMonitor);
     GenerationStatus status;
     try {
       SModel outputModel = generateModel(inputModel, generator);
@@ -450,7 +452,6 @@ public class GenerationSession implements IGenerationSession {
     for (GenerationSessionContext context : mySavedContexts) {
       transientModules.add(context.getModule());
     }
-
 
     // collect all transient models
     List<SModelDescriptor> transientModels = new LinkedList<SModelDescriptor>();

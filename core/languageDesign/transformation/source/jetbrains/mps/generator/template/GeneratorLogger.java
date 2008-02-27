@@ -1,9 +1,7 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
@@ -14,29 +12,29 @@ import java.util.HashSet;
  * Nov 30, 2007
  */
 public class GeneratorLogger {
+  private static final Logger LOG = Logger.getLogger(GeneratorLogger.class);
+
   private IOperationContext myOperationContext;
-  private IMessageHandler myMessageHandler;
   private int myWarningsCount;
   private int myErrorsCount;
   private HashSet<SNode> myFailedRules = new HashSet<SNode>();
 
-  public GeneratorLogger(IMessageHandler messageHandler, IOperationContext operationContext) {
-    myMessageHandler = messageHandler;
+  public GeneratorLogger(IOperationContext operationContext) {
     myOperationContext = operationContext;
   }
 
   public void showInformationMessage(SNode node, String message) {
-    addMessage(new Message(MessageKind.INFORMATION, message, new NodeWithContext(node, myOperationContext)));
+    LOG.info(message, new NodeWithContext(node, myOperationContext));
   }
 
   public void showWarningMessage(SNode node, String message) {
     myWarningsCount++;
-    addMessage(new Message(MessageKind.WARNING, message, new NodeWithContext(node, myOperationContext)));
+    LOG.warning(message, new NodeWithContext(node, myOperationContext));
   }
 
   public void showErrorMessage(SNode node, String message) {
     myErrorsCount++;
-    addMessage(new Message(MessageKind.ERROR, message, new NodeWithContext(node, myOperationContext)));
+    LOG.error(message, new NodeWithContext(node, myOperationContext));
   }
 
   public void showErrorMessage(SNode sourceNode, SNode templateNode, String message) {
@@ -56,21 +54,17 @@ public class GeneratorLogger {
 
     showErrorMessage((templateNode != null ? templateNode : ruleNode), message);
     if (sourceNode != null) {
-      addMessage(new Message(MessageKind.ERROR, "-- was source node: " + sourceNode.getDebugText(),
-              new NodeWithContext(sourceNode, myOperationContext)));
+      LOG.error("-- was source node: " + sourceNode.getDebugText(),
+        new NodeWithContext(sourceNode, myOperationContext));
     }
     if (ruleNode != null) {
-      addMessage(new Message(MessageKind.ERROR, "-- was rule: " + ruleNode.getDebugText(),
-              new NodeWithContext(ruleNode, myOperationContext)));
+      LOG.error("-- was rule: " + ruleNode.getDebugText(),
+        new NodeWithContext(ruleNode, myOperationContext));
     }
     if (templateNode != null) {
-      addMessage(new Message(MessageKind.ERROR, "-- was template: " + templateNode.getDebugText(),
-              new NodeWithContext(templateNode, myOperationContext)));
+      LOG.error("-- was template: " + templateNode.getDebugText(),
+        new NodeWithContext(templateNode, myOperationContext));
     }
-  }
-
-  private void addMessage(final Message msg) {
-    myMessageHandler.handle(msg);
   }
 
   public int getErrorCount() {

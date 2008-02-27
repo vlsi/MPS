@@ -21,7 +21,7 @@ public class Logger {
   }
 
   /**
-   * @param "FATAL", "ERROR", "WARN" ...
+   * @param "OFF", "FATAL", "ERROR", "WARN" ...
    */
   public static String setThreshold(String threshhold) {
     Level wasThresholdLevel = org.apache.log4j.Logger.getRootLogger().getLoggerRepository().getThreshold();

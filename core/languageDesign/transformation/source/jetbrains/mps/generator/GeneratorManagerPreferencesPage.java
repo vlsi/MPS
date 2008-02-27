@@ -23,7 +23,7 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
   private JCheckBox myCompileSourceLanguagesModules = new JCheckBox("Compile source languages' modules before generation");
   private JCheckBox myCheckBeforeGeneration = new JCheckBox("Check before generation");
   private JCheckBox myCompileInMPS = new JCheckBox("Compile In MPS");
-  private JCheckBox myShowErrorsOnlyCheckBox = new JCheckBox("Don't show info and warning messages, only errors");
+  private JCheckBox myShowErrorsOnlyCheckBox = new JCheckBox("Log errors only (no info and warnings)");
   private GeneratorManager myGeneratorManager;
 
   public GeneratorManagerPreferencesPage(GeneratorManager generatorManager) {
