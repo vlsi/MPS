@@ -1,17 +1,21 @@
 package jetbrains.mps.ide.findusages.view.optionseditor;
 
 import jetbrains.mps.ide.BaseDialog;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
+import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.QueryEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
+import jetbrains.mps.ide.navigation.EditorNavigationCommand;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -26,11 +30,30 @@ public class FindUsagesDialog extends BaseDialog {
   private ViewOptionsEditor myViewOptionsEditor;
   private boolean myIsCancelled = true;
 
-  public FindUsagesDialog(FindUsagesOptions defaultOptions, SNode node, ActionContext context) {
+  public FindUsagesDialog(FindUsagesOptions defaultOptions, SNode node, final ActionContext context) {
     super(context.getOperationContext().getMainFrame(), "Find usages");
 
     myQueryEditor = new QueryEditor(defaultOptions.getOption(QueryOptions.class), node, context);
-    myFindersEditor = new FindersEditor(defaultOptions.getOption(FindersOptions.class), node, context);
+    myFindersEditor = new FindersEditor(defaultOptions.getOption(FindersOptions.class), node, context) {
+      public void goToFinder(final GeneratedFinder finder) {
+        final SNode[] finderNode = new SNode[]{null};
+
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            finderNode[0] = FindUsagesManager.getInstance().getNodeByFinder(finder);
+          }
+        });
+
+        if (finderNode[0] == null) return;
+
+        FindUsagesDialog.this.onCancel();
+
+        IDEProjectFrame frame = context.getOperationContext().getComponent(IDEProjectFrame.class);
+        NavigationActionProcessor.executeNavigationAction(
+          new EditorNavigationCommand(finderNode[0], frame.getEditorsPane().getCurrentEditor(), frame.getEditorsPane()),
+          frame.getProject(), true);
+      }
+    };
     myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class), node, context);
 
     myQueryEditor.getComponent().setBorder(new EmptyBorder(7, 3, 3, 3));

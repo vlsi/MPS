@@ -12,6 +12,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.intentions.Intention;
 import org.jdom.Element;
 
 import java.util.*;
@@ -20,6 +21,7 @@ public class FindUsagesManager implements IExternalizableComponent {
   private static final Logger LOG = Logger.getLogger(FindUsagesManager.class);
 
   private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
+  private Map<GeneratedFinder, SNode> myNodesByFinder = new HashMap<GeneratedFinder, SNode>();
 
   public static FindUsagesManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(FindUsagesManager.class);
@@ -66,6 +68,10 @@ public class FindUsagesManager implements IExternalizableComponent {
     return null;
   }
 
+  public SNode getNodeByFinder(GeneratedFinder finder) {
+    return myNodesByFinder.get(finder);
+  }
+
   public void reload() {
     myFinders.clear();
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
@@ -86,6 +92,7 @@ public class FindUsagesManager implements IExternalizableComponent {
               }
               finders.add((GeneratedFinder) finder);
               myFinders.put(conceptName, finders);
+              myNodesByFinder.put((GeneratedFinder) finder, finderDeclaration.getNode());
             } else {
               LOG.warning("Finder is registered but isn't compiled " + NameUtil.nodeFQName(finderDeclaration), finderDeclaration);
             }

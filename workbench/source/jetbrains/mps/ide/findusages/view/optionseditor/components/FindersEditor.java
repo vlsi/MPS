@@ -6,14 +6,23 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
+import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.intentions.IntentionsManager;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.event.MenuKeyEvent;
 import java.util.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
 
-public class FindersEditor extends BaseEditor<FindersOptions> {
+public abstract class FindersEditor extends BaseEditor<FindersOptions> {
   public FindersEditor(FindersOptions defaultOptions, final SNode node, ActionContext context) {
     super(defaultOptions, node, context);
 
@@ -63,14 +72,40 @@ public class FindersEditor extends BaseEditor<FindersOptions> {
         }
       });
 
+      finderCheckBox.addKeyListener(new KeyAdapter() {
+        public void keyPressed(KeyEvent e) {
+          if ((e.getKeyCode() == MenuKeyEvent.VK_B) && (e.getID() == MenuKeyEvent.KEY_PRESSED) && (e.isControlDown())) {
+            goToFinder(finder);
+          }
+        }
+      });
+
+      JButton goToFinderButton = new JButton("->");
+      goToFinderButton.setToolTipText("Go to finder declaration");
+      goToFinderButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+          goToFinder(finder);
+        }
+      });
+
       if (!finder.getLongDescription().equals("")) {
         String htmlTooltipText = "<html>" + finder.getLongDescription().replaceAll("\n", "<br>") + "</html>";
         finderCheckBox.setToolTipText(htmlTooltipText);
       }
 
+      //JPanel finderPanel = new JPanel(new BorderLayout());
+      //finderPanel.add(finderCheckBox, BorderLayout.WEST);
+      //finderPanel.add(goToFinderButton, BorderLayout.EAST);
+
+      //myPanel.add(finderPanel);
       myPanel.add(finderCheckBox);
     }
 
+    //JLabel hintLabel = new JLabel("<html><small><b>ctrl+b</b> to go to finder declaration</small></html>");
+    //myPanel.add(hintLabel);
+
     myOptions.setFindersClassNames(correctEnabledFinders);
   }
+
+  public abstract void goToFinder(GeneratedFinder finder);
 }
