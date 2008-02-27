@@ -21,38 +21,30 @@ public interface IEditor {
   void rebuildEditorContent();
   void relayout();
 
-  void addCellSelectionListener(@NotNull ICellSelectionListener listener);
-  void removeCellSelectionListener(@NotNull ICellSelectionListener listener);
+  void addCellSelectionListener(ICellSelectionListener listener);
+  void removeCellSelectionListener(ICellSelectionListener listener);
 
-  void addChangeListener(@NotNull ChangeListener listener);
-  void removeChangeListener(@NotNull ChangeListener listener);
+  void addChangeListener(ChangeListener listener);
+  void removeChangeListener(ChangeListener listener);
 
-  @NotNull IOperationContext getOperationContext();
+  IOperationContext getOperationContext();
+  EditorContext getEditorContext();
 
-  @Nullable EditorContext getEditorContext();
-
-  @Nullable EditorCell  getSelectedCell();
-
-  @Nullable EditorCell getRootCell();
-
-  @Nullable SNode getEditedNode();
-
-  @Nullable SNodePointer getEditedNodePointer();
+  EditorCell  getSelectedCell();
+  EditorCell getRootCell();
+  SNode getEditedNode();
+  SNodePointer getEditedNodePointer();
 
   //for those types of editors which do not contain node: to find them in another way 
-  @Nullable EditorInfo getEditorInfo();
+  EditorInfo getEditorInfo();
 
   void selectNode(SNode node);
-
-  @Nullable IHistoryItem getHistoryItemFromEditor();
+  IHistoryItem getHistoryItemFromEditor();
 
   void requestFocus();
-
   void dispose();
-
   void repaint();
 
-  @Nullable AbstractEditorComponent getCurrentEditorComponent();
-
+  AbstractEditorComponent getCurrentEditorComponent();
   boolean removeFromRecentEditorsOnClose();
 }
