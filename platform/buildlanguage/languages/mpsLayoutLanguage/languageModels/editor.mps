@@ -174,6 +174,17 @@
         </node>
       </node>
     </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204108018630">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204108018631">
+        <property name="text" value="excludes" />
+        <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204108018632">
+        <property name="allowEmptyText" value="true" />
+        <link role="relationDeclaration" targetNodeId="1.1204107522064" resolveInfo="excludes" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203598612021">
     <link role="conceptDeclaration" targetNodeId="1.1203598322527" resolveInfo="File" />
@@ -232,6 +243,17 @@
         </node>
       </node>
     </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204108012251">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204108012252">
+        <property name="text" value="excludes" />
+        <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204108012253">
+        <property name="allowEmptyText" value="true" />
+        <link role="relationDeclaration" targetNodeId="1.1204107522064" resolveInfo="excludes" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203599720833">
     <link role="conceptDeclaration" targetNodeId="1.1203599702327" resolveInfo="Module" />
@@ -283,6 +305,17 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1204015218159">
         <link role="relationDeclaration" targetNodeId="1.1204015133936" />
+      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204107969497">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204107972201">
+        <property name="text" value="excludes" />
+        <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204107982250">
+        <property name="allowEmptyText" value="true" />
+        <link role="relationDeclaration" targetNodeId="1.1204107538752" resolveInfo="excludes" />
       </node>
     </node>
   </node>

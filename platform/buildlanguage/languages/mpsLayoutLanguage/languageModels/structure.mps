@@ -200,9 +200,13 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203617897549">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="entri" />
+      <property name="role" value="entry" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204107522064">
+      <property name="name" value="excludes" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204015075559">
@@ -216,6 +220,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204015144550">
       <property name="value" value="copy" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204107538752">
+      <property name="name" value="excludes" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204018553150">
