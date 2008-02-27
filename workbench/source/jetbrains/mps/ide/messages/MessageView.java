@@ -23,9 +23,6 @@ import org.jdom.Element;
  * @author Kostik
  */
 public class MessageView extends DefaultTool implements IExternalizableComponent {
-
-  private static int MESSAGES_COUNT = 1000;
-
   private static final String SHOW_INFORMATION = "showInformation";
   private static final String SHOW_ERRORS = "showErrors";
   private static final String SHOW_WARNINGS = "showWarnings";
