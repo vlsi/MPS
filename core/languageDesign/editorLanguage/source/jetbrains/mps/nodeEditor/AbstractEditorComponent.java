@@ -19,6 +19,7 @@ import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
+import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.IntentionsMenu;
@@ -1369,7 +1370,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                   public void run() {
                     // String nodeClassName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
                     String s = herror.reportError();
-                    JOptionPane.showMessageDialog(getExternalComponent(), s, "TYPESYSTEM ERROR", JOptionPane.ERROR_MESSAGE);
+                    new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR");
+                   // JOptionPane.showMessageDialog(getExternalComponent(), s, "TYPESYSTEM ERROR", JOptionPane.ERROR_MESSAGE);
                   }
                 });
                 return;
