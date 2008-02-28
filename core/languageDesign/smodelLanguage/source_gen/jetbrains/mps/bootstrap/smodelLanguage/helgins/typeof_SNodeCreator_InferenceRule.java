@@ -21,7 +21,7 @@ public class typeof_SNodeCreator_InferenceRule implements InferenceRule_Runtime 
         return;
       }
       if(SLinkOperations.getTarget(creator, "prototypeNode", true) != null) {
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(creator, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061742845", true), new QuotationClass_66().createNode(), SLinkOperations.getTarget(creator, "prototypeNode", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181945011354");
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(creator, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061742845", true), new QuotationClass_64().createNode(), SLinkOperations.getTarget(creator, "prototypeNode", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181945011354");
       }
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(creator, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712073963", true), createdType, creator, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712073961");
     }

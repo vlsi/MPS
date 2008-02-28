@@ -14,8 +14,8 @@ public class typeOf_NotExpression_InferenceRule implements InferenceRule_Runtime
   }
 
   public void applyRule(final SNode notExpr) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_38().createNode(), notExpr, "jetbrains.mps.baseLanguage.helgins", "1176900899744");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(notExpr, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1176900878654", true), new QuotationClass_39().createNode(), SLinkOperations.getTarget(notExpr, "expression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176900889144");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_37().createNode(), notExpr, "jetbrains.mps.baseLanguage.helgins", "1176900899744");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(notExpr, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1176900878654", true), new QuotationClass_38().createNode(), SLinkOperations.getTarget(notExpr, "expression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176900889144");
   }
 
   public String getApplicableConceptFQName() {

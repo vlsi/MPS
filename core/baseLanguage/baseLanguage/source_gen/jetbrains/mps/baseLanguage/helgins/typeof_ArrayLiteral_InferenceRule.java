@@ -18,7 +18,7 @@ public class typeof_ArrayLiteral_InferenceRule implements InferenceRule_Runtime 
     for(SNode item : SLinkOperations.getTargets(arrayLiteral, "item", true)) {
       TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596), TypeChecker.getInstance().getRuntimeSupport().typeOf(item, "jetbrains.mps.baseLanguage.helgins", "1188221461717", true), item, null, "jetbrains.mps.baseLanguage.helgins", "1188221461712");
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayLiteral, "jetbrains.mps.baseLanguage.helgins", "1188221454647", true), new QuotationClass_75().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596)), arrayLiteral, null, "jetbrains.mps.baseLanguage.helgins", "1188221467376");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayLiteral, "jetbrains.mps.baseLanguage.helgins", "1188221454647", true), new QuotationClass_73().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596)), arrayLiteral, null, "jetbrains.mps.baseLanguage.helgins", "1188221467376");
   }
 
   public String getApplicableConceptFQName() {

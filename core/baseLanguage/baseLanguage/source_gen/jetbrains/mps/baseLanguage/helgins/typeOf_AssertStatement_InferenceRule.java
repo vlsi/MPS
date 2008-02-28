@@ -14,9 +14,9 @@ public class typeOf_AssertStatement_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(final SNode assertStatement) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1176899056092", true), new QuotationClass_35().createNode(), SLinkOperations.getTarget(assertStatement, "condition", true), null, "jetbrains.mps.baseLanguage.helgins", "1176899078020");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1176899056092", true), new QuotationClass_34().createNode(), SLinkOperations.getTarget(assertStatement, "condition", true), null, "jetbrains.mps.baseLanguage.helgins", "1176899078020");
     if((SLinkOperations.getTarget(assertStatement, "message", true) != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "message", true), "jetbrains.mps.baseLanguage.helgins", "1176899107820", true), new QuotationClass_36().createNode(), SLinkOperations.getTarget(assertStatement, "message", true), null, "jetbrains.mps.baseLanguage.helgins", "1176899115123");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(assertStatement, "message", true), "jetbrains.mps.baseLanguage.helgins", "1176899107820", true), new QuotationClass_35().createNode(), SLinkOperations.getTarget(assertStatement, "message", true), null, "jetbrains.mps.baseLanguage.helgins", "1176899115123");
     }
   }
 

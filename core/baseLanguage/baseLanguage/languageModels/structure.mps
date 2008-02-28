@@ -2635,5 +2635,16 @@
       <link role="target" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204200696010">
+    <property name="name" value="NullType" />
+    <link role="extends" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204200727982">
+      <property name="value" value="nulltype" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1204200858358">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 
