@@ -34,11 +34,11 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\platform\regexp\classes" />
-    <entry path="${mps_home}\platform\regexp\runtime\classes" />
+    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}\runtime\classes" />
   </classPath>
   <runtimeClassPath>
-    <entry path="${mps_home}\platform\regexp\classes" />
+    <entry path="${language_descriptor}\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
