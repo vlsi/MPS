@@ -1917,6 +1917,16 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="Beansbinding">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/lib/beansbinding" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/beansbinding/beansbinding-1.2.1-src.zip!/src" />
+      </SOURCES>
+      <jarDirectory url="file://$PROJECT_DIR$/lib/beansbinding" recursive="false" />
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
