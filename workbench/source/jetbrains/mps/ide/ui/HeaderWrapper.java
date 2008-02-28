@@ -60,7 +60,11 @@ public class HeaderWrapper extends JPanel {
           public void actionPerformed(ActionEvent e) {
             doMinimize();
           }
-        });
+        }) {
+          public void updateUI() {
+            setUI(new MPSRoundButtonUI());
+          }
+        };
         setupButton(myMinimizeButton);
         myButtonsPanel.add(myMinimizeButton);
       }
@@ -70,7 +74,11 @@ public class HeaderWrapper extends JPanel {
           public void actionPerformed(ActionEvent e) {
             doClose();
           }
-        });
+        }) {
+          public void updateUI() {
+            setUI(new MPSRoundButtonUI());
+          }
+        };
         setupButton(myCloseButton);
         myButtonsPanel.add(myCloseButton);
       }
@@ -102,7 +110,6 @@ public class HeaderWrapper extends JPanel {
   }
 
   private void setupButton(JButton button) {
-    button.setUI(new MPSRoundButtonUI());
     button.setContentAreaFilled(false);
     button.setBorder(null);
   }

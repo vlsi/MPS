@@ -23,13 +23,10 @@ public class MPSRoundButtonUI extends BasicButtonUI {
 
 
     if (!b.getModel().isRollover()) {
-    //  g.setColor(new Color(0, 0, 160, 50));
-    //  g.fillRect(0, 0, b.getWidth(), b.getHeight());
       g.setColor(new Color(150, 220, 220, 50));
       g.fillOval(0,0, b.getWidth(), b.getHeight());
       g.setColor(new Color(250, 250, 250, 80));
       g.drawOval(1,1, b.getWidth()-2, b.getHeight()-2);
-
     }
   }
 
