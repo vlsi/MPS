@@ -30,7 +30,6 @@ import java.util.*;
  * Date: Aug 2, 2003
  */
 public final class SNode {
-
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
   public static final Object STATUS = new Object();
@@ -293,7 +292,7 @@ public final class SNode {
     ModelAccess.assertLegalRead(this);
 
     if (myUserObjects == null) {
-      myUserObjects = new HashMap<Object, Object>(2);
+      myUserObjects = new ListMap<Object, Object>(2);
     }
     myUserObjects.put(key, value);
   }

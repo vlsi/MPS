@@ -25,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
-import java.lang.ref.SoftReference;
 
 /**
  * @author Kostik
@@ -51,8 +50,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange ;
   private IFile myModelFile;
-
-  private SoftReference<FastNodeFinder> myFastNodeFinder = new SoftReference<FastNodeFinder>(null);
+  private FastNodeFinder myFastNodeFinder;
   private List<IPostLoadRunnable> myPostLoadRunnables = new ArrayList<IPostLoadRunnable>(2);
   private Throwable myInitializationStackTrace;
 
@@ -85,7 +83,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       public void modelChangedInCommand(List<SModelEvent> events) {
         if (EventUtil.isDramaticalChange(events)) {
           myLastStructuralChange = System.currentTimeMillis();
-          myFastNodeFinder = new SoftReference<FastNodeFinder>(null);
+          myFastNodeFinder = null;
           ourStructuralState++;
         }
         myLastChange = System.currentTimeMillis();
@@ -253,7 +251,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   private IOperationContext findOperationContext() {
     IOperationContext operationContext = null;
-  outer : 
+  outer :
     for (IModule module : getModules()) {
       if (module instanceof Generator) {
         module = ((Generator)module).getSourceLanguage();
@@ -399,10 +397,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return mySModel != null;
   }
 
-  public void refresh() {      
+  public void refresh() {
     if (isInitialized()) {
       long start = System.currentTimeMillis();
-      myFastNodeFinder = new SoftReference<FastNodeFinder>(null);
+      myFastNodeFinder = null;
       myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
       myModelListeners.addAll(mySModel.getModelListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
@@ -424,7 +422,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   public void replaceModel(SModel newModel) {
     if (newModel == mySModel) return;
     if (isInitialized()) {
-      myFastNodeFinder = new SoftReference<FastNodeFinder>(null);
+      myFastNodeFinder = null;
       myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
       myModelListeners.addAll(mySModel.getModelListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
@@ -442,7 +440,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     myWeakModelListeners.clear();
     myModelListeners.clear();
 
-    UnregisteredNodes.instance().clear();
+    UnregisteredNodes.instance().clear(getModelUID());
 
     if (mySModel != null) {
       mySModel.dispose();
@@ -457,7 +455,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
         strings.add(quoteSpecialXMLCharacters(node.getId()));
       }
-    }    
+    }
 
     if (!myModelRootManager.containsSomeString(this, strings)) return new HashSet<SReference>();
     getSModel();
@@ -593,12 +591,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   public FastNodeFinder getFastNodeFinder() {
-    FastNodeFinder result = myFastNodeFinder.get();
-    if (result == null) {
-      result = new FastNodeFinder(this);
-      myFastNodeFinder = new SoftReference(result);
+    if (myFastNodeFinder == null) {
+      myFastNodeFinder = new FastNodeFinder(this);
     }
-    return result;
+    return myFastNodeFinder;
   }
 
   private void addInstances(SNode current, AbstractConceptDeclaration concept, Set<SNode> result, IScope scope) {
