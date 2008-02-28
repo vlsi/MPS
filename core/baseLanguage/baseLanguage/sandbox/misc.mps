@@ -221,6 +221,17 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204203835101">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1204203835102" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204203838292">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1204203841672">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1204203843253" />
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204203838293">
+              <link role="variableDeclaration" targetNodeId="1204031531093" resolveInfo="o" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203611141027" />

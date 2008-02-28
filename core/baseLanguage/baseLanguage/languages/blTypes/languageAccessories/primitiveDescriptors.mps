@@ -27,8 +27,5 @@
   <node type="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor" id="1196683941620">
     <property name="name" value="Primitive" />
   </node>
-  <node type="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor" id="1196684011412">
-    <property name="name" value="NullType" />
-  </node>
 </model>
 
