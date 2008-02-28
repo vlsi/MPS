@@ -562,10 +562,10 @@ public final class SNode {
   public void putProperties(SNode fromNode) {
     if (fromNode == null || fromNode.myProperties == null) return;
     if (myProperties == null) {
-      myProperties = new LinkedHashMap<String, String>(fromNode.myProperties);
-    } else {
-      myProperties.putAll(fromNode.myProperties);
+      myProperties = new LinkedHashMap<String, String>(fromNode.myProperties.size());
     }
+
+    myProperties.putAll(fromNode.myProperties);
   }
 
   @NotNull
