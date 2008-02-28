@@ -53,7 +53,6 @@ public class RefactoringContext {
   private Serializer mySerializer = new Serializer();
   //-----------------
 
-
   //other
   private SearchResults myUsages;
   private Set<String> myTransientParameters = new HashSet<String>();
@@ -131,7 +130,9 @@ public class RefactoringContext {
     myCachesAreUpToDate = false;
   }
 
-  public @Nullable SearchResults getUsages() {
+  public
+  @Nullable
+  SearchResults getUsages() {
     return myUsages;
   }
 
@@ -250,7 +251,6 @@ public class RefactoringContext {
       //updating concept features' names
       String conceptFQName = node.getConceptFqName();
 
-
       //only this concept
       Set<ConceptFeature> exactConceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
       if (exactConceptFeatures != null) {
@@ -322,7 +322,7 @@ public class RefactoringContext {
         if (kind == ConceptFeatureKind.PROPERTY) {
           String oldName = conceptFeature.getFeatureName();
           String newName = newConceptFeature.getFeatureName();
-          node.changePropertyName(oldName, newName);
+          HackSNodeUtil.changePropertyName(node, oldName, newName);
           for (SNode propertyAttribute : node.getPropertyAttributesForPropertyName(oldName)) {
             String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRole_());
             propertyAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
@@ -365,7 +365,6 @@ public class RefactoringContext {
   public ILoggableRefactoring getRefactoring() {
     return myRefactoring;
   }
-
 
   //serialization:
 
@@ -540,7 +539,7 @@ public class RefactoringContext {
     public int compareTo(FullNodeId o) {
       int i1 = myNodeId.toString().compareTo(o.myNodeId.toString());
       int i2 = myModelUID.toString().compareTo(o.myModelUID.toString());
-      return Math.round(Math.signum(i1) + Math.signum(i2)*10);
+      return Math.round(Math.signum(i1) + Math.signum(i2) * 10);
     }
 
     public SNodeId getNodeId() {

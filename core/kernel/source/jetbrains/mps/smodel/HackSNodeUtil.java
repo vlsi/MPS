@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.annotation.UseCarefully;
+import org.jetbrains.annotations.NotNull;
 
 @UseCarefully
 public final class HackSNodeUtil {
@@ -13,4 +14,8 @@ public final class HackSNodeUtil {
     node.setConceptFqName(conceptFQName);
   }
 
+  @UseCarefully
+  public static void changePropertyName(SNode node, @NotNull String oldPropertyName, @NotNull String newPropertyName) {
+    node.changePropertyName(oldPropertyName, newPropertyName);
+  }
 }

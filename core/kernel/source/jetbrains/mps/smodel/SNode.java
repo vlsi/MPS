@@ -665,8 +665,8 @@ public final class SNode {
     return myProperties.get(propertyName);
   }
 
-  //todo make undo?
-  public void changePropertyName(@NotNull String oldPropertyName, @NotNull String newPropertyName) {
+  /*package*/ void changePropertyName(@NotNull String oldPropertyName, @NotNull String newPropertyName) {
+    //todo make undo?
     if (myProperties == null) return;
     String value = myProperties.remove(oldPropertyName);
     myProperties.put(newPropertyName, value);
