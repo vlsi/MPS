@@ -26,7 +26,6 @@ public class RulesManager {
   private RuleSet<InferenceRule_Runtime> myInferenceRules = new CheckingRuleSet<InferenceRule_Runtime>();
   private RuleSet<NonTypesystemRule_Runtime> myNonTypesystemRules = new CheckingRuleSet<NonTypesystemRule_Runtime>();
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
-  private RuleSet<SupertypingRule_Runtime> mySupertypingRules = new RuleSet<SupertypingRule_Runtime>();
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
   private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
   private DependenciesContainer myDependenciesContainer = new DependenciesContainer();
@@ -44,7 +43,6 @@ public class RulesManager {
     myInferenceRules.clear();
     myNonTypesystemRules.clear();
     mySubtypingRules.clear();
-    mySupertypingRules.clear();
     myComparisonRules.clear();
     myReplacementRules.clear();
     myDependenciesContainer.clear();
@@ -67,7 +65,6 @@ public class RulesManager {
         myInferenceRules.addRuleSetItem(helginsDescriptor.getInferenceRules());
         myNonTypesystemRules.addRuleSetItem(helginsDescriptor.getNonTypesystemRules());
         mySubtypingRules.addRuleSetItem(helginsDescriptor.getSubtypingRules());
-        mySupertypingRules.addRuleSetItem(helginsDescriptor.getSupertypingRules());
         myComparisonRules.addRuleSetItem(helginsDescriptor.getComparisonRules());
         myReplacementRules.addRuleSetItem(helginsDescriptor.getEliminationRules());
         myDependenciesContainer.addDependencies(helginsDescriptor.getDependencies());
@@ -75,7 +72,6 @@ public class RulesManager {
         myInferenceRules.makeConsistent();
         myNonTypesystemRules.makeConsistent();
         mySubtypingRules.makeConsistent();
-        mySupertypingRules.makeConsistent();
         myComparisonRules.makeConsistent();
         myReplacementRules.makeConsistent();
         myDependenciesContainer.makeConsistent();
@@ -118,14 +114,6 @@ public class RulesManager {
   public Set<SubtypingRule_Runtime> getSubtypingRules(final SNode node, final boolean isWeak) {
      return CollectionUtil.filter(mySubtypingRules.getRules(node), new Condition<SubtypingRule_Runtime>() {
       public boolean met(SubtypingRule_Runtime object) {
-        return (isWeak || !object.isWeak()) && object.isApplicable(node);
-      }
-    });
-  }
-
-  public Set<SupertypingRule_Runtime> getSupertypingRules(final SNode node, final boolean isWeak) {
-     return CollectionUtil.filter(mySupertypingRules.getRules(node), new Condition<SupertypingRule_Runtime>() {
-      public boolean met(SupertypingRule_Runtime object) {
         return (isWeak || !object.isWeak()) && object.isApplicable(node);
       }
     });

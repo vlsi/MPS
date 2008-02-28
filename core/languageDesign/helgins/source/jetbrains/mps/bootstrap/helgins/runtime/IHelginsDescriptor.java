@@ -17,7 +17,6 @@ public interface IHelginsDescriptor {
   public Set<InferenceRule_Runtime> getInferenceRules();
   public Set<NonTypesystemRule_Runtime> getNonTypesystemRules();
   public Set<SubtypingRule_Runtime> getSubtypingRules();
-  public Set<SupertypingRule_Runtime> getSupertypingRules();
   public Set<ComparisonRule_Runtime> getComparisonRules();
   public Set<InequationReplacementRule_Runtime> getEliminationRules();
   public Set<IDependency_Runtime> getDependencies();

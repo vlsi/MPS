@@ -114,27 +114,9 @@ public class SubtypingManager {
       if (searchInSupertypes((NodeWrapper) subRepresentator, superRepresentator, equationManager, errorInfo, isWeak)) return true;
     }
 
-    //subtypes
-    if (superRepresentator instanceof NodeWrapper) {
-      if (searchInBottom((NodeWrapper) superRepresentator, subRepresentator, equationManager, errorInfo, isWeak)) return true;
-    }
-
     return false;
   }
 
-  // without any transitivity now
-  private boolean searchInBottom(NodeWrapper superRepresentator, IMatcher subRepresentator, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo, boolean isWeak) {
-    StructuralNodeSet<?> descendants = collectBottoms(superRepresentator.getNode(), isWeak);
-    if (descendants == null) return false;
-    descendants.removeStructurally(superRepresentator.getNode());
-    for (SNode descendant : descendants) {
-      if (subRepresentator.matchesWith(NodeWrapper.createNodeWrapper(descendant, equationManager),
-        equationManager, errorInfo)) {
-        return true;
-      }
-    }
-    return false;
-  }
 
   private boolean searchInSupertypes(NodeWrapper subRepresentator, IMatcher superRepresentator, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo, boolean isWeak) {
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
@@ -211,44 +193,6 @@ public class SubtypingManager {
         for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
           List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(node);
           result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));
-        }
-      }
-    }
-
-    return result;
-  }
-
-  public StructuralNodeSet collectBottoms(SNode term, boolean isWeak) {
-    StructuralNodeSet result = new StructuralNodeSet();
-    if (term == null) return result;
-    Set<SupertypingRule_Runtime> supertypingRule_runtimes = myTypeChecker.getRulesManager().getSupertypingRules(term, isWeak);
-    if (supertypingRule_runtimes != null) {
-      for (SupertypingRule_Runtime supertypingRule : supertypingRule_runtimes) {
-        List<SNode> subtypes = supertypingRule.getSubOrSuperTypes(term);
-        result.addAll(subtypes);
-      }
-    }
-
-    return result;
-  }
-
-  public StructuralWrapperSet collectBottoms(IWrapper term, boolean isWeak) {
-    StructuralWrapperSet result = new StructuralWrapperSet();
-    if (term == null) return result;
-
-    if (term instanceof JoinWrapper) {
-      for (IWrapper wrapper : ((JoinWrapper)term).getArguments()) {
-        result.addStructurally(wrapper);
-      }
-    }
-
-    if (term.isConcrete()) {
-      SNode node = term.getNode();
-      Set<SupertypingRule_Runtime> supertypingRule_runtimes = myTypeChecker.getRulesManager().getSupertypingRules(node, isWeak);
-      if (supertypingRule_runtimes != null) {
-        for (SupertypingRule_Runtime supertypingRule : supertypingRule_runtimes) {
-          List<SNode> subtypes = supertypingRule.getSubOrSuperTypes(node);
-          result.addAll(toWrappers(new HashSet<SNode>(subtypes), null));
         }
       }
     }
@@ -357,14 +301,6 @@ public class SubtypingManager {
     if ((a.isConcrete() && b.isConcrete() && MatchingUtil.matchNodes(a.getNode(), b.getNode())) ||
             a.equals(b)) { // todo what if not concrete?
       result.add(a);
-      return result;
-    }
-    if (collectBottoms(a, isWeak).contains(b)) {
-      result.add(a);
-      return result;
-    }
-    if (collectBottoms(b, isWeak).contains(a)) {
-      result.add(b);
       return result;
     }
 

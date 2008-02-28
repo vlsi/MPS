@@ -19,7 +19,6 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
   protected Set<InferenceRule_Runtime> myInferenceRules = new HashSet<InferenceRule_Runtime>();
   protected Set<NonTypesystemRule_Runtime> myNonTypesystemRules = new HashSet<NonTypesystemRule_Runtime>();
   protected Set<SubtypingRule_Runtime> mySubtypingRules = new HashSet<SubtypingRule_Runtime>();
-  protected Set<SupertypingRule_Runtime> mySupertypingRules = new HashSet<SupertypingRule_Runtime>();
   protected Set<ComparisonRule_Runtime> myComparisonRules = new HashSet<ComparisonRule_Runtime>();
   protected Set<InequationReplacementRule_Runtime> myInequationReplacementRules = new HashSet<InequationReplacementRule_Runtime>();
   protected Set<IDependency_Runtime> myDependencies = new HashSet<IDependency_Runtime>();
@@ -35,10 +34,6 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
 
   public Set<SubtypingRule_Runtime> getSubtypingRules() {
     return new HashSet<SubtypingRule_Runtime>(this.mySubtypingRules);
-  }
-
-  public Set<SupertypingRule_Runtime> getSupertypingRules() {
-    return new HashSet<SupertypingRule_Runtime>(this.mySupertypingRules);
   }
 
   public Set<ComparisonRule_Runtime> getComparisonRules() {
