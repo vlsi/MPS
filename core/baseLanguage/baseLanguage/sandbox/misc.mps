@@ -232,6 +232,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204212577332">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1204212579396">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204212581837">
+              <link role="variableDeclaration" targetNodeId="1204031531093" resolveInfo="o" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1204212577333" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203611141027" />

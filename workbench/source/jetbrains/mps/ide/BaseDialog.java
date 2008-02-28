@@ -25,10 +25,12 @@ import java.util.List;
 public abstract class BaseDialog extends JDialog {
   private static final Logger LOG = Logger.getLogger(BaseDialog.class);
 
-  private JLabel myErrorLabel = new JLabel("") {
+  private JTextField myErrorLabel = new JTextField("") {
     {
       setForeground(Color.RED);
       setFont(getFont().deriveFont(Font.BOLD));
+      setBorder(null);
+      setEditable(false);
     }
   };
 
