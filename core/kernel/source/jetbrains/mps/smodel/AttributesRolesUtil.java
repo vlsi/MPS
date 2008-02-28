@@ -72,6 +72,13 @@ public class AttributesRolesUtil {
             AttributesRolesUtil.isPropertyAttributeRole(role));
   }
 
+  public static String replaceLinkRoleInLinkAttributeRole(String attributeRole, String linkRole) {
+    assert isLinkAttributeRole(attributeRole) : "attribute role must be link attribute role. was: " + attributeRole;
+    int i = attributeRole.lastIndexOf(STEREOTYPE_DELIM);
+    String result = attributeRole.substring(0, i + 1) + linkRole;
+    return result;
+  }
+
   public static String getLinkRoleFromLinkAttributeRole(String attributeRole) {
     int index = attributeRole.indexOf(STEREOTYPE_DELIM);
     if (index < 0) return null;

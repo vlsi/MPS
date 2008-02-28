@@ -396,6 +396,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1146528767789">
       <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" resolveInfo="lvalue" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204242095135">
+      <property name="value" value="this concept was replaced with DotExpression + FieldReferenceOperation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1193783916915" resolveInfo="deprecated_next_after_470" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1080137532343">
       <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1" />

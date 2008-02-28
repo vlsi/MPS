@@ -545,6 +545,10 @@
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1080137532343" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204242054429">
+        <property name="text" value="!" />
+        <property name="textFgColor" value="red" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1080138264331">
         <property name="drawBorder" value="false" />
         <property name="text" value="." />
@@ -9148,10 +9152,12 @@
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197031525906" />
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197031525907">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197031559325">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1197551569955">
-                        <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1197551569166" />
-                        <node role="referenceAntiquotation$link_attribute$variableDeclaration" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1197551580610">
-                          <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1197551619520" />
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204241896086">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1197551569166" />
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204241896087">
+                          <node role="referenceAntiquotation$link_attribute$fieldDeclaration" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1197551580610">
+                            <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1197551619520" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -9267,10 +9273,12 @@
                         <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197035381890">
                           <link role="variableDeclaration" targetNodeId="1197031822426" resolveInfo="value" />
                         </node>
-                        <node role="lValue" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1197551867239">
-                          <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1197035379209" />
-                          <node role="referenceAntiquotation$link_attribute$variableDeclaration" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1197551869631">
-                            <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1197551872395" />
+                        <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204242591174">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1197035379209" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204242591175">
+                            <node role="referenceAntiquotation$link_attribute$fieldDeclaration" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1197551869631">
+                              <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1197551872395" />
+                            </node>
                           </node>
                         </node>
                       </node>

@@ -236,7 +236,7 @@
     <property name="name" value="Replace_SNodeOperationExpression" />
     <property name="title" value="Convert SNodeOperationExpression -&gt; DotExpression" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1203640759821">
-      <property name="description" value="SNodeOperationExpression -&gt; DotExpression" />
+      <property name="description" value="DotExpression: convert SNodeOperationExpression " />
       <link role="affectedInstanceConcept" targetNodeId="1.1138055978872" resolveInfo="SNodeOperationExpression" />
       <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1203640759822">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203640759823">
