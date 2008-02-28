@@ -44,9 +44,9 @@
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1167245583620">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1167245583621">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1167245583622">
-              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1167245583623">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1167245583624" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1167245583625">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227930797">
+                <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1167245583624" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1167245583625">
                   <link role="property" targetNodeId="1.1167228628751" />
                 </node>
               </node>

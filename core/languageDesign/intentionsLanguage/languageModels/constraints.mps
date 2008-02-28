@@ -32,11 +32,11 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193399660578">
               <link role="baseMethodDeclaration" targetNodeId="6.~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolveInfo="toValidIdentifier" />
               <link role="classConcept" targetNodeId="6.~NameUtil" resolveInfo="NameUtil" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1193399660579">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1193399660580">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227935529">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193399660581" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1193399660580">
                   <link role="property" targetNodeId="4.1169194664001" resolveInfo="name" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193399660581" />
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193399660582">
@@ -53,15 +53,15 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193142194525">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193142292995">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1193142310252">
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1193145865817">
-              <link role="conceptMethodDeclaration" targetNodeId="5.1184686272576" resolveInfo="getFqName" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1193142305639">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1193142308251">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227945542">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227907819">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193142304497" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1193142308251">
                 <link role="link" targetNodeId="2.1192796383601" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193142304497" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1193145865817">
+              <link role="conceptMethodDeclaration" targetNodeId="5.1184686272576" resolveInfo="getFqName" />
             </node>
           </node>
         </node>

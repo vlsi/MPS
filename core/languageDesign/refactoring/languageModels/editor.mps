@@ -119,14 +119,14 @@
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1199455517241">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199455517242">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199455520103">
-              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199455526047">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation" id="1199455528706" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199455521168">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1199455523452">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227935164">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227932315">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1199455520104" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1199455523452">
                     <link role="link" targetNodeId="1.1199455378190" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1199455520104" />
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation" id="1199455528706" />
               </node>
             </node>
           </node>

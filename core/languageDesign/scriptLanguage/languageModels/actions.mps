@@ -22,17 +22,17 @@
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1185457769594">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1185457769595">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1185457771953">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185457808624">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1185457810113" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185457772522">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1185457773628">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227909198">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227902930">
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1185457771954" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1185457773628">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1185457775541" />
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1185457776942">
                     <link role="concept" targetNodeId="1.1172272794406" />
                   </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1185457771954" />
               </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1185457810113" />
             </node>
           </node>
         </node>

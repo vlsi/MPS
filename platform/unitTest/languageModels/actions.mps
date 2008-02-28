@@ -19,15 +19,15 @@
       <node role="setupFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction" id="1198167764447">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198167764448">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198167785565">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198167899922">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1198167901275">
-                <link role="concept" targetNodeId="2.1068581517677" resolveInfo="VoidType" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198167794646">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198167899254">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227842325">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227893081">
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1198167785566" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198167899254">
                   <link role="link" targetNodeId="2.1068580123133" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1198167785566" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1198167901275">
+                <link role="concept" targetNodeId="2.1068581517677" resolveInfo="VoidType" />
               </node>
             </node>
           </node>

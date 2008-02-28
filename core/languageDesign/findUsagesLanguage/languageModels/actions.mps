@@ -26,13 +26,13 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200309169959">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1200309169960">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1200309169961" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200309169962">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1200309169963">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227885466">
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1200309183888" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1200309169963">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1200309169964">
                     <link role="concept" targetNodeId="1.1197044488840" resolveInfo="FindBlock" />
                   </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1200309183888" />
               </node>
             </node>
           </node>
@@ -53,13 +53,13 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200309262505">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1200309262506">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1200309262507" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200309262508">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1200309262509">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227911527">
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1200309262511" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1200309262509">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1200309262510">
                     <link role="concept" targetNodeId="1.1197044488840" resolveInfo="FindBlock" />
                   </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1200309262511" />
               </node>
             </node>
           </node>
@@ -74,13 +74,13 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200407854987">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1200407854988">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1200407854989" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1200407854990">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1200407854991">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227946734">
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1200407854993" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1200407854991">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1200407854992">
                     <link role="concept" targetNodeId="1.1197044488840" resolveInfo="FindBlock" />
                   </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1200407854993" />
               </node>
             </node>
           </node>

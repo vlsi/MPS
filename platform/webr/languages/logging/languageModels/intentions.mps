@@ -30,9 +30,9 @@
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1195647359343">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647359344">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195647359345">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195647359346">
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1195647359347" />
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195647359348">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227841079">
+            <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1195647359347" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195647359348">
               <link role="property" targetNodeId="1.1167228628751" resolveInfo="hasException" />
             </node>
           </node>
@@ -42,14 +42,14 @@
     <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1195647359365">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647359366">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195647359367">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195647359368">
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195647359369">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1195647359370" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195647359371">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227867900">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227923273">
+              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1195647359370" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195647359371">
                 <link role="property" targetNodeId="1.1167228628751" resolveInfo="hasException" />
               </node>
             </node>
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1195647359372">
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1195647359372">
               <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1195647359373" />
             </node>
           </node>
@@ -74,9 +74,9 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647386625">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195647386626">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1195647386627">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195647386628">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1195647386629" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195647386630">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227928446">
+              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1195647386629" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195647386630">
                 <link role="property" targetNodeId="1.1167228628751" resolveInfo="hasException" />
               </node>
             </node>
@@ -87,14 +87,14 @@
     <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1195647386631">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195647386632">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195647386633">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195647386634">
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195647386635">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1195647386636" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195647386637">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227930154">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227933210">
+              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1195647386636" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195647386637">
                 <link role="property" targetNodeId="1.1167228628751" resolveInfo="hasException" />
               </node>
             </node>
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1195647386638">
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1195647386638">
               <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1195647386639">
                 <property name="value" value="true" />
               </node>

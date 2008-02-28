@@ -376,17 +376,17 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203603097129">
                   <property name="name" value="homePath" />
                   <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1203603097130" />
-                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203603117991">
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1203603117992">
-                      <link role="conceptMethodDeclaration" targetNodeId="2v.1203601713182" resolveInfo="getHomePath" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1203603117993">
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227881623">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1203603117993">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203603117994">
                         <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1203603117995" />
                         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1203603117996">
                           <link role="concept" targetNodeId="1.1203598300291" resolveInfo="AbstractProjectComponent" />
                         </node>
                       </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1203603117992">
+                      <link role="conceptMethodDeclaration" targetNodeId="2v.1203601713182" resolveInfo="getHomePath" />
                     </node>
                   </node>
                 </node>

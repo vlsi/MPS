@@ -28,11 +28,11 @@
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1202246676983">
               <link role="elementConcept" targetNodeId="3.1195168316083" resolveInfo="InputRoot" />
             </node>
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202246676984">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1202246676985">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227821155">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1202246676985">
                 <link role="variableDeclaration" targetNodeId="1202246477204" resolveInfo="model" />
               </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsOperation" id="1202246676986">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsOperation" id="1202246676986">
                 <link role="concept" targetNodeId="3.1195168316083" resolveInfo="InputRoot" />
               </node>
             </node>
@@ -47,18 +47,18 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202246684913">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1202246743792">
-              <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202246762601">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1202246764214">
-                  <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1202246764215">
-                    <link role="enumMember" targetNodeId="3.1202242680338" />
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227957230">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227936827">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1202246748374">
+                    <link role="variable" targetNodeId="1202246684911" resolveInfo="node" />
                   </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202246753392">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1202246759614">
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1202246759614">
                     <link role="property" targetNodeId="3.1202243304949" resolveInfo="useInTest" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1202246748374">
-                    <link role="variable" targetNodeId="1202246684911" resolveInfo="node" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1202246764214">
+                  <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1202246764215">
+                    <link role="enumMember" targetNodeId="3.1202242680338" />
                   </node>
                 </node>
               </node>

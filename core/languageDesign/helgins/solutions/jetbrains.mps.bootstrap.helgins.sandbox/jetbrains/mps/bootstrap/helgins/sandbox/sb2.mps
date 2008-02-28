@@ -32,12 +32,12 @@
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1194962413884">
             <link role="concept" targetNodeId="8.1174642900584" resolveInfo="PatternCondition" />
           </node>
-          <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1194965123601">
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1194965123602">
-              <link role="link" targetNodeId="8.1174648101952" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference" id="1194965123603">
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227928474">
+            <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference" id="1194965123603">
               <link role="applicableNode" targetNodeId="1194962193426" resolveInfo="inferenceRule" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1194965123602">
+              <link role="link" targetNodeId="8.1174648101952" />
             </node>
           </node>
         </node>
@@ -50,12 +50,12 @@
         </node>
         <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1194962407098">
           <node role="normalType" type="jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression" id="1194962400782">
-            <node role="term" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1194962454909">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1194962458677">
-                <link role="link" targetNodeId="8.1174642936809" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194962453657">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227898344">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194962453657">
                 <link role="variableDeclaration" targetNodeId="1194962413883" resolveInfo="patternCondition" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1194962458677">
+                <link role="link" targetNodeId="8.1174642936809" />
               </node>
             </node>
           </node>

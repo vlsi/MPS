@@ -31,16 +31,16 @@
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198168125395">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198168128113">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198168189466">
-                      <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198168189467">
-                        <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198168189468">
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1198168189469">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227866682">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227902067">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1198168189469">
                             <link role="closureParameter" targetNodeId="1198168125394" resolveInfo="it" />
                           </node>
-                          <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198168189470">
+                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198168189470">
                             <link role="link" targetNodeId="2.1068580123133" />
                           </node>
                         </node>
-                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1198168189471">
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1198168189471">
                           <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1198168189472">
                             <link role="conceptDeclaration" targetNodeId="2.1068581517677" resolveInfo="VoidType" />
                           </node>
@@ -59,17 +59,17 @@
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198168154094">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198168158226">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198168161986">
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1198168171107">
-                      <link role="concept" targetNodeId="2.1068581517677" resolveInfo="VoidType" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198168159014">
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198168161250">
-                        <link role="link" targetNodeId="2.1068580123133" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1198168158227">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227830900">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227917714">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1198168158227">
                         <link role="closureParameter" targetNodeId="1198168154093" resolveInfo="it" />
                       </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198168161250">
+                        <link role="link" targetNodeId="2.1068580123133" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1198168171107">
+                      <link role="concept" targetNodeId="2.1068581517677" resolveInfo="VoidType" />
                     </node>
                   </node>
                 </node>

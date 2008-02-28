@@ -27,9 +27,9 @@
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1172274025415">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1172274025416">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1172274028233">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1172274032845">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1172274032266" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1172274033753">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227889415">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1172274032266" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1172274033753">
                 <link role="property" targetNodeId="1.1172272845008" />
               </node>
             </node>

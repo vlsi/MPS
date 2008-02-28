@@ -31,16 +31,16 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187347794780">
             <property name="name" value="rtype" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1187347794781" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1187352009537">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1187352009538" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1187352009539">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187352009540">
-                  <link role="link" targetNodeId="2.1081773367579" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187352009541">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227844891">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227820646">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187352009541">
                   <link role="variableDeclaration" targetNodeId="1187345199673" resolveInfo="expr" />
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187352009540">
+                  <link role="link" targetNodeId="2.1081773367579" />
+                </node>
               </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1187352009538" />
             </node>
           </node>
         </node>
@@ -48,16 +48,16 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187347814745">
             <property name="name" value="ltype" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1187347814746" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1187352015590">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1187352015591" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1187352015592">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187352019220">
-                  <link role="link" targetNodeId="2.1081773367580" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187352015594">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227922674">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227920364">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187352015594">
                   <link role="variableDeclaration" targetNodeId="1187345199673" resolveInfo="expr" />
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187352019220">
+                  <link role="link" targetNodeId="2.1081773367580" />
+                </node>
               </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1187352015591" />
             </node>
           </node>
         </node>
@@ -110,16 +110,16 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187352032270">
             <property name="name" value="rtype" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1187352032271" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1187352032272">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1187352032273" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1187352032274">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187352032275">
-                  <link role="link" targetNodeId="2.1081773367579" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187352032276">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227907379">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227838221">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187352032276">
                   <link role="variableDeclaration" targetNodeId="1187348820111" resolveInfo="expr" />
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187352032275">
+                  <link role="link" targetNodeId="2.1081773367579" />
+                </node>
               </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1187352032273" />
             </node>
           </node>
         </node>
@@ -127,16 +127,16 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187352032278">
             <property name="name" value="ltype" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1187352032279" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1187352032280">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1187352032281" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1187352032282">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187352032283">
-                  <link role="link" targetNodeId="2.1081773367580" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187352032284">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227917744">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227896553">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1187352032284">
                   <link role="variableDeclaration" targetNodeId="1187348820111" resolveInfo="expr" />
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1187352032283">
+                  <link role="link" targetNodeId="2.1081773367580" />
+                </node>
               </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1187352032281" />
             </node>
           </node>
         </node>
