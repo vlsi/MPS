@@ -17,7 +17,7 @@ public class JarFileEntryFile implements IFile {
 
   JarFileEntryFile(JarFileData jarFileData, String path) {
     myJarFileData = jarFileData;
-    myEntryPath = path;
+    myEntryPath = path.replace(File.separator, "/");
   }
 
   public String getName() {
