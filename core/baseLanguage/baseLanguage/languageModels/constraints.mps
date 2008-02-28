@@ -1230,7 +1230,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184959749711">
       <property name="name" value="getClass" />
-      <property name="isVirtual" value="true" />
+      <property name="isVirtual" value="false" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184959753000">
         <link role="classifier" targetNodeId="13.~Class" resolveInfo="Class" />
       </node>
@@ -6098,42 +6098,6 @@
       </node>
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1190026804859">
         <link role="concept" targetNodeId="1.1145552809883" />
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1204156895556">
-      <property name="name" value="getClass" />
-      <link role="overriddenMethod" targetNodeId="1184959749711" resolveInfo="getClass" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204156895558">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204156913241">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204156913242">
-            <link role="classConcept" targetNodeId="30.~ReflectionUtil" resolveInfo="ReflectionUtil" />
-            <link role="baseMethodDeclaration" targetNodeId="30.~ReflectionUtil.forName(jetbrains.mps.project.IModule,jetbrains.mps.smodel.SNode):java.lang.Class" resolveInfo="forName" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204156913243">
-              <link role="variableDeclaration" targetNodeId="1204156903425" resolveInfo="module" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204156913244">
-              <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1204156913245">
-                <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1204156913246">
-                  <property name="name" value="classifierType" />
-                  <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
-                </node>
-                <node role="nodeToCoerce" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204156913247" />
-              </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1204156913248">
-                <link role="link" targetNodeId="1.1107535924139" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204156903425">
-        <property name="name" value="module" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204156903426">
-          <link role="classifier" targetNodeId="35.~IModule" resolveInfo="IModule" />
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204156903442">
-        <link role="classifier" targetNodeId="13.~Class" resolveInfo="Class" />
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1187625988102">
