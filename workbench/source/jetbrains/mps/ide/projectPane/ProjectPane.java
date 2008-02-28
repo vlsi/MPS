@@ -123,6 +123,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
           }
         });
       }
+
+      public void updateUI() {
+        setUI(new MPSToolBarButtonUI());
+      }
     });
 
     myToolbar.add(myAutoscrollToSource = new JToggleButton() {
@@ -133,6 +137,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
           }
         });
       }
+
+      public void updateUI() {
+        setUI(new MPSToolBarButtonUI());
+      }
     });
 
     myToolbar.add(myAutoscrollFromSource = new JToggleButton() {
@@ -141,6 +149,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
           public void actionPerformed(ActionEvent e) {
           }
         });
+      }
+
+      public void updateUI() {
+        setUI(new MPSToolBarButtonUI());
       }
     });
 
