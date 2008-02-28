@@ -31,9 +31,13 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private Language myTargetLanguage;
   private AbstractGenerationStepController myGenerationStepController;
 
-  private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
+  private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>() {
+
+  };
   // object survive between transient models but not between generation steps 
-  private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
+  private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>() {
+
+  };
 
   private LinkedHashSet<MappingConfiguration> myCustomMappingConfigurations;
   private LinkedHashSet<MappingConfiguration> myMappingConfigurations;
