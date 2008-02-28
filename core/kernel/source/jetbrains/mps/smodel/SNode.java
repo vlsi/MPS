@@ -47,8 +47,6 @@ public final class SNode {
   private SNode myParent;
   private List<SNode> myChildren;
 
-  private IChildrenLoader myChildrenLoader;
-
   private List<SReference> myReferences;
   private Map<String, String> myProperties;
 
@@ -88,28 +86,9 @@ public final class SNode {
 
   private List<SNode> _children() {
     if (myChildren == null) {
-      if (myChildrenLoader == null) return Collections.emptyList();
-      myChildren = new ArrayList<SNode>(0);
-      if (myChildrenLoader != null) {
-        myModel.runLoadingAction(new Runnable() {
-          public void run() {
-            try {
-              myChildrenLoader.loadChildren(SNode.this);
-            } catch (Throwable t) {
-              LOG.error(t);
-            }
-          }
-        });
-        myChildrenLoader = null;
-      }
+      return Collections.emptyList();
     }
     return myChildren;
-  }
-
-
-  public void setChildrenLoader(IChildrenLoader childrenLoader) {
-    assert myChildren == null && myChildrenLoader == null;
-    myChildrenLoader = childrenLoader;
   }
 
   public boolean isRoot() {
