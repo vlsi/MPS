@@ -90,7 +90,7 @@ public final class SNode {
   private List<SNode> _children() {
     if (myChildren == null) {
       if (myChildrenLoader == null) return Collections.emptyList();
-      myChildren = new ArrayList<SNode>(2);
+      myChildren = new ArrayList<SNode>(0);
       if (myChildrenLoader != null) {
         myModel.runLoadingAction(new Runnable() {
           public void run() {
@@ -351,7 +351,7 @@ public final class SNode {
 
   @NotNull
   public List<SNode> getNodeAttributes() {
-    List<SNode> attributes = new ArrayList<SNode>(4);
+    List<SNode> attributes = new ArrayList<SNode>(0);
     for (SNode child : _children()) {
       if (AttributesRolesUtil.isNodeAttributeRole(child.getRole_())) {
         attributes.add(child);
@@ -362,7 +362,7 @@ public final class SNode {
 
   @NotNull
   public List<SNode> getAllAttributes() {
-    List<SNode> attributes = new ArrayList<SNode>(4);
+    List<SNode> attributes = new ArrayList<SNode>(0);
     for (SNode child : _children()) {
       String role = child.getRole_();
       if (AttributesRolesUtil.isNodeAttributeRole(role) ||
@@ -944,7 +944,7 @@ public final class SNode {
 
 //    _children().add(index, child);
     _children();
-    if (myChildren == null) myChildren = new ArrayList<SNode>();
+    if (myChildren == null) myChildren = new ArrayList<SNode>(1);
     myChildren.add(index, child);
 
     child.myRoleInParent = InternUtil.intern(role);
