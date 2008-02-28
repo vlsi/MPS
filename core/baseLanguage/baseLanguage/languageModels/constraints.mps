@@ -3378,23 +3378,6 @@
         <link role="classifier" targetNodeId="13.~Object" resolveInfo="Object" />
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194438333909">
-      <property name="name" value="getInstanceType" />
-      <link role="overriddenMethod" targetNodeId="1194437264907" resolveInfo="getInstanceType" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194438333911">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1194438351867">
-          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression" id="1194438357135">
-            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956439">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1194438361904" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1194438357152">
-                <link role="link" targetNodeId="1.1068580123164" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1194438342913" />
-    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141242">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141243" />
     </node>
@@ -5657,16 +5640,6 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190026804854">
         <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194437264907">
-      <property name="name" value="getInstanceType" />
-      <property name="isVirtual" value="true" />
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1194437300145" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194437264909">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1194437400101">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1194437403587" />
-        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1201184197901">
