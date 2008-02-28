@@ -256,7 +256,10 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
         if (sm != null) {
           addOurListener(sm);
         } else {
-          LOG.error("model descriptor is null: " + sModel);
+          String stereotype = sModel.getStereotype();
+          if (stereotype.equals(SModelStereotype.NONE) || stereotype.equals(SModelStereotype.TEMPLATES)) {
+            LOG.error("model descriptor is null: " + sModel);
+          }
         }
       }
       final Set<SNodePointer> skippedNodes = new HashSet<SNodePointer>(myNotSkippedNodes);
@@ -326,8 +329,8 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
         computeTypes(node, true, false, false, additionalNodes);
         type = getType(initialNode);
         if (type == null ||
-                type.getAdapter() instanceof RuntimeTypeVariable ||
-                !type.allChildrenByAdaptor(RuntimeTypeVariable.class).isEmpty()) {
+          type.getAdapter() instanceof RuntimeTypeVariable ||
+          !type.allChildrenByAdaptor(RuntimeTypeVariable.class).isEmpty()) {
           if (node.isRoot()) {
             computeTypes(node, true, true, false, new ArrayList<SNode>()); //the last possibility: check the whole root
             type = getType(initialNode);
