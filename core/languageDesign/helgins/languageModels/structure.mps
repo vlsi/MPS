@@ -288,12 +288,6 @@
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1175162660418">
-    <property name="name" value="SupertypingRule" />
-    <property name="iconPath" value="${language_descriptor}\icons\supertyping.png" />
-    <property name="rootable" value="true" />
-    <link role="extends" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1175496148685">
     <property name="name" value="GivetypeStatement" />
     <link role="extends" targetNodeId="2.1068580123157" />

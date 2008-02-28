@@ -22,7 +22,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavio
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.bootstrap.helgins.structure.InferenceRule;
 import jetbrains.mps.bootstrap.helgins.structure.SubtypingRule;
-import jetbrains.mps.bootstrap.helgins.structure.SupertypingRule;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.helgins.structure.ComparisonRule;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -538,13 +537,10 @@ public class QueriesGenerated {
     if(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.SubtypingRule")) {
       return SLinkOperations.getTarget(new QuotationClass_6().createNode(), "classifier", false);
     }
-    if(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.SupertypingRule")) {
+    if(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
       return SLinkOperations.getTarget(new QuotationClass_7().createNode(), "classifier", false);
     }
-    if(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_8().createNode(), "classifier", false);
-    }
-    return SLinkOperations.getTarget(new QuotationClass_9().createNode(), "classifier", false);
+    return SLinkOperations.getTarget(new QuotationClass_8().createNode(), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1175249167916(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -552,10 +548,6 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1175440294358(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "classForRule").getChild("constructor");
-  }
-
-  public static Object referenceMacro_GetReferent_1175440299480(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "classForRule").getChild("constructor");
   }
 
@@ -1238,10 +1230,6 @@ public class QueriesGenerated {
 
   public static List sourceNodesQuery_1175440294397(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(SubtypingRule.class));
-  }
-
-  public static List sourceNodesQuery_1175440299519(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BaseAdapter.toNodes(_context.getSourceModel().getRootsAdapters(SupertypingRule.class));
   }
 
   public static List sourceNodesQuery_1176548514510(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -11,8 +11,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class Dependency extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.Dependency";
-  public static String FIND_SOURCE_BLOCK = "findSourceBlock";
   public static String TARGET_CONCEPT = "targetConcept";
+  public static String FIND_SOURCE_BLOCK = "findSourceBlock";
 
   public  Dependency(SNode node) {
     super(node);
@@ -27,20 +27,20 @@ public class Dependency extends BaseConcept {
   }
 
 
-  public FindSourceBlock getFindSourceBlock() {
-    return (FindSourceBlock)this.getChild(Dependency.FIND_SOURCE_BLOCK);
-  }
-
-  public void setFindSourceBlock(FindSourceBlock node) {
-    super.setChild(Dependency.FIND_SOURCE_BLOCK, node);
-  }
-
   public AbstractConceptDeclaration getTargetConcept() {
     return (AbstractConceptDeclaration)this.getReferent(Dependency.TARGET_CONCEPT);
   }
 
   public void setTargetConcept(AbstractConceptDeclaration node) {
     super.setReferent(Dependency.TARGET_CONCEPT, node);
+  }
+
+  public FindSourceBlock getFindSourceBlock() {
+    return (FindSourceBlock)this.getChild(Dependency.FIND_SOURCE_BLOCK);
+  }
+
+  public void setFindSourceBlock(FindSourceBlock node) {
+    super.setChild(Dependency.FIND_SOURCE_BLOCK, node);
   }
 
 }
