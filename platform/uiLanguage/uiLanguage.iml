@@ -16,6 +16,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="uiLanguage-runtime" exported="" />
+    <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntryProperties />
   </component>
 </module>
