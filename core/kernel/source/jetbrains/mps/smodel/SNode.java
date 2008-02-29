@@ -736,7 +736,7 @@ public final class SNode {
   @Nullable
   public SNode getChild(@NotNull String role) {
     ModelAccess.assertLegalRead(this);
-
+    role = SNodeMembersAccessModifier.getInstance().getNewChildRole(myConceptFqName, role);
     fireNodeReadAccess();
     int count = 0;
     SNode foundChild = null;
@@ -793,6 +793,7 @@ public final class SNode {
   }
 
   public int getChildCount(@NotNull String role) {
+    role = SNodeMembersAccessModifier.getInstance().getNewChildRole(myConceptFqName, role);
     int count = 0;
     for (SNode child : _children()) {
       if (role.equals(child.getRole_())) {
@@ -845,7 +846,7 @@ public final class SNode {
   @NotNull
   public List<SNode> getChildren(@NotNull String role) {
     ModelAccess.assertLegalRead(this);
-
+    role = SNodeMembersAccessModifier.getInstance().getNewChildRole(myConceptFqName, role);
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     List<SNode> children = _children();
@@ -910,7 +911,8 @@ public final class SNode {
     }
   }
 
-  private void insertChildAt(final int index, final @NotNull String role, final @NotNull SNode child) {
+  private void insertChildAt(final int index, @NotNull String _role, final @NotNull SNode child) {
+    final String role = SNodeMembersAccessModifier.getInstance().getNewChildRole(myConceptFqName, _role);
     SNode parentOfChild = child.getParent();
     if (parentOfChild != null) {
       throw new RuntimeException(child.getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
