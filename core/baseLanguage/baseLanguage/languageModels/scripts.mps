@@ -628,19 +628,16 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1204244561565">
     <property name="name" value="ConvertFieldReferenceToDotExpression" />
-    <property name="title" value="DotExpression: convert old FieldReference" />
+    <property name="title" value="DotExpression: convert old FieldReference [migrate form b.470] " />
     <property name="package" value="dotExpression" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1204244594738">
       <property name="description" value="field references" />
       <link role="affectedInstanceConcept" targetNodeId="1.1068580123158" resolveInfo="FieldReference" />
       <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1204244594739">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204244594740">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1204249124071">
-            <property name="value" value="disable script" />
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204244629852">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204249135385">
-              <property name="value" value="false" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204320505349">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204320505350">
+              <property name="value" value="true" />
             </node>
           </node>
         </node>
