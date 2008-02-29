@@ -410,44 +410,41 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.EditorComponentDeclaration" id="1204116610828">
     <property name="name" value="ConfigurationReferencesEditorComponent" />
     <link role="conceptDeclaration" targetNodeId="1.1203598300291" resolveInfo="AbstractProjectComponent" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204129100200">
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204299963611">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204129100201">
-        <property name="vertical" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204129100202">
-          <property name="text" value="include in" />
-          <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+      <property name="selectable" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204299963612">
+        <property name="text" value="include in" />
+        <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1204299963613">
+        <property name="separatorText" value="," />
+        <link role="relationDeclaration" targetNodeId="1.1204116468206" />
+        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204299963614">
+          <property name="text" value="&lt;any configuration&gt;" />
+          <link role="styleClass" targetNodeId="1203012208595" resolveInfo="hint" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1204129100203">
-          <property name="separatorText" value="," />
-          <link role="relationDeclaration" targetNodeId="1.1204116468206" />
-          <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204129100204">
-            <property name="text" value="&lt;any configuration&gt;" />
-            <link role="styleClass" targetNodeId="1203012208595" resolveInfo="hint" />
-          </node>
-        </node>
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1204129100205">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204129100206">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204129100207">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1204129165706">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204129182398">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204129189612">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1204129189613" />
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204129185245">
-                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1204129184369" />
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1204129188012">
-                        <link role="link" targetNodeId="1.1204116468206" />
-                      </node>
+      </node>
+      <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1204299963615">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204299963616">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204299963617">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1204299963618">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204299963619">
+                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204299963620">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1204299963621" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204299963622">
+                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1204299963623" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1204299963624">
+                      <link role="link" targetNodeId="1.1204116468206" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1204129193068" />
                   </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1204299963625" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204129100208">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1204129100209" />
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204129100210">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~EditorContext.isInspector():boolean" resolveInfo="isInspector" />
-                  </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204299963626">
+                <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1204299963627" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204299963628">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~EditorContext.isInspector():boolean" resolveInfo="isInspector" />
                 </node>
               </node>
             </node>
