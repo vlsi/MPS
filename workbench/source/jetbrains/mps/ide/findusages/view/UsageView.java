@@ -13,6 +13,7 @@ import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
+import jetbrains.mps.ide.findusages.view.util.AnonymToggleButton;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -267,6 +268,15 @@ public abstract class UsageView implements IExternalizableComponent {
       add(new AnonymButton(Icons.NEXT_ICON, "Next occurence") {
         public void action() {
           myTreeWrapper.nextOccurence();
+        }
+      });
+      add(new AnonymToggleButton(Icons.AUTOSCROLL_ICON, "Autoscroll to source") {
+        public void actionSelected() {
+          myTreeWrapper.setAutoscroll(true);
+        }
+
+        public void actionDeselected() {
+          myTreeWrapper.setAutoscroll(false);
         }
       });
       if (buttonConfiguration.isShowCloseButton()) {
