@@ -105,6 +105,7 @@
       <entry name="?*.txt" />
       <entry name="?*.js" />
       <entry name="?*.css" />
+      <entry name="?*.ico" />
     </wildcardResourcePatterns>
   </component>
   <component name="DependenciesAnalyzeManager">
@@ -1029,7 +1030,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.MPSLauncher" />
-      <option name="VM_PARAMETERS" value="-Xmx1224m -XX:MaxPermSize=200m -ea -Dmps.internal=true" />
+      <option name="VM_PARAMETERS" value="-Xmx1200m -XX:MaxPermSize=200m -ea -Dmps.internal=true" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/build/" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1045,7 +1046,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
+        <option name="myExternalizedOptions" value="&#10;snapshots-dir=&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
