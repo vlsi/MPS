@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.tabbedEditor;
+package jetbrains.mps.ide.tabbedEditor.tabs;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -9,6 +9,8 @@ import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.tabbedEditor.ILazyTab;
+import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
@@ -22,13 +24,6 @@ import java.util.ArrayList;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Mihail.Muhin
- * Date: 29.02.2008
- * Time: 16:59:44
- * To change this template use File | Settings | File Templates.
- */
 public abstract class BaseMultitabbedTab implements ILazyTab {
 
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();

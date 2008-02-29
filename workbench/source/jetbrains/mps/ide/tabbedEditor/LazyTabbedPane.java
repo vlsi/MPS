@@ -17,13 +17,6 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Mihail.Muhin
- * Date: 29.02.2008
- * Time: 17:05:30
- * To change this template use File | Settings | File Templates.
- */
 public class LazyTabbedPane extends JPanel {
   private JTabbedPane myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
   private List<ILazyTab> myLazyTabs = new ArrayList<ILazyTab>();
