@@ -645,6 +645,7 @@ public final class SNode {
   @Nullable
   public String getPersistentProperty(@NotNull String propertyName) {
     if (myProperties == null) return null;
+    propertyName = SNodeMembersAccessModifier.getInstance().getNewPropertyName(myConceptFqName, propertyName);
     return myProperties.get(propertyName);
   }
 
@@ -659,7 +660,7 @@ public final class SNode {
     setProperty(propertyName, propertyValue, true);
   }
 
-  public void setProperty(@NotNull final String propertyName, String propertyValue, boolean usePropertySetter) {
+  public void setProperty(@NotNull String propertyName, String propertyValue, boolean usePropertySetter) {
     ModelChange.assertLegalNodeChange(this);
     propertyValue = InternUtil.intern(propertyValue);
     if (usePropertySetter) {
@@ -680,22 +681,23 @@ public final class SNode {
     if (myProperties == null) {
       myProperties = new ListMap<String, String>();
     }
-    final String oldValue = myProperties.get(propertyName);
+    final String propertyName_ = SNodeMembersAccessModifier.getInstance().getNewPropertyName(myConceptFqName, propertyName);
+    final String oldValue = myProperties.get(propertyName_);
     if (propertyValue == null) {
-      myProperties.remove(propertyName);
+      myProperties.remove(propertyName_);
     } else {
-      myProperties.put(propertyName, propertyValue);
+      myProperties.put(propertyName_, propertyValue);
     }
 
     if (ModelChange.needRegisterUndo(getModel())) {
       final String pv = propertyValue;
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
-          setProperty(propertyName, oldValue);
+          setProperty(propertyName_, oldValue);
         }
 
         public String toString() {
-          return "set property " + propertyName + " in " + SNode.this + " to " + pv;
+          return "set property " + propertyName_ + " in " + SNode.this + " to " + pv;
         }
       });
     }
@@ -711,7 +713,7 @@ public final class SNode {
         addedOrRemoved = true;
         isRemoved = true;
       }
-      getModel().firePropertyChangedEvent(this, propertyName, oldValue, propertyValue, addedOrRemoved, isRemoved);
+      getModel().firePropertyChangedEvent(this, propertyName_, oldValue, propertyValue, addedOrRemoved, isRemoved);
     }
   }
 
