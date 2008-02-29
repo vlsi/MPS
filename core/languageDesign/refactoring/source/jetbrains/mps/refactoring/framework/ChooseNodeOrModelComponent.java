@@ -13,11 +13,11 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
+import java.awt.*;
+import static java.awt.GridBagConstraints.*;
 import java.util.*;
 
 import org.jetbrains.annotations.Nullable;
@@ -50,14 +50,23 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     myConceptFQName = conceptFQName;
 
     // JPanel panel = new JPanel();
-    BoxLayout layout = new BoxLayout(this, BoxLayout.Y_AXIS);
-    this.setLayout(layout);
-    add(new JLabel(myCaption, SwingConstants.CENTER)/*, BorderLayout.NORTH*/);
-    /*panel.*/add(myChooseItemComponent);
-    /*panel.*/add(new JScrollPane(myTree));
-
-
-    //add(panel, BorderLayout.CENTER);
+    //BoxLayout layout = new BoxLayout(this, BoxLayout.Y_AXIS);
+    setLayout(new GridBagLayout());
+    GridBagConstraints constraints = new GridBagConstraints();
+    constraints.gridx = 0;
+    constraints.gridy = 0;
+    constraints.fill = HORIZONTAL;
+    constraints.weightx = 1;
+    constraints.weighty = 0;
+    add(new JLabel(myCaption), constraints);
+    constraints.gridy++;
+    constraints.fill = BOTH;
+    constraints.weighty = 0.5;
+    add(myChooseItemComponent, constraints);
+    constraints.gridy++;
+    constraints.fill = BOTH;
+    constraints.weighty = 1;
+    add(new JScrollPane(myTree), constraints);
 
     myTree.setRootVisible(false);
     updateModels(myCondition);
@@ -184,6 +193,8 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   class MyChooseItemComponent extends ChooseItemComponent<SModelDescriptor> {
     public MyChooseItemComponent() {
       super(null);
+      setMinimumSize(new Dimension(50, 100));
+      setPreferredSize(new Dimension(50, 100));
     }
 
     public void askForDispose() {

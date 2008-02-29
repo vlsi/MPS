@@ -8,6 +8,8 @@ import jetbrains.mps.util.Condition;
 import javax.swing.JPanel;
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,7 +23,14 @@ public class ChooseModelDescriptorComponent extends JPanel implements IChooseCom
 
   public ChooseModelDescriptorComponent(String caption, String propertyName, ActionContext actionContext) {
     myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(caption, propertyName, actionContext, null, true, false);
-    add(myChooseNodeOrModelComponent, BorderLayout.CENTER);
+    setLayout(new GridBagLayout());
+    GridBagConstraints constraints = new GridBagConstraints();
+    constraints.gridx = 0;
+    constraints.gridy = 0;
+    constraints.fill = GridBagConstraints.BOTH;
+    constraints.weightx = 1;
+    constraints.weighty = 1;
+    add(myChooseNodeOrModelComponent, constraints);
   }
 
   public SModelDescriptor submit() throws InvalidInputValueException {
