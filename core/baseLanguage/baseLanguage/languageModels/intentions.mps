@@ -5848,6 +5848,7 @@
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1204229560692">
     <property name="name" value="ConvertFieldReferenceToDotExpression" />
     <property name="isErrorIntention" value="true" />
+    <property name="package" value="migration" />
     <link role="forConcept" targetNodeId="1.1068580123158" resolveInfo="FieldReference" />
     <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1204229560693">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204229560694">
