@@ -7,6 +7,8 @@ import jetbrains.mps.uiLanguage.samples.grid.GridDemo;
 import jetbrains.mps.uiLanguage.samples.dialogs.DialogDemo;
 import jetbrains.mps.uiLanguage.samples.checkbox.CheckBoxDemo;
 import jetbrains.mps.uiLanguage.samples.lists.ListsDemo;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Folder;
 
 import javax.swing.*;
 
@@ -16,9 +18,9 @@ import java.util.*;
 
 public class Sandbox {
   public static void main(String[] args) {
-    final List<Integer> a = Arrays.asList(1, 2, 3);
+    final List<Integer> a = Arrays.asList(1,2,3);
 
-    Map m = new HashMap();
+    final Map m = new HashMap();
     for (int i = 0; i < 1000000; i++) {
       m.put(i, i);      
     }
@@ -41,13 +43,23 @@ public class Sandbox {
         }
       }
     });
-    
+
     measure(new Runnable() {
       public void run() {
         int sum = 0;
         for (Integer anA : a) {
           sum += anA;
         }
+      }
+    });
+
+    measure(new Runnable() {
+      public void run() {
+        int sum = CollectionUtil.fold(a, new Folder<Integer, Integer>() {
+          public Integer foldOnce(Integer initial, Integer nextElement) {
+            return initial + nextElement;
+          }
+        }, 0);
       }
     });
   }
