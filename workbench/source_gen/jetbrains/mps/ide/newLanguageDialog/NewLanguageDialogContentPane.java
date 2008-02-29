@@ -5,6 +5,7 @@ package jetbrains.mps.ide.newLanguageDialog;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
@@ -25,7 +26,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class NewLanguageDialogContentPane extends JPanel {
@@ -34,7 +34,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   private JLabel myComponent;
   private JTextField myComponent1;
   private JLabel myComponent2;
-  private JTextField myComponent3;
+  private PathField myComponent3;
   private String myLanguageNamespace;
   private String myLanguagePath;
   private MPSProject myProject;
@@ -79,7 +79,7 @@ public class NewLanguageDialogContentPane extends JPanel {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("languagePath");
       Object targetObject = this.myComponent3;
-      Property targetProperty = BeanProperty.create("text");
+      Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
       this.myBindings.add(binding);
@@ -114,8 +114,8 @@ public class NewLanguageDialogContentPane extends JPanel {
     return component;
   }
 
-  private JTextField createComponent3() {
-    JTextField component = new JTextField();
+  private PathField createComponent3() {
+    PathField component = new PathField();
     this.myComponent3 = component;
     return component;
   }
@@ -244,7 +244,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     LanguageAspect.EDITOR.createNew(language);
     LanguageAspect.CONSTRAINTS.createNew(language);
     LanguageAspect.HELGINS_TYPESYSTEM.createNew(language);
-    language.setLanguageDescriptor((LanguageDescriptor)((INodeAdapter)SNodeOperations.getAdapter(languageDescriptor)));
+    language.setLanguageDescriptor((LanguageDescriptor)((LanguageDescriptor)SNodeOperations.getAdapter(languageDescriptor)));
     myThis.getProject().addProjectLanguage(language);
     language.save();
     myThis.setResult(language);

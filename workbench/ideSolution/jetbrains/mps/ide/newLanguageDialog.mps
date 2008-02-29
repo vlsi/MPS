@@ -10,7 +10,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
-  <maxImportIndex value="11" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
@@ -22,6 +22,8 @@
   <import index="9" modelUID="jetbrains.mps.ide.common@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.ide.command@java_stub" version="-1" />
   <import index="11" modelUID="java.awt@java_stub" version="-1" />
+  <import index="12" modelUID="jetbrains.mpslite.common" version="-1" />
+  <import index="13" modelUID="jetbrains.mps.ide.common" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.uiLanguage.components" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1203684597238">
     <property name="name" value="NewLanguageDialog" />
@@ -86,14 +88,14 @@
           </node>
         </node>
         <node role="row" type="jetbrains.mps.uiLanguage.structure.GridRow" id="1203685081760">
-          <node role="component" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1203685083026">
-            <link role="componentDeclaration" targetNodeId="2v.1202464198724" resolveInfo="TextField" />
-            <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1203685128665">
-              <link role="attribute" targetNodeId="2v.1202464208353" resolveInfo="text" />
-              <node role="value" type="jetbrains.mps.uiLanguage.structure.BindExpression" id="1203685130214">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203685131467">
-                  <node role="operand" type="jetbrains.mps.uiLanguage.structure.ThisComponentExpression" id="1203685131122" />
-                  <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1203685135892">
+          <node role="component" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="1204294178958">
+            <link role="componentDeclaration" targetNodeId="13.1203601634745" resolveInfo="PathField" />
+            <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="1204294181723">
+              <link role="attribute" targetNodeId="13.1203601661865" resolveInfo="path" />
+              <node role="value" type="jetbrains.mps.uiLanguage.structure.BindExpression" id="1204294182506">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204294183790">
+                  <node role="operand" type="jetbrains.mps.uiLanguage.structure.ThisComponentExpression" id="1204294183555" />
+                  <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204294185682">
                     <link role="attribute" targetNodeId="1203685104730" resolveInfo="languagePath" />
                   </node>
                 </node>
