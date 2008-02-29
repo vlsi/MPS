@@ -409,11 +409,11 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public void setLinkAttribute(String role, String propertyName, INodeAdapter propertyAttribute) {
-    if (propertyAttribute == null) {
-      myNode.setLinkAttribute(role, propertyName, null);
+  public void setLinkAttribute(String role, String linkRole, INodeAdapter linkAttribute) {
+    if (linkAttribute == null) {
+      myNode.setLinkAttribute(role, linkRole, null);
     } else {
-      myNode.setLinkAttribute(role, propertyName, propertyAttribute.getNode());
+      myNode.setLinkAttribute(role, linkRole, linkAttribute.getNode());
     }
   }
 
