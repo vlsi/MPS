@@ -901,7 +901,6 @@ public class SModel implements Iterable<SNode> {
       LOG.error("Registration in model " + getUID() + " is temporarely forbidden");
     }
 
-
     SNode existingNode = myIdToNodeMap.get(id);
     if (existingNode != null && existingNode != node) {
       LOG.errorWithTrace("couldn't set id=" + id + " to node: " + node.getDebugText() + "\nnode with this id exists: " + existingNode.getDebugText());
