@@ -10,10 +10,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.tree.TreePath;
 import java.util.HashSet;
 import java.util.Set;
 import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,10 +37,20 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     myPropertyName = propertyName;
     myCaption = caption;
     myHierarchyTree = new MyHierarchyTree(descendantsProvider);
-
-    setLayout(new BorderLayout());
-    add(new JLabel(myCaption), BorderLayout.NORTH);
-    add(new JScrollPane(myHierarchyTree), BorderLayout.CENTER);
+    setLayout(new GridBagLayout());
+    GridBagConstraints constraints = new GridBagConstraints();
+    constraints.gridx = 0;
+    constraints.gridy = 0;
+    constraints.fill = GridBagConstraints.HORIZONTAL;
+    constraints.weightx = 1;
+    constraints.weighty = 0;
+    add(new JLabel(myCaption), constraints);
+    constraints.gridx = 0;
+    constraints.gridy = 1;
+    constraints.fill = GridBagConstraints.BOTH;
+    constraints.weightx = 1;
+    constraints.weighty = 1;
+    add(new JScrollPane(myHierarchyTree), constraints);
 
     showHierarchy(initialNode, myActionContext.getOperationContext());
   }
