@@ -45,9 +45,10 @@ public final class SNode {
 
   private String myRoleInParent;
   private SNode myParent;
-  private List<SNode> myChildren;
 
+  private List<SNode> myChildren;
   private List<SReference> myReferences;
+
   private Map<String, String> myProperties;
 
   private boolean myRegisteredInModelFlag;
@@ -792,9 +793,8 @@ public final class SNode {
   }
 
   public int getChildCount(@NotNull String role) {
-    if (myChildren == null) return 0;
     int count = 0;
-    for (SNode child : myChildren) {
+    for (SNode child : _children()) {
       if (role.equals(child.getRole_())) {
         count++;
       }
@@ -961,10 +961,8 @@ public final class SNode {
     if (myId != null) {
       myModel.removeNodeId(myId);
     }
-    if (myChildren != null) {
-      for (SNode child : myChildren) {
-        child.unRegisterFromModel();
-      }
+    for (SNode child : _children()) {
+      child.unRegisterFromModel();
     }
   }
 
@@ -980,10 +978,8 @@ public final class SNode {
     myRegisteredInModelFlag = true;
     myModel = model;
     myModel.putNodeId(getSNodeId(), this);
-    if (myChildren != null) {
-      for (SNode child : myChildren) {
-        child.registerInModel(model);
-      }
+    for (SNode child : _children()) {
+      child.registerInModel(model);
     }
 
     // add language because helgins needs it to invalidate/revalidate its caches
@@ -1718,19 +1714,15 @@ public final class SNode {
 
   void clearAdapters() {
     myAdapter = null;
-    if (myChildren != null) {
-      for (SNode child : myChildren) {
-        child.clearAdapters();
-      }
+    for (SNode child : _children()) {
+      child.clearAdapters();
     }
   }
 
   void clearUserObjects() {
     removeAllUserObjects();
-    if (myChildren != null) {
-      for (SNode child : myChildren) {
-        child.clearUserObjects();
-      }
+    for (SNode child : _children()) {
+      child.clearUserObjects();
     }
   }
 
