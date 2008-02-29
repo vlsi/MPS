@@ -13267,11 +13267,13 @@
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1198587563859">
               <node role="parameter" type="jetbrains.mps.quotation.structure.Quotation" id="1198587563860">
-                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.FieldReference" id="1198587800906">
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1198587804352" />
-                  <node role="referenceAntiquotation$link_attribute$variableDeclaration" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1198587808343">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198587811423">
-                      <link role="variableDeclaration" targetNodeId="1198586186551" resolveInfo="newDeclaration" />
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204243443007">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1198587804352" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204243443008">
+                    <node role="referenceAntiquotation$link_attribute$fieldDeclaration" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1198587808343">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198587811423">
+                        <link role="variableDeclaration" targetNodeId="1198586186551" resolveInfo="newDeclaration" />
+                      </node>
                     </node>
                   </node>
                 </node>
