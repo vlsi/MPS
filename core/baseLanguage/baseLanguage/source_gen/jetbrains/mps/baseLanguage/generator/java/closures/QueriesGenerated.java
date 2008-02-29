@@ -117,11 +117,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170348563863(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode outputTargetNode = _QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(_context.getNode(), _context.getGenerator());
-    if(outputTargetNode == null) {
-        outputTargetNode = _QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(_context.getNode(), _context.getGenerator());
-    }
-    return outputTargetNode;
+    return _QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(_context.getNode(), _context.getGenerator());
   }
 
   public static Object referenceMacro_GetReferent_1170350646244(final IOperationContext operationContext, final ReferenceMacroContext _context) {
