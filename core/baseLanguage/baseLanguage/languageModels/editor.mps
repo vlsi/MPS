@@ -1572,6 +1572,10 @@
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1068580123164" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204324244302">
+        <property name="text" value="!" />
+        <property name="textFgColor" value="red" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1075308084251">
         <property name="text" value="." />
         <property name="selectable" value="false" />
