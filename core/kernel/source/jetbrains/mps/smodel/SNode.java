@@ -1016,6 +1016,7 @@ public final class SNode {
 
   @Nullable
   public SReference setReferent(@NotNull String role, SNode newReferent, boolean useHandler) {
+    role = SNodeMembersAccessModifier.getInstance().getNewReferentRole(myConceptFqName, role);
     // remove old references
     List<SReference> toDelete = new ArrayList<SReference>();
     for (SReference reference : _references()) {
@@ -1067,7 +1068,7 @@ public final class SNode {
 
   public SReference getReference(@NotNull String role) {
     ModelAccess.assertLegalRead(this);
-
+    role = SNodeMembersAccessModifier.getInstance().getNewReferentRole(myConceptFqName, role);
     fireNodeReadAccess();
     SReference result = null;
     int count = 0; // paranoid check
@@ -1092,6 +1093,7 @@ public final class SNode {
   }
 
   public void removeReferent(@NotNull String role) {
+    role = SNodeMembersAccessModifier.getInstance().getNewReferentRole(myConceptFqName, role);
     for (SReference reference : _references()) {
       if (reference.getRole().equals(role)) {
         int index = _references().indexOf(reference);
