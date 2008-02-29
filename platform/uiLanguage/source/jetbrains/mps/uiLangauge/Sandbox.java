@@ -12,13 +12,54 @@ import javax.swing.*;
 
 import org.jdesktop.swingbinding.SwingBindings;
 
+import java.util.*;
+
 public class Sandbox {
   public static void main(String[] args) {
-    SwingUtilities.invokeLater(new Runnable() {
+    final List<Integer> a = Arrays.asList(1, 2, 3);
+
+    Map m = new HashMap();
+    for (int i = 0; i < 1000000; i++) {
+      m.put(i, i);      
+    }
+
+    measure(new Runnable() {
       public void run() {
-        new ListsDemo();
+        int sum = 0;
+        int size = a.size();
+        for (int i = 0; i < size; i++) {
+          sum += a.get(i);
+        }                
       }
     });
+
+    measure(new Runnable() {
+      public void run() {
+        int sum = 0;
+        for (int i = 0; i < a.size(); i++) {
+          sum += a.get(i);
+        }
+      }
+    });
+    
+    measure(new Runnable() {
+      public void run() {
+        int sum = 0;
+        for (Integer anA : a) {
+          sum += anA;
+        }
+      }
+    });
+  }
+
+  private static void measure(Runnable r) {
+    long start = System.currentTimeMillis();
+
+    for (int i = 0; i < 10000000; i++) {
+      r.run();
+    }
+
+    System.out.println("It took " + (System.currentTimeMillis() - start));
   }
 }
     

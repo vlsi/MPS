@@ -37,6 +37,18 @@ public class ListMap<K, V> extends AbstractMap<K, V> {
     };
   }
 
+
+  public V get(Object key) {
+    int size = myEntries.size();
+    for (int i = 0; i < size; i++) {
+      MyEntry<K, V> entry = myEntries.get(i);
+      if (entry.getKey().equals(key)) {
+        return entry.getValue();
+      }
+    }
+    return null;
+  }
+
   private static class MyEntry<K, V> implements Entry<K, V> {
     private K myKey;
     private V myValue;
