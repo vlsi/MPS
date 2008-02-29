@@ -282,7 +282,7 @@ public class RefactoringContext {
         }
         continue;
       }
-      for (String parentConceptFQName : l.getParentNames(conceptFQName)) {
+      for (String parentConceptFQName : l.getAncestorsNames(conceptFQName)) {
         Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(parentConceptFQName);
         if (conceptFeatures != null) {
           allConceptFeatures.addAll(conceptFeatures);

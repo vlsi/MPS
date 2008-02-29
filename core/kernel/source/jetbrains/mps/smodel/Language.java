@@ -51,6 +51,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
 
+  private Map<String, Set<String>> myAncestorsNamesMap = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
   private SModelCommandListener myAspectModelsListener = new SModelCommandListener() {
     public void modelChangedInCommand(List<SModelEvent> events) {
@@ -545,6 +546,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     super.invalidateCaches();
     myNameToConceptCache.clear();
     myParentsNamesMap.clear();
+    myAncestorsNamesMap.clear();
   }
 
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
@@ -563,12 +565,41 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return myNameToConceptCache.get(conceptName);
   }
 
-  public Set<String> getParentNames(String conceptFqName) {
+  public Set<String> getParentsNames(String conceptFqName) {
     if (myParentsNamesMap.containsKey(conceptFqName)) {
+      return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
+    }
+    Set<String> result = new HashSet<String>();
+    AbstractConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(conceptFqName));
+    if (declaration == null) {
+      return result;
+    }
+    if (declaration instanceof ConceptDeclaration) {
+      ConceptDeclaration cd = (ConceptDeclaration) declaration;
+      if (cd.getExtends() != null) {
+        result.add(NameUtil.nodeFQName(cd.getExtends()));
+      }
+      for (InterfaceConceptReference icr : cd.getImplementses()) {
+        result.add(NameUtil.nodeFQName(icr.getIntfc()));
+      }
+    }
+    if (declaration instanceof InterfaceConceptDeclaration) {
+      InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
+      for (InterfaceConceptReference icr : icd.getExtendses()) {
+        result.add(NameUtil.nodeFQName(icr.getIntfc()));
+      }
+    }
+    myParentsNamesMap.put(conceptFqName, result);
+    return result;
+  }
+
+  public Set<String> getAncestorsNames(String conceptFqName) {
+    if (myAncestorsNamesMap.containsKey(conceptFqName)) {
       //return new HashSet<String>(myParentsNamesMap.get(conceptFqName));
-      return myParentsNamesMap.get(conceptFqName);
+      return myAncestorsNamesMap.get(conceptFqName);
     } else {
       Set<String> result = new HashSet<String>();
+      Set<String> parents = new HashSet<String>();
       AbstractConceptDeclaration declaration = findConceptDeclaration(NameUtil.shortNameFromLongName(conceptFqName));
       if (declaration == null) {
         return result;
@@ -579,28 +610,34 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       if (declaration instanceof ConceptDeclaration) {
         ConceptDeclaration cd = (ConceptDeclaration) declaration;
         if (cd.getExtends() != null) {
+          String fqName = NameUtil.nodeFQName(cd.getExtends());
+          parents.add(fqName);
           result.addAll(SModelUtil_new.getDeclaringLanguage(
-            cd.getExtends(), GlobalScope.getInstance()).getParentNames(
-            NameUtil.nodeFQName(cd.getExtends())));
+            cd.getExtends(), GlobalScope.getInstance()).getAncestorsNames(
+            fqName));
         }
 
         for (InterfaceConceptReference icr : cd.getImplementses()) {
+          String fqName = NameUtil.nodeFQName(icr.getIntfc());
+          parents.add(fqName);
           result.addAll(SModelUtil_new.getDeclaringLanguage(
-            icr.getIntfc(), GlobalScope.getInstance()).getParentNames(
-            NameUtil.nodeFQName(icr.getIntfc())));
+            icr.getIntfc(), GlobalScope.getInstance()).getAncestorsNames(
+            fqName));
         }
       }
 
       if (declaration instanceof InterfaceConceptDeclaration) {
         InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
         for (InterfaceConceptReference icr : icd.getExtendses()) {
+          String fqName = NameUtil.nodeFQName(icr.getIntfc());
+          parents.add(fqName);
           result.addAll(SModelUtil_new.getDeclaringLanguage(
-            icr.getIntfc(), GlobalScope.getInstance()).getParentNames(
-            NameUtil.nodeFQName(icr.getIntfc())));
+            icr.getIntfc(), GlobalScope.getInstance()).getAncestorsNames(
+            fqName));
         }
       }
-
-      myParentsNamesMap.put(conceptFqName, result);
+      myParentsNamesMap.put(conceptFqName, parents);
+      myAncestorsNamesMap.put(conceptFqName, result);
       //return new HashSet<String>(result);
       return result;
     }
