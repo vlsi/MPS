@@ -37,9 +37,35 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
         condition = SLinkOperations.getTarget(condition, "expression", true);
       } else
       {
-        SNode notExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
-        SLinkOperations.setTarget(notExpression, "expression", condition, true);
-        condition = notExpression;
+        SNode newCondition = null;
+        if(SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
+          newCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null);
+        } else
+        if(SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
+          newCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EqualsExpression", null);
+        } else
+        if(SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression")) {
+          newCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression", null);
+        } else
+        if(SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression")) {
+          newCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LessThanExpression", null);
+        } else
+        if(SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.LessThanExpression")) {
+          newCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression", null);
+        } else
+        if(SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression")) {
+          newCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GreaterThanExpression", null);
+        }
+        if(newCondition != null) {
+          SLinkOperations.setTarget(newCondition, "leftExpression", SLinkOperations.getTarget(condition, "leftExpression", true), true);
+          SLinkOperations.setTarget(newCondition, "rightExpression", SLinkOperations.getTarget(condition, "rightExpression", true), true);
+          condition = newCondition;
+        } else
+        {
+          SNode notExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
+          SLinkOperations.setTarget(notExpression, "expression", condition, true);
+          condition = notExpression;
+        }
       }
       SLinkOperations.setTarget(node, "condition", condition, true);
     }
@@ -50,11 +76,11 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
     if(SLinkOperations.getCount(ifTrue, "statement") == 0) {
       SLinkOperations.setTarget(node, "ifFalseStatement", null, true);
     } else
-    if(SLinkOperations.getCount(ifTrue, "statement") == 1) {
+    if(SLinkOperations.getCount(ifTrue, "statement") == 1 && SNodeOperations.isInstanceOf(SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true)), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
       SLinkOperations.setTarget(node, "ifFalseStatement", SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true)), true);
     } else
     {
-      SLinkOperations.setNewChild(node, "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
+      SLinkOperations.addAll(SLinkOperations.getTarget(SLinkOperations.setNewChild(node, "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true), "statement", SLinkOperations.getTargets(ifTrue, "statement", true));
     }
     // Set new ifTrue
     if(SNodeOperations.isInstanceOf(ifFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
