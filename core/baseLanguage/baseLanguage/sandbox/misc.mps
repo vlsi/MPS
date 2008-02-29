@@ -207,12 +207,15 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204212577332">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1204212579396">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204212581837">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204295760773">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204295760774">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1204295760775" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1204295764841">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1204295767203" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204295762637">
               <link role="variableDeclaration" targetNodeId="1204031531093" resolveInfo="o" />
             </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1204221733684" />
           </node>
         </node>
       </node>

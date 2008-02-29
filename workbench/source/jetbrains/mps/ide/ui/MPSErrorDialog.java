@@ -19,8 +19,8 @@ public class MPSErrorDialog extends JDialog {
   private static final int FIELD_SIDE_PADDING = 30;
   private static final int BUTTON_WIDTH = 40;
 
-  public MPSErrorDialog(Frame owner, String error, String title) throws HeadlessException {
-    super(owner, title, true);
+  public MPSErrorDialog(Frame frame, String error, String title) throws HeadlessException {
+    super(frame, title, true);
 
     setLayout(new BorderLayout());
     JTextField field = new JTextField(error);
@@ -42,6 +42,8 @@ public class MPSErrorDialog extends JDialog {
 
     pack();
     setResizable(false);
+    setLocation(frame.getX() + (frame.getWidth() - this.getWidth())/2,
+      frame.getY() + (frame.getHeight() - this.getHeight())/2);
     //setLocationRelativeTo();
     setVisible(true);
   }
