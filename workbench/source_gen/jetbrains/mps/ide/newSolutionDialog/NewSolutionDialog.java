@@ -14,7 +14,7 @@ public class NewSolutionDialog extends BaseDialog {
   public NewSolutionDialogContentPane myContentPane;
 
   public  NewSolutionDialog(Frame frame) {
-    super(frame, "NewSolutionDialog");
+    super(frame, "New Solution");
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {

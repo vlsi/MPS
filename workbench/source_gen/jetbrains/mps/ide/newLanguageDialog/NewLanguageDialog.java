@@ -14,7 +14,7 @@ public class NewLanguageDialog extends BaseDialog {
   public NewLanguageDialogContentPane myContentPane;
 
   public  NewLanguageDialog(Frame frame) {
-    super(frame, "NewLanguageDialog");
+    super(frame, "New Language");
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {

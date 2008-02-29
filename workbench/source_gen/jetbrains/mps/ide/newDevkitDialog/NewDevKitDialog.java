@@ -13,7 +13,7 @@ public class NewDevKitDialog extends BaseDialog {
   public NewDevKitDialogContentPane myContentPane;
 
   public  NewDevKitDialog(Frame frame) {
-    super(frame, "NewDevKitDialog");
+    super(frame, "New Dev Kit");
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
