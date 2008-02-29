@@ -2,6 +2,7 @@ package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.blame.BlameDialog;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
@@ -215,7 +216,24 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
         clear();
       }
     });
+
+    if (((Message)myList.getSelectedValue()).getKind() == MessageKind.ERROR) {
+      menu.addSeparator();
+      menu.add(new AbstractActionWithEmptyIcon("Submit to Issue tracker") {
+        public void actionPerformed(ActionEvent e) {
+          submitToTracker();
+        }
+      });
+    }
+
     menu.show(myList, evt.getX(), evt.getY());
+  }
+
+  private void submitToTracker() {
+    new BlameDialog(myToolsPane.getFrame().getMainFrame(),
+      ((Message) myList.getSelectedValue()).getText(),
+      ((Message) myList.getSelectedValue()).getException() 
+      ).showDialog();
   }
 
   private void openCurrentMessageNodeIfPossible() {

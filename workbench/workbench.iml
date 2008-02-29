@@ -15,6 +15,16 @@
     <orderEntry type="module" module-name="pluginLanguage" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="library" name="Beansbinding" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MPS_HOME$/lib/idea-rt/forms_rt.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="httpclient" level="project" />
     <orderEntryProperties />
   </component>
 </module>

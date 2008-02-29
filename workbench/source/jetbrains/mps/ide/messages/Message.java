@@ -13,12 +13,17 @@ public class Message {
   private MessageKind myKind;
   private String myText;
   private Object myHintObject;
+  private Throwable myException;
   private long myCreationTime = System.currentTimeMillis();
 
   public Message(MessageKind kind, String text, Object hintObject) {
     myKind = kind;
     myText = text;
     myHintObject = hintObject;
+  }
+  public Message(MessageKind kind, String text, Object hintObject, Throwable exception) {
+    this(kind, text, hintObject);
+    myException = exception;
   }
 
   public Message(MessageKind kind, String text) {
@@ -35,6 +40,10 @@ public class Message {
 
   public Object getHintObject() {
     return myHintObject;
+  }
+
+  public Throwable getException() {
+    return myException;
   }
 
   public String getText() {
