@@ -2,6 +2,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
@@ -22,16 +23,22 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private String myResolveInfoForDynamicResolve;
   private Map<String, SNode> myInputNodesByMappingName;
 
-  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro refMacro, SNode inputNode, Map<String, SNode> inputNodesByMappingName, SNode templateReferenceNode) {
-    super(outputSourceNode, refMacro.getLink().getRole(), inputNode);
+  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, SNode inputNode, Map<String, SNode> inputNodesByMappingName, SNode templateReferenceNode) {
+    super(outputSourceNode, getReferenceRole(macro), inputNode);
     myInputNodesByMappingName = inputNodesByMappingName;
     myTemplateReferenceNode = templateReferenceNode;
-    myReferenceMacro = refMacro;
+    myReferenceMacro = macro;
   }
 
   public SNode getInputTargetNode() {
-    String role = myReferenceMacro.getLink().getRole();
-    return myTemplateReferenceNode.getReferent(role);
+//    String role = myReferenceMacro.getLink().getRole();
+    return myTemplateReferenceNode.getReferent(getReferenceRole());
+  }
+
+  private static String getReferenceRole(ReferenceMacro macro) {
+    String attributeRole = macro.getRole_();
+    String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(attributeRole);
+    return linkRole;
   }
 
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
@@ -65,7 +72,8 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   private SNode expandReferenceMacro(ITemplateGenerator generator) {
-    String role = myReferenceMacro.getLink().getRole();
+//    String linkRole = myReferenceMacro.getLink().getRole();
+    String linkRole = getReferenceRole();
 
     // try new query
     ReferenceMacro_GetReferent function = myReferenceMacro.getReferentFunction();
@@ -107,7 +115,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
         return outputTargetNode_output;
       }
 
-      generator.showWarningMessage(getOutputSourceNode(), "reference '" + role + "' to input model in output node " + getOutputSourceNode().getDebugText());
+      generator.showWarningMessage(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
       generator.showInformationMessage(outputTargetNode, " -- referent node: " + outputTargetNode.getDebugText());
       generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
       generator.getGeneratorSessionContext().addTransientModelToKeep(generator.getInputModel());
