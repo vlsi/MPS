@@ -391,8 +391,8 @@ public abstract class BaseAdapter implements INodeAdapter {
     myNode.addPropertyAttribute(role, propertyName, propertyAttribute.getNode());
   }
 
-  public INodeAdapter getLinkAttribute(String propertyName) {
-    SNode node = myNode.getLinkAttribute(propertyName);
+  public INodeAdapter getLinkAttribute(String linkRole) {
+    SNode node = myNode.getLinkAttribute(linkRole);
     if (node == null) {
       return null;
     } else {
@@ -400,8 +400,8 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public INodeAdapter getLinkAttribute(String role, String propertyName) {
-    SNode node = myNode.getLinkAttribute(role, propertyName);
+  public INodeAdapter getLinkAttribute(String linkAttributeRole, String linkRole) {
+    SNode node = myNode.getLinkAttribute(linkAttributeRole, linkRole);
     if (node == null) {
       return null;
     } else {
@@ -409,20 +409,20 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  public void setLinkAttribute(String role, String linkRole, INodeAdapter linkAttribute) {
+  public void setLinkAttribute(String linkAttributeRole, String linkRole, INodeAdapter linkAttribute) {
     if (linkAttribute == null) {
-      myNode.setLinkAttribute(role, linkRole, null);
+      myNode.setLinkAttribute(linkAttributeRole, linkRole, null);
     } else {
-      myNode.setLinkAttribute(role, linkRole, linkAttribute.getNode());
+      myNode.setLinkAttribute(linkAttributeRole, linkRole, linkAttribute.getNode());
     }
   }
 
-  public void addLinkAttribute(String role, String propertyName, INodeAdapter propertyAttribute) {
-    myNode.addLinkAttribute(role, propertyName, propertyAttribute.getNode());
+  public void addLinkAttribute(String linkAttributeRole, String linkRole, INodeAdapter propertyAttribute) {
+    myNode.addLinkAttribute(linkAttributeRole, linkRole, propertyAttribute.getNode());
   }
 
-  public List<? extends INodeAdapter> getLinkAttributes(String role, String linkRole) {
-    return toAdapters(myNode.getLinkAttributes(role, linkRole));
+  public List<? extends INodeAdapter> getLinkAttributes(String linkAttributeRole, String linkRole) {
+    return toAdapters(myNode.getLinkAttributes(linkAttributeRole, linkRole));
   }
 
   public boolean equals(Object obj) {
