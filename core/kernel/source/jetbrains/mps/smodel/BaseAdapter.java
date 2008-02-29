@@ -525,10 +525,6 @@ public abstract class BaseAdapter implements INodeAdapter {
     };
   }
 
-  public static String getConceptFqName(Class<? extends INodeAdapter> cls) {
-    return cls.getName();
-  }
-
   public static boolean isInstance(SNode node, Class<? extends INodeAdapter> cls) {
     return cls.isInstance(fromNode(node));
   }

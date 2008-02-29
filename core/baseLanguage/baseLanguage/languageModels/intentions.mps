@@ -6157,12 +6157,9 @@
     </node>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1204229560695">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204229560696">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1204249039932">
-          <property name="value" value="disable intention" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204229818754">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204249057698">
-            <property name="value" value="false" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204313684709">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204313684710">
+            <property name="value" value="true" />
           </node>
         </node>
       </node>
