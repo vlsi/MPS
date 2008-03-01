@@ -67,7 +67,7 @@
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203082695294">
-    <property name="name" value="IsApplicableBlock" />
+    <property name="name" value="DoUpdateBlock" />
     <property name="package" value="Actions.Action" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203860215299">
@@ -76,7 +76,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1203082808306">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1203082810573" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204384831912" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1203083173569">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -448,6 +448,16 @@
     <property name="name" value="Menu" />
     <property name="package" value="Menus" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204383956737">
+    <property name="package" value="Actions.Configuration.GroupModification" />
+    <property name="name" value="BootstrapActionGroup" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204384361462">
+      <property name="name" value="groupID" />
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
+    </node>
   </node>
 </model>
 

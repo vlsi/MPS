@@ -4,7 +4,10 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage" />
   </models>
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="jetbrains.mps.bootstrap.pluginLanguage" />
+    <model modelUID="jetbrains.mps.bootstrap.pluginLanguage.bootstrapGroups" />
+  </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.bootstrap.pluginLanguage#1203080439937" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
