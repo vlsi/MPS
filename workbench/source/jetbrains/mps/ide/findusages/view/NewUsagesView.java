@@ -19,6 +19,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
+import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
@@ -36,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.955";
+  private static final String VERSION_NUMBER = "0.96";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
@@ -229,7 +230,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       myTabbedPane.addTab("", usageViewData.myUsageView.getComponent());
       myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
 
-      usageViewData.myUsageView.setRunOptions(provider, query, isRerunnable, searchResults);
+      usageViewData.myUsageView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
 
       myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsageView.getCaption());
       myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsageView.getIcon());
@@ -329,7 +330,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     }
   }
 
-  class UsageViewData {
+  public class UsageViewData {
     private static final String USAGE_VIEW = "usage_view";
     private static final String USAGE_VIEW_OPTIONS = "usage_view_options";
 

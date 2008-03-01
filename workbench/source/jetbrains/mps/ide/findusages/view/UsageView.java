@@ -14,6 +14,7 @@ import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.ide.findusages.view.util.AnonymToggleButton;
+import jetbrains.mps.ide.findusages.view.usagesTree.path.IPathProvider;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -73,10 +74,6 @@ public abstract class UsageView implements IExternalizableComponent {
     myPanel.add(myTreeWrapper, BorderLayout.CENTER);
   }
 
-  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, boolean isRerunnable) {
-    setRunOptions(resultProvider, searchQuery, new ButtonConfiguration(isRerunnable));
-  }
-
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration) {
     assert !myIsInitialized;
     myIsInitialized = true;
@@ -86,15 +83,15 @@ public abstract class UsageView implements IExternalizableComponent {
     myPanel.add(new ActionsToolbar(buttonConfiguration), BorderLayout.WEST);
   }
 
-  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, boolean isRerunnable, SearchResults results) {
-    setRunOptions(resultProvider, searchQuery, new ButtonConfiguration(isRerunnable), results);
-  }
-
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration, SearchResults results) {
     assert !ThreadUtils.isEventDispatchThread();
     setRunOptions(resultProvider, searchQuery, buttonConfiguration);
     myFoundModelDescriptors = collectModels(results.getSearchResults());
     myTreeWrapper.setContents(results);
+  }
+
+  public void setCustomPlainPathProvider(IPathProvider pathProvider) {
+    myTreeWrapper.setCustomPlainPathProvider(pathProvider);
   }
 
   public void run() {

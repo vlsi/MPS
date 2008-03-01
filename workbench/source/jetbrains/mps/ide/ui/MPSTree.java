@@ -123,8 +123,8 @@ public abstract class MPSTree extends JTree {
         } else {
           KeyStroke stroke = KeyStroke.getKeyStrokeForEvent(e);
           if (stroke.getKeyCode() == KeyEvent.VK_CONTROL ||
-                  stroke.getKeyCode() == KeyEvent.VK_SHIFT ||
-                  stroke.getKeyCode() == KeyEvent.VK_ALT) {
+            stroke.getKeyCode() == KeyEvent.VK_SHIFT ||
+            stroke.getKeyCode() == KeyEvent.VK_ALT) {
             return;
           }
           stroke.toString();
@@ -141,7 +141,7 @@ public abstract class MPSTree extends JTree {
 
             JMenuItem item = CommandProcessor.instance().executeLightweightCommand(new Calculable<JMenuItem>() {
               public JMenuItem calculate() {
-               return findMenuItem(eventKeyStroke, menu);
+                return findMenuItem(eventKeyStroke, menu);
               }
             });
             if (item != null) {
@@ -249,7 +249,7 @@ public abstract class MPSTree extends JTree {
 
     Object lastPathComponent = path.getLastPathComponent();
     if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened() && (e.getClickCount() == 2 ||
-            (e.getClickCount() == 1 && myAutoOpen))) {
+      (e.getClickCount() == 1 && myAutoOpen))) {
       setSelectionPath(path);
       MPSTreeNode node = (MPSTreeNode) lastPathComponent;
       node.doubleClick();
@@ -505,7 +505,9 @@ public abstract class MPSTree extends JTree {
   }
 
   public void setCurrentNode(MPSTreeNode node) {
-    setSelectionPath(new TreePath(node.getPath()));
+    TreePath path = new TreePath(node.getPath());
+    setSelectionPath(path);
+    this.scrollPathToVisible(path);
   }
 
   private MPSTreeNode findNodeWith(MPSTreeNode root, Object userObject) {
@@ -685,7 +687,7 @@ public abstract class MPSTree extends JTree {
         myMainTextLabel.setFont(newFont);
         myAdditionalTextLabel.setFont(newFont);
 
-        myMainTextLabel.setForeground(treeNode.getColor());        
+        myMainTextLabel.setForeground(treeNode.getColor());
       } else {
         myMainTextLabel.setFont(tree.getFont());
         myAdditionalTextLabel.setFont(tree.getFont());
