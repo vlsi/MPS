@@ -1297,7 +1297,11 @@ public final class SNode {
 
   public void setId(SNodeId id) {
     if (id.equals(myId)) return;
-    LOG.assertLog(!isRegistered(), "can't set id to registered node " + getDebugText());
+
+    if (isRegistered()) {
+      LOG.error("can't set id to registered node " + getDebugText());
+    }
+
     SNodeId wasId = myId;
     myId = id;
     UnregisteredNodes.instance().nodeIdChanged(this, wasId);

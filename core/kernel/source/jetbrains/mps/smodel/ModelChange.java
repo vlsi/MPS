@@ -10,19 +10,26 @@ import jetbrains.mps.ide.command.CommandProcessor;
 
   static void assertLegalNodeChange(SNode node) {
     if (!(node.getModel().isLoading())) {
-      assertTrue(!node.isRegistered() || CommandProcessor.instance().isInsideUndoableCommand(), "registered node can only be modified inside undoable command or in 'loading' model " + node.getDebugText());
+      boolean condition = !node.isRegistered() || CommandProcessor.instance().isInsideUndoableCommand();
+      if (!condition) {
+        throw new IllegalModelChangeError("registered node can only be modified inside undoable command or in 'loading' model " + node.getDebugText());
+      }
     }
   }
 
   static void assertLegalNodeRegistration(SModel model, SNode node) {
     if (!(model.isLoading())) {
-      assertTrue(CommandProcessor.instance().isInsideUndoableCommand(), "node registration is only allowed inside undoable command  or in 'loading' model " + node.getDebugText());
+      if (!CommandProcessor.instance().isInsideUndoableCommand()) {
+        throw new IllegalModelChangeError("node registration is only allowed inside undoable command  or in 'loading' model " + node.getDebugText());
+      }
     }
   }
 
   static void assertLegalNodeUnRegistration(SModel model, SNode node) {
     if (!(model.isLoading())) {
-      assertTrue(CommandProcessor.instance().isInsideUndoableCommand(), "node un-registration is only allowed inside undoable command or in 'loading' model" + node.getDebugText());
+      if (!CommandProcessor.instance().isInsideUndoableCommand()) {
+        throw new IllegalModelChangeError("node un-registration is only allowed inside undoable command or in 'loading' model" + node.getDebugText());
+      }
     }
   }
 
@@ -32,12 +39,5 @@ import jetbrains.mps.ide.command.CommandProcessor;
 
   static boolean needFireEvents(SModel model, SNode node) {
     return node.isRegistered() && !(model.isLoading());
-  }
-
-
-  static void assertTrue(boolean condition, String message) {
-    if (!condition) {
-      throw new IllegalModelChangeError(message);
-    }
   }
 }
