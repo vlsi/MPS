@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.RTransformPreconditionContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -91,11 +90,6 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1202576295767(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.SetAccessor", false, false) != null);
-  }
-
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    SNode ct = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    return ct != null;
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
@@ -919,32 +913,6 @@ public class QueriesGenerated {
 
         });
       }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1177499026995(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReference", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.FieldReference", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "instance", _context.getSourceNode(), true);
-          return result;
-        }
-
-        public String getMatchingText(String pattern) {
-          return ".";
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "instance member access";
-        }
-
-      });
     }
     return result;
   }
