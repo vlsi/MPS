@@ -1774,14 +1774,6 @@ public final class SNode {
     return null;
   }
 
-  /**
-   * tmp
-   */
-  void loadAllChildren() {
-    for (SNode child : _children()) {
-      child.loadAllChildren();
-    }
-  }
 
   abstract class NodeUndoableAction implements IUndoableAction {
     public SNode getNode() {

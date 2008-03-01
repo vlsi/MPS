@@ -882,13 +882,6 @@ public class SModel implements Iterable<SNode> {
   public SNode getNodeById(SNodeId nodeId) {
     SNode node = myIdToNodeMap.get(nodeId);
     if (node != null) return node;
-    // tmp patch
-    // todo ?
-    if (SModelStereotype.JAVA_STUB.equals(getStereotype())) {
-      for (SNode root : getRoots()) {
-        root.loadAllChildren();
-      }
-    }
     return myIdToNodeMap.get(nodeId);
   }
 
