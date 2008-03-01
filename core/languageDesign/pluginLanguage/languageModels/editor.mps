@@ -587,7 +587,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203881493812" />
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204384430354">
-    <property name="package" value="Actions.Configuration.GroupModification" />
+    <property name="package" value="Actions.Configuration.GroupModification.bootstrap" />
     <link role="conceptDeclaration" targetNodeId="1.1204383956737" resolveInfo="BootstrapActionGroup" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204384454872">
       <property name="vertical" value="true" />
@@ -623,6 +623,29 @@
           <property name="usesBraces" value="false" />
           <link role="relationDeclaration" targetNodeId="1.1203087991474" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204398191153">
+    <property name="package" value="Actions.Configuration.GroupModification.bootstrap" />
+    <link role="conceptDeclaration" targetNodeId="1.1204397573187" resolveInfo="BootstrapExtentionPoint" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204398241220">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204398241221">
+        <property name="text" value="-&gt;" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204398280442">
+        <property name="text" value="bootstrap label" />
+        <property name="textFgColor" value="red" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204398241222">
+        <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204398265593">
+        <property name="text" value="internal-id" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204398269658">
+        <link role="relationDeclaration" targetNodeId="1.1204397873283" resolveInfo="pointID" />
       </node>
     </node>
   </node>

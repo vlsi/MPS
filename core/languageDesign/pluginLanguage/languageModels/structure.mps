@@ -144,7 +144,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="reference" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1203680471709" resolveInfo="ActionGroupMember" />
+      <link role="target" targetNodeId="1204391079391" resolveInfo="ActionGroupMember" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203088222865">
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept" />
@@ -153,7 +153,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203088046679">
     <property name="package" value="Actions.Configuration" />
     <property name="name" value="ActionReference" />
-    <link role="extends" targetNodeId="1203680471709" resolveInfo="ActionGroupMember" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204391136040">
+      <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203088061055">
       <property name="role" value="action" />
       <property name="sourceCardinality" value="1" />
@@ -188,20 +191,15 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203680471709">
-    <property name="package" value="Actions.Configuration" />
-    <property name="name" value="ActionGroupMember" />
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1203680489820">
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473854053" resolveInfo="abstract" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203680534665">
     <property name="package" value="Actions.Configuration" />
     <property name="name" value="ExtentionPoint" />
-    <link role="extends" targetNodeId="1203680471709" resolveInfo="ActionGroupMember" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1203682365376">
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204391152120">
+      <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203680791094">
@@ -450,12 +448,25 @@
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204383956737">
-    <property name="package" value="Actions.Configuration.GroupModification" />
+    <property name="package" value="Actions.Configuration.GroupModification.bootstrap" />
     <property name="name" value="BootstrapActionGroup" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204384361462">
       <property name="name" value="groupID" />
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1204391079391">
+    <property name="package" value="Actions.Configuration" />
+    <property name="name" value="ActionGroupMember" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204397573187">
+    <property name="package" value="Actions.Configuration.GroupModification.bootstrap" />
+    <property name="name" value="BootstrapExtentionPoint" />
+    <link role="extends" targetNodeId="1203680534665" resolveInfo="ExtentionPoint" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204397873283">
+      <property name="name" value="pointID" />
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
     </node>
   </node>
