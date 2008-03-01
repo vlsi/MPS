@@ -45,12 +45,11 @@ public class TodoViewer extends DefaultTool {
       public void run() {
         MPSProject project = myProjectFrame.getProject();
 
-        assert project != null;
+        //assert project != null;
 
         myUsageView.setRunOptions(
           TreeBuilder.forFinder(new TodoFinder()),
-          new SearchQuery(new SNodePointer((SNode) null),
-            project.getScope()),
+          new SearchQuery(new SNodePointer((SNode) null), GlobalScope.getInstance()),
           new ButtonConfiguration(true),
           new SearchResults()
         );
