@@ -68,9 +68,8 @@
                 <property name="value" value="." />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203873526559">
-              <link role="baseMethodDeclaration" targetNodeId="8.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1203873501488">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204388982892">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1203873501488">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203873501881">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203873501882">
                     <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203873501883" />
@@ -80,6 +79,9 @@
                     <link role="classifier" targetNodeId="8.~SModel" resolveInfo="SModel" />
                   </node>
                 </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204388982893">
+                <link role="baseMethodDeclaration" targetNodeId="8.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
               </node>
             </node>
           </node>
@@ -137,9 +139,8 @@
                 <property name="value" value="." />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203873563147">
-              <link role="baseMethodDeclaration" targetNodeId="8.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1203873563148">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204388969249">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1203873563148">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203873563149">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203873563150">
                     <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203873563151" />
@@ -149,6 +150,9 @@
                     <link role="classifier" targetNodeId="8.~SModel" resolveInfo="SModel" />
                   </node>
                 </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204388969250">
+                <link role="baseMethodDeclaration" targetNodeId="8.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
               </node>
             </node>
           </node>
@@ -203,9 +207,8 @@
                 <property name="value" value="." />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203873574993">
-              <link role="baseMethodDeclaration" targetNodeId="8.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1203873574994">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204388987800">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1203873574994">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203873574995">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203873574996">
                     <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203873574997" />
@@ -215,6 +218,9 @@
                     <link role="classifier" targetNodeId="8.~SModel" resolveInfo="SModel" />
                   </node>
                 </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204388987801">
+                <link role="baseMethodDeclaration" targetNodeId="8.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
               </node>
             </node>
           </node>
@@ -275,9 +281,8 @@
                 <property name="value" value="." />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204043000853">
-              <link role="baseMethodDeclaration" targetNodeId="8.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204043000854">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204388996445">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204043000854">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1204043000855">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204043000856">
                     <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204043000857" />
@@ -287,6 +292,9 @@
                     <link role="classifier" targetNodeId="8.~SModel" resolveInfo="SModel" />
                   </node>
                 </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204388996446">
+                <link role="baseMethodDeclaration" targetNodeId="8.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
               </node>
             </node>
           </node>
@@ -344,9 +352,8 @@
                 <property name="value" value="." />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204047777660">
-              <link role="baseMethodDeclaration" targetNodeId="8.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204047777661">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204388992443">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204047777661">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1204047777662">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204047777663">
                     <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204047777664" />
@@ -356,6 +363,9 @@
                     <link role="classifier" targetNodeId="8.~SModel" resolveInfo="SModel" />
                   </node>
                 </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204388992444">
+                <link role="baseMethodDeclaration" targetNodeId="8.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
               </node>
             </node>
           </node>
