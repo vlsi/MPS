@@ -16,6 +16,7 @@ import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -42,10 +43,14 @@ public class TodoViewer extends DefaultTool {
 
     new Thread(new Runnable() {
       public void run() {
+        MPSProject project = myProjectFrame.getProject();
+
+        assert project != null;
+
         myUsageView.setRunOptions(
           TreeBuilder.forFinder(new TodoFinder()),
           new SearchQuery(new SNodePointer((SNode) null),
-            GlobalScope.getInstance()),
+            project.getScope()),
           new ButtonConfiguration(true),
           new SearchResults()
         );
