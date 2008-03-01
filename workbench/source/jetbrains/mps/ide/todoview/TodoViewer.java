@@ -21,6 +21,8 @@ import jetbrains.mps.project.MPSProject;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -34,29 +36,40 @@ public class TodoViewer extends DefaultTool {
     myProjectFrame = projectFrame;
 
     myPanel = new JPanel(new BorderLayout());
-    myUsageView = new UsageView(myProjectFrame) {
-      public void close() {
-        hideTool();
+
+    myPanel.add(new JLabel("Click to find TODOs", JLabel.CENTER), BorderLayout.CENTER);
+
+    myPanel.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        myPanel.removeAll();
+
+        myUsageView = new UsageView(myProjectFrame) {
+          public void close() {
+            hideTool();
+          }
+        };
+        myPanel.add(myUsageView.getComponent(), BorderLayout.CENTER);
+
+        new Thread(new Runnable() {
+          public void run() {
+            MPSProject project = myProjectFrame.getProject();
+
+            if (project == null) return;
+
+            myUsageView.setRunOptions(
+              TreeBuilder.forFinder(new TodoFinder()),
+              new SearchQuery(new SNodePointer((SNode) null), project.getScope()),
+              new ButtonConfiguration(true),
+              new SearchResults()
+            );
+
+            myUsageView.setCustomPlainPathProvider(new MyIPathProvider());
+
+            myUsageView.run();
+          }
+        }).start();
       }
-    };
-    myPanel.add(myUsageView.getComponent(), BorderLayout.CENTER);
-
-    new Thread(new Runnable() {
-      public void run() {
-        MPSProject project = myProjectFrame.getProject();
-
-        //assert project != null;
-
-        myUsageView.setRunOptions(
-          TreeBuilder.forFinder(new TodoFinder()),
-          new SearchQuery(new SNodePointer((SNode) null), GlobalScope.getInstance()),
-          new ButtonConfiguration(true),
-          new SearchResults()
-        );
-
-        myUsageView.setCustomPlainPathProvider(new MyIPathProvider());
-      }
-    }).start();
+    });
   }
 
   public String getName() {
