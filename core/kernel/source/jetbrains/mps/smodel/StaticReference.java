@@ -54,7 +54,7 @@ public class StaticReference extends SReferenceBase {
   }
 
   protected SNode getTargetNode_internal() {
-    NodeReadAccessCaster.fireReferenceTargetReadAccessed(getSourceNode(), new SNodePointer(getTargetModelUID(), getTargetNodeId()));
+    NodeReadAccessCaster.fireReferenceTargetReadAccessed(getSourceNode(), getTargetModelUID(), getTargetNodeId());
 
     if (!mature()) {
       return myTargetNode;

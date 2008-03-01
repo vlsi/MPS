@@ -1,9 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.INodeReadAccessListener;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.annotation.Hack;
 
 import java.util.Set;
@@ -120,10 +117,12 @@ public class NodeReadAccessCaster {
   }
 
 
-  public static void fireReferenceTargetReadAccessed(SNode sourceNode, SNodePointer targetNode) {
+  public static void fireReferenceTargetReadAccessed(SNode sourceNode, SModelUID targetModelUID, SNodeId targetNodeId) {
     if (ourEventsBlocked) return;
     if(!sourceNode.isRegistered()) return;
-    if (ourReadAccessListener != null) ourReadAccessListener.addRefTargetToDependOn(targetNode);
+    if (ourReadAccessListener != null) {
+      ourReadAccessListener.addRefTargetToDependOn(new SNodePointer(targetModelUID, targetNodeId));
+    }
   }
 
 
