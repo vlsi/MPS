@@ -1021,5 +1021,136 @@
       <property name="fontStyle" value="BOLD"/>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204478850240">
+    <property name="package" value="ProjectPane"/>
+    <link role="conceptDeclaration" targetNodeId="1.1203080649866" resolveInfo="ProjectPane"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+          id="1204478864549">
+      <property name="name" value="classBox"/>
+      <property name="vertical" value="true"/>
+      <property name="drawBorder" value="false"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1204478864550">
+        <property name="name" value="headerRow"/>
+        <property name="vertical" value="false"/>
+        <property name="drawBorder" value="false"/>
+        <property name="selectable" value="false"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1204478864551">
+          <property name="text" value="tool"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+              id="1204478864552">
+          <property name="vertical" value="true"/>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+                id="1204478864553">
+            <property name="selectable" value="false"/>
+            <property name="vertical" value="false"/>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+                  id="1204478864554">
+              <property name="text" value="name:"/>
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+                  id="1204478864555">
+              <property name="writable" value="true"/>
+              <property name="noTargetText" value="&lt;no name&gt;"/>
+              <property name="defaultValue" value="&lt;no name&gt;"/>
+              <property name="rightTransformAnchorTag" value="default_RTransform"/>
+              <property name="drawBorder" value="false"/>
+              <property name="selectable" value="true"/>
+              <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+                id="1204478864556">
+            <property name="selectable" value="false"/>
+            <property name="vertical" value="false"/>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+                  id="1204478864557">
+              <property name="text" value="caption:"/>
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+                  id="1204478864558">
+              <link role="relationDeclaration" targetNodeId="1.1204477510962" resolveInfo="title"/>
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+                id="1204478864562">
+            <property name="drawBorder" value="false"/>
+            <property name="selectable" value="false"/>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+                  id="1204478864563">
+              <property name="text" value="icon:"/>
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+                  id="1204478864564">
+              <property name="noTargetText" value="&lt;no icon&gt;"/>
+              <link role="relationDeclaration" targetNodeId="1.1204477531337" resolveInfo="icon"/>
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+                id="1204478864565">
+            <property name="selectable" value="false"/>
+            <property name="vertical" value="false"/>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+                  id="1204478864566">
+              <property name="text" value="component class:"/>
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell"
+                  id="1204478864567">
+              <link role="relationDeclaration" targetNodeId="1.1204477555839"/>
+              <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent"
+                    id="1204478864568">
+                <link role="conceptDeclaration" targetNodeId="15.1068390468198" resolveInfo="ClassConcept"/>
+                <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+                      id="1204478864569">
+                  <property name="readOnly" value="true"/>
+                  <link role="relationDeclaration" targetNodeId="15.1075300953595" resolveInfo="name"/>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1204478864570">
+        <property name="text" value="{"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1204478864571"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+            id="1204478864572">
+        <property name="noTargetText" value="&lt;canClose block&gt;"/>
+        <link role="relationDeclaration" targetNodeId="1.1204478355855"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1204478864573"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+            id="1204478864574">
+        <property name="noTargetText" value="&lt;close block&gt;"/>
+        <link role="relationDeclaration" targetNodeId="1.1204478348572"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1204478864575"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+            id="1204478864576">
+        <property name="noTargetText" value="&lt;toolHidden block&gt;"/>
+        <link role="relationDeclaration" targetNodeId="1.1204478343258"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1204478864577"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+            id="1204478864578">
+        <property name="noTargetText" value="&lt;toolShown block&gt;"/>
+        <link role="relationDeclaration" targetNodeId="1.1204478352635"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1204478864579"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1204478864580">
+        <property name="text" value="}"/>
+      </node>
+    </node>
+  </node>
 </model>
 

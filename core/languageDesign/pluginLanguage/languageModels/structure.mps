@@ -162,6 +162,10 @@
       <property name="name" value="icon"/>
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1204478890569">
+      <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203082695294">
     <property name="name" value="DoUpdateBlock"/>
@@ -696,7 +700,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204471433283">
     <property name="package" value="Tool"/>
-    <property name="name" value="InstanceExpression"/>
+    <property name="name" value="ToolInstanceExpression"/>
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1204472970200">
@@ -814,7 +818,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204478385903">
     <property name="package" value="ProjectPane"/>
-    <property name="name" value="InstanceExpression"/>
+    <property name="name" value="ProjectPaneInstanceExpression"/>
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1204478405232">
