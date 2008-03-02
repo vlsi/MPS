@@ -43,7 +43,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Oct 25, 2003
  */
-public class ProjectPane extends AbstractProjectTreeView implements IActionDataProvider  {
+public class ProjectPane extends AbstractProjectTreeView implements IActionDataProvider {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
@@ -270,7 +270,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
 
     if (!myModulesPool.isInitialized()) {
-      myModulesPool.init();      
+      myModulesPool.init();
       return findModuleTreeNode(module);
     }
 
@@ -299,7 +299,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       return root;
     }
 
-    if (descendCondition.met(root)) {    
+    if (descendCondition.met(root)) {
       for (MPSTreeNode node : root) {
         MPSTreeNode result = findTreeNode(node, descendCondition, resultCondition);
         if (result != null) {
@@ -310,13 +310,13 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     return null;
   }
 
-  public void scrollFromSoure(SNode node) {
+  public void scrollFromSource(SNode node) {
     if (isAutoscrollFromSource()) {
       selectNode(node);
     }
   }
 
-  public void openModule(IModule m) {    
+  public void openModule(IModule m) {
     selectModule(m);
   }
 
@@ -493,7 +493,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     return result;
   }
 
-  
 
   public List<SNode> getNormalizedSelectedNodes() {
     List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedNodes());
@@ -608,7 +607,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       ModulesNamespaceTreeBuilder builder = new ModulesNamespaceTreeBuilder(getProject());
       for (MPSTreeNode mtn : moduleNodes) {
         builder.addNode(mtn);
-      }      
+      }
       builder.fillNode(root);
 
       myModulesPool = new ProjectModulesPoolTreeNode(getProject());

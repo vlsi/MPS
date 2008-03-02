@@ -1037,7 +1037,7 @@
         <property name="selectable" value="false"/>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1204478864551">
-          <property name="text" value="tool"/>
+          <property name="text" value="project pane"/>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
               id="1204478864552">
@@ -1120,28 +1120,28 @@
             id="1204478864571"/>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1204478864572">
-        <property name="noTargetText" value="&lt;canClose block&gt;"/>
+        <property name="noTargetText" value="&lt;setProject block&gt;"/>
         <link role="relationDeclaration" targetNodeId="1.1204478355855"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1204478864573"/>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1204478864574">
-        <property name="noTargetText" value="&lt;close block&gt;"/>
+        <property name="noTargetText" value="&lt;rebuild block&gt;"/>
         <link role="relationDeclaration" targetNodeId="1.1204478348572"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1204478864575"/>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1204478864576">
-        <property name="noTargetText" value="&lt;toolHidden block&gt;"/>
+        <property name="noTargetText" value="&lt;openModule block&gt;"/>
         <link role="relationDeclaration" targetNodeId="1.1204478343258"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1204478864577"/>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1204478864578">
-        <property name="noTargetText" value="&lt;toolShown block&gt;"/>
+        <property name="noTargetText" value="&lt;scrollFromSource block&gt;"/>
         <link role="relationDeclaration" targetNodeId="1.1204478352635"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
