@@ -80,7 +80,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   private JToggleButton myPAndRToggle;
   private JToggleButton myAutoscrollToSource;
   private JToggleButton myAutoscrollFromSource;
-  private JToggleButton myCollapseAll;
 
   public ProjectPane(IDEProjectFrame ide) {
     myIDE = ide;
@@ -157,7 +156,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       }
     });
 
-    myToolbar.add(myCollapseAll = new JToggleButton() {
+    myToolbar.add(new JButton() {
       {
         setAction(new AbstractAction("", jetbrains.mps.ide.findusages.view.icons.Icons.COLLAPSE_ICON) {
           public void actionPerformed(ActionEvent e) {
