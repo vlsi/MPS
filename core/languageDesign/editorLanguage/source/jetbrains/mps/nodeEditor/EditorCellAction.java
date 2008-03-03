@@ -46,7 +46,7 @@ public abstract class EditorCellAction {
 
   public boolean canExecute(EditorContext context) {
     return true;
-  }  
+  }
 
   public abstract void execute(EditorContext context);
 }
