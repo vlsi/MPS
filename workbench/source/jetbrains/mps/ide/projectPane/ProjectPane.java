@@ -2,6 +2,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
+import jetbrains.mps.ide.findusages.view.icons.*;
 import jetbrains.mps.ide.settings.GlobalIdeSettings;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
@@ -79,6 +80,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   private JToggleButton myPAndRToggle;
   private JToggleButton myAutoscrollToSource;
   private JToggleButton myAutoscrollFromSource;
+  private JToggleButton myCollapseAll;
 
   public ProjectPane(IDEProjectFrame ide) {
     myIDE = ide;
@@ -149,6 +151,23 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
           }
         });
       }
+
+      public void updateUI() {
+        setUI(new MPSToolBarButtonUI());
+      }
+    });
+
+    myToolbar.add(myCollapseAll = new JToggleButton() {
+      {
+        setAction(new AbstractAction("", jetbrains.mps.ide.findusages.view.icons.Icons.COLLAPSE_ICON) {
+          public void actionPerformed(ActionEvent e) {
+            for (MPSTreeNode rootChild : myTree.getRootNode()) {
+              myTree.collapseAll(rootChild);
+            }
+          }
+        });
+      }
+
 
       public void updateUI() {
         setUI(new MPSToolBarButtonUI());
