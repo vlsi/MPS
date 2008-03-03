@@ -8,13 +8,6 @@ import jetbrains.mps.project.ProjectOperationContext;
 
 import javax.swing.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Aug 25, 2005
- * Time: 5:18:23 PM
- * To change this template use File | Settings | File Templates.
- */
 class ProjectTreeNode extends MPSTreeNode {
 
   ProjectTreeNode(MPSProject project) {

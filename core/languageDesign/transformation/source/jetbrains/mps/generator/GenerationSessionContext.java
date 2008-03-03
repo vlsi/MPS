@@ -72,7 +72,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       initTemplateModels();
     }
 
-    myTransientModule = new TransientModule("TransientModule:[" + inputModel.getUID() + "]", invocationContext.getModule(), myGeneratorModules);
+    String inputModuleUID = inputModel.getUID().toString();
+    myTransientModule = new TransientModule("TransientModule:[" + inputModuleUID + "]", invocationContext.getModule(), myGeneratorModules);
     if (prevContext != null) {
       myTransientModule.addDependency(prevContext.getModule());
       myUsedNames = prevContext.myUsedNames;
@@ -317,6 +318,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public class TransientModule extends AbstractModule {
     private List<IModule> myDependOnModules = new ArrayList<IModule>();
+    private List<Language> myUsedLanguages = new ArrayList<Language>();
     private IModule myInvocationModule;
     private SModelDescriptor myProjectModelDescriptor = ProjectModels.createDescriptorFor(this);
     private ModuleDescriptor myModuleDescriptor = ModuleDescriptor.newInstance(myProjectModelDescriptor.getSModel());
@@ -331,9 +333,21 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       myDependOnModules.addAll(generatorModules);
       myDependOnModules.add(invocationModule);
 
+      Set<Language> usedLanguages = new LinkedHashSet<Language>();
+      usedLanguages.addAll(invocationModule.getUsedLanguages());
+      for (Generator g : generatorModules) {
+        usedLanguages.add(g.getSourceLanguage());
+        usedLanguages.addAll(g.getUsedLanguages());
+      }
+      myUsedLanguages.addAll(usedLanguages);
+
       reload();
 
       MPSModuleRepository.getInstance().addModule(this, myOwnOnwer);
+    }
+
+    public List<Language> getUsedLanguages() {
+      return myUsedLanguages;
     }
 
     public List<Dependency> getDependencies() {

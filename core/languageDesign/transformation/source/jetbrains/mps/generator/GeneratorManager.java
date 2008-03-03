@@ -658,21 +658,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             generationSession.discardTransients();
             progress.finishTask(taskName);
           }
-          //-- generation
-
-          if (saveTransientModels) {
-            File solutionDescriptorFile = generationSession.saveTransientModels();
-
-            progress.addText("update output models solution");
-
-            messages.handle(new Message(MessageKind.INFORMATION, "update output models solution"));
-            Solution outputModels = project.findSolution("outputModels");
-            if (outputModels != null) {
-              outputModels.reloadFromDisk();
-            } else {
-              project.addProjectSolution(solutionDescriptorFile);
-            }
-          }
         } finally {
           if (wasLoggingThreshold != null) {
             Logger.setThreshold(wasLoggingThreshold);

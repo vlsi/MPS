@@ -13,12 +13,6 @@ import jetbrains.mps.util.NameUtil;
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Aug 25, 2005
- * Time: 5:20:32 PM
- */
 class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   private Solution mySolution;
   private boolean myShortNameOnly;

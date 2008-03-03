@@ -21,7 +21,7 @@ public class Sandbox {
     final List<Integer> a = Arrays.asList(1,2,3);
 
     final Map m = new HashMap();
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < 100000; i++) {
       m.put(i, i);      
     }
 
@@ -67,7 +67,7 @@ public class Sandbox {
   private static void measure(Runnable r) {
     long start = System.currentTimeMillis();
 
-    for (int i = 0; i < 10000000; i++) {
+    for (int i = 0; i < 1000000; i++) {
       r.run();
     }
 

@@ -10,13 +10,6 @@ import jetbrains.mps.util.NameUtil;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Aug 25, 2005
- * Time: 5:21:28 PM
- * To change this template use File | Settings | File Templates.
- */
 class ProjectModulesPoolTreeNode extends TextTreeNode {
   private MPSProject myProject;
   private boolean myInitialized;
