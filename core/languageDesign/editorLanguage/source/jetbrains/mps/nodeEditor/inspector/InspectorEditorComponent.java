@@ -88,7 +88,7 @@ final public class InspectorEditorComponent extends AbstractEditorComponent impl
 
   public EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().isDeleted()) {
-      return EditorCell_Constant.create(getEditorContext(), null, "<no inspect info>", true);
+      return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");
     }
     return getEditorContext().createInspectedCell(getEditedNode(), events);
   }
