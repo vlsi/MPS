@@ -3,13 +3,14 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
-  <module />
-  <languages />
   <classPath />
   <runtimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency>readerConfigLanguage</dependency>
+    <dependency reexport="false">readerConfigLanguage</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>readerConfigLanguage</usedLanguages>
+  </usedLanguages>
 </solution>
 
