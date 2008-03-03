@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.inference.TypeCheckingMode;
 
 /**
  * Igor Alshannikov
@@ -45,7 +47,12 @@ public class ModelConstraintsUtil {
     final SearchScopeStatus[] status = new SearchScopeStatus[1];
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
+        try {
+        TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.RESOLVE);
         status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, scope);
+        } finally {
+          TypeChecker.getInstance().resetTypeCheckingMode();
+        }
       }
     });
     return status[0];

@@ -44,11 +44,15 @@ public class TypeChecker {
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
   private NodeTypesComponent_new myCurrentTypesComponent = null;
+  private Stack<NodeTypesComponent_new> myCurentTypesComponentStack = new Stack<NodeTypesComponent_new>();
+  private Stack<TypeCheckingMode> myTypesCheckingModesStack = new Stack<TypeCheckingMode>();
+
 
   private MPSProject myProject;
   private boolean myIsIncrementalMode = true;
-  private boolean myIsGenerationMode = false;
 
+
+  private TypeCheckingMode myTypeCheckingMode = null;
 
   public TypeChecker() {
     mySubtypingManager = new SubtypingManager(this);
@@ -94,17 +98,24 @@ public class TypeChecker {
 
   @UseCarefully
   public void setCurrentTypesComponent(NodeTypesComponent_new component) {
+    if (myCurrentTypesComponent != null) {
+      myCurentTypesComponentStack.push(myCurrentTypesComponent);
+    }
     myCurrentTypesComponent = component;
   }
 
   @UseCarefully
   public void clearCurrentTypesComponent() {
     myCurrentTypesComponent = null;
+    if (!myCurentTypesComponentStack.isEmpty()) {
+      myCurrentTypesComponent = myCurentTypesComponentStack.pop();
+    }
   }
 
   public void clearForReload() {
     myNodesToDependentRoots.clear();
     myRulesManager.clear();
+    myCurentTypesComponentStack.clear();
     myCurrentTypesComponent = null;
     myCheckedRoots.clear();
   }
@@ -113,8 +124,18 @@ public class TypeChecker {
     myIsIncrementalMode = isIncrementalMode; 
   }
 
-  public void setGenerationMode(boolean isGenerationMode) {
-    myIsGenerationMode = isGenerationMode;
+  public void setTypeCheckingMode(TypeCheckingMode typeCheckingMode) {
+    if (myTypeCheckingMode != null) {
+      myTypesCheckingModesStack.push(myTypeCheckingMode);
+    }
+    myTypeCheckingMode = typeCheckingMode;
+  }
+
+  public void resetTypeCheckingMode() {
+    myTypeCheckingMode = null;
+    if (!myTypesCheckingModesStack.isEmpty()) {
+      myTypeCheckingMode = myTypesCheckingModesStack.pop();
+    }
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString) {
@@ -217,14 +238,41 @@ public class TypeChecker {
     return getTypeDontCheck(node);
   }
 
+  private SNode getTypeOf_resolveMode(final SNode node) {
+    if (node == null) return null;
+    SNode containingRoot = node.getContainingRoot();
+    if (containingRoot == null) return null;
+    NodeTypesComponent_new component = NodeTypesComponentsRepository.getInstance().
+            getNodeTypesComponent(node.getContainingRoot());
+    if (!myCheckedRoots.contains(containingRoot) || component == null) {
+      final SNode[] result = new SNode[1];
+      final NodeTypesComponent_new component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
+
+      checkWithinRoot(node, new Runnable() {
+        public void run() {
+          result[0] = component1.computeTypesForNodeDuringResolving(node, new Runnable() {
+            public void run() {
+              myCheckedRoots.add(node);
+            }
+          });
+        }
+      });
+
+      return result[0];
+    }
+    return getTypeDontCheck(node);
+  }
+
   public void markAsChecked(SNode node) {
     myCheckedRoots.add(node);
   }
 
   @Nullable
   public SNode getTypeOf(SNode node) {
-    if (myIsGenerationMode && HelginsPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
+    if (myTypeCheckingMode == TypeCheckingMode.GENERATION && HelginsPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
       return getTypeOf_generationMode(node);
+    } else if (myTypeCheckingMode == TypeCheckingMode.RESOLVE) {
+      return getTypeOf_resolveMode(node);
     } else {
       return getTypeOf_normalMode(node);
     }

@@ -293,6 +293,14 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
   }
 
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode, Runnable continuation) {
+    return computeTypesForNode_special(initialNode, continuation, true);
+  }
+
+  public SNode computeTypesForNodeDuringResolving(SNode initialNode, Runnable continuation) {
+    return computeTypesForNode_special(initialNode, continuation, false);
+  }
+
+  private SNode computeTypesForNode_special(SNode initialNode, Runnable continuation, boolean refreshTypes) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
@@ -303,13 +311,13 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
         if (prevNode != null) {
           additionalNodes.add(prevNode);
         }
-        computeTypes(node, true, false, false, additionalNodes);
+        computeTypes(node, refreshTypes, false, false, additionalNodes);
         type = getType(initialNode);
         if (type == null ||
           type.getAdapter() instanceof RuntimeTypeVariable ||
           !type.allChildrenByAdaptor(RuntimeTypeVariable.class).isEmpty()) {
           if (node.isRoot()) {
-            computeTypes(node, true, true, false, new ArrayList<SNode>()); //the last possibility: check the whole root
+            computeTypes(node, refreshTypes, true, false, new ArrayList<SNode>()); //the last possibility: check the whole root
             type = getType(initialNode);
             continuation.run();
             return type;

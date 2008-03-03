@@ -7,6 +7,7 @@ import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.inference.TypeCheckingMode;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.IDEProjectFrame;
@@ -620,7 +621,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           }
           Logger.addLoggingHandler(generationSession.getLoggingHandler());
           TypeChecker.getInstance().setIncrementalMode(false);
-          TypeChecker.getInstance().setGenerationMode(true);
+          TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.GENERATION);
           for (SModelDescriptor inputModel : moduleAndDescriptors.o2) {
             progress.addText("");
 
@@ -665,7 +666,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           generationSession.discardTransients();
           Logger.removeLoggingHandler(generationSession.getLoggingHandler());
           TypeChecker.getInstance().setIncrementalMode(true);
-          TypeChecker.getInstance().setGenerationMode(false);
+          TypeChecker.getInstance().resetTypeCheckingMode();
 
           if (firstContext.getMainFrame() != null) {
             SModelRepository.getInstance().tryToReloadModelsFromDisk((JFrame) firstContext.getMainFrame());

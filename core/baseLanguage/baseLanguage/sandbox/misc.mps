@@ -218,7 +218,7 @@
               <link role="variableDeclaration" targetNodeId="1204554545150" resolveInfo="c" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204554557314">
-              <link role="fieldDeclaration" targetNodeId="1204554523706" resolveInfo="fooField" />
+              <link role="fieldDeclaration" targetNodeId="^" resolveInfo="fooField" />
             </node>
           </node>
         </node>
