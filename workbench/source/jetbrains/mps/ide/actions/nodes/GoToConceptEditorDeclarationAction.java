@@ -60,9 +60,6 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     if (currentEditor == null) return;
     AbstractEditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
     if (editorComponent == null) return;
-    if (!editorComponent.hasFocus()) {
-      currentEditor = context.get(IDEProjectFrame.class).getInspectorPane().getInspector().getEditor();
-    }
 
     Language language = null;
     IModule module = invocationContext.getModule();

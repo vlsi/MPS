@@ -87,8 +87,7 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
                   }
                 }
               }
-
-              updateEditorComponent(projectFrame.getInspectorPane().getInspector().getEditorComponent());
+              
               InspectorTool inspectorTool = projectFrame.getToolsPane().getTool(InspectorTool.class);
               updateEditorComponent(inspectorTool.getInspector().getEditorComponent());
 

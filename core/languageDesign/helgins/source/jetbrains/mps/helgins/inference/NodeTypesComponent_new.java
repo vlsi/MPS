@@ -22,7 +22,6 @@ import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.InspectorPane;
 import jetbrains.mps.ide.InspectorTool;
 import jetbrains.mps.nodeEditor.IGutterMessageOwner;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
@@ -183,11 +182,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
 
   @Nullable
   private AbstractEditorComponent getInspectorComponent1() {
-    MPSProject project = myTypeChecker.getProject();
-    if (project == null) return null;
-    InspectorPane inspectorPane = project.getComponent(InspectorPane.class);
-    if (inspectorPane == null) return null;
-    return (AbstractEditorComponent) inspectorPane.getInspector();
+    return null;
   }
 
   @Nullable
