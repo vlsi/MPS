@@ -194,27 +194,31 @@
   </refactoringLog>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1203611141026">
     <property name="name" value="C" />
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1204554523706">
+      <property name="name" value="fooField" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204554523707" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204554526803" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1203611169278">
       <property name="name" value="foo" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203611169279" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203611169280" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203611169281">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204031531092">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204031531093">
-            <property name="name" value="o" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204031531094">
-              <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204554545149">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204554545150">
+            <property name="name" value="c" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204554545151">
+              <link role="classifier" targetNodeId="1203611141026" resolveInfo="C" />
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204295760773">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204295760774">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1204295760775" />
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1204295764841">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1204295767203" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204295762637">
-              <link role="variableDeclaration" targetNodeId="1204031531093" resolveInfo="o" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204554552607">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204554553546">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204554552608">
+              <link role="variableDeclaration" targetNodeId="1204554545150" resolveInfo="c" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204554557314">
+              <link role="fieldDeclaration" targetNodeId="1204554523706" resolveInfo="fooField" />
             </node>
           </node>
         </node>
