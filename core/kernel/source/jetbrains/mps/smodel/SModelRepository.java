@@ -414,7 +414,9 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void markChanged(@NotNull SModelDescriptor descriptor, boolean b) {
-    LOG.assertLog(myModelDescriptors.contains(descriptor));
+    if (!myModelDescriptors.contains(descriptor)) {
+      return;
+    }
 
     if (b) {
       myChangedModels.put(descriptor, System.currentTimeMillis());
