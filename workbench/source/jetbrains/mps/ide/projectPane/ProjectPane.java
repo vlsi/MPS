@@ -2,6 +2,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
+import jetbrains.mps.ide.settings.GlobalIdeSettings;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
@@ -12,10 +13,7 @@ import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -612,6 +610,11 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
       myModulesPool = new ProjectModulesPoolTreeNode(getProject());
       root.add(myModulesPool);
+
+      if (ApplicationComponents.getInstance().getComponentSafe(GlobalIdeSettings.class).isLoadModelsOnProjectLoad()) {      
+        myModulesPool.init();
+      }
+
       return root;
     }
   } // private class MyTree
