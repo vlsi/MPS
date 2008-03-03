@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.SNode;
 public class DefaultNodeEditor implements INodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return EditorCell_Error.create(editorContext, node, "no editor found");
+    return new EditorCell_Error(editorContext, node, "no editor found");
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return EditorCell_Constant.create(editorContext, node, node.getDebugText(), true);
+    return new EditorCell_Constant(editorContext, node, node.getDebugText(), true);
   }
 }

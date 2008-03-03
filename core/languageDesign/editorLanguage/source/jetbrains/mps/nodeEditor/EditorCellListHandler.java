@@ -43,7 +43,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
   }
 
   protected EditorCell createEmptyCell(EditorContext editorContext) {
-    EditorCell_Constant emptyCell = EditorCell_Constant.create(editorContext, getOwner(), null, true);
+    EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getOwner(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
     emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration(), editorContext));
