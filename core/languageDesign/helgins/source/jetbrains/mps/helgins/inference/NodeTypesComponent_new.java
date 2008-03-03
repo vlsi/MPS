@@ -22,9 +22,9 @@ import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.InspectorTool;
 import jetbrains.mps.nodeEditor.IGutterMessageOwner;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.*;
@@ -180,19 +180,6 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     return component;
   }
 
-  @Nullable
-  private AbstractEditorComponent getInspectorComponent1() {
-    return null;
-  }
-
-  @Nullable
-  private AbstractEditorComponent getInspectorComponent2() {
-    MPSProject project = myTypeChecker.getProject();
-    if (project == null) return null;
-    InspectorTool inspectorTool = project.getComponent(InspectorTool.class);
-    if (inspectorTool == null) return null;
-    return (AbstractEditorComponent) inspectorTool.getInspector();
-  }
 
   public void computeTypes() {
     computeTypes(false);
@@ -213,13 +200,9 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
         if (component != null) {
           component.getHighlightManager().clearForOwner(this);
         }
-        AbstractEditorComponent inspector1 = getInspectorComponent1();
-        if (inspector1 != null) {
-          inspector1.getHighlightManager().clearForOwner(this);
-        }
-        AbstractEditorComponent inspector2 = getInspectorComponent2();
-        if (inspector2 != null) {
-          inspector2.getHighlightManager().clearForOwner(this);
+
+        if (component instanceof NodeEditorComponent) {
+          ((NodeEditorComponent) component).getInspector().getHighlightManager().clear();
         }
 
         doInvalidate();
@@ -263,15 +246,14 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
           public void run() {
             AbstractEditorComponent component = (AbstractEditorComponent) getEditorComponent();
             if (component == null) return;
-            AbstractEditorComponent inspector1 = getInspectorComponent1();
-            AbstractEditorComponent inspector2 = getInspectorComponent2();
+            AbstractEditorComponent inspector1 = null;
+            AbstractEditorComponent inspector2 = null;
             for (SNodePointer skippedNode : skippedNodes) {
               markNode(component, skippedNode);
-              if (inspector1 != null) {
-                markNode(inspector1, skippedNode);
-              }
-              if (inspector2 != null) {
-                markNode(inspector2, skippedNode);
+
+
+              if (component instanceof NodeEditorComponent) {
+                markNode(((NodeEditorComponent) component).getInspector(), skippedNode);
               }
             }
           }

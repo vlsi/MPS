@@ -85,11 +85,12 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
                   if (updateEditorComponent(component)) {
                     isUpdated = true;
                   }
+
+                  if (component instanceof NodeEditorComponent) {
+                    updateEditorComponent(((NodeEditorComponent) component).getInspector());
+                  }
                 }
               }
-              
-              InspectorTool inspectorTool = projectFrame.getToolsPane().getTool(InspectorTool.class);
-              updateEditorComponent(inspectorTool.getInspector().getEditorComponent());
 
               if (isUpdated) { //why do we need this code? it's looks like a hack.
                 IEditor currentEditor = editorsPane.getCurrentEditor();

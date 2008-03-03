@@ -20,11 +20,17 @@ import javax.swing.event.ChangeListener;
 import java.util.List;
 
 final public class InspectorEditorComponent extends AbstractEditorComponent implements IEditor {
+  private NodeEditorComponent myContainer;
 
   public InspectorEditorComponent() {
+    this(null);
+  }
+
+  public InspectorEditorComponent(NodeEditorComponent container) {
     super(null);
     myNodePointer = new SNodePointer((SNode) null);
     reinitEditor();
+    myContainer = container;
   }
 
   private void reinitEditor() {
@@ -113,11 +119,11 @@ final public class InspectorEditorComponent extends AbstractEditorComponent impl
     IHistoryItem inspectorItem = super.getHistoryItemFromEditor();
     if (!(inspectorItem instanceof HistoryItem)) return inspectorItem;
 
-    IEditor currentEditor = getOperationContext().getComponent(EditorsPane.class).getCurrentEditor();
-    assert currentEditor != null;
-    AbstractEditorComponent outer = currentEditor.getCurrentEditorComponent();
-    assert outer != null;
-    IHistoryItem outerItem = outer.getHistoryItemFromEditor();
+    if (myContainer == null) {
+      throw new IllegalStateException();
+    }
+
+    IHistoryItem outerItem = myContainer.getHistoryItemFromEditor();
     return new InspectorHistoryItem((HistoryItem) inspectorItem, outerItem);
   }
 }
