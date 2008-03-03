@@ -139,29 +139,34 @@ public class GenericRefactoring {
       }
     });
     if (!sourceModels.isEmpty()) {
-      generateModels(context, sourceModels);
+      generateModels(context, sourceModels, refactoringContext);
     }
   }
 
-  private void generateModels(ActionContext context, Map<IModule, List<SModel>> sourceModels) {
-
+  private void generateModels(ActionContext context, Map<IModule, List<SModel>> sourceModels, RefactoringContext refactoringContext) {
+    SNodeMembersAccessModifier modifier = SNodeMembersAccessModifier.getInstance();
+    refactoringContext.setUpMembersAccessModifier(modifier);
     for (IModule sourceModule : sourceModels.keySet()) {
-      IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
-      new GeneratorManager().generateModels(sourceModels.get(sourceModule),
-        null,
-        operationContext,
-        IGenerationType.FILES,
-        new IGenerationScript() {
-          public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
-            return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
-          }
-        },
-        IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
-        new DefaultMessageHandler(operationContext.getProject()),
-        false);
+      try {
+        IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
+        List<SModel> models = sourceModels.get(sourceModule);
+        modifier.startModificationMode(models);
+        new GeneratorManager().generateModels(models,
+          null,
+          operationContext,
+          IGenerationType.FILES,
+          new IGenerationScript() {
+            public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
+              return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
+            }
+          },
+          IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
+          new DefaultMessageHandler(operationContext.getProject()),
+          false);
+      } finally {
+        modifier.clear();
+      }
     }
-
-
   }
 
   private void processModel(SModel model, SModel usedModel, RefactoringContext refactoringContext) {

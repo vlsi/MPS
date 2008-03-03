@@ -350,6 +350,25 @@ public class RefactoringContext {
     }
   }
 
+  public void setUpMembersAccessModifier(SNodeMembersAccessModifier modifier) {
+    //assert myCachesAreUpToDate;
+    for (ConceptFeature conceptFeature : myConceptFeatureMap.keySet()) {
+      ConceptFeature newConceptFeature = myConceptFeatureMap.get(conceptFeature);
+      if (newConceptFeature == null) continue;
+      ConceptFeatureKind kind = newConceptFeature.getConceptFeatureKind();
+      String conceptFQName = conceptFeature.getConceptFQName();
+      String oldFeatureName = conceptFeature.getFeatureName();
+      String newFeatureName = newConceptFeature.getFeatureName();
+      if (kind == ConceptFeatureKind.CHILD) {
+        modifier.addChildRoleChange(conceptFQName, oldFeatureName, newFeatureName);
+      } else if (kind == ConceptFeatureKind.REFERENCE) {
+        modifier.addReferentRoleChange(conceptFQName, oldFeatureName, newFeatureName);
+      } else if (kind == ConceptFeatureKind.PROPERTY) {
+        modifier.addPropertyNameChange(conceptFQName, oldFeatureName, newFeatureName);
+      }
+    }
+  }
+
   public void setModelVersion(int version) {
     myModelVersion = version;
   }
