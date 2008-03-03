@@ -2,8 +2,8 @@ package jetbrains.mps.vcs.ui;
 
 import jetbrains.mps.nodeEditor.IGutterMessageOwner;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
-import jetbrains.mps.nodeEditor.inspector.IInspectorEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponentFactory;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -31,7 +31,7 @@ import java.util.Set;
 public class ModelDifferenceViewWithEditor extends JPanel implements IGutterMessageOwner {
   private IOperationContext myOperationContext;
   private UIEditorComponent myModelEditorComponent;
-  public IInspectorEditorComponent myModelInspector;
+  private InspectorEditorComponent myModelInspector;
   private Set<SNodeId> myChangedNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myAddedNodes = new HashSet<SNodeId>();
   private SNode myNewRoot;

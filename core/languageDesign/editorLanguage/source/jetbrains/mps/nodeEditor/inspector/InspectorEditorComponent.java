@@ -1,9 +1,3 @@
-/*
- * Created by IntelliJ IDEA.
- * User: alshan
- * Date: Feb 25, 2004
- * Time: 2:04:52 PM
- */
 package jetbrains.mps.nodeEditor.inspector;
 
 import jetbrains.mps.ide.EditorsPane;
@@ -25,9 +19,9 @@ import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
 import java.util.List;
 
-final public class InspectorEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent, IEditor {
+final public class InspectorEditorComponent extends AbstractEditorComponent implements IEditor {
 
-  InspectorEditorComponent() {
+  public InspectorEditorComponent() {
     super(null);
     myNodePointer = new SNodePointer((SNode) null);
     reinitEditor();
@@ -80,10 +74,6 @@ final public class InspectorEditorComponent extends AbstractEditorComponent impl
         repaint();
       }
     });
-  }
-
-  public IEditor getEditor() {
-    return this;
   }
 
   public IEditorComponent getEditorComponent() {

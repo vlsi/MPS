@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.navigation.*;
-import jetbrains.mps.nodeEditor.inspector.IInspectorEditorComponent;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -23,10 +23,10 @@ import java.util.List;
  * @author Kostik
  */
 public class UIEditorComponent extends AbstractEditorComponent implements IEditorOpener {
-  private IInspectorEditorComponent myInspector;
+  private InspectorEditorComponent myInspector;
   private EditorsHistory myEditorsHistory;
 
-  public UIEditorComponent(IOperationContext operationContext, IInspectorEditorComponent inspector) {
+  public UIEditorComponent(IOperationContext operationContext, InspectorEditorComponent inspector) {
     super(operationContext);
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
     myInspector = inspector;
@@ -79,7 +79,7 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
     return createRootCell(null);
   }
 
-  public IInspectorEditorComponent getInspector() {
+  public InspectorEditorComponent getInspector() {
     return myInspector;
   }
 

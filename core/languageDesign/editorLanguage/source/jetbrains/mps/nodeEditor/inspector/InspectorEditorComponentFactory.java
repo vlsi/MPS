@@ -5,7 +5,7 @@ public final class InspectorEditorComponentFactory {
   private InspectorEditorComponentFactory() {
   }
 
-  public static IInspectorEditorComponent getInspectorEditorComponent() {
+  public static InspectorEditorComponent getInspectorEditorComponent() {
     return new InspectorEditorComponent();
   }
 

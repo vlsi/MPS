@@ -13,7 +13,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-final class InspectorPaneEditorComponent extends JComponent implements IInspectorEditorComponent {
+final class InspectorPaneEditorComponent extends JComponent {
 
   private final List<InspectorEditorComponent> myInspectorEditorComponents = new ArrayList<InspectorEditorComponent>();
   private final JScrollPane myScrollPane = new JScrollPane();
@@ -54,10 +54,6 @@ final class InspectorPaneEditorComponent extends JComponent implements IInspecto
 
   private InspectorEditorComponent getInspectorEditorComponent() {
     return myInspectorEditorComponents.get(0);
-  }
-
-  public IEditor getEditor() {
-    return getInspectorEditorComponent();
   }
 
   public IEditorComponent getEditorComponent() {
