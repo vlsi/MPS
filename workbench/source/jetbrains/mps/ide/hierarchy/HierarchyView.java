@@ -94,7 +94,6 @@ public class HierarchyView extends AbstractHierarchyView<AbstractConceptDeclarat
 
   }
 
-
   public String getName() {
     return "Hierarchy View";
   }

@@ -119,7 +119,9 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         myHierarchyTree.rebuildNow();
-        if (myTreeNode != null) myHierarchyTree.selectNode(myTreeNode);
+        if (myTreeNode != null) {
+          myHierarchyTree.selectNode(myTreeNode);
+        }
       }
     });
   }
