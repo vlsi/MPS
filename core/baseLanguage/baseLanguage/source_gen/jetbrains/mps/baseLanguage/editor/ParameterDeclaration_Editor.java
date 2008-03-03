@@ -242,7 +242,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList1(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList1_ == null) {
-      this.myAnnotationListHandler_annotationList1_ = new ParameterDeclaration_Editor._RefNodeListHandler62(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList1_ = new ParameterDeclaration_Editor._RefNodeListHandler61(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
     ParameterDeclaration_Editor.setupBasic_AnnotationList1(editorCell, node, context);
@@ -255,7 +255,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList_ == null) {
-      this.myAnnotationListHandler_annotationList_ = new ParameterDeclaration_Editor._RefNodeListHandler64(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList_ = new ParameterDeclaration_Editor._RefNodeListHandler63(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
     ParameterDeclaration_Editor.setupBasic_AnnotationList(editorCell, node, context);
@@ -324,9 +324,9 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler62 extends RefNodeListHandler {
+  public static class _RefNodeListHandler61 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler62(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler61(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -367,9 +367,9 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler64 extends RefNodeListHandler {
+  public static class _RefNodeListHandler63 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler64(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler63(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

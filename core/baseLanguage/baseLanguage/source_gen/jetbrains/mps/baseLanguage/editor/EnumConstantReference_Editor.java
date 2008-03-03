@@ -83,7 +83,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createEnumConstantDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline5());
+    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline4());
     EditorCell editorCell = provider.createEditorCell(context);
     EnumConstantReference_Editor.setupBasic_EnumConstantDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -113,7 +113,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createEnumClassReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline12());
+    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline11());
     EditorCell editorCell = provider.createEditorCell(context);
     EnumConstantReference_Editor.setupBasic_EnumClassReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -140,9 +140,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline5 extends AbstractCellProvider {
+  public static class _Inline4 extends AbstractCellProvider {
 
-    public  _Inline5() {
+    public  _Inline4() {
       super();
     }
 
@@ -169,9 +169,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      EnumConstantReference_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
+      EnumConstantReference_Editor._Inline4.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        EnumConstantReference_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        EnumConstantReference_Editor._Inline4.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -195,9 +195,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline12 extends AbstractCellProvider {
+  public static class _Inline11 extends AbstractCellProvider {
 
-    public  _Inline12() {
+    public  _Inline11() {
       super();
     }
 
@@ -222,9 +222,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      EnumConstantReference_Editor._Inline12.setupBasic_NameCell(editorCell, node, context);
+      EnumConstantReference_Editor._Inline11.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        EnumConstantReference_Editor._Inline12.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        EnumConstantReference_Editor._Inline11.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

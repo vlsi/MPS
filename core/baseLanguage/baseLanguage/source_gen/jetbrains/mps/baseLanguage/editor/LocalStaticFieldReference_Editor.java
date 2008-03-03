@@ -31,7 +31,7 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createStaticFieldDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new LocalStaticFieldReference_Editor._Inline19());
+    provider.setAuxiliaryCellProvider(new LocalStaticFieldReference_Editor._Inline18());
     EditorCell editorCell = provider.createEditorCell(context);
     LocalStaticFieldReference_Editor.setupBasic_StaticFieldDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -58,9 +58,9 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline19 extends AbstractCellProvider {
+  public static class _Inline18 extends AbstractCellProvider {
 
-    public  _Inline19() {
+    public  _Inline18() {
       super();
     }
 
@@ -86,9 +86,9 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      LocalStaticFieldReference_Editor._Inline19.setupBasic_NameCell(editorCell, node, context);
+      LocalStaticFieldReference_Editor._Inline18.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        LocalStaticFieldReference_Editor._Inline19.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        LocalStaticFieldReference_Editor._Inline18.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

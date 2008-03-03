@@ -570,26 +570,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068581242868">
-    <property name="name" value="MethodCall" />
-    <property name="package" value="method" />
-    <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107217192964">
-      <property name="value" value="&lt;{methodDeclaration}&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107217203825">
-      <property name="value" value="freestanding method invocation" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1070568331956">
-      <property name="targetCardinality" value="0..n" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="methodDeclaration" />
-      <link role="target" targetNodeId="1068390468204" resolveInfo="MethodDeclaration" />
-      <link role="specializedLink" targetNodeId="1068499141037" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068581242869">
     <property name="name" value="MinusExpression" />
     <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />

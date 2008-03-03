@@ -451,7 +451,7 @@ public class Interface_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList_ == null) {
-      this.myAnnotationListHandler_annotationList_ = new Interface_Editor._RefNodeListHandler47(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList_ = new Interface_Editor._RefNodeListHandler46(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
     Interface_Editor.setupBasic_AnnotationList(editorCell, node, context);
@@ -464,7 +464,7 @@ public class Interface_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList1(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList1_ == null) {
-      this.myAnnotationListHandler_annotationList1_ = new Interface_Editor._RefNodeListHandler48(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList1_ = new Interface_Editor._RefNodeListHandler47(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
     Interface_Editor.setupBasic_AnnotationList1(editorCell, node, context);
@@ -699,9 +699,9 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler47 extends RefNodeListHandler {
+  public static class _RefNodeListHandler46 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler47(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler46(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -742,9 +742,9 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler48 extends RefNodeListHandler {
+  public static class _RefNodeListHandler47 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler48(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler47(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

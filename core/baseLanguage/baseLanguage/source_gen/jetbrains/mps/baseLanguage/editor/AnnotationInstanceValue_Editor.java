@@ -71,7 +71,7 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
   public EditorCell createKeyReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AnnotationInstanceValue_Editor._Inline23());
+    provider.setAuxiliaryCellProvider(new AnnotationInstanceValue_Editor._Inline22());
     EditorCell editorCell = provider.createEditorCell(context);
     AnnotationInstanceValue_Editor.setupBasic_KeyReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -127,9 +127,9 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline23 extends AbstractCellProvider {
+  public static class _Inline22 extends AbstractCellProvider {
 
-    public  _Inline23() {
+    public  _Inline22() {
       super();
     }
 
@@ -153,9 +153,9 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      AnnotationInstanceValue_Editor._Inline23.setupBasic_NameCell(editorCell, node, context);
+      AnnotationInstanceValue_Editor._Inline22.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        AnnotationInstanceValue_Editor._Inline23.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        AnnotationInstanceValue_Editor._Inline22.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -33,7 +33,7 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createClosureParameterReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClosureParameterReference_Editor._Inline16());
+    provider.setAuxiliaryCellProvider(new ClosureParameterReference_Editor._Inline15());
     EditorCell editorCell = provider.createEditorCell(context);
     ClosureParameterReference_Editor.setupBasic_ClosureParameterReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -60,9 +60,9 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline16 extends AbstractCellProvider {
+  public static class _Inline15 extends AbstractCellProvider {
 
-    public  _Inline16() {
+    public  _Inline15() {
       super();
     }
 
@@ -89,9 +89,9 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ClosureParameterReference_Editor._Inline16.setupBasic_NameCell(editorCell, node, context);
+      ClosureParameterReference_Editor._Inline15.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ClosureParameterReference_Editor._Inline16.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ClosureParameterReference_Editor._Inline15.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -31,7 +31,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createVariableDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new VariableReference_Editor._Inline9());
+    provider.setAuxiliaryCellProvider(new VariableReference_Editor._Inline8());
     EditorCell editorCell = provider.createEditorCell(context);
     VariableReference_Editor.setupBasic_VariableDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -58,9 +58,9 @@ public class VariableReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline9 extends AbstractCellProvider {
+  public static class _Inline8 extends AbstractCellProvider {
 
-    public  _Inline9() {
+    public  _Inline8() {
       super();
     }
 
@@ -85,9 +85,9 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      VariableReference_Editor._Inline9.setupBasic_NameCell(editorCell, node, context);
+      VariableReference_Editor._Inline8.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        VariableReference_Editor._Inline9.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        VariableReference_Editor._Inline8.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

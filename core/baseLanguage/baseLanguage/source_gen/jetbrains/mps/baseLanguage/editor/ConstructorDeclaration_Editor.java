@@ -453,7 +453,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createThrowsItemList(EditorContext context, SNode node) {
     if(this.myThrowsItemListHandler_throwsItemList_ == null) {
-      this.myThrowsItemListHandler_throwsItemList_ = new ConstructorDeclaration_Editor._RefNodeListHandler32(node, "throwsItem", context);
+      this.myThrowsItemListHandler_throwsItemList_ = new ConstructorDeclaration_Editor._RefNodeListHandler31(node, "throwsItem", context);
     }
     EditorCell_Collection editorCell = this.myThrowsItemListHandler_throwsItemList_.createCells(context, new CellLayout_Horizontal(), false);
     ConstructorDeclaration_Editor.setupBasic_ThrowsItemList(editorCell, node, context);
@@ -466,7 +466,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList_ == null) {
-      this.myAnnotationListHandler_annotationList_ = new ConstructorDeclaration_Editor._RefNodeListHandler51(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList_ = new ConstructorDeclaration_Editor._RefNodeListHandler50(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
     ConstructorDeclaration_Editor.setupBasic_AnnotationList(editorCell, node, context);
@@ -479,7 +479,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList1(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList1_ == null) {
-      this.myAnnotationListHandler_annotationList1_ = new ConstructorDeclaration_Editor._RefNodeListHandler52(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList1_ = new ConstructorDeclaration_Editor._RefNodeListHandler51(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
     ConstructorDeclaration_Editor.setupBasic_AnnotationList1(editorCell, node, context);
@@ -620,9 +620,9 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler32 extends RefNodeListHandler {
+  public static class _RefNodeListHandler31 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler32(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler31(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -669,9 +669,9 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler51 extends RefNodeListHandler {
+  public static class _RefNodeListHandler50 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler51(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler50(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -712,9 +712,9 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler52 extends RefNodeListHandler {
+  public static class _RefNodeListHandler51 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler52(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler51(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -4373,31 +4373,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141422">
-    <property name="package" value="method" />
-    <link role="concept" targetNodeId="1.1068581242868" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178192141423">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178192141424" />
-    </node>
-    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1150224867196">
-      <link role="applicableLink" targetNodeId="1.1070568331956" />
-      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1150224867197">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1150224867198">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1150224881715">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1150224907674">
-              <link role="classConcept" targetNodeId="5.~SModelSearchUtil_new" resolveInfo="SModelSearchUtil_new" />
-              <link role="baseMethodDeclaration" targetNodeId="5.~SModelSearchUtil_new.createModelAndImportedModelsScope(jetbrains.mps.smodel.SModel,boolean,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.search.ISearchScope" resolveInfo="createModelAndImportedModelsScope" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1150224910471" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1150224924864">
-                <property name="value" value="true" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1150224928444" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178551970215">
     <link role="concept" targetNodeId="1.1116615150612" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178551970216">

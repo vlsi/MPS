@@ -30,7 +30,7 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createFieldDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new FieldReferenceOperation_Editor._Inline24());
+    provider.setAuxiliaryCellProvider(new FieldReferenceOperation_Editor._Inline23());
     EditorCell editorCell = provider.createEditorCell(context);
     FieldReferenceOperation_Editor.setupBasic_FieldDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -57,9 +57,9 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline24 extends AbstractCellProvider {
+  public static class _Inline23 extends AbstractCellProvider {
 
-    public  _Inline24() {
+    public  _Inline23() {
       super();
     }
 
@@ -84,9 +84,9 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      FieldReferenceOperation_Editor._Inline24.setupBasic_NameCell(editorCell, node, context);
+      FieldReferenceOperation_Editor._Inline23.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        FieldReferenceOperation_Editor._Inline24.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        FieldReferenceOperation_Editor._Inline23.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

@@ -35,7 +35,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new NewExpression_constructorDeclaration_ReferentConstraint());
     this.myConstraints.add(new FieldReference_fieldDeclaration_ReferentConstraint());
     this.myConstraints.add(new ParameterReference_parameterDeclaration_ReferentConstraint());
-    this.myConstraints.add(new MethodCall_methodDeclaration_ReferentConstraint());
     this.myConstraints.add(new ThisExpression_classConcept_ReferentConstraint());
     this.myConstraints.add(new AnnotationInstanceValue_key_ReferentConstraint());
     this.myConstraints.add(new FieldReferenceOperation_fieldDeclaration_ReferentConstraint());

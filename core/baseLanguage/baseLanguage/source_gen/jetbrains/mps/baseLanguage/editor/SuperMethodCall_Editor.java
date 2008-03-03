@@ -152,7 +152,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new SuperMethodCall_Editor._RefNodeListHandler22(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new SuperMethodCall_Editor._RefNodeListHandler21(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     SuperMethodCall_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -165,7 +165,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createInstanceMethodDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new SuperMethodCall_Editor._Inline6());
+    provider.setAuxiliaryCellProvider(new SuperMethodCall_Editor._Inline5());
     EditorCell editorCell = provider.createEditorCell(context);
     SuperMethodCall_Editor.setupBasic_InstanceMethodDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -192,9 +192,9 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline6 extends AbstractCellProvider {
+  public static class _Inline5 extends AbstractCellProvider {
 
-    public  _Inline6() {
+    public  _Inline5() {
       super();
     }
 
@@ -219,9 +219,9 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      SuperMethodCall_Editor._Inline6.setupBasic_NameCell(editorCell, node, context);
+      SuperMethodCall_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SuperMethodCall_Editor._Inline6.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        SuperMethodCall_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -245,9 +245,9 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler22 extends RefNodeListHandler {
+  public static class _RefNodeListHandler21 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler22(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler21(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -310,8 +310,8 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      SuperMethodCall_Editor._RefNodeListHandler22.setupBasic_ConstantCell3(editorCell, node, context);
-      SuperMethodCall_Editor._RefNodeListHandler22.setupLabel_ConstantCell3(editorCell, node, context);
+      SuperMethodCall_Editor._RefNodeListHandler21.setupBasic_ConstantCell3(editorCell, node, context);
+      SuperMethodCall_Editor._RefNodeListHandler21.setupLabel_ConstantCell3(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

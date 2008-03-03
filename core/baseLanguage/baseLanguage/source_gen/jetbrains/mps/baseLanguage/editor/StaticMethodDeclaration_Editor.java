@@ -486,7 +486,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createThrowsItemList(EditorContext context, SNode node) {
     if(this.myThrowsItemListHandler_throwsItemList_ == null) {
-      this.myThrowsItemListHandler_throwsItemList_ = new StaticMethodDeclaration_Editor._RefNodeListHandler29(node, "throwsItem", context);
+      this.myThrowsItemListHandler_throwsItemList_ = new StaticMethodDeclaration_Editor._RefNodeListHandler28(node, "throwsItem", context);
     }
     EditorCell_Collection editorCell = this.myThrowsItemListHandler_throwsItemList_.createCells(context, new CellLayout_Horizontal(), false);
     StaticMethodDeclaration_Editor.setupBasic_ThrowsItemList(editorCell, node, context);
@@ -499,7 +499,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList_ == null) {
-      this.myAnnotationListHandler_annotationList_ = new StaticMethodDeclaration_Editor._RefNodeListHandler55(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList_ = new StaticMethodDeclaration_Editor._RefNodeListHandler54(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
     StaticMethodDeclaration_Editor.setupBasic_AnnotationList(editorCell, node, context);
@@ -512,7 +512,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList1(EditorContext context, SNode node) {
     if(this.myAnnotationListHandler_annotationList1_ == null) {
-      this.myAnnotationListHandler_annotationList1_ = new StaticMethodDeclaration_Editor._RefNodeListHandler56(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList1_ = new StaticMethodDeclaration_Editor._RefNodeListHandler55(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
     StaticMethodDeclaration_Editor.setupBasic_AnnotationList1(editorCell, node, context);
@@ -653,9 +653,9 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler29 extends RefNodeListHandler {
+  public static class _RefNodeListHandler28 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler29(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler28(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -702,9 +702,9 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler55 extends RefNodeListHandler {
+  public static class _RefNodeListHandler54 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler55(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler54(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -745,9 +745,9 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler56 extends RefNodeListHandler {
+  public static class _RefNodeListHandler55 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler56(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler55(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

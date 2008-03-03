@@ -140,7 +140,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
   public EditorCell createValueList(EditorContext context, SNode node) {
     if(this.myValueListHandler_valueList_ == null) {
-      this.myValueListHandler_valueList_ = new AnnotationInstance_Editor._RefNodeListHandler66(node, "value", context);
+      this.myValueListHandler_valueList_ = new AnnotationInstance_Editor._RefNodeListHandler65(node, "value", context);
     }
     EditorCell_Collection editorCell = this.myValueListHandler_valueList_.createCells(context, new CellLayout_Horizontal(), false);
     AnnotationInstance_Editor.setupBasic_ValueList(editorCell, node, context);
@@ -153,7 +153,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AnnotationInstance_Editor._Inline22());
+    provider.setAuxiliaryCellProvider(new AnnotationInstance_Editor._Inline21());
     EditorCell editorCell = provider.createEditorCell(context);
     AnnotationInstance_Editor.setupBasic_AnnotationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -180,9 +180,9 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline22 extends AbstractCellProvider {
+  public static class _Inline21 extends AbstractCellProvider {
 
-    public  _Inline22() {
+    public  _Inline21() {
       super();
     }
 
@@ -207,9 +207,9 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      AnnotationInstance_Editor._Inline22.setupBasic_NameCell(editorCell, node, context);
+      AnnotationInstance_Editor._Inline21.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        AnnotationInstance_Editor._Inline22.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        AnnotationInstance_Editor._Inline21.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -233,9 +233,9 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler66 extends RefNodeListHandler {
+  public static class _RefNodeListHandler65 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler66(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler65(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -295,8 +295,8 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      AnnotationInstance_Editor._RefNodeListHandler66.setupBasic_ConstantCell2(editorCell, node, context);
-      AnnotationInstance_Editor._RefNodeListHandler66.setupLabel_ConstantCell2(editorCell, node, context);
+      AnnotationInstance_Editor._RefNodeListHandler65.setupBasic_ConstantCell2(editorCell, node, context);
+      AnnotationInstance_Editor._RefNodeListHandler65.setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

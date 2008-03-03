@@ -30,7 +30,7 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createPropertyReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new PropertyReference_Editor._Inline25());
+    provider.setAuxiliaryCellProvider(new PropertyReference_Editor._Inline24());
     EditorCell editorCell = provider.createEditorCell(context);
     PropertyReference_Editor.setupBasic_PropertyReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -57,9 +57,9 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline25 extends AbstractCellProvider {
+  public static class _Inline24 extends AbstractCellProvider {
 
-    public  _Inline25() {
+    public  _Inline24() {
       super();
     }
 
@@ -84,9 +84,9 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      PropertyReference_Editor._Inline25.setupBasic_PropertyNameCell(editorCell, node, context);
+      PropertyReference_Editor._Inline24.setupBasic_PropertyNameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        PropertyReference_Editor._Inline25.setupLabel_PropertyNameCell((EditorCell_Label)editorCell, node, context);
+        PropertyReference_Editor._Inline24.setupLabel_PropertyNameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

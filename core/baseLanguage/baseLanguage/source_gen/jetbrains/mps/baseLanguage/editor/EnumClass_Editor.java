@@ -508,7 +508,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   public EditorCell createImplementedInterfaceList(EditorContext context, SNode node) {
     if(this.myImplementedInterfaceListHandler_implementedInterfaceList_ == null) {
-      this.myImplementedInterfaceListHandler_implementedInterfaceList_ = new EnumClass_Editor._RefNodeListHandler33(node, "implementedInterface", context);
+      this.myImplementedInterfaceListHandler_implementedInterfaceList_ = new EnumClass_Editor._RefNodeListHandler32(node, "implementedInterface", context);
     }
     EditorCell_Collection editorCell = this.myImplementedInterfaceListHandler_implementedInterfaceList_.createCells(context, new CellLayout_Vertical(), false);
     EnumClass_Editor.setupBasic_ImplementedInterfaceList(editorCell, node, context);
@@ -873,9 +873,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler33 extends RefNodeListHandler {
+  public static class _RefNodeListHandler32 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler33(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler32(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -931,8 +931,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      EnumClass_Editor._RefNodeListHandler33.setupBasic_ConstantCell2(editorCell, node, context);
-      EnumClass_Editor._RefNodeListHandler33.setupLabel_ConstantCell2(editorCell, node, context);
+      EnumClass_Editor._RefNodeListHandler32.setupBasic_ConstantCell2(editorCell, node, context);
+      EnumClass_Editor._RefNodeListHandler32.setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("<none>");
       return editorCell;
     }
