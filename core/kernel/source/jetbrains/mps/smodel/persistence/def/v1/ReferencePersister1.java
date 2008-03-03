@@ -101,12 +101,6 @@ import org.jdom.Element;
       return null;
     }
 
-//    return SReference.create(this.getRole(),
-//            this.getSourceNode(),
-//            importedModelUID,
-//            SNodeId.fromString(this.getTargetId()),
-//            this.getResolveInfo());
-
     if (this.getTargetId().equals("^")) {
       return new DynamicReference(
         this.getRole(),
@@ -182,11 +176,12 @@ import org.jdom.Element;
     String targetNodeId;
     if (reference instanceof StaticReference) {
       StaticReference staticReference = (StaticReference) reference;
-      if (staticReference.getTargetNodeId() != null) {
-        targetNodeId = staticReference.getTargetNodeId().toString();
-      } else {
-        targetNodeId = "^";
-      }
+//      if (staticReference.getTargetNodeId() != null) {
+//        targetNodeId = staticReference.getTargetNodeId().toString();
+//      } else {
+//        targetNodeId = "^";
+//      }
+      targetNodeId = String.valueOf(staticReference.getTargetNodeId());
     } else {
       targetNodeId = "^";
     }
