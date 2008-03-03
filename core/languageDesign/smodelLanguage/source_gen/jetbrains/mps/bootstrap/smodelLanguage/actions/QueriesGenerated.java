@@ -458,45 +458,6 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_1196933387032(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        Calculable calc = new Calculable() {
-
-          public Object calculate() {
-            return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(_context.getParentNode()), operationContext.getScope(), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
-          }
-
-        };
-        Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        assert queryResult != null;
-        for(final SNode item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType", null);
-              SLinkOperations.setTarget(result, "concept", (item), false);
-              return result;
-            }
-
-            public String getMatchingText(String pattern) {
-              return "snode<" + SPropertyOperations.getString((item), "name") + ">";
-            }
-
-            public String getDescriptionText(String pattern) {
-              return SNodeOperations.getModel((item)).getUID().getCompactPresentation();
-            }
-
-          });
-        }
-      }
-    }
-    return result;
-  }
-
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1196936340075(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
