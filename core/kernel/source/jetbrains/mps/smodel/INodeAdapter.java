@@ -64,11 +64,6 @@ public interface INodeAdapter {
 
   void addPrevSibling(INodeAdapter a);
 
-  /**
-   * @deprecated
-   */
-  boolean hasConceptProperty(String propertyName, IScope scope);
-
   boolean hasConceptProperty(String propertyName);
 
   String getConceptProperty(String propertyName);

@@ -185,13 +185,6 @@ public abstract class BaseAdapter implements INodeAdapter {
     myNode.addPrevSibling(a.getNode());
   }
 
-  /**
-   * @deprecated
-   */
-  public boolean hasConceptProperty(String propertyName, IScope scope) {
-    return myNode.hasConceptProperty(propertyName);
-  }
-
   public boolean hasConceptProperty(String propertyName) {
     return myNode.hasConceptProperty(propertyName);
   }
