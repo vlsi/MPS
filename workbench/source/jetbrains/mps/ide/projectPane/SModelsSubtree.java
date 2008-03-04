@@ -19,7 +19,6 @@ public class SModelsSubtree {
     List<SModelDescriptor> regularModels = new ArrayList<SModelDescriptor>();
     List<SModelDescriptor> javaStubs = new ArrayList<SModelDescriptor>();
 
-    Map<String, List<SModelDescriptor>> stereotypes = new HashMap<String, List<SModelDescriptor>>();
     IModule module = operationContext.getModule();
     assert module != null;
     for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
