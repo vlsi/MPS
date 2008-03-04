@@ -26,6 +26,7 @@ public class EquationManager {
   private static Logger LOG = Logger.getLogger(EquationManager.class);
 
   private static final boolean PREPARE_TYPES = false;
+  private static final boolean COLLECT_WHEN_CONCRETES = false;
   private TypeChecker myTypeChecker;
 
   private Map<IWrapper, Map<IWrapper, ErrorInfo>> mySubtypesToSupertypesMap = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
@@ -221,7 +222,7 @@ public class EquationManager {
       }
     }
 
-     // if one of them is a var
+    // if one of them is a var
     RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
     RuntimeTypeVariable varSupertype = supertypeRepresentator == null ? null : supertypeRepresentator.getVariable();
     Set<SNodePointer> vars = myNonConcreteVars.get(subtypeRepresentator);
@@ -735,6 +736,7 @@ public class EquationManager {
     boolean hasConcreteTypes = true;
 
     while (hasConcreteTypes) {
+      startCollectingConcretes();
       hasConcreteTypes = false;
       for (IWrapper type : types) {
         if (type == null) continue;
@@ -751,6 +753,7 @@ public class EquationManager {
           hasConcreteTypes = true;
         }
       }
+      processConcretes();
       types = subtypingGraphVertices();
     }
 
@@ -1050,15 +1053,19 @@ public class EquationManager {
   }
 
   private void processConcretes() {
-    for (WhenConcreteEntity whenConcreteEntity : myCollectedWhenConcreteEntities) {
-      whenConcreteEntity.run();
+    if (COLLECT_WHEN_CONCRETES) {
+      for (WhenConcreteEntity whenConcreteEntity : myCollectedWhenConcreteEntities) {
+        whenConcreteEntity.run();
+      }
     }
     myCollectedWhenConcreteEntities.clear();
     myCollectConcretes = false;
   }
 
   private void startCollectingConcretes() {
-    myCollectConcretes = true;
+    if (COLLECT_WHEN_CONCRETES) {
+      myCollectConcretes = true;
+    }
   }
 
 
