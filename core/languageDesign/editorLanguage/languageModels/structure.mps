@@ -47,6 +47,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1073389214265">
     <property name="name" value="EditorCellModel" />
     <property name="package" value="CellModel" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1173470701199">
       <link role="intfc" targetNodeId="3.1169194658468" />
     </node>

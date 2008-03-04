@@ -227,6 +227,18 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1204631137547">
+      <property name="name" value="useHorizontalInspector" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1204631139973" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204631137549">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204631153383">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204631155245">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1180102191498">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180102191499" />
     </node>

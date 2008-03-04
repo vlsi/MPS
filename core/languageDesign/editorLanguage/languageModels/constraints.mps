@@ -2058,5 +2058,25 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201269997857" />
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.core.constraints" />
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1204631254084">
+    <property name="package" value="CellModel" />
+    <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1204631291627">
+      <property name="name" value="useHorizontalInspector" />
+      <link role="overriddenMethod" targetNodeId="2v.1204631137547" resolveInfo="useHorizontalInspector" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204631291629">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204631299439">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204631300628">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1204631294068" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1204631254085">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204631254086" />
+    </node>
+  </node>
 </model>
 
