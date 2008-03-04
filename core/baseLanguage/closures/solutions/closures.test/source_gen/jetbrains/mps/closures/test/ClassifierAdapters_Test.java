@@ -165,20 +165,18 @@ __switch__:
   public void test_instanceMethodCall() throws Exception {
     Assert.assertEquals("1234", this.makeWork(new Worker() {
 
-      public String doWork(Integer iiiiiiiiiiii) {
-        return String.valueOf(iiiiiiiiiiii);
+      public String doWork(Integer i) {
+        return String.valueOf(i);
       }
 
     }, 1234));
-    /*
-      Assert.assertEquals("4321", this.makeWork(new FunctionTypes._R_from_T <String, Integer>() {
+    Assert.assertEquals("4321", this.makeWork(new Worker() {
 
-        public String invoke(Integer xxxxxxxxxxx) {
-          return String.valueOf(xxxxxxxxxxx);
-        }
+      public String doWork(Integer i) {
+        return String.valueOf(i);
+      }
 
-      }, 4321));
-    */
+    }, 4321));
   }
 
   public void test_closureLiteralAsComparator() throws Exception {

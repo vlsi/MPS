@@ -3730,7 +3730,7 @@
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204637272603" />
               <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204637272605">
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204637272606">
-                  <property name="name" value="iiiiiiiiiiii" />
+                  <property name="name" value="i" />
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1204637272607" />
                 </node>
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204637272608">
@@ -3750,35 +3750,33 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1204646140358">
-            <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1204637275914">
-              <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204637276969">
-                <property name="value" value="4321" />
-              </node>
-              <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204637282819">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204637282820" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204637282821">
-                  <link role="baseMethodDeclaration" targetNodeId="1204637135743" resolveInfo="makeWork" />
-                  <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204637282822">
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204637282823">
-                      <property name="name" value="xxxxxxxxxxx" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1204637282824" />
-                    </node>
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204637282825">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204637282826">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204637282827">
-                          <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
-                          <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204637282828">
-                            <link role="variableDeclaration" targetNodeId="1204637282823" resolveInfo="i" />
-                          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1204637275914">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204637276969">
+              <property name="value" value="4321" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204637282819">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204637282820" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204637282821">
+                <link role="baseMethodDeclaration" targetNodeId="1204637135743" resolveInfo="makeWork" />
+                <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204637282822">
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204637282823">
+                    <property name="name" value="i" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1204637282824" />
+                  </node>
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204637282825">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204637282826">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204637282827">
+                        <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
+                        <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204637282828">
+                          <link role="variableDeclaration" targetNodeId="1204637282823" resolveInfo="i" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204637282829">
-                    <property name="value" value="4321" />
-                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204637282829">
+                  <property name="value" value="4321" />
                 </node>
               </node>
             </node>
