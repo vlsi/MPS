@@ -1395,9 +1395,9 @@
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176717082039">
                     <link role="classConcept" targetNodeId="13.~EditorCellTags" resolveInfo="EditorCellTags" />
                     <link role="baseMethodDeclaration" targetNodeId="13.~EditorCellTags.getOpeningText(jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel):java.lang.String" resolveInfo="getOpeningText" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1176717082040">
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176717082041" />
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176717082042" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721614">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176717082042" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176717082041" />
                     </node>
                   </node>
                 </node>
@@ -1442,9 +1442,9 @@
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176717095684">
                     <link role="classConcept" targetNodeId="13.~EditorCellTags" resolveInfo="EditorCellTags" />
                     <link role="baseMethodDeclaration" targetNodeId="13.~EditorCellTags.getOpeningText(jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel):java.lang.String" resolveInfo="getOpeningText" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1176717095685">
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176717095686" />
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176717095687" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721374">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176717095687" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176717095686" />
                     </node>
                   </node>
                 </node>
@@ -5910,9 +5910,9 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176475981469">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1176476477521">
                     <link role="baseMethodDeclaration" targetNodeId="13.~SelectImageFileButton.&lt;init&gt;(jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Image)" resolveInfo="SelectImageFileButton" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1176476525811">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176476522569" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176476527315" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721948">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176476522569" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176476527315" />
                     </node>
                   </node>
                 </node>
@@ -7334,9 +7334,9 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176718844748">
                 <link role="baseMethodDeclaration" targetNodeId="13.~EditorCellTags.getOpeningText(jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel):java.lang.String" resolveInfo="getOpeningText" />
                 <link role="classConcept" targetNodeId="13.~EditorCellTags" resolveInfo="EditorCellTags" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1176718848985">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176718846155" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176718849783" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721559">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176718846155" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176718849783" />
                 </node>
               </node>
             </node>
@@ -7381,9 +7381,9 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176718817382">
                 <link role="baseMethodDeclaration" targetNodeId="13.~EditorCellTags.getClosingText(jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel):java.lang.String" resolveInfo="getClosingText" />
                 <link role="classConcept" targetNodeId="13.~EditorCellTags" resolveInfo="EditorCellTags" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1176718821423">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176718818946" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176718822267" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721397">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1176718818946" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176718822267" />
                 </node>
               </node>
             </node>
@@ -7608,11 +7608,11 @@
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1176889000874">
               <link role="baseMethodDeclaration" targetNodeId="22.~EditorCellModel.getSelectable():jetbrains.mps.bootstrap.editorLanguage.structure._YesNoDefault_Enum" resolveInfo="getSelectable" />
-              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1176888992892">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1176888991077">
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721534">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1176888991077">
                   <link role="variableDeclaration" targetNodeId="1176888932798" resolveInfo="cellModel" />
                 </node>
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176888993581" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1176888993581" />
               </node>
             </node>
           </node>

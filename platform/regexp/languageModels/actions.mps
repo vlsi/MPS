@@ -941,11 +941,11 @@
                     <link role="classConcept" targetNodeId="9.~ModelConstraintsUtil" resolveInfo="ModelConstraintsUtil" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1186083130909" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1186083134880" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1186083208101">
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1186083209589" />
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1186083170725">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721567">
+                      <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1186083170725">
                         <link role="conceptDeclaration" targetNodeId="1.1174909099093" />
                       </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1186083209589" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186083231871">
                       <property name="value" value="match" />

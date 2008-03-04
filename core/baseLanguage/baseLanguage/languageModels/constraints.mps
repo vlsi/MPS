@@ -1768,9 +1768,9 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1189552684793">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1189552688124">
             <link role="baseMethodDeclaration" targetNodeId="10.~VisibleClassifierMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.Classifier,jetbrains.mps.smodel.SNode,int)" resolveInfo="VisibleClassifierMembersScope" />
-            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1189552789853">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1189552792044" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1189552727798" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721486">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1189552727798" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1189552792044" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1189552771538">
               <link role="variableDeclaration" targetNodeId="1189552740066" resolveInfo="contextNode" />
@@ -3237,15 +3237,15 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202868702619">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1190321153136">
               <link role="baseMethodDeclaration" targetNodeId="32.~StaticMethodCall_StaticMethodScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.ClassConcept,jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall)" resolveInfo="StaticMethodCall_StaticMethodScope" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1190321203150">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190321204591" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1190321190241">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721751">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1190321190241">
                   <link role="variableDeclaration" targetNodeId="1189556848981" resolveInfo="clazz" />
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190321204591" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1190321207060">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190321209063" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190321199259" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721478">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190321199259" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190321209063" />
               </node>
             </node>
           </node>
@@ -3523,15 +3523,15 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1190151837666">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1190151858199">
               <link role="baseMethodDeclaration" targetNodeId="32.~InstanceMethodCall_InstanceMethodScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.ClassifierType,jetbrains.mps.baseLanguage.structure.InstanceMethodCall)" resolveInfo="InstanceMethodCall_InstanceMethodScope" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1190151937426">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190151937427" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1190151937430">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721833">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1190151937430">
                   <link role="variableDeclaration" targetNodeId="1179960832522" resolveInfo="classifierType" />
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190151937427" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1190151952386">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190151954218" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190151950839" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672722009">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190151950839" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190151954218" />
               </node>
             </node>
           </node>
@@ -3701,18 +3701,18 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1190320970035">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1190320970036">
               <link role="baseMethodDeclaration" targetNodeId="32.~StaticMethodCall_StaticMethodScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.ClassConcept,jetbrains.mps.baseLanguage.structure.StaticMethodCall)" resolveInfo="StaticMethodCall_StaticMethodScope" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1190321018654">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190321021016" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977957161">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721297">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977957161">
                   <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190321010343" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1190321016191">
                     <link role="link" targetNodeId="1.1144433194310" />
                   </node>
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190321021016" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1190321039897">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190321043353" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190321025677" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721480">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190321025677" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190321043353" />
               </node>
             </node>
           </node>
@@ -3802,15 +3802,15 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1189544787010">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1189549295968">
               <link role="baseMethodDeclaration" targetNodeId="32.~SuperMethodCall_InstanceMethodScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.Classifier,jetbrains.mps.baseLanguage.structure.SuperMethodCall)" resolveInfo="SuperMethodCall_InstanceMethodScope" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1189549295969">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1189549295970" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1189549295971">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721891">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1189549295971">
                   <link role="variableDeclaration" targetNodeId="1189544538257" resolveInfo="superclass" />
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1189549295970" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1190152059061">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190152061267" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190152050357" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721506">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190152050357" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190152061267" />
               </node>
             </node>
           </node>
@@ -4087,9 +4087,9 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1188411626000">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1188411626001">
               <link role="baseMethodDeclaration" targetNodeId="32.~NewExpression_ClassConstructorScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.NewExpression,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope)" resolveInfo="NewExpression_ClassConstructorScope" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1190137910787">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190137913681" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190137908849" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721329">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" id="1190137908849" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1190137913681" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1188411709999" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1188411718501" />
@@ -4147,9 +4147,8 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1189546699121">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1189546704701">
               <link role="baseMethodDeclaration" targetNodeId="10.~VisibleClassifierMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.Classifier,jetbrains.mps.smodel.SNode,int)" resolveInfo="VisibleClassifierMembersScope" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1189546749852">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1189546750839" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977957141">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721246">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977957141">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1189546743190">
                     <link role="variableDeclaration" targetNodeId="1179960359445" resolveInfo="classifierType" />
                   </node>
@@ -4157,6 +4156,7 @@
                     <link role="link" targetNodeId="1.1107535924139" />
                   </node>
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1189546750839" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1189546772515" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1189546784611">
@@ -6715,9 +6715,8 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197029820939">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1197029820940">
               <link role="baseMethodDeclaration" targetNodeId="10.~VisibleClassifierMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.Classifier,jetbrains.mps.smodel.SNode,int)" resolveInfo="VisibleClassifierMembersScope" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197029820941">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1197029922757" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967898">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721399">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967898">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197029919519">
                     <link role="variableDeclaration" targetNodeId="1197029820932" resolveInfo="classifierType" />
                   </node>
@@ -6725,6 +6724,7 @@
                     <link role="link" targetNodeId="1.1107535924139" />
                   </node>
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1197029922757" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1197029924465" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1197029820947">
@@ -7873,18 +7873,18 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1202952192763">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1202952192764">
               <link role="baseMethodDeclaration" targetNodeId="32.~InstanceMethodCall_InstanceMethodScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.ClassifierType,jetbrains.mps.baseLanguage.structure.DotExpression)" resolveInfo="InstanceMethodCall_InstanceMethodScope" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202952192765">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1202952192766" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202952192767">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721429">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202952192767">
                   <link role="variableDeclaration" targetNodeId="1202952099876" resolveInfo="classifierType" />
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1202952192766" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1202952192768">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1202952192769" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1203009828735">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721827">
+                <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1203009828735">
                   <link role="concept" targetNodeId="1.1197027756228" resolveInfo="OperationExpression" />
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1203009828736" />
                 </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1202952192769" />
               </node>
             </node>
           </node>

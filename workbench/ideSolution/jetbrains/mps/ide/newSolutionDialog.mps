@@ -707,11 +707,11 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203609578307">
               <link role="variableDeclaration" targetNodeId="1203608561247" resolveInfo="solutionDescriptorFile" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1203609585060">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1203609586438" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203609582621">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721538">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203609582621">
                 <link role="variableDeclaration" targetNodeId="1203609286777" resolveInfo="solutionDescriptor" />
               </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1203609586438" />
             </node>
           </node>
         </node>

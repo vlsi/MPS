@@ -35,9 +35,9 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1177765735896">
             <link role="baseMethodDeclaration" targetNodeId="6.~RegexpProcessor.toString(jetbrains.mps.regexp.structure.Regexp):java.lang.String" resolveInfo="toString" />
             <link role="classConcept" targetNodeId="6.~RegexpProcessor" resolveInfo="RegexpProcessor" />
-            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1177765740165">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1177765737398" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1177765740838" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721380">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1177765737398" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1177765740838" />
             </node>
           </node>
         </node>
@@ -383,11 +383,11 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1188912177252">
             <link role="classConcept" targetNodeId="6.~RegexpProcessor" resolveInfo="RegexpProcessor" />
             <link role="baseMethodDeclaration" targetNodeId="6.~RegexpProcessor.toString(jetbrains.mps.regexp.structure.Regexp,java.util.List):java.lang.String" resolveInfo="toString" />
-            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1188912180191">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1188912181366" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188912179597">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721912">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188912179597">
                 <link role="variableDeclaration" targetNodeId="1188912109183" resolveInfo="container" />
               </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1188912181366" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188912187306">
               <link role="variableDeclaration" targetNodeId="1188912126382" resolveInfo="parens" />
@@ -404,9 +404,9 @@
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1188912220639">
                 <link role="variableDeclaration" targetNodeId="1188912126382" resolveInfo="parens" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1188912224020">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1188912224913" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1188912223706" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721970">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1188912223706" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1188912224913" />
               </node>
             </node>
           </node>

@@ -3015,11 +3015,11 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170386370728">
               <link role="classifier" targetNodeId="13.~IfStatement" resolveInfo="IfStatement" />
             </node>
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1170385770905">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1170385769685">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721449">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1170385769685">
                 <link role="variableDeclaration" targetNodeId="1170385759464" resolveInfo="node" />
               </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1170385773547" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1170385773547" />
             </node>
           </node>
         </node>
@@ -3320,11 +3320,11 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178552852311">
               <link role="classifier" targetNodeId="4.~INodeAdapter" resolveInfo="INodeAdapter" />
             </node>
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1178552830314">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178552827747">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721966">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178552827747">
                 <link role="variableDeclaration" targetNodeId="1173133388685" resolveInfo="concept1" />
               </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1178552849257" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1178552849257" />
             </node>
           </node>
         </node>
