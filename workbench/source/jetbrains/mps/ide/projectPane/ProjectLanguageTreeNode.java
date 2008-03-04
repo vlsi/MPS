@@ -115,7 +115,8 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       this.add(generatorNode);
     }
 
-    TextTreeNode allModels = new TextTreeNode("All models");
+    TextTreeNode allModels = new TextTreeNode("all models");
+    allModels.setIcon(Icons.PROJECT_MODELS_ICON);
     SModelsSubtree.create(allModels, getOperationContext());
     this.add(allModels);
   }
