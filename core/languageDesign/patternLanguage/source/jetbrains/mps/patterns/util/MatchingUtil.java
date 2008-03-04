@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.logging.Logger;
 
 import java.util.Iterator;
 import java.util.List;
@@ -20,7 +21,7 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class MatchingUtil {
-
+  private static Logger LOG = Logger.getLogger(MatchingUtil.class);
 
   public static boolean matchNodes(SNode node1, SNode node2) {
     return matchNodes(node1, node2, IMatchModifier.DEFAULT, true);
@@ -38,9 +39,19 @@ public class MatchingUtil {
     for (String propertyName : propertyNames) {
       AbstractConceptDeclaration typeDeclaration = node1.getConceptDeclarationAdapter();
       PropertyDeclaration propertyDeclaration = SModelSearchUtil_new.findPropertyDeclaration(typeDeclaration, propertyName);
-      PropertySupport propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
-      if (!EqualUtil.equals(propertySupport.fromInternalValue(node1.getProperty(propertyName)),
-              propertySupport.fromInternalValue(node2.getProperty(propertyName)))) return false;
+      String propertyValue1 = node1.getProperty(propertyName);
+      String propertyValue2 = node2.getProperty(propertyName);
+      if (propertyDeclaration == null) {
+        LOG.error("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration);
+        LOG.error("try to compare just properties' internal values");
+        if (!EqualUtil.equals(propertyValue1, propertyValue2))                 {
+          return false;
+        }
+      } else {
+        PropertySupport propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
+        if (!EqualUtil.equals(propertySupport.fromInternalValue(propertyValue1),
+          propertySupport.fromInternalValue(propertyValue2))) return false;
+      }
     }
 
     //-- matching references
@@ -49,10 +60,10 @@ public class MatchingUtil {
     for (String role : referenceRoles) {
       SNode target1 = node1.getReferent(role);
       SNode target2 = node2.getReferent(role);
-       if (matchModifier.accept(target1, target2)) {
-          matchModifier.performAction(target1, target2);
-          continue;
-        }
+      if (matchModifier.accept(target1, target2)) {
+        matchModifier.performAction(target1, target2);
+        continue;
+      }
       if (target2 != target1) return false;
     }
 
@@ -84,7 +95,7 @@ public class MatchingUtil {
         }
         if (!matchNodes(child1, child2)) return false;
       }
-    }  
+    }
 
     return true;
   }
