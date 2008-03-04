@@ -52,6 +52,12 @@ public class TabbedEditor implements IEditor {
         }
       }
     }, KeyStroke.getKeyStroke("alt shift RIGHT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        myTabbedPane.getCurrentTab().createNewItem();
+      }
+    }, KeyStroke.getKeyStroke("INSERT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
   public void registerKeyboardAction(ActionListener anAction, KeyStroke aKeyStroke, int aCondition) {
