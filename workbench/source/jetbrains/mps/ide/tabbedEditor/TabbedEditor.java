@@ -15,6 +15,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.util.*;
 
 public class TabbedEditor implements IEditor {
@@ -29,6 +30,28 @@ public class TabbedEditor implements IEditor {
   public TabbedEditor(IOperationContext context, SNode node) {
     myOperationContext = context;
     myNodePointer = new SNodePointer(node);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        int currentTab = myTabbedPane.getCurrentTabIndex();
+        if (currentTab != 0) {
+          selectTab(currentTab - 1);
+        } else {
+          selectTab(myTabbedPane.getTabs().size() - 1);
+        }
+      }
+    }, KeyStroke.getKeyStroke("alt shift LEFT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        int currentTab = myTabbedPane.getCurrentTabIndex();
+        if (currentTab != myTabbedPane.getTabs().size() - 1) {
+          selectTab(currentTab + 1);
+        } else {
+          selectTab(0);
+        }
+      }
+    }, KeyStroke.getKeyStroke("alt shift RIGHT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
   public void registerKeyboardAction(ActionListener anAction, KeyStroke aKeyStroke, int aCondition) {
