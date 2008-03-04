@@ -4,6 +4,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.projectPane.SModelsSubtree.JavaStubsTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
@@ -136,44 +137,6 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
       add(newChild);
 
       return newChild.getSubnamespace(otherElements);
-    }
-
-
-
-    public JPopupMenu getPopupMenu() {
-      JPopupMenu result = new JPopupMenu();
-
-      String stereotype = "";
-      MPSTreeNode current = this;
-      IOperationContext operationContext = null;
-
-      while (true) {
-        if (current == null) {
-          return null;
-        }
-
-        if (current instanceof SModelsSubtree.ModelsGroupTreeNode) {
-          stereotype = current.toString();
-          operationContext = ((SModelsSubtree.ModelsGroupTreeNode) current).getOperationContext();
-          break;
-        }
-
-        current = (MPSTreeNode) current.getParent();
-      }
-
-
-      ActionContext context = new ActionContext(operationContext);
-      IModule module = operationContext.getModule();
-      if (module instanceof Solution) {
-        Solution solution = (Solution) module;
-        context.put(Solution.class, solution);
-        if (stereotype.equals("<" + SModelStereotype.JAVA_STUB + ">")) {
-          ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_STUBS_ACTIONS).add(result, context);
-        } else {
-          ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_MODELS_ACTIONS).add(result, context);
-        }
-      }
-      return result;
     }
 
     public String getName() {

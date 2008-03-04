@@ -14,16 +14,10 @@ import jetbrains.mps.smodel.*;
 import javax.swing.JPopupMenu;
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Aug 25, 2005
- * Time: 5:20:32 PM
- * To change this template use File | Settings | File Templates.
- */
 public class SModelsSubtree {
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
-    List<MPSTreeNode> list = new LinkedList<MPSTreeNode>();
+    List<SModelDescriptor> regularModels = new ArrayList<SModelDescriptor>();
+    List<SModelDescriptor> javaStubs = new ArrayList<SModelDescriptor>();
 
     Map<String, List<SModelDescriptor>> stereotypes = new HashMap<String, List<SModelDescriptor>>();
     IModule module = operationContext.getModule();
@@ -37,91 +31,39 @@ public class SModelsSubtree {
         stereotype = ".";
       }
 
-      List<SModelDescriptor> modelDescriptors = stereotypes.get(stereotype);
-      if (modelDescriptors == null) {
-        modelDescriptors = new LinkedList<SModelDescriptor>();
-        stereotypes.put(stereotype, modelDescriptors);
+      if (SModelStereotype.JAVA_STUB.equals(stereotype)) {
+        javaStubs.add(modelDescriptor);
+      } else {
+        regularModels.add(modelDescriptor);
       }
-      modelDescriptors.add(modelDescriptor);
     }
 
-    // create "root" for each stereotype
-    Set<String> sortedStereotypes = new TreeSet<String>(stereotypes.keySet());
-    for (String stereotype : sortedStereotypes) {
-      List<SModelDescriptor> modelDescriptors = stereotypes.get(stereotype);
-      ModelsGroupTreeNode stereotypedModelsNode = new ModelsGroupTreeNode("<" + stereotype + ">", operationContext);
-      list.add(stereotypedModelsNode);
-      stereotypedModelsNode.addAll(modelDescriptors);
-    }
 
-    for (MPSTreeNode treeNode : list) {
-      rootTreeNode.add(treeNode);
+    SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
+    for (SModelDescriptor md : SortUtil.sortModels(regularModels)) {
+      builder.addNode(new SModelTreeNode(md, null, operationContext, false));
+    }
+    builder.fillNode(rootTreeNode);
+
+    if (!javaStubs.isEmpty()) {
+      builder = new SModelNamespaceTreeBuilder();
+      for (SModelDescriptor md : SortUtil.sortModels(javaStubs)) {
+        builder.addNode(new SModelTreeNode(md, null, operationContext, false));
+      }
+
+      JavaStubsTreeNode javaStubsNode = new JavaStubsTreeNode(operationContext);
+      builder.fillNode(javaStubsNode);
+      
+      rootTreeNode.add(javaStubsNode);
     }
   }
 
 
-  public static class ModelsGroupTreeNode extends TextTreeNode {
-    private List<SModelDescriptor> myDescriptors = new ArrayList<SModelDescriptor>();
-    private boolean myInitialized = false;
-
-    public ModelsGroupTreeNode(String text, IOperationContext context) {
-      super(text, context);
+  public static class JavaStubsTreeNode extends TextTreeNode {
+    public JavaStubsTreeNode(IOperationContext context) {
+      super("Java Stubs", context);
 
       setIcon(Icons.PROJECT_MODELS_ICON);
-    }
-
-    public void addAll(List<SModelDescriptor> modelDescriptor) {
-      myDescriptors.addAll(modelDescriptor);
-    }
-
-    public boolean isInitialized() {
-      return myInitialized;
-    }              
-
-    protected void doInit() {
-      if (myInitialized) return;
-
-      NamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
-
-      for (SModelDescriptor md : SortUtil.sortModels(myDescriptors)) {
-        builder.addNode(new SModelTreeNode(md, null, getOperationContext(), false));
-      }
-
-      builder.fillNode(this);
-
-      myInitialized = true;
-    }
-
-    public JPopupMenu getQuickCreatePopupbMenu() {
-      IModule module = getOperationContext().getModule();
-      if ((module instanceof Solution || module instanceof Generator) &&
-              !toString().equals("<" + SModelStereotype.JAVA_STUB + ">")) {
-        ActionContext context = new ActionContext(getOperationContext());
-        context.put(IModule.class, module);
-        JPopupMenu popupMenu = new JPopupMenu();
-        MPSAction action = new NewModelAction();
-        action.update(context);
-        action.add(popupMenu, context);
-        return popupMenu;
-      }
-      return null;
-    }
-
-    public JPopupMenu getPopupMenu() {
-      JPopupMenu result = new JPopupMenu();
-
-      ActionContext context = new ActionContext(getOperationContext());
-      IModule module = getOperationContext().getModule();
-      if (module instanceof Solution) {
-        Solution solution = (Solution) module;
-        context.put(Solution.class, solution);
-        if (toString().equals("<" + SModelStereotype.JAVA_STUB + ">")) {
-          ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_STUBS_ACTIONS).add(result, context);
-        } else {
-          ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_MODELS_ACTIONS).add(result, context);
-        }
-      }
-      return result;
     }
   }
 }
