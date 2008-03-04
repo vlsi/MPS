@@ -123,19 +123,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private List<RebuildListener> myRebuildListeners;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
-
-//  private Color myBackground = Color.white;
-
   private final IGutterMessageOwner myOwner = new IGutterMessageOwner() {
   };
-//  private CellSpeedSearch myCellSpeedSearch;
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
   private AbstractAction myShowIntentionsAction;
   private LightBulbMenu myLightBulb;
-
-  //private List<Intention> myAvailableIntentions = new ArrayList<Intention>();
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -182,6 +176,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     //    myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
     myContainer = new JPanel();
+    myContainer.setMinimumSize(new Dimension(0, 0));
     myContainer.setLayout(new BorderLayout());
     myContainer.add(myScrollPane, BorderLayout.CENTER);
 
