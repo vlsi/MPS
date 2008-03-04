@@ -18,19 +18,15 @@ import java.awt.GridBagConstraints;
  * Time: 17:49:18
  * To change this template use File | Settings | File Templates.
  */
-public class ChooseModelDescriptorComponent extends JPanel implements IChooseComponent<SModelDescriptor> {
+public class ChooseModelDescriptorComponent implements IChooseComponent<SModelDescriptor> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 
   public ChooseModelDescriptorComponent(String caption, String propertyName, ActionContext actionContext) {
     myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(caption, propertyName, actionContext, null, true, false);
-    setLayout(new GridBagLayout());
-    GridBagConstraints constraints = new GridBagConstraints();
-    constraints.gridx = 0;
-    constraints.gridy = 0;
-    constraints.fill = GridBagConstraints.BOTH;
-    constraints.weightx = 1;
-    constraints.weighty = 1;
-    add(myChooseNodeOrModelComponent, constraints);
+  }
+
+   public ChooseModelDescriptorComponent(String caption, ActionContext actionContext) {
+    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(caption, actionContext, null, true, false);
   }
 
   public SModelDescriptor submit() throws InvalidInputValueException {
@@ -39,6 +35,10 @@ public class ChooseModelDescriptorComponent extends JPanel implements IChooseCom
 
   public String getPropertyName() {
     return myChooseNodeOrModelComponent.getPropertyName();
+  }
+
+  public void setPropertyName(String propertyName) {
+    myChooseNodeOrModelComponent.setPropertyName(propertyName);
   }
 
   public void setInitialValue(SModelDescriptor initialValue) {
@@ -51,5 +51,9 @@ public class ChooseModelDescriptorComponent extends JPanel implements IChooseCom
 
   public JComponent getComponentToFocus() {
     return myChooseNodeOrModelComponent.getComponentToFocus();
+  }
+
+  public JComponent getMainComponent() {
+    return myChooseNodeOrModelComponent;
   }
 }

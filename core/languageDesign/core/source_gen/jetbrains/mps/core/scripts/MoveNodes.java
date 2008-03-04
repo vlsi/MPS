@@ -36,11 +36,9 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.refactoring.framework.IChooseComponentPart;
-import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
+import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
 import java.util.ArrayList;
-import jetbrains.mps.refactoring.framework.ChooseComponentWithName;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
 public class MoveNodes extends AbstractLoggableRefactoring {
@@ -184,8 +182,8 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public IChooseComponentPart<Object> target_componentCreator(ActionContext actionContext) {
-    return new ChooseNodeOrModelComponent("choose target", "target", actionContext, null, true, true);
+  public IChooseComponent<Object> target_componentCreator(ActionContext actionContext) {
+    return new ChooseNodeOrModelComponent("choose target", actionContext, null, true, true);
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
@@ -194,7 +192,8 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       List<IChooseComponent> components = new ArrayList<IChooseComponent>();
       {
         IChooseComponent<Object> chooseComponent;
-        chooseComponent = new ChooseComponentWithName<Object>("target", this.target_componentCreator(actionContext));
+        chooseComponent = this.target_componentCreator(actionContext);
+        chooseComponent.setPropertyName("target");
         components.add(chooseComponent);
       }
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);

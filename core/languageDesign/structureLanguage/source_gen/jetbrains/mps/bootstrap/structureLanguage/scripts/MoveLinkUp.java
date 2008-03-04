@@ -31,11 +31,9 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
-import jetbrains.mps.refactoring.framework.IChooseComponentPart;
+import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
-import jetbrains.mps.refactoring.framework.IChooseComponent;
-import jetbrains.mps.refactoring.framework.ChooseComponentWithName;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
 public class MoveLinkUp extends AbstractLoggableRefactoring {
@@ -153,7 +151,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public IChooseComponentPart<SNode> targetConcept_componentCreator(ActionContext actionContext) {
+  public IChooseComponent<SNode> targetConcept_componentCreator(ActionContext actionContext) {
     SNode node = actionContext.getNode();
     SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
     return new HierarchicalChooseNodeComponent("choose target concept", "targetConcept", actionContext, new ConceptAncestorsProvider(), abstractConceptDeclaration);
@@ -165,7 +163,8 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
       List<IChooseComponent> components = new ArrayList<IChooseComponent>();
       {
         IChooseComponent<SNode> chooseComponent;
-        chooseComponent = new ChooseComponentWithName<SNode>("targetConcept", this.targetConcept_componentCreator(actionContext));
+        chooseComponent = this.targetConcept_componentCreator(actionContext);
+        chooseComponent.setPropertyName("targetConcept");
         components.add(chooseComponent);
       }
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);

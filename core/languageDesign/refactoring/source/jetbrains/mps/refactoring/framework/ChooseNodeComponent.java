@@ -17,19 +17,11 @@ import java.awt.GridBagConstraints;
  * Time: 20:04:41
  * To change this template use File | Settings | File Templates.
  */
-public class ChooseNodeComponent extends JPanel implements IChooseComponent<SNode> {
+public class ChooseNodeComponent implements IChooseComponent<SNode> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 
   public ChooseNodeComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName) {
     myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(caption, propertyName, actionContext, conceptFQName, false, true);
-    setLayout(new GridBagLayout());
-    GridBagConstraints constraints = new GridBagConstraints();
-    constraints.gridx = 0;
-    constraints.gridy = 0;
-    constraints.fill = GridBagConstraints.BOTH;
-    constraints.weightx = 1;
-    constraints.weighty = 1;
-    add(myChooseNodeOrModelComponent, constraints);
   }
 
   public SNode submit() throws InvalidInputValueException {
@@ -38,6 +30,10 @@ public class ChooseNodeComponent extends JPanel implements IChooseComponent<SNod
 
   public String getPropertyName() {
     return myChooseNodeOrModelComponent.getPropertyName();
+  }
+
+  public void setPropertyName(String propertyName) {
+    myChooseNodeOrModelComponent.setPropertyName(propertyName);
   }
 
   public void setInitialValue(SNode initialValue) {
@@ -50,5 +46,9 @@ public class ChooseNodeComponent extends JPanel implements IChooseComponent<SNod
 
   public JComponent getComponentToFocus() {
     return myChooseNodeOrModelComponent.getComponentToFocus();
+  }
+
+  public JComponent getMainComponent() {
+    return myChooseNodeOrModelComponent;
   }
 }

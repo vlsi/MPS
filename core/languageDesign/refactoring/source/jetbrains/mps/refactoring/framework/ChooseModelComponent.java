@@ -18,19 +18,11 @@ import java.awt.GridBagConstraints;
  * Time: 20:04:41
  * To change this template use File | Settings | File Templates.
  */
-public class ChooseModelComponent extends JPanel implements IChooseComponent<SModel> {
+public class ChooseModelComponent implements IChooseComponent<SModel> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 
   public ChooseModelComponent(String caption, String propertyName, ActionContext actionContext) {
     myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(caption, propertyName, actionContext, null, true, false, true);
-    setLayout(new GridBagLayout());
-    GridBagConstraints constraints = new GridBagConstraints();
-    constraints.gridx = 0;
-    constraints.gridy = 0;
-    constraints.fill = GridBagConstraints.BOTH;
-    constraints.weightx = 1;
-    constraints.weighty = 1;
-    add(myChooseNodeOrModelComponent, constraints);
   }
 
   public SModel submit() throws InvalidInputValueException {
@@ -39,6 +31,10 @@ public class ChooseModelComponent extends JPanel implements IChooseComponent<SMo
 
   public String getPropertyName() {
     return myChooseNodeOrModelComponent.getPropertyName();
+  }
+
+  public void setPropertyName(String propertyName) {
+    myChooseNodeOrModelComponent.setPropertyName(propertyName);
   }
 
   public void setInitialValue(SModel initialValue) {
@@ -51,5 +47,9 @@ public class ChooseModelComponent extends JPanel implements IChooseComponent<SMo
 
   public JComponent getComponentToFocus() {
     return myChooseNodeOrModelComponent.getComponentToFocus();
+  }
+
+  public JComponent getMainComponent() {
+    return myChooseNodeOrModelComponent;
   }
 }

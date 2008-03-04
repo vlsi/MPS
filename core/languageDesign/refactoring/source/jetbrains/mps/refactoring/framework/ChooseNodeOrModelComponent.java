@@ -39,9 +39,12 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private Condition myCondition = Condition.TRUE_CONDITION;
 
   public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
+    this(caption, actionContext, conceptFQName, mayBeModel, mayBeNode);
+  }
+
+  public ChooseNodeOrModelComponent(String caption, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
     //setLayout(new BorderLayout());
     myCaption = caption;
-    myPropertyName = propertyName;
     myActionContext = actionContext;
     myOperationContext = myActionContext.getOperationContext();
     myMayBeModel = mayBeModel;
@@ -180,6 +183,10 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     return myPropertyName;
   }
 
+  public void setPropertyName(String propertyName) {
+    myPropertyName = propertyName;
+  }
+
   public void setInitialValue(Object initialValue) {
     if (myReturnLoadedModels && initialValue instanceof SModel) {
       initialValue = ((SModel)initialValue).getModelDescriptor();
@@ -188,6 +195,10 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     if (treeNode != null) {
       myTree.selectNode(treeNode);
     }
+  }
+
+  public JComponent getMainComponent() {
+    return this;
   }
 
   class MyChooseItemComponent extends ChooseItemComponent<SModelDescriptor> {

@@ -304,8 +304,8 @@
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1197984794993">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197993235053">
-        <link role="classifier" targetNodeId="10.~IChooseComponentPart" resolveInfo="IChooseComponentPart" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204631330445">
+        <link role="classifier" targetNodeId="10.~IChooseComponent" resolveInfo="IChooseComponent" />
       </node>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1198076418841">

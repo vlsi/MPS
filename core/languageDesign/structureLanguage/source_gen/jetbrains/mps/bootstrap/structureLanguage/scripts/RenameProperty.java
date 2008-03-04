@@ -138,6 +138,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
         IChooseComponent<String> chooseComponent;
         chooseComponent = new ChooseStringComponent("enter new name", "newName");
         chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
+        chooseComponent.setPropertyName("newName");
         components.add(chooseComponent);
       }
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);

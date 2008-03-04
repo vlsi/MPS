@@ -19,7 +19,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   private ILoggableRefactoring myRefactoring;
   private ActionContext myActionContext;
   private RefactoringContext myRefactoringContext;
-  private JComponent myFirstComponent = null;
+  private IChooseComponent myFirstComponent = null;
   public JCheckBox myIsLocalCheckBox;
 
   public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, ActionContext actionContext, RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
@@ -47,12 +47,12 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     for (int i = 0; i < myComponents.size(); i++) {
       IChooseComponent component = myComponents.get(i);
       if (myFirstComponent == null && component instanceof JComponent) {
-        myFirstComponent = (JComponent) component;
+        myFirstComponent = component;
       }
       if (i == myComponents.size() -1) {
         constraints.weighty = 1;
       }
-      myInnerPanel.add((Component) component, constraints);
+      myInnerPanel.add(component.getMainComponent(), constraints);
     }
   }
 
@@ -83,7 +83,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
         }
 
         public Component getFirstComponent(Container aContainer) {
-          return ((IChooseComponent)myFirstComponent).getComponentToFocus();
+          return myFirstComponent.getComponentToFocus();
         }
 
         public Component getLastComponent(Container aContainer) {
@@ -91,11 +91,11 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
         }
 
         public Component getDefaultComponent(Container aContainer) {
-          return ((IChooseComponent)myFirstComponent).getComponentToFocus();
+          return myFirstComponent.getComponentToFocus();
         }
 
         public Component getInitialComponent(Window window) {
-          return ((IChooseComponent)myFirstComponent).getComponentToFocus();
+          return myFirstComponent.getComponentToFocus();
         }
       });
     }

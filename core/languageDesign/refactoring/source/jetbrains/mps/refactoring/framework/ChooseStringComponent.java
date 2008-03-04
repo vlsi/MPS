@@ -44,11 +44,19 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
     return myPropertyName;
   }
 
+  public void setPropertyName(String propertyName) {
+    myPropertyName = propertyName;
+  }
+
   public void setInitialValue(String initialValue) {
     myTextField.setText(initialValue);
   }
 
   public void setCondition(Condition<String> condition) {
     myCondition = condition;
+  }
+
+  public JComponent getMainComponent() {
+    return this;
   }
 }

@@ -11,9 +11,12 @@ import javax.swing.JComponent;
  * Time: 18:44:46
  * To change this template use File | Settings | File Templates.
  */
-public interface IChooseComponentPart<T> {
+public interface IChooseComponent<T> {
   public T submit() throws InvalidInputValueException;
   public void setInitialValue(T initialValue);
   public void setCondition(Condition<T> condition);
   public JComponent getComponentToFocus();
+  public JComponent getMainComponent();
+  public String getPropertyName();
+  public void setPropertyName(String propertyName);
 }

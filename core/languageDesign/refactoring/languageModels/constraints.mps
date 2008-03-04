@@ -143,7 +143,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197984921041">
           <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1197985096212">
             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197985111167">
-              <link role="classifier" targetNodeId="6.~IChooseComponentPart" resolveInfo="IChooseComponentPart" />
+              <link role="classifier" targetNodeId="6.~IChooseComponent" resolveInfo="IChooseComponent" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1197985112340">
                 <node role="_attr_$attribute" type="jetbrains.mps.quotation.structure.Antiquotation" id="1197985117029">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197985251298">

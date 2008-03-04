@@ -78,6 +78,10 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     return myPropertyName;
   }
 
+  public void setPropertyName(String propertyName) {
+    myPropertyName = propertyName;
+  }
+
   public void setInitialValue(SNode initialValue) {
     myHierarchyTree.selectNode(myHierarchyTree.findNodeWith(initialValue.getAdapter()));
   }
@@ -91,6 +95,10 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     }
     HierarchyTreeNode selectedTreeNode = (HierarchyTreeNode) lastComponent;
     return selectedTreeNode.getNode().getNode();
+  }
+
+  public JComponent getMainComponent() {
+    return this;
   }
 
   class MyHierarchyTree extends AbstractHierarchyTree<INodeAdapter> {
@@ -122,4 +130,5 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     }
 
   }
+
 }

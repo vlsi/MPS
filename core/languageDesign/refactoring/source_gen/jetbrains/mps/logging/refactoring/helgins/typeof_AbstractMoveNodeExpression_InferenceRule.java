@@ -14,8 +14,8 @@ public class typeof_AbstractMoveNodeExpression_InferenceRule implements Inferenc
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "whatToMove", true), "jetbrains.mps.logging.refactoring.helgins", "1199620247218", true), new QuotationClass_5().createNode(), SLinkOperations.getTarget(nodeToCheck, "whatToMove", true), null, "jetbrains.mps.logging.refactoring.helgins", "1199620247213");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.logging.refactoring.helgins", "1199621080697", true), new QuotationClass_6().createNode(), nodeToCheck, null, "jetbrains.mps.logging.refactoring.helgins", "1199621083981");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "whatToMove", true), "jetbrains.mps.logging.refactoring.helgins", "1199620247218", true), new QuotationClass_4().createNode(), SLinkOperations.getTarget(nodeToCheck, "whatToMove", true), null, "jetbrains.mps.logging.refactoring.helgins", "1199620247213");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.logging.refactoring.helgins", "1199621080697", true), new QuotationClass_12().createNode(), nodeToCheck, null, "jetbrains.mps.logging.refactoring.helgins", "1199621083981");
   }
 
   public String getApplicableConceptFQName() {
