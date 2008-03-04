@@ -61,7 +61,7 @@ public class SModelsSubtree {
 
   public static class JavaStubsTreeNode extends TextTreeNode {
     public JavaStubsTreeNode(IOperationContext context) {
-      super("Java Stubs", context);
+      super("java Stubs", context);
 
       setIcon(Icons.PROJECT_MODELS_ICON);
     }
