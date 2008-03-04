@@ -32,6 +32,7 @@ import java.util.Collections;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 
 public class QueriesGenerated {
@@ -242,10 +243,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201048260874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      IMatchingPattern pattern_1204073715341 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1204073715323 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1204073715341);
-      if(coercedNode_1204073715323 != null) {
-        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1204073715323, "elementType", true));
+      IMatchingPattern pattern_1204645124490 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1204645124472 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1204645124490);
+      if(coercedNode_1204645124472 != null) {
+        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1204645124472, "elementType", true));
       }
     }
     return null;
@@ -607,7 +608,7 @@ public class QueriesGenerated {
     if(ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if(imds.size() > 0) {
-        return SLinkOperations.getTarget(imds.get(0), "returnType", true);
+        return ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(imds.get(0), "returnType", true), ct);
       }
     }
     return FunctionType_Behavior.call_getNormalizedReturnType_1201526153722(TypeChecker.getInstance().getTypeOf(_context.getNode()));
@@ -1107,6 +1108,7 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1201686683809(final IOperationContext operationContext, final MappingScriptContext _context) {
+    System.out.println(">>> searching BaseMethodCall in " + ((SModel)_context.getModel()).getUID());
     List<SNode> bmcs = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BaseMethodCall");
     for(SNode bmc : bmcs) {
       List<SNode> args = SLinkOperations.getTargets(bmc, "actualArgument", true);
@@ -1282,6 +1284,58 @@ public class QueriesGenerated {
       } else
       {
         System.out.println("Found classifier: " + SPropertyOperations.getString(SLinkOperations.getTarget(ct, "classifier", false), "name"));
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_1204637450606(final IOperationContext operationContext, final MappingScriptContext _context) {
+    System.out.println(">>> searching DotExpression in " + ((SModel)_context.getModel()).getUID());
+    for(SNode de : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+      if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(de, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
+        SNode imco = SLinkOperations.getTarget(de, "operation", true);
+        List<SNode> args = SLinkOperations.getTargets(imco, "actualArgument", true);
+        List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "parameter", true);
+        if((SLinkOperations.getTarget(imco, "baseMethodDeclaration", false) != null) && args.size() != pdecls.size()) {
+          _context.getGenerator().showInformationMessage(imco, "Actual arguments count != parameter declarations count");
+        }
+        int idx = 0;
+        for(SNode pdecl : pdecls) {
+          SNode pdtype = SLinkOperations.getTarget(pdecl, "type", true);
+          SNode pdFType = (SNodeOperations.isInstanceOf(pdtype, "jetbrains.mps.closures.structure.FunctionType") ?
+            pdtype :
+            null
+          );
+          SNode pdCType = (SNodeOperations.isInstanceOf(pdtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
+            pdtype :
+            null
+          );
+          if(((pdFType != null) || (pdCType != null)) && idx < args.size()) {
+            SNode arg = args.get(idx);
+            SNode argtype = TypeChecker.getInstance().getTypeOf(arg);
+            SNode argFType = (SNodeOperations.isInstanceOf(argtype, "jetbrains.mps.closures.structure.FunctionType") ?
+              argtype :
+              null
+            );
+            SNode argCType = (SNodeOperations.isInstanceOf(argtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
+              argtype :
+              null
+            );
+            if((pdCType != null) && (argFType != null)) {
+              if(SNodeOperations.isInstanceOf(arg, "jetbrains.mps.closures.structure.ClosureLiteral")) {
+                ClosureLiteralUtil.addAdaptableClosureLiteralTarget(arg, pdCType, _context.getGenerator());
+              } else
+              {
+                FunctionTypeUtil.addAdaptableClassifierTypeTarget(ClassifierTypeUtil.getClassifierType(argFType), pdCType, _context.getGenerator());
+                FunctionTypeUtil.putPrepData(arg, INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(pdCType, "classifier", false)), _context.getGenerator());
+              }
+            } else
+            if((pdFType != null) && (argCType != null)) {
+              FunctionTypeUtil.addAdaptableClassifierTypeTarget(argCType, ClassifierTypeUtil.getClassifierType(pdFType), _context.getGenerator());
+              FunctionTypeUtil.putPrepData(arg, INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(ClassifierTypeUtil.getClassifierType(pdFType), "classifier", false)), _context.getGenerator());
+            }
+          }
+          idx = idx + 1;
+        }
       }
     }
   }

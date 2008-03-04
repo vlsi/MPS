@@ -3280,6 +3280,40 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204637135743">
+      <property name="name" value="makeWork" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204637139605">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204637135745" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204637135746">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204637150548">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204637165529">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204637165329">
+              <link role="variableDeclaration" targetNodeId="1204637147524" resolveInfo="wrk" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204637167197">
+              <link role="baseMethodDeclaration" targetNodeId="1202741897838" resolveInfo="doWork" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204637168480">
+                <link role="variableDeclaration" targetNodeId="1204637152916" resolveInfo="i" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204637147524">
+        <property name="name" value="wrk" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204637147525">
+          <link role="classifier" targetNodeId="1202741884865" resolveInfo="Worker" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204637152916">
+        <property name="name" value="i" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204637156736">
+          <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1202741841878" />
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1202741841879">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1202741857090">
@@ -3683,6 +3717,74 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1204637019115">
+        <property name="methodName" value="instanceMethodCall" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204637019116" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204637019117">
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1204637265255">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204637267278">
+              <property name="value" value="1234" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204637272602">
+              <link role="baseMethodDeclaration" targetNodeId="1204637135743" resolveInfo="makeWork" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204637272603" />
+              <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204637272605">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204637272606">
+                  <property name="name" value="iiiiiiiiiiii" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1204637272607" />
+                </node>
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204637272608">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204637272609">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204637272610">
+                      <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
+                      <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204637272611">
+                        <link role="variableDeclaration" targetNodeId="1204637272606" resolveInfo="i" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204637272612">
+                <property name="value" value="1234" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1204646140358">
+            <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1204637275914">
+              <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204637276969">
+                <property name="value" value="4321" />
+              </node>
+              <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204637282819">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204637282820" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204637282821">
+                  <link role="baseMethodDeclaration" targetNodeId="1204637135743" resolveInfo="makeWork" />
+                  <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204637282822">
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204637282823">
+                      <property name="name" value="xxxxxxxxxxx" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1204637282824" />
+                    </node>
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204637282825">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204637282826">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204637282827">
+                          <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
+                          <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204637282828">
+                            <link role="variableDeclaration" targetNodeId="1204637282823" resolveInfo="i" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204637282829">
+                    <property name="value" value="4321" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1202780473356">
         <property name="methodName" value="closureLiteralAsComparator" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1202780473357" />
@@ -3752,6 +3854,9 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822704115">
             <property name="value" value="Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1204636801877">
+            <property name="value" value="Besides, overriding only equals() without overriding also hashCode() is simply plain wrong." />
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822785733">
             <property name="value" value="===================================================================" />

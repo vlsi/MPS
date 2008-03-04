@@ -162,6 +162,25 @@ __switch__:
     Assert.assertEquals(exp, (Integer)4);
   }
 
+  public void test_instanceMethodCall() throws Exception {
+    Assert.assertEquals("1234", this.makeWork(new Worker() {
+
+      public String doWork(Integer iiiiiiiiiiii) {
+        return String.valueOf(iiiiiiiiiiii);
+      }
+
+    }, 1234));
+    /*
+      Assert.assertEquals("4321", this.makeWork(new FunctionTypes._R_from_T <String, Integer>() {
+
+        public String invoke(Integer xxxxxxxxxxx) {
+          return String.valueOf(xxxxxxxxxxx);
+        }
+
+      }, 4321));
+    */
+  }
+
   public void test_closureLiteralAsComparator() throws Exception {
     List<Integer> list = new ArrayList<Integer>();
     list.addAll(Arrays.asList(new Integer[]{4,3,5,1,2}));
@@ -170,6 +189,7 @@ __switch__:
     // In reality we could only substitute an interface that has a single method.
     // This example works only because java.util.Comparator defines compare() before equals()
     // Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything
+    // Besides, overriding only equals() without overriding also hashCode() is simply plain wrong.
     // ===================================================================
     Collections.sort(list, new Comparator <Object>() {
 
@@ -195,6 +215,10 @@ __switch__:
   }
 
   public void acceptWorker(Worker one) {
+  }
+
+  public String makeWork(Worker wrk, Integer i) {
+    return wrk.doWork(i);
   }
 
 }

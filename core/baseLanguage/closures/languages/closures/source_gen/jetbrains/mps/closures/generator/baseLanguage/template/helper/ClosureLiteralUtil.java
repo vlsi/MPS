@@ -113,7 +113,7 @@ public class ClosureLiteralUtil {
     while(!(queue.isEmpty())) {
       SNode candidate = queue.removeFirst();
       if(!(visited.contains(BaseConcept_Behavior.call_getPresentation_1180102203531(candidate)))) {
-        if(SNodeOperations.getConceptDeclaration(absType) == SNodeOperations.getConceptDeclaration(candidate) && (!(SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) || SLinkOperations.getTarget(absType, "classifier", false) == SLinkOperations.getTarget(candidate, "classifier", false))) {
+        if(SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || (SNodeOperations.getConceptDeclaration(absType) == SNodeOperations.getConceptDeclaration(candidate) && (!(SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) || SLinkOperations.getTarget(absType, "classifier", false) == SLinkOperations.getTarget(candidate, "classifier", false)))) {
           map = ClosureLiteralUtil.matchType(absType, candidate, map);
           return map;
         }
@@ -130,7 +130,7 @@ public class ClosureLiteralUtil {
     if(SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       (map = ClosureLiteralUtil.getMap(map)).put(SPropertyOperations.getString(SLinkOperations.getTarget(absType, "typeVariableDeclaration", false), "name"), realType);
     } else
-    if(SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+    if(SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(absType, "classifier", false) == SLinkOperations.getTarget(realType, "classifier", false)) {
       int idx = 0;
       List<SNode> mptypes = SLinkOperations.getTargets(absType, "parameter", true);
       List<SNode> rptypes = SLinkOperations.getTargets(realType, "parameter", true);
