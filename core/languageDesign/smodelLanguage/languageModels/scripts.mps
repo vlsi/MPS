@@ -234,27 +234,34 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1203640442563">
     <property name="name" value="Replace_SNodeOperationExpression" />
-    <property name="title" value="Convert SNodeOperationExpression -&gt; DotExpression" />
+    <property name="title" value="DotExpression: convert old SNodeOperationExpression [migrate form b.470] " />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1203640759821">
       <property name="description" value="DotExpression: convert SNodeOperationExpression " />
       <link role="affectedInstanceConcept" targetNodeId="1.1138055978872" resolveInfo="SNodeOperationExpression" />
       <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1203640759822">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203640759823">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203640812670">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1203648071453">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203648071454">
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1203648071455">
-                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1203648071456">
-                    <link role="conceptDeclaration" targetNodeId="1.1170384605257" resolveInfo="Node_GetAdapterOperation" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1204668020334">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203640812670">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1203648071453">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203648071454">
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1203648071455">
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1203648071456">
+                      <link role="conceptDeclaration" targetNodeId="1.1170384605257" resolveInfo="Node_GetAdapterOperation" />
+                    </node>
                   </node>
-                </node>
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203648071457">
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203648071458">
-                    <link role="link" targetNodeId="1.1138411864174" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203648071457">
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203648071458">
+                      <link role="link" targetNodeId="1.1138411864174" />
+                    </node>
+                    <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1203648071459" />
                   </node>
-                  <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1203648071459" />
                 </node>
               </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204668026197">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204668026198">
+              <property name="value" value="true" />
             </node>
           </node>
         </node>
