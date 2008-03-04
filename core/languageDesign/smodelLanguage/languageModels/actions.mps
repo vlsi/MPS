@@ -1097,11 +1097,11 @@
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1188590645040">
                     <link role="baseMethodDeclaration" targetNodeId="13.~SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getPropertyDeclarationsExcludingOverridden" />
                     <link role="classConcept" targetNodeId="13.~SModelSearchUtil_new" resolveInfo="SModelSearchUtil_new" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1188590908069">
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1188590913384" />
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableReference" id="1188590665416">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668169849">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableReference" id="1188590665416">
                         <link role="variableDeclaration" targetNodeId="1179529852488" resolveInfo="leftNodeConcept" />
                       </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1188590913384" />
                     </node>
                   </node>
                 </node>
@@ -1891,11 +1891,11 @@
                             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1179531430822">
                               <link role="baseMethodDeclaration" targetNodeId="7.~SModelUtil_new.getGenuineLinkSourceCardinality(jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration):jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality" resolveInfo="getGenuineLinkSourceCardinality" />
                               <link role="classConcept" targetNodeId="7.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1179531430823">
-                                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1179531430824" />
-                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1179531430825">
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668169900">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1179531430825">
                                   <link role="closureParameter" targetNodeId="1179531430817" resolveInfo="it" />
                                 </node>
+                                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1179531430824" />
                               </node>
                             </node>
                           </node>
@@ -1960,11 +1960,11 @@
                             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1179531467657">
                               <link role="classConcept" targetNodeId="7.~SModelUtil_new" resolveInfo="SModelUtil_new" />
                               <link role="baseMethodDeclaration" targetNodeId="7.~SModelUtil_new.getGenuineLinkSourceCardinality(jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration):jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality" resolveInfo="getGenuineLinkSourceCardinality" />
-                              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1179531467658">
-                                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1179531467659" />
-                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1179531467660">
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668169873">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1179531467660">
                                   <link role="closureParameter" targetNodeId="1179531467652" resolveInfo="it" />
                                 </node>
+                                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1179531467659" />
                               </node>
                             </node>
                           </node>
@@ -2745,11 +2745,11 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180538822445">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1180538822446">
                 <link role="baseMethodDeclaration" targetNodeId="13.~ConceptAndSuperConceptsScope.&lt;init&gt;(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration)" resolveInfo="ConceptAndSuperConceptsScope" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1180538850366">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1180538865394" />
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableReference" id="1180538847618">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668169802">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableReference" id="1180538847618">
                     <link role="variableDeclaration" targetNodeId="1180538409497" resolveInfo="leftConcept" />
                   </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1180538865394" />
                 </node>
               </node>
             </node>
