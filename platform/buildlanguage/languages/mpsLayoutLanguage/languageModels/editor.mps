@@ -186,6 +186,7 @@
         <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1203602068954">
+        <property name="attractsFocus" value="2" />
         <link role="relationDeclaration" targetNodeId="1.1203601963019" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1204128152423">
