@@ -315,7 +315,7 @@ public abstract class AbstractModule implements IModule {
     for (String s : getRuntimeClassPathItems()) {
       if (!FileSystem.getFile(s).exists()) {
         if (!s.equals(getClassesGen().getPath())) {
-          LOG.error("Classpath item doesn't exist " + s);
+          LOG.error("Classpath item doesn't exist " + s + "in" + this);
         }
         continue;
       }
