@@ -43,6 +43,9 @@ public class EquationManager {
 
   private Map<IWrapper, Set<IWrapperListener>> myWrapperListeners = new HashMap<IWrapper, Set<IWrapperListener>>();
 
+  private boolean myCollectConcretes = false;
+  private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new HashSet<WhenConcreteEntity>();
+
   public EquationManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
   }
@@ -240,9 +243,6 @@ public class EquationManager {
       subtypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
     }
     if (supertypeRepresentator instanceof NodeWrapper) {
-      /* if ("IMapper<i,j>".equals(supertypeRepresentator.toString())) {
-        System.err.println("BINGO!!");
-      }*/
       NodeWrapper supertypeNodeWrapper = (NodeWrapper) supertypeRepresentator;
       SModel typesModel = myTypeChecker.getRuntimeTypesModel();
       NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(supertypeNodeWrapper.getNode(), typesModel), this);
@@ -1049,6 +1049,19 @@ public class EquationManager {
     return (NodeWrapper) wrapper;
   }
 
+  private void processConcretes() {
+    for (WhenConcreteEntity whenConcreteEntity : myCollectedWhenConcreteEntities) {
+      whenConcreteEntity.run();
+    }
+    myCollectedWhenConcreteEntities.clear();
+    myCollectConcretes = false;
+  }
+
+  private void startCollectingConcretes() {
+    myCollectConcretes = true;
+  }
+
+
   /*package*/ void checkConcrete(IWrapper representator) {
     if (representator == null) return;
     // NB: we assume that wrapper is a representator
@@ -1056,7 +1069,11 @@ public class EquationManager {
       WhenConcreteEntity whenConcreteEntity = getWhenConcreteEntity(representator);
       if (whenConcreteEntity != null) {
         clearWhenConcreteEntity(representator);
-        whenConcreteEntity.run();
+        if (myCollectConcretes) {
+          myCollectedWhenConcreteEntities.add(whenConcreteEntity);
+        } else {
+          whenConcreteEntity.run();
+        }
       }
       representator.fireBecomesDeeplyConcrete(this);
     }
