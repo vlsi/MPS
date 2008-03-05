@@ -1544,6 +1544,80 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1204728474125">
+      <property name="name" value="getRuntimeJarPath" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1204728478813" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204728474127">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204728492410">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1204728503221">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204728505085">
+              <property name="value" value=".runtime.jar" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204728496979">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204728495461" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1204728501921">
+                <link role="conceptMethodDeclaration" targetNodeId="1203613242856" resolveInfo="getPath" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1204728513682">
+      <property name="name" value="getRuntimeJarPathRelativeToTheProjectHome" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1204728517811" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204728513684">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204728561517">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204728629952">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204728566977">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204728564552" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1204728628512">
+                <link role="conceptMethodDeclaration" targetNodeId="1204728474125" resolveInfo="getRuntimeJarPath" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204728634331">
+              <link role="baseMethodDeclaration" targetNodeId="7.~String.substring(int):java.lang.String" resolveInfo="substring" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1204729220525">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204729221481">
+                  <property name="value" value="1" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204729207661">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204728678647">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204728739342">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1204728742860">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204728761552">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204728761553">
+                            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204728761554" />
+                            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1204728761555">
+                              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1204728761556">
+                                <link role="concept" targetNodeId="2v.1202916958754" resolveInfo="MPSLayout" />
+                              </node>
+                              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1204728761557" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1204728761558">
+                            <link role="link" targetNodeId="2v.1204706457824" />
+                          </node>
+                        </node>
+                        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1204728747550">
+                          <link role="concept" targetNodeId="2v.1203598300291" resolveInfo="AbstractProjectComponent" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1204728770075">
+                      <link role="conceptMethodDeclaration" targetNodeId="1203613242856" resolveInfo="getPath" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204729211712">
+                    <link role="baseMethodDeclaration" targetNodeId="7.~String.length():int" resolveInfo="length" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1204024318284">
       <property name="name" value="getRuntimeClasspathToCopy" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1204024320537">
