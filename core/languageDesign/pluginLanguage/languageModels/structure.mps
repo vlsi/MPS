@@ -566,11 +566,6 @@
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept"/>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203866635736">
-    <property name="name" value="FakePlugin"/>
-    <property name="rootable" value="true"/>
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204038435236">
     <property name="package" value="EditorTab.Methods"/>
     <property name="name" value="GetMainConceptBlock"/>
