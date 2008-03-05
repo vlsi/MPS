@@ -301,16 +301,6 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  @Nullable
-  public INodeAdapter getAttribute() {
-    SNode result = myNode.getAttribute();
-    if (result == null) {
-      return null;
-    } else {
-      return result.getAdapter();
-    }
-  }
-
   public List<INodeAdapter> getAllAttributes() {
     return toAdapters(getNode().getAllAttributes());
   }

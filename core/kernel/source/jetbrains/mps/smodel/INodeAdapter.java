@@ -97,9 +97,6 @@ public interface INodeAdapter {
 
   <T extends INodeAdapter> Iterator<T> children(@NotNull String role);
 
-  @Nullable
-  INodeAdapter getAttribute();
-
   List<INodeAdapter> getAllAttributes();
 
   @Nullable
