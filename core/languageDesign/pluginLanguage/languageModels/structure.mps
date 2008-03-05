@@ -109,7 +109,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1204464989905">
-      <property name="sourceCardinality" value="0..1"/>
+      <property name="sourceCardinality" value="1"/>
       <property name="role" value="componentClass"/>
       <link role="target" targetNodeId="2.1068390468198" resolveInfo="ClassConcept"/>
     </node>
@@ -127,29 +127,34 @@
           id="1204478343258">
       <property name="metaClass" value="aggregation"/>
       <property name="role" value="openModuleBlock"/>
+      <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1204477602436" resolveInfo="OpenModuleBlock"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1204478348572">
       <property name="metaClass" value="aggregation"/>
       <property name="role" value="rebuildBlock"/>
+      <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1204477604390" resolveInfo="RebuildBlock"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1204478352635">
       <property name="metaClass" value="aggregation"/>
       <property name="role" value="scrollFromSourceBlock"/>
+      <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1204477605969" resolveInfo="ScrollFromSourceBlock"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1204478355855">
       <property name="metaClass" value="aggregation"/>
       <property name="role" value="setProjectBlock"/>
+      <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1204477594372" resolveInfo="SetProjectBlock"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1204477555839">
       <property name="role" value="componentClass"/>
+      <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="2.1068390468198" resolveInfo="ClassConcept"/>
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
