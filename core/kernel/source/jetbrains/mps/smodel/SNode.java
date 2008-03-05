@@ -316,19 +316,21 @@ public final class SNode {
   //node attributes
 
   @Nullable
-  private SNode getAttribute_internal() {
-    return getChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE);
-  }
-
-  @Nullable
+  @Deprecated
   public SNode getAttribute() {
-    SNode result = getAttribute_new();
-    if (result == null) result = getAttribute_internal();
+    // default (?) attribute
+    SNode result = getAttribute(null);  // '_attr_$attribute'
+    if (result == null) {
+      // old way, just: '$attribute'
+      result = getChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE);
+    }
     return result;
   }
 
+  @Deprecated
   public void setAttribute(SNode attributeConcept) {
-    setAttribute_new(attributeConcept);
+    // default (?) attribute
+    setAttribute(null, attributeConcept);
   }
 
   @NotNull
@@ -373,15 +375,6 @@ public final class SNode {
     return getChildren(attributeRole);
   }
 
-  @Nullable
-  public SNode getAttribute_new() {
-    return getAttribute(null);
-  }
-
-  public void setAttribute_new(SNode attributeConcept) {
-    setAttribute(null, attributeConcept);
-  }
-
   public void setAttribute(String role, SNode attribute) {
     setChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attribute);
   }
@@ -392,26 +385,29 @@ public final class SNode {
 
   ///--property attributes
 
-  @Nullable
-  private SNode getPropertyAttribute_internal(String propertyName) {
-    return getChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE);
-  }
-
+  @Deprecated
   public void setPropertyAttribute(String propertyName, SNode propertyAttribute) {
-    setPropertyAttribute_new(propertyName, propertyAttribute);
+    // 'default' property attr
+    setPropertyAttribute(null, propertyName, propertyAttribute);
   }
 
   @Nullable
+  @Deprecated
   public SNode getPropertyAttribute(String propertyName) {
-    SNode result = getPropertyAttribute_new(propertyName);
-    if (result == null) result = getPropertyAttribute_internal(propertyName);
+    // 'default' property attr
+    SNode result = getPropertyAttribute(null, propertyName);
+    if (result != null) return result;
+
+    // back compatibility with some obsolete property attributes?
+    for (SNode child : _children()) {
+      if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
+        return result;
+      }
+    }
+
+    // old - no attribute role.
+    result = getChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE);
     return result;
-  }
-
-  //--new
-
-  public void setPropertyAttribute_new(String propertyName, SNode propertyAttribute) {
-    setPropertyAttribute(null, propertyName, propertyAttribute);
   }
 
   public void setPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
@@ -446,41 +442,30 @@ public final class SNode {
     return result;
   }
 
+  // -- link attributes
+
+  @Deprecated
+  public void setLinkAttribute(String role, SNode linkAttribute) {
+    // 'default' link attr
+    setLinkAttribute(null, role, linkAttribute);
+  }
+
   @Nullable
-  public SNode getPropertyAttribute_new(String propertyName) {
-    SNode propertyAttribute = getPropertyAttribute(null, propertyName);
-    if (propertyAttribute == null) {
-      for (SNode child : _children()) {
-        if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
-          propertyAttribute = child;
-          break;
-        }
+  @Deprecated
+  public SNode getLinkAttribute(String role) {
+    // 'default' link attr
+    SNode result = getLinkAttribute(null, role);
+    if (result != null) return result;
+
+    // back compatibility with some obsolete link attributes?
+    for (SNode child : _children()) {
+      if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(role, child.getRole_())) {
+        return child;
       }
     }
-    return propertyAttribute;
-  }
 
-  ///-- link attributes
-
-  @Nullable
-  private SNode getLinkAttribute_internal(String role) {
-    return getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);
-  }
-
-  public void setLinkAttribute(String role, SNode linkAttribute) {
-    setLinkAttribute_new(role, linkAttribute);
-  }
-
-  @Nullable
-  public SNode getLinkAttribute(String role) {
-    SNode result = getLinkAttribute_new(role);
-    if (result == null) result = getLinkAttribute_internal(role);
+    result = getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);
     return result;
-  }
-
-  //new
-  public void setLinkAttribute_new(String linkRole, SNode linkAttribute) {
-    setLinkAttribute(null, linkRole, linkAttribute);
   }
 
   public void setLinkAttribute(String role, String linkRole, SNode linkAttribute) {
@@ -512,20 +497,6 @@ public final class SNode {
       }
     }
     return result;
-  }
-
-  @Nullable
-  public SNode getLinkAttribute_new(String linkRole) {
-    SNode linkAttribute = getLinkAttribute(null, linkRole);
-    if (linkAttribute == null) {
-      for (SNode child : _children()) {
-        if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(linkRole, child.getRole_())) {
-          linkAttribute = child;
-          break;
-        }
-      }
-    }
-    return linkAttribute;
   }
 
   //
