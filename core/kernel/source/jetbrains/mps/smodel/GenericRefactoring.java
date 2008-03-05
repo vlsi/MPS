@@ -1,30 +1,26 @@
 package jetbrains.mps.smodel;
 
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.refactoring.NewRefactoringView;
-import jetbrains.mps.generator.*;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.refactoring.NewRefactoringView;
+import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.util.Calculable;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,6 +30,9 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class GenericRefactoring {
+
+  private static final Logger LOG = Logger.getLogger(GenericRefactoring.class);
+
   private ILoggableRefactoring myRefactoring;
 
   public GenericRefactoring(ILoggableRefactoring refactoring) {
@@ -57,6 +56,7 @@ public class GenericRefactoring {
                 newContext.put(IOperationContext.class, new ProjectOperationContext(context.getOperationContext().getProject()));
                 usagesContainer[0] = myRefactoring.getAffectedNodes(newContext, refactoringContext);
               } catch (Throwable t) {
+                LOG.error(t);
                 ThreadUtils.runInUIThreadAndWait(new Runnable() {
                   public void run() {
                     int promptResult = JOptionPane.showConfirmDialog(context.getFrame(),
