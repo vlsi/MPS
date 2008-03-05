@@ -32,7 +32,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createIntfcReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new InterfaceConceptReference_Editor._Inline16());
+    provider.setAuxiliaryCellProvider(new InterfaceConceptReference_Editor._Inline14());
     EditorCell editorCell = provider.createEditorCell(context);
     InterfaceConceptReference_Editor.setupBasic_IntfcReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -59,9 +59,9 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline16 extends AbstractCellProvider {
+  public static class _Inline14 extends AbstractCellProvider {
 
-    public  _Inline16() {
+    public  _Inline14() {
       super();
     }
 
@@ -87,9 +87,9 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      InterfaceConceptReference_Editor._Inline16.setupBasic_NameCell(editorCell, node, context);
+      InterfaceConceptReference_Editor._Inline14.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        InterfaceConceptReference_Editor._Inline16.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        InterfaceConceptReference_Editor._Inline14.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

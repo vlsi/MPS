@@ -459,7 +459,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createMemberDataTypeReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline12());
+    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline10());
     EditorCell editorCell = provider.createEditorCell(context);
     EnumerationDataTypeDeclaration_Editor.setupBasic_MemberDataTypeReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -488,7 +488,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createDefaultMemberReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline13());
+    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline11());
     EditorCell editorCell = provider.createEditorCell(context);
     EnumerationDataTypeDeclaration_Editor.setupBasic_DefaultMemberReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -544,9 +544,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline12 extends AbstractCellProvider {
+  public static class _Inline10 extends AbstractCellProvider {
 
-    public  _Inline12() {
+    public  _Inline10() {
       super();
     }
 
@@ -571,9 +571,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      EnumerationDataTypeDeclaration_Editor._Inline12.setupBasic_NameCell(editorCell, node, context);
+      EnumerationDataTypeDeclaration_Editor._Inline10.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        EnumerationDataTypeDeclaration_Editor._Inline12.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        EnumerationDataTypeDeclaration_Editor._Inline10.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -597,9 +597,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _Inline13 extends AbstractCellProvider {
+  public static class _Inline11 extends AbstractCellProvider {
 
-    public  _Inline13() {
+    public  _Inline11() {
       super();
     }
 
@@ -626,9 +626,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      EnumerationDataTypeDeclaration_Editor._Inline13.setupBasic_ExternalValueCell(editorCell, node, context);
+      EnumerationDataTypeDeclaration_Editor._Inline11.setupBasic_ExternalValueCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        EnumerationDataTypeDeclaration_Editor._Inline13.setupLabel_ExternalValueCell((EditorCell_Label)editorCell, node, context);
+        EnumerationDataTypeDeclaration_Editor._Inline11.setupLabel_ExternalValueCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
