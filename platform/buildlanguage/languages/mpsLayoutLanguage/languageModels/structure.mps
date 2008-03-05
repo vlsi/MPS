@@ -22,6 +22,11 @@
     <property name="name" value="MPSLayout" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204706457824">
+      <property name="role" value="projectHome" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1203617883391" resolveInfo="ICompositeComponent" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204115898932">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="configuration" />
@@ -176,6 +181,9 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204107522064">
       <property name="name" value="excludes" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204706613165">
+      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204015075559">
