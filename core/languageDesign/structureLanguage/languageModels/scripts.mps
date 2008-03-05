@@ -4190,18 +4190,17 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201283796908">
             <property name="name" value="node" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1201283801943" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201283796910">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-              <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201283796911" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204725601980">
+              <node role="operand" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1201283796911" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204725601981">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+              </node>
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201283806070">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648356">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201283806071">
-              <link role="variableDeclaration" targetNodeId="1201283796908" resolveInfo="node" />
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_DeleteOperation" id="1201283807544" />
+        <node role="statement" type="jetbrains.mps.logging.refactoring.structure.DeleteFeatureOperation" id="1204725627551">
+          <node role="feature" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204725630522">
+            <link role="variableDeclaration" targetNodeId="1201283796908" resolveInfo="node" />
           </node>
         </node>
       </node>

@@ -103,7 +103,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SNode node = actionContext.getNode();
-      SNodeOperations.deleteNode(node);
+      refactoringContext.deleteFeature(node);
     }
   }
 
