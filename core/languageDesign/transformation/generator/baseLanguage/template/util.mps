@@ -28,10 +28,12 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1184619948551">
             <property name="name" value="outputModel" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1184619948552" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1184619962732">
-              <link role="baseMethodDeclaration" targetNodeId="3.~ITemplateGenerator.getTargetModel():jetbrains.mps.smodel.SModel" resolveInfo="getTargetModel" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1184619956398">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204753574148">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1184619956398">
                 <link role="variableDeclaration" targetNodeId="1184619938962" resolveInfo="generator" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204753574149">
+                <link role="baseMethodDeclaration" targetNodeId="3.~ITemplateGenerator.getTargetModel():jetbrains.mps.smodel.SModel" resolveInfo="getTargetModel" />
               </node>
             </node>
           </node>
@@ -59,17 +61,19 @@
                     </node>
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184619272593">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1184619279984">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1184619291287">
-                          <link role="baseMethodDeclaration" targetNodeId="1.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                          <node role="instance" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1184619279985">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204753574146">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1184619279985">
                             <property name="value" value="QueriesGenerated" />
                           </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227898431">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1184619305310">
-                              <link role="closureParameter" targetNodeId="1184619272592" resolveInfo="it" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1184619351136">
-                              <link role="property" targetNodeId="2.1075300953595" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204753574147">
+                            <link role="baseMethodDeclaration" targetNodeId="1.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227898431">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1184619305310">
+                                <link role="closureParameter" targetNodeId="1184619272592" resolveInfo="it" />
+                              </node>
+                              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1184619351136">
+                                <link role="property" targetNodeId="2.1075300953595" />
+                              </node>
                             </node>
                           </node>
                         </node>
