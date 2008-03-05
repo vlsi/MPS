@@ -4,24 +4,16 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 
 
-public class BaseIntention implements Intention {
-  public String getConcept() {
-    return null;
-  }
+public abstract class BaseIntention implements Intention {
+  public abstract String getConcept();
 
-  public String getDescription(SNode node, EditorContext editorContext) {
-    return "";
-  }
+  public abstract String getDescription(SNode node, EditorContext editorContext);
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
     return true;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public abstract void execute(SNode node, EditorContext editorContext);
 
-  }
-
-  public boolean isErrorIntention() {
-    return false;
-  }
+  public abstract boolean isErrorIntention();
 }
