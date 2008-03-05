@@ -169,6 +169,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1084197782722">
     <property name="name" value="Cardinality" />
+    <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1084197782723" resolveInfo="_0_1" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1084197782723">
@@ -389,6 +390,7 @@
     <property name="name" value="AnnotationLinkDeclaration" />
     <property name="rootable" value="true" />
     <property name="iconPath" value="${language_descriptor}\icons\annotationLink.png" />
+    <property name="package" value="annotation" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1174387216526">
       <link role="intfc" targetNodeId="1.1169194658468" />
@@ -429,6 +431,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1149608316235">
     <property name="name" value="AnnotationLinkStereotype" />
     <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
+    <property name="package" value="annotation" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1149608364144" resolveInfo="node" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1149608364144">

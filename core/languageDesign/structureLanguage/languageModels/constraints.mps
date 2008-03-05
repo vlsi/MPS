@@ -1237,6 +1237,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181705044">
+    <property name="package" value="annotation" />
     <link role="concept" targetNodeId="1.1149608206811" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181705045">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181705046" />

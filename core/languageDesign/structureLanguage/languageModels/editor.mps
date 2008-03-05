@@ -1790,6 +1790,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1149608488896">
+    <property name="package" value="annotation" />
     <link role="conceptDeclaration" targetNodeId="1.1149608206811" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1149608637030">
       <property name="vertical" value="true" />
