@@ -102,6 +102,10 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return myBaseNode.getNode();
   }
 
+  public TabbedEditor getTabbedEditor() {
+    return myTabbedEditor;
+  }
+
   public AbstractEditorComponent getCurrentEditor() {
     JPanel panel = (JPanel) getComponent();
     if (panel == null) return null;
