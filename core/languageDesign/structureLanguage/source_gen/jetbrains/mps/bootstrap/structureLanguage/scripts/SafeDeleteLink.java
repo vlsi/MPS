@@ -129,10 +129,11 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
+    refactoringContext.updateModelWithMaps(model);
   }
 
   public boolean doesUpdateModel() {
-    return false;
+    return true;
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {

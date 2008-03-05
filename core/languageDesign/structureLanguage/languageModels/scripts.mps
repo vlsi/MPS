@@ -4205,6 +4205,11 @@
         </node>
       </node>
     </node>
+    <node role="updateModelClause" type="jetbrains.mps.logging.refactoring.structure.UpdateModelClause" id="1204731600803">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204731600804">
+        <node role="statement" type="jetbrains.mps.logging.refactoring.structure.UpdateModelByDefaultOperation" id="1204731622795" />
+      </node>
+    </node>
   </node>
 </model>
 
