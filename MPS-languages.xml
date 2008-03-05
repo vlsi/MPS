@@ -1,0 +1,1315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="MPS-languages" default="pack.jetbrains.mps.baseLanguageInternal">
+  <property file=".\MPS.properties" />
+  <target name="pack.jetbrains.mps.baseLanguageInternal">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguageInternal.tmp">
+      <fileset dir="core\baseLanguage\baseLanguageInternal" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\baseLanguageInternal" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguageInternal.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguageInternal.tmp" filesonly="true" />
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguageInternal.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.closures">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp">
+      <fileset dir="core\baseLanguage\closures\languages\closures" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\closures\languages\closures" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\closures">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\baseLanguage\closures">
+        <include name="languages\closures\runtime\classes\" />
+      </fileset>
+      <fileset dir="core\baseLanguage\closures">
+        <include name="languages\closures\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/baseLanguage/jetbrains.mps.closures.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\META-INF\MANIFEST.MF" token="/languages\closures\runtime\classes/" value="/languages\closures\runtime\classes/,/core/baseLanguage/jetbrains.mps.closures.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\META-INF\MANIFEST.MF" token="/languages\closures\classes_gen/" value="/languages\closures\classes_gen/,/core/baseLanguage/jetbrains.mps.closures.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\closures.mpl" token="{mps_home}\core\baseLanguage\closures\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.closures.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\closures.mpl" token="{language_descriptor}\runtime\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.closures.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\closures.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.closures.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\closures\classes" />
+    <mkdir dir="core\baseLanguage\closures\languages\closures\runtime\classes" />
+    <mkdir dir="core\baseLanguage\closures\languages\closures\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.runtime.jar">
+      <fileset dir="core\baseLanguage\closures\classes" />
+      <fileset dir="core\baseLanguage\closures\languages\closures\runtime\classes" />
+      <fileset dir="core\baseLanguage\closures\languages\closures\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp" />
+  </target>
+  <target name="pack.closures.test">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\closures.test.tmp">
+      <fileset dir="core\baseLanguage\closures\solutions\closures.test" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\closures\solutions\closures.test" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\closures">
+        <include name="solutions\closures.test\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\closures.test.tmp\META-INF\MANIFEST.MF" token="/solutions\closures.test\classes_gen/" value="/solutions\closures.test\classes_gen/,/core/baseLanguage/closures.test.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\closures.test.tmp\closures.test.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\closures.test.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\closures.test.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\closures.test.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\closures\solutions\closures.test\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\closures.test.runtime.jar">
+      <fileset dir="core\baseLanguage\closures\solutions\closures.test\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\closures.test.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.ext.collections.lang">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp">
+      <fileset dir="core\baseLanguage\collections" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\collections" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\collections">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\baseLanguage\collections">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/baseLanguage/jetbrains.mps.baseLanguage.ext.collections.lang.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/baseLanguage/jetbrains.mps.baseLanguage.ext.collections.lang.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp\collections.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp\collections.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\collections\classes" />
+    <mkdir dir="core\baseLanguage\collections\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.runtime.jar">
+      <fileset dir="core\baseLanguage\collections\classes" />
+      <fileset dir="core\baseLanguage\collections\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp" />
+  </target>
+  <target name="pack.collections_samples">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_samples.tmp">
+      <fileset dir="core\baseLanguage\collections\solutions\collections\samples" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\collections\solutions\collections\samples" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\collections">
+        <include name="solutions\collections\samples\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_samples.tmp\META-INF\MANIFEST.MF" token="/solutions\collections\samples\classes_gen/" value="/solutions\collections\samples\classes_gen/,/core/baseLanguage/collections_samples.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_samples.tmp\collections_samples.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\collections_samples.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_samples.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_samples.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\collections\solutions\collections\samples\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_samples.runtime.jar">
+      <fileset dir="core\baseLanguage\collections\solutions\collections\samples\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_samples.tmp" />
+  </target>
+  <target name="pack.collections_generationTest">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_generationTest.tmp">
+      <fileset dir="core\baseLanguage\collections\solutions\collections_generationTest" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\collections\solutions\collections_generationTest" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\collections">
+        <include name="solutions\collections_generationTest\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_generationTest.tmp\META-INF\MANIFEST.MF" token="/solutions\collections_generationTest\classes_gen/" value="/solutions\collections_generationTest\classes_gen/,/core/baseLanguage/collections_generationTest.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_generationTest.tmp\collections_generationTest.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\collections_generationTest.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_generationTest.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_generationTest.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\collections\solutions\collections_generationTest\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_generationTest.runtime.jar">
+      <fileset dir="core\baseLanguage\collections\solutions\collections_generationTest\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_generationTest.tmp" />
+  </target>
+  <target name="pack.collections_unittest">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_unittest.tmp">
+      <fileset dir="core\baseLanguage\collections\solutions\collections\unittest" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\collections\solutions\collections\unittest" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\collections">
+        <include name="solutions\collections\unittest\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_unittest.tmp\META-INF\MANIFEST.MF" token="/solutions\collections\unittest\classes_gen/" value="/solutions\collections\unittest\classes_gen/,/core/baseLanguage/collections_unittest.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_unittest.tmp\collections_unittest.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\collections_unittest.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_unittest.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_unittest.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\collections\solutions\collections\unittest\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_unittest.runtime.jar">
+      <fileset dir="core\baseLanguage\collections\solutions\collections\unittest\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\collections_unittest.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.ext.csharp">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.tmp">
+      <fileset dir="core\baseLanguage\csharp" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\csharp" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\csharp">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\baseLanguage\csharp">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/baseLanguage/jetbrains.mps.baseLanguage.ext.csharp.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.tmp\csharp.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.tmp\csharp.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\csharp\classes" />
+    <mkdir dir="core\baseLanguage\csharp\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.runtime.jar">
+      <fileset dir="core\baseLanguage\csharp\classes" />
+      <fileset dir="core\baseLanguage\csharp\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.csharp.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.ext.dates.lang">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp">
+      <fileset dir="core\baseLanguage\dates" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\dates" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\dates">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\baseLanguage\dates">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.lang.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.lang.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp\dates.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp\dates.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\dates\classes" />
+    <mkdir dir="core\baseLanguage\dates\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.runtime.jar">
+      <fileset dir="core\baseLanguage\dates\classes" />
+      <fileset dir="core\baseLanguage\dates\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.ext.dates.internal">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp">
+      <fileset dir="core\baseLanguage\dates\internal" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\dates\internal" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\dates">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\baseLanguage\dates">
+        <include name="internal\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.internal.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp\META-INF\MANIFEST.MF" token="/internal\classes_gen/" value="/internal\classes_gen/,/core/baseLanguage/jetbrains.mps.baseLanguage.ext.dates.internal.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp\internal.mpl" token="{mps_home}\core\baseLanguage\dates\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp\internal.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\dates\classes" />
+    <mkdir dir="core\baseLanguage\dates\internal\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.runtime.jar">
+      <fileset dir="core\baseLanguage\dates\classes" />
+      <fileset dir="core\baseLanguage\dates\internal\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp" />
+  </target>
+  <target name="pack.dates_unittest">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\dates_unittest.tmp">
+      <fileset dir="core\baseLanguage\dates\unittest" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\dates\unittest" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\dates">
+        <include name="unittest\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\dates_unittest.tmp\META-INF\MANIFEST.MF" token="/unittest\classes_gen/" value="/unittest\classes_gen/,/core/baseLanguage/dates_unittest.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\dates_unittest.tmp\dates.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\dates_unittest.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\dates_unittest.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\dates_unittest.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\dates\unittest\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\dates_unittest.runtime.jar">
+      <fileset dir="core\baseLanguage\dates\unittest\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\dates_unittest.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.internal.collections">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp">
+      <fileset dir="core\baseLanguage\internalCollections\languages\collections" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\internalCollections\languages\collections" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\internalCollections">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\baseLanguage\internalCollections">
+        <include name="languages\collections\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/baseLanguage/jetbrains.mps.internal.collections.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp\META-INF\MANIFEST.MF" token="/languages\collections\classes_gen/" value="/languages\collections\classes_gen/,/core/baseLanguage/jetbrains.mps.internal.collections.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp\collections.mpl" token="{mps_home}\core\baseLanguage\internalCollections\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.internal.collections.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp\collections.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.internal.collections.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\internalCollections\classes" />
+    <mkdir dir="core\baseLanguage\internalCollections\languages\collections\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.runtime.jar">
+      <fileset dir="core\baseLanguage\internalCollections\classes" />
+      <fileset dir="core\baseLanguage\internalCollections\languages\collections\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp" />
+  </target>
+  <target name="pack.jetbrains.accounting.money">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp">
+      <fileset dir="core\baseLanguage\money" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\money" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\money">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\baseLanguage\money">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/baseLanguage/jetbrains.accounting.money.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/baseLanguage/jetbrains.accounting.money.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp\money.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\baseLanguage\jetbrains.accounting.money.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp\money.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.accounting.money.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\money\classes" />
+    <mkdir dir="core\baseLanguage\money\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.runtime.jar">
+      <fileset dir="core\baseLanguage\money\classes" />
+      <fileset dir="core\baseLanguage\money\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.accounting.money.tmp" />
+  </target>
+  <target name="pack.editor">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\editor.tmp">
+      <fileset dir="core\baseLanguage\baseLanguage\editor" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\baseLanguage\editor" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\baseLanguage">
+        <include name="editor\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\editor.tmp\META-INF\MANIFEST.MF" token="/editor\classes_gen/" value="/editor\classes_gen/,/core/baseLanguage/editor.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\editor.tmp\editor.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\editor.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\editor.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\editor.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\baseLanguage\editor\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\editor.runtime.jar">
+      <fileset dir="core\baseLanguage\baseLanguage\editor\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\editor.tmp" />
+  </target>
+  <target name="pack.JDK">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\JDK.tmp">
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\JDK" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\JDK" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\baseLanguage">
+        <include name="solutions\JDK\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\JDK.tmp\META-INF\MANIFEST.MF" token="/solutions\JDK\classes_gen/" value="/solutions\JDK\classes_gen/,/core/baseLanguage/JDK.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\JDK.tmp\JDK.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\JDK.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\JDK.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\JDK.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\baseLanguage\solutions\JDK\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\JDK.runtime.jar">
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\JDK\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\JDK.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.blTypes">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp">
+      <fileset dir="core\baseLanguage\baseLanguage\languages\blTypes" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\baseLanguage\languages\blTypes" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\baseLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\baseLanguage\baseLanguage">
+        <include name="languages\blTypes\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp\META-INF\MANIFEST.MF" token="/languages\blTypes\classes_gen/" value="/languages\blTypes\classes_gen/,/core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp\blTypes.mpl" token="{mps_home}\core\baseLanguage\baseLanguage\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp\blTypes.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\baseLanguage\classes" />
+    <mkdir dir="core\baseLanguage\baseLanguage\languages\blTypes\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.runtime.jar">
+      <fileset dir="core\baseLanguage\baseLanguage\classes" />
+      <fileset dir="core\baseLanguage\baseLanguage\languages\blTypes\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.blTypes.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp">
+      <fileset dir="core\baseLanguage\baseLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\baseLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\baseLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\baseLanguage\baseLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/baseLanguage/jetbrains.mps.baseLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/baseLanguage/jetbrains.mps.baseLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp\baseLanguage.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp\baseLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\baseLanguage\classes" />
+    <mkdir dir="core\baseLanguage\baseLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.runtime.jar">
+      <fileset dir="core\baseLanguage\baseLanguage\classes" />
+      <fileset dir="core\baseLanguage\baseLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.strings">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp">
+      <fileset dir="core\baseLanguage\strings" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\strings" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\strings">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\baseLanguage\strings">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/baseLanguage/jetbrains.mps.baseLanguage.strings.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/baseLanguage/jetbrains.mps.baseLanguage.strings.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp\strings.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.strings.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp\strings.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.strings.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\strings\classes" />
+    <mkdir dir="core\baseLanguage\strings\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.runtime.jar">
+      <fileset dir="core\baseLanguage\strings\classes" />
+      <fileset dir="core\baseLanguage\strings\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.strings.tmp" />
+  </target>
+  <target name="pack.MPS.Classpath">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\MPS.Classpath.tmp">
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\baseLanguage">
+        <include name="solutions\MPS.Classpath\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\MPS.Classpath.tmp\META-INF\MANIFEST.MF" token="/solutions\MPS.Classpath\classes_gen/" value="/solutions\MPS.Classpath\classes_gen/,/core/baseLanguage/MPS.Classpath.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\MPS.Classpath.tmp\MPS.Classpath.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\MPS.Classpath.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\MPS.Classpath.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\MPS.Classpath.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\MPS.Classpath.runtime.jar">
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\MPS.Classpath\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\MPS.Classpath.tmp" />
+  </target>
+  <target name="pack.refactoring">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\refactoring.tmp">
+      <fileset dir="core\baseLanguage\baseLanguage\refactoring" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\baseLanguage\refactoring" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\baseLanguage">
+        <include name="refactoring\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\refactoring.tmp\META-INF\MANIFEST.MF" token="/refactoring\classes_gen/" value="/refactoring\classes_gen/,/core/baseLanguage/refactoring.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\refactoring.tmp\refactoring.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\refactoring.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\refactoring.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\refactoring.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\baseLanguage\refactoring\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\refactoring.runtime.jar">
+      <fileset dir="core\baseLanguage\baseLanguage\refactoring\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\refactoring.tmp" />
+  </target>
+  <target name="pack.resolve">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\resolve.tmp">
+      <fileset dir="core\baseLanguage\baseLanguage\resolve" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\baseLanguage\resolve" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\baseLanguage">
+        <include name="resolve\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\resolve.tmp\META-INF\MANIFEST.MF" token="/resolve\classes_gen/" value="/resolve\classes_gen/,/core/baseLanguage/resolve.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\resolve.tmp\resolve.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\resolve.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\resolve.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\resolve.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\baseLanguage\resolve\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\resolve.runtime.jar">
+      <fileset dir="core\baseLanguage\baseLanguage\resolve\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\resolve.tmp" />
+  </target>
+  <target name="pack.testLogger">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger.tmp">
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\baseLanguage">
+        <include name="solutions\testLogger\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger.tmp\META-INF\MANIFEST.MF" token="/solutions\testLogger\classes_gen/" value="/solutions\testLogger\classes_gen/,/core/baseLanguage/testLogger.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger.tmp\testLogger.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\testLogger.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\baseLanguage\solutions\testLogger\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger.runtime.jar">
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger.tmp" />
+  </target>
+  <target name="pack.testLogger2">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger2.tmp">
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger2" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger2" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\baseLanguage\baseLanguage">
+        <include name="solutions\testLogger2\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger2.tmp\META-INF\MANIFEST.MF" token="/solutions\testLogger2\classes_gen/" value="/solutions\testLogger2\classes_gen/,/core/baseLanguage/testLogger2.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger2.tmp\testLogger2.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\testLogger2.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger2.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger2.tmp" filesonly="true" />
+    <mkdir dir="core\baseLanguage\baseLanguage\solutions\testLogger2\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger2.runtime.jar">
+      <fileset dir="core\baseLanguage\baseLanguage\solutions\testLogger2\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\testLogger2.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bootstrap.actionsLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp">
+      <fileset dir="core\languageDesign\actionsLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\actionsLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\actionsLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\actionsLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.bootstrap.actionsLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.bootstrap.actionsLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\actionsLanguage\classes" />
+    <mkdir dir="core\languageDesign\actionsLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.runtime.jar">
+      <fileset dir="core\languageDesign\actionsLanguage\classes" />
+      <fileset dir="core\languageDesign\actionsLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.actionsLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.annotations">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp">
+      <fileset dir="core\languageDesign\annotations\languages\annotations" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\annotations\languages\annotations" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\annotations">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\annotations">
+        <include name="languages\annotations\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.annotations.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp\META-INF\MANIFEST.MF" token="/languages\annotations\classes_gen/" value="/languages\annotations\classes_gen/,/core/languageDesign/jetbrains.mps.annotations.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp\annotations.mpl" token="{mps_home}\core\languageDesign\annotations\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.annotations.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp\annotations.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.annotations.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\annotations\classes" />
+    <mkdir dir="core\languageDesign\annotations\languages\annotations\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.runtime.jar">
+      <fileset dir="core\languageDesign\annotations\classes" />
+      <fileset dir="core\languageDesign\annotations\languages\annotations\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bootstrap.cfaLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.tmp">
+      <fileset dir="core\languageDesign\cfaLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\cfaLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\cfaLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\cfaLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.bootstrap.cfaLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.bootstrap.cfaLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.tmp\cfaLanguage.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.tmp\cfaLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\cfaLanguage\classes" />
+    <mkdir dir="core\languageDesign\cfaLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.runtime.jar">
+      <fileset dir="core\languageDesign\cfaLanguage\classes" />
+      <fileset dir="core\languageDesign\cfaLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bootstrap.constraintsLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp">
+      <fileset dir="core\languageDesign\constraintsLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\constraintsLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\constraintsLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\constraintsLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp\constraintsLanguage.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp\constraintsLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\constraintsLanguage\classes" />
+    <mkdir dir="core\languageDesign\constraintsLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.runtime.jar">
+      <fileset dir="core\languageDesign\constraintsLanguage\classes" />
+      <fileset dir="core\languageDesign\constraintsLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bootstrap.editorLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp">
+      <fileset dir="core\languageDesign\editorLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\editorLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\editorLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\editorLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp\editorLanguage.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp\editorLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\editorLanguage\classes" />
+    <mkdir dir="core\languageDesign\editorLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.runtime.jar">
+      <fileset dir="core\languageDesign\editorLanguage\classes" />
+      <fileset dir="core\languageDesign\editorLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.editorLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bootstrap.findUsagesLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp">
+      <fileset dir="core\languageDesign\findUsagesLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\findUsagesLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\findUsagesLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\findUsagesLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp\findUsagesLanguage.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp\findUsagesLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\findUsagesLanguage\classes" />
+    <mkdir dir="core\languageDesign\findUsagesLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.runtime.jar">
+      <fileset dir="core\languageDesign\findUsagesLanguage\classes" />
+      <fileset dir="core\languageDesign\findUsagesLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.findUsagesLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bootstrap.helgins">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp">
+      <fileset dir="core\languageDesign\helgins" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\helgins" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\helgins">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\helgins">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.bootstrap.helgins.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.bootstrap.helgins.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp\helgins.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.helgins.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp\helgins.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.helgins.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\helgins\classes" />
+    <mkdir dir="core\languageDesign\helgins\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.runtime.jar">
+      <fileset dir="core\languageDesign\helgins\classes" />
+      <fileset dir="core\languageDesign\helgins\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.helgins.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bootstrap.intentionsLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp">
+      <fileset dir="core\languageDesign\intentionsLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\intentionsLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\intentionsLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\intentionsLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp\intentionsLanguage.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp\intentionsLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\intentionsLanguage\classes" />
+    <mkdir dir="core\languageDesign\intentionsLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.runtime.jar">
+      <fileset dir="core\languageDesign\intentionsLanguage\classes" />
+      <fileset dir="core\languageDesign\intentionsLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.intentionsLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mpslite">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp">
+      <fileset dir="core\languageDesign\mps-lite\languages\mpslite" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\mps-lite\languages\mpslite" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\mps-lite">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\mps-lite">
+        <include name="languages\mpslite\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mpslite.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp\META-INF\MANIFEST.MF" token="/languages\mpslite\classes_gen/" value="/languages\mpslite\classes_gen/,/core/languageDesign/jetbrains.mpslite.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp\mpslite.mpl" token="{mps_home}\core\languageDesign\mps-lite\classes" value="{mps_home}\core\languageDesign\jetbrains.mpslite.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp\mpslite.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mpslite.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mpslite.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\mps-lite\classes" />
+    <mkdir dir="core\languageDesign\mps-lite\languages\mpslite\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mpslite.runtime.jar">
+      <fileset dir="core\languageDesign\mps-lite\classes" />
+      <fileset dir="core\languageDesign\mps-lite\languages\mpslite\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.nanoj">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp">
+      <fileset dir="core\languageDesign\mps-lite\languages\nanoj" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\mps-lite\languages\nanoj" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\mps-lite">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\mps-lite">
+        <include name="languages\nanoj\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.nanoj.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp\META-INF\MANIFEST.MF" token="/languages\nanoj\classes_gen/" value="/languages\nanoj\classes_gen/,/core/languageDesign/jetbrains.mps.nanoj.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp\nanoj.mpl" token="{mps_home}\core\languageDesign\mps-lite\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.nanoj.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp\nanoj.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.nanoj.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\mps-lite\classes" />
+    <mkdir dir="core\languageDesign\mps-lite\languages\nanoj\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.runtime.jar">
+      <fileset dir="core\languageDesign\mps-lite\classes" />
+      <fileset dir="core\languageDesign\mps-lite\languages\nanoj\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.nanoj.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.patterns">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp">
+      <fileset dir="core\languageDesign\patternLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\patternLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\patternLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\patternLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.patterns.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.patterns.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp\patterns.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.patterns.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp\patterns.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.patterns.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\patternLanguage\classes" />
+    <mkdir dir="core\languageDesign\patternLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.runtime.jar">
+      <fileset dir="core\languageDesign\patternLanguage\classes" />
+      <fileset dir="core\languageDesign\patternLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.patterns.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.quotation">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.quotation.tmp">
+      <fileset dir="core\languageDesign\quotation" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\quotation" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.quotation.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.quotation.tmp" filesonly="true" />
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.quotation.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bootstrap.pluginLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp">
+      <fileset dir="core\languageDesign\pluginLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\pluginLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\pluginLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\pluginLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.bootstrap.pluginLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.bootstrap.pluginLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp\pluginLanguage.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp\pluginLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\pluginLanguage\classes" />
+    <mkdir dir="core\languageDesign\pluginLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.runtime.jar">
+      <fileset dir="core\languageDesign\pluginLanguage\classes" />
+      <fileset dir="core\languageDesign\pluginLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.pluginLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bootstrap.sharedConcepts">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp">
+      <fileset dir="core\languageDesign\sharedConcepts" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\sharedConcepts" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\sharedConcepts">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\sharedConcepts">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.bootstrap.sharedConcepts.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.bootstrap.sharedConcepts.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp\sharedConcepts.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp\sharedConcepts.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\sharedConcepts\classes" />
+    <mkdir dir="core\languageDesign\sharedConcepts\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.runtime.jar">
+      <fileset dir="core\languageDesign\sharedConcepts\classes" />
+      <fileset dir="core\languageDesign\sharedConcepts\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.sharedConcepts.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bootstrap.smodelLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp">
+      <fileset dir="core\languageDesign\smodelLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\smodelLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\smodelLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\smodelLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp\smodelLanguage.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp\smodelLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\smodelLanguage\classes" />
+    <mkdir dir="core\languageDesign\smodelLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.runtime.jar">
+      <fileset dir="core\languageDesign\smodelLanguage\classes" />
+      <fileset dir="core\languageDesign\smodelLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.smodelLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.ide.scriptLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp">
+      <fileset dir="core\languageDesign\scriptLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\scriptLanguage" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp" filesonly="true" />
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.ide.scriptLanguageInternal">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguageInternal.tmp">
+      <fileset dir="core\languageDesign\scriptLanguageInternal" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\scriptLanguageInternal" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguageInternal.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguageInternal.tmp" filesonly="true" />
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguageInternal.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bootstrap.structureLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp">
+      <fileset dir="core\languageDesign\structureLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\structureLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\structureLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\structureLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.bootstrap.structureLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.bootstrap.structureLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\structureLanguage\classes" />
+    <mkdir dir="core\languageDesign\structureLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.runtime.jar">
+      <fileset dir="core\languageDesign\structureLanguage\classes" />
+      <fileset dir="core\languageDesign\structureLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.structureLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.core">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp">
+      <fileset dir="core\languageDesign\core" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\core" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\core">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\core">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.core.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.core.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.core.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.core.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.core.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\core\classes" />
+    <mkdir dir="core\languageDesign\core\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.core.runtime.jar">
+      <fileset dir="core\languageDesign\core\classes" />
+      <fileset dir="core\languageDesign\core\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.core.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.logging.refactoring">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp">
+      <fileset dir="core\languageDesign\refactoring" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\refactoring" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\refactoring">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\refactoring">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.logging.refactoring.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.logging.refactoring.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp\refactoring.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.logging.refactoring.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp\refactoring.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.logging.refactoring.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\refactoring\classes" />
+    <mkdir dir="core\languageDesign\refactoring\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.runtime.jar">
+      <fileset dir="core\languageDesign\refactoring\classes" />
+      <fileset dir="core\languageDesign\refactoring\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.logging.refactoring.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.transformation.test.inputLang">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.tmp">
+      <fileset dir="core\languageDesign\transformation\test\inputLang" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\transformation\test\inputLang" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\transformation">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\transformation">
+        <include name="test\inputLang\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.transformation.test.inputLang.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.tmp\META-INF\MANIFEST.MF" token="/test\inputLang\classes_gen/" value="/test\inputLang\classes_gen/,/core/languageDesign/jetbrains.mps.transformation.test.inputLang.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.tmp\inputLang.mpl" token="{mps_home}\core\languageDesign\transformation\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.transformation.test.inputLang.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.tmp\inputLang.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.transformation.test.inputLang.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\transformation\classes" />
+    <mkdir dir="core\languageDesign\transformation\test\inputLang\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.runtime.jar">
+      <fileset dir="core\languageDesign\transformation\classes" />
+      <fileset dir="core\languageDesign\transformation\test\inputLang\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.inputLang.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.transformation.test.outputLang">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.tmp">
+      <fileset dir="core\languageDesign\transformation\test\outputLang" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\transformation\test\outputLang" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\transformation">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\transformation">
+        <include name="test\outputLang\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.transformation.test.outputLang.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.tmp\META-INF\MANIFEST.MF" token="/test\outputLang\classes_gen/" value="/test\outputLang\classes_gen/,/core/languageDesign/jetbrains.mps.transformation.test.outputLang.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.tmp\outputLang.mpl" token="{mps_home}\core\languageDesign\transformation\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.transformation.test.outputLang.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.tmp\outputLang.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.transformation.test.outputLang.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\transformation\classes" />
+    <mkdir dir="core\languageDesign\transformation\test\outputLang\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.runtime.jar">
+      <fileset dir="core\languageDesign\transformation\classes" />
+      <fileset dir="core\languageDesign\transformation\test\outputLang\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.test.outputLang.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.transformation.TLBase">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp">
+      <fileset dir="core\languageDesign\transformation" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\transformation" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\transformation">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\languageDesign\transformation">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/languageDesign/jetbrains.mps.transformation.TLBase.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/languageDesign/jetbrains.mps.transformation.TLBase.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.transformation.TLBase.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\jetbrains.mps.transformation.TLBase.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\transformation\classes" />
+    <mkdir dir="core\languageDesign\transformation\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.runtime.jar">
+      <fileset dir="core\languageDesign\transformation\classes" />
+      <fileset dir="core\languageDesign\transformation\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\jetbrains.mps.transformation.TLBase.tmp" />
+  </target>
+  <target name="pack.smodelLanguage-samples">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage-samples.tmp">
+      <fileset dir="core\languageDesign\smodelLanguage\solutions\samples" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\smodelLanguage\solutions\samples" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\smodelLanguage">
+        <include name="solutions\samples\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage-samples.tmp\META-INF\MANIFEST.MF" token="/solutions\samples\classes_gen/" value="/solutions\samples\classes_gen/,/core/languageDesign/smodelLanguage-samples.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage-samples.tmp\smodelLanguage-samples.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\smodelLanguage-samples.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage-samples.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage-samples.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\smodelLanguage\solutions\samples\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage-samples.runtime.jar">
+      <fileset dir="core\languageDesign\smodelLanguage\solutions\samples\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage-samples.tmp" />
+  </target>
+  <target name="pack.smodelLanguage_typetest">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage_typetest.tmp">
+      <fileset dir="core\languageDesign\smodelLanguage\solutions\typetest" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\languageDesign\smodelLanguage\solutions\typetest" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\languageDesign\smodelLanguage">
+        <include name="solutions\typetest\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage_typetest.tmp\META-INF\MANIFEST.MF" token="/solutions\typetest\classes_gen/" value="/solutions\typetest\classes_gen/,/core/languageDesign/smodelLanguage_typetest.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage_typetest.tmp\smodelLanguage_typetest.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\languageDesign\smodelLanguage_typetest.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage_typetest.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage_typetest.tmp" filesonly="true" />
+    <mkdir dir="core\languageDesign\smodelLanguage\solutions\typetest\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage_typetest.runtime.jar">
+      <fileset dir="core\languageDesign\smodelLanguage\solutions\typetest\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign\smodelLanguage_typetest.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.projectLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp">
+      <fileset dir="core\projectLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\projectLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="core\projectLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="core\projectLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/core/jetbrains.mps.projectLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/core/jetbrains.mps.projectLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\jetbrains.mps.projectLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\jetbrains.mps.projectLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\core\jetbrains.mps.projectLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp" filesonly="true" />
+    <mkdir dir="core\projectLanguage\classes" />
+    <mkdir dir="core\projectLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\jetbrains.mps.projectLanguage.runtime.jar">
+      <fileset dir="core\projectLanguage\classes" />
+      <fileset dir="core\projectLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.buildlanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp">
+      <fileset dir="platform\buildlanguage\languages\buildlanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\buildlanguage\languages\buildlanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\buildlanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="platform\buildlanguage">
+        <include name="languages\buildlanguage\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/platform/jetbrains.mps.buildlanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp\META-INF\MANIFEST.MF" token="/languages\buildlanguage\classes_gen/" value="/languages\buildlanguage\classes_gen/,/platform/jetbrains.mps.buildlanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp\buildlanguage.mpl" token="{mps_home}\platform\buildlanguage\classes" value="{mps_home}\platform\jetbrains.mps.buildlanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp\buildlanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.buildlanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.buildlanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp" filesonly="true" />
+    <mkdir dir="platform\buildlanguage\classes" />
+    <mkdir dir="platform\buildlanguage\languages\buildlanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.buildlanguage.runtime.jar">
+      <fileset dir="platform\buildlanguage\classes" />
+      <fileset dir="platform\buildlanguage\languages\buildlanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.mpsLayoutLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp">
+      <fileset dir="platform\buildlanguage\languages\mpsLayoutLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\buildlanguage\languages\mpsLayoutLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\buildlanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="platform\buildlanguage">
+        <include name="languages\mpsLayoutLanguage\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/platform/jetbrains.mps.mpsLayoutLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp\META-INF\MANIFEST.MF" token="/languages\mpsLayoutLanguage\classes_gen/" value="/languages\mpsLayoutLanguage\classes_gen/,/platform/jetbrains.mps.mpsLayoutLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp\mpsLayoutLanguage.mpl" token="{mps_home}\platform\buildlanguage\classes" value="{mps_home}\platform\jetbrains.mps.mpsLayoutLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp\mpsLayoutLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.mpsLayoutLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp" filesonly="true" />
+    <mkdir dir="platform\buildlanguage\classes" />
+    <mkdir dir="platform\buildlanguage\languages\mpsLayoutLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.runtime.jar">
+      <fileset dir="platform\buildlanguage\classes" />
+      <fileset dir="platform\buildlanguage\languages\mpsLayoutLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsLayoutLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.mpsProjectLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp">
+      <fileset dir="platform\buildlanguage\languages\mpsProjectLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\buildlanguage\languages\mpsProjectLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\buildlanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="platform\buildlanguage">
+        <include name="languages\mpsProjectLanguage\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/platform/jetbrains.mps.mpsProjectLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp\META-INF\MANIFEST.MF" token="/languages\mpsProjectLanguage\classes_gen/" value="/languages\mpsProjectLanguage\classes_gen/,/platform/jetbrains.mps.mpsProjectLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp\mpsProjectLanguage.mpl" token="{mps_home}\platform\buildlanguage\classes" value="{mps_home}\platform\jetbrains.mps.mpsProjectLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp\mpsProjectLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.mpsProjectLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp" filesonly="true" />
+    <mkdir dir="platform\buildlanguage\classes" />
+    <mkdir dir="platform\buildlanguage\languages\mpsProjectLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.runtime.jar">
+      <fileset dir="platform\buildlanguage\classes" />
+      <fileset dir="platform\buildlanguage\languages\mpsProjectLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.mpsProjectLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.propertylanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp">
+      <fileset dir="platform\buildlanguage\languages\propertylanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\buildlanguage\languages\propertylanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\buildlanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="platform\buildlanguage">
+        <include name="languages\propertylanguage\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/platform/jetbrains.mps.propertylanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp\META-INF\MANIFEST.MF" token="/languages\propertylanguage\classes_gen/" value="/languages\propertylanguage\classes_gen/,/platform/jetbrains.mps.propertylanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp\propertylanguage.mpl" token="{mps_home}\platform\buildlanguage\classes" value="{mps_home}\platform\jetbrains.mps.propertylanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp\propertylanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.propertylanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.propertylanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp" filesonly="true" />
+    <mkdir dir="platform\buildlanguage\classes" />
+    <mkdir dir="platform\buildlanguage\languages\propertylanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.propertylanguage.runtime.jar">
+      <fileset dir="platform\buildlanguage\classes" />
+      <fileset dir="platform\buildlanguage\languages\propertylanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.bookLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp">
+      <fileset dir="platform\textLanguage\languages\bookLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\textLanguage\languages\bookLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\textLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="platform\textLanguage">
+        <include name="languages\bookLanguage\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/platform/jetbrains.mps.bookLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp\META-INF\MANIFEST.MF" token="/languages\bookLanguage\classes_gen/" value="/languages\bookLanguage\classes_gen/,/platform/jetbrains.mps.bookLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp\bookLanguage.mpl" token="{mps_home}\platform\textLanguage\classes" value="{mps_home}\platform\jetbrains.mps.bookLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp\bookLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.bookLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.bookLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp" filesonly="true" />
+    <mkdir dir="platform\textLanguage\classes" />
+    <mkdir dir="platform\textLanguage\languages\bookLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.bookLanguage.runtime.jar">
+      <fileset dir="platform\textLanguage\classes" />
+      <fileset dir="platform\textLanguage\languages\bookLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.regexp">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.tmp">
+      <fileset dir="platform\regexp" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\regexp" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\regexp">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="platform\regexp">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/platform/jetbrains.mps.regexp.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/platform/jetbrains.mps.regexp.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.tmp\regexp.mpl" token="{language_descriptor}\classes" value="{mps_home}\platform\jetbrains.mps.regexp.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.tmp\regexp.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.regexp.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.tmp" filesonly="true" />
+    <mkdir dir="platform\regexp\classes" />
+    <mkdir dir="platform\regexp\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.runtime.jar">
+      <fileset dir="platform\regexp\classes" />
+      <fileset dir="platform\regexp\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.regexp.examples">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.examples.tmp">
+      <fileset dir="platform\regexp\solutions\jetbrains.mps.regexp.examples" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\regexp\solutions\jetbrains.mps.regexp.examples" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\regexp">
+        <include name="solutions\jetbrains.mps.regexp.examples\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.examples.tmp\META-INF\MANIFEST.MF" token="/solutions\jetbrains.mps.regexp.examples\classes_gen/" value="/solutions\jetbrains.mps.regexp.examples\classes_gen/,/platform/jetbrains.mps.regexp.examples.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.examples.tmp\jetbrains.mps.regexp.examples.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.regexp.examples.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.examples.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.examples.tmp" filesonly="true" />
+    <mkdir dir="platform\regexp\solutions\jetbrains.mps.regexp.examples\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.examples.runtime.jar">
+      <fileset dir="platform\regexp\solutions\jetbrains.mps.regexp.examples\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.examples.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.textLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp">
+      <fileset dir="platform\textLanguage\languages\textLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\textLanguage\languages\textLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\textLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="platform\textLanguage">
+        <include name="languages\textLanguage\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/platform/jetbrains.mps.textLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp\META-INF\MANIFEST.MF" token="/languages\textLanguage\classes_gen/" value="/languages\textLanguage\classes_gen/,/platform/jetbrains.mps.textLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp\textLanguage.mpl" token="{mps_home}\platform\textLanguage\classes" value="{mps_home}\platform\jetbrains.mps.textLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp\textLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.textLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp" filesonly="true" />
+    <mkdir dir="platform\textLanguage\classes" />
+    <mkdir dir="platform\textLanguage\languages\textLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.runtime.jar">
+      <fileset dir="platform\textLanguage\classes" />
+      <fileset dir="platform\textLanguage\languages\textLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.textLanguage.formula">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp">
+      <fileset dir="platform\textLanguage\languages\formula" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\textLanguage\languages\formula" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\textLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="platform\textLanguage">
+        <include name="languages\formula\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/platform/jetbrains.mps.textLanguage.formula.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp\META-INF\MANIFEST.MF" token="/languages\formula\classes_gen/" value="/languages\formula\classes_gen/,/platform/jetbrains.mps.textLanguage.formula.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp\formula.mpl" token="{mps_home}\platform\textLanguage\classes" value="{mps_home}\platform\jetbrains.mps.textLanguage.formula.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp\formula.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.textLanguage.formula.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp" filesonly="true" />
+    <mkdir dir="platform\textLanguage\classes" />
+    <mkdir dir="platform\textLanguage\languages\formula\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.runtime.jar">
+      <fileset dir="platform\textLanguage\classes" />
+      <fileset dir="platform\textLanguage\languages\formula\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.textLanguage.table">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp">
+      <fileset dir="platform\textLanguage\languages\table" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\textLanguage\languages\table" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\textLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="platform\textLanguage">
+        <include name="languages\table\classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/platform/jetbrains.mps.textLanguage.table.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp\META-INF\MANIFEST.MF" token="/languages\table\classes_gen/" value="/languages\table\classes_gen/,/platform/jetbrains.mps.textLanguage.table.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp\table.mpl" token="{mps_home}\platform\textLanguage\classes" value="{mps_home}\platform\jetbrains.mps.textLanguage.table.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp\table.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.textLanguage.table.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.table.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp" filesonly="true" />
+    <mkdir dir="platform\textLanguage\classes" />
+    <mkdir dir="platform\textLanguage\languages\table\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.table.runtime.jar">
+      <fileset dir="platform\textLanguage\classes" />
+      <fileset dir="platform\textLanguage\languages\table\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.uiLanguage">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.tmp">
+      <fileset dir="platform\uiLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\uiLanguage" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\uiLanguage">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="platform\uiLanguage">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/platform/jetbrains.mps.uiLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/platform/jetbrains.mps.uiLanguage.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.tmp\uiLanguage.mpl" token="{language_descriptor}\classes" value="{mps_home}\platform\jetbrains.mps.uiLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.tmp\uiLanguage.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.uiLanguage.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.tmp" filesonly="true" />
+    <mkdir dir="platform\uiLanguage\classes" />
+    <mkdir dir="platform\uiLanguage\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.runtime.jar">
+      <fileset dir="platform\uiLanguage\classes" />
+      <fileset dir="platform\uiLanguage\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.unitTest">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp">
+      <fileset dir="platform\unitTest" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\unitTest" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp" filesonly="true" />
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.xml">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.xml.tmp">
+      <fileset dir="platform\xml" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\xml" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\xml">
+        <include name="classes\" />
+      </fileset>
+      <fileset dir="platform\xml">
+        <include name="classes_gen\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.xml.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/platform/jetbrains.mps.xml.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.xml.tmp\META-INF\MANIFEST.MF" token="/classes_gen/" value="/classes_gen/,/platform/jetbrains.mps.xml.runtime.jar/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.xml.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes" value="{mps_home}\platform\jetbrains.mps.xml.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.xml.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.xml.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.xml.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.xml.tmp" filesonly="true" />
+    <mkdir dir="platform\xml\classes" />
+    <mkdir dir="platform\xml\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.xml.runtime.jar">
+      <fileset dir="platform\xml\classes" />
+      <fileset dir="platform\xml\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.xml.tmp" />
+  </target>
+</project>
+

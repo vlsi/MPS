@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="MPS-external" default="main">
-  <import file="MPSlanguages.xml" />
+  <import file="MPS-languages.xml" />
   <property file=".\MPS.properties" />
   <target name="main" depends="clean.before,folders.create,do.the.job,clean.after" />
   <target name="clean.before">
@@ -15,8 +15,6 @@
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\app" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\core" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage" />
-    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp" />
-    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.runtime.tmp" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\core\configuration" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\core\configurations" />
@@ -29,8 +27,6 @@
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\platform\webr" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\platform\ypath" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\platform\stateMachine" />
-    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.runtime.tmp" />
-    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.runtime.tmp" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\docs" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\META-INF" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\plugin" />
@@ -137,13 +133,6 @@
     <antcall target="pack.jetbrains.mps.closures" />
     <antcall target="pack.closures.test" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.collections.lang" />
-    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp">
-      <fileset dir="core\baseLanguage\collections\runtime\classes" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
-    </copy>
-    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.jar" filesonly="true">
-      <fileset dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
-    </jar>
-    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp" />
     <antcall target="pack.collections_samples" />
     <antcall target="pack.collections_generationTest" />
     <antcall target="pack.collections_unittest" />
@@ -152,13 +141,6 @@
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.dates.internal" />
     <antcall target="pack.dates_unittest" />
     <antcall target="pack.jetbrains.mps.internal.collections" />
-    <copy todir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.runtime.tmp">
-      <fileset dir="core\baseLanguage\internalCollections\languages\collections\runtime\classes" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
-    </copy>
-    <jar destfile="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.runtime.jar" filesonly="true">
-      <fileset dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.runtime.tmp" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
-    </jar>
-    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.runtime.tmp" />
     <antcall target="pack.jetbrains.accounting.money" />
     <antcall target="pack.editor" />
     <antcall target="pack.JDK" />
@@ -209,25 +191,11 @@
     <antcall target="pack.jetbrains.mps.bookLanguage" />
     <antcall target="pack.jetbrains.mps.regexp" />
     <antcall target="pack.jetbrains.mps.regexp.examples" />
-    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.runtime.tmp">
-      <fileset dir="platform\regexp\runtime\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
-    </copy>
-    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.runtime.jar" filesonly="true">
-      <fileset dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.runtime.tmp" excludes="**/*.iml, **/*.ipr, **/*.java" />
-    </jar>
-    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.runtime.tmp" />
     <antcall target="pack.jetbrains.mps.textLanguage" />
     <antcall target="pack.jetbrains.mps.textLanguage.formula" />
     <antcall target="pack.jetbrains.mps.textLanguage.table" />
     <antcall target="pack.jetbrains.mps.uiLanguage" />
     <antcall target="pack.jetbrains.mps.baseLanguage.unitTest" />
-    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.runtime.tmp">
-      <fileset dir="platform\uiLanguage\runtime\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
-    </copy>
-    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.runtime.jar" filesonly="true">
-      <fileset dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.runtime.tmp" excludes="**/*.iml, **/*.ipr, **/*.java" />
-    </jar>
-    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.runtime.tmp" />
     <antcall target="pack.jetbrains.mps.xml" />
     <copy todir="${deploy.dir}\MPS.tmp\MPS\docs">
       <fileset dir="docs" excludes="**/*.iml, **/*.ipr, **/*.java" />
@@ -270,10 +238,6 @@
   <target name="clean.after" depends="do.the.job">
     <delete dir="${deploy.dir}\MPS.tmp" />
     <delete dir="${deploy.dir}\MPS.tmp\MPS\lib\mps.tmp" />
-    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.collections.lang.tmp" />
-    <delete dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.runtime.tmp" />
-    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.regexp.runtime.tmp" />
-    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.uiLanguage.runtime.tmp" />
   </target>
 </project>
 
