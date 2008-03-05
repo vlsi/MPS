@@ -109,8 +109,6 @@ public interface INodeAdapter {
 
   void addAttribute(String role, INodeAdapter attribute);
 
-  INodeAdapter getPropertyAttribute(String propertyName);
-
   INodeAdapter getPropertyAttribute(String role, String propertyName);
 
   @NotNull
@@ -119,8 +117,6 @@ public interface INodeAdapter {
   void setPropertyAttribute(String role, String propertyName, INodeAdapter propertyAttribute);
 
   void addPropertyAttribute(String role, String propertyName, INodeAdapter propertyAttribute);
-
-  INodeAdapter getLinkAttribute(String propertyName);
 
   INodeAdapter getLinkAttribute(String role, String propertyName);
 

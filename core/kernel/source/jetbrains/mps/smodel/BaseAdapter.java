@@ -301,9 +301,17 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
+  // ---
+  // -- attributes
+  // ---
+
   public List<INodeAdapter> getAllAttributes() {
     return toAdapters(getNode().getAllAttributes());
   }
+
+  // ---
+  // node attributes
+  // ---
 
   @Nullable
   public INodeAdapter getAttribute(String role) {
@@ -331,14 +339,9 @@ public abstract class BaseAdapter implements INodeAdapter {
     myNode.addAttribute(role, attribute.getNode());
   }
 
-  public INodeAdapter getPropertyAttribute(String propertyName) {
-    SNode node = myNode.getPropertyAttribute(propertyName);
-    if (node == null) {
-      return null;
-    } else {
-      return node.getAdapter();
-    }
-  }
+  // ---
+  // property attributes
+  // ---
 
   public INodeAdapter getPropertyAttribute(String role, String propertyName) {
     SNode node = myNode.getPropertyAttribute(role, propertyName);
@@ -366,14 +369,9 @@ public abstract class BaseAdapter implements INodeAdapter {
     myNode.addPropertyAttribute(role, propertyName, propertyAttribute.getNode());
   }
 
-  public INodeAdapter getLinkAttribute(String linkRole) {
-    SNode node = myNode.getLinkAttribute(linkRole);
-    if (node == null) {
-      return null;
-    } else {
-      return node.getAdapter();
-    }
-  }
+  // ---
+  // link attributes
+  // ---
 
   public INodeAdapter getLinkAttribute(String linkAttributeRole, String linkRole) {
     SNode node = myNode.getLinkAttribute(linkAttributeRole, linkRole);
@@ -399,6 +397,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   public List<? extends INodeAdapter> getLinkAttributes(String linkAttributeRole, String linkRole) {
     return toAdapters(myNode.getLinkAttributes(linkAttributeRole, linkRole));
   }
+
 
   public boolean equals(Object obj) {
     if (!(obj instanceof INodeAdapter)) return false;
