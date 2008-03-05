@@ -3,23 +3,15 @@
   <persistence version="1"/>
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.editorLanguage"/>
-  <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
-  </language>
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
-  </language>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0"/>
   <maxImportIndex value="8"/>
   <import index="1" modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1"/>
-  <import index="3" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.editor" version="-1"/>
   <import index="4" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
-  <import index="6" modelUID="javax.swing.border@java_stub" version="-1"/>
-  <import index="7" modelUID="javax.swing@java_stub" version="-1"/>
-  <import index="8" modelUID="java.awt.event@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197044909166">
     <link role="conceptDeclaration" targetNodeId="1.1197044488845" resolveInfo="SimpleFinderDeclaration"/>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
