@@ -401,7 +401,7 @@ public final class SNode {
     // back compatibility with some obsolete property attributes?
     for (SNode child : _children()) {
       if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
-        return result;
+        return child;
       }
     }
 
