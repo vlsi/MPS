@@ -176,6 +176,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068498886292">
     <property name="name" value="ParameterDeclaration" />
     <property name="package" value="method" />
+    <property name="iconPath" value="${language_descriptor}\icons\parameter.png" />
     <link role="extends" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198103547463">
       <property name="value" value="parameter" />
