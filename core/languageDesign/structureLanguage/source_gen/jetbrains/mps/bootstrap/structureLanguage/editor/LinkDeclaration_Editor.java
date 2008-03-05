@@ -27,14 +27,14 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
@@ -296,6 +296,41 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public static class LinkDeclaration_sourceCardinality_cellMenu extends AbstractCellMenuPart_PropertyValues {
+
+    public  LinkDeclaration_sourceCardinality_cellMenu() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> result = ListOperations.<String>createList();
+      if(SPropertyOperations.hasValue(node, "metaClass", "aggregation", null)) {
+        for(Cardinality c : Cardinality.getConstants()) {
+          ListOperations.addElement(result, c.getValueAsString());
+        }
+      } else
+      {
+        ListOperations.addElement(result, Cardinality._0__1.getValueAsString());
+        ListOperations.addElement(result, Cardinality._1.getValueAsString());
+      }
+      return result;
+    }
+
+}
+  public static class LinkDeclaration_role_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
+
+    public  LinkDeclaration_role_postfixCellMenu() {
+    }
+
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> postfixes = ListOperations.<String>createList();
+      if((SLinkOperations.getTarget(node, "target", false) != null)) {
+        String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "target", false), "name"));
+        ListOperations.addAllElements(postfixes, NameUtil.splitByCamels(name));
+      }
+      return postfixes;
+    }
+
+}
   public static class _Inline14 extends AbstractCellProvider {
 
     public  _Inline14() {
@@ -400,41 +435,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-}
-  public static class LinkDeclaration_sourceCardinality_cellMenu extends AbstractCellMenuPart_PropertyValues {
-
-    public  LinkDeclaration_sourceCardinality_cellMenu() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result = ListOperations.<String>createList();
-      if(SPropertyOperations.hasValue(node, "metaClass", "aggregation", null)) {
-        for(Cardinality c : Cardinality.getConstants()) {
-          ListOperations.addElement(result, c.getValueAsString());
-        }
-      } else
-      {
-        ListOperations.addElement(result, Cardinality._0__1.getValueAsString());
-        ListOperations.addElement(result, Cardinality._1.getValueAsString());
-      }
-      return result;
-    }
-
-}
-  public static class LinkDeclaration_role_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
-
-    public  LinkDeclaration_role_postfixCellMenu() {
-    }
-
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> postfixes = ListOperations.<String>createList();
-      if((SLinkOperations.getTarget(node, "target", false) != null)) {
-        String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "target", false), "name"));
-        ListOperations.addAllElements(postfixes, NameUtil.splitByCamels(name));
-      }
-      return postfixes;
     }
 
 }
