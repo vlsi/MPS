@@ -2,11 +2,10 @@ package jetbrains.mps.ide.ui;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.Frame;
-import java.awt.HeadlessException;
-import java.awt.BorderLayout;
-import java.awt.FontMetrics;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,7 +18,13 @@ public class MPSErrorDialog extends JDialog {
   private static final int FIELD_SIDE_PADDING = 30;
   private static final int BUTTON_WIDTH = 40;
 
-  public MPSErrorDialog(Frame frame, String error, String title) throws HeadlessException {
+  private List<JButton> myButtons = new ArrayList<JButton>();
+
+  public MPSErrorDialog(Frame frame, String error, String title) {
+    this(frame, error, title, new ArrayList<JButton>());
+  }
+
+  public MPSErrorDialog(Frame frame, String error, String title, List<JButton> additionalButtons) throws HeadlessException {
     super(frame, title, true);
 
     setLayout(new BorderLayout());
@@ -31,11 +36,17 @@ public class MPSErrorDialog extends JDialog {
         dispose();
       }
     });
+    myButtons.add(button);
+    myButtons.addAll(additionalButtons);
     add(field, BorderLayout.CENTER);
     int width = field.getFontMetrics(field.getFont()).stringWidth(error);
-    JPanel panel = new JPanel(new BorderLayout());
-    panel.add(button, BorderLayout.CENTER);
-    int calculatedPadding = (width + 2 * FIELD_SIDE_PADDING - BUTTON_WIDTH) / 2;
+    JPanel panel = new JPanel(new FlowLayout());
+    for (JButton jButton : myButtons) {
+      panel.add(jButton);
+    }
+    //panel.add(button, BorderLayout.CENTER);
+    int buttonsSize = myButtons.size();
+    int calculatedPadding = (width + 2 * FIELD_SIDE_PADDING - (BUTTON_WIDTH * buttonsSize + 5 * (buttonsSize - 1))) / 2;
     int buttonPadding = Math.max(calculatedPadding, FIELD_SIDE_PADDING);
     panel.setBorder(new EmptyBorder(5, buttonPadding, 15, buttonPadding));
     add(panel, BorderLayout.SOUTH);

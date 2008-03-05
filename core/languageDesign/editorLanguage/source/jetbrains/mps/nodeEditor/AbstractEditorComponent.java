@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.uiActions.GoToTypeErrorRuleAction;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
@@ -1365,7 +1366,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                   public void run() {
                     // String nodeClassName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
                     String s = herror.reportError();
-                    new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR");
+                    new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR", CollectionUtil.asList(new JButton(new AbstractAction("Go To Rule") {
+                      public void actionPerformed(ActionEvent e) {
+                        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+                          public void run() {
+                            GoToTypeErrorRuleAction.goToTypeErrorRule(myOperationContext, herror);
+                          }
+                        });
+                      }
+                    })));
                    // JOptionPane.showMessageDialog(getExternalComponent(), s, "TYPESYSTEM ERROR", JOptionPane.ERROR_MESSAGE);
                   }
                 });
