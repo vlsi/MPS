@@ -22,10 +22,9 @@ public class IdeMain {
     }
   }
                                                                           
-  public static IDEProjectFrame openProjectWindow(final boolean loadOldProject) {
+  public static void openProjectWindow(final boolean loadOldProject) {
     installFocusKiller();
 
-    final IDEProjectFrame[] projectWindow = new IDEProjectFrame[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         System.setProperty("alloy.licenseCode", "4#JetBrains_s.r.o.#nvxvi9#2i0t28");
@@ -49,19 +48,23 @@ public class IdeMain {
 
         IdeAppearanceSettings.instance().applySettings();
 
+//        SimpleIDEProjectFrame projectWindow = new SimpleIDEProjectFrame();
+//        if (loadOldProject) {
+//          projectWindow.loadLastProjectIfAny();
+//        }
+//        projectWindow.show();
 
-        projectWindow[0] = new IDEProjectFrame();
+        IDEProjectFrame projectWindow = new IDEProjectFrame();
         if (loadOldProject) {
-          projectWindow[0].loadLastProjectIfAny();
+          projectWindow.loadLastProjectIfAny();
         }
         SplashScreen.getInstance().hideSplashScreen();
-        projectWindow[0].show();
+        projectWindow.show();
 
         long end = System.currentTimeMillis();
         System.out.println("MPS Started in " + (end - start) + " ms");
       }
     });
-    return projectWindow[0];
   }
 
   public static Date expirationDate() {
