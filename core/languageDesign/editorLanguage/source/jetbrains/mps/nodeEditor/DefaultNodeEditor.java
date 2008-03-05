@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Author: Sergey Dmitriev.
@@ -13,6 +14,12 @@ public class DefaultNodeEditor implements INodeEditor {
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return new EditorCell_Constant(editorContext, node, node.getDebugText(), true);
+    return new DefaultInspectorCell(editorContext, node, node.getDebugText(), true);
+  }
+
+  public class DefaultInspectorCell extends EditorCell_Constant {
+    public DefaultInspectorCell(@NotNull EditorContext editorContext, SNode node, String text, boolean editable) {
+      super(editorContext, node, text, editable);
+    }
   }
 }
