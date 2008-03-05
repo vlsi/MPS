@@ -35,6 +35,9 @@
     <mkdir dir="${deploy.dir}\mps.tmp\plugin" />
     <mkdir dir="${deploy.dir}\mps.tmp\.configuration" />
     <mkdir dir="${deploy.dir}\mps.tmp\workbench" />
+    <mkdir dir="${deploy.dir}\mps.tmp\workbench\ideSolution" />
+    <mkdir dir="${deploy.dir}\mps.tmp\workbench\ideUiLanguage" />
+    <mkdir dir="${deploy.dir}\mps.tmp\workbench\monitorLanguage" />
     <mkdir dir="${deploy.dir}\mps.tmp\log" />
   </target>
   <target name="do.the.job" depends="folders.create">
@@ -237,8 +240,14 @@
     <copy todir="${deploy.dir}\mps.tmp\.configuration">
       <fileset dir=".configuration" excludes="**/*.iml, **/*.ipr, **/*.java" />
     </copy>
-    <copy todir="${deploy.dir}\mps.tmp\workbench">
-      <fileset dir="workbench" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
+    <copy todir="${deploy.dir}\mps.tmp\workbench\ideSolution">
+      <fileset dir="workbench\ideSolution" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
+    </copy>
+    <copy todir="${deploy.dir}\mps.tmp\workbench\ideUiLanguage">
+      <fileset dir="workbench\ideUiLanguage" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
+    </copy>
+    <copy todir="${deploy.dir}\mps.tmp\workbench\monitorLanguage">
+      <fileset dir="workbench\monitorLanguage" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
     </copy>
     <copy todir="${deploy.dir}\mps.tmp\log">
       <fileset dir="log" excludes="**/*.iml, **/*.ipr, **/*.java" />
