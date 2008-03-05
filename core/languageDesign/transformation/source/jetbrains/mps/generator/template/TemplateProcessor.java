@@ -67,7 +67,7 @@ public class TemplateProcessor {
 
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
     generationTracer.pushTemplateNode(templateNode);
-    SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false); 
+    SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false);
 //    if (outputNode == null) {
 //      myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode' cannot create output node");
 //      return null;
@@ -89,7 +89,7 @@ public class TemplateProcessor {
 
     SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferences()) {
-      if (templateNode.getLinkAttribute("referenceMacro", reference.getRole()) != null) {
+      if (templateNode.getLinkAttribute(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, reference.getRole()) != null) {
         continue;
       }
       SNode templateReferentNode = reference.getTargetNode();

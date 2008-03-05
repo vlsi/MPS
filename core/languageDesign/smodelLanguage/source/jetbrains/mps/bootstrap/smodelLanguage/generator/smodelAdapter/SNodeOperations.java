@@ -25,6 +25,9 @@ public class SNodeOperations {
     return copyNode(node, node.getModel());
   }
 
+  /**
+   * @deprecated
+   */
   public static SNode copyNode(SNode node, SModel model) {
     // i can't see why anybody would need to copy a node to particular model.
     // copied node is in-air anyway.
@@ -32,7 +35,7 @@ public class SNodeOperations {
 //    return SNodeCopyUtil.copySNode(node, model);
     // todo: if everithing is ok - remove this method
     if (node == null) return null;
-    return CopyUtil.copy(node, node.getModel());
+    return CopyUtil.copy(node);
   }
 
   public static SNode getContainingRoot(SNode node) {
@@ -55,7 +58,6 @@ public class SNodeOperations {
     }
 
     // look up for certain concept
-    IScope scope = GlobalScope.getInstance();
     if (root) {
       SNode rootParent = node.getContainingRoot();
       if (rootParent.isInstanceOfConcept(ancestorConceptFqName)) {
@@ -383,7 +385,7 @@ public class SNodeOperations {
 
   private static void copyAllAttributes(SNode oldChild, SNode newChild) {
     for (SNode attribute : oldChild.getAllAttributes()) {
-      SNode newAttribute = CopyUtil.copy(attribute, newChild.getModel());
+      SNode newAttribute = CopyUtil.copy(attribute);
       String role = attribute.getRole_();
       assert role != null;
       newChild.addChild(role, newAttribute);
@@ -414,8 +416,8 @@ public class SNodeOperations {
 
   public static boolean hasRole(SNode node, String conceptOfParentFqName, String role) {
     if (node == null || node.getParent() == null ||
-            conceptOfParentFqName == null || conceptOfParentFqName.length() == 0 ||
-            role == null || role.length() == 0) {
+      conceptOfParentFqName == null || conceptOfParentFqName.length() == 0 ||
+      role == null || role.length() == 0) {
       return false;
     }
     AbstractConceptDeclaration expectedConcept = SModelUtil_new.findConceptDeclaration(conceptOfParentFqName, GlobalScope.getInstance());
