@@ -202,7 +202,15 @@ public class RefactoringContext {
     return targetNodes;
   }
 
+  public void deleteFeature(SNode feature) {
+    doChangeFeatureName(feature, null, null, true);
+  }
+
   public void changeFeatureName(SNode feature, @Nullable String newConceptFQName, @Nullable String newFeatureName) {
+    doChangeFeatureName(feature, newConceptFQName, newFeatureName, false);
+  }
+
+  private void doChangeFeatureName(SNode feature, @Nullable String newConceptFQName, @Nullable String newFeatureName, boolean delete) {
     BaseAdapter adapter = feature.getAdapter();
     String oldConceptFQName = "";
     String oldFeatureName = "";
@@ -216,29 +224,44 @@ public class RefactoringContext {
       } else {
         kind = ConceptFeatureKind.REFERENCE;
       }
-      if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) {
-        linkDeclaration.setRole(newFeatureName);
+      if (delete) {
+        linkDeclaration.delete();
+      } else {
+        if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) {
+          linkDeclaration.setRole(newFeatureName);
+        }
       }
     }
     if (adapter instanceof PropertyDeclaration) {
       oldConceptFQName = NameUtil.nodeFQName(adapter.getParent());
       oldFeatureName = adapter.getName();
       kind = ConceptFeatureKind.PROPERTY;
-      if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) {
-        feature.setName(newFeatureName);
+      if (delete) {
+        adapter.delete();
+      } else {
+        if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) {
+          feature.setName(newFeatureName);
+        }
       }
     }
     if (adapter instanceof AbstractConceptDeclaration) {
       oldConceptFQName = NameUtil.nodeFQName(adapter);
       oldFeatureName = adapter.getName();
       kind = ConceptFeatureKind.CONCEPT;
-      if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) {
-        feature.setName(newFeatureName);
+      if (delete) {
+        adapter.delete();
+      } else {
+        if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) {
+          feature.setName(newFeatureName);
+        }
       }
     }
     if (kind != ConceptFeatureKind.NONE) {
       ConceptFeature oldConceptFeature = new ConceptFeature(oldConceptFQName, kind, oldFeatureName);
-      ConceptFeature newConceptFeature = new ConceptFeature(newConceptFQName, kind, newFeatureName);
+      ConceptFeature newConceptFeature = null;
+      if (!delete) {
+        newConceptFeature = new ConceptFeature(newConceptFQName, kind, newFeatureName);
+      }
       myConceptFeatureMap.put(oldConceptFeature, newConceptFeature);
     }
     myCachesAreUpToDate = false;
@@ -259,8 +282,12 @@ public class RefactoringContext {
           ConceptFeatureKind kind = conceptFeature.getConceptFeatureKind();
 
           if (kind == ConceptFeatureKind.CONCEPT) {
-            String newConceptFQName = newConceptFeature.getConceptFQName();
-            HackSNodeUtil.setConceptFqName(node, newConceptFQName);
+            if (newConceptFeature == null) {
+              node.delete();
+            } else {
+              String newConceptFQName = newConceptFeature.getConceptFQName();
+              HackSNodeUtil.setConceptFqName(node, newConceptFQName);
+            }
           }
         }
       }
@@ -292,40 +319,68 @@ public class RefactoringContext {
 
       for (ConceptFeature conceptFeature : allConceptFeatures) {
         ConceptFeature newConceptFeature = myConceptFeatureMap.get(conceptFeature);
+        boolean delete = newConceptFeature == null;
         ConceptFeatureKind kind = conceptFeature.getConceptFeatureKind();
 
         if (kind == ConceptFeatureKind.REFERENCE) {
           String oldRole = conceptFeature.getFeatureName();
-          String newRole = newConceptFeature.getFeatureName();
+          String newRole = null;
+          if (!delete) {
+            newRole = newConceptFeature.getFeatureName();
+          }
           for (SReference reference : node.getReferences()) {
             if (reference.getRole().equals(oldRole)) {
-              reference.setRole(newRole);
+              if (delete) {
+                node.removeReference(reference);
+              } else {
+                reference.setRole(newRole);
+              }
             }
           }
           for (SNode linkAttribute : node.getLinkAttributesForLinkRole(oldRole)) {
-            String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRole_());
-            linkAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromLinkAttributeRole(linkAttributeRole, newRole));
+            if (delete) {
+              linkAttribute.delete();
+            } else {
+              String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRole_());
+              linkAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromLinkAttributeRole(linkAttributeRole, newRole));
+            }
           }
         }
 
         if (kind == ConceptFeatureKind.CHILD) {
           String oldRole = conceptFeature.getFeatureName();
-          String newRole = newConceptFeature.getFeatureName();
+          String newRole = null;
+          if (!delete) {
+            newRole = newConceptFeature.getFeatureName();
+          }
           for (SNode child : node.getChildren()) {
             String childRole = child.getRole_();
             if (childRole != null && childRole.equals(oldRole)) {
-              child.setRoleInParent(newRole);
+              if (delete) {
+                child.delete();
+              } else {
+                child.setRoleInParent(newRole);
+              }
             }
           }
         }
 
         if (kind == ConceptFeatureKind.PROPERTY) {
           String oldName = conceptFeature.getFeatureName();
-          String newName = newConceptFeature.getFeatureName();
-          HackSNodeUtil.changePropertyName(node, oldName, newName);
+          String newName = null;
+          if (!delete) {
+            newName = newConceptFeature.getFeatureName();
+            HackSNodeUtil.changePropertyName(node, oldName, newName);
+          } else {
+            node.setProperty(oldName, null, false);
+          }
           for (SNode propertyAttribute : node.getPropertyAttributesForPropertyName(oldName)) {
-            String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRole_());
-            propertyAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
+            if (delete) {
+              propertyAttribute.delete();
+            } else {
+              String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRole_());
+              propertyAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
+            }
           }
         }
       }

@@ -127,10 +127,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1200668668194(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      Pattern_ pattern_1204633958141 = new Pattern_();
-      SNode coercedNode_1204633958140 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1204633958141);
-      if(coercedNode_1204633958140 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1204633958141.PatternVar;
+      Pattern_ pattern_1204724150725 = new Pattern_();
+      SNode coercedNode_1204724150724 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_1204724150725);
+      if(coercedNode_1204724150724 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1204724150725.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -432,6 +432,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1200933082201(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "affectedNodesClause", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1204723894467(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "feature", true);
   }
 
   public static List sourceNodesQuery_1189698183859(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
