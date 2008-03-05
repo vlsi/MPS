@@ -24,6 +24,7 @@ import org.jdom.Element;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,6 +73,8 @@ public abstract class UsageView implements IExternalizableComponent {
     myTreeWrapper.setEmptyContents();
 
     myPanel.add(myTreeWrapper, BorderLayout.CENTER);
+
+    myPanel.setMinimumSize(new Dimension());
   }
 
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration) {
