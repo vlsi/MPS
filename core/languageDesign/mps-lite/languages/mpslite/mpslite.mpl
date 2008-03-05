@@ -64,7 +64,6 @@
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.ypath</extendedLanguage>
   </extendedLanguages>
 </language>
 
