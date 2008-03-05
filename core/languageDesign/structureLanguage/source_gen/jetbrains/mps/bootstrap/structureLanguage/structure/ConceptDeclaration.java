@@ -11,10 +11,10 @@ import java.util.List;
 
 public class ConceptDeclaration extends AbstractConceptDeclaration {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration";
+  public static String IMPLEMENTS = "implements";
   public static String ICON_PATH = "iconPath";
   public static String ROOTABLE = "rootable";
   public static String EXTENDS = "extends";
-  public static String IMPLEMENTS = "implements";
 
   public  ConceptDeclaration(SNode node) {
     super(node);
@@ -28,6 +28,26 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
     return ConceptDeclaration.newInstance(sm, false);
   }
 
+
+  public int getImplementsesCount() {
+    return this.getChildCount(ConceptDeclaration.IMPLEMENTS);
+  }
+
+  public Iterator<InterfaceConceptReference> implementses() {
+    return this.children(ConceptDeclaration.IMPLEMENTS);
+  }
+
+  public List<InterfaceConceptReference> getImplementses() {
+    return this.getChildren(ConceptDeclaration.IMPLEMENTS);
+  }
+
+  public void addImplements(InterfaceConceptReference node) {
+    this.addChild(ConceptDeclaration.IMPLEMENTS, node);
+  }
+
+  public void insertImplements(InterfaceConceptReference prev, InterfaceConceptReference node) {
+    this.insertChild(prev, ConceptDeclaration.IMPLEMENTS, node);
+  }
 
   public String getIconPath() {
     return this.getProperty(ConceptDeclaration.ICON_PATH);
@@ -51,26 +71,6 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
 
   public void setExtends(ConceptDeclaration node) {
     super.setReferent(ConceptDeclaration.EXTENDS, node);
-  }
-
-  public int getImplementsesCount() {
-    return this.getChildCount(ConceptDeclaration.IMPLEMENTS);
-  }
-
-  public Iterator<InterfaceConceptReference> implementses() {
-    return this.children(ConceptDeclaration.IMPLEMENTS);
-  }
-
-  public List<InterfaceConceptReference> getImplementses() {
-    return this.getChildren(ConceptDeclaration.IMPLEMENTS);
-  }
-
-  public void addImplements(InterfaceConceptReference node) {
-    this.addChild(ConceptDeclaration.IMPLEMENTS, node);
-  }
-
-  public void insertImplements(InterfaceConceptReference prev, InterfaceConceptReference node) {
-    this.insertChild(prev, ConceptDeclaration.IMPLEMENTS, node);
   }
 
 }

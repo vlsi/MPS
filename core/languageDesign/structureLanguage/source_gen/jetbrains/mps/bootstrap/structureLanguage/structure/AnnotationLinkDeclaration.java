@@ -83,12 +83,12 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
     super.setProperty(AnnotationLinkDeclaration.STEREOTYPE, value.getValueAsString());
   }
 
-  public Cardinality getSourceCardinality() {
+  public AnnotationLinkCardinality getSourceCardinality() {
     String value = super.getProperty(AnnotationLinkDeclaration.SOURCE_CARDINALITY);
-    return Cardinality.parseValue(value);
+    return AnnotationLinkCardinality.parseValue(value);
   }
 
-  public void setSourceCardinality(Cardinality value) {
+  public void setSourceCardinality(AnnotationLinkCardinality value) {
     super.setProperty(AnnotationLinkDeclaration.SOURCE_CARDINALITY, value.getValueAsString());
   }
 

@@ -15,6 +15,8 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.NameGenerationUtil;
 
 public class QueriesUtil {
 
@@ -138,14 +140,12 @@ public class QueriesUtil {
 
   public static boolean AL_isSingular(SNode al) {
     boolean b1 = SPropertyOperations.hasValue(al, "sourceCardinality", "0..1", "0..1");
-    boolean b2 = SPropertyOperations.hasValue(al, "sourceCardinality", "1", "0..1");
-    return b1 || b2;
+    return b1;
   }
 
   public static boolean AL_isPlural(SNode al) {
     boolean b1 = SPropertyOperations.hasValue(al, "sourceCardinality", "0..n", "0..1");
-    boolean b2 = SPropertyOperations.hasValue(al, "sourceCardinality", "1..n", "0..1");
-    return b1 || b2;
+    return b1;
   }
 
   public static String conceptClassFQName(SNode conceptDeclaration) {
@@ -160,6 +160,22 @@ public class QueriesUtil {
       return "jetbrains.mps.core.structure.BaseConcept";
     }
     return SNodeOperations.getModel(enumDeclaration).getLongName() + "." + SPropertyOperations.getString(enumDeclaration, "name");
+  }
+
+  public static String AL_class_getterName(SNode node) {
+    return "get" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
+  }
+
+  public static String AL_class_listGetterName(SNode node) {
+    String role = NameGenerationUtil.pluralize(SPropertyOperations.getString(node, "role"));
+    return "get" + NameGenerationUtil.capitalizeFirst(role);
+  }
+
+  public static String AL_class_setterName(SNode node) {
+    if(QueriesUtil.AL_isSingular(node)) {
+      return "set" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
+    }
+    return "add" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
   }
 
 }

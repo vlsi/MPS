@@ -407,7 +407,7 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204741022738">
       <property name="name" value="sourceCardinality" />
       <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="1084197782722" resolveInfo="Cardinality" />
+      <link role="dataType" targetNodeId="1204742406467" resolveInfo="AnnotationLinkCardinality" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1149608246500">
       <property name="sourceCardinality" value="1" />
@@ -543,6 +543,20 @@
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1197591075491">
       <property name="externalValue" value="custom" />
       <property name="internalValue" value="custom" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1204742406467">
+    <property name="package" value="annotation" />
+    <property name="name" value="AnnotationLinkCardinality" />
+    <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1204742406468">
+      <property name="internalValue" value="0..1" />
+      <property name="externalValue" value="1" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1204742457437">
+      <property name="internalValue" value="0..n" />
+      <property name="externalValue" value="*" />
     </node>
   </node>
 </model>

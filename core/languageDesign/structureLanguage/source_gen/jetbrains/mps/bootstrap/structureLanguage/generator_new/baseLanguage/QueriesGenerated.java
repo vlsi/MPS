@@ -157,10 +157,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1169758290216(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if(QueriesUtil.AL_isSingular(_context.getNode())) {
-      return "set" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "role"));
-    }
-    return "add" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "role"));
+    return QueriesUtil.AL_class_setterName(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1170173405392(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -441,6 +438,38 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1198517087605(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _QueriesUtil.linkSetterName(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getNode(), "specializedLink", false))));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1204743264017(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return QueriesUtil.AL_class_getterName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1204743391565(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return QueriesUtil.AL_class_listGetterName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1204744128652(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return QueriesUtil.AL_class_getterName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1204744299607(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return QueriesUtil.AL_class_listGetterName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1204744522569(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return QueriesUtil.AL_class_setterName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1204744528715(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return QueriesUtil.AL_class_setterName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1204744584300(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return QueriesUtil.AL_class_getterName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1204744645214(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return QueriesUtil.AL_class_listGetterName(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
