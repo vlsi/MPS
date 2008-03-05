@@ -319,14 +319,6 @@ public abstract class BaseAdapter implements INodeAdapter {
     return toAdapters(myNode.getAttributes(role));
   }
 
-  public void setAttribute(INodeAdapter adapter) {
-    if (adapter == null) {
-      myNode.setAttribute(null);
-    } else {
-      myNode.setAttribute(adapter.getNode());
-    }
-  }
-
   public void setAttribute(String role, INodeAdapter attribute) {
     if (attribute == null) {
       myNode.setAttribute(role, null);

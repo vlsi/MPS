@@ -105,8 +105,6 @@ public interface INodeAdapter {
   @NotNull
   List<? extends INodeAdapter> getAttributes(String role);
 
-  void setAttribute(INodeAdapter adapter);
-
   void setAttribute(String role, INodeAdapter attribute);
 
   void addAttribute(String role, INodeAdapter attribute);
