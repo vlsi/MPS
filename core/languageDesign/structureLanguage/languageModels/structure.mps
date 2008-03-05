@@ -389,18 +389,34 @@
     <property name="name" value="AnnotationLinkDeclaration" />
     <property name="rootable" value="true" />
     <property name="iconPath" value="${language_descriptor}\icons\annotationLink.png" />
-    <link role="extends" targetNodeId="1071489288298" resolveInfo="LinkDeclaration" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1174387216526">
       <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204740973143">
+      <property name="name" value="role" />
+      <property name="propertyType" value="string" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1149608445162">
       <property name="name" value="stereotype" />
       <link role="dataType" targetNodeId="1149608316235" resolveInfo="AnnotationLinkStereotype" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1204741022738">
+      <property name="name" value="sourceCardinality" />
+      <property name="propertyType" value="string" />
+      <link role="dataType" targetNodeId="1084197782722" resolveInfo="Cardinality" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1149608246500">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="source" />
-      <link role="target" targetNodeId="1071489090640" resolveInfo="ConceptDeclaration" />
+      <link role="target" targetNodeId="1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204741097161">
+      <property name="targetCardinality" value="0..n" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="target" />
+      <link role="target" targetNodeId="1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1174386183942">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />

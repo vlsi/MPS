@@ -1103,8 +1103,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1169757328765">
                   <link role="variableDeclaration" targetNodeId="1169757325607" resolveInfo="al" />
                 </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1169757335267">
-                  <link role="property" targetNodeId="1.1071599893252" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204741508255">
+                  <link role="property" targetNodeId="1.1204741022738" resolveInfo="sourceCardinality" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1169757317271">
@@ -1124,8 +1124,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1169757332454">
                   <link role="variableDeclaration" targetNodeId="1169757325607" resolveInfo="al" />
                 </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1169757336877">
-                  <link role="property" targetNodeId="1.1071599893252" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204741509459">
+                  <link role="property" targetNodeId="1.1204741022738" resolveInfo="sourceCardinality" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1169757317280">
@@ -1168,8 +1168,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1169757354286">
                   <link role="variableDeclaration" targetNodeId="1169757354277" resolveInfo="al" />
                 </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1169757354287">
-                  <link role="property" targetNodeId="1.1071599893252" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204741513116">
+                  <link role="property" targetNodeId="1.1204741022738" resolveInfo="sourceCardinality" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1169757354288">
@@ -1189,8 +1189,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1169757354295">
                   <link role="variableDeclaration" targetNodeId="1169757354277" resolveInfo="al" />
                 </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1169757354296">
-                  <link role="property" targetNodeId="1.1071599893252" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204741514055">
+                  <link role="property" targetNodeId="1.1204741022738" resolveInfo="sourceCardinality" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1169757354297">

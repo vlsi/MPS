@@ -1808,11 +1808,11 @@
         <property name="drawBorder" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1149608664342">
           <property name="drawBorder" value="false" />
-          <link role="relationDeclaration" targetNodeId="1.1071599776563" />
+          <link role="relationDeclaration" targetNodeId="1.1204740973143" resolveInfo="role" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1149608664343">
           <property name="drawBorder" value="false" />
-          <link role="relationDeclaration" targetNodeId="1.1071599893252" />
+          <link role="relationDeclaration" targetNodeId="1.1204741022738" resolveInfo="sourceCardinality" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1149608664344">
           <property name="drawBorder" value="false" />
@@ -1836,9 +1836,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1149608664349">
           <property name="drawBorder" value="false" />
           <property name="noTargetText" value="&lt;no target&gt;" />
-          <link role="relationDeclaration" targetNodeId="1.1071599976176" />
+          <link role="relationDeclaration" targetNodeId="1.1204741097161" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1149608664350">
-            <link role="conceptDeclaration" targetNodeId="1.1169125787135" />
+            <link role="conceptDeclaration" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1149608664351">
               <property name="drawBorder" value="false" />
               <property name="noTargetText" value="&lt;no name&gt;" />

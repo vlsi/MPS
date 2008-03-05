@@ -1248,8 +1248,8 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1174387236307">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648238">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" id="1174387241138" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1174387263483">
-                <link role="property" targetNodeId="1.1071599776563" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204741197193">
+                <link role="property" targetNodeId="1.1204740973143" resolveInfo="role" />
               </node>
             </node>
           </node>

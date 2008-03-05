@@ -62,7 +62,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   public static boolean isNotAggregation(LinkDeclaration linkDeclaration) {
-    return !(linkDeclaration instanceof AnnotationLinkDeclaration) && SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation;
+    return SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation;
   }
 
 }
