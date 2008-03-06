@@ -1366,16 +1366,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                   public void run() {
                     // String nodeClassName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
                     String s = herror.reportError();
-                    new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR", CollectionUtil.asList(new JButton(new AbstractAction("Go To Rule") {
+                    final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR", false);
+                    JButton button = new JButton(new AbstractAction("Go To Rule") {
                       public void actionPerformed(ActionEvent e) {
                         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
                           public void run() {
                             GoToTypeErrorRuleAction.goToTypeErrorRule(myOperationContext, herror);
+                            dialog.dispose();
                           }
                         });
                       }
-                    })));
-                   // JOptionPane.showMessageDialog(getExternalComponent(), s, "TYPESYSTEM ERROR", JOptionPane.ERROR_MESSAGE);
+                    });
+                    dialog.addButton(button);
+                    dialog.initializeUI();
+                    dialog.setVisible(true);
                   }
                 });
                 return;
@@ -1521,7 +1525,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (getDeepestSelectedCell() instanceof EditorCell_Label && cell.getWidth() > viewportWidth) {
       EditorCell_Label cellLabel = (EditorCell_Label) getDeepestSelectedCell();
 
-      int caretX = cellLabel.getCaretX();     
+      int caretX = cellLabel.getCaretX();
       int charWidth = cellLabel.getCharWidth();
 
       x0 = Math.max(cell.getX(), caretX + 2 * charWidth - viewportWidth);

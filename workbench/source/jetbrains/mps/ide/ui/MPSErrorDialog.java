@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -15,49 +17,78 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class MPSErrorDialog extends JDialog {
-  private static final int FIELD_SIDE_PADDING = 30;
+  private static final int MIN_SIDE_PADDING = 30;
   private static final int BUTTON_WIDTH = 40;
 
   private List<JButton> myButtons = new ArrayList<JButton>();
+  private boolean myIsInitialized = false;
+  private JTextField myField;
+  private Frame myOwnerFrame;
+  private String myErrorString;
 
   public MPSErrorDialog(Frame frame, String error, String title) {
-    this(frame, error, title, new ArrayList<JButton>());
+    this(frame, error, title, true);
   }
 
-  public MPSErrorDialog(Frame frame, String error, String title, List<JButton> additionalButtons) throws HeadlessException {
+  public MPSErrorDialog(Frame frame, String error, String title, boolean initializeUI) throws HeadlessException {
     super(frame, title, true);
+    init(frame, error);
+    if (initializeUI) {
+      initializeUI();
+      setVisible(true);
+    }
+  }
 
+  private void init(Frame frame, String error) {
+    myOwnerFrame = frame;
+    myErrorString = error;
     setLayout(new BorderLayout());
-    JTextField field = new JTextField(error);
-    field.setEditable(false);
-    field.setBorder(new EmptyBorder(20, FIELD_SIDE_PADDING, 5, FIELD_SIDE_PADDING));
+    myField = new JTextField(error);
+    myField.setEditable(false);
     JButton button = new JButton(new AbstractAction("OK") {
       public void actionPerformed(ActionEvent e) {
         dispose();
       }
     });
+    addKeyListener(new KeyAdapter() {
+      public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+          dispose();
+        }
+      }
+    });
     myButtons.add(button);
-    myButtons.addAll(additionalButtons);
-    add(field, BorderLayout.CENTER);
-    int width = field.getFontMetrics(field.getFont()).stringWidth(error);
-    JPanel panel = new JPanel(new FlowLayout());
+  }
+
+  public void initializeUI() {
+    int textWidth = myField.getFontMetrics(myField.getFont()).stringWidth(myErrorString);
+    JPanel panel = new JPanel(new GridLayout(1,myButtons.size()));
     for (JButton jButton : myButtons) {
       panel.add(jButton);
     }
-    //panel.add(button, BorderLayout.CENTER);
-    int buttonsSize = myButtons.size();
-    int calculatedPadding = (width + 2 * FIELD_SIDE_PADDING - (BUTTON_WIDTH * buttonsSize + 5 * (buttonsSize - 1))) / 2;
-    int buttonPadding = Math.max(calculatedPadding, FIELD_SIDE_PADDING);
-    panel.setBorder(new EmptyBorder(5, buttonPadding, 15, buttonPadding));
+    panel.doLayout();
+    int buttonsWidth = (int) panel.getPreferredSize().getWidth();
+    int minPanelWidth = Math.max(2*MIN_SIDE_PADDING + buttonsWidth, 2*MIN_SIDE_PADDING + textWidth);
+    int calculatedButtonsPadding = (minPanelWidth - buttonsWidth) / 2;
+    int calculatedTextPadding = (minPanelWidth - textWidth) / 2;
+    panel.setBorder(new EmptyBorder(5, calculatedButtonsPadding, 15, calculatedButtonsPadding));
+    myField.setBorder(new EmptyBorder(20, calculatedTextPadding, 5, calculatedTextPadding));
+    add(myField, BorderLayout.CENTER);
     add(panel, BorderLayout.SOUTH);
-
     pack();
     setResizable(false);
-    setLocation(frame.getX() + (frame.getWidth() - this.getWidth())/2,
-      frame.getY() + (frame.getHeight() - this.getHeight())/2);
-    //setLocationRelativeTo();
-    setVisible(true);
+    setLocation(myOwnerFrame.getX() + (myOwnerFrame.getWidth() - this.getWidth())/2,
+      myOwnerFrame.getY() + (myOwnerFrame.getHeight() - this.getHeight())/2);
+    myIsInitialized = true;
   }
 
+  public void addButton(JButton button) {
+    myButtons.add(button);
+    myIsInitialized = false;
+  }
 
+  public void setVisible(boolean b) {
+    assert !b || myIsInitialized;
+    super.setVisible(b);
+  }
 }
