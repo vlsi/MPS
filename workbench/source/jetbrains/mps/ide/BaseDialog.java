@@ -41,7 +41,19 @@ public abstract class BaseDialog extends JDialog {
 
   protected BaseDialog(Frame mainFrame, String text) throws HeadlessException {
     super(mainFrame, text, true);
+    doInit(mainFrame);
+  }
 
+  protected BaseDialog(Dialog owner, String title) throws HeadlessException {
+    super(owner, title);
+    doInit(owner);
+  }
+
+  protected BaseDialog(Frame owner) throws HeadlessException {
+    this(owner, null);
+  }    
+
+  private void doInit(Component mainFrame) {
     //do not remove this code
     //it require to run MPS correctly on system
     //with many monitors  
@@ -58,9 +70,6 @@ public abstract class BaseDialog extends JDialog {
     setSize(myDialogDimensions.myWidth, myDialogDimensions.myHeight);
   }
 
-  protected BaseDialog(Frame owner) throws HeadlessException {
-    this(owner, null);
-  }
 
   public void setDefaultButton(JButton button) {
     getRootPane().setDefaultButton(button);
@@ -166,19 +175,7 @@ public abstract class BaseDialog extends JDialog {
   }
 
   protected JButton[] createButtons() {
-    Map<Integer, Method> buttonMethods = new HashMap<Integer, Method>();
-    for (Method m : getClass().getMethods()) {
-      if (m.isAnnotationPresent(Button.class) && !Modifier.isStatic(m.getModifiers())) {
-        Button b = m.getAnnotation(Button.class);
-        if (buttonMethods.containsKey(b.position())) {
-          throw new RuntimeException("BaseDialog has buttons with the same position");
-        }
-        if (m.getReturnType() != Void.TYPE || m.getParameterTypes().length != 0) {
-          throw new RuntimeException("Button methods should return void type and have no parameters");
-        }
-        buttonMethods.put(b.position(), m);
-      }
-    }
+    Map<Integer, Method> buttonMethods = getButtonMethods();
 
     List<JButton> result = new ArrayList<JButton>();
     for (int i = 0; i < buttonMethods.keySet().size(); i++) {
@@ -211,6 +208,23 @@ public abstract class BaseDialog extends JDialog {
     }
 
     return result.toArray(new JButton[0]);
+  }
+
+  private Map<Integer, Method> getButtonMethods() {
+    Map<Integer, Method> buttonMethods = new HashMap<Integer, Method>();
+    for (Method m : getClass().getMethods()) {
+      if (m.isAnnotationPresent(Button.class) && !Modifier.isStatic(m.getModifiers())) {
+        Button b = m.getAnnotation(Button.class);
+        if (buttonMethods.containsKey(b.position())) {
+          throw new RuntimeException("BaseDialog has buttons with the same position");
+        }
+        if (m.getReturnType() != Void.TYPE || m.getParameterTypes().length != 0) {
+          throw new RuntimeException("Button methods should return void type and have no parameters");
+        }
+        buttonMethods.put(b.position(), m);
+      }
+    }
+    return buttonMethods;
   }
 
   protected abstract JComponent getMainComponent();

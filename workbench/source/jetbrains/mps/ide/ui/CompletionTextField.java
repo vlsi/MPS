@@ -1,15 +1,17 @@
 package jetbrains.mps.ide.ui;
 
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
+import javax.swing.event.CaretListener;
+import javax.swing.event.CaretEvent;
 import java.awt.FlowLayout;
 import java.awt.BorderLayout;
 import java.awt.Window;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public abstract class CompletionTextField extends JTextField {
@@ -20,15 +22,21 @@ public abstract class CompletionTextField extends JTextField {
 
     getDocument().addDocumentListener(new DocumentListener() {
       public void insertUpdate(DocumentEvent e) {
-        textChanged();
+        updateCompletion();
       }
 
       public void removeUpdate(DocumentEvent e) {
-        textChanged();
+        updateCompletion();
       }
 
       public void changedUpdate(DocumentEvent e) {
-        textChanged();
+        updateCompletion();
+      }
+    });
+
+    addCaretListener(new CaretListener() {
+      public void caretUpdate(CaretEvent e) {
+        updateCompletion();
       }
     });
 
@@ -51,27 +59,43 @@ public abstract class CompletionTextField extends JTextField {
     }, KeyStroke.getKeyStroke("ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
+      public void actionPerformed(ActionEvent e) {        
         myHint.hide();
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        myHint.show();
+        updateCompletion();
+      }
+    }, KeyStroke.getKeyStroke("control SPACE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
   protected abstract List<String> getProposals(String text);
 
-  private void textChanged() {
-    List<String> proposals = getProposals(getText());
+  private String getTextPrefix() {
+    try {
+      if (getCaretPosition() >= getText().length()) {
+        return getText();
+      }
+      return getText(0, getCaretPosition());
+    } catch (BadLocationException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  private void updateCompletion() {
+    List<String> proposals = getProposals(getTextPrefix());
 
     if (proposals.isEmpty()) {
       myHint.hide();
       return;
     }
 
-    if (proposals.size() == 1) {
-      if (proposals.get(0).equals(getText())) {
-        myHint.hide();
-        return;
-      }
+    if (proposals.contains(getTextPrefix())) {
+      myHint.hide();
+      return;
     }
 
     if (!myHint.isVisible()) {
