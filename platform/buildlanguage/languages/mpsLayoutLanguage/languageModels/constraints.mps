@@ -3794,7 +3794,23 @@
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1204815459448">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204815459449" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204815459449">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204819126418">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204819132657">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204819127967">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204819126419" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204819131156">
+                <link role="property" targetNodeId="2v.1203602403405" resolveInfo="file" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1204819135253">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204819137286">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
