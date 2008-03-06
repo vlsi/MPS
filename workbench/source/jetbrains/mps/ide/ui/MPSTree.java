@@ -704,9 +704,9 @@ public abstract class MPSTree extends JTree {
         if (leaf) {
           icon = UIManager.getIcon("Tree.leafIcon");
         } else if (expanded) {
-          icon = UIManager.getIcon(UIManager.getIcon("Tree.openIcon"));
+          icon = UIManager.getIcon("Tree.openIcon");
         } else {
-          icon = UIManager.getIcon(UIManager.getIcon("Tree.closedIcon"));
+          icon = UIManager.getIcon("Tree.closedIcon");
         }
       }
       myMainTextLabel.setIcon(icon);
