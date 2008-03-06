@@ -318,11 +318,15 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }.start();
   }
 
-  private List<SModel> toModels(List<SModelDescriptor> models) {
-    List<SModel> result = new ArrayList<SModel>();
-    for (SModelDescriptor sm : models) {
-      result.add(sm.getSModel());
-    }
+  private List<SModel> toModels(final List<SModelDescriptor> models) {
+    final List<SModel> result = new ArrayList<SModel>();
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        for (SModelDescriptor sm : models) {
+          result.add(sm.getSModel());
+        }
+      }
+    });
     return result;
   }
 
