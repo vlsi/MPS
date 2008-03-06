@@ -88,9 +88,7 @@ public class Node_GetAllSiblingsOperation_Editor extends DefaultNodeEditor {
     if(this.myOperationParameters_Component3 == null) {
       this.myOperationParameters_Component3 = new OperationParameters_Component(node);
     }
-    EditorCell componentCell = this.myOperationParameters_Component3.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.myOperationParameters_Component3.createEditorCell(context);
     Node_GetAllSiblingsOperation_Editor.setupBasic_OperationParameters_ComponentCell(editorCell, node, context);
     return editorCell;
   }

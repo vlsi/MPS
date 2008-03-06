@@ -16,6 +16,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new EnumMemberReference_enumMember_ReferentConstraint());
     this.myConstraints.add(new Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint());
     this.myConstraints.add(new NodeAttributeAccessQualifier_annotationLink_ReferentConstraint());
+    this.myConstraints.add(new PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

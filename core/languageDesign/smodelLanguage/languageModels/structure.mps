@@ -1788,5 +1788,28 @@
       <link role="intfc" targetNodeId="1204762015203" resolveInfo="IAttributeAccessQualifier" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204832665472">
+    <property name="package" value="attribute" />
+    <property name="name" value="PropertyAttributeAccessQualifier" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204834178790">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="propertyArgument" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1204834061007" resolveInfo="IPropertyAttributeAccessQualifierArg" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204832665473">
+      <property name="role" value="annotationLink" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1149608206811" resolveInfo="AnnotationLinkDeclaration" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204832665474">
+      <link role="intfc" targetNodeId="1204762015203" resolveInfo="IAttributeAccessQualifier" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1204834061007">
+    <property name="package" value="attribute" />
+    <property name="name" value="IPropertyAttributeAccessQualifierArg" />
+  </node>
 </model>
 

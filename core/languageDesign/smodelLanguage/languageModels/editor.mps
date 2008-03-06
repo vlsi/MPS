@@ -2382,5 +2382,33 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204832702256">
+    <property name="package" value="attribute" />
+    <link role="conceptDeclaration" targetNodeId="1.1204832665472" resolveInfo="PropertyAttributeAccessQualifier" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204834222431">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1204834222432">
+        <link role="relationDeclaration" targetNodeId="1.1204832665473" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1204834222433">
+          <link role="conceptDeclaration" targetNodeId="3.1149608206811" resolveInfo="AnnotationLinkDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204834222434">
+            <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no annotation link&gt;" />
+            <link role="relationDeclaration" targetNodeId="3.1204740973143" resolveInfo="role" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204834237155">
+        <property name="text" value="&lt;" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1204834257832">
+        <property name="noTargetText" value="&lt;property&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1204834178790" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204834262709">
+        <property name="text" value="&gt;" />
+      </node>
+    </node>
+  </node>
 </model>
 

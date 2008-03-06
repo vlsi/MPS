@@ -113,13 +113,6 @@
   </component>
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
-    <scope name="Generated Files" pattern="file:*source_gen/**/*.java||file:*tests_gen/**/*.java" />
-    <scope name="Query Methods" pattern="file:*/Queries.java" />
-    <scope name="Icons Java Files" pattern="file:*/Icons.java" />
-    <scope name="Node Builders Java Files" pattern="file:*/*_NodeBuilder.java" />
-    <scope name="TextGen Java Files" pattern="file:*/*_TextGen.java" />
-    <scope name="Reference Resolvers Java Files" pattern="file:*/*_ReferenceResolver.java" />
-    <scope name="Text Presentation Generator Java Files" pattern="file:*/*_TextPresentationGenerator.java" />
   </component>
   <component name="EclipseCompilerSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -291,15 +284,7 @@
   <component name="InspectionProjectProfileManager">
     <option name="PROJECT_PROFILE" value="Default" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="true" />
-    <scopes>
-      <scope profile="For Generated Code" name="Generated Files" />
-      <scope profile="Code Called Through Reflection" name="Icons Java Files" />
-      <scope profile="Code Called Through Reflection" name="Node Builders Java Files" />
-      <scope profile="Query methods" name="Query Methods" />
-      <scope profile="Code Called Through Reflection" name="Reference Resolvers Java Files" />
-      <scope profile="Code Called Through Reflection" name="Text Presentation Generator Java Files" />
-      <scope profile="Code Called Through Reflection" name="TextGen Java Files" />
-    </scopes>
+    <scopes />
     <profiles>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Code Called Through Reflection" />
@@ -1046,7 +1031,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#10;snapshots-dir=&#10;" />
+        <option name="myExternalizedOptions" value="&#13;&#10;snapshots-dir=&#13;&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
@@ -1056,7 +1041,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
@@ -1521,6 +1506,25 @@
     <option name="GENERATE_NO_WARNINGS" value="false" />
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="TeamCityRootDirectoryHolder">
     <option name="myRelativeRootDirectory" />
