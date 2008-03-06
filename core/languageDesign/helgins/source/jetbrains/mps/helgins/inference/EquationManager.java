@@ -940,7 +940,7 @@ public class EquationManager {
   }
 
   /*package*/ SNode expandType(SNode term, SNode type, SModel typesModel,
-                               boolean finalExpansion, NodeTypesComponent_new nodeTypesComponent)  {
+                               boolean finalExpansion, NodeTypesComponent nodeTypesComponent)  {
     if (type == null) return null;
     NodeWrapper wrapper = NodeWrapper.createNodeWrapper(type, this);
     IWrapper representator;
@@ -949,7 +949,7 @@ public class EquationManager {
   }
 
   /*package*/ IWrapper expandWrapper(SNode term, IWrapper representator, SModel typesModel,
-                                     boolean finalExpansion, NodeTypesComponent_new nodeTypesComponent) {
+                                     boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
     if (representator instanceof MeetWrapper) {
       MeetWrapper meetWrapper = (MeetWrapper) representator;
       MeetType meetType = MeetType.newInstance(typesModel);
@@ -972,7 +972,7 @@ public class EquationManager {
   }
 
   private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
-                                 boolean finalExpansion, NodeTypesComponent_new nodeTypesComponent) {
+                                 boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
     if (wrapper == null) return null;
 
     if (wrapper.isVariable()) {

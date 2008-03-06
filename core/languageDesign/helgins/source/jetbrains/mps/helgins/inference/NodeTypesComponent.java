@@ -10,14 +10,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
-import jetbrains.mps.bootstrap.helgins.structure.MeetType;
-import jetbrains.mps.bootstrap.helgins.structure.JoinType;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.EditorsPane;
@@ -25,7 +22,6 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.IGutterMessageOwner;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -40,7 +36,7 @@ import org.jetbrains.annotations.Nullable;
  * Time: 13:50:13
  * To change this template use File | Settings | File Templates.
  */
-public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
+public class NodeTypesComponent implements IGutterMessageOwner, Cloneable {
 
   private static final char A_CHAR = 'a';
   private static final char Z_CHAR = 'z';
@@ -73,21 +69,21 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
   // for diagnostics
   private Set<SNodePointer> myNotSkippedNodes = new HashSet<SNodePointer>();
 
-  private static final Logger LOG = Logger.getLogger(NodeTypesComponent_new.class);
+  private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
   private Set<SNode> myCurrentFrontier;
   private SNode myCurrentCheckedNode;
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
   private boolean myIsGeneration = false;
 
-  public NodeTypesComponent_new(SNode rootNode, TypeChecker typeChecker) {
+  public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
     // myProject = project;
     myEquationManager = new EquationManager(myTypeChecker);
   }
 
-  public NodeTypesComponent_new clone() throws CloneNotSupportedException {
-    NodeTypesComponent_new result = (NodeTypesComponent_new) super.clone();
+  public NodeTypesComponent clone() throws CloneNotSupportedException {
+    NodeTypesComponent result = (NodeTypesComponent) super.clone();
     result.myNodesToTypesMap = new HashMap<SNode, SNode>();
     result.myNodesToErrorsMap = new HashMap<SNode, IErrorReporter>();
     result.myFullyCheckedNodes = new WeakSet<SNode>();

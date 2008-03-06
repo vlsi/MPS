@@ -43,8 +43,8 @@ public class TypeChecker {
   private SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
-  private NodeTypesComponent_new myCurrentTypesComponent = null;
-  private Stack<NodeTypesComponent_new> myCurentTypesComponentStack = new Stack<NodeTypesComponent_new>();
+  private NodeTypesComponent myCurrentTypesComponent = null;
+  private Stack<NodeTypesComponent> myCurentTypesComponentStack = new Stack<NodeTypesComponent>();
   private Stack<TypeCheckingMode> myTypesCheckingModesStack = new Stack<TypeCheckingMode>();
 
 
@@ -97,7 +97,7 @@ public class TypeChecker {
   }
 
   @UseCarefully
-  public void setCurrentTypesComponent(NodeTypesComponent_new component) {
+  public void setCurrentTypesComponent(NodeTypesComponent component) {
     if (myCurrentTypesComponent != null) {
       myCurentTypesComponentStack.push(myCurrentTypesComponent);
     }
@@ -217,11 +217,11 @@ public class TypeChecker {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
-    NodeTypesComponent_new component = NodeTypesComponentsRepository.getInstance().
+    NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
             getNodeTypesComponent(node.getContainingRoot());
     if (!myCheckedRoots.contains(containingRoot) || component == null) {
       final SNode[] result = new SNode[1];
-      final NodeTypesComponent_new component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
+      final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
 
       checkWithinRoot(node, new Runnable() {
         public void run() {
@@ -242,11 +242,11 @@ public class TypeChecker {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
-    NodeTypesComponent_new component = NodeTypesComponentsRepository.getInstance().
+    NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
             getNodeTypesComponent(node.getContainingRoot());
     if (!myCheckedRoots.contains(containingRoot) || component == null) {
       final SNode[] result = new SNode[1];
-      final NodeTypesComponent_new component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
+      final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
 
       checkWithinRoot(node, new Runnable() {
         public void run() {
@@ -293,7 +293,7 @@ public class TypeChecker {
   @Nullable
   public SNode getTypeDontCheck(SNode node) {
     if (node == null) return null;
-    NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
             getNodeTypesComponent(node.getContainingRoot());
     if (nodeTypesComponent == null) return null;
     return nodeTypesComponent.getType(node);
@@ -330,7 +330,7 @@ public class TypeChecker {
     myCheckedRoots.remove(containingRoot);
   }
 
-  public NodeTypesComponent_new getCurrentTypesComponent() {
+  public NodeTypesComponent getCurrentTypesComponent() {
     return myCurrentTypesComponent;
   }
 

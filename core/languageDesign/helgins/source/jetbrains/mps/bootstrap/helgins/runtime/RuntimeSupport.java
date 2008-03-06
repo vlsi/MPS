@@ -7,8 +7,6 @@ import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 
 import java.util.Map;
-import java.util.Set;
-import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,7 +36,7 @@ public class RuntimeSupport {
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     if (node == null) return null;
     SNode type;
-    NodeTypesComponent_new currentTypesComponent = myTypeChecker.getCurrentTypesComponent();   //first, in current component
+    NodeTypesComponent currentTypesComponent = myTypeChecker.getCurrentTypesComponent();   //first, in current component
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
@@ -54,7 +52,7 @@ public class RuntimeSupport {
       if (type != null) return getRepresentatorIfNecessary(type, currentTypesComponent);
     }
 
-    NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance()  // then, in appropriate component
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance()  // then, in appropriate component
             .getNodeTypesComponent(node.getContainingRoot());
     if (nodeTypesComponent != null && nodeTypesComponent != currentTypesComponent) {
       type = nodeTypesComponent.getType(node);
@@ -67,7 +65,7 @@ public class RuntimeSupport {
     return getRepresentatorIfNecessary(type, currentTypesComponent);
   }
 
-  private SNode getRepresentatorIfNecessary(SNode type, NodeTypesComponent_new nodeTypesComponent) {
+  private SNode getRepresentatorIfNecessary(SNode type, NodeTypesComponent nodeTypesComponent) {
     if (type == null) return null;
     SNode representator = nodeTypesComponent.getEquationManager().getRepresentator(type);
     if (representator != null) return representator;
@@ -207,7 +205,7 @@ public class RuntimeSupport {
 
   public void givetype(SNode type, SNode node, String ruleModel, String ruleId) {
     Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
-    NodeTypesComponent_new component = myTypeChecker.getCurrentTypesComponent();
+    NodeTypesComponent component = myTypeChecker.getCurrentTypesComponent();
     if (component != null) {
       component.addDependcyOnCurrent(node);
       //----

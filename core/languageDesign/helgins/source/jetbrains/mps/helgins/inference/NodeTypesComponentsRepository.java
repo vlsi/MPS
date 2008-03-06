@@ -15,11 +15,11 @@ import java.util.HashSet;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeTypesComponentsRepository {
-  private Set<NodeTypesComponent_new> myNodeTypesComponents = new HashSet<NodeTypesComponent_new>();
+  private Set<NodeTypesComponent> myNodeTypesComponents = new HashSet<NodeTypesComponent>();
   private TypeChecker myTypeChecker;
   private SModelRepositoryAdapter myModelRepositoryListener = new SModelRepositoryAdapter() {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
-      for (NodeTypesComponent_new nodeTypesComponent : new HashSet<NodeTypesComponent_new>(myNodeTypesComponents)) {
+      for (NodeTypesComponent nodeTypesComponent : new HashSet<NodeTypesComponent>(myNodeTypesComponents)) {
         if (nodeTypesComponent.getNode().getModel().getUID().equals(modelDescriptor.getModelUID())) {
           nodeTypesComponent.clearListeners();
           myNodeTypesComponents.remove(nodeTypesComponent);
@@ -40,10 +40,10 @@ public class NodeTypesComponentsRepository {
     return ApplicationComponents.getInstance().getComponent(NodeTypesComponentsRepository.class);
   }
 
-  public NodeTypesComponent_new getNodeTypesComponent(SNode node) {
+  public NodeTypesComponent getNodeTypesComponent(SNode node) {
     if (node == null) return null;
     SNode root = node.getContainingRoot();
-    for (NodeTypesComponent_new nodeTypesComponent : myNodeTypesComponents) {
+    for (NodeTypesComponent nodeTypesComponent : myNodeTypesComponents) {
       if (nodeTypesComponent.getNode() == root) {
         return nodeTypesComponent;
       }
@@ -51,10 +51,10 @@ public class NodeTypesComponentsRepository {
     return null;
   }
 
-  public NodeTypesComponent_new createNodeTypesComponent(SNode node) {
+  public NodeTypesComponent createNodeTypesComponent(SNode node) {
     if (node == null) return null;
     SNode root = node.getContainingRoot();
-    NodeTypesComponent_new nodeTypesComponent = getNodeTypesComponent(root);
+    NodeTypesComponent nodeTypesComponent = getNodeTypesComponent(root);
     if (nodeTypesComponent != null) {
       return nodeTypesComponent;
     }
@@ -66,17 +66,17 @@ public class NodeTypesComponentsRepository {
   }
 
   public void clear() {
-    for (NodeTypesComponent_new nodeTypesComponent : myNodeTypesComponents) {
+    for (NodeTypesComponent nodeTypesComponent : myNodeTypesComponents) {
       nodeTypesComponent.clearListeners();
     }
     myNodeTypesComponents.clear();
   }
 
-  public NodeTypesComponent_new swapTypesComponentForRoot(SNode containingRoot, NodeTypesComponent_new newComponent) {
+  public NodeTypesComponent swapTypesComponentForRoot(SNode containingRoot, NodeTypesComponent newComponent) {
     if (newComponent == null) return null;
     assert containingRoot == newComponent.getNode();
-    NodeTypesComponent_new componentToRemove = null;
-    for (NodeTypesComponent_new nodeTypesComponent : myNodeTypesComponents) {
+    NodeTypesComponent componentToRemove = null;
+    for (NodeTypesComponent nodeTypesComponent : myNodeTypesComponents) {
       if (nodeTypesComponent.getNode() == containingRoot) {
         componentToRemove = nodeTypesComponent;
         break;

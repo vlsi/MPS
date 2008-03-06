@@ -3,7 +3,7 @@ package jetbrains.mps.resolve;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.helgins.inference.NodeTypesComponent_new;
+import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.logging.Logger;
@@ -95,9 +95,9 @@ public class Resolver {
     if (sNode == null) sNode = referenceNode;
 
     SNode containingRoot = sNode.getContainingRoot();
-    NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
             createNodeTypesComponent(containingRoot);
-    NodeTypesComponent_new temporaryComponent;
+    NodeTypesComponent temporaryComponent;
     try {
       temporaryComponent = nodeTypesComponent.clone();
     } catch(CloneNotSupportedException ex) {
