@@ -35,7 +35,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202117999935">
           <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1202129341392">
             <node role="operation" type="jetbrains.mps.internal.collections.structure.SelectOperation" id="1202129394762">
-              <node role="selector" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202129396703">
+              <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202129396703">
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1202129399843">
                   <property name="name" value="i" />
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1202129402374" />
@@ -51,7 +51,7 @@
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1202128759821">
               <node role="operation" type="jetbrains.mps.internal.collections.structure.WhereOperation" id="1202128839611">
-                <node role="filter" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202128928368">
+                <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202128928368">
                   <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1202128933842">
                     <property name="name" value="i" />
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1202128935107" />
@@ -67,7 +67,7 @@
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1202117999988">
                 <node role="operation" type="jetbrains.mps.internal.collections.structure.MappingOperation" id="1202118002768">
-                  <node role="mapper" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202118032635">
+                  <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202118032635">
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1202118040179">
                       <property name="name" value="i" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1202118042077" />
