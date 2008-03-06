@@ -12,11 +12,12 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.transformation.TLBase.structure" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170455697846">
     <property name="name" value="AAA" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170455701847">
@@ -148,8 +149,8 @@
               <link role="variableDeclaration" targetNodeId="1204763884209" resolveInfo="node" />
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1204763895715">
-              <node role="qualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.NodeAttributeAccessQualifier" id="1204764854623">
-                <link role="annotationLink" targetNodeId="4.1149694518242" resolveInfo="referenceMacro" />
+              <node role="qualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.NodeAttributeAccessQualifier" id="1204767133724">
+                <link role="annotationLink" targetNodeId="5.1182950852687" resolveInfo="helginsJudgement" />
               </node>
             </node>
           </node>
