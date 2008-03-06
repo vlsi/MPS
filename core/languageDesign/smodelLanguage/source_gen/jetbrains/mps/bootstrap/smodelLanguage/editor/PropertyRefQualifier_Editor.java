@@ -16,37 +16,37 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class PropertyRefQualifier_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_PropertyDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_PropertyReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204837286691");
   }
 
-  private static void setupLabel_PropertyDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_PropertyReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createPropertyDeclarationReferenceCell(context, node);
+    return this.createPropertyReferenceCell(context, node);
   }
 
-  public EditorCell createPropertyDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createPropertyReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new PropertyRefQualifier_Editor._Inline34());
     EditorCell editorCell = provider.createEditorCell(context);
-    PropertyRefQualifier_Editor.setupBasic_PropertyDeclarationReferenceCell(editorCell, node, context);
+    PropertyRefQualifier_Editor.setupBasic_PropertyReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      PropertyRefQualifier_Editor.setupLabel_PropertyDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      PropertyRefQualifier_Editor.setupLabel_PropertyReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createPropertyDeclarationReferenceCell(EditorContext context, SNode node) {
+  public EditorCell createPropertyReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("propertyDeclaration");
+    provider.setRole("property");
     provider.setNoTargetText("no property");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createPropertyDeclarationReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createPropertyReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

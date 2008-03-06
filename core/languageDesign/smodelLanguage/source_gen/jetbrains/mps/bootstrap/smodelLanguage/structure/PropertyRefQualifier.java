@@ -14,7 +14,7 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String PROPERTY_DECLARATION = "propertyDeclaration";
+  public static String PROPERTY = "property";
 
   public  PropertyRefQualifier(SNode node) {
     super(node);
@@ -53,12 +53,12 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
     this.setProperty(PropertyRefQualifier.VIRTUAL_PACKAGE, value);
   }
 
-  public PropertyDeclaration getPropertyDeclaration() {
-    return (PropertyDeclaration)this.getReferent(PropertyRefQualifier.PROPERTY_DECLARATION);
+  public PropertyDeclaration getProperty() {
+    return (PropertyDeclaration)this.getReferent(PropertyRefQualifier.PROPERTY);
   }
 
-  public void setPropertyDeclaration(PropertyDeclaration node) {
-    super.setReferent(PropertyRefQualifier.PROPERTY_DECLARATION, node);
+  public void setProperty(PropertyDeclaration node) {
+    super.setReferent(PropertyRefQualifier.PROPERTY, node);
   }
 
 }

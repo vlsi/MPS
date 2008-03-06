@@ -68,13 +68,6 @@
     <property name="name" value="SPropertyAccess" />
     <property name="package" value="operation.featureAccess" />
     <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1138162277586">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1138412282562">
-      <property name="value" value="&lt;property access&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1178560704219">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" resolveInfo="applicable_to_node" />
     </node>
@@ -1844,7 +1837,7 @@
     <property name="name" value="PropertyRefQualifier" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204837225594">
-      <property name="role" value="propertyDeclaration" />
+      <property name="role" value="property" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3.1071489288299" resolveInfo="PropertyDeclaration" />
     </node>
