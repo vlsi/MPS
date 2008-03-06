@@ -1010,6 +1010,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mps.bootstrap.sharedConcepts.editor" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177670593009">
     <link role="conceptDeclaration" targetNodeId="1.1177670533743" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177670598279">
@@ -1027,6 +1028,7 @@
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1177670612538">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+              <link role="styleClass" targetNodeId="2v.1203541385314" resolveInfo="ReferenceOnConcept" />
             </node>
           </node>
         </node>
