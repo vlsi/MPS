@@ -3721,8 +3721,9 @@
                           <link role="baseMethodDeclaration" targetNodeId="11.~IFile.getParent():jetbrains.mps.vfs.IFile" resolveInfo="getParent" />
                         </node>
                       </node>
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1204817416215">
-                        <link role="baseMethodDeclaration" targetNodeId="14.~TmpModelOwner.&lt;init&gt;()" resolveInfo="TmpModelOwner" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204821809527">
+                        <link role="baseMethodDeclaration" targetNodeId="14.~TmpModelOwner.getInstance():jetbrains.mps.mpsLayoutLanguage.TmpModelOwner" resolveInfo="getInstance" />
+                        <link role="classConcept" targetNodeId="14.~TmpModelOwner" resolveInfo="TmpModelOwner" />
                       </node>
                     </node>
                   </node>
