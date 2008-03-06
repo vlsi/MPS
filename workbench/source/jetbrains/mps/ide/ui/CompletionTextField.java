@@ -11,6 +11,8 @@ import java.awt.BorderLayout;
 import java.awt.Window;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.Arrays;
 
@@ -57,19 +59,21 @@ public abstract class CompletionTextField extends JTextField {
         myHint.complete();
       }
     }, KeyStroke.getKeyStroke("ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {        
-        myHint.hide();
-      }
-    }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         myHint.show();
         updateCompletion();
       }
     }, KeyStroke.getKeyStroke("control SPACE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    addKeyListener(new KeyAdapter() {
+      public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE && myHint.isVisible()) {
+          myHint.hide();
+          e.consume();
+        }
+      }
+    });
   }
 
   protected abstract List<String> getProposals(String text);
