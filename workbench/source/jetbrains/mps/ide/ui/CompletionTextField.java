@@ -50,7 +50,12 @@ public abstract class CompletionTextField extends JTextField {
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        myHint.down();
+        if (myHint.isVisible()) {
+          myHint.down();
+        } else {
+          myHint.show();
+          updateCompletion();
+        }
       }
     }, KeyStroke.getKeyStroke("DOWN"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
