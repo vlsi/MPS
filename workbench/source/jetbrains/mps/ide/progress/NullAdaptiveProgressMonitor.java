@@ -32,6 +32,10 @@ public class NullAdaptiveProgressMonitor  implements IAdaptiveProgressMonitor {
 
   }
 
+  public Long getEstimatedTime(String taskName) {
+    return (long) 0;
+  }
+
   public void startTask(String taskName, long estimatedTime) {
 
   }

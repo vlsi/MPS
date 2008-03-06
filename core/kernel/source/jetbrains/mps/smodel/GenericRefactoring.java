@@ -2,11 +2,14 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.generator.*;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
@@ -97,12 +100,27 @@ public class GenericRefactoring {
   public void doExecute(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
     refactoringContext.setRefactoring(myRefactoring);
 
+    AbstractProjectFrame projectFrame = context.get(AbstractProjectFrame.class);
+    IAdaptiveProgressMonitor monitor_ = new NullAdaptiveProgressMonitor();
+    boolean hasMonitor = projectFrame != null;
+    if (hasMonitor) {
+      monitor_ = projectFrame.createAdaptiveProgressMonitor();
+    }
+    final IAdaptiveProgressMonitor monitor = monitor_;
+    final String refactoringTaskName = "refactoring_" + myRefactoring.getClass().getName();
+    final long estimatedTime = monitor.getEstimatedTime(refactoringTaskName);
+    new Thread() {
+      public void run() {
+        monitor.start("refactoring", estimatedTime);
+        monitor.startLeafTask(refactoringTaskName, "refactoring", estimatedTime);
+      }
+    }.start();
+
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         myRefactoring.doRefactor(context, refactoringContext);
       }
     });
-
     SModelDescriptor modelDescriptor = context.getModel();
 
     if (modelDescriptor == null) return;
@@ -141,6 +159,14 @@ public class GenericRefactoring {
     if (!sourceModels.isEmpty()) {
       generateModels(context, sourceModels, refactoringContext);
     }
+
+    new Thread() {
+      public void run() {
+        monitor.finishTask();
+        monitor.finish();
+      }
+    }.start();
+
   }
 
   private void generateModels(ActionContext context, Map<IModule, List<SModel>> sourceModels, RefactoringContext refactoringContext) {

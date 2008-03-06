@@ -30,6 +30,8 @@ public interface IAdaptiveProgressMonitor {
   //  estimatedTime according to your knowledge.
   void startTask(String taskName, String taskKind, long estimatedTime);
 
+  public Long getEstimatedTime(String taskName);
+
   void addText(String text);
 
   boolean isCanceled();

@@ -15,6 +15,7 @@
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.teamsys.dnq" />
+  <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="126" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
@@ -204,27 +205,42 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203611169279" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203611169280" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203611169281">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204554545149">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204554545150">
-            <property name="name" value="c" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204554545151">
-              <link role="classifier" targetNodeId="1203611141026" resolveInfo="C" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204826901524">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204826902354">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204826901525">
+              <link role="variableDeclaration" targetNodeId="1204828328708" resolveInfo="c" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204826905075">
+              <link role="fieldDeclaration" targetNodeId="1204554523706" resolveInfo="fooField" />
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204554552607">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204554553546">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204554552608">
-              <link role="variableDeclaration" targetNodeId="1204554545150" resolveInfo="c" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204554557314">
-              <link role="fieldDeclaration" targetNodeId="^" resolveInfo="fooField" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204826892065">
+      <property name="name" value="bar" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204826892066" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204826892067" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204826892068">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204828328707">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204828328708">
+            <property name="name" value="c" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204828328709">
+              <link role="classifier" targetNodeId="1203611141026" resolveInfo="C" />
             </node>
           </node>
         </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203611141027" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204828440499">
+    <property name="name" value="AConcept" />
+    <link role="extends" targetNodeId="125.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204828459126">
+      <property name="role" value="refRefdd" />
+      <link role="target" targetNodeId="1204828440499" resolveInfo="AConcept" />
+    </node>
   </node>
 </model>
 
