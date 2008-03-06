@@ -1,13 +1,16 @@
 package jetbrains.mps.ide.ui;
 
+import jetbrains.mps.util.CollectionUtil;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.*;
 import java.util.List;
-import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,13 +21,19 @@ import java.util.ArrayList;
  */
 public class MPSErrorDialog extends JDialog {
   private static final int MIN_SIDE_PADDING = 30;
-  private static final int BUTTON_WIDTH = 40;
 
   private List<JButton> myButtons = new ArrayList<JButton>();
   private boolean myIsInitialized = false;
   private JTextField myField;
   private Frame myOwnerFrame;
   private String myErrorString;
+  private KeyListener myEscapeListener = new KeyAdapter() {
+      public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+          dispose();
+        }
+      }
+    };
 
   public MPSErrorDialog(Frame frame, String error, String title) {
     this(frame, error, title, true);
@@ -48,13 +57,6 @@ public class MPSErrorDialog extends JDialog {
     JButton button = new JButton(new AbstractAction("OK") {
       public void actionPerformed(ActionEvent e) {
         dispose();
-      }
-    });
-    addKeyListener(new KeyAdapter() {
-      public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-          dispose();
-        }
       }
     });
     myButtons.add(button);
