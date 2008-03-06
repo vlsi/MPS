@@ -13,6 +13,13 @@
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\lib" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\lib\mps.tmp" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\app" />
+    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\app" />
+    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\app\agreement" />
+    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\app\complexLanguage" />
+    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\app\dslbook_example" />
+    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\app\fibonacci" />
+    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\app\fixedLengthReader" />
+    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\app\formulaLanguage" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\core" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\core\baseLanguage" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\core\languageDesign" />
@@ -128,6 +135,24 @@
     <delete dir="${deploy.dir}\MPS.tmp\MPS\lib\mps.tmp" />
     <copy todir="${deploy.dir}\MPS.tmp\MPS\lib">
       <fileset dir="lib" excludes="**/*.iml, **/*.ipr, **/*.java" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\app\agreement">
+      <fileset dir="app\agreement" excludes="**/*.iml, **/*.ipr, **/*.java" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\app\complexLanguage">
+      <fileset dir="app\complexLanguage" excludes="**/*.iml, **/*.ipr, **/*.java" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\app\dslbook_example">
+      <fileset dir="app\dslbook_example" excludes="**/*.iml, **/*.ipr, **/*.java" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\app\fibonacci">
+      <fileset dir="app\fibonacci" excludes="**/*.iml, **/*.ipr, **/*.java" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\app\fixedLengthReader">
+      <fileset dir="app\fixedLengthReader" excludes="**/*.iml, **/*.ipr, **/*.java" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\app\formulaLanguage">
+      <fileset dir="app\formulaLanguage" excludes="**/*.iml, **/*.ipr, **/*.java" />
     </copy>
     <antcall target="pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="pack.jetbrains.mps.closures" />
