@@ -39,9 +39,6 @@
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\plugin" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\.configuration" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\workbench" />
-    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\workbench\ideSolution" />
-    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\workbench\ideUiLanguage" />
-    <mkdir dir="${deploy.dir}\MPS.tmp\MPS\workbench\monitorLanguage" />
     <mkdir dir="${deploy.dir}\MPS.tmp\MPS\log" />
   </target>
   <target name="do.the.job" depends="folders.create">
@@ -234,15 +231,9 @@
     <copy todir="${deploy.dir}\MPS.tmp\MPS\.configuration">
       <fileset dir=".configuration" excludes="**/*.iml, **/*.ipr, **/*.java" />
     </copy>
-    <copy todir="${deploy.dir}\MPS.tmp\MPS\workbench\ideSolution">
-      <fileset dir="workbench\ideSolution" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
-    </copy>
-    <copy todir="${deploy.dir}\MPS.tmp\MPS\workbench\ideUiLanguage">
-      <fileset dir="workbench\ideUiLanguage" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
-    </copy>
-    <copy todir="${deploy.dir}\MPS.tmp\MPS\workbench\monitorLanguage">
-      <fileset dir="workbench\monitorLanguage" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
-    </copy>
+    <antcall target="pack.jetbrains.mps.ide.uiLanguage" />
+    <antcall target="pack.jetbrains.mps.monitorLanguage" />
+    <antcall target="pack.jetbrains.mps.ide" />
     <copy todir="${deploy.dir}\MPS.tmp\MPS\log">
       <fileset dir="log" excludes="**/*.iml, **/*.ipr, **/*.java" />
     </copy>
