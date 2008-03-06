@@ -10,6 +10,7 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public abstract class CompletionTextField extends JTextField {
   private PopupHint myHint = new PopupHint();
@@ -182,25 +183,13 @@ public abstract class CompletionTextField extends JTextField {
     JFrame frame = new JFrame();
 
     frame.setLayout(new FlowLayout());
-    frame.add(new CompletionTextField() {
-      protected List<String> getProposals(String text) {
-        List<String> result = new ArrayList<String>();
-
-        if ("Kostik".startsWith(text)) {
-          result.add("Kostik");
-        }
-
-        if ("JetBrains".startsWith(text)) {
-          result.add("JetBrains");
-        }
-
-        if ("MPS".startsWith(text)) {
-          result.add("MPS");
-        }
-
-        return result;
-      }
-    });
+    frame.add(new DefaultCompletionTextField(
+      Arrays.asList(
+        "jetbrains.mps.core.structure",
+        "jetbrains.mps.core.editor",
+        "jetbrains.mps.core.constraints")
+      )
+    );
 
     frame.setSize(800, 600);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
