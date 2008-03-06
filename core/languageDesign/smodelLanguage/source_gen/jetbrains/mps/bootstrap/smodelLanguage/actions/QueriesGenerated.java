@@ -81,13 +81,6 @@ public class QueriesGenerated {
     return SequenceOperations.getSize(SLinkOperations.getConceptLinkTargets(_context.getSourceNode(), "applicableParameter")) > 0;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189083(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    /*
-      return QueriesUtil.isExpression_appropriateFor_ourOperations(_context.getSourceNode());
-    */
-    return false;
-  }
-
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189126(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
     return nodeType != null;
@@ -588,34 +581,6 @@ public class QueriesGenerated {
 
         public String getDescriptionText(String pattern) {
           return "add operation parameters";
-        }
-
-      });
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1179535189082(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          // replace expression with snode-operation-expression
-          SNode expression = _context.getSourceNode();
-          SNode opExpression = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", null);
-          SNodeOperations.replaceWithAnother(expression, opExpression);
-          SLinkOperations.setTarget(opExpression, "leftExpression", expression, true);
-          return opExpression;
-        }
-
-        public String getMatchingText(String pattern) {
-          return ".";
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "smodel language operation";
         }
 
       });
