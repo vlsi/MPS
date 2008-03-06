@@ -1377,6 +1377,26 @@ public class QueriesGenerated {
 
       });
     }
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCall", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode instanceMethodCall = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.InstanceMethodCall");
+          SLinkOperations.setTarget(instanceMethodCall, "instance", _context.getSourceNode(), true);
+          return instanceMethodCall;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "!.";
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "old deprecated InstanceMethodCall";
+        }
+
+      });
+    }
     return result;
   }
 
