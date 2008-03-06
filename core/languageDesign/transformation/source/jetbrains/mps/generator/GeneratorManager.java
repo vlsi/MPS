@@ -621,7 +621,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         IGenerationSession generationSession = new GenerationSession(invocationContext, saveTransientModels, progress, messages);
         try {
           if (isShowErrorsOnly()) {
-            wasLoggingThreshold = Logger.setThreshold("OFF");
+            wasLoggingThreshold = Logger.setThreshold("ERROR");
           }
           Logger.addLoggingHandler(generationSession.getLoggingHandler());
           TypeChecker.getInstance().setIncrementalMode(false);
