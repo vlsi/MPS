@@ -2353,5 +2353,34 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204762366627">
+    <property name="package" value="attribute" />
+    <link role="conceptDeclaration" targetNodeId="1.1204761823073" resolveInfo="AttributeAccessOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204762834552">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204762856929">
+        <property name="text" value="@" />
+        <property name="fontStyle" value="PLAIN" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1204762928415">
+        <link role="relationDeclaration" targetNodeId="1.1204762310079" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204763553921">
+    <property name="package" value="attribute" />
+    <link role="conceptDeclaration" targetNodeId="1.1204763358057" resolveInfo="NodeAttributeAccessQualifier" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1204763572767">
+      <link role="relationDeclaration" targetNodeId="1.1204763443606" />
+      <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1204763572768">
+        <link role="conceptDeclaration" targetNodeId="3.1149608206811" resolveInfo="AnnotationLinkDeclaration" />
+        <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204763584536">
+          <property name="readOnly" value="true" />
+          <property name="noTargetText" value="&lt;no annotation link&gt;" />
+          <link role="relationDeclaration" targetNodeId="3.1204740973143" resolveInfo="role" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -12,10 +12,11 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.transformation.TLBase.structure" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170455697846">
     <property name="name" value="AAA" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170455701847">
@@ -133,6 +134,33 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1204763824500">
+    <property name="name" value="TestAttr" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204763860596">
+      <property name="name" value="aaa" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204763860597" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204763860598" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204763860599">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204763888180">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204763890635">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204763888181">
+              <link role="variableDeclaration" targetNodeId="1204763884209" resolveInfo="node" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1204763895715">
+              <node role="qualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.NodeAttributeAccessQualifier" id="1204764854623">
+                <link role="annotationLink" targetNodeId="4.1149694518242" resolveInfo="referenceMacro" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204763884209">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1204763884210" />
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204763824501" />
   </node>
 </model>
 

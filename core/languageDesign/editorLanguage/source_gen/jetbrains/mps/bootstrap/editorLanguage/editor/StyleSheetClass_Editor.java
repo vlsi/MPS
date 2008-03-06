@@ -4,13 +4,13 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -29,10 +29,6 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 public class StyleSheetClass_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myItemListHandler_itemList_;
-
-  public static boolean _QueryFunction_NodeCondition_1198252496152(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "extendedClass", true) != null;
-  }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1186402439414");
@@ -103,6 +99,10 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ExtendedClassCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1198252496152(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "extendedClass", true) != null;
   }
 
 

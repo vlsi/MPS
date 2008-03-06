@@ -4,11 +4,11 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -22,37 +22,37 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     super(node);
   }
 
-  public static boolean _QueryFunction_NodeCondition_1204632031165(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
-  }
-
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204632031160");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204762501987");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204632031161");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204762501988");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204632031162");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204762501989");
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204632031163");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204762501990");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_FocusPolicyApplicableCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204632031164");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204762501991");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_FocusPolicyApplicableCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1204762501992(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 
 
@@ -70,7 +70,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if(_FocusPolicy_Applicable._QueryFunction_NodeCondition_1204632031165(node, context, context.getOperationContext().getScope())) {
+    if(_FocusPolicy_Applicable._QueryFunction_NodeCondition_1204762501992(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createColumnCell(context, node));
     }
     return editorCell;

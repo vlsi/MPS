@@ -1651,5 +1651,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1204764877968">
+    <property name="package" value="attribute" />
+    <link role="concept" targetNodeId="1.1204763358057" resolveInfo="NodeAttributeAccessQualifier" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1204764877969">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204764877970" />
+    </node>
+  </node>
 </model>
 

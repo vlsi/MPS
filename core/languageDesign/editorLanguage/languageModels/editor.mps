@@ -27,6 +27,7 @@
   <import index="25" modelUID="javax.swing@java_stub" version="-1" />
   <import index="26" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
   <import index="27" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <visible index="2" modelUID="jetbrains.mps.bootstrap.sharedConcepts.editor" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1078153915535">
     <property name="name" value="ConceptEditorDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="2.1071666914219" />
@@ -57,6 +58,7 @@
               <property name="readOnly" value="true" />
               <property name="drawBorder" value="true" />
               <link role="relationDeclaration" targetNodeId="3.1169194664001" />
+              <link role="styleClass" targetNodeId="2v.1203541385314" resolveInfo="ReferenceOnConcept" />
             </node>
           </node>
         </node>
@@ -1259,7 +1261,6 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="jetbrains.mps.bootstrap.sharedConcepts.editor" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1079007237531">
     <property name="name" value="EditorComponentDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="2.1078938745671" />

@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.bootstrap.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
@@ -418,6 +419,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1106262846793");
+      SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
       editorCell.setDrawBorder(true);
     }
 

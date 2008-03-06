@@ -4,11 +4,11 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -26,10 +26,6 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_OpenTag;
   /* package */AbstractCellProvider my_CloseTag;
   /* package */AbstractCellProvider my_FocusPolicy_Applicable9;
-
-  public static Color _QueryFunction_Color_1176889074951(SNode node, EditorContext editorContext) {
-    return _EditorUtil.grayIfNotSelectable(node);
-  }
 
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1078250851486");
@@ -527,6 +523,10 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_StyleClassReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Color _QueryFunction_Color_1176889074951(SNode node, EditorContext editorContext) {
+    return _EditorUtil.grayIfNotSelectable(node);
   }
 
 
