@@ -538,8 +538,12 @@ public class RefactoringContext {
           LOG.errorWithTrace("can't find a language " + namespace);
         } else {
           Class<ILoggableRefactoring> refactoringClass = (Class<ILoggableRefactoring>) l.getClass(className);
-          Constructor<ILoggableRefactoring> constructor = refactoringClass.getConstructor();
-          myRefactoring = constructor.newInstance();
+          if (refactoringClass == null) {
+            LOG.errorWithTrace("can't find a class " + className + " in a language " + namespace);
+          } else {
+            Constructor<ILoggableRefactoring> constructor = refactoringClass.getConstructor();
+            myRefactoring = constructor.newInstance();
+          }
         }
       } catch (Throwable t) {
         LOG.error(t);
