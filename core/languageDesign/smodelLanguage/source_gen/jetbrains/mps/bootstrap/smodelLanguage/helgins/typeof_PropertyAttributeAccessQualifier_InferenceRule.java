@@ -24,7 +24,7 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "property annotation link is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204832870610");
     }
     SNode propertyArgument = SLinkOperations.getTarget(nodeToCheck, "propertyArgument", true);
-    if(SNodeOperations.isInstanceOf(propertyArgument, "jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionAsArgument")) {
+    if(SNodeOperations.isInstanceOf(propertyArgument, "jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier")) {
       // property name expected
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(propertyArgument, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998062", false), new QuotationClass_78().createNode(), SLinkOperations.getTarget(propertyArgument, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998060");
     } else

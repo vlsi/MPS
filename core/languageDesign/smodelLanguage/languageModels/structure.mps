@@ -1809,11 +1809,11 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1204834061007">
     <property name="package" value="attribute" />
-    <property name="name" value="IPropertyAttributeAccessQualifierArg" />
+    <property name="name" value="IPropertyAccessQualifier" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204834851141">
     <property name="package" value="attribute" />
-    <property name="name" value="ExpressionAsArgument" />
+    <property name="name" value="ExpressionQualifier" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204834868751">
       <property name="metaClass" value="aggregation" />
@@ -1830,6 +1830,19 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204835048021">
+      <link role="intfc" targetNodeId="1204834061007" resolveInfo="IPropertyAttributeAccessQualifierArg" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204837120311">
+    <property name="package" value="attribute" />
+    <property name="name" value="PropertyRefQualifier" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204837225594">
+      <property name="role" value="propertyDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1071489288299" resolveInfo="PropertyDeclaration" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204837131328">
       <link role="intfc" targetNodeId="1204834061007" resolveInfo="IPropertyAttributeAccessQualifierArg" />
     </node>
   </node>

@@ -164,7 +164,7 @@
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1204833106011">
               <node role="qualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1204833111684">
                 <link role="annotationLink" targetNodeId="4.1149694466802" resolveInfo="propertyMacro" />
-                <node role="propertyArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionAsArgument" id="1204835129683">
+                <node role="propertyArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1204835129683">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1204835289622">
                     <link role="classifier" targetNodeId="1170455697846" resolveInfo="AAA" />
                   </node>
@@ -181,10 +181,8 @@
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1204836692554">
               <node role="qualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1204836697368">
                 <link role="annotationLink" targetNodeId="4.1149694466802" resolveInfo="propertyMacro" />
-                <node role="propertyArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionAsArgument" id="1204836701931">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204836703621">
-                    <property name="value" value="aaaa" />
-                  </node>
+                <node role="propertyArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier" id="1204837725052">
+                  <link role="propertyDeclaration" targetNodeId="5.1185281562362" resolveInfo="errorText" />
                 </node>
               </node>
             </node>

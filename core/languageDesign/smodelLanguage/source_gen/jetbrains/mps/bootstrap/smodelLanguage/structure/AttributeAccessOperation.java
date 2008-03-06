@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AttributeAccessOperation extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation";
+  public static String QUALIFIER = "qualifier";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String QUALIFIER = "qualifier";
 
   public  AttributeAccessOperation(SNode node) {
     super(node);
@@ -28,6 +28,14 @@ public class AttributeAccessOperation extends BaseConcept implements IOperation 
     return AttributeAccessOperation.newInstance(sm, false);
   }
 
+
+  public IAttributeAccessQualifier getQualifier() {
+    return (IAttributeAccessQualifier)this.getChild(AttributeAccessOperation.QUALIFIER);
+  }
+
+  public void setQualifier(IAttributeAccessQualifier node) {
+    super.setChild(AttributeAccessOperation.QUALIFIER, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(AttributeAccessOperation.SHORT_DESCRIPTION);
@@ -51,14 +59,6 @@ public class AttributeAccessOperation extends BaseConcept implements IOperation 
 
   public void setVirtualPackage(String value) {
     this.setProperty(AttributeAccessOperation.VIRTUAL_PACKAGE, value);
-  }
-
-  public IAttributeAccessQualifier getQualifier() {
-    return (IAttributeAccessQualifier)this.getChild(AttributeAccessOperation.QUALIFIER);
-  }
-
-  public void setQualifier(IAttributeAccessQualifier node) {
-    super.setChild(AttributeAccessOperation.QUALIFIER, node);
   }
 
 }
