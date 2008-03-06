@@ -4,14 +4,14 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -28,6 +28,18 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_EditorCellModel_CellBackground_Component12;
   /* package */AbstractCellProvider my_CellKeyMapLnk_Component12;
   /* package */AbstractCellProvider my_FocusPolicy_Applicable14;
+
+  public static boolean _QueryFunction_NodeCondition_1182191264575(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "vertical");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1182191264590(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "vertical"));
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1182948746816(SNode node, EditorContext editorContext, IScope scope) {
+    return "templates".equals(SNodeOperations.getModel(node).getStereotype());
+  }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182191264562");
@@ -869,18 +881,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   private static void setupLabel_StyleClassReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean _QueryFunction_NodeCondition_1182191264575(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "vertical");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1182191264590(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "vertical"));
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1182948746816(SNode node, EditorContext editorContext, IScope scope) {
-    return "templates".equals(SNodeOperations.getModel(node).getStereotype());
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -1336,9 +1336,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     if(this.my_OpenTag12 == null) {
       this.my_OpenTag12 = new _OpenTag(node);
     }
-    EditorCell componentCell = this.my_OpenTag12.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_OpenTag12.createEditorCell(context);
     CellModel_RefNodeList_Editor.setupBasic__OpenTagCell(editorCell, node, context);
     return editorCell;
   }
@@ -1347,9 +1345,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     if(this.my_CloseTag12 == null) {
       this.my_CloseTag12 = new _CloseTag(node);
     }
-    EditorCell componentCell = this.my_CloseTag12.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_CloseTag12.createEditorCell(context);
     CellModel_RefNodeList_Editor.setupBasic__CloseTagCell(editorCell, node, context);
     return editorCell;
   }
@@ -1358,9 +1354,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     if(this.my_EditorCellModel_CellBackground_Component12 == null) {
       this.my_EditorCellModel_CellBackground_Component12 = new _EditorCellModel_CellBackground_Component(node);
     }
-    EditorCell componentCell = this.my_EditorCellModel_CellBackground_Component12.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_EditorCellModel_CellBackground_Component12.createEditorCell(context);
     CellModel_RefNodeList_Editor.setupBasic__EditorCellModel_CellBackground_ComponentCell(editorCell, node, context);
     return editorCell;
   }
@@ -1369,9 +1363,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     if(this.my_CellKeyMapLnk_Component12 == null) {
       this.my_CellKeyMapLnk_Component12 = new _CellKeyMapLnk_Component(node);
     }
-    EditorCell componentCell = this.my_CellKeyMapLnk_Component12.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_CellKeyMapLnk_Component12.createEditorCell(context);
     CellModel_RefNodeList_Editor.setupBasic__CellKeyMapLnk_ComponentCell(editorCell, node, context);
     return editorCell;
   }
@@ -1380,9 +1372,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     if(this.my_FocusPolicy_Applicable14 == null) {
       this.my_FocusPolicy_Applicable14 = new _FocusPolicy_Applicable(node);
     }
-    EditorCell componentCell = this.my_FocusPolicy_Applicable14.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_FocusPolicy_Applicable14.createEditorCell(context);
     CellModel_RefNodeList_Editor.setupBasic__FocusPolicy_ApplicableCell(editorCell, node, context);
     return editorCell;
   }
