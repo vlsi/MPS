@@ -1813,7 +1813,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204834851141">
     <property name="package" value="attribute" />
-    <property name="name" value="ExpressionArg" />
+    <property name="name" value="ExpressionAsArgument" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204834868751">
       <property name="metaClass" value="aggregation" />
