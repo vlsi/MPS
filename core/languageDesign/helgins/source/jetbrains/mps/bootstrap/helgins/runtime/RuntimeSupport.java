@@ -7,6 +7,8 @@ import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 
 import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -77,11 +79,28 @@ public class RuntimeSupport {
     RuntimeTypeVariable typeVar = RuntimeTypeVariable.newInstance(myTypeChecker.getRuntimeTypesModel());
     typeVar.setNullable(isNullable);
     typeVar.setName(getNewVarName());
+    registerTypeVariable(typeVar.getNode());
     return typeVar.getNode();
   }
 
   private String getNewVarName() {
     return myTypeChecker.getCurrentTypesComponent().getNewVarName();
+  }
+
+  public void registerTypeVariable(SNode variable) {
+    NodeTypesComponent typesComponent = myTypeChecker.getCurrentTypesComponent();
+    if (typesComponent != null) {
+      typesComponent.registerTypeVariable(variable);
+    }
+  }
+
+  public Set<SNode> getRegisteredTypeVariables(String varName) {
+    NodeTypesComponent typesComponent = myTypeChecker.getCurrentTypesComponent();
+    if (typesComponent != null) {
+      return typesComponent.getVariables(varName);
+    } else {
+      return new HashSet<SNode>();
+    }
   }
 
   @Deprecated

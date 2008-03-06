@@ -6,6 +6,8 @@ import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
 
+import java.util.Set;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -44,7 +46,7 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
   }
 
   public void representatorSet(IWrapper wrapper, IWrapper representator, EquationManager equationManager) {
-   /* if ("f".equals(getNode().getProperty("name"))) {
+    /*  if ("o".equals(getNode().getProperty("name"))) {
       System.err.println("BINGO!");
     }*/
 
@@ -71,10 +73,13 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
 
   public void becomesDeeplyConcrete(IWrapper wrapper, EquationManager equationManager) {
     if (EqualUtil.equals(wrapper, myShallowConcreteRepresentator)) {//must be always true
-      SNode parent = getNode().getParent();
-      while (parent != null) {
-        equationManager.checkConcrete(NodeWrapper.createNodeWrapper(parent, equationManager));
-        parent = parent.getParent();
+      Set<SNode> typeVariables = equationManager.getTypeChecker().getRuntimeSupport().getRegisteredTypeVariables(getNode().getName());
+      for (SNode var : typeVariables) {
+        SNode parent = var.getParent();
+        while (parent != null) {
+          equationManager.checkConcrete(NodeWrapper.createNodeWrapper(parent, equationManager));
+          parent = parent.getParent();
+        }
       }
     } else {
       LOG.warning("becomes concrete event not my shallow concrete representator");

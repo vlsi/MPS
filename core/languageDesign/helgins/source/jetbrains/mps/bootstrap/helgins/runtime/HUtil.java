@@ -3,8 +3,11 @@ package jetbrains.mps.bootstrap.helgins.runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.helgins.inference.TypeChecker;
 
 import java.util.HashMap;
 
@@ -19,7 +22,11 @@ public class HUtil {
 
   public static SNode copyIfNecessary ( SNode node, SModel model ) {
      if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
-        return CopyUtil.copy (node, new HashMap<SNode, SNode>(), false) ;
+       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
+       if (BaseAdapter.isInstance(copy, RuntimeTypeVariable.class)) {
+         TypeChecker.getInstance().getRuntimeSupport().registerTypeVariable(copy);
+       }
+       return copy;
      } else {
         return node ;
      }

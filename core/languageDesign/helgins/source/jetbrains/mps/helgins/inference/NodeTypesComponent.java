@@ -57,6 +57,7 @@ public class NodeTypesComponent implements IGutterMessageOwner, Cloneable {
   private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
 
   private EquationManager myEquationManager;
+  private Map<String, Set<SNode>> myRegisteredVariables = new HashMap<String, Set<SNode>>();
 
   private Set<SModelDescriptor> myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
 
@@ -97,12 +98,14 @@ public class NodeTypesComponent implements IGutterMessageOwner, Cloneable {
     result.myCurrentFrontier = null;
     result.myCurrentCheckedNode = null;
     result.myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
+    result.myRegisteredVariables = new HashMap<String, Set<SNode>>();
     return result;
   }
 
   public void clear() {
     clearEquationManager();
     clearNodesTypes();
+    myRegisteredVariables.clear();
     clearCaches();
   }
 
@@ -551,6 +554,25 @@ public class NodeTypesComponent implements IGutterMessageOwner, Cloneable {
     Set<Pair<String, String>> set = myNodesToRules.get(node);
     if (set == null) return null;
     return new HashSet<Pair<String, String>>(set);
+  }
+
+  public void registerTypeVariable(SNode variable) {
+    String name = variable.getName();
+    Set<SNode> variables = myRegisteredVariables.get(name);
+    if (variables == null) {
+      variables = new HashSet<SNode>();
+      myRegisteredVariables.put(name, variables);
+    }
+    variables.add(variable);
+  }
+
+  public Set<SNode> getVariables(String varName) {
+    Set<SNode> variables = myRegisteredVariables.get(varName);
+    if (variables == null) {
+      return new HashSet<SNode>();
+    } else {
+      return new HashSet<SNode>(variables);
+    }
   }
 
 
