@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements InferenceRule_Runtime {
@@ -21,6 +22,13 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
     }
     if(!(SPropertyOperations.hasValue(annotationLink, "stereotype", "property", "node"))) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "property annotation link is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204832870610");
+    }
+    SNode propertyArgument = SLinkOperations.getTarget(nodeToCheck, "propertyArgument", true);
+    if(SNodeOperations.isInstanceOf(propertyArgument, "jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionArg")) {
+      // property name expected
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(propertyArgument, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998062", false), new QuotationClass_78().createNode(), SLinkOperations.getTarget(propertyArgument, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998060");
+    } else
+    {
     }
   }
 

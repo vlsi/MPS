@@ -12,6 +12,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclara
 public class PropertyAttributeAccessQualifier extends BaseConcept implements IAttributeAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier";
   public static String ANNOTATION_LINK = "annotationLink";
+  public static String PROPERTY_ARGUMENT = "propertyArgument";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
@@ -35,6 +36,14 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
 
   public void setAnnotationLink(AnnotationLinkDeclaration node) {
     super.setReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK, node);
+  }
+
+  public IPropertyAttributeAccessQualifierArg getPropertyArgument() {
+    return (IPropertyAttributeAccessQualifierArg)this.getChild(PropertyAttributeAccessQualifier.PROPERTY_ARGUMENT);
+  }
+
+  public void setPropertyArgument(IPropertyAttributeAccessQualifierArg node) {
+    super.setChild(PropertyAttributeAccessQualifier.PROPERTY_ARGUMENT, node);
   }
 
   public String getShortDescription() {

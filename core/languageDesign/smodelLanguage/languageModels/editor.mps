@@ -2410,5 +2410,23 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204835157357">
+    <property name="package" value="attribute" />
+    <link role="conceptDeclaration" targetNodeId="1.1204834851141" resolveInfo="ExpressionArg" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204835162156">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204835162157">
+        <property name="editable" value="false" />
+        <property name="textFgColor" value="DARK_MAGENTA" />
+        <property name="text" value="#" />
+        <property name="fontStyle" value="ITALIC" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1204835162158">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1177025447014" />
+      </node>
+    </node>
+  </node>
 </model>
 
