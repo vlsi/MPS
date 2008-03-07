@@ -95,6 +95,10 @@ public abstract class CompletionTextField extends JTextField {
   }
 
   private void updateCompletion() {
+    if (!isShowing()) {
+      return;
+    }
+
     List<String> proposals = getProposals(getTextPrefix());
 
     if (proposals.isEmpty()) {
@@ -111,7 +115,7 @@ public abstract class CompletionTextField extends JTextField {
       myHint.show();
     }
 
-    myHint.setProposals(proposals);    
+    myHint.setProposals(proposals);
   }
 
 
@@ -221,7 +225,7 @@ public abstract class CompletionTextField extends JTextField {
         "jetbrains.mps.core.structure",
         "jetbrains.mps.core.editor",
         "jetbrains.mps.core.constraints")
-      )
+    )
     );
 
     frame.setSize(800, 600);
