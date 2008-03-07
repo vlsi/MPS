@@ -78,7 +78,7 @@
           id="1197044488849">
       <property name="metaClass" value="aggregation"/>
       <property name="role" value="isApplicableFunction"/>
-      <property name="sourceCardinality" value="1"/>
+      <property name="sourceCardinality" value="0..1"/>
       <link role="target" targetNodeId="1197044488852" resolveInfo="IsApplicableBlock"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"

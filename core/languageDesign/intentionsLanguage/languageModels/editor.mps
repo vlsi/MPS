@@ -82,6 +82,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1192795986344">
+        <property name="noTargetText" value="&lt;isApplicable = true&gt;"/>
         <link role="relationDeclaration" targetNodeId="1.1192795688242"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
