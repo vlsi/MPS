@@ -120,11 +120,11 @@ public class QueriesGenerated {
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
-      for(SNode parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, _context.getSourceNode()) {
+      for(final SNode item : parameterObjects) {
+        result.add(new AbstractRTransformHintSubstituteAction(concept, _context.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)this.getOutputConcept())), null);
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null);
             SNode statement = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
             if(statement == null) {
               return null;

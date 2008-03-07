@@ -18,10 +18,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138397498295");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1136720096754");
     editorCell.setDrawBorder(false);
-    editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupBasic_VarNameCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -30,16 +29,17 @@ public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1136720096754");
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138397498295");
     editorCell.setDrawBorder(false);
-  }
-
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.setFontType(MPSFonts.BOLD);
   }
 
   private static void setupLabel_VarNameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+  }
+
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
   }
 

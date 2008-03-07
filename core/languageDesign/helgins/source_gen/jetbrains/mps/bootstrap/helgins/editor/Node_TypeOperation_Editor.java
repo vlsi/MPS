@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_TypeOperation_Editor extends DefaultNodeEditor {
@@ -39,9 +38,7 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
     if(this.my_NotInRules_Component == null) {
       this.my_NotInRules_Component = new _NotInRules_Component(node);
     }
-    EditorCell componentCell = this.my_NotInRules_Component.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_NotInRules_Component.createEditorCell(context);
     Node_TypeOperation_Editor.setupBasic__NotInRules_ComponentCell(editorCell, node, context);
     return editorCell;
   }
