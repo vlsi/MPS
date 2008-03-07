@@ -13,6 +13,10 @@ import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 
 public class PropertyRefQualifier_property_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -37,7 +41,11 @@ public class PropertyRefQualifier_property_ReferentConstraint implements IModelC
     if(nodeType == null) {
       return null;
     }
-    return null;
+    SNode dotOperandConcept = SLinkOperations.getTarget(nodeType, "concept", false);
+    if(dotOperandConcept == null) {
+      dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
+    }
+    return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarationsExcludingOverridden_1203539034160(dotOperandConcept));
   }
 
   public String getNodeReferentSearchScopeDescription() {
