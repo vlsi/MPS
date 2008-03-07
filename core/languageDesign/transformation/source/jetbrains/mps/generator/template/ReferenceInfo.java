@@ -8,6 +8,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.inference.TypeCheckingMode;
 
 /**
  * Created by: Sergey Dmitriev
@@ -61,7 +63,12 @@ public abstract class ReferenceInfo {
   public SNode doResolve_WithCustomReferenceResolver() {
     IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
     if (referenceResolver != null) {
-      return referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, getInputTargetNode());
+      try {
+        TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.RESOLVE);
+        return referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, getInputTargetNode());
+      } finally {
+        TypeChecker.getInstance().resetTypeCheckingMode();
+      }
     }
     return null;
   }
