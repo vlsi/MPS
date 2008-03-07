@@ -119,6 +119,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
             setShowPropertiesAndReferences(!isShowPropertiesAndReferences());
           }
         });
+
+        setToolTipText("Show properties and references");
       }
 
       public void updateUI() {
@@ -133,6 +135,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
             myTree.setAutoOpen(!myTree.isAutoOpen());
           }
         });
+
+        setToolTipText("Autoscroll to source");
       }
 
       public void updateUI() {
@@ -146,6 +150,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
           public void actionPerformed(ActionEvent e) {
           }
         });
+
+        setToolTipText("Autoscroll from source");
       }
 
       public void updateUI() {
@@ -162,6 +168,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
             }
           }
         });
+
+        setToolTipText("Collapse all");
       }
 
 
