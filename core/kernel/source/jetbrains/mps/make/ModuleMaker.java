@@ -284,7 +284,11 @@ public class ModuleMaker {
   /*package private*/ static boolean isAllClassesPresented(File sourcedir, File classdir, String sourceSuffix, String destinationSuffix){
     File[] sourcefiles = sourcedir.listFiles();
 
-    for (File source : sourcefiles){
+    if (sourcefiles == null) {
+      return true;
+    }
+
+    for (File source : sourcefiles) {
       if (source.isFile()){
         String destinationName;
         if (source.getAbsolutePath().endsWith(sourceSuffix)){
