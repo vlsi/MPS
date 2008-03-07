@@ -917,8 +917,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   @NotNull
   public List<IPreferencesPage> createPreferencesPages() {
     return CollectionUtil.asList(
-      (IPreferencesPage) new ProjectPathsDialog(getComponent(AbstractProjectFrame.class), this, new ProjectOperationContext(this)).createPreferencesPage(),
-      (IPreferencesPage) new ProjectSettingsPage(this)
+      (IPreferencesPage) new ProjectPathsDialog(getComponent(AbstractProjectFrame.class), this, new ProjectOperationContext(this)).createPreferencesPage()
     );
   }
 
