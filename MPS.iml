@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/classes" />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/MPSProjects/Project/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MPSProjects/TestProject/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/core/configurations/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/core/languageDesign/mpsIntegrationLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/core/languageDesign/pluginLanguage/languages/pluginLanguage/source_gen" isTestSource="false" />

@@ -906,7 +906,6 @@
       <module fileurl="file://$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" filepath="$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" group="app/charisma" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" group="core/baseLanguage/collections" />
-      <module fileurl="file://$PROJECT_DIR$/core/configuration/configurationLanguage.iml" filepath="$PROJECT_DIR$/core/configuration/configurationLanguage.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" group="core/baseLanguage/csharp" />
@@ -1931,6 +1930,24 @@
         <root url="jar://$PROJECT_DIR$/lib/beansbinding/beansbinding-1.2.1-src.zip!/src" />
       </SOURCES>
       <jarDirectory url="file://$PROJECT_DIR$/lib/beansbinding" recursive="false" />
+    </library>
+    <library name="MPS">
+      <CLASSES>
+        <root url="jar://C:\MPS\lib\mps.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://C:\MPS\src.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="MPS">
+      <CLASSES>
+        <root url="jar://C:\MPS\lib\mps.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://C:\MPS\src.zip!/" />
+      </SOURCES>
     </library>
   </component>
   <component name="uidesigner-configuration">

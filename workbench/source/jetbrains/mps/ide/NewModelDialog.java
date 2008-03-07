@@ -1,12 +1,12 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.modelProperties.ModelPropertiesDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.configurations.modelProperties.ModelPropertiesDialog;
 
 import javax.swing.*;
 import java.awt.Frame;
