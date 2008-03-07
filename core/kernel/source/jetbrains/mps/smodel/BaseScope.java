@@ -22,41 +22,35 @@ public abstract class BaseScope implements IScope {
 
   private Map<SModelUID, SModelDescriptor> myDescriptors = new HashMap<SModelUID, SModelDescriptor>();
   
-  @Nullable
-  public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
+  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     initialize();
     return myDescriptors.get(modelUID);
   }
 
-  @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
     initialize();
     return new ArrayList<SModelDescriptor>(myDescriptors.values());
   }
 
-  @Nullable
-  public Language getLanguage(@NotNull String languageNamespace) {
+  public Language getLanguage(String languageNamespace) {
     initialize();
     return myLanguages.get(languageNamespace);
   }
 
-  public boolean isVisibleLanguage(@NotNull String languageNamespace) {
+  public boolean isVisibleLanguage(String languageNamespace) {
     return getLanguage(languageNamespace) != null;
   }
 
-  @NotNull
   public List<Language> getVisibleLanguages() {
     initialize();
     return new ArrayList<Language>(myLanguages.values());
   }
 
-  @NotNull
   public List<DevKit> getVisibleDevkits() {
     return new ArrayList<DevKit>(CollectionUtil.filter(DevKit.class, getVisibleModules()));
   }
 
-  @Nullable
-  public DevKit getDevKit(@NotNull String devKitNamespace) {
+  public DevKit getDevKit(String devKitNamespace) {
     for (DevKit dk : getVisibleDevkits()) {
       if (devKitNamespace.equals(dk.getName())) {
         return dk;
@@ -65,7 +59,7 @@ public abstract class BaseScope implements IScope {
     return null;
   }
 
-  public boolean isVisibleDevKit(@NotNull String devKitNamespace) {
+  public boolean isVisibleDevKit(String devKitNamespace) {
     return getDevKit(devKitNamespace) != null;
   }
 

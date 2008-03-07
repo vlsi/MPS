@@ -9,29 +9,17 @@ import java.util.Set;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Sep 9, 2005
- * Time: 2:15:50 PM
- * To change this template use File | Settings | File Templates.
- */
 public interface IScope {
-  @Nullable SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID);
-  
-  @NotNull List<SModelDescriptor> getModelDescriptors();
+  SModelDescriptor getModelDescriptor(SModelUID modelUID);
+  List<SModelDescriptor> getModelDescriptors();
 
-  @Nullable Language getLanguage(@NotNull String languageNamespace);
+  Language getLanguage(String languageNamespace);
+  boolean isVisibleLanguage(String languageNamespace);
+  List<Language> getVisibleLanguages();
 
-  boolean isVisibleLanguage(@NotNull String languageNamespace);
-
-  @NotNull List<Language> getVisibleLanguages();
-
-  @NotNull List<DevKit> getVisibleDevkits();
-
-  @Nullable DevKit getDevKit(@NotNull String devKitNamespace);
-
-  boolean isVisibleDevKit(@NotNull String devKitNamespace);
+  List<DevKit> getVisibleDevkits();
+  DevKit getDevKit(String devKitNamespace);
+  boolean isVisibleDevKit(String devKitNamespace);
 
   Set<IModule> getVisibleModules();
 }
