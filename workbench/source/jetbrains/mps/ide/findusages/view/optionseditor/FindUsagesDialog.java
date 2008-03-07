@@ -31,43 +31,43 @@ public class FindUsagesDialog extends BaseDialog {
   private ViewOptionsEditor myViewOptionsEditor;
   private boolean myIsCancelled = true;
 
-  public FindUsagesDialog(FindUsagesOptions defaultOptions, SNode node, final ActionContext context) {
+  public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final ActionContext context) {
     super(context.getOperationContext().getMainFrame(), "Find usages");
 
-    myQueryEditor = new QueryEditor(defaultOptions.getOption(QueryOptions.class), node, context);
-    myFindersEditor = new FindersEditor(defaultOptions.getOption(FindersOptions.class), node, context) {
-      public void goToFinder(final GeneratedFinder finder) {
-        final SNode[] finderNode = new SNode[]{null};
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        myQueryEditor = new QueryEditor(defaultOptions.getOption(QueryOptions.class), node, context);
+        myFindersEditor = new FindersEditor(defaultOptions.getOption(FindersOptions.class), node, context) {
+          public void goToFinder(final GeneratedFinder finder) {
+            final SNode[] finderNode = new SNode[]{null};
 
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            finderNode[0] = FindUsagesManager.getInstance().getNodeByFinder(finder);
+            CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+              public void run() {
+                finderNode[0] = FindUsagesManager.getInstance().getNodeByFinder(finder);
+              }
+            });
+
+            if (finderNode[0] == null) return;
+
+            FindUsagesDialog.this.onCancel();
+
+            IDEProjectFrame frame = context.getOperationContext().getComponent(IDEProjectFrame.class);
+            NavigationActionProcessor.executeNavigationAction(
+              new EditorNavigationCommand(finderNode[0], frame.getEditorsPane().getCurrentEditor(), frame.getEditorsPane()),
+              frame.getProject(), true);
           }
-        });
+        };
+        myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class), node, context);
 
-        if (finderNode[0] == null) return;
+        JPanel centerPanel = new JPanel(new BorderLayout());
+        centerPanel.add(myFindersEditor.getComponent(), BorderLayout.CENTER);
+        centerPanel.add(myViewOptionsEditor.getComponent(), BorderLayout.EAST);
 
-        FindUsagesDialog.this.onCancel();
-
-        IDEProjectFrame frame = context.getOperationContext().getComponent(IDEProjectFrame.class);
-        NavigationActionProcessor.executeNavigationAction(
-          new EditorNavigationCommand(finderNode[0], frame.getEditorsPane().getCurrentEditor(), frame.getEditorsPane()),
-          frame.getProject(), true);
+        myPanel = new JPanel(new BorderLayout());
+        myPanel.add(centerPanel, BorderLayout.CENTER);
+        myPanel.add(myQueryEditor.getComponent(), BorderLayout.SOUTH);
       }
-    };
-    myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class), node, context);
-
-    myQueryEditor.getComponent().setBorder(new EmptyBorder(7, 3, 3, 3));
-
-    JPanel centerPanel = new JPanel(new BorderLayout());
-    centerPanel.add(myFindersEditor.getComponent(), BorderLayout.CENTER);
-    centerPanel.add(myViewOptionsEditor.getComponent(), BorderLayout.EAST);
-
-    myPanel = new JPanel(new BorderLayout());
-    myPanel.add(centerPanel, BorderLayout.CENTER);
-    myPanel.add(myQueryEditor.getComponent(), BorderLayout.SOUTH);
-
-    //setResizable(false);
+    });
   }
 
   public FindUsagesOptions getResult() {

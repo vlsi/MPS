@@ -4,10 +4,13 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class QueryOptions extends BaseOptions<SearchQuery> {
   public static final String SCOPE_TYPE = "scope_type";
@@ -17,8 +20,14 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
   public static final String MODULE_SCOPE = "module_scope";
   public static final String MODEL_SCOPE = "model_scope";
 
+  private static final String MODEL = "model";
+  private static final String MODULE = "module";
+
   @NotNull
   private String myScopeType;
+  private String myModel;
+  private String myModule;
+  public static final String DEFAULT_VALUE = "<default>";
 
   public QueryOptions() {
 
@@ -28,12 +37,14 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
     read(element, project);
   }
 
-  public QueryOptions(String scopeType) {
-    setScopeType(scopeType);
+  public QueryOptions(String scopeType, String model, String module) {
+    myScopeType = scopeType;
+    myModel = model;
+    myModule = module;
   }
 
   public QueryOptions clone() {
-    return new QueryOptions(myScopeType);
+    return new QueryOptions(myScopeType, myModel, myModule);
   }
 
   public void setScopeType(@NotNull String scopeType) {
@@ -43,6 +54,22 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
   @NotNull
   public String getScopeType() {
     return myScopeType;
+  }
+
+  public String getModel() {
+    return myModel;
+  }
+
+  public void setModel(String model) {
+    myModel = model;
+  }
+
+  public String getModule() {
+    return myModule;
+  }
+
+  public void setModule(String module) {
+    myModule = module;
   }
 
   @NotNull
@@ -55,9 +82,20 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
     } else if (myScopeType.equals(PROJECT_SCOPE)) {
       scope = operationContext.getProject().getScope();
     } else if (myScopeType.equals(MODULE_SCOPE)) {
-      scope = operationContext.getModule().getScope();
+      if (myModule.equals(DEFAULT_VALUE)) {
+        scope = operationContext.getModule().getScope();
+      } else {
+        scope = MPSModuleRepository.getInstance().getModuleByUID(myModule).getScope();
+      }
     } else if (myScopeType.equals(MODEL_SCOPE)) {
-      scope = new ModelScope(operationContext.getModule().getScope(), context.getModel());
+      if (myModel.equals(DEFAULT_VALUE)) {
+        scope = new ModelScope(operationContext.getModule().getScope(), context.getModel());
+      } else {
+        List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
+        assert !models.isEmpty();
+        SModelDescriptor modelDescriptor = models.get(0);
+        scope = new ModelScope(modelDescriptor.getModule().getScope(), modelDescriptor);
+      }
     } else {
       throw new IllegalArgumentException();
     }
@@ -68,11 +106,15 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
   public void write(Element element, MPSProject project) {
     Element scopeTypeXML = new Element(SCOPE_TYPE);
     scopeTypeXML.setAttribute(SCOPE_TYPE, myScopeType);
+    scopeTypeXML.setAttribute(MODULE, myModule);
+    scopeTypeXML.setAttribute(MODEL, myModel);
     element.addContent(scopeTypeXML);
   }
 
   public void read(Element element, MPSProject project) {
     Element scopeTypeXML = element.getChild(SCOPE_TYPE);
     myScopeType = scopeTypeXML.getAttributeValue(SCOPE_TYPE);
+    myModule = scopeTypeXML.getAttributeValue(MODULE);
+    myModel = scopeTypeXML.getAttributeValue(MODEL);
   }
 }

@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.96";
+  private static final String VERSION_NUMBER = "0.97";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
@@ -73,7 +73,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     ViewOptions viewOptions = new ViewOptions(true, false);
     myDefaultOptions.setOption(viewOptions);
 
-    QueryOptions queryOptions = new QueryOptions(QueryOptions.PROJECT_SCOPE);
+    QueryOptions queryOptions = new QueryOptions(QueryOptions.PROJECT_SCOPE, QueryOptions.DEFAULT_VALUE, QueryOptions.DEFAULT_VALUE);
     myDefaultOptions.setOption(queryOptions);
   }
 
