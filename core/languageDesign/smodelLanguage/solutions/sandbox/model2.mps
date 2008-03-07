@@ -264,8 +264,15 @@
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1204848842655">
               <node role="qualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1204850509128">
                 <link role="annotationLink" targetNodeId="4.1149694518242" resolveInfo="referenceMacro" />
-                <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier" id="1204852507156">
-                  <link role="link" targetNodeId="7.1070568044740" />
+                <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1204852640998">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204852660564">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204852659548">
+                      <link role="variableDeclaration" targetNodeId="1204848597508" resolveInfo="node" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1204852683788">
+                      <link role="link" targetNodeId="7.1068499141038" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
