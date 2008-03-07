@@ -54,11 +54,13 @@ public class RuntimeSupport {
       if (type != null) return getRepresentatorIfNecessary(type, currentTypesComponent);
     }
 
-    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance()  // then, in appropriate component
-            .getNodeTypesComponent(node.getContainingRoot());
-    if (nodeTypesComponent != null && nodeTypesComponent != currentTypesComponent) {
-      type = nodeTypesComponent.getType(node);
-      if (type != null) return type;
+    if (currentTypesComponent == null || currentTypesComponent.getNode() != node.getContainingRoot()) {
+      NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance()  // then, in appropriate component
+        .getNodeTypesComponent(node.getContainingRoot());
+      if (nodeTypesComponent != null && nodeTypesComponent != currentTypesComponent) {
+        type = nodeTypesComponent.getType(node);
+        if (type != null) return type;
+      }
     }
 
     SNode var = createNewRuntimeTypesVariable(false);
@@ -247,7 +249,7 @@ public class RuntimeSupport {
     if (argument == null) return;
     EquationManager equationManager = myTypeChecker.getEquationManager();
     equationManager.addNewWhenConcreteEntity(NodeWrapper.createNodeWrapper(argument, equationManager),
-            new WhenConcreteEntity(r, nodeModel, nodeId));
+      new WhenConcreteEntity(r, nodeModel, nodeId));
   }
 
   public SNode coerce(SNode subtype, IMatchingPattern pattern, boolean isWeak) {

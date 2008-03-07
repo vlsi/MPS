@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.TypeCheckingMode;
+import jetbrains.mps.helgins.inference.NodeTypesComponent;
+import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 
 /**
  * Igor Alshannikov
@@ -48,8 +50,8 @@ public class ModelConstraintsUtil {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         try {
-        TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.RESOLVE);
-        status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, scope);
+          TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.RESOLVE);
+          status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, scope);
         } finally {
           TypeChecker.getInstance().resetTypeCheckingMode();
         }

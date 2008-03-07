@@ -121,7 +121,7 @@ public class TypeChecker {
   }
 
   public void setIncrementalMode(boolean isIncrementalMode) {
-    myIsIncrementalMode = isIncrementalMode; 
+    myIsIncrementalMode = isIncrementalMode;
   }
 
   public void setTypeCheckingMode(TypeCheckingMode typeCheckingMode) {
@@ -218,7 +218,7 @@ public class TypeChecker {
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
-            getNodeTypesComponent(node.getContainingRoot());
+      getNodeTypesComponent(node.getContainingRoot());
     if (!myCheckedRoots.contains(containingRoot) || component == null) {
       final SNode[] result = new SNode[1];
       final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
@@ -243,21 +243,28 @@ public class TypeChecker {
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
-            getNodeTypesComponent(node.getContainingRoot());
+      getNodeTypesComponent(node.getContainingRoot());
     if (!myCheckedRoots.contains(containingRoot) || component == null) {
       final SNode[] result = new SNode[1];
       final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
-
+      final NodeTypesComponent temporaryComponent;
+      try {
+        temporaryComponent = component1.clone();
+      } catch(CloneNotSupportedException ex) {
+        LOG.error(ex);
+        return null;
+      }
+      setCurrentTypesComponent(temporaryComponent);
       checkWithinRoot(node, new Runnable() {
         public void run() {
-          result[0] = component1.computeTypesForNodeDuringResolving(node, new Runnable() {
+          result[0] = temporaryComponent.computeTypesForNodeDuringResolving(node, new Runnable() {
             public void run() {
               myCheckedRoots.add(node);
             }
           });
         }
       });
-
+      clearCurrentTypesComponent();
       return result[0];
     }
     return getTypeDontCheck(node);
@@ -284,7 +291,7 @@ public class TypeChecker {
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
     if (!myCheckedRoots.contains(containingRoot) || NodeTypesComponentsRepository.getInstance().
-            getNodeTypesComponent(node.getContainingRoot()) == null) {
+      getNodeTypesComponent(node.getContainingRoot()) == null) {
       checkRoot(containingRoot);
     }
     return getTypeDontCheck(node);
@@ -294,7 +301,7 @@ public class TypeChecker {
   public SNode getTypeDontCheck(SNode node) {
     if (node == null) return null;
     NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
-            getNodeTypesComponent(node.getContainingRoot());
+      getNodeTypesComponent(node.getContainingRoot());
     if (nodeTypesComponent == null) return null;
     return nodeTypesComponent.getType(node);
   }
