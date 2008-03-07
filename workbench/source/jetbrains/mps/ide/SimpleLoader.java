@@ -1,5 +1,7 @@
 package jetbrains.mps.ide;
 
+import javax.swing.JList;
+
 public class SimpleLoader<Item> implements ItemsLoader<Item> {
   private final Item[] myItems;
 
