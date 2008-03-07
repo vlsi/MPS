@@ -510,6 +510,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068581242863">
     <property name="name" value="LocalVariableDeclaration" />
+    <property name="iconPath" value="${language_descriptor}\icons\variable.png" />
     <link role="extends" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107222782262">
       <property name="value" value="&lt;type&gt; &lt;var&gt;" />
