@@ -414,6 +414,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1203088945536">
           <property name="text" value="  "/>
+          <property name="selectable" value="false"/>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList"
               id="1203088949397">
