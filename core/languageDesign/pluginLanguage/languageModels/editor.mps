@@ -1143,5 +1143,29 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204903559628">
+    <property name="package" value="Actions.Configuration"/>
+    <link role="conceptDeclaration" targetNodeId="1.1204903488751" resolveInfo="JavaAction"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1204903569309">
+      <link role="relationDeclaration" targetNodeId="1.1204903542721"/>
+      <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent"
+            id="1204903569310">
+        <link role="conceptDeclaration" targetNodeId="15.1068390468198" resolveInfo="ClassConcept"/>
+        <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+              id="1204903575140">
+          <property name="readOnly" value="true"/>
+          <link role="relationDeclaration" targetNodeId="15.1075300953595" resolveInfo="name"/>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204908136809">
+    <property name="package" value="Actions.Configuration"/>
+    <link role="conceptDeclaration" targetNodeId="1.1204908117386" resolveInfo="Separator"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+          id="1204908141843">
+      <property name="text" value="&lt;---&gt;"/>
+    </node>
+  </node>
 </model>
 
