@@ -2443,5 +2443,47 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204849551517">
+    <property name="package" value="attribute" />
+    <link role="conceptDeclaration" targetNodeId="1.1204848911283" resolveInfo="LinkAttributeAccessQualifier" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204849566535">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1204849566536">
+        <link role="relationDeclaration" targetNodeId="1.1204848911285" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1204849566537">
+          <link role="conceptDeclaration" targetNodeId="3.1149608206811" resolveInfo="AnnotationLinkDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204849566538">
+            <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no annotation link&gt;" />
+            <link role="relationDeclaration" targetNodeId="3.1204740973143" resolveInfo="role" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204849566539">
+        <property name="text" value="&lt;" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1204849566540">
+        <property name="noTargetText" value="&lt;link&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1204848911284" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204849566541">
+        <property name="text" value="&gt;" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204851941271">
+    <property name="package" value="attribute" />
+    <link role="conceptDeclaration" targetNodeId="1.1204851882688" resolveInfo="LinkRefQualifier" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1204851958179">
+      <link role="relationDeclaration" targetNodeId="1.1204851882689" />
+      <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1204851958180">
+        <link role="conceptDeclaration" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
+        <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204851963572">
+          <property name="readOnly" value="true" />
+          <link role="relationDeclaration" targetNodeId="3.1071599776563" resolveInfo="role" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

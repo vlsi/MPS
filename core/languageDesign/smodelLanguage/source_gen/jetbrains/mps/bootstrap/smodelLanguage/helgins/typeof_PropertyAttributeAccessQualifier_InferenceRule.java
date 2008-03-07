@@ -23,10 +23,10 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
     if(!(SPropertyOperations.hasValue(annotationLink, "stereotype", "property", "node"))) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "property annotation link is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204832870610");
     }
-    SNode propertyArgument = SLinkOperations.getTarget(nodeToCheck, "propertyArgument", true);
-    if(SNodeOperations.isInstanceOf(propertyArgument, "jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier")) {
+    SNode propertyQualifier = SLinkOperations.getTarget(nodeToCheck, "propertyQualifier", true);
+    if(SNodeOperations.isInstanceOf(propertyQualifier, "jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier")) {
       // property name expected
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(propertyArgument, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998062", false), new QuotationClass_78().createNode(), SLinkOperations.getTarget(propertyArgument, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998060");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(propertyQualifier, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998062", false), new QuotationClass_78().createNode(), SLinkOperations.getTarget(propertyQualifier, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998060");
     } else
     {
     }

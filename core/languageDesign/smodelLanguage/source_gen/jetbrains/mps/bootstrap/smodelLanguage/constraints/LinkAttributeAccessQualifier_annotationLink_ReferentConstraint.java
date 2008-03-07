@@ -14,17 +14,17 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
-public class PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
+public class LinkAttributeAccessQualifier_annotationLink_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint() {
+  public  LinkAttributeAccessQualifier_annotationLink_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier", "annotationLink", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier", "annotationLink", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier", "annotationLink");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier", "annotationLink");
   }
 
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
@@ -34,12 +34,12 @@ public class PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint 
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode ald = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration");
     List<SNode> annotationLinks = SConceptOperations.findConceptInstances(ald, scope);
-    List<SNode> propertyAttrLinks = SequenceOperations.toList(SequenceOperations.where(annotationLinks, new zPredicate1(null, null)));
-    return new SimpleSearchScope(propertyAttrLinks);
+    List<SNode> linkAttrLinks = SequenceOperations.toList(SequenceOperations.where(annotationLinks, new zPredicate2(null, null)));
+    return new SimpleSearchScope(linkAttrLinks);
   }
 
   public String getNodeReferentSearchScopeDescription() {
-    return "all 'property' annotation links";
+    return "all 'link' annotation links";
   }
 
 }

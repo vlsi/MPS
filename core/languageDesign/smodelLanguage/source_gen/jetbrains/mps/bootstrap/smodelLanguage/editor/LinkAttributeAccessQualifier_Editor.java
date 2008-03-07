@@ -17,26 +17,26 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
-public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
+public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204834222431");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204849566535");
   }
 
   private static void setupBasic_AnnotationLinkReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204834222432");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204849566536");
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204834237155");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204849566539");
   }
 
-  private static void setupBasic_PropertyQualifierCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204834257832");
+  private static void setupBasic_LinkQualifierCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204849566540");
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204834262709");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204849566541");
   }
 
   private static void setupLabel_AnnotationLinkReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -45,7 +45,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_PropertyQualifierCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_LinkQualifierCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -58,40 +58,40 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    PropertyAttributeAccessQualifier_Editor.setupBasic_RowCell(editorCell, node, context);
+    LinkAttributeAccessQualifier_Editor.setupBasic_RowCell(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createAnnotationLinkReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "<"));
-    editorCell.addEditorCell(this.createPropertyQualifierCell(context, node));
+    editorCell.addEditorCell(this.createLinkQualifierCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ">"));
     return editorCell;
   }
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    PropertyAttributeAccessQualifier_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    PropertyAttributeAccessQualifier_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    LinkAttributeAccessQualifier_Editor.setupBasic_ConstantCell(editorCell, node, context);
+    LinkAttributeAccessQualifier_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    PropertyAttributeAccessQualifier_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    PropertyAttributeAccessQualifier_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    LinkAttributeAccessQualifier_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    LinkAttributeAccessQualifier_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createAnnotationLinkReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new PropertyAttributeAccessQualifier_Editor._Inline33());
+    provider.setAuxiliaryCellProvider(new LinkAttributeAccessQualifier_Editor._Inline35());
     EditorCell editorCell = provider.createEditorCell(context);
-    PropertyAttributeAccessQualifier_Editor.setupBasic_AnnotationLinkReferenceCell(editorCell, node, context);
+    LinkAttributeAccessQualifier_Editor.setupBasic_AnnotationLinkReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      PropertyAttributeAccessQualifier_Editor.setupLabel_AnnotationLinkReferenceCell((EditorCell_Label)editorCell, node, context);
+      LinkAttributeAccessQualifier_Editor.setupLabel_AnnotationLinkReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -114,25 +114,25 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createPropertyQualifierCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createLinkQualifierCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    PropertyAttributeAccessQualifier_Editor.setupBasic_PropertyQualifierCell(editorCell, node, context);
+    LinkAttributeAccessQualifier_Editor.setupBasic_LinkQualifierCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      PropertyAttributeAccessQualifier_Editor.setupLabel_PropertyQualifierCell((EditorCell_Label)editorCell, node, context);
+      LinkAttributeAccessQualifier_Editor.setupLabel_LinkQualifierCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createPropertyQualifierCell(EditorContext context, SNode node) {
+  public EditorCell createLinkQualifierCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("propertyQualifier");
-    provider.setNoTargetText("<property>");
+    provider.setRole("linkQualifier");
+    provider.setNoTargetText("<link>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createPropertyQualifierCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createLinkQualifierCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
@@ -143,14 +143,14 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline33 extends AbstractCellProvider {
+  public static class _Inline35 extends AbstractCellProvider {
 
-    public  _Inline33() {
+    public  _Inline35() {
       super();
     }
 
     private static void setupBasic_RoleCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204834222434");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204849566538");
     }
 
     private static void setupLabel_RoleCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -169,9 +169,9 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      PropertyAttributeAccessQualifier_Editor._Inline33.setupBasic_RoleCell(editorCell, node, context);
+      LinkAttributeAccessQualifier_Editor._Inline35.setupBasic_RoleCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        PropertyAttributeAccessQualifier_Editor._Inline33.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
+        LinkAttributeAccessQualifier_Editor._Inline35.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

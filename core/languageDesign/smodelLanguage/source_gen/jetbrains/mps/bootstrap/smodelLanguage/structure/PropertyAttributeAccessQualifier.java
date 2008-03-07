@@ -11,11 +11,11 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclara
 
 public class PropertyAttributeAccessQualifier extends BaseConcept implements IAttributeAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier";
-  public static String PROPERTY_ARGUMENT = "propertyArgument";
+  public static String ANNOTATION_LINK = "annotationLink";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ANNOTATION_LINK = "annotationLink";
+  public static String PROPERTY_QUALIFIER = "propertyQualifier";
 
   public  PropertyAttributeAccessQualifier(SNode node) {
     super(node);
@@ -30,12 +30,12 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
   }
 
 
-  public IPropertyAccessQualifier getPropertyArgument() {
-    return (IPropertyAccessQualifier)this.getChild(PropertyAttributeAccessQualifier.PROPERTY_ARGUMENT);
+  public AnnotationLinkDeclaration getAnnotationLink() {
+    return (AnnotationLinkDeclaration)this.getReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK);
   }
 
-  public void setPropertyArgument(IPropertyAccessQualifier node) {
-    super.setChild(PropertyAttributeAccessQualifier.PROPERTY_ARGUMENT, node);
+  public void setAnnotationLink(AnnotationLinkDeclaration node) {
+    super.setReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK, node);
   }
 
   public String getShortDescription() {
@@ -62,12 +62,12 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
     this.setProperty(PropertyAttributeAccessQualifier.VIRTUAL_PACKAGE, value);
   }
 
-  public AnnotationLinkDeclaration getAnnotationLink() {
-    return (AnnotationLinkDeclaration)this.getReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK);
+  public IPropertyAccessQualifier getPropertyQualifier() {
+    return (IPropertyAccessQualifier)this.getChild(PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER);
   }
 
-  public void setAnnotationLink(AnnotationLinkDeclaration node) {
-    super.setReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK, node);
+  public void setPropertyQualifier(IPropertyAccessQualifier node) {
+    super.setChild(PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER, node);
   }
 
 }
