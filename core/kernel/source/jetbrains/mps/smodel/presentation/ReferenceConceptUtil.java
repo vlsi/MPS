@@ -7,6 +7,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.logging.Logger;
 
 import java.util.List;
@@ -85,6 +87,10 @@ public class ReferenceConceptUtil {
     LinkDeclaration characteristicReference = getCharacteristicReference(nodeConcept);
     if (characteristicReference == null) return null;
     String genuineRole = SModelUtil_new.getGenuineLinkRole(characteristicReference);
+    SReference reference = node.getReference(genuineRole);
+    if (reference instanceof DynamicReference) {
+      return reference.getResolveInfo();
+    }
     SNode referentNode = node.getReferent(genuineRole);
     String referentPresentation = "<no " + characteristicReference.getRole() + ">";
     if (referentNode != null) {
