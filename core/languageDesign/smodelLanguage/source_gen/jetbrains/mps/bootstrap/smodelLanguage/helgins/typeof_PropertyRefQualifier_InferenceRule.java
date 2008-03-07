@@ -4,15 +4,8 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_PropertyRefQualifier_InferenceRule implements InferenceRule_Runtime {
@@ -21,32 +14,12 @@ public class typeof_PropertyRefQualifier_InferenceRule implements InferenceRule_
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    final SNode property = SLinkOperations.getTarget(nodeToCheck, "property", false);
-    SNode propertyAccessT = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure._PropertyAccessT", null);
-    SLinkOperations.setTarget(propertyAccessT, "property", property, false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204911523719", true), propertyAccessT, nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204911536597");
-    // --
     SNode op = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", false, false);
     SNode propAAQ = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier", false, false);
     if(op == null || propAAQ == null) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204909225630");
       return;
     }
-    // --
-    final SNode C_typevar_1204909589268 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204909589268), RulesUtil.get_inputNodeConcept(op), nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204909602801");
-    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204909589268), new Runnable() {
-
-      public void run() {
-        SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204909589268);
-        List<PropertyDeclaration> declaredProperties = SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
-        if(!(declaredProperties.contains(((PropertyDeclaration)SNodeOperations.getAdapter(property))))) {
-          TypeChecker.getInstance().reportTypeError(nodeToCheck, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204909999919");
-        }
-      }
-
-    }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204909999898");
-    // --- assign type here
   }
 
   public String getApplicableConceptFQName() {

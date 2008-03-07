@@ -1884,17 +1884,5 @@
       <link role="intfc" targetNodeId="1204848879094" resolveInfo="ILinkAccessQualifier" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204910880217">
-    <property name="name" value="_PropertyAccessT" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204910923046">
-      <property name="role" value="property" />
-      <link role="target" targetNodeId="3.1071489288299" resolveInfo="PropertyDeclaration" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204910991689">
-      <property name="value" value="prop acc" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
 </model>
 
