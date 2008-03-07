@@ -247,7 +247,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204763884209">
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1204763884210">
-          <link role="concept" targetNodeId="2.1071489288298" resolveInfo="LinkDeclaration" />
+          <link role="concept" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
         </node>
       </node>
     </node>

@@ -29,6 +29,7 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(propertyQualifier, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998062", false), new QuotationClass_78().createNode(), SLinkOperations.getTarget(propertyQualifier, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998060");
     } else
     {
+      // qualifier will check itself
     }
   }
 
