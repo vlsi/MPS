@@ -1217,7 +1217,6 @@ public class SModel implements Iterable<SNode> {
     }
 
     public void modelSaved(SModelSavedEvent event) {
-      myEvents.add(event);
     }
 
     public void commandFinished(@NotNull CommandEvent event) {

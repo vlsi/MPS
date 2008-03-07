@@ -655,7 +655,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
             checkMonitorCanceled(progress);
             if (status.getOutputModel() != null) {
-              generationType.handleOutput(status, outputFolder, invocationContext, progress, messages);
+              generationType.handleOutput(status, outputFolder, invocationContext, progress, messages);             
             } else if (!(status.isCanceled() || status.isError())) {
               // nothig has been generated (no generators found)
               generationType.handleEmptyOutput(status, outputFolder, invocationContext, progress, messages);
