@@ -5,16 +5,16 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
@@ -41,6 +41,38 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
+
+  public static boolean _QueryFunction_NodeCondition_1178608724220(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1178609059858(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1178609091789(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1178609161098(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1178609166621(SNode node, EditorContext editorContext, IScope scope) {
+    return SequenceOperations.getSize(SLinkOperations.getTargets(node, "throwsItem", true)) > 0;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1178609275710(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1188210514741(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "annotation") > 0;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1203413352303(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
+  }
 
   private static void setupBasic_MethodBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459438");
@@ -248,38 +280,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_AnnotationList(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean _QueryFunction_NodeCondition_1178608724220(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1178609059858(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1178609091789(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1178609161098(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1178609166621(SNode node, EditorContext editorContext, IScope scope) {
-    return SequenceOperations.getSize(SLinkOperations.getTargets(node, "throwsItem", true)) > 0;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1178609275710(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1188210514741(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "annotation") > 0;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1203413352303(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createMethodBox(context, node);
@@ -408,9 +408,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     if(this.my_Component_Visibility == null) {
       this.my_Component_Visibility = new _Component_Visibility(node);
     }
-    EditorCell componentCell = this.my_Component_Visibility.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_Component_Visibility.createEditorCell(context);
     InstanceMethodDeclaration_Editor.setupBasic__Component_VisibilityCell(editorCell, node, context);
     return editorCell;
   }
@@ -419,9 +417,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     if(this.myBaseMethodDeclaration_NameCellComponent == null) {
       this.myBaseMethodDeclaration_NameCellComponent = new BaseMethodDeclaration_NameCellComponent(node);
     }
-    EditorCell componentCell = this.myBaseMethodDeclaration_NameCellComponent.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.myBaseMethodDeclaration_NameCellComponent.createEditorCell(context);
     InstanceMethodDeclaration_Editor.setupBasic_BaseMethodDeclaration_NameCellComponentCell(editorCell, node, context);
     return editorCell;
   }
@@ -430,9 +426,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     if(this.my_GenericDeclaration_TypeVariables_Component4 == null) {
       this.my_GenericDeclaration_TypeVariables_Component4 = new _GenericDeclaration_TypeVariables_Component(node);
     }
-    EditorCell componentCell = this.my_GenericDeclaration_TypeVariables_Component4.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component4.createEditorCell(context);
     InstanceMethodDeclaration_Editor.setupBasic__GenericDeclaration_TypeVariables_ComponentCell(editorCell, node, context);
     return editorCell;
   }

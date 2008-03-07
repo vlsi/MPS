@@ -12101,11 +12101,17 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198524401167">
             <property name="name" value="expressionType" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198524401168" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977965824">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1198524410750">
-                <link role="variableDeclaration" targetNodeId="1198524374424" resolveInfo="node" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1204929439104">
+              <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1204929452920">
+                <property name="name" value="x" />
+                <link role="concept" targetNodeId="17.1068431790189" resolveInfo="Type" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1198524401170" />
+              <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204929445958">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204929444469">
+                  <link role="variableDeclaration" targetNodeId="1198524374424" resolveInfo="node" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1204929449478" />
+              </node>
             </node>
           </node>
         </node>

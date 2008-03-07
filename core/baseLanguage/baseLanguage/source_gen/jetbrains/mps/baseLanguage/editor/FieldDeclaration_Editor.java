@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -31,6 +31,14 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
+
+  public static boolean _QueryFunction_NodeCondition_1188210576820(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "initializer", true) != null;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1188210594843(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "annotation") > 0;
+  }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576812");
@@ -125,14 +133,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_AnnotationList(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean _QueryFunction_NodeCondition_1188210576820(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "initializer", true) != null;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1188210594843(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "annotation") > 0;
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
@@ -217,9 +217,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     if(this.my_Component_Visibility6 == null) {
       this.my_Component_Visibility6 = new _Component_Visibility(node);
     }
-    EditorCell componentCell = this.my_Component_Visibility6.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_Component_Visibility6.createEditorCell(context);
     FieldDeclaration_Editor.setupBasic__Component_VisibilityCell(editorCell, node, context);
     return editorCell;
   }
@@ -228,9 +226,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     if(this.myVariableDeclaration_NameCellComponent == null) {
       this.myVariableDeclaration_NameCellComponent = new VariableDeclaration_NameCellComponent(node);
     }
-    EditorCell componentCell = this.myVariableDeclaration_NameCellComponent.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.myVariableDeclaration_NameCellComponent.createEditorCell(context);
     FieldDeclaration_Editor.setupBasic_VariableDeclaration_NameCellComponentCell(editorCell, node, context);
     return editorCell;
   }

@@ -49,6 +49,7 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.setEditable(true);
   }
 
 

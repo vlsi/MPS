@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -35,6 +35,14 @@ public class Interface_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
+
+  public static boolean _QueryFunction_NodeCondition_1145916182768(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1188208760862(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "annotation") > 0;
+  }
 
   private static void setupBasic_ClassBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1107796852505");
@@ -210,14 +218,6 @@ public class Interface_Editor extends DefaultNodeEditor {
   private static void setupLabel_AnnotationList1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean _QueryFunction_NodeCondition_1145916182768(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1188208760862(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "annotation") > 0;
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createClassBox(context, node);
@@ -320,9 +320,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     if(this.my_GenericDeclaration_TypeVariables_Component == null) {
       this.my_GenericDeclaration_TypeVariables_Component = new _GenericDeclaration_TypeVariables_Component(node);
     }
-    EditorCell componentCell = this.my_GenericDeclaration_TypeVariables_Component.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component.createEditorCell(context);
     Interface_Editor.setupBasic__GenericDeclaration_TypeVariables_ComponentCell(editorCell, node, context);
     return editorCell;
   }
@@ -331,9 +329,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     if(this.my_Component_Visibility4 == null) {
       this.my_Component_Visibility4 = new _Component_Visibility(node);
     }
-    EditorCell componentCell = this.my_Component_Visibility4.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_Component_Visibility4.createEditorCell(context);
     Interface_Editor.setupBasic__Component_VisibilityCell(editorCell, node, context);
     return editorCell;
   }

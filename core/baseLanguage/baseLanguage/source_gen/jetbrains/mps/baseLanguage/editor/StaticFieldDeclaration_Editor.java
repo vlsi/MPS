@@ -5,14 +5,14 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -34,6 +34,18 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent1;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
+
+  public static boolean _QueryFunction_NodeCondition_1188210606984(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isFinal");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1188210606995(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "initializer", true) != null;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1188210613757(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "annotation") > 0;
+  }
 
   private static void setupBasic_ColumnCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184156044214");
@@ -162,18 +174,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_AnnotationList1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean _QueryFunction_NodeCondition_1188210606984(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isFinal");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1188210606995(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "initializer", true) != null;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1188210613757(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "annotation") > 0;
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
@@ -274,9 +274,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     if(this.my_Component_Visibility7 == null) {
       this.my_Component_Visibility7 = new _Component_Visibility(node);
     }
-    EditorCell componentCell = this.my_Component_Visibility7.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.my_Component_Visibility7.createEditorCell(context);
     StaticFieldDeclaration_Editor.setupBasic__Component_VisibilityCell(editorCell, node, context);
     return editorCell;
   }
@@ -285,9 +283,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     if(this.myVariableDeclaration_NameCellComponent1 == null) {
       this.myVariableDeclaration_NameCellComponent1 = new VariableDeclaration_NameCellComponent(node);
     }
-    EditorCell componentCell = this.myVariableDeclaration_NameCellComponent1.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.myVariableDeclaration_NameCellComponent1.createEditorCell(context);
     StaticFieldDeclaration_Editor.setupBasic_VariableDeclaration_NameCellComponentCell(editorCell, node, context);
     return editorCell;
   }
