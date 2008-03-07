@@ -27,7 +27,7 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
     if(!(SPropertyOperations.hasValue(annotationLink, "stereotype", "property", "node"))) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "property annotation link is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204832870610");
     }
-    SNode propQ = SLinkOperations.getTarget(nodeToCheck, "propertyQualifier", true);
+    final SNode propQ = SLinkOperations.getTarget(nodeToCheck, "propertyQualifier", true);
     if(SNodeOperations.isInstanceOf(propQ, "jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier")) {
       // # property name
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(propQ, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998062", false), new QuotationClass_78().createNode(), SLinkOperations.getTarget(propQ, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998060");
@@ -43,7 +43,7 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
           SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204914077372);
           List<PropertyDeclaration> declaredProperties = SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
           if(!(declaredProperties.contains(((PropertyDeclaration)SNodeOperations.getAdapter(property))))) {
-            TypeChecker.getInstance().reportTypeError(nodeToCheck, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204914077394");
+            TypeChecker.getInstance().reportTypeError(propQ, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204914077394");
           }
         }
 

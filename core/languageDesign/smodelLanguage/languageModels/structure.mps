@@ -1748,7 +1748,7 @@
     <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204762310079">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="qualifier" />
+      <property name="role" value="attributeQualifier" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1204762015203" resolveInfo="IAttributeAccessQualifier" />
     </node>
@@ -1882,6 +1882,20 @@
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204851897988">
       <link role="intfc" targetNodeId="1204848879094" resolveInfo="ILinkAccessQualifier" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204919674986">
+    <property name="package" value="type_internal" />
+    <property name="name" value="_LinkAccessT" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204926237448">
+      <property name="role" value="targetConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204919745471">
+      <property name="value" value="link acc" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

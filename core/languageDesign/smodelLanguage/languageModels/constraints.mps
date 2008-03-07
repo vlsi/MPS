@@ -2334,5 +2334,24 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204852013810" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1204919875514">
+    <property name="package" value="type_internal" />
+    <link role="concept" targetNodeId="1.1204919674986" resolveInfo="_BaseLinkAccessT" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1204919875515">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204919875516" />
+    </node>
+    <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" id="1204919938564">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204919938565">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1204919938566">
+          <property name="value" value="transient node" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204919938567">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204919938568">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -13,7 +13,7 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String QUALIFIER = "qualifier";
+  public static String ATTRIBUTE_QUALIFIER = "attributeQualifier";
 
   public  AttributeAccessOperation(SNode node) {
     super(node);
@@ -52,12 +52,12 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
     this.setProperty(AttributeAccessOperation.VIRTUAL_PACKAGE, value);
   }
 
-  public IAttributeAccessQualifier getQualifier() {
-    return (IAttributeAccessQualifier)this.getChild(AttributeAccessOperation.QUALIFIER);
+  public IAttributeAccessQualifier getAttributeQualifier() {
+    return (IAttributeAccessQualifier)this.getChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER);
   }
 
-  public void setQualifier(IAttributeAccessQualifier node) {
-    super.setChild(AttributeAccessOperation.QUALIFIER, node);
+  public void setAttributeQualifier(IAttributeAccessQualifier node) {
+    super.setChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER, node);
   }
 
 }

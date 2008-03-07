@@ -26,14 +26,14 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
-  private static void setupBasic_QualifierCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_AttributeQualifierCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204762928415");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_QualifierCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_AttributeQualifierCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -48,7 +48,7 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "@"));
-    editorCell.addEditorCell(this.createQualifierCell(context, node));
+    editorCell.addEditorCell(this.createAttributeQualifierCell(context, node));
     return editorCell;
   }
 
@@ -60,25 +60,25 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createQualifierCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createAttributeQualifierCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    AttributeAccessOperation_Editor.setupBasic_QualifierCell(editorCell, node, context);
+    AttributeAccessOperation_Editor.setupBasic_AttributeQualifierCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      AttributeAccessOperation_Editor.setupLabel_QualifierCell((EditorCell_Label)editorCell, node, context);
+      AttributeAccessOperation_Editor.setupLabel_AttributeQualifierCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createQualifierCell(EditorContext context, SNode node) {
+  public EditorCell createAttributeQualifierCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("qualifier");
+    provider.setRole("attributeQualifier");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createQualifierCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createAttributeQualifierCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
