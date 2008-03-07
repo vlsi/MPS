@@ -463,6 +463,7 @@
     <property name="package" value="EditorTab" />
     <property name="name" value="TabbedEditorDeclaration" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}\icons\tabbedEditor.png" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1203866063460">
       <property name="metaClass" value="aggregation" />
