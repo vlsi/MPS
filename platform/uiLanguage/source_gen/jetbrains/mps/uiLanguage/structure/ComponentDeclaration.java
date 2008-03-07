@@ -19,10 +19,10 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
   public static String STUB = "stub";
   public static String ABSTRACT = "abstract";
   public static String ACTION_COMPONENT = "actionComponent";
-  public static String ROOT = "root";
   public static String EXTENDED_COMPONENT = "extendedComponent";
   public static String MAPPED_TO = "mappedTo";
   public static String MAP_TO = "mapTo";
+  public static String ROOT = "root";
 
   public  ComponentDeclaration(SNode node) {
     super(node);
@@ -93,14 +93,6 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
     this.setBooleanProperty(ComponentDeclaration.ACTION_COMPONENT, value);
   }
 
-  public IComponentInstance getRoot() {
-    return (IComponentInstance)this.getChild(ComponentDeclaration.ROOT);
-  }
-
-  public void setRoot(IComponentInstance node) {
-    super.setChild(ComponentDeclaration.ROOT, node);
-  }
-
   public ComponentDeclaration getExtendedComponent() {
     return (ComponentDeclaration)this.getReferent(ComponentDeclaration.EXTENDED_COMPONENT);
   }
@@ -123,6 +115,14 @@ public class ComponentDeclaration extends BaseConcept implements INamedConcept {
 
   public void setMapTo(ClassConcept node) {
     super.setReferent(ComponentDeclaration.MAP_TO, node);
+  }
+
+  public IComponentInstance getRoot() {
+    return (IComponentInstance)this.getChild(ComponentDeclaration.ROOT);
+  }
+
+  public void setRoot(IComponentInstance node) {
+    super.setChild(ComponentDeclaration.ROOT, node);
   }
 
 }

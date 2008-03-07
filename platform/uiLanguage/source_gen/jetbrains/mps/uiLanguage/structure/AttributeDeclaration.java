@@ -18,6 +18,7 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept {
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String TYPE = "type";
+  public static String INITIALIZER = "initializer";
   public static String ON_CHANGE = "onChange";
 
   public  AttributeDeclaration(SNode node) {
@@ -71,6 +72,14 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept {
 
   public void setType(Type node) {
     super.setChild(AttributeDeclaration.TYPE, node);
+  }
+
+  public Expression getInitializer() {
+    return (Expression)this.getChild(AttributeDeclaration.INITIALIZER);
+  }
+
+  public void setInitializer(Expression node) {
+    super.setChild(AttributeDeclaration.INITIALIZER, node);
   }
 
   public Expression getOnChange() {

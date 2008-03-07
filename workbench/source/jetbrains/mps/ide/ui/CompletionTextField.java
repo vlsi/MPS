@@ -94,7 +94,7 @@ public abstract class CompletionTextField extends JTextField {
     }
   }
 
-  private void updateCompletion() {
+  private void updateCompletion() {        
     if (!isShowing()) {
       return;
     }
