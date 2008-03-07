@@ -10,9 +10,7 @@ import java.awt.FlowLayout;
 import java.awt.BorderLayout;
 import java.awt.Window;
 import java.awt.Point;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.util.List;
 import java.util.Arrays;
 
@@ -38,7 +36,9 @@ public abstract class CompletionTextField extends JTextField {
 
     addCaretListener(new CaretListener() {
       public void caretUpdate(CaretEvent e) {
-        updateCompletion();
+        if (isFocusOwner()) {
+          updateCompletion();
+        }
       }
     });
 
@@ -79,6 +79,12 @@ public abstract class CompletionTextField extends JTextField {
         }
       }
     });
+
+    addFocusListener(new FocusAdapter() {
+      public void focusLost(FocusEvent e) {
+        myHint.hide();
+      }
+    });
   }
 
   protected abstract List<String> getProposals(String text);
@@ -94,7 +100,7 @@ public abstract class CompletionTextField extends JTextField {
     }
   }
 
-  private void updateCompletion() {        
+  private void updateCompletion() {
     if (!isShowing()) {
       return;
     }
@@ -117,7 +123,6 @@ public abstract class CompletionTextField extends JTextField {
 
     myHint.setProposals(proposals);
   }
-
 
   private class PopupHint {
     private JWindow myWindow;
