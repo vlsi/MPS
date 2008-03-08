@@ -270,7 +270,7 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
           id="1204991940915">
-      <property name="name" value="id"/>
+      <property name="name" value="caption"/>
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
     </node>
   </node>

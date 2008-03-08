@@ -408,11 +408,11 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1204991952869">
-          <property name="text" value="id:"/>
+          <property name="text" value="caption:"/>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
               id="1204991958668">
-          <link role="relationDeclaration" targetNodeId="1.1204991940915" resolveInfo="id"/>
+          <link role="relationDeclaration" targetNodeId="1.1204991940915" resolveInfo="screenName"/>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
@@ -542,6 +542,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell"
             id="1204992326342">
+        <property name="noTargetText" value="&lt;default&gt;"/>
         <link role="relationDeclaration" targetNodeId="1.1204992316090"/>
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent"
               id="1204992326343">
@@ -549,7 +550,6 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
                 id="1204992330376">
             <property name="readOnly" value="true"/>
-            <property name="noTargetText" value="&lt;default&gt;"/>
             <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
           </node>
         </node>

@@ -59,8 +59,8 @@ import java.util.List;
  */
 public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider, IEditorComponent {
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
-  public static final String EDITOR_POPUP_MENU_ACTIONS = "jetbrains.mps.ide.actions.EditorPopup_ActionGroup";
-  public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = "jetbrains.mps.ide.actions.EditorInternal_ActionGroup";
+  public static final String EDITOR_POPUP_MENU_ACTIONS = "jetbrains.mps.ide.actions.EditorPopup";
+  public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = "jetbrains.mps.ide.actions.EditorInternal";
 
   static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {

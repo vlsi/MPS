@@ -45,23 +45,23 @@ import java.util.List;
 public class ProjectPane extends AbstractProjectTreeView implements IActionDataProvider {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
-  public static final String PROJECT_PANE_NODE_ACTIONS = "jetbrains.mps.ide.actions.ProjectPaneNodeActions_ActionGroup";
-  public static final String PROJECT_PANE_NODE_ACTIONS_INTERNAL = "jetbrains.mps.ide.actions.Internal_ActionGroup";
-  public static final String PROJECT_PANE_MODEL_ACTIONS = "jetbrains.mps.ide.actions.ProjectPaneModelGroup_ActionGroup";
-  public static final String PROJECT_PANE_MODEL_ACTIONS_INTERNAL = "project-pane-model-actions-internal";
+  public static final String PROJECT_PANE_NODE_ACTIONS = "jetbrains.mps.ide.actions.ProjectPaneNodeActions";
+  public static final String PROJECT_PANE_NODE_ACTIONS_INTERNAL = "jetbrains.mps.ide.actions.ProjectPaneNodeActionsInternal";
+  public static final String PROJECT_PANE_MODEL_ACTIONS = "jetbrains.mps.ide.actions.ProjectPaneModelActions";
+  public static final String PROJECT_PANE_MODEL_ACTIONS_INTERNAL = "jetbrains.mps.ide.actions.ProjectPaneModelActionsInternal";
   public static final String PROJECT_PANE_MODEL_ACTIONS_GENERATE_OBSOLETE_MENU = "project-pane-model-actions-generate-obsolete-menu";
   public static final String PROJECT_PANE_VCS_ACTIONS = "project-pane-vcs-actions";
-  public static final String PROJECT_PANE_LANGUAGE_ACTIONS = "jetbrains.mps.ide.actions.LanguageActions_ActionGroup";
-  public static final String PROJECT_PANE_DEVKIT_ACTIONS = "jetbrains.mps.ide.actions.DevkitActions_ActionGroup";
-  public static final String PROJECT_PANE_PROJECT_ACTIONS = "jetbrains.mps.ide.actions.ProjectActions_ActionGroup";
-  public static final String PROJECT_PANE_PROJECT_SOLUTION_ACTIONS = "jetbrains.mps.ide.actions.SolutionActions_ActionGroup";
-  public static final String PROJECT_PANE_GENERATOR_ACTIONS = "jetbrains.mps.ide.actions.GeneratorActions_ActionGroup";
-  public static final String PROJECT_PANE_TRANSIENT_MODULES_ACTIONS = "jetbrains.mps.ide.actions.TransientModulesActions_ActionGroup";
+  public static final String PROJECT_PANE_LANGUAGE_ACTIONS = "jetbrains.mps.ide.actions.LanguageActions";
+  public static final String PROJECT_PANE_DEVKIT_ACTIONS = "jetbrains.mps.ide.actions.DevkitActions";
+  public static final String PROJECT_PANE_PROJECT_ACTIONS = "jetbrains.mps.ide.actions.ProjectActions";
+  public static final String PROJECT_PANE_PROJECT_SOLUTION_ACTIONS = "jetbrains.mps.ide.actions.SolutionActions";
+  public static final String PROJECT_PANE_GENERATOR_ACTIONS = "jetbrains.mps.ide.actions.GeneratorActions";
+  public static final String PROJECT_PANE_TRANSIENT_MODULES_ACTIONS = "jetbrains.mps.ide.actions.TransientModulesActions";
 
-  public static final String PROJECT_NEW = "jetbrains.mps.ide.actions.ProjectNew_ActionGroup";
-  public static final String SOLUTION_NEW = "jetbrains.mps.ide.actions.SolutionNew_ActionGroup";
-  public static final String LANGUAGE_NEW = "jetbrains.mps.ide.actions.LanguageNew_ActionGroup";
-  public static final String GENERATOR_NEW = "jetbrains.mps.ide.actions.GeneratorNew_ActionGroup";
+  public static final String PROJECT_NEW = "jetbrains.mps.ide.actions.ProjectNew";
+  public static final String SOLUTION_NEW = "jetbrains.mps.ide.actions.SolutionNew";
+  public static final String LANGUAGE_NEW = "jetbrains.mps.ide.actions.LanguageNew";
+  public static final String GENERATOR_NEW = "jetbrains.mps.ide.actions.GeneratorNew";
 
   public static final String SHOW_P_AND_R = "show-p-and-r";
   public static final String AUTOSCROLL_TO_SOURCE = "autoscroll-to-source";

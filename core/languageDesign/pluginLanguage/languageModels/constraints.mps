@@ -219,8 +219,8 @@
                 <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression"
                       id="1204995405963"/>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess"
-                      id="1204995408088">
-                  <link role="property" targetNodeId="7.1204991940915" resolveInfo="id"/>
+                      id="1205002845442">
+                  <link role="property" targetNodeId="3.1169194664001" resolveInfo="name"/>
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204995400388">
