@@ -29,798 +29,654 @@
   <import index="20" modelUID="jetbrains.mps.ide.actions.navigation@java_stub" version="-1"/>
   <import index="21" modelUID="jetbrains.mps.ide.actions.help@java_stub" version="-1"/>
   <import index="22" modelUID="jetbrains.mps.ide.actions.gotoMenu@java_stub" version="-1"/>
-  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionConfigurationDeclaration" id="1204906070852">
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204906074603">
-      <property name="name" value="ProjectPaneNodeActions"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908294534">
-        <link role="javaClass" targetNodeId="1.~EditNodeAction" resolveInfo="EditNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908785221"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908790551">
-        <link role="javaClass" targetNodeId="1.~SetNodePackageAction" resolveInfo="SetNodePackageAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908793772"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908800977">
-        <link role="javaClass" targetNodeId="1.~ExpandNodeAction" resolveInfo="ExpandNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908802354"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908810043">
-        <link role="javaClass" targetNodeId="1.~GoToConceptEditorDeclarationAction"
-              resolveInfo="GoToConceptEditorDeclarationAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908813326"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908819234">
-        <link role="javaClass" targetNodeId="1.~CopyNodeAction" resolveInfo="CopyNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908826049">
-        <link role="javaClass" targetNodeId="1.~CopyNodeReferenceAction" resolveInfo="CopyNodeReferenceAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908831332">
-        <link role="javaClass" targetNodeId="1.~PasteNodeAction" resolveInfo="PasteNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908837084">
-        <link role="javaClass" targetNodeId="1.~CutNodeAction" resolveInfo="CutNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908844226"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908850869">
-        <link role="javaClass" targetNodeId="1.~DeleteNodeAction" resolveInfo="DeleteNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908854183"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908860185">
-        <link role="javaClass" targetNodeId="1.~GoToConceptDeclarationAction"
-              resolveInfo="GoToConceptDeclarationAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908864765">
-        <link role="javaClass" targetNodeId="1.~GoToEditorDeclarationAction" resolveInfo="GoToEditorDeclarationAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908869111">
-        <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908875707">
-        <link role="javaClass" targetNodeId="1.~ShowNodeInExplorerAction" resolveInfo="ShowNodeInExplorerAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908878146"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908888414">
-        <link role="javaClass" targetNodeId="1.~FastFindUsagesNodeAction" resolveInfo="FastFindUsagesNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908892556">
-        <link role="javaClass" targetNodeId="1.~FindSpecificNodeUsages" resolveInfo="FindSpecificNodeUsages"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908905857">
-        <link role="javaClass" targetNodeId="1.~ShowConceptInHierarchyAction"
-              resolveInfo="ShowConceptInHierarchyAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908910859">
-        <link role="javaClass" targetNodeId="1.~ShowConceptStructureAction" resolveInfo="ShowConceptStructureAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908896793">
-        <link role="javaClass" targetNodeId="1.~ShowClassInHierarchyAction" resolveInfo="ShowClassInHierarchyAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908914158"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908936238">
-        <link role="javaClass" targetNodeId="2.~ShowErrorMessageAction" resolveInfo="ShowErrorMessageAction"/>
-      </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
+    <property name="name" value="ProjectPaneNodeActions"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908294534">
+      <link role="javaClass" targetNodeId="1.~EditNodeAction" resolveInfo="EditNodeAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204908068930">
-      <property name="name" value="Internal"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909137190">
-        <link role="javaClass" targetNodeId="1.~PrintTextPresentationNodeAction"
-              resolveInfo="PrintTextPresentationNodeAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908785221"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908790551">
+      <link role="javaClass" targetNodeId="1.~SetNodePackageAction" resolveInfo="SetNodePackageAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204909193363">
-      <property name="name" value="ProjectPaneModelGroup"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909216307">
-        <link role="javaClass" targetNodeId="3.~CreateRootNodeGroup" resolveInfo="CreateRootNodeGroup"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909225059">
-        <link role="javaClass" targetNodeId="1.~PasteNodeAction" resolveInfo="PasteNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909227967"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909235829">
-        <link role="javaClass" targetNodeId="3.~DeleteModelsAction" resolveInfo="DeleteModelsAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909239159">
-        <link role="javaClass" targetNodeId="3.~CloneModelAction" resolveInfo="CloneModelAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909243505">
-        <link role="javaClass" targetNodeId="3.~OptimizeImportsAction" resolveInfo="OptimizeImportsAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909245350"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909251602">
-        <link role="javaClass" targetNodeId="2.~CheckModelAction" resolveInfo="CheckModelAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909253120"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204909273200">
-        <property name="name" value="refactoring"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204988344441"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204988291723">
-        <link role="javaClass" targetNodeId="3.~GenerateGroup_autoplan_files"
-              resolveInfo="GenerateGroup_autoplan_files"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204988291724">
-        <link role="javaClass" targetNodeId="3.~GenerateGroup_autoplan_text" resolveInfo="GenerateGroup_autoplan_text"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909572396"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909587586">
-        <link role="javaClass" targetNodeId="3.~ShowDifferenceWithModelOnDiskAction"
-              resolveInfo="ShowDifferenceWithModelOnDiskAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909591822"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909597168">
-        <link role="javaClass" targetNodeId="3.~RevertMemoryChangesAction" resolveInfo="RevertMemoryChangesAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909600513">
-        <link role="javaClass" targetNodeId="3.~SaveModelAction" resolveInfo="SaveModelAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909603015"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909608173">
-        <link role="javaClass" targetNodeId="3.~ModelPropertiesAction" resolveInfo="ModelPropertiesAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909616097">
-        <link role="javaClass" targetNodeId="3.~ModelPropertiesAction_New" resolveInfo="ModelPropertiesAction_New"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908793772"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908800977">
+      <link role="javaClass" targetNodeId="1.~ExpandNodeAction" resolveInfo="ExpandNodeAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204909292092">
-      <property name="name" value="Refactoring"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909359139">
-        <link role="javaClass" targetNodeId="4.~RenameModelAction" resolveInfo="RenameModelAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908802354"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908810043">
+      <link role="javaClass" targetNodeId="1.~GoToConceptEditorDeclarationAction"
+            resolveInfo="GoToConceptEditorDeclarationAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204909848031">
-      <property name="name" value="ProjectActions"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204910715381">
-        <property name="name" value="projectNew"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204910765604"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204910792476">
-        <link role="javaClass" targetNodeId="6.~MakeProjectAction" resolveInfo="MakeProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204910796681">
-        <link role="javaClass" targetNodeId="6.~CleanProjectAction" resolveInfo="CleanProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204910799433"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204910819335">
-        <link role="javaClass" targetNodeId="7.~ProjectSettingsAction" resolveInfo="ProjectSettingsAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908813326"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908819234">
+      <link role="javaClass" targetNodeId="1.~CopyNodeAction" resolveInfo="CopyNodeAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204909751412">
-      <property name="name" value="ProjectNew"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909777120">
-        <link role="javaClass" targetNodeId="5.~NewSolutionAction" resolveInfo="NewSolutionAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909780903">
-        <link role="javaClass" targetNodeId="5.~NewLanguageAction" resolveInfo="NewLanguageAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909784374">
-        <link role="javaClass" targetNodeId="5.~NewDevKitAction" resolveInfo="NewDevKitAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908826049">
+      <link role="javaClass" targetNodeId="1.~CopyNodeReferenceAction" resolveInfo="CopyNodeReferenceAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204911099177">
-      <property name="name" value="LanguageActions"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204911159306">
-        <property name="name" value="newGroup"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911304334"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204913069595">
-        <link role="javaClass" targetNodeId="8.~GenerateLanguageAction_true" resolveInfo="GenerateLanguageAction_true"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204913074644">
-        <link role="javaClass" targetNodeId="8.~GenerateLanguageAction_false"
-              resolveInfo="GenerateLanguageAction_false"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204913024052"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911328898">
-        <link role="javaClass" targetNodeId="2.~CheckLanguageAction" resolveInfo="CheckLanguageAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911334932">
-        <link role="javaClass" targetNodeId="8.~OptimizeLanguageImportsAction"
-              resolveInfo="OptimizeLanguageImportsAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911338527"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911344576">
-        <link role="javaClass" targetNodeId="8.~LanguagePropertiesAction" resolveInfo="LanguagePropertiesAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911363732">
-        <link role="javaClass" targetNodeId="9.~LanguageHierarchyAction" resolveInfo="LanguageHierarchyAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911366952"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911372454">
-        <link role="javaClass" targetNodeId="5.~AddModuleToProjectAction" resolveInfo="AddModuleToProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911375722">
-        <link role="javaClass" targetNodeId="5.~RemoveModuleFromProjectAction"
-              resolveInfo="RemoveModuleFromProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911378302"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911382773">
-        <link role="javaClass" targetNodeId="6.~MakeModuleAction" resolveInfo="MakeModuleAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911390291">
-        <link role="javaClass" targetNodeId="6.~CleanModuleAction" resolveInfo="CleanModuleAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911393137"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911408605">
-        <link role="javaClass" targetNodeId="10.~SetModuleFolderAction" resolveInfo="SetModuleFolderAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911412372"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911577488">
-        <link role="javaClass" targetNodeId="4.~RenameLanguageAction" resolveInfo="RenameLanguageAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908831332">
+      <link role="javaClass" targetNodeId="1.~PasteNodeAction" resolveInfo="PasteNodeAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204911119662">
-      <property name="name" value="LanguageNew"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911209655">
-        <link role="javaClass" targetNodeId="8.~NewGeneratorAction" resolveInfo="NewGeneratorAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911211079"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911218519">
-        <link role="javaClass" targetNodeId="8.~NewAccessoryModelAction" resolveInfo="NewAccessoryModelAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911225380"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908837084">
+      <link role="javaClass" targetNodeId="1.~CutNodeAction" resolveInfo="CutNodeAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204911656426">
-      <property name="name" value="SolutionActions"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204911787238">
-        <property name="name" value="solutionNew"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912155146"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912160805">
-        <link role="javaClass" targetNodeId="5.~AddModuleToProjectAction" resolveInfo="AddModuleToProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912171635">
-        <link role="javaClass" targetNodeId="5.~RemoveModuleFromProjectAction"
-              resolveInfo="RemoveModuleFromProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912175121"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912887984">
-        <link role="javaClass" targetNodeId="11.~GenerateAllModelsInSolutionAction_true"
-              resolveInfo="GenerateAllModelsInSolutionAction_true"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912908939">
-        <link role="javaClass" targetNodeId="11.~GenerateAllModelsInSolutionAction_false"
-              resolveInfo="GenerateAllModelsInSolutionAction_false"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912216802">
-        <link role="javaClass" targetNodeId="11.~GenerateTextFromAllModelsInSolutionAction"
-              resolveInfo="GenerateTextFromAllModelsInSolutionAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912222836">
-        <link role="javaClass" targetNodeId="2.~CheckSolutionAction" resolveInfo="CheckSolutionAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912230212">
-        <link role="javaClass" targetNodeId="11.~OptimizeSolutionImportsAction"
-              resolveInfo="OptimizeSolutionImportsAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912232777"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912235154">
-        <link role="javaClass" targetNodeId="6.~MakeModuleAction" resolveInfo="MakeModuleAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912241000">
-        <link role="javaClass" targetNodeId="6.~CleanModuleAction" resolveInfo="CleanModuleAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912243845"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912248832">
-        <link role="javaClass" targetNodeId="10.~SetModuleFolderAction" resolveInfo="SetModuleFolderAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912251396"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912255351">
-        <link role="javaClass" targetNodeId="11.~SolutionPropertiesAction" resolveInfo="SolutionPropertiesAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908844226"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908850869">
+      <link role="javaClass" targetNodeId="1.~DeleteNodeAction" resolveInfo="DeleteNodeAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204911993283">
-      <property name="name" value="SolutionNew"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912017471">
-        <link role="javaClass" targetNodeId="3.~NewModelAction" resolveInfo="NewModelAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908854183"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908860185">
+      <link role="javaClass" targetNodeId="1.~GoToConceptDeclarationAction" resolveInfo="GoToConceptDeclarationAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204980388497">
-      <property name="name" value="DevkitActions"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980425624">
-        <link role="javaClass" targetNodeId="10.~SetModuleFolderAction" resolveInfo="SetModuleFolderAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980427376"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980432972">
-        <link role="javaClass" targetNodeId="5.~AddModuleToProjectAction" resolveInfo="AddModuleToProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980437818">
-        <link role="javaClass" targetNodeId="5.~RemoveModuleFromProjectAction"
-              resolveInfo="RemoveModuleFromProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980440117"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980460700">
-        <link role="javaClass" targetNodeId="12.~DevKitPropertiesAction" resolveInfo="DevKitPropertiesAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908864765">
+      <link role="javaClass" targetNodeId="1.~GoToEditorDeclarationAction" resolveInfo="GoToEditorDeclarationAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204980525547">
-      <property name="name" value="GeneratorNew"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980543003">
-        <link role="javaClass" targetNodeId="3.~NewModelAction" resolveInfo="NewModelAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908869111">
+      <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204980529720">
-      <property name="name" value="GeneratorActions"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204980550723">
-        <property name="name" value="generatorNew"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980588962"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980690186"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980696642">
-        <link role="javaClass" targetNodeId="8.~DeleteGeneratorAction" resolveInfo="DeleteGeneratorAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980704959"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980700863">
-        <link role="javaClass" targetNodeId="2.~CheckGeneratorAction" resolveInfo="CheckGeneratorAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980706523"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980712838">
-        <link role="javaClass" targetNodeId="8.~GeneratorPropertiesAction" resolveInfo="GeneratorPropertiesAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908875707">
+      <link role="javaClass" targetNodeId="1.~ShowNodeInExplorerAction" resolveInfo="ShowNodeInExplorerAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204980715651">
-      <property name="name" value="TransientModulesActions"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980812705">
-        <link role="javaClass" targetNodeId="13.~RemoveTransientModulesAction"
-              resolveInfo="RemoveTransientModulesAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908878146"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908888414">
+      <link role="javaClass" targetNodeId="1.~FastFindUsagesNodeAction" resolveInfo="FastFindUsagesNodeAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204980857425">
-      <property name="name" value="EditorPopup"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980870691">
-        <link role="javaClass" targetNodeId="1.~GoByReferenceGroup" resolveInfo="GoByReferenceGroup"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980875740">
-        <link role="javaClass" targetNodeId="1.~GoByFirstReferenceAction" resolveInfo="GoByFirstReferenceAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980879383">
-        <link role="javaClass" targetNodeId="1.~HighlightUsagesAction" resolveInfo="HighlightUsagesAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980884041">
-        <link role="javaClass" targetNodeId="1.~HighlightInstancesAction" resolveInfo="HighlightInstancesAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980886715"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980891420">
-        <link role="javaClass" targetNodeId="1.~ShowRootInProjectAction" resolveInfo="ShowRootInProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980895985">
-        <link role="javaClass" targetNodeId="1.~ShowInProjectAction" resolveInfo="ShowInProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980902346">
-        <link role="javaClass" targetNodeId="1.~GoToConceptDeclarationAction"
-              resolveInfo="GoToConceptDeclarationAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980908286">
-        <link role="javaClass" targetNodeId="1.~GoToEditorDeclarationAction" resolveInfo="GoToEditorDeclarationAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980910163">
-        <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980915743">
-        <link role="javaClass" targetNodeId="1.~ShowNodeInExplorerAction" resolveInfo="ShowNodeInExplorerAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980917260"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980947669">
-        <link role="javaClass" targetNodeId="14.~GenerateFilesFromCurrentModelAction"
-              resolveInfo="GenerateFilesFromCurrentModelAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980953202">
-        <link role="javaClass" targetNodeId="14.~GenerateTextFromCurrentModelAction"
-              resolveInfo="GenerateTextFromCurrentModelAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980956111"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980961050">
-        <link role="javaClass" targetNodeId="1.~FindSpecificNodeUsages" resolveInfo="FindSpecificNodeUsages"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980963412">
-        <link role="javaClass" targetNodeId="1.~FastFindUsagesNodeAction" resolveInfo="FastFindUsagesNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980968757">
-        <link role="javaClass" targetNodeId="1.~ShowClassInHierarchyAction" resolveInfo="ShowClassInHierarchyAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980977744">
-        <link role="javaClass" targetNodeId="1.~ShowConceptInHierarchyAction"
-              resolveInfo="ShowConceptInHierarchyAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981007621">
-        <link role="javaClass" targetNodeId="1.~ShowConceptStructureAction" resolveInfo="ShowConceptStructureAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981009795"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981030762">
-        <link role="javaClass" targetNodeId="15.~ShowCellKeymapsAction" resolveInfo="ShowCellKeymapsAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981045436"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981046469"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981070972">
-        <link role="javaClass" targetNodeId="16.~ShowParametersAction" resolveInfo="ShowParametersAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981072739"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981073163"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908892556">
+      <link role="javaClass" targetNodeId="1.~FindSpecificNodeUsages" resolveInfo="FindSpecificNodeUsages"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204981205726">
-      <property name="name" value="EditorInternal"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981253852">
-        <link role="javaClass" targetNodeId="1.~TestNodePathAction" resolveInfo="TestNodePathAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981257932">
-        <link role="javaClass" targetNodeId="15.~CellPropertiesAction" resolveInfo="CellPropertiesAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981262715">
-        <link role="javaClass" targetNodeId="15.~ShowCellInCellExplorerAction"
-              resolveInfo="ShowCellInCellExplorerAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981265733"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981294286">
-        <link role="javaClass" targetNodeId="17.~ShowCFGTreeAction" resolveInfo="ShowCFGTreeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981300007">
-        <link role="javaClass" targetNodeId="17.~HighlightUnreachableBlocksAction"
-              resolveInfo="HighlightUnreachableBlocksAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981304743">
-        <link role="javaClass" targetNodeId="1.~PrintNodeIDAction" resolveInfo="PrintNodeIDAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981313167">
-        <link role="javaClass" targetNodeId="1.~PrintTextPresentationAction" resolveInfo="PrintTextPresentationAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981316341">
-        <link role="javaClass" targetNodeId="1.~HighlightCellDependenciesAction"
-              resolveInfo="HighlightCellDependenciesAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981318702"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981319204"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908905857">
+      <link role="javaClass" targetNodeId="1.~ShowConceptInHierarchyAction" resolveInfo="ShowConceptInHierarchyAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204981417191">
-      <property name="name" value="ToolBar"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981428285">
-        <link role="javaClass" targetNodeId="7.~OpenProjectAction" resolveInfo="OpenProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981430850">
-        <link role="javaClass" targetNodeId="7.~SaveProjectAction" resolveInfo="SaveProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981434289"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981438354">
-        <link role="javaClass" targetNodeId="13.~ReloadAllAction" resolveInfo="ReloadAllAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981439918"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981762832">
-        <link role="javaClass" targetNodeId="19.~UndoAction" resolveInfo="UndoAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981848543">
-        <link role="javaClass" targetNodeId="19.~RedoAction" resolveInfo="RedoAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981850764"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981868592">
-        <link role="javaClass" targetNodeId="20.~PreviousEditorAction" resolveInfo="PreviousEditorAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981873878">
-        <link role="javaClass" targetNodeId="20.~NextEditorAction" resolveInfo="NextEditorAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981877585"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981881401">
-        <link role="javaClass" targetNodeId="7.~ProjectSettingsAction" resolveInfo="ProjectSettingsAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981882013"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981905919">
-        <link role="javaClass" targetNodeId="21.~ShowIdeHelpAction" resolveInfo="ShowIdeHelpAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908910859">
+      <link role="javaClass" targetNodeId="1.~ShowConceptStructureAction" resolveInfo="ShowConceptStructureAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204982833879">
-      <property name="name" value="MainMenu"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982915148">
-        <property name="name" value="file"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982920758">
-        <property name="name" value="edit"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982925572">
-        <property name="name" value="generate"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982943399">
-        <property name="name" value="goto"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982943509">
-        <property name="name" value="tools"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982952853">
-        <property name="name" value="windows"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982959744">
-        <property name="name" value="help"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908896793">
+      <link role="javaClass" targetNodeId="1.~ShowClassInHierarchyAction" resolveInfo="ShowClassInHierarchyAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204982971746">
-      <property name="name" value="File"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983104295">
-        <link role="javaClass" targetNodeId="7.~NewProjectAction" resolveInfo="NewProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983109874">
-        <link role="javaClass" targetNodeId="7.~OpenProjectAction" resolveInfo="OpenProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983112845">
-        <link role="javaClass" targetNodeId="7.~ReopenGroup" resolveInfo="ReopenGroup"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983116612">
-        <link role="javaClass" targetNodeId="7.~SaveProjectAction" resolveInfo="SaveProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983120332">
-        <link role="javaClass" targetNodeId="7.~ProjectSettingsAction" resolveInfo="ProjectSettingsAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983121162"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983125070">
-        <link role="javaClass" targetNodeId="7.~NewProjectWindowAction" resolveInfo="NewProjectWindowAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983136183">
-        <link role="javaClass" targetNodeId="7.~CloseProjectAction" resolveInfo="CloseProjectAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983138044"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983141171">
-        <link role="javaClass" targetNodeId="7.~ExitAction" resolveInfo="ExitAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204908914158"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204908936238">
+      <link role="javaClass" targetNodeId="2.~ShowErrorMessageAction" resolveInfo="ShowErrorMessageAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204982976512">
-      <property name="name" value="Edit"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983212689">
-        <link role="javaClass" targetNodeId="19.~UndoAction" resolveInfo="UndoAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983214770">
-        <link role="javaClass" targetNodeId="19.~RedoAction" resolveInfo="RedoAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983215944"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983220211">
-        <link role="javaClass" targetNodeId="1.~CopyNodeAction" resolveInfo="CopyNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983225229">
-        <link role="javaClass" targetNodeId="1.~CopyNodeReferenceAction" resolveInfo="CopyNodeReferenceAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983230419">
-        <link role="javaClass" targetNodeId="1.~PasteNodeAction" resolveInfo="PasteNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983233139">
-        <link role="javaClass" targetNodeId="1.~CutNodeAction" resolveInfo="CutNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983234438"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983237628">
-        <link role="javaClass" targetNodeId="19.~RecentEditorsAction" resolveInfo="RecentEditorsAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983239052"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983242944">
-        <link role="javaClass" targetNodeId="3.~AddModelImportAction" resolveInfo="AddModelImportAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983248353">
-        <link role="javaClass" targetNodeId="3.~AddLanguageImportAction" resolveInfo="AddLanguageImportAction"/>
-      </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991217354">
+    <property name="name" value="Internal"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909137190">
+      <link role="javaClass" targetNodeId="1.~PrintTextPresentationNodeAction"
+            resolveInfo="PrintTextPresentationNodeAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204982978950">
-      <property name="name" value="Generate"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983511988">
-        <link role="javaClass" targetNodeId="14.~ToggleTransientModelsSavingAction"
-              resolveInfo="ToggleTransientModelsSavingAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983513756"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983520899">
-        <link role="javaClass" targetNodeId="14.~GenerateFilesFromCurrentModelAction"
-              resolveInfo="GenerateFilesFromCurrentModelAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983527418">
-        <link role="javaClass" targetNodeId="14.~GenerateTextFromCurrentModelAction"
-              resolveInfo="GenerateTextFromCurrentModelAction"/>
-      </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991218714">
+    <property name="name" value="ProjectPaneModelGroup"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909216307">
+      <link role="javaClass" targetNodeId="3.~CreateRootNodeGroup" resolveInfo="CreateRootNodeGroup"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204982984716">
-      <property name="name" value="Goto"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983538826">
-        <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983552274">
-        <link role="javaClass" targetNodeId="22.~GoToSymbolAction" resolveInfo="GoToSymbolAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983557370">
-        <link role="javaClass" targetNodeId="22.~GoToConceptAction" resolveInfo="GoToConceptAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983561793">
-        <link role="javaClass" targetNodeId="22.~GoToNodeAction" resolveInfo="GoToNodeAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983564013"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983568436">
-        <link role="javaClass" targetNodeId="1.~GoToConceptDeclarationAction"
-              resolveInfo="GoToConceptDeclarationAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983572780">
-        <link role="javaClass" targetNodeId="1.~GoToEditorDeclarationAction" resolveInfo="GoToEditorDeclarationAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983578765">
-        <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983581141"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983587938">
-        <link role="javaClass" targetNodeId="22.~ReturnToEditorAction" resolveInfo="ReturnToEditorAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983590986"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983596518">
-        <link role="javaClass" targetNodeId="22.~GoToLanguageAction" resolveInfo="GoToLanguageAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983601284">
-        <link role="javaClass" targetNodeId="22.~GoToModelAction" resolveInfo="GoToModelAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909225059">
+      <link role="javaClass" targetNodeId="1.~PasteNodeAction" resolveInfo="PasteNodeAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204982986966">
-      <property name="name" value="Tools"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983609908">
-        <link role="javaClass" targetNodeId="13.~InstallIDEAPluginAction" resolveInfo="InstallIDEAPluginAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983612847">
-        <link role="javaClass" targetNodeId="13.~ReloadAllAction" resolveInfo="ReloadAllAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909227967"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909235829">
+      <link role="javaClass" targetNodeId="3.~DeleteModelsAction" resolveInfo="DeleteModelsAction"/>
     </node>
-    <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
-          id="1204982993624">
-      <property name="name" value="Help"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983954995">
-        <link role="javaClass" targetNodeId="21.~ShowIdeHelpAction" resolveInfo="ShowIdeHelpAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983958090"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983965701">
-        <link role="javaClass" targetNodeId="21.~ShowMPSHelpIndexAction" resolveInfo="ShowMPSHelpIndexAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983968874">
-        <link role="javaClass" targetNodeId="21.~ShowTutorialAction" resolveInfo="ShowTutorialAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983975501">
-        <link role="javaClass" targetNodeId="21.~ShowAcknowledgementsAction" resolveInfo="ShowAcknowledgementsAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983980877"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204984025124">
-        <link role="javaClass" targetNodeId="21.~ShowMPSSiteAction" resolveInfo="ShowMPSSiteAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204984029532">
-        <link role="javaClass" targetNodeId="21.~ShowMPSDiscussionForum" resolveInfo="ShowMPSDiscussionForum"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204984034252">
-        <link role="javaClass" targetNodeId="21.~ShowMPSBlogAction" resolveInfo="ShowMPSBlogAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204984036457"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204984043505">
-        <link role="javaClass" targetNodeId="21.~ShowCheatSheetAction" resolveInfo="ShowCheatSheetAction"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204984045148"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204984048571">
-        <link role="javaClass" targetNodeId="21.~AboutAction" resolveInfo="AboutAction"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909239159">
+      <link role="javaClass" targetNodeId="3.~CloneModelAction" resolveInfo="CloneModelAction"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204909021066">
-      <property name="additionType" value="false"/>
-      <link role="addedGroup" targetNodeId="1204908068930" resolveInfo="Internal"/>
-      <link role="modifiedGroup" targetNodeId="1204906074603" resolveInfo="ProjectPaneNodeActions"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909243505">
+      <link role="javaClass" targetNodeId="3.~OptimizeImportsAction" resolveInfo="OptimizeImportsAction"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204909362999">
-      <property name="additionType" value="false"/>
-      <link role="addedGroup" targetNodeId="1204909292092" resolveInfo="Refactoring"/>
-      <link role="modifiedGroup" targetNodeId="1204909193363" resolveInfo="ProjectPaneModelGroup"/>
-      <node role="extention" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Extention" id="1204909379734">
-        <link role="point" targetNodeId="1204909273200" resolveInfo="refactoring"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909245350"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909251602">
+      <link role="javaClass" targetNodeId="2.~CheckModelAction" resolveInfo="CheckModelAction"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204910730257">
-      <property name="additionType" value="false"/>
-      <link role="addedGroup" targetNodeId="1204909751412" resolveInfo="ProjectNew"/>
-      <link role="modifiedGroup" targetNodeId="1204909848031" resolveInfo="ProjectActions"/>
-      <node role="extention" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Extention" id="1204910749415">
-        <link role="point" targetNodeId="1204910715381" resolveInfo="projectNew"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909253120"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204909273200">
+      <property name="name" value="refactoring"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204911127507">
-      <property name="additionType" value="false"/>
-      <link role="addedGroup" targetNodeId="1204911119662" resolveInfo="NewGroup"/>
-      <link role="modifiedGroup" targetNodeId="1204911099177" resolveInfo="LanguageActions"/>
-      <node role="extention" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Extention" id="1204911153665">
-        <link role="point" targetNodeId="1204911159306" resolveInfo="newGroup"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204988344441"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204988291723">
+      <link role="javaClass" targetNodeId="3.~GenerateGroup_autoplan_files" resolveInfo="GenerateGroup_autoplan_files"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204912030347">
-      <property name="additionType" value="false"/>
-      <link role="addedGroup" targetNodeId="1204911993283" resolveInfo="SolutionsNew"/>
-      <link role="modifiedGroup" targetNodeId="1204911656426" resolveInfo="SolutionActions"/>
-      <node role="extention" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Extention" id="1204912049536">
-        <link role="point" targetNodeId="1204911787238" resolveInfo="solutionNew"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204988291724">
+      <link role="javaClass" targetNodeId="3.~GenerateGroup_autoplan_text" resolveInfo="GenerateGroup_autoplan_text"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204980558911">
-      <property name="additionType" value="false"/>
-      <link role="addedGroup" targetNodeId="1204980525547" resolveInfo="GeneratorNew"/>
-      <link role="modifiedGroup" targetNodeId="1204980529720" resolveInfo="GeneratorActions"/>
-      <node role="extention" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Extention" id="1204980579256">
-        <link role="point" targetNodeId="1204980550723" resolveInfo="generatorNew"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909572396"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909587586">
+      <link role="javaClass" targetNodeId="3.~ShowDifferenceWithModelOnDiskAction"
+            resolveInfo="ShowDifferenceWithModelOnDiskAction"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204981339222">
-      <property name="additionType" value="false"/>
-      <link role="addedGroup" targetNodeId="1204981205726" resolveInfo="EditorInternal"/>
-      <link role="modifiedGroup" targetNodeId="1204980857425" resolveInfo="EditorPopup"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909591822"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909597168">
+      <link role="javaClass" targetNodeId="3.~RevertMemoryChangesAction" resolveInfo="RevertMemoryChangesAction"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204983009685">
-      <property name="additionType" value="false"/>
-      <link role="addedGroup" targetNodeId="1204982971746" resolveInfo="File"/>
-      <link role="modifiedGroup" targetNodeId="1204982833879" resolveInfo="MainMenu"/>
-      <node role="extention" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Extention" id="1204983029902">
-        <link role="point" targetNodeId="1204982915148" resolveInfo="file"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909600513">
+      <link role="javaClass" targetNodeId="3.~SaveModelAction" resolveInfo="SaveModelAction"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204983036980">
-      <property name="additionType" value="false"/>
-      <link role="modifiedGroup" targetNodeId="1204982833879" resolveInfo="MainMenu"/>
-      <link role="addedGroup" targetNodeId="1204982976512" resolveInfo="Edit"/>
-      <node role="extention" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Extention" id="1204983036981">
-        <link role="point" targetNodeId="1204982920758" resolveInfo="edit"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909603015"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909608173">
+      <link role="javaClass" targetNodeId="3.~ModelPropertiesAction" resolveInfo="ModelPropertiesAction"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204983040778">
-      <property name="additionType" value="false"/>
-      <link role="modifiedGroup" targetNodeId="1204982833879" resolveInfo="MainMenu"/>
-      <link role="addedGroup" targetNodeId="1204982978950" resolveInfo="Generate"/>
-      <node role="extention" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Extention" id="1204983040779">
-        <link role="point" targetNodeId="1204982925572" resolveInfo="generate"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909616097">
+      <link role="javaClass" targetNodeId="3.~ModelPropertiesAction_New" resolveInfo="ModelPropertiesAction_New"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204983041983">
-      <property name="additionType" value="false"/>
-      <link role="modifiedGroup" targetNodeId="1204982833879" resolveInfo="MainMenu"/>
-      <link role="addedGroup" targetNodeId="1204982984716" resolveInfo="Goto"/>
-      <node role="extention" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Extention" id="1204983041984">
-        <link role="point" targetNodeId="1204982943399" resolveInfo="goto"/>
-      </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991219778">
+    <property name="name" value="Refactoring"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909359139">
+      <link role="javaClass" targetNodeId="4.~RenameModelAction" resolveInfo="RenameModelAction"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204983042798">
-      <property name="additionType" value="false"/>
-      <link role="modifiedGroup" targetNodeId="1204982833879" resolveInfo="MainMenu"/>
-      <link role="addedGroup" targetNodeId="1204982986966" resolveInfo="Tools"/>
-      <node role="extention" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Extention" id="1204983042799">
-        <link role="point" targetNodeId="1204982943509" resolveInfo="tools"/>
-      </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991220529">
+    <property name="name" value="ProjectActions"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204910715381">
+      <property name="name" value="projectNew"/>
     </node>
-    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
-          id="1204983044348">
-      <property name="additionType" value="false"/>
-      <link role="modifiedGroup" targetNodeId="1204982833879" resolveInfo="MainMenu"/>
-      <link role="addedGroup" targetNodeId="1204982993624" resolveInfo="Help"/>
-      <node role="extention" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Extention" id="1204983044349">
-        <link role="point" targetNodeId="1204982959744" resolveInfo="help"/>
-      </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204910765604"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204910792476">
+      <link role="javaClass" targetNodeId="6.~MakeProjectAction" resolveInfo="MakeProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204910796681">
+      <link role="javaClass" targetNodeId="6.~CleanProjectAction" resolveInfo="CleanProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204910799433"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204910819335">
+      <link role="javaClass" targetNodeId="7.~ProjectSettingsAction" resolveInfo="ProjectSettingsAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991221264">
+    <property name="name" value="ProjectNew"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909777120">
+      <link role="javaClass" targetNodeId="5.~NewSolutionAction" resolveInfo="NewSolutionAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909780903">
+      <link role="javaClass" targetNodeId="5.~NewLanguageAction" resolveInfo="NewLanguageAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909784374">
+      <link role="javaClass" targetNodeId="5.~NewDevKitAction" resolveInfo="NewDevKitAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991224874">
+    <property name="name" value="LanguageActions"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204911159306">
+      <property name="name" value="newGroup"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911304334"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204913069595">
+      <link role="javaClass" targetNodeId="8.~GenerateLanguageAction_true" resolveInfo="GenerateLanguageAction_true"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204913074644">
+      <link role="javaClass" targetNodeId="8.~GenerateLanguageAction_false" resolveInfo="GenerateLanguageAction_false"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204913024052"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911328898">
+      <link role="javaClass" targetNodeId="2.~CheckLanguageAction" resolveInfo="CheckLanguageAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911334932">
+      <link role="javaClass" targetNodeId="8.~OptimizeLanguageImportsAction"
+            resolveInfo="OptimizeLanguageImportsAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911338527"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911344576">
+      <link role="javaClass" targetNodeId="8.~LanguagePropertiesAction" resolveInfo="LanguagePropertiesAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911363732">
+      <link role="javaClass" targetNodeId="9.~LanguageHierarchyAction" resolveInfo="LanguageHierarchyAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911366952"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911372454">
+      <link role="javaClass" targetNodeId="5.~AddModuleToProjectAction" resolveInfo="AddModuleToProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911375722">
+      <link role="javaClass" targetNodeId="5.~RemoveModuleFromProjectAction"
+            resolveInfo="RemoveModuleFromProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911378302"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911382773">
+      <link role="javaClass" targetNodeId="6.~MakeModuleAction" resolveInfo="MakeModuleAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911390291">
+      <link role="javaClass" targetNodeId="6.~CleanModuleAction" resolveInfo="CleanModuleAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911393137"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911408605">
+      <link role="javaClass" targetNodeId="10.~SetModuleFolderAction" resolveInfo="SetModuleFolderAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911412372"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911577488">
+      <link role="javaClass" targetNodeId="4.~RenameLanguageAction" resolveInfo="RenameLanguageAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991225922">
+    <property name="name" value="LanguageNew"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911209655">
+      <link role="javaClass" targetNodeId="8.~NewGeneratorAction" resolveInfo="NewGeneratorAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911211079"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911218519">
+      <link role="javaClass" targetNodeId="8.~NewAccessoryModelAction" resolveInfo="NewAccessoryModelAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911225380"/>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991226689">
+    <property name="name" value="SolutionActions"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204911787238">
+      <property name="name" value="solutionNew"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912155146"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912160805">
+      <link role="javaClass" targetNodeId="5.~AddModuleToProjectAction" resolveInfo="AddModuleToProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912171635">
+      <link role="javaClass" targetNodeId="5.~RemoveModuleFromProjectAction"
+            resolveInfo="RemoveModuleFromProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912175121"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912887984">
+      <link role="javaClass" targetNodeId="11.~GenerateAllModelsInSolutionAction_true"
+            resolveInfo="GenerateAllModelsInSolutionAction_true"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912908939">
+      <link role="javaClass" targetNodeId="11.~GenerateAllModelsInSolutionAction_false"
+            resolveInfo="GenerateAllModelsInSolutionAction_false"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912216802">
+      <link role="javaClass" targetNodeId="11.~GenerateTextFromAllModelsInSolutionAction"
+            resolveInfo="GenerateTextFromAllModelsInSolutionAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912222836">
+      <link role="javaClass" targetNodeId="2.~CheckSolutionAction" resolveInfo="CheckSolutionAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912230212">
+      <link role="javaClass" targetNodeId="11.~OptimizeSolutionImportsAction"
+            resolveInfo="OptimizeSolutionImportsAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912232777"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912235154">
+      <link role="javaClass" targetNodeId="6.~MakeModuleAction" resolveInfo="MakeModuleAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912241000">
+      <link role="javaClass" targetNodeId="6.~CleanModuleAction" resolveInfo="CleanModuleAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912243845"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912248832">
+      <link role="javaClass" targetNodeId="10.~SetModuleFolderAction" resolveInfo="SetModuleFolderAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912251396"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912255351">
+      <link role="javaClass" targetNodeId="11.~SolutionPropertiesAction" resolveInfo="SolutionPropertiesAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991227487">
+    <property name="name" value="SolutionNew"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912017471">
+      <link role="javaClass" targetNodeId="3.~NewModelAction" resolveInfo="NewModelAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991228238">
+    <property name="name" value="DevkitActions"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980425624">
+      <link role="javaClass" targetNodeId="10.~SetModuleFolderAction" resolveInfo="SetModuleFolderAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980427376"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980432972">
+      <link role="javaClass" targetNodeId="5.~AddModuleToProjectAction" resolveInfo="AddModuleToProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980437818">
+      <link role="javaClass" targetNodeId="5.~RemoveModuleFromProjectAction"
+            resolveInfo="RemoveModuleFromProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980440117"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980460700">
+      <link role="javaClass" targetNodeId="12.~DevKitPropertiesAction" resolveInfo="DevKitPropertiesAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991229114">
+    <property name="name" value="GeneratorNew"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980543003">
+      <link role="javaClass" targetNodeId="3.~NewModelAction" resolveInfo="NewModelAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991229896">
+    <property name="name" value="GeneratorActions"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204980550723">
+      <property name="name" value="generatorNew"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980588962"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980690186"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980696642">
+      <link role="javaClass" targetNodeId="8.~DeleteGeneratorAction" resolveInfo="DeleteGeneratorAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980704959"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980700863">
+      <link role="javaClass" targetNodeId="2.~CheckGeneratorAction" resolveInfo="CheckGeneratorAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980706523"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980712838">
+      <link role="javaClass" targetNodeId="8.~GeneratorPropertiesAction" resolveInfo="GeneratorPropertiesAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991230694">
+    <property name="name" value="TransientModulesActions"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980812705">
+      <link role="javaClass" targetNodeId="13.~RemoveTransientModulesAction"
+            resolveInfo="RemoveTransientModulesAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991231476">
+    <property name="name" value="EditorPopup"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980870691">
+      <link role="javaClass" targetNodeId="1.~GoByReferenceGroup" resolveInfo="GoByReferenceGroup"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980875740">
+      <link role="javaClass" targetNodeId="1.~GoByFirstReferenceAction" resolveInfo="GoByFirstReferenceAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980879383">
+      <link role="javaClass" targetNodeId="1.~HighlightUsagesAction" resolveInfo="HighlightUsagesAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980884041">
+      <link role="javaClass" targetNodeId="1.~HighlightInstancesAction" resolveInfo="HighlightInstancesAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980886715"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980891420">
+      <link role="javaClass" targetNodeId="1.~ShowRootInProjectAction" resolveInfo="ShowRootInProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980895985">
+      <link role="javaClass" targetNodeId="1.~ShowInProjectAction" resolveInfo="ShowInProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980902346">
+      <link role="javaClass" targetNodeId="1.~GoToConceptDeclarationAction" resolveInfo="GoToConceptDeclarationAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980908286">
+      <link role="javaClass" targetNodeId="1.~GoToEditorDeclarationAction" resolveInfo="GoToEditorDeclarationAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980910163">
+      <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980915743">
+      <link role="javaClass" targetNodeId="1.~ShowNodeInExplorerAction" resolveInfo="ShowNodeInExplorerAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980917260"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980947669">
+      <link role="javaClass" targetNodeId="14.~GenerateFilesFromCurrentModelAction"
+            resolveInfo="GenerateFilesFromCurrentModelAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980953202">
+      <link role="javaClass" targetNodeId="14.~GenerateTextFromCurrentModelAction"
+            resolveInfo="GenerateTextFromCurrentModelAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980956111"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980961050">
+      <link role="javaClass" targetNodeId="1.~FindSpecificNodeUsages" resolveInfo="FindSpecificNodeUsages"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980963412">
+      <link role="javaClass" targetNodeId="1.~FastFindUsagesNodeAction" resolveInfo="FastFindUsagesNodeAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980968757">
+      <link role="javaClass" targetNodeId="1.~ShowClassInHierarchyAction" resolveInfo="ShowClassInHierarchyAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980977744">
+      <link role="javaClass" targetNodeId="1.~ShowConceptInHierarchyAction" resolveInfo="ShowConceptInHierarchyAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981007621">
+      <link role="javaClass" targetNodeId="1.~ShowConceptStructureAction" resolveInfo="ShowConceptStructureAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981009795"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981030762">
+      <link role="javaClass" targetNodeId="15.~ShowCellKeymapsAction" resolveInfo="ShowCellKeymapsAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981045436"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981046469"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981070972">
+      <link role="javaClass" targetNodeId="16.~ShowParametersAction" resolveInfo="ShowParametersAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981072739"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981073163"/>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991232446">
+    <property name="name" value="EditorInternal"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981253852">
+      <link role="javaClass" targetNodeId="1.~TestNodePathAction" resolveInfo="TestNodePathAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981257932">
+      <link role="javaClass" targetNodeId="15.~CellPropertiesAction" resolveInfo="CellPropertiesAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981262715">
+      <link role="javaClass" targetNodeId="15.~ShowCellInCellExplorerAction"
+            resolveInfo="ShowCellInCellExplorerAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981265733"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981294286">
+      <link role="javaClass" targetNodeId="17.~ShowCFGTreeAction" resolveInfo="ShowCFGTreeAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981300007">
+      <link role="javaClass" targetNodeId="17.~HighlightUnreachableBlocksAction"
+            resolveInfo="HighlightUnreachableBlocksAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981304743">
+      <link role="javaClass" targetNodeId="1.~PrintNodeIDAction" resolveInfo="PrintNodeIDAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981313167">
+      <link role="javaClass" targetNodeId="1.~PrintTextPresentationAction" resolveInfo="PrintTextPresentationAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981316341">
+      <link role="javaClass" targetNodeId="1.~HighlightCellDependenciesAction"
+            resolveInfo="HighlightCellDependenciesAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981318702"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981319204"/>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991233275">
+    <property name="name" value="ToolBar"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981428285">
+      <link role="javaClass" targetNodeId="7.~OpenProjectAction" resolveInfo="OpenProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981430850">
+      <link role="javaClass" targetNodeId="7.~SaveProjectAction" resolveInfo="SaveProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981434289"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981438354">
+      <link role="javaClass" targetNodeId="13.~ReloadAllAction" resolveInfo="ReloadAllAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981439918"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981762832">
+      <link role="javaClass" targetNodeId="19.~UndoAction" resolveInfo="UndoAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981848543">
+      <link role="javaClass" targetNodeId="19.~RedoAction" resolveInfo="RedoAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981850764"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981868592">
+      <link role="javaClass" targetNodeId="20.~PreviousEditorAction" resolveInfo="PreviousEditorAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981873878">
+      <link role="javaClass" targetNodeId="20.~NextEditorAction" resolveInfo="NextEditorAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981877585"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981881401">
+      <link role="javaClass" targetNodeId="7.~ProjectSettingsAction" resolveInfo="ProjectSettingsAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981882013"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981905919">
+      <link role="javaClass" targetNodeId="21.~ShowIdeHelpAction" resolveInfo="ShowIdeHelpAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991234260">
+    <property name="name" value="MainMenu"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982915148">
+      <property name="name" value="file"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982920758">
+      <property name="name" value="edit"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982925572">
+      <property name="name" value="generate"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982943399">
+      <property name="name" value="goto"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982943509">
+      <property name="name" value="tools"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982952853">
+      <property name="name" value="windows"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982959744">
+      <property name="name" value="help"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991234980">
+    <property name="name" value="File"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983104295">
+      <link role="javaClass" targetNodeId="7.~NewProjectAction" resolveInfo="NewProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983109874">
+      <link role="javaClass" targetNodeId="7.~OpenProjectAction" resolveInfo="OpenProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983112845">
+      <link role="javaClass" targetNodeId="7.~ReopenGroup" resolveInfo="ReopenGroup"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983116612">
+      <link role="javaClass" targetNodeId="7.~SaveProjectAction" resolveInfo="SaveProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983120332">
+      <link role="javaClass" targetNodeId="7.~ProjectSettingsAction" resolveInfo="ProjectSettingsAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983121162"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983125070">
+      <link role="javaClass" targetNodeId="7.~NewProjectWindowAction" resolveInfo="NewProjectWindowAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983136183">
+      <link role="javaClass" targetNodeId="7.~CloseProjectAction" resolveInfo="CloseProjectAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983138044"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983141171">
+      <link role="javaClass" targetNodeId="7.~ExitAction" resolveInfo="ExitAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991235731">
+    <property name="name" value="Edit"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983212689">
+      <link role="javaClass" targetNodeId="19.~UndoAction" resolveInfo="UndoAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983214770">
+      <link role="javaClass" targetNodeId="19.~RedoAction" resolveInfo="RedoAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983215944"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983220211">
+      <link role="javaClass" targetNodeId="1.~CopyNodeAction" resolveInfo="CopyNodeAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983225229">
+      <link role="javaClass" targetNodeId="1.~CopyNodeReferenceAction" resolveInfo="CopyNodeReferenceAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983230419">
+      <link role="javaClass" targetNodeId="1.~PasteNodeAction" resolveInfo="PasteNodeAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983233139">
+      <link role="javaClass" targetNodeId="1.~CutNodeAction" resolveInfo="CutNodeAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983234438"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983237628">
+      <link role="javaClass" targetNodeId="19.~RecentEditorsAction" resolveInfo="RecentEditorsAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983239052"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983242944">
+      <link role="javaClass" targetNodeId="3.~AddModelImportAction" resolveInfo="AddModelImportAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983248353">
+      <link role="javaClass" targetNodeId="3.~AddLanguageImportAction" resolveInfo="AddLanguageImportAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991236497">
+    <property name="name" value="Generate"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983511988">
+      <link role="javaClass" targetNodeId="14.~ToggleTransientModelsSavingAction"
+            resolveInfo="ToggleTransientModelsSavingAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983513756"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983520899">
+      <link role="javaClass" targetNodeId="14.~GenerateFilesFromCurrentModelAction"
+            resolveInfo="GenerateFilesFromCurrentModelAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983527418">
+      <link role="javaClass" targetNodeId="14.~GenerateTextFromCurrentModelAction"
+            resolveInfo="GenerateTextFromCurrentModelAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991237264">
+    <property name="name" value="Goto"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983538826">
+      <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983552274">
+      <link role="javaClass" targetNodeId="22.~GoToSymbolAction" resolveInfo="GoToSymbolAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983557370">
+      <link role="javaClass" targetNodeId="22.~GoToConceptAction" resolveInfo="GoToConceptAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983561793">
+      <link role="javaClass" targetNodeId="22.~GoToNodeAction" resolveInfo="GoToNodeAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983564013"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983568436">
+      <link role="javaClass" targetNodeId="1.~GoToConceptDeclarationAction" resolveInfo="GoToConceptDeclarationAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983572780">
+      <link role="javaClass" targetNodeId="1.~GoToEditorDeclarationAction" resolveInfo="GoToEditorDeclarationAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983578765">
+      <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983581141"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983587938">
+      <link role="javaClass" targetNodeId="22.~ReturnToEditorAction" resolveInfo="ReturnToEditorAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983590986"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983596518">
+      <link role="javaClass" targetNodeId="22.~GoToLanguageAction" resolveInfo="GoToLanguageAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983601284">
+      <link role="javaClass" targetNodeId="22.~GoToModelAction" resolveInfo="GoToModelAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991238062">
+    <property name="name" value="Tools"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983609908">
+      <link role="javaClass" targetNodeId="13.~InstallIDEAPluginAction" resolveInfo="InstallIDEAPluginAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983612847">
+      <link role="javaClass" targetNodeId="13.~ReloadAllAction" resolveInfo="ReloadAllAction"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991238844">
+    <property name="name" value="Help"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983954995">
+      <link role="javaClass" targetNodeId="21.~ShowIdeHelpAction" resolveInfo="ShowIdeHelpAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983958090"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983965701">
+      <link role="javaClass" targetNodeId="21.~ShowMPSHelpIndexAction" resolveInfo="ShowMPSHelpIndexAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983968874">
+      <link role="javaClass" targetNodeId="21.~ShowTutorialAction" resolveInfo="ShowTutorialAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983975501">
+      <link role="javaClass" targetNodeId="21.~ShowAcknowledgementsAction" resolveInfo="ShowAcknowledgementsAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983980877"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204984025124">
+      <link role="javaClass" targetNodeId="21.~ShowMPSSiteAction" resolveInfo="ShowMPSSiteAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204984029532">
+      <link role="javaClass" targetNodeId="21.~ShowMPSDiscussionForum" resolveInfo="ShowMPSDiscussionForum"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204984034252">
+      <link role="javaClass" targetNodeId="21.~ShowMPSBlogAction" resolveInfo="ShowMPSBlogAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204984036457"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204984043505">
+      <link role="javaClass" targetNodeId="21.~ShowCheatSheetAction" resolveInfo="ShowCheatSheetAction"/>
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204984045148"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204984048571">
+      <link role="javaClass" targetNodeId="21.~AboutAction" resolveInfo="AboutAction"/>
     </node>
   </node>
 </model>

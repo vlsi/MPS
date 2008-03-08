@@ -236,34 +236,8 @@
       <link role="target" targetNodeId="1203082903663" resolveInfo="ConceptFunctionParameter_ActionContext"/>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203087874735">
-    <property name="package" value="Actions.Configuration"/>
-    <property name="name" value="ActionConfigurationDeclaration"/>
-    <property name="rootable" value="true"/>
-    <property name="iconPath" value="${language_descriptor}\icons\actionConfiguration.png"/>
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1203866277391">
-      <property name="value" value="Action Configuration"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1203088188973">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="groups"/>
-      <property name="sourceCardinality" value="0..n"/>
-      <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroup"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1203092458687">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="modifier"/>
-      <property name="sourceCardinality" value="0..n"/>
-      <link role="target" targetNodeId="1203092361741" resolveInfo="AbstractModificationStatement"/>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203087890642">
-    <property name="package" value="Actions.Configuration"/>
+    <property name="package" value="Actions.Groups"/>
     <property name="name" value="ActionGroupDeclaration"/>
     <property name="rootable" value="true"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
@@ -274,13 +248,34 @@
       <property name="sourceCardinality" value="0..n"/>
       <link role="target" targetNodeId="1204391079391" resolveInfo="ActionGroupMember"/>
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1204991552650">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="modifier"/>
+      <property name="sourceCardinality" value="0..n"/>
+      <link role="target" targetNodeId="1203092361741" resolveInfo="ModificationStatement"/>
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
           id="1203088222865">
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept"/>
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1204996366600">
+      <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1204989879672">
+      <property name="value" value="group"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1204991940915">
+      <property name="name" value="id"/>
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203088046679">
-    <property name="package" value="Actions.Configuration"/>
+    <property name="package" value="Actions.Groups.GroupMembers"/>
     <property name="name" value="ActionReference"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
@@ -295,7 +290,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203092361741">
-    <property name="package" value="Actions.Configuration.GroupModification"/>
+    <property name="package" value="Actions.Groups.GroupModification"/>
     <property name="name" value="ModificationStatement"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
@@ -304,22 +299,16 @@
       <link role="dataType" targetNodeId="1203682870930" resolveInfo="AdditionType"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1203681486670">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="extention"/>
-      <link role="target" targetNodeId="1203680791094" resolveInfo="Extention"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1203092736097">
       <property name="role" value="modifiedGroup"/>
       <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1203682596234">
-      <property name="role" value="addedGroup"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration"/>
+          id="1204992316090">
+      <property name="role" value="point"/>
+      <property name="sourceCardinality" value="0..1"/>
+      <link role="target" targetNodeId="1203680534665" resolveInfo="ExtentionPoint"/>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1203682671874">
@@ -328,7 +317,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203680534665">
-    <property name="package" value="Actions.Configuration"/>
+    <property name="package" value="Actions.Groups.GroupMembers"/>
     <property name="name" value="ExtentionPoint"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
@@ -339,25 +328,14 @@
           id="1204391152120">
       <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember"/>
     </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203680791094">
-    <property name="package" value="Actions.Configuration.GroupModification"/>
-    <property name="name" value="Extention"/>
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
-          id="1203681018017">
-      <property name="name" value="position"/>
-      <link role="dataType" targetNodeId="1203684568987" resolveInfo="AdditionPosition"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1203681004063">
-      <property name="role" value="point"/>
-      <property name="sourceCardinality" value="0..1"/>
-      <link role="target" targetNodeId="1203680534665" resolveInfo="ExtentionPoint"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1204989851141">
+      <property name="value" value="-&gt;"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1203682870930">
-    <property name="package" value="Actions.Configuration.GroupModification"/>
+    <property name="package" value="Actions.Groups.GroupModification"/>
     <property name="name" value="AdditionType"/>
     <property name="memberIdentifierPolicy" value="derive_from_presentation"/>
     <link role="memberDataType" targetNodeId="6.1082983657063" resolveInfo="boolean"/>
@@ -369,21 +347,6 @@
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration"
           id="1203684275974">
       <property name="externalValue" value="subgroup"/>
-      <property name="internalValue" value="false"/>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1203684568987">
-    <property name="package" value="Actions.Configuration.GroupModification"/>
-    <property name="name" value="AdditionPosition"/>
-    <link role="memberDataType" targetNodeId="6.1082983657063" resolveInfo="boolean"/>
-    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration"
-          id="1203684568988">
-      <property name="externalValue" value="before"/>
-      <property name="internalValue" value="true"/>
-    </node>
-    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration"
-          id="1203684635832">
-      <property name="externalValue" value="after"/>
       <property name="internalValue" value="false"/>
     </node>
   </node>
@@ -623,7 +586,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204383956737">
-    <property name="package" value="Actions.Configuration.GroupModification.bootstrap"/>
+    <property name="package" value="Actions.Groups.GroupModification.bootstrap"/>
     <property name="name" value="BootstrapActionGroup"/>
     <property name="rootable" value="true"/>
     <link role="extends" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration"/>
@@ -634,11 +597,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1204391079391">
-    <property name="package" value="Actions.Configuration"/>
+    <property name="package" value="Actions.Groups"/>
     <property name="name" value="ActionGroupMember"/>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204397573187">
-    <property name="package" value="Actions.Configuration.GroupModification.bootstrap"/>
+    <property name="package" value="Actions.Groups.GroupModification.bootstrap"/>
     <property name="name" value="BootstrapExtentionPoint"/>
     <link role="extends" targetNodeId="1203680534665" resolveInfo="ExtentionPoint"/>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
@@ -848,7 +811,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204903488751">
-    <property name="package" value="Actions.Configuration"/>
+    <property name="package" value="Actions.Groups.GroupMembers"/>
     <property name="name" value="JavaAction"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
@@ -863,7 +826,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204908117386">
-    <property name="package" value="Actions.Configuration"/>
+    <property name="package" value="Actions.Groups.GroupMembers"/>
     <property name="name" value="Separator"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
