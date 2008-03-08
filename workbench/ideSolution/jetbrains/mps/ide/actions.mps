@@ -137,6 +137,14 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204909273200">
         <property name="name" value="refactoring"/>
       </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204988344441"/>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204988291723">
+        <link role="javaClass" targetNodeId="3.~GenerateGroup_autoplan_files"
+              resolveInfo="GenerateGroup_autoplan_files"/>
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204988291724">
+        <link role="javaClass" targetNodeId="3.~GenerateGroup_autoplan_text" resolveInfo="GenerateGroup_autoplan_text"/>
+      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909572396"/>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909587586">
         <link role="javaClass" targetNodeId="3.~ShowDifferenceWithModelOnDiskAction"
@@ -155,14 +163,6 @@
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909616097">
         <link role="javaClass" targetNodeId="3.~ModelPropertiesAction_New" resolveInfo="ModelPropertiesAction_New"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204909619318"/>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980244656">
-        <link role="javaClass" targetNodeId="3.~GenerateGroup_autoplan_files"
-              resolveInfo="GenerateGroup_autoplan_files"/>
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980248127">
-        <link role="javaClass" targetNodeId="3.~GenerateGroup_autoplan_text" resolveInfo="GenerateGroup_autoplan_text"/>
       </node>
     </node>
     <node role="groups" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration"
