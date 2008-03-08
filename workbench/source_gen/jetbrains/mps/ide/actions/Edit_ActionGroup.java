@@ -11,6 +11,7 @@ import jetbrains.mps.ide.actions.model.AddModelImportAction;
 import jetbrains.mps.ide.actions.model.AddLanguageImportAction;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
+import jetbrains.mps.ide.action.ActionGroup;
 
 public class Edit_ActionGroup extends BaseActionGroup {
 
@@ -31,6 +32,14 @@ public class Edit_ActionGroup extends BaseActionGroup {
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+    {
+      ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
+      ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Edit");
+      if (gTo == null || gWhat == null) {
+        return;
+      }
+      gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.edit_ExtentionPoint");
+    }
   }
 
 }

@@ -584,10 +584,22 @@
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983141171">
       <link role="javaClass" targetNodeId="7.~ExitAction" resolveInfo="ExitAction"/>
     </node>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
+          id="1205007862754">
+      <property name="additionType" value="false"/>
+      <link role="modifiedGroup" targetNodeId="1204991234260" resolveInfo="MainMenu"/>
+      <link role="point" targetNodeId="1204982915148" resolveInfo="file"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991235731">
     <property name="name" value="Edit"/>
     <property name="caption" value="Edit"/>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
+          id="1205007875051">
+      <property name="additionType" value="false"/>
+      <link role="modifiedGroup" targetNodeId="1204991234260" resolveInfo="MainMenu"/>
+      <link role="point" targetNodeId="1204982920758" resolveInfo="edit"/>
+    </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983212689">
       <link role="javaClass" targetNodeId="19.~UndoAction" resolveInfo="UndoAction"/>
     </node>
@@ -622,6 +634,12 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991236497">
     <property name="name" value="Generate"/>
     <property name="caption" value="Generate"/>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
+          id="1205007885099">
+      <property name="additionType" value="false"/>
+      <link role="modifiedGroup" targetNodeId="1204991234260" resolveInfo="MainMenu"/>
+      <link role="point" targetNodeId="1204982925572" resolveInfo="generate"/>
+    </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983511988">
       <link role="javaClass" targetNodeId="14.~ToggleTransientModelsSavingAction"
             resolveInfo="ToggleTransientModelsSavingAction"/>
@@ -639,6 +657,12 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991237264">
     <property name="name" value="Goto"/>
     <property name="caption" value="Goto"/>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
+          id="1205007901663">
+      <property name="additionType" value="false"/>
+      <link role="modifiedGroup" targetNodeId="1204991234260" resolveInfo="MainMenu"/>
+      <link role="point" targetNodeId="1204982943399" resolveInfo="goto"/>
+    </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983538826">
       <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction"/>
     </node>
@@ -676,6 +700,12 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991238062">
     <property name="name" value="Tools"/>
     <property name="caption" value="Tools"/>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
+          id="1205007918257">
+      <property name="additionType" value="false"/>
+      <link role="modifiedGroup" targetNodeId="1204991234260" resolveInfo="MainMenu"/>
+      <link role="point" targetNodeId="1204982943509" resolveInfo="tools"/>
+    </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983609908">
       <link role="javaClass" targetNodeId="13.~InstallIDEAPluginAction" resolveInfo="InstallIDEAPluginAction"/>
     </node>
@@ -686,6 +716,12 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991238844">
     <property name="name" value="Help"/>
     <property name="caption" value="Help"/>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
+          id="1205007933274">
+      <property name="additionType" value="false"/>
+      <link role="modifiedGroup" targetNodeId="1204991234260" resolveInfo="MainMenu"/>
+      <link role="point" targetNodeId="1204982959744" resolveInfo="help"/>
+    </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983954995">
       <link role="javaClass" targetNodeId="21.~ShowIdeHelpAction" resolveInfo="ShowIdeHelpAction"/>
     </node>

@@ -8,6 +8,7 @@ import jetbrains.mps.ide.actions.generate.GenerateFilesFromCurrentModelAction;
 import jetbrains.mps.ide.actions.generate.GenerateTextFromCurrentModelAction;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
+import jetbrains.mps.ide.action.ActionGroup;
 
 public class Generate_ActionGroup extends BaseActionGroup {
 
@@ -20,6 +21,14 @@ public class Generate_ActionGroup extends BaseActionGroup {
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
+    {
+      ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
+      ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Generate");
+      if (gTo == null || gWhat == null) {
+        return;
+      }
+      gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.generate_ExtentionPoint");
+    }
   }
 
 }
