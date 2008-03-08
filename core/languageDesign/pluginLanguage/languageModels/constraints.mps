@@ -692,8 +692,9 @@
                             id="1204907565712">
                         <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1204907565713">
                           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType"
-                                id="1204907565714">
-                            <link role="classifier" targetNodeId="16.~MPSAction" resolveInfo="MPSAction"/>
+                                id="1204909171626">
+                            <link role="classifier" targetNodeId="16.~ActionGroupElement"
+                                  resolveInfo="ActionGroupElement"/>
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
