@@ -592,10 +592,10 @@
                 <link role="link" targetNodeId="4.1197027771414" />
               </node>
             </node>
-            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203966935917">
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205082489589">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203966935910" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1205080630615">
-                <link role="conceptMethodDeclaration" targetNodeId="1203966722225" resolveInfo="getOperand" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205082491791">
+                <link role="link" targetNodeId="1.1151701835028" />
               </node>
             </node>
           </node>
