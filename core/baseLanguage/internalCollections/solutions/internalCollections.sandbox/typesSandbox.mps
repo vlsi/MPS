@@ -51,7 +51,6 @@
                 </node>
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1204815958351" />
             <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204815958352">
               <node role="operation" type="jetbrains.mps.internal.collections.structure.SelectOperation" id="1204815958353">
                 <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204815958354">
@@ -68,7 +67,6 @@
                   </node>
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1204815958362" />
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204815972316">
                 <link role="variableDeclaration" targetNodeId="1204814283164" resolveInfo="input" />
               </node>

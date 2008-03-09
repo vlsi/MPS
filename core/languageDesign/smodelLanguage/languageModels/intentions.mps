@@ -661,7 +661,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203705504792">
                 <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1203705501755">
                   <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1203705503681" />
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203705214178">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203705214178">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203705214179">
                       <link role="variableDeclaration" targetNodeId="1203705048413" resolveInfo="listNode" />
                     </node>

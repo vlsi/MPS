@@ -76,33 +76,30 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1160671171675">
           <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1160671173333">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1160671171676">
-              <link role="variableDeclaration" targetNodeId="1160610983611" resolveInfo="list" />
-            </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1160671175225">
               <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1160671203618">
                 <property name="value" value="var4" />
               </node>
             </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1160671171676">
+              <link role="variableDeclaration" targetNodeId="1160610983611" resolveInfo="list" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1160671212493">
           <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1160671212494">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1160671212495">
-              <link role="variableDeclaration" targetNodeId="1160610983611" resolveInfo="list" />
-            </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1160671212496">
               <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1160671212497">
                 <property name="value" value="var5" />
               </node>
             </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1160671212495">
+              <link role="variableDeclaration" targetNodeId="1160610983611" resolveInfo="list" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1160671228609">
           <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1160671232627">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1160671228610">
-              <link role="variableDeclaration" targetNodeId="1160610983611" resolveInfo="list" />
-            </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation" id="1160671236331">
               <node role="argument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1160671244521">
                 <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1160671246460">
@@ -117,6 +114,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1160671228610">
+              <link role="variableDeclaration" targetNodeId="1160610983611" resolveInfo="list" />
             </node>
           </node>
         </node>
@@ -159,13 +159,13 @@
                   <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1162935503004">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1162935501409">
-                    <link role="variableDeclaration" targetNodeId="1160610983611" resolveInfo="list" />
-                  </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetElementOperation" id="1162935504958">
                     <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1162935523821">
                       <link role="variableDeclaration" targetNodeId="1162935411370" resolveInfo="i" />
                     </node>
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1162935501409">
+                    <link role="variableDeclaration" targetNodeId="1160610983611" resolveInfo="list" />
                   </node>
                 </node>
               </node>
@@ -173,10 +173,10 @@
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1162935430876">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1162936633532">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1162936631250">
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1162936636080" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1162936631250">
                 <link role="variableDeclaration" targetNodeId="1160610983611" resolveInfo="list" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1162936636080" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1162935428000">
               <link role="variableDeclaration" targetNodeId="1162935411370" resolveInfo="i" />

@@ -101,9 +101,6 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061366151">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186061366152">
                   <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1186061366153">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186061366154">
-                      <link role="variableDeclaration" targetNodeId="1186061366135" resolveInfo="variableSuffixes" />
-                    </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1186061366155">
                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186061366156">
                         <link role="classConcept" targetNodeId="7.~NameUtil" resolveInfo="NameUtil" />
@@ -112,6 +109,9 @@
                           <link role="variable" targetNodeId="1186061366145" resolveInfo="suffix" />
                         </node>
                       </node>
+                    </node>
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186061366154">
+                      <link role="variableDeclaration" targetNodeId="1186061366135" resolveInfo="variableSuffixes" />
                     </node>
                   </node>
                 </node>
@@ -274,9 +274,6 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186061243033">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186061280738">
                   <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1186061281391">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186061280739">
-                      <link role="variableDeclaration" targetNodeId="1186061158202" resolveInfo="variableSuffixes" />
-                    </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1186061283044">
                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186061317288">
                         <link role="baseMethodDeclaration" targetNodeId="7.~NameUtil.pluralize(java.lang.String):java.lang.String" resolveInfo="pluralize" />
@@ -285,6 +282,9 @@
                           <link role="variable" targetNodeId="1186061243031" resolveInfo="suffix" />
                         </node>
                       </node>
+                    </node>
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186061280739">
+                      <link role="variableDeclaration" targetNodeId="1186061158202" resolveInfo="variableSuffixes" />
                     </node>
                   </node>
                 </node>
@@ -362,10 +362,10 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1182460136718">
               <link role="baseMethodDeclaration" targetNodeId="2.~SubnodesSearchScope.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SubnodesSearchScope" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1182460226583">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182460194439">
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetLastOperation" id="1182460228555" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182460194439">
                   <link role="variableDeclaration" targetNodeId="1182460178600" resolveInfo="forEachStatements" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetLastOperation" id="1182460228555" />
               </node>
             </node>
           </node>
@@ -594,8 +594,8 @@
             </node>
             <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203966935917">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1203966935910" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203978660533">
-                <link role="link" targetNodeId="1.1151701835028" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1205080630615">
+                <link role="conceptMethodDeclaration" targetNodeId="1203966722225" resolveInfo="getOperand" />
               </node>
             </node>
           </node>

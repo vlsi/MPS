@@ -147,9 +147,6 @@
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178541894246">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180470427156">
                 <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1180470429238">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180470427157">
-                    <link role="variableDeclaration" targetNodeId="1178541862121" resolveInfo="vars" />
-                  </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation" id="1180470431992">
                     <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227929963">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180470439246">
@@ -159,6 +156,9 @@
                         <link role="link" targetNodeId="1.1178540170602" />
                       </node>
                     </node>
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1180470427157">
+                    <link role="variableDeclaration" targetNodeId="1178541862121" resolveInfo="vars" />
                   </node>
                 </node>
               </node>
@@ -1246,7 +1246,7 @@
                     <link role="conceptDeclaration" targetNodeId="1.1177337833147" resolveInfo="ConceptFunctionParameter_parameterObject" />
                   </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203346437531">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203346437531">
                   <link role="variableDeclaration" targetNodeId="1203346315759" resolveInfo="result" />
                 </node>
               </node>
@@ -1313,7 +1313,7 @@
                     <link role="conceptDeclaration" targetNodeId="1.1177337833147" resolveInfo="ConceptFunctionParameter_parameterObject" />
                   </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203347027895">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203347027895">
                   <link role="variableDeclaration" targetNodeId="1203347027883" resolveInfo="result" />
                 </node>
               </node>
@@ -1400,7 +1400,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203348165795">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203348165795">
                     <link role="variableDeclaration" targetNodeId="1203348129236" resolveInfo="vars" />
                   </node>
                 </node>

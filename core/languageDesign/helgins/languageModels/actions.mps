@@ -378,7 +378,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199876270880">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199876270880">
                     <link role="variableDeclaration" targetNodeId="1199876270871" resolveInfo="subconcepts" />
                   </node>
                 </node>

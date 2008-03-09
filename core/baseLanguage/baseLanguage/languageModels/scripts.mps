@@ -436,7 +436,6 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204244697697">
                 <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204244697698">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1204244697699" />
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204244697700">
                     <link role="variableDeclaration" targetNodeId="1204244697670" resolveInfo="attPairs" />
                   </node>
@@ -784,7 +783,6 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204325544487">
                 <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204325544488">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1204325544489" />
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204325544490">
                     <link role="variableDeclaration" targetNodeId="1204325544460" resolveInfo="attPairs" />
                   </node>
@@ -902,7 +900,6 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204325544536">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204325544537">
                 <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204325544538">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1204325544539" />
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204325544540">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204325544541">
                       <link role="variableDeclaration" targetNodeId="1204325544514" resolveInfo="imco" />

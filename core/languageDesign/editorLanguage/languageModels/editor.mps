@@ -3970,7 +3970,7 @@
                           <property name="value" value="_KeyMap" />
                         </node>
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200683831260">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200683831260">
                         <link role="variableDeclaration" targetNodeId="1200683745843" resolveInfo="prefixes" />
                       </node>
                     </node>
@@ -4006,7 +4006,7 @@
                               </node>
                             </node>
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200683791320">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200683791320">
                             <link role="variableDeclaration" targetNodeId="1200683745843" resolveInfo="prefixes" />
                           </node>
                         </node>
@@ -5574,14 +5574,14 @@
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1164849028345">
                   <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1164849028346">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1164849028347">
-                      <link role="variableDeclaration" targetNodeId="1164849028334" resolveInfo="keycodes" />
-                    </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation" id="1164849028348">
                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1164849028349">
                         <link role="classConcept" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
                         <link role="baseMethodDeclaration" targetNodeId="16.~EditorCellKeyMap.getVirtualKeycodes():java.util.List" resolveInfo="getVirtualKeycodes" />
                       </node>
+                    </node>
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1164849028347">
+                      <link role="variableDeclaration" targetNodeId="1164849028334" resolveInfo="keycodes" />
                     </node>
                   </node>
                 </node>
@@ -6470,9 +6470,6 @@
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1185873787459">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1185873798360">
                         <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1185873799081">
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1185873798361">
-                            <link role="variableDeclaration" targetNodeId="1185873764233" resolveInfo="names" />
-                          </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1185873800606">
                             <node role="argument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1185873812058">
                               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1185873813172">
@@ -6490,6 +6487,9 @@
                                 </node>
                               </node>
                             </node>
+                          </node>
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1185873798361">
+                            <link role="variableDeclaration" targetNodeId="1185873764233" resolveInfo="names" />
                           </node>
                         </node>
                       </node>

@@ -974,9 +974,6 @@
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184772415122">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1184772415123">
                       <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1184772415124">
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184772485158">
-                          <link role="variableDeclaration" targetNodeId="1184772415115" resolveInfo="postfixes" />
-                        </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation" id="1184772415126">
                           <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227911061">
                             <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1184772415129">
@@ -990,6 +987,9 @@
                               <link role="conceptMethodDeclaration" targetNodeId="14.1182416669983" />
                             </node>
                           </node>
+                        </node>
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184772485158">
+                          <link role="variableDeclaration" targetNodeId="1184772415115" resolveInfo="postfixes" />
                         </node>
                       </node>
                     </node>

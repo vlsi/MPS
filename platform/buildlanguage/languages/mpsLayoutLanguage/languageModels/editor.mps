@@ -523,7 +523,6 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1204299963618">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204299963619">
                 <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204299963620">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1204299963621" />
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204299963622">
                     <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1204299963623" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1204299963624">

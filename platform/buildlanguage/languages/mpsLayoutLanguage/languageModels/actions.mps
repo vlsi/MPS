@@ -291,7 +291,7 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203606451489">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203606451489">
                                 <link role="variableDeclaration" targetNodeId="1203606226893" resolveInfo="result" />
                               </node>
                             </node>
@@ -503,7 +503,7 @@
                               </node>
                             </node>
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204633709505">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204633709505">
                             <link role="variableDeclaration" targetNodeId="1203607751022" resolveInfo="result" />
                           </node>
                         </node>

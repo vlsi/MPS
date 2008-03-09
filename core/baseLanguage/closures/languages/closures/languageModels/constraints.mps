@@ -790,7 +790,7 @@
                         <link role="variableDeclaration" targetNodeId="1201860914802" resolveInfo="c" />
                       </node>
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201860875328">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201860875328">
                       <link role="variableDeclaration" targetNodeId="1199634883989" resolveInfo="paramTypes" />
                     </node>
                   </node>

@@ -777,7 +777,7 @@
                 </node>
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199987523161">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199987523161">
               <link role="variableDeclaration" targetNodeId="1199987504499" resolveInfo="members" />
             </node>
           </node>
@@ -792,7 +792,7 @@
                 </node>
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199987541831">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199987541831">
               <link role="variableDeclaration" targetNodeId="1199987504499" resolveInfo="members" />
             </node>
           </node>
@@ -807,7 +807,7 @@
                 </node>
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199987565363">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199987565363">
               <link role="variableDeclaration" targetNodeId="1199987504499" resolveInfo="members" />
             </node>
           </node>
