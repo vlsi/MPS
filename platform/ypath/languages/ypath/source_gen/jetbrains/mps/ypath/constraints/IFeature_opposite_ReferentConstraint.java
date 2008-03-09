@@ -35,7 +35,7 @@ public class IFeature_opposite_ReferentConstraint implements IModelConstraints, 
     final zClosureContext5 _zClosureContext5 = new zClosureContext5();
     _zClosureContext5.feature = referenceNode;
     _zClosureContext5.isGeneric = SNodeOperations.isInstanceOf(_zClosureContext5.feature, "jetbrains.mps.ypath.structure.IGenericFeature");
-    return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext5.feature, null, false, false), "features", true), new zPredicate(null, _zClosureContext5))));
+    return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext5.feature, null, false, false), "features", true), new zPredicate19(null, _zClosureContext5))));
   }
 
   public String getNodeReferentSearchScopeDescription() {

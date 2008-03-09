@@ -19,8 +19,8 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myTreePath_component;
 
-  private static void setupBasic_TreePath_componentCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179306250318");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168429858540");
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -48,8 +48,8 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168429858540");
+  private static void setupBasic_TreePath_componentCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179306250318");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -91,9 +91,7 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
     if(this.myTreePath_component == null) {
       this.myTreePath_component = new TreePath_component(node);
     }
-    EditorCell componentCell = this.myTreePath_component.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.myTreePath_component.createEditorCell(context);
     TreePathCreator_Editor.setupBasic_TreePath_componentCell(editorCell, node, context);
     return editorCell;
   }

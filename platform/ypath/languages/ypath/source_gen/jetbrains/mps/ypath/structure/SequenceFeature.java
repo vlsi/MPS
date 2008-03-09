@@ -11,7 +11,6 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SequenceFeature extends BaseConcept implements INamedConcept, IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.SequenceFeature";
-  public static String OPPOSITE = "opposite";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -19,6 +18,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
   public static String ASCENDING = "ascending";
+  public static String OPPOSITE = "opposite";
   public static String SEQUENCE_FUNCTION = "sequenceFunction";
   public static String SIZE_FUNCTION = "sizeFunction";
   public static String ADD_FUNCTION = "addFunction";
@@ -36,14 +36,6 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
     return SequenceFeature.newInstance(sm, false);
   }
 
-
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(SequenceFeature.OPPOSITE);
-  }
-
-  public void setOpposite(IFeature node) {
-    super.setReferent(SequenceFeature.OPPOSITE, node);
-  }
 
   public String getName() {
     return this.getProperty(SequenceFeature.NAME);
@@ -99,6 +91,14 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
 
   public void setAscending(boolean value) {
     this.setBooleanProperty(SequenceFeature.ASCENDING, value);
+  }
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(SequenceFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(SequenceFeature.OPPOSITE, node);
   }
 
   public FeatureSequenceFun getSequenceFunction() {

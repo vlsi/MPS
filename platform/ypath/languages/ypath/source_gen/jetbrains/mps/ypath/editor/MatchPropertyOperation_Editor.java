@@ -20,9 +20,8 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175170079264");
-    editorCell.setSelectable(false);
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175169841526");
     editorCell.setDrawBorder(false);
   }
 
@@ -57,18 +56,16 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175170079264");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175170085297");
     editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175169841526");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_NodeKindOccurrenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -84,6 +81,9 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_MatchExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -110,14 +110,6 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MatchPropertyOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    MatchPropertyOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     MatchPropertyOperation_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -130,6 +122,14 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     MatchPropertyOperation_Editor.setupBasic_ConstantCell2(editorCell, node, context);
     MatchPropertyOperation_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MatchPropertyOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
+    MatchPropertyOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -173,7 +173,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createPropertyReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new MatchPropertyOperation_Editor._Inline5());
+    provider.setAuxiliaryCellProvider(new MatchPropertyOperation_Editor._Inline1());
     EditorCell editorCell = provider.createEditorCell(context);
     MatchPropertyOperation_Editor.setupBasic_PropertyReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -229,9 +229,9 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline5 extends AbstractCellProvider {
+  public static class _Inline1 extends AbstractCellProvider {
 
-    public  _Inline5() {
+    public  _Inline1() {
       super();
     }
 
@@ -255,9 +255,9 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      MatchPropertyOperation_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
+      MatchPropertyOperation_Editor._Inline1.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        MatchPropertyOperation_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        MatchPropertyOperation_Editor._Inline1.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

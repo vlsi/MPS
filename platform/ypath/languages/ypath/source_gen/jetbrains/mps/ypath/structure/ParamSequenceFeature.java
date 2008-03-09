@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.structure.Type;
 
 public class ParamSequenceFeature extends SequenceFeature implements IFeature, IParamFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ParamSequenceFeature";
-  public static String OPPOSITE = "opposite";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -18,6 +17,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
   public static String ASCENDING = "ascending";
+  public static String OPPOSITE = "opposite";
   public static String PARAMETER_TYPE = "parameterType";
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
@@ -36,14 +36,6 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
     return ParamSequenceFeature.newInstance(sm, false);
   }
 
-
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(ParamSequenceFeature.OPPOSITE);
-  }
-
-  public void setOpposite(IFeature node) {
-    super.setReferent(ParamSequenceFeature.OPPOSITE, node);
-  }
 
   public String getName() {
     return this.getProperty(ParamSequenceFeature.NAME);
@@ -99,6 +91,14 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
 
   public void setAscending(boolean value) {
     this.setBooleanProperty(ParamSequenceFeature.ASCENDING, value);
+  }
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(ParamSequenceFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(ParamSequenceFeature.OPPOSITE, node);
   }
 
   public Type getParameterType() {

@@ -104,7 +104,7 @@
             </node>
             <node role="actual" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1196720899965">
               <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1196720899966" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720899967">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720899967">
                 <link role="variableDeclaration" targetNodeId="1196720899956" resolveInfo="attribs" />
               </node>
             </node>
@@ -690,7 +690,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196720900193">
             <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1196720900194">
               <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1196720900195" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720900196">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196720900196">
                 <link role="variableDeclaration" targetNodeId="1196720900159" resolveInfo="seq" />
               </node>
             </node>

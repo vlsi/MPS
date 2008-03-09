@@ -7125,15 +7125,15 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197478418095">
               <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1197478418765">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197478418096">
-                  <link role="variableDeclaration" targetNodeId="1197462039670" resolveInfo="res" />
-                </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1197478419601">
                   <node role="argument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1197478423511">
                     <link role="baseMethodDeclaration" targetNodeId="38.~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="Pair" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197478456394" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197478459471" />
                   </node>
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197478418096">
+                  <link role="variableDeclaration" targetNodeId="1197462039670" resolveInfo="res" />
                 </node>
               </node>
             </node>
@@ -7216,9 +7216,6 @@
                               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197465288049">
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197465288050">
                                   <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1197465288051">
-                                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197465288052">
-                                      <link role="variableDeclaration" targetNodeId="1197462039670" resolveInfo="res" />
-                                    </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1197465288053">
                                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1197465288054">
                                         <link role="baseMethodDeclaration" targetNodeId="38.~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="Pair" />
@@ -7229,6 +7226,9 @@
                                           <link role="variable" targetNodeId="1197465288048" resolveInfo="bar" />
                                         </node>
                                       </node>
+                                    </node>
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197465288052">
+                                      <link role="variableDeclaration" targetNodeId="1197462039670" resolveInfo="res" />
                                     </node>
                                   </node>
                                 </node>
@@ -7263,9 +7263,6 @@
                             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197465288070">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197465288071">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1197465288072">
-                                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197465288073">
-                                    <link role="variableDeclaration" targetNodeId="1197462039670" resolveInfo="res" />
-                                  </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1197465288074">
                                     <node role="argument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1197465288075">
                                       <link role="baseMethodDeclaration" targetNodeId="38.~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="Pair" />
@@ -7274,6 +7271,9 @@
                                       </node>
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197465288077" />
                                     </node>
+                                  </node>
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197465288073">
+                                    <link role="variableDeclaration" targetNodeId="1197462039670" resolveInfo="res" />
                                   </node>
                                 </node>
                               </node>
@@ -7806,9 +7806,6 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197650335098">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199387203462">
                       <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199387203463">
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199387203464">
-                          <link role="variableDeclaration" targetNodeId="1197650298042" resolveInfo="res" />
-                        </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1199387203465">
                           <node role="argument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1199387203466">
                             <link role="baseMethodDeclaration" targetNodeId="38.~Triplet.&lt;init&gt;(java.lang.Object,java.lang.Object,java.lang.Object)" resolveInfo="Triplet" />
@@ -7818,6 +7815,9 @@
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1199387203468" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1199387203469" />
                           </node>
+                        </node>
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199387203464">
+                          <link role="variableDeclaration" targetNodeId="1197650298042" resolveInfo="res" />
                         </node>
                       </node>
                     </node>
@@ -7848,9 +7848,6 @@
                               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199387562669">
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199387562670">
                                   <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199387562671">
-                                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199387562672">
-                                      <link role="variableDeclaration" targetNodeId="1197650298042" resolveInfo="res" />
-                                    </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1199387562673">
                                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1199387562674">
                                         <link role="baseMethodDeclaration" targetNodeId="38.~Triplet.&lt;init&gt;(java.lang.Object,java.lang.Object,java.lang.Object)" resolveInfo="Triplet" />
@@ -7862,6 +7859,9 @@
                                         </node>
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1199387562677" />
                                       </node>
+                                    </node>
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199387562672">
+                                      <link role="variableDeclaration" targetNodeId="1197650298042" resolveInfo="res" />
                                     </node>
                                   </node>
                                 </node>
@@ -7883,9 +7883,6 @@
                                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199387562685">
                                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199387562686">
                                         <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199387562687">
-                                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199387562688">
-                                            <link role="variableDeclaration" targetNodeId="1197650298042" resolveInfo="res" />
-                                          </node>
                                           <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1199387562689">
                                             <node role="argument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1199387562690">
                                               <link role="baseMethodDeclaration" targetNodeId="38.~Triplet.&lt;init&gt;(java.lang.Object,java.lang.Object,java.lang.Object)" resolveInfo="Triplet" />
@@ -7899,6 +7896,9 @@
                                                 <link role="variable" targetNodeId="1199387562684" resolveInfo="pw" />
                                               </node>
                                             </node>
+                                          </node>
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199387562688">
+                                            <link role="variableDeclaration" targetNodeId="1197650298042" resolveInfo="res" />
                                           </node>
                                         </node>
                                       </node>
@@ -7933,9 +7933,6 @@
                                   <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199387562704">
                                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199387562705">
                                       <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199387562706">
-                                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199387562707">
-                                          <link role="variableDeclaration" targetNodeId="1197650298042" resolveInfo="res" />
-                                        </node>
                                         <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1199387562708">
                                           <node role="argument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1199387562709">
                                             <link role="baseMethodDeclaration" targetNodeId="38.~Triplet.&lt;init&gt;(java.lang.Object,java.lang.Object,java.lang.Object)" resolveInfo="Triplet" />
@@ -7947,6 +7944,9 @@
                                             </node>
                                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1199387562712" />
                                           </node>
+                                        </node>
+                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199387562707">
+                                          <link role="variableDeclaration" targetNodeId="1197650298042" resolveInfo="res" />
                                         </node>
                                       </node>
                                     </node>
@@ -8524,20 +8524,6 @@
                 <property name="name" value="fe" />
               </node>
               <node role="inputSequence" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1197903778922">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227928126">
-                  <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1197903778925">
-                    <link role="concept" targetNodeId="1.1168879975004" resolveInfo="TreePathAspect" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227946736">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197903786383">
-                        <link role="variableDeclaration" targetNodeId="1197903778917" resolveInfo="srcNode" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1197903778927" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1197903778924">
-                    <link role="link" targetNodeId="1.1183980376561" />
-                  </node>
-                </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation" id="1197903778929">
                   <node role="whereClosure" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereBlock" id="1197903778930">
                     <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1197903778931">
@@ -8588,13 +8574,24 @@
                     </node>
                   </node>
                 </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227928126">
+                  <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1197903778925">
+                    <link role="concept" targetNodeId="1.1168879975004" resolveInfo="TreePathAspect" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227946736">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197903786383">
+                        <link role="variableDeclaration" targetNodeId="1197903778917" resolveInfo="srcNode" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1197903778927" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1197903778924">
+                    <link role="link" targetNodeId="1.1183980376561" />
+                  </node>
+                </node>
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197903778937">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197903778938">
                   <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1197903778939">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197903778940">
-                      <link role="variableDeclaration" targetNodeId="1197903778910" resolveInfo="res" />
-                    </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1197903778941">
                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1197903778942">
                         <link role="baseMethodDeclaration" targetNodeId="38.~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="Pair" />
@@ -8607,13 +8604,13 @@
                         </node>
                       </node>
                     </node>
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197903778940">
+                      <link role="variableDeclaration" targetNodeId="1197903778910" resolveInfo="res" />
+                    </node>
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197903778945">
                   <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1197903778946">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197903778947">
-                      <link role="variableDeclaration" targetNodeId="1197903778910" resolveInfo="res" />
-                    </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1197903778948">
                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1197903778949">
                         <link role="baseMethodDeclaration" targetNodeId="38.~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="Pair" />
@@ -8625,6 +8622,9 @@
                           <link role="variableDeclaration" targetNodeId="33.~Boolean.FALSE" resolveInfo="FALSE" />
                         </node>
                       </node>
+                    </node>
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197903778947">
+                      <link role="variableDeclaration" targetNodeId="1197903778910" resolveInfo="res" />
                     </node>
                   </node>
                 </node>

@@ -28,6 +28,14 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myNodeKindCaseListHandler_nodeKindCaseList_;
 
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024000481");
+  }
+
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024000482");
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024000483");
   }
@@ -44,8 +52,12 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024000486");
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024000482");
+  private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024003666");
+  }
+
+  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024006715");
   }
 
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
@@ -55,18 +67,6 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_NodeKindCaseList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024016002");
-  }
-
-  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024006715");
-  }
-
-  private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024003666");
-  }
-
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024000481");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -83,18 +83,30 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_ConstantCell5(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_NodeKindCaseList(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell5(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
+  }
+
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    SwitchNodeKindStatement_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.createConstantCell5(context, node, "}"));
+    return editorCell;
   }
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -118,18 +130,6 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell3(context, node, "  "));
     editorCell.addEditorCell(this.createNodeKindCaseList(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    SwitchNodeKindStatement_Editor.setupBasic_ColumnCell(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.addEditorCell(this.createConstantCell5(context, node, "}"));
     return editorCell;
   }
 
@@ -157,14 +157,6 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    SwitchNodeKindStatement_Editor.setupBasic_ConstantCell3(editorCell, node, context);
-    SwitchNodeKindStatement_Editor.setupLabel_ConstantCell3(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     SwitchNodeKindStatement_Editor.setupBasic_ConstantCell5(editorCell, node, context);
@@ -173,9 +165,17 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    SwitchNodeKindStatement_Editor.setupBasic_ConstantCell3(editorCell, node, context);
+    SwitchNodeKindStatement_Editor.setupLabel_ConstantCell3(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createNodeKindCaseList(EditorContext context, SNode node) {
     if(this.myNodeKindCaseListHandler_nodeKindCaseList_ == null) {
-      this.myNodeKindCaseListHandler_nodeKindCaseList_ = new SwitchNodeKindStatement_Editor._RefNodeListHandler4(node, "nodeKindCase", context);
+      this.myNodeKindCaseListHandler_nodeKindCaseList_ = new SwitchNodeKindStatement_Editor._RefNodeListHandler3(node, "nodeKindCase", context);
     }
     EditorCell_Collection editorCell = this.myNodeKindCaseListHandler_nodeKindCaseList_.createCells(context, new CellLayout_Vertical(), false);
     SwitchNodeKindStatement_Editor.setupBasic_NodeKindCaseList(editorCell, node, context);
@@ -215,9 +215,9 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler4 extends RefNodeListHandler {
+  public static class _RefNodeListHandler3 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -272,8 +272,8 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      SwitchNodeKindStatement_Editor._RefNodeListHandler4.setupBasic_ConstantCell4(editorCell, node, context);
-      SwitchNodeKindStatement_Editor._RefNodeListHandler4.setupLabel_ConstantCell4(editorCell, node, context);
+      SwitchNodeKindStatement_Editor._RefNodeListHandler3.setupBasic_ConstantCell4(editorCell, node, context);
+      SwitchNodeKindStatement_Editor._RefNodeListHandler3.setupLabel_ConstantCell4(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

@@ -354,7 +354,8 @@
                 </node>
               </node>
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199879911091">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199879911093">
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1199879911092" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199879911093">
                   <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation" id="1199879911094">
                     <node role="whereClosure" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereBlock" id="1199879911095">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199879911097">
@@ -376,7 +377,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227924011">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227924011">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199879911103">
                       <link role="variableDeclaration" targetNodeId="1199879911073" resolveInfo="tp" />
                     </node>
@@ -385,7 +386,6 @@
                     </node>
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1199879911092" />
               </node>
             </node>
             <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1199879911088">
@@ -397,7 +397,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199879911116">
           <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199879976263">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199879911117">
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1199879977440" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199879911117">
               <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MappingOperation" id="1199879911119">
                 <node role="mapper" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock" id="1199879911120">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199879911122">
@@ -606,11 +607,10 @@
                   </node>
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199879911118">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199879911118">
                 <link role="variableDeclaration" targetNodeId="1199879911087" resolveInfo="features" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1199879977440" />
           </node>
         </node>
       </node>

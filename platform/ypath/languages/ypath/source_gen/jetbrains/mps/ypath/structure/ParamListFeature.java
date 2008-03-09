@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.structure.Type;
 
 public class ParamListFeature extends ListFeature implements IParamFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ParamListFeature";
-  public static String OPPOSITE = "opposite";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -18,6 +17,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
   public static String ASCENDING = "ascending";
+  public static String OPPOSITE = "opposite";
   public static String PARAMETER_TYPE = "parameterType";
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
@@ -36,14 +36,6 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
     return ParamListFeature.newInstance(sm, false);
   }
 
-
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(ParamListFeature.OPPOSITE);
-  }
-
-  public void setOpposite(IFeature node) {
-    super.setReferent(ParamListFeature.OPPOSITE, node);
-  }
 
   public String getName() {
     return this.getProperty(ParamListFeature.NAME);
@@ -99,6 +91,14 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
 
   public void setAscending(boolean value) {
     this.setBooleanProperty(ParamListFeature.ASCENDING, value);
+  }
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(ParamListFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(ParamListFeature.OPPOSITE, node);
   }
 
   public Type getParameterType() {

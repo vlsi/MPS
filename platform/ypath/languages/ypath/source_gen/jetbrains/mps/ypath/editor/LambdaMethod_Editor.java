@@ -18,6 +18,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LambdaMethod_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168428739492");
+  }
+
   private static void setupBasic_ParameterCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168428744598");
     editorCell.setDrawBorder(false);
@@ -33,10 +37,6 @@ public class LambdaMethod_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168428754196");
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(true);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168428739492");
   }
 
   private static void setupLabel_ParameterCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

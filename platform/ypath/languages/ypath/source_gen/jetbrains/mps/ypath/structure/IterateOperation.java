@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IterateOperation extends TreePathOperation {
   public static final String concept = "jetbrains.mps.ypath.structure.IterateOperation";
-  public static String USED_FEATURE = "usedFeature";
   public static String USE_DEFAULT = "useDefault";
   public static String AXIS = "axis";
+  public static String USED_FEATURE = "usedFeature";
   public static String PARAM_OBJECT = "paramObject";
 
   public  IterateOperation(SNode node) {
@@ -26,14 +26,6 @@ public class IterateOperation extends TreePathOperation {
     return IterateOperation.newInstance(sm, false);
   }
 
-
-  public IFeature getUsedFeature() {
-    return (IFeature)this.getReferent(IterateOperation.USED_FEATURE);
-  }
-
-  public void setUsedFeature(IFeature node) {
-    super.setReferent(IterateOperation.USED_FEATURE, node);
-  }
 
   public boolean getUseDefault() {
     return this.getBooleanProperty(IterateOperation.USE_DEFAULT);
@@ -50,6 +42,14 @@ public class IterateOperation extends TreePathOperation {
 
   public void setAxis(TraversalAxis value) {
     super.setProperty(IterateOperation.AXIS, value.getValueAsString());
+  }
+
+  public IFeature getUsedFeature() {
+    return (IFeature)this.getReferent(IterateOperation.USED_FEATURE);
+  }
+
+  public void setUsedFeature(IFeature node) {
+    super.setReferent(IterateOperation.USED_FEATURE, node);
   }
 
   public ParameterWrapper getParamObject() {

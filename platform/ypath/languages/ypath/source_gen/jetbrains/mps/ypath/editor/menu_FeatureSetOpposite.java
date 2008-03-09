@@ -36,15 +36,15 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
       _zClosureContext.srcNode = node;
       _zClosureContext.isGeneric = SNodeOperations.isInstanceOf(_zClosureContext.srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
       {
-        ICursor<SNode> _zCursor11 = CursorFactory.createCursor(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext.srcNode, null, false, false), "features", true), new zPredicate(null, _zClosureContext)));
+        ICursor<SNode> _zCursor5 = CursorFactory.createCursor(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext.srcNode, null, false, false), "features", true), new zPredicate(null, _zClosureContext)));
         try {
-          while(_zCursor11.moveToNext()) {
-            SNode fe = _zCursor11.getCurrent();
+          while(_zCursor5.moveToNext()) {
+            SNode fe = _zCursor5.getCurrent();
             ListOperations.addElement(res, new Pair(fe, Boolean.TRUE));
             ListOperations.addElement(res, new Pair(fe, Boolean.FALSE));
           }
         } finally {
-          _zCursor11.release();
+          _zCursor5.release();
         }
       }
       return res;
