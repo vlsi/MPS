@@ -86,7 +86,7 @@ public class ModuleMaker {
 
     for (IModule m : modules) {
       if (!m.isCompileInMPS()) {
-        LOG.error("Module which isn't compiled in MPS depend on module which has to be compiled in MPS:" + m.getModuleUID(), m);
+        LOG.error("Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleUID(), m);
         continue;
       }
       
