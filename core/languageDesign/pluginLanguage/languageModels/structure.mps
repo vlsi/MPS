@@ -531,7 +531,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1204039008173">
       <property name="metaClass" value="aggregation"/>
-      <property name="role" value="getBaseNodeBlock"/>
+      <property name="role" value="getMainConceptBlock"/>
       <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1204038435236" resolveInfo="GetMainConceptBlock"/>
     </node>
