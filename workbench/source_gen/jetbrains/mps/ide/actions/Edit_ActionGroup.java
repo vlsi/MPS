@@ -17,6 +17,8 @@ public class Edit_ActionGroup extends BaseActionGroup {
 
   public Edit_ActionGroup() {
     super("Edit", "jetbrains.mps.ide.actions.Edit");
+    this.setMnemonic("".charAt(0));
+    this.setInternal(false);
     this.add(new UndoAction());
     this.add(new RedoAction());
     this.addSeparator();

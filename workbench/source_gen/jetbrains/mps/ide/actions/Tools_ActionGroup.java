@@ -13,6 +13,8 @@ public class Tools_ActionGroup extends BaseActionGroup {
 
   public Tools_ActionGroup() {
     super("Tools", "jetbrains.mps.ide.actions.Tools");
+    this.setMnemonic("".charAt(0));
+    this.setInternal(false);
     this.add(new InstallIDEAPluginAction());
     this.add(new ReloadAllAction());
   }

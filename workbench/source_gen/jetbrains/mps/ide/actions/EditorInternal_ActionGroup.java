@@ -19,6 +19,8 @@ public class EditorInternal_ActionGroup extends BaseActionGroup {
 
   public EditorInternal_ActionGroup() {
     super("", "jetbrains.mps.ide.actions.EditorInternal");
+    this.setMnemonic("".charAt(0));
+    this.setInternal(false);
     this.add(new TestNodePathAction());
     this.add(new CellPropertiesAction());
     this.add(new ShowCellInCellExplorerAction());

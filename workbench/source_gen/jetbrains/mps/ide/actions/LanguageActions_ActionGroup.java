@@ -22,6 +22,8 @@ public class LanguageActions_ActionGroup extends BaseActionGroup {
 
   public LanguageActions_ActionGroup() {
     super("", "jetbrains.mps.ide.actions.LanguageActions");
+    this.setMnemonic("".charAt(0));
+    this.setInternal(false);
     this.add(new newGroup_ExtentionPoint());
     this.addSeparator();
     this.add(new GenerateLanguageAction_true());

@@ -414,6 +414,14 @@
               id="1204991958668">
           <link role="relationDeclaration" targetNodeId="1.1204991940915" resolveInfo="screenName"/>
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1205160963998">
+          <property name="text" value="mnemonic:"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+              id="1205160971703">
+          <link role="relationDeclaration" targetNodeId="1.1205160812895" resolveInfo="mnemonic"/>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
             id="1203088943659">
@@ -485,7 +493,19 @@
           </node>
         </node>
         <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-              id="1204996615646"/>
+              id="1205161492950"/>
+      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+          id="1205160880945">
+      <property name="vertical" value="false"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1205160883649">
+        <property name="text" value="isInternal:"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+            id="1205160899073">
+        <link role="relationDeclaration" targetNodeId="1.1205160838084" resolveInfo="isInternal"/>
       </node>
     </node>
   </node>

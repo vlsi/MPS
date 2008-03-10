@@ -21,6 +21,8 @@ public class SolutionActions_ActionGroup extends BaseActionGroup {
 
   public SolutionActions_ActionGroup() {
     super("", "jetbrains.mps.ide.actions.SolutionActions");
+    this.setMnemonic("".charAt(0));
+    this.setInternal(false);
     this.add(new solutionNew_ExtentionPoint());
     this.addSeparator();
     this.add(new AddModuleToProjectAction());

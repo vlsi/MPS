@@ -13,6 +13,8 @@ public class ProjectActions_ActionGroup extends BaseActionGroup {
 
   public ProjectActions_ActionGroup() {
     super("", "jetbrains.mps.ide.actions.ProjectActions");
+    this.setMnemonic("".charAt(0));
+    this.setInternal(false);
     this.add(new projectNew_ExtentionPoint());
     this.addSeparator();
     this.add(new MakeProjectAction());

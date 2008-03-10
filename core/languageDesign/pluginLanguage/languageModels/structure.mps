@@ -273,6 +273,16 @@
       <property name="name" value="caption"/>
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1205160812895">
+      <property name="name" value="mnemonic"/>
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1205160838084">
+      <property name="name" value="isInternal"/>
+      <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203088046679">
     <property name="package" value="Actions.Groups.GroupMembers"/>

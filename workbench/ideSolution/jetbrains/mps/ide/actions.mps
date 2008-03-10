@@ -663,8 +663,8 @@
       <link role="modifiedGroup" targetNodeId="1204991234260" resolveInfo="MainMenu"/>
       <link role="point" targetNodeId="1204982943399" resolveInfo="goto"/>
     </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983538826">
-      <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205159596514">
+      <link role="javaClass" targetNodeId="22.~GoToRootAction" resolveInfo="GoToRootAction"/>
     </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983552274">
       <link role="javaClass" targetNodeId="22.~GoToSymbolAction" resolveInfo="GoToSymbolAction"/>

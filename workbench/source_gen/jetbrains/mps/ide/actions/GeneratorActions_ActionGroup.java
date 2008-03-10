@@ -15,6 +15,8 @@ public class GeneratorActions_ActionGroup extends BaseActionGroup {
 
   public GeneratorActions_ActionGroup() {
     super("", "jetbrains.mps.ide.actions.GeneratorActions");
+    this.setMnemonic("".charAt(0));
+    this.setInternal(false);
     this.add(new generatorNew_ExtentionPoint());
     this.addSeparator();
     this.add(new GenerateTemplateQueriesAction_true());
