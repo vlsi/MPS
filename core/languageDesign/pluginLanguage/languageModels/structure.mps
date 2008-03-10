@@ -240,6 +240,7 @@
     <property name="package" value="Actions.Groups"/>
     <property name="name" value="ActionGroupDeclaration"/>
     <property name="rootable" value="true"/>
+    <property name="iconPath" value="${language_descriptor}\icons\actionGroup.png"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1203087991474">

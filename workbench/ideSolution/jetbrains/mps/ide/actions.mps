@@ -533,6 +533,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991234260">
     <property name="name" value="MainMenu"/>
+    <property name="package" value="MainMenu"/>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1204982915148">
       <property name="name" value="file"/>
     </node>
@@ -558,6 +559,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991234980">
     <property name="name" value="File"/>
     <property name="caption" value="File"/>
+    <property name="package" value="MainMenu"/>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983104295">
       <link role="javaClass" targetNodeId="7.~NewProjectAction" resolveInfo="NewProjectAction"/>
     </node>
@@ -594,6 +596,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991235731">
     <property name="name" value="Edit"/>
     <property name="caption" value="Edit"/>
+    <property name="package" value="MainMenu"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1205007875051">
       <property name="additionType" value="false"/>
@@ -634,6 +637,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991236497">
     <property name="name" value="Generate"/>
     <property name="caption" value="Generate"/>
+    <property name="package" value="MainMenu"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1205007885099">
       <property name="additionType" value="false"/>
@@ -657,6 +661,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991237264">
     <property name="name" value="Goto"/>
     <property name="caption" value="Goto"/>
+    <property name="package" value="MainMenu"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1205007901663">
       <property name="additionType" value="false"/>
@@ -700,6 +705,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991238062">
     <property name="name" value="Tools"/>
     <property name="caption" value="Tools"/>
+    <property name="package" value="MainMenu"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1205007918257">
       <property name="additionType" value="false"/>
@@ -716,6 +722,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991238844">
     <property name="name" value="Help"/>
     <property name="caption" value="Help"/>
+    <property name="package" value="MainMenu"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1205007933274">
       <property name="additionType" value="false"/>
