@@ -63,7 +63,7 @@ public class ModuleMaker {
 
       int errorCount = 0;
       for (Set<IModule> cycle : new MakeScheduleBuilder().buildSchedule(toCompile)) {
-        monitor.addText("Compiling module cycle: " + cycle + "...");
+        monitor.addText("Compiling modules: " + cycle + "...");
         errorCount += compile(cycle).getErrors();
         if (errorCount != 0) {
           break;
