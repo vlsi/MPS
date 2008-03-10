@@ -77,7 +77,14 @@ public class ModuleMaker {
   }
 
   private jetbrains.mps.plugin.CompilationResult compile(Set<IModule> modules) {
-    if (modules.isEmpty()) {
+    boolean hasAnythingToCompile = false;
+    for (IModule m : modules) {
+      if (m.isCompileInMPS()) {
+        hasAnythingToCompile = true;
+      }
+    }
+
+    if (!hasAnythingToCompile) {
       return new jetbrains.mps.plugin.CompilationResult(0, 0, false);
     }
 
