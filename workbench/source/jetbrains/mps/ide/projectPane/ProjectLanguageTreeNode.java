@@ -62,7 +62,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     final Language language = getLanguage();
     ActionContext context = new ActionContext(getOperationContext());
     context.put(Language.class, language);
-    ActionManager.instance().getGroup(ProjectPane.LANGUAGE_NEW).add(result, context);
+    ActionManager.instance().getGroup(ProjectPane.LANGUAGE_NEW_ACTIONS).add(result, context);
     return result;
   }
 

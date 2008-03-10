@@ -58,10 +58,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public static final String PROJECT_PANE_GENERATOR_ACTIONS = "jetbrains.mps.ide.actions.GeneratorActions";
   public static final String PROJECT_PANE_TRANSIENT_MODULES_ACTIONS = "jetbrains.mps.ide.actions.TransientModulesActions";
 
-  public static final String PROJECT_NEW = "jetbrains.mps.ide.actions.ProjectNew";
-  public static final String SOLUTION_NEW = "jetbrains.mps.ide.actions.SolutionNew";
-  public static final String LANGUAGE_NEW = "jetbrains.mps.ide.actions.LanguageNew";
-  public static final String GENERATOR_NEW = "jetbrains.mps.ide.actions.GeneratorNew";
+  public static final String PROJECT_NEW_ACTIONS = "jetbrains.mps.ide.actions.ProjectNewActions";
+  public static final String SOLUTION_NEW_ACTIONS = "jetbrains.mps.ide.actions.SolutionNewActions";
+  public static final String LANGUAGE_NEW_ACTIONS = "jetbrains.mps.ide.actions.LanguageNewActions";
+  public static final String GENERATOR_NEW_ACTIONS = "jetbrains.mps.ide.actions.GeneratorNewActions";
 
   public static final String SHOW_P_AND_R = "show-p-and-r";
   public static final String AUTOSCROLL_TO_SOURCE = "autoscroll-to-source";

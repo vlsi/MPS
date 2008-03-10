@@ -29,7 +29,6 @@ public class EditorPopup_ActionGroup extends BaseActionGroup {
 
   public EditorPopup_ActionGroup() {
     super("", "jetbrains.mps.ide.actions.EditorPopup");
-    this.setMnemonic("".charAt(0));
     this.setInternal(false);
     this.add(new GoByReferenceGroup());
     this.add(new GoByFirstReferenceAction());

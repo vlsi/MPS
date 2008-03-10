@@ -14,7 +14,6 @@ public class DevkitActions_ActionGroup extends BaseActionGroup {
 
   public DevkitActions_ActionGroup() {
     super("", "jetbrains.mps.ide.actions.DevkitActions");
-    this.setMnemonic("".charAt(0));
     this.setInternal(false);
     this.add(new SetModuleFolderAction());
     this.addSeparator();

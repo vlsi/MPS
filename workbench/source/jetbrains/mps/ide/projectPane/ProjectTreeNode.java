@@ -19,7 +19,7 @@ class ProjectTreeNode extends MPSTreeNode {
 
   public JPopupMenu getQuickCreatePopupMenu() {
     JPopupMenu result = new JPopupMenu();
-    ActionManager.instance().getGroup(ProjectPane.PROJECT_NEW).add(result, new ActionContext(getOperationContext()));
+    ActionManager.instance().getGroup(ProjectPane.PROJECT_NEW_ACTIONS).add(result, new ActionContext(getOperationContext()));
     return result;
   }
 

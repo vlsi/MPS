@@ -7,10 +7,8 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.NameUtil;
 
-import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 
 class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
@@ -53,7 +51,7 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     Solution solution = getSolution();
     ActionContext context = new ActionContext(getOperationContext());
     context.put(Solution.class, solution);
-    ActionManager.instance().getGroup(ProjectPane.SOLUTION_NEW).add(result, context);
+    ActionManager.instance().getGroup(ProjectPane.SOLUTION_NEW_ACTIONS).add(result, context);
     return result;
   }
 
@@ -73,12 +71,12 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
       name = NameUtil.shortNameFromLongName(name);
     }
 
-    if(name != null) {
+    if (name != null) {
       return name;
     }
     return "solution";
   }
- 
+
   private void populate() {
     SModelsSubtree.create(this, getOperationContext());
   }

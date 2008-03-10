@@ -5,6 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.ide.actions.tools.InstallIDEAPluginAction;
 import jetbrains.mps.ide.actions.tools.ReloadAllAction;
+import jetbrains.mps.ide.action.Label;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
@@ -13,10 +14,11 @@ public class Tools_ActionGroup extends BaseActionGroup {
 
   public Tools_ActionGroup() {
     super("Tools", "jetbrains.mps.ide.actions.Tools");
-    this.setMnemonic("".charAt(0));
+    this.setMnemonic("T".charAt(0));
     this.setInternal(false);
     this.add(new InstallIDEAPluginAction());
     this.add(new ReloadAllAction());
+    this.add(new Label("_label_jetbrains.mps.ide.actions.ToolsInternal"));
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {

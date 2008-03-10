@@ -39,7 +39,7 @@ class GeneratorTreeNode extends MPSTreeNode {
     ActionContext context = new ActionContext(getOperationContext());
     context.put(MPSProject.class, getOperationContext().getProject());
     context.put(Generator.class, getGenerator());
-    ActionManager.instance().getGroup(ProjectPane.GENERATOR_NEW).add(result, context);
+    ActionManager.instance().getGroup(ProjectPane.GENERATOR_NEW_ACTIONS).add(result, context);
     return result;
   }
 

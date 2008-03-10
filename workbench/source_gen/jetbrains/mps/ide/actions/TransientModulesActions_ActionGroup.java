@@ -11,7 +11,6 @@ public class TransientModulesActions_ActionGroup extends BaseActionGroup {
 
   public TransientModulesActions_ActionGroup() {
     super("", "jetbrains.mps.ide.actions.TransientModulesActions");
-    this.setMnemonic("".charAt(0));
     this.setInternal(false);
     this.add(new RemoveTransientModulesAction());
   }

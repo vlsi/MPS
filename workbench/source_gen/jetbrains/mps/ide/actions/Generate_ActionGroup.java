@@ -14,7 +14,7 @@ public class Generate_ActionGroup extends BaseActionGroup {
 
   public Generate_ActionGroup() {
     super("Generate", "jetbrains.mps.ide.actions.Generate");
-    this.setMnemonic("".charAt(0));
+    this.setMnemonic("G".charAt(0));
     this.setInternal(false);
     this.add(new ToggleTransientModelsSavingAction());
     this.addSeparator();

@@ -20,8 +20,8 @@ import jetbrains.mps.ide.action.ActionGroup;
 public class Goto_ActionGroup extends BaseActionGroup {
 
   public Goto_ActionGroup() {
-    super("Goto", "jetbrains.mps.ide.actions.Goto");
-    this.setMnemonic("".charAt(0));
+    super("Go To", "jetbrains.mps.ide.actions.Goto");
+    this.setMnemonic("O".charAt(0));
     this.setInternal(false);
     this.add(new GoToRootAction());
     this.add(new GoToSymbolAction());
