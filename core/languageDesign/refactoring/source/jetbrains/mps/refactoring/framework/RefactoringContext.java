@@ -302,11 +302,10 @@ public class RefactoringContext {
         l = node.getNodeLanguage();
       } catch (IllegalStateException ex) {
         LOG.error(ex);
-        try {
-          node.getNodeLanguage();
-        } catch (Throwable t) {
-
-        }
+        continue;
+      }
+      if (l == null) {
+        LOG.warning("language for node " + node + " is null; concept is " + node.getConceptFqName());
         continue;
       }
       for (String parentConceptFQName : l.getAncestorsNames(conceptFQName)) {
