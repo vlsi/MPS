@@ -324,11 +324,11 @@
                 </node>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1205266185579">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1205266189831">
-                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1205266191630">
-                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205266191631">
-                    <link role="concept" targetNodeId="4.1087833466690" resolveInfo="NodeMacro" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1205272345203">
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1205272351487">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1205272351488">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205272351489">
+                    <link role="concept" targetNodeId="4.1088761943574" resolveInfo="ReferenceMacro" />
                   </node>
                 </node>
               </node>
