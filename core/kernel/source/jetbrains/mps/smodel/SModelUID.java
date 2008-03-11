@@ -90,7 +90,6 @@ public class SModelUID implements Comparable<Object> {
     return getLongName().substring(offset + 1);
   }
 
-  @NotNull
   public String getStereotype() {
     return myStereotype;
   }

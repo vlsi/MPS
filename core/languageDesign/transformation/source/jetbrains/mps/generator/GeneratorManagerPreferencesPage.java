@@ -9,8 +9,8 @@ import java.awt.*;
 
 class GeneratorManagerPreferencesPage implements IPreferencesPage {
   private JPanel myPage;
-  private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation (experts only)");
-  private JCheckBox myDumpQueriesStatisticsCheckBox = new JCheckBox("Dump query execution statistic in console (experts only)");
+  private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
+  private JCheckBox myDumpQueriesStatisticsCheckBox = new JCheckBox("Dump query execution statistic in console");
   private JCheckBox myCompileInMPS = new JCheckBox("Compile In MPS");
   private JCheckBox myShowErrorsOnlyCheckBox = new JCheckBox("Log errors only (no info and warnings)");
   private GeneratorManager myGeneratorManager;
