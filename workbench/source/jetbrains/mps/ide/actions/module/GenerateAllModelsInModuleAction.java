@@ -9,6 +9,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Calculable;
@@ -56,8 +57,13 @@ public class GenerateAllModelsInModuleAction extends MPSAction {
 
   public void doExecute(@NotNull final ActionContext context) {
     final IOperationContext operationContext = context.get(IOperationContext.class);
-    final IModule module = operationContext.getModule();
+    IModule module = operationContext.getModule();
 
+    if (module instanceof Generator) {
+      module = ((Generator) module).getSourceLanguage();
+    }
+
+    final IModule module1 = module;
     GenParameters params = CommandProcessor.instance().executeLightweightCommand(new Calculable<GenParameters>() {
       public GenParameters calculate() {
         SModel tmp = new SModel();
@@ -66,19 +72,20 @@ public class GenerateAllModelsInModuleAction extends MPSAction {
 
         BaseGeneratorConfiguration conf = null;
 
-        if (module instanceof Solution) {
+        if (module1 instanceof Solution) {
           SolutionGeneratorConfiguration solutionConfig = SolutionGeneratorConfiguration.newInstance(tmp);
-          solutionConfig.setSolutionModuleUID(module.getModuleUID());
+          solutionConfig.setSolutionModuleUID(module1.getModuleUID());
           solutionConfig.setName("tmp");
           conf = solutionConfig;
         }
 
-        if (module instanceof Language) {
+        if (module1 instanceof Language) {
           LanguageGeneratorConfiguration languageConfig = LanguageGeneratorConfiguration.newInstance(tmp);
-          languageConfig.setLanguageNamespace(module.getModuleUID());
+          languageConfig.setLanguageNamespace(module1.getModuleUID());
           languageConfig.setName("tmp");
           conf = languageConfig;
         }
+
 
         if (conf == null) {
           throw new RuntimeException();
