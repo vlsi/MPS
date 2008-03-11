@@ -132,13 +132,6 @@ public class SNodeOperations {
     return result;
   }
 
-  /**
-   * @deprecated
-   */
-  public static List<SNode> getDescendants(SNode node, String childConceptFqName) {
-    return getDescendants(node, childConceptFqName, false);
-  }
-
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion) {
     List<SNode> result = new ArrayList<SNode>();
     if (node == null) {
