@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.actions.language.GenerateLanguageAction_false;
-import jetbrains.mps.ide.actions.solution.GenerateAllModelsInSolutionAction_false;
+import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_false;
 import jetbrains.mps.ide.actions.generate.ToggleTransientModelsSavingAction;
 import jetbrains.mps.ide.actions.generate.GenerateFilesFromCurrentModelAction;
 import jetbrains.mps.ide.actions.generate.GenerateTextFromCurrentModelAction;
@@ -15,12 +14,11 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class Generate_ActionGroup extends BaseActionGroup {
 
-  public Generate_ActionGroup(MPSProject project) {
+  public  Generate_ActionGroup(MPSProject project) {
     super("Generate", "jetbrains.mps.ide.actions.Generate");
     this.setMnemonic("G".charAt(0));
     this.setInternal(false);
-    this.add(new GenerateLanguageAction_false());
-    this.add(new GenerateAllModelsInSolutionAction_false());
+    this.add(new GenerateAllModelsInModuleAction_false());
     this.addSeparator();
     this.add(new ToggleTransientModelsSavingAction());
     this.addSeparator();
@@ -32,7 +30,7 @@ public class Generate_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Generate");
-      if (gTo == null || gWhat == null) {
+      if(gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.generate_ExtentionPoint");

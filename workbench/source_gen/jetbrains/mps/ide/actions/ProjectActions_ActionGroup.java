@@ -13,7 +13,7 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class ProjectActions_ActionGroup extends BaseActionGroup {
 
-  public ProjectActions_ActionGroup(MPSProject project) {
+  public  ProjectActions_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.ProjectActions");
     this.setInternal(false);
     this.add(new Label("jetbrains.mps.ide.actions.projectNew_ExtentionPoint"));

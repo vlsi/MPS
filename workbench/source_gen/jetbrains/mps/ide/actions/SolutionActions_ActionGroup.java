@@ -7,8 +7,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.action.Label;
 import jetbrains.mps.ide.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
-import jetbrains.mps.ide.actions.solution.GenerateAllModelsInSolutionAction_true;
-import jetbrains.mps.ide.actions.solution.GenerateAllModelsInSolutionAction_false;
+import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_false;
 import jetbrains.mps.ide.actions.solution.GenerateTextFromAllModelsInSolutionAction;
 import jetbrains.mps.ide.modelchecker.CheckSolutionAction;
 import jetbrains.mps.ide.actions.solution.OptimizeSolutionImportsAction;
@@ -21,7 +20,7 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class SolutionActions_ActionGroup extends BaseActionGroup {
 
-  public SolutionActions_ActionGroup(MPSProject project) {
+  public  SolutionActions_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.SolutionActions");
     this.setInternal(false);
     this.add(new Label("jetbrains.mps.ide.actions.solutionNew_ExtentionPoint"));
@@ -29,8 +28,7 @@ public class SolutionActions_ActionGroup extends BaseActionGroup {
     this.add(new AddModuleToProjectAction());
     this.add(new RemoveModuleFromProjectAction());
     this.addSeparator();
-    this.add(new GenerateAllModelsInSolutionAction_true());
-    this.add(new GenerateAllModelsInSolutionAction_false());
+    this.add(new GenerateAllModelsInModuleAction_false());
     this.add(new GenerateTextFromAllModelsInSolutionAction());
     this.add(new CheckSolutionAction());
     this.add(new OptimizeSolutionImportsAction());

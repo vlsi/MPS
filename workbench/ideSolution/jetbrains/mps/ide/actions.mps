@@ -204,11 +204,8 @@
       <property name="name" value="newGroup" />
     </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911304334" />
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204913069595">
-      <link role="javaClass" targetNodeId="8.~GenerateLanguageAction_true" resolveInfo="GenerateLanguageAction_true" />
-    </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204913074644">
-      <link role="javaClass" targetNodeId="8.~GenerateLanguageAction_false" resolveInfo="GenerateLanguageAction_false" />
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205268112301">
+      <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_false" resolveInfo="GenerateAllModelsInModuleAction_false" />
     </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911328898">
       <link role="javaClass" targetNodeId="2.~CheckLanguageAction" resolveInfo="CheckLanguageAction" />
@@ -282,11 +279,8 @@
       <link role="javaClass" targetNodeId="5.~RemoveModuleFromProjectAction" resolveInfo="RemoveModuleFromProjectAction" />
     </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912175121" />
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912887984">
-      <link role="javaClass" targetNodeId="11.~GenerateAllModelsInSolutionAction_true" resolveInfo="GenerateAllModelsInSolutionAction_true" />
-    </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912908939">
-      <link role="javaClass" targetNodeId="11.~GenerateAllModelsInSolutionAction_false" resolveInfo="GenerateAllModelsInSolutionAction_false" />
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205268121849">
+      <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_false" resolveInfo="GenerateAllModelsInModuleAction_false" />
     </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912216802">
       <link role="javaClass" targetNodeId="11.~GenerateTextFromAllModelsInSolutionAction" resolveInfo="GenerateTextFromAllModelsInSolutionAction" />
@@ -644,11 +638,8 @@
       <link role="modifiedGroup" targetNodeId="1204991234260" resolveInfo="MainMenu" />
       <link role="point" targetNodeId="1204982925572" resolveInfo="generate" />
     </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205244591185">
-      <link role="javaClass" targetNodeId="8.~GenerateLanguageAction_false" resolveInfo="GenerateLanguageAction_false" />
-    </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205245751840">
-      <link role="javaClass" targetNodeId="11.~GenerateAllModelsInSolutionAction_false" resolveInfo="GenerateAllModelsInSolutionAction_false" />
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205268101799">
+      <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_false" resolveInfo="GenerateAllModelsInModuleAction_false" />
     </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1205244590370" />
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983511988">

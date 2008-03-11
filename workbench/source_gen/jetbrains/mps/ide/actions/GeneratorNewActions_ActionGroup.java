@@ -11,7 +11,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class GeneratorNewActions_ActionGroup extends BaseActionGroup {
 
-  public GeneratorNewActions_ActionGroup(MPSProject project) {
+  public  GeneratorNewActions_ActionGroup(MPSProject project) {
     super("New", "jetbrains.mps.ide.actions.GeneratorNewActions");
     this.setInternal(false);
     this.add(new NewModelAction());
@@ -21,7 +21,7 @@ public class GeneratorNewActions_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.GeneratorActions");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.GeneratorNewActions");
-      if (gTo == null || gWhat == null) {
+      if(gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.generatorNew_ExtentionPoint");
