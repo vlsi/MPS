@@ -1163,7 +1163,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   public EditorCell createIfFalseCellModelCell1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifFalseCellModel");
-    provider.setNoTargetText("<none>");
+    provider.setNoTargetText("<no cell model>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createIfFalseCellModelCell1internal(context, node, provider);
