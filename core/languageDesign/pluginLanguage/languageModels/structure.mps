@@ -47,6 +47,11 @@
       <property name="name" value="shortcut"/>
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1205250923097">
+      <property name="name" value="caption"/>
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
           id="1203087326257">
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept"/>
@@ -857,6 +862,25 @@
           id="1204908322801">
       <property name="value" value="&lt;---&gt;"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205249134759">
+    <property name="package" value="Actions.Action.Methods"/>
+    <property name="name" value="ThisExpression"/>
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1205249163449">
+      <property name="value" value="this"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1205249472192">
+      <property name="value" value="action object access"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="short_description"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1205249704652">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
     </node>
   </node>
 </model>

@@ -338,6 +338,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
               id="1203083909133">
           <property name="noTargetText" value="&lt;no keystroke&gt;"/>
+          <property name="allowEmptyText" value="true"/>
           <link role="relationDeclaration" targetNodeId="1.1203083943150" resolveInfo="keystroke"/>
         </node>
       </node>
@@ -355,7 +356,18 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
               id="1203084014501">
+          <property name="noTargetText" value="&lt;no name&gt;"/>
           <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1205250941849">
+          <property name="text" value="caption:"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+              id="1205250949930">
+          <property name="allowEmptyText" value="false"/>
+          <property name="noTargetText" value="&lt;no caption&gt;"/>
+          <link role="relationDeclaration" targetNodeId="1.1205250923097" resolveInfo="caption"/>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
@@ -1166,6 +1178,14 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
           id="1204908141843">
       <property name="text" value="&lt;---&gt;"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1205249582093">
+    <property name="package" value="Actions.Action.Methods"/>
+    <link role="conceptDeclaration" targetNodeId="1.1205249134759" resolveInfo="ThisExpression"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+          id="1205249585564">
+      <property name="text" value="this"/>
     </node>
   </node>
 </model>
