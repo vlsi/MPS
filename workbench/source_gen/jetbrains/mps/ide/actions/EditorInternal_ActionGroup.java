@@ -17,8 +17,8 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class EditorInternal_ActionGroup extends BaseActionGroup {
 
-  public  EditorInternal_ActionGroup() {
-    super("", "jetbrains.mps.ide.actions.EditorInternal");
+  public EditorInternal_ActionGroup() {
+    super("Internal", "jetbrains.mps.ide.actions.EditorInternal");
     this.setInternal(true);
     this.add(new TestNodePathAction());
     this.add(new CellPropertiesAction());
@@ -36,7 +36,7 @@ public class EditorInternal_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.EditorPopup");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.EditorInternal");
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner);
