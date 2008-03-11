@@ -12,7 +12,7 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class DevkitActions_ActionGroup extends BaseActionGroup {
 
-  public DevkitActions_ActionGroup() {
+  public  DevkitActions_ActionGroup() {
     super("", "jetbrains.mps.ide.actions.DevkitActions");
     this.setInternal(false);
     this.add(new SetModuleFolderAction());

@@ -20,7 +20,7 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class SolutionActions_ActionGroup extends BaseActionGroup {
 
-  public SolutionActions_ActionGroup() {
+  public  SolutionActions_ActionGroup() {
     super("", "jetbrains.mps.ide.actions.SolutionActions");
     this.setInternal(false);
     this.add(new Label("jetbrains.mps.ide.actions.solutionNew_ExtentionPoint"));

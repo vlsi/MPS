@@ -19,7 +19,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class Goto_ActionGroup extends BaseActionGroup {
 
-  public Goto_ActionGroup() {
+  public  Goto_ActionGroup() {
     super("Go To", "jetbrains.mps.ide.actions.Goto");
     this.setMnemonic("O".charAt(0));
     this.setInternal(false);
@@ -42,7 +42,7 @@ public class Goto_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Goto");
-      if (gTo == null || gWhat == null) {
+      if(gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.goto_ExtentionPoint");

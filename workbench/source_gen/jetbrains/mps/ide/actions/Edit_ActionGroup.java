@@ -15,7 +15,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class Edit_ActionGroup extends BaseActionGroup {
 
-  public Edit_ActionGroup() {
+  public  Edit_ActionGroup() {
     super("Edit", "jetbrains.mps.ide.actions.Edit");
     this.setMnemonic("E".charAt(0));
     this.setInternal(false);
@@ -37,7 +37,7 @@ public class Edit_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Edit");
-      if (gTo == null || gWhat == null) {
+      if(gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.edit_ExtentionPoint");

@@ -10,7 +10,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class SolutionNewActions_ActionGroup extends BaseActionGroup {
 
-  public SolutionNewActions_ActionGroup() {
+  public  SolutionNewActions_ActionGroup() {
     super("New", "jetbrains.mps.ide.actions.SolutionNewActions");
     this.setInternal(false);
     this.add(new NewModelAction());
@@ -20,7 +20,7 @@ public class SolutionNewActions_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.SolutionActions");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.SolutionNewActions");
-      if (gTo == null || gWhat == null) {
+      if(gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.solutionNew_ExtentionPoint");

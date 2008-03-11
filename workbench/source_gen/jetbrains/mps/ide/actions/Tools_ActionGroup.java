@@ -12,7 +12,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class Tools_ActionGroup extends BaseActionGroup {
 
-  public Tools_ActionGroup() {
+  public  Tools_ActionGroup() {
     super("Tools", "jetbrains.mps.ide.actions.Tools");
     this.setMnemonic("T".charAt(0));
     this.setInternal(false);
@@ -25,7 +25,7 @@ public class Tools_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Tools");
-      if (gTo == null || gWhat == null) {
+      if(gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.tools_ExtentionPoint");
