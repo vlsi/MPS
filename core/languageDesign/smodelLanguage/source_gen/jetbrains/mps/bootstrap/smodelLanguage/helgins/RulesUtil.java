@@ -9,10 +9,11 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
@@ -48,6 +49,19 @@ public class RulesUtil {
         if(SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
           if(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), new QuotationClass_42().createNode(), false, false)) {
             isGood = true;
+          }
+        }
+        // =========== new
+        if(SConceptPropertyOperations.getBoolean(op, "applicable_to_link")) {
+          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
+          if(linkAccessT != null) {
+            isGood = SPropertyOperations.getBoolean(linkAccessT, "isSingularCradinality");
+          }
+        }
+        if(SConceptPropertyOperations.getBoolean(op, "applicable_to_linkList")) {
+          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
+          if(linkAccessT != null) {
+            isGood = !(SPropertyOperations.getBoolean(linkAccessT, "isSingularCradinality"));
           }
         }
         // ===========
