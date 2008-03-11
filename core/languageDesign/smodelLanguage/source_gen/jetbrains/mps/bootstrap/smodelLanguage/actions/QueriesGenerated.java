@@ -587,6 +587,11 @@ public class QueriesGenerated {
           }
           // ==========
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
+          // (new)
+          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
+          if(linkAccessT != null) {
+            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link"));
+          }
           // is concept ?
           if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false) != null) {
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_concept"));

@@ -262,8 +262,8 @@
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1204929878485">
               <link role="concept" targetNodeId="4.1088761943574" resolveInfo="ReferenceMacro" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1205263433587">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205263433588">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205264002119">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205263433588">
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205263433589">
                   <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1205263433590">
                     <link role="annotationLink" targetNodeId="4.1149694518242" resolveInfo="referenceMacro" />
@@ -281,6 +281,15 @@
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205263433595">
                   <link role="variableDeclaration" targetNodeId="1204848597508" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1205264554348">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1205264576960">
+                  <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1205264581385">
+                    <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205264581386">
+                      <link role="concept" targetNodeId="4.1088761943574" resolveInfo="ReferenceMacro" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
