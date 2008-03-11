@@ -45,11 +45,7 @@ import java.util.*;
 import java.util.concurrent.*;
 
 
-/**
- * @author Kostik
- */
 public class GeneratorManager implements IExternalizableComponent, IComponentWithPreferences {
-  // progress monitor
   public static final int AMOUNT_PER_MODEL = 100;
   public static final int AMOUNT_PER_COMPILATION = 100;
 
@@ -127,9 +123,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return IGenerationType.FILES;
   }
 
-  /**
-   * todo: what about massage handler?
-   */
   private void clearMessageVew(MPSProject project) {
     MessageView messageView = project.getComponent(MessageView.class);
     if (messageView != null) {
@@ -137,9 +130,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
   }
 
-  /**
-   * todo: what about massage handler?
-   */
   private void showMessageView(MPSProject project) {
     MessageView messageView = project.getComponent(MessageView.class);
     if (messageView != null) {
@@ -147,9 +137,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
   }
 
-  /**
-   * todo Move it to a better place
-   */
   public IFileGenerator chooseFileGenerator(SNode outputRootNode, SNode originalInputNode) {
     for (IFileGenerator fileGenerator : myFileGenerators) {
       try {
@@ -245,10 +232,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           Future<Boolean> f = generatorManager.generateModelsWithProgressWindow(
             modelsWithContext,
             BootstrapLanguagesManager.getInstance().getBaseLanguage(),
-            //TODO: add assertion or leave this variant
-            //Modified by Mihail Muhin - when one model and project.createOperationContext() are passed, it produces NPE
-            //models.size() == 1 ? operationContext : ModuleContext.create(model, operationContext.getComponent(AbstractProjectFrame.class), false),
-            //  ModuleContext.create(model, projectFrame, false),
             generationType,
             IGenerationScript.DEFAULT,
             false);
@@ -456,12 +439,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
 
     boolean ideaPresent = projectHandler != null;
-    if (!generationType.requiresCompilationInIDEABeforeGeneration()) {
-      progress.addText("compilation in IntelliJ IDEA before generation is turned off or not needed");
-    } else if (!ideaPresent) {
-      progress.addText("IntelliJ IDEA with installed MPS is not present");
-    }
-
     Map<IModule, String> outputFolders = new HashMap<IModule, String>();
 
     try {
@@ -549,10 +526,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         for (Pair<IModule, List<SModelDescriptor>> moduleListPair : moduleSequence) {
           IModule module = moduleListPair.o1;
           if (module != null && (!ideaPresent && !module.isCompileInMPS()) || !generationType.requiresCompilationInIDEAfterGeneration()) {
-            progress.addText("compilation in IntelliJ IDEA after generation is turned off or not needed");
           } else {
-            // -- compile after generation
-
             checkMonitorCanceled(progress);
             progress.startTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
             CompilationResult compilationResult;
