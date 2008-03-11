@@ -141,7 +141,7 @@ public class RulesUtil {
   }
 
   @InferenceMethod()
-  public static boolean checkAppliedTo_LinkAccess_aggregation(final SNode op) {
+  public static void checkAppliedTo_LinkAccess_aggregation(final SNode op) {
     // expect access to an aggregation link with singular cardinality
     // ------------------- new (duplicates checkAppliedCorrectly_generic)
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
@@ -174,7 +174,6 @@ public class RulesUtil {
       }
 
     }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267101146");
-    return true;
   }
 
   public static boolean checkAssignableConcept(SNode fromConcept, SNode toConcept, SNode nodeToReportError, String errorTextPrefix) {
