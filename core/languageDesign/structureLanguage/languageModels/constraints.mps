@@ -1336,6 +1336,42 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1205275061212">
+      <property name="name" value="isSingular" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1205275065343" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205275061214">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205275076724">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1205275095988">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205275102999">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205275099674">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1205275098637" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1205275101509">
+                  <link role="property" targetNodeId="1.1071599893252" resolveInfo="sourceCardinality" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1205275105022">
+                <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1205275105023">
+                  <link role="enumMember" targetNodeId="1.1084197782724" resolveInfo="_1" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205275084416">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205275077856">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1205275076725" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1205275082769">
+                  <link role="property" targetNodeId="1.1071599893252" resolveInfo="sourceCardinality" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1205275087601">
+                <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1205275087602">
+                  <link role="enumMember" targetNodeId="1.1084197782723" resolveInfo="_0_1" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199063473952">
       <property name="name" value="getPresentation" />
       <link role="overriddenMethod" targetNodeId="22.1180102203531" resolveInfo="getPresentation" />
