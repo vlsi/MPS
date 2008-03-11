@@ -57,18 +57,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   private static final String SAVE_TRANSIENT_MODELS = "save-transient-models-on-generation";
   private static final String DUMP_STATISTICS = "dump-staticstics-on-generation";
-  private static final String COMPILE_BEFORE_GENERATION = "compile-before-generation";
-  private static final String COMPILE_ON_GENERATION = "compile-on-generation";
-  private static final String COMPILE_SOURCE_LANGUAGES_MODULES = "compile-source-languages-modules";
-  private static final String CHECK_BEFORE_COMPILATION = "check-before-compilation";
   private static final String SHOW_ERRORS_ONLY = "show-errors-only";
 
-  private boolean myCompileBeforeGeneration = false;
-  private boolean myCompileOnGeneration = true;
   private boolean mySaveTransientModels;
   private boolean myDumpStatistics = false;
-  private boolean myCompileSourceLanguageModules = false;
-  private boolean myCheckBeforeCompilation = false;
   private boolean myShowErrorsOnly;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
 
@@ -86,23 +78,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public void read(Element element, MPSProject project) {
-    if (element.getAttribute(COMPILE_BEFORE_GENERATION) != null) {
-      myCompileBeforeGeneration = Boolean.parseBoolean(element.getAttributeValue(COMPILE_BEFORE_GENERATION));
-    }
-    if (element.getAttribute(COMPILE_ON_GENERATION) != null) {
-      myCompileOnGeneration = Boolean.parseBoolean(element.getAttributeValue(COMPILE_ON_GENERATION));
-    }
     if (element.getAttribute(SAVE_TRANSIENT_MODELS) != null) {
       mySaveTransientModels = Boolean.parseBoolean(element.getAttributeValue(SAVE_TRANSIENT_MODELS));
     }
     if (element.getAttribute(DUMP_STATISTICS) != null) {
       myDumpStatistics = Boolean.parseBoolean(element.getAttributeValue(DUMP_STATISTICS));
-    }
-    if (element.getAttribute(COMPILE_SOURCE_LANGUAGES_MODULES) != null) {
-      myCompileSourceLanguageModules = Boolean.parseBoolean(element.getAttributeValue(COMPILE_SOURCE_LANGUAGES_MODULES));
-    }
-    if (element.getAttribute(CHECK_BEFORE_COMPILATION) != null) {
-      myCheckBeforeCompilation = Boolean.parseBoolean(element.getAttributeValue(CHECK_BEFORE_COMPILATION));
     }
     if (element.getAttribute(SHOW_ERRORS_ONLY) != null) {
       myShowErrorsOnly = Boolean.parseBoolean(element.getAttributeValue(SHOW_ERRORS_ONLY));
@@ -110,29 +90,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public void write(Element element, MPSProject project) {
-    element.setAttribute(COMPILE_BEFORE_GENERATION, "" + myCompileBeforeGeneration);
-    element.setAttribute(COMPILE_ON_GENERATION, "" + myCompileOnGeneration);
     element.setAttribute(SAVE_TRANSIENT_MODELS, "" + mySaveTransientModels);
     element.setAttribute(DUMP_STATISTICS, "" + myDumpStatistics);
-    element.setAttribute(COMPILE_SOURCE_LANGUAGES_MODULES, "" + myCompileSourceLanguageModules);
-    element.setAttribute(CHECK_BEFORE_COMPILATION, "" + myCheckBeforeCompilation);
     element.setAttribute(SHOW_ERRORS_ONLY, "" + myShowErrorsOnly);
-  }
-
-  public boolean isCompileBeforeGeneration() {
-    return myCompileBeforeGeneration;
-  }
-
-  public void setCompileBeforeGeneration(boolean compileBeforeGeneration) {
-    myCompileBeforeGeneration = compileBeforeGeneration;
-  }
-
-  public boolean isCompileOnGeneration() {
-    return myCompileOnGeneration;
-  }
-
-  public void setCompileOnGeneration(boolean compileOnGeneration) {
-    myCompileOnGeneration = compileOnGeneration;
   }
 
   public boolean isSaveTransientModels() {
@@ -157,22 +117,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   public void setDumpStatistics(boolean dumpStatistics) {
     myDumpStatistics = dumpStatistics;
-  }
-
-  public boolean isCompileSourceLanguageModules() {
-    return myCompileSourceLanguageModules;
-  }
-
-  public void setCompileSourceLanguageModules(boolean compileSourceLanguageModules) {
-    myCompileSourceLanguageModules = compileSourceLanguageModules;
-  }
-
-  public boolean isCheckBeforeCompilation() {
-    return myCheckBeforeCompilation;
-  }
-
-  public void setCheckBeforeCompilation(boolean checkBeforeCompilation) {
-    myCheckBeforeCompilation = checkBeforeCompilation;
   }
 
   public List<IPreferencesPage> createPreferencesPages() {
@@ -479,8 +423,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     // time estimation
     boolean compile = (
-      (myCompileOnGeneration && generationType.requiresCompilationInIDEAfterGeneration())
-        || (myCompileBeforeGeneration && generationType.requiresCompilationInIDEABeforeGeneration()));
+      generationType.requiresCompilationInIDEAfterGeneration() || generationType.requiresCompilationInIDEABeforeGeneration());
     long totalJob = 0;
     Map<IModule, Long> modulesToGenerationTimes = new HashMap<IModule, Long>();
     Map<IModule, Long> modulesToResidualTimes = new HashMap<IModule, Long>();
@@ -513,15 +456,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
 
     boolean ideaPresent = projectHandler != null;
-    boolean reloadClasses = true;
-    boolean compileBefore = false;
-    if (!myCompileBeforeGeneration || !generationType.requiresCompilationInIDEABeforeGeneration()) {
+    if (!generationType.requiresCompilationInIDEABeforeGeneration()) {
       progress.addText("compilation in IntelliJ IDEA before generation is turned off or not needed");
-      reloadClasses = false;
     } else if (!ideaPresent) {
       progress.addText("IntelliJ IDEA with installed MPS is not present");
-    } else {
-      compileBefore = true;
     }
 
     Map<IModule, String> outputFolders = new HashMap<IModule, String>();
@@ -550,68 +488,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
         messages.handle(new Message(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\""));
         outputFolders.put(currentModule, outputFolder);
-        if (compileBefore) {
-          // -- compile sources before generation
-          checkMonitorCanceled(progress);
-
-          progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
-          projectHandler.refreshFS();
-          progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
-          checkMonitorCanceled(progress);
-
-          progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-          CompilationResult compilationResult;
-          IModule module = currentModule;
-          if (module != null && module.isCompileInMPS()) {
-            progress.addText("compiling output module in JetBrains MPS...");
-            compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
-          } else {
-            progress.addText("compiling output module in IntelliJ IDEA...");
-            compilationResult = projectHandler.buildModule(outputFolder);
-          }
-          progress.addText("" + compilationResult);
-          if (!compilationResult.isOk()) {
-            reloadClasses = false;
-          }
-
-          boolean needCompileSourceLanguageModules = false;
-
-          if (invocationContext instanceof ModuleContext) {
-            ModuleContext ctx = (ModuleContext) invocationContext;
-            if (ctx.getModule() instanceof Solution) {
-              needCompileSourceLanguageModules = true;
-            }
-          }
-
-          if (myCompileSourceLanguageModules && needCompileSourceLanguageModules) {
-            //todo get rid of
-            for (Language l : getPossibleSourceLanguages(CollectionUtil.map(moduleAndDescriptors.o2, new Mapper<SModelDescriptor, SModel>() {
-              public SModel map(SModelDescriptor sModelDescriptor) {
-                return sModelDescriptor.getSModel();
-              }
-            }), invocationContext.getScope())) {
-              progress.addText("compiling " + l + "'s  module...");
-              compilationResult = projectHandler.buildModule(l.getSourceDir().getPath());
-              progress.addText("" + compilationResult);
-
-              if (!compilationResult.isOk()) {
-                reloadClasses = false;
-              }
-            }
-          }
-
-          progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-          checkMonitorCanceled(progress);
-        }
-
-        // re-load classes anyway (to be sure that java_stub are up-to-date)
-        if (reloadClasses) {
-          progress.addText("reloading MPS classes...");
-          progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-          ReloadUtils.reloadAll(false);
-          progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-          checkMonitorCanceled(progress);
-        }
 
         //++ generation
 //      GenerationStatus status = null;
@@ -628,20 +504,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.GENERATION);
           for (SModelDescriptor inputModel : moduleAndDescriptors.o2) {
             progress.addText("");
-
-            if (myCheckBeforeCompilation) {
-              progress.addText("Checking model \"" + inputModel.getModelUID() + "\"... ");
-              ModelCheckResult result = new ModelChecker(invocationContext).checkModel(inputModel);
-              if (result.hasErrors()) {
-                if (JOptionPane.showConfirmDialog(
-                  firstContext.getMainFrame(),
-                  "Model's " + inputModel.getModelUID() + " generation finished with errors. Do you want to save generated files?",
-                  "Generation finished with errors",
-                  JOptionPane.YES_NO_OPTION) != JOptionPane.YES_OPTION) {
-                  continue;
-                }
-              }
-            }
 
             String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
             progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
@@ -686,8 +548,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       if (generationOK) {
         for (Pair<IModule, List<SModelDescriptor>> moduleListPair : moduleSequence) {
           IModule module = moduleListPair.o1;
-          if (module != null && (!myCompileOnGeneration || !(ideaPresent || module.isCompileInMPS()))
-            || !generationType.requiresCompilationInIDEAfterGeneration()) {
+          if (module != null && (!ideaPresent && !module.isCompileInMPS()) || !generationType.requiresCompilationInIDEAfterGeneration()) {
             progress.addText("compilation in IntelliJ IDEA after generation is turned off or not needed");
           } else {
             // -- compile after generation
@@ -765,7 +626,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       TypeChecker.getInstance().clearForReload();
       NodeTypesComponentsRepository.getInstance().clear();
 
-      if (myCompileOnGeneration && ideaPresent && generationType.requiresCompilationInIDEAfterGeneration()) {
+      if (ideaPresent && generationType.requiresCompilationInIDEAfterGeneration()) {
         //todo this is tmp anti memory leak hack:
         progress.addText("Invalidate caches");
         ReloadUtils.invalidateCaches();
@@ -785,6 +646,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public boolean willCompile(boolean ideaPresent, IGenerationType generationType) {
-    return myCompileOnGeneration && ideaPresent && generationType.requiresCompilationInIDEABeforeGeneration();
+    return ideaPresent && generationType.requiresCompilationInIDEABeforeGeneration();
   }
 }
