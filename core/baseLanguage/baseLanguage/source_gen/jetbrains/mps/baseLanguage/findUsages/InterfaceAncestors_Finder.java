@@ -13,10 +13,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
-
 import java.util.List;
 import java.util.ArrayList;
-
 import jetbrains.mps.smodel.IScope;
 
 public class InterfaceAncestors_Finder extends GeneratedFinder {
@@ -43,31 +41,33 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
   }
 
   public void doFind(SearchQuery searchQuery, SearchResults results) {
-    SNode current = (SNode) searchQuery.getNode();
+    SNode current = (SNode)searchQuery.getNode();
     results.getSearchedNodePointers().add(new SNodePointer(current));
     {
       ICursor<SNode> _zCursor16 = CursorFactory.createCursor(SLinkOperations.getTargets(current, "extendedInterface", true));
       try {
-        while (_zCursor16.moveToNext()) {
+        while(_zCursor16.moveToNext()) {
           SNode ancestor = _zCursor16.getCurrent();
           {
             results.getSearchResults().add(new SearchResult(new SNodePointer(ancestor), "Ancestor"));
             List<SearchResult> ancestorAncestors = new ArrayList<SearchResult>();
             try {
-              GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder").newInstance();
+              GeneratedFinder _finder = (GeneratedFinder)Class.forName("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder").newInstance();
               SNode _node = ancestor;
               IScope _scope;
               _scope = searchQuery.getScope();
               boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Interface");
-              if (!(rightConcept)) {
+              if(!(rightConcept)) {
                 InterfaceAncestors_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-              } else {
+              } else
+              {
                 boolean isApplicable = _finder.isApplicable(_node);
-                if (!(isApplicable)) {
+                if(!(isApplicable)) {
                   InterfaceAncestors_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-                } else {
+                } else
+                {
                   SearchResults results_19 = _finder.find(new SearchQuery(_node, _scope));
-                  for (SearchResult result : results_19.getSearchResults()) {
+                  for(SearchResult result : results_19.getSearchResults()) {
                     ancestorAncestors.add(result);
                   }
                 }
@@ -78,7 +78,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
             {
               ICursor<SearchResult> _zCursor17 = CursorFactory.createCursor(ancestorAncestors);
               try {
-                while (_zCursor17.moveToNext()) {
+                while(_zCursor17.moveToNext()) {
                   SearchResult ancestorAncestor = _zCursor17.getCurrent();
                   results.getSearchResults().add(new SearchResult(new SNodePointer(ancestorAncestor.getNode()), "Ancestor"));
                 }

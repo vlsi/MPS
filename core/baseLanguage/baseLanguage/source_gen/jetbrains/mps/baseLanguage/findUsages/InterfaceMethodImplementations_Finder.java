@@ -9,20 +9,14 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.smodel.SNodePointer;
-
 import java.util.List;
-
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-
 import java.util.Set;
 import java.util.HashSet;
-
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.constraints.BaseMethodDeclaration_Behavior;
 
@@ -50,24 +44,26 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
   }
 
   public void doFind(SearchQuery searchQuery, SearchResults results) {
-    SNode searchedNode = (SNode) searchQuery.getNode();
+    SNode searchedNode = (SNode)searchQuery.getNode();
     results.getSearchedNodePointers().add(new SNodePointer(searchedNode));
     List<SearchResult> implementors = new ArrayList<SearchResult>();
     try {
-      GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder").newInstance();
+      GeneratedFinder _finder = (GeneratedFinder)Class.forName("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder").newInstance();
       SNode _node = SNodeOperations.getParent(searchedNode, null, false, false);
       IScope _scope;
       _scope = searchQuery.getScope();
       boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Interface");
-      if (!(rightConcept)) {
+      if(!(rightConcept)) {
         InterfaceMethodImplementations_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-      } else {
+      } else
+      {
         boolean isApplicable = _finder.isApplicable(_node);
-        if (!(isApplicable)) {
+        if(!(isApplicable)) {
           InterfaceMethodImplementations_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-        } else {
+        } else
+        {
           SearchResults results_12 = _finder.find(new SearchQuery(_node, _scope));
-          for (SearchResult result : results_12.getSearchResults()) {
+          for(SearchResult result : results_12.getSearchResults()) {
             implementors.add(result);
           }
         }
@@ -80,26 +76,28 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     {
       ICursor<SearchResult> _zCursor5 = CursorFactory.createCursor(implementors);
       try {
-        while (_zCursor5.moveToNext()) {
+        while(_zCursor5.moveToNext()) {
           SearchResult implementor = _zCursor5.getCurrent();
           {
             implementorsAndAncestorsList.add(implementor);
             SNode implementorNode = implementor.getNode();
             try {
-              GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder").newInstance();
+              GeneratedFinder _finder = (GeneratedFinder)Class.forName("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder").newInstance();
               SNode _node = implementorNode;
               IScope _scope;
               _scope = searchQuery.getScope();
               boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ClassConcept");
-              if (!(rightConcept)) {
+              if(!(rightConcept)) {
                 InterfaceMethodImplementations_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-              } else {
+              } else
+              {
                 boolean isApplicable = _finder.isApplicable(_node);
-                if (!(isApplicable)) {
+                if(!(isApplicable)) {
                   InterfaceMethodImplementations_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-                } else {
+                } else
+                {
                   SearchResults results_13 = _finder.find(new SearchQuery(_node, _scope));
-                  for (SearchResult result : results_13.getSearchResults()) {
+                  for(SearchResult result : results_13.getSearchResults()) {
                     implementorsAndAncestorsList.add(result);
                   }
                 }
@@ -118,9 +116,9 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     {
       ICursor<SearchResult> _zCursor6 = CursorFactory.createCursor(implementorsAndAncestorsList);
       try {
-        while (_zCursor6.moveToNext()) {
+        while(_zCursor6.moveToNext()) {
           SearchResult implementorOrAncestor = _zCursor6.getCurrent();
-          implementorsAndAncestorsNodes.add((SNode) implementorOrAncestor.getNode());
+          implementorsAndAncestorsNodes.add((SNode)implementorOrAncestor.getNode());
         }
       } finally {
         _zCursor6.release();
@@ -130,14 +128,14 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     {
       ICursor<SNode> _zCursor7 = CursorFactory.createCursor(implementorsAndAncestorsNodes);
       try {
-        while (_zCursor7.moveToNext()) {
+        while(_zCursor7.moveToNext()) {
           SNode classNode = _zCursor7.getCurrent();
           {
             ICursor<SNode> _zCursor8 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "method", true));
             try {
-              while (_zCursor8.moveToNext()) {
+              while(_zCursor8.moveToNext()) {
                 SNode sMethod = _zCursor8.getCurrent();
-                if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, searchedNode)) {
+                if(BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, searchedNode)) {
                   results.getSearchResults().add(new SearchResult(new SNodePointer(sMethod), "Method Implementation"));
                 }
               }

@@ -9,11 +9,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.smodel.SNodePointer;
-
 import java.util.List;
-
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
-
 import java.util.ArrayList;
 
 public class BaseMethod_Finder extends GeneratedFinder {
@@ -36,22 +33,23 @@ public class BaseMethod_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Interface", false, false) == null) {
+    if(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Interface", false, false) == null) {
       return false;
     }
-    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
+    if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       return false;
     }
     return true;
   }
 
   public void doFind(SearchQuery searchQuery, SearchResults results) {
-    SNode methodNode = (SNode) searchQuery.getNode();
+    SNode methodNode = (SNode)searchQuery.getNode();
     results.getSearchedNodePointers().add(new SNodePointer(methodNode));
     // traverse ancestors
     List<SearchResult> ancestors = new ArrayList<SearchResult>();
-    if (SNodeOperations.getAncestor(methodNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-    } else {
+    if(SNodeOperations.getAncestor(methodNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
+    } else
+    {
     }
     // traverse self
   }

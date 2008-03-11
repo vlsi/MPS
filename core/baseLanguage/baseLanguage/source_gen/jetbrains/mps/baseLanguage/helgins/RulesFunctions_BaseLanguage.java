@@ -80,7 +80,7 @@ public class RulesFunctions_BaseLanguage {
               new QuotationClass_30().createNode()
             );
             if(returnType == tvr) {
-              returnType = SNodeOperations.copyNode(actualParam, TypeChecker.getInstance().getRuntimeTypesModel());
+              returnType = SNodeOperations.copyNode(actualParam);
             } else
             {
               // in this code the 'tvr' is not necessarily *child* of the 'returnType'.

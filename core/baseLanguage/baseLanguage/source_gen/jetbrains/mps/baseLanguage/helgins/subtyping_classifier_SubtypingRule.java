@@ -41,7 +41,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
       result.add(new QuotationClass_5().createNode());
     }
     for(SNode supertype : supertypes) {
-      SNode supertypeCopy = SNodeOperations.copyNode(supertype, runtimeTypesModel);
+      SNode supertypeCopy = SNodeOperations.copyNode(supertype);
       for(SNode typeParam : new ArrayList<SNode>(SLinkOperations.getTargets(supertypeCopy, "parameter", true))) {
         if(SNodeOperations.isInstanceOf(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           SNode tvr = typeParam;
@@ -50,7 +50,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
             ((SNode)supertypeCopy).removeChild(typeParam);
             continue;
           }
-          SNode newNode = SNodeOperations.copyNode(((SNode)((List)SLinkOperations.getTargets(clt, "parameter", true)).get(i)), runtimeTypesModel);
+          SNode newNode = SNodeOperations.copyNode(((SNode)((List)SLinkOperations.getTargets(clt, "parameter", true)).get(i)));
           supertypeCopy.replaceChild(typeParam, newNode);
         }
       }
@@ -58,7 +58,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     }
     supertypes.add(clt);
     for(SNode supertype : supertypes) {
-      SNode erasure = SNodeOperations.copyNode(supertype, runtimeTypesModel);
+      SNode erasure = SNodeOperations.copyNode(supertype);
       if(SLinkOperations.getCount(erasure, "parameter") > 0) {
         for(SNode parameter : SLinkOperations.getTargets(erasure, "parameter", true)) {
           SNodeOperations.deleteNode(parameter);

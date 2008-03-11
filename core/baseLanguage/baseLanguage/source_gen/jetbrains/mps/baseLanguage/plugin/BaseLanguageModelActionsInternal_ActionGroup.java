@@ -11,7 +11,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class BaseLanguageModelActionsInternal_ActionGroup extends BaseActionGroup {
 
-  public BaseLanguageModelActionsInternal_ActionGroup(MPSProject project) {
+  public  BaseLanguageModelActionsInternal_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal");
     this.setInternal(false);
     this.add(new TestReferenceResolvingPerformance_Model());
@@ -21,7 +21,7 @@ public class BaseLanguageModelActionsInternal_ActionGroup extends BaseActionGrou
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.ProjectPaneModelActionsInternal");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal");
-      if (gTo == null || gWhat == null) {
+      if(gTo == null || gWhat == null) {
         return;
       }
       gTo.addEveryFrom(gWhat, owner);
