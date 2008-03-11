@@ -66,7 +66,7 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAnnotationLinkReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "<"));
     editorCell.addEditorCell(this.createLinkQualifierCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, ">"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "> "));
     return editorCell;
   }
 

@@ -1888,6 +1888,10 @@
     <property name="package" value="type_internal" />
     <property name="name" value="_LinkAccessT" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1205264860045">
+      <property name="name" value="isSingularCradinality" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204926237448">
       <property name="role" value="targetConcept" />
       <property name="sourceCardinality" value="1" />

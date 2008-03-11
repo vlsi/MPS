@@ -12,6 +12,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 public class _LinkAccessT extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT";
   public static String TARGET_CONCEPT = "targetConcept";
+  public static String IS_SINGULAR_CRADINALITY = "isSingularCradinality";
 
   public  _LinkAccessT(SNode node) {
     super(node);
@@ -32,6 +33,14 @@ public class _LinkAccessT extends BaseConcept {
 
   public void setTargetConcept(AbstractConceptDeclaration node) {
     super.setReferent(_LinkAccessT.TARGET_CONCEPT, node);
+  }
+
+  public boolean getIsSingularCradinality() {
+    return this.getBooleanProperty(_LinkAccessT.IS_SINGULAR_CRADINALITY);
+  }
+
+  public void setIsSingularCradinality(boolean value) {
+    this.setBooleanProperty(_LinkAccessT.IS_SINGULAR_CRADINALITY, value);
   }
 
 }

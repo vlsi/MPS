@@ -590,7 +590,10 @@ public class QueriesGenerated {
           // (new)
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
           if(linkAccessT != null) {
-            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link"));
+            if(SPropertyOperations.getBoolean(linkAccessT, "isSingularCradinality")) {
+              return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link"));
+            }
+            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_linkList"));
           }
           // is concept ?
           if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false) != null) {
