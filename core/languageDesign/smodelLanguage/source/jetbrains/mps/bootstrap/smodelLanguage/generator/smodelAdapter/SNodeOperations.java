@@ -25,19 +25,6 @@ public class SNodeOperations {
     return CopyUtil.copy(node);
   }
 
-  /**
-   * @deprecated
-   */
-  public static SNode copyNode(SNode node, SModel model) {
-    // i can't see why anybody would need to copy a node to particular model.
-    // copied node is in-air anyway.
-//    if (node == null || model == null) return null;
-//    return SNodeCopyUtil.copySNode(node, model);
-    // todo: if everithing is ok - remove this method
-    if (node == null) return null;
-    return CopyUtil.copy(node);
-  }
-
   public static SNode getContainingRoot(SNode node) {
     if (node == null) return null;
     return node.getContainingRoot();
