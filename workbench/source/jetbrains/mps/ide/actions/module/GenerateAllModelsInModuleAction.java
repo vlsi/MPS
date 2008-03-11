@@ -49,7 +49,7 @@ public class GenerateAllModelsInModuleAction extends MPSAction {
     boolean isEnabled = opContext != null && opContext.getModule() != null;
     setVisible(isEnabled);
     if (isEnabled) {
-      setName((myRegenerate ? "Regenerate" : "Generate") +
+      setName((myRegenerate ? "Regenerate" : "Generate") + " " +
         NameUtil.shortNameFromLongName(opContext.getModule().getClass().getName()));
     }
   }
