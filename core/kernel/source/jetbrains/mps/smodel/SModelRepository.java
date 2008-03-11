@@ -163,6 +163,13 @@ public class SModelRepository extends SModelAdapter {
     myWeakSModelRepositoryListeners.remove(l);
   }
 
+  private List<SModelRepositoryListener> listeners() {
+    List<SModelRepositoryListener> result = new ArrayList<SModelRepositoryListener>();
+    result.addAll(mySModelRepositoryListeners);
+    result.addAll(myWeakSModelRepositoryListeners);
+    return result;
+  }
+
   @NotNull
   public List<SModelDescriptor> getAllModelDescriptors() {
     return new ArrayList<SModelDescriptor>(myModelDescriptors);
@@ -602,19 +609,13 @@ public class SModelRepository extends SModelAdapter {
   }
 
   private void fireModelRemoved(SModelDescriptor modelDescriptor) {
-    for (SModelRepositoryListener l : mySModelRepositoryListeners) {
-      l.modelRemoved(modelDescriptor);
-    }
-    for (SModelRepositoryListener l : myWeakSModelRepositoryListeners) {
+    for (SModelRepositoryListener l : listeners()) {
       l.modelRemoved(modelDescriptor);
     }
   }
 
    private void fireModelAdded(SModelDescriptor modelDescriptor) {
-    for (SModelRepositoryListener l : mySModelRepositoryListeners) {
-      l.modelAdded(modelDescriptor);
-    }
-    for (SModelRepositoryListener l : myWeakSModelRepositoryListeners) {
+    for (SModelRepositoryListener l : listeners()) {
       l.modelAdded(modelDescriptor);
     }
   }
