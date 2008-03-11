@@ -482,14 +482,14 @@
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1179536479690">
                 <property name="value" value="0" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1179536427291">
-                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1179536430015" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205263501943">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203648260487">
                   <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1179536421297" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess" id="1179536421296">
                     <link role="conceptLinkDeclaration" targetNodeId="1.1144102537873" />
                   </node>
                 </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1179536430015" />
               </node>
             </node>
           </node>
@@ -2508,6 +2508,26 @@
                     <property name="value" value="new root node(" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1205263868336">
+    <property name="package" value="rightTransform" />
+    <property name="name" value="applyAncestorActions" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1205263933103">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1204762015203" resolveInfo="IAttributeAccessQualifier" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart" id="1205263951293">
+        <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_NodeQuery" id="1205263951294">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205263951295">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205263963905">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205263965110">
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1205263963906" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1205263968331" />
               </node>
             </node>
           </node>

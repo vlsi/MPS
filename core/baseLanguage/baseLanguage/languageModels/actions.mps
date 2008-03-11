@@ -2833,6 +2833,7 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1197032086774">
       <property name="useNewActions" value="true" />
+      <property name="description" value="same actions as for containing dot-expression" />
       <link role="applicableConcept" targetNodeId="1.1197027803184" resolveInfo="IOperation" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart" id="1197032097444">
         <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_NodeQuery" id="1197032097445">
