@@ -14,13 +14,12 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule implements Inferenc
   }
 
   public void applyRule(final SNode op) {
-    if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(op)) {
-      SNode parameter = SLinkOperations.getTarget(op, "parameter", true);
-      if((parameter != null)) {
-        SNode expectedType = RulesUtil.get_inputNodeType(op);
-        SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061512312", true);
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, expectedType, op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061480425");
-      }
+    RulesUtil.checkAppliedTo_LinkListAccess_aggregation(op);
+    SNode parameter = SLinkOperations.getTarget(op, "parameter", true);
+    if((parameter != null)) {
+      SNode expectedType = RulesUtil.get_inputNodeType(op);
+      SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205272443654", true);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, expectedType, op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205272443656");
     }
   }
 

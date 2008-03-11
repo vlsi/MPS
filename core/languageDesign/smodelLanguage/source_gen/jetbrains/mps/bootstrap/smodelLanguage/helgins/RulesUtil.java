@@ -106,7 +106,7 @@ public class RulesUtil {
   }
 
   @InferenceMethod()
-  public static boolean checkAppliedTo_LinkListAccess_aggregation(final SNode op) {
+  public static void checkAppliedTo_LinkListAccess_aggregation(final SNode op) {
     // expect access to an aggregation link with plural cardinality
     // ------------------- new (duplicates checkAppliedCorrectly_generic)
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
@@ -138,7 +138,6 @@ public class RulesUtil {
       }
 
     }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267224541");
-    return true;
   }
 
   @InferenceMethod()

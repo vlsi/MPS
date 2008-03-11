@@ -16,22 +16,21 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
   public  typeOf_LinkList_AddNewChildOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode node) {
+  public void applyRule(final SNode op) {
+    RulesUtil.checkAppliedTo_LinkListAccess_aggregation(op);
     SNode resultConcept = null;
-    if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(node)) {
-      SNode expectedConcept = RulesUtil.get_inputNodeConcept(node);
-      SNode parameterConcept = SLinkOperations.getTarget(node, "concept", false);
-      if(parameterConcept == null) {
-        resultConcept = expectedConcept;
-      } else
-      {
-        resultConcept = parameterConcept;
-        if(!(SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(expectedConcept)))) {
-          TypeChecker.getInstance().reportTypeError(node, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(expectedConcept, "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1194374844329");
-        }
+    SNode expectedConcept = RulesUtil.get_inputNodeConcept(op);
+    SNode parameterConcept = SLinkOperations.getTarget(op, "concept", false);
+    if(parameterConcept == null) {
+      resultConcept = expectedConcept;
+    } else
+    {
+      resultConcept = parameterConcept;
+      if(!(SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(expectedConcept)))) {
+        TypeChecker.getInstance().reportTypeError(op, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(expectedConcept, "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205272523912");
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711948298", true), new QuotationClass_47().createNode(resultConcept), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711948296");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711948298", true), new QuotationClass_47().createNode(resultConcept), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711948296");
   }
 
   public String getApplicableConceptFQName() {
