@@ -11,7 +11,6 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
   private JPanel myPage;
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
   private JCheckBox myDumpQueriesStatisticsCheckBox = new JCheckBox("Dump query execution statistic in console");
-  private JCheckBox myCompileInMPS = new JCheckBox("Compile In MPS");
   private JCheckBox myShowErrorsOnlyCheckBox = new JCheckBox("Log errors only (no info and warnings)");
   private GeneratorManager myGeneratorManager;
 
@@ -24,7 +23,6 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
     JPanel optionsPanel = new JPanel(new GridLayout(0, 1));
     optionsPanel.add(mySaveTransientModelsCheckBox);
     optionsPanel.add(myDumpQueriesStatisticsCheckBox);
-    optionsPanel.add(myCompileInMPS);
     optionsPanel.add(myShowErrorsOnlyCheckBox);
 
     myPage = new JPanel(new BorderLayout());
