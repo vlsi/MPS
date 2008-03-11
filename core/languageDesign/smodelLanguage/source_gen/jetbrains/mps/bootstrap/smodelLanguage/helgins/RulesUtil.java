@@ -224,16 +224,20 @@ public class RulesUtil {
     TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), new Runnable() {
 
       public void run() {
+        SNode conceptDeclaration = null;
+        if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
+          conceptDeclaration = SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "targetConcept", false);
+        } else
         if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
-          SNode conceptDeclaration = SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "concept", false);
-          if(conceptDeclaration == null) {
-            conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
-          }
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(Result_typevar_1186062019004), conceptDeclaration, null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062259216");
+          conceptDeclaration = SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "concept", false);
         } else
         if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(Result_typevar_1186062019004), SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062259230");
+          conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
+        } else
+        {
+          conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
         }
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(Result_typevar_1186062019004), conceptDeclaration, null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205278228661");
       }
 
     }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062066737");

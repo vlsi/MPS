@@ -328,7 +328,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1205272351487">
                 <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1205272351488">
                   <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205272351489">
-                    <link role="concept" targetNodeId="4.1088761943574" resolveInfo="ReferenceMacro" />
+                    <link role="concept" targetNodeId="4.1087833466690" resolveInfo="NodeMacro" />
                   </node>
                 </node>
               </node>
@@ -399,7 +399,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1205276932194">
                 <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1205276932195">
                   <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205276932196">
-                    <link role="concept" targetNodeId="2.1071489288298" resolveInfo="LinkDeclaration" />
+                    <link role="concept" targetNodeId="4.1087833241328" resolveInfo="PropertyMacro" />
                   </node>
                 </node>
               </node>
