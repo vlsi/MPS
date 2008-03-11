@@ -22,7 +22,7 @@ public class SNodeOperations {
 
   public static SNode copyNode(SNode node) {
     if (node == null) return null;
-    return copyNode(node, node.getModel());
+    return CopyUtil.copy(node);
   }
 
   /**

@@ -939,18 +939,6 @@
       <property name="text" value="copy" />
       <property name="drawBorder" value="false" />
     </node>
-    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1175593565899">
-      <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175593569728">
-        <property name="drawBorder" value="false" />
-        <property name="text" value="model = " />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1175593575918">
-        <property name="noTargetText" value="&lt;default&gt;" />
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="1.1175593548382" />
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1144195442138">
     <link role="conceptDeclaration" targetNodeId="1.1144195091934" />

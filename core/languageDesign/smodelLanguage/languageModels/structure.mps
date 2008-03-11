@@ -673,11 +673,6 @@
     <property name="name" value="Node_CopyOperation" />
     <property name="package" value="operation.node" />
     <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1175593548382">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="modelToCopy" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1144146320702">
       <property name="value" value="copy" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

@@ -546,10 +546,6 @@ public class QueriesGenerated {
     return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getGenerator().getScope());
   }
 
-  public static boolean ifMacro_Condition_1175594466810(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "modelToCopy", true) != null;
-  }
-
   public static boolean ifMacro_Condition_1194958602508(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
     return SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.constraintsLanguage.structure.SuperNodeExpression");
@@ -871,10 +867,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1173123284728(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
-  }
-
-  public static SNode sourceNodeQuery_1175594470814(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "modelToCopy", true);
   }
 
   public static SNode sourceNodeQuery_1175621385813(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
