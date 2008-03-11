@@ -43,6 +43,9 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
+  <dependencies>
+    <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
+  </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
   </usedLanguages>
