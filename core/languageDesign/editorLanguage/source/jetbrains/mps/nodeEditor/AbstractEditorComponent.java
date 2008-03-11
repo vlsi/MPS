@@ -476,24 +476,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     selectNode(current[0]);
   }
 
-/*
-  private SNode findLeftNode(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
-    if (includeThis && current.isInstanceOfConcept(acd)) {
-      return current;
-    }
-
-    List<SNode> children = new ArrayList<SNode>(current.getChildren());
-    for (SNode child : children) {
-      SNode result = findLeftNode(acd, child, true);
-      if (result != null) {
-        return result;
-      }
-    }
-
-    return null;
-  }
-*/
-
   public SNode getEditedNode() {
     if (myNodePointer != null) {
       return myNodePointer.getNode();
