@@ -58,12 +58,13 @@ public class FileGenerationUtil {
     return sm.lastChangeTime() >= getLastGenerationTime(sm);
   }
 
-  public static void handleOutput(IOperationContext context,
+  public static boolean handleOutput(IOperationContext context,
                                   GenerationStatus status,
                                   String outputDir) {
     if (outputDir == null) throw new RuntimeException("unspecified output path for file generation.");
 
     if (!status.isOk()) {
+      //todo wtf!
       int result = JOptionPane.showConfirmDialog(
         context.getMainFrame(),
         "Errors while generating model " + status.getInputModel().getUID() + "\n" +
@@ -76,7 +77,7 @@ public class FileGenerationUtil {
         throw new GenerationCanceledException();
       }
       if (result == JOptionPane.NO_OPTION) {
-        return;
+        return false;
       }
     }
 
@@ -84,7 +85,8 @@ public class FileGenerationUtil {
     GeneratorManager gm = context.getProject().getComponentSafe(GeneratorManager.class);
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
-    if (generateText(context, status, outputNodeContents)) {
+    boolean ok = true;
+    if (!generateText(context, status, outputNodeContents)) {
       int result = JOptionPane.showConfirmDialog(
         context.getMainFrame(),
         "Code generated form model\n" +
@@ -98,7 +100,9 @@ public class FileGenerationUtil {
       if (result == JOptionPane.CANCEL_OPTION) {
         throw new GenerationCanceledException();
       }
-      if (result == JOptionPane.NO_OPTION) return;
+      if (result == JOptionPane.NO_OPTION) return false;
+
+      ok = false;
     }
 
     // generate files and synchronize vcs
@@ -119,6 +123,8 @@ public class FileGenerationUtil {
     // always clean-up default output dir.
     directories.add(getDefaultOutputDir(status.getInputModel(), outputRootDirectory));
     cleanUp(context, generatedFiles, directories);
+
+    return ok; 
   }
 
   public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
@@ -138,7 +144,7 @@ public class FileGenerationUtil {
         TextGenManager.reset();
       }
     }
-    return hasErrors;
+    return !hasErrors;
   }
 
   public static void cleanUp(IOperationContext context, Set<File> generatedFiles, Set<File> directories) {
