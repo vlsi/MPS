@@ -13,6 +13,7 @@ public class _LinkAccessT extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT";
   public static String TARGET_CONCEPT = "targetConcept";
   public static String IS_SINGULAR_CRADINALITY = "isSingularCradinality";
+  public static String IS_AGGREGATION = "isAggregation";
 
   public  _LinkAccessT(SNode node) {
     super(node);
@@ -41,6 +42,14 @@ public class _LinkAccessT extends BaseConcept {
 
   public void setIsSingularCradinality(boolean value) {
     this.setBooleanProperty(_LinkAccessT.IS_SINGULAR_CRADINALITY, value);
+  }
+
+  public boolean getIsAggregation() {
+    return this.getBooleanProperty(_LinkAccessT.IS_AGGREGATION);
+  }
+
+  public void setIsAggregation(boolean value) {
+    this.setBooleanProperty(_LinkAccessT.IS_AGGREGATION, value);
   }
 
 }

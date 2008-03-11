@@ -30,7 +30,7 @@ public class RulesUtil {
     }
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
     final SNode LeftType_typevar_1186058295229 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058318393", true), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058309840");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058318393", false), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058309840");
     TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), new Runnable() {
 
       public void run() {
@@ -105,19 +105,66 @@ public class RulesUtil {
     }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186065634833");
   }
 
-  public static boolean checkAppliedTo_LinkListAccess_aggregation(SNode op) {
-    SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
-    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
-      SNode link = SLinkOperations.getTarget(leftOperation, "link", false);
-      if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
-        return true;
+  @InferenceMethod()
+  public static boolean checkAppliedTo_LinkListAccess_aggregation(final SNode op) {
+    // expect access to an aggregation link with plural cardinality
+    // ------------------- new (duplicates checkAppliedCorrectly_generic)
+    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
+    final SNode LeftType_typevar_1205267224534 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267224534), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267224539", true), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267224535");
+    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267224534), new Runnable() {
+
+      public void run() {
+        boolean isGood = false;
+        SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267224534), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
+        if(linkAccessT != null) {
+          if(!(SPropertyOperations.getBoolean(linkAccessT, "isSingularCradinality"))) {
+            isGood = true;
+          }
+        }
+        if(!(isGood)) {
+          SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
+          if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
+            SNode link = SLinkOperations.getTarget(leftOperation, "link", false);
+            if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
+              isGood = true;
+            }
+          }
+        }
+        // ----
+        if(!(isGood)) {
+          TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-list-access", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205271287931");
+        }
       }
-    }
-    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-list-access", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287491613");
-    return false;
+
+    }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267224541");
+    return true;
   }
 
+  @InferenceMethod()
   public static boolean checkAppliedTo_LinkAccess_aggregation(SNode op) {
+    // expect access to an aggregation link with singular cardinality
+    // ------------------- new (duplicates checkAppliedCorrectly_generic)
+    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
+    final SNode LeftType_typevar_1205267007210 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267007210), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267007215", true), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267007211");
+    final boolean[] ok = new boolean[1];
+    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267007210), new Runnable() {
+
+      public void run() {
+        SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267007210), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
+        if(linkAccessT != null) {
+          if(SPropertyOperations.getBoolean(linkAccessT, "isSingularCradinality")) {
+            ok[0] = true;
+          }
+        }
+      }
+
+    }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267101146");
+    if(ok[0]) {
+      return true;
+    }
+    // -------------------
     SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
     if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
       SNode link = SLinkOperations.getTarget(leftOperation, "link", false);

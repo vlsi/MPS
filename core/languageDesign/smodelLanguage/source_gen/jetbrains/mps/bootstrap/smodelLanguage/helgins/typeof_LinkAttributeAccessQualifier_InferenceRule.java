@@ -25,6 +25,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule implements Infere
     SNode T = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT", null);
     SLinkOperations.setTarget(T, "targetConcept", SLinkOperations.getTarget(annotationLink, "target", false), false);
     SPropertyOperations.set(T, "isSingularCradinality", "" + (SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1")));
+    SPropertyOperations.set(T, "isAggregation", "" + (true));
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204926978425", true), T, nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204926978423");
     // ---
     if(!(SPropertyOperations.hasValue(annotationLink, "stereotype", "link", "node"))) {

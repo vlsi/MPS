@@ -1892,6 +1892,10 @@
       <property name="name" value="isSingularCradinality" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1205266306005">
+      <property name="name" value="isAggregation" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204926237448">
       <property name="role" value="targetConcept" />
       <property name="sourceCardinality" value="1" />

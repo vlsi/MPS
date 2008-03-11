@@ -312,6 +312,29 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205265942953">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205265953544">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205265944221">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205265942954">
+                <link role="variableDeclaration" targetNodeId="1204848597508" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205265947558">
+                <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.NodeAttributeAccessQualifier" id="1205265951230">
+                  <link role="annotationLink" targetNodeId="4.1149694500506" resolveInfo="nodeMacro" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1205266185579">
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1205266189831">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1205266191630">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205266191631">
+                    <link role="concept" targetNodeId="4.1087833466690" resolveInfo="NodeMacro" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204929905527">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204929906591">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204929905528">

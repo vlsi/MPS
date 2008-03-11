@@ -5,6 +5,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -19,6 +20,13 @@ public class typeof_NodeAttributeAccessQualifier_InferenceRule implements Infere
     if(annotationLink == null) {
       return;
     }
+    // assign type
+    SNode T = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT", null);
+    SLinkOperations.setTarget(T, "targetConcept", SLinkOperations.getTarget(annotationLink, "target", false), false);
+    SPropertyOperations.set(T, "isSingularCradinality", "" + (SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1")));
+    SPropertyOperations.set(T, "isAggregation", "" + (true));
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205266078203", true), T, nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205266078201");
+    // ---
     if(!(SPropertyOperations.hasValue(annotationLink, "stereotype", "node", "node"))) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "node annotation link is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204764593904");
     }
