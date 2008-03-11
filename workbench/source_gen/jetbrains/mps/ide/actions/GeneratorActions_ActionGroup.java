@@ -15,7 +15,7 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class GeneratorActions_ActionGroup extends BaseActionGroup {
 
-  public  GeneratorActions_ActionGroup(MPSProject project) {
+  public GeneratorActions_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.GeneratorActions");
     this.setInternal(false);
     this.add(new Label("jetbrains.mps.ide.actions.generatorNew_ExtentionPoint"));

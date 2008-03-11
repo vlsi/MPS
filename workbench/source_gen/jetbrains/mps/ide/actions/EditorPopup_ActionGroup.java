@@ -28,7 +28,7 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class EditorPopup_ActionGroup extends BaseActionGroup {
 
-  public  EditorPopup_ActionGroup(MPSProject project) {
+  public EditorPopup_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.EditorPopup");
     this.setInternal(false);
     this.add(new GoByReferenceGroup());

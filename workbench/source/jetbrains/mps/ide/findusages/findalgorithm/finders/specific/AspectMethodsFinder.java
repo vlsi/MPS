@@ -75,6 +75,8 @@ public class AspectMethodsFinder extends BaseFinder {
 
     Element modelsXML = new Element(MODELS);
     for (SModel model : myModels) {
+      //model can be transient - workaround
+      if (model.getModelDescriptor() == null) continue;
       Element modelXML = new Element(MODEL);
       modelXML.setAttribute(MODEL_UID, model.getModelDescriptor().getModelUID().toString());
       modelsXML.addContent(modelXML);

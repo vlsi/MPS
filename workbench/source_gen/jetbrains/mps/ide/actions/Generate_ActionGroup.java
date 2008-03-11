@@ -15,7 +15,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class Generate_ActionGroup extends BaseActionGroup {
 
-  public  Generate_ActionGroup(MPSProject project) {
+  public Generate_ActionGroup(MPSProject project) {
     super("Generate", "jetbrains.mps.ide.actions.Generate");
     this.setMnemonic("G".charAt(0));
     this.setInternal(false);
@@ -32,7 +32,7 @@ public class Generate_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Generate");
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.generate_ExtentionPoint");

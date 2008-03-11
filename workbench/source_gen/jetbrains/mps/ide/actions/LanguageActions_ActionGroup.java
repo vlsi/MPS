@@ -21,7 +21,7 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class LanguageActions_ActionGroup extends BaseActionGroup {
 
-  public  LanguageActions_ActionGroup(MPSProject project) {
+  public LanguageActions_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.LanguageActions");
     this.setInternal(false);
     this.add(new Label("jetbrains.mps.ide.actions.newGroup_ExtentionPoint"));
