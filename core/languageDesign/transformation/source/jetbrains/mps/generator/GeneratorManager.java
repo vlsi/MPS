@@ -492,13 +492,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               Statistics.dumpAll();
             }
 
-            progress.addText("Handling output...");
+            progress.addText("handling output...");
             checkMonitorCanceled(progress);
             if (status.getOutputModel() != null) {
               boolean result = generationType.handleOutput(status, outputFolder, invocationContext, progress, messages);
 
               if (!result) {
-                progress.addText("There were errors. See output for details.");
+                progress.addText("there were errors.");
                 generationOK = false;
               }
             } else if (!(status.isCanceled() || status.isError())) {
@@ -613,10 +613,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
       if (ideaPresent && generationType.requiresCompilationInIDEAfterGeneration()) {
         //todo this is tmp anti memory leak hack:
-        progress.addText("Invalidate caches");
+        progress.addText("invalidate caches");
         ReloadUtils.invalidateCaches();
 
-        progress.addText("Refresh models");
+        progress.addText("refresh models");
         SModelRepository.getInstance().refreshModels();
         System.gc();
       }

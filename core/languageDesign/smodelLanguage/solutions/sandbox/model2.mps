@@ -381,15 +381,26 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205273112701" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205273112702">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205273131720">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205273131721">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205273131722">
-              <link role="variableDeclaration" targetNodeId="1205273117249" resolveInfo="node" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205276869018">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205273131721">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205273131722">
+                <link role="variableDeclaration" targetNodeId="1205273117249" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205273131723">
+                <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1205273131724">
+                  <link role="annotationLink" targetNodeId="4.1149694466802" resolveInfo="propertyMacro" />
+                  <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier" id="1205273152881">
+                    <link role="property" targetNodeId="2.1071599937831" resolveInfo="metaClass" />
+                  </node>
+                </node>
+              </node>
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205273131723">
-              <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1205273131724">
-                <link role="annotationLink" targetNodeId="4.1149694466802" resolveInfo="propertyMacro" />
-                <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier" id="1205273152881">
-                  <link role="property" targetNodeId="2.1071599937831" resolveInfo="metaClass" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1205276921348">
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1205276932194">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1205276932195">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205276932196">
+                    <link role="concept" targetNodeId="2.1071489288298" resolveInfo="LinkDeclaration" />
+                  </node>
                 </node>
               </node>
             </node>
