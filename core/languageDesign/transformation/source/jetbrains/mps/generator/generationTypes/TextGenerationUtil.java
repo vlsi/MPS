@@ -14,11 +14,11 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 public class TextGenerationUtil {
-  public static TextGenerationResult generateText(IOperationContext context, SNode node, IMessageHandler messages) {
+  public static TextGenerationResult generateText(IOperationContext context, SNode node) {
     String nodeText;
     boolean containsErrors = false;
     if (TextGenManager.instance().canGenerateTextFor(node)) {
-      TextGenManager.TextGenerationResult generationResult = TextGenManager.instance().generateText(context, node, messages);
+      TextGenManager.TextGenerationResult generationResult = TextGenManager.instance().generateText(context, node);
       containsErrors = generationResult.hasErrors();
       nodeText = generationResult.getText();
     } else {
@@ -27,8 +27,7 @@ public class TextGenerationUtil {
     return new TextGenerationResult(nodeText, containsErrors);
   }
 
-  public static JavaCompiler compile(IOperationContext context, SModel targetModel, IAdaptiveProgressMonitor progress, IMessageHandler messages) {
-
+  public static JavaCompiler compile(IOperationContext context, SModel targetModel, IAdaptiveProgressMonitor progress) {
     CompositeClassPathItem item = new CompositeClassPathItem();
     item.add(context.getModule().getModuleWithDependenciesClassPathItem());
     item.add(ClassLoaderManager.getInstance().getMPSPath());
@@ -39,7 +38,7 @@ public class TextGenerationUtil {
     for (SNode root : targetModel.getRoots()) {
       INodeAdapter outputNode = BaseAdapter.fromNode(root);
       if (outputNode instanceof ClassConcept || outputNode instanceof Interface) {
-        compiler.addSource(generateText(context, root, messages).getText(),
+        compiler.addSource(generateText(context, root).getText(),
                 JavaNameUtil.packageNameForModelUID(targetModel.getUID()) + "." + root.getName());
       }
     }

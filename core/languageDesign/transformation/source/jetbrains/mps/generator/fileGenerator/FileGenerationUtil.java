@@ -60,8 +60,7 @@ public class FileGenerationUtil {
 
   public static void handleOutput(IOperationContext context,
                                   GenerationStatus status,
-                                  String outputDir,
-                                  IMessageHandler messages) {
+                                  String outputDir) {
     if (outputDir == null) throw new RuntimeException("unspecified output path for file generation.");
 
     if (!status.isOk()) {
@@ -85,7 +84,7 @@ public class FileGenerationUtil {
     GeneratorManager gm = context.getProject().getComponentSafe(GeneratorManager.class);
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
-    if (generateText(context, status, outputNodeContents, messages)) {
+    if (generateText(context, status, outputNodeContents)) {
       int result = JOptionPane.showConfirmDialog(
         context.getMainFrame(),
         "Code generated form model\n" +
@@ -128,15 +127,14 @@ public class FileGenerationUtil {
     return file;
   }
 
-  public static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents, IMessageHandler messages) {
+  public static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
     boolean hasErrors = false;
     for (SNode outputNode : status.getOutputModel().getRoots()) {
       try {
-        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode, messages);
+        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
         hasErrors |= result.hasErrors();
         outputNodeContents.put(outputNode, result.getText());
       } finally {
-        // todo: get rid of this.
         TextGenManager.reset();
       }
     }

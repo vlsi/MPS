@@ -16,7 +16,6 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
 
   private TextGenBuffer myBuffer;
   private IOperationContext myContext;
-  private IMessageHandler myMessageHandler;
 
   public void setBuffer(TextGenBuffer buffer) {
     myBuffer = buffer;
@@ -34,19 +33,11 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     myContext = context;
   }
 
-  public IMessageHandler getMessageHandler() {
-    return myMessageHandler;
-  }
-
-  public void setMessageHandler(IMessageHandler messageHandler) {
-    myMessageHandler = messageHandler;
-  }
-
   protected abstract void doGenerateText(BA ba);
 
   protected final void appendNodeText(INodeAdapter ba) {
     try {
-      TextGenManager.instance().appendNodeText(myContext, myBuffer, BaseAdapter.fromAdapter(ba), getMessageHandler());
+      TextGenManager.instance().appendNodeText(myContext, myBuffer, BaseAdapter.fromAdapter(ba));
     } catch (Exception e) {
       LOGGER.error(e);
       append("\n<<<" + e + ">>>");

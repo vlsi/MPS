@@ -22,7 +22,6 @@ public class TextGenManager {
   private static final Logger LOG = Logger.getLogger(TextGenManager.class);
   private static TextGenManager myInstance;
 
-
   public static void reset() {
     myInstance = null;
   }
@@ -34,25 +33,25 @@ public class TextGenManager {
     return myInstance;
   }
 
-  public TextGenerationResult generateText(IOperationContext context, SNode node, IMessageHandler messages) {
+  public TextGenerationResult generateText(IOperationContext context, SNode node) {
     TextGenBuffer buffer = new TextGenBuffer();
     buffer.putUserObject(JavaNodeTextGen.PACKAGE_NAME, node.getModel().getLongName());
-    appendNodeText(context, buffer, node, messages);
+    appendNodeText(context, buffer, node);
     return new TextGenerationResult(buffer.getText(), buffer.hasErrors());
   }
 
   public boolean canGenerateTextFor(SNode node) {
-    return !(loadNodeTextGen(null, IMessageHandler.NULL_HANDLER, node) instanceof DefaultTextGen);
+    return !(loadNodeTextGen(null, node) instanceof DefaultTextGen);
   }
 
-  protected void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, IMessageHandler messages) {
+  protected void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node) {
     if(node == null) {
       buffer.append("???");
       buffer.foundError();
       return;
     }
 
-    SNodeTextGen nodeTextGen = loadNodeTextGen(context, messages, node);
+    SNodeTextGen nodeTextGen = loadNodeTextGen(context,  node);
     LOG.assertLog(nodeTextGen != null, "Couldn't find text generator for " + node.getDebugText());
 
     assert nodeTextGen != null;
@@ -61,13 +60,13 @@ public class TextGenManager {
     try {
       nodeTextGen.doGenerateText(node.getAdapter());
     } catch (Exception e) {
-      messages.handle(new Message(MessageKind.ERROR, e.getClass() + " : " + e.getMessage()));
+      buffer.foundError();
       LOG.error("Exception during text generation on node ", node);
       e.printStackTrace();
     }
   }
 
-  private SNodeTextGen loadNodeTextGen(IOperationContext context, IMessageHandler messages, SNode node) {
+  private SNodeTextGen loadNodeTextGen(IOperationContext context, SNode node) {
     ConceptDeclaration cd = (ConceptDeclaration) node.getConceptDeclarationAdapter();
 
     while (cd != SModelUtil_new.getBaseConcept()) {
@@ -81,7 +80,6 @@ public class TextGenManager {
         if (textgenClass != null) {
           SNodeTextGen result = (SNodeTextGen) textgenClass.newInstance();
           result.setContext(context);
-          result.setMessageHandler(messages);
           return result;
         }
       } catch (InstantiationException e) {
@@ -108,7 +106,6 @@ public class TextGenManager {
       myText = text;
       myContainErrors = containErrors;
     }
-
 
     public String getText() {
       return myText;
