@@ -90,6 +90,10 @@
           <link role="relationDeclaration" targetNodeId="1.1151701835028" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205249438197">
+        <property name="text" value="!" />
+        <property name="textFgColor" value="red" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1151702156292">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />

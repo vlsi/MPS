@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.baseLanguage.ext.collections.lang.constraints.SequenceOperationExpression_Behavior;
 
 public class QueriesGenerated {
 
@@ -52,6 +51,9 @@ public class QueriesGenerated {
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1161719130431(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
+    if(true) {
+      return false;
+    }
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getSourceNode());
     SNode sequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), false);
     return (sequenceType != null);
@@ -270,9 +272,6 @@ public class QueriesGenerated {
           boolean applicableToSequence = false;
           boolean applicableToList = false;
           SNode leftExpression = null;
-          if(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
-            leftExpression = SequenceOperationExpression_Behavior.call_getOperand_1203966722225(_context.getParentNode());
-          } else
           if(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
             leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
           }

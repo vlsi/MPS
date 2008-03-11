@@ -901,8 +901,7 @@
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205155675758">
                       <property name="value" value="1" />
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1205155669084">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1205155669085" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205254753701">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205155667017">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205155666349">
                           <link role="variableDeclaration" targetNodeId="1205155653899" resolveInfo="gao" />
@@ -911,7 +910,7 @@
                           <link role="link" targetNodeId="2.1144104376918" />
                         </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_GetCountOperation" id="1205155673785" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_GetCountOperation" id="1205254758065" />
                     </node>
                   </node>
                   <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1205155764968">
@@ -1326,11 +1325,7 @@
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205157712566">
                 <link role="concept" targetNodeId="2v.1068581242878" resolveInfo="ReturnStatement" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1205157712567">
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation" id="1205157712568">
-                  <link role="concept" targetNodeId="2v.1068581242878" resolveInfo="ReturnStatement" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1205157712569" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205254899178">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205157712570">
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1205157712571">
                     <link role="link" targetNodeId="2v.1068581517665" />
@@ -1338,6 +1333,9 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205157712572">
                     <link role="variableDeclaration" targetNodeId="1205157667869" resolveInfo="truebody" />
                   </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation" id="1205254905704">
+                  <link role="concept" targetNodeId="2v.1068581242878" resolveInfo="ReturnStatement" />
                 </node>
               </node>
             </node>
@@ -1521,8 +1519,7 @@
                     </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205156967622">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1205156981937">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1205156981938" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205254947860">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205156978476">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205156967623">
                           <link role="variableDeclaration" targetNodeId="1205156891696" resolveInfo="body" />
@@ -1531,8 +1528,8 @@
                           <link role="link" targetNodeId="2v.1068581517665" />
                         </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_InsertChildFirstOperation" id="1205156983161">
-                        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205157039315">
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_InsertChildFirstOperation" id="1205254949801">
+                        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205254951574">
                           <link role="variableDeclaration" targetNodeId="1205157022406" resolveInfo="ifs" />
                         </node>
                       </node>
@@ -1688,11 +1685,7 @@
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205157877625">
                       <link role="concept" targetNodeId="2v.1068580123155" resolveInfo="ExpressionStatement" />
                     </node>
-                    <node role="initializer" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1205157877626">
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation" id="1205157877627">
-                        <link role="concept" targetNodeId="2v.1068580123155" resolveInfo="ExpressionStatement" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1205157877628" />
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205254972536">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205157877629">
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1205157877630">
                           <link role="link" targetNodeId="2v.1068581517665" />
@@ -1700,6 +1693,9 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205157877631">
                           <link role="variableDeclaration" targetNodeId="1205156891696" resolveInfo="body" />
                         </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation" id="1205254976842">
+                        <link role="concept" targetNodeId="2v.1068580123155" resolveInfo="ExpressionStatement" />
                       </node>
                     </node>
                   </node>

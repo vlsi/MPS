@@ -18,7 +18,6 @@
   <import index="12" modelUID="java.lang@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
   <import index="17" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
-  <visible index="2" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170956206132">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1178821527695">
@@ -191,7 +190,7 @@
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227909449">
                   <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1173887262943">
-                    <link role="concept" targetNodeId="8.1151701773464" />
+                    <link role="concept" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227943006">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1173887247923">
                         <link role="variableDeclaration" targetNodeId="1173886625953" resolveInfo="parent" />
@@ -199,8 +198,8 @@
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1173887258692" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1203973182920">
-                    <link role="conceptMethodDeclaration" targetNodeId="2v.1203966722225" resolveInfo="getOperand" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205249110565">
+                    <link role="link" targetNodeId="1.1197027771414" />
                   </node>
                 </node>
               </node>

@@ -603,7 +603,7 @@ public class QueriesGenerated {
   public static List sourceNodesQuery_1169592290002(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all aggregation links with cardinality:1 and specialization
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper7(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SequenceOperations.map(concepts, new zMapper7(null, null)), new zPredicate(null, null)));
   }
 
   public static List sourceNodesQuery_1169592375021(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -613,39 +613,39 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1169751054593(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true), new zPredicate(null, null)));
-  }
-
-  public static List sourceNodesQuery_1169751903568(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true), new zPredicate1(null, null)));
   }
 
-  public static List sourceNodesQuery_1169751987220(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static List sourceNodesQuery_1169751903568(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true), new zPredicate2(null, null)));
   }
 
-  public static List sourceNodesQuery_1169752052157(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static List sourceNodesQuery_1169751987220(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true), new zPredicate3(null, null)));
   }
 
-  public static List sourceNodesQuery_1169752120196(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true), new zPredicate4(null, null)));
+  public static List sourceNodesQuery_1169752052157(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true), new zPredicate4(null, null)));
   }
 
-  public static List sourceNodesQuery_1169753230932(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static List sourceNodesQuery_1169752120196(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true), new zPredicate5(null, null)));
   }
 
-  public static List sourceNodesQuery_1169753275330(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static List sourceNodesQuery_1169753230932(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true), new zPredicate6(null, null)));
   }
 
-  public static List sourceNodesQuery_1169753367103(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static List sourceNodesQuery_1169753275330(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true), new zPredicate7(null, null)));
   }
 
-  public static List sourceNodesQuery_1169753422079(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static List sourceNodesQuery_1169753367103(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true), new zPredicate8(null, null)));
+  }
+
+  public static List sourceNodesQuery_1169753422079(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true), new zPredicate9(null, null)));
   }
 
   public static List sourceNodesQuery_1170173405399(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

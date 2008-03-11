@@ -12,7 +12,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.ext.collections.lang.constraints.SequenceOperationExpression_Behavior;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -57,6 +56,10 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1201654289541(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapOperation");
+  }
+
+  public static boolean baseMappingRule_Condition_1205249925954(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation");
   }
 
   public static Object propertyMacro_GetPropertyValue_1167778587376(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -134,7 +137,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1184984218976(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode type = TypeChecker.getInstance().getTypeOf(SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false)));
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true));
     SNode elementType = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), true), "elementType", true);
     return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce(elementType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false);
   }
@@ -148,7 +151,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1168511702747(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1168511753711(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -195,7 +198,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1170983343379(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170983373123(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -203,51 +206,51 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1170983493873(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170983576308(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170984308010(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170984324347(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170984684780(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170984693960(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170984702547(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170984709164(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170984715204(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170984722931(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170984732283(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170984741354(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1170984931561(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -291,7 +294,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1171392402011(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1171392402022(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -303,7 +306,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1172256338945(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1172256491217(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -315,7 +318,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1172663560406(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1172663671537(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -323,7 +326,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1172664516573(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1172664516584(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -331,7 +334,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1172668127591(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1172668158982(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -347,7 +350,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1173950824211(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1173950824222(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -355,15 +358,15 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1175845773852(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1176501960201(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1176917998267(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1176918010599(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -371,7 +374,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1176922592150(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1176922640725(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -379,7 +382,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1176923871602(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1176923878778(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -387,12 +390,12 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1178898419393(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1180967393869(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     // 1
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1180967433812(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -401,7 +404,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1184964109836(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1185914105374(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -419,11 +422,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1192414012706(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1195127985972(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SequenceOperationExpression_Behavior.call_getOperand_1203966722225(SNodeOperations.getParent(_context.getNode(), null, false, false));
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "operand", true);
   }
 
   public static SNode sourceNodeQuery_1197683878141(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
