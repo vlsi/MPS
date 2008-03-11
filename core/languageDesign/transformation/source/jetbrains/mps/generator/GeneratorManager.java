@@ -492,11 +492,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               Statistics.dumpAll();
             }
 
+            progress.addText("Handling output...");
             checkMonitorCanceled(progress);
             if (status.getOutputModel() != null) {
-              generationType.handleOutput(status, outputFolder, invocationContext, progress, messages);             
+              boolean result = generationType.handleOutput(status, outputFolder, invocationContext, progress, messages);
+
+              if (!result) {
+                progress.addText("There were errors. See output for details.");
+                generationOK = false;
+              }
             } else if (!(status.isCanceled() || status.isError())) {
-              // nothig has been generated (no generators found)
               generationType.handleEmptyOutput(status, outputFolder, invocationContext, progress, messages);
             }
             generationSession.discardTransients();
@@ -567,8 +572,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             ReloadUtils.rebuildProjectPanes();
           }
         }
-        progress.addText("generation completed successfully");
-        messages.handle(new Message(MessageKind.INFORMATION, "generation completed successfully"));
+
+        if (generationOK) {
+          progress.addText("generation completed successfully");
+          messages.handle(new Message(MessageKind.INFORMATION, "generation completed successfully"));
+        } else {
+          progress.addText("generation completed with errors");
+          messages.handle(new Message(MessageKind.INFORMATION, "generation completed with errors"));
+        }
         //  progress.finishSomehow();
       } else if (generationERROR) {
         progress.addText("generation finished with errors");
