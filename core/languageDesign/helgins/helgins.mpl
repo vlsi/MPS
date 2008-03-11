@@ -34,6 +34,7 @@
   </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.bootstrap.actionsLanguage</dependency>
+    <dependency reexport="false">jetbrains.mps.ide</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
