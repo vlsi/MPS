@@ -1069,7 +1069,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
-  public EditorCell findCellWithId(final EditorCell root, String id, SNode node) {
+  public EditorCell findCellWithId(String id, SNode node) {
     EditorCell bigCell = getBigCellForNode(node);
 
     if (bigCell == null) {
