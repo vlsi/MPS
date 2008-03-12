@@ -31,7 +31,6 @@
   <import index="35" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <import index="36" modelUID="jetbrains.mps.patterns.util@java_stub" version="-1" />
   <import index="38" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
-  <import index="41" modelUID="jetbrains.mps.ide.icons@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1138168268784">
     <property name="name" value="binaryOperations" />
     <property name="package" value="rightTransform" />
@@ -1823,17 +1822,6 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197031199113">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197031199114">
                   <link role="variableDeclaration" targetNodeId="1197031199092" resolveInfo="ref" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="icon" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_Icon" id="1204721691074">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204721691075">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204721694277">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204721696991">
-                  <link role="classConcept" targetNodeId="41.~IconManager" resolveInfo="IconManager" />
-                  <link role="baseMethodDeclaration" targetNodeId="41.~IconManager.getIconFor(jetbrains.mps.smodel.SNode):javax.swing.Icon" resolveInfo="getIconFor" />
-                  <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1204721714240" />
                 </node>
               </node>
             </node>

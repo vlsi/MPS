@@ -51,8 +51,6 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.constraints.QueriesUtil;
 import jetbrains.mps.generator.JavaModelUtil_new;
-import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
@@ -821,10 +819,6 @@ public class QueriesGenerated {
 
             public String getDescriptionText(String pattern) {
               return "this." + SPropertyOperations.getString((item), "name");
-            }
-
-            public Icon getIconFor(String pattern) {
-              return IconManager.getIconFor((item));
             }
 
           });

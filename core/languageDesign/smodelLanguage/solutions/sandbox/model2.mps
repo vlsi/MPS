@@ -134,7 +134,12 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1205334249667" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205345969184">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205346056800">
+            <link role="classifier" targetNodeId="6.~Double" resolveInfo="Double" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1205346587858" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1179351074639">
         <property name="name" value="node" />
