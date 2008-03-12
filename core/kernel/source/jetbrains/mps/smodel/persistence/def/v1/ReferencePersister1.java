@@ -168,7 +168,7 @@ import org.jdom.Element;
           }
         } else {
           LOG.error("external reference '" + reference.getRole() + "' has no target model info", reference.getSourceNode());
-          LOG.errorWithTrace("-- was reference " + reference + " in " + reference.getSourceNode().getDebugText());
+          LOG.error("-- was reference " + reference + " in " + reference.getSourceNode().getDebugText());
         }
       }
     }
