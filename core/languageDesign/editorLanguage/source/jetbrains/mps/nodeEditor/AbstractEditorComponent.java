@@ -66,6 +66,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (EditorSettings.getInstance().isUseAntialiasing()) {
       g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
         RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+      g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+      g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
     }
   }
 
