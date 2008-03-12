@@ -22,6 +22,11 @@
   <import index="7" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170455697846">
     <property name="name" value="AAA" />
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1205334673796">
+      <property name="name" value="aaa" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205334673797" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1205334679112" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170455701847">
       <property name="name" value="aaa" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1170455838774" />
@@ -129,6 +134,7 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1205334249667" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1179351074639">
         <property name="name" value="node" />
