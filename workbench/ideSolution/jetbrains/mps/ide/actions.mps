@@ -238,14 +238,6 @@
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911408605">
       <link role="javaClass" targetNodeId="10.~SetModuleFolderAction" resolveInfo="SetModuleFolderAction" />
     </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911412372" />
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205163646348">
-      <property name="name" value="LanguageActionsRefactoring" />
-      <property name="caption" value="Refactoring" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205163672489">
-        <link role="javaClass" targetNodeId="4.~RenameLanguageAction" resolveInfo="RenameLanguageAction" />
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991225922">
     <property name="name" value="LanguageNewActions" />

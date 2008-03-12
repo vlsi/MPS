@@ -39,8 +39,6 @@ public class LanguageActions_ActionGroup extends BaseActionGroup {
     this.add(new CleanModuleAction());
     this.addSeparator();
     this.add(new SetModuleFolderAction());
-    this.addSeparator();
-    this.add(new Label("_label_jetbrains.mps.ide.actions.LanguageActionsRefactoring"));
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {

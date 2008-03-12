@@ -6,6 +6,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.Root;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
@@ -429,7 +430,8 @@ public class MPSModuleRepository {
     }
   }
 
-  /*package*/ void renameUID(Language l, String newUID) {
+  @UseCarefully
+  public void renameUID(Language l, String newUID) {
     IFile descriptorFile = l.getDescriptorFile();
     if (descriptorFile != null) {
       myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
