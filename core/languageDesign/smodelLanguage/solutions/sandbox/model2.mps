@@ -485,6 +485,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205357710817">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205357710818">
+            <property name="name" value="nodes" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1205357716528">
+              <link role="elementConcept" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205357710821">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205357710822">
+                <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AllAttributesQualifier" id="1205357710823" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205357710824">
+                <link role="variableDeclaration" targetNodeId="1205273117249" resolveInfo="node" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1205273117249">
         <property name="name" value="node" />

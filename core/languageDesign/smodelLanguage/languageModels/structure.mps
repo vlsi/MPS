@@ -1887,5 +1887,21 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205357139746">
+    <property name="package" value="attribute" />
+    <property name="name" value="AllAttributesQualifier" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1205357175701">
+      <link role="intfc" targetNodeId="1204762015203" resolveInfo="IAttributeAccessQualifier" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205357188670">
+      <property name="value" value="&lt;all&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205357194157">
+      <property name="value" value="all attributes" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
 </model>
 

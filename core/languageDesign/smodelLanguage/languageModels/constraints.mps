@@ -2086,7 +2086,10 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204765779653">
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1204765779654" />
-                <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204765779656">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205357284720">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204765779669">
+                    <link role="variableDeclaration" targetNodeId="1204765602891" resolveInfo="annotationLinks" />
+                  </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation" id="1204765779657">
                     <node role="whereClosure" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereBlock" id="1204765779658">
                       <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1204765779659">
@@ -2112,9 +2115,6 @@
                         </node>
                       </node>
                     </node>
-                  </node>
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204765779669">
-                    <link role="variableDeclaration" targetNodeId="1204765602891" resolveInfo="annotationLinks" />
                   </node>
                 </node>
               </node>
