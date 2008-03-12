@@ -11,6 +11,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
@@ -167,6 +168,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   private void playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
+    if (modelDescriptor instanceof StubModelDescriptor) {
+      StubModelDescriptor stubModelDescriptor = (StubModelDescriptor) modelDescriptor;
+      SModelDescriptor actualDescriptor = stubModelDescriptor.getActualDescriptor();
+      mySModel.changeImportedModelUID(stubModelDescriptor.getModelUID(), actualDescriptor.getModelUID());
+      playUsedModelDescriptorsRefactoring(actualDescriptor);
+      return;
+    }
     int currentVersion = modelDescriptor.getVersion();
     int usedVersion = mySModel.getUsedVersion(modelDescriptor.getModelUID());
     if (myIsTestRefactoringMode) {
