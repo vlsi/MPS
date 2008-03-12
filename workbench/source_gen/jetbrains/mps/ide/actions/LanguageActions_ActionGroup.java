@@ -5,6 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.action.Label;
+import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_true;
 import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_false;
 import jetbrains.mps.ide.modelchecker.CheckLanguageAction;
 import jetbrains.mps.ide.actions.language.OptimizeLanguageImportsAction;
@@ -25,6 +26,7 @@ public class LanguageActions_ActionGroup extends BaseActionGroup {
     this.setInternal(false);
     this.add(new Label("jetbrains.mps.ide.actions.newGroup_ExtentionPoint"));
     this.addSeparator();
+    this.add(new GenerateAllModelsInModuleAction_true());
     this.add(new GenerateAllModelsInModuleAction_false());
     this.add(new CheckLanguageAction());
     this.add(new OptimizeLanguageImportsAction());

@@ -204,6 +204,9 @@
       <property name="name" value="newGroup" />
     </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204911304334" />
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205347605622">
+      <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_true" resolveInfo="GenerateAllModelsInModuleAction_true" />
+    </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205268112301">
       <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_false" resolveInfo="GenerateAllModelsInModuleAction_false" />
     </node>
@@ -271,6 +274,9 @@
       <link role="javaClass" targetNodeId="5.~RemoveModuleFromProjectAction" resolveInfo="RemoveModuleFromProjectAction" />
     </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204912175121" />
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205347618406">
+      <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_true" resolveInfo="GenerateAllModelsInModuleAction_true" />
+    </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205268121849">
       <link role="javaClass" targetNodeId="10.~GenerateAllModelsInModuleAction_false" resolveInfo="GenerateAllModelsInModuleAction_false" />
     </node>

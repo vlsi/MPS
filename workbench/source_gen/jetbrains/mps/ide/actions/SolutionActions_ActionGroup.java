@@ -7,6 +7,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.action.Label;
 import jetbrains.mps.ide.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
+import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_true;
 import jetbrains.mps.ide.actions.module.GenerateAllModelsInModuleAction_false;
 import jetbrains.mps.ide.actions.solution.GenerateTextFromAllModelsInSolutionAction;
 import jetbrains.mps.ide.modelchecker.CheckSolutionAction;
@@ -28,6 +29,7 @@ public class SolutionActions_ActionGroup extends BaseActionGroup {
     this.add(new AddModuleToProjectAction());
     this.add(new RemoveModuleFromProjectAction());
     this.addSeparator();
+    this.add(new GenerateAllModelsInModuleAction_true());
     this.add(new GenerateAllModelsInModuleAction_false());
     this.add(new GenerateTextFromAllModelsInSolutionAction());
     this.add(new CheckSolutionAction());
