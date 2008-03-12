@@ -192,6 +192,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

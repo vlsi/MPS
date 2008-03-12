@@ -70,6 +70,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1174643059857">
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
+            <property name="textFgColor" value="DARK_MAGENTA" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
