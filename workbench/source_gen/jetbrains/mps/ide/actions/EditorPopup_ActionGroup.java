@@ -21,6 +21,7 @@ import jetbrains.mps.ide.actions.nodes.FastFindUsagesNodeAction;
 import jetbrains.mps.ide.actions.nodes.ShowClassInHierarchyAction;
 import jetbrains.mps.ide.actions.nodes.ShowConceptInHierarchyAction;
 import jetbrains.mps.ide.actions.nodes.ShowConceptStructureAction;
+import jetbrains.mps.ide.actions.nodes.CloneRootAction;
 import jetbrains.mps.ide.actions.cells.ShowCellKeymapsAction;
 import jetbrains.mps.ide.actions.baseLanguage.ShowParametersAction;
 import jetbrains.mps.ide.action.ActionManager;
@@ -51,6 +52,8 @@ public class EditorPopup_ActionGroup extends BaseActionGroup {
     this.add(new ShowClassInHierarchyAction());
     this.add(new ShowConceptInHierarchyAction());
     this.add(new ShowConceptStructureAction());
+    this.addSeparator();
+    this.add(new CloneRootAction());
     this.addSeparator();
     this.add(new ShowCellKeymapsAction());
     this.addSeparator();
