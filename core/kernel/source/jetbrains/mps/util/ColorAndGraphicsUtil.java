@@ -40,13 +40,15 @@ public class ColorAndGraphicsUtil {
   }
 
   public static void drawWave(Graphics g, int xStart, int xEnd, int y) {
+    int offset = xStart % WAVE_SEGMENT_LENGTH;
+
     Graphics gc = g.create();
-    gc.translate(xStart, y);
+    gc.translate(xStart - offset, y);
 
     Graphics2D g2d = (Graphics2D) gc;
     Paint oldPaint = g2d.getPaint();
     g2d.setPaint(createPaintForLine(g.getColor()));
-    g2d.fillRect(0, 0, xEnd - xStart, WAVE_HEIGHT + 1);
+    g2d.fillRect(0, 0, xEnd - xStart + offset, WAVE_HEIGHT + 1);
     g2d.setPaint(oldPaint);
   }                                                           
 
