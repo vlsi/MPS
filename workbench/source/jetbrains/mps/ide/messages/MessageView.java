@@ -36,6 +36,8 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
   private JPanel myComponent = new JPanel();
 
+  private BlameDialog myBlameDialog;
+
   private JCheckBox myErrorsCheckbox = new JCheckBox(new AbstractAction("Errors") {
     public void actionPerformed(ActionEvent e) {
       rebuildModel();
@@ -183,6 +185,8 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
         return this;
       }
     });
+
+    myBlameDialog = new BlameDialog(null);
   }
 
   public boolean canClose() {
@@ -230,10 +234,9 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
   }
 
   private void submitToTracker() {
-    new BlameDialog(myToolsPane.getFrame().getMainFrame(),
-      ((Message) myList.getSelectedValue()).getText(),
-      ((Message) myList.getSelectedValue()).getException() 
-      ).showDialog();
+    myBlameDialog.setEx(((Message) myList.getSelectedValue()).getException());
+    myBlameDialog.setMessage(((Message) myList.getSelectedValue()).getText());
+    myBlameDialog.showDialog();
   }
 
   private void openCurrentMessageNodeIfPossible() {
@@ -341,12 +344,16 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     myErrorsCheckbox.setSelected("true".equals(element.getAttributeValue(SHOW_ERRORS)));
     myWarningsCheckbox.setSelected("true".equals(element.getAttributeValue(SHOW_WARNINGS)));
     myInfoCheckbox.setSelected("true".equals(element.getAttributeValue(SHOW_INFORMATION)));
+
+    myBlameDialog.read(element, project);
   }
 
   public void write(Element element, MPSProject project) {
     element.setAttribute(SHOW_ERRORS, "" + myErrorsCheckbox.isSelected());
     element.setAttribute(SHOW_WARNINGS, "" + myWarningsCheckbox.isSelected());
     element.setAttribute(SHOW_INFORMATION, "" + myInfoCheckbox.isSelected());
+
+    myBlameDialog.write(element, project);
   }
 
   public String getName() {

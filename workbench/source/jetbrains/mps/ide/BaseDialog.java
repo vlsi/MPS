@@ -39,6 +39,8 @@ public abstract class BaseDialog extends JDialog {
   static final String D_WIDTH = "width";
   static final String D_HEIGHT = "height";
 
+  private boolean myPrepared = false;
+
   protected BaseDialog(Frame mainFrame, String text) throws HeadlessException {
     super(mainFrame, text, true);
     doInit(mainFrame);
@@ -119,6 +121,10 @@ public abstract class BaseDialog extends JDialog {
   }
 
   protected void prepareDialog() {
+    if (myPrepared) {
+      return;
+    }
+
     ((JComponent) getContentPane()).setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
 
     setLayout(new BorderLayout());
@@ -154,6 +160,8 @@ public abstract class BaseDialog extends JDialog {
     }, KeyStroke.getKeyStroke("ESCAPE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+    myPrepared = true;
   }
 
   protected String getButtonsPosition() {
