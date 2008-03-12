@@ -13,10 +13,7 @@
   </language>
   <language namespace="jetbrains.mps.internal.collections" />
   <maxImportIndex value="4" />
-  <import index="1" modelUID="jetbrains.mps.internalCollections.test" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.internal.collections.runtime@java_stub" version="-1" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
-  <import index="4" modelUID="java.util@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1204032931119">
     <property name="name" value="Test" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1204032946575">
