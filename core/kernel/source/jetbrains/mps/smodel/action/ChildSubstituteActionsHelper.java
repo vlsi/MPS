@@ -81,6 +81,10 @@ public class ChildSubstituteActionsHelper {
             public String getDescriptionText(String pattern) {
               return getDescriptionText(pattern, true);
             }
+
+            public Icon getIconFor(String pattern) {
+              return getIconFor(pattern, true);
+            }
           });
         }
         return resultActions;
@@ -451,7 +455,7 @@ public class ChildSubstituteActionsHelper {
     }
 
     public Icon getIconFor(String pattern) {
-      return IconManager.getIconFor(myReferentNode);
+      return NodePresentationUtil.getIcon(myReferentNode, true);
     }
 
     public String getDescriptionText(String pattern) {

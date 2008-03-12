@@ -41,17 +41,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   protected AbstractNodeSubstituteAction() {
   }
 
-  public Icon getIconFor(String pattern) {
-    if (getOutputConcept() != null && getOutputConcept().getAdapter() instanceof ConceptDeclaration) {
-      return IconManager.getIconFor((ConceptDeclaration) getOutputConcept().getAdapter());
-    }
-    if (getParameterObject() instanceof SNode) {
-      return IconManager.getIconFor((SNode) getParameterObject());
-    }
-
-    return null;
-  }
-
   public SNode getSourceNode() {
     return mySourceNode;
   }
@@ -70,6 +59,9 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
   public String getDescriptionText(String pattern) {
     return getDescriptionText(pattern, false);
+  }
+  public Icon getIconFor(String pattern) {
+    return getIconFor(pattern, false);
   }
 
   protected String getMatchingText(String pattern, boolean referent_presentation) {
@@ -90,6 +82,24 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       return NodePresentationUtil.descriptionText((INodeAdapter) myParameterObject, referent_presentation);
     }
     return "";
+  }
+
+  public Icon getIconFor(String pattern, boolean referent_presentation) {
+//    if (getOutputConcept() != null && getOutputConcept().getAdapter() instanceof ConceptDeclaration) {
+//      return IconManager.getIconFor((ConceptDeclaration) getOutputConcept().getAdapter());
+//    }
+//    if (getParameterObject() instanceof SNode) {
+//      return IconManager.getIconFor((SNode) getParameterObject());
+//    }
+//
+//    return null;
+    if (myParameterObject instanceof SNode) {
+      return NodePresentationUtil.getIcon((SNode) myParameterObject, referent_presentation);
+    }
+    if (myParameterObject instanceof INodeAdapter) {
+      return NodePresentationUtil.getIcon((INodeAdapter) myParameterObject, referent_presentation);
+    }
+    return null;
   }
 
   public boolean canSubstituteStrictly(String pattern) {

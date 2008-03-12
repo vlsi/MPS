@@ -34,6 +34,10 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     return getDescriptionText(pattern, true);
   }
 
+  public Icon getIconFor(String pattern) {
+    return super.getIconFor(pattern, true);
+  }
+
   public SNode doSubstitute(String pattern) {
     SNode parameterNode = (SNode) getParameterObject();
     if (myCurrentReferent != parameterNode) {

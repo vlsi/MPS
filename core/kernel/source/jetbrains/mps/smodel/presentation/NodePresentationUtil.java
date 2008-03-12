@@ -9,8 +9,22 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.core.structure.INamedConcept;
+import jetbrains.mps.ide.icons.IconManager;
+
+import javax.swing.Icon;
 
 public class NodePresentationUtil {
+  public static Icon getIcon(SNode node, boolean referent_presentation) {
+    return getIcon(node.getAdapter(), referent_presentation);
+  }
+
+  public static Icon getIcon(INodeAdapter nodeAdapter, boolean referent_presentation) {
+    if (nodeAdapter instanceof ConceptDeclaration && !referent_presentation) {
+      return IconManager.getIconFor((ConceptDeclaration) nodeAdapter);
+    }
+    return IconManager.getIconFor(nodeAdapter.getNode());
+  }
+
   public static String matchingText(SNode node) {
     return matchingText(node, false);
   }
