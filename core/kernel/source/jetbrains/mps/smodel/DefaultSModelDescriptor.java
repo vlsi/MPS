@@ -4,24 +4,15 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -29,45 +20,34 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class DefaultSModelDescriptor implements SModelDescriptor {
+public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private static final String VERSION = "version";
+  private static final String NAME_VERSION = "nameVersion";
 
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
-
-  private static volatile long ourStructuralState = 0;
-  private static volatile long ourState = 0;
 
   protected SModel mySModel = null;
 
   private Map<String, String> myMetadata;
   private boolean myMetadataLoaded;
 
-  private SModelUID myModelUID = new SModelUID("", "");
   private List<SModelListener> myWeakModelListeners = new ArrayList<SModelListener>();
   private List<SModelListener> myModelListeners = new ArrayList<SModelListener>();
   private List<SModelCommandListener> myModelCommandListeners = new ArrayList<SModelCommandListener>();
-  private Map<String, Object> myUserObjects = new HashMap<String, Object>();
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange ;
-  private IFile myModelFile;
   private FastNodeFinder myFastNodeFinder;
   private List<IPostLoadRunnable> myPostLoadRunnables = new ArrayList<IPostLoadRunnable>(2);
   private Throwable myInitializationStackTrace;
 
-  private IModelRootManager myModelRootManager;
   private boolean myTransient;
 
   private long myDiskTimestamp = -1;
   private boolean myIsTestRefactoringMode = false;
 
   public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelUID modelUID) {
-    myModelUID = modelUID;
-    myModelRootManager = manager;
-    myModelFile = modelFile;
-
+    super(modelUID, modelFile, manager);
     updateLastChange();
-
-    checkModelDuplication();
   }
 
   private void updateLastChange() {
@@ -87,19 +67,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
           ourStructuralState++;
         }
         myLastChange = System.currentTimeMillis();
-        ourState++;
       }
     });
-  }
-
-  private void checkModelDuplication() {
-    SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelUID);
-    if (anotherModel != null) {
-      String message = "Model Already Register : " + myModelUID + "\n";
-      message += "file = " + myModelFile + "\n";
-      message += "another model's file = " + anotherModel.getModelFile();
-      LOG.error(message);
-    }
   }
 
   protected SModel loadModel() {
@@ -130,17 +99,9 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public SModelUID getModelUID() {
-    return myModelUID;
-  }
-
   public boolean isNotEditable() {
     String stereotype = getModelUID().getStereotype();
     return stereotype.equals(SModelStereotype.JAVA_STUB);
-  }
-
-  public IFile getModelFile() {
-    return myModelFile;
   }
 
   public long timestamp() {
@@ -151,22 +112,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     IFile file = getModelFile();
     if (file == null || !file.exists()) return -1;
     return file.lastModified();
-  }
-
-  /**
-   * todo: should return "long name"
-   */
-  public String getName() {
-    return NameUtil.shortNameFromLongName(myModelUID.getLongName());
-  }
-
-  public String getLongName() {
-    return myModelUID.getLongName();
-  }
-
-  @NotNull
-  public String getStereotype() {
-    return myModelUID.getStereotype();
   }
 
   public SModel getSModel() {
@@ -244,43 +189,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return;
   }
 
-  @Nullable
-  public IOperationContext getOperationContext() {
-    return findOperationContext();
-  }
-
-  private IOperationContext findOperationContext() {
-    IOperationContext operationContext = null;
-  outer :
-    for (IModule module : getModules()) {
-      if (module instanceof Generator) {
-        module = ((Generator)module).getSourceLanguage();
-      }
-      Set<MPSModuleOwner> mpsModuleOwners = MPSModuleRepository.getInstance().getOwners(module);
-      if (mpsModuleOwners == null) continue;
-      for (MPSModuleOwner owner : mpsModuleOwners) {
-        if (owner instanceof MPSProject) {
-          operationContext = new ModuleContext(module, (MPSProject) owner);
-          break outer;
-        }
-      }
-    }
-    return operationContext;
-  }
-
-  public Set<IModule> getModules() {
-    return SModelRepository.getInstance().getOwners(this, IModule.class);
-  }
-
-  @Nullable
-  public IModule getModule() {
-    Set<IModule> modules = getModules();
-    if (!modules.isEmpty()) {
-      return modules.iterator().next();
-    }
-    return null;
-  }
-
   private void addListenersToNewModel() {
     if (mySModel == null) return;
 
@@ -312,14 +220,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public long lastChangeTime() {
     return myLastChange;
-  }
-
-  public long structuralState() {
-    return ourStructuralState;
-  }
-
-  public long state() {
-    return ourState;
   }
 
   public void addWeakModelListener(SModelListener listener) {
@@ -657,27 +557,25 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
+  public int getNameVersion() {
+    try {
+      return Integer.parseInt(getAttribute(NAME_VERSION));
+    } catch (NumberFormatException e) {
+      return -1;
+    }
+  }
+
   public void setVersion(int newVersion) {
     System.err.println("setting version for model " + this + ": " + newVersion);
     setAttribute(VERSION, "" + newVersion);
   }
 
-  public void setTransient(boolean b) {
-    myTransient = b;
+  public void setNameVersion(int newNameVersion) {
+    setAttribute(VERSION, "" + newNameVersion);
   }
 
-  public Set<ModelRoot> collectModelRoots() {
-    Set<ModelRoot> result = new HashSet<ModelRoot>();
-    IFile sourceFile = this.getModelFile();
-    Set<IModule> modelOwners = getModules();
-    for (IModule module : modelOwners) {
-      for (ModelRoot modelRoot : module.getModelRoots()) {
-        if (this.getModelUID().toString().equals(PathManager.getModelUIDString(sourceFile, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix()))) {
-          result.add(modelRoot);
-        }
-      }
-    }
-    return result;
+  public void setTransient(boolean b) {
+    myTransient = b;
   }
 
   public boolean rename(String newLongName, MPSProject project, ModelRoot newRoot) {
@@ -698,15 +596,4 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     myModelFile = file;
   }
 
-  public Object getUserObject(String key) {
-    return myUserObjects.get(key);
-  }
-
-  public void putUserObject(String key, Object value) {
-    myUserObjects.put(key, value);
-  }
-
-  public void removeUserObject(String key) {
-    myUserObjects.remove(key);
-  }
 }

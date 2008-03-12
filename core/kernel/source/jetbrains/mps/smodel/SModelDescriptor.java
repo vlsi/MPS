@@ -71,8 +71,6 @@ public interface SModelDescriptor {
   //dramatical event counter
   long structuralState();
 
-  long state();
-
   void delete();
 
   boolean isNotEditable();
@@ -88,6 +86,8 @@ public interface SModelDescriptor {
   Map<String, String> getMetaData();
 
   int getVersion();
+
+  int getNameVersion();
 
   void setVersion(int newVersion);
 

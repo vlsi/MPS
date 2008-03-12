@@ -121,6 +121,10 @@ public class SModel implements Iterable<SNode> {
     return getModelDescriptor().getVersion();
   }
 
+  public int getNameVersion() {
+    return getModelDescriptor().getNameVersion();
+  }
+
   @Deprecated
   public void setLog(SNode log) {
     myLog = log;
