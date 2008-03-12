@@ -575,6 +575,45 @@
     </jar>
     <delete dir="${deploy.dir}\MPS.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp" />
   </target>
+  <target name="pack.ypath.main">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\ypath.main.tmp">
+      <fileset dir="platform\ypath\solutions\main" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\ypath\solutions\main" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\ypath">
+        <include name="solutions\classes\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\ypath.main.tmp\META-INF\MANIFEST.MF" token="/solutions\classes/" value="/solutions\classes/,/solutions/classes/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\ypath.main.tmp\main.msd" token="{mps_home}\platform\ypath\solutions\classes" value="{language_descriptor}\solutions\classes" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\ypath.main.tmp\main.msd" token="{mps_home}\platform\ypath\solutions\classes" value="{mps_home}\platform\ypath.main.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\ypath.main.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\ypath.main.tmp" filesonly="true" />
+    <mkdir dir="platform\ypath\solutions\classes" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\ypath.main.runtime.jar">
+      <fileset dir="platform\ypath\solutions\classes" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\ypath.main.tmp" />
+  </target>
+  <target name="pack.ypath.test">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\ypath.test.tmp">
+      <fileset dir="platform\ypath\solutions\test" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\ypath\solutions\test" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\ypath">
+        <include name="solutions\classes\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\ypath.test.tmp\META-INF\MANIFEST.MF" token="/solutions\classes/" value="/solutions\classes/,/solutions/classes/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\ypath.test.tmp\test.msd" token="{mps_home}\platform\ypath\solutions\classes" value="{language_descriptor}\solutions\classes" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\ypath.test.tmp\test.msd" token="{mps_home}\platform\ypath\classes" value="{mps_home}\platform\ypath.test.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\ypath.test.tmp\test.msd" token="{mps_home}\platform\ypath\solutions\classes" value="{mps_home}\platform\ypath.test.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\ypath.test.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\ypath.test.tmp" filesonly="true" />
+    <mkdir dir="platform\ypath\classes" />
+    <mkdir dir="platform\ypath\solutions\classes" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\ypath.test.runtime.jar">
+      <fileset dir="platform\ypath\classes" />
+      <fileset dir="platform\ypath\solutions\classes" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\ypath.test.tmp" />
+  </target>
   <target name="pack.jetbrains.mps.ypath">
     <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.tmp">
       <fileset dir="platform\ypath\languages\ypath" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />

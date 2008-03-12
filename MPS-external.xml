@@ -205,6 +205,8 @@
       <fileset dir="core\configurations" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
     </copy>
     <antcall target="pack.jetbrains.mps.projectLanguage" />
+    <antcall target="pack.ypath.main" />
+    <antcall target="pack.ypath.test" />
     <antcall target="pack.jetbrains.mps.buildlanguage" />
     <antcall target="pack.jetbrains.mps.mpsLayoutLanguage" />
     <antcall target="pack.jetbrains.mps.mpsProjectLanguage" />
