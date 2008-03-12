@@ -35,7 +35,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   protected IFile myModelFile;
   protected IModelRootManager myModelRootManager;
 
-  public BaseSModelDescriptor(SModelUID modelUID, IFile modelFile, IModelRootManager manager) {
+  public BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelUID modelUID) {
     myModelUID = modelUID;
     myModelFile = modelFile;
     myModelRootManager = manager;

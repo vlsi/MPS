@@ -46,7 +46,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private boolean myIsTestRefactoringMode = false;
 
   public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelUID modelUID) {
-    super(modelUID, modelFile, manager);
+    super(manager, modelFile, modelUID);
     updateLastChange();
   }
 

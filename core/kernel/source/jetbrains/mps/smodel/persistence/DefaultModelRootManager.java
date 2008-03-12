@@ -16,7 +16,6 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.Merger;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileNameFilter;
 import jetbrains.mps.reloading.ReloadUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -32,6 +31,8 @@ import java.util.*;
  */
 public class DefaultModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
+  public static final String MODEL_EXTENSION = ".mps";
+  public static final String STUB_EXTENSION = ".mpstub";
 
   @NotNull
   public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner) {
@@ -119,9 +120,12 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     List<IFile> files = dir.list();
     for (IFile file : files) {
-      if (!file.getName().endsWith(".mps")) continue;      
+      String fileName = file.getName();
+      boolean isMPSModel = fileName.endsWith(MODEL_EXTENSION);
+      boolean isMPSStub = fileName.endsWith(STUB_EXTENSION);
+      if (!(isMPSModel || isMPSStub)) continue;
       SModelUID modelUID = PathManager.getModelUID(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
-      SModelDescriptor modelDescriptor = getInstance(this, modelRoot, file.getAbsolutePath(), modelUID, owner);
+      SModelDescriptor modelDescriptor = getInstance(this, modelRoot, isMPSStub, file.getAbsolutePath(), modelUID, owner);
       LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       modelDescriptors.add(modelDescriptor);
     }
@@ -176,11 +180,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       filenameSuffix = filenameSuffix + '@' + uid.getStereotype();
     }
 
-    IFile modelFile = FileSystem.getFile(path + File.separator + filenameSuffix.replace('.', File.separatorChar) + ".mps");
+    IFile modelFile = FileSystem.getFile(path + File.separator + filenameSuffix.replace('.', File.separatorChar) + MODEL_EXTENSION);
     return modelFile;
   }
 
-  public static SModelDescriptor getInstance(IModelRootManager manager, ModelRoot root, String fileName, SModelUID modelUID, ModelOwner owner) {
+  private static SModelDescriptor getInstance(IModelRootManager manager, ModelRoot root, boolean createStub, String fileName, SModelUID modelUID, ModelOwner owner) {
     LOG.debug("Getting model " + modelUID + " from " + fileName + " with owner " + owner);
 
     SModelRepository modelRepository = SModelRepository.getInstance();
@@ -189,7 +193,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
       return modelDescriptor;
     } else {
-      modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getFile(fileName), modelUID);
+      if (createStub) {
+        modelDescriptor = new StubModelDescriptor(manager, FileSystem.getFile(fileName), modelUID);
+      } else {
+        modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getFile(fileName), modelUID);
+      }
       modelRepository.registerModelDescriptor(modelDescriptor, owner);
       return modelDescriptor;
     }
@@ -300,7 +308,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   private static IFile getMetadataFile(IFile modelFile) {
     String modelPath = modelFile.getAbsolutePath();
-    String versionPath = modelPath.substring(0, modelPath.length() - ".mps".length()) + ".metadata";
+    String versionPath = modelPath.substring(0, modelPath.length() - MODEL_EXTENSION.length()) + ".metadata";
     return FileSystem.getFile(versionPath);
   }
 }
