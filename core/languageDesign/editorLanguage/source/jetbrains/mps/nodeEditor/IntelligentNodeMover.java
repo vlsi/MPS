@@ -11,20 +11,52 @@ import jetbrains.mps.logging.Logger;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Arrays;
 
-abstract class IntelligentNodeMover {
+class IntelligentNodeMover {
   private static final Logger LOG = Logger.getLogger(IntelligentNodeMover.class);
 
-  private SNode myNode;
+  private List<SNode> myNodes = new ArrayList<SNode>();
+  private EditorContext myEditorContext;
+  private boolean myForward;
 
-  IntelligentNodeMover(SNode node) {
-    myNode = node;
+  IntelligentNodeMover(EditorContext context, List<SNode> nodes, boolean forward) {
+    myNodes.addAll(nodes);
+    myEditorContext = context;
+    myForward = forward;
   }
 
-  abstract boolean forward();
+  private boolean forward() {
+    return myForward;
+  }
 
   void move() {
-    final SNode current = myNode;
+    final List<SNode> nodes = new ArrayList<SNode>();
+    CommandProcessor.instance().executeCommand(myEditorContext, new Runnable() {
+      public void run() {
+        nodes.addAll(myEditorContext.getSelectedNodes());
+
+        if (nodes.isEmpty()) {
+          return;
+        }
+
+        doMove();
+      }
+    });
+
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        if (nodes.size() == 1) {
+          myEditorContext.getNodeEditorComponent().selectNode(nodes.get(0));
+        } else if (nodes.size() > 1) {
+          myEditorContext.getNodeEditorComponent().getNodeRangeSelection().setRange(nodes.get(0), nodes.get(nodes.size() - 1));
+        }
+      }
+    });
+  }
+
+  private void doMove() {
+    final SNode current = findBoundaryNode();
     if (current == null) return;
     if (current.getParent() == null) return;
 
@@ -54,6 +86,7 @@ abstract class IntelligentNodeMover {
         if (currentTarget.isInstanceOfConcept(targetType)) {
           parent.removeChild(current);
           addWithAnchor(currentTarget, currentAnchor, role, current);
+          moveOtherNodes(current);
           return;
         }
 
@@ -63,6 +96,7 @@ abstract class IntelligentNodeMover {
           if (result != null) {
             parent.removeChild(current);
             addAtBoundary(result, role, current);
+            moveOtherNodes(current);
             return;
           }
 
@@ -85,6 +119,24 @@ abstract class IntelligentNodeMover {
     } else {
       parent.removeChild(current);
       addWithAnchor(parent, prevChild, role, current);
+    }
+
+    moveOtherNodes(current);
+  }
+
+  private void moveOtherNodes(SNode current) {
+    if (forward()) {
+      for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
+        node.getParent().removeChild(node);
+        current.addPrevSibling(node);
+      }
+    } else {
+      List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
+      Collections.reverse(list);
+      for (SNode node : list) {
+        node.getParent().removeChild(node);
+        current.addNextSibling(node);
+      }
     }
   }
 
@@ -148,6 +200,14 @@ abstract class IntelligentNodeMover {
       result.insertChild(null, role, current);
     } else {
       result.addChild(role, current);
+    }
+  }
+
+  private SNode findBoundaryNode() {
+    if (forward()) {
+      return myNodes.get(myNodes.size() - 1);
+    } else {
+      return myNodes.get(0);
     }
   }
 }

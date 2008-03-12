@@ -291,6 +291,10 @@ public class EditorContext {
     return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeClass, cellWithRole, this, roleAttribute);
   }
 
+  public List<SNode> getSelectedNodes() {
+    return myNodeEditorComponent.getSelectedNodes();
+  }
+
   private static class Memento {
     private AbstractEditorComponent myNodeEditor;
    // private Point selectionPosition;

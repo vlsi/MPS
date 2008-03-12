@@ -214,6 +214,29 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205321108666">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205321108667">
+            <property name="value" value="1" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205321109560">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205321109561">
+            <property name="value" value="2" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205321105549">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205321105550">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205321107506">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205321107507" />
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1205321121093">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1205321123047">
+            <property name="value" value="false" />
+          </node>
+        </node>
       </node>
     </node>
   </node>

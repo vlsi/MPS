@@ -15,6 +15,7 @@ import jetbrains.mps.util.Pair;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -67,6 +68,26 @@ public class NodeRangeSelection implements IKeyboardHandler {
       myEditorComponent.repaint();
       myEditorComponent.popKeyboardHandler();
     }
+  }
+
+  public void setRange(SNode first, SNode last) {
+    assert first.getParent() == last.getParent();
+
+    if (!myActive) {
+      myActive = true;
+      myEditorComponent.pushKeyboardHandler(this);
+    }
+
+    myFirstNode = first;
+    myLastNode = last;
+    myParentNode = first.getParent();
+    myRole = myFirstNode.getRole_();
+
+    Rectangle firstBound = myEditorComponent.findNodeCell(myFirstNode).getBounds();
+    Rectangle lastBounds = myEditorComponent.findNodeCell(myLastNode).getBounds();
+
+    myEditorComponent.scrollRectToVisible(firstBound.union(lastBounds));
+    myEditorComponent.repaint();
   }
 
   public boolean activate(KeyEvent keyEvent) {
@@ -178,6 +199,12 @@ public class NodeRangeSelection implements IKeyboardHandler {
               keyEvent.getKeyCode() == KeyEvent.VK_DOWN ||
               keyEvent.getKeyCode() == KeyEvent.VK_LEFT ||
               keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
+
+        if (keyEvent.isAltDown()) {
+          //alt + arrows node movement will be handled by editor 
+          return false;
+        }
+
         deactivate();
       }
       // eat it anyway
@@ -204,9 +231,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
     if (newLastNode != null) {
       myLastNode = newLastNode;
-
       myEditorComponent.scrollToNode(myLastNode);
-
       myEditorComponent.repaint();
     }
 

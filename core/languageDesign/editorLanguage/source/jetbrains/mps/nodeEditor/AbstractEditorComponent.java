@@ -376,6 +376,23 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return getSelectedCell().getSNode();
   }
 
+
+  public List<SNode> getSelectedNodes() {
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<List<SNode>>() {
+      public List<SNode> calculate() {
+        if (getNodeRangeSelection().isActive()) {
+          return getNodeRangeSelection().getNodes();
+        } else {
+          List<SNode> result = new ArrayList<SNode>();
+          if (getSelectedNode() != null) {
+            result.add(getSelectedNode());
+          }
+          return result;
+        }
+      }
+    });
+  }
+
   private Set<Intention> getAvailableIntentions() {
     final Set<Intention> result = new LinkedHashSet<Intention>();
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
@@ -446,34 +463,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void moveCurrentUp() {
-    final SNode[] current = new SNode[1];
-    CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
-      public void run() {
-        current[0] = getSelectedCell().getSNode();
-        new IntelligentNodeMover(current[0]) {
-          boolean forward() {
-            return false;
-          }
-        }.move();
-      }
-    });
-    selectNode(current[0]);
+    new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), false).move();
   }
 
 
   private void moveCurrentDown() {
-    final SNode[] current = new SNode[1];
-    CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
-      public void run() {
-        current[0] = getSelectedCell().getSNode();
-        new IntelligentNodeMover(current[0]) {
-          boolean forward() {
-            return true;
-          }
-        }.move();
-      }
-    });
-    selectNode(current[0]);
+    new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), true).move();
   }
 
   public SNode getEditedNode() {
