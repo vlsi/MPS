@@ -112,6 +112,21 @@ public class QueriesGenerated {
     }
   }
 
+  public static void nodeFactory_NodeSetup_SNodeListType_1205353787834(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType")) {
+      SNode elementType = SLinkOperations.getTarget(_context.getSampleNode(), "elementType", true);
+      if(SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+        SLinkOperations.setTarget(_context.getNewNode(), "elementConcept", SLinkOperations.getTarget(elementType, "concept", false), false);
+      }
+    }
+    if(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType")) {
+      SNode elementType = SLinkOperations.getTarget(_context.getSampleNode(), "elementType", true);
+      if(SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+        SLinkOperations.setTarget(_context.getNewNode(), "elementConcept", SLinkOperations.getTarget(elementType, "concept", false), false);
+      }
+    }
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1138413233760(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     return result;

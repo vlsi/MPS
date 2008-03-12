@@ -12,7 +12,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <maxImportIndex value="7" />
+  <maxImportIndex value="8" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
@@ -20,6 +20,7 @@
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="8" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1193745200272">
     <property name="name" value="AddSNodeCastStatetment" />
     <link role="forConcept" targetNodeId="2.1068580123159" resolveInfo="IfStatement" />
@@ -711,6 +712,94 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203705302534">
             <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1203705302486" />
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_DeleteOperation" id="1203705304693" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1205353291760">
+    <property name="name" value="Replace_SequenceType_withNodeListType" />
+    <link role="forConcept" targetNodeId="8.1151689724996" resolveInfo="SequenceType" />
+    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1205353291761">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205353291762">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205353386999">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205353387000">
+            <property name="value" value="replace with snodes&lt; &gt;" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1205353291763">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205353291764">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205353644653">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205353646358">
+            <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1205353644654" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1205353649360">
+              <link role="concept" targetNodeId="1.1145383075378" resolveInfo="SNodeListType" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1205353420079">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205353420080">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205353527472">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205353547883">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205353529302">
+              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1205353527473" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205353545679">
+                <link role="link" targetNodeId="8.1151689745422" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1205353565323">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1205353575465">
+                <link role="conceptDeclaration" targetNodeId="1.1138055754698" resolveInfo="SNodeType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1205354609722">
+    <property name="name" value="Replace_ListType_withNodeListType" />
+    <link role="forConcept" targetNodeId="8.1151688443754" resolveInfo="ListType" />
+    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1205354609723">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205354609724">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205354609725">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205354609726">
+            <property name="value" value="replace with snodes&lt; &gt;" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1205354609727">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205354609728">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205354609729">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205354609730">
+            <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1205354609731" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1205354609732">
+              <link role="concept" targetNodeId="1.1145383075378" resolveInfo="SNodeListType" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1205354609733">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205354609734">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205354609735">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205354609736">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205354609737">
+              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1205354609738" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205354655977">
+                <link role="link" targetNodeId="8.1151688676805" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1205354609740">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1205354609741">
+                <link role="conceptDeclaration" targetNodeId="1.1138055754698" resolveInfo="SNodeType" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
