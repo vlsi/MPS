@@ -370,7 +370,7 @@ public final class SNode {
   }
 
   @NotNull
-  public List<? extends SNode> getAttributes(String role) {
+  public List<SNode> getAttributes(String role) {
     String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
     return getChildren(attributeRole);
   }
