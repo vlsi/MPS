@@ -899,7 +899,7 @@
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204325544536">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204325544537">
-                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204325544538">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205281876312">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204325544540">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204325544541">
                       <link role="variableDeclaration" targetNodeId="1204325544514" resolveInfo="imco" />
