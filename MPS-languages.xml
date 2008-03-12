@@ -575,6 +575,32 @@
     </jar>
     <delete dir="${deploy.dir}\MPS.tmp\MPS\core\jetbrains.mps.projectLanguage.tmp" />
   </target>
+  <target name="pack.jetbrains.mps.ypath">
+    <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.tmp">
+      <fileset dir="platform\ypath\languages\ypath" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\ypath\languages\ypath" includes="*.mpl, *.msd, *.devkit" />
+      <fileset dir="platform\ypath">
+        <include name="runtime\classes\" />
+      </fileset>
+      <fileset dir="platform\ypath">
+        <include name="classes\" />
+      </fileset>
+    </copy>
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.tmp\META-INF\MANIFEST.MF" token="/runtime\classes/" value="/runtime\classes/,/runtime/classes/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.tmp\ypath.mpl" token="{mps_home}\platform\ypath\runtime\classes" value="{language_descriptor}\runtime\classes" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.tmp\ypath.mpl" token="{mps_home}\platform\ypath\classes" value="{language_descriptor}\classes" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.tmp\ypath.mpl" token="{mps_home}\platform\ypath\classes" value="{mps_home}\platform\jetbrains.mps.ypath.runtime.jar" />
+    <replace file="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.tmp\ypath.mpl" token="{mps_home}\platform\ypath\runtime\classes" value="{mps_home}\platform\jetbrains.mps.ypath.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.mpsarch" basedir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.tmp" filesonly="true" />
+    <mkdir dir="platform\ypath\classes" />
+    <mkdir dir="platform\ypath\runtime\classes" />
+    <jar destfile="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.runtime.jar">
+      <fileset dir="platform\ypath\classes" />
+      <fileset dir="platform\ypath\runtime\classes" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.ypath.tmp" />
+  </target>
   <target name="pack.jetbrains.mps.buildlanguage">
     <copy todir="${deploy.dir}\MPS.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp">
       <fileset dir="platform\buildlanguage\languages\buildlanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
