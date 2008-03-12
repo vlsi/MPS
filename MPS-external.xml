@@ -238,7 +238,7 @@
     <copy todir="${deploy.dir}\MPS-${build.number}.tmp\MPS\log">
       <fileset dir="log" excludes="**/*.iml, **/*.ipr, **/*.java" />
     </copy>
-    <copy file="build.number" tofile="${deploy.dir}\MPS-${build.number}.tmp\MPS\build.number" />
+    <echo file="${deploy.dir}\MPS-${build.number}.tmp\MPS\build.number">build.number=${build.number}${line.separator}revision.number=${build.vcs.number.1}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
     <copy file="changelog.txt" tofile="${deploy.dir}\MPS-${build.number}.tmp\MPS\changelog.txt" />
     <copy file="entryPoints.xml" tofile="${deploy.dir}\MPS-${build.number}.tmp\MPS\entryPoints.xml" />
     <copy file="focuskiller.dll" tofile="${deploy.dir}\MPS-${build.number}.tmp\MPS\focuskiller.dll" />
