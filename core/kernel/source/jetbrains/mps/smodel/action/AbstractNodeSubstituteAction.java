@@ -57,13 +57,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   }
 
   public SNode getOutputConcept() {
-//    if (myParameterObject instanceof SNode) {
-//      return (SNode) myParameterObject;
-//    }
-//    if (myParameterObject instanceof AbstractConceptDeclaration) {
-//      return ((AbstractConceptDeclaration) myParameterObject).getNode();
-//    }
-//    return null;
     return myOutputConcept;
   }
 
@@ -84,17 +77,17 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       return NodePresentationUtil.matchingText((SNode) myParameterObject, referent_presentation);
     }
     if (myParameterObject instanceof INodeAdapter) {
-      return NodePresentationUtil.matchingText(((INodeAdapter) myParameterObject).getNode(), referent_presentation);
+      return NodePresentationUtil.matchingText((INodeAdapter) myParameterObject, referent_presentation);
     }
     return "" + myParameterObject;
   }
 
   protected String getDescriptionText(String pattern, boolean referent_presentation) {
     if (myParameterObject instanceof SNode) {
-      return NodePresentationUtil.descriptionText((SNode) myParameterObject);
+      return NodePresentationUtil.descriptionText((SNode) myParameterObject, referent_presentation);
     }
     if (myParameterObject instanceof INodeAdapter) {
-      return NodePresentationUtil.descriptionText(((INodeAdapter) myParameterObject), referent_presentation);
+      return NodePresentationUtil.descriptionText((INodeAdapter) myParameterObject, referent_presentation);
     }
     return "";
   }

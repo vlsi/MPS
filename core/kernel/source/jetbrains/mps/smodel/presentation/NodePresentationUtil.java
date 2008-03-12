@@ -16,16 +16,19 @@ public class NodePresentationUtil {
   }
 
   public static String matchingText(SNode node, boolean referent_presentation) {
+    return matchingText(node.getAdapter(), referent_presentation);
+  }
+
+  public static String matchingText(INodeAdapter nodeAdapter, boolean referent_presentation) {
     // concept declaration : return either 'alias' or 'name'
-    INodeAdapter nodeAdapter = node.getAdapter();
     if (nodeAdapter instanceof ConceptDeclaration) {
       if (!referent_presentation) {
-        String alias = node.getConceptProperty("alias");
+        String alias = nodeAdapter.getConceptProperty("alias");
         if (alias != null) {
           return alias;
         }
       }
-      return node.getName();
+      return nodeAdapter.getName();
     }
 
     // all other nodes (not a concept declarations)
@@ -42,28 +45,27 @@ public class NodePresentationUtil {
     return descriptionText(node, false);
   }
 
-  public static String descriptionText(INodeAdapter node, boolean referent_presentation) {
-    return descriptionText(BaseAdapter.fromAdapter(node), referent_presentation);
+  public static String descriptionText(SNode node, boolean referent_presentation) {
+    return descriptionText(node.getAdapter(), referent_presentation);
   }
 
-  public static String descriptionText(SNode node, boolean referent_presentation) {
-    if (node.getAdapter() instanceof ConceptDeclaration &&
-      !referent_presentation) {
-      String description = node.getConceptProperty("short_description");
+  public static String descriptionText(INodeAdapter nodeAdapter, boolean referent_presentation) {
+    if (nodeAdapter instanceof ConceptDeclaration && !referent_presentation) {
+      String description = nodeAdapter.getConceptProperty("short_description");
       if (description != null) {
         return description;
       }
 
-      ConceptDeclaration anExtends = ((ConceptDeclaration) node.getAdapter()).getExtends();
+      ConceptDeclaration anExtends = ((ConceptDeclaration) nodeAdapter).getExtends();
       if (anExtends != null) {
-        String namespace = NameUtil.namespaceFromConcept((ConceptDeclaration) node.getAdapter());
+        String namespace = NameUtil.namespaceFromConcept((ConceptDeclaration) nodeAdapter);
         namespace = NameUtil.compactNamespace(namespace);
         return "(" + anExtends.getName() + " in " + namespace + ")";
       }
       return "";
     }
 
-    return descriptionText_internal(node.getAdapter());
+    return descriptionText_internal(nodeAdapter);
   }
 
   private static String descriptionText_internal(INodeAdapter nodeAdapter) {
