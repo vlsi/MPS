@@ -40,12 +40,15 @@ public class ColorAndGraphicsUtil {
   }
 
   public static void drawWave(Graphics g, int xStart, int xEnd, int y) {
-    Graphics2D g2d = (Graphics2D) g;
+    Graphics gc = g.create();
+    gc.translate(xStart, y);
+
+    Graphics2D g2d = (Graphics2D) gc;
     Paint oldPaint = g2d.getPaint();
     g2d.setPaint(createPaintForLine(g.getColor()));
-    g2d.fillRect(xStart, y, xEnd - xStart, WAVE_HEIGHT);
+    g2d.fillRect(0, 0, xEnd - xStart, WAVE_HEIGHT + 1);
     g2d.setPaint(oldPaint);
-  }
+  }                                                           
 
   public static void drawWaveOld(Graphics g, int xStart, int xEnd, int y) {
     int startSegment = xStart / WAVE_SEGMENT_LENGTH;
@@ -64,13 +67,13 @@ public class ColorAndGraphicsUtil {
   }
 
   private static TexturePaint createPaintForLine(Color c) {
-    BufferedImage image = new BufferedImage(WAVE_SEGMENT_LENGTH, WAVE_HEIGHT, BufferedImage.TYPE_INT_ARGB);
+    BufferedImage image = new BufferedImage(WAVE_SEGMENT_LENGTH, WAVE_HEIGHT + 1, BufferedImage.TYPE_INT_ARGB);
     Graphics g = image.getGraphics();
     g.setColor(new Color(0, 0, 0, 0));
-    g.fillRect(0, 0, WAVE_SEGMENT_LENGTH, WAVE_HEIGHT);
+    g.fillRect(0, 0, image.getWidth(), image.getHeight());
     g.setColor(c);
     drawWaveSegment(g, 0, 0);
-    return new TexturePaint(image, new Rectangle(0, 0, WAVE_SEGMENT_LENGTH , WAVE_HEIGHT));
+    return new TexturePaint(image, new Rectangle(0, 0, image.getWidth(), image.getHeight()));
   }
 
   public static Point getCentralPosition(Component parent, Component component) {
