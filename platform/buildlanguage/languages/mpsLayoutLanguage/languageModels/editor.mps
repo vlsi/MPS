@@ -223,9 +223,6 @@
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1205343740058">
       <property name="name" value="string" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1205343745652">
-        <property name="color" value="DARK_GREEN" />
-      </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1205343758186">
         <property name="style" value="BOLD" />
       </node>
@@ -243,8 +240,8 @@
           <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
           <link role="styleClass" targetNodeId="1203598953979" resolveInfo="projectComponent" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1203599103055">
-          <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1205344621976">
+          <link role="relationDeclaration" targetNodeId="1.1205340441197" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1204128139480">
           <link role="editorComponent" targetNodeId="1204116610828" resolveInfo="configurationReferences_editorComponent" />
@@ -292,8 +289,8 @@
         <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
         <link role="styleClass" targetNodeId="1203598953979" resolveInfo="projectComponent" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1203598625838">
-        <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1205344590206">
+        <link role="relationDeclaration" targetNodeId="1.1205340441197" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203598633261">
         <property name="text" value="from" />
@@ -323,8 +320,8 @@
           <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
           <link role="styleClass" targetNodeId="1203598953979" resolveInfo="projectComponent" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1203598734211">
-          <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1205344608911">
+          <link role="relationDeclaration" targetNodeId="1.1205340441197" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203598738479">
           <property name="text" value="from" />
@@ -659,8 +656,8 @@
         <property name="text" value="&gt;" />
         <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1205331467673">
-        <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1205344861008">
+        <link role="relationDeclaration" targetNodeId="1.1205340441197" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1205331920317">
         <link role="editorComponent" targetNodeId="1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
