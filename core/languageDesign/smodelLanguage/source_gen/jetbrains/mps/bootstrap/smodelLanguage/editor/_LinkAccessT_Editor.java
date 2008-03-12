@@ -38,7 +38,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1205264956549");
   }
 
-  private static void setupBasic_IsSingularCradinalityCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_SingularCradinalityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1205264969895");
   }
 
@@ -46,7 +46,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1205266348084");
   }
 
-  private static void setupBasic_IsAggregationCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_AggregationCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1205266348085");
   }
 
@@ -62,13 +62,13 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_IsSingularCradinalityCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_SingularCradinalityCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_IsAggregationCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_AggregationCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -85,9 +85,9 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "link acc<"));
     editorCell.addEditorCell(this.createTargetConceptReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ",singular:"));
-    editorCell.addEditorCell(this.createIsSingularCradinalityCell(context, node));
+    editorCell.addEditorCell(this.createSingularCradinalityCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ",aggregation:"));
-    editorCell.addEditorCell(this.createIsAggregationCell(context, node));
+    editorCell.addEditorCell(this.createAggregationCell(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ">"));
     return editorCell;
   }
@@ -153,25 +153,25 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createIsSingularCradinalityCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createSingularCradinalityCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    _LinkAccessT_Editor.setupBasic_IsSingularCradinalityCell(editorCell, node, context);
+    _LinkAccessT_Editor.setupBasic_SingularCradinalityCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      _LinkAccessT_Editor.setupLabel_IsSingularCradinalityCell((EditorCell_Label)editorCell, node, context);
+      _LinkAccessT_Editor.setupLabel_SingularCradinalityCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createIsSingularCradinalityCell(EditorContext context, SNode node) {
+  public EditorCell createSingularCradinalityCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("isSingularCradinality");
+    provider.setRole("singularCradinality");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createIsSingularCradinalityCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createSingularCradinalityCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
@@ -182,25 +182,25 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createIsAggregationCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createAggregationCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    _LinkAccessT_Editor.setupBasic_IsAggregationCell(editorCell, node, context);
+    _LinkAccessT_Editor.setupBasic_AggregationCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      _LinkAccessT_Editor.setupLabel_IsAggregationCell((EditorCell_Label)editorCell, node, context);
+      _LinkAccessT_Editor.setupLabel_AggregationCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createIsAggregationCell(EditorContext context, SNode node) {
+  public EditorCell createAggregationCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("isAggregation");
+    provider.setRole("aggregation");
     provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createIsAggregationCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createAggregationCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

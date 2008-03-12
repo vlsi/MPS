@@ -11,8 +11,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class _LinkAccessT extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT";
-  public static String IS_SINGULAR_CRADINALITY = "isSingularCradinality";
-  public static String IS_AGGREGATION = "isAggregation";
+  public static String SINGULAR_CRADINALITY = "singularCradinality";
+  public static String AGGREGATION = "aggregation";
   public static String TARGET_CONCEPT = "targetConcept";
 
   public  _LinkAccessT(SNode node) {
@@ -28,20 +28,20 @@ public class _LinkAccessT extends BaseConcept {
   }
 
 
-  public boolean getIsSingularCradinality() {
-    return this.getBooleanProperty(_LinkAccessT.IS_SINGULAR_CRADINALITY);
+  public boolean getSingularCradinality() {
+    return this.getBooleanProperty(_LinkAccessT.SINGULAR_CRADINALITY);
   }
 
-  public void setIsSingularCradinality(boolean value) {
-    this.setBooleanProperty(_LinkAccessT.IS_SINGULAR_CRADINALITY, value);
+  public void setSingularCradinality(boolean value) {
+    this.setBooleanProperty(_LinkAccessT.SINGULAR_CRADINALITY, value);
   }
 
-  public boolean getIsAggregation() {
-    return this.getBooleanProperty(_LinkAccessT.IS_AGGREGATION);
+  public boolean getAggregation() {
+    return this.getBooleanProperty(_LinkAccessT.AGGREGATION);
   }
 
-  public void setIsAggregation(boolean value) {
-    this.setBooleanProperty(_LinkAccessT.IS_AGGREGATION, value);
+  public void setAggregation(boolean value) {
+    this.setBooleanProperty(_LinkAccessT.AGGREGATION, value);
   }
 
   public AbstractConceptDeclaration getTargetConcept() {

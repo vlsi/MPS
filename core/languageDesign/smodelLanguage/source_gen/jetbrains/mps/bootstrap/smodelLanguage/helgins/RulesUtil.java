@@ -55,13 +55,13 @@ public class RulesUtil {
         if(SConceptPropertyOperations.getBoolean(op, "applicable_to_link")) {
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
           if(linkAccessT != null) {
-            isGood = SPropertyOperations.getBoolean(linkAccessT, "isSingularCradinality");
+            isGood = SPropertyOperations.getBoolean(linkAccessT, "singularCradinality");
           }
         }
         if(SConceptPropertyOperations.getBoolean(op, "applicable_to_linkList")) {
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
           if(linkAccessT != null) {
-            isGood = !(SPropertyOperations.getBoolean(linkAccessT, "isSingularCradinality"));
+            isGood = !(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality"));
           }
         }
         // ===========
@@ -118,7 +118,7 @@ public class RulesUtil {
         boolean isGood = false;
         SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267224534), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
         if(linkAccessT != null) {
-          if(!(SPropertyOperations.getBoolean(linkAccessT, "isSingularCradinality"))) {
+          if(!(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality"))) {
             isGood = true;
           }
         }
@@ -154,7 +154,7 @@ public class RulesUtil {
         boolean isGood = false;
         SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267007210), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
         if(linkAccessT != null) {
-          if(SPropertyOperations.getBoolean(linkAccessT, "isSingularCradinality")) {
+          if(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
             isGood = true;
           }
         }

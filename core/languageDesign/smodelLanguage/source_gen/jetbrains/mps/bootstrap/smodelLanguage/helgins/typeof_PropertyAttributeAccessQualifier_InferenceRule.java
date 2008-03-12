@@ -28,8 +28,8 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
     // assign type
     SNode T = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT", null);
     SLinkOperations.setTarget(T, "targetConcept", SLinkOperations.getTarget(annotationLink, "target", false), false);
-    SPropertyOperations.set(T, "isSingularCradinality", "" + (SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1")));
-    SPropertyOperations.set(T, "isAggregation", "" + (true));
+    SPropertyOperations.set(T, "singularCradinality", "" + (SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1")));
+    SPropertyOperations.set(T, "aggregation", "" + (true));
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205276553448", true), T, nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205276553446");
     // ---
     if(!(SPropertyOperations.hasValue(annotationLink, "stereotype", "property", "node"))) {

@@ -1870,11 +1870,11 @@
     <property name="name" value="_LinkAccessT" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1205264860045">
-      <property name="name" value="isSingularCradinality" />
+      <property name="name" value="singularCradinality" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1205266306005">
-      <property name="name" value="isAggregation" />
+      <property name="name" value="aggregation" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204926237448">

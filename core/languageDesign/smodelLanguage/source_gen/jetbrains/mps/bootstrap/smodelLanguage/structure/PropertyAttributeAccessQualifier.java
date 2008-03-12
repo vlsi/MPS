@@ -14,8 +14,8 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ANNOTATION_LINK = "annotationLink";
   public static String PROPERTY_QUALIFIER = "propertyQualifier";
+  public static String ANNOTATION_LINK = "annotationLink";
 
   public  PropertyAttributeAccessQualifier(SNode node) {
     super(node);
@@ -54,20 +54,20 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
     this.setProperty(PropertyAttributeAccessQualifier.VIRTUAL_PACKAGE, value);
   }
 
-  public AnnotationLinkDeclaration getAnnotationLink() {
-    return (AnnotationLinkDeclaration)this.getReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK);
-  }
-
-  public void setAnnotationLink(AnnotationLinkDeclaration node) {
-    super.setReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK, node);
-  }
-
   public IPropertyAccessQualifier getPropertyQualifier() {
     return (IPropertyAccessQualifier)this.getChild(PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER);
   }
 
   public void setPropertyQualifier(IPropertyAccessQualifier node) {
     super.setChild(PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER, node);
+  }
+
+  public AnnotationLinkDeclaration getAnnotationLink() {
+    return (AnnotationLinkDeclaration)this.getReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK);
+  }
+
+  public void setAnnotationLink(AnnotationLinkDeclaration node) {
+    super.setReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK, node);
   }
 
 }

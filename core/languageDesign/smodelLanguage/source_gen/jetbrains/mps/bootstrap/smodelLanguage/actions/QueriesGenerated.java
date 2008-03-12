@@ -553,7 +553,7 @@ public class QueriesGenerated {
           // (new)
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
           if(linkAccessT != null) {
-            if(SPropertyOperations.getBoolean(linkAccessT, "isSingularCradinality")) {
+            if(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
               return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link"));
             }
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_linkList"));
