@@ -922,6 +922,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/formulaLanguage/formulaLanguage.iml" filepath="$PROJECT_DIR$/app/formulaLanguage/formulaLanguage.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/functional/functional.iml" filepath="$PROJECT_DIR$/app/functional/functional.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/core/kernel/vcs/generic/generic.iml" filepath="$PROJECT_DIR$/core/kernel/vcs/generic/generic.iml" group="core/kernel/vcs" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/app/mf/gothic/gothic.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" filepath="$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" filepath="$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" group="workbench" />
@@ -956,6 +957,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" filepath="$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/stwiki/stwiki-webapp.iml" filepath="$PROJECT_DIR$/app/stwiki/stwiki-webapp.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/core/kernel/vcs/svn/svn.iml" filepath="$PROJECT_DIR$/core/kernel/vcs/svn/svn.iml" group="core/kernel/vcs" />
       <module fileurl="file://$PROJECT_DIR$/app/testRefactoring/testRefactoring.iml" filepath="$PROJECT_DIR$/app/testRefactoring/testRefactoring.iml" group="core/languageDesign/refactoring" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
@@ -1854,6 +1856,19 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://C:\MPS\src.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="SVNKit">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/svnkit/svnkit.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/svnkit/jna.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/svnkit/trilead.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/svnkit/svnkit-cli.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/svnkit/svnkit-javahl.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/svnkit/svnkitsrc.zip!/" />
       </SOURCES>
     </library>
   </component>

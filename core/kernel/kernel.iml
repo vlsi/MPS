@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/vcs" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -24,6 +25,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="pluginLanguage" />
+    <orderEntry type="module" module-name="generic" exported="" />
     <orderEntryProperties />
   </component>
 </module>
