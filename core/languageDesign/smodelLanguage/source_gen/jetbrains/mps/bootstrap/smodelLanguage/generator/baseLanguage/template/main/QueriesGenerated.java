@@ -553,6 +553,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "annotationLink", false), "role");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1205435459593(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "property", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1205435517749(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "link", false), "role");
+  }
+
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getGenerator().getScope());
   }
@@ -1059,6 +1067,18 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1205432701308(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "attributeQualifier", true);
+  }
+
+  public static SNode sourceNodeQuery_1205435292075(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "linkQualifier", true);
+  }
+
+  public static SNode sourceNodeQuery_1205435322756(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "propertyQualifier", true);
+  }
+
+  public static SNode sourceNodeQuery_1205435568235(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
   public static List sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class Class1 {
 
@@ -16,10 +17,15 @@ public class Class1 {
   }
 
   public void method2(SNode node) {
-    List<SNode> macros = SLinkOperations.getTargets(node, "role", true);
-    SNode firstMacro = SequenceOperations.getFirst(SLinkOperations.getTargets(node, "role", true));
-    SNode propertyMacro = SLinkOperations.getTarget(node, "role", true);
-    SNode concept = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "role", true));
+    List<SNode> macros = SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true);
+    SNode firstMacro = SequenceOperations.getFirst(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true));
+    SNode propertyMacro = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), true);
+    SNode concept = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), true));
+  }
+
+  public void method3(SNode node) {
+    SNode macro = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), true);
+    SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "xoxoxoxo"), true);
   }
 
 }

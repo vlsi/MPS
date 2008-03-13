@@ -157,6 +157,57 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205434991160">
+      <property name="name" value="method3" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205434991161" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205434991162" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205434991163">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205435159083">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205435159084">
+            <property name="name" value="macro" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205435159085">
+              <link role="concept" targetNodeId="2.1088761943574" resolveInfo="ReferenceMacro" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205435159086">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205435159087">
+                <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1205435159088">
+                  <link role="annotationLink" targetNodeId="2.1149694518242" resolveInfo="referenceMacro" />
+                  <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier" id="1205435159089">
+                    <link role="link" targetNodeId="2.1114458346385" />
+                  </node>
+                </node>
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205435159090">
+                <link role="variableDeclaration" targetNodeId="1205435002494" resolveInfo="node" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205435164654">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205435170094">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205435164655">
+              <link role="variableDeclaration" targetNodeId="1205435002494" resolveInfo="node" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205435174986">
+              <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1205435176597">
+                <link role="annotationLink" targetNodeId="2.1149694518242" resolveInfo="referenceMacro" />
+                <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1205435179317">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205435181069">
+                    <property name="value" value="xoxoxoxo" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1205435002494">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205435002495">
+          <link role="concept" targetNodeId="2.1114458327664" resolveInfo="ConceptDeclarationReference" />
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205367917535" />
   </node>
 </model>
