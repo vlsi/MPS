@@ -95,19 +95,7 @@ public class CellInfo {
   }
 
   public EditorCell findCell(AbstractEditorComponent editorComponent) {
-    if (myParentInfo == null) {
-      return editorComponent.findNodeCell(getSNode());
-    }
-    EditorCell parentCell = myParentInfo.findCell(editorComponent);
-    if (!(parentCell instanceof EditorCell_Collection)) {
-      return editorComponent.findNodeCell(getSNode());
-    }
-    EditorCell_Collection collection = (EditorCell_Collection) parentCell;
-    if (myIsInList || myCellId == null) {
-      return collection.getCellAt(myCellNumber);
-    } else {
-      return editorComponent.findCellWithId(myCellId, myNodePointer.getNode());
-    }
+    return editorComponent.findCellWithId(myCellId, myNodePointer.getNode());
   }
 
   public boolean equals(Object o) {
