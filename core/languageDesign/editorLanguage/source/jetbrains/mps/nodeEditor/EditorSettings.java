@@ -37,7 +37,6 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   private @Externalizable int myTextWidth = 500;
   private @Externalizable boolean myUseAntialiasing = true;
   private @Externalizable Color mySelectionColor = null;
-  private @Externalizable Color myRangeSelectionColor = null;
   private @Externalizable boolean myUseLegacyTypesystem = true;
   private @Externalizable boolean myUseBraces = true;
   private int myIndentSize = 2;
@@ -108,9 +107,6 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   }
 
   public Color getRangeSelectionForegroundColor() {
-    if (myRangeSelectionColor != null) {
-      return myRangeSelectionColor;
-    }
     return getSelectionBackgroundColor();
   }
 
@@ -222,11 +218,6 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
         return getDefaultSelectionBackgroundColor();
       }
     };
-    private MyColorComponent myRangeSelColorComponent = new MyColorComponent(getRangeSelectionForegroundColor()) {
-      protected Color getDefaultColor() {
-        return getDefaultSelectionBackgroundColor();
-      }
-    };
     private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
     private JCheckBox myLegacyTypesystemCheckBox = createLegacyTypesystemCheckBox();
     private JCheckBox myUseBraces = createUseBracesCheckBox();
@@ -269,9 +260,6 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       JPanel colorSettingsPanel = new JPanel(new GridLayout(0, 1));
       colorSettingsPanel.add(new JLabel("Selection Color : "));
       colorSettingsPanel.add(mySelectedColorComponent);
-
-      colorSettingsPanel.add(new JLabel("Range Selection Color : "));
-      colorSettingsPanel.add(myRangeSelColorComponent);
 
       colorSettingsPanel.add(new JLabel(" "));
       colorSettingsPanel.add(new JLabel("Cursor Blinking Rate : "));
@@ -401,8 +389,6 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       setUseBraces(myUseBraces.isSelected());
 
       mySelectionColor = mySelectedColorComponent.getColor();
-      myRangeSelectionColor = myRangeSelColorComponent.getColor();
-
 
       CommandProcessor.instance().executeLightweightCommand(new Runnable() {
         public void run() {
