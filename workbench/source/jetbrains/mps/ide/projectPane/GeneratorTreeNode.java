@@ -9,13 +9,6 @@ import jetbrains.mps.smodel.Generator;
 
 import javax.swing.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Aug 25, 2005
- * Time: 5:16:43 PM
- * To change this template use File | Settings | File Templates.
- */
 class GeneratorTreeNode extends MPSTreeNode {
 
   public GeneratorTreeNode(Generator generator, MPSProject project) {

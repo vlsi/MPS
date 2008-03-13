@@ -305,7 +305,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     return findTreeNode(rootTreeNode,
       new Condition<MPSTreeNode>() {
         public boolean met(MPSTreeNode object) {
-          return !(object instanceof ProjectModuleTreeNode);
+          return !(object instanceof ProjectModuleTreeNode)
+            || object instanceof ProjectLanguageTreeNode;
         }
       },
       new Condition<MPSTreeNode>() {
