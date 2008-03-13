@@ -150,6 +150,15 @@ public abstract class CompletionTextField extends JTextField {
       myList = new JList();
 
       myScroller = new JScrollPane(myList);
+
+      myList.addMouseListener(new MouseAdapter() {
+        public void mouseClicked(MouseEvent e) {
+          if (e.getClickCount() == 2 && myList.getSelectedValue() != null) {
+            setText((String) myList.getSelectedValue());
+          }
+        }
+      });
+
       myWindow.add(myScroller);
 
       updateBounds();
