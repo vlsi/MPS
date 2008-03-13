@@ -561,6 +561,14 @@ public class QueriesGenerated {
     return LinkDeclaration_Behavior.call_getGenuineRole_1203470470631(SLinkOperations.getTarget(_context.getNode(), "link", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1205436108309(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LinkDeclaration_Behavior.call_getGenuineRole_1203470470631(SLinkOperations.getTarget(_context.getNode(), "link", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1205436136620(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LinkDeclaration_Behavior.call_getGenuineRole_1203470470631(SLinkOperations.getTarget(_context.getNode(), "link", false));
+  }
+
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getGenerator().getScope());
   }
