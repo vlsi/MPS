@@ -25,8 +25,8 @@ public class LanguagesKeymapManager {
 
   private Map<String, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<String, List<EditorCellKeyMap>>();
   private Set<Language> myLanguages = new HashSet<Language>();
-  private Set<Language> myRegisteredLanguages = new HashSet<Language>();
-   private List<Language> myLanguagesToRegister = new LinkedList<Language>();
+  private Set<String> myRegisteredLanguages = new HashSet<String>();
+  private List<Language> myLanguagesToRegister = new LinkedList<Language>();
   private MyModuleRepositoryListener myListener = new MyModuleRepositoryListener();
 
 
@@ -64,9 +64,9 @@ public class LanguagesKeymapManager {
 
   private void registerLanguageKeyMaps(Language language) {
 //    System.out.println("register KeyMaps " + language.getNamespace());
-    if (myRegisteredLanguages.contains(language)) return;
+    if (myRegisteredLanguages.contains(language.getNamespace())) return;
     myLanguages.add(language);
-    myRegisteredLanguages.add(language);
+    myRegisteredLanguages.add(language.getNamespace());
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
     if (editorModelDescriptor == null) return;
     SModel editorModel = editorModelDescriptor.getSModel();
@@ -85,7 +85,7 @@ public class LanguagesKeymapManager {
 
   private void unregisterLanguageKeyMaps(Language language) {
     myLanguages.remove(language);
-    myRegisteredLanguages.remove(language);
+    myRegisteredLanguages.remove(language.getNamespace());
     myLanguagesToRegister.remove(language);
 //    System.out.println("unregister KeyMaps " + language.getNamespace());
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
@@ -103,7 +103,7 @@ public class LanguagesKeymapManager {
   }
 
   public List<EditorCellKeyMap> getKeyMapsForLanguage(String languageNamespace) {
-    if (!myLanguagesToKeyMaps.containsKey(languageNamespace)) {
+    if (!myLanguagesToKeyMaps.containsKey(languageNamespace) && !myRegisteredLanguages.contains(languageNamespace)) {
       for (Language l : myLanguagesToRegister) {
         if (languageNamespace.equals(l.getNamespace())) {
           registerLanguageKeyMaps(l);
