@@ -65,6 +65,7 @@ public class LinkRefQualifier_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_RoleCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1204851963572");
+      Styles_StyleSheet.REF_LINK_ROLE.apply(editorCell);
     }
 
     private static void setupLabel_RoleCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

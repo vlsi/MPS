@@ -75,11 +75,9 @@
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1138412329757">
         <link role="conceptDeclaration" targetNodeId="3.1071489288298" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1138412329758">
-          <property name="textFgColor" value="darkGray" />
           <property name="readOnly" value="true" />
-          <property name="fontStyle" value="ITALIC" />
-          <property name="drawBorder" value="false" />
           <link role="relationDeclaration" targetNodeId="3.1071599776563" />
+          <link role="styleClass" targetNodeId="1205441017139" resolveInfo="ref-link-role" />
         </node>
       </node>
     </node>
@@ -2470,6 +2468,7 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1204851963572">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="3.1071599776563" resolveInfo="role" />
+          <link role="styleClass" targetNodeId="1205441017139" resolveInfo="ref-link-role" />
         </node>
       </node>
     </node>
@@ -2515,6 +2514,18 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1205357242128">
       <property name="editable" value="false" />
       <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1205441004091">
+    <property name="name" value="Styles" />
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1205441017139">
+      <property name="name" value="ref_link_role" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1205441036593">
+        <property name="style" value="ITALIC" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1205441075892">
+        <property name="color" value="darkGray" />
+      </node>
     </node>
   </node>
 </model>

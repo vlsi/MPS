@@ -245,6 +245,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205440842896">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205440844054">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205440842897">
+              <link role="variableDeclaration" targetNodeId="1205436212316" resolveInfo="node" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205440845369">
+              <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1205440847057">
+                <link role="annotationLink" targetNodeId="2.1149694518242" resolveInfo="referenceMacro" />
+                <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier" id="1205440850121">
+                  <link role="link" targetNodeId="2.1114458346385" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1205436212316">
         <property name="name" value="node" />

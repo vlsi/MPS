@@ -12,8 +12,6 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class SLinkAccess_Editor extends DefaultNodeEditor {
@@ -68,12 +66,10 @@ public class SLinkAccess_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_RoleCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138412329758");
-      editorCell.setDrawBorder(false);
-      editorCell.setFontType(MPSFonts.ITALIC);
+      Styles_StyleSheet.REF_LINK_ROLE.apply(editorCell);
     }
 
     private static void setupLabel_RoleCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(Color.darkGray);
     }
 
 
