@@ -253,6 +253,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1203598588660">
           <property name="vertical" value="true" />
           <property name="selectable" value="false" />
+          <property name="usesFolding" value="true" />
           <link role="relationDeclaration" targetNodeId="1.1203617897549" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203599011357">
             <property name="text" value="&lt;entries&gt;" />
@@ -341,6 +342,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1203598761160">
           <property name="vertical" value="true" />
           <property name="selectable" value="false" />
+          <property name="usesFolding" value="true" />
           <link role="relationDeclaration" targetNodeId="1.1203617897549" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1203599044452">
             <property name="text" value="&lt;entries&gt;" />
