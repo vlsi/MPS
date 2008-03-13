@@ -6,12 +6,20 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class Class1 {
 
   public void method1(SNode node) {
     List<SNode> nodes = SNodeOperations.getAllAttributes(node);
     SNode firstNode = SequenceOperations.getFirst(SNodeOperations.getAllAttributes(node));
+  }
+
+  public void metgod2(SNode node) {
+    List<SNode> macros = SLinkOperations.getTargets(node, "role", true);
+    SNode firstMacro = SequenceOperations.getFirst(SLinkOperations.getTargets(node, "role", true));
+    SNode propertyMacro = SLinkOperations.getTarget(node, "role", true);
+    SNode concept = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "role", true));
   }
 
 }
