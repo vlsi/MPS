@@ -11,6 +11,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
   </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <language-engaged-on-generation namespace="jetbrains.mps.internal.collections" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.internalCollections.test.closures" version="-1" />
   <import index="2" modelUID="jetbrains.mps.internal.collections.runtime@java_stub" version="-1" />

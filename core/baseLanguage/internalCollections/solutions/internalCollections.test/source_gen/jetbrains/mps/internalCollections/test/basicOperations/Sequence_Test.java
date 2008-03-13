@@ -6,7 +6,6 @@ import jetbrains.mps.internalCollections.test.closures.Util_Test;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
 import java.util.Collections;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 
 public class Sequence_Test extends Util_Test {
 
@@ -28,18 +27,18 @@ public class Sequence_Test extends Util_Test {
 
   public void test_sequenceOperations() throws Exception {
     Iterable<Integer> input = this.input5();
-    Assert.assertEquals(((Integer)1), SequenceOperations.getFirst(input));
-    Assert.assertEquals(((Integer)5), SequenceOperations.getLast(input));
-    Assert.assertEquals(5, SequenceOperations.count(input));
+    Assert.assertEquals(((Integer)1), Sequence.fromIterable(input).first());
+    Assert.assertEquals(((Integer)5), Sequence.fromIterable(input).last());
+    Assert.assertEquals(5, Sequence.fromIterable(input).count());
     for(Integer i : this.input5()) {
-      Assert.assertEquals(true, SequenceOperations.contains(input, i));
-      Assert.assertEquals(i - 1, SequenceOperations.indexOf(input, i));
+      Assert.assertEquals(true, Sequence.fromIterable(input).contains(i));
+      Assert.assertEquals(i - 1, Sequence.fromIterable(input).indexOf(i));
     }
-    Assert.assertEquals(false, SequenceOperations.contains(input, -1));
-    Assert.assertEquals(false, SequenceOperations.isEmpty(input));
-    Assert.assertEquals(true, !(SequenceOperations.isEmpty(input)));
-    Assert.assertEquals(true, SequenceOperations.isEmpty(this.inputEmpty()));
-    Assert.assertEquals(false, !(SequenceOperations.isEmpty(this.inputEmpty())));
+    Assert.assertEquals(false, Sequence.fromIterable(input).contains(-1));
+    Assert.assertEquals(false, Sequence.fromIterable(input).isEmpty());
+    Assert.assertEquals(true, Sequence.fromIterable(input).isNotEmpty());
+    Assert.assertEquals(true, Sequence.fromIterable(this.inputEmpty()).isEmpty());
+    Assert.assertEquals(false, Sequence.fromIterable(this.inputEmpty()).isNotEmpty());
   }
 
 }
