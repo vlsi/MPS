@@ -49,7 +49,6 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
 
@@ -66,7 +65,7 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAnnotationLinkReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "<"));
     editorCell.addEditorCell(this.createLinkQualifierCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "> "));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, ">"));
     return editorCell;
   }
 
