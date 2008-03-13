@@ -688,6 +688,9 @@
       <link role="javaClass" targetNodeId="1.~GoToRulesAction" resolveInfo="GoToRulesAction" />
     </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983581141" />
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205404450015">
+      <link role="javaClass" targetNodeId="22.~GoToProjectPaneAction" resolveInfo="GoToProjectPaneAction" />
+    </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983587938">
       <link role="javaClass" targetNodeId="22.~ReturnToEditorAction" resolveInfo="ReturnToEditorAction" />
     </node>
@@ -730,7 +733,6 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205164762805">
         <link role="javaClass" targetNodeId="13.~InternalRefactoringAction" resolveInfo="InternalRefactoringAction" />
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupMember" id="1205164583505" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991238844">

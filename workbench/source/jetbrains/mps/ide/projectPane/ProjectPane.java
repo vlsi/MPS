@@ -364,6 +364,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
   }
 
+  public void selectRoot() {
+    myTree.setSelectionPath(new TreePath(myTree.getRootNode()));
+  }
+
   public MPSTreeNode findNextTreeNode(SNode node) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
