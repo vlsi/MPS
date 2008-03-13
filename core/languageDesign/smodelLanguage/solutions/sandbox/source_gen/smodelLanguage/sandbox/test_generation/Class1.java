@@ -28,4 +28,9 @@ public class Class1 {
     SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "xoxoxoxo"), true);
   }
 
+  public void method4(SNode node) {
+    SNode conceptDeclaration = SLinkOperations.getTarget(node, "conceptDeclaration", false);
+    SLinkOperations.setTarget(node, "conceptDeclaration", null, false);
+  }
+
 }
