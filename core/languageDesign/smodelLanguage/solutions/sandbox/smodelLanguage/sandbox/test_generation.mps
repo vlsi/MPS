@@ -63,7 +63,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205369123424">
-      <property name="name" value="metgod2" />
+      <property name="name" value="method2" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205369123425" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205369123426" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205369123427">

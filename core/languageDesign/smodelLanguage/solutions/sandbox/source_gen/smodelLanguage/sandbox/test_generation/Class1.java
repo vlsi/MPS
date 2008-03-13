@@ -15,7 +15,7 @@ public class Class1 {
     SNode firstNode = SequenceOperations.getFirst(SNodeOperations.getAllAttributes(node));
   }
 
-  public void metgod2(SNode node) {
+  public void method2(SNode node) {
     List<SNode> macros = SLinkOperations.getTargets(node, "role", true);
     SNode firstMacro = SequenceOperations.getFirst(SLinkOperations.getTargets(node, "role", true));
     SNode propertyMacro = SLinkOperations.getTarget(node, "role", true);

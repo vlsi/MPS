@@ -174,15 +174,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1205368275944(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "attributeQualifier", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.AllAttributesQualifier"));
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT");
   }
 
   public static boolean baseMappingRule_Condition_1205368387856(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode opType = TypeChecker.getInstance().getTypeOf(_context.getNode());
-    if(SNodeOperations.isInstanceOf(opType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
-      return SPropertyOperations.getBoolean(opType, "singularCradinality");
-    }
-    return false;
+    return SPropertyOperations.getBoolean(TypeChecker.getInstance().getTypeOf(_context.getNode()), "singularCradinality");
   }
 
   public static Object propertyMacro_GetPropertyValue_1168981884180(final IOperationContext operationContext, final PropertyMacroContext _context) {
