@@ -563,13 +563,6 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(parmConcept);
   }
 
-  public static Object propertyMacro_GetPropertyValue_1205440400376(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    // expr . link-access . op
-    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
-    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
-    return LinkDeclaration_Behavior.call_getGenuineRole_1203470470631(link);
-  }
-
   public static Object propertyMacro_GetPropertyValue_1205440400406(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // expr . link-access . op
     SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
@@ -1100,6 +1093,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1205440400398(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "parameter", true);
+  }
+
+  public static SNode sourceNodeQuery_1205440672657(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
   }
 
   public static List sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
