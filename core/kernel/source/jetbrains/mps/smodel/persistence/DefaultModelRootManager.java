@@ -193,10 +193,13 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
       return modelDescriptor;
     } else {
+      IFile modelFile = FileSystem.getFile(fileName);
       if (createStub) {
-        modelDescriptor = new StubModelDescriptor(manager, FileSystem.getFile(fileName), modelUID);
+        StubModelDescriptor stubModelDescriptor = new StubModelDescriptor(manager, modelFile, modelUID);
+        stubModelDescriptor.readStub(modelFile);
+        modelDescriptor = stubModelDescriptor;
       } else {
-        modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getFile(fileName), modelUID);
+        modelDescriptor = new DefaultSModelDescriptor(manager, modelFile, modelUID);
       }
       modelRepository.registerModelDescriptor(modelDescriptor, owner);
       return modelDescriptor;
