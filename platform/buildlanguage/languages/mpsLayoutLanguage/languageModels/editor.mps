@@ -106,7 +106,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204115922983">
         <property name="selectable" value="false" />
         <property name="vertical" value="false" />
-        <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204115928548">
           <property name="text" value="configurations" />
           <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
@@ -567,7 +566,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204299963617">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1204299963618">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204299963619">
-                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204299963620">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205408662893">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204299963622">
                     <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1204299963623" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1204299963624">
