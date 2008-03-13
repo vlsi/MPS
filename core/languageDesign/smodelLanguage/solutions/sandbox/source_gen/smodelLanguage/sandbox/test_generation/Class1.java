@@ -36,4 +36,11 @@ public class Class1 {
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), SConceptOperations.createNewNode("jetbrains.mps.transformation.TLBase.structure.ReferenceMacro", null), false);
   }
 
+  public void method5(SNode node) {
+    SNode expression = SLinkOperations.getTarget(node, "expression", true);
+    SLinkOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+    SLinkOperations.setNewChild(node, "", "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+    SLinkOperations.setNewChild(node, "", "null");
+  }
+
 }

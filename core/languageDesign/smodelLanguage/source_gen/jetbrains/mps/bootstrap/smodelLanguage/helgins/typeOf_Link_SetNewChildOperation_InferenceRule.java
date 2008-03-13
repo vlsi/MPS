@@ -4,10 +4,10 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,19 +18,25 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule implements Inference
 
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedTo_LinkAccess_aggregation(op);
-    SNode resultConcept = null;
-    SNode expectedConcept = RulesUtil.get_inputNodeConcept(op);
-    SNode parameterConcept = SLinkOperations.getTarget(op, "concept", false);
-    if(parameterConcept == null) {
-      resultConcept = expectedConcept;
-    } else
-    {
-      resultConcept = parameterConcept;
-      if(!(SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(expectedConcept)))) {
-        TypeChecker.getInstance().reportTypeError(op, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(expectedConcept, "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205272766746");
+    final SNode expectedConcept = RulesUtil.get_inputNodeConcept(op);
+    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(expectedConcept, new Runnable() {
+
+      public void run() {
+        SNode resultConcept = null;
+        SNode parameterConcept = SLinkOperations.getTarget(op, "concept", false);
+        if(parameterConcept == null) {
+          resultConcept = expectedConcept;
+        } else
+        {
+          resultConcept = parameterConcept;
+          if(!(SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(expectedConcept)))) {
+            TypeChecker.getInstance().reportTypeError(op, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(expectedConcept, "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205442304609");
+          }
+        }
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205442304627", true), new QuotationClass_80().createNode(resultConcept), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205442304625");
       }
-    }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711957380", true), new QuotationClass_48().createNode(resultConcept), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711957378");
+
+    }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205442246000");
   }
 
   public String getApplicableConceptFQName() {
