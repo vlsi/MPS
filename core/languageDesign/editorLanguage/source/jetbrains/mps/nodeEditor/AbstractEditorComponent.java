@@ -82,6 +82,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>>();
   private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>>();
 
+  private Set<EditorCell> myFoldedCells = new HashSet<EditorCell>();
+  private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
+
   private IGutterMessageOwner myMessageOwner = new IGutterMessageOwner() {
   };
 
@@ -690,6 +693,30 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public abstract EditorCell createRootCell();
+
+  public void setFolded(EditorCell cell, boolean folded) {
+    if (folded) {
+      myFoldedCells.add(cell);
+    } else {
+      myFoldedCells.remove(cell);
+    }
+  }
+
+  public Set<EditorCell> getFoldedCells() {
+    return new HashSet<EditorCell>(myFoldedCells);
+  }
+
+  public void setBracesEnabled(EditorCell cell, boolean enabled) {
+    if (enabled) {
+      myBracesEnabledCells.add(cell);
+    } else {
+      myBracesEnabledCells.remove(cell);
+    }
+  }
+
+  public Set<EditorCell> getBracesEnabledCells() {
+    return new HashSet<EditorCell>(myBracesEnabledCells);
+  }
 
   public void dispose() {
     removeOurListener();
@@ -2225,6 +2252,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (getEditorContext() != null) {
       memento = getEditorContext().createMemento();
     }
+    myFoldedCells.clear();
+    myBracesEnabledCells.clear();
     action.run();
     if (getEditorContext() != null) {
       getEditorContext().setMemento(memento);

@@ -315,16 +315,13 @@ public class EditorContext {
         }
         myCellInfo = selectedCell.getCellInfo();
         mySelectedStack = myNodeEditor.getSelectedStackForMemento();
-        EditorCell rootCell = myNodeEditor.getRootCell();
-        if (rootCell instanceof EditorCell_Collection) fillBracesAndFoldedInfo((EditorCell_Collection) rootCell);
-      }
-    }
 
-    private void fillBracesAndFoldedInfo(EditorCell_Collection cell) {
-      if (cell.areBracesEnabled()) myCollectionsWithEnabledBraces.add(cell.getCellInfo());
-      if (cell.isFolded()) myFolded.add(cell.getCellInfo());
-      for (EditorCell child : cell) {
-        if (child instanceof EditorCell_Collection) fillBracesAndFoldedInfo((EditorCell_Collection) child);
+        for (EditorCell foldedCell : myNodeEditor.getFoldedCells()) {
+          myFolded.add(foldedCell.getCellInfo());
+        }
+        for (EditorCell bracesEnabledCell : myNodeEditor.getBracesEnabledCells()) {
+          myCollectionsWithEnabledBraces.add(bracesEnabledCell.getCellInfo());
+        }
       }
     }
 
