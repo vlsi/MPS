@@ -2344,6 +2344,9 @@
       <property name="value" value="property postfix hints" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1205367019469">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1180616057533">
     <property name="name" value="CellMenuPart_PropertyPostfixHints_GetPostfixes" />

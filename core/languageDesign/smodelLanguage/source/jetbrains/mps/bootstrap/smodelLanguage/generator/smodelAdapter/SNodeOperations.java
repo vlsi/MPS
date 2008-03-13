@@ -422,4 +422,9 @@ public class SNodeOperations {
     }
     return node.getParent().getIndexOfChild(node);
   }
+
+  public static List<SNode> getAllAttributes(SNode node) {
+    if(node == null) return new ArrayList<SNode>();
+    return node.getAllAttributes();
+  }
 }

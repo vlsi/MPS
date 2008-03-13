@@ -1723,34 +1723,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1143235288634" resolveInfo="applicable_to_model" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204761823073">
-    <property name="name" value="AttributeAccessOperation" />
-    <property name="package" value="attribute" />
-    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204762310079">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="attributeQualifier" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1204762015203" resolveInfo="IAttributeAccessQualifier" />
-    </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204761852761">
-      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204761912669">
-      <property name="value" value="@" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204761921358">
-      <property name="value" value="attribute access" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1204840857881">
-      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" resolveInfo="applicable_to_node" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1204840860351">
-      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicable_to_link" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1204762015203">
     <property name="package" value="attribute" />
     <property name="name" value="IAttributeAccessQualifier" />
@@ -1901,6 +1873,34 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205357194157">
       <property name="value" value="all attributes" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204761823073">
+    <property name="name" value="AttributeAccessOperation" />
+    <property name="package" value="attribute" />
+    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1204762310079">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="attributeQualifier" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1204762015203" resolveInfo="IAttributeAccessQualifier" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1204761852761">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204761912669">
+      <property name="value" value="@" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204761921358">
+      <property name="value" value="attribute access" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1204840857881">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" resolveInfo="applicable_to_node" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1204840860351">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicable_to_link" />
     </node>
   </node>
 </model>
