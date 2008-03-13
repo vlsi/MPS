@@ -55,6 +55,7 @@ public class GenerationSession implements IGenerationSession {
 
   private int myInvocationCount = 0;
   private int myTransientModelsCount = 0;
+  private boolean myIgnoreConflictsInMappingPriorityRules;
 
 
   public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor, final IMessageHandler messagesHandler) {
@@ -121,6 +122,10 @@ public class GenerationSession implements IGenerationSession {
                                         final IGenerationScript script,
                                         final AbstractGenerationStepController generationStepController) throws Exception {
     Statistics.clearAll();
+    if (!checkGenerationStep(generationStepController)) {
+      throw new GenerationCanceledException();
+    }
+
     GenerationStatus status = script.doGenerate(new IGenerationScriptContext() {
       public GenerationStatus doGenerate(@NotNull SModelDescriptor inputModel,
                                          Language targetLanguage,
@@ -203,9 +208,9 @@ public class GenerationSession implements IGenerationSession {
     GenerationSessionContext context = new GenerationSessionContext(targetLanguage, inputModel, myInvocationContext, mappings, generationStepController, myCurrentContext);
     if (generationStepController != null) {
       // auto-plan
-      if (!checkGenerationStep(generationStepController)) {
-        throw new GenerationCanceledException();
-      }
+//      if (!checkGenerationStep(generationStepController)) {
+//        throw new GenerationCanceledException();
+//      }
       if (generationStepController.getCurrentMappings().isEmpty()) {
         addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator avalable");
         return new GenerationStatus(inputModel, null, null, false, false, false);
@@ -428,16 +433,28 @@ public class GenerationSession implements IGenerationSession {
   }
 
   private boolean checkGenerationStep(AbstractGenerationStepController stepController) {
-    if (stepController.hasConflictingPriorityRules()) {
+    if (!myIgnoreConflictsInMappingPriorityRules && stepController.hasConflictingPriorityRules()) {
       List<String> errors = stepController.getConflictingPriorityRulesAsStrings();
       for (String error : errors) {
         addMessage(new Message(MessageKind.ERROR, "conflicting rule: " + error));
       }
 
-      int option = JOptionPane.showConfirmDialog(null,
+      Object[] options = {"Yes",
+        "Yes, and ingnore all conflicts",
+        "No, cancel generation"};
+      int option = JOptionPane.showOptionDialog(null,
         "Conflicting mapping priority rules encountered.\nContinue generation?",
-        "", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
-      return option == JOptionPane.YES_OPTION;
+        "",
+        JOptionPane.YES_NO_CANCEL_OPTION,
+        JOptionPane.ERROR_MESSAGE,
+        null,
+        options,
+        options[0]);
+      if (option == JOptionPane.NO_OPTION) {
+        // actualy 'yes and ignore all'
+        myIgnoreConflictsInMappingPriorityRules = true;
+      }
+      return option == JOptionPane.YES_OPTION || option == JOptionPane.NO_OPTION;
     }
     return true;
   }
