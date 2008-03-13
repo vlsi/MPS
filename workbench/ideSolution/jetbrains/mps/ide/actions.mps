@@ -691,9 +691,6 @@
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205404450015">
       <link role="javaClass" targetNodeId="22.~GoToProjectPaneAction" resolveInfo="GoToProjectPaneAction" />
     </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983587938">
-      <link role="javaClass" targetNodeId="22.~ReturnToEditorAction" resolveInfo="ReturnToEditorAction" />
-    </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983590986" />
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204983596518">
       <link role="javaClass" targetNodeId="22.~GoToLanguageAction" resolveInfo="GoToLanguageAction" />

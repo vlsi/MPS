@@ -12,7 +12,6 @@ import jetbrains.mps.ide.actions.nodes.GoToConceptDeclarationAction;
 import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationAction;
 import jetbrains.mps.ide.actions.nodes.GoToRulesAction;
 import jetbrains.mps.ide.actions.gotoMenu.GoToProjectPaneAction;
-import jetbrains.mps.ide.actions.gotoMenu.ReturnToEditorAction;
 import jetbrains.mps.ide.actions.gotoMenu.GoToLanguageAction;
 import jetbrains.mps.ide.actions.gotoMenu.GoToModelAction;
 import jetbrains.mps.ide.action.ActionManager;
@@ -35,7 +34,6 @@ public class Goto_ActionGroup extends BaseActionGroup {
     this.add(new GoToRulesAction());
     this.addSeparator();
     this.add(new GoToProjectPaneAction());
-    this.add(new ReturnToEditorAction());
     this.addSeparator();
     this.add(new GoToLanguageAction());
     this.add(new GoToModelAction());
