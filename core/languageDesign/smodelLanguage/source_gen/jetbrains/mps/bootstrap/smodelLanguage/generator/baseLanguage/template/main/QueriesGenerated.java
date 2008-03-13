@@ -547,13 +547,6 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(link, "metaClass", "aggregation", null);
   }
 
-  public static Object propertyMacro_GetPropertyValue_1205440206230(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    // expr . link-access . op
-    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
-    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
-    return LinkDeclaration_Behavior.call_getGenuineRole_1203470470631(link);
-  }
-
   public static Object propertyMacro_GetPropertyValue_1205440206252(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parmConcept = SLinkOperations.getTarget(_context.getNode(), "concept", false);
     if(parmConcept == null) {
@@ -1096,6 +1089,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1205440672657(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1205442738989(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
   }
 

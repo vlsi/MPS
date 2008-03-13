@@ -338,6 +338,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205442884596">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205442884597">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205442884598">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205442884599">
+                <link role="variableDeclaration" targetNodeId="1205441815308" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205442884600">
+                <link role="link" targetNodeId="4.1068580123156" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1205442884601" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205442089315">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205442089316">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205442089317">
@@ -354,7 +367,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1205442089322">
-              <link role="concept" targetNodeId="4.1081773326031" resolveInfo="BinaryOperation" />
+              <link role="concept" targetNodeId="2.1087833241328" resolveInfo="PropertyMacro" />
             </node>
           </node>
         </node>
