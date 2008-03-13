@@ -25,6 +25,7 @@ import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
@@ -50,6 +51,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private boolean myUpToDate = true;
 
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
+  private @Nullable Set<ILoggableRefactoring> myCachedRefactorings = null;
 
   private Map<String, Set<String>> myAncestorsNamesMap = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
@@ -268,6 +270,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       myGenerators.clear();
     }
     myNotFoundRefactorings.clear();
+    myCachedRefactorings = null;
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
@@ -547,6 +550,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     myNameToConceptCache.clear();
     myParentsNamesMap.clear();
     myAncestorsNamesMap.clear();
+    myNotFoundRefactorings.clear();
+    myCachedRefactorings = null;
   }
 
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
@@ -713,13 +718,17 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public Set<ILoggableRefactoring> getRefactorings() {
     Set<ILoggableRefactoring> result = new HashSet<ILoggableRefactoring>();
+    if (myCachedRefactorings != null) {
+      result.addAll(myCachedRefactorings);
+      return result;
+    }
     SModelDescriptor scriptsModelDescriptor = getScriptsModelDescriptor();
     if (scriptsModelDescriptor == null) {
       return result;
     }
     SModel scriptsModel = scriptsModelDescriptor.getSModel();
     String packageName = scriptsModel.getLongName();
-    for (Refactoring refactoring : scriptsModel.allAdapters(Refactoring.class)) {
+    for (Refactoring refactoring : scriptsModel.getRootsAdapters(Refactoring.class)) {
       try {
         String fqName = packageName + "." + refactoring.getName();
         Class<ILoggableRefactoring> cls = getClass(fqName);
@@ -738,6 +747,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         LOG.error(t);
       }
     }
+    myCachedRefactorings = new HashSet<ILoggableRefactoring>(result);
     return result;
   }
 
