@@ -44,7 +44,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     editorCells.setHeight(ascent + descent);
     editorCells.setBaseline(baseline);
 
-    for (EditorCell editorCell : editorCells) {
+    for (EditorCell editorCell : cells) {
       editorCell.setBaseline(baseline);
     }
   }

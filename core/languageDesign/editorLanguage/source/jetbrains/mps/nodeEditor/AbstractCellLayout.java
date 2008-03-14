@@ -14,7 +14,7 @@ import java.awt.*;
 public abstract class AbstractCellLayout implements CellLayout {
   public int getAscent(EditorCell_Collection editorCells) {
     int ascent = 0;
-    for (EditorCell cell : editorCells) {
+    for (EditorCell cell : editorCells.getCells()) {
       ascent = Math.max(ascent, cell.getAscent());
     }
     return ascent;
