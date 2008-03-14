@@ -22,7 +22,7 @@ public class MessageDialog extends BaseDialog {
     );
 
     Dimension d = myScrollPane.getPreferredSize();
-    d.height = Math.min(d.height + 50, Toolkit.getDefaultToolkit().getScreenSize().height - 200);
+    d.height = Math.min(d.height + 100, Toolkit.getDefaultToolkit().getScreenSize().height - 200);
     d.width = Math.min(d.width + 50, Toolkit.getDefaultToolkit().getScreenSize().width - 200);
 
     setPreferredSize(d);
