@@ -62,7 +62,7 @@ public class Class1 {
     SLinkOperations.addChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), null);
     SLinkOperations.addAll(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), null);
     SLinkOperations.insertChildFirst(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), null);
-    int c2 = SLinkOperations.getCount(node, "");
+    int c2 = SLinkOperations.getCount(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"));
     int c3 = SequenceOperations.count(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true));
   }
 
