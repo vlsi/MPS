@@ -52,9 +52,11 @@ public class Class1 {
     List<SNode> nodes = SLinkOperations.getTargets(node, "statement", true);
     SLinkOperations.addNewChild(node, "statement", "jetbrains.mps.baseLanguage.structure.Statement");
     SLinkOperations.addNewChild(node, "statement", "jetbrains.mps.baseLanguage.structure.Statement");
+    SLinkOperations.addChild(node, "statement", null);
     List<SNode> macros = SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true);
     SLinkOperations.addNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), "jetbrains.mps.transformation.TLBase.structure.NodeMacro");
     SLinkOperations.addNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), "jetbrains.mps.transformation.TLBase.structure.NodeMacro");
+    SLinkOperations.addChild(node, "", null);
   }
 
 }
