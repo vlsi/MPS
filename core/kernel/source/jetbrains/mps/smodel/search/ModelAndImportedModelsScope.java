@@ -14,10 +14,6 @@ import java.util.ArrayList;
 
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Igor Alshannikov
-* Aug 29, 2007
-*/
 public class ModelAndImportedModelsScope extends AbstractSearchScope {
   private static final Logger LOG = Logger.getLogger(ModelAndImportedModelsScope.class);
 
@@ -57,12 +53,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
     } else {
       for (SModelDescriptor model : models) {
         try {
-          if (condition instanceof IsInstanceCondition
-                  /* TODO following line was added because cache of FastNodeFinder currently doesn't
-                   * support InterfaceConceptDeclaration and as a result
-                   * fastNodeFinder.getNodes(abstractConceptDeclaration, true)
-                   * always returns empty list for InstanceConceptDeclaration */
-                  && ((IsInstanceCondition) condition).getConceptDeclaration() instanceof ConceptDeclaration) {
+          if (condition instanceof IsInstanceCondition) {
             IsInstanceCondition isInstance = (IsInstanceCondition) condition;
             result.addAll(model.getFastNodeFinder().getNodes(isInstance.getConceptDeclaration(), true));
           } else {
