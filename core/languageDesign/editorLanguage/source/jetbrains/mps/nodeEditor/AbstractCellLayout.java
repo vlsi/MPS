@@ -12,8 +12,6 @@ import java.awt.*;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractCellLayout implements CellLayout {
-
-
   public int getAscent(EditorCell_Collection editorCells) {
     int ascent = 0;
     for (EditorCell cell : editorCells) {
