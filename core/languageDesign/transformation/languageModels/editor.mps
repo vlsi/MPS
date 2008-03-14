@@ -3953,6 +3953,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1169494942775">
           <property name="drawBorder" value="false" />
           <property name="text" value="condition" />
+          <property name="selectable" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1169494942776">
           <property name="drawBorder" value="false" />
