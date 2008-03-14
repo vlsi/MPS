@@ -298,12 +298,7 @@ public class RefactoringContext {
         allConceptFeatures.addAll(exactConceptFeatures);
       }
       Language l;
-      try {
-        l = node.getNodeLanguage();
-      } catch (IllegalStateException ex) {
-        LOG.error(ex);
-        continue;
-      }
+      l = node.getNodeLanguage();
       if (l == null) {
         LOG.warning("language for node " + node + " is null; concept is " + node.getConceptFqName());
         continue;

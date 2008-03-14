@@ -1378,7 +1378,7 @@ public final class SNode {
     });
   }
 
-  @NotNull
+  @Nullable
   public Language getNodeLanguage() {
     AbstractConceptDeclaration concept = getConceptDeclarationAdapter();
     return SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
