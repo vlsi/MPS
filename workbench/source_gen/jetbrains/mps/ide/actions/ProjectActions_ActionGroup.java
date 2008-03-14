@@ -13,15 +13,15 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class ProjectActions_ActionGroup extends BaseActionGroup {
 
-  public  ProjectActions_ActionGroup(MPSProject project) {
+  public ProjectActions_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.ProjectActions");
     this.setInternal(false);
-    this.add(new Label("jetbrains.mps.ide.actions.projectNew_ExtentionPoint"));
+    this.add(new Label("jetbrains.mps.ide.actions.projectNew_ExtentionPoint"), this);
     this.addSeparator();
-    this.add(new MakeProjectAction());
-    this.add(new CleanProjectAction());
+    this.add(new MakeProjectAction(), this);
+    this.add(new CleanProjectAction(), this);
     this.addSeparator();
-    this.add(new ProjectSettingsAction());
+    this.add(new ProjectSettingsAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {

@@ -14,23 +14,23 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class Generate_ActionGroup extends BaseActionGroup {
 
-  public  Generate_ActionGroup(MPSProject project) {
+  public Generate_ActionGroup(MPSProject project) {
     super("Generate", "jetbrains.mps.ide.actions.Generate");
     this.setMnemonic("G".charAt(0));
     this.setInternal(false);
-    this.add(new GenerateAllModelsInModuleAction_false());
+    this.add(new GenerateAllModelsInModuleAction_false(), this);
     this.addSeparator();
-    this.add(new ToggleTransientModelsSavingAction());
+    this.add(new ToggleTransientModelsSavingAction(), this);
     this.addSeparator();
-    this.add(new GenerateFilesFromCurrentModelAction());
-    this.add(new GenerateTextFromCurrentModelAction());
+    this.add(new GenerateFilesFromCurrentModelAction(), this);
+    this.add(new GenerateTextFromCurrentModelAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Generate");
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.generate_ExtentionPoint");

@@ -13,15 +13,15 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class DevkitActions_ActionGroup extends BaseActionGroup {
 
-  public  DevkitActions_ActionGroup(MPSProject project) {
+  public DevkitActions_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.DevkitActions");
     this.setInternal(false);
-    this.add(new SetModuleFolderAction());
+    this.add(new SetModuleFolderAction(), this);
     this.addSeparator();
-    this.add(new AddModuleToProjectAction());
-    this.add(new RemoveModuleFromProjectAction());
+    this.add(new AddModuleToProjectAction(), this);
+    this.add(new RemoveModuleFromProjectAction(), this);
     this.addSeparator();
-    this.add(new DevKitPropertiesAction());
+    this.add(new DevKitPropertiesAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {

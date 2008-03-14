@@ -13,12 +13,12 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class Tools_ActionGroup extends BaseActionGroup {
 
-  public  Tools_ActionGroup(MPSProject project) {
+  public Tools_ActionGroup(MPSProject project) {
     super("Tools", "jetbrains.mps.ide.actions.Tools");
     this.setMnemonic("T".charAt(0));
     this.setInternal(false);
-    this.add(new InstallIDEAPluginAction());
-    this.add(new ReloadAllAction());
+    this.add(new InstallIDEAPluginAction(), this);
+    this.add(new ReloadAllAction(), this);
     this.add(new Label("_label_jetbrains.mps.ide.actions.ToolsInternal"));
   }
 
@@ -26,7 +26,7 @@ public class Tools_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Tools");
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.tools_ExtentionPoint");

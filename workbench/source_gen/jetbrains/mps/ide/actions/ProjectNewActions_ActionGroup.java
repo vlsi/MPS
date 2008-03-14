@@ -13,19 +13,19 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class ProjectNewActions_ActionGroup extends BaseActionGroup {
 
-  public  ProjectNewActions_ActionGroup(MPSProject project) {
+  public ProjectNewActions_ActionGroup(MPSProject project) {
     super("New", "jetbrains.mps.ide.actions.ProjectNewActions");
     this.setInternal(false);
-    this.add(new NewSolutionAction());
-    this.add(new NewLanguageAction());
-    this.add(new NewDevKitAction());
+    this.add(new NewSolutionAction(), this);
+    this.add(new NewLanguageAction(), this);
+    this.add(new NewDevKitAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.ProjectActions");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.ProjectNewActions");
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.projectNew_ExtentionPoint");

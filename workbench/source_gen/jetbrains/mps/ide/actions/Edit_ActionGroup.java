@@ -16,29 +16,29 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class Edit_ActionGroup extends BaseActionGroup {
 
-  public  Edit_ActionGroup(MPSProject project) {
+  public Edit_ActionGroup(MPSProject project) {
     super("Edit", "jetbrains.mps.ide.actions.Edit");
     this.setMnemonic("E".charAt(0));
     this.setInternal(false);
-    this.add(new UndoAction());
-    this.add(new RedoAction());
+    this.add(new UndoAction(), this);
+    this.add(new RedoAction(), this);
     this.addSeparator();
-    this.add(new CopyNodeAction());
-    this.add(new CopyNodeReferenceAction());
-    this.add(new PasteNodeAction());
-    this.add(new CutNodeAction());
+    this.add(new CopyNodeAction(), this);
+    this.add(new CopyNodeReferenceAction(), this);
+    this.add(new PasteNodeAction(), this);
+    this.add(new CutNodeAction(), this);
     this.addSeparator();
-    this.add(new RecentEditorsAction());
+    this.add(new RecentEditorsAction(), this);
     this.addSeparator();
-    this.add(new AddModelImportAction());
-    this.add(new AddLanguageImportAction());
+    this.add(new AddModelImportAction(), this);
+    this.add(new AddLanguageImportAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Edit");
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.edit_ExtentionPoint");

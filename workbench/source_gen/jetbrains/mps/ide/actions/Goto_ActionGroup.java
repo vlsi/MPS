@@ -20,30 +20,30 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class Goto_ActionGroup extends BaseActionGroup {
 
-  public  Goto_ActionGroup(MPSProject project) {
+  public Goto_ActionGroup(MPSProject project) {
     super("Go To", "jetbrains.mps.ide.actions.Goto");
     this.setMnemonic("O".charAt(0));
     this.setInternal(false);
-    this.add(new GoToRootAction());
-    this.add(new GoToSymbolAction());
-    this.add(new GoToConceptAction());
-    this.add(new GoToNodeAction());
+    this.add(new GoToRootAction(), this);
+    this.add(new GoToSymbolAction(), this);
+    this.add(new GoToConceptAction(), this);
+    this.add(new GoToNodeAction(), this);
     this.addSeparator();
-    this.add(new GoToConceptDeclarationAction());
-    this.add(new GoToEditorDeclarationAction());
-    this.add(new GoToRulesAction());
+    this.add(new GoToConceptDeclarationAction(), this);
+    this.add(new GoToEditorDeclarationAction(), this);
+    this.add(new GoToRulesAction(), this);
     this.addSeparator();
-    this.add(new GoToProjectPaneAction());
+    this.add(new GoToProjectPaneAction(), this);
     this.addSeparator();
-    this.add(new GoToLanguageAction());
-    this.add(new GoToModelAction());
+    this.add(new GoToLanguageAction(), this);
+    this.add(new GoToModelAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Goto");
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.goto_ExtentionPoint");

@@ -4,7 +4,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
-public abstract class BaseActionGroup extends ActionGroup {
+public abstract class BaseActionGroup extends ActionGroup implements IActionGroupElementOwner {
   public BaseActionGroup(String name, String id) {
     super(name, id);
   }

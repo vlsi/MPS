@@ -21,26 +21,26 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class SolutionActions_ActionGroup extends BaseActionGroup {
 
-  public  SolutionActions_ActionGroup(MPSProject project) {
+  public SolutionActions_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.SolutionActions");
     this.setInternal(false);
-    this.add(new Label("jetbrains.mps.ide.actions.solutionNew_ExtentionPoint"));
+    this.add(new Label("jetbrains.mps.ide.actions.solutionNew_ExtentionPoint"), this);
     this.addSeparator();
-    this.add(new AddModuleToProjectAction());
-    this.add(new RemoveModuleFromProjectAction());
+    this.add(new AddModuleToProjectAction(), this);
+    this.add(new RemoveModuleFromProjectAction(), this);
     this.addSeparator();
-    this.add(new GenerateAllModelsInModuleAction_true());
-    this.add(new GenerateAllModelsInModuleAction_false());
-    this.add(new GenerateTextFromAllModelsInSolutionAction());
-    this.add(new CheckSolutionAction());
-    this.add(new OptimizeSolutionImportsAction());
+    this.add(new GenerateAllModelsInModuleAction_true(), this);
+    this.add(new GenerateAllModelsInModuleAction_false(), this);
+    this.add(new GenerateTextFromAllModelsInSolutionAction(), this);
+    this.add(new CheckSolutionAction(), this);
+    this.add(new OptimizeSolutionImportsAction(), this);
     this.addSeparator();
-    this.add(new MakeModuleAction());
-    this.add(new CleanModuleAction());
+    this.add(new MakeModuleAction(), this);
+    this.add(new CleanModuleAction(), this);
     this.addSeparator();
-    this.add(new SetModuleFolderAction());
+    this.add(new SetModuleFolderAction(), this);
     this.addSeparator();
-    this.add(new SolutionPropertiesAction());
+    this.add(new SolutionPropertiesAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {

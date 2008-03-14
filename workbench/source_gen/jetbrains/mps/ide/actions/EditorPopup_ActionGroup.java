@@ -29,36 +29,36 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class EditorPopup_ActionGroup extends BaseActionGroup {
 
-  public  EditorPopup_ActionGroup(MPSProject project) {
+  public EditorPopup_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.EditorPopup");
     this.setInternal(false);
-    this.add(new GoByReferenceGroup());
-    this.add(new GoByFirstReferenceAction());
-    this.add(new HighlightUsagesAction());
-    this.add(new HighlightInstancesAction());
+    this.add(new GoByReferenceGroup(), this);
+    this.add(new GoByFirstReferenceAction(), this);
+    this.add(new HighlightUsagesAction(), this);
+    this.add(new HighlightInstancesAction(), this);
     this.addSeparator();
-    this.add(new ShowRootInProjectAction());
-    this.add(new ShowInProjectAction());
-    this.add(new GoToConceptDeclarationAction());
-    this.add(new GoToEditorDeclarationAction());
-    this.add(new GoToRulesAction());
-    this.add(new ShowNodeInExplorerAction());
+    this.add(new ShowRootInProjectAction(), this);
+    this.add(new ShowInProjectAction(), this);
+    this.add(new GoToConceptDeclarationAction(), this);
+    this.add(new GoToEditorDeclarationAction(), this);
+    this.add(new GoToRulesAction(), this);
+    this.add(new ShowNodeInExplorerAction(), this);
     this.addSeparator();
-    this.add(new GenerateFilesFromCurrentModelAction());
-    this.add(new GenerateTextFromCurrentModelAction());
+    this.add(new GenerateFilesFromCurrentModelAction(), this);
+    this.add(new GenerateTextFromCurrentModelAction(), this);
     this.addSeparator();
-    this.add(new FindSpecificNodeUsages());
-    this.add(new FastFindUsagesNodeAction());
-    this.add(new ShowClassInHierarchyAction());
-    this.add(new ShowConceptInHierarchyAction());
-    this.add(new ShowConceptStructureAction());
+    this.add(new FindSpecificNodeUsages(), this);
+    this.add(new FastFindUsagesNodeAction(), this);
+    this.add(new ShowClassInHierarchyAction(), this);
+    this.add(new ShowConceptInHierarchyAction(), this);
+    this.add(new ShowConceptStructureAction(), this);
     this.addSeparator();
-    this.add(new CloneRootAction());
+    this.add(new CloneRootAction(), this);
     this.addSeparator();
-    this.add(new ShowCellKeymapsAction());
+    this.add(new ShowCellKeymapsAction(), this);
     this.addSeparator();
     this.addSeparator();
-    this.add(new ShowParametersAction());
+    this.add(new ShowParametersAction(), this);
     this.addSeparator();
     this.addSeparator();
   }

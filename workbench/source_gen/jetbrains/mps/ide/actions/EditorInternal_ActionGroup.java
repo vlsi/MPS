@@ -18,18 +18,18 @@ import jetbrains.mps.ide.action.ActionGroup;
 
 public class EditorInternal_ActionGroup extends BaseActionGroup {
 
-  public  EditorInternal_ActionGroup(MPSProject project) {
+  public EditorInternal_ActionGroup(MPSProject project) {
     super("Internal", "jetbrains.mps.ide.actions.EditorInternal");
     this.setInternal(true);
-    this.add(new TestNodePathAction());
-    this.add(new CellPropertiesAction());
-    this.add(new ShowCellInCellExplorerAction());
+    this.add(new TestNodePathAction(), this);
+    this.add(new CellPropertiesAction(), this);
+    this.add(new ShowCellInCellExplorerAction(), this);
     this.addSeparator();
-    this.add(new ShowCFGTreeAction());
-    this.add(new HighlightUnreachableBlocksAction());
-    this.add(new PrintNodeIDAction());
-    this.add(new PrintTextPresentationAction());
-    this.add(new HighlightCellDependenciesAction());
+    this.add(new ShowCFGTreeAction(), this);
+    this.add(new HighlightUnreachableBlocksAction(), this);
+    this.add(new PrintNodeIDAction(), this);
+    this.add(new PrintTextPresentationAction(), this);
+    this.add(new HighlightCellDependenciesAction(), this);
     this.addSeparator();
   }
 
@@ -37,7 +37,7 @@ public class EditorInternal_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.EditorPopup");
       ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.EditorInternal");
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner);

@@ -21,26 +21,26 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class LanguageActions_ActionGroup extends BaseActionGroup {
 
-  public  LanguageActions_ActionGroup(MPSProject project) {
+  public LanguageActions_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.LanguageActions");
     this.setInternal(false);
-    this.add(new Label("jetbrains.mps.ide.actions.newGroup_ExtentionPoint"));
+    this.add(new Label("jetbrains.mps.ide.actions.newGroup_ExtentionPoint"), this);
     this.addSeparator();
-    this.add(new GenerateAllModelsInModuleAction_true());
-    this.add(new GenerateAllModelsInModuleAction_false());
-    this.add(new CheckLanguageAction());
-    this.add(new OptimizeLanguageImportsAction());
+    this.add(new GenerateAllModelsInModuleAction_true(), this);
+    this.add(new GenerateAllModelsInModuleAction_false(), this);
+    this.add(new CheckLanguageAction(), this);
+    this.add(new OptimizeLanguageImportsAction(), this);
     this.addSeparator();
-    this.add(new LanguagePropertiesAction());
-    this.add(new LanguageHierarchyAction());
+    this.add(new LanguagePropertiesAction(), this);
+    this.add(new LanguageHierarchyAction(), this);
     this.addSeparator();
-    this.add(new AddModuleToProjectAction());
-    this.add(new RemoveModuleFromProjectAction());
+    this.add(new AddModuleToProjectAction(), this);
+    this.add(new RemoveModuleFromProjectAction(), this);
     this.addSeparator();
-    this.add(new MakeModuleAction());
-    this.add(new CleanModuleAction());
+    this.add(new MakeModuleAction(), this);
+    this.add(new CleanModuleAction(), this);
     this.addSeparator();
-    this.add(new SetModuleFolderAction());
+    this.add(new SetModuleFolderAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {

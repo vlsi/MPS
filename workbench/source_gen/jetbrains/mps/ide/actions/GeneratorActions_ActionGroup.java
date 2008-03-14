@@ -15,19 +15,19 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class GeneratorActions_ActionGroup extends BaseActionGroup {
 
-  public  GeneratorActions_ActionGroup(MPSProject project) {
+  public GeneratorActions_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.GeneratorActions");
     this.setInternal(false);
-    this.add(new Label("jetbrains.mps.ide.actions.generatorNew_ExtentionPoint"));
+    this.add(new Label("jetbrains.mps.ide.actions.generatorNew_ExtentionPoint"), this);
     this.addSeparator();
-    this.add(new GenerateTemplateQueriesAction_true());
-    this.add(new GenerateTemplateQueriesAction_false());
+    this.add(new GenerateTemplateQueriesAction_true(), this);
+    this.add(new GenerateTemplateQueriesAction_false(), this);
     this.addSeparator();
-    this.add(new DeleteGeneratorAction());
+    this.add(new DeleteGeneratorAction(), this);
     this.addSeparator();
-    this.add(new CheckGeneratorAction());
+    this.add(new CheckGeneratorAction(), this);
     this.addSeparator();
-    this.add(new GeneratorPropertiesAction());
+    this.add(new GeneratorPropertiesAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {

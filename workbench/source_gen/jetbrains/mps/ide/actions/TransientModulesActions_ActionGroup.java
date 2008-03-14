@@ -10,10 +10,10 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class TransientModulesActions_ActionGroup extends BaseActionGroup {
 
-  public  TransientModulesActions_ActionGroup(MPSProject project) {
+  public TransientModulesActions_ActionGroup(MPSProject project) {
     super("", "jetbrains.mps.ide.actions.TransientModulesActions");
     this.setInternal(false);
-    this.add(new RemoveTransientModulesAction());
+    this.add(new RemoveTransientModulesAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
