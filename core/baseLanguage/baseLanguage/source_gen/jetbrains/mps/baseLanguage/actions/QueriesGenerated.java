@@ -1148,7 +1148,6 @@ public class QueriesGenerated {
         public SNode doSubstitute(String pattern) {
           SNode tryStatement = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.TryStatement", null);
           SNode body = SLinkOperations.getTarget(_context.getSourceNode(), "body", true);
-          SLinkOperations.deleteChild(_context.getSourceNode(), "body");
           SLinkOperations.setTarget(tryStatement, "body", body, true);
           for(SNode catchClause : SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true)) {
             SNodeOperations.deleteNode(catchClause);

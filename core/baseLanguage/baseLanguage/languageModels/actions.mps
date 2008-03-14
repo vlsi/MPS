@@ -3620,17 +3620,6 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1177508261519">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977955142">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977966264">
-                    <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1177508261520" />
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1177508267632">
-                      <link role="link" targetNodeId="1.1164879758292" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation" id="1177508277165" />
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1177508280902">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977952334">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977963098">

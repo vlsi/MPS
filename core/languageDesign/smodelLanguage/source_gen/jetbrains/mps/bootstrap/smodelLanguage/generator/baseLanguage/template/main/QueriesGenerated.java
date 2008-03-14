@@ -13,10 +13,10 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.constraints.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
-import jetbrains.mps.bootstrap.structureLanguage.constraints.LinkDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.LinkDeclaration_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
@@ -187,13 +187,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1168985327635(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "conceptProperty", false), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1169056436910(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    // expr . link-access . op
-    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
-    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
-    return LinkDeclaration_Behavior.call_getGenuineRole_1203470470631(link);
   }
 
   public static Object propertyMacro_GetPropertyValue_1169056926467(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -624,11 +617,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1168985092391(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
-  }
-
-  public static SNode sourceNodeQuery_1169056377509(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    // <expr-to-copy> . link-access . delete-op
-    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1169056862270(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1101,6 +1089,15 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1205442738989(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1205527437690(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    // <expr-to-copy> . link-access . delete-op
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1205527490830(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
   }
 
