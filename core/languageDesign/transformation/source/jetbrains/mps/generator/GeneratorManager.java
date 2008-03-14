@@ -2,7 +2,6 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
@@ -13,8 +12,6 @@ import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
-import jetbrains.mps.ide.modelchecker.ModelCheckResult;
-import jetbrains.mps.ide.modelchecker.ModelChecker;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
@@ -28,7 +25,6 @@ import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
@@ -563,7 +559,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           }
 
           if (generationType.forceReload() && module != null) {
-            ReloadUtils.reloadAll(true, true, true, new HashSet<SModelDescriptor>(), module, new Runnable() {
+            ReloadUtils.reloadAll(true, true, true, new HashSet<SModelDescriptor>(), new Runnable() {
               public void run() {
               }
             });
