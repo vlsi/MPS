@@ -525,7 +525,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
       if (generationOK) {
         for (Pair<IModule, List<SModelDescriptor>> moduleListPair : moduleSequence) {
-          progress.addText("");
           IModule module = moduleListPair.o1;
           if (module != null && (!ideaPresent && !module.isCompileInMPS()) || !generationType.requiresCompilationInIDEAfterGeneration()) {
           } else {
