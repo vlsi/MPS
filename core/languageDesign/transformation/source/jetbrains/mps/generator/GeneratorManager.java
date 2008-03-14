@@ -548,23 +548,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             progress.addText("" + compilationResult);
             progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
             checkMonitorCanceled(progress);
-
-            if (compilationResult.isOk()) {
-              progress.addText("reloading MPS classes...");
-              progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-              ReloadUtils.reloadAll(false);
-              progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-              checkMonitorCanceled(progress);
-            }
-          }
-
-          if (generationType.forceReload() && module != null) {
-            ReloadUtils.reloadAll(true, true, new HashSet<SModelDescriptor>(), new Runnable() {
-              public void run() {
-              }
-            });
           }
         }
+
+        progress.addText("reloading MPS classes...");
+        progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+        ReloadUtils.reloadAll();
+        progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
 
         if (generationOK) {
           progress.addText("generation completed successfully");
