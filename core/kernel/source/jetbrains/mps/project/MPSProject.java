@@ -98,7 +98,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
         readModules();
 
-        ReloadUtils.reloadAll(true, false);
+        ReloadUtils.reloadAll(false);
 
         for (IModule m : getModules()) {
           m.convert();
