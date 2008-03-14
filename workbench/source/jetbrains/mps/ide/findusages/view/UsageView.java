@@ -72,7 +72,12 @@ public abstract class UsageView implements IExternalizableComponent {
     };
     myTreeWrapper.setEmptyContents();
 
-    myPanel.add(myTreeWrapper, BorderLayout.CENTER);
+    JPanel treeWrapperPanel = new JPanel(new BorderLayout());
+    JPanel treeToolbarPanel = new JPanel(new BorderLayout());
+    treeToolbarPanel.add(myTreeWrapper.getViewToolbar(JToolBar.VERTICAL), BorderLayout.NORTH);
+    treeWrapperPanel.add(treeToolbarPanel, BorderLayout.WEST);
+    treeWrapperPanel.add(myTreeWrapper, BorderLayout.CENTER);
+    myPanel.add(treeWrapperPanel, BorderLayout.CENTER);
 
     myPanel.setMinimumSize(new Dimension());
   }
@@ -250,35 +255,7 @@ public abstract class UsageView implements IExternalizableComponent {
           }
         });
       }
-      add(new AnonymButton(Icons.COLLAPSE_ICON, "Collapse") {
-        public void action() {
-          myTreeWrapper.collapseResults();
-        }
-      });
-      add(new AnonymButton(Icons.EXPAND_ICON, "Expand") {
-        public void action() {
-          myTreeWrapper.expandResults();
-        }
-      });
-      add(new AnonymButton(Icons.PREVIOUS_ICON, "Previous occurence") {
-        public void action() {
-          myTreeWrapper.prevOccurence();
-        }
-      });
-      add(new AnonymButton(Icons.NEXT_ICON, "Next occurence") {
-        public void action() {
-          myTreeWrapper.nextOccurence();
-        }
-      });
-      add(new AnonymToggleButton(Icons.AUTOSCROLL_ICON, "Autoscroll to source") {
-        public void actionSelected() {
-          myTreeWrapper.setAutoscroll(true);
-        }
-
-        public void actionDeselected() {
-          myTreeWrapper.setAutoscroll(false);
-        }
-      });
+      add(myTreeWrapper.getActionsToolbar(JToolBar.VERTICAL));
       if (buttonConfiguration.isShowCloseButton()) {
         add(new AnonymButton(Icons.CLOSE_ICON, "Close") {
           public void action() {
@@ -324,18 +301,4 @@ public abstract class UsageView implements IExternalizableComponent {
       return myShowCloseButton;
     }
   }
-
-  /*
-  private class GoToNodeListener{
-    private gotoNode(){
-       IDEProjectFrame ideProjectFrame = context.get(IDEProjectFrame.class);
-    ProjectPane projectPane = ideProjectFrame.getProjectPane();
-    SNode node = context.get(SNode.class);
-    IOperationContext operationContext = context.get(IOperationContext.class);
-    ideProjectFrame.showMainProjectPane();
-    projectPane.selectNode(node, operationContext);
-    projectPane.getTree().requestFocus();
-    }
-  }
-  */
 }
