@@ -928,26 +928,100 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
-                id="1205515746160">
+                id="1205516109798">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"
-                  id="1205515746161">
-              <property name="name" value="thisGroup"/>
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType"
-                    id="1205515746162">
-                <link role="elementConcept" targetNodeId="7.1203087890642" resolveInfo="ActionGroupDeclaration"/>
+                  id="1205516109799">
+              <property name="name" value="groupDeclaration"/>
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205516109800">
+                <link role="concept" targetNodeId="7.1203087890642" resolveInfo="ActionGroupDeclaration"/>
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205515746163">
-                <node role="operation"
-                      type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation"
-                      id="1205515746164">
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205516109801">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation"
+                      id="1205516109802">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"
-                        id="1205515746165">
+                        id="1205516109803">
                     <link role="concept" targetNodeId="7.1203087890642" resolveInfo="ActionGroupDeclaration"/>
                   </node>
                 </node>
                 <node role="operand"
                       type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode"
-                      id="1205515746166"/>
+                      id="1205516109804"/>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
+                id="1205515746160">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"
+                  id="1205515746161">
+              <property name="name" value="thisGroupChildGroups"/>
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType"
+                    id="1205515746162">
+                <link role="elementConcept" targetNodeId="7.1203087890642" resolveInfo="ActionGroupDeclaration"/>
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205516276907">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205516200486">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205516200487">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                          id="1205516200488">
+                      <link role="variableDeclaration" targetNodeId="1205516109799" resolveInfo="groupDeclaration"/>
+                    </node>
+                    <node role="operation"
+                          type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation"
+                          id="1205516200489"/>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation"
+                        id="1205516200490">
+                    <node role="whereClosure"
+                          type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereBlock"
+                          id="1205516200491">
+                      <node role="defaultInputElement"
+                            type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement"
+                            id="1205516200492">
+                        <property name="name" value="it"/>
+                      </node>
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205516200493">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
+                              id="1205516200494">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                id="1205516200495">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference"
+                                  id="1205516200496">
+                              <link role="closureParameter" targetNodeId="1205516200492" resolveInfo="it"/>
+                            </node>
+                            <node role="operation"
+                                  type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation"
+                                  id="1205516200497">
+                              <node role="conceptArgument"
+                                    type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference"
+                                    id="1205516200498">
+                                <link role="conceptDeclaration" targetNodeId="7.1203087890642"
+                                      resolveInfo="ActionGroupDeclaration"/>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation"
+                      id="1205516278699"/>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205516065017">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205516211111">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                    id="1205516065018">
+                <link role="variableDeclaration" targetNodeId="1205515746161" resolveInfo="thisGroupChildGroups"/>
+              </node>
+              <node role="operation"
+                    type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation"
+                    id="1205516214431">
+                <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                      id="1205516216126">
+                  <link role="variableDeclaration" targetNodeId="1205516109799" resolveInfo="groupDeclaration"/>
+                </node>
               </node>
             </node>
           </node>
