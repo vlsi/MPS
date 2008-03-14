@@ -19,11 +19,12 @@ import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Folder;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -128,6 +129,11 @@ public class GenericRefactoring {
 
     refactoringContext.computeCaches();
     SearchResults usages = refactoringContext.getUsages();
+    Map<IModule, List<SModel>> sourceModels = CommandProcessor.instance().executeLightweightCommand(new Calculable<Map<IModule, List<SModel>>>() {
+      public Map<IModule, List<SModel>> calculate() {
+        return myRefactoring.getModelsToGenerate(context, refactoringContext);
+      }
+    });
     if (!refactoringContext.isLocal() || usages == null) {
       if (myRefactoring.doesUpdateModel()) {
         writeIntoLog(model, refactoringContext);
@@ -145,17 +151,20 @@ public class GenericRefactoring {
       }
     } else {
       if (myRefactoring.doesUpdateModel()) {
-        for (SModel anotherModel : usages.getModelsWithResults()) {
+        Set<SModel> modelsToProcess = usages.getModelsWithResults();
+        modelsToProcess.addAll(CollectionUtil.fold(sourceModels.values(), new Folder<List<SModel>, List<SModel>>() {
+          public List<SModel> foldOnce(List<SModel> initial, List<SModel> nextElement) {
+            initial.addAll(nextElement);
+            return initial; 
+          }
+        }, new ArrayList<SModel>()));
+        for (SModel anotherModel : modelsToProcess) {
           processModel(anotherModel, model, refactoringContext);
         }
       }
     }
 
-    Map<IModule, List<SModel>> sourceModels = CommandProcessor.instance().executeLightweightCommand(new Calculable<Map<IModule, List<SModel>>>() {
-      public Map<IModule, List<SModel>> calculate() {
-        return myRefactoring.getModelsToGenerate(context, refactoringContext);
-      }
-    });
+
     if (!sourceModels.isEmpty()) {
       generateModels(context, sourceModels, refactoringContext);
     }
