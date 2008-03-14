@@ -38,6 +38,14 @@ public class QueryMethodGenerated {
     ourMethods.clear();
   }
 
+  public static Class getQueriesGeneratedClassFor(SModelDescriptor sm) {
+    String packageName = JavaNameUtil.packageNameForModelUID(sm.getSModel().getUID());
+    String queriesClassName = packageName + ".QueriesGenerated";
+    IModule module = findModuleForModel(sm.getSModel());
+    assert module != null;
+    return module.getClass(queriesClassName);
+  }
+
   private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
     Pair<SModelUID, String> pair = new Pair<SModelUID, String>(sourceModel.getUID(), methodName);
     if (QueryMethodGenerated.ourMethods.containsKey(pair)) {
@@ -49,7 +57,6 @@ public class QueryMethodGenerated {
     Class queriesClass = null;
     IModule module = findModuleForModel(sourceModel);
     assert module != null;
-
 
     queriesClass = module.getClass(queriesClassName);
 

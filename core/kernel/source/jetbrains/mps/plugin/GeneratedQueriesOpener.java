@@ -3,27 +3,27 @@ package jetbrains.mps.plugin;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.rmi.RemoteException;
+import java.lang.reflect.Method;
 
 public class GeneratedQueriesOpener {
   public static boolean openQueryMethod(IOperationContext context, SNode node) {
     String modelName = node.getModel().getModelDescriptor().getLongName();
 
-    SModelDescriptor sm = context.getScope().getModelDescriptor(SModelUID.fromString(modelName + "@" + SModelStereotype.JAVA_STUB));
+    Class cls = QueryMethodGenerated.getQueriesGeneratedClassFor(node.getModel().getModelDescriptor());
 
-    if (sm == null) {
+    if (cls == null) {
       return false;
     }
-    
-    ClassConcept cls = (ClassConcept) sm.getSModel().getRootAdapterByName("QueriesGenerated");
 
-    for (StaticMethodDeclaration smd : cls.getStaticMethods()) {
-      if (smd.getName().endsWith("_" + node.getId())) {
+    for (Method m : cls.getMethods()) {
+      if (m.getName().endsWith("_" + node.getId())) {
         try {
           IProjectHandler handler = context.getProject().getProjectHandler();
           if (handler != null) {
-            handler.openMethod(modelName + ".QueriesGenerated", smd.getName(), smd.getParametersCount());
+            handler.openMethod(modelName + ".QueriesGenerated", m.getName(), m.getParameterTypes().length);
             return true;
           }
         } catch (RemoteException e) {
