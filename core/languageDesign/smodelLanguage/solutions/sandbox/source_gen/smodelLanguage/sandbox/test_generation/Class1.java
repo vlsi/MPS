@@ -60,7 +60,7 @@ public class Class1 {
     SLinkOperations.addNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), "jetbrains.mps.transformation.TLBase.structure.NodeMacro");
     SLinkOperations.addChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), null);
     SLinkOperations.addAll(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), null);
-    SLinkOperations.insertChildFirst(node, "", null);
+    SLinkOperations.insertChildFirst(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), null);
   }
 
 }
