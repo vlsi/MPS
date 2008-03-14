@@ -97,7 +97,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected EditorCell myRootCell;
   protected EditorCell mySelectedCell;
-  private static final int MIN_SHIFT_X = 10;
+  private static final int MIN_SHIFT_X = 30;
   private static final int ADDITIONAL_SHIFT_X = 10;
   private int myShiftX = MIN_SHIFT_X + ADDITIONAL_SHIFT_X;
   private int myShiftY = 10;
@@ -1103,7 +1103,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return null;
     }
 
-    return findCellWithIdWithingBigCell(bigCell, id, node);    
+    return findCellWithIdWithingBigCell(bigCell, id, node);
   }
 
   private EditorCell findCellWithIdWithingBigCell(EditorCell root, String id, SNode node) {
@@ -1635,7 +1635,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       selectedCell = bigCell;
     }
 
-    int x = getRootCell().getX();//- ADDITIONAL_SHIFT_X; //- myLightBulb.getWidth() - 3;
+    int x = getRootCell().getX() - ADDITIONAL_SHIFT_X - myLightBulb.getWidth() - 6;
     int y = selectedCell.getY();
     x = x < 0 ? 2 : x;
     y = y < 0 ? 2 : y;
