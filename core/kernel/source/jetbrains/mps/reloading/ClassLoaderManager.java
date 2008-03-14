@@ -200,31 +200,14 @@ public class ClassLoaderManager implements IComponentLifecycle {
     myModuleRepository = moduleRepository;
   }
 
-  public void updateClassPathIfTimestampChanged() {
-    updateClassPath();
-  }
-
   public void updateClassPath() {
-    updateClassPath(null);
-  }
-
-  public void updateClassPath(IModule changeModule) {
     LOG.debug("Updating class path");
 
-    if (changeModule == null) {
-      refreshBundles(myOSGIBundles.values().toArray(new Bundle[0]), true);
-    } else {
-      refreshBundles(new Bundle[] { myOSGIBundles.get(changeModule.getModuleUID())}, true);
-    }
+    refreshBundles(myOSGIBundles.values().toArray(new Bundle[myOSGIBundles.size()]), true);
 
-    if (changeModule == null) {
-      for (IModule m : myModuleRepository.getAllModules()) {
-        m.reloadStubs();
-        ((AbstractModule) m).updateRuntimeClassPath();
-      }
-    } else {
-      changeModule.reloadStubs();
-      ((AbstractModule) changeModule).updateRuntimeClassPath();
+    for (IModule m : myModuleRepository.getAllModules()) {
+      m.reloadStubs();
+      ((AbstractModule) m).updateRuntimeClassPath();
     }
 
     LOG.debug("Done");

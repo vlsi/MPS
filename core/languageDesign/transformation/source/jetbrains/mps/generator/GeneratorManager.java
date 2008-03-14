@@ -559,7 +559,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           }
 
           if (generationType.forceReload() && module != null) {
-            ReloadUtils.reloadAll(true, true, true, new HashSet<SModelDescriptor>(), new Runnable() {
+            ReloadUtils.reloadAll(true, true, new HashSet<SModelDescriptor>(), new Runnable() {
               public void run() {
               }
             });
