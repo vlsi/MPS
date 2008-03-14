@@ -83,6 +83,13 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
         coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, new Pattern_1(), false);
         text = text + "\nstrong: " + coercedType;
       }
+      {
+        text = text + "\n\ncoerce to Type";
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
+        text = text + "\nweak  : " + coercedType;
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), false);
+        text = text + "\nstrong: " + coercedType;
+      }
       JOptionPane.showMessageDialog(null, text, node.getDebugText(), JOptionPane.INFORMATION_MESSAGE);
     }
 

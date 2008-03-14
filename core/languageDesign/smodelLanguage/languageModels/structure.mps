@@ -1235,6 +1235,10 @@
       <property name="value" value="add all" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205532279587">
+      <property name="value" value="add children" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1172244025710">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" resolveInfo="applicable_to_linkList" />
     </node>

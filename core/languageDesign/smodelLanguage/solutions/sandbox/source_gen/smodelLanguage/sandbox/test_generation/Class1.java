@@ -37,6 +37,7 @@ public class Class1 {
   }
 
   public void method5(SNode node) {
+    // single attribute access
     SNode expression = SLinkOperations.getTarget(node, "expression", true);
     SLinkOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.BinaryOperation");
     SLinkOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
@@ -44,6 +45,16 @@ public class Class1 {
     SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"), "jetbrains.mps.transformation.TLBase.structure.PropertyMacro");
     SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"), "jetbrains.mps.transformation.TLBase.structure.PropertyMacro");
     SNode macro = SLinkOperations.deleteChild(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"));
+  }
+
+  public void method6(SNode node) {
+    // attribute list access
+    List<SNode> nodes = SLinkOperations.getTargets(node, "statement", true);
+    SLinkOperations.addNewChild(node, "statement", "jetbrains.mps.baseLanguage.structure.Statement");
+    SLinkOperations.addNewChild(node, "statement", "jetbrains.mps.baseLanguage.structure.Statement");
+    List<SNode> macros = SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true);
+    SLinkOperations.addNewChild(node, "", "null");
+    SLinkOperations.addNewChild(node, "", "jetbrains.mps.transformation.TLBase.structure.NodeMacro");
   }
 
 }
