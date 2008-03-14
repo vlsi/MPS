@@ -16,23 +16,23 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
-    Iterator<EditorCell> lookAhead = editorCells.iterator();
-    if (lookAhead.hasNext()) lookAhead.next();
     int ascent = 0;
     int descent = 0;
-    for (EditorCell editorCell : editorCells) {
+    EditorCell[] cells = editorCells.getCells();
+    for (int i = 0; i < cells.length; i++) {
+      EditorCell editorCell = cells[i];
       editorCell.setX(x + width);
       editorCell.relayout();
       width += editorCell.getWidth();
-      //++ punctuation support
-      if (lookAhead.hasNext()) {
-        EditorCell nextCell = lookAhead.next();
+
+      if (i != cells.length - 1) {
+        EditorCell nextCell = cells[i + 1];
         if (nextCell.isPunctuationLayout()) {
           width -= editorCell.getRightInternalInset();
           editorCell.setNextIsPunctuation();
         }
       }
-      //-- punctuation support
+
       ascent = Math.max(ascent, editorCell.getAscent());
       descent = Math.max(descent, editorCell.getDescent());
     }
