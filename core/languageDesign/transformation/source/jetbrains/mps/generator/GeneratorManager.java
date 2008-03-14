@@ -567,9 +567,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               public void run() {
               }
             });
-          } else {
-            //we need it to update genearation status
-            ReloadUtils.rebuildProjectPanes();
           }
         }
 
@@ -621,6 +618,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         System.gc();
       }
       progress.finishAnyway();
+
+      //we need it to update genearation status
+      ReloadUtils.rebuildProjectPanes();
     }
 
     return true;
