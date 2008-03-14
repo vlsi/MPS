@@ -4,6 +4,7 @@ import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 
 import java.util.HashMap;
+import java.awt.Dimension;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,9 +14,11 @@ import java.util.HashMap;
  * To change this template use File | Settings | File Templates.
  */
 public class DialogDimensionsSettings extends DefaultExternalizableComponent {
-  private @Externalizable HashMap<String, DialogDimensions> myDialogsDimensions = new HashMap<String, DialogDimensions>();
+  private
+  @Externalizable
+  HashMap<String, DialogDimensions> myDialogsDimensions = new HashMap<String, DialogDimensions>();
 
-  protected DialogDimensions getDimensionSettings(Class <? extends BaseDialog> cls) {
+  protected DialogDimensions getDimensionSettings(Class<? extends BaseDialog> cls) {
     return myDialogsDimensions.get(cls.getName());
   }
 
@@ -35,6 +38,10 @@ public class DialogDimensionsSettings extends DefaultExternalizableComponent {
       myWidth = width;
       myLeft = left;
       myTop = top;
+    }
+
+    public Dimension getDimensions() {
+      return new Dimension(myWidth, myHeight);
     }
   }
 }
