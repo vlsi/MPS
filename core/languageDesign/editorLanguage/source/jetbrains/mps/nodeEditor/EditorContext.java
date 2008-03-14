@@ -223,8 +223,8 @@ public class EditorContext {
             getNodeEditorComponent().changeSelection(editorCell);
             editorCell_label.getTextLine().setCaretPosition(position);
           }
-        } else if (editorCell instanceof EditorCell_Iterable) {
-          EditorCell_Iterable editorCell_iterable = (EditorCell_Iterable) editorCell;
+        } else if (editorCell instanceof EditorCell_Collection) {
+          EditorCell_Collection editorCell_iterable = (EditorCell_Collection) editorCell;
           for (EditorCell subEditorCell: editorCell_iterable) {
             newPosition = setCaretPosition(subEditorCell, newPosition);
             if (newPosition < 0) {
