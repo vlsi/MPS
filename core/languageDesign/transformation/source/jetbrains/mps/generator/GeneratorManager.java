@@ -525,6 +525,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
       if (generationOK) {
         for (Pair<IModule, List<SModelDescriptor>> moduleListPair : moduleSequence) {
+          progress.addText("");
           IModule module = moduleListPair.o1;
           if (module != null && (!ideaPresent && !module.isCompileInMPS()) || !generationType.requiresCompilationInIDEAfterGeneration()) {
           } else {
@@ -551,6 +552,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           }
         }
 
+        progress.addText("");
         progress.addText("reloading MPS classes...");
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
         ReloadUtils.reloadAll();
