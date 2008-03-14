@@ -22,8 +22,8 @@ public class MessageDialog extends BaseDialog {
     );
 
     Dimension d = myScrollPane.getPreferredSize();
-    d.height = Math.min(d.height + 50, 800);
-    d.width = Math.min(d.width + 50, 800);
+    d.height = Math.min(d.height + 50, Toolkit.getDefaultToolkit().getScreenSize().height - 200);
+    d.width = Math.min(d.width + 50, Toolkit.getDefaultToolkit().getScreenSize().width - 200);
 
     setPreferredSize(d);
     setSize(d);
@@ -35,7 +35,7 @@ public class MessageDialog extends BaseDialog {
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(400, 100, 400, 600);
+    return new DialogDimensions(100, 100, 400, 600);
   }
 
   protected JComponent getMainComponent() {
