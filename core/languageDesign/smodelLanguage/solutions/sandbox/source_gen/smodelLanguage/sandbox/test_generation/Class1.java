@@ -64,6 +64,8 @@ public class Class1 {
     SLinkOperations.insertChildFirst(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), null);
     int c2 = SLinkOperations.getCount(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"));
     int c3 = SequenceOperations.count(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true));
+    // not a link
+    int all = SequenceOperations.count(SNodeOperations.getAllAttributes(node));
   }
 
 }

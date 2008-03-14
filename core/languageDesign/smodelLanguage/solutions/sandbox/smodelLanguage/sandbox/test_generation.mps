@@ -696,6 +696,26 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205536339862">
+          <property name="value" value="not a link" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205536380189">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205536380190">
+            <property name="name" value="all" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1205536380191" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205536380192">
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.CountOperation" id="1205536380193" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205536380194">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205536380195">
+                  <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AllAttributesQualifier" id="1205536380196" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205536380197">
+                  <link role="variableDeclaration" targetNodeId="1205530364668" resolveInfo="node" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1205530364668">
         <property name="name" value="node" />
