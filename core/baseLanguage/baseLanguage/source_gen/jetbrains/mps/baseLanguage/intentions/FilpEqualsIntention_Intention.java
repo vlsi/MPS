@@ -14,7 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 public class FilpEqualsIntention_Intention extends BaseIntention implements Intention {
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.InstanceMethodCall";
+    return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
   }
 
   public boolean isErrorIntention() {
@@ -26,10 +26,10 @@ public class FilpEqualsIntention_Intention extends BaseIntention implements Inte
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    if(SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
+    if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
       return false;
     }
-    if(SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name") == null) {
+    if (SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name") == null) {
       return false;
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name").equals("equals") && SLinkOperations.getCount(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter") == 1;
@@ -37,8 +37,8 @@ public class FilpEqualsIntention_Intention extends BaseIntention implements Inte
 
   public void execute(SNode node, EditorContext editorContext) {
     SNode parameter = SequenceOperations.getFirst(SLinkOperations.getTargets(node, "actualArgument", true));
-    SNodeOperations.replaceWithAnother(parameter, SLinkOperations.getTarget(node, "instance", true));
-    SLinkOperations.setTarget(node, "instance", parameter, true);
+    SNodeOperations.replaceWithAnother(parameter, SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true));
+    SLinkOperations.setTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", parameter, true);
   }
 
 }

@@ -8,14 +8,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class ReplaceEqualsWithEquality_Intention extends BaseIntention implements Intention {
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.InstanceMethodCall";
+    return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
   }
 
   public boolean isErrorIntention() {
@@ -27,17 +27,17 @@ public class ReplaceEqualsWithEquality_Intention extends BaseIntention implement
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    if(SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
+    if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
       return false;
     }
-    if(SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name") == null) {
+    if (SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name") == null) {
       return false;
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name").equals("equals") && SLinkOperations.getCount(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter") == 1;
   }
 
   public void execute(SNode node, EditorContext editorContext) {
-    SNode leftExpr = SLinkOperations.getTarget(node, "instance", true);
+    SNode leftExpr = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true);
     SNode rightExpression = SequenceOperations.getFirst(SLinkOperations.getTargets(node, "actualArgument", true));
     SNode equalsExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EqualsExpression", null);
     SLinkOperations.setTarget(equalsExpression, "leftExpression", leftExpr, true);
