@@ -22,7 +22,7 @@ public class Link_DeleteChildOperation_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "delete");
+    return this.createConstantCell(context, node, "remove");
   }
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

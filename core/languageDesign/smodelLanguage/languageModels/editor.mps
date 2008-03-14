@@ -599,7 +599,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1140129518788" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1140129710123">
       <property name="editable" value="true" />
-      <property name="text" value="delete" />
+      <property name="text" value="remove" />
       <property name="drawBorder" value="false" />
     </node>
   </node>

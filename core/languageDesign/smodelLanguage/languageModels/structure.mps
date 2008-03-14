@@ -396,11 +396,11 @@
     <property name="package" value="operation.link" />
     <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1140129518790">
-      <property name="value" value="delete" />
+      <property name="value" value="remove" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1140129518791">
-      <property name="value" value="delete child" />
+      <property name="value" value="remove child" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1140129518792">

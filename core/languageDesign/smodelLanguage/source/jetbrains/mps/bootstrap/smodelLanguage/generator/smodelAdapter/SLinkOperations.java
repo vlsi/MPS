@@ -105,13 +105,18 @@ public class SLinkOperations {
     }
   }
 
-  public static void deleteChild(SNode parent, String role) {
+  /**
+   * actually only remove chald from parent (node become 'in-air')
+   */
+  public static SNode deleteChild(SNode parent, String role) {
     if (parent != null) {
       SNode child = parent.getChild(role);
       if (child != null) {
-        child.delete();
+        parent.removeChild(child);
+        return child;
       }
     }
+    return null;
   }
 
   public static int getCount(SNode parent, String role) {

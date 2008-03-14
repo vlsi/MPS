@@ -40,8 +40,10 @@ public class Class1 {
     SNode expression = SLinkOperations.getTarget(node, "expression", true);
     SLinkOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.BinaryOperation");
     SLinkOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
+    SNode ex = SLinkOperations.deleteChild(node, "expression");
     SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"), "jetbrains.mps.transformation.TLBase.structure.PropertyMacro");
     SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"), "jetbrains.mps.transformation.TLBase.structure.PropertyMacro");
+    SNode macro = SLinkOperations.deleteChild(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"));
   }
 
 }

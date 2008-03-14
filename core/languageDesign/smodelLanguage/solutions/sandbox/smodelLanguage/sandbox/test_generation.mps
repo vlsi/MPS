@@ -351,6 +351,25 @@
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1205442884601" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205529236419">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205529236420">
+            <property name="name" value="ex" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205529236421">
+              <link role="concept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205529236422">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation" id="1205529236423" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205529236424">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205529236425">
+                  <link role="link" targetNodeId="4.1068580123156" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205529236426">
+                  <link role="variableDeclaration" targetNodeId="1205441815308" resolveInfo="node" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205442089315">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205442089316">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205442089317">
@@ -387,6 +406,30 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1205442004032" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205529266610">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205529266611">
+            <property name="name" value="macro" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205529266612">
+              <link role="concept" targetNodeId="2.1087833241328" resolveInfo="PropertyMacro" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205529266613">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation" id="1205529266614" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205529266615">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205529266616">
+                  <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1205529266617">
+                    <link role="annotationLink" targetNodeId="2.1149694466802" resolveInfo="propertyMacro" />
+                    <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier" id="1205529266618">
+                      <link role="property" targetNodeId="1.1156235010670" resolveInfo="alias" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205529266619">
+                  <link role="variableDeclaration" targetNodeId="1205441815308" resolveInfo="node" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
