@@ -56,7 +56,7 @@ public class Class1 {
     List<SNode> macros = SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true);
     SLinkOperations.addNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), "jetbrains.mps.transformation.TLBase.structure.NodeMacro");
     SLinkOperations.addNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), "jetbrains.mps.transformation.TLBase.structure.NodeMacro");
-    SLinkOperations.addChild(node, "", null);
+    SLinkOperations.addChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), null);
   }
 
 }

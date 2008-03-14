@@ -203,13 +203,6 @@ public class QueriesGenerated {
     return "false";
   }
 
-  public static Object propertyMacro_GetPropertyValue_1169058210501(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    // expr . link-list-access . op
-    SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
-    SNode link = SLinkOperations.getTarget(linkAccess, "link", false);
-    return LinkDeclaration_Behavior.call_getGenuineRole_1203470470631(link);
-  }
-
   public static Object propertyMacro_GetPropertyValue_1169058658826(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // expr . link-list-access . op
     SNode linkAccess = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
@@ -622,15 +615,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1169056862270(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
-  }
-
-  public static SNode sourceNodeQuery_1169058187694(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    // <expr-to-copy> . linklist-access . add-child-op
-    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
-  }
-
-  public static SNode sourceNodeQuery_1169058238859(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameter", true);
   }
 
   public static SNode sourceNodeQuery_1169058619143(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1103,6 +1087,19 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1205532570102(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1205533195180(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    // <expr-to-copy> . linklist-access . add-child-op
+    return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1203458218533(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1205533195211(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "parameter", true);
+  }
+
+  public static SNode sourceNodeQuery_1205533319834(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
   }
 
