@@ -86,7 +86,7 @@ public class Solution extends AbstractModule {
 
     reload();
 
-    ReloadUtils.reloadAll(true, false);
+    ReloadUtils.reloadAll(false);
 
     myEventTranslator.solutionChanged();
   }
