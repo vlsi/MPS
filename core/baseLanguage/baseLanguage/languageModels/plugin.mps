@@ -12,13 +12,15 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   </language>
-  <maxImportIndex value="6"/>
+  <maxImportIndex value="8"/>
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1"/>
   <import index="4" modelUID="java.util@java_stub" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
   <import index="6" modelUID="jetbrains.mps.ide.action@java_stub" version="-1"/>
+  <import index="7" modelUID="jetbrains.mps.plugin@java_stub" version="-1"/>
+  <import index="8" modelUID="jetbrains.mps.plugins@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup"/>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1205254813928">
@@ -70,6 +72,8 @@
     <property name="shortcut" value="control shift SLASH"/>
     <property name="caption" value="Comment Statements"/>
     <property name="package" value="Actions"/>
+    <link role="extendedClass" targetNodeId="8.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
+    <link role="extendedAction" targetNodeId="4.~AbstractSequentialList" resolveInfo="AbstractSequentialList"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DoUpdateBlock"
           id="1205248417576">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205248751277">
@@ -238,7 +242,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205249655307">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205249657249">
             <node role="operand" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ThisExpression"
-                  id="1205249655308"/>
+                  id="1205608537842"/>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1205249669204">
               <link role="baseMethodDeclaration" targetNodeId="6.~ActionGroupElement.setVisible(boolean):void"
@@ -253,7 +257,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205249677926">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205249679335">
             <node role="operand" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ThisExpression"
-                  id="1205249677927"/>
+                  id="1205608537076"/>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1205249686118">
               <link role="baseMethodDeclaration" targetNodeId="6.~ActionGroupElement.setEnabled(boolean):void"
@@ -405,6 +409,8 @@
     <property name="caption" value="Uncomment Statements"/>
     <property name="shortcut" value="control shift SLASH"/>
     <property name="package" value="Actions"/>
+    <link role="extendedClass" targetNodeId="8.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
+    <link role="extendedAction" targetNodeId="8.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DoUpdateBlock"
           id="1205604975728">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205604975729">

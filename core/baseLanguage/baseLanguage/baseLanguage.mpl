@@ -29,6 +29,7 @@
     <dependency reexport="true">JDK</dependency>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
     <dependency reexport="false">jetbrains.mps.ide</dependency>
+    <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>

@@ -12,7 +12,7 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   </language>
-  <maxImportIndex value="16"/>
+  <maxImportIndex value="17"/>
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.helgins.uiActions@java_stub" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1"/>
@@ -29,6 +29,7 @@
   <import index="14" modelUID="jetbrains.mps.project@java_stub" version="-1"/>
   <import index="15" modelUID="jetbrains.mps.ide.hierarchy@java_stub" version="-1"/>
   <import index="16" modelUID="jetbrains.mps.ide.toolsPane@java_stub" version="-1"/>
+  <import index="17" modelUID="jetbrains.mps.plugins@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205244087094">
     <property name="name" value="TypesystemActions"/>
     <property name="caption" value="Type System"/>
@@ -83,6 +84,9 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1205605492950">
     <property name="name" value="HighlightDependentLeaves"/>
     <property name="caption" value="Highlight Dependent Leaves"/>
+    <property name="package" value="Actions"/>
+    <link role="extendedClass" targetNodeId="17.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
+    <link role="extendedAction" targetNodeId="17.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DoUpdateBlock"
           id="1205605492951">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205605492952">
@@ -162,7 +166,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205605652923">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205605653737">
             <node role="operand" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ThisExpression"
-                  id="1205605652924"/>
+                  id="1205608804604"/>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                   id="1205605655645">
               <link role="baseMethodDeclaration" targetNodeId="5.~ActionGroupElement.setEnabled(boolean):void"
@@ -380,6 +384,9 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1205606256131">
     <property name="name" value="ShowSupertypes"/>
     <property name="caption" value="Show Supertypes"/>
+    <property name="package" value="Actions"/>
+    <link role="extendedClass" targetNodeId="17.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
+    <link role="extendedAction" targetNodeId="17.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DoUpdateBlock"
           id="1205606256132">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205606256133">

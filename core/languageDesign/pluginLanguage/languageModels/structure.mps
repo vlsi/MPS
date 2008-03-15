@@ -56,6 +56,12 @@
           id="1203087326257">
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept"/>
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1205607379485">
+      <property name="role" value="extendedAction"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="2.1068390468198" resolveInfo="ClassConcept"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071663527">
     <property name="name" value="SingletabbedEditorTab"/>

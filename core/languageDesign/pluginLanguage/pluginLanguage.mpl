@@ -36,6 +36,7 @@
   </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.baseLanguage.strings</dependency>
+    <dependency reexport="false">jetbrains.mpslite</dependency>
   </dependencies>
   <extendedLanguages />
 </language>

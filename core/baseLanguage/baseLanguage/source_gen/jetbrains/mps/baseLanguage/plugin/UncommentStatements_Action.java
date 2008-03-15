@@ -27,14 +27,14 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     return "";
   }
 
-  public void doUpdate(@NotNull()ActionContext actionContext) {
-    boolean enabled = SNodeOperations.isInstanceOf(((SNode) actionContext.getNode()), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
+  public void doUpdate(@NotNull()ActionContext context) {
+    boolean enabled = SNodeOperations.isInstanceOf(((SNode) context.getNode()), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
     this.setVisible(enabled);
     this.setEnabled(enabled);
   }
 
-  public void doExecute(@NotNull()ActionContext actionContext) {
-    SNode node = actionContext.getNode();
+  public void doExecute(@NotNull()ActionContext context) {
+    SNode node = context.getNode();
     {
       ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(node, "statement", true));
       try {
