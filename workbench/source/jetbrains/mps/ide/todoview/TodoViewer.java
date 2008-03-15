@@ -6,6 +6,7 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.todoview.icons.Icons;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.ide.findusages.view.UsageView;
+import jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions;
 import jetbrains.mps.ide.findusages.view.usagesTree.path.IPathProvider;
 import jetbrains.mps.ide.findusages.view.usagesTree.PathItem;
 import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
@@ -43,7 +44,7 @@ public class TodoViewer extends DefaultTool {
       public void mouseClicked(MouseEvent e) {
         myPanel.removeAll();
 
-        myUsageView = new UsageView(myProjectFrame) {
+        myUsageView = new UsageView(myProjectFrame, new ViewOptions()) {
           public void close() {
             hideTool();
           }

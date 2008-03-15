@@ -3,6 +3,7 @@ package jetbrains.mps.refactoring;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.findusages.view.UsageView;
+import jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions;
 import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
@@ -81,7 +82,7 @@ public class NewRefactoringView extends DefaultTool {
     myName = myRefactoring.getUserFriendlyName();
 
     myPanel = new JPanel(new BorderLayout());
-    myUsageView = new UsageView(myProjectFrame) {
+    myUsageView = new UsageView(myProjectFrame, new ViewOptions()) {
       public void close() {
         cancel();
       }

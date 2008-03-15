@@ -13,8 +13,9 @@ import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
-import jetbrains.mps.ide.findusages.view.util.AnonymToggleButton;
 import jetbrains.mps.ide.findusages.view.usagesTree.path.IPathProvider;
+import jetbrains.mps.ide.findusages.view.treewrapper.UsagesTreeWrapper;
+import jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -60,12 +61,12 @@ public abstract class UsageView implements IExternalizableComponent {
   //last results
   List<SModelDescriptor> myFoundModelDescriptors = new ArrayList<SModelDescriptor>();
 
-  public UsageView(IDEProjectFrame projectFrame) {
+  public UsageView(IDEProjectFrame projectFrame, ViewOptions defaultOptions) {
     myProjectFrame = projectFrame;
 
     myPanel = new JPanel(new BorderLayout());
 
-    myTreeWrapper = new UsagesTreeWrapper() {
+    myTreeWrapper = new UsagesTreeWrapper(defaultOptions) {
       public IDEProjectFrame getProjectFrame() {
         return myProjectFrame;
       }

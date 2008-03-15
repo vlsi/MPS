@@ -37,21 +37,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.975";
+  private static final String VERSION_NUMBER = "0.98";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
   private static final String TAB = "tab";
   private static final String TABS = "tabs";
 
-  private static final String PREFERENCES = "preferences";
+  private static final String DEFAULT_FIND_OPTIONS = "default_find_options";
+  private static final String DEFAULT_VIEW_OPTIONS = "default_view_options";
 
   private IDEProjectFrame myProjectFrame;
 
   private JPanel myPanel;
   private JTabbedPane myTabbedPane;
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
-  private FindUsagesOptions myDefaultOptions = new FindUsagesOptions();
+  private FindUsagesOptions myDefaultFindOptions = new FindUsagesOptions();
+  private jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions myDefaultViewOptions = new jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions();
 
   public NewUsagesView(IDEProjectFrame projectFrame) {
     super();
@@ -68,13 +70,13 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
 
   private void setDefaultOptions() {
     FindersOptions findersOptions = new FindersOptions(NodeUsages_Finder.class.getName(), ConceptInstances_Finder.class.getName());
-    myDefaultOptions.setOption(findersOptions);
+    myDefaultFindOptions.setOption(findersOptions);
 
     ViewOptions viewOptions = new ViewOptions(true, false);
-    myDefaultOptions.setOption(viewOptions);
+    myDefaultFindOptions.setOption(viewOptions);
 
     QueryOptions queryOptions = new QueryOptions(QueryOptions.PROJECT_SCOPE, QueryOptions.DEFAULT_VALUE, QueryOptions.DEFAULT_VALUE);
-    myDefaultOptions.setOption(queryOptions);
+    myDefaultFindOptions.setOption(queryOptions);
   }
 
   private int currentTabIndex() {
@@ -152,14 +154,14 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
 
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultOptions, operationNode[0], context);
+        final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultFindOptions, operationNode[0], context);
         findUsagesDialog.showDialog();
 
         if (!findUsagesDialog.isCancelled()) {
           CommandProcessor.instance().executeLightweightCommand(new Runnable() {
             public void run() {
               FindUsagesOptions options = findUsagesDialog.getResult();
-              myDefaultOptions = options;
+              myDefaultFindOptions = options;
 
               IResultProvider provider = options.getOption(FindersOptions.class).getResult(operationNode[0], context);
               SearchQuery query = options.getOption(QueryOptions.class).getResult(operationNode[0], context);
@@ -258,8 +260,11 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       }
     }
 
-    Element preferencesXML = element.getChild(PREFERENCES);
-    myDefaultOptions.read(preferencesXML, project);
+    Element defaultFindOptionsXML = element.getChild(DEFAULT_FIND_OPTIONS);
+    myDefaultFindOptions.read(defaultFindOptionsXML, project);
+
+    Element defaultViewOptionsXML = element.getChild(DEFAULT_VIEW_OPTIONS);
+    myDefaultViewOptions.read(defaultViewOptionsXML, project);
   }
 
   public void write(Element element, MPSProject project) {
@@ -275,9 +280,13 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     }
     element.addContent(tabsXML);
 
-    Element preferencesXML = new Element(PREFERENCES);
-    myDefaultOptions.write(preferencesXML, project);
-    element.addContent(preferencesXML);
+    Element defaultFindOptionsXML = new Element(DEFAULT_FIND_OPTIONS);
+    myDefaultFindOptions.write(defaultFindOptionsXML, project);
+    element.addContent(defaultFindOptionsXML);
+
+    Element defaultViewOptionsXML = new Element(DEFAULT_VIEW_OPTIONS);
+    myDefaultViewOptions.write(defaultViewOptionsXML, project);
+    element.addContent(defaultViewOptionsXML);
   }
 
   class TabPaneMouseListener extends MouseAdapter {
@@ -339,7 +348,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     private FindUsagesOptions myOptions = new FindUsagesOptions();
 
     public void createUsageView() {
-      myUsageView = new UsageView(myProjectFrame) {
+      myUsageView = new UsageView(myProjectFrame, myDefaultViewOptions) {
         public void close() {
           NewUsagesView.this.closeTab(myUsageViewsData.indexOf(UsageViewData.this));
         }

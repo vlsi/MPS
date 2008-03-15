@@ -9,6 +9,7 @@ public abstract class AnonymToggleButton extends JToggleButton {
   public AnonymToggleButton(Icon icon, String tooltip) {
     setAction(new AbstractAction("", icon) {
       public void actionPerformed(ActionEvent e) {
+        change();
         if (getModel().isSelected()) {
           actionSelected();
         } else {
@@ -23,6 +24,7 @@ public abstract class AnonymToggleButton extends JToggleButton {
 
   public void setState(boolean state) {
     if (getModel().isSelected() != state) {
+
       doClick();
     }
   }
@@ -34,4 +36,6 @@ public abstract class AnonymToggleButton extends JToggleButton {
   public abstract void actionSelected();
 
   public abstract void actionDeselected();
+
+  public abstract void change();
 }
