@@ -3,11 +3,17 @@
  */
 package jetbrains.mps.internal.collections.runtime;
 
+import java.util.Arrays;
+
 
 /**
  * @author fyodor
  */
-public abstract class Sequence<T> {
+public abstract class Sequence<T> implements Iterable<T> {
+    
+    public static <U> Sequence <U> fromArray (U...array) {
+        return new BasicSequence<U> (Arrays.asList(array));
+    }    
     
     public static <U> Sequence <U> fromIterable (Iterable<U> iterable) {
         return new BasicSequence<U> (iterable);
@@ -26,6 +32,10 @@ public abstract class Sequence<T> {
     public <U> Sequence<U> select (ISelector<T,U> selector){
         return new SelectingSequence<T,U> (this, selector);
     }
+    
+    public void visitAll (IVisitor<T> visitor) {
+        IterableUtils.visitAll(toIterable(), visitor);
+    }
 
     public Sequence<T> take (int length) {
         return new PagingSequence<T> (this, PagingSequence.Page.TAKE, length);
@@ -43,8 +53,24 @@ public abstract class Sequence<T> {
         return new PagingSequence<T> (this, PagingSequence.Page.TAIL, length);
     }
     
-    public void visitAll (IVisitor<T> visitor) {
-        IterableUtils.visitAll(toIterable(), visitor);
+    public Sequence<T> concat (Sequence<T> that) {
+        return new ConcatingSequence<T> (this, that);
+    }
+    
+    public Sequence<T> intersect (Sequence<T> that) {
+        return new ComparingSequence<T> (this, that, ComparingSequence.Kind.INTERSECTION);
+    }
+    
+    public Sequence<T> substract (Sequence<T> that) {
+        return new ComparingSequence<T> (this, that, ComparingSequence.Kind.SUBSTRACTION);        
+    }
+    
+    public Sequence<T> union (Sequence<T> that) {
+        return new ComparingSequence<T> (this, that, ComparingSequence.Kind.UNION);
+    }
+    
+    public Sequence<T> disjunction (Sequence<T> that) {
+        return new ComparingSequence<T> (this, that, ComparingSequence.Kind.DISJUNCTION);
     }
 
     public boolean contains (T t) {
@@ -75,6 +101,8 @@ public abstract class Sequence<T> {
         return IterableUtils.last(toIterable());
     }
     
-    public abstract Iterable<T> toIterable ();
+    public Iterable<T> toIterable () {
+        return this;
+    }
     
 }

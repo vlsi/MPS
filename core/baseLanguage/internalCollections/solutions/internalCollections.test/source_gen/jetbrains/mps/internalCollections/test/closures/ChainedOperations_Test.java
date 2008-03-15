@@ -119,7 +119,7 @@ __switch__:
         return it.length() == 2;
       }
 
-    }).toIterable();
+    });
     this.assertIterableEquals(Arrays.asList("12", "15"), test);
   }
 

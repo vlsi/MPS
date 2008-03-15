@@ -154,7 +154,7 @@ __switch__:
         };
       }
 
-    }).toIterable();
+    });
     this.assertIterableEquals(Arrays.asList(1, 2, 2, 4, 3, 6, 4, 8, 5, 10), test);
   }
 

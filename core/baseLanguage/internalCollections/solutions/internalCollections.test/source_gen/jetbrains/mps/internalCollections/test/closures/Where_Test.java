@@ -41,7 +41,7 @@ public class Where_Test extends Util_Test {
         return it % 2 == 1;
       }
 
-    }).toIterable();
+    });
     Iterable<Integer> expected = Arrays.asList(1, 3, 5);
     this.assertIterableEquals(expected, test);
   }

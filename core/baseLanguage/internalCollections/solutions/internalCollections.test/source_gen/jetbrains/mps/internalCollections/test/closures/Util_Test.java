@@ -5,13 +5,12 @@ package jetbrains.mps.internalCollections.test.closures;
 import junit.framework.TestCase;
 import java.util.Iterator;
 import junit.framework.Assert;
+import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Collections;
 import java.util.Arrays;
 
-public class Util_Test extends TestCase {
-
-  public void test_dummy() throws Exception {
-  }
+public abstract class Util_Test extends TestCase {
 
   public  <T>void assertIterableEquals(Iterable<T> exp, Iterable<T> test) {
     Iterator<T> expIt = exp.iterator();
@@ -20,6 +19,41 @@ public class Util_Test extends TestCase {
       Assert.assertEquals(expIt.next(), testIt.next());
     }
     Assert.assertFalse(expIt.hasNext());
+    Assert.assertFalse(testIt.hasNext());
+  }
+
+  public  <T>void assertIterableEqualsAsSet(Iterable<T> exp, Iterable<T> test) {
+    HashSet<T> expSet = new HashSet<T>();
+    for(T e : exp) {
+      Assert.assertTrue(expSet.add(e));
+    }
+    Iterator<T> testIt = test.iterator();
+    while(testIt.hasNext()) {
+      Assert.assertTrue(expSet.remove(testIt.next()));
+    }
+    Assert.assertTrue(expSet.isEmpty());
+    Assert.assertFalse(testIt.hasNext());
+  }
+
+  public  <T>void assertIterableEqualsIgnoreOrder(Iterable<T> exp, Iterable<T> test) {
+    HashMap<T, Integer> cardMap = new HashMap<T, Integer>();
+    for(T e : exp) {
+      Integer card = cardMap.get(e);
+      cardMap.put(e, (card != null ?
+        card + 1 :
+        1
+      ));
+    }
+    Iterator<T> testIt = test.iterator();
+    while(testIt.hasNext()) {
+      T next = testIt.next();
+      Integer card = cardMap.remove(next);
+      Assert.assertFalse(card == null);
+      if(card > 1) {
+        cardMap.put(next, card - 1);
+      }
+    }
+    Assert.assertTrue(cardMap.isEmpty());
     Assert.assertFalse(testIt.hasNext());
   }
 
