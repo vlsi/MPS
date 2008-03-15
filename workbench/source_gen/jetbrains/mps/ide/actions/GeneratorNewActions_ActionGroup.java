@@ -10,21 +10,26 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
 public class GeneratorNewActions_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.GeneratorNewActions";
 
   public GeneratorNewActions_ActionGroup(MPSProject project) {
-    super("New", "jetbrains.mps.ide.actions.GeneratorNewActions");
+    super("New", GeneratorNewActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new NewModelAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.GeneratorActions");
-      ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.GeneratorNewActions");
+      ActionGroup gTo = manager.getGroup(GeneratorActions_ActionGroup.ID);
+      ActionGroup gWhat = manager.getGroup(GeneratorNewActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }
-      gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.generatorNew_ExtentionPoint");
+      {
+        String labelName;
+        labelName = GeneratorActions_ActionGroup.LABEL_ID_generatorNew;
+        gTo.add(gWhat, owner, labelName);
+      }
     }
   }
 

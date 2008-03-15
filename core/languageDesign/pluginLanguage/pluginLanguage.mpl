@@ -17,6 +17,9 @@
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
       </dependencies>
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+      </usedLanguages>
       <mapping-priorities />
     </generator>
   </generators>

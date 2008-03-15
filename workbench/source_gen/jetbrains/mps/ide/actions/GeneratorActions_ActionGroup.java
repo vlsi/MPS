@@ -14,11 +14,13 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class GeneratorActions_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.GeneratorActions";
+  public static final String LABEL_ID_generatorNew = "generatorNew";
 
   public GeneratorActions_ActionGroup(MPSProject project) {
-    super("", "jetbrains.mps.ide.actions.GeneratorActions");
+    super("", GeneratorActions_ActionGroup.ID);
     this.setInternal(false);
-    this.add(new Label("jetbrains.mps.ide.actions.generatorNew_ExtentionPoint"), this);
+    this.add(new Label(GeneratorActions_ActionGroup.LABEL_ID_generatorNew), this);
     this.addSeparator();
     this.add(new GenerateTemplateQueriesAction_true(), this);
     this.add(new GenerateTemplateQueriesAction_false(), this);

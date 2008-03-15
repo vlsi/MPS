@@ -12,9 +12,10 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class DevkitActions_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.DevkitActions";
 
   public DevkitActions_ActionGroup(MPSProject project) {
-    super("", "jetbrains.mps.ide.actions.DevkitActions");
+    super("", DevkitActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new SetModuleFolderAction(), this);
     this.addSeparator();

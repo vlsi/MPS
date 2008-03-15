@@ -20,11 +20,13 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class LanguageActions_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.LanguageActions";
+  public static final String LABEL_ID_newGroup = "newGroup";
 
   public LanguageActions_ActionGroup(MPSProject project) {
-    super("", "jetbrains.mps.ide.actions.LanguageActions");
+    super("", LanguageActions_ActionGroup.ID);
     this.setInternal(false);
-    this.add(new Label("jetbrains.mps.ide.actions.newGroup_ExtentionPoint"), this);
+    this.add(new Label(LanguageActions_ActionGroup.LABEL_ID_newGroup), this);
     this.addSeparator();
     this.add(new GenerateAllModelsInModuleAction_true(), this);
     this.add(new GenerateAllModelsInModuleAction_false(), this);

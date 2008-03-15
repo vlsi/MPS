@@ -10,21 +10,26 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
 public class SolutionNewActions_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.SolutionNewActions";
 
   public SolutionNewActions_ActionGroup(MPSProject project) {
-    super("New", "jetbrains.mps.ide.actions.SolutionNewActions");
+    super("New", SolutionNewActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new NewModelAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.SolutionActions");
-      ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.SolutionNewActions");
+      ActionGroup gTo = manager.getGroup(SolutionActions_ActionGroup.ID);
+      ActionGroup gWhat = manager.getGroup(SolutionNewActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }
-      gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.solutionNew_ExtentionPoint");
+      {
+        String labelName;
+        labelName = SolutionActions_ActionGroup.LABEL_ID_solutionNew;
+        gTo.add(gWhat, owner, labelName);
+      }
     }
   }
 

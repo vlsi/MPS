@@ -8,20 +8,22 @@ import jetbrains.mps.baseLanguage.plugin.uiActions.TestReferenceResolvingPerform
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
+import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 
 public class BaseLanguageEditorPopupInternal_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal";
 
-  public BaseLanguageEditorPopupInternal_ActionGroup(MPSProject project) {
-    super("", "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal");
+  public  BaseLanguageEditorPopupInternal_ActionGroup(MPSProject project) {
+    super("", BaseLanguageEditorPopupInternal_ActionGroup.ID);
     this.setInternal(false);
     this.add(new TestReferenceResolvingPerformance_Editor(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.EditorInternal");
-      ActionGroup gWhat = manager.getGroup("jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal");
-      if (gTo == null || gWhat == null) {
+      ActionGroup gTo = manager.getGroup(EditorInternal_ActionGroup.ID);
+      ActionGroup gWhat = manager.getGroup(BaseLanguageEditorPopupInternal_ActionGroup.ID);
+      if(gTo == null || gWhat == null) {
         return;
       }
       gTo.addEveryFrom(gWhat, owner);

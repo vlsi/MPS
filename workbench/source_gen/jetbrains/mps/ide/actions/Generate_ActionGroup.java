@@ -13,9 +13,10 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
 public class Generate_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.Generate";
 
   public Generate_ActionGroup(MPSProject project) {
-    super("Generate", "jetbrains.mps.ide.actions.Generate");
+    super("Generate", Generate_ActionGroup.ID);
     this.setMnemonic("G".charAt(0));
     this.setInternal(false);
     this.add(new GenerateAllModelsInModuleAction_false(), this);
@@ -28,12 +29,16 @@ public class Generate_ActionGroup extends BaseActionGroup {
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
-      ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Generate");
+      ActionGroup gTo = manager.getGroup(MainMenu_ActionGroup.ID);
+      ActionGroup gWhat = manager.getGroup(Generate_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }
-      gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.generate_ExtentionPoint");
+      {
+        String labelName;
+        labelName = MainMenu_ActionGroup.LABEL_ID_generate;
+        gTo.add(gWhat, owner, labelName);
+      }
     }
   }
 

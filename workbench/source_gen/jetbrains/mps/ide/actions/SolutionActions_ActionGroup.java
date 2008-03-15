@@ -20,11 +20,13 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class SolutionActions_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.SolutionActions";
+  public static final String LABEL_ID_solutionNew = "solutionNew";
 
   public SolutionActions_ActionGroup(MPSProject project) {
-    super("", "jetbrains.mps.ide.actions.SolutionActions");
+    super("", SolutionActions_ActionGroup.ID);
     this.setInternal(false);
-    this.add(new Label("jetbrains.mps.ide.actions.solutionNew_ExtentionPoint"), this);
+    this.add(new Label(SolutionActions_ActionGroup.LABEL_ID_solutionNew), this);
     this.addSeparator();
     this.add(new AddModuleToProjectAction(), this);
     this.add(new RemoveModuleFromProjectAction(), this);

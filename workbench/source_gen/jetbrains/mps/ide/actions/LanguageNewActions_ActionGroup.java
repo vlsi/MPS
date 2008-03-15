@@ -11,9 +11,10 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
 public class LanguageNewActions_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.LanguageNewActions";
 
   public LanguageNewActions_ActionGroup(MPSProject project) {
-    super("New", "jetbrains.mps.ide.actions.LanguageNewActions");
+    super("New", LanguageNewActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new NewGeneratorAction(), this);
     this.addSeparator();
@@ -23,12 +24,16 @@ public class LanguageNewActions_ActionGroup extends BaseActionGroup {
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.LanguageActions");
-      ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.LanguageNewActions");
+      ActionGroup gTo = manager.getGroup(LanguageActions_ActionGroup.ID);
+      ActionGroup gWhat = manager.getGroup(LanguageNewActions_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }
-      gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.newGroup_ExtentionPoint");
+      {
+        String labelName;
+        labelName = LanguageActions_ActionGroup.LABEL_ID_newGroup;
+        gTo.add(gWhat, owner, labelName);
+      }
     }
   }
 

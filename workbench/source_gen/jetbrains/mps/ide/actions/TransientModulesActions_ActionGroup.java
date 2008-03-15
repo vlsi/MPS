@@ -9,9 +9,10 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class TransientModulesActions_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.TransientModulesActions";
 
   public TransientModulesActions_ActionGroup(MPSProject project) {
-    super("", "jetbrains.mps.ide.actions.TransientModulesActions");
+    super("", TransientModulesActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new RemoveTransientModulesAction(), this);
   }

@@ -15,9 +15,10 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
 public class Edit_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.Edit";
 
   public Edit_ActionGroup(MPSProject project) {
-    super("Edit", "jetbrains.mps.ide.actions.Edit");
+    super("Edit", Edit_ActionGroup.ID);
     this.setMnemonic("E".charAt(0));
     this.setInternal(false);
     this.add(new UndoAction(), this);
@@ -36,12 +37,16 @@ public class Edit_ActionGroup extends BaseActionGroup {
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
-      ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Edit");
+      ActionGroup gTo = manager.getGroup(MainMenu_ActionGroup.ID);
+      ActionGroup gWhat = manager.getGroup(Edit_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }
-      gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.edit_ExtentionPoint");
+      {
+        String labelName;
+        labelName = MainMenu_ActionGroup.LABEL_ID_edit;
+        gTo.add(gWhat, owner, labelName);
+      }
     }
   }
 

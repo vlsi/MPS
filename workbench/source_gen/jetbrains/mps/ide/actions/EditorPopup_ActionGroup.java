@@ -28,9 +28,10 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class EditorPopup_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.EditorPopup";
 
   public EditorPopup_ActionGroup(MPSProject project) {
-    super("", "jetbrains.mps.ide.actions.EditorPopup");
+    super("", EditorPopup_ActionGroup.ID);
     this.setInternal(false);
     this.add(new GoByReferenceGroup(), this);
     this.add(new GoByFirstReferenceAction(), this);

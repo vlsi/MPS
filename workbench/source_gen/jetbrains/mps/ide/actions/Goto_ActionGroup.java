@@ -19,9 +19,10 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 
 public class Goto_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.ide.actions.Goto";
 
   public Goto_ActionGroup(MPSProject project) {
-    super("Go To", "jetbrains.mps.ide.actions.Goto");
+    super("Go To", Goto_ActionGroup.ID);
     this.setMnemonic("O".charAt(0));
     this.setInternal(false);
     this.add(new GoToRootAction(), this);
@@ -41,12 +42,16 @@ public class Goto_ActionGroup extends BaseActionGroup {
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.MainMenu");
-      ActionGroup gWhat = manager.getGroup("jetbrains.mps.ide.actions.Goto");
+      ActionGroup gTo = manager.getGroup(MainMenu_ActionGroup.ID);
+      ActionGroup gWhat = manager.getGroup(Goto_ActionGroup.ID);
       if (gTo == null || gWhat == null) {
         return;
       }
-      gTo.add(gWhat, owner, "jetbrains.mps.ide.actions.goto_ExtentionPoint");
+      {
+        String labelName;
+        labelName = MainMenu_ActionGroup.LABEL_ID_goto;
+        gTo.add(gWhat, owner, labelName);
+      }
     }
   }
 

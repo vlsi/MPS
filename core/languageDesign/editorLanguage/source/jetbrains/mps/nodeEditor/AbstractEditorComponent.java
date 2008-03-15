@@ -9,6 +9,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
+import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.modelchecker.ModelCheckResult;
@@ -59,8 +61,8 @@ import java.util.List;
  */
 public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider, IEditorComponent {
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
-  public static final String EDITOR_POPUP_MENU_ACTIONS = "jetbrains.mps.ide.actions.EditorPopup";
-  public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = "jetbrains.mps.ide.actions.EditorInternal";
+  public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
+  public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
 
   static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {

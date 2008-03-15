@@ -8,20 +8,22 @@ import jetbrains.mps.baseLanguage.plugin.uiActions.TestReferenceResolvingPerform
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
+import jetbrains.mps.ide.actions.ProjectPaneNodeActionsInternal_ActionGroup;
 
 public class BaseLanguageNodeActionsInternal_ActionGroup extends BaseActionGroup {
+  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal";
 
-  public BaseLanguageNodeActionsInternal_ActionGroup(MPSProject project) {
-    super("", "jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal");
+  public  BaseLanguageNodeActionsInternal_ActionGroup(MPSProject project) {
+    super("", BaseLanguageNodeActionsInternal_ActionGroup.ID);
     this.setInternal(false);
     this.add(new TestReferenceResolvingPerformance_Node(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
-      ActionGroup gTo = manager.getGroup("jetbrains.mps.ide.actions.ProjectPaneNodeActionsInternal");
-      ActionGroup gWhat = manager.getGroup("jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal");
-      if (gTo == null || gWhat == null) {
+      ActionGroup gTo = manager.getGroup(ProjectPaneNodeActionsInternal_ActionGroup.ID);
+      ActionGroup gWhat = manager.getGroup(BaseLanguageNodeActionsInternal_ActionGroup.ID);
+      if(gTo == null || gWhat == null) {
         return;
       }
       gTo.addEveryFrom(gWhat, owner);
