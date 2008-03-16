@@ -86,7 +86,7 @@
     <property name="name" value="HighlightDependentLeaves"/>
     <property name="caption" value="Highlight Dependent Leaves"/>
     <property name="package" value="Actions"/>
-    <link role="extendedAction" targetNodeId="18.~GenerateLanguageAction" resolveInfo="GenerateLanguageAction"/>
+    <link role="extendedAction" targetNodeId="17.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DoUpdateBlock"
           id="1205605492951">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205605492952">
