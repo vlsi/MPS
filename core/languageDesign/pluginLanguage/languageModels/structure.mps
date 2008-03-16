@@ -917,5 +917,31 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205673372866">
+    <property name="package" value="Actions.Groups.GroupMembers"/>
+    <property name="name" value="ActionWithConstructor"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1205673397492">
+      <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1205674303797">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="newExpression"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="2.1068581242872" resolveInfo="NewExpression"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1205674547668">
+      <property name="value" value="new"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1205674553338">
+      <property name="value" value="action with constructor"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="short_description"/>
+    </node>
+  </node>
 </model>
 

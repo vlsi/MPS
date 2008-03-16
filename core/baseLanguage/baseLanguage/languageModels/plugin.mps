@@ -40,9 +40,18 @@
           id="1205247403415">
       <link role="modifiedGroup" targetNodeId="3.1204991232446" resolveInfo="EditorInternal"/>
     </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205247707610">
-      <link role="javaClass" targetNodeId="2.~TestReferenceResolvingPerformance_Editor"
-            resolveInfo="TestReferenceResolvingPerformance_Editor"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionWithConstructor"
+          id="1205674533040">
+      <node role="newExpression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205674533041">
+        <link role="baseMethodDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)"
+              resolveInfo="TestReferenceResolvingPerformance"/>
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205674685487">
+          <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance"
+                resolveInfo="TestReferenceResolvingPerformance"/>
+          <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.EDITOR"
+                resolveInfo="EDITOR"/>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247737002">
@@ -51,9 +60,18 @@
           id="1205247768364">
       <link role="modifiedGroup" targetNodeId="3.1205163054135" resolveInfo="ProjectPaneModelActionsInternal"/>
     </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205247815915">
-      <link role="javaClass" targetNodeId="2.~TestReferenceResolvingPerformance_Model"
-            resolveInfo="TestReferenceResolvingPerformance_Model"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionWithConstructor"
+          id="1205674703262">
+      <node role="newExpression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205674703263">
+        <link role="baseMethodDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)"
+              resolveInfo="TestReferenceResolvingPerformance"/>
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205674715744">
+          <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance"
+                resolveInfo="TestReferenceResolvingPerformance"/>
+          <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.MODEL"
+                resolveInfo="MODEL"/>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247740394">
@@ -62,9 +80,17 @@
           id="1205247793147">
       <link role="modifiedGroup" targetNodeId="3.1204991217354" resolveInfo="ProjectPaneNodeActionsInternal"/>
     </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205247810586">
-      <link role="javaClass" targetNodeId="2.~TestReferenceResolvingPerformance_Node"
-            resolveInfo="TestReferenceResolvingPerformance_Node"/>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionWithConstructor"
+          id="1205674737387">
+      <node role="newExpression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205674737388">
+        <link role="baseMethodDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)"
+              resolveInfo="TestReferenceResolvingPerformance"/>
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205674744717">
+          <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance"
+                resolveInfo="TestReferenceResolvingPerformance"/>
+          <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.NODE" resolveInfo="NODE"/>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1205248417575">
@@ -73,7 +99,7 @@
     <property name="caption" value="Comment Statements"/>
     <property name="package" value="Actions"/>
     <link role="extendedClass" targetNodeId="8.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
-    <link role="extendedAction" targetNodeId="4.~AbstractSequentialList" resolveInfo="AbstractSequentialList"/>
+    <link role="extendedAction" targetNodeId="8.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DoUpdateBlock"
           id="1205248417576">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205248751277">

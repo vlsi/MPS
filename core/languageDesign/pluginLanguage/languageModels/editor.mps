@@ -1218,5 +1218,12 @@
       <property name="text" value="this"/>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1205674318516">
+    <property name="package" value="Actions.Groups.GroupMembers"/>
+    <link role="conceptDeclaration" targetNodeId="1.1205673372866" resolveInfo="ActionWithConstructor"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1205674326197">
+      <link role="relationDeclaration" targetNodeId="1.1205674303797"/>
+    </node>
+  </node>
 </model>
 

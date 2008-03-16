@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.baseLanguage.plugin.uiActions.TestReferenceResolvingPerformance_Model;
+import jetbrains.mps.baseLanguage.plugin.uiActions.TestReferenceResolvingPerformance;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
@@ -13,17 +13,17 @@ import jetbrains.mps.ide.actions.ProjectPaneModelActionsInternal_ActionGroup;
 public class BaseLanguageModelActionsInternal_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal";
 
-  public  BaseLanguageModelActionsInternal_ActionGroup(MPSProject project) {
+  public BaseLanguageModelActionsInternal_ActionGroup(MPSProject project) {
     super("", BaseLanguageModelActionsInternal_ActionGroup.ID);
     this.setInternal(false);
-    this.add(new TestReferenceResolvingPerformance_Model(), this);
+    this.add(new TestReferenceResolvingPerformance(TestReferenceResolvingPerformance.MODEL), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
     {
       ActionGroup gTo = manager.getGroup(ProjectPaneModelActionsInternal_ActionGroup.ID);
       ActionGroup gWhat = manager.getGroup(BaseLanguageModelActionsInternal_ActionGroup.ID);
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       gTo.addEveryFrom(gWhat, owner);
