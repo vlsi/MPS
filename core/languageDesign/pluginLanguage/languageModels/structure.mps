@@ -297,7 +297,7 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
           id="1205160812895">
       <property name="name" value="mnemonic"/>
-      <link role="dataType" targetNodeId="2.1200397549879" resolveInfo="_CharConstant_String"/>
+      <link role="dataType" targetNodeId="1205676676847" resolveInfo="Mnemonic"/>
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
           id="1205160838084">
@@ -917,31 +917,42 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205673372866">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205675355325">
     <property name="package" value="Actions.Groups.GroupMembers"/>
-    <property name="name" value="ActionWithConstructor"/>
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
-          id="1205673397492">
-      <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember"/>
+    <property name="name" value="ParameterizedActionCreator"/>
+    <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator"/>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1205675413186">
+      <property name="role" value="constructorDeclaration"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="2.1068580123140" resolveInfo="ConstructorDeclaration"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1205674303797">
+          id="1205675486953">
       <property name="metaClass" value="aggregation"/>
-      <property name="role" value="newExpression"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="2.1068581242872" resolveInfo="NewExpression"/>
+      <property name="role" value="actualArgument"/>
+      <property name="sourceCardinality" value="0..n"/>
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1205674547668">
+          id="1205675508671">
       <property name="value" value="new"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1205674553338">
-      <property name="value" value="action with constructor"/>
+          id="1205675591041">
+      <property name="value" value="parameterized action creation"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="short_description"/>
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1205676232975">
+      <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1205676676847">
+    <property name="package" value="Actions.Groups"/>
+    <property name="name" value="mnemonic"/>
+    <property name="constraint" value=".|"/>
   </node>
 </model>
 

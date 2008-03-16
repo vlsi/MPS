@@ -40,17 +40,15 @@
           id="1205247403415">
       <link role="modifiedGroup" targetNodeId="3.1204991232446" resolveInfo="EditorInternal"/>
     </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionWithConstructor"
-          id="1205674533040">
-      <node role="newExpression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205674533041">
-        <link role="baseMethodDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)"
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
+          id="1205676319245">
+      <link role="constructorDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)"
+            resolveInfo="TestReferenceResolvingPerformance"/>
+      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205676335974">
+        <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance"
               resolveInfo="TestReferenceResolvingPerformance"/>
-        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205674685487">
-          <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance"
-                resolveInfo="TestReferenceResolvingPerformance"/>
-          <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.EDITOR"
-                resolveInfo="EDITOR"/>
-        </node>
+        <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.EDITOR"
+              resolveInfo="EDITOR"/>
       </node>
     </node>
   </node>
@@ -60,17 +58,14 @@
           id="1205247768364">
       <link role="modifiedGroup" targetNodeId="3.1205163054135" resolveInfo="ProjectPaneModelActionsInternal"/>
     </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionWithConstructor"
-          id="1205674703262">
-      <node role="newExpression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205674703263">
-        <link role="baseMethodDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)"
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
+          id="1205676391925">
+      <link role="constructorDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)"
+            resolveInfo="TestReferenceResolvingPerformance"/>
+      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205676398539">
+        <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance"
               resolveInfo="TestReferenceResolvingPerformance"/>
-        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205674715744">
-          <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance"
-                resolveInfo="TestReferenceResolvingPerformance"/>
-          <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.MODEL"
-                resolveInfo="MODEL"/>
-        </node>
+        <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.MODEL" resolveInfo="MODEL"/>
       </node>
     </node>
   </node>
@@ -80,16 +75,14 @@
           id="1205247793147">
       <link role="modifiedGroup" targetNodeId="3.1204991217354" resolveInfo="ProjectPaneNodeActionsInternal"/>
     </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionWithConstructor"
-          id="1205674737387">
-      <node role="newExpression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205674737388">
-        <link role="baseMethodDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)"
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
+          id="1205676408265">
+      <link role="constructorDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.&lt;init&gt;(int)"
+            resolveInfo="TestReferenceResolvingPerformance"/>
+      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205676413754">
+        <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance"
               resolveInfo="TestReferenceResolvingPerformance"/>
-        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205674744717">
-          <link role="classifier" targetNodeId="2.~TestReferenceResolvingPerformance"
-                resolveInfo="TestReferenceResolvingPerformance"/>
-          <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.NODE" resolveInfo="NODE"/>
-        </node>
+        <link role="variableDeclaration" targetNodeId="2.~TestReferenceResolvingPerformance.NODE" resolveInfo="NODE"/>
       </node>
     </node>
   </node>

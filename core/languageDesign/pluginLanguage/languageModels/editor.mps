@@ -1218,11 +1218,42 @@
       <property name="text" value="this"/>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1205674318516">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1205675514794">
     <property name="package" value="Actions.Groups.GroupMembers"/>
-    <link role="conceptDeclaration" targetNodeId="1.1205673372866" resolveInfo="ActionWithConstructor"/>
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1205674326197">
-      <link role="relationDeclaration" targetNodeId="1.1205674303797"/>
+    <link role="conceptDeclaration" targetNodeId="1.1205675355325" resolveInfo="ParameterizedAction"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+          id="1205675518301">
+      <property name="vertical" value="false"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1205675614550">
+        <property name="text" value="new"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell"
+            id="1205675623588">
+        <link role="relationDeclaration" targetNodeId="1.1205675413186"/>
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent"
+              id="1205675623589">
+          <link role="conceptDeclaration" targetNodeId="15.1068580123140" resolveInfo="ConstructorDeclaration"/>
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+                id="1205675636396">
+            <property name="readOnly" value="true"/>
+            <link role="relationDeclaration" targetNodeId="15.1083152972672" resolveInfo="name"/>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1205675647475">
+        <property name="text" value="("/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList"
+            id="1205675655112">
+        <property name="separatorText" value=","/>
+        <link role="relationDeclaration" targetNodeId="1.1205675486953"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1205675651605">
+        <property name="text" value=")"/>
+      </node>
     </node>
   </node>
 </model>
