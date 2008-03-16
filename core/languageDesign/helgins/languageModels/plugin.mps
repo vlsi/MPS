@@ -12,7 +12,7 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   </language>
-  <maxImportIndex value="17"/>
+  <maxImportIndex value="18"/>
   <import index="1" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.helgins.uiActions@java_stub" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1"/>
@@ -30,6 +30,7 @@
   <import index="15" modelUID="jetbrains.mps.ide.hierarchy@java_stub" version="-1"/>
   <import index="16" modelUID="jetbrains.mps.ide.toolsPane@java_stub" version="-1"/>
   <import index="17" modelUID="jetbrains.mps.plugins@java_stub" version="-1"/>
+  <import index="18" modelUID="jetbrains.mpslite@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205244087094">
     <property name="name" value="TypesystemActions"/>
     <property name="caption" value="Type System"/>
@@ -85,8 +86,7 @@
     <property name="name" value="HighlightDependentLeaves"/>
     <property name="caption" value="Highlight Dependent Leaves"/>
     <property name="package" value="Actions"/>
-    <link role="extendedClass" targetNodeId="17.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
-    <link role="extendedAction" targetNodeId="17.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
+    <link role="extendedAction" targetNodeId="18.~GenerateLanguageAction" resolveInfo="GenerateLanguageAction"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DoUpdateBlock"
           id="1205605492951">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205605492952">
