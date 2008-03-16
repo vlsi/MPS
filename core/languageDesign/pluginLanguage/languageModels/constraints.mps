@@ -19,7 +19,7 @@
   <language namespace="jetbrains.mps.bootstrap.findUsagesLanguage"/>
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts"/>
   <language namespace="jetbrains.mps.transformation.TLBase"/>
-  <maxImportIndex value="22"/>
+  <maxImportIndex value="23"/>
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="4" modelUID="java.lang@java_stub" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.util@java_stub" version="-1"/>
@@ -39,6 +39,7 @@
   <import index="21" modelUID="jetbrains.mps.project@java_stub" version="-1"/>
   <import index="22" modelUID="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.main@templates"
           version="-1"/>
+  <import index="23" modelUID="jetbrains.mps.baseLanguage.search@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1203086933326">
     <property name="package" value="Actions.Action"/>
     <link role="concept" targetNodeId="7.1203071646776" resolveInfo="Action"/>
@@ -1631,6 +1632,14 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1205679244182">
+    <property name="package" value="Actions.Action"/>
+    <link role="concept" targetNodeId="7.1205679047295" resolveInfo="ActionParameterDeclaration"/>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration"
+          id="1205679244183">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205679244184"/>
     </node>
   </node>
 </model>

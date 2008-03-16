@@ -11,12 +11,13 @@
   </language>
   <language namespace="jetbrains.mps.core"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0"/>
-  <maxImportIndex value="12"/>
+  <maxImportIndex value="13"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
   <import index="10" modelUID="java.lang@java_stub" version="-1"/>
   <import index="12" modelUID="jetbrains.mps.ide.action@java_stub" version="-1"/>
+  <import index="13" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203071646776">
     <property name="name" value="ActionDeclaration"/>
     <property name="rootable" value="true"/>
@@ -24,11 +25,18 @@
     <property name="iconPath" value="${language_descriptor}\icons\uiAction.png"/>
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1205679176223">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="parameterDeclaration"/>
+      <property name="sourceCardinality" value="0..n"/>
+      <link role="target" targetNodeId="1205679047295" resolveInfo="ActionParameterDeclaration"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1203083196627">
       <property name="metaClass" value="aggregation"/>
-      <property name="role" value="isApplicableFunction"/>
+      <property name="role" value="updateBlock"/>
       <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="1203082695294" resolveInfo="IsApplicableBlock"/>
+      <link role="target" targetNodeId="1205681149025" resolveInfo="UpdateBlock"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1203083461638">
@@ -190,22 +198,16 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203082695294">
     <property name="name" value="DoUpdateBlock"/>
     <property name="package" value="Actions.Action.Methods"/>
-    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
+    <link role="extends" targetNodeId="1205681149025" resolveInfo="UpdateBlock"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1203860215299">
       <property name="value" value="doUpdate"/>
       <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName"/>
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
-          id="1203082808306">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204384831912"/>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
-          id="1203083173569">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
-            resolveInfo="applicableConceptFunctionParameter"/>
-      <link role="target" targetNodeId="1203082903663" resolveInfo="ConceptFunctionParameter_ActionContext"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1205681280616">
+      <property name="value" value="doUpdate"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203082903663">
@@ -953,6 +955,46 @@
     <property name="package" value="Actions.Groups"/>
     <property name="name" value="mnemonic"/>
     <property name="constraint" value=".|"/>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205679047295">
+    <property name="package" value="Actions.Action"/>
+    <property name="name" value="ActionParameterDeclaration"/>
+    <link role="extends" targetNodeId="2.1068431474542" resolveInfo="VariableDeclaration"/>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205681149025">
+    <property name="package" value="Actions.Action.Methods"/>
+    <property name="name" value="UpdateBlock"/>
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
+          id="1205681227497">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205681227498"/>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
+          id="1205681227499">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
+            resolveInfo="applicableConceptFunctionParameter"/>
+      <link role="target" targetNodeId="1203082903663" resolveInfo="ConceptFunctionParameter_ActionContext"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1205681292696">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473854053" resolveInfo="abstract"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205681243813">
+    <property name="package" value="Actions.Action.Methods"/>
+    <property name="name" value="IsApplicableBlock"/>
+    <link role="extends" targetNodeId="1205681149025" resolveInfo="UpdateBlock"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1205681258659">
+      <property name="value" value="isApplicable"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1205681268802">
+      <property name="value" value="isApplicable"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
   </node>
 </model>
 

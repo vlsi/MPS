@@ -87,8 +87,7 @@
     <property name="caption" value="Highlight Dependent Leaves"/>
     <property name="package" value="Actions"/>
     <link role="extendedAction" targetNodeId="17.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
-    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DoUpdateBlock"
-          id="1205605492951">
+    <node role="updateBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DoUpdateBlock" id="1205605492951">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205605492952">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
               id="1205605546534">
@@ -387,8 +386,7 @@
     <property name="package" value="Actions"/>
     <link role="extendedClass" targetNodeId="17.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
     <link role="extendedAction" targetNodeId="17.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction"/>
-    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DoUpdateBlock"
-          id="1205606256132">
+    <node role="updateBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DoUpdateBlock" id="1205606256132">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205606256133">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
               id="1205606295433">
