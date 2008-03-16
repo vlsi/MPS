@@ -28,7 +28,9 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
   }
 
   public void doUpdate(@NotNull()ActionContext context) {
-    this.fillFieldsIfNecessary(context);
+    if (!(this.fillFieldsIfNecessary(context))) {
+      return;
+    }
     {
       boolean enabled = SNodeOperations.isInstanceOf(((SNode) context.getNode()), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
       this.setVisible(enabled);
@@ -36,11 +38,18 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     }
   }
 
-  public void fillFieldsIfNecessary(ActionContext context) {
+  public boolean fillFieldsIfNecessary(ActionContext context) {
+    try {
+    } catch (Throwable t) {
+      return false;
+    }
+    return true;
   }
 
   public void doExecute(@NotNull()ActionContext context) {
-    this.fillFieldsIfNecessary(context);
+    if (!(this.fillFieldsIfNecessary(context))) {
+      return;
+    }
     {
       SNode node = context.getNode();
       {
