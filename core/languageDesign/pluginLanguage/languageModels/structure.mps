@@ -959,7 +959,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205679047295">
     <property name="package" value="Actions.Action"/>
     <property name="name" value="ActionParameterDeclaration"/>
-    <link role="extends" targetNodeId="2.1068431474542" resolveInfo="VariableDeclaration"/>
+    <link role="extends" targetNodeId="2.1068390468200" resolveInfo="FieldDeclaration"/>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205681149025">
     <property name="package" value="Actions.Action.Methods"/>

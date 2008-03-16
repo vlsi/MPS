@@ -28,25 +28,34 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
   }
 
   public void doUpdate(@NotNull()ActionContext context) {
-    boolean enabled = SNodeOperations.isInstanceOf(((SNode) context.getNode()), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
-    this.setVisible(enabled);
-    this.setEnabled(enabled);
+    this.fillFieldsIfNecessary(context);
+    {
+      boolean enabled = SNodeOperations.isInstanceOf(((SNode) context.getNode()), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
+      this.setVisible(enabled);
+      this.setEnabled(enabled);
+    }
+  }
+
+  public void fillFieldsIfNecessary(ActionContext context) {
   }
 
   public void doExecute(@NotNull()ActionContext context) {
-    SNode node = context.getNode();
+    this.fillFieldsIfNecessary(context);
     {
-      ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(node, "statement", true));
-      try {
-        while (_zCursor1.moveToNext()) {
-          SNode statement = _zCursor1.getCurrent();
-          SNodeOperations.insertPrevSiblingChild(node, statement);
+      SNode node = context.getNode();
+      {
+        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(node, "statement", true));
+        try {
+          while (_zCursor1.moveToNext()) {
+            SNode statement = _zCursor1.getCurrent();
+            SNodeOperations.insertPrevSiblingChild(node, statement);
+          }
+        } finally {
+          _zCursor1.release();
         }
-      } finally {
-        _zCursor1.release();
       }
+      SNodeOperations.deleteNode(node);
     }
-    SNodeOperations.deleteNode(node);
   }
 
 }

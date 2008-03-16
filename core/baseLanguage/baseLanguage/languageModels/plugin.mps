@@ -421,6 +421,13 @@
         </node>
       </node>
     </node>
+    <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration"
+          id="1205682966654">
+      <property name="name" value="myNode"/>
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205682970015">
+        <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode"/>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1205604975727">
     <property name="name" value="UncommentStatements"/>
