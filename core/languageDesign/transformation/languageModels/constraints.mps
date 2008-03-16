@@ -1042,8 +1042,8 @@
         </node>
       </node>
     </node>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1200914495114">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200914495115" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1205664013922">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205664013923" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1200918245282">
