@@ -996,5 +996,24 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205685036103">
+    <property name="package" value="Actions.Action"/>
+    <property name="name" value="ActionParameterReference"/>
+    <link role="extends" targetNodeId="2.1068498886296" resolveInfo="VariableReference"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1205685162389">
+      <property name="value" value="ref parameter"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1205685162390">
+      <property name="value" value="action parameter reference"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="short_description"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1205685162391">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1146528679895" resolveInfo="lvalue"/>
+    </node>
+  </node>
 </model>
 
