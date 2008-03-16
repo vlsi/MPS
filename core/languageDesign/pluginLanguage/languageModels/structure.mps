@@ -867,7 +867,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204903488751">
     <property name="package" value="Actions.Groups.GroupMembers"/>
     <property name="name" value="JavaAction"/>
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1204903542721">
       <property name="role" value="javaClass"/>
