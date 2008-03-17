@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.ext.collections.lang.structure">
   <persistence version="1" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="leftExpression" conceptFQName="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" featureKind="CHILD" />
+          <value featureName="operand" conceptFQName="jetbrains.mps.baseLanguage.ext.collections.lang.structureSequenceOperationExpression" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1151688443754">
     <property name="name" value="ListType" />
     <link role="extends" targetNodeId="2.1068431790189" />
@@ -43,7 +55,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1151701835028">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
-      <property name="role" value="leftExpression" />
+      <property name="role" value="operand" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1151702083785">

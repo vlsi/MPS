@@ -10,7 +10,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.quotation" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
@@ -20,7 +20,7 @@
   <import index="6" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="21" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="25" modelUID="java.lang@java_stub" version="-1" />
-  <import index="30" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
+  <import index="30" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <import index="31" modelUID="jetbrains.mps.ypath.structure@java_stub" version="-1" />
   <import index="38" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
   <import index="39" modelUID="jetbrains.mps.ypath.constraints" version="-1" />

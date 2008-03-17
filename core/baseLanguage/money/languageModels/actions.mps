@@ -12,7 +12,7 @@
   <language namespace="jetbrains.accounting.money" />
   <language namespace="jetbrains.mps.core" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.accounting.money.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />

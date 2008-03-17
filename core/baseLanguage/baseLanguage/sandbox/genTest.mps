@@ -8,7 +8,7 @@
   <language namespace="jetbrains.mps.baseLanguageInternal" />
   <language namespace="jetbrains.mps.regexp" />
   <language namespace="webr.css" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <maxImportIndex value="6" />
   <import index="5" modelUID="jetbrains.mps.ide.command@java_stub" version="-1" />
   <import index="6" modelUID="java.lang@java_stub" version="-1" />

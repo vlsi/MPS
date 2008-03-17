@@ -9,7 +9,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.quotation" />
@@ -28,7 +28,7 @@
   <import index="19" modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
   <import index="20" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <import index="21" modelUID="java.io@java_stub" version="-1" />
-  <import index="22" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
+  <import index="22" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1138078942005">
     <property name="name" value="snodeOperation" />
     <property name="package" value="substitute" />
