@@ -38,24 +38,27 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
     final SNode propQ = SLinkOperations.getTarget(nodeToCheck, "propertyQualifier", true);
     if(SNodeOperations.isInstanceOf(propQ, "jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier")) {
       // # property name
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(propQ, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998062", false), new QuotationClass_77().createNode(), SLinkOperations.getTarget(propQ, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998060");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(propQ, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998062", false), new QuotationClass_76().createNode(), SLinkOperations.getTarget(propQ, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998060");
     } else
     if(SNodeOperations.isInstanceOf(propQ, "jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier")) {
       // check that property is in scope
       final SNode property = SLinkOperations.getTarget(propQ, "property", false);
       final SNode C_typevar_1204914077372 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204914077372), RulesUtil.get_inputNodeConcept(SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", false, false)), nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204914077373");
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204914077372), new Runnable() {
+      {
+        final SNode _representatorVar8 = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204914077372);
+        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar8, new Runnable() {
 
-        public void run() {
-          SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204914077372);
-          List<PropertyDeclaration> declaredProperties = SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
-          if(!(declaredProperties.contains(((PropertyDeclaration)SNodeOperations.getAdapter(property))))) {
-            TypeChecker.getInstance().reportTypeError(propQ, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204914077394");
+          public void run() {
+            SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204914077372);
+            List<PropertyDeclaration> declaredProperties = SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
+            if(!(declaredProperties.contains(((PropertyDeclaration)SNodeOperations.getAdapter(property))))) {
+              TypeChecker.getInstance().reportTypeError(propQ, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204914077394");
+            }
           }
-        }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204914077379");
+        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204914077379");
+      }
     }
   }
 

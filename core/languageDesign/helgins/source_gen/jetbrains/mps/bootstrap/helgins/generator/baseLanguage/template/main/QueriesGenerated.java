@@ -1238,10 +1238,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "argument", true);
   }
 
-  public static SNode sourceNodeQuery_1205764705012(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "argumentRepresentator", true)));
-  }
-
   public static List sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "judgement", true);
   }

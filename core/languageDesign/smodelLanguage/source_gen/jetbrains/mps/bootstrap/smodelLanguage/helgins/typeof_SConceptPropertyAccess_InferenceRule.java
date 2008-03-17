@@ -26,34 +26,37 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
     final SNode LeftType_typevar_1186059933158 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059945864", true), TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059950336");
-    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158), new Runnable() {
+    {
+      final SNode _representatorVar4 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar4, new Runnable() {
 
-      public void run() {
-        SNode leftConcept = null;
-        // sconcept ?
-        SNode maybeSConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
-        if(maybeSConceptType != null) {
-          leftConcept = SLinkOperations.getTarget(maybeSConceptType, "conceptDeclaraton", false);
-        } else
-        {
-          SNode maybeSNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-          if(maybeSNodeType != null) {
-            leftConcept = SLinkOperations.getTarget(maybeSNodeType, "concept", false);
-            if(leftConcept == null) {
-              leftConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
-            }
+        public void run() {
+          SNode leftConcept = null;
+          // sconcept ?
+          SNode maybeSConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
+          if(maybeSConceptType != null) {
+            leftConcept = SLinkOperations.getTarget(maybeSConceptType, "conceptDeclaraton", false);
           } else
           {
-            if(!(false)) {
-              TypeChecker.getInstance().reportTypeError(op, "can't compute SNodeType from left expression", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060015897");
+            SNode maybeSNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
+            if(maybeSNodeType != null) {
+              leftConcept = SLinkOperations.getTarget(maybeSNodeType, "concept", false);
+              if(leftConcept == null) {
+                leftConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
+              }
+            } else
+            {
+              if(!(false)) {
+                TypeChecker.getInstance().reportTypeError(op, "can't compute SNodeType from left expression", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060015897");
+              }
             }
           }
+          SNode declaringConcept = SNodeOperations.getParent(conceptPropertyDecl, null, false, false);
+          RulesUtil.checkAssignableConcept(leftConcept, declaringConcept, op, "operation is applied to wrong concept");
         }
-        SNode declaringConcept = SNodeOperations.getParent(conceptPropertyDecl, null, false, false);
-        RulesUtil.checkAssignableConcept(leftConcept, declaringConcept, op, "operation is applied to wrong concept");
-      }
 
-    }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060002359");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060002359");
+    }
     // ==========
     if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration")) {
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710663195", true), new QuotationClass_19().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710663193");

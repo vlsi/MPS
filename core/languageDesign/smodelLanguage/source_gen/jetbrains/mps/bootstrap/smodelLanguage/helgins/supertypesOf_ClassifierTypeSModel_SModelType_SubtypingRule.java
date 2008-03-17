@@ -14,7 +14,7 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_57().createNode();
+    return new QuotationClass_56().createNode();
   }
 
   public String getApplicableConceptFQName() {
