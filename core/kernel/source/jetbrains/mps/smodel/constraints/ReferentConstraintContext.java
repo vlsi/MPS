@@ -8,8 +8,9 @@ public class ReferentConstraintContext {
   private SModel myModel;
   private SNode myEnclosingNode;
   private SNode myReferenceNode;
+  private SNode myLinkTarget;
 
-  public ReferentConstraintContext(SModel model, SNode enclosingNode, SNode referenceNode) {
+  public ReferentConstraintContext(SModel model, SNode enclosingNode, SNode referenceNode, SNode linkTarget) {
     myModel = model;
     myEnclosingNode = enclosingNode;
     myReferenceNode = referenceNode;
@@ -25,5 +26,9 @@ public class ReferentConstraintContext {
 
   public SNode getReferenceNode() {
     return myReferenceNode;
+  }
+
+  public SNode getLinkTarget() {
+    return myLinkTarget;
   }
 }

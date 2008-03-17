@@ -484,7 +484,19 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1205756973940">
     <link role="concept" targetNodeId="1.1205756064662" resolveInfo="IMemberOperation" />
-    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1205756987583" />
+    <node role="references" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" id="1205756987583">
+      <link role="applicableLink" targetNodeId="1.1205756909548" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1205764607698">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205764607699">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205764609810">
+            <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_linkTarget" id="1205764609811" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1205764611188">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205764612221" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1205756973941">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205756973942" />
     </node>

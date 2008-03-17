@@ -55,12 +55,20 @@ public class ModelConstraintsUtil {
     return status[0];
   }
 
-  private static SearchScopeStatus getSearchScope_intern(SModel model, SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, String linkRole, AbstractConceptDeclaration linkTarget, IOperationContext context) {
+  private static SearchScopeStatus getSearchScope_intern(
+      SModel model,
+      SNode enclosingNode,
+      SNode referenceNode,
+      AbstractConceptDeclaration referenceNodeConcept,
+      String linkRole,
+      AbstractConceptDeclaration linkTarget,
+      IOperationContext context) {
+
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
     if (scopeProvider != null) {
       try {
-        if (scopeProvider.canCreateNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode))) {
-          ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode));
+        if (scopeProvider.canCreateNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget.getNode()))) {
+          ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget.getNode()));
           return newOK(searchScope, false);
         }
       } catch (Throwable t) {
@@ -82,8 +90,8 @@ public class ModelConstraintsUtil {
     }
     scopeProvider = ModelConstraintsManager.getInstance().getNodeDefaultSearchScopeProvider(linkTarget);
     if (scopeProvider != null) {
-      if (scopeProvider.canCreateNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode))) {
-        ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode));
+      if (scopeProvider.canCreateNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget.getNode()))) {
+        ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget.getNode()));
         return newOK(searchScope, false);
       }
       return new SearchScopeStatus.ERROR("can't create default search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
