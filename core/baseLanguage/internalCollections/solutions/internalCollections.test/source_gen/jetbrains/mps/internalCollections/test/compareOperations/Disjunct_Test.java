@@ -20,4 +20,11 @@ public class Disjunct_Test extends Util_Test {
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(2, 3, 5), test);
   }
 
+  public void test_disjunctionEquivalence() throws Exception {
+    Iterable<String> a = Arrays.asList("X", "W", "Z", "Y", "X", "Z", "X", "Y", "W");
+    Iterable<String> b = Arrays.asList("V", "X", "V", "Z", "Z", "Z", "Y");
+    this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(a).disjunction(Sequence.fromIterable(b)), Sequence.fromIterable(a).union(Sequence.fromIterable(b)).substract(Sequence.fromIterable(a).intersect(Sequence.fromIterable(b))));
+    this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(a).disjunction(Sequence.fromIterable(b)), Sequence.fromIterable(a).substract(Sequence.fromIterable(b)).union(Sequence.fromIterable(b).substract(Sequence.fromIterable(a))));
+  }
+
 }

@@ -56,7 +56,13 @@ public abstract class Sequence<T> implements Iterable<T> {
     public Sequence<T> tail (int length) {
         return new PagingSequence<T> (this, PagingSequence.Page.TAIL, length);
     }
-    
+
+    // curse the page operation
+    public Sequence<T> page (int skip, int skipplustake) {
+        int take = skipplustake-skip;
+        return skip (skip).take (take);
+    }
+
     public Sequence<T> concat (Sequence<T> that) {
         return new ConcatingSequence<T> (this, that);
     }

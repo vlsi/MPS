@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class Sort_Test extends Util_Test {
 
   public void test_sortMethod() throws Exception {
-    Sequence<String> input = Sequence.fromArray("Z", "YY", "XXX", "WWWW");
+    Sequence<String> input = Sequence.fromArray("ZZZ", "Y", "XXXX", "WW");
     Sequence<String> test = input.sort(new ISelector <String, Comparable<?>>() {
 
       public Comparable<?> select(String it) {
@@ -17,21 +17,30 @@ public class Sort_Test extends Util_Test {
       }
 
     }, false);
-    this.assertIterableEquals(Sequence.fromArray("WWWW", "XXX", "YY", "Z"), test);
+    this.assertIterableEquals(Sequence.fromArray("XXXX", "ZZZ", "WW", "Y"), test);
   }
 
   public void test_toComparableVar() throws Exception {
-    Sequence<String> input = Sequence.fromArray("Z", "YY", "XXX", "WWWW");
-    ISelector<String, Comparable<?>> tocomp = new ISelector <String, Comparable<?>>() {
+    Sequence<String> input = Sequence.fromArray("ZZZ", "Y", "XXXX", "WW");
+    ISelector<String, Comparable<?>> length = new ISelector <String, Comparable<?>>() {
 
       public Comparable<?> select(String it) {
         return it.length();
       }
 
     };
-    Sequence<String> test = input.sort(tocomp, false);
-    this.assertIterableEquals(Sequence.fromArray("WWWW", "XXX", "YY", "Z"), test);
-    this.assertIterableEquals(input, test.sort(tocomp, true));
+    Sequence<String> test = input.sort(length, false);
+    ISelector<String, Comparable<?>> itself = new ISelector <String, Comparable<?>>() {
+
+      public Comparable<?> select(String it) {
+        return it;
+      }
+
+    };
+    Sequence<String> test2 = input.sort(itself, true);
+    this.assertIterableEquals(Sequence.fromArray("XXXX", "ZZZ", "WW", "Y"), test);
+    this.assertIterableEquals(Sequence.fromArray("Y", "WW", "ZZZ", "XXXX"), test.sort(length, true));
+    this.assertIterableEquals(Sequence.fromArray("WW", "XXXX", "Y", "ZZZ"), test2);
   }
 
   public void test_sortOperationInternal() throws Exception {
