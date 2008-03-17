@@ -4,9 +4,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 import java.util.List;
 
-/**
- * @author Kostik
- */
 public class EventUtil {
   public static boolean isDetachedOnlyChange(List<SModelEvent> events) {
     final boolean[] result = { true };
@@ -42,6 +39,15 @@ public class EventUtil {
        if (e instanceof SModelChildEvent) return true;
        if (e instanceof SModelRootEvent) return true;
        if (e instanceof SModelReferenceEvent) return true;
+     }
+    return false;
+  }
+
+  public static boolean isChange(List<SModelEvent> events) {
+    for (SModelEvent e : events) {
+      if (e.isChangeEvent()) {
+        return true;
+      }
      }
     return false;
   }

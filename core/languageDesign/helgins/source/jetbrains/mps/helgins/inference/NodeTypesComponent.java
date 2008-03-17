@@ -577,7 +577,7 @@ public class NodeTypesComponent implements IGutterMessageOwner, Cloneable {
 
 
   private class MyModelListener implements SModelCommandListener {
-    public void modelChangedInCommand(List<SModelEvent> events) {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
         event.accept(new SModelEventVisitorAdapter() {
 

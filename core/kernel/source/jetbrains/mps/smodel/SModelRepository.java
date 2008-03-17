@@ -9,7 +9,6 @@ import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -18,11 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import javax.swing.Timer;
-import java.io.File;
 import java.util.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class SModelRepository extends SModelAdapter {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
@@ -47,7 +42,7 @@ public class SModelRepository extends SModelAdapter {
   private boolean myInChangedModelsReloading = false;
 
   private SModelCommandListener myListener = new SModelCommandListener() {
-    public void modelChangedInCommand(List<SModelEvent> events) {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
       someModelChangedInCommand(events);
     }
   };
@@ -101,7 +96,7 @@ public class SModelRepository extends SModelAdapter {
       if (listeners != null) {
         for (SModelCommandListener l : listeners) {
           try {
-            l.modelChangedInCommand(Collections.unmodifiableList(events));
+            l.eventsHappenedInCommand(Collections.unmodifiableList(events));
           } catch (Throwable t) {
             LOG.error(t);
           }

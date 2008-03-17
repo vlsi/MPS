@@ -56,7 +56,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private Map<String, Set<String>> myAncestorsNamesMap = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
   private SModelCommandListener myAspectModelsListener = new SModelCommandListener() {
-    public void modelChangedInCommand(List<SModelEvent> events) {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
       if (myUpToDate) {
         myUpToDate = false;
         CommandProcessor.instance().executeCommand(new Runnable() {

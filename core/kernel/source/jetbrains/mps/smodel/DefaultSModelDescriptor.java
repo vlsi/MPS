@@ -18,9 +18,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-/**
- * @author Kostik
- */
 public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private static final String VERSION = "version";
   private static final String NAME_VERSION = "nameVersion";
@@ -61,13 +58,16 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   {
     this.addModelCommandListener(new SModelCommandListener() {
-      public void modelChangedInCommand(List<SModelEvent> events) {
+      public void eventsHappenedInCommand(List<SModelEvent> events) {
         if (EventUtil.isDramaticalChange(events)) {
           myLastStructuralChange = System.currentTimeMillis();
           myFastNodeFinder = null;
           ourStructuralState++;
         }
-        myLastChange = System.currentTimeMillis();
+
+        if (EventUtil.isChange(events)) {        
+          myLastChange = System.currentTimeMillis();
+        }
       }
     });
   }

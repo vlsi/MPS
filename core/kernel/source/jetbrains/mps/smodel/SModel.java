@@ -16,8 +16,6 @@ import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.annotation.ForDebug;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -402,7 +400,7 @@ public class SModel implements Iterable<SNode> {
   private void fireSModelChangedInCommandEvent(@NotNull List<SModelEvent> events) {
     for (SModelCommandListener l : copyCommandListeners()) {
       try {
-        l.modelChangedInCommand(events);
+        l.eventsHappenedInCommand(events);
       } catch (Exception e) {
         LOG.error(e);
       }
@@ -1221,6 +1219,7 @@ public class SModel implements Iterable<SNode> {
     }
 
     public void modelSaved(SModelSavedEvent event) {
+      myEvents.add(event);
     }
 
     public void commandFinished(@NotNull CommandEvent event) {

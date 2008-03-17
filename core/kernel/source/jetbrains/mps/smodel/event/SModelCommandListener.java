@@ -5,9 +5,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.util.List;
 
-/**
- * @author Kostik
- */
 public interface SModelCommandListener {
-  void modelChangedInCommand(List<SModelEvent> events);
+  void eventsHappenedInCommand(List<SModelEvent> events);
 }

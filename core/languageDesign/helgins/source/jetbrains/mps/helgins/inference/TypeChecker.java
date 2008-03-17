@@ -401,7 +401,7 @@ public class TypeChecker {
       }
     };
 
-    public void modelChangedInCommand(List<SModelEvent> events) {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
         event.accept(myVisitor);
       }

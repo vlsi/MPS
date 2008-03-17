@@ -441,7 +441,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     public MyModelListener() {
     }
 
-    public void modelChangedInCommand(final List<SModelEvent> events) {
+    public void eventsHappenedInCommand(final List<SModelEvent> events) {
       getTree().rebuildTreeLater(new Runnable() {
         public void run() {
           final Set<SNode> addedRoots = new LinkedHashSet<SNode>();
