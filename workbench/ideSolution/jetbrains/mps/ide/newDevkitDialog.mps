@@ -631,26 +631,5 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1205762877131">
-    <property name="name" value="ABC" />
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205762879337">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205762879338" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205762879339" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205762879340">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205762881028">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205762881029">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1205762881030" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205762886407">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205762886408">
-            <link role="variableDeclaration" targetNodeId="1205762881029" resolveInfo="i" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205762877132" />
-  </node>
 </model>
 
