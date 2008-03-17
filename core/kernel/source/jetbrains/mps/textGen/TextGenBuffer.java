@@ -6,7 +6,6 @@ import java.util.HashMap;
  * User: Dmitriev.
  * Date: Dec 22, 2003
  */
-/*package*/
 public final class TextGenBuffer {
   public static final int TOP = 0;
   public static final int DEFAULT = 1;

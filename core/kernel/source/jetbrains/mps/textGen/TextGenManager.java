@@ -4,15 +4,11 @@ import jetbrains.mps.baseLanguage.textGen.JavaNodeTextGen;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
 
 /**
  * User: Dmitriev.
@@ -36,7 +32,7 @@ public class TextGenManager {
   public TextGenerationResult generateText(IOperationContext context, SNode node) {
     TextGenBuffer buffer = new TextGenBuffer();
     buffer.putUserObject(JavaNodeTextGen.PACKAGE_NAME, node.getModel().getLongName());
-    appendNodeText(context, buffer, node);
+    appendNodeText(context, buffer, node, null);
     return new TextGenerationResult(buffer.getText(), buffer.hasErrors());
   }
 
@@ -44,11 +40,14 @@ public class TextGenManager {
     return !(loadNodeTextGen(null, node) instanceof DefaultTextGen);
   }
 
-  protected void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node) {
+  protected void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, SNode contextNode) {
     if(node == null) {
       buffer.append("???");
-      LOG.error("may be broken reference");
-      //buffer.foundError();
+
+      if (contextNode != null) {
+        LOG.error("possible broken reference", contextNode);
+      }
+
       return;
     }
 
@@ -59,7 +58,9 @@ public class TextGenManager {
 
     nodeTextGen.setBuffer(buffer);
     try {
+      nodeTextGen.setSNode(node);
       nodeTextGen.doGenerateText(node.getAdapter());
+      nodeTextGen.setSNode(null);
     } catch (Exception e) {
       buffer.foundError();
       LOG.error("Exception during text generation on node ", node);
