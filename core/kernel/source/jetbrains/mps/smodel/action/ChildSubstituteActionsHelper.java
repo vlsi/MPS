@@ -256,7 +256,7 @@ public class ChildSubstituteActionsHelper {
 
     LinkDeclaration smartRef = ReferenceConceptUtil.getCharacteristicReference(applicableConcept);
     if (smartRef != null) {
-      List<INodeSubstituteAction> smartActions = createSmartReferenceActions(applicableConcept, smartRef, parentNode, currentChild, setter, scope);
+      List<INodeSubstituteAction> smartActions = createSmartReferenceActions(applicableConcept, smartRef, parentNode, currentChild, setter, operationContext);
       if (smartActions != null) {
         return smartActions;
       } else {
@@ -284,10 +284,10 @@ public class ChildSubstituteActionsHelper {
     final SNode parentNode,
     final SNode currentChild,
     IChildNodeSetter childSetter,
-    final IScope scope) {
+    final IOperationContext context) {
 
     // try to create referent-search-scope
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, context);
     if (status.isError()) return null;
 
     // create smart actions
@@ -298,7 +298,7 @@ public class ChildSubstituteActionsHelper {
 
     List<SNode> referentNodes = searchScope.getNodes(new IsInstanceCondition(targetConcept));
     for (SNode referentNode : referentNodes) {
-      actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope, referenceNodeConcept, referenceLink_final));
+      actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, context.getScope(), referenceNodeConcept, referenceLink_final));
     }
 
     return actions;

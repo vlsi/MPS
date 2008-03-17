@@ -5,12 +5,12 @@ package jetbrains.mps.bootstrap.structureLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -33,15 +33,15 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", "specializedLink");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return referenceNode != null;
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return _context.getReferenceNode() != null;
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     final zClosureContext _zClosureContext = new zClosureContext();
-    _zClosureContext.aggregation = SPropertyOperations.hasValue(referenceNode, "metaClass", "aggregation", null);
+    _zClosureContext.aggregation = SPropertyOperations.hasValue(_context.getReferenceNode(), "metaClass", "aggregation", null);
     List<SNode> result = new ArrayList<SNode>();
-    SNode enclosingConcept = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", true, false);
+    SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", true, false);
     List<SNode> directSupers = SConceptOperations.getDirectSuperConcepts(enclosingConcept);
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(directSupers);

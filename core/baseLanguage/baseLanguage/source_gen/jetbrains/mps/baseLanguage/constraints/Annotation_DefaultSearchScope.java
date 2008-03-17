@@ -4,9 +4,8 @@ package jetbrains.mps.baseLanguage.constraints;
 
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
@@ -24,12 +23,12 @@ public class Annotation_DefaultSearchScope implements INodeReferentSearchScopePr
     manager.unRegisterNodeDefaultSearchScopeProvider("jetbrains.mps.baseLanguage.structure.Annotation");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    return new VisibleClassifiersScope(model, IClassifiersSearchScope.ANNOTATION, scope);
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.ANNOTATION, operationContext.getScope());
   }
 
   public String getNodeReferentSearchScopeDescription() {

@@ -5,9 +5,8 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
@@ -27,12 +26,12 @@ public class StaticMethodCall_staticMethodDeclaration_ReferentConstraint impleme
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "baseMethodDeclaration");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return (SLinkOperations.getTarget(referenceNode, "classConcept", false) != null);
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return (SLinkOperations.getTarget(_context.getReferenceNode(), "classConcept", false) != null);
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    return new StaticMethodCall_StaticMethodScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(referenceNode, "classConcept", false))), ((StaticMethodCall)SNodeOperations.getAdapter(referenceNode)));
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return new StaticMethodCall_StaticMethodScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getReferenceNode(), "classConcept", false))), ((StaticMethodCall)SNodeOperations.getAdapter(_context.getReferenceNode())));
   }
 
   public String getNodeReferentSearchScopeDescription() {

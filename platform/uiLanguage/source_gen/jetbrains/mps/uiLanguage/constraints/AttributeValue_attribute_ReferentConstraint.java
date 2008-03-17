@@ -5,10 +5,10 @@ package jetbrains.mps.uiLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -29,12 +29,12 @@ public class AttributeValue_attribute_ReferentConstraint implements IModelConstr
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.uiLanguage.structure.AttributeValue", "attribute");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    SNode instance = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.uiLanguage.structure.ComponentInstance", true, false);
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    SNode instance = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.uiLanguage.structure.ComponentInstance", true, false);
     List<SNode> result = new ArrayList<SNode>();
     if(instance != null) {
       ListOperations.addAllElements(result, ComponentDeclaration_Behavior.call_getAttributes_1202392603201(SLinkOperations.getTarget(instance, "componentDeclaration", false)));

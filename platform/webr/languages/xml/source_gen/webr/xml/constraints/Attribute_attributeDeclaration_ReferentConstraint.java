@@ -5,10 +5,10 @@ package webr.xml.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
@@ -28,15 +28,15 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
     manager.unRegisterNodeReferentSearchScopeProvider("webr.xml.structure.Attribute", "attributeDeclaration");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     ISearchScope searchScope;
-    SNode element = SNodeOperations.getAncestor(enclosingNode, "webr.xml.structure.Element", false, false);
+    SNode element = SNodeOperations.getAncestor(_context.getEnclosingNode(), "webr.xml.structure.Element", false, false);
     if((element == null)) {
-      searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(model, scope);
+      searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());
     } else
     {
       searchScope = new SimpleSearchScope(ElementDeclaration_Behavior.call_getAttributeDeclarations_1183587644932(SLinkOperations.getTarget(element, "elementDeclaration", false)));

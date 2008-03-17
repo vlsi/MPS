@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
@@ -63,7 +64,7 @@ public class DynamicReference extends SReferenceBase {
             getSourceNode(),
             sourceNodeConcept,
             getRole(), // "genuine" role here
-            GlobalScope.getInstance());
+            new GlobalOperationContext());
     if (status.isError()) {
       error("can't obtain search scope: " + status.getMessage());
       return null;

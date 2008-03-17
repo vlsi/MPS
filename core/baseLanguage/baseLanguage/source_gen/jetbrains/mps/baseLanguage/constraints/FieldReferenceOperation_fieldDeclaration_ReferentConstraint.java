@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
@@ -30,8 +30,8 @@ public class FieldReferenceOperation_fieldDeclaration_ReferentConstraint impleme
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "fieldDeclaration");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    SNode operand = SLinkOperations.getTarget(enclosingNode, "operand", true);
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    SNode operand = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
     if(operand == null) {
       return false;
     }
@@ -39,10 +39,10 @@ public class FieldReferenceOperation_fieldDeclaration_ReferentConstraint impleme
     return classifierType != null;
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    SNode instance = SLinkOperations.getTarget(enclosingNode, "operand", true);
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    SNode instance = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    return new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(classifierType, "classifier", false))), enclosingNode, IClassifiersSearchScope.INSTANCE_FIELD);
+    return new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(classifierType, "classifier", false))), _context.getEnclosingNode(), IClassifiersSearchScope.INSTANCE_FIELD);
   }
 
   public String getNodeReferentSearchScopeDescription() {

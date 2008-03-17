@@ -71,10 +71,10 @@ public class Resolver {
           final ConceptDeclaration referenceNodeConcept,
           LinkDeclaration smartReference,
           final SNode parentNode,
-          final IScope scope) {
+          final IOperationContext context) {
 
     // try to create referent-search-scope
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, context);
     if (status.isError()) return new ArrayList<SNode>();
 
     ISearchScope searchScope = status.getSearchScope();
@@ -113,7 +113,7 @@ public class Resolver {
 
     try {
     SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
-            referenceNode, referenceNodeConcept, linkDeclaration, operationContext.getScope());
+            referenceNode, referenceNodeConcept, linkDeclaration, operationContext);
     if (status.isError()) {
       LOG.error("Couldn't create referent search scope : " + status.getMessage());
       return false;
@@ -152,7 +152,7 @@ public class Resolver {
       ConceptDeclaration applicableConcept = (ConceptDeclaration) BaseAdapter.fromNode(node);
       LinkDeclaration smartReference = ReferenceConceptUtil.getCharacteristicReference(applicableConcept);
       if (smartReference == null) continue;
-      List<SNode> smartReferenceTargets = getSmartReferenceTargets(applicableConcept, smartReference, parent, operationContext.getScope());
+      List<SNode> smartReferenceTargets = getSmartReferenceTargets(applicableConcept, smartReference, parent, operationContext);
       List<SNode> filteredRefTargets = CollectionUtil.filter(smartReferenceTargets, nameMatchesCondition);
       if (!filteredRefTargets.isEmpty()) {
         SNode target = filteredRefTargets.get(0);
@@ -218,8 +218,8 @@ public class Resolver {
         DefaultReferentNodeSubstituteAction action2 = (DefaultReferentNodeSubstituteAction) o2;
         SModel model1 = null;
         SModel model2 = null;
-        if (action1.getOutputConcept() instanceof SNode) model1 = ((SNode) action1.getOutputConcept()).getModel();
-        if (action2.getOutputConcept() instanceof SNode) model2 = ((SNode) action2.getOutputConcept()).getModel();
+        if (action1.getOutputConcept() != null) model1 = ((SNode) action1.getOutputConcept()).getModel();
+        if (action2.getOutputConcept() != null) model2 = ((SNode) action2.getOutputConcept()).getModel();
         if (model1 == sourceNode.getModel()) return 1;
         if (model2 == sourceNode.getModel()) return -1;
         return 0;

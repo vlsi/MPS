@@ -5,9 +5,8 @@ package jetbrains.mps.ypath.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
@@ -27,13 +26,13 @@ public class IFeature_opposite_ReferentConstraint implements IModelConstraints, 
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.ypath.structure.IFeature", "opposite");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     final zClosureContext5 _zClosureContext5 = new zClosureContext5();
-    _zClosureContext5.feature = referenceNode;
+    _zClosureContext5.feature = _context.getReferenceNode();
     _zClosureContext5.isGeneric = SNodeOperations.isInstanceOf(_zClosureContext5.feature, "jetbrains.mps.ypath.structure.IGenericFeature");
     return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext5.feature, null, false, false), "features", true), new zPredicate19(null, _zClosureContext5))));
   }

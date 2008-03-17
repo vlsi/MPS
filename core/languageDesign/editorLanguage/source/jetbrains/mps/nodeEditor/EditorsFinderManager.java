@@ -22,14 +22,16 @@ public class EditorsFinderManager {
 
     if (ourCachedEditors.containsKey(node.getConceptFqName())) {
       Constructor constructor = ourCachedEditors.get(node.getConceptFqName());
-      try {
-        return (INodeEditor) constructor.newInstance();
-      } catch (InstantiationException e) {
-        LOG.error(e);
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (InvocationTargetException e) {
-        LOG.error(e);
+      if (constructor != null) {
+        try {
+          return (INodeEditor) constructor.newInstance();
+        } catch (InstantiationException e) {
+          LOG.error(e);
+        } catch (IllegalAccessException e) {
+          LOG.error(e);
+        } catch (InvocationTargetException e) {
+          LOG.error(e);
+        }
       }
       return new DefaultNodeEditor();        
     }

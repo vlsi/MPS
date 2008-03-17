@@ -5,9 +5,8 @@ package jetbrains.mps.ypath.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -25,12 +24,12 @@ public class NodeKindSpecificCase_treeNodeKind_ReferentConstraint implements IMo
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.ypath.structure.NodeKindSpecificCase", "treeNodeKind");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    return new SimpleSearchScope(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(enclosingNode, "nodeExpression", true), "treepathAspect", false), "nodeKinds", true));
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return new SimpleSearchScope(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getEnclosingNode(), "nodeExpression", true), "treepathAspect", false), "nodeKinds", true));
   }
 
   public String getNodeReferentSearchScopeDescription() {

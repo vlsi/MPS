@@ -5,10 +5,10 @@ package jetbrains.mps.uiLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -30,12 +30,12 @@ public class ComponentReference_component_ReferentConstraint implements IModelCo
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.uiLanguage.structure.ComponentReference", "component");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    SNode container = SNodeOperations.getAncestorWhereConceptInList(enclosingNode, new String[]{"jetbrains.mps.uiLanguage.structure.ComponentController","jetbrains.mps.uiLanguage.structure.ComponentDeclaration"}, true, false);
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    SNode container = SNodeOperations.getAncestorWhereConceptInList(_context.getEnclosingNode(), new String[]{"jetbrains.mps.uiLanguage.structure.ComponentController","jetbrains.mps.uiLanguage.structure.ComponentDeclaration"}, true, false);
     SNode componentDeclaration = null;
     if(SNodeOperations.isInstanceOf(container, "jetbrains.mps.uiLanguage.structure.ComponentController")) {
       componentDeclaration = SLinkOperations.getTarget(container, "component", false);

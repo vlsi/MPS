@@ -5,9 +5,8 @@ package jetbrains.mps.ypath.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
@@ -26,14 +25,14 @@ public class TreeNodeKindReference_treeNodeKind_ReferentConstraint implements IM
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.ypath.structure.TreeNodeKindReference", "treeNodeKind");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     ISearchScope searchScope;
-    if((referenceNode != null) && (SLinkOperations.getTarget(referenceNode, "treePathAspect", false) != null)) {
-      searchScope = new SimpleSearchScope(SLinkOperations.getTargets(SLinkOperations.getTarget(referenceNode, "treePathAspect", false), "nodeKinds", true));
+    if((_context.getReferenceNode() != null) && (SLinkOperations.getTarget(_context.getReferenceNode(), "treePathAspect", false) != null)) {
+      searchScope = new SimpleSearchScope(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getReferenceNode(), "treePathAspect", false), "nodeKinds", true));
     } else
     {
       searchScope = new EmptySearchScope();

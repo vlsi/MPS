@@ -5,10 +5,10 @@ package jetbrains.mps.ypath.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.ypath.actions.TreePathAspectUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -26,13 +26,13 @@ public class TreePathAdapterExpression_treepathAspect_ReferentConstraint impleme
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.ypath.structure.TreePathAdapterExpression", "treepathAspect");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    SNode tpae = referenceNode;
-    return new SimpleSearchScope(TreePathAspectUtil.getTreePathAspects(SLinkOperations.getTarget(tpae, "expression", true), scope));
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    SNode tpae = _context.getReferenceNode();
+    return new SimpleSearchScope(TreePathAspectUtil.getTreePathAspects(SLinkOperations.getTarget(tpae, "expression", true), operationContext.getScope()));
   }
 
   public String getNodeReferentSearchScopeDescription() {

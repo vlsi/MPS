@@ -5,11 +5,11 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -25,13 +25,13 @@ public class LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "variableDeclaration");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return (SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return (SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    SNode classifier = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    return Classifier_Behavior.call_getVisibleMembersSearchScope_1189552517057(classifier, enclosingNode, IClassifiersSearchScope.STATIC_FIELD);
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    SNode classifier = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    return Classifier_Behavior.call_getVisibleMembersSearchScope_1189552517057(classifier, _context.getEnclosingNode(), IClassifiersSearchScope.STATIC_FIELD);
   }
 
   public String getNodeReferentSearchScopeDescription() {

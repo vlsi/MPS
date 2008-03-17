@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
@@ -32,16 +32,16 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.PropertyReference", "property");
   }
 
-  public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    if(!(SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+  public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    if(!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return false;
     }
-    return (DotExpression_Behavior.call_getClassifier_1201997214164(enclosingNode) != null);
+    return (DotExpression_Behavior.call_getClassifier_1201997214164(_context.getEnclosingNode()) != null);
   }
 
-  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> resultProperties = ListOperations.<SNode>createList();
-    SNode opClassifier = DotExpression_Behavior.call_getClassifier_1201997214164(enclosingNode);
+    SNode opClassifier = DotExpression_Behavior.call_getClassifier_1201997214164(_context.getEnclosingNode());
     List<SNode> classifiers = ClassifierAndSuperClassifiersCache.getInstance(opClassifier).getClassifierNodes();
     {
       ICursor<SNode> _zCursor4 = CursorFactory.createCursor(classifiers);
@@ -56,7 +56,7 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
               try {
                 while(_zCursor5.moveToNext()) {
                   SNode property = _zCursor5.getCurrent();
-                  if(VisibilityUtil.isVisible(enclosingNode, property)) {
+                  if(VisibilityUtil.isVisible(_context.getEnclosingNode(), property)) {
                     ListOperations.addElement(resultProperties, property);
                   }
                 }

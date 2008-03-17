@@ -1314,5 +1314,30 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203007489137" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1205759303619">
+    <property name="package" value="Functions" />
+    <link role="concept" targetNodeId="1.1148934493876" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1205759305075">
+      <property name="name" value="usesParameterObjectFor" />
+      <link role="overriddenMethod" targetNodeId="17.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205759305077">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1205759310081">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1205759310974">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1205759308640">
+        <property name="name" value="parameter" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205759308641">
+          <link role="concept" targetNodeId="12.1107135704075" resolveInfo="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1205759308642" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1205759303620">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205759303621" />
+    </node>
+  </node>
 </model>
 

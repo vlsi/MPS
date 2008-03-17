@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface IOperationContext {
 
-  @NotNull MPSProject getProject();
+  MPSProject getProject();
 
   IModule getModule();
 

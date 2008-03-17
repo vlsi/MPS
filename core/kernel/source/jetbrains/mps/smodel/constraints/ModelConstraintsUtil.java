@@ -3,10 +3,7 @@ package jetbrains.mps.smodel.constraints;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
@@ -14,8 +11,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.TypeCheckingMode;
-import jetbrains.mps.helgins.inference.NodeTypesComponent;
-import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 
 /**
  * Igor Alshannikov
@@ -24,17 +19,17 @@ import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 public class ModelConstraintsUtil {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsUtil.class);
 
-  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
+  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IOperationContext context) {
     String linkRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDeclaration);
     AbstractConceptDeclaration linkTarget = referenceLinkDeclaration.getTarget();
-    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, linkTarget, scope);
+    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
   }
 
-  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, String linkRole, IScope scope) {
-    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, null, scope);
+  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, String linkRole, IOperationContext context) {
+    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, null, context);
   }
 
-  private static SearchScopeStatus getSearchScope(SNode enclosingNode, final SNode referenceNode, final AbstractConceptDeclaration referenceNodeConcept, final String linkRole, final AbstractConceptDeclaration linkTarget, final IScope scope) {
+  private static SearchScopeStatus getSearchScope(SNode enclosingNode, final SNode referenceNode, final AbstractConceptDeclaration referenceNodeConcept, final String linkRole, final AbstractConceptDeclaration linkTarget, final IOperationContext context) {
     final SModel model;
     if (enclosingNode != null) {
       model = enclosingNode.getModel();
@@ -51,7 +46,7 @@ public class ModelConstraintsUtil {
       public void run() {
         try {
           TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.RESOLVE);
-          status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, scope);
+          status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
         } finally {
           TypeChecker.getInstance().resetTypeCheckingMode();
         }
@@ -60,12 +55,12 @@ public class ModelConstraintsUtil {
     return status[0];
   }
 
-  private static SearchScopeStatus getSearchScope_intern(SModel model, SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, String linkRole, AbstractConceptDeclaration linkTarget, IScope scope) {
+  private static SearchScopeStatus getSearchScope_intern(SModel model, SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, String linkRole, AbstractConceptDeclaration linkTarget, IOperationContext context) {
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
     if (scopeProvider != null) {
       try {
-        if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {
-          ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
+        if (scopeProvider.canCreateNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode))) {
+          ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode));
           return newOK(searchScope, false);
         }
       } catch (Throwable t) {
@@ -87,15 +82,15 @@ public class ModelConstraintsUtil {
     }
     scopeProvider = ModelConstraintsManager.getInstance().getNodeDefaultSearchScopeProvider(linkTarget);
     if (scopeProvider != null) {
-      if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {
-        ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
+      if (scopeProvider.canCreateNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode))) {
+        ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode));
         return newOK(searchScope, false);
       }
       return new SearchScopeStatus.ERROR("can't create default search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
     }
 
     // global search scope
-    ISearchScope searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(model, false, scope);
+    ISearchScope searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(model, false, context.getScope());
     return newOK(searchScope, true);
   }
 
