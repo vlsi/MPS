@@ -102,7 +102,9 @@ public class FileGenerationUtil {
       }
       if (result == JOptionPane.NO_OPTION) return false;
 
-      ok = false;
+      if (result == JOptionPane.YES_OPTION) {
+        ok = true;
+      }
     }
 
     // generate files and synchronize vcs
