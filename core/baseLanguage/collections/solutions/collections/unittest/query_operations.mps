@@ -638,7 +638,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205787434375">
                 <link role="variableDeclaration" targetNodeId="1205787380274" resolveInfo="strings" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.CountOperation" id="1205787440581" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1205787807405" />
             </node>
           </node>
         </node>
