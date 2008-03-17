@@ -4,7 +4,7 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <maxImportIndex value="1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
@@ -47,6 +47,17 @@
       <property name="role" value="classifier" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1205751982837" resolveInfo="IClassifier" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1205756064662">
+    <property name="name" value="IMemberOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1205756909548">
+      <property name="role" value="member" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1205752032448" resolveInfo="IMember" />
+    </node>
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1205756760046">
+      <link role="intfc" targetNodeId="3v.1197027803184" resolveInfo="IOperation" />
     </node>
   </node>
 </model>

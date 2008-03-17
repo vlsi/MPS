@@ -284,9 +284,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     if(this.myConceptFunction_Component1 == null) {
       this.myConceptFunction_Component1 = new ConceptFunction_Component(node);
     }
-    EditorCell componentCell = this.myConceptFunction_Component1.createEditorCell(context);
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.addEditorCell(componentCell);
+    EditorCell editorCell = this.myConceptFunction_Component1.createEditorCell(context);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConceptFunction_ComponentCell(editorCell, node, context);
     return editorCell;
   }
