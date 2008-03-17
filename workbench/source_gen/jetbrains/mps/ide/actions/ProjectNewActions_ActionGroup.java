@@ -14,7 +14,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 public class ProjectNewActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.ProjectNewActions";
 
-  public ProjectNewActions_ActionGroup(MPSProject project) {
+  public  ProjectNewActions_ActionGroup(MPSProject project) {
     super("New", ProjectNewActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new NewSolutionAction(), this);
@@ -26,7 +26,7 @@ public class ProjectNewActions_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup(ProjectActions_ActionGroup.ID);
       ActionGroup gWhat = manager.getGroup(ProjectNewActions_ActionGroup.ID);
-      if (gTo == null || gWhat == null) {
+      if(gTo == null || gWhat == null) {
         return;
       }
       {

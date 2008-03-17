@@ -14,6 +14,7 @@ public class ReferentConstraintContext {
     myModel = model;
     myEnclosingNode = enclosingNode;
     myReferenceNode = referenceNode;
+    myLinkTarget = linkTarget;
   }
 
   public SModel getModel() {

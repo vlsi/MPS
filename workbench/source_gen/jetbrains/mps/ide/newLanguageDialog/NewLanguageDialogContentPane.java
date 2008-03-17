@@ -68,7 +68,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   private void bind() {
     {
       Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("languageNamespace");
+      Property sourceProperty = BeanProperty.create("");
       Object targetObject = this.myComponent1;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
@@ -77,7 +77,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
     {
       Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("languagePath");
+      Property sourceProperty = BeanProperty.create("");
       Object targetObject = this.myComponent3;
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);

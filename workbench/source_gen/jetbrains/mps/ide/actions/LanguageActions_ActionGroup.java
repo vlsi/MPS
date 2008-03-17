@@ -23,7 +23,7 @@ public class LanguageActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.LanguageActions";
   public static final String LABEL_ID_newGroup = "newGroup";
 
-  public LanguageActions_ActionGroup(MPSProject project) {
+  public  LanguageActions_ActionGroup(MPSProject project) {
     super("", LanguageActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new Label(LanguageActions_ActionGroup.LABEL_ID_newGroup), this);

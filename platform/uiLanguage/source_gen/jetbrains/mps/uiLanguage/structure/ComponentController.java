@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration;
 
 public class ComponentController extends BaseConcept implements INamedConcept, IClassifierPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentController";
@@ -100,19 +101,19 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
     return this.getChildCount(ComponentController.COMPONENT_METHOD);
   }
 
-  public Iterator<ComponentMethodDeclaration> componentMethods() {
+  public Iterator<DefaultClassifierMethodDeclaration> componentMethods() {
     return this.children(ComponentController.COMPONENT_METHOD);
   }
 
-  public List<ComponentMethodDeclaration> getComponentMethods() {
+  public List<DefaultClassifierMethodDeclaration> getComponentMethods() {
     return this.getChildren(ComponentController.COMPONENT_METHOD);
   }
 
-  public void addComponentMethod(ComponentMethodDeclaration node) {
+  public void addComponentMethod(DefaultClassifierMethodDeclaration node) {
     this.addChild(ComponentController.COMPONENT_METHOD, node);
   }
 
-  public void insertComponentMethod(ComponentMethodDeclaration prev, ComponentMethodDeclaration node) {
+  public void insertComponentMethod(DefaultClassifierMethodDeclaration prev, DefaultClassifierMethodDeclaration node) {
     this.insertChild(prev, ComponentController.COMPONENT_METHOD, node);
   }
 

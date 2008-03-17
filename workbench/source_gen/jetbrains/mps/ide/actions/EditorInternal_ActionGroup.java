@@ -19,7 +19,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 public class EditorInternal_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.EditorInternal";
 
-  public EditorInternal_ActionGroup(MPSProject project) {
+  public  EditorInternal_ActionGroup(MPSProject project) {
     super("Internal", EditorInternal_ActionGroup.ID);
     this.setInternal(true);
     this.add(new TestNodePathAction(), this);
@@ -38,7 +38,7 @@ public class EditorInternal_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup(EditorPopup_ActionGroup.ID);
       ActionGroup gWhat = manager.getGroup(EditorInternal_ActionGroup.ID);
-      if (gTo == null || gWhat == null) {
+      if(gTo == null || gWhat == null) {
         return;
       }
       gTo.add(gWhat, owner);

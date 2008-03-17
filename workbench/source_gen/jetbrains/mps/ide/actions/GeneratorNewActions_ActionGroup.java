@@ -12,7 +12,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 public class GeneratorNewActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorNewActions";
 
-  public GeneratorNewActions_ActionGroup(MPSProject project) {
+  public  GeneratorNewActions_ActionGroup(MPSProject project) {
     super("New", GeneratorNewActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new NewModelAction(), this);
@@ -22,7 +22,7 @@ public class GeneratorNewActions_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup(GeneratorActions_ActionGroup.ID);
       ActionGroup gWhat = manager.getGroup(GeneratorNewActions_ActionGroup.ID);
-      if (gTo == null || gWhat == null) {
+      if(gTo == null || gWhat == null) {
         return;
       }
       {

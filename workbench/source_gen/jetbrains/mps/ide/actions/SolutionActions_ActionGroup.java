@@ -23,7 +23,7 @@ public class SolutionActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.SolutionActions";
   public static final String LABEL_ID_solutionNew = "solutionNew";
 
-  public SolutionActions_ActionGroup(MPSProject project) {
+  public  SolutionActions_ActionGroup(MPSProject project) {
     super("", SolutionActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new Label(SolutionActions_ActionGroup.LABEL_ID_solutionNew), this);

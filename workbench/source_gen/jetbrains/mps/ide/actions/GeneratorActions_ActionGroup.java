@@ -17,7 +17,7 @@ public class GeneratorActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorActions";
   public static final String LABEL_ID_generatorNew = "generatorNew";
 
-  public GeneratorActions_ActionGroup(MPSProject project) {
+  public  GeneratorActions_ActionGroup(MPSProject project) {
     super("", GeneratorActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new Label(GeneratorActions_ActionGroup.LABEL_ID_generatorNew), this);

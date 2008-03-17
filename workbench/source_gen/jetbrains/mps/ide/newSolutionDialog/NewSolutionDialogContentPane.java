@@ -71,7 +71,7 @@ public class NewSolutionDialogContentPane extends JPanel {
   private void bind() {
     {
       Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("solutionName");
+      Property sourceProperty = BeanProperty.create("");
       Object targetObject = this.myComponent1;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
@@ -80,7 +80,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     }
     {
       Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("solutionPath");
+      Property sourceProperty = BeanProperty.create("");
       Object targetObject = this.myComponent3;
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);

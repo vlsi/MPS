@@ -13,7 +13,7 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 public class ToolsInternal_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Internal";
 
-  public ToolsInternal_ActionGroup(MPSProject project) {
+  public  ToolsInternal_ActionGroup(MPSProject project) {
     super("Internal", ToolsInternal_ActionGroup.ID);
     this.setInternal(true);
     this.add(new RemoveTransientModulesAction(), this);

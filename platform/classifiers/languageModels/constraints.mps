@@ -15,10 +15,13 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <maxImportIndex value="3" />
+  <language namespace="jetbrains.mps.patterns" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.classifiers.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1205752058980">
     <link role="concept" targetNodeId="1.1205752032448" resolveInfo="IMember" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1205752061687">
@@ -442,6 +445,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1205752829638">
+    <property name="package" value="Types" />
     <link role="concept" targetNodeId="1.1205752813637" resolveInfo="BaseClassifierType" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1205752850005">
       <property name="name" value="getMembers" />
@@ -457,6 +461,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1205752990357">
+    <property name="package" value="Types" />
     <link role="concept" targetNodeId="1.1205752906494" resolveInfo="DefaultClassifierType" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1205752992063">
       <property name="name" value="getMembers" />
@@ -593,6 +598,13 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1205756973941">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205756973942" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1205771378977">
+    <property name="package" value="Methods" />
+    <link role="concept" targetNodeId="1.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1205771378978">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205771378979" />
     </node>
   </node>
 </model>

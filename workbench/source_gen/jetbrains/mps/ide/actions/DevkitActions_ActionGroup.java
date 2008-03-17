@@ -14,7 +14,7 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 public class DevkitActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions";
 
-  public DevkitActions_ActionGroup(MPSProject project) {
+  public  DevkitActions_ActionGroup(MPSProject project) {
     super("", DevkitActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new SetModuleFolderAction(), this);

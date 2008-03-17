@@ -11,7 +11,7 @@ import jetbrains.mps.ide.action.IActionGroupElementOwner;
 public class TransientModulesActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.TransientModulesActions";
 
-  public TransientModulesActions_ActionGroup(MPSProject project) {
+  public  TransientModulesActions_ActionGroup(MPSProject project) {
     super("", TransientModulesActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new RemoveTransientModulesAction(), this);
