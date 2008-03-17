@@ -256,6 +256,9 @@
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" />
       <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1148934636685" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1205764674131">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1148934636686">
       <property name="value" value="enclosingNode" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

@@ -8,6 +8,17 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.patterns.IMatchingPattern;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class IMemberOperation_member_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -27,8 +38,20 @@ public class IMemberOperation_member_ReferentConstraint implements IModelConstra
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    _context.getLinkTarget();
-    return null;
+    SNode operand = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
+    List<SNode> applicableMembers = new ArrayList<SNode>();
+    {
+      IMatchingPattern pattern_1205765124703 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
+      SNode coercedNode_1205765117789 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(operand), pattern_1205765124703);
+      if(coercedNode_1205765117789 != null) {
+        for(SNode member : BaseClassifierType_Behavior.call_getMembers_1205752850005(coercedNode_1205765117789)) {
+          if(SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget()))) {
+            ListOperations.addElement(applicableMembers, member);
+          }
+        }
+      }
+    }
+    return new SimpleSearchScope(applicableMembers);
   }
 
   public String getNodeReferentSearchScopeDescription() {
