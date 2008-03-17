@@ -4,8 +4,7 @@ package jetbrains.mps.baseLanguage.classifiers.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.classifiers.constraints.IClassifierPart_Behavior;
+import jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpresson_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.classifiers.constraints.IClassifier_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,11 +15,7 @@ public class typeof_ThisClassifierExpresson_InferenceRule implements InferenceRu
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    SNode classifier = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", true, false);
-    if(classifier == null) {
-      SNode part = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart", true, false);
-      classifier = IClassifierPart_Behavior.call_getBaseClassifier_1205752202019(part);
-    }
+    SNode classifier = ThisClassifierExpresson_Behavior.call_getClassifier_1205753961441(nodeToCheck);
     if(classifier != null) {
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.baseLanguage.classifiers.helgins", "1205753197519", true), IClassifier_Behavior.call_createType_1205753057931(classifier), nodeToCheck, null, "jetbrains.mps.baseLanguage.classifiers.helgins", "1205753196184");
     } else

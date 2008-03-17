@@ -10,6 +10,7 @@
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   </language>
+  <language namespace="jetbrains.mps.baseLanguage.classifiers" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="java.util@java_stub" version="-1" />
@@ -34,7 +35,7 @@
           <link role="attribute" targetNodeId="2v.1202464208353" resolveInfo="text" />
           <node role="value" type="jetbrains.mps.uiLanguage.structure.BindExpression" id="1203601681731">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203601686659">
-              <node role="operand" type="jetbrains.mps.uiLanguage.structure.ThisComponentExpression" id="1203601685548" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224173" />
               <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1203601687630">
                 <link role="attribute" targetNodeId="1203601661865" resolveInfo="text" />
               </node>
@@ -64,7 +65,7 @@
         </node>
         <node role="content" type="jetbrains.mps.uiLanguage.structure.ActionHandler" id="1203605502672">
           <node role="handler" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203605531678">
-            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ThisComponentExpression" id="1203605530473" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224325" />
             <node role="operation" type="jetbrains.mps.uiLanguage.structure.ComponentMethodCallOperation" id="1203605532959">
               <link role="baseMethodDeclaration" targetNodeId="1203605506361" resolveInfo="choosePathClicked" />
             </node>
@@ -119,7 +120,7 @@
               <link role="variableDeclaration" targetNodeId="1203605648065" resolveInfo="chooser" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203605663842">
-              <node role="operand" type="jetbrains.mps.uiLanguage.structure.ThisComponentExpression" id="1203605661435" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224241" />
               <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1203605664782">
                 <link role="attribute" targetNodeId="1203605603115" resolveInfo="mode" />
               </node>
@@ -175,7 +176,7 @@
                   </node>
                 </node>
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203605755201">
-                  <node role="operand" type="jetbrains.mps.uiLanguage.structure.ThisComponentExpression" id="1203605751151" />
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224086" />
                   <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1203605756203">
                     <link role="attribute" targetNodeId="1203601661865" resolveInfo="path" />
                   </node>
@@ -211,7 +212,7 @@
               <link role="variableDeclaration" targetNodeId="4.~TreeFileChooser.MODE_DIRECTORIES" resolveInfo="MODE_DIRECTORIES" />
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203605617937">
-              <node role="operand" type="jetbrains.mps.uiLanguage.structure.ThisComponentExpression" id="1203605616826" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224233" />
               <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1203605618907">
                 <link role="attribute" targetNodeId="1203605603115" resolveInfo="mode" />
               </node>

@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.uiLanguage.constraints.ThisComponentExpression_Behavior;
+import jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpresson_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
@@ -40,7 +40,8 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1203599879180(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ThisComponentExpression_Behavior.call_getContextComponent_1202465160989(_context.getNode()) == null;
+    // todo find a better way to express this
+    return ThisClassifierExpresson_Behavior.call_getClassifier_1205753961441(_context.getNode()) == null;
   }
 
   public static Object propertyMacro_GetPropertyValue_1203593674593(final IOperationContext operationContext, final PropertyMacroContext _context) {
