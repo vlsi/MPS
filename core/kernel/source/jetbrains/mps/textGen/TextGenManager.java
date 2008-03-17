@@ -47,7 +47,8 @@ public class TextGenManager {
   protected void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node) {
     if(node == null) {
       buffer.append("???");
-      buffer.foundError();
+      LOG.error("may be broken reference");
+      //buffer.foundError();
       return;
     }
 

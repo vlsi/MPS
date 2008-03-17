@@ -856,6 +856,51 @@
         </node>
       </node>
     </node>
+    <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory" id="1205764418295">
+      <link role="applicableConcept" targetNodeId="1.1082485599095" resolveInfo="BlockStatement" />
+      <node role="setupFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction" id="1205764418296">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205764418297">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205764430672">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205764430673">
+              <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_SampleNode" id="1205764430674" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1205764430675">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1205764430676">
+                  <link role="conceptDeclaration" targetNodeId="1.1068580123157" resolveInfo="Statement" />
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205764430677">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205764430678">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205764430679">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205764430680">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205764430681">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205764430682">
+                        <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1205764430683" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205764458425">
+                          <link role="link" targetNodeId="1.1082485599096" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1205764430685">
+                        <link role="concept" targetNodeId="1.1068580123136" resolveInfo="StatementList" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1205764430686">
+                      <link role="link" targetNodeId="1.1068581517665" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1205764430687">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1205764430688">
+                      <link role="concept" targetNodeId="1.1068580123157" resolveInfo="Statement" />
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_SampleNode" id="1205764430689" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory" id="1188991552884">
       <link role="applicableConcept" targetNodeId="1.1144231330558" />
       <node role="setupFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction" id="1188991552885">

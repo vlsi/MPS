@@ -18,6 +18,9 @@
         <dependency reexport="false">jetbrains.mps.quotation</dependency>
         <dependency reexport="false">jetbrains.mps.quotation</dependency>
       </dependencies>
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+      </usedLanguages>
       <mapping-priorities />
     </generator>
   </generators>
