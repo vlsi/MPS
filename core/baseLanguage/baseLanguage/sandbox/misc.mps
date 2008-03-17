@@ -17,13 +17,14 @@
   <language namespace="jetbrains.teamsys.dnq" />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <maxImportIndex value="126" />
+  <maxImportIndex value="127" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
   <import index="123" modelUID="jetbrains.mps.baseLanguage.sandbox.test" version="-1" />
   <import index="124" modelUID="java.io@java_stub" version="-1" />
   <import index="125" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="126" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <import index="127" modelUID="jetbrains.mps.transformation.TLBase.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.smodel@java_stub" />
   <refactoringLog type="jetbrains.mps.logging.refactoring.structure.RuntimeLogStack" id="1191250524181">
     <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1191250524182">
@@ -8561,6 +8562,45 @@
       <property name="role" value="refRefdd" />
       <link role="target" targetNodeId="1204828440499" resolveInfo="AConcept" />
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1205760020954">
+    <property name="name" value="CC" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205760026221">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205760026222" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205760026223" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205760026224">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205760063030">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205760063031">
+            <property name="name" value="node" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205760063032">
+              <link role="concept" targetNodeId="125.1133920641626" resolveInfo="BaseConcept" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205760036397">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205760036398">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205760036399">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205760072595">
+                <link role="variableDeclaration" targetNodeId="1205760063031" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205760036401">
+                <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1205760036402">
+                  <link role="annotationLink" targetNodeId="127.1149694466802" resolveInfo="propertyMacro" />
+                  <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier" id="1205760172024">
+                    <link role="property" targetNodeId="125.1156235010670" resolveInfo="alias" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1205760036404">
+              <link role="concept" targetNodeId="127.1087833241328" resolveInfo="PropertyMacro" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205760020955" />
   </node>
 </model>
 

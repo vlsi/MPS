@@ -152,12 +152,11 @@ public class GenericRefactoring {
     } else {
       if (myRefactoring.doesUpdateModel()) {
         Set<SModel> modelsToProcess = usages.getModelsWithResults();
-        modelsToProcess.addAll(CollectionUtil.fold(sourceModels.values(), new Folder<List<SModel>, List<SModel>>() {
-          public List<SModel> foldOnce(List<SModel> initial, List<SModel> nextElement) {
-            initial.addAll(nextElement);
-            return initial; 
-          }
-        }, new ArrayList<SModel>()));
+
+        for (List<SModel> sModels : sourceModels.values()) {
+          modelsToProcess.addAll(sModels);
+        }
+
         for (SModel anotherModel : modelsToProcess) {
           processModel(anotherModel, model, refactoringContext);
         }

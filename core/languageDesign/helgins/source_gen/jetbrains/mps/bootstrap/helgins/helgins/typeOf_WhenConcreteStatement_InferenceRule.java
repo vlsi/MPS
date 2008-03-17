@@ -15,6 +15,7 @@ public class typeOf_WhenConcreteStatement_InferenceRule implements InferenceRule
 
   public void applyRule(final SNode whenConcreteStatement) {
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(whenConcreteStatement, "argument", true), "jetbrains.mps.bootstrap.helgins.helgins", "1185805519376", true), new QuotationClass_13().createNode(), SLinkOperations.getTarget(whenConcreteStatement, "argument", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805532321");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(whenConcreteStatement, "argumentRepresentator", true), "jetbrains.mps.bootstrap.helgins.helgins", "1205762376571", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(whenConcreteStatement, "argument", true), "jetbrains.mps.bootstrap.helgins.helgins", "1205762402783", false), SLinkOperations.getTarget(whenConcreteStatement, "argumentRepresentator", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1205762370802");
   }
 
   public String getApplicableConceptFQName() {

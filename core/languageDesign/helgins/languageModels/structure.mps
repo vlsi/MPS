@@ -683,6 +683,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1205761991995">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="argumentRepresentator" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1205762105978" resolveInfo="WhenConcreteVariableDeclaration" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1185963081006">
       <property name="value" value="WHEN CONCRETE" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -910,6 +916,19 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1203528289790">
       <property name="value" value="getvar" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205762105978">
+    <property name="name" value="WhenConcreteVariableDeclaration" />
+    <link role="extends" targetNodeId="2.1068431474542" resolveInfo="VariableDeclaration" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205762656241">
+    <property name="name" value="WhenConcreteVariableReference" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1205762683928">
+      <property name="role" value="whenConcreteVar" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1205762105978" resolveInfo="WhenConcreteVariableDeclaration" />
     </node>
   </node>
 </model>

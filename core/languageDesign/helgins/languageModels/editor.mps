@@ -1490,6 +1490,13 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1185805131335">
           <link role="relationDeclaration" targetNodeId="1.1185805056450" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205762043713">
+          <property name="text" value="as" />
+          <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1205762295902">
+          <link role="relationDeclaration" targetNodeId="1.1205761991995" />
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1185805133322">
           <property name="text" value=") {" />
         </node>
@@ -2164,6 +2171,26 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1203528309598">
         <link role="relationDeclaration" targetNodeId="1.1203528272880" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1205762226590">
+    <link role="conceptDeclaration" targetNodeId="1.1205762105978" resolveInfo="WhenConcreteVariableDeclaration" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1205762236138">
+      <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+      <link role="styleClass" targetNodeId="27.1198596033801" resolveInfo="LocalVariable" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1205762719474">
+    <link role="conceptDeclaration" targetNodeId="1.1205762656241" resolveInfo="WhenConcreteVariableReference" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1205762743622">
+      <link role="relationDeclaration" targetNodeId="1.1205762683928" />
+      <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1205762743623">
+        <link role="conceptDeclaration" targetNodeId="1.1205762105978" resolveInfo="WhenConcreteVariableDeclaration" />
+        <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1205762746782">
+          <property name="readOnly" value="true" />
+          <link role="relationDeclaration" targetNodeId="20.1083152972671" resolveInfo="name" />
+        </node>
       </node>
     </node>
   </node>

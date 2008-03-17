@@ -14,6 +14,7 @@ public class WhenConcreteStatement extends Statement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement";
   public static String BODY = "body";
   public static String ARGUMENT = "argument";
+  public static String ARGUMENT_REPRESENTATOR = "argumentRepresentator";
 
   public  WhenConcreteStatement(SNode node) {
     super(node);
@@ -42,6 +43,14 @@ public class WhenConcreteStatement extends Statement {
 
   public void setArgument(Expression node) {
     super.setChild(WhenConcreteStatement.ARGUMENT, node);
+  }
+
+  public WhenConcreteVariableDeclaration getArgumentRepresentator() {
+    return (WhenConcreteVariableDeclaration)this.getChild(WhenConcreteStatement.ARGUMENT_REPRESENTATOR);
+  }
+
+  public void setArgumentRepresentator(WhenConcreteVariableDeclaration node) {
+    super.setChild(WhenConcreteStatement.ARGUMENT_REPRESENTATOR, node);
   }
 
 }

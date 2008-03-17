@@ -14,6 +14,7 @@
     <dependency reexport="true">jetbrains.mps.baseLanguage.strings</dependency>
     <dependency reexport="true">jetbrains.mps.logging.refactoring</dependency>
     <dependency reexport="true">webr.css</dependency>
+    <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
