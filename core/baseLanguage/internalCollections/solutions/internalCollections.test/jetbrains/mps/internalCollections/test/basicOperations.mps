@@ -11,7 +11,9 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.transformation.TLBase" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <language-engaged-on-generation namespace="jetbrains.mps.internal.collections" />
   <maxImportIndex value="4" />
