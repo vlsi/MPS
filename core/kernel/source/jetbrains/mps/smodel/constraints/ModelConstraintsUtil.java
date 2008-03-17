@@ -67,8 +67,8 @@ public class ModelConstraintsUtil {
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
     if (scopeProvider != null) {
       try {
-        if (scopeProvider.canCreateNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget.getNode()))) {
-          ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget.getNode()));
+        if (scopeProvider.canCreateNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget)))) {
+          ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget)));
           return newOK(searchScope, false);
         }
       } catch (Throwable t) {
@@ -90,8 +90,8 @@ public class ModelConstraintsUtil {
     }
     scopeProvider = ModelConstraintsManager.getInstance().getNodeDefaultSearchScopeProvider(linkTarget);
     if (scopeProvider != null) {
-      if (scopeProvider.canCreateNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget.getNode()))) {
-        ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget.getNode()));
+      if (scopeProvider.canCreateNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget)))) {
+        ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget)));
         return newOK(searchScope, false);
       }
       return new SearchScopeStatus.ERROR("can't create default search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
