@@ -17,6 +17,7 @@ import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.MessagesOnlyAdaptiveProgressMonitorWrapper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
@@ -442,6 +443,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       boolean generationERROR = false;
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : moduleSequence) {
         IModule currentModule = moduleAndDescriptors.o1;
+
+        ModuleMaker maker = new ModuleMaker();
+        if (!maker.getModulesToCompile(CollectionUtil.asSet(currentModule)).isEmpty()) {
+          new ModuleMaker().make(CollectionUtil.asSet(currentModule), new MessagesOnlyAdaptiveProgressMonitorWrapper(progress));
+          ReloadUtils.reloadAll();
+        }
+
         IOperationContext invocationContext = modulesToContexts.get(currentModule);
         Long estimated = modulesToGenerationTimes.get(currentModule);
         if (estimated == null) {
@@ -463,8 +471,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         outputFolders.put(currentModule, outputFolder);
 
         //++ generation
-//      GenerationStatus status = null;
-
         Statistics.setEnabled(Statistics.TPL, isDumpStatistics());
         String wasLoggingThreshold = null;
         IGenerationSession generationSession = new GenerationSession(invocationContext, saveTransientModels, progress, messages);

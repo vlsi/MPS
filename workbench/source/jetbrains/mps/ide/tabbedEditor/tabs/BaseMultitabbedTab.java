@@ -111,7 +111,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     if (panel == null) return null;
     return myEditors.get(myInnerTabbedPane.getSelectedIndex());
   }
-
+                                                                        
   public AbstractEditorComponent getEditorComponent() {
     return getCurrentEditor();
   }

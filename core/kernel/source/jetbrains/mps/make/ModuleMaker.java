@@ -47,19 +47,7 @@ public class ModuleMaker {
     try {
       monitor.start("Compiling...", 1000 * modules.size());
 
-      Set<IModule> toCompile = new LinkedHashSet<IModule>();
-      Set<IModule> candidates = new HashSet<IModule>();
-      candidates.addAll(modules);
-
-      for (IModule m : modules) {
-        candidates.addAll(m.getAllDependOnModules(IModule.class));
-      }
-
-      for (IModule c : candidates) {
-        if (!isUpToDate(c)) {
-          toCompile.add(c);
-        }
-      }
+      Set<IModule> toCompile = getModulesToCompile(modules);
 
       int errorCount = 0;
       for (Set<IModule> cycle : new MakeScheduleBuilder().buildSchedule(toCompile)) {
@@ -74,6 +62,23 @@ public class ModuleMaker {
     } finally {    
       monitor.finish();
     }
+  }
+
+  public Set<IModule> getModulesToCompile(Set<IModule> modules) {
+    Set<IModule> toCompile = new LinkedHashSet<IModule>();
+    Set<IModule> candidates = new HashSet<IModule>();
+    candidates.addAll(modules);
+
+    for (IModule m : modules) {
+      candidates.addAll(m.getAllDependOnModules(IModule.class));
+    }
+
+    for (IModule c : candidates) {
+      if (!isUpToDate(c)) {
+        toCompile.add(c);
+      }
+    }
+    return toCompile;
   }
 
   private jetbrains.mps.plugin.CompilationResult compile(Set<IModule> modules) {
