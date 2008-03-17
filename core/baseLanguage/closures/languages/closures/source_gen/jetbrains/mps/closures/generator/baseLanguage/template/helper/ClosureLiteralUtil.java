@@ -52,7 +52,7 @@ public class ClosureLiteralUtil {
   public static void addAdaptableClosureLiteralTarget(SNode literal, SNode target, ITemplateGenerator generator) {
     SNode trgCopy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(trgCopy, "classifier", SLinkOperations.getTarget(target, "classifier", false), false);
-    ClosureLiteralUtil.matchParameters(trgCopy, TypeChecker.getInstance().getTypeOf(literal));
+    ClosureLiteralUtil.matchParameters(target, trgCopy, TypeChecker.getInstance().getTypeOf(literal));
     generator.getGeneratorSessionContext().putSessionObject("literal_target_" + ((SNode)literal).getId(), trgCopy);
     ((SNode)trgCopy).putUserObject("literal", literal);
   }
@@ -61,7 +61,7 @@ public class ClosureLiteralUtil {
     return (SNode)generator.getGeneratorSessionContext().getSessionObject("literal_target_" + ((SNode)literal).getId());
   }
 
-  private static void matchParameters(SNode ctNoParams, SNode ft) {
+  private static void matchParameters(SNode origCT, SNode ctNoParams, SNode ft) {
     Map<String, SNode> map = null;
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
     SNode absRetCT = null;
@@ -101,8 +101,30 @@ public class ClosureLiteralUtil {
         }
       }
     }
-    for(SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "typeVariableDeclaration", true)) {
-      SLinkOperations.addChild(ctNoParams, "parameter", map.get(SPropertyOperations.getString(tvar, "name")));
+    /*
+      for(SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "typeVariableDeclaration", true)) {
+        SLinkOperations.addChild(ctNoParams, "parameter", map.get(SPropertyOperations.getString(tvar, "name")));
+      }
+    */
+    List<SNode> varDecls = SLinkOperations.getTargets(SLinkOperations.getTarget(origCT, "classifier", false), "typeVariableDeclaration", true);
+    int idx = 0;
+    for(SNode p : SLinkOperations.getTargets(origCT, "parameter", true)) {
+      if(SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+        p = (SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
+          SLinkOperations.getTarget(p, "bound", true) :
+          SLinkOperations.getTarget(p, "bound", true)
+        );
+      }
+      if(SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+        if(idx < varDecls.size()) {
+          SNode tvd = varDecls.get(idx);
+          SLinkOperations.addChild(ctNoParams, "parameter", map.get(SPropertyOperations.getString(tvd, "name")));
+        }
+      } else
+      {
+        SLinkOperations.addChild(ctNoParams, "parameter", SNodeOperations.copyNode(p));
+      }
+      idx = idx + 1;
     }
   }
 

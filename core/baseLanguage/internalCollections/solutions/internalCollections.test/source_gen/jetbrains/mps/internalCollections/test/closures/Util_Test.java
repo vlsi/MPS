@@ -10,7 +10,10 @@ import java.util.HashMap;
 import java.util.Collections;
 import java.util.Arrays;
 
-public abstract class Util_Test extends TestCase {
+public class Util_Test extends TestCase {
+
+  public void test_dummy() throws Exception {
+  }
 
   public  <T>void assertIterableEquals(Iterable<T> exp, Iterable<T> test) {
     Iterator<T> expIt = exp.iterator();

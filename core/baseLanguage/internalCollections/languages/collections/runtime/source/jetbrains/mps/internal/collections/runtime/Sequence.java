@@ -33,6 +33,10 @@ public abstract class Sequence<T> implements Iterable<T> {
         return new SelectingSequence<T,U> (this, selector);
     }
     
+    public Sequence<T> sort (ISelector<T, Comparable<?>> tr, boolean ascending){
+        return new SortingSequence<T> (this, tr, ascending);
+    }
+
     public void visitAll (IVisitor<T> visitor) {
         IterableUtils.visitAll(toIterable(), visitor);
     }

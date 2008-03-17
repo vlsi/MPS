@@ -14,4 +14,10 @@ public class Disjunct_Test extends Util_Test {
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(2, 3, 4), test);
   }
 
+  public void test_discjunctOperation() throws Exception {
+    Iterable<Integer> input = Arrays.asList(1, 2, 2, 3, 4, 4);
+    Iterable<Integer> test = Sequence.fromIterable(input).disjunction(Sequence.fromIterable(Arrays.asList(1, 2, 4, 4, 5)));
+    this.assertIterableEqualsIgnoreOrder(Arrays.asList(2, 3, 5), test);
+  }
+
 }

@@ -15,9 +15,9 @@ public class Intersect_Test extends Util_Test {
   }
 
   public void test_intersectOperation() throws Exception {
-    Iterable<Integer> input = Arrays.asList(1, 2, 2, 3);
-    Iterable<Integer> test = Sequence.fromIterable(input).intersect(Sequence.fromIterable(Arrays.asList(2, 3, 3, 4)));
-    this.assertIterableEqualsIgnoreOrder(Arrays.asList(2, 3), test);
+    Iterable<Integer> input = Arrays.asList(1, 2, 2, 3, 4, 4);
+    Iterable<Integer> test = Sequence.fromIterable(input).intersect(Sequence.fromIterable(Arrays.asList(2, 3, 3, 4, 4, 5)));
+    this.assertIterableEqualsIgnoreOrder(Arrays.asList(2, 3, 4, 4), test);
   }
 
 }
