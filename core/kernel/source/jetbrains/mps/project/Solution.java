@@ -178,7 +178,7 @@ public class Solution extends AbstractModule {
 
   public List<String> getClassPath() {
     List<String> result = super.getClassPath();
-    if (getClassesGen() != null) {
+    if (getClassesGen() != null && getClassesGen().exists()) {
       result.add(getClassesGen().getPath());
     }
     return result;
