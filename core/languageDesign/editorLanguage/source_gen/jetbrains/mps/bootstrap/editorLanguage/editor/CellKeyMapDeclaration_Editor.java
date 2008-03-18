@@ -301,7 +301,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellKeyMapDeclaration_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellKeyMapDeclaration_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      CellKeyMapDeclaration_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new CellKeyMapDeclaration_Editor.CellKeyMapDeclaration_name_postfixCellMenu()}));
@@ -331,7 +331,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellKeyMapDeclaration_Editor.setupBasic_ApplicableConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellKeyMapDeclaration_Editor.setupLabel_ApplicableConceptReferenceCell((EditorCell_Label)editorCell, node, context);
+      CellKeyMapDeclaration_Editor.setupLabel_ApplicableConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -360,7 +360,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellKeyMapDeclaration_Editor.setupBasic_EveryModelCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellKeyMapDeclaration_Editor.setupLabel_EveryModelCell((EditorCell_Label)editorCell, node, context);
+      CellKeyMapDeclaration_Editor.setupLabel_EveryModelCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -413,7 +413,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       CellKeyMapDeclaration_Editor._Inline4.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        CellKeyMapDeclaration_Editor._Inline4.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        CellKeyMapDeclaration_Editor._Inline4.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

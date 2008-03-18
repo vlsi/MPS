@@ -69,7 +69,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InlineEditorComponent_Editor.setupBasic_CellModelCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      InlineEditorComponent_Editor.setupLabel_CellModelCell((EditorCell_Label)editorCell, node, context);
+      InlineEditorComponent_Editor.setupLabel_CellModelCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

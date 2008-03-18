@@ -464,7 +464,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ModelAccessor_Editor.setupBasic_SetterCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ModelAccessor_Editor.setupLabel_SetterCell((EditorCell_Label)editorCell, node, context);
+      ModelAccessor_Editor.setupLabel_SetterCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -493,7 +493,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ModelAccessor_Editor.setupBasic_GetterCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ModelAccessor_Editor.setupLabel_GetterCell((EditorCell_Label)editorCell, node, context);
+      ModelAccessor_Editor.setupLabel_GetterCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -522,7 +522,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ModelAccessor_Editor.setupBasic_ValidatorCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ModelAccessor_Editor.setupLabel_ValidatorCell((EditorCell_Label)editorCell, node, context);
+      ModelAccessor_Editor.setupLabel_ValidatorCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

@@ -5307,7 +5307,6 @@
         <property name="text" value="item" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1136923029235">
-        <property name="usesBraces" value="true" />
         <property name="vertical" value="true" />
         <property name="selectable" value="true" />
         <property name="gridLayout" value="true" />

@@ -116,7 +116,7 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_JComponent_Editor.setupBasic_ComponentProviderCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_JComponent_Editor.setupLabel_ComponentProviderCell((EditorCell_Label)editorCell, node, context);
+      CellModel_JComponent_Editor.setupLabel_ComponentProviderCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

@@ -80,7 +80,7 @@ public class CaretPositionParameter_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CaretPositionParameter_Editor.setupBasic_PositionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CaretPositionParameter_Editor.setupLabel_PositionCell((EditorCell_Label)editorCell, node, context);
+      CaretPositionParameter_Editor.setupLabel_PositionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

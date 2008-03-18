@@ -157,7 +157,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_PropertyValues_Editor.setupBasic_ValuesFunctionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_PropertyValues_Editor.setupLabel_ValuesFunctionCell((EditorCell_Label)editorCell, node, context);
+      CellMenuPart_PropertyValues_Editor.setupLabel_ValuesFunctionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

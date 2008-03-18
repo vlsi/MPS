@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.editorLanguage.structure._YesNoDefault_Enum;
 public class _EditorUtil {
 
   public static Color grayIfNotSelectable(SNode cellModel) {
-    if(((EditorCellModel)SNodeOperations.getAdapter(cellModel)).getSelectable() == _YesNoDefault_Enum.no) {
+    if((((EditorCellModel)SNodeOperations.getAdapter(cellModel))).getSelectable() == _YesNoDefault_Enum.no) {
       return new Color(230, 230, 230);
     }
     return null;

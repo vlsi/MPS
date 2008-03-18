@@ -80,7 +80,7 @@ public class SelectPositionParameter_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     SelectPositionParameter_Editor.setupBasic_PositionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      SelectPositionParameter_Editor.setupLabel_PositionCell((EditorCell_Label)editorCell, node, context);
+      SelectPositionParameter_Editor.setupLabel_PositionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

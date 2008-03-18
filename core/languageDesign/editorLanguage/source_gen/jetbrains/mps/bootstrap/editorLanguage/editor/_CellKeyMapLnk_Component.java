@@ -42,7 +42,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     EditorCell editorCell = provider.createEditorCell(context);
     _CellKeyMapLnk_Component.setupBasic_KeyMapReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      _CellKeyMapLnk_Component.setupLabel_KeyMapReferenceCell((EditorCell_Label)editorCell, node, context);
+      _CellKeyMapLnk_Component.setupLabel_KeyMapReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -94,7 +94,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       EditorCell editorCell = provider.createEditorCell(context);
       _CellKeyMapLnk_Component._Inline25.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        _CellKeyMapLnk_Component._Inline25.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        _CellKeyMapLnk_Component._Inline25.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

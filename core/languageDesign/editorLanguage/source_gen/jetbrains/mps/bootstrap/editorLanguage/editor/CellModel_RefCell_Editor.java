@@ -1119,7 +1119,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_SelectableCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_SelectableCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_SelectableCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1148,7 +1148,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_EditorComponentCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_EditorComponentCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_EditorComponentCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1177,7 +1177,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_NoTargetTextCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_NoTargetTextCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_NoTargetTextCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1206,7 +1206,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_ActionMapReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_ActionMapReferenceCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_ActionMapReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1235,7 +1235,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1264,7 +1264,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_LinkDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_LinkDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_LinkDeclarationReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1293,7 +1293,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_LinkDeclarationReferenceCell1(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_LinkDeclarationReferenceCell1((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_LinkDeclarationReferenceCell1(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1322,7 +1322,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_AttractsFocusCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_AttractsFocusCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_AttractsFocusCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1351,7 +1351,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_LayoutConstraintCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_LayoutConstraintCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_LayoutConstraintCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1380,7 +1380,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_DrawBorderCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_DrawBorderCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_DrawBorderCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1409,7 +1409,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_DrawBracketsCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_DrawBracketsCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_DrawBracketsCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1438,7 +1438,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_BracketsColorCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_BracketsColorCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_BracketsColorCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1467,7 +1467,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_FontStyleCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_FontStyleCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_FontStyleCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1496,7 +1496,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_FontSizeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_FontSizeCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_FontSizeCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1525,7 +1525,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_UnderlinedCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_UnderlinedCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_UnderlinedCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1554,7 +1554,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_RenderingConditionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_RenderingConditionCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_RenderingConditionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1583,7 +1583,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_EditorComponentReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_EditorComponentReferenceCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_EditorComponentReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1612,7 +1612,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_MenuDescriptorCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_MenuDescriptorCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_MenuDescriptorCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1641,7 +1641,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_RefCell_Editor.setupBasic_StyleClassReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellModel_RefCell_Editor.setupLabel_StyleClassReferenceCell((EditorCell_Label)editorCell, node, context);
+      CellModel_RefCell_Editor.setupLabel_StyleClassReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -1693,7 +1693,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       CellModel_RefCell_Editor._Inline14.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        CellModel_RefCell_Editor._Inline14.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        CellModel_RefCell_Editor._Inline14.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -1746,7 +1746,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       CellModel_RefCell_Editor._Inline21.setupBasic_RoleCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        CellModel_RefCell_Editor._Inline21.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
+        CellModel_RefCell_Editor._Inline21.setupLabel_RoleCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -1799,7 +1799,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       CellModel_RefCell_Editor._Inline22.setupBasic_RoleCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        CellModel_RefCell_Editor._Inline22.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
+        CellModel_RefCell_Editor._Inline22.setupLabel_RoleCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -1851,7 +1851,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       CellModel_RefCell_Editor._Inline26.setupBasic_ConceptDeclarationReferenceCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        CellModel_RefCell_Editor._Inline26.setupLabel_ConceptDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+        CellModel_RefCell_Editor._Inline26.setupLabel_ConceptDeclarationReferenceCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -1903,7 +1903,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       CellModel_RefCell_Editor._Inline27.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        CellModel_RefCell_Editor._Inline27.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        CellModel_RefCell_Editor._Inline27.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -1957,7 +1957,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       CellModel_RefCell_Editor._Inline40.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        CellModel_RefCell_Editor._Inline40.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        CellModel_RefCell_Editor._Inline40.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

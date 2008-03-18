@@ -295,7 +295,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     CellKeyMapItem_Editor.setupBasic_ColumnCell(editorCell, node, context);
     editorCell.setGridLayout(true);
-    editorCell.setUsesBraces(true);
+    editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createRowCell2(context, node));
@@ -539,7 +539,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellKeyMapItem_Editor.setupBasic_IsApplicableFunctionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellKeyMapItem_Editor.setupLabel_IsApplicableFunctionCell((EditorCell_Label)editorCell, node, context);
+      CellKeyMapItem_Editor.setupLabel_IsApplicableFunctionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -568,7 +568,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellKeyMapItem_Editor.setupBasic_ExecuteFunctionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellKeyMapItem_Editor.setupLabel_ExecuteFunctionCell((EditorCell_Label)editorCell, node, context);
+      CellKeyMapItem_Editor.setupLabel_ExecuteFunctionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -597,7 +597,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellKeyMapItem_Editor.setupBasic_DescriptionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellKeyMapItem_Editor.setupLabel_DescriptionCell((EditorCell_Label)editorCell, node, context);
+      CellKeyMapItem_Editor.setupLabel_DescriptionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -626,7 +626,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellKeyMapItem_Editor.setupBasic_CaretPolicyCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellKeyMapItem_Editor.setupLabel_CaretPolicyCell((EditorCell_Label)editorCell, node, context);
+      CellKeyMapItem_Editor.setupLabel_CaretPolicyCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -655,7 +655,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellKeyMapItem_Editor.setupBasic_ShowInPopupCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellKeyMapItem_Editor.setupLabel_ShowInPopupCell((EditorCell_Label)editorCell, node, context);
+      CellKeyMapItem_Editor.setupLabel_ShowInPopupCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -684,7 +684,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellKeyMapItem_Editor.setupBasic_MenuAlwaysShownCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellKeyMapItem_Editor.setupLabel_MenuAlwaysShownCell((EditorCell_Label)editorCell, node, context);
+      CellKeyMapItem_Editor.setupLabel_MenuAlwaysShownCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

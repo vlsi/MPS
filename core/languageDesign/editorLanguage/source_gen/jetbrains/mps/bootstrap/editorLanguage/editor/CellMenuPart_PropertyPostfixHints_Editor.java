@@ -157,7 +157,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_PropertyPostfixHints_Editor.setupBasic_PostfixesFunctionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_PropertyPostfixHints_Editor.setupLabel_PostfixesFunctionCell((EditorCell_Label)editorCell, node, context);
+      CellMenuPart_PropertyPostfixHints_Editor.setupLabel_PostfixesFunctionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

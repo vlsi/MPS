@@ -74,7 +74,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     BooleanStyleSheetItem_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      BooleanStyleSheetItem_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
+      BooleanStyleSheetItem_Editor.setupLabel_CellModel_ConceptProperty(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -103,7 +103,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     BooleanStyleSheetItem_Editor.setupBasic_FlagCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      BooleanStyleSheetItem_Editor.setupLabel_FlagCell((EditorCell_Label)editorCell, node, context);
+      BooleanStyleSheetItem_Editor.setupLabel_FlagCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

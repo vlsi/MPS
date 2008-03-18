@@ -157,7 +157,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_ReplaceChild_CustomChildConcept_Editor.setupBasic_ChildConceptFunctionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_ReplaceChild_CustomChildConcept_Editor.setupLabel_ChildConceptFunctionCell((EditorCell_Label)editorCell, node, context);
+      CellMenuPart_ReplaceChild_CustomChildConcept_Editor.setupLabel_ChildConceptFunctionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

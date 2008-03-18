@@ -176,7 +176,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     StyleSheet_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      StyleSheet_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      StyleSheet_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

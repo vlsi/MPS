@@ -159,7 +159,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.setupBasic_ReplacementConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.setupLabel_ReplacementConceptReferenceCell((EditorCell_Label)editorCell, node, context);
+      CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.setupLabel_ReplacementConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -211,7 +211,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
       EditorCell editorCell = provider.createEditorCell(context);
       CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline28.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline28.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline28.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

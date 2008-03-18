@@ -209,7 +209,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     StyleSheetClass_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      StyleSheetClass_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      StyleSheetClass_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -238,7 +238,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     StyleSheetClass_Editor.setupBasic_ExtendedClassCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      StyleSheetClass_Editor.setupLabel_ExtendedClassCell((EditorCell_Label)editorCell, node, context);
+      StyleSheetClass_Editor.setupLabel_ExtendedClassCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

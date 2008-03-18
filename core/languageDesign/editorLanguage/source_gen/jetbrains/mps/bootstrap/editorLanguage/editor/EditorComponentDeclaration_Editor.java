@@ -326,7 +326,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     EditorComponentDeclaration_Editor.setupBasic_ConceptDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      EditorComponentDeclaration_Editor.setupLabel_ConceptDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      EditorComponentDeclaration_Editor.setupLabel_ConceptDeclarationReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -355,7 +355,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     EditorComponentDeclaration_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      EditorComponentDeclaration_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      EditorComponentDeclaration_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -384,7 +384,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     EditorComponentDeclaration_Editor.setupBasic_CellModelCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      EditorComponentDeclaration_Editor.setupLabel_CellModelCell((EditorCell_Label)editorCell, node, context);
+      EditorComponentDeclaration_Editor.setupLabel_CellModelCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -436,7 +436,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       EditorComponentDeclaration_Editor._Inline.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        EditorComponentDeclaration_Editor._Inline.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        EditorComponentDeclaration_Editor._Inline.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

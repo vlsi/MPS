@@ -503,7 +503,7 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_ReplaceNode_Group_Editor.setupBasic_ParameterObjectTypeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_ParameterObjectTypeCell((EditorCell_Label)editorCell, node, context);
+      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_ParameterObjectTypeCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -532,7 +532,7 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_ReplaceNode_Group_Editor.setupBasic_PresentationCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_PresentationCell((EditorCell_Label)editorCell, node, context);
+      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_PresentationCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -561,7 +561,7 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_ReplaceNode_Group_Editor.setupBasic_MatchingTextFunctionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_MatchingTextFunctionCell((EditorCell_Label)editorCell, node, context);
+      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_MatchingTextFunctionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -590,7 +590,7 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_ReplaceNode_Group_Editor.setupBasic_DescriptionTextFunctionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_DescriptionTextFunctionCell((EditorCell_Label)editorCell, node, context);
+      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_DescriptionTextFunctionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -619,7 +619,7 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_ReplaceNode_Group_Editor.setupBasic_ParametersFunctionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_ParametersFunctionCell((EditorCell_Label)editorCell, node, context);
+      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_ParametersFunctionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -648,7 +648,7 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_ReplaceNode_Group_Editor.setupBasic_CreateFunctionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_CreateFunctionCell((EditorCell_Label)editorCell, node, context);
+      CellMenuPart_ReplaceNode_Group_Editor.setupLabel_CreateFunctionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

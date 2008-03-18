@@ -210,7 +210,7 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellActionMapItem_Editor.setupBasic_ExecuteFunctionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellActionMapItem_Editor.setupLabel_ExecuteFunctionCell((EditorCell_Label)editorCell, node, context);
+      CellActionMapItem_Editor.setupLabel_ExecuteFunctionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -239,7 +239,7 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellActionMapItem_Editor.setupBasic_ActionIdCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellActionMapItem_Editor.setupLabel_ActionIdCell((EditorCell_Label)editorCell, node, context);
+      CellActionMapItem_Editor.setupLabel_ActionIdCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -268,7 +268,7 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellActionMapItem_Editor.setupBasic_DescriptionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellActionMapItem_Editor.setupLabel_DescriptionCell((EditorCell_Label)editorCell, node, context);
+      CellActionMapItem_Editor.setupLabel_DescriptionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

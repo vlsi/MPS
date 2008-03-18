@@ -240,7 +240,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellActionMapDeclaration_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellActionMapDeclaration_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      CellActionMapDeclaration_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new CellActionMapDeclaration_Editor.CellActionMapDeclaration_name_cellMenu()}));
@@ -270,7 +270,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CellActionMapDeclaration_Editor.setupBasic_ApplicableConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CellActionMapDeclaration_Editor.setupLabel_ApplicableConceptReferenceCell((EditorCell_Label)editorCell, node, context);
+      CellActionMapDeclaration_Editor.setupLabel_ApplicableConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -322,7 +322,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       CellActionMapDeclaration_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        CellActionMapDeclaration_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        CellActionMapDeclaration_Editor._Inline5.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
