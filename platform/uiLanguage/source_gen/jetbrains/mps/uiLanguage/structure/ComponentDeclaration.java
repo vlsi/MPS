@@ -12,6 +12,7 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 
 public class ComponentDeclaration extends BaseConcept implements IClassifier {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentDeclaration";
+  public static String ROOT = "root";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -19,7 +20,6 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   public static String STUB = "stub";
   public static String ABSTRACT = "abstract";
   public static String ACTION_COMPONENT = "actionComponent";
-  public static String ROOT = "root";
   public static String EXTENDED_COMPONENT = "extendedComponent";
   public static String MAPPED_TO = "mappedTo";
   public static String MAP_TO = "mapTo";
@@ -36,6 +36,14 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
     return ComponentDeclaration.newInstance(sm, false);
   }
 
+
+  public IComponentInstance getRoot() {
+    return (IComponentInstance)this.getChild(ComponentDeclaration.ROOT);
+  }
+
+  public void setRoot(IComponentInstance node) {
+    super.setChild(ComponentDeclaration.ROOT, node);
+  }
 
   public String getName() {
     return this.getProperty(ComponentDeclaration.NAME);
@@ -91,14 +99,6 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
 
   public void setActionComponent(boolean value) {
     this.setBooleanProperty(ComponentDeclaration.ACTION_COMPONENT, value);
-  }
-
-  public IComponentInstance getRoot() {
-    return (IComponentInstance)this.getChild(ComponentDeclaration.ROOT);
-  }
-
-  public void setRoot(IComponentInstance node) {
-    super.setChild(ComponentDeclaration.ROOT, node);
   }
 
   public ComponentDeclaration getExtendedComponent() {

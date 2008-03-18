@@ -62,11 +62,11 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
     super.setReferent(AttributeReferenceOperation.MEMBER, node);
   }
 
-  public AttributeDeclaration getAttribute() {
+  public AttributeDeclaration getAttributeDeclaration() {
     return (AttributeDeclaration)this.getMember();
   }
 
-  public void setAttribute(AttributeDeclaration node) {
+  public void setAttributeDeclaration(AttributeDeclaration node) {
     this.setMember(node);
   }
 

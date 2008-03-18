@@ -69,7 +69,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204026619527">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224094" />
                   <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204026675276">
-                    <link role="attribute" targetNodeId="1204026659144" resolveInfo="devkitName" />
+                    <link role="member" targetNodeId="1204026659144" resolveInfo="devkitName" />
                   </node>
                 </node>
               </node>
@@ -96,7 +96,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027154820">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224315" />
                   <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027157401">
-                    <link role="attribute" targetNodeId="1204026664006" resolveInfo="devkitDir" />
+                    <link role="member" targetNodeId="1204026664006" resolveInfo="devkitDir" />
                   </node>
                 </node>
               </node>
@@ -132,7 +132,7 @@
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027464007">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224320" />
                 <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027465462">
-                  <link role="attribute" targetNodeId="1204026664006" resolveInfo="devkitDir" />
+                  <link role="member" targetNodeId="1204026664006" resolveInfo="devkitDir" />
                 </node>
               </node>
             </node>
@@ -158,7 +158,7 @@
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027480311">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224147" />
                 <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027483298">
-                  <link role="attribute" targetNodeId="1204026659144" resolveInfo="devkitName" />
+                  <link role="member" targetNodeId="1204026659144" resolveInfo="devkitName" />
                 </node>
               </node>
             </node>
@@ -180,7 +180,7 @@
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027655319">
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224273" />
                     <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027657165">
-                      <link role="attribute" targetNodeId="1204026659144" resolveInfo="devkitName" />
+                      <link role="member" targetNodeId="1204026659144" resolveInfo="devkitName" />
                     </node>
                   </node>
                 </node>
@@ -192,7 +192,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027645136">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224138" />
                 <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027646373">
-                  <link role="attribute" targetNodeId="1204026664006" resolveInfo="devkitDir" />
+                  <link role="member" targetNodeId="1204026664006" resolveInfo="devkitDir" />
                 </node>
               </node>
             </node>
@@ -263,7 +263,7 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027900746">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224177" />
                 <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027902170">
-                  <link role="attribute" targetNodeId="1204026664006" resolveInfo="devkitDir" />
+                  <link role="member" targetNodeId="1204026664006" resolveInfo="devkitDir" />
                 </node>
               </node>
             </node>
@@ -376,7 +376,7 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027193198">
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224192" />
               <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027194200">
-                <link role="attribute" targetNodeId="1204026853869" resolveInfo="project" />
+                <link role="member" targetNodeId="1204026853869" resolveInfo="project" />
               </node>
             </node>
           </node>
@@ -397,7 +397,7 @@
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027247848">
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224360" />
                     <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027247850">
-                      <link role="attribute" targetNodeId="1204026853869" resolveInfo="project" />
+                      <link role="member" targetNodeId="1204026853869" resolveInfo="project" />
                     </node>
                   </node>
                 </node>
@@ -441,7 +441,7 @@
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027334618">
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224120" />
                     <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027337167">
-                      <link role="attribute" targetNodeId="1204026659144" resolveInfo="devkitName" />
+                      <link role="member" targetNodeId="1204026659144" resolveInfo="devkitName" />
                     </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204027331128">
@@ -451,7 +451,7 @@
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027325763">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224126" />
                   <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027328499">
-                    <link role="attribute" targetNodeId="1204026664006" resolveInfo="devkitDir" />
+                    <link role="member" targetNodeId="1204026664006" resolveInfo="devkitDir" />
                   </node>
                 </node>
               </node>
@@ -462,7 +462,7 @@
               <link role="baseMethodDeclaration" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027320320">
                 <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027320321">
-                  <link role="attribute" targetNodeId="1204026664006" resolveInfo="devkitDir" />
+                  <link role="member" targetNodeId="1204026664006" resolveInfo="devkitDir" />
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224274" />
               </node>
@@ -475,7 +475,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="2.~String.length():int" resolveInfo="length" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027320317">
                   <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027320318">
-                    <link role="attribute" targetNodeId="1204026664006" resolveInfo="devkitDir" />
+                    <link role="member" targetNodeId="1204026664006" resolveInfo="devkitDir" />
                   </node>
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224194" />
                 </node>
@@ -527,7 +527,7 @@
               <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204028250219">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224290" />
                 <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204028251814">
-                  <link role="attribute" targetNodeId="1204026659144" resolveInfo="devkitName" />
+                  <link role="member" targetNodeId="1204026659144" resolveInfo="devkitName" />
                 </node>
               </node>
             </node>
@@ -557,7 +557,7 @@
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204028297873">
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224313" />
               <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204028299500">
-                <link role="attribute" targetNodeId="1204026853869" resolveInfo="project" />
+                <link role="member" targetNodeId="1204026853869" resolveInfo="project" />
               </node>
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1204028312595">
@@ -610,7 +610,7 @@
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027371890">
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224276" />
               <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027373236">
-                <link role="attribute" targetNodeId="1204026659144" resolveInfo="devkitName" />
+                <link role="member" targetNodeId="1204026659144" resolveInfo="devkitName" />
               </node>
             </node>
           </node>
@@ -623,7 +623,7 @@
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027376463">
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224142" />
               <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1204027378496">
-                <link role="attribute" targetNodeId="1204026664006" resolveInfo="devkitDir" />
+                <link role="member" targetNodeId="1204026664006" resolveInfo="devkitDir" />
               </node>
             </node>
           </node>

@@ -11,9 +11,9 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class StandardDialogButton extends BaseConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.StandardDialogButton";
+  public static String HANDLER = "handler";
   public static String TEXT = "text";
   public static String IS_DEFAULT = "isDefault";
-  public static String HANDLER = "handler";
 
   public  StandardDialogButton(SNode node) {
     super(node);
@@ -27,6 +27,14 @@ public class StandardDialogButton extends BaseConcept {
     return StandardDialogButton.newInstance(sm, false);
   }
 
+
+  public Expression getHandler() {
+    return (Expression)this.getChild(StandardDialogButton.HANDLER);
+  }
+
+  public void setHandler(Expression node) {
+    super.setChild(StandardDialogButton.HANDLER, node);
+  }
 
   public String getText() {
     return this.getProperty(StandardDialogButton.TEXT);
@@ -42,14 +50,6 @@ public class StandardDialogButton extends BaseConcept {
 
   public void setIsDefault(boolean value) {
     this.setBooleanProperty(StandardDialogButton.IS_DEFAULT, value);
-  }
-
-  public Expression getHandler() {
-    return (Expression)this.getChild(StandardDialogButton.HANDLER);
-  }
-
-  public void setHandler(Expression node) {
-    super.setChild(StandardDialogButton.HANDLER, node);
   }
 
 }
