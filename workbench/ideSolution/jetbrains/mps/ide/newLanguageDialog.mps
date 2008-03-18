@@ -35,8 +35,8 @@
         <property name="isDefault" value="true" />
         <node role="handler" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203687841165">
           <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224277" />
-          <node role="operation" type="jetbrains.mps.uiLanguage.structure.ComponentMethodCallOperation" id="1203687842824">
-            <link role="baseMethodDeclaration" targetNodeId="1203685139549" resolveInfo="onOk" />
+          <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1205834446422">
+            <link role="member" targetNodeId="1203685139549" resolveInfo="onOk" />
           </node>
         </node>
       </node>
@@ -44,8 +44,8 @@
         <property name="text" value="Cancel" />
         <node role="handler" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203687846575">
           <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224264" />
-          <node role="operation" type="jetbrains.mps.uiLanguage.structure.ComponentMethodCallOperation" id="1203687847984">
-            <link role="baseMethodDeclaration" targetNodeId="1203685144412" resolveInfo="onCancel" />
+          <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1205834446424">
+            <link role="member" targetNodeId="1203685144412" resolveInfo="onCancel" />
           </node>
         </node>
       </node>
@@ -292,8 +292,8 @@
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203688720888">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203688722077">
                           <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224335" />
-                          <node role="operation" type="jetbrains.mps.uiLanguage.structure.ComponentMethodCallOperation" id="1203688725158">
-                            <link role="baseMethodDeclaration" targetNodeId="1203686236523" resolveInfo="createNewLanguage" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1205834446431">
+                            <link role="member" targetNodeId="1203686236523" resolveInfo="createNewLanguage" />
                           </node>
                         </node>
                       </node>
@@ -705,8 +705,8 @@
       </node>
       <node role="onChange" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203686154917">
         <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224283" />
-        <node role="operation" type="jetbrains.mps.uiLanguage.structure.ComponentMethodCallOperation" id="1203686156013">
-          <link role="baseMethodDeclaration" targetNodeId="1203685811265" resolveInfo="updateLanguagePath" />
+        <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1205834446421">
+          <link role="member" targetNodeId="1203685811265" resolveInfo="updateLanguagePath" />
         </node>
       </node>
     </node>
@@ -723,8 +723,8 @@
       </node>
       <node role="onChange" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203686146694">
         <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224314" />
-        <node role="operation" type="jetbrains.mps.uiLanguage.structure.ComponentMethodCallOperation" id="1203686148649">
-          <link role="baseMethodDeclaration" targetNodeId="1203685811265" resolveInfo="updateLanguagePath" />
+        <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1205834446434">
+          <link role="member" targetNodeId="1203685811265" resolveInfo="updateLanguagePath" />
         </node>
       </node>
     </node>

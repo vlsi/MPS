@@ -66,8 +66,8 @@
         <node role="content" type="jetbrains.mps.uiLanguage.structure.ActionHandler" id="1203605502672">
           <node role="handler" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203605531678">
             <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224325" />
-            <node role="operation" type="jetbrains.mps.uiLanguage.structure.ComponentMethodCallOperation" id="1203605532959">
-              <link role="baseMethodDeclaration" targetNodeId="1203605506361" resolveInfo="choosePathClicked" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1205834446436">
+              <link role="member" targetNodeId="1203605506361" resolveInfo="choosePathClicked" />
             </node>
           </node>
         </node>

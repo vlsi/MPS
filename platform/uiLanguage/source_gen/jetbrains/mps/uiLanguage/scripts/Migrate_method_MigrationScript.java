@@ -7,9 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.scriptLanguage.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class Migrate_method_MigrationScript extends BaseMigrationScript {
@@ -27,7 +25,7 @@ public class Migrate_method_MigrationScript extends BaseMigrationScript {
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration";
+        return "jetbrains.mps.uiLanguage.structure.ComponentMethodCallOperation";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
@@ -35,15 +33,10 @@ public class Migrate_method_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
-        SPropertyOperations.set(replacement, "name", SPropertyOperations.getString(node, "name"));
-        SNode body = SLinkOperations.getTarget(node, "body", true);
-        SLinkOperations.setTarget(node, "body", null, true);
-        SLinkOperations.setTarget(replacement, "body", body, true);
-        SLinkOperations.setTarget(replacement, "returnType", SLinkOperations.getTarget(node, "returnType", true), true);
-        for(SNode param : SLinkOperations.getTargets(node, "parameter", true)) {
-          ListOperations.removeElement(SLinkOperations.getTargets(node, "parameter", true), param);
-          ListOperations.addElement(SLinkOperations.getTargets(replacement, "parameter", true), param);
+        SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", null);
+        SLinkOperations.setTarget(replacement, "member", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
+        for(SNode parm : SLinkOperations.getTargets(node, "actualArgument", true)) {
+          SLinkOperations.addChild(replacement, "actualArgument", parm);
         }
         SNodeOperations.replaceWithAnother(node, replacement);
       }
