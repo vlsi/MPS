@@ -19,6 +19,7 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.intentionsLanguage" />
+  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <maxImportIndex value="13" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
@@ -28,7 +29,7 @@
   <import index="6" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
-  <import index="9" modelUID="jetbrains.mps.transformation.TLBase.structure" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="10" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
   <import index="11" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="12" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />

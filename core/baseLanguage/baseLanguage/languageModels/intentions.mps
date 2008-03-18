@@ -16,6 +16,7 @@
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.core" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <maxImportIndex value="22" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -35,7 +36,7 @@
   <import index="16" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="17" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="18" modelUID="jetbrains.mps.baseLanguage.actions@java_stub" version="-1" />
-  <import index="20" modelUID="jetbrains.mps.transformation.TLBase.structure" version="-1" />
+  <import index="20" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="21" modelUID="jetbrains.mps.util.misc@java_stub" version="-1" />
   <import index="22" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1193744597902">

@@ -12,11 +12,12 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.transformation.TLBase.structure" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
   <import index="6" modelUID="java.lang@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />

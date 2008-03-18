@@ -17,6 +17,7 @@
   <language namespace="jetbrains.teamsys.dnq" />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <maxImportIndex value="127" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -24,7 +25,7 @@
   <import index="124" modelUID="java.io@java_stub" version="-1" />
   <import index="125" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="126" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="127" modelUID="jetbrains.mps.transformation.TLBase.structure" version="-1" />
+  <import index="127" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <visible index="2" modelUID="jetbrains.mps.smodel@java_stub" />
   <refactoringLog type="jetbrains.mps.logging.refactoring.structure.RuntimeLogStack" id="1191250524181">
     <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1191250524182">
