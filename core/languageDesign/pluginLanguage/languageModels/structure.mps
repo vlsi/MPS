@@ -9,6 +9,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
   </language>
+  <language namespace="jetbrains.mps.core"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   <maxImportIndex value="14"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
@@ -34,7 +35,7 @@
           id="1203083196627">
       <property name="metaClass" value="aggregation"/>
       <property name="role" value="updateBlock"/>
-      <property name="sourceCardinality" value="1"/>
+      <property name="sourceCardinality" value="0..1"/>
       <link role="target" targetNodeId="1205681149025" resolveInfo="UpdateBlock"/>
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
@@ -981,6 +982,11 @@
           id="1205681268802">
       <property name="value" value="isApplicable"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
+          id="1205870734285">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1205870741334"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205685036103">
