@@ -23,6 +23,14 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205367929771" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205367929772" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205367929773">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205864181866">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205864183602">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205864181867">
+              <link role="variableDeclaration" targetNodeId="1205367937962" resolveInfo="node" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsAttributeOperation" id="1205864184995" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205367958157">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205367958158">
             <property name="name" value="nodes" />
