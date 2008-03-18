@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.SequenceIterableAdapter;
 import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
 import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Mapper_Test extends Util_Test {
@@ -156,6 +157,125 @@ __switch__:
 
     });
     this.assertIterableEquals(Arrays.asList(1, 2, 2, 4, 3, 6, 4, 8, 5, 10), test);
+  }
+
+  public void test_legacyMapper() throws Exception {
+    Iterable<Integer> test = Sequence.fromIterable(this.input5()).map(new IMapper <Integer, Integer>() {
+
+      public Sequence<Integer> map(final Integer it) {
+        return new SequenceIterableAdapter <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 3;
+                      this.yield(it);
+                      return true;
+                    case 3:
+                      this.__CP__ = 1;
+                      this.yield(it * 2);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    this.assertIterableEquals(Arrays.asList(1, 2, 2, 4, 3, 6, 4, 8, 5, 10), test);
+  }
+
+  public void test_stopSkip() throws Exception {
+    Iterable<Integer> test = Sequence.fromIterable(this.input10()).map(new IMapper <Integer, Integer>() {
+
+      public Sequence<Integer> map(final Integer it) {
+        return new SequenceIterableAdapter <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 4:
+                      if(it % 2 == 1) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 6;
+                      break;
+                    case 8:
+                      if(it > 5) {
+                        this.__CP__ = 9;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 3:
+                      if(false) {
+                        this.__CP__ = 2;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 6:
+                      this.__CP__ = 8;
+                      this.yield(it);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 2:
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this.__CP__ = 1;
+                      break;
+                    case 9:
+                      throw new StopIteratingException();
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    this.assertIterableEquals(Arrays.asList(2, 4), test);
   }
 
   public void test_weirdness() throws Exception {

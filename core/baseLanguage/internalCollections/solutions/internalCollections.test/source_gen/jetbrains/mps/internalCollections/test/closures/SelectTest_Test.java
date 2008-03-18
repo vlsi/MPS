@@ -53,4 +53,26 @@ public class SelectTest_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList(2, 6, 6, 12, 10), test.toIterable());
   }
 
+  public void test_selectOperation() throws Exception {
+    Iterable<Integer> test = Sequence.fromIterable(this.input5()).select(new ISelector <Integer, Integer>() {
+
+      public Integer select(Integer it) {
+        return it * 2;
+      }
+
+    });
+    this.assertIterableEquals(this.expectEven10(), test);
+  }
+
+  public void test_legacySelector() throws Exception {
+    Iterable<Integer> test = Sequence.fromIterable(this.input5()).select(new ISelector <Integer, Integer>() {
+
+      public Integer select(Integer it) {
+        return it * 2;
+      }
+
+    });
+    this.assertIterableEquals(this.expectEven10(), test);
+  }
+
 }

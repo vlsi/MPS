@@ -5,6 +5,8 @@ package jetbrains.mps.internalCollections.test.closures;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.StopIteratingException;
+import java.util.Arrays;
 
 public class VisitAll_Test extends Util_Test {
 
@@ -33,6 +35,51 @@ public class VisitAll_Test extends Util_Test {
     };
     seq.visitAll(visitor);
     this.assertIterableEquals(this.expectEven10(), res);
+  }
+
+  public void test_visitOperation() throws Exception {
+    final ArrayList<Integer> res = new ArrayList<Integer>();
+    Sequence.fromIterable(this.input5()).visitAll(new IVisitor <Integer>() {
+
+      public void visit(Integer it) {
+        res.add(it * 2);
+      }
+
+    });
+    this.assertIterableEquals(this.expectEven10(), res);
+  }
+
+  public void test_legacyForEach() throws Exception {
+    final ArrayList<Integer> res = new ArrayList<Integer>();
+    Sequence.fromIterable(this.input5()).visitAll(new IVisitor <Integer>() {
+
+      public void visit(Integer it) {
+        res.add(it * 2);
+      }
+
+    });
+    this.assertIterableEquals(this.expectEven10(), res);
+  }
+
+  public void test_skipStop() throws Exception {
+    final ArrayList<Integer> res = new ArrayList<Integer>();
+    Sequence.fromIterable(this.input10()).visitAll(new IVisitor <Integer>() {
+
+      public void visit(Integer it) {
+__skip__:
+        do {
+          if(it % 2 == 1) {
+            break __skip__;
+          }
+          res.add(it * 2);
+          if(it > 5) {
+            throw new StopIteratingException();
+          }
+        } while(false);
+      }
+
+    });
+    this.assertIterableEquals(Arrays.asList(4, 8, 12), res);
   }
 
 }

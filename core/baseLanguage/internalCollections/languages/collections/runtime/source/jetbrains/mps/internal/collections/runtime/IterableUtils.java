@@ -14,7 +14,13 @@ public class IterableUtils {
 
     public static <E> void visitAll (Iterable<E> seq, IVisitor<E> visitor) {
         for(Iterator<E> it=seq.iterator(); it.hasNext(); ) {
-            visitor.visit(it.next());
+            try {
+                visitor.visit(it.next());
+            }
+            catch (StopIteratingException stop) {
+                // received the signal to stop the visitor
+                break;
+            }
         }
     }
     

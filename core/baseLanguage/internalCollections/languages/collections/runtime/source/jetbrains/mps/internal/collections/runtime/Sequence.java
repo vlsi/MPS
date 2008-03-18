@@ -23,6 +23,7 @@ public abstract class Sequence<T> implements Iterable<T> {
     public Sequence<T> where (IWhereFilter<T> filter) {
         return new FilteringSequence<T> (this, filter);
     }
+    
     // public <U> Sequence<T,U> map (IMapper<? super T,U> mapper)
     public <U> Sequence<U> map (IMapper<T,U> mapper) {
         return new MappingSequence<T,U> (this, mapper);
@@ -33,8 +34,12 @@ public abstract class Sequence<T> implements Iterable<T> {
         return new SelectingSequence<T,U> (this, selector);
     }
     
-    public Sequence<T> sort (ISelector<T, Comparable<?>> tr, boolean ascending){
-        return new SortingSequence<T> (this, tr, ascending);
+    public Sequence<T> sort (ISelector<T, Comparable<?>> selector, boolean ascending){
+        return new SortingSequence<T> (this, selector, ascending);
+    }
+    
+    public Sequence<T> distinct () {
+        return new LimitedCardinalitySequence<T> (this, 1);
     }
 
     public void visitAll (IVisitor<T> visitor) {

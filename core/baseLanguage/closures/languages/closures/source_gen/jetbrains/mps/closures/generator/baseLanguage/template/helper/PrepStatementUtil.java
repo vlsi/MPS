@@ -122,9 +122,9 @@ public class PrepStatementUtil {
     int beginLabel = label;
     int condLabel = this.ctx.incrementLabel();
     PrepStatementUtil.putPrepData(SLinkOperations.getTarget(dwstmt, "body", true), new Integer[]{beginLabel,condLabel}, this.generator);
-    this.prepStatementList(SLinkOperations.getTarget(dwstmt, "body", true));
     int nextLabel = this.calcNextLabel(dwstmt);
     PrepStatementUtil.putPrepData(dwstmt, new Integer[]{beginLabel,condLabel,nextLabel}, this.generator);
+    this.prepStatementList(SLinkOperations.getTarget(dwstmt, "body", true));
     return nextLabel;
   }
 

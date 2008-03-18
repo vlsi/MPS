@@ -62,4 +62,16 @@ public class Sort_Test extends Util_Test {
     }, true));
   }
 
+  public void test_legacySort() throws Exception {
+    Iterable<String> input = Arrays.asList("Z", "YY", "XXX", "WWWW");
+    Iterable<String> test = Sequence.fromIterable(input).sort(new ISelector <String, Comparable<?>>() {
+
+      public Comparable<?> select(String it) {
+        return it.length();
+      }
+
+    }, false);
+    this.assertIterableEquals(Arrays.asList("WWWW", "XXX", "YY", "Z"), test);
+  }
+
 }
