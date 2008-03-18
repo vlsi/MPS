@@ -210,7 +210,7 @@ public class NewSolutionDialogContentPane extends JPanel {
       return;
     }
     if(!(dir.exists())) {
-      if(!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir))) {
+      if(!(DirectoryUtil.askToCreateNewDirectory(((Frame)myThis.getDialog().getOwner()), dir))) {
         myThis.getDialog().setErrorText("Enter correct path");
         return;
       }
@@ -253,7 +253,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     SPropertyOperations.set(modelRoot, "prefix", "");
     SPropertyOperations.set(modelRoot, "path", solutionDescriptorFile.getParent().getAbsolutePath());
     SLinkOperations.addChild(solutionDescriptor, "modelRoot", modelRoot);
-    DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, ((SolutionDescriptor)SNodeOperations.getAdapter(solutionDescriptor)));
+    DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, (((SolutionDescriptor)SNodeOperations.getAdapter(solutionDescriptor))));
     return myThis.getProject().addProjectSolution(solutionDescriptorFile.toFile());
   }
 

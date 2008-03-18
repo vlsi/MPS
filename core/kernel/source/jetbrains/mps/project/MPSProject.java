@@ -38,6 +38,8 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.vcs.IRepository;
+import jetbrains.mps.vcs.ProjectVCSManager;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader;
@@ -83,6 +85,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   public MPSProject(final @NotNull File projectFile) {
     myContext.register(MPSProject.class, this);
     myContext.register(GeneratorManager.class);
+    myContext.register(ProjectVCSManager.class);
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
@@ -126,7 +129,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   public void update() {
     setProjectDescriptor(getProjectDescriptor());
   }
-
 
   public PluginManager getPluginManager() {
     return myPluginManager;

@@ -25,7 +25,8 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="pluginLanguage" />
-    <orderEntry type="module" module-name="generic" exported="" />
+    <orderEntry type="module" module-name="generic" />
+    <orderEntry type="module" module-name="svn" exported="" />
     <orderEntryProperties />
   </component>
 </module>

@@ -25,6 +25,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="httpclient" level="project" />
+    <orderEntry type="module" module-name="svn" />
     <orderEntryProperties />
   </component>
 </module>

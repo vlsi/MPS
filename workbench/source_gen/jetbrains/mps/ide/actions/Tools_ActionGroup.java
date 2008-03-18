@@ -7,6 +7,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.tools.InstallIDEAPluginAction;
 import jetbrains.mps.ide.actions.tools.ReloadAllAction;
 import jetbrains.mps.ide.action.Label;
+import jetbrains.mps.svn.gui.SVNCheckOutAction;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
@@ -22,6 +23,8 @@ public class Tools_ActionGroup extends BaseActionGroup {
     this.add(new InstallIDEAPluginAction(), this);
     this.add(new ReloadAllAction(), this);
     this.add(new Label(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal));
+    this.addSeparator();
+    this.add(new SVNCheckOutAction(), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {

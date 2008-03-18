@@ -201,7 +201,7 @@ public class NewLanguageDialogContentPane extends JPanel {
       return;
     }
     if(!(dir.exists())) {
-      if(!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir))) {
+      if(!(DirectoryUtil.askToCreateNewDirectory(((Frame)myThis.getDialog().getOwner()), dir))) {
         return;
       }
     }
@@ -238,13 +238,13 @@ public class NewLanguageDialogContentPane extends JPanel {
       dir.mkdirs();
     }
     Language language = Language.createLanguage(myThis.getLanguageNamespace(), descriptorFile, myThis.getProject());
-    SNode languageDescriptor = (SNode)language.getLanguageDescriptor().getNode();
+    SNode languageDescriptor = ((SNode)language.getLanguageDescriptor().getNode());
     SPropertyOperations.set(languageDescriptor, "compileInMPS", "" + (myThis.getCompileInMPS()));
     LanguageAspect.STRUCTURE.createNew(language);
     LanguageAspect.EDITOR.createNew(language);
     LanguageAspect.CONSTRAINTS.createNew(language);
     LanguageAspect.HELGINS_TYPESYSTEM.createNew(language);
-    language.setLanguageDescriptor((LanguageDescriptor)((LanguageDescriptor)SNodeOperations.getAdapter(languageDescriptor)));
+    language.setLanguageDescriptor(((LanguageDescriptor)(((LanguageDescriptor)SNodeOperations.getAdapter(languageDescriptor)))));
     myThis.getProject().addProjectLanguage(language);
     language.save();
     myThis.setResult(language);

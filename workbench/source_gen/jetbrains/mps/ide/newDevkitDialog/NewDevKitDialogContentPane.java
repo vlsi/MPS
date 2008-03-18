@@ -179,7 +179,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     }
     File dir = new File(myThis.getDevkitDir());
     if(!(dir.exists())) {
-      if(!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir))) {
+      if(!(DirectoryUtil.askToCreateNewDirectory(((Frame)myThis.getDialog().getOwner()), dir))) {
         myThis.getDialog().setErrorText("Enter correct path");
         return;
       }
@@ -212,7 +212,7 @@ public class NewDevKitDialogContentPane extends JPanel {
   /* package */void createNewDevKit(File devkitPath) {
     SNode descriptor = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.DevKitDescriptor", null);
     SPropertyOperations.set(descriptor, "name", myThis.getDevkitName());
-    DescriptorsPersistence.saveDevKitDescriptor(((DevKitDescriptor)SNodeOperations.getAdapter(descriptor)), new FileSystemFile(devkitPath));
+    DescriptorsPersistence.saveDevKitDescriptor((((DevKitDescriptor)SNodeOperations.getAdapter(descriptor))), new FileSystemFile(devkitPath));
     myThis.getProject().addProjectDevKit(new FileSystemFile(devkitPath));
   }
 
