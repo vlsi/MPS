@@ -161,7 +161,11 @@ public class Logger {
   }
 
   public void error(Throwable t, Object hintObject) {
-    error(t.getClass().getName() + (t.getMessage() != null ? " : " + t.getMessage() : ""), t, hintObject);
+    if (t != null) {
+      error(t.getClass().getName() + (t.getMessage() != null ? " : " + t.getMessage() : ""), t, hintObject);
+    } else {
+      error(new Throwable("error with null throwable was called"));
+    }
   }
 
   public void error(String message, Throwable t) {
