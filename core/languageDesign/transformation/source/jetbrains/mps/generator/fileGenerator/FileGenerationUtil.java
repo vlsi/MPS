@@ -64,21 +64,7 @@ public class FileGenerationUtil {
     if (outputDir == null) throw new RuntimeException("unspecified output path for file generation.");
 
     if (!status.isOk()) {
-      //todo wtf!
-      int result = JOptionPane.showConfirmDialog(
-        context.getMainFrame(),
-        "Errors while generating model " + status.getInputModel().getUID() + "\n" +
-          "Do you want to generate output files?",
-        "Generation Finished With Errors",
-        JOptionPane.YES_NO_CANCEL_OPTION,
-        JOptionPane.WARNING_MESSAGE);
-
-      if (result == JOptionPane.CANCEL_OPTION) {
-        throw new GenerationCanceledException();
-      }
-      if (result == JOptionPane.NO_OPTION) {
-        return false;
-      }
+      return false;
     }
 
     File outputRootDirectory = new File(outputDir);
@@ -87,24 +73,7 @@ public class FileGenerationUtil {
 
     boolean ok = true;
     if (!generateText(context, status, outputNodeContents)) {
-      int result = JOptionPane.showConfirmDialog(
-        context.getMainFrame(),
-        "Code generated form model\n" +
-          status.getInputModel().getUID() + "\n" +
-          "is not compilable.\n" +
-          "Do you still want to generate output files?",
-        "Generated Code Is Not Compilable",
-        JOptionPane.YES_NO_CANCEL_OPTION,
-        JOptionPane.WARNING_MESSAGE);
-
-      if (result == JOptionPane.CANCEL_OPTION) {
-        throw new GenerationCanceledException();
-      }
-      if (result == JOptionPane.NO_OPTION) return false;
-
-      if (result == JOptionPane.YES_OPTION) {
-        ok = true;
-      }
+      return false;
     }
 
     // generate files and synchronize vcs
