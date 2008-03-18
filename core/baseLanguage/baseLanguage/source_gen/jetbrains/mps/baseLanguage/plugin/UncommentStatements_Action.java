@@ -14,7 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class UncommentStatements_Action extends CurrentProjectMPSAction {
 
-  public  UncommentStatements_Action(MPSProject project) {
+  public UncommentStatements_Action(MPSProject project) {
     super(project, "Uncomment Statements");
   }
 
@@ -23,12 +23,14 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     return "control shift SLASH";
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
-    if(!(this.fillFieldsIfNecessary(context))) {
+  public void doUpdate(@NotNull()ActionContext context) {
+    if (!(this.fillFieldsIfNecessary(context))) {
+      this.setEnabled(false);
+      this.setVisible(false);
       return;
     }
     {
-      boolean enabled = SNodeOperations.isInstanceOf((((SNode)context.getNode())), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
+      boolean enabled = SNodeOperations.isInstanceOf((((SNode) context.getNode())), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
       this.setVisible(enabled);
       this.setEnabled(enabled);
     }
@@ -42,8 +44,8 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
-    if(!(this.fillFieldsIfNecessary(context))) {
+  public void doExecute(@NotNull()ActionContext context) {
+    if (!(this.fillFieldsIfNecessary(context))) {
       return;
     }
     {
@@ -51,7 +53,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
       {
         ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(node, "statement", true));
         try {
-          while(_zCursor1.moveToNext()) {
+          while (_zCursor1.moveToNext()) {
             SNode statement = _zCursor1.getCurrent();
             SNodeOperations.insertPrevSiblingChild(node, statement);
           }

@@ -12,7 +12,7 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 public class BaseLanguageEditorPopup_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup";
 
-  public  BaseLanguageEditorPopup_ActionGroup(MPSProject project) {
+  public BaseLanguageEditorPopup_ActionGroup(MPSProject project) {
     super("", BaseLanguageEditorPopup_ActionGroup.ID);
     this.setInternal(false);
     this.add(new CommentStatements_Action(project), this);
@@ -24,7 +24,7 @@ public class BaseLanguageEditorPopup_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup(EditorPopup_ActionGroup.ID);
       ActionGroup gWhat = manager.getGroup(BaseLanguageEditorPopup_ActionGroup.ID);
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       gTo.addEveryFrom(gWhat, owner);

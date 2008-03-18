@@ -13,7 +13,7 @@ import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 public class BaseLanguageEditorPopupInternal_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal";
 
-  public  BaseLanguageEditorPopupInternal_ActionGroup(MPSProject project) {
+  public BaseLanguageEditorPopupInternal_ActionGroup(MPSProject project) {
     super("", BaseLanguageEditorPopupInternal_ActionGroup.ID);
     this.setInternal(false);
     this.add(new TestReferenceResolvingPerformance(TestReferenceResolvingPerformance.EDITOR), this);
@@ -23,7 +23,7 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends BaseActionGroup
     {
       ActionGroup gTo = manager.getGroup(EditorInternal_ActionGroup.ID);
       ActionGroup gWhat = manager.getGroup(BaseLanguageEditorPopupInternal_ActionGroup.ID);
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       gTo.addEveryFrom(gWhat, owner);
