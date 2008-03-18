@@ -18,6 +18,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
+import java.util.StringTokenizer;
+
 public class CommentStatements_Action extends CurrentProjectMPSAction {
 
   private SNode myNode;
@@ -84,12 +86,14 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
       return;
     }
     {
-      List<SNode> statements = (List<SNode>) context.getNodes();
+      List<SNode> statements = ((List<SNode>) context.getNodes());
       SModel model = context.getModel().getSModel();
       SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(SequenceOperations.getFirst(statements), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
       SLinkOperations.addAll(commentedStatementsBlock, "statement", statements);
       SNodeOperations.deleteNode(ListOperations.getElement(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true), 0));
+      //this.qwe();
     }
   }
+
 
 }

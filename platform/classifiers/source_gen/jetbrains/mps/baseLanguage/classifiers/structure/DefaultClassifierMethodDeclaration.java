@@ -11,32 +11,24 @@ import jetbrains.mps.baseLanguage.structure.Visibility;
 
 public class DefaultClassifierMethodDeclaration extends BaseMethodDeclaration implements IMember {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration";
-  public static String VISIBILITY = "visibility";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String VISIBILITY = "visibility";
 
-  public  DefaultClassifierMethodDeclaration(SNode node) {
+  public DefaultClassifierMethodDeclaration(SNode node) {
     super(node);
   }
 
   public static DefaultClassifierMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (DefaultClassifierMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((DefaultClassifierMethodDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static DefaultClassifierMethodDeclaration newInstance(SModel sm) {
     return DefaultClassifierMethodDeclaration.newInstance(sm, false);
   }
 
-
-  public Visibility getVisibility() {
-    return (Visibility)this.getChild(DefaultClassifierMethodDeclaration.VISIBILITY);
-  }
-
-  public void setVisibility(Visibility node) {
-    super.setChild(DefaultClassifierMethodDeclaration.VISIBILITY, node);
-  }
 
   public String getName() {
     return this.getProperty(DefaultClassifierMethodDeclaration.NAME);
@@ -68,6 +60,14 @@ public class DefaultClassifierMethodDeclaration extends BaseMethodDeclaration im
 
   public void setVirtualPackage(String value) {
     this.setProperty(DefaultClassifierMethodDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public Visibility getVisibility() {
+    return ((Visibility) this.getChild(DefaultClassifierMethodDeclaration.VISIBILITY));
+  }
+
+  public void setVisibility(Visibility node) {
+    super.setChild(DefaultClassifierMethodDeclaration.VISIBILITY, node);
   }
 
 }

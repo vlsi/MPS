@@ -13,6 +13,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" exported="" />
+    <orderEntry type="module" module-name="classifiers" />
     <orderEntryProperties />
   </component>
 </module>

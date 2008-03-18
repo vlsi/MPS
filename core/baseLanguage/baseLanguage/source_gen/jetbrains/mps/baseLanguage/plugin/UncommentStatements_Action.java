@@ -32,7 +32,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
       return;
     }
     {
-      boolean enabled = SNodeOperations.isInstanceOf(((SNode) context.getNode()), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
+      boolean enabled = SNodeOperations.isInstanceOf((((SNode) context.getNode())), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
       this.setVisible(enabled);
       this.setEnabled(enabled);
     }

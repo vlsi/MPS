@@ -33,6 +33,7 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.regexp</usedLanguages>
+    <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>
   </usedLanguages>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>

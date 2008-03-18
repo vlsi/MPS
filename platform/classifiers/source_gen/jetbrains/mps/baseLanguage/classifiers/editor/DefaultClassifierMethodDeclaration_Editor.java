@@ -28,8 +28,8 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myBaseMethodDeclaration_NameCellComponent;
-  /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
+  /* package */ AbstractCellProvider myBaseMethodDeclaration_NameCellComponent;
+  /* package */ AbstractCellListHandler myParameterListHandler_parameterList_;
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1205769855685");
@@ -169,7 +169,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   }
 
   public EditorCell createBaseMethodDeclaration_NameCellComponentCell(EditorContext context, SNode node) {
-    if(this.myBaseMethodDeclaration_NameCellComponent == null) {
+    if (this.myBaseMethodDeclaration_NameCellComponent == null) {
       this.myBaseMethodDeclaration_NameCellComponent = new BaseMethodDeclaration_NameCellComponent(node);
     }
     EditorCell editorCell = this.myBaseMethodDeclaration_NameCellComponent.createEditorCell(context);
@@ -210,7 +210,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   }
 
   public EditorCell createParameterList(EditorContext context, SNode node) {
-    if(this.myParameterListHandler_parameterList_ == null) {
+    if (this.myParameterListHandler_parameterList_ == null) {
       this.myParameterListHandler_parameterList_ = new DefaultClassifierMethodDeclaration_Editor._RefNodeListHandler1(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
@@ -232,8 +232,8 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     DefaultClassifierMethodDeclaration_Editor.setupBasic_ReturnTypeCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      DefaultClassifierMethodDeclaration_Editor.setupLabel_ReturnTypeCell((EditorCell_Label)editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      DefaultClassifierMethodDeclaration_Editor.setupLabel_ReturnTypeCell(((EditorCell_Label) editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -248,12 +248,12 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     EditorCell cellWithRole = this.createReturnTypeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createBodyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -261,8 +261,8 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     DefaultClassifierMethodDeclaration_Editor.setupBasic_BodyCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      DefaultClassifierMethodDeclaration_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      DefaultClassifierMethodDeclaration_Editor.setupLabel_BodyCell(((EditorCell_Label) editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -277,12 +277,12 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     EditorCell cellWithRole = this.createBodyCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createVisibilityCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -290,8 +290,8 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     DefaultClassifierMethodDeclaration_Editor.setupBasic_VisibilityCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      DefaultClassifierMethodDeclaration_Editor.setupLabel_VisibilityCell((EditorCell_Label)editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      DefaultClassifierMethodDeclaration_Editor.setupLabel_VisibilityCell(((EditorCell_Label) editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -306,17 +306,17 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     EditorCell cellWithRole = this.createVisibilityCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public static class _RefNodeListHandler1 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -351,15 +351,15 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
           elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -382,6 +382,6 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
       return editorCell;
     }
 
-}
+  }
 
 }

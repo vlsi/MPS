@@ -11,12 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 public class BaseClassifierType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType";
 
-  public  BaseClassifierType(SNode node) {
+  public BaseClassifierType(SNode node) {
     super(node);
   }
 
   public static BaseClassifierType newInstance(SModel sm, boolean init) {
-    return (BaseClassifierType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((BaseClassifierType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static BaseClassifierType newInstance(SModel sm) {
