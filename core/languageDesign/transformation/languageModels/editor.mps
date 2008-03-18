@@ -2946,28 +2946,13 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205869094729">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205869094730">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205873422243">
-                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205873422244">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205869257766">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205869261221">
-                      <link role="baseMethodDeclaration" targetNodeId="1205869137520" resolveInfo="createTemplateFragment" />
-                      <link role="classConcept" targetNodeId="1205859480204" resolveInfo="QueriesUtil" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205869269051">
-                        <link role="variableDeclaration" targetNodeId="1205868849175" resolveInfo="applyToNode" />
-                      </node>
-                    </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205869257766">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205869261221">
+                  <link role="baseMethodDeclaration" targetNodeId="1205869137520" resolveInfo="createTemplateFragment" />
+                  <link role="classConcept" targetNodeId="1205859480204" resolveInfo="QueriesUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205869269051">
+                    <link role="variableDeclaration" targetNodeId="1205868849175" resolveInfo="applyToNode" />
                   </node>
-                </node>
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1205873434331">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205873434332">
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1205873434333">
-                      <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1205873434334">
-                        <link role="concept" targetNodeId="1.1092059087312" resolveInfo="TemplateDeclaration" />
-                      </node>
-                    </node>
-                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1205873434335" />
-                  </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205873434336" />
                 </node>
               </node>
             </node>
@@ -2979,6 +2964,20 @@
                   <link role="variableDeclaration" targetNodeId="1205868849175" resolveInfo="applyToNode" />
                 </node>
               </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205873422243">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205873422244" />
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1205873434331">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205873434332">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1205873434333">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1205873434334">
+                    <link role="concept" targetNodeId="1.1092059087312" resolveInfo="TemplateDeclaration" />
+                  </node>
+                </node>
+                <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1205873434335" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205873434336" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205869316787">
@@ -3230,10 +3229,10 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205877816727">
             <property name="value" value="surround with &lt;TF&gt; if necessary" />
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205877816728">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205877816729">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205877816730">
-                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205877816731">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205877816730">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205877816731">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205877816728">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205877816729">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205877816732">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205877816733">
                       <link role="classConcept" targetNodeId="1205859480204" resolveInfo="QueriesUtil" />
@@ -3242,25 +3241,25 @@
                     </node>
                   </node>
                 </node>
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1205877816735">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205877816736">
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1205877816737">
-                      <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1205877816738">
-                        <link role="concept" targetNodeId="1.1092059087312" resolveInfo="TemplateDeclaration" />
-                      </node>
-                    </node>
-                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1205877816739" />
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1205877816741">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205877816742">
+                    <link role="baseMethodDeclaration" targetNodeId="1205859565509" resolveInfo="isInsideTemplateFragment" />
+                    <link role="classConcept" targetNodeId="1205859480204" resolveInfo="QueriesUtil" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1205877827541" />
                   </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205877816740" />
                 </node>
               </node>
             </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1205877816741">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205877816742">
-                <link role="baseMethodDeclaration" targetNodeId="1205859565509" resolveInfo="isInsideTemplateFragment" />
-                <link role="classConcept" targetNodeId="1205859480204" resolveInfo="QueriesUtil" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1205877827541" />
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1205877816735">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205877816736">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1205877816737">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1205877816738">
+                    <link role="concept" targetNodeId="1.1092059087312" resolveInfo="TemplateDeclaration" />
+                  </node>
+                </node>
+                <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1205877816739" />
               </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205877816740" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1149868414165">
@@ -3489,10 +3488,10 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205880891984">
             <property name="value" value="surround with &lt;TF&gt; if necessary" />
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205880891985">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205880891986">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205880891987">
-                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205880891988">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205880891987">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205880891988">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205880891985">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205880891986">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205880891989">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205880891990">
                       <link role="baseMethodDeclaration" targetNodeId="1205869137520" resolveInfo="createTemplateFragment" />
@@ -3503,29 +3502,29 @@
                     </node>
                   </node>
                 </node>
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1205880891992">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205880891993">
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1205880891994">
-                      <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1205880891995">
-                        <link role="concept" targetNodeId="1.1092059087312" resolveInfo="TemplateDeclaration" />
-                      </node>
-                    </node>
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205880907971">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1205880891998">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205880891999">
+                    <link role="baseMethodDeclaration" targetNodeId="1205859565509" resolveInfo="isInsideTemplateFragment" />
+                    <link role="classConcept" targetNodeId="1205859480204" resolveInfo="QueriesUtil" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205880898219">
                       <link role="variableDeclaration" targetNodeId="1205880849486" resolveInfo="referentNode" />
                     </node>
                   </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205880891997" />
                 </node>
               </node>
             </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1205880891998">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205880891999">
-                <link role="baseMethodDeclaration" targetNodeId="1205859565509" resolveInfo="isInsideTemplateFragment" />
-                <link role="classConcept" targetNodeId="1205859480204" resolveInfo="QueriesUtil" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205880898219">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1205880891992">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205880891993">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1205880891994">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1205880891995">
+                    <link role="concept" targetNodeId="1.1092059087312" resolveInfo="TemplateDeclaration" />
+                  </node>
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205880907971">
                   <link role="variableDeclaration" targetNodeId="1205880849486" resolveInfo="referentNode" />
                 </node>
               </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205880891997" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1193052813063">
