@@ -55,6 +55,12 @@
       <fileset dir="core\languageDesign\core\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
+      <fileset dir="core\kernel\vcs\generic\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
+      <fileset dir="core\kernel\vcs\svn\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
       <fileset dir="core\languageDesign\actionsLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
