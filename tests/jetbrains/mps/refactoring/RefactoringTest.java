@@ -1,4 +1,4 @@
-package jetbrains.mps.refactoring.framework;
+package jetbrains.mps.refactoring;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.PathManager;
