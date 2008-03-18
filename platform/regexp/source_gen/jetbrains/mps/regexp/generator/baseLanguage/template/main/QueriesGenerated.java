@@ -10,10 +10,10 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.regexp.generator.baseLanguage.template.util.GeneratorUtil;
+import java.util.List;
 import jetbrains.mps.regexp.structure.MatchParensRegexp;
 import java.util.ArrayList;
 import jetbrains.mps.regexp.RegexpProcessor;
@@ -48,9 +48,12 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.FindMatchStatement");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1174655313358(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false);
-    return "_pattern_" + SequenceOperations.getSize(nodes);
+  public static Object propertyMacro_GetPropertyValue_1174565617595(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
+    SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
+    List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
+    RegexpProcessor.toString((((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true)))), matchparens);
+    return "" + (1 + matchparens.indexOf((((MatchParensRegexp)SNodeOperations.getAdapter(parens)))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1174655168104(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -58,12 +61,9 @@ public class QueriesGenerated {
     return "_matcher_" + SequenceOperations.getSize(nodes);
   }
 
-  public static Object propertyMacro_GetPropertyValue_1174565617595(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
-    SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
-    List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
-    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true))), matchparens);
-    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
+  public static Object propertyMacro_GetPropertyValue_1174655313358(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false);
+    return "_pattern_" + SequenceOperations.getSize(nodes);
   }
 
   public static Object propertyMacro_GetPropertyValue_1174658262046(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -74,8 +74,8 @@ public class QueriesGenerated {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
-    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true))), matchparens);
-    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
+    RegexpProcessor.toString((((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true)))), matchparens);
+    return "" + (1 + matchparens.indexOf((((MatchParensRegexp)SNodeOperations.getAdapter(parens)))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1175155526348(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -92,8 +92,8 @@ public class QueriesGenerated {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
-    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true))), matchparens);
-    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
+    RegexpProcessor.toString((((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true)))), matchparens);
+    return "" + (1 + matchparens.indexOf((((MatchParensRegexp)SNodeOperations.getAdapter(parens)))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1175169642723(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -110,8 +110,8 @@ public class QueriesGenerated {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
-    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true))), matchparens);
-    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
+    RegexpProcessor.toString((((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true)))), matchparens);
+    return "" + (1 + matchparens.indexOf((((MatchParensRegexp)SNodeOperations.getAdapter(parens)))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1194610282338(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -136,10 +136,6 @@ public class QueriesGenerated {
     return _context.getGenerator().getGeneratorSessionContext().createUniqueName("REGEXP");
   }
 
-  public static Object referenceMacro_GetReferent_1194610323562(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "precompiledRegexp");
-  }
-
   public static Object referenceMacro_GetReferent_1174655509856(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return GeneratorUtil.findOutputMatcher(_context.getGenerator(), _context.getNode());
   }
@@ -150,6 +146,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1175170026388(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return GeneratorUtil.findOutputMatcher(_context.getGenerator(), _context.getNode());
+  }
+
+  public static Object referenceMacro_GetReferent_1194610323562(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "precompiledRegexp");
   }
 
   public static SNode sourceNodeQuery_1174512824855(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -164,6 +164,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1174658308251(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
   public static SNode sourceNodeQuery_1174659183903(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expr", true);
   }
@@ -174,10 +178,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1174659237673(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "replaceBlock", true);
-  }
-
-  public static SNode sourceNodeQuery_1174658308251(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
   public static SNode sourceNodeQuery_1175155573909(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
