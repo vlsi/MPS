@@ -581,6 +581,7 @@ public class SModel implements Iterable<SNode> {
       Language language = scope.getLanguage(languageNamespace);
       if (language != null) {
         languages.add(language);
+        languages.addAll(language.getAllExtendedLanguages());
         addAspectModelVersions(languageNamespace, language);
       } else {
         if (!isLoading()) {
