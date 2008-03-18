@@ -5,11 +5,15 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelsListener;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
+import jetbrains.mps.transformation.TLBase.structure.RootTemplateAnnotation;
+import jetbrains.mps.transformation.TLBase.structure.RootTemplateAnnotation_AnnotationLink;
+import jetbrains.mps.project.GlobalScope;
 
 /**
  * Igor Alshannikov
@@ -53,7 +57,9 @@ public class RootTemplateAnnotator implements SModelsListener {
     public void rootAdded(SModelRootEvent event) {
       SNode newRoot = event.getRoot();
       if (newRoot.getNodeLanguage() != BootstrapLanguagesManager.getInstance().getTLBase()) {
-        TemplateLanguageUtil.addRootTemplateAnnotation(newRoot);
+//        TemplateLanguageUtil.addRootTemplateAnnotation(newRoot);
+        SNode annotation = NodeFactoryManager.createNode(RootTemplateAnnotation.concept, null, newRoot, newRoot.getModel(), GlobalScope.getInstance());
+        newRoot.addAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION, annotation);
       }
     }
   }
