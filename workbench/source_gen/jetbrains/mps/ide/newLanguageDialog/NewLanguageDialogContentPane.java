@@ -182,7 +182,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     this.firePropertyChange("dialog", oldValue, newValue);
   }
 
-  public void onOk() {
+  /* package */void onOk() {
     File dir = new File(myThis.getLanguagePath());
     if(!(dir.isAbsolute())) {
       myThis.getDialog().setErrorText("Path should path");
@@ -215,11 +215,11 @@ public class NewLanguageDialogContentPane extends JPanel {
     });
   }
 
-  public void onCancel() {
+  /* package */void onCancel() {
     myThis.getDialog().dispose();
   }
 
-  public void updateLanguagePath() {
+  /* package */void updateLanguagePath() {
     if(myThis.getProject() == null) {
       return;
     }
@@ -230,7 +230,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
   }
 
-  public void createNewLanguage() {
+  /* package */void createNewLanguage() {
     String descriptorFileName = NameUtil.shortNameFromLongName(myThis.getLanguageNamespace());
     File descriptorFile = new File(myThis.getLanguagePath(), descriptorFileName + ".mpl");
     File dir = descriptorFile.getParentFile();

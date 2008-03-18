@@ -185,7 +185,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     this.firePropertyChange("dialog", oldValue, newValue);
   }
 
-  public void onOk() {
+  /* package */void onOk() {
     if(myThis.getSolutionPath().length() == 0) {
       myThis.getDialog().setErrorText("Enter solution directory");
       return;
@@ -230,11 +230,11 @@ public class NewSolutionDialogContentPane extends JPanel {
     });
   }
 
-  public void onCancel() {
+  /* package */void onCancel() {
     myThis.getDialog().dispose();
   }
 
-  public File prepareToCreateNewSolutionDescriptorFile(String path) {
+  /* package */File prepareToCreateNewSolutionDescriptorFile(String path) {
     File solutionDescriptorFile = new File(path);
     File dir = solutionDescriptorFile.getParentFile();
     if(!(dir.exists())) {
@@ -243,7 +243,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     return solutionDescriptorFile;
   }
 
-  public Solution createNewSolution(String solutionName, IFile solutionDescriptorFile) {
+  /* package */Solution createNewSolution(String solutionName, IFile solutionDescriptorFile) {
     SNode solutionDescriptor = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.SolutionDescriptor", null);
     SPropertyOperations.set(solutionDescriptor, "externallyVisible", "" + (true));
     SPropertyOperations.set(solutionDescriptor, "compileInMPS", "" + (myThis.getCompileInMPS()));
@@ -257,7 +257,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     return myThis.getProject().addProjectSolution(solutionDescriptorFile.toFile());
   }
 
-  public void updateSolutionPath() {
+  /* package */void updateSolutionPath() {
     if(myThis.getProject() == null) {
       return;
     }

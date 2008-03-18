@@ -159,7 +159,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     this.firePropertyChange("dialog", oldValue, newValue);
   }
 
-  public void onOk() {
+  /* package */void onOk() {
     if(myThis.getDevkitDir().length() == 0) {
       myThis.getDialog().setErrorText("Enter DevKit Directory");
       return;
@@ -194,11 +194,11 @@ public class NewDevKitDialogContentPane extends JPanel {
     myThis.getDialog().dispose();
   }
 
-  public void onCancel() {
+  /* package */void onCancel() {
     myThis.getDialog().dispose();
   }
 
-  public void updateSolutionPath() {
+  /* package */void updateSolutionPath() {
     if(myThis.getProject() == null) {
       return;
     }
@@ -209,7 +209,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     }
   }
 
-  public void createNewDevKit(File devkitPath) {
+  /* package */void createNewDevKit(File devkitPath) {
     SNode descriptor = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.DevKitDescriptor", null);
     SPropertyOperations.set(descriptor, "name", myThis.getDevkitName());
     DescriptorsPersistence.saveDevKitDescriptor(((DevKitDescriptor)SNodeOperations.getAdapter(descriptor)), new FileSystemFile(devkitPath));

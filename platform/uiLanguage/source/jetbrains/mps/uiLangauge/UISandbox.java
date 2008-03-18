@@ -1,6 +1,5 @@
 package jetbrains.mps.uiLangauge;
 
-import org.jdesktop.swingbinding.SwingBindings;
 import org.jdesktop.beansbinding.Bindings;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Property;
