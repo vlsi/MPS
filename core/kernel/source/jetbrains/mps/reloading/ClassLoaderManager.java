@@ -128,6 +128,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   private void handleAddAndRemoves() {
     try {
+
       Set<String> toReload = new LinkedHashSet<String>(myToAdd);
       toReload.retainAll(myToRemove);
 
