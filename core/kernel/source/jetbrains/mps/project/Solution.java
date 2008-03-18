@@ -175,4 +175,12 @@ public class Solution extends AbstractModule {
     collectPackages(result, "");
     return result;
   }
+
+  public List<String> getClassPath() {
+    List<String> result = super.getClassPath();
+    if (getClassesGen() != null) {
+      result.add(getClassesGen().getPath());
+    }
+    return result;
+  }
 }
