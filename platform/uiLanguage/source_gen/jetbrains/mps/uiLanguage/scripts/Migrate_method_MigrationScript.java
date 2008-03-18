@@ -25,7 +25,7 @@ public class Migrate_method_MigrationScript extends BaseMigrationScript {
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.uiLanguage.structure.ComponentMethodCallOperation";
+        return "null";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
@@ -34,7 +34,7 @@ public class Migrate_method_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", null);
-        SLinkOperations.setTarget(replacement, "member", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
+        SLinkOperations.setTarget(replacement, "member", SLinkOperations.getTarget(node, "", false), false);
         for(SNode parm : SLinkOperations.getTargets(node, "actualArgument", true)) {
           SLinkOperations.addChild(replacement, "actualArgument", parm);
         }

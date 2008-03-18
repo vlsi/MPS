@@ -15,13 +15,13 @@ import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodD
 
 public class ComponentController extends BaseConcept implements INamedConcept, IClassifierPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentController";
-  public static String CONSTRUCTOR = "constructor";
-  public static String ATTRIBUTE = "attribute";
-  public static String COMPONENT_METHOD = "componentMethod";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String CONSTRUCTOR = "constructor";
+  public static String ATTRIBUTE = "attribute";
+  public static String COMPONENT_METHOD = "componentMethod";
   public static String COMPONENT = "component";
 
   public  ComponentController(SNode node) {
@@ -36,6 +36,38 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
     return ComponentController.newInstance(sm, false);
   }
 
+
+  public String getName() {
+    return this.getProperty(ComponentController.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ComponentController.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ComponentController.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ComponentController.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ComponentController.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ComponentController.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ComponentController.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ComponentController.VIRTUAL_PACKAGE, value);
+  }
 
   public ComponentConstructor getConstructor() {
     return (ComponentConstructor)this.getChild(ComponentController.CONSTRUCTOR);
@@ -83,38 +115,6 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
 
   public void insertComponentMethod(DefaultClassifierMethodDeclaration prev, DefaultClassifierMethodDeclaration node) {
     this.insertChild(prev, ComponentController.COMPONENT_METHOD, node);
-  }
-
-  public String getName() {
-    return this.getProperty(ComponentController.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ComponentController.NAME, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(ComponentController.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(ComponentController.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(ComponentController.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(ComponentController.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(ComponentController.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(ComponentController.VIRTUAL_PACKAGE, value);
   }
 
   public ComponentDeclaration getComponent() {
