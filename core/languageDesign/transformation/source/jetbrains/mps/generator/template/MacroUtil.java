@@ -9,6 +9,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.NameUtil;
@@ -26,9 +27,11 @@ import java.util.List;
 public class MacroUtil {
   private static final Logger LOG = Logger.getLogger(MacroUtil.class);
 
-  public static void expandPropertyMacro(ITemplateGenerator generator, PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode putputNode) {
-    String propertyName = propertyMacro.getProperty().getName();
-    assert propertyName != null;
+  public static void expandPropertyMacro(ITemplateGenerator generator, PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) {
+//    String propertyName = propertyMacro.getProperty().getName();
+//    assert propertyName != null;
+    String attributeRole = propertyMacro.getRole_();
+    String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(attributeRole);
     String propertyValue;
 
     // try new query
@@ -55,12 +58,12 @@ public class MacroUtil {
       Object[] args = new Object[]{
         inputNode,
         templateNode,
-        BaseAdapter.fromAdapter(propertyMacro.getProperty()),
+        null/*BaseAdapter.fromAdapter(propertyMacro.getProperty())*/,
         generator};
       propertyValue = (String) QueryMethod.invoke("propertyMacro_" + propertyMacro.getAspectMethodName(), args, propertyMacro.getModel());
     }
 
-    putputNode.setProperty(propertyName, propertyValue);
+    outputNode.setProperty(propertyName, propertyValue);
   }
 
 

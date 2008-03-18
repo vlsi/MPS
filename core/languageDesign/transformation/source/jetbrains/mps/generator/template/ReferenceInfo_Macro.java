@@ -31,7 +31,6 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   public SNode getInputTargetNode() {
-//    String role = myReferenceMacro.getLink().getRole();
     return myTemplateReferenceNode.getReferent(getReferenceRole());
   }
 
