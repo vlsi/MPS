@@ -376,7 +376,7 @@ public abstract class AbstractModule implements IModule {
   private void releaseJavaStubs() {
     for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
       if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) {
-        SModelRepository.getInstance().unRegisterModelDescriptor(sm, this);
+        SModelRepository.getInstance().removeModelDescriptor(sm);
       }
     }
   }
