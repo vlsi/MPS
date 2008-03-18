@@ -40,19 +40,25 @@ public class RulesFunctions_BaseLanguage {
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1185963005725", true), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1185963003424");
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), SLinkOperations.getTarget(new QuotationClass_28().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908856117");
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908902743");
-    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), new Runnable() {
+    {
+      final SNode _representatorVar5 = TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar5, new Runnable() {
 
-      public void run() {
-        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), new Runnable() {
+        public void run() {
+          {
+            final SNode _representatorVar6 = TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265);
+            TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar6, new Runnable() {
 
-          public void run() {
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(binOp, "jetbrains.mps.baseLanguage.helgins", "1203512296348", true), Queries.getBinaryOperationType(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265)), binOp, null, "jetbrains.mps.baseLanguage.helgins", "1203512296346");
+              public void run() {
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(binOp, "jetbrains.mps.baseLanguage.helgins", "1203512296348", true), Queries.getBinaryOperationType(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265)), binOp, null, "jetbrains.mps.baseLanguage.helgins", "1203512296346");
+              }
+
+            }, "jetbrains.mps.baseLanguage.helgins", "1185963100352");
           }
+        }
 
-        }, "jetbrains.mps.baseLanguage.helgins", "1185963100352");
-      }
-
-    }, "jetbrains.mps.baseLanguage.helgins", "1185963072800");
+      }, "jetbrains.mps.baseLanguage.helgins", "1185963072800");
+    }
   }
 
   public static Iterable<SNode> collectReturnStatements(SNode node) {
@@ -183,13 +189,16 @@ public class RulesFunctions_BaseLanguage {
             final SNode var = prev;
             final SNode prevVar_typevar_1204114618000 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
             TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000), prev, null, null, "jetbrains.mps.baseLanguage.helgins", "1204114618001");
-            TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000), new Runnable() {
+            {
+              final SNode _representatorVar7 = TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000);
+              TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar7, new Runnable() {
 
-              public void run() {
-                System.out.println("-4- " + BaseConcept_Behavior.call_getPresentation_1180102203531(var) + " :==: " + BaseConcept_Behavior.call_getPresentation_1180102203531(TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000)));
-              }
+                public void run() {
+                  System.out.println("-4- " + BaseConcept_Behavior.call_getPresentation_1180102203531(var) + " :==: " + BaseConcept_Behavior.call_getPresentation_1180102203531(TypeChecker.getInstance().getEquationManager().getRepresentator(prevVar_typevar_1204114618000)));
+                }
 
-            }, "jetbrains.mps.baseLanguage.helgins", "1204114618006");
+              }, "jetbrains.mps.baseLanguage.helgins", "1204114618006");
+            }
           }
         }
       }

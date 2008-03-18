@@ -30,15 +30,18 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1197028596169(imco), "jetbrains.mps.baseLanguage.helgins", "1204064784351", false), IOperation_Behavior.call_getOperand_1197028596169(imco), null, "jetbrains.mps.baseLanguage.helgins", "1204064763142");
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_85().createNode(methodClassifier), imco, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120");
     // --- following piece of cake is identical for any method call ---
-    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new Runnable() {
+    {
+      final SNode _representatorVar4 = TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar4, new Runnable() {
 
-      public void run() {
-        Map<SNode, List<SNode>> mmap = RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(imco, SLinkOperations.getTarget(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "returnType", true));
-        RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(methodClassifier, TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), mmap);
-        RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
-      }
+        public void run() {
+          Map<SNode, List<SNode>> mmap = RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(imco, SLinkOperations.getTarget(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "returnType", true));
+          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(methodClassifier, TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), mmap);
+          RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
+        }
 
-    }, "jetbrains.mps.baseLanguage.helgins", "1204065986803");
+      }, "jetbrains.mps.baseLanguage.helgins", "1204065986803");
+    }
   }
 
   public String getApplicableConceptFQName() {

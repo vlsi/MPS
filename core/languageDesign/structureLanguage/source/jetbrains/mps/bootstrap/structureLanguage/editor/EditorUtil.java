@@ -21,9 +21,20 @@ import java.io.File;
 
 public class EditorUtil {
   public static JComponent createSelectIconButton(SNode sourceNode, final EditorContext context) {
-    final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) BaseAdapter.fromNode(sourceNode);
-    final String path = conceptDeclaration.getIconPath();
+    return createSelectIconButton(sourceNode, null, context);
+  }
+
+  public static JComponent createSelectIconButton(final SNode sourceNode, final String propertyName, final EditorContext context) {
+    final ConceptDeclaration conceptDeclaration;
+    if (propertyName == null) {
+      conceptDeclaration = (ConceptDeclaration) BaseAdapter.fromNode(sourceNode);
+    } else {
+      conceptDeclaration = (ConceptDeclaration) sourceNode.getConceptDeclarationAdapter();
+    }
+
+    String path = conceptDeclaration.getIconPath();
     final Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, context.getScope());
+
     String filename = language == null ? null : Macros.languageDescriptor().expandPath(path, language.getDescriptorFile());
     final File baseFile = filename == null ? null : new File(filename);
     final JButton button = new JButton();
@@ -47,7 +58,11 @@ public class EditorUtil {
 
         new CommandRunnable() {
           protected Object onRun() {
-            conceptDeclaration.setIconPath(pathToShow);
+            if (propertyName == null) {
+              conceptDeclaration.setIconPath(pathToShow);
+            } else {
+              sourceNode.setProperty(propertyName, pathToShow);
+            }
             return null;
           }
         }.run();
@@ -55,4 +70,6 @@ public class EditorUtil {
     });
     return button;
   }
+
+
 }
