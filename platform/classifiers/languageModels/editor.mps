@@ -82,6 +82,10 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1205769855686">
         <property name="selectable" value="false" />
         <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1205838275288">
+          <property name="noTargetText" value="/*package*/" />
+          <link role="relationDeclaration" targetNodeId="2v.1205838264380" />
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1205769855687">
           <link role="relationDeclaration" targetNodeId="4v.1068580123133" />
         </node>

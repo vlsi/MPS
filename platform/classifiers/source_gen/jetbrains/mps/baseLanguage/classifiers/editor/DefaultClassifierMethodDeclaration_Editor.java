@@ -86,6 +86,10 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1205769855698");
   }
 
+  private static void setupBasic_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1205838275288");
+  }
+
   private static void setupLabel_ReturnTypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -105,6 +109,9 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   }
 
   private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_VisibilityCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -130,6 +137,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createVisibilityCell(context, node));
     editorCell.addEditorCell(this.createReturnTypeCell(context, node));
     editorCell.addEditorCell(this.createBaseMethodDeclaration_NameCellComponentCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "("));
@@ -267,6 +275,35 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createBodyCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if(attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createVisibilityCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    DefaultClassifierMethodDeclaration_Editor.setupBasic_VisibilityCell(editorCell, node, context);
+    if(editorCell instanceof EditorCell_Label) {
+      DefaultClassifierMethodDeclaration_Editor.setupLabel_VisibilityCell((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createVisibilityCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("visibility");
+    provider.setNoTargetText("/*package*/");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createVisibilityCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

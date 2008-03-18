@@ -11,9 +11,9 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class IDEDialogButton extends BaseConcept {
   public static final String concept = "jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton";
+  public static String HANDLER = "handler";
   public static String TEXT = "text";
   public static String IS_DEFAULT = "isDefault";
-  public static String HANDLER = "handler";
 
   public  IDEDialogButton(SNode node) {
     super(node);
@@ -27,6 +27,14 @@ public class IDEDialogButton extends BaseConcept {
     return IDEDialogButton.newInstance(sm, false);
   }
 
+
+  public Expression getHandler() {
+    return (Expression)this.getChild(IDEDialogButton.HANDLER);
+  }
+
+  public void setHandler(Expression node) {
+    super.setChild(IDEDialogButton.HANDLER, node);
+  }
 
   public String getText() {
     return this.getProperty(IDEDialogButton.TEXT);
@@ -42,14 +50,6 @@ public class IDEDialogButton extends BaseConcept {
 
   public void setIsDefault(boolean value) {
     this.setBooleanProperty(IDEDialogButton.IS_DEFAULT, value);
-  }
-
-  public Expression getHandler() {
-    return (Expression)this.getChild(IDEDialogButton.HANDLER);
-  }
-
-  public void setHandler(Expression node) {
-    super.setChild(IDEDialogButton.HANDLER, node);
   }
 
 }

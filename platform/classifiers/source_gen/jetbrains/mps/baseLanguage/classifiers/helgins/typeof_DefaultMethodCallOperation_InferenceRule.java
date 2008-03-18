@@ -18,7 +18,7 @@ public class typeof_DefaultMethodCallOperation_InferenceRule implements Inferenc
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.classifiers.structure.DefaultMethodCallOperation";
+    return "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation";
   }
 
   public boolean isApplicable(SNode argument) {

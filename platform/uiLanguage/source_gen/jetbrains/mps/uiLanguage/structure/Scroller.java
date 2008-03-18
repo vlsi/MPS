@@ -12,10 +12,10 @@ import java.util.List;
 
 public class Scroller extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.Scroller";
+  public static String CONTENT = "content";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String CONTENT = "content";
 
   public  Scroller(SNode node) {
     super(node);
@@ -29,6 +29,26 @@ public class Scroller extends BaseConcept implements IComponentInstance {
     return Scroller.newInstance(sm, false);
   }
 
+
+  public int getContentsCount() {
+    return this.getChildCount(Scroller.CONTENT);
+  }
+
+  public Iterator<IComponentPart> contents() {
+    return this.children(Scroller.CONTENT);
+  }
+
+  public List<IComponentPart> getContents() {
+    return this.getChildren(Scroller.CONTENT);
+  }
+
+  public void addContent(IComponentPart node) {
+    this.addChild(Scroller.CONTENT, node);
+  }
+
+  public void insertContent(IComponentPart prev, IComponentPart node) {
+    this.insertChild(prev, Scroller.CONTENT, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(Scroller.SHORT_DESCRIPTION);
@@ -52,26 +72,6 @@ public class Scroller extends BaseConcept implements IComponentInstance {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Scroller.VIRTUAL_PACKAGE, value);
-  }
-
-  public int getContentsCount() {
-    return this.getChildCount(Scroller.CONTENT);
-  }
-
-  public Iterator<IComponentPart> contents() {
-    return this.children(Scroller.CONTENT);
-  }
-
-  public List<IComponentPart> getContents() {
-    return this.getChildren(Scroller.CONTENT);
-  }
-
-  public void addContent(IComponentPart node) {
-    this.addChild(Scroller.CONTENT, node);
-  }
-
-  public void insertContent(IComponentPart prev, IComponentPart node) {
-    this.insertChild(prev, Scroller.CONTENT, node);
   }
 
 }

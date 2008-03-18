@@ -12,10 +12,10 @@ import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
 
 public class AttributeReferenceOperation extends BaseConcept implements IMemberOperation {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation";
+  public static String MEMBER = "member";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String MEMBER = "member";
 
   public  AttributeReferenceOperation(SNode node) {
     super(node);
@@ -29,6 +29,22 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
     return AttributeReferenceOperation.newInstance(sm, false);
   }
 
+
+  public IMember getMember() {
+    return (IMember)this.getReferent(AttributeReferenceOperation.MEMBER);
+  }
+
+  public void setMember(IMember node) {
+    super.setReferent(AttributeReferenceOperation.MEMBER, node);
+  }
+
+  public AttributeDeclaration getAttributeDeclaration() {
+    return (AttributeDeclaration)this.getMember();
+  }
+
+  public void setAttributeDeclaration(AttributeDeclaration node) {
+    this.setMember(node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(AttributeReferenceOperation.SHORT_DESCRIPTION);
@@ -52,22 +68,6 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
 
   public void setVirtualPackage(String value) {
     this.setProperty(AttributeReferenceOperation.VIRTUAL_PACKAGE, value);
-  }
-
-  public IMember getMember() {
-    return (IMember)this.getReferent(AttributeReferenceOperation.MEMBER);
-  }
-
-  public void setMember(IMember node) {
-    super.setReferent(AttributeReferenceOperation.MEMBER, node);
-  }
-
-  public AttributeDeclaration getAttributeDeclaration() {
-    return (AttributeDeclaration)this.getMember();
-  }
-
-  public void setAttributeDeclaration(AttributeDeclaration node) {
-    this.setMember(node);
   }
 
 }

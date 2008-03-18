@@ -69,6 +69,11 @@
     <property name="name" value="DefaultClassifierMethodDeclaration" />
     <property name="package" value="Methods" />
     <link role="extends" targetNodeId="3v.1068580123132" resolveInfo="BaseMethodDeclaration" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1205838264380">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="visibility" />
+      <link role="target" targetNodeId="3v.1146644584814" resolveInfo="Visibility" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1205769489840">
       <link role="intfc" targetNodeId="1205752032448" resolveInfo="IMember" />
     </node>

@@ -13,11 +13,11 @@ import java.util.List;
 
 public class DefaultClassifierMethodCallOperation extends BaseConcept implements IMemberOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation";
+  public static String ACTUAL_ARGUMENT = "actualArgument";
+  public static String MEMBER = "member";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ACTUAL_ARGUMENT = "actualArgument";
-  public static String MEMBER = "member";
 
   public  DefaultClassifierMethodCallOperation(SNode node) {
     super(node);
@@ -31,30 +31,6 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
     return DefaultClassifierMethodCallOperation.newInstance(sm, false);
   }
 
-
-  public String getShortDescription() {
-    return this.getProperty(DefaultClassifierMethodCallOperation.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(DefaultClassifierMethodCallOperation.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(DefaultClassifierMethodCallOperation.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(DefaultClassifierMethodCallOperation.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(DefaultClassifierMethodCallOperation.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(DefaultClassifierMethodCallOperation.VIRTUAL_PACKAGE, value);
-  }
 
   public int getActualArgumentsCount() {
     return this.getChildCount(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
@@ -90,6 +66,30 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
 
   public void setMethod(DefaultClassifierMethodDeclaration node) {
     this.setMember(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(DefaultClassifierMethodCallOperation.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(DefaultClassifierMethodCallOperation.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(DefaultClassifierMethodCallOperation.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(DefaultClassifierMethodCallOperation.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(DefaultClassifierMethodCallOperation.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(DefaultClassifierMethodCallOperation.VIRTUAL_PACKAGE, value);
   }
 
 }
