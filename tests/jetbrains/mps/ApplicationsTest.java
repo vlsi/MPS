@@ -48,4 +48,9 @@ public class ApplicationsTest extends BaseMPSTest {
     String res = testProject(new File("platform/buildlanguage/BuildLanguage.mpr"));
     assertTrue(res, res == null);
   }
+
+  public void testUILAnguage() {
+    String res = testProject(new File("platform/uiLanguage/uiLanguage.mpr"));
+    assertTrue(res, res == null);
+  }
 }

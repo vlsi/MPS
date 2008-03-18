@@ -860,10 +860,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           }
         }
 
-
-
         for (BaseGeneratorConfiguration t : configurations) {
-
           System.out.println("completed : " + configurations.indexOf(t) + " / " + configurations.size());
 
           GenParameters parms;

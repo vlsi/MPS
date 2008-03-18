@@ -187,6 +187,23 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return result;
   }
 
+  public List<Language> getAllExtendedLanguages() {
+    Set<Language> set = new LinkedHashSet<Language>();
+    collectExtendedLanguages(set);
+    return new ArrayList<Language>(set);
+  }
+
+  private void collectExtendedLanguages(Set<Language> result) {
+    if (result.contains(this)) {
+      return;
+    }
+
+    result.add(this);
+    for (Language l : getExtendedLanguages()) {
+      l.collectExtendedLanguages(result);
+    }
+  }
+
   public void validateExtends() {
     boolean changed = false;
     // this doesn't allow to remove structureLanguage from 'extended langauges' of baseLanguage

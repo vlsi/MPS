@@ -11,6 +11,7 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.Language;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -236,12 +237,23 @@ public class ModuleMaker {
     dependOnModules.addAll(BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore());
 
     CompositeClassPathItem classPathItems = new CompositeClassPathItem();
+    
+    classPathItems.add(ClassLoaderManager.getInstance().getRTJar());
+    classPathItems.add(ClassLoaderManager.getInstance().getMPSPath());
+
     for (IModule m : dependOnModules) {
       classPathItems.add(m.getModuleWithDependenciesClassPathItem());
     }
 
-    classPathItems.add(ClassLoaderManager.getInstance().getRTJar());
-    classPathItems.add(ClassLoaderManager.getInstance().getMPSPath());
+    Set<Language> allExtendedLanguages = new LinkedHashSet<Language>();
+    for (IModule m : modules) {
+      if (m instanceof Language) {
+        allExtendedLanguages.addAll(((Language) m).getAllExtendedLanguages());
+      }
+    }
+    for (Language l : allExtendedLanguages) {
+      classPathItems.add(l.getRuntimeClasspath());
+    }
 
     return classPathItems.optimize();
   }
