@@ -109,7 +109,7 @@
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="1203685087824">
     <link role="component" targetNodeId="1203684597238" resolveInfo="NewLanguageDialog" />
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203685139549">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1203685139549">
       <property name="name" value="onOk" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203685141989" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203685139551">
@@ -306,7 +306,7 @@
         </node>
       </node>
     </node>
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203685144412">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1203685144412">
       <property name="name" value="onCancel" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203685145540" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203685144414">
@@ -315,7 +315,7 @@
         </node>
       </node>
     </node>
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203685811265">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1203685811265">
       <property name="name" value="updateLanguagePath" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203685828384" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203685811267">
@@ -444,7 +444,7 @@
         </node>
       </node>
     </node>
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203686236523">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1203686236523">
       <property name="name" value="createNewLanguage" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203686246367" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203686236525">

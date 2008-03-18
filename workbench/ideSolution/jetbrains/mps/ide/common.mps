@@ -82,7 +82,7 @@
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="1203601659817">
     <link role="component" targetNodeId="1203601634745" resolveInfo="PathField" />
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203605506361">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1203605506361">
       <property name="name" value="choosePathClicked" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203605517894" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203605506363">

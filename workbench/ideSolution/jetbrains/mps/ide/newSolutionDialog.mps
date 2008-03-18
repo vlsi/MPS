@@ -111,7 +111,7 @@
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="1203593910897">
     <link role="component" targetNodeId="1203592850595" resolveInfo="NewSolutionDialog" />
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203599983021">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1203599983021">
       <property name="name" value="onOk" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203599984696" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203599983023">
@@ -435,7 +435,7 @@
         </node>
       </node>
     </node>
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203599986635">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1203599986635">
       <property name="name" value="onCancel" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203599987700" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203599986637">
@@ -444,7 +444,7 @@
         </node>
       </node>
     </node>
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203611075447">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1203611075447">
       <property name="name" value="prepareToCreateNewSolutionDescriptorFile" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203611077169">
         <link role="classifier" targetNodeId="2.~File" resolveInfo="File" />
@@ -511,7 +511,7 @@
         </node>
       </node>
     </node>
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203608542333">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1203608542333">
       <property name="name" value="createNewSolution" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1203608557260">
         <property name="name" value="solutionName" />
@@ -735,7 +735,7 @@
         </node>
       </node>
     </node>
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1203676067041">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1203676067041">
       <property name="name" value="updateSolutionPath" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203676068373" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203676067043">

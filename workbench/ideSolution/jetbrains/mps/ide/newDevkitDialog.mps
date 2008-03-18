@@ -108,7 +108,7 @@
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="1204026656767">
     <link role="component" targetNodeId="1204026592280" resolveInfo="NewDevKitDialog" />
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1204027050087">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1204027050087">
       <property name="name" value="onOk" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204027085953" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204027050089">
@@ -354,7 +354,7 @@
         </node>
       </node>
     </node>
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1204027087626">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1204027087626">
       <property name="name" value="onCancel" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204027088942" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204027087628">
@@ -363,7 +363,7 @@
         </node>
       </node>
     </node>
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1204027179199">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1204027179199">
       <property name="name" value="updateSolutionPath" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1204027180359" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204027179201">
@@ -488,7 +488,7 @@
         </node>
       </node>
     </node>
-    <node role="componentMethod" type="jetbrains.mps.uiLanguage.structure.ComponentMethodDeclaration" id="1204027985317">
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1204027985317">
       <property name="name" value="createNewDevKit" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1204028053073">
         <property name="name" value="devkitPath" />
