@@ -3440,16 +3440,18 @@
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1204108514144">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204108514145">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1204108514146">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204108514147">
-                          <link role="baseMethodDeclaration" targetNodeId="7.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                          <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204108514148">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205835691141">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204108514148">
                             <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204108514149" />
                             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204108525040">
                               <link role="property" targetNodeId="2v.1204107522064" resolveInfo="excludes" />
                             </node>
                           </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204108514151">
-                            <property name="value" value="" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205835691142">
+                            <link role="baseMethodDeclaration" targetNodeId="7.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204108514151">
+                              <property name="value" value="" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -3622,16 +3624,18 @@
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1204108401796">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204108425484">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1204108441395">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204108453669">
-                          <link role="baseMethodDeclaration" targetNodeId="7.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                          <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204108444039">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205835675154">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204108444039">
                             <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1204108443194" />
                             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1204108445337">
                               <link role="property" targetNodeId="2v.1204107538752" resolveInfo="excludes" />
                             </node>
                           </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204108455482">
-                            <property name="value" value="" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205835675155">
+                            <link role="baseMethodDeclaration" targetNodeId="7.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1204108455482">
+                              <property name="value" value="" />
+                            </node>
                           </node>
                         </node>
                       </node>

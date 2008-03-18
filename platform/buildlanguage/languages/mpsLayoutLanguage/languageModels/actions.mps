@@ -280,7 +280,10 @@
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203606262132">
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203606262133">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203606451488">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1203606453615">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205835517537">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203606451489">
+                                <link role="variableDeclaration" targetNodeId="1203606226893" resolveInfo="result" />
+                              </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1203606455962">
                                 <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204819027288">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1203606459356">
@@ -290,9 +293,6 @@
                                     <link role="baseMethodDeclaration" targetNodeId="4.~File.getName():java.lang.String" resolveInfo="getName" />
                                   </node>
                                 </node>
-                              </node>
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203606451489">
-                                <link role="variableDeclaration" targetNodeId="1203606226893" resolveInfo="result" />
                               </node>
                             </node>
                           </node>
@@ -492,7 +492,10 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204633664490">
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204633664491">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204633709499">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204633709500">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205835512167">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204633709505">
+                            <link role="variableDeclaration" targetNodeId="1203607751022" resolveInfo="result" />
+                          </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1204633709501">
                             <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204633709502">
                               <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1204633709503">
@@ -502,9 +505,6 @@
                                 <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
                               </node>
                             </node>
-                          </node>
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204633709505">
-                            <link role="variableDeclaration" targetNodeId="1203607751022" resolveInfo="result" />
                           </node>
                         </node>
                       </node>
