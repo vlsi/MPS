@@ -86,7 +86,7 @@ public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Node_ReplaceWithAnotherOperation_Editor.setupBasic_ParameterCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Node_ReplaceWithAnotherOperation_Editor.setupLabel_ParameterCell((EditorCell_Label)editorCell, node, context);
+      Node_ReplaceWithAnotherOperation_Editor.setupLabel_ParameterCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

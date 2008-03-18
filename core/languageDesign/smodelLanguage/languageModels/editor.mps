@@ -2527,5 +2527,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1205861795290">
+    <property name="package" value="operation.node" />
+    <link role="conceptDeclaration" targetNodeId="1.1205861725686" resolveInfo="Node_IsAttributeOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205861801901">
+      <property name="text" value="isAttribute" />
+    </node>
+  </node>
 </model>
 

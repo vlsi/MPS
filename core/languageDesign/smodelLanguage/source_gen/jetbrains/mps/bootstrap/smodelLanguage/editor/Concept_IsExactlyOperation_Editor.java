@@ -108,7 +108,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Concept_IsExactlyOperation_Editor.setupBasic_ConceptDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Concept_IsExactlyOperation_Editor.setupLabel_ConceptDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      Concept_IsExactlyOperation_Editor.setupLabel_ConceptDeclarationReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -161,7 +161,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       Concept_IsExactlyOperation_Editor._Inline23.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Concept_IsExactlyOperation_Editor._Inline23.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        Concept_IsExactlyOperation_Editor._Inline23.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

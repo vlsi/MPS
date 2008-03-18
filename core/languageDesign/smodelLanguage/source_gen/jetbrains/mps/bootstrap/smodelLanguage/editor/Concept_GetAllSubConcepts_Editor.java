@@ -121,7 +121,7 @@ public class Concept_GetAllSubConcepts_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Concept_GetAllSubConcepts_Editor.setupBasic_SmodelCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Concept_GetAllSubConcepts_Editor.setupLabel_SmodelCell((EditorCell_Label)editorCell, node, context);
+      Concept_GetAllSubConcepts_Editor.setupLabel_SmodelCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -150,7 +150,7 @@ public class Concept_GetAllSubConcepts_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Concept_GetAllSubConcepts_Editor.setupBasic_ScopeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Concept_GetAllSubConcepts_Editor.setupLabel_ScopeCell((EditorCell_Label)editorCell, node, context);
+      Concept_GetAllSubConcepts_Editor.setupLabel_ScopeCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

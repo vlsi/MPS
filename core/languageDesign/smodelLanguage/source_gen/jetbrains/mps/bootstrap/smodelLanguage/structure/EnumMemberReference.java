@@ -18,7 +18,7 @@ public class EnumMemberReference extends Expression {
   }
 
   public static EnumMemberReference newInstance(SModel sm, boolean init) {
-    return (EnumMemberReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((EnumMemberReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static EnumMemberReference newInstance(SModel sm) {
@@ -27,7 +27,7 @@ public class EnumMemberReference extends Expression {
 
 
   public EnumerationMemberDeclaration getEnumMember() {
-    return (EnumerationMemberDeclaration)this.getReferent(EnumMemberReference.ENUM_MEMBER);
+    return ((EnumerationMemberDeclaration)this.getReferent(EnumMemberReference.ENUM_MEMBER));
   }
 
   public void setEnumMember(EnumerationMemberDeclaration node) {

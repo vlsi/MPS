@@ -19,7 +19,7 @@ public class Node_IsRoleOperation extends SNodeOperation {
   }
 
   public static Node_IsRoleOperation newInstance(SModel sm, boolean init) {
-    return (Node_IsRoleOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsRoleOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((Node_IsRoleOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsRoleOperation", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static Node_IsRoleOperation newInstance(SModel sm) {
@@ -28,7 +28,7 @@ public class Node_IsRoleOperation extends SNodeOperation {
 
 
   public AbstractConceptDeclaration getConceptOfParent() {
-    return (AbstractConceptDeclaration)this.getReferent(Node_IsRoleOperation.CONCEPT_OF_PARENT);
+    return ((AbstractConceptDeclaration)this.getReferent(Node_IsRoleOperation.CONCEPT_OF_PARENT));
   }
 
   public void setConceptOfParent(AbstractConceptDeclaration node) {
@@ -36,7 +36,7 @@ public class Node_IsRoleOperation extends SNodeOperation {
   }
 
   public LinkDeclaration getLinkInParent() {
-    return (LinkDeclaration)this.getReferent(Node_IsRoleOperation.LINK_IN_PARENT);
+    return ((LinkDeclaration)this.getReferent(Node_IsRoleOperation.LINK_IN_PARENT));
   }
 
   public void setLinkInParent(LinkDeclaration node) {

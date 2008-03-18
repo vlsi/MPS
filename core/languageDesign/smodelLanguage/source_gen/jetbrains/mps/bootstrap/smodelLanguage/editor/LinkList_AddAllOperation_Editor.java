@@ -86,7 +86,7 @@ public class LinkList_AddAllOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     LinkList_AddAllOperation_Editor.setupBasic_ParameterCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      LinkList_AddAllOperation_Editor.setupLabel_ParameterCell((EditorCell_Label)editorCell, node, context);
+      LinkList_AddAllOperation_Editor.setupLabel_ParameterCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

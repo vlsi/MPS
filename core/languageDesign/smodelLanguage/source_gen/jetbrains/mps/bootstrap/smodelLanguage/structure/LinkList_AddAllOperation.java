@@ -17,7 +17,7 @@ public class LinkList_AddAllOperation extends SNodeOperation {
   }
 
   public static LinkList_AddAllOperation newInstance(SModel sm, boolean init) {
-    return (LinkList_AddAllOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddAllOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((LinkList_AddAllOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddAllOperation", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static LinkList_AddAllOperation newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class LinkList_AddAllOperation extends SNodeOperation {
 
 
   public Expression getParameter() {
-    return (Expression)this.getChild(LinkList_AddAllOperation.PARAMETER);
+    return ((Expression)this.getChild(LinkList_AddAllOperation.PARAMETER));
   }
 
   public void setParameter(Expression node) {

@@ -33,7 +33,7 @@ public class AllAttributesQualifier_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     AllAttributesQualifier_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      AllAttributesQualifier_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
+      AllAttributesQualifier_Editor.setupLabel_CellModel_ConceptProperty(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

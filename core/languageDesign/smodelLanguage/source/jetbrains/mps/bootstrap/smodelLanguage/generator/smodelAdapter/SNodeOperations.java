@@ -424,7 +424,12 @@ public class SNodeOperations {
   }
 
   public static List<SNode> getAllAttributes(SNode node) {
-    if(node == null) return new ArrayList<SNode>();
+    if (node == null) return new ArrayList<SNode>();
     return node.getAllAttributes();
+  }
+
+  public static boolean isAttribute(SNode node) {
+    if (node == null) return false;
+    return node.isAttribute();
   }
 }

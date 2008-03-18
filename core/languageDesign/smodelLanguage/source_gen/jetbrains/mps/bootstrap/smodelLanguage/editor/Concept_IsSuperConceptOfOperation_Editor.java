@@ -106,7 +106,7 @@ public class Concept_IsSuperConceptOfOperation_Editor extends DefaultNodeEditor 
     EditorCell editorCell = provider.createEditorCell(context);
     Concept_IsSuperConceptOfOperation_Editor.setupBasic_ConceptArgumentCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Concept_IsSuperConceptOfOperation_Editor.setupLabel_ConceptArgumentCell((EditorCell_Label)editorCell, node, context);
+      Concept_IsSuperConceptOfOperation_Editor.setupLabel_ConceptArgumentCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

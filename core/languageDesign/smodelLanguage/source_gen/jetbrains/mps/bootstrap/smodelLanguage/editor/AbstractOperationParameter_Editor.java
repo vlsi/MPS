@@ -35,7 +35,7 @@ public class AbstractOperationParameter_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     AbstractOperationParameter_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      AbstractOperationParameter_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
+      AbstractOperationParameter_Editor.setupLabel_CellModel_ConceptProperty(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

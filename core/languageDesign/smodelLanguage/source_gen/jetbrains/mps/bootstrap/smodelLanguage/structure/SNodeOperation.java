@@ -23,23 +23,43 @@ public class SNodeOperation extends BaseConcept implements IOperation {
   public static String CPR_Applicable_to_concept = "applicable_to_concept";
   public static String CLNK_ApplicableParameter = "applicableParameter";
   public static String CLNK_ReturnType = "returnType";
+  public static String PARAMETER = "parameter";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String PARAMETER = "parameter";
 
   public  SNodeOperation(SNode node) {
     super(node);
   }
 
   public static SNodeOperation newInstance(SModel sm, boolean init) {
-    return (SNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((SNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static SNodeOperation newInstance(SModel sm) {
     return SNodeOperation.newInstance(sm, false);
   }
 
+
+  public int getParametersCount() {
+    return this.getChildCount(SNodeOperation.PARAMETER);
+  }
+
+  public Iterator<AbstractOperationParameter> parameters() {
+    return this.children(SNodeOperation.PARAMETER);
+  }
+
+  public List<AbstractOperationParameter> getParameters() {
+    return this.getChildren(SNodeOperation.PARAMETER);
+  }
+
+  public void addParameter(AbstractOperationParameter node) {
+    this.addChild(SNodeOperation.PARAMETER, node);
+  }
+
+  public void insertParameter(AbstractOperationParameter prev, AbstractOperationParameter node) {
+    this.insertChild(prev, SNodeOperation.PARAMETER, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(SNodeOperation.SHORT_DESCRIPTION);
@@ -63,26 +83,6 @@ public class SNodeOperation extends BaseConcept implements IOperation {
 
   public void setVirtualPackage(String value) {
     this.setProperty(SNodeOperation.VIRTUAL_PACKAGE, value);
-  }
-
-  public int getParametersCount() {
-    return this.getChildCount(SNodeOperation.PARAMETER);
-  }
-
-  public Iterator<AbstractOperationParameter> parameters() {
-    return this.children(SNodeOperation.PARAMETER);
-  }
-
-  public List<AbstractOperationParameter> getParameters() {
-    return this.getChildren(SNodeOperation.PARAMETER);
-  }
-
-  public void addParameter(AbstractOperationParameter node) {
-    this.addChild(SNodeOperation.PARAMETER, node);
-  }
-
-  public void insertParameter(AbstractOperationParameter prev, AbstractOperationParameter node) {
-    this.insertChild(prev, SNodeOperation.PARAMETER, node);
   }
 
 }

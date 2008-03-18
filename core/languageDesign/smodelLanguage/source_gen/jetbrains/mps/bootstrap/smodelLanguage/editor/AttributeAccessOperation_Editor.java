@@ -66,7 +66,7 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     AttributeAccessOperation_Editor.setupBasic_AttributeQualifierCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      AttributeAccessOperation_Editor.setupLabel_AttributeQualifierCell((EditorCell_Label)editorCell, node, context);
+      AttributeAccessOperation_Editor.setupLabel_AttributeQualifierCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

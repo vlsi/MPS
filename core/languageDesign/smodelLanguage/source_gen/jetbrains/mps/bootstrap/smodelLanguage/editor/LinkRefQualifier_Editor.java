@@ -34,7 +34,7 @@ public class LinkRefQualifier_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     LinkRefQualifier_Editor.setupBasic_LinkReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      LinkRefQualifier_Editor.setupLabel_LinkReferenceCell((EditorCell_Label)editorCell, node, context);
+      LinkRefQualifier_Editor.setupLabel_LinkReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -86,7 +86,7 @@ public class LinkRefQualifier_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       LinkRefQualifier_Editor._Inline36.setupBasic_RoleCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        LinkRefQualifier_Editor._Inline36.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
+        LinkRefQualifier_Editor._Inline36.setupLabel_RoleCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

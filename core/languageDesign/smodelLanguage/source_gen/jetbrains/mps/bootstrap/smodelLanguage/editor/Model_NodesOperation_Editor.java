@@ -89,7 +89,7 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Model_NodesOperation_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Model_NodesOperation_Editor.setupLabel_ConceptReferenceCell((EditorCell_Label)editorCell, node, context);
+      Model_NodesOperation_Editor.setupLabel_ConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -142,7 +142,7 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       Model_NodesOperation_Editor._Inline21.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Model_NodesOperation_Editor._Inline21.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        Model_NodesOperation_Editor._Inline21.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

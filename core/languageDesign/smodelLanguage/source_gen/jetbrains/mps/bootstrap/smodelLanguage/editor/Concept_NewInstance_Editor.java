@@ -103,7 +103,7 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Concept_NewInstance_Editor.setupBasic_PrototypeNodeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Concept_NewInstance_Editor.setupLabel_PrototypeNodeCell((EditorCell_Label)editorCell, node, context);
+      Concept_NewInstance_Editor.setupLabel_PrototypeNodeCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

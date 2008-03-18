@@ -11,18 +11,18 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclara
 
 public class PropertyAttributeAccessQualifier extends BaseConcept implements IAttributeAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier";
-  public static String ANNOTATION_LINK = "annotationLink";
+  public static String PROPERTY_QUALIFIER = "propertyQualifier";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String PROPERTY_QUALIFIER = "propertyQualifier";
+  public static String ANNOTATION_LINK = "annotationLink";
 
   public  PropertyAttributeAccessQualifier(SNode node) {
     super(node);
   }
 
   public static PropertyAttributeAccessQualifier newInstance(SModel sm, boolean init) {
-    return (PropertyAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((PropertyAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static PropertyAttributeAccessQualifier newInstance(SModel sm) {
@@ -30,12 +30,12 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
   }
 
 
-  public AnnotationLinkDeclaration getAnnotationLink() {
-    return (AnnotationLinkDeclaration)this.getReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK);
+  public IPropertyAccessQualifier getPropertyQualifier() {
+    return ((IPropertyAccessQualifier)this.getChild(PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER));
   }
 
-  public void setAnnotationLink(AnnotationLinkDeclaration node) {
-    super.setReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK, node);
+  public void setPropertyQualifier(IPropertyAccessQualifier node) {
+    super.setChild(PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER, node);
   }
 
   public String getShortDescription() {
@@ -62,12 +62,12 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
     this.setProperty(PropertyAttributeAccessQualifier.VIRTUAL_PACKAGE, value);
   }
 
-  public IPropertyAccessQualifier getPropertyQualifier() {
-    return (IPropertyAccessQualifier)this.getChild(PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER);
+  public AnnotationLinkDeclaration getAnnotationLink() {
+    return ((AnnotationLinkDeclaration)this.getReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK));
   }
 
-  public void setPropertyQualifier(IPropertyAccessQualifier node) {
-    super.setChild(PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER, node);
+  public void setAnnotationLink(AnnotationLinkDeclaration node) {
+    super.setReferent(PropertyAttributeAccessQualifier.ANNOTATION_LINK, node);
   }
 
 }

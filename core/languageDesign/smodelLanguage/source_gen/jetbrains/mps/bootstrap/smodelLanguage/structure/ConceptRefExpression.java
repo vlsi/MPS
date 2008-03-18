@@ -18,7 +18,7 @@ public class ConceptRefExpression extends Expression {
   }
 
   public static ConceptRefExpression newInstance(SModel sm, boolean init) {
-    return (ConceptRefExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((ConceptRefExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static ConceptRefExpression newInstance(SModel sm) {
@@ -27,7 +27,7 @@ public class ConceptRefExpression extends Expression {
 
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(ConceptRefExpression.CONCEPT_DECLARATION);
+    return ((AbstractConceptDeclaration)this.getReferent(ConceptRefExpression.CONCEPT_DECLARATION));
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {

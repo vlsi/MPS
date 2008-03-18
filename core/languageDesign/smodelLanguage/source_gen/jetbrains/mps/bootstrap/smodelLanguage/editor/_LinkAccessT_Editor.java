@@ -130,7 +130,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     _LinkAccessT_Editor.setupBasic_TargetConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      _LinkAccessT_Editor.setupLabel_TargetConceptReferenceCell((EditorCell_Label)editorCell, node, context);
+      _LinkAccessT_Editor.setupLabel_TargetConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -159,7 +159,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     _LinkAccessT_Editor.setupBasic_SingularCradinalityCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      _LinkAccessT_Editor.setupLabel_SingularCradinalityCell((EditorCell_Label)editorCell, node, context);
+      _LinkAccessT_Editor.setupLabel_SingularCradinalityCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -188,7 +188,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     _LinkAccessT_Editor.setupBasic_AggregationCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      _LinkAccessT_Editor.setupLabel_AggregationCell((EditorCell_Label)editorCell, node, context);
+      _LinkAccessT_Editor.setupLabel_AggregationCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -239,7 +239,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       _LinkAccessT_Editor._Inline37.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        _LinkAccessT_Editor._Inline37.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        _LinkAccessT_Editor._Inline37.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

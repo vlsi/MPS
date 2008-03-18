@@ -91,7 +91,7 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     LinkAttributeAccessQualifier_Editor.setupBasic_AnnotationLinkReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      LinkAttributeAccessQualifier_Editor.setupLabel_AnnotationLinkReferenceCell((EditorCell_Label)editorCell, node, context);
+      LinkAttributeAccessQualifier_Editor.setupLabel_AnnotationLinkReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -120,7 +120,7 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     LinkAttributeAccessQualifier_Editor.setupBasic_LinkQualifierCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      LinkAttributeAccessQualifier_Editor.setupLabel_LinkQualifierCell((EditorCell_Label)editorCell, node, context);
+      LinkAttributeAccessQualifier_Editor.setupLabel_LinkQualifierCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -171,7 +171,7 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       LinkAttributeAccessQualifier_Editor._Inline35.setupBasic_RoleCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        LinkAttributeAccessQualifier_Editor._Inline35.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
+        LinkAttributeAccessQualifier_Editor._Inline35.setupLabel_RoleCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

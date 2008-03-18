@@ -86,7 +86,7 @@ public class Property_HasValue_Enum_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Property_HasValue_Enum_Editor.setupBasic_ValueCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Property_HasValue_Enum_Editor.setupLabel_ValueCell((EditorCell_Label)editorCell, node, context);
+      Property_HasValue_Enum_Editor.setupLabel_ValueCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

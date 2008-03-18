@@ -19,13 +19,13 @@ public class Styles_StyleSheet {
     public void apply(EditorCell cell, boolean recurive) {
       cell.setFontType(MPSFonts.ITALIC);
       if(cell instanceof EditorCell_Label) {
-        EditorCell_Label labelCell = (EditorCell_Label)cell;
+        EditorCell_Label labelCell = ((EditorCell_Label)cell);
         Color color = Styles_StyleSheet.calculateColor(cell);
         labelCell.getTextLine().setTextColor(color);
       }
       if(recurive) {
         if(cell instanceof EditorCell_Collection) {
-          EditorCell_Collection collection = (EditorCell_Collection)cell;
+          EditorCell_Collection collection = ((EditorCell_Collection)cell);
           for(EditorCell child : collection) {
             if(child.getSNode().isAttribute()) {
               this.skipAttributePart(child);
@@ -40,7 +40,7 @@ public class Styles_StyleSheet {
 
     private void skipAttributePart(EditorCell current) {
       if(current instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection)current;
+        EditorCell_Collection collection = ((EditorCell_Collection)current);
         for(EditorCell child : collection) {
           if(child.getSNode() == current.getSNode().getParent()) {
             this.apply(child, true);

@@ -110,7 +110,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     SNodeListType_Editor.setupBasic_ElementConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      SNodeListType_Editor.setupLabel_ElementConceptReferenceCell((EditorCell_Label)editorCell, node, context);
+      SNodeListType_Editor.setupLabel_ElementConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -163,7 +163,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       SNodeListType_Editor._Inline14.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SNodeListType_Editor._Inline14.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        SNodeListType_Editor._Inline14.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

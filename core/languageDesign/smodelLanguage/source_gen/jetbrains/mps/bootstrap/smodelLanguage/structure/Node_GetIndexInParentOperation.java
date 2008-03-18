@@ -15,7 +15,7 @@ public class Node_GetIndexInParentOperation extends SNodeOperation {
   }
 
   public static Node_GetIndexInParentOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetIndexInParentOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetIndexInParentOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((Node_GetIndexInParentOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetIndexInParentOperation", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static Node_GetIndexInParentOperation newInstance(SModel sm) {

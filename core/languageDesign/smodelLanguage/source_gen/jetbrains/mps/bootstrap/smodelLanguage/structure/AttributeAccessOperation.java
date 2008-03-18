@@ -10,23 +10,31 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AttributeAccessOperation extends SNodeOperation implements IOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation";
+  public static String ATTRIBUTE_QUALIFIER = "attributeQualifier";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ATTRIBUTE_QUALIFIER = "attributeQualifier";
 
   public  AttributeAccessOperation(SNode node) {
     super(node);
   }
 
   public static AttributeAccessOperation newInstance(SModel sm, boolean init) {
-    return (AttributeAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((AttributeAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static AttributeAccessOperation newInstance(SModel sm) {
     return AttributeAccessOperation.newInstance(sm, false);
   }
 
+
+  public IAttributeAccessQualifier getAttributeQualifier() {
+    return ((IAttributeAccessQualifier)this.getChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER));
+  }
+
+  public void setAttributeQualifier(IAttributeAccessQualifier node) {
+    super.setChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(AttributeAccessOperation.SHORT_DESCRIPTION);
@@ -50,14 +58,6 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
 
   public void setVirtualPackage(String value) {
     this.setProperty(AttributeAccessOperation.VIRTUAL_PACKAGE, value);
-  }
-
-  public IAttributeAccessQualifier getAttributeQualifier() {
-    return (IAttributeAccessQualifier)this.getChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER);
-  }
-
-  public void setAttributeQualifier(IAttributeAccessQualifier node) {
-    super.setChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER, node);
   }
 
 }

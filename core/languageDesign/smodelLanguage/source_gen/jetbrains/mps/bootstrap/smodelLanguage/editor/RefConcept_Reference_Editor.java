@@ -35,7 +35,7 @@ public class RefConcept_Reference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     RefConcept_Reference_Editor.setupBasic_ConceptDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      RefConcept_Reference_Editor.setupLabel_ConceptDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      RefConcept_Reference_Editor.setupLabel_ConceptDeclarationReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -87,7 +87,7 @@ public class RefConcept_Reference_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       RefConcept_Reference_Editor._Inline27.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        RefConcept_Reference_Editor._Inline27.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        RefConcept_Reference_Editor._Inline27.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
