@@ -16,7 +16,7 @@ public class Concept_IsSuperConceptOfOperation extends SNodeOperation {
   }
 
   public static Concept_IsSuperConceptOfOperation newInstance(SModel sm, boolean init) {
-    return ((Concept_IsSuperConceptOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (Concept_IsSuperConceptOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Concept_IsSuperConceptOfOperation newInstance(SModel sm) {
@@ -25,7 +25,7 @@ public class Concept_IsSuperConceptOfOperation extends SNodeOperation {
 
 
   public RefConcept_Abstract getConceptArgument() {
-    return ((RefConcept_Abstract)this.getChild(Concept_IsSuperConceptOfOperation.CONCEPT_ARGUMENT));
+    return (RefConcept_Abstract)this.getChild(Concept_IsSuperConceptOfOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(RefConcept_Abstract node) {

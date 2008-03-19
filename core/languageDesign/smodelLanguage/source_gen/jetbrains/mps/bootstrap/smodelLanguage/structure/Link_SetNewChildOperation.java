@@ -17,7 +17,7 @@ public class Link_SetNewChildOperation extends SNodeOperation {
   }
 
   public static Link_SetNewChildOperation newInstance(SModel sm, boolean init) {
-    return ((Link_SetNewChildOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (Link_SetNewChildOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Link_SetNewChildOperation newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class Link_SetNewChildOperation extends SNodeOperation {
 
 
   public ConceptDeclaration getConcept() {
-    return ((ConceptDeclaration)this.getReferent(Link_SetNewChildOperation.CONCEPT));
+    return (ConceptDeclaration)this.getReferent(Link_SetNewChildOperation.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {

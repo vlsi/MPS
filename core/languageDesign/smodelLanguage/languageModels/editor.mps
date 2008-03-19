@@ -783,7 +783,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1143226143282">
       <property name="editable" value="true" />
       <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="smodel" />
+      <property name="text" value="model" />
       <property name="fontStyle" value="BOLD" />
       <property name="drawBorder" value="false" />
     </node>
@@ -995,7 +995,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1145383245680">
         <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
-        <property name="text" value="snodes" />
+        <property name="text" value="nlist" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
       </node>
@@ -1831,7 +1831,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1180481149412">
         <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
-        <property name="text" value="sconcept" />
+        <property name="text" value="concept" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
       </node>

@@ -26,7 +26,7 @@ public class SModelType_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "smodel");
+    return this.createConstantCell(context, node, "model");
   }
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

@@ -18,7 +18,7 @@ public class Node_IsInstanceOfOperation extends SNodeOperation {
   }
 
   public static Node_IsInstanceOfOperation newInstance(SModel sm, boolean init) {
-    return ((Node_IsInstanceOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (Node_IsInstanceOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_IsInstanceOfOperation newInstance(SModel sm) {
@@ -27,7 +27,7 @@ public class Node_IsInstanceOfOperation extends SNodeOperation {
 
 
   public RefConcept_Abstract getConceptArgument() {
-    return ((RefConcept_Abstract)this.getChild(Node_IsInstanceOfOperation.CONCEPT_ARGUMENT));
+    return (RefConcept_Abstract)this.getChild(Node_IsInstanceOfOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(RefConcept_Abstract node) {
@@ -35,7 +35,7 @@ public class Node_IsInstanceOfOperation extends SNodeOperation {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return ((AbstractConceptDeclaration)this.getReferent(Node_IsInstanceOfOperation.CONCEPT));
+    return (AbstractConceptDeclaration)this.getReferent(Node_IsInstanceOfOperation.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {

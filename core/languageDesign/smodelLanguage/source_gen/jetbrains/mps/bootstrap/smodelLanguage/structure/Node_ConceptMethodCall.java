@@ -21,7 +21,7 @@ public class Node_ConceptMethodCall extends SNodeOperation {
   }
 
   public static Node_ConceptMethodCall newInstance(SModel sm, boolean init) {
-    return ((Node_ConceptMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (Node_ConceptMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_ConceptMethodCall newInstance(SModel sm) {
@@ -50,7 +50,7 @@ public class Node_ConceptMethodCall extends SNodeOperation {
   }
 
   public ConceptMethodDeclaration getConceptMethodDeclaration() {
-    return ((ConceptMethodDeclaration)this.getReferent(Node_ConceptMethodCall.CONCEPT_METHOD_DECLARATION));
+    return (ConceptMethodDeclaration)this.getReferent(Node_ConceptMethodCall.CONCEPT_METHOD_DECLARATION);
   }
 
   public void setConceptMethodDeclaration(ConceptMethodDeclaration node) {

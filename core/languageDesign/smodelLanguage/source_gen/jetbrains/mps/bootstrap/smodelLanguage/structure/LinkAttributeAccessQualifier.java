@@ -12,17 +12,17 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclara
 public class LinkAttributeAccessQualifier extends BaseConcept implements IAttributeAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier";
   public static String LINK_QUALIFIER = "linkQualifier";
+  public static String ANNOTATION_LINK = "annotationLink";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ANNOTATION_LINK = "annotationLink";
 
   public  LinkAttributeAccessQualifier(SNode node) {
     super(node);
   }
 
   public static LinkAttributeAccessQualifier newInstance(SModel sm, boolean init) {
-    return ((LinkAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (LinkAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkAttributeAccessQualifier newInstance(SModel sm) {
@@ -31,11 +31,19 @@ public class LinkAttributeAccessQualifier extends BaseConcept implements IAttrib
 
 
   public ILinkAccessQualifier getLinkQualifier() {
-    return ((ILinkAccessQualifier)this.getChild(LinkAttributeAccessQualifier.LINK_QUALIFIER));
+    return (ILinkAccessQualifier)this.getChild(LinkAttributeAccessQualifier.LINK_QUALIFIER);
   }
 
   public void setLinkQualifier(ILinkAccessQualifier node) {
     super.setChild(LinkAttributeAccessQualifier.LINK_QUALIFIER, node);
+  }
+
+  public AnnotationLinkDeclaration getAnnotationLink() {
+    return (AnnotationLinkDeclaration)this.getReferent(LinkAttributeAccessQualifier.ANNOTATION_LINK);
+  }
+
+  public void setAnnotationLink(AnnotationLinkDeclaration node) {
+    super.setReferent(LinkAttributeAccessQualifier.ANNOTATION_LINK, node);
   }
 
   public String getShortDescription() {
@@ -60,14 +68,6 @@ public class LinkAttributeAccessQualifier extends BaseConcept implements IAttrib
 
   public void setVirtualPackage(String value) {
     this.setProperty(LinkAttributeAccessQualifier.VIRTUAL_PACKAGE, value);
-  }
-
-  public AnnotationLinkDeclaration getAnnotationLink() {
-    return ((AnnotationLinkDeclaration)this.getReferent(LinkAttributeAccessQualifier.ANNOTATION_LINK));
-  }
-
-  public void setAnnotationLink(AnnotationLinkDeclaration node) {
-    super.setReferent(LinkAttributeAccessQualifier.ANNOTATION_LINK, node);
   }
 
 }

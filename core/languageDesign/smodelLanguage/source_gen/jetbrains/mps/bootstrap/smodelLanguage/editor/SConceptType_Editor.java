@@ -73,7 +73,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "sconcept"));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "concept"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "<"));
     editorCell.addEditorCell(this.createConceptDeclaratonReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ">"));

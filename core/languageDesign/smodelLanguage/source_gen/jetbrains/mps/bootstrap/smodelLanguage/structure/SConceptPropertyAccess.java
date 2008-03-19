@@ -17,7 +17,7 @@ public class SConceptPropertyAccess extends SNodeOperation {
   }
 
   public static SConceptPropertyAccess newInstance(SModel sm, boolean init) {
-    return ((SConceptPropertyAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (SConceptPropertyAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SConceptPropertyAccess newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class SConceptPropertyAccess extends SNodeOperation {
 
 
   public ConceptPropertyDeclaration getConceptProperty() {
-    return ((ConceptPropertyDeclaration)this.getReferent(SConceptPropertyAccess.CONCEPT_PROPERTY));
+    return (ConceptPropertyDeclaration)this.getReferent(SConceptPropertyAccess.CONCEPT_PROPERTY);
   }
 
   public void setConceptProperty(ConceptPropertyDeclaration node) {

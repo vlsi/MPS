@@ -17,7 +17,7 @@ public class SLinkAccess extends SNodeOperation {
   }
 
   public static SLinkAccess newInstance(SModel sm, boolean init) {
-    return ((SLinkAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (SLinkAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SLinkAccess newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class SLinkAccess extends SNodeOperation {
 
 
   public LinkDeclaration getLink() {
-    return ((LinkDeclaration)this.getReferent(SLinkAccess.LINK));
+    return (LinkDeclaration)this.getReferent(SLinkAccess.LINK);
   }
 
   public void setLink(LinkDeclaration node) {

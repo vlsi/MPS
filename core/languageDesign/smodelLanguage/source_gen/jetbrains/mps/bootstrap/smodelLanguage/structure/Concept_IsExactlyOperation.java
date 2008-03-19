@@ -17,7 +17,7 @@ public class Concept_IsExactlyOperation extends SNodeOperation {
   }
 
   public static Concept_IsExactlyOperation newInstance(SModel sm, boolean init) {
-    return ((Concept_IsExactlyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (Concept_IsExactlyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Concept_IsExactlyOperation newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class Concept_IsExactlyOperation extends SNodeOperation {
 
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return ((AbstractConceptDeclaration)this.getReferent(Concept_IsExactlyOperation.CONCEPT_DECLARATION));
+    return (AbstractConceptDeclaration)this.getReferent(Concept_IsExactlyOperation.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {

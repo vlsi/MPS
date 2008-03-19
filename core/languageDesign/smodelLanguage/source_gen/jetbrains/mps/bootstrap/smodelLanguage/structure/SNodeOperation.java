@@ -33,7 +33,7 @@ public class SNodeOperation extends BaseConcept implements IOperation {
   }
 
   public static SNodeOperation newInstance(SModel sm, boolean init) {
-    return ((SNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (SNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SNodeOperation newInstance(SModel sm) {

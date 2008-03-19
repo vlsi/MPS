@@ -19,7 +19,7 @@ public class SNodeTypeCastExpression extends Expression {
   }
 
   public static SNodeTypeCastExpression newInstance(SModel sm, boolean init) {
-    return ((SNodeTypeCastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (SNodeTypeCastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SNodeTypeCastExpression newInstance(SModel sm) {
@@ -28,7 +28,7 @@ public class SNodeTypeCastExpression extends Expression {
 
 
   public Expression getLeftExpression() {
-    return ((Expression)this.getChild(SNodeTypeCastExpression.LEFT_EXPRESSION));
+    return (Expression)this.getChild(SNodeTypeCastExpression.LEFT_EXPRESSION);
   }
 
   public void setLeftExpression(Expression node) {
@@ -36,7 +36,7 @@ public class SNodeTypeCastExpression extends Expression {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return ((AbstractConceptDeclaration)this.getReferent(SNodeTypeCastExpression.CONCEPT));
+    return (AbstractConceptDeclaration)this.getReferent(SNodeTypeCastExpression.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {

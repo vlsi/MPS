@@ -18,7 +18,7 @@ public class SConceptType extends Type {
   }
 
   public static SConceptType newInstance(SModel sm, boolean init) {
-    return ((SConceptType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (SConceptType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SConceptType newInstance(SModel sm) {
@@ -27,7 +27,7 @@ public class SConceptType extends Type {
 
 
   public AbstractConceptDeclaration getConceptDeclaraton() {
-    return ((AbstractConceptDeclaration)this.getReferent(SConceptType.CONCEPT_DECLARATON));
+    return (AbstractConceptDeclaration)this.getReferent(SConceptType.CONCEPT_DECLARATON);
   }
 
   public void setConceptDeclaraton(AbstractConceptDeclaration node) {

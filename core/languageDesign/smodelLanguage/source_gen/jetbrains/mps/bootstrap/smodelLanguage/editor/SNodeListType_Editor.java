@@ -73,7 +73,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "snodes"));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "nlist"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "<"));
     editorCell.addEditorCell(this.createElementConceptReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ">"));

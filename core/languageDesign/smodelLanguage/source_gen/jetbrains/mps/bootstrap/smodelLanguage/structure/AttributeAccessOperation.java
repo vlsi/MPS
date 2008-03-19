@@ -20,7 +20,7 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
   }
 
   public static AttributeAccessOperation newInstance(SModel sm, boolean init) {
-    return ((AttributeAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (AttributeAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttributeAccessOperation newInstance(SModel sm) {
@@ -29,7 +29,7 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
 
 
   public IAttributeAccessQualifier getAttributeQualifier() {
-    return ((IAttributeAccessQualifier)this.getChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER));
+    return (IAttributeAccessQualifier)this.getChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER);
   }
 
   public void setAttributeQualifier(IAttributeAccessQualifier node) {
