@@ -725,6 +725,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205967649920">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205967674551">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205967661750">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205967649921">
+                <link role="variableDeclaration" targetNodeId="1205530364668" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205967663877">
+                <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1205967695584">
+                  <link role="annotationLink" targetNodeId="2.1149694466802" resolveInfo="propertyMacro" />
+                  <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier" id="1205967698460">
+                    <link role="property" targetNodeId="1.1156235010670" resolveInfo="alias" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1205967701165" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1205530364668">
         <property name="name" value="node" />

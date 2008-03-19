@@ -46,8 +46,8 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
       final SNode C_typevar_1204914077372 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204914077372), RulesUtil.get_inputNodeConcept(SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", false, false)), nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204914077373");
       {
-        final SNode _representatorVar8 = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204914077372);
-        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar8, new Runnable() {
+        final SNode _representatorVar9 = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204914077372);
+        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar9, new Runnable() {
 
           public void run() {
             SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1204914077372);

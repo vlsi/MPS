@@ -32,8 +32,8 @@ public class RulesUtil {
     final SNode LeftType_typevar_1186058295229 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058318393", false), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058309840");
     {
-      final SNode _representatorVar9 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar9, new Runnable() {
+      final SNode _representatorVar11 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar11, new Runnable() {
 
         public void run() {
           String applicableErrorString = "operation is not applicable to expression";
@@ -116,8 +116,8 @@ public class RulesUtil {
     final SNode LeftType_typevar_1205267224534 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267224534), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267224539", false), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267224535");
     {
-      final SNode _representatorVar10 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267224534);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar10, new Runnable() {
+      final SNode _representatorVar12 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267224534);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar12, new Runnable() {
 
         public void run() {
           boolean isGood = false;
@@ -155,8 +155,8 @@ public class RulesUtil {
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267007210), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267007215", false), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205267007211");
     final boolean[] ok = new boolean[1];
     {
-      final SNode _representatorVar11 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267007210);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar11, new Runnable() {
+      final SNode _representatorVar13 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1205267007210);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar13, new Runnable() {
 
         public void run() {
           boolean isGood = false;
@@ -219,7 +219,7 @@ public class RulesUtil {
     // todo: just compute type of the expression
     // now: the expression is expected to be SNodeOperationExpression with Link/LinkList access operation
     SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
-    if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
+    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
       return SLinkOperations.getTarget(SLinkOperations.getTarget(leftOperation, "link", false), "target", false);
     }
     if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
@@ -231,8 +231,8 @@ public class RulesUtil {
     final SNode LeftType_typevar_1186062031569 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205441980320", false), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205441963346");
     {
-      final SNode _representatorVar12 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar12, new Runnable() {
+      final SNode _representatorVar14 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar14, new Runnable() {
 
         public void run() {
           SNode conceptDeclaration = null;

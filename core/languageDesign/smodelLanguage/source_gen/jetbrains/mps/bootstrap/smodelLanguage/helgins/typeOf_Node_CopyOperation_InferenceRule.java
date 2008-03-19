@@ -5,7 +5,6 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Runtime {
@@ -15,7 +14,19 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
 
   public void applyRule(final SNode node) {
     RulesUtil.checkAppliedCorrectly_generic(node);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710439120", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperation_Behavior.call_getLeftExpression_1200920411564(node), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057852494", true), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710439118");
+    final SNode C_typevar_1205967749950 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1205967749950), RulesUtil.get_inputNodeConcept(node), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749951");
+    {
+      final SNode _representatorVar7 = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1205967749950);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar7, new Runnable() {
+
+        public void run() {
+          SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1205967749950);
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749966", true), new QuotationClass_83().createNode(inputNodeConcept), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749964");
+        }
+
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749957");
+    }
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057865109", true), new QuotationClass_52().createNode(), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057869956");
   }
 

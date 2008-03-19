@@ -5,9 +5,6 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,16 +15,15 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
 
   public void applyRule(final SNode node) {
     RulesUtil.checkAppliedCorrectly_generic(node);
-    final SNode LeftExprType_typevar_1186057669134 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperation_Behavior.call_getLeftExpression_1200920411564(node), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057669139", true), TypeChecker.getInstance().getEquationManager().getRepresentator(LeftExprType_typevar_1186057669134), SNodeOperation_Behavior.call_getLeftExpression_1200920411564(node), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057669135");
+    final SNode C_typevar_1205967245422 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1205967245422), RulesUtil.get_inputNodeConcept(node), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967245423");
     {
-      final SNode _representatorVar7 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftExprType_typevar_1186057669134);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar7, new Runnable() {
+      final SNode _representatorVar8 = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1205967245422);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar8, new Runnable() {
 
         public void run() {
-          SNode leftNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftExprType_typevar_1186057669134), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-          SNode leftNodeConcept = SLinkOperations.getTarget(leftNodeType, "concept", false);
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710468988", true), AbstractConceptDeclaration_Behavior.call_getAdapterType_1179511141975(leftNodeConcept), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710468986");
+          SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1205967245422);
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710468988", true), AbstractConceptDeclaration_Behavior.call_getAdapterType_1179511141975(inputNodeConcept), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710468986");
         }
 
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057669142");

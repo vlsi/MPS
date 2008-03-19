@@ -5,13 +5,14 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SLinkAccess_InferenceRule implements InferenceRule_Runtime {
@@ -20,27 +21,38 @@ public class typeof_SLinkAccess_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode op) {
-    RulesUtil.checkAppliedCorrectly_generic(op);
-    if((SLinkOperations.getTarget(op, "link", false) != null)) {
-      final SNode C_typevar_1186062441601 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062441601), RulesUtil.get_inputNodeConcept(op), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062452900");
-      {
-        final SNode _representatorVar2 = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062441601);
-        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar2, new Runnable() {
-
-          public void run() {
-            SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062441601);
-            List<LinkDeclaration> declaredLinks = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
-            SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
-            if(!(declaredLinks.contains(((LinkDeclaration)SNodeOperations.getAdapter(linkDecl))))) {
-              TypeChecker.getInstance().reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062499482");
-            }
-          }
-
-        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062479067");
-      }
+    SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
+    if(linkDecl == null) {
+      return;
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712059252", true), new QuotationClass_11().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "link", false), "target", false)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712059250");
+    // assign type
+    SNode T = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT", null);
+    SLinkOperations.setTarget(T, "targetConcept", SLinkOperations.getTarget(linkDecl, "target", false), false);
+    SPropertyOperations.set(T, "singularCradinality", "" + (SPropertyOperations.hasValue(linkDecl, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(linkDecl, "sourceCardinality", "0..1", "0..1")));
+    SPropertyOperations.set(T, "aggregation", "" + (SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", null)));
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205962193116", true), T, op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205962193114");
+    // ---
+    RulesUtil.checkAppliedCorrectly_generic(op);
+    final SNode C_typevar_1186062441601 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062441601), RulesUtil.get_inputNodeConcept(op), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062452900");
+    {
+      final SNode _representatorVar2 = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062441601);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar2, new Runnable() {
+
+        public void run() {
+          SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062441601);
+          List<LinkDeclaration> declaredLinks = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
+          SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
+          if(!(declaredLinks.contains(((LinkDeclaration)SNodeOperations.getAdapter(linkDecl))))) {
+            TypeChecker.getInstance().reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062499482");
+          }
+        }
+
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062479067");
+    }
+    /*
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712059252", true), new QuotationClass_11().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "link", false), "target", false)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712059250");
+    */
   }
 
   public String getApplicableConceptFQName() {

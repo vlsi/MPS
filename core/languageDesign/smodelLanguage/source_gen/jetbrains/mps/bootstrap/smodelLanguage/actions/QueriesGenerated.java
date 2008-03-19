@@ -466,10 +466,10 @@ public class QueriesGenerated {
             if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess")) {
               return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_concept_property"));
             }
-            if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
+            if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
               return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link"));
             }
-            if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
+            if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
               return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_linkList"));
             }
           }

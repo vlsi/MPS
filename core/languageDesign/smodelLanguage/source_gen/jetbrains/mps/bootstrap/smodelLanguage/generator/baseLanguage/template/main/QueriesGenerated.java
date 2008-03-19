@@ -191,12 +191,12 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1169056926467(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode link = SLinkOperations.getTarget(_context.getNode(), "link", false);
-    return SModelUtil_new.getGenuineLinkRole((((LinkDeclaration)SNodeOperations.getAdapter(link))));
+    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(link)));
   }
 
   public static Object propertyMacro_GetPropertyValue_1169057010209(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode link = SLinkOperations.getTarget(_context.getNode(), "link", false);
-    link = SModelUtil_new.getGenuineLinkDeclaration((((LinkDeclaration)SNodeOperations.getAdapter(link)))).getNode();
+    link = SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
     if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
       return "true";
     }
@@ -250,7 +250,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1170444136064(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SModelUtil_new.getGenuineLinkRole((((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getNode(), "linkInParent", false)))));
+    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getNode(), "linkInParent", false))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1170457795969(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -539,7 +539,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.get_SConceptPropertyAccess_GetMethod((((SConceptPropertyAccess)SNodeOperations.getAdapter(_context.getNode()))), _context.getGenerator().getScope());
+    return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getGenerator().getScope());
   }
 
   public static Object referenceMacro_GetReferent_1170386916206(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -548,11 +548,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170457360268(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.get_SPropertyAccess_simple_getterMethod((((SPropertyAccess)SNodeOperations.getAdapter(_context.getNode()))), _context.getGenerator().getScope());
+    return _QueriesUtil.get_SPropertyAccess_simple_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getGenerator().getScope());
   }
 
   public static Object referenceMacro_GetReferent_1170461142999(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod((((SPropertyAccess)SNodeOperations.getAdapter(_context.getNode()))), _context.getGenerator().getScope());
+    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getGenerator().getScope());
   }
 
   public static boolean ifMacro_Condition_1194958602508(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -579,8 +579,8 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1195247677817(final IOperationContext operationContext, final IfMacroContext _context) {
     // not NULL internal default value ?
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "property", false), "dataType", false);
-    EnumerationMemberDeclaration defaultMember_ = DataTypeUtil.getDefaultMember((((EnumerationDataTypeDeclaration)SNodeOperations.getAdapter(dataType))));
-    SNode defaultMember = ((SNode)defaultMember_.getNode());
+    EnumerationMemberDeclaration defaultMember_ = DataTypeUtil.getDefaultMember(((EnumerationDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
+    SNode defaultMember = (SNode)defaultMember_.getNode();
     return SPropertyOperations.getString(defaultMember, "internalValue") != null;
   }
 
@@ -1107,15 +1107,15 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1203118690610(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ((List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts((((Node_GetAncestorOperation)SNodeOperations.getAdapter(_context.getNode())))));
+    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetAncestorOperation)SNodeOperations.getAdapter(_context.getNode())));
   }
 
   public static List sourceNodesQuery_1203119702930(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ((List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts((((Node_GetAncestorsOperation)SNodeOperations.getAdapter(_context.getNode())))));
+    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetAncestorsOperation)SNodeOperations.getAdapter(_context.getNode())));
   }
 
   public static List sourceNodesQuery_1203457991461(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ((List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts((((Node_GetDescendantsOperation)SNodeOperations.getAdapter(_context.getNode())))));
+    return (List<SNode>)_QueriesUtil.getNodeOperation_ConceptList_concepts(((Node_GetDescendantsOperation)SNodeOperations.getAdapter(_context.getNode())));
   }
 
 }
