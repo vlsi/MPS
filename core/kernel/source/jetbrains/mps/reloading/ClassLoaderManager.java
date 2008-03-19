@@ -302,6 +302,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
       result.add(getWorkbenchClassPath());
     }
 
+    IClassPathItem svnClassPath = getSVNSupportClasspath();
+    if (svnClassPath != null) {
+      result.add(svnClassPath);
+    }
+
     return result;
   }
 
@@ -358,6 +363,18 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return null;
   }
 
+  private IClassPathItem getSVNSupportClasspath() {
+    String workbenchClasses = PathManager.getHomePath() + File.separator + "core"
+            + File.separator + "kernel"
+            + File.separator + "vcs"
+            + File.separator + "svn"
+            + File.separator + "classes";
+    if (new File(workbenchClasses).exists()) {
+      return new FileClassPathItem(workbenchClasses);
+    }
+
+    return null;
+  }
 
   private JarFileClassPathItem findBootstrapJarByName(String name) {
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {

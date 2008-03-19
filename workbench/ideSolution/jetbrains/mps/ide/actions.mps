@@ -524,6 +524,10 @@
       <link role="javaClass" targetNodeId="7.~ProjectSettingsAction" resolveInfo="ProjectSettingsAction" />
     </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981882013" />
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205936020383">
+      <link role="javaClass" targetNodeId="13.~MakeAllModulesAction" resolveInfo="MakeAllModulesAction" />
+    </node>
+    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1205936017756" />
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981905919">
       <link role="javaClass" targetNodeId="21.~ShowIdeHelpAction" resolveInfo="ShowIdeHelpAction" />
     </node>

@@ -6,6 +6,7 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.make.MakeScheduleBuilder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -268,6 +269,11 @@ public class ModuleMaker {
   }
 
   private boolean isUpToDate(IModule m) {
+    //don't compile generators and transient modules
+    if (!(m instanceof Solution) && !(m instanceof Language)) {
+      return true;
+    }
+
     if (m.isPackaged()) {
       return true;
     }
