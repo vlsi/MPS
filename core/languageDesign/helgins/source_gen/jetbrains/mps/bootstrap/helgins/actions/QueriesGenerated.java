@@ -97,7 +97,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1201875763403(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation", operationContext.getScope()));
+      ConceptDeclaration conceptToAdd = (((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation", operationContext.getScope())));
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
     }
@@ -107,7 +107,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1175609466956(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement", operationContext.getScope());
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -118,10 +118,10 @@ public class QueriesGenerated {
         }
 
       };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
+      Iterable<SNode> parameterObjects = ((Iterable<SNode>)calculable.calculate());
       assert parameterObjects != null;
       for(final SNode item : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        result.add(new AbstractRTransformHintSubstituteAction(item, _context.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null);
@@ -133,7 +133,11 @@ public class QueriesGenerated {
             SNode left = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", null);
             SLinkOperations.setTarget(left, "normalType", _context.getSourceNode(), true);
             SLinkOperations.setTarget(result, "leftExpression", left, true);
-            return SLinkOperations.getTarget(result, "rightExpression", true);
+            return result;
+          }
+
+          public SNode getOutputConcept() {
+            return concept.getNode();
           }
 
         });

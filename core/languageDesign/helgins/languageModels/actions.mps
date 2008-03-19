@@ -310,6 +310,7 @@
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068431790191" />
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1199876186454">
+        <link role="concept" targetNodeId="1.1174660718586" resolveInfo="AbstractEquationStatement" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart" id="1199876188033">
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1199876190492">
             <link role="conceptDeclaraton" targetNodeId="1.1174660718586" resolveInfo="AbstractEquationStatement" />
@@ -488,13 +489,8 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199876628269">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227845028">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199876630927">
-                    <link role="variableDeclaration" targetNodeId="1199876619384" resolveInfo="result" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1199876632947">
-                    <link role="link" targetNodeId="1.1174660783414" />
-                  </node>
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205928418407">
+                  <link role="variableDeclaration" targetNodeId="1199876619384" resolveInfo="result" />
                 </node>
               </node>
             </node>

@@ -34,7 +34,17 @@ public class NodePresentationUtil {
   }
 
   public static String matchingText(INodeAdapter nodeAdapter, boolean referent_presentation) {
+    return matchingText(nodeAdapter, referent_presentation, true);
+  }
+
+  public static String matchingText(INodeAdapter nodeAdapter, boolean referent_presentation, boolean debug) {
     // concept declaration : return either 'alias' or 'name'
+    if (debug) {
+      if ("AbstractEquationStatement".equals(matchingText(nodeAdapter, referent_presentation, false))) {
+        System.err.println("");
+      }
+    }
+
     if (nodeAdapter instanceof ConceptDeclaration) {
       if (!referent_presentation) {
         String alias = nodeAdapter.getConceptProperty("alias");
