@@ -6,4 +6,5 @@ import jetbrains.mps.core.structure.INamedConcept;
 
 public interface IMember extends INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.IMember";
+  public static String CLNK_OperationConcept = "operationConcept";
 }

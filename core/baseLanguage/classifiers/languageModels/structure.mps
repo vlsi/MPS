@@ -6,7 +6,8 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
-  <maxImportIndex value="1" />
+  <maxImportIndex value="2" />
+  <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1205751982837">
     <property name="name" value="IClassifier" />
@@ -16,6 +17,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1205752032448">
     <property name="name" value="IMember" />
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLinkDeclaration" id="1205921683134">
+      <property name="name" value="operationConcept" />
+      <link role="targetType" targetNodeId="2.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
     <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1205765564563">
       <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -76,6 +81,10 @@
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1205769489840">
       <link role="intfc" targetNodeId="1205752032448" resolveInfo="IMember" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1205922182858">
+      <link role="conceptLinkDeclaration" targetNodeId="1205921683134" resolveInfo="operationConcept" />
+      <link role="target" targetNodeId="1205769149993" resolveInfo="DefaultClassifierMethodCallOperation" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205769149993">
