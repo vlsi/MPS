@@ -3,7 +3,7 @@ package jetbrains.mps.vcs.gui;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vcs.IFileStatusProvider;
+import jetbrains.mps.vcs.gui.IFileController;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -15,7 +15,7 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     myExcluded.add(".svn");
   }
 
-  public FolderTreeNode(IOperationContext operationContext, IFileStatusProvider provider, IFile folder) {
+  public FolderTreeNode(IOperationContext operationContext, IFileController provider, IFile folder) {
     super(operationContext, provider, folder);
 
     for (IFile f : myFile.list()){
@@ -23,11 +23,9 @@ public class FolderTreeNode extends AbstractFileTreeNode {
         this.add(createNode(operationContext, provider, f));
       }
     }
-
-    updatePresentation();
   }
 
-  private static MPSTreeNode createNode(IOperationContext operationContext, IFileStatusProvider provider, IFile file){
+  private static MPSTreeNode createNode(IOperationContext operationContext, IFileController provider, IFile file){
     if (file.isDirectory()){
       return new FolderTreeNode(operationContext, provider, file);
     } else {
