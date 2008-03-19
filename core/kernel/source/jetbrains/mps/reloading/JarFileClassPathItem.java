@@ -146,8 +146,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
           myEntries.put(pack + "." + className, entry);
         } else {
           myEntries.put(className, entry);
-        }
-
+        }                                                                                  
       }
     }
   }
