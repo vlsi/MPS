@@ -530,11 +530,18 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
 
       if (generationOK) {
-        boolean needReload = true;
+        boolean generatedAndCompiledSuccessfully = true;
+        boolean needToReload = false;
+
         for (Pair<IModule, List<SModelDescriptor>> moduleListPair : moduleSequence) {
           IModule module = moduleListPair.o1;
+
+          if (module != null && module.reloadClassesAfterGeneration()) {
+            needToReload = true;
+          }
+
           if (module != null && (!ideaPresent && !module.isCompileInMPS()) || !generationType.requiresCompilationInIDEAfterGeneration()) {
-            needReload = false;
+            generatedAndCompiledSuccessfully = false;
           } else {
             checkMonitorCanceled(progress);
             progress.startTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
@@ -555,8 +562,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             }
 
             if (compilationResult.getErrors() > 0) {
-              needReload = false;
-            }
+              generatedAndCompiledSuccessfully = false;
+            }           
 
             progress.addText("" + compilationResult);
             progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
@@ -564,7 +571,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           }
         }
 
-        if (needReload) {
+        if (generatedAndCompiledSuccessfully && needToReload) {
           progress.addText("");
           progress.addText("reloading MPS classes...");
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);

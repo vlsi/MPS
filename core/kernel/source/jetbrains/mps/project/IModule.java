@@ -58,6 +58,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
   boolean isCompileInMPS();
+  boolean reloadClassesAfterGeneration();
+
   void invalidateCaches();
   void reloadStubs();
   void save();

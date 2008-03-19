@@ -494,6 +494,10 @@ public abstract class AbstractModule implements IModule {
     return getModuleDescriptor().getCompileInMPS();
   }
 
+  public boolean reloadClassesAfterGeneration() {
+    return true;
+  }
+
   protected String getRequiredBundlesString() {
     StringBuilder result = new StringBuilder();
 

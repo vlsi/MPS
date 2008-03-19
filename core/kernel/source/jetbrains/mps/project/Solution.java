@@ -183,4 +183,8 @@ public class Solution extends AbstractModule {
     }
     return result;
   }
+
+  public boolean reloadClassesAfterGeneration() {
+    return false;
+  }
 }
