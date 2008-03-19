@@ -104,7 +104,9 @@ public class ModuleMaker {
       }
       
       for (String sp : m.getSourcePaths()) {
-        addSource(compiler, new File(sp), "", m);
+        if (new File(sp).exists()) {
+          addSource(compiler, new File(sp), "", m);
+        }
       }
 
       FileUtil.delete(m.getClassesGen().toFile());
@@ -166,7 +168,7 @@ public class ModuleMaker {
     return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
   }
 
-  private static void copyResources(IModule module, final String sourceSuffix) {
+  private void copyResources(IModule module, final String sourceSuffix) {
     File destination = module.getClassesGen().toFile();
 
     FilenameFilter filenameFilter = new FilenameFilter() {
@@ -182,12 +184,18 @@ public class ModuleMaker {
     }
   }
 
-  private static void copyFiles(File source, File destination, FilenameFilter filenameFilter) {
-    if (source.getName().equals(".svn") && source.isDirectory()) return;
+  private boolean isIgnored(File file) {
+    return file.isDirectory() && ".svn".equals(file.getName());
+  }
 
+  private void copyFiles(File source, File destination, FilenameFilter filenameFilter) {
+    if (!source.exists()) {
+      return;
+    }
     File[] children = source.listFiles(filenameFilter);
 
     for (File child : children){
+      if (isIgnored(child)) continue;
       File destinationChild = new File(destination + File.separator + child.getName());
       if (child.isFile()){
         FileUtil.copyFile(child, destinationChild);
@@ -197,6 +205,7 @@ public class ModuleMaker {
       }
     }
   }
+
 
   private String getName(char[][] compoundName) {
     StringBuilder result = new StringBuilder();
@@ -305,7 +314,7 @@ public class ModuleMaker {
     return result;
   }
 
-  /*package private*/ static boolean isAllClassesPresented(File sourcedir, File classdir, String sourceSuffix, String destinationSuffix){
+  boolean isAllClassesPresented(File sourcedir, File classdir, String sourceSuffix, String destinationSuffix){
     File[] sourcefiles = sourcedir.listFiles();
 
     if (sourcefiles == null) {
@@ -313,6 +322,7 @@ public class ModuleMaker {
     }
 
     for (File source : sourcefiles) {
+      if (isIgnored(source)) continue;
       if (source.isFile()){
         String destinationName;
         if (source.getAbsolutePath().endsWith(sourceSuffix)){
