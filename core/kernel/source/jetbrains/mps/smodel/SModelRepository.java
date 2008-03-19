@@ -105,18 +105,12 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  public void refreshModels(Set<SModelDescriptor> skip) {
+  public void refreshModels() {
     LOG.debug("Model refresh");
     for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myUIDToModelDescriptorMap.values())) {
-      if (!skip.contains(m)) {
-        m.refresh();
-      }
+      m.refresh();
     }
     LOG.debug("Model refresh done");
-  }
-
-  public void refreshModels() {
-    refreshModels(new HashSet<SModelDescriptor>());
   }
 
   public boolean containsModelWithFile(@NotNull IFile modelFile) {
