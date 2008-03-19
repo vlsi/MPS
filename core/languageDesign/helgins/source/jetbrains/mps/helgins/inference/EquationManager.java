@@ -240,13 +240,13 @@ public class EquationManager {
     if (subtypeRepresentator instanceof NodeWrapper) {
       NodeWrapper subtypeNodeWrapper = (NodeWrapper) subtypeRepresentator;
       SModel typesModel = myTypeChecker.getRuntimeTypesModel();
-      NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(subtypeNodeWrapper.getNode(), typesModel), this);
+      NodeWrapper representatorCopy = NodeWrapper.fromNode(CopyUtil.copy(subtypeNodeWrapper.getNode(), typesModel), this);
       subtypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
     }
     if (supertypeRepresentator instanceof NodeWrapper) {
       NodeWrapper supertypeNodeWrapper = (NodeWrapper) supertypeRepresentator;
       SModel typesModel = myTypeChecker.getRuntimeTypesModel();
-      NodeWrapper representatorCopy = NodeWrapper.createNodeWrapper(CopyUtil.copy(supertypeNodeWrapper.getNode(), typesModel), this);
+      NodeWrapper representatorCopy = NodeWrapper.fromNode(CopyUtil.copy(supertypeNodeWrapper.getNode(), typesModel), this);
       supertypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
     }
 
@@ -942,7 +942,7 @@ public class EquationManager {
   /*package*/ SNode expandType(SNode term, SNode type, SModel typesModel,
                                boolean finalExpansion, NodeTypesComponent nodeTypesComponent)  {
     if (type == null) return null;
-    NodeWrapper wrapper = NodeWrapper.createNodeWrapper(type, this);
+    IWrapper wrapper = NodeWrapper.createNodeWrapper(type, this);
     IWrapper representator;
     representator = this.getRepresentatorWrapper(wrapper);
     return expandWrapper(term, representator, typesModel, finalExpansion, nodeTypesComponent).getNode();
@@ -984,7 +984,7 @@ public class EquationManager {
           //recursion!!
           RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
           error.setErrorText("recursion types not allowed");
-          return NodeWrapper.createNodeWrapper(error.getNode(), this);
+          return NodeWrapper.fromNode(error.getNode(), this);
         }
         variablesMet.add(wrapper);
         wrapper1 = expandNode(term, type, type, 0, variablesMet, typesModel, finalExpansion, nodeTypesComponent);
@@ -1016,7 +1016,7 @@ public class EquationManager {
       if (child.getParent() == null) {
         RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
         error.setErrorText("recursion types not allowed");
-        return NodeWrapper.createNodeWrapper(error.getNode(), this);
+        return NodeWrapper.fromNode(error.getNode(), this);
       }
       SNode parent = child.getParent();
       assert parent != null;
