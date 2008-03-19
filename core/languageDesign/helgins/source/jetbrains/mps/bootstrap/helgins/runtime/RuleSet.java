@@ -4,6 +4,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 
 import java.util.Map;
@@ -28,7 +30,7 @@ public class RuleSet<T extends Rule_Runtime> {
       if (existingRules == null) {
         existingRules = new HashSet<T>(2);
         myRules.put(concept,
-                existingRules);
+          existingRules);
       }
       existingRules.add(rule);
     }
@@ -40,22 +42,41 @@ public class RuleSet<T extends Rule_Runtime> {
   }
 
   protected Set<T> get(AbstractConceptDeclaration key) {
-    if (key instanceof ConceptDeclaration) {
-      ConceptDeclaration conceptDeclaration = (ConceptDeclaration) key;
-      while (conceptDeclaration != null) {
-        Set<T> rules = myRules.get(conceptDeclaration);
+    Set<T> result = new HashSet<T>();
+    Set<AbstractConceptDeclaration> frontier = new HashSet<AbstractConceptDeclaration>();
+    Set<AbstractConceptDeclaration> newFrontier = new HashSet<AbstractConceptDeclaration>();
+    frontier.add(key);
+    while (!frontier.isEmpty()) {
+      for (AbstractConceptDeclaration abstractConcept : frontier) {
+        Set<T> rules = myRules.get(abstractConcept);
         if (rules != null) {
-          if (conceptDeclaration != key) {
-            myRules.put(key, rules);
+          result.addAll(rules);
+        } else {
+          if (abstractConcept instanceof ConceptDeclaration) {
+            ConceptDeclaration conceptDeclaration = (ConceptDeclaration) abstractConcept;
+            newFrontier.add(conceptDeclaration.getExtends());
+            for (InterfaceConceptReference interfaceConceptReference : conceptDeclaration.getImplementses()) {
+              newFrontier.add(interfaceConceptReference.getIntfc());
+            }
           }
-          return rules;
+          if (abstractConcept instanceof InterfaceConceptDeclaration) {
+            InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) abstractConcept;
+            for (InterfaceConceptReference interfaceConceptReference : interfaceConcept.getExtendses()) {
+              newFrontier.add(interfaceConceptReference.getIntfc());
+            }
+          }
         }
-        conceptDeclaration = conceptDeclaration.getExtends();
       }
+      frontier = newFrontier;
+      newFrontier = new HashSet<AbstractConceptDeclaration>();
     }
-    HashSet<T> hashSet = new HashSet<T>(2);
-    myRules.put(key, hashSet);
-    return hashSet;
+    Set<T> rulesForKey = myRules.get(key);
+    if (rulesForKey == null) {
+      rulesForKey = new HashSet<T>();
+      myRules.put(key, rulesForKey);
+    }
+    rulesForKey.addAll(result);
+    return result;
   }
 
   public void makeConsistent() {
