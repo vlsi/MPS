@@ -1,4 +1,4 @@
-package jetbrains.mps.uiLangauge;
+package jetbrains.mps.uiLanguage;
 
 import org.jdesktop.beansbinding.Bindings;
 import org.jdesktop.beansbinding.BeanProperty;
