@@ -11,6 +11,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -149,6 +151,15 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
     List<M> result = MPSModuleRepository.getInstance().getModules(myOwner, cls);
     result.addAll(MPSModuleRepository.getInstance().getModules(myPredefinedLibrariesOwner, cls));
+
+    for (M m : new ArrayList<M>(result)) {
+      if (m instanceof Language) {
+        if (cls.isAssignableFrom(Generator.class)) {
+          result.addAll((List<? extends M>)((Language) m).getGenerators());
+        }
+      }
+    }
+
     return new HashSet<M>(result);
   }
 
