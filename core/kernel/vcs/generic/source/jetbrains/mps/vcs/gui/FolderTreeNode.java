@@ -3,42 +3,35 @@ package jetbrains.mps.vcs.gui;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vcs.IFileStatusProvider;
 
 import java.util.Set;
 import java.util.HashSet;
 
-public class FolderTreeNode extends MPSTreeNode {
-  private IFile myFolder;
+public class FolderTreeNode extends AbstractFileTreeNode {
   private static final Set<String> myExcluded = new HashSet<String>();
 
   static{
     myExcluded.add(".svn");
   }
 
-  public FolderTreeNode(IOperationContext operationContext, IFile folder) {
-    super(operationContext);
-    myFolder = folder;
+  public FolderTreeNode(IOperationContext operationContext, IFileStatusProvider provider, IFile folder) {
+    super(operationContext, provider, folder);
 
-    for (IFile f : myFolder.list()){
+    for (IFile f : myFile.list()){
       if (!myExcluded.contains(f.getName())){
-        this.add(createNode(operationContext, f));
+        this.add(createNode(operationContext, provider, f));
       }
     }
 
     updatePresentation();
   }
 
-  @Override
-  protected void updatePresentation() {
-    setText(myFolder.getName());
-    setNodeIdentifier(myFolder.getPath());
-  }
-
-  MPSTreeNode createNode(IOperationContext operationContext, IFile file){
+  private static MPSTreeNode createNode(IOperationContext operationContext, IFileStatusProvider provider, IFile file){
     if (file.isDirectory()){
-      return new FolderTreeNode(operationContext, file);
+      return new FolderTreeNode(operationContext, provider, file);
     } else {
-      return new FileTreeNode(operationContext, file);
+      return new FileTreeNode(operationContext, provider, file);
     }
   }
 }
