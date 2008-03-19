@@ -193,7 +193,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     MultipleForeachLoop_Editor.setupBasic_BodyCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      MultipleForeachLoop_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
+      MultipleForeachLoop_Editor.setupLabel_BodyCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

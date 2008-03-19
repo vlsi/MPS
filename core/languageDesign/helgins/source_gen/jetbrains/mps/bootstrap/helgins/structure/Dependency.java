@@ -19,7 +19,7 @@ public class Dependency extends BaseConcept {
   }
 
   public static Dependency newInstance(SModel sm, boolean init) {
-    return (Dependency)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.Dependency", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((Dependency)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.Dependency", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static Dependency newInstance(SModel sm) {
@@ -28,7 +28,7 @@ public class Dependency extends BaseConcept {
 
 
   public AbstractConceptDeclaration getTargetConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(Dependency.TARGET_CONCEPT);
+    return ((AbstractConceptDeclaration)this.getReferent(Dependency.TARGET_CONCEPT));
   }
 
   public void setTargetConcept(AbstractConceptDeclaration node) {
@@ -36,7 +36,7 @@ public class Dependency extends BaseConcept {
   }
 
   public FindSourceBlock getFindSourceBlock() {
-    return (FindSourceBlock)this.getChild(Dependency.FIND_SOURCE_BLOCK);
+    return ((FindSourceBlock)this.getChild(Dependency.FIND_SOURCE_BLOCK));
   }
 
   public void setFindSourceBlock(FindSourceBlock node) {

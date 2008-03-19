@@ -16,7 +16,7 @@ public class InequationReplacementRule extends AbstractSubtypingRule {
   }
 
   public static InequationReplacementRule newInstance(SModel sm, boolean init) {
-    return (InequationReplacementRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((InequationReplacementRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static InequationReplacementRule newInstance(SModel sm) {
@@ -25,7 +25,7 @@ public class InequationReplacementRule extends AbstractSubtypingRule {
 
 
   public ApplicableNodeCondition getSupertypeNode() {
-    return (ApplicableNodeCondition)this.getChild(InequationReplacementRule.SUPERTYPE_NODE);
+    return ((ApplicableNodeCondition)this.getChild(InequationReplacementRule.SUPERTYPE_NODE));
   }
 
   public void setSupertypeNode(ApplicableNodeCondition node) {

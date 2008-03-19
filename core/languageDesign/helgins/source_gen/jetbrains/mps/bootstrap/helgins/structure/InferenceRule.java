@@ -18,7 +18,7 @@ public class InferenceRule extends AbstractCheckingRule {
   }
 
   public static InferenceRule newInstance(SModel sm, boolean init) {
-    return (InferenceRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.InferenceRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((InferenceRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.InferenceRule", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static InferenceRule newInstance(SModel sm) {

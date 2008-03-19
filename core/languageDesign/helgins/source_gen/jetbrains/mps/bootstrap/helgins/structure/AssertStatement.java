@@ -17,7 +17,7 @@ public class AssertStatement extends ReportErrorStatement {
   }
 
   public static AssertStatement newInstance(SModel sm, boolean init) {
-    return (AssertStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AssertStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((AssertStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AssertStatement", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static AssertStatement newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class AssertStatement extends ReportErrorStatement {
 
 
   public Expression getCondition() {
-    return (Expression)this.getChild(AssertStatement.CONDITION);
+    return ((Expression)this.getChild(AssertStatement.CONDITION));
   }
 
   public void setCondition(Expression node) {

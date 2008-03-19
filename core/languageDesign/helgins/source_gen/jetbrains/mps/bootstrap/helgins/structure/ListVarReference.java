@@ -17,7 +17,7 @@ public class ListVarReference extends Expression {
   }
 
   public static ListVarReference newInstance(SModel sm, boolean init) {
-    return (ListVarReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ListVarReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((ListVarReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ListVarReference", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static ListVarReference newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class ListVarReference extends Expression {
 
 
   public ListVarDeclaration getListVarDeclaration() {
-    return (ListVarDeclaration)this.getReferent(ListVarReference.LIST_VAR_DECLARATION);
+    return ((ListVarDeclaration)this.getReferent(ListVarReference.LIST_VAR_DECLARATION));
   }
 
   public void setListVarDeclaration(ListVarDeclaration node) {

@@ -37,7 +37,7 @@ public class PatternVariableReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     PatternVariableReference_Editor.setupBasic_PatternVarDeclReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      PatternVariableReference_Editor.setupLabel_PatternVarDeclReferenceCell((EditorCell_Label)editorCell, node, context);
+      PatternVariableReference_Editor.setupLabel_PatternVarDeclReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -91,7 +91,7 @@ public class PatternVariableReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       PatternVariableReference_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        PatternVariableReference_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        PatternVariableReference_Editor._Inline5.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

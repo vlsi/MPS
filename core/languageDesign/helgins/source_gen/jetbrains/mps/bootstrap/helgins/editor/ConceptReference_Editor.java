@@ -127,7 +127,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptReference_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ConceptReference_Editor.setupLabel_ConceptReferenceCell((EditorCell_Label)editorCell, node, context);
+      ConceptReference_Editor.setupLabel_ConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -156,7 +156,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptReference_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ConceptReference_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      ConceptReference_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new ConceptReference_Editor.ConceptReference_name_postfixCellMenu()}));
@@ -228,7 +228,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       ConceptReference_Editor._Inline.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ConceptReference_Editor._Inline.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ConceptReference_Editor._Inline.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

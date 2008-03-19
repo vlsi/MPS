@@ -22,7 +22,7 @@ public class RuntimeTypeVariable extends BaseConcept implements INamedConcept {
   }
 
   public static RuntimeTypeVariable newInstance(SModel sm, boolean init) {
-    return (RuntimeTypeVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((RuntimeTypeVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static RuntimeTypeVariable newInstance(SModel sm) {

@@ -19,7 +19,7 @@ public class ReportErrorStatement extends Statement {
   }
 
   public static ReportErrorStatement newInstance(SModel sm, boolean init) {
-    return (ReportErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((ReportErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static ReportErrorStatement newInstance(SModel sm) {
@@ -28,7 +28,7 @@ public class ReportErrorStatement extends Statement {
 
 
   public Expression getErrorString() {
-    return (Expression)this.getChild(ReportErrorStatement.ERROR_STRING);
+    return ((Expression)this.getChild(ReportErrorStatement.ERROR_STRING));
   }
 
   public void setErrorString(Expression node) {
@@ -36,7 +36,7 @@ public class ReportErrorStatement extends Statement {
   }
 
   public Expression getNodeToReport() {
-    return (Expression)this.getChild(ReportErrorStatement.NODE_TO_REPORT);
+    return ((Expression)this.getChild(ReportErrorStatement.NODE_TO_REPORT));
   }
 
   public void setNodeToReport(Expression node) {

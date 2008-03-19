@@ -22,7 +22,7 @@ public class MatchStatement extends Statement {
   }
 
   public static MatchStatement newInstance(SModel sm, boolean init) {
-    return (MatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((MatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MatchStatement", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static MatchStatement newInstance(SModel sm) {
@@ -31,7 +31,7 @@ public class MatchStatement extends Statement {
 
 
   public Expression getExpression() {
-    return (Expression)this.getChild(MatchStatement.EXPRESSION);
+    return ((Expression)this.getChild(MatchStatement.EXPRESSION));
   }
 
   public void setExpression(Expression node) {
@@ -39,7 +39,7 @@ public class MatchStatement extends Statement {
   }
 
   public Statement getIfFalseStatement() {
-    return (Statement)this.getChild(MatchStatement.IF_FALSE_STATEMENT);
+    return ((Statement)this.getChild(MatchStatement.IF_FALSE_STATEMENT));
   }
 
   public void setIfFalseStatement(Statement node) {

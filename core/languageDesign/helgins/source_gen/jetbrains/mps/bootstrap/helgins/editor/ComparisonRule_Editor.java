@@ -374,7 +374,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ComparisonRule_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ComparisonRule_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      ComparisonRule_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -403,7 +403,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ComparisonRule_Editor.setupBasic_ApplicableNodeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ComparisonRule_Editor.setupLabel_ApplicableNodeCell((EditorCell_Label)editorCell, node, context);
+      ComparisonRule_Editor.setupLabel_ApplicableNodeCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -432,7 +432,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ComparisonRule_Editor.setupBasic_BodyCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ComparisonRule_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
+      ComparisonRule_Editor.setupLabel_BodyCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -461,7 +461,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ComparisonRule_Editor.setupBasic_IsWeakCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ComparisonRule_Editor.setupLabel_IsWeakCell((EditorCell_Label)editorCell, node, context);
+      ComparisonRule_Editor.setupLabel_IsWeakCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -490,7 +490,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ComparisonRule_Editor.setupBasic_AnotherNodeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ComparisonRule_Editor.setupLabel_AnotherNodeCell((EditorCell_Label)editorCell, node, context);
+      ComparisonRule_Editor.setupLabel_AnotherNodeCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

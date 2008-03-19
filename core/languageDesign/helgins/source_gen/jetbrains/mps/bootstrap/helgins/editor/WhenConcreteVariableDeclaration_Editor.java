@@ -34,7 +34,7 @@ public class WhenConcreteVariableDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     WhenConcreteVariableDeclaration_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      WhenConcreteVariableDeclaration_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      WhenConcreteVariableDeclaration_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

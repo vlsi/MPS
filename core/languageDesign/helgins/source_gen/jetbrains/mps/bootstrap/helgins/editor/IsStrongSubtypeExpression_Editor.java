@@ -109,7 +109,7 @@ public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     IsStrongSubtypeExpression_Editor.setupBasic_SubtypeExpressionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      IsStrongSubtypeExpression_Editor.setupLabel_SubtypeExpressionCell((EditorCell_Label)editorCell, node, context);
+      IsStrongSubtypeExpression_Editor.setupLabel_SubtypeExpressionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -138,7 +138,7 @@ public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     IsStrongSubtypeExpression_Editor.setupBasic_SupertypeExpressionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      IsStrongSubtypeExpression_Editor.setupLabel_SupertypeExpressionCell((EditorCell_Label)editorCell, node, context);
+      IsStrongSubtypeExpression_Editor.setupLabel_SupertypeExpressionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

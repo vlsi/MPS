@@ -82,7 +82,7 @@ public class ListVarDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ListVarDeclaration_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ListVarDeclaration_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      ListVarDeclaration_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

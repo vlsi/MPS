@@ -17,7 +17,7 @@ public class WhenConcreteVariableReference extends Expression {
   }
 
   public static WhenConcreteVariableReference newInstance(SModel sm, boolean init) {
-    return (WhenConcreteVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.WhenConcreteVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((WhenConcreteVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.WhenConcreteVariableReference", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static WhenConcreteVariableReference newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class WhenConcreteVariableReference extends Expression {
 
 
   public WhenConcreteVariableDeclaration getWhenConcreteVar() {
-    return (WhenConcreteVariableDeclaration)this.getReferent(WhenConcreteVariableReference.WHEN_CONCRETE_VAR);
+    return ((WhenConcreteVariableDeclaration)this.getReferent(WhenConcreteVariableReference.WHEN_CONCRETE_VAR));
   }
 
   public void setWhenConcreteVar(WhenConcreteVariableDeclaration node) {

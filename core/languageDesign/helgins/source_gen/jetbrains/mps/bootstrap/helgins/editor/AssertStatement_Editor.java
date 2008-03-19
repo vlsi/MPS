@@ -139,7 +139,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     AssertStatement_Editor.setupBasic_ConditionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      AssertStatement_Editor.setupLabel_ConditionCell((EditorCell_Label)editorCell, node, context);
+      AssertStatement_Editor.setupLabel_ConditionCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -168,7 +168,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     AssertStatement_Editor.setupBasic_ErrorStringCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      AssertStatement_Editor.setupLabel_ErrorStringCell((EditorCell_Label)editorCell, node, context);
+      AssertStatement_Editor.setupLabel_ErrorStringCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -197,7 +197,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     AssertStatement_Editor.setupBasic_NodeToReportCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      AssertStatement_Editor.setupLabel_NodeToReportCell((EditorCell_Label)editorCell, node, context);
+      AssertStatement_Editor.setupLabel_NodeToReportCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

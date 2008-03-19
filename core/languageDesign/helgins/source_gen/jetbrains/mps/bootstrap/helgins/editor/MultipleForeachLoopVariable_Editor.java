@@ -72,7 +72,7 @@ public class MultipleForeachLoopVariable_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     MultipleForeachLoopVariable_Editor.setupBasic_VariableCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      MultipleForeachLoopVariable_Editor.setupLabel_VariableCell((EditorCell_Label)editorCell, node, context);
+      MultipleForeachLoopVariable_Editor.setupLabel_VariableCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -101,7 +101,7 @@ public class MultipleForeachLoopVariable_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     MultipleForeachLoopVariable_Editor.setupBasic_IterableCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      MultipleForeachLoopVariable_Editor.setupLabel_IterableCell((EditorCell_Label)editorCell, node, context);
+      MultipleForeachLoopVariable_Editor.setupLabel_IterableCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

@@ -18,7 +18,7 @@ public class CoerceExpression extends Expression {
   }
 
   public static CoerceExpression newInstance(SModel sm, boolean init) {
-    return (CoerceExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.CoerceExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return ((CoerceExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.CoerceExpression", sm, GlobalScope.getInstance(), init).getAdapter());
   }
 
   public static CoerceExpression newInstance(SModel sm) {
@@ -27,7 +27,7 @@ public class CoerceExpression extends Expression {
 
 
   public ApplicableNodeCondition getPattern() {
-    return (ApplicableNodeCondition)this.getChild(CoerceExpression.PATTERN);
+    return ((ApplicableNodeCondition)this.getChild(CoerceExpression.PATTERN));
   }
 
   public void setPattern(ApplicableNodeCondition node) {
@@ -35,7 +35,7 @@ public class CoerceExpression extends Expression {
   }
 
   public Expression getNodeToCoerce() {
-    return (Expression)this.getChild(CoerceExpression.NODE_TO_COERCE);
+    return ((Expression)this.getChild(CoerceExpression.NODE_TO_COERCE));
   }
 
   public void setNodeToCoerce(Expression node) {

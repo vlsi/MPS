@@ -470,7 +470,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InferenceRule_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      InferenceRule_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      InferenceRule_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new InferenceRule_Editor.InferenceRule_name_cellMenu()}));
@@ -500,7 +500,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InferenceRule_Editor.setupBasic_ApplicableNodeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      InferenceRule_Editor.setupLabel_ApplicableNodeCell((EditorCell_Label)editorCell, node, context);
+      InferenceRule_Editor.setupLabel_ApplicableNodeCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -529,7 +529,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InferenceRule_Editor.setupBasic_OverridesCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      InferenceRule_Editor.setupLabel_OverridesCell((EditorCell_Label)editorCell, node, context);
+      InferenceRule_Editor.setupLabel_OverridesCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -558,7 +558,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InferenceRule_Editor.setupBasic_BodyCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      InferenceRule_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
+      InferenceRule_Editor.setupLabel_BodyCell(((EditorCell_Label)editorCell), node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

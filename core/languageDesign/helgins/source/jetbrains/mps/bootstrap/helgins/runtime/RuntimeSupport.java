@@ -105,6 +105,22 @@ public class RuntimeSupport {
     }
   }
 
+  public JoinWrapper createJoinWrapper(SNode... arguments) {
+    JoinWrapper joinWrapper = new JoinWrapper();
+    for (SNode argument : arguments) {
+      joinWrapper.addArgument(NodeWrapper.createNodeWrapper(argument, myTypeChecker.getEquationManager()));
+    }
+    return joinWrapper;
+  }
+
+  public MeetWrapper createMeetWrapper(SNode... arguments) {
+    MeetWrapper meetWrapper = new MeetWrapper();
+    for (SNode argument : arguments) {
+      meetWrapper.addArgument(NodeWrapper.createNodeWrapper(argument, myTypeChecker.getEquationManager()));
+    }
+    return meetWrapper;
+  }
+
   @Deprecated
   public void createEquation(SNode node1, SNode node2, SNode nodeToCheck) {
     myTypeChecker.getEquationManager().addEquation(node1, node2, nodeToCheck);
