@@ -1556,7 +1556,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       int charWidth = cellLabel.getCharWidth();
 
       x0 = Math.max(cell.getX(), caretX + 2 * charWidth - viewportWidth);
-      width = viewportWidth;
+
+      if (cell instanceof EditorCell_Label) {
+        width = ((EditorCell_Label) cell).getTextLineWidth();
+      } else {
+        width = viewportWidth;
+      }
     } else {
       x0 = cell.getX();
       width = cell.getWidth();
