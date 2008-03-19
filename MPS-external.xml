@@ -130,6 +130,9 @@
       <fileset dir="core\baseLanguage\collections\runtime\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
+      <fileset dir="core\baseLanguage\classifiers\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
       <fileset dir="MPSPlugin\MPSSupport\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar" filesonly="true">
@@ -180,6 +183,7 @@
     <antcall target="pack.resolve" />
     <antcall target="pack.testLogger" />
     <antcall target="pack.testLogger2" />
+    <antcall target="pack.jetbrains.mps.baseLanguage.classifiers" />
     <antcall target="pack.jetbrains.mps.bootstrap.actionsLanguage" />
     <antcall target="pack.jetbrains.mps.annotations" />
     <antcall target="pack.jetbrains.mps.bootstrap.cfaLanguage" />
