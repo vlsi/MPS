@@ -124,7 +124,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Node_ConceptMethodCall_Editor.setupBasic_ConceptMethodDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Node_ConceptMethodCall_Editor.setupLabel_ConceptMethodDeclarationReferenceCell(((EditorCell_Label)editorCell), node, context);
+      Node_ConceptMethodCall_Editor.setupLabel_ConceptMethodDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -175,7 +175,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       Node_ConceptMethodCall_Editor._Inline29.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Node_ConceptMethodCall_Editor._Inline29.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        Node_ConceptMethodCall_Editor._Inline29.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

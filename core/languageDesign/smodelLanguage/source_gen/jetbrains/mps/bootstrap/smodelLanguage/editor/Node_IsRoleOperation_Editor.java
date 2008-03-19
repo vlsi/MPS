@@ -116,7 +116,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Node_IsRoleOperation_Editor.setupBasic_ConceptOfParentReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Node_IsRoleOperation_Editor.setupLabel_ConceptOfParentReferenceCell(((EditorCell_Label)editorCell), node, context);
+      Node_IsRoleOperation_Editor.setupLabel_ConceptOfParentReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -145,7 +145,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Node_IsRoleOperation_Editor.setupBasic_LinkInParentReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Node_IsRoleOperation_Editor.setupLabel_LinkInParentReferenceCell(((EditorCell_Label)editorCell), node, context);
+      Node_IsRoleOperation_Editor.setupLabel_LinkInParentReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -198,7 +198,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       Node_IsRoleOperation_Editor._Inline12.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Node_IsRoleOperation_Editor._Inline12.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        Node_IsRoleOperation_Editor._Inline12.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -253,7 +253,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       Node_IsRoleOperation_Editor._Inline13.setupBasic_RoleCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Node_IsRoleOperation_Editor._Inline13.setupLabel_RoleCell(((EditorCell_Label)editorCell), node, context);
+        Node_IsRoleOperation_Editor._Inline13.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

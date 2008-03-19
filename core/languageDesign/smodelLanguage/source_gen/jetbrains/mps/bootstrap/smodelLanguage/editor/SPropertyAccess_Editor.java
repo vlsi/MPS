@@ -37,7 +37,7 @@ public class SPropertyAccess_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     SPropertyAccess_Editor.setupBasic_PropertyReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      SPropertyAccess_Editor.setupLabel_PropertyReferenceCell(((EditorCell_Label)editorCell), node, context);
+      SPropertyAccess_Editor.setupLabel_PropertyReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -91,7 +91,7 @@ public class SPropertyAccess_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       SPropertyAccess_Editor._Inline3.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SPropertyAccess_Editor._Inline3.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        SPropertyAccess_Editor._Inline3.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

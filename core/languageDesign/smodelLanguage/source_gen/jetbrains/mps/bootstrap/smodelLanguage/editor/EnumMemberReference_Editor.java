@@ -92,7 +92,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     EnumMemberReference_Editor.setupBasic_EnumMemberReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      EnumMemberReference_Editor.setupLabel_EnumMemberReferenceCell(((EditorCell_Label)editorCell), node, context);
+      EnumMemberReference_Editor.setupLabel_EnumMemberReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -146,7 +146,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       EnumMemberReference_Editor._Inline16.setupBasic_ExternalValueCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        EnumMemberReference_Editor._Inline16.setupLabel_ExternalValueCell(((EditorCell_Label)editorCell), node, context);
+        EnumMemberReference_Editor._Inline16.setupLabel_ExternalValueCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

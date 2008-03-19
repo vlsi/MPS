@@ -89,7 +89,7 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Link_SetNewChildOperation_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Link_SetNewChildOperation_Editor.setupLabel_ConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
+      Link_SetNewChildOperation_Editor.setupLabel_ConceptReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -142,7 +142,7 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       Link_SetNewChildOperation_Editor._Inline7.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Link_SetNewChildOperation_Editor._Inline7.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        Link_SetNewChildOperation_Editor._Inline7.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

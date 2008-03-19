@@ -37,7 +37,7 @@
       <link role="target" targetNodeId="3.1169125787135" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1138055932762">
-      <property name="value" value="snode" />
+      <property name="value" value="node &lt; &gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>

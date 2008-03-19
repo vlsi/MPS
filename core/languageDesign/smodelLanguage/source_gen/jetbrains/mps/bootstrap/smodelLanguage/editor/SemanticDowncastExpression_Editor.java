@@ -75,7 +75,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     SemanticDowncastExpression_Editor.setupBasic_LeftExpressionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      SemanticDowncastExpression_Editor.setupLabel_LeftExpressionCell(((EditorCell_Label)editorCell), node, context);
+      SemanticDowncastExpression_Editor.setupLabel_LeftExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

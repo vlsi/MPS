@@ -107,7 +107,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1138405916830">
         <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
-        <property name="text" value="snode" />
+        <property name="text" value="node" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
       </node>

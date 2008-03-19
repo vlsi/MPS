@@ -103,7 +103,7 @@ public class Concept_FindInstances_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Concept_FindInstances_Editor.setupBasic_ScopeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Concept_FindInstances_Editor.setupLabel_ScopeCell(((EditorCell_Label)editorCell), node, context);
+      Concept_FindInstances_Editor.setupLabel_ScopeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

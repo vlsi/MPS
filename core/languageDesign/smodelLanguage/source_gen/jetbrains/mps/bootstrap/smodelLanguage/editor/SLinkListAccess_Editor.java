@@ -37,7 +37,7 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     SLinkListAccess_Editor.setupBasic_LinkReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      SLinkListAccess_Editor.setupLabel_LinkReferenceCell(((EditorCell_Label)editorCell), node, context);
+      SLinkListAccess_Editor.setupLabel_LinkReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -91,7 +91,7 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       SLinkListAccess_Editor._Inline2.setupBasic_RoleCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SLinkListAccess_Editor._Inline2.setupLabel_RoleCell(((EditorCell_Label)editorCell), node, context);
+        SLinkListAccess_Editor._Inline2.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

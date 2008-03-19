@@ -72,7 +72,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     OperationParm_Concept_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      OperationParm_Concept_Editor.setupLabel_ConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
+      OperationParm_Concept_Editor.setupLabel_ConceptReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -125,7 +125,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       OperationParm_Concept_Editor._Inline11.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        OperationParm_Concept_Editor._Inline11.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        OperationParm_Concept_Editor._Inline11.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

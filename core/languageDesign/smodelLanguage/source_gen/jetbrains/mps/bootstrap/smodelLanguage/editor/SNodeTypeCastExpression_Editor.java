@@ -82,7 +82,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     SNodeTypeCastExpression_Editor.setupBasic_LeftExpressionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      SNodeTypeCastExpression_Editor.setupLabel_LeftExpressionCell(((EditorCell_Label)editorCell), node, context);
+      SNodeTypeCastExpression_Editor.setupLabel_LeftExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -111,7 +111,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     SNodeTypeCastExpression_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      SNodeTypeCastExpression_Editor.setupLabel_ConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
+      SNodeTypeCastExpression_Editor.setupLabel_ConceptReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -164,7 +164,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       SNodeTypeCastExpression_Editor._Inline8.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SNodeTypeCastExpression_Editor._Inline8.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        SNodeTypeCastExpression_Editor._Inline8.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

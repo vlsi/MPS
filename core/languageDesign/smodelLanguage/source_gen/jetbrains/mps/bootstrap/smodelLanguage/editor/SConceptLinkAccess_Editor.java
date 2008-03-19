@@ -75,7 +75,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     SConceptLinkAccess_Editor.setupBasic_ConceptLinkDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      SConceptLinkAccess_Editor.setupLabel_ConceptLinkDeclarationReferenceCell(((EditorCell_Label)editorCell), node, context);
+      SConceptLinkAccess_Editor.setupLabel_ConceptLinkDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -129,7 +129,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       SConceptLinkAccess_Editor._Inline25.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        SConceptLinkAccess_Editor._Inline25.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        SConceptLinkAccess_Editor._Inline25.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

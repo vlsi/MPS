@@ -90,7 +90,7 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Node_InsertNextSiblingOperation_Editor.setupBasic_InsertedNodeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Node_InsertNextSiblingOperation_Editor.setupLabel_InsertedNodeCell(((EditorCell_Label)editorCell), node, context);
+      Node_InsertNextSiblingOperation_Editor.setupLabel_InsertedNodeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

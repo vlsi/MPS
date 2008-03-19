@@ -91,7 +91,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     PropertyAttributeAccessQualifier_Editor.setupBasic_AnnotationLinkReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      PropertyAttributeAccessQualifier_Editor.setupLabel_AnnotationLinkReferenceCell(((EditorCell_Label)editorCell), node, context);
+      PropertyAttributeAccessQualifier_Editor.setupLabel_AnnotationLinkReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -120,7 +120,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     PropertyAttributeAccessQualifier_Editor.setupBasic_PropertyQualifierCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      PropertyAttributeAccessQualifier_Editor.setupLabel_PropertyQualifierCell(((EditorCell_Label)editorCell), node, context);
+      PropertyAttributeAccessQualifier_Editor.setupLabel_PropertyQualifierCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -171,7 +171,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       PropertyAttributeAccessQualifier_Editor._Inline33.setupBasic_RoleCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        PropertyAttributeAccessQualifier_Editor._Inline33.setupLabel_RoleCell(((EditorCell_Label)editorCell), node, context);
+        PropertyAttributeAccessQualifier_Editor._Inline33.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

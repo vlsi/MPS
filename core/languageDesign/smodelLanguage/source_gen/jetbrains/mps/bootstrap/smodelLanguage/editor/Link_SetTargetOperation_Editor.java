@@ -86,7 +86,7 @@ public class Link_SetTargetOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Link_SetTargetOperation_Editor.setupBasic_ParameterCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Link_SetTargetOperation_Editor.setupLabel_ParameterCell(((EditorCell_Label)editorCell), node, context);
+      Link_SetTargetOperation_Editor.setupLabel_ParameterCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

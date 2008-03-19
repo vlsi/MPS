@@ -194,7 +194,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Node_IsInstanceOfOperation_Editor.setupBasic_ConceptArgumentCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Node_IsInstanceOfOperation_Editor.setupLabel_ConceptArgumentCell(((EditorCell_Label)editorCell), node, context);
+      Node_IsInstanceOfOperation_Editor.setupLabel_ConceptArgumentCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -223,7 +223,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Node_IsInstanceOfOperation_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Node_IsInstanceOfOperation_Editor.setupLabel_ConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
+      Node_IsInstanceOfOperation_Editor.setupLabel_ConceptReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -276,7 +276,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       Node_IsInstanceOfOperation_Editor._Inline28.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Node_IsInstanceOfOperation_Editor._Inline28.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        Node_IsInstanceOfOperation_Editor._Inline28.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

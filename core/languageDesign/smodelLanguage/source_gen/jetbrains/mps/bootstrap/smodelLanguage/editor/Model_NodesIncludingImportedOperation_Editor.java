@@ -121,7 +121,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     EditorCell editorCell = provider.createEditorCell(context);
     Model_NodesIncludingImportedOperation_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Model_NodesIncludingImportedOperation_Editor.setupLabel_CellModel_ConceptProperty(((EditorCell_Label)editorCell), node, context);
+      Model_NodesIncludingImportedOperation_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -150,7 +150,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     EditorCell editorCell = provider.createEditorCell(context);
     Model_NodesIncludingImportedOperation_Editor.setupBasic_ScopeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Model_NodesIncludingImportedOperation_Editor.setupLabel_ScopeCell(((EditorCell_Label)editorCell), node, context);
+      Model_NodesIncludingImportedOperation_Editor.setupLabel_ScopeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -179,7 +179,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     EditorCell editorCell = provider.createEditorCell(context);
     Model_NodesIncludingImportedOperation_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      Model_NodesIncludingImportedOperation_Editor.setupLabel_ConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
+      Model_NodesIncludingImportedOperation_Editor.setupLabel_ConceptReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -231,7 +231,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
       EditorCell editorCell = provider.createEditorCell(context);
       Model_NodesIncludingImportedOperation_Editor._Inline31.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        Model_NodesIncludingImportedOperation_Editor._Inline31.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        Model_NodesIncludingImportedOperation_Editor._Inline31.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
