@@ -301,7 +301,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     reload();
 
-    ReloadUtils.reloadAll(false);
+    ReloadUtils.reloadAll();
 
     registerAspectListener();
 

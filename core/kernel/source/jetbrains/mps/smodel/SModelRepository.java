@@ -574,7 +574,7 @@ public class SModelRepository extends SModelAdapter {
           }
 
           if (needReloadAll) {
-            ReloadUtils.reloadAll(false);
+            ReloadUtils.reloadAll();
           }
         } finally {
           myInChangedModelsReloading = false;

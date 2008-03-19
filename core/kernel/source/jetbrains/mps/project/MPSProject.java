@@ -101,8 +101,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
         readModules();
 
-        ReloadUtils.reloadAll(false);
-
         for (IModule m : getModules()) {
           m.convert();
         }
@@ -110,6 +108,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         model.setLoading(false);
 
         myContext.init();
+
+        ReloadUtils.reloadAll();
       }
     });
 
@@ -221,7 +221,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
 
     readModules();
-    ReloadUtils.reloadAll(true);
+    ReloadUtils.reloadAll();
 
     myEventTranslator.projectChanged();
   }
@@ -673,7 +673,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
         if (reloadAll) {
-          ReloadUtils.reloadAll(true);
+          ReloadUtils.reloadAll();
         }
       }
     });
@@ -722,7 +722,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         new ModuleMaker().make(modulesToBuild, monitor);
-        ReloadUtils.reloadAll(true);
+        ReloadUtils.reloadAll();
       }
     });
   }
