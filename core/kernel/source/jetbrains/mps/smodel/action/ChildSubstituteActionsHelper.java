@@ -68,8 +68,7 @@ public class ChildSubstituteActionsHelper {
     // special case
     if (childConcept == SModelUtil_new.getBaseConcept()) {
       if ((currentChild == null || currentChild.getConceptFqName().equals(BaseConcept.concept))) {
-        resultActions = createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context);
-        // also show all concepts (to provide ability to choose an arbitrary concept)
+        resultActions = new ArrayList<INodeSubstituteAction>();
         ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, context.getScope());
         List<SNode> allVisibleConcepts = conceptsSearchScope.getNodes();
         for (SNode visibleConcept : allVisibleConcepts) {
@@ -79,7 +78,7 @@ public class ChildSubstituteActionsHelper {
             }
 
             public String getDescriptionText(String pattern) {
-              return getDescriptionText(pattern, true);
+              return "concept instance";
             }
 
             public Icon getIconFor(String pattern) {
@@ -150,6 +149,11 @@ public class ChildSubstituteActionsHelper {
     List<NodeSubstituteActionsBuilder> extendedBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
     List<Language> languages = parentNode.getModel().getLanguages(scope);
     for (Language language : languages) {
+
+      if (language.equals("jetbrains.mps.baseLanguage")) {
+        System.out.println("!!!");
+      }
+
       if (language == primaryLanguage) {
         continue;
       }
