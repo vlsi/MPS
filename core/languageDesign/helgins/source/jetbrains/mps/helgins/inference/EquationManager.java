@@ -201,10 +201,10 @@ public class EquationManager {
 
     if (PREPARE_TYPES) {
       if (subType == subtypeRepresentator && subType != null && subType.isConcrete()) {
-        subtypeRepresentator = NodeWrapper.createNodeWrapper(prepareType(subtypeRepresentator.getNode()), this);
+        subtypeRepresentator = NodeWrapper.createWrapperFromNode(prepareType(subtypeRepresentator.getNode()), this);
       }
       if (supertype == supertypeRepresentator && supertype != null && supertype.isConcrete()) {
-        supertypeRepresentator = NodeWrapper.createNodeWrapper(prepareType(supertypeRepresentator.getNode()), this);
+        supertypeRepresentator = NodeWrapper.createWrapperFromNode(prepareType(supertypeRepresentator.getNode()), this);
       }
     }
 
@@ -392,7 +392,7 @@ public class EquationManager {
           continue;
         }
         IWrapper varRepresentatorWrapper = this.
-          getRepresentatorWrapper(NodeWrapper.createNodeWrapper(var.getNode(), this));
+          getRepresentatorWrapper(NodeWrapper.createWrapperFromNode(var.getNode(), this));
         if (varRepresentatorWrapper.isConcrete()) {
           variables.remove(var);
           for (RuntimeTypeVariable varChild : varRepresentatorWrapper.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
@@ -426,10 +426,10 @@ public class EquationManager {
     IWrapper rhsRepresentator = getRepresentatorWrapper(rhs);
     if (PREPARE_TYPES) {
       if (lhs == lhsRepresentator && lhs != null && lhs.isConcrete()) {
-        lhsRepresentator = NodeWrapper.createNodeWrapper(prepareType(lhsRepresentator.getNode()), this);
+        lhsRepresentator = NodeWrapper.createWrapperFromNode(prepareType(lhsRepresentator.getNode()), this);
       }
       if (rhs == rhsRepresentator && rhs != null && rhs.isConcrete()) {
-        rhsRepresentator = NodeWrapper.createNodeWrapper(prepareType(rhsRepresentator.getNode()), this);
+        rhsRepresentator = NodeWrapper.createWrapperFromNode(prepareType(rhsRepresentator.getNode()), this);
       }
     }
 
@@ -942,7 +942,7 @@ public class EquationManager {
   /*package*/ SNode expandType(SNode term, SNode type, SModel typesModel,
                                boolean finalExpansion, NodeTypesComponent nodeTypesComponent)  {
     if (type == null) return null;
-    IWrapper wrapper = NodeWrapper.createNodeWrapper(type, this);
+    IWrapper wrapper = NodeWrapper.createWrapperFromNode(type, this);
     IWrapper representator;
     representator = this.getRepresentatorWrapper(wrapper);
     return expandWrapper(term, representator, typesModel, finalExpansion, nodeTypesComponent).getNode();
@@ -1005,7 +1005,7 @@ public class EquationManager {
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
     List<SNode> children = new ArrayList<SNode>(wrapper.getNode().getChildren());
     for (SNode child : children) {
-      SNode newChild = expandNode(term, NodeWrapper.createNodeWrapper(child, this),
+      SNode newChild = expandNode(term, NodeWrapper.createWrapperFromNode(child, this),
         representator, depth + 1, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
@@ -1032,7 +1032,7 @@ public class EquationManager {
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
       if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
-        SNode newNode = expandNode(term, NodeWrapper.createNodeWrapper(oldNode, this), representator,
+        SNode newNode = expandNode(term, NodeWrapper.createWrapperFromNode(oldNode, this), representator,
           depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
         referenceReplacement.put(reference, newNode);
       }

@@ -65,7 +65,7 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
       equationManager.checkConcrete(representator);
       SNode parent = getNode().getParent();
       while (parent != null) {
-        equationManager.checkConcrete(NodeWrapper.createNodeWrapper(parent, equationManager));
+        equationManager.checkConcrete(NodeWrapper.createWrapperFromNode(parent, equationManager));
         parent = parent.getParent();
       }
     }
@@ -77,7 +77,7 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
       for (SNode var : typeVariables) {
         SNode parent = var.getParent();
         while (parent != null) {
-          equationManager.checkConcrete(NodeWrapper.createNodeWrapper(parent, equationManager));
+          equationManager.checkConcrete(NodeWrapper.createWrapperFromNode(parent, equationManager));
           parent = parent.getParent();
         }
       }

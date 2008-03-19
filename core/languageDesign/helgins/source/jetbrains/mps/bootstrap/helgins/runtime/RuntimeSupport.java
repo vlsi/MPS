@@ -108,7 +108,7 @@ public class RuntimeSupport {
   public JoinWrapper createJoinWrapper(SNode... arguments) {
     JoinWrapper joinWrapper = new JoinWrapper();
     for (SNode argument : arguments) {
-      joinWrapper.addArgument(NodeWrapper.createNodeWrapper(argument, myTypeChecker.getEquationManager()));
+      joinWrapper.addArgument(NodeWrapper.createWrapperFromNode(argument, myTypeChecker.getEquationManager()));
     }
     return joinWrapper;
   }
@@ -116,7 +116,7 @@ public class RuntimeSupport {
   public MeetWrapper createMeetWrapper(SNode... arguments) {
     MeetWrapper meetWrapper = new MeetWrapper();
     for (SNode argument : arguments) {
-      meetWrapper.addArgument(NodeWrapper.createNodeWrapper(argument, myTypeChecker.getEquationManager()));
+      meetWrapper.addArgument(NodeWrapper.createWrapperFromNode(argument, myTypeChecker.getEquationManager()));
     }
     return meetWrapper;
   }
@@ -264,7 +264,7 @@ public class RuntimeSupport {
   public void whenConcrete(SNode argument, final Runnable r, String nodeModel, String nodeId) {
     if (argument == null) return;
     EquationManager equationManager = myTypeChecker.getEquationManager();
-    equationManager.addNewWhenConcreteEntity(NodeWrapper.createNodeWrapper(argument, equationManager),
+    equationManager.addNewWhenConcreteEntity(NodeWrapper.createWrapperFromNode(argument, equationManager),
       new WhenConcreteEntity(r, nodeModel, nodeId));
   }
 

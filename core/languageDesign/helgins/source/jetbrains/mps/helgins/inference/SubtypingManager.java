@@ -8,7 +8,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 
@@ -48,8 +47,8 @@ public class SubtypingManager {
   public boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
     if (subtype == supertype) return true;
     if (subtype == null || supertype == null) return false;
-    return isSubtype(NodeWrapper.createNodeWrapper(subtype, null),
-      NodeWrapper.createNodeWrapper(supertype, null), null, null, isWeak);
+    return isSubtype(NodeWrapper.createWrapperFromNode(subtype, null),
+      NodeWrapper.createWrapperFromNode(supertype, null), null, null, isWeak);
   }
 
   public boolean isSubtype(IWrapper subtype, IWrapper supertype, EquationManager equationManager, ErrorInfo errorInfo) {
@@ -139,7 +138,7 @@ public class SubtypingManager {
         }
       });
       for (SNode ancestor : ancestorsSorted) {
-        if (superRepresentator.matchesWith(NodeWrapper.createNodeWrapper(ancestor, equationManager),
+        if (superRepresentator.matchesWith(NodeWrapper.createWrapperFromNode(ancestor, equationManager),
           equationManager, errorInfo)) {
           return true;
         }

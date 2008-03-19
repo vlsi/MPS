@@ -8599,6 +8599,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205940228854">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1205940229934">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1205940234563">
+              <link role="baseMethodDeclaration" targetNodeId="1.~Integer.&lt;init&gt;(int)" resolveInfo="Integer" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205940247798">
+                <property name="value" value="2" />
+              </node>
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205940254643">
+              <property name="value" value="sdsd" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1205940228855">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205760020955" />

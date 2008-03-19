@@ -28,14 +28,21 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
 
   private SNode myNode;
 
-  public static IWrapper createNodeWrapper(@NotNull SNode node, EquationManager equationManager) {
+  public static IWrapper createWrapperFromNode(@NotNull SNode node, EquationManager equationManager) {
     String conceptFqName = node.getConceptFqName();
-    if ("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable".equals(conceptFqName)) {
-      return new VariableWrapper(node, equationManager);
-    } else if ("jetbrains.mps.bootstrap.helgins.structure.MeetType".equals(conceptFqName)) {
+    if ("jetbrains.mps.bootstrap.helgins.structure.MeetType".equals(conceptFqName)) {
       return new MeetWrapper(node.getChildren("argument"), equationManager);
     } else if ("jetbrains.mps.bootstrap.helgins.structure.JoinType".equals(conceptFqName)) {
       return new JoinWrapper(node.getChildren("argument"), equationManager);
+    } else {
+      return createNodeWrapper(node, equationManager);
+    }
+  }
+
+   public static NodeWrapper createNodeWrapper(@NotNull SNode node, EquationManager equationManager) {
+    String conceptFqName = node.getConceptFqName();
+    if ("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable".equals(conceptFqName)) {
+      return new VariableWrapper(node, equationManager);
     } else {
       return new NodeWrapper(node);
     }
@@ -158,7 +165,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
 
   public static NodeWrapper fromNode(SNode node, EquationManager equationManager) {
     if (node == null) return null;
-    IWrapper wrapper = NodeWrapper.createNodeWrapper(node, equationManager);
+    IWrapper wrapper = NodeWrapper.createWrapperFromNode(node, equationManager);
     if (wrapper instanceof NodeWrapper) {
       return (NodeWrapper) wrapper;
     }
