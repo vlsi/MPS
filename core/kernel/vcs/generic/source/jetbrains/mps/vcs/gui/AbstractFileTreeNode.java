@@ -33,7 +33,7 @@ public abstract class AbstractFileTreeNode  extends MPSTreeNode {
         return Color.BLUE;
       case DEFAULT:
         return Color.BLACK;
-      case NONVERSIONED:
+      case UNVERSIONED:
         return new Color(150,50,0);
     }
     return Color.RED;
