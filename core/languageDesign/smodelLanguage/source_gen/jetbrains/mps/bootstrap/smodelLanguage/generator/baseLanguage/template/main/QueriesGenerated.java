@@ -36,7 +36,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperatio
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints._LinkAccessT_Behavior;
+import jetbrains.mps.baseLanguage.constraints.IInternalType_Behavior;
 
 public class QueriesGenerated {
 
@@ -1134,7 +1134,7 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_1206037957637(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return _LinkAccessT_Behavior.virtual_getPublicType_1206036091684(_context.getNode());
+    return IInternalType_Behavior.call_getPublicType_1206036091684(_context.getNode());
   }
 
 }
