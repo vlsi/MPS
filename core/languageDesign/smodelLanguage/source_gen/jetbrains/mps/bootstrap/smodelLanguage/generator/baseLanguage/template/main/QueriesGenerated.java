@@ -528,31 +528,21 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1206049660326(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode link = SLinkOperations.getTarget(_context.getNode(), "link", false);
-    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(link)));
+    return LinkDeclaration_Behavior.call_getGenuineRole_1203470470631(SLinkOperations.getTarget(_context.getNode(), "link", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1206049660341(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode link = SLinkOperations.getTarget(_context.getNode(), "link", false);
-    link = SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
-    if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
-      return "true";
-    }
-    return "false";
+    SNode link = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(SLinkOperations.getTarget(_context.getNode(), "link", false));
+    return SPropertyOperations.hasValue(link, "metaClass", "aggregation", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1206050125869(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode link = SLinkOperations.getTarget(_context.getNode(), "link", false);
-    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(link)));
+    return LinkDeclaration_Behavior.call_getGenuineRole_1203470470631(SLinkOperations.getTarget(_context.getNode(), "link", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1206050125884(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode link = SLinkOperations.getTarget(_context.getNode(), "link", false);
-    link = SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
-    if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
-      return "true";
-    }
-    return "false";
+    SNode link = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(SLinkOperations.getTarget(_context.getNode(), "link", false));
+    return SPropertyOperations.hasValue(link, "metaClass", "aggregation", null);
   }
 
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
