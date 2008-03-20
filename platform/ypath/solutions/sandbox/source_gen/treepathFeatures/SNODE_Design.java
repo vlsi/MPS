@@ -17,7 +17,7 @@ public class SNODE_Design {
     public SNode getTargetType(String param, SNode nodeType) {
       final zClosureContext2 _zClosureContext1 = new zClosureContext2();
       _zClosureContext1._param = param;
-      SNode ld = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate1(null, _zClosureContext1)));
+      SNode ld = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate2(null, _zClosureContext1)));
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
       return new QuotationClass_().createNode(trg);
     }
@@ -30,7 +30,7 @@ public class SNODE_Design {
   public static class Design_Feature_link extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
 
     public Iterable<String> getParameters(SNode nodeType) {
-      return SequenceOperations.select(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate2(null, null)), new zSelector1(null, null));
+      return SequenceOperations.select(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate1(null, null)), new zSelector1(null, null));
     }
 
     public SNode getTargetType(String param, SNode nodeType) {
