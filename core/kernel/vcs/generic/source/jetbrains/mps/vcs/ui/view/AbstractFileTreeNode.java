@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vcs.ui.IFileController;
 import jetbrains.mps.vcs.ui.IFileListener;
+import jetbrains.mps.vcs.ui.IUpdatedAction;
 import jetbrains.mps.vcs.Status;
 
 import javax.swing.JPopupMenu;
@@ -16,6 +17,7 @@ public abstract class AbstractFileTreeNode  extends MPSTreeNode {
   protected IFile myFile;
   private IFileController myProvider;
   private JPopupMenu myPopupMenu;
+  private Collection<? extends IUpdatedAction> myActions;
 
   public AbstractFileTreeNode(IOperationContext operationContext, IFileController provider, IFile file) {
     super(operationContext);
@@ -27,22 +29,22 @@ public abstract class AbstractFileTreeNode  extends MPSTreeNode {
   }
 
   private void createUI() {
-    Collection<? extends Action> actions = myProvider.createFileActions(myFile, new IFileListener(){
+    myActions = myProvider.createFileActions(myFile, new IFileListener(){
       public void updateStatus() {
         updatePresentation();
         // TODO this looks very cool
         // need to make smart actions
-        createUI();
+        for (IUpdatedAction action : myActions){
+          action.update();
+        }
       }
     });
 
-    if (actions.isEmpty()) return;
+    if (myActions.isEmpty()) return;
 
-    myPopupMenu = new JPopupMenu(){
-
-    };
-    for (Action a : actions){
-      if (a != null) myPopupMenu.add(a);
+    myPopupMenu = new JPopupMenu();
+    for (IUpdatedAction a : myActions){
+      if (a != null) myPopupMenu.add(a.createMenuItem());
       else myPopupMenu.addSeparator();
     }
   }
