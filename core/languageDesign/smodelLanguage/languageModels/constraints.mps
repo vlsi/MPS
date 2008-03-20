@@ -16,6 +16,7 @@
   </language>
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
+  <language namespace="jetbrains.mps.core" />
   <maxImportIndex value="20" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -2640,6 +2641,73 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1204919875514">
     <property name="package" value="type_internal" />
     <link role="concept" targetNodeId="1.1204919674986" resolveInfo="_BaseLinkAccessT" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206037402703">
+      <property name="name" value="getClassExpression" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206037433269">
+        <link role="concept" targetNodeId="18.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206037402705">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206037437176">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206037472796">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206037468403">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206037462510" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206037462511">
+                <link role="conceptMethodDeclaration" targetNodeId="15.1206036091684" resolveInfo="getPublicType" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206037477485">
+              <link role="conceptMethodDeclaration" targetNodeId="15.1194035415601" resolveInfo="getClassExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206037037456">
+      <property name="name" value="getPublicType" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206037111458">
+        <link role="concept" targetNodeId="18.1068431790189" resolveInfo="Type" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206037037458">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206037128397">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206037131401">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206037130369" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1206037147387">
+              <link role="property" targetNodeId="1.1205264860045" resolveInfo="singularCradinality" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206037128399">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206037158310">
+              <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1206037179937">
+                <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206037190877">
+                  <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1206037202081">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206037206724">
+                      <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206037205598" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206037225055">
+                        <link role="link" targetNodeId="1.1204926237448" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206037231760">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1206037236871">
+            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1206037241420">
+              <node role="referenceAntiquotation$link_attribute$elementConcept" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1206037248921">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206037258611">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206037257829" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206037261520">
+                    <link role="link" targetNodeId="1.1204926237448" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1204919875515">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204919875516" />
     </node>

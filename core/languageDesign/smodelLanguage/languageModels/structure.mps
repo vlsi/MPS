@@ -1856,7 +1856,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204919674986">
     <property name="package" value="type_internal" />
     <property name="name" value="_LinkAccessT" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1205264860045">
       <property name="name" value="singularCradinality" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
@@ -1873,6 +1873,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1204919745471">
       <property name="value" value="link acc" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1206036984625">
+      <link role="intfc" targetNodeId="2.1206036041805" resolveInfo="IInternalType" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205357139746">
