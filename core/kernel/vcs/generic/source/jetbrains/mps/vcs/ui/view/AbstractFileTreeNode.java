@@ -13,7 +13,7 @@ import javax.swing.Action;
 import java.awt.Color;
 import java.util.Collection;
 
-public abstract class AbstractFileTreeNode  extends MPSTreeNode {
+public abstract class AbstractFileTreeNode extends MPSTreeNode {
   protected IFile myFile;
   private IFileController myProvider;
   private JPopupMenu myPopupMenu;
@@ -28,20 +28,30 @@ public abstract class AbstractFileTreeNode  extends MPSTreeNode {
     updatePresentation();
   }
 
+  private void updateNodeStatus() {
+    updatePresentation();
+    for (IUpdatedAction action : myActions) {
+      action.update();
+    }
+
+    int count = getChildCount();
+    for (int i = 0; i < count; i++){
+      AbstractFileTreeNode child = (AbstractFileTreeNode) getChildAt(i);
+      child.updateNodeStatus();
+    }
+  }
+
   private void createUI() {
-    myActions = myProvider.createFileActions(myFile, new IFileListener(){
+    myActions = myProvider.createFileActions(myFile, new IFileListener() {
       public void updateStatus() {
-        updatePresentation();
-        for (IUpdatedAction action : myActions){
-          action.update();
-        }
+        updateNodeStatus();
       }
     });
 
     if (myActions.isEmpty()) return;
 
     myPopupMenu = new JPopupMenu();
-    for (IUpdatedAction a : myActions){
+    for (IUpdatedAction a : myActions) {
       if (a != null) myPopupMenu.add(a.createMenuItem());
       else myPopupMenu.addSeparator();
     }
@@ -60,15 +70,15 @@ public abstract class AbstractFileTreeNode  extends MPSTreeNode {
   }
 
   private Color getColor(Status status) {
-    switch (status){
+    switch (status) {
       case ADDED:
-        return new Color(10,119,0);
+        return new Color(10, 119, 0);
       case CHANGED:
         return new Color(0, 50, 160);
       case DEFAULT:
         return Color.BLACK;
       case UNVERSIONED:
-        return new Color(153,51,0);
+        return new Color(153, 51, 0);
     }
     return Color.RED;
   }
