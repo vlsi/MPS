@@ -150,10 +150,10 @@ public class MergeResultView extends JPanel {
       changesMap.put(c.getNodeId(), c);
     }
 
-    for (NewNodeChange c : newNodeChanges) {
+    for (NewNodeChange c : newNodeChanges) {      
       applyNewNodeChange(c, changesMap);
     }
-  }
+  }                                 
 
   private void applyNewNodeChange(NewNodeChange c, Map<SNodeId, NewNodeChange> map) {
     if (myExcludedChanges.contains(c)) {
@@ -229,12 +229,24 @@ public class MergeResultView extends JPanel {
   }
 
   private void applyMoves() {
-    List<MoveNodeChange> moves = getChanges(MoveNodeChange.class);
+    Set<MoveNodeChange> moves = new LinkedHashSet<MoveNodeChange>(getChanges(MoveNodeChange.class));
 
+    Map<SNodeId, MoveNodeChange> idsToMoves = new HashMap<SNodeId, MoveNodeChange>();
     for (MoveNodeChange mnc : moves) {
-      if (myExcludedChanges.contains(mnc)) continue;
-      mnc.apply(myResultModel);
+      idsToMoves.put(mnc.getNode(), mnc);
     }
+
+    while (!moves.isEmpty()) {
+      executeMove(moves.iterator().next(), moves, idsToMoves);
+    }
+  }
+
+  private void executeMove(MoveNodeChange current, Set<MoveNodeChange> notExecuted, Map<SNodeId, MoveNodeChange> map) {
+    notExecuted.remove(current);
+    if (current.getPrevSibling() != null && map.containsKey(current.getPrevSibling())) {
+      executeMove(map.get(current.getPrevSibling()), notExecuted, map);
+    }
+    current.apply(myResultModel);
   }
 
   private void collectConflicts() {
@@ -533,7 +545,6 @@ public class MergeResultView extends JPanel {
     public boolean isLeaf() {
       return true;
     }
-
 
     public String calculateText() {
       String result;

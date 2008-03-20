@@ -87,7 +87,12 @@ public class DiffBuilder {
       SNodeId oid = getParentId(o);
 
       if (!(nid + "").equals(oid + "")) {
-        myChanges.add(new MoveNodeChange(id, nid, n.getRole_()));
+        SNode prevSibling = n.prevSibling();
+        if (prevSibling != null) {
+          myChanges.add(new MoveNodeChange(id, nid, prevSibling.getSNodeId(), n.getRole_()));
+        } else {
+          myChanges.add(new MoveNodeChange(id, nid, null, n.getRole_()));
+        }
       }
     }
   }

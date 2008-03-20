@@ -7,15 +7,16 @@ import jetbrains.mps.smodel.SNodeId;
 public class MoveNodeChange extends Change {
   private SNodeId myNodeId;
   private SNodeId myNewParent;
+  private SNodeId myPrevSibling;
   private String myNewRole;
 
 
-  public MoveNodeChange(SNodeId node, SNodeId newParent, String newRole) {
+  public MoveNodeChange(SNodeId node, SNodeId newParent, SNodeId prevSibling, String newRole) {
     myNodeId = node;
     myNewParent = newParent;
     myNewRole = newRole;
+    myPrevSibling = prevSibling;
   }
-
 
   public SNodeId getNode() {
     return myNodeId;
@@ -23,6 +24,10 @@ public class MoveNodeChange extends Change {
 
   public SNodeId getNewParent() {
     return myNewParent;
+  }
+
+  public SNodeId getPrevSibling() {
+    return myPrevSibling;
   }
 
   public String getNewRole() {
@@ -43,7 +48,8 @@ public class MoveNodeChange extends Change {
     SNode parent = m.getNodeById(myNewParent);
     if (parent == null) return false;
     node.getParent().removeChild(node);
-    parent.addChild(myNewRole, node);
+    SNode prevSibling = m.getNodeById(myPrevSibling);
+    parent.insertChild(prevSibling, myNewRole, node);
     return true;
   }
 
