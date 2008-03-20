@@ -305,6 +305,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+      editorCell.setEditable(true);
     }
 
 
