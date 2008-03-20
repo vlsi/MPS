@@ -28,7 +28,8 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
 
   private SNode myNode;
 
-  public static IWrapper createWrapperFromNode(@NotNull SNode node, EquationManager equationManager) {
+  public static IWrapper createWrapperFromNode(SNode node, EquationManager equationManager) {
+    if (node == null) return null;
     String conceptFqName = node.getConceptFqName();
     if ("jetbrains.mps.bootstrap.helgins.structure.MeetType".equals(conceptFqName)) {
       return new MeetWrapper(node.getChildren("argument"), equationManager);
@@ -39,7 +40,8 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     }
   }
 
-   public static NodeWrapper createNodeWrapper(@NotNull SNode node, EquationManager equationManager) {
+  public static NodeWrapper createNodeWrapper(SNode node, EquationManager equationManager) {
+    if (node == null) return null;
     String conceptFqName = node.getConceptFqName();
     if ("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable".equals(conceptFqName)) {
       return new VariableWrapper(node, equationManager);

@@ -470,7 +470,7 @@ public class EquationManager {
 
   void addChildEquations(Set<Pair<SNode, SNode>> childEqs, ErrorInfo errorInfo) {
     for (Pair<SNode, SNode> eq : childEqs) {
-      addEquation(NodeWrapper.createWrapperFromNode(eq.o2, this), NodeWrapper.createWrapperFromNode(eq.o1, this), errorInfo);
+      addEquation(NodeWrapper.fromNode(eq.o2, this), NodeWrapper.fromNode(eq.o1, this), errorInfo);
     }
   }
 
