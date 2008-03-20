@@ -69,19 +69,6 @@
     </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_samples.tmp" />
   </target>
-  <target name="pack.collections_generationTest">
-    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_generationTest.tmp">
-      <fileset dir="core\baseLanguage\collections\solutions\collections_generationTest" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
-      <fileset dir="core\baseLanguage\collections\solutions\collections_generationTest" includes="*.mpl, *.msd, *.devkit" />
-    </copy>
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_generationTest.tmp\collections_generationTest.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\collections_generationTest.runtime.jar" />
-    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_generationTest.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_generationTest.tmp" />
-    <mkdir dir="core\baseLanguage\collections\solutions\collections_generationTest\classes_gen" />
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_generationTest.runtime.jar">
-      <fileset dir="core\baseLanguage\collections\solutions\collections_generationTest\classes_gen" />
-    </jar>
-    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_generationTest.tmp" />
-  </target>
   <target name="pack.collections_unittest">
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\collections_unittest.tmp">
       <fileset dir="core\baseLanguage\collections\solutions\collections\unittest" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
