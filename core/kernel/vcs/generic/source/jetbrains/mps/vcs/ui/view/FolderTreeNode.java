@@ -1,9 +1,11 @@
-package jetbrains.mps.vcs.gui;
+package jetbrains.mps.vcs.ui.view;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vcs.gui.IFileController;
+import jetbrains.mps.vcs.ui.IFileController;
+import jetbrains.mps.vcs.ui.view.AbstractFileTreeNode;
+import jetbrains.mps.vcs.ui.view.FileTreeNode;
 
 import java.util.Set;
 import java.util.HashSet;

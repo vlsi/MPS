@@ -7,7 +7,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.tools.InstallIDEAPluginAction;
 import jetbrains.mps.ide.actions.tools.ReloadAllAction;
 import jetbrains.mps.ide.action.Label;
-import jetbrains.mps.svn.gui.SVNCheckOutAction;
+import jetbrains.mps.svn.ui.SVNCheckOutAction;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;

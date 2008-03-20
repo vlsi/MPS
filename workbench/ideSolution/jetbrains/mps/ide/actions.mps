@@ -29,7 +29,7 @@
   <import index="20" modelUID="jetbrains.mps.ide.actions.navigation@java_stub" version="-1" />
   <import index="21" modelUID="jetbrains.mps.ide.actions.help@java_stub" version="-1" />
   <import index="22" modelUID="jetbrains.mps.ide.actions.gotoMenu@java_stub" version="-1" />
-  <import index="27" modelUID="jetbrains.mps.svn.gui@java_stub" version="-1" />
+  <import index="27" modelUID="jetbrains.mps.svn.ui@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
