@@ -32,8 +32,6 @@ public abstract class AbstractFileTreeNode  extends MPSTreeNode {
     myActions = myProvider.createFileActions(myFile, new IFileListener(){
       public void updateStatus() {
         updatePresentation();
-        // TODO this looks very cool
-        // need to make smart actions
         for (IUpdatedAction action : myActions){
           action.update();
         }
@@ -64,13 +62,13 @@ public abstract class AbstractFileTreeNode  extends MPSTreeNode {
   private Color getColor(Status status) {
     switch (status){
       case ADDED:
-        return new Color(0,150,0);
+        return new Color(10,119,0);
       case CHANGED:
-        return Color.BLUE;
+        return new Color(0, 50, 160);
       case DEFAULT:
         return Color.BLACK;
       case UNVERSIONED:
-        return new Color(150,50,0);
+        return new Color(153,51,0);
     }
     return Color.RED;
   }
