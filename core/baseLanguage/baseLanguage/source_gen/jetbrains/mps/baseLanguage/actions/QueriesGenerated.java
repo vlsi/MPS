@@ -600,13 +600,13 @@ public class QueriesGenerated {
         }
 
         public boolean returnSmallPart(SNode nodeToWrap) {
-          return false;
+          return Type_Behavior.call_selectOnVariableCreation_1206028811708(nodeToWrap);
         }
 
         public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
           SNode wrappedNode = this.wrapNode(nc, nc.getModel());
           _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
-          if(this.returnSmallPart(nc)) {
+          if(returnSmallPart(nc)) {
             return nc;
           } else
           {

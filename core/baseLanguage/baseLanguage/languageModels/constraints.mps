@@ -1326,6 +1326,18 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206028811708">
+      <property name="name" value="selectOnVariableCreation" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1206028846679" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206028811710">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206028920497">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206028922421">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194035415601">
       <property name="isVirtual" value="true" />
       <property name="name" value="getClassExpression" />

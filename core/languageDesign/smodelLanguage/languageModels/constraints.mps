@@ -244,6 +244,18 @@
         <link role="concept" targetNodeId="18.1068431790191" resolveInfo="Expression" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206029069609">
+      <property name="name" value="selectOnVariableCreation" />
+      <link role="overriddenMethod" targetNodeId="15.1206028811708" resolveInfo="selectOnVariableCreation" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206029069611">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206029074911">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206029075991">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1206029073363" />
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704882">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181704883" />
     </node>
@@ -458,6 +470,18 @@
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1194294850662">
         <link role="concept" targetNodeId="18.1068431790191" resolveInfo="Expression" />
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206029057284">
+      <property name="name" value="selectOnVariableCreation" />
+      <link role="overriddenMethod" targetNodeId="15.1206028811708" resolveInfo="selectOnVariableCreation" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206029057286">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206029064637">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206029065764">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1206029061459" />
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704907">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181704908" />

@@ -2732,6 +2732,18 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1196699869478">
     <link role="concept" targetNodeId="1.1196683107273" resolveInfo="NodeType" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206029039731">
+      <property name="name" value="selectOnVariableCreation" />
+      <link role="overriddenMethod" targetNodeId="11.1206028811708" resolveInfo="selectOnVariableCreation" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206029039733">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206029045630">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206029046928">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1206029042703" />
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196699874184">
       <property name="name" value="getPresentation" />
       <link role="overriddenMethod" targetNodeId="5.1180102203531" resolveInfo="getPresentation" />

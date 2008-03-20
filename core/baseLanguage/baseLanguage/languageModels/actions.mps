@@ -2696,6 +2696,18 @@
               </node>
             </node>
           </node>
+          <node role="returnSmallPart" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ReturnSmallPart" id="1206029120397">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206029120398">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206029155860">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206029157018">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_nodeToWrap" id="1206029155861" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206029166952">
+                    <link role="conceptMethodDeclaration" targetNodeId="35.1206028811708" resolveInfo="selectOnVariableCreation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
