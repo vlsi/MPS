@@ -6,14 +6,16 @@ import java.util.*;
  * @author Kostik
  */
 public class WeakSet<T> extends AbstractSet<T> {
-  private WeakHashMap<T, T> myWeakHashMap;
+  private static final Object VALUE = new Object();
+
+  private WeakHashMap<T, Object> myWeakHashMap;
 
   public WeakSet(int size) {
-    myWeakHashMap = new WeakHashMap<T, T>(size);
+    myWeakHashMap = new WeakHashMap<T, Object>(size);
   }
 
   public WeakSet() {
-    myWeakHashMap = new WeakHashMap<T, T>();
+    myWeakHashMap = new WeakHashMap<T, Object>();
   }
 
   public WeakSet(Collection<? extends T> collection) {
@@ -25,9 +27,7 @@ public class WeakSet<T> extends AbstractSet<T> {
   }
 
   public boolean add(T t) {
-    boolean result = myWeakHashMap.keySet().contains(t);
-    myWeakHashMap.put(t, null);
-    return !result;
+    return myWeakHashMap.put(t, VALUE) == null;
   }
 
 
