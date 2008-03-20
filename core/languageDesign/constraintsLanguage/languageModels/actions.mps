@@ -13,7 +13,7 @@
   </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="7" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.helgins.inference@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
@@ -33,18 +33,56 @@
       </node>
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1177671835252">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177671835253">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177671843145">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1177671876315">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1177671877256" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227883356">
-                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1177671849804" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1177671863389">
-                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1177671865828">
-                    <link role="concept" targetNodeId="1.1177670533743" />
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1177671872861" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206018113266">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206018113267">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206018122284">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206018125333">
+                  <property name="value" value="false" />
                 </node>
               </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1206018121167">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206018121168">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1206018121169">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1206018121170">
+                    <link role="concept" targetNodeId="1.1177670533743" resolveInfo="ConceptBehavior" />
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1206018121171" />
+                </node>
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1206018121172" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206018121173" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206018126913">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206018126914">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206018146479">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206018156522">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1206018152169">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206018152170">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1206018152171">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList" id="1206018152172">
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference" id="1206018152173">
+                      <link role="concept" targetNodeId="1.1177673300966" resolveInfo="ConceptMethodDeclaration" />
+                    </node>
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference" id="1206018152174">
+                      <link role="concept" targetNodeId="1.1177671617671" resolveInfo="ConceptConstructorDeclaration" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1206018152175" />
+                </node>
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1206018152176" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206018152177" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177671843145">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206018158664">
+              <property name="value" value="true" />
             </node>
           </node>
         </node>

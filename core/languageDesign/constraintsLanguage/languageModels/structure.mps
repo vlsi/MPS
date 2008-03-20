@@ -474,6 +474,12 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1177673300966" resolveInfo="ConceptMethodDeclaration" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206017774302">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="staticMethod" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1206017324045" resolveInfo="StaticConceptMethodDeclaration" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1202989765072">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="canBeAChild" />
@@ -661,6 +667,15 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205764387742">
       <property name="value" value="linkTarget" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206017324045">
+    <property name="package" value="Behavior" />
+    <property name="name" value="StaticConceptMethodDeclaration" />
+    <link role="extends" targetNodeId="3.1068580123132" resolveInfo="BaseMethodDeclaration" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1206017581736">
+      <property name="name" value="isPrivate" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
   </node>
 </model>

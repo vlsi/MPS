@@ -23,12 +23,13 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   public static String PROPERTIES = "properties";
   public static String REFERENCES = "references";
   public static String METHOD = "method";
-  public static String CONCEPT = "concept";
-  public static String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
+  public static String STATIC_METHOD = "staticMethod";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String CONCEPT = "concept";
+  public static String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
 
   public  ConceptBehavior(SNode node) {
     super(node);
@@ -135,20 +136,24 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
     this.insertChild(prev, ConceptBehavior.METHOD, node);
   }
 
-  public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
+  public int getStaticMethodsCount() {
+    return this.getChildCount(ConceptBehavior.STATIC_METHOD);
   }
 
-  public void setConcept(AbstractConceptDeclaration node) {
-    super.setReferent(ConceptBehavior.CONCEPT, node);
+  public Iterator<StaticConceptMethodDeclaration> staticMethods() {
+    return this.children(ConceptBehavior.STATIC_METHOD);
   }
 
-  public ConceptDeclaration getDefaultConcreteConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT);
+  public List<StaticConceptMethodDeclaration> getStaticMethods() {
+    return this.getChildren(ConceptBehavior.STATIC_METHOD);
   }
 
-  public void setDefaultConcreteConcept(ConceptDeclaration node) {
-    super.setReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT, node);
+  public void addStaticMethod(StaticConceptMethodDeclaration node) {
+    this.addChild(ConceptBehavior.STATIC_METHOD, node);
+  }
+
+  public void insertStaticMethod(StaticConceptMethodDeclaration prev, StaticConceptMethodDeclaration node) {
+    this.insertChild(prev, ConceptBehavior.STATIC_METHOD, node);
   }
 
   public String getName() {
@@ -181,6 +186,22 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConceptBehavior.VIRTUAL_PACKAGE, value);
+  }
+
+  public AbstractConceptDeclaration getConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
+  }
+
+  public void setConcept(AbstractConceptDeclaration node) {
+    super.setReferent(ConceptBehavior.CONCEPT, node);
+  }
+
+  public ConceptDeclaration getDefaultConcreteConcept() {
+    return (ConceptDeclaration)this.getReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT);
+  }
+
+  public void setDefaultConcreteConcept(ConceptDeclaration node) {
+    super.setReferent(ConceptBehavior.DEFAULT_CONCRETE_CONCEPT, node);
   }
 
 }

@@ -19,6 +19,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.NodeDefaultSearchScope_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
+import jetbrains.mps.bootstrap.constraintsLanguage.constraints.StaticConceptMethodDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.DataTypeDeclaration_Behavior;
@@ -212,6 +213,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1203004860889(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1206018606831(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return StaticConceptMethodDeclaration_Behavior.call_getGeneratedName_1206019079060(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1206018674516(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object referenceMacro_GetReferent_1194605811159(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -418,6 +427,18 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canBeAParent", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1206018594838(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1206018638934(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "returnType", true);
+  }
+
+  public static SNode sourceNodeQuery_1206018656405(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "type", true);
+  }
+
   public static List sourceNodesQuery_1177676783297(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
@@ -477,6 +498,14 @@ public class QueriesGenerated {
 
   public static List sourceNodesQuery_1194966965000(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getSourceModel(), "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeDefaultSearchScope");
+  }
+
+  public static List sourceNodesQuery_1206018562524(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "staticMethod", true);
+  }
+
+  public static List sourceNodesQuery_1206018647334(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184605541559(final IOperationContext operationContext, final TemplateFragmentContext _context) {
