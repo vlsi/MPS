@@ -3,15 +3,18 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
+  <language namespace="jetbrains.mps.baseLanguage.strings" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <maxImportIndex value="13" />
+  <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -20,6 +23,7 @@
   <import index="11" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
   <import index="12" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
   <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
+  <import index="14" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1147467427805">
     <link role="conceptDeclaration" targetNodeId="1.1147467351491" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1147467448495">
@@ -1404,6 +1408,46 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177755630515">
               <property name="text" value="overrides" />
               <property name="textFgColor" value="DARK_BLUE" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1206015223011">
+              <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1206015223012">
+                <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1206015223013">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206015223014">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206015273727">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206015761880">
+                        <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1206015761660" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206015766523">
+                          <link role="conceptMethodDeclaration" targetNodeId="12.1206015659223" resolveInfo="getOverridenMethodConceptName" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="setter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Setter" id="1206015223015">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206015223016" />
+                </node>
+                <node role="validator" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Validator" id="1206015223017">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206015223018">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206015287652">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206015501618">
+                        <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_oldText" id="1206015501086" />
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206015503215">
+                          <link role="baseMethodDeclaration" targetNodeId="14.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206015503576">
+                            <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1206015503577" />
+                            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206015503578">
+                              <link role="conceptMethodDeclaration" targetNodeId="12.1206015659223" resolveInfo="getOverridenMethodConceptName" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206015371307">
+              <property name="text" value="." />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1177755650425">
               <link role="relationDeclaration" targetNodeId="1.1177755346718" />

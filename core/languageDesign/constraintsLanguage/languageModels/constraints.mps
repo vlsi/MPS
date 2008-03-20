@@ -98,6 +98,50 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206015659223">
+      <property name="name" value="getOverridenMethodConceptName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206015667349">
+        <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206015659225">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206015733849">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206015733850">
+            <property name="name" value="conceptDeclaration" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206015733851">
+              <link role="concept" targetNodeId="5.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206015733852">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206015733853">
+                <link role="link" targetNodeId="1.1177670543683" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206015733854">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1206015733855">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1206015733856">
+                    <link role="concept" targetNodeId="1.1177670533743" resolveInfo="ConceptBehavior" />
+                  </node>
+                </node>
+                <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1206015733857">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206015733858" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206015733859">
+                    <link role="conceptMethodDeclaration" targetNodeId="1177759451607" resolveInfo="getOverridenMethod" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206015681052">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206015736847">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206015733860">
+              <link role="variableDeclaration" targetNodeId="1206015733850" resolveInfo="conceptDeclaration" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1206015739429">
+              <link role="property" targetNodeId="11.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1177681178696">
       <property name="isPrivate" value="false" />
       <property name="name" value="getGeneratedName" />
