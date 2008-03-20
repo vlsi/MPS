@@ -2636,5 +2636,9 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1206036041805">
+    <property name="package" value="type" />
+    <property name="name" value="IInternalType" />
+  </node>
 </model>
 

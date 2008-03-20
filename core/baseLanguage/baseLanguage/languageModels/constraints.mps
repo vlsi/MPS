@@ -8357,5 +8357,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1206036075775">
+    <property name="package" value="type" />
+    <link role="concept" targetNodeId="1.1206036041805" resolveInfo="IInternalType" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206036091684">
+      <property name="name" value="getPublicType" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206036101776">
+        <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206036091686" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1206036075776">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206036075777" />
+    </node>
+  </node>
 </model>
 

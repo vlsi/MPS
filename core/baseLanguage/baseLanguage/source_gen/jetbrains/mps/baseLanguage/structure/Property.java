@@ -10,13 +10,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Property extends BaseConcept implements ClassifierMember {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Property";
+  public static String TYPE = "type";
+  public static String PROPERTY_IMPLEMENTATION = "propertyImplementation";
+  public static String VISIBILITY = "visibility";
   public static String PROPERTY_NAME = "propertyName";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String TYPE = "type";
-  public static String PROPERTY_IMPLEMENTATION = "propertyImplementation";
-  public static String VISIBILITY = "visibility";
 
   public  Property(SNode node) {
     super(node);
@@ -30,6 +30,30 @@ public class Property extends BaseConcept implements ClassifierMember {
     return Property.newInstance(sm, false);
   }
 
+
+  public Type getType() {
+    return (Type)this.getChild(Property.TYPE);
+  }
+
+  public void setType(Type node) {
+    super.setChild(Property.TYPE, node);
+  }
+
+  public PropertyImplementation getPropertyImplementation() {
+    return (PropertyImplementation)this.getChild(Property.PROPERTY_IMPLEMENTATION);
+  }
+
+  public void setPropertyImplementation(PropertyImplementation node) {
+    super.setChild(Property.PROPERTY_IMPLEMENTATION, node);
+  }
+
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(Property.VISIBILITY);
+  }
+
+  public void setVisibility(Visibility node) {
+    super.setChild(Property.VISIBILITY, node);
+  }
 
   public String getPropertyName() {
     return this.getProperty(Property.PROPERTY_NAME);
@@ -61,30 +85,6 @@ public class Property extends BaseConcept implements ClassifierMember {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Property.VIRTUAL_PACKAGE, value);
-  }
-
-  public Type getType() {
-    return (Type)this.getChild(Property.TYPE);
-  }
-
-  public void setType(Type node) {
-    super.setChild(Property.TYPE, node);
-  }
-
-  public PropertyImplementation getPropertyImplementation() {
-    return (PropertyImplementation)this.getChild(Property.PROPERTY_IMPLEMENTATION);
-  }
-
-  public void setPropertyImplementation(PropertyImplementation node) {
-    super.setChild(Property.PROPERTY_IMPLEMENTATION, node);
-  }
-
-  public Visibility getVisibility() {
-    return (Visibility)this.getChild(Property.VISIBILITY);
-  }
-
-  public void setVisibility(Visibility node) {
-    super.setChild(Property.VISIBILITY, node);
   }
 
 }
