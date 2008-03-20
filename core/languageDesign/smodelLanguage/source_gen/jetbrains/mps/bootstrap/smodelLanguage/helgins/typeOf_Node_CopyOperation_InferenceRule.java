@@ -22,12 +22,12 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
 
         public void run() {
           SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1205967749950);
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749966", true), new QuotationClass_83().createNode(inputNodeConcept), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749964");
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749966", true), new QuotationClass_82().createNode(inputNodeConcept), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749964");
         }
 
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205967749957");
     }
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057865109", true), new QuotationClass_52().createNode(), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057869956");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057865109", true), new QuotationClass_51().createNode(), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057869956");
   }
 
   public String getApplicableConceptFQName() {

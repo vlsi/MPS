@@ -15,7 +15,7 @@ public class typeof_Node_ReplaceWithNewOperation_InferenceRule implements Infere
 
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712024275", true), new QuotationClass_17().createNode(SLinkOperations.getTarget(op, "concept", false)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712024273");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712024275", true), new QuotationClass_16().createNode(SLinkOperations.getTarget(op, "concept", false)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712024273");
   }
 
   public String getApplicableConceptFQName() {

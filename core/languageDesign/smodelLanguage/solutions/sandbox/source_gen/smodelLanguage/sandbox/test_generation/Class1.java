@@ -9,6 +9,9 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperati
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class Class1 {
 
@@ -68,6 +71,23 @@ public class Class1 {
     // not a link
     int all = SequenceOperations.count(SNodeOperations.getAllAttributes(node));
     SNodeOperations.copyNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"), true));
+  }
+
+  public void method7(SNode node) {
+    Iterable<SNode> seq = SequenceOperations.where(SLinkOperations.getTargets(node, "statement", true), new zPredicate(Class1.this, null));
+    {
+      ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(node, "statement", true));
+      try {
+        while(_zCursor.moveToNext()) {
+          SNode statement = _zCursor.getCurrent();
+          {
+            String string = SPropertyOperations.getString(statement, "alias");
+          }
+        }
+      } finally {
+        _zCursor.release();
+      }
+    }
   }
 
 }

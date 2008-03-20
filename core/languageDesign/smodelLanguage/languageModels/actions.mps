@@ -261,33 +261,6 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203550520827">
-                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203550520828">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203550520829">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1203550520830">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203648255832">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203550520833">
-                            <link role="variableDeclaration" targetNodeId="1180539443585" resolveInfo="parameterOp" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1203550520832">
-                            <link role="conceptProperty" targetNodeId="1.1138763325919" resolveInfo="applicable_to_link" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203648255905">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205968408971">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203550616320">
-                        <link role="variableDeclaration" targetNodeId="1203550228442" resolveInfo="leftOperation" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1205968413707" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" id="1205968418396">
-                      <link role="conceptDeclaration" targetNodeId="1.1138056143562" resolveInfo="SLinkAccess" />
-                    </node>
-                  </node>
-                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203550520838">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203550520839">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203550520840">

@@ -59,13 +59,13 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
     }
     // ==========
     if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration")) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710663195", true), new QuotationClass_19().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710663193");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710663195", true), new QuotationClass_18().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710663193");
     } else
     if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.IntegerConceptPropertyDeclaration")) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710667949", true), new QuotationClass_20().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710667947");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710667949", true), new QuotationClass_19().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710667947");
     } else
     if(SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration")) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710671344", true), new QuotationClass_21().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710671342");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710671344", true), new QuotationClass_20().createNode(), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203710671342");
     } else
     {
       TypeChecker.getInstance().reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059822707");

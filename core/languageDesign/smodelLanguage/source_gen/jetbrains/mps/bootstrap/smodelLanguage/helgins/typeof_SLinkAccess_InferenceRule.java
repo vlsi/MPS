@@ -50,9 +50,6 @@ public class typeof_SLinkAccess_InferenceRule implements InferenceRule_Runtime {
 
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062479067");
     }
-    /*
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712059252", true), new QuotationClass_11().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "link", false), "target", false)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712059250");
-    */
   }
 
   public String getApplicableConceptFQName() {
