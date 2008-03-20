@@ -67,6 +67,7 @@ public class Class1 {
     int c3 = SequenceOperations.count(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true));
     // not a link
     int all = SequenceOperations.count(SNodeOperations.getAllAttributes(node));
+    SNodeOperations.copyNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"), true));
   }
 
 }

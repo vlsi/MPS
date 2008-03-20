@@ -35,6 +35,8 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.bootstrap.smodelLanguage.constraints._LinkAccessT_Behavior;
 
 public class QueriesGenerated {
 
@@ -1129,6 +1131,10 @@ public class QueriesGenerated {
 
   public static List sourceNodesQuery_1206021463571(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
+  }
+
+  public static SNode mapSrcMacro_mapper_1206037957637(final IOperationContext operationContext, final MapSrcMacroContext _context) {
+    return _LinkAccessT_Behavior.call_getPublicType_1206037037456(_context.getNode());
   }
 
 }
