@@ -204,7 +204,7 @@ public class SubtypingManager {
     if (lcss.size() != 1) {
       RuntimeErrorType type = RuntimeErrorType.newInstance(myTypeChecker.getRuntimeTypesModel());
       type.setErrorText("uncomparable types");
-      return NodeWrapper.fromNode(BaseAdapter.fromAdapter(type), equationManager);
+      return NodeWrapper.createWrapperFromNode(BaseAdapter.fromAdapter(type), equationManager);
     }
     return lcss.iterator().next();
   }

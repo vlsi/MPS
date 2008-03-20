@@ -161,19 +161,19 @@ public class EquationManager {
 
 
   public void addInequation(SNode subType, SNode supertype, SNode nodeToCheck) {
-    addInequation(NodeWrapper.fromNode(subType, this), NodeWrapper.fromNode(supertype, this), nodeToCheck, true);
+    addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), nodeToCheck, true);
   }
 
   public void addInequation(SNode subType, SNode supertype, ErrorInfo errorInfo) {
-    addInequation(NodeWrapper.fromNode(subType, this), NodeWrapper.fromNode(supertype, this), errorInfo, true);
+    addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), errorInfo, true);
   }
 
   public void addInequation(SNode subType, SNode supertype, SNode nodeToCheck, boolean isWeak) {
-    addInequation(NodeWrapper.fromNode(subType, this), NodeWrapper.fromNode(supertype, this), new ErrorInfo(nodeToCheck, null), isWeak);
+    addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), new ErrorInfo(nodeToCheck, null), isWeak);
   }
 
   public void addInequation(SNode subType, SNode supertype, ErrorInfo errorInfo, boolean isWeak) {
-    addInequation(NodeWrapper.fromNode(subType, this), NodeWrapper.fromNode(supertype, this), errorInfo, isWeak);
+    addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), errorInfo, isWeak);
   }
 
   //--------------------
@@ -270,19 +270,19 @@ public class EquationManager {
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck) {
-    addInequationComparable(NodeWrapper.fromNode(type1, this), NodeWrapper.fromNode(type2, this), nodeToCheck, true);
+    addInequationComparable(NodeWrapper.createWrapperFromNode(type1, this), NodeWrapper.createWrapperFromNode(type2, this), nodeToCheck, true);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, ErrorInfo errorInfo) {
-    addInequationComparable(NodeWrapper.fromNode(type1, this), NodeWrapper.fromNode(type2, this), errorInfo, true);
+    addInequationComparable(NodeWrapper.createWrapperFromNode(type1, this), NodeWrapper.createWrapperFromNode(type2, this), errorInfo, true);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck, boolean isWeak) {
-    addInequationComparable(NodeWrapper.fromNode(type1, this), NodeWrapper.fromNode(type2, this), new ErrorInfo(nodeToCheck, null), isWeak);
+    addInequationComparable(NodeWrapper.createWrapperFromNode(type1, this), NodeWrapper.createWrapperFromNode(type2, this), new ErrorInfo(nodeToCheck, null), isWeak);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, ErrorInfo errorInfo, boolean isWeak) {
-    addInequationComparable(NodeWrapper.fromNode(type1, this), NodeWrapper.fromNode(type2, this), errorInfo, isWeak);
+    addInequationComparable(NodeWrapper.createWrapperFromNode(type1, this), NodeWrapper.createWrapperFromNode(type2, this), errorInfo, isWeak);
   }
 
   //---------------------
@@ -410,7 +410,7 @@ public class EquationManager {
   }
 
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck) {
-    addEquation(NodeWrapper.fromNode(lhs, this), NodeWrapper.fromNode(rhs, this), new ErrorInfo(nodeToCheck, null));
+    addEquation(NodeWrapper.createWrapperFromNode(lhs, this), NodeWrapper.createWrapperFromNode(rhs, this), new ErrorInfo(nodeToCheck, null));
   }
 
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck, String errorString) {
@@ -418,7 +418,7 @@ public class EquationManager {
   }
 
   public void addEquation(SNode lhs, SNode rhs, ErrorInfo errorInfo) {
-    addEquation(NodeWrapper.fromNode(lhs, this), NodeWrapper.fromNode(rhs, this), errorInfo);
+    addEquation(NodeWrapper.createWrapperFromNode(lhs, this), NodeWrapper.createWrapperFromNode(rhs, this), errorInfo);
   }
 
   public void addEquation(IWrapper lhs, IWrapper rhs, ErrorInfo errorInfo) {
@@ -470,7 +470,7 @@ public class EquationManager {
 
   void addChildEquations(Set<Pair<SNode, SNode>> childEqs, ErrorInfo errorInfo) {
     for (Pair<SNode, SNode> eq : childEqs) {
-      addEquation(NodeWrapper.fromNode(eq.o2, this), NodeWrapper.fromNode(eq.o1, this), errorInfo);
+      addEquation(NodeWrapper.createWrapperFromNode(eq.o2, this), NodeWrapper.createWrapperFromNode(eq.o1, this), errorInfo);
     }
   }
 

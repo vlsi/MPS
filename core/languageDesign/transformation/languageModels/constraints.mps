@@ -18,6 +18,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.patterns" />
+  <language namespace="jetbrains.mps.core" />
   <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
@@ -527,13 +528,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198264831991">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198264831992">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198264986211">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1198264986212">
-                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1198264986213">
-                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198264986214">
-                    <link role="concept" targetNodeId="1.1198101033452" resolveInfo="SNodeOrStringType" />
+              <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1206015315635">
+                <node role="quotedNode" type="jetbrains.mps.bootstrap.helgins.structure.JoinType" id="1206015345450">
+                  <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206015555414">
+                    <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1206015664639">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206015667328">
+                        <link role="variableDeclaration" targetNodeId="1182460876765" resolveInfo="targetConcept" />
+                      </node>
+                    </node>
                   </node>
-                  <node role="prototypeNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198264986215">
-                    <link role="variableDeclaration" targetNodeId="1198264357510" resolveInfo="expectedNodeType" />
+                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206015627731">
+                    <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
                   </node>
                 </node>
               </node>
