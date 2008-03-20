@@ -1134,7 +1134,7 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_1206037957637(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return _LinkAccessT_Behavior.call_getPublicType_1206037037456(_context.getNode());
+    return _LinkAccessT_Behavior.virtual_getPublicType_1206036091684(_context.getNode());
   }
 
 }
