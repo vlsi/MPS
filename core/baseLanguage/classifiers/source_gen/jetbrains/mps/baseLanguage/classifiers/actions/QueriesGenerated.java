@@ -41,7 +41,7 @@ public class QueriesGenerated {
             return contextPart;
           } else
           {
-            return IClassifierPart_Behavior.call_getBaseClassifier_1205752202019(contextPart);
+            return IClassifierPart_Behavior.call_getMainClassifier_1205752202019(contextPart);
           }
         }
 

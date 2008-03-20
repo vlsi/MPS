@@ -23,7 +23,7 @@
   <import index="8" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="9" modelUID="java.lang@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints@java_stub" version="-1" />
-  <import index="14" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <import index="14" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <import index="17" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
@@ -194,7 +194,7 @@
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1178096832142">
       <property name="name" value="findBehaviour" />
-      <property name="isPrivate" value="true" />
+      <property name="isPrivate" value="false" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1178096832137">
         <property name="name" value="scope" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178096832143">

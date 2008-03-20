@@ -27,7 +27,7 @@
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <import index="5" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138055754698">
     <property name="name" value="SNodeType" />
     <link role="extends" targetNodeId="2.1068431790189" />
@@ -1936,6 +1936,24 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1205861725694">
       <link role="conceptLinkDeclaration" targetNodeId="1179351420610" resolveInfo="returnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1205861725695" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206019730951">
+    <property name="name" value="StaticConceptMethodCall" />
+    <link role="extends" targetNodeId="2.1068499141036" resolveInfo="BaseMethodCall" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206019820684">
+      <property name="role" value="concept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206019830404">
+      <property name="role" value="methodDeclaration" />
+      <link role="target" targetNodeId="5.1206017324045" resolveInfo="StaticConceptMethodDeclaration" />
+      <link role="specializedLink" targetNodeId="2.1068499141037" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206020090768">
+      <property name="value" value="&lt;static concept method call&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

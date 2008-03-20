@@ -12,12 +12,12 @@ import java.util.List;
 
 public class StandardDialog extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.StandardDialog";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String ROOT_COMPONENT = "rootComponent";
   public static String BUTTON = "button";
   public static String CONTENT = "content";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  StandardDialog(SNode node) {
     super(node);
@@ -31,30 +31,6 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
     return StandardDialog.newInstance(sm, false);
   }
 
-
-  public String getShortDescription() {
-    return this.getProperty(StandardDialog.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(StandardDialog.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(StandardDialog.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(StandardDialog.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(StandardDialog.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(StandardDialog.VIRTUAL_PACKAGE, value);
-  }
 
   public IComponentInstance getRootComponent() {
     return (IComponentInstance)this.getChild(StandardDialog.ROOT_COMPONENT);
@@ -102,6 +78,30 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, StandardDialog.CONTENT, node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(StandardDialog.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(StandardDialog.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(StandardDialog.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(StandardDialog.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(StandardDialog.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(StandardDialog.VIRTUAL_PACKAGE, value);
   }
 
 }

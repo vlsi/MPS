@@ -11,9 +11,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class _LinkAccessT extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT";
-  public static String TARGET_CONCEPT = "targetConcept";
   public static String SINGULAR_CRADINALITY = "singularCradinality";
   public static String AGGREGATION = "aggregation";
+  public static String TARGET_CONCEPT = "targetConcept";
 
   public  _LinkAccessT(SNode node) {
     super(node);
@@ -27,14 +27,6 @@ public class _LinkAccessT extends BaseConcept {
     return _LinkAccessT.newInstance(sm, false);
   }
 
-
-  public AbstractConceptDeclaration getTargetConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(_LinkAccessT.TARGET_CONCEPT);
-  }
-
-  public void setTargetConcept(AbstractConceptDeclaration node) {
-    super.setReferent(_LinkAccessT.TARGET_CONCEPT, node);
-  }
 
   public boolean getSingularCradinality() {
     return this.getBooleanProperty(_LinkAccessT.SINGULAR_CRADINALITY);
@@ -50,6 +42,14 @@ public class _LinkAccessT extends BaseConcept {
 
   public void setAggregation(boolean value) {
     this.setBooleanProperty(_LinkAccessT.AGGREGATION, value);
+  }
+
+  public AbstractConceptDeclaration getTargetConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(_LinkAccessT.TARGET_CONCEPT);
+  }
+
+  public void setTargetConcept(AbstractConceptDeclaration node) {
+    super.setReferent(_LinkAccessT.TARGET_CONCEPT, node);
   }
 
 }

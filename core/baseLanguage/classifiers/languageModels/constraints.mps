@@ -724,7 +724,7 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1205752199298">
     <link role="concept" targetNodeId="1.1205752174734" resolveInfo="IClassifierPart" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1205752202019">
-      <property name="name" value="getBaseClassifier" />
+      <property name="name" value="getMainClassifier" />
       <property name="isVirtual" value="true" />
       <property name="isAbstract" value="true" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205752204069">

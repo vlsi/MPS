@@ -14,10 +14,10 @@ import java.util.List;
 public class DefaultClassifierMethodCallOperation extends BaseConcept implements IMemberOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation";
   public static String ACTUAL_ARGUMENT = "actualArgument";
-  public static String MEMBER = "member";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String MEMBER = "member";
 
   public  DefaultClassifierMethodCallOperation(SNode node) {
     super(node);
@@ -52,22 +52,6 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
     this.insertChild(prev, DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT, node);
   }
 
-  public IMember getMember() {
-    return (IMember)this.getReferent(DefaultClassifierMethodCallOperation.MEMBER);
-  }
-
-  public void setMember(IMember node) {
-    super.setReferent(DefaultClassifierMethodCallOperation.MEMBER, node);
-  }
-
-  public DefaultClassifierMethodDeclaration getMethod() {
-    return (DefaultClassifierMethodDeclaration)this.getMember();
-  }
-
-  public void setMethod(DefaultClassifierMethodDeclaration node) {
-    this.setMember(node);
-  }
-
   public String getShortDescription() {
     return this.getProperty(DefaultClassifierMethodCallOperation.SHORT_DESCRIPTION);
   }
@@ -90,6 +74,22 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
 
   public void setVirtualPackage(String value) {
     this.setProperty(DefaultClassifierMethodCallOperation.VIRTUAL_PACKAGE, value);
+  }
+
+  public IMember getMember() {
+    return (IMember)this.getReferent(DefaultClassifierMethodCallOperation.MEMBER);
+  }
+
+  public void setMember(IMember node) {
+    super.setReferent(DefaultClassifierMethodCallOperation.MEMBER, node);
+  }
+
+  public DefaultClassifierMethodDeclaration getMethod() {
+    return (DefaultClassifierMethodDeclaration)this.getMember();
+  }
+
+  public void setMethod(DefaultClassifierMethodDeclaration node) {
+    this.setMember(node);
   }
 
 }
