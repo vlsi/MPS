@@ -68,11 +68,6 @@ public class RulesUtil {
           }
           // ===========
           SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
-          if(SConceptPropertyOperations.getBoolean(op, "applicable_to_link")) {
-            if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
-              isGood = true;
-            }
-          }
           if(SConceptPropertyOperations.getBoolean(op, "applicable_to_linkList")) {
             if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
               isGood = true;
@@ -164,15 +159,6 @@ public class RulesUtil {
           if(linkAccessT != null) {
             if(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
               isGood = true;
-            }
-          }
-          if(!(isGood)) {
-            SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
-            if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
-              SNode link = SLinkOperations.getTarget(leftOperation, "link", false);
-              if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
-                isGood = true;
-              }
             }
           }
           // ----
