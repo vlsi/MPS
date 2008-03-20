@@ -2604,6 +2604,15 @@
               </node>
             </node>
           </node>
+          <node role="returnSmallPart" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ReturnSmallPart" id="1206028184911">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206028184912">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206028216373">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206028216374">
+                  <property name="value" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

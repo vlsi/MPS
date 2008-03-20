@@ -131,10 +131,6 @@ public class QueriesGenerated {
             return result;
           }
 
-          public String getDescriptionText(String pattern) {
-            return "simple text";
-          }
-
           public String getMatchingText(String pattern) {
             return pattern;
           }
@@ -158,7 +154,7 @@ public class QueriesGenerated {
         }
 
       };
-      if(SConceptOperations.isAssignableFrom(applicableConcept, concept) && cond.met(null)) {
+      if(SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
         actions.remove();
       }
     }
@@ -177,7 +173,7 @@ public class QueriesGenerated {
         }
 
       };
-      if(SConceptOperations.isAssignableFrom(applicableConcept, concept) && cond.met(null)) {
+      if(SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
         actions.remove();
       }
     }

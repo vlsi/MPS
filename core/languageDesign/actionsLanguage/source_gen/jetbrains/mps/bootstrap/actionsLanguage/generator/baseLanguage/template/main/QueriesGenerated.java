@@ -187,14 +187,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode(), null, false, false), "commonInitializer", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1198600310110(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getNode(), "returnSmallPart"));
-  }
-
-  public static boolean ifMacro_Condition_1198600330839(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "returnSmallPart");
-  }
-
   public static boolean ifMacro_Condition_1201900835343(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "matchingText", true) != null;
   }
@@ -237,6 +229,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1203349777665(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commonInitializer", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1206027920373(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) == null);
+  }
+
+  public static boolean ifMacro_Condition_1206027954955(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) != null);
   }
 
   public static SNode sourceNodeQuery_1172253185556(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -429,6 +429,11 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1203349791101(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "commonInitializer", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1206027958053(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode smallPart = SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true);
+    return SLinkOperations.getTarget(smallPart, "body", true);
   }
 
   public static List sourceNodesQuery_1177330914926(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

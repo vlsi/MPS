@@ -27,7 +27,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   }
 
   public String getMatchingText(String pattern) {
-    return getMatchingText(pattern, true);
+    return getMatchingText(pattern, true);                                       
   }
 
   public String getDescriptionText(String pattern) {
