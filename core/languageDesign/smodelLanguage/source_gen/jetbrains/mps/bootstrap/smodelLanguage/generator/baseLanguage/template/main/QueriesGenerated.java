@@ -549,6 +549,20 @@ public class QueriesGenerated {
     return StaticConceptMethodDeclaration_Behavior.call_getGeneratedName_1206019079060(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1206049660326(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode link = SLinkOperations.getTarget(_context.getNode(), "link", false);
+    return SModelUtil_new.getGenuineLinkRole(((LinkDeclaration)SNodeOperations.getAdapter(link)));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1206049660341(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode link = SLinkOperations.getTarget(_context.getNode(), "link", false);
+    link = SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
+    if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
+      return "true";
+    }
+    return "false";
+  }
+
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getGenerator().getScope());
   }
@@ -1106,6 +1120,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1205862275009(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1206049660318(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
