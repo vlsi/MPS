@@ -506,13 +506,10 @@ public class QueriesGenerated {
             if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess")) {
               return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_concept_property"));
             }
-            if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
-              return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_linkList"));
-            }
           }
           // ==========
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-          // (new)
+          // link or link-list access?
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
           if(linkAccessT != null) {
             if(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {

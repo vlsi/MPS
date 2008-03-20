@@ -261,33 +261,6 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203550520838">
-                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203550520839">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203550520840">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1203550520841">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203648260453">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203550520844">
-                            <link role="variableDeclaration" targetNodeId="1180539443585" resolveInfo="parameterOp" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1203550520843">
-                            <link role="conceptProperty" targetNodeId="1.1138763350436" resolveInfo="applicable_to_linkList" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203648260643">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205968436631">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203550621587">
-                        <link role="variableDeclaration" targetNodeId="1203550228442" resolveInfo="leftOperation" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1205968442539" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" id="1205968448431">
-                      <link role="conceptDeclaration" targetNodeId="1.1138056282393" resolveInfo="SLinkListAccess" />
-                    </node>
-                  </node>
-                </node>
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1203550495012">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1203550496953" />
@@ -312,7 +285,7 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205264287337">
-              <property name="value" value="(new)" />
+              <property name="value" value="link or link-list access?" />
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205264401518">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205264401519">

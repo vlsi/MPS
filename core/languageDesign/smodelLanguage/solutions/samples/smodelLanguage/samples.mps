@@ -1405,6 +1405,46 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1206054637452">
+          <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable" id="1206054637453">
+            <property name="name" value="statement" />
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206054656911">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206054655379">
+              <link role="variableDeclaration" targetNodeId="1145581220850" resolveInfo="statementList2" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206054658117">
+              <link role="link" targetNodeId="1.1068581517665" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206054637455">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206054666369">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206054675015">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206054669683">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206054666370">
+                    <link role="variableDeclaration" targetNodeId="1145581220850" resolveInfo="statementList2" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206054673592">
+                    <link role="link" targetNodeId="1.1068581517665" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" id="1206054678813">
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206054693495">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206054684551">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206054689569">
+                        <link role="variableDeclaration" targetNodeId="1145581220850" resolveInfo="statementList2" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206054692228">
+                        <link role="link" targetNodeId="1.1068581517665" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1206054694795" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1145581213911">
         <property name="name" value="statementList1" />
