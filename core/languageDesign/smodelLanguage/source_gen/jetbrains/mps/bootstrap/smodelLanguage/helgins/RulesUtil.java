@@ -68,11 +68,6 @@ public class RulesUtil {
           }
           // ===========
           SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
-          if(SConceptPropertyOperations.getBoolean(op, "applicable_to_linkList")) {
-            if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
-              isGood = true;
-            }
-          }
           if(SConceptPropertyOperations.getBoolean(op, "applicable_to_simple_property")) {
             if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
               SNode propertyDecl = SLinkOperations.getTarget(leftOperation, "property", false);
@@ -122,16 +117,6 @@ public class RulesUtil {
               isGood = true;
             }
           }
-          if(!(isGood)) {
-            SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
-            if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
-              SNode link = SLinkOperations.getTarget(leftOperation, "link", false);
-              if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
-                isGood = true;
-              }
-            }
-          }
-          // ----
           if(!(isGood)) {
             TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-list-access", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205271287931");
           }
@@ -202,13 +187,6 @@ public class RulesUtil {
 
   @InferenceMethod()
   public static SNode get_inputNodeConcept(SNode op) {
-    // todo: just compute type of the expression
-    // now: the expression is expected to be SNodeOperationExpression with Link/LinkList access operation
-    SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
-    if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(leftOperation, "link", false), "target", false);
-    }
-    // ---
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
     final SNode Result_typevar_1186062019004 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     final SNode LeftType_typevar_1186062031569 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
