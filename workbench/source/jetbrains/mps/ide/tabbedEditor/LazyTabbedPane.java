@@ -61,7 +61,17 @@ public class LazyTabbedPane extends JPanel {
 
   public void add(ILazyTab lazyTab) {
     myLazyTabs.add(lazyTab);
-    myTabbedPane.addTab(lazyTab.getTitle(), new JPanel(new BorderLayout()));
+    myTabbedPane.addTab(lazyTab.getTitle(), new JPanel(new BorderLayout()));    
+    updateTabColor(lazyTab);
+  }
+
+  private void updateTabColor(ILazyTab tab) {
+    int index = myLazyTabs.indexOf(tab);
+    if (tab.getComponent() == null) {
+      myTabbedPane.setForegroundAt(index, Color.GRAY);
+    } else {
+      myTabbedPane.setForegroundAt(index, Color.BLACK);
+    }
   }
 
   public void initTab(final ILazyTab tab) {
@@ -85,8 +95,10 @@ public class LazyTabbedPane extends JPanel {
       panel.add(label, BorderLayout.CENTER);
       panel.revalidate();
       panel.repaint();
+      updateTabColor(tab);
       return;
-    }
+    }    
+    updateTabColor(tab);
     panel.removeAll();
     panel.add(component, BorderLayout.CENTER);
     myInitializedTabs.add(tab);
