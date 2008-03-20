@@ -30,13 +30,13 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
         try {
           while(_zCursor1.moveToNext()) {
             SNode superConcept = _zCursor1.getCurrent();
-            ListOperations.addElement(list, new QuotationClass_31().createNode(superConcept));
+            ListOperations.addElement(list, new QuotationClass_30().createNode(superConcept));
           }
         } finally {
           _zCursor1.release();
         }
       }
-      ListOperations.addElement(list, new QuotationClass_32().createNode());
+      ListOperations.addElement(list, new QuotationClass_31().createNode());
     }
     return list;
   }

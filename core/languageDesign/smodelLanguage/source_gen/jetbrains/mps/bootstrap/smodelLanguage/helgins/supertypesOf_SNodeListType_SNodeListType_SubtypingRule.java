@@ -28,14 +28,14 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
         try {
           while(_zCursor.moveToNext()) {
             SNode superConcept = _zCursor.getCurrent();
-            ListOperations.addElement(supertypes, new QuotationClass_28().createNode(superConcept));
+            ListOperations.addElement(supertypes, new QuotationClass_27().createNode(superConcept));
           }
         } finally {
           _zCursor.release();
         }
       }
       // ==========
-      ListOperations.addElement(supertypes, new QuotationClass_29().createNode());
+      ListOperations.addElement(supertypes, new QuotationClass_28().createNode());
     }
     return supertypes;
   }

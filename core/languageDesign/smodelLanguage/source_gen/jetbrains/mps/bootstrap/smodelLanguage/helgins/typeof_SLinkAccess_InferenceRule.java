@@ -21,14 +21,14 @@ public class typeof_SLinkAccess_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode op) {
-    SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
+    final SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
     if(linkDecl == null) {
       return;
     }
     // assign type
     SNode T = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT", null);
     SLinkOperations.setTarget(T, "targetConcept", SLinkOperations.getTarget(linkDecl, "target", false), false);
-    SPropertyOperations.set(T, "singularCradinality", "" + (SPropertyOperations.hasValue(linkDecl, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(linkDecl, "sourceCardinality", "0..1", "0..1")));
+    SPropertyOperations.set(T, "singularCradinality", "" + (true));
     SPropertyOperations.set(T, "aggregation", "" + (SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", null)));
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205962193116", true), T, op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205962193114");
     // ---
@@ -42,7 +42,6 @@ public class typeof_SLinkAccess_InferenceRule implements InferenceRule_Runtime {
         public void run() {
           SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062441601);
           List<LinkDeclaration> declaredLinks = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
-          SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
           if(!(declaredLinks.contains(((LinkDeclaration)SNodeOperations.getAdapter(linkDecl))))) {
             TypeChecker.getInstance().reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062499482");
           }

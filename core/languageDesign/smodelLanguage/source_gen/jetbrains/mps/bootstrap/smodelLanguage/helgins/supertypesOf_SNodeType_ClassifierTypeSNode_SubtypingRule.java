@@ -13,7 +13,7 @@ public class supertypesOf_SNodeType_ClassifierTypeSNode_SubtypingRule extends Su
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_30().createNode();
+    return new QuotationClass_29().createNode();
   }
 
   public String getApplicableConceptFQName() {

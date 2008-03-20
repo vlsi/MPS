@@ -15,7 +15,7 @@ public class typeof_Node_InsertNewNextSiblingOperation_InferenceRule implements 
 
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712011549", true), new QuotationClass_12().createNode(SLinkOperations.getTarget(op, "concept", false)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712011547");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712011549", true), new QuotationClass_11().createNode(SLinkOperations.getTarget(op, "concept", false)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712011547");
   }
 
   public String getApplicableConceptFQName() {

@@ -5,13 +5,14 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runtime {
@@ -20,27 +21,34 @@ public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(final SNode op) {
-    RulesUtil.checkAppliedCorrectly_generic(op);
-    if((SLinkOperations.getTarget(op, "link", false) != null)) {
-      final SNode C_typevar_1186062842230 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062842230), RulesUtil.get_inputNodeConcept(op), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062847014");
-      {
-        final SNode _representatorVar3 = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062842230);
-        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar3, new Runnable() {
-
-          public void run() {
-            SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062842230);
-            List<LinkDeclaration> declaredLinks = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
-            SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
-            if(!(declaredLinks.contains(((LinkDeclaration)SNodeOperations.getAdapter(linkDecl))))) {
-              TypeChecker.getInstance().reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062887864");
-            }
-          }
-
-        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062870557");
-      }
+    final SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
+    if(linkDecl == null) {
+      return;
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712068287", true), new QuotationClass_11().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "link", false), "target", false)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712068285");
+    // assign type
+    SNode T = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT", null);
+    SLinkOperations.setTarget(T, "targetConcept", SLinkOperations.getTarget(linkDecl, "target", false), false);
+    SPropertyOperations.set(T, "singularCradinality", "" + (false));
+    SPropertyOperations.set(T, "aggregation", "" + (SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", null)));
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206053536883", true), T, op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206053536881");
+    // ---
+    RulesUtil.checkAppliedCorrectly_generic(op);
+    final SNode C_typevar_1186062842230 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062842230), RulesUtil.get_inputNodeConcept(op), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062847014");
+    {
+      final SNode _representatorVar3 = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062842230);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar3, new Runnable() {
+
+        public void run() {
+          SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062842230);
+          List<LinkDeclaration> declaredLinks = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
+          if(!(declaredLinks.contains(((LinkDeclaration)SNodeOperations.getAdapter(linkDecl))))) {
+            TypeChecker.getInstance().reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062887864");
+          }
+        }
+
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062870557");
+    }
   }
 
   public String getApplicableConceptFQName() {

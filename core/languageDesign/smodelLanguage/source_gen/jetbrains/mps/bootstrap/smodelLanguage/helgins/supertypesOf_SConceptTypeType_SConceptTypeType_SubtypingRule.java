@@ -29,13 +29,13 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
         try {
           while(_zCursor2.moveToNext()) {
             SNode superConcept = _zCursor2.getCurrent();
-            ListOperations.addElement(list, new QuotationClass_59().createNode(superConcept));
+            ListOperations.addElement(list, new QuotationClass_58().createNode(superConcept));
           }
         } finally {
           _zCursor2.release();
         }
       }
-      ListOperations.addElement(list, new QuotationClass_60().createNode());
+      ListOperations.addElement(list, new QuotationClass_59().createNode());
     }
     return list;
   }
