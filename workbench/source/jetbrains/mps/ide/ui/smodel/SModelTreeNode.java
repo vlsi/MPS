@@ -279,7 +279,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     ActionContext context = new ActionContext(getOperationContext());
     context.put(SModelDescriptor.class, model);
-    context.put(MPSProject.class, getOperationContext().getProject());
+    if (getOperationContext() != null) {    
+      context.put(MPSProject.class, getOperationContext().getProject());
+    }
     context.put(List.class, models);
     return context;
   }
