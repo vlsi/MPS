@@ -85,7 +85,7 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     NormalTypeClause_Editor.setupBasic_NormalTypeCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      NormalTypeClause_Editor.setupLabel_NormalTypeCell(((EditorCell_Label)editorCell), node, context);
+      NormalTypeClause_Editor.setupLabel_NormalTypeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

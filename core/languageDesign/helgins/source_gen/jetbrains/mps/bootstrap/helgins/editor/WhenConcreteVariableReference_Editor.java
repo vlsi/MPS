@@ -34,7 +34,7 @@ public class WhenConcreteVariableReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     WhenConcreteVariableReference_Editor.setupBasic_WhenConcreteVarReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      WhenConcreteVariableReference_Editor.setupLabel_WhenConcreteVarReferenceCell(((EditorCell_Label)editorCell), node, context);
+      WhenConcreteVariableReference_Editor.setupLabel_WhenConcreteVarReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -85,7 +85,7 @@ public class WhenConcreteVariableReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       WhenConcreteVariableReference_Editor._Inline9.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        WhenConcreteVariableReference_Editor._Inline9.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        WhenConcreteVariableReference_Editor._Inline9.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

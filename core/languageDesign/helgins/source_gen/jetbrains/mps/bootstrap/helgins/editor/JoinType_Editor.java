@@ -15,6 +15,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
@@ -34,10 +35,17 @@ public class JoinType_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179479667160");
   }
 
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206015396370");
+  }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ArgumentList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -53,6 +61,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "JOIN ("));
     editorCell.addEditorCell(this.createArgumentList(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
     return editorCell;
   }
 
@@ -60,6 +69,14 @@ public class JoinType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     JoinType_Editor.setupBasic_ConstantCell(editorCell, node, context);
     JoinType_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    JoinType_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    JoinType_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -108,6 +125,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
         if(elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, "|"));
         }
         if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
@@ -116,7 +134,12 @@ public class JoinType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createSeparatorCell(EditorContext context) {
-      return super.createSeparatorCell(context);
+      {
+        EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), "|");
+        editorCell.setSelectable(false);
+        editorCell.setLayoutConstraint("");
+        return editorCell;
+      }
     }
 
 }

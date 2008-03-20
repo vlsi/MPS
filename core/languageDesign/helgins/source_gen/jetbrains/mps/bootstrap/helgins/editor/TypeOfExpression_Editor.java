@@ -156,7 +156,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     TypeOfExpression_Editor.setupBasic_TermCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      TypeOfExpression_Editor.setupLabel_TermCell(((EditorCell_Label)editorCell), node, context);
+      TypeOfExpression_Editor.setupLabel_TermCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -185,7 +185,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     TypeOfExpression_Editor.setupBasic_SkipDependencyOnCurrentCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      TypeOfExpression_Editor.setupLabel_SkipDependencyOnCurrentCell(((EditorCell_Label)editorCell), node, context);
+      TypeOfExpression_Editor.setupLabel_SkipDependencyOnCurrentCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

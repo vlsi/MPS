@@ -81,7 +81,7 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     PatternCondition_Editor.setupBasic_PatternCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      PatternCondition_Editor.setupLabel_PatternCell(((EditorCell_Label)editorCell), node, context);
+      PatternCondition_Editor.setupLabel_PatternCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -110,7 +110,7 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     PatternCondition_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      PatternCondition_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+      PatternCondition_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

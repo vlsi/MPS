@@ -135,7 +135,7 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     MatchStatementItem_Editor.setupBasic_ConditionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      MatchStatementItem_Editor.setupLabel_ConditionCell(((EditorCell_Label)editorCell), node, context);
+      MatchStatementItem_Editor.setupLabel_ConditionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -164,7 +164,7 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     MatchStatementItem_Editor.setupBasic_IfTrueCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      MatchStatementItem_Editor.setupLabel_IfTrueCell(((EditorCell_Label)editorCell), node, context);
+      MatchStatementItem_Editor.setupLabel_IfTrueCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

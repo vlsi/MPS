@@ -193,7 +193,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CoerceStatement_Editor.setupBasic_NodeToCoerceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CoerceStatement_Editor.setupLabel_NodeToCoerceCell(((EditorCell_Label)editorCell), node, context);
+      CoerceStatement_Editor.setupLabel_NodeToCoerceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -222,7 +222,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CoerceStatement_Editor.setupBasic_PatternCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CoerceStatement_Editor.setupLabel_PatternCell(((EditorCell_Label)editorCell), node, context);
+      CoerceStatement_Editor.setupLabel_PatternCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -251,7 +251,7 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CoerceStatement_Editor.setupBasic_BodyCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CoerceStatement_Editor.setupLabel_BodyCell(((EditorCell_Label)editorCell), node, context);
+      CoerceStatement_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

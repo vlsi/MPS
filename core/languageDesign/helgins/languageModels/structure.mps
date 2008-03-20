@@ -561,6 +561,10 @@
       <property name="role" value="argument" />
       <link role="target" targetNodeId="1.1133920641626" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206015362264">
+      <property name="value" value="JOIN" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1179832490862">
     <property name="name" value="CreateStrongLessThanInequationStatement" />

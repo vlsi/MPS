@@ -112,7 +112,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ReportErrorStatement_Editor.setupBasic_ErrorStringCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ReportErrorStatement_Editor.setupLabel_ErrorStringCell(((EditorCell_Label)editorCell), node, context);
+      ReportErrorStatement_Editor.setupLabel_ErrorStringCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -141,7 +141,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ReportErrorStatement_Editor.setupBasic_NodeToReportCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ReportErrorStatement_Editor.setupLabel_NodeToReportCell(((EditorCell_Label)editorCell), node, context);
+      ReportErrorStatement_Editor.setupLabel_NodeToReportCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

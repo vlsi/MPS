@@ -37,7 +37,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ApplicableNodeReference_Editor.setupBasic_ApplicableNodeReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ApplicableNodeReference_Editor.setupLabel_ApplicableNodeReferenceCell(((EditorCell_Label)editorCell), node, context);
+      ApplicableNodeReference_Editor.setupLabel_ApplicableNodeReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -91,7 +91,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       ApplicableNodeReference_Editor._Inline1.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ApplicableNodeReference_Editor._Inline1.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        ApplicableNodeReference_Editor._Inline1.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

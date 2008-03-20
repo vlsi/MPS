@@ -80,7 +80,7 @@ public class ImmediateSupertypesExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     ImmediateSupertypesExpression_Editor.setupBasic_SubtypeExpressionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      ImmediateSupertypesExpression_Editor.setupLabel_SubtypeExpressionCell(((EditorCell_Label)editorCell), node, context);
+      ImmediateSupertypesExpression_Editor.setupLabel_SubtypeExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

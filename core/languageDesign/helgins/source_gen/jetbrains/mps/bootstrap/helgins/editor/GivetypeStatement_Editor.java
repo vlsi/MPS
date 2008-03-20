@@ -166,7 +166,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     GivetypeStatement_Editor.setupBasic_TypeExpressionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      GivetypeStatement_Editor.setupLabel_TypeExpressionCell(((EditorCell_Label)editorCell), node, context);
+      GivetypeStatement_Editor.setupLabel_TypeExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -195,7 +195,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     GivetypeStatement_Editor.setupBasic_TermExpressionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      GivetypeStatement_Editor.setupLabel_TermExpressionCell(((EditorCell_Label)editorCell), node, context);
+      GivetypeStatement_Editor.setupLabel_TermExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

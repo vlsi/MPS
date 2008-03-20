@@ -35,7 +35,7 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     TypeVarReference_Editor.setupBasic_TypeVarDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      TypeVarReference_Editor.setupLabel_TypeVarDeclarationReferenceCell(((EditorCell_Label)editorCell), node, context);
+      TypeVarReference_Editor.setupLabel_TypeVarDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -87,7 +87,7 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       TypeVarReference_Editor._Inline2.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        TypeVarReference_Editor._Inline2.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+        TypeVarReference_Editor._Inline2.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

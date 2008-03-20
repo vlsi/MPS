@@ -193,7 +193,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     WhenConcreteStatement_Editor.setupBasic_ArgumentCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      WhenConcreteStatement_Editor.setupLabel_ArgumentCell(((EditorCell_Label)editorCell), node, context);
+      WhenConcreteStatement_Editor.setupLabel_ArgumentCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -222,7 +222,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     WhenConcreteStatement_Editor.setupBasic_BodyCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      WhenConcreteStatement_Editor.setupLabel_BodyCell(((EditorCell_Label)editorCell), node, context);
+      WhenConcreteStatement_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -251,7 +251,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     WhenConcreteStatement_Editor.setupBasic_ArgumentRepresentatorCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      WhenConcreteStatement_Editor.setupLabel_ArgumentRepresentatorCell(((EditorCell_Label)editorCell), node, context);
+      WhenConcreteStatement_Editor.setupLabel_ArgumentRepresentatorCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

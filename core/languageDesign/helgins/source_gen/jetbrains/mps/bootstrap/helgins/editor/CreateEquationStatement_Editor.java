@@ -258,7 +258,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CreateEquationStatement_Editor.setupBasic_LeftExpressionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CreateEquationStatement_Editor.setupLabel_LeftExpressionCell(((EditorCell_Label)editorCell), node, context);
+      CreateEquationStatement_Editor.setupLabel_LeftExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -287,7 +287,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CreateEquationStatement_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CreateEquationStatement_Editor.setupLabel_CellModel_ConceptProperty(((EditorCell_Label)editorCell), node, context);
+      CreateEquationStatement_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new CreateEquationStatement_Editor.CreateEquationStatement_replaceWith_AbstractEquationStatement_cellMenu()}));
@@ -317,7 +317,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CreateEquationStatement_Editor.setupBasic_RightExpressionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CreateEquationStatement_Editor.setupLabel_RightExpressionCell(((EditorCell_Label)editorCell), node, context);
+      CreateEquationStatement_Editor.setupLabel_RightExpressionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -346,7 +346,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CreateEquationStatement_Editor.setupBasic_NodeToCheckCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CreateEquationStatement_Editor.setupLabel_NodeToCheckCell(((EditorCell_Label)editorCell), node, context);
+      CreateEquationStatement_Editor.setupLabel_NodeToCheckCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -375,7 +375,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CreateEquationStatement_Editor.setupBasic_ErrorStringCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CreateEquationStatement_Editor.setupLabel_ErrorStringCell(((EditorCell_Label)editorCell), node, context);
+      CreateEquationStatement_Editor.setupLabel_ErrorStringCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -404,7 +404,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     CreateEquationStatement_Editor.setupBasic_DirectionCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      CreateEquationStatement_Editor.setupLabel_DirectionCell(((EditorCell_Label)editorCell), node, context);
+      CreateEquationStatement_Editor.setupLabel_DirectionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

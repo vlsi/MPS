@@ -86,7 +86,7 @@ public class TypeVarDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     TypeVarDeclaration_Editor.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      TypeVarDeclaration_Editor.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+      TypeVarDeclaration_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;

@@ -1306,7 +1306,11 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1179479667160">
         <property name="vertical" value="false" />
+        <property name="separatorText" value="|" />
         <link role="relationDeclaration" targetNodeId="1.1179479418730" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206015396370">
+        <property name="text" value=")" />
       </node>
     </node>
   </node>
@@ -1525,6 +1529,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1188473560036">
         <property name="vertical" value="false" />
+        <property name="separatorText" value="&amp;" />
         <link role="relationDeclaration" targetNodeId="1.1188473537547" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1202228508657">
