@@ -513,16 +513,8 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1205530218487(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parmConcept = SLinkOperations.getTarget(_context.getNode(), "concept", false);
     if(parmConcept == null) {
-      SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(_context.getNode());
-      if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
-        parmConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(leftOperation, "link", false), "target", false);
-      } else
-      {
-        SNode leftOperationType = TypeChecker.getInstance().getTypeOf(leftOperation);
-        if(SNodeOperations.isInstanceOf(leftOperationType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
-          parmConcept = SLinkOperations.getTarget(leftOperationType, "targetConcept", false);
-        }
-      }
+      SNode operandType = TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode()));
+      parmConcept = SLinkOperations.getTarget(operandType, "targetConcept", false);
     }
     return NameUtil.nodeFQName(parmConcept);
   }
