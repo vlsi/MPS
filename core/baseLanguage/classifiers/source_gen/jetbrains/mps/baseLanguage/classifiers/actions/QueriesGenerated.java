@@ -46,12 +46,12 @@ public class QueriesGenerated {
         }
 
       };
-      contextClassifier = ((SNode)calc.calculate());
+      contextClassifier = (SNode)calc.calculate();
     }
     {
       AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", operationContext.getScope());
-      SNode childConcept = ((SNode)_context.getChildConcept());
-      if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(((SNode)BaseAdapter.fromAdapter(outputConcept))))) {
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
@@ -59,7 +59,7 @@ public class QueriesGenerated {
           }
 
         };
-        Iterable<SNode> queryResult = ((Iterable)calc.calculate());
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
         assert queryResult != null;
         for(final SNode item : queryResult) {
           result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {

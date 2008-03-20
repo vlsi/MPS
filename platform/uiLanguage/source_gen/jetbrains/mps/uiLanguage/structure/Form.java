@@ -12,11 +12,11 @@ import java.util.List;
 
 public class Form extends BaseConcept implements IComponentPart, IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.Form";
-  public static String PART = "part";
-  public static String CONTENT = "content";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String PART = "part";
+  public static String CONTENT = "content";
 
   public  Form(SNode node) {
     super(node);
@@ -30,6 +30,30 @@ public class Form extends BaseConcept implements IComponentPart, IComponentInsta
     return Form.newInstance(sm, false);
   }
 
+
+  public String getShortDescription() {
+    return this.getProperty(Form.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(Form.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(Form.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(Form.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(Form.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(Form.VIRTUAL_PACKAGE, value);
+  }
 
   public int getPartsCount() {
     return this.getChildCount(Form.PART);
@@ -69,30 +93,6 @@ public class Form extends BaseConcept implements IComponentPart, IComponentInsta
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, Form.CONTENT, node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(Form.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(Form.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(Form.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(Form.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(Form.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(Form.VIRTUAL_PACKAGE, value);
   }
 
 }

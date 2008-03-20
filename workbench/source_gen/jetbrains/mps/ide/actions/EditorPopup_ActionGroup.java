@@ -14,6 +14,7 @@ import jetbrains.mps.ide.actions.nodes.GoToConceptDeclarationAction;
 import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationAction;
 import jetbrains.mps.ide.actions.nodes.GoToRulesAction;
 import jetbrains.mps.ide.actions.nodes.ShowNodeInExplorerAction;
+import jetbrains.mps.ide.actions.nodes.ShowNodeInInspectorAction;
 import jetbrains.mps.ide.actions.generate.GenerateFilesFromCurrentModelAction;
 import jetbrains.mps.ide.actions.generate.GenerateTextFromCurrentModelAction;
 import jetbrains.mps.ide.actions.nodes.FindSpecificNodeUsages;
@@ -44,6 +45,7 @@ public class EditorPopup_ActionGroup extends BaseActionGroup {
     this.add(new GoToEditorDeclarationAction(), this);
     this.add(new GoToRulesAction(), this);
     this.add(new ShowNodeInExplorerAction(), this);
+    this.add(new ShowNodeInInspectorAction(), this);
     this.addSeparator();
     this.add(new GenerateFilesFromCurrentModelAction(), this);
     this.add(new GenerateTextFromCurrentModelAction(), this);

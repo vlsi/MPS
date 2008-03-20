@@ -27,7 +27,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEditor {
 
-  /* package */ AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
+  /* package */AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1205769393645");
@@ -96,7 +96,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
   }
 
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
-    if (this.myActualArgumentListHandler_actualArgumentList_ == null) {
+    if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
       this.myActualArgumentListHandler_actualArgumentList_ = new DefaultClassifierMethodCallOperation_Editor._RefNodeListHandler(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
@@ -113,8 +113,8 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     provider.setAuxiliaryCellProvider(new DefaultClassifierMethodCallOperation_Editor._Inline1());
     EditorCell editorCell = provider.createEditorCell(context);
     DefaultClassifierMethodCallOperation_Editor.setupBasic_MethodReferenceCell(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      DefaultClassifierMethodCallOperation_Editor.setupLabel_MethodReferenceCell(((EditorCell_Label) editorCell), node, context);
+    if(editorCell instanceof EditorCell_Label) {
+      DefaultClassifierMethodCallOperation_Editor.setupLabel_MethodReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -129,17 +129,17 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     EditorCell cellWithRole = this.createMethodReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
+    if(attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public static class _Inline1 extends AbstractCellProvider {
 
-    public _Inline1() {
+    public  _Inline1() {
       super();
     }
 
@@ -164,8 +164,8 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       DefaultClassifierMethodCallOperation_Editor._Inline1.setupBasic_NameCell(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        DefaultClassifierMethodCallOperation_Editor._Inline1.setupLabel_NameCell(((EditorCell_Label) editorCell), node, context);
+      if(editorCell instanceof EditorCell_Label) {
+        DefaultClassifierMethodCallOperation_Editor._Inline1.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -180,19 +180,18 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
+      if(attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
-        return cellWithRole;
+      return cellWithRole;
     }
 
-  }
-
+}
   public static class _RefNodeListHandler extends RefNodeListHandler {
 
-    public _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -227,15 +226,15 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if (elementNode != null) {
+        if(elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
           elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
         }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -258,6 +257,6 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
       return editorCell;
     }
 
-  }
+}
 
 }

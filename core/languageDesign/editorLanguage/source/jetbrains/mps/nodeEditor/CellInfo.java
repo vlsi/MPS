@@ -94,7 +94,10 @@ public class CellInfo {
         (myNodePointer == null?0: myNodePointer.hashCode()) + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
   }
 
-  public EditorCell findCell(AbstractEditorComponent editorComponent) {
+  public EditorCell findCell(AbstractEditorComponent editorComponent) {    
+    if (myNodePointer == null) {
+      return null;
+    }
     return editorComponent.findCellWithId(myCellId, myNodePointer.getNode());
   }
 

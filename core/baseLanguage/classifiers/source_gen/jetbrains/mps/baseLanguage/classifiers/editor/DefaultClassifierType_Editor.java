@@ -99,8 +99,8 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new DefaultClassifierType_Editor._Inline());
     EditorCell editorCell = provider.createEditorCell(context);
     DefaultClassifierType_Editor.setupBasic_ClassifierReferenceCell(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      DefaultClassifierType_Editor.setupLabel_ClassifierReferenceCell(((EditorCell_Label) editorCell), node, context);
+    if(editorCell instanceof EditorCell_Label) {
+      DefaultClassifierType_Editor.setupLabel_ClassifierReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -115,17 +115,17 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createClassifierReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
+    if(attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public static class _Inline extends AbstractCellProvider {
 
-    public _Inline() {
+    public  _Inline() {
       super();
     }
 
@@ -150,8 +150,8 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       DefaultClassifierType_Editor._Inline.setupBasic_NameCell(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        DefaultClassifierType_Editor._Inline.setupLabel_NameCell(((EditorCell_Label) editorCell), node, context);
+      if(editorCell instanceof EditorCell_Label) {
+        DefaultClassifierType_Editor._Inline.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -166,14 +166,14 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
+      if(attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
-        return cellWithRole;
+      return cellWithRole;
     }
 
-  }
+}
 
 }

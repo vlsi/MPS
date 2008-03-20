@@ -13,8 +13,8 @@ import java.util.List;
 
 public class DefaultClassifierMethodCallOperation extends BaseConcept implements IMemberOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation";
-  public static String MEMBER = "member";
   public static String ACTUAL_ARGUMENT = "actualArgument";
+  public static String MEMBER = "member";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
@@ -24,29 +24,13 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
   }
 
   public static DefaultClassifierMethodCallOperation newInstance(SModel sm, boolean init) {
-    return ((DefaultClassifierMethodCallOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (DefaultClassifierMethodCallOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultClassifierMethodCallOperation newInstance(SModel sm) {
     return DefaultClassifierMethodCallOperation.newInstance(sm, false);
   }
 
-
-  public IMember getMember() {
-    return ((IMember)this.getReferent(DefaultClassifierMethodCallOperation.MEMBER));
-  }
-
-  public void setMember(IMember node) {
-    super.setReferent(DefaultClassifierMethodCallOperation.MEMBER, node);
-  }
-
-  public DefaultClassifierMethodDeclaration getMethod() {
-    return ((DefaultClassifierMethodDeclaration)this.getMember());
-  }
-
-  public void setMethod(DefaultClassifierMethodDeclaration node) {
-    this.setMember(node);
-  }
 
   public int getActualArgumentsCount() {
     return this.getChildCount(DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT);
@@ -66,6 +50,22 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT, node);
+  }
+
+  public IMember getMember() {
+    return (IMember)this.getReferent(DefaultClassifierMethodCallOperation.MEMBER);
+  }
+
+  public void setMember(IMember node) {
+    super.setReferent(DefaultClassifierMethodCallOperation.MEMBER, node);
+  }
+
+  public DefaultClassifierMethodDeclaration getMethod() {
+    return (DefaultClassifierMethodDeclaration)this.getMember();
+  }
+
+  public void setMethod(DefaultClassifierMethodDeclaration node) {
+    this.setMember(node);
   }
 
   public String getShortDescription() {
