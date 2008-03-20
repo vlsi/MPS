@@ -219,9 +219,6 @@ public class RulesUtil {
     // todo: just compute type of the expression
     // now: the expression is expected to be SNodeOperationExpression with Link/LinkList access operation
     SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1203459446846(op);
-    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(leftOperation, "link", false), "target", false);
-    }
     if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
       return SLinkOperations.getTarget(SLinkOperations.getTarget(leftOperation, "link", false), "target", false);
     }
