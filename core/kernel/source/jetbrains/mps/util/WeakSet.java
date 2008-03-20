@@ -27,7 +27,7 @@ public class WeakSet<T> extends AbstractSet<T> {
   public boolean add(T t) {
     boolean result = myWeakHashMap.keySet().contains(t);
     myWeakHashMap.put(t, null);
-    return result;
+    return !result;
   }
 
 
