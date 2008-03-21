@@ -366,5 +366,22 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203676475131" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1206062473637">
+    <property name="name" value="ElsifClauseTest" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206062485264">
+      <property name="name" value="f" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206062485265" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206062485266" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206062485267">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206062489143">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206062491302">
+            <property name="value" value="true" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206062489145" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206062473638" />
+  </node>
 </model>
 
