@@ -5,9 +5,8 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
@@ -26,11 +25,7 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
       return;
     }
     // assign type
-    SNode T = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT", null);
-    SLinkOperations.setTarget(T, "targetConcept", SLinkOperations.getTarget(annotationLink, "target", false), false);
-    SPropertyOperations.set(T, "singularCradinality", "" + (SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1")));
-    SPropertyOperations.set(T, "aggregation", "" + (true));
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205276553448", true), T, nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205276553446");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103035534", true), new QuotationClass_85().createNode(SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1") + "", SLinkOperations.getTarget(annotationLink, "target", false)), nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103041053");
     // ---
     if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "property", "node"))) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "property annotation link is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204832870610");

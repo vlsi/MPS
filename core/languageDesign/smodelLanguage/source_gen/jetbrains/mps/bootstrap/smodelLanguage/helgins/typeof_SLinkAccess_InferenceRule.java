@@ -5,9 +5,8 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
@@ -26,11 +25,7 @@ public class typeof_SLinkAccess_InferenceRule implements InferenceRule_Runtime {
       return;
     }
     // assign type
-    SNode T = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT", null);
-    SLinkOperations.setTarget(T, "targetConcept", SLinkOperations.getTarget(linkDecl, "target", false), false);
-    SPropertyOperations.set(T, "singularCradinality", "" + (true));
-    SPropertyOperations.set(T, "aggregation", "" + (SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", null)));
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205962193116", true), T, op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205962193114");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103331026", true), new QuotationClass_86().createNode(SLinkOperations.getTarget(linkDecl, "target", false), SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", null) + ""), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103335045");
     // ---
     RulesUtil.checkAppliedCorrectly_generic(op);
     final SNode Concept_typevar_1186062441601 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);

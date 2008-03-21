@@ -8575,7 +8575,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205760063031">
             <property name="name" value="node" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205760063032">
-              <link role="concept" targetNodeId="125.1133920641626" resolveInfo="BaseConcept" />
+              <link role="concept" targetNodeId="126.1068580123155" resolveInfo="ExpressionStatement" />
             </node>
           </node>
         </node>
