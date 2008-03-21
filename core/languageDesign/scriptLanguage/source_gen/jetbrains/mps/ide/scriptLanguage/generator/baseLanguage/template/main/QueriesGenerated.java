@@ -9,6 +9,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -31,8 +32,17 @@ public class QueriesGenerated {
     );
   }
 
+  public static Object propertyMacro_GetPropertyValue_1177464650516(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ScriptNameUtil.getMigrationScriptClassName(_context.getNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_1177464819480(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "title");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1177465342820(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode affectedConcept = SLinkOperations.getTarget(_context.getNode(), "affectedInstanceConcept", false);
+    return NameUtil.nodeFQName(affectedConcept);
   }
 
   public static Object propertyMacro_GetPropertyValue_1177555396906(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -51,13 +61,8 @@ public class QueriesGenerated {
     );
   }
 
-  public static Object propertyMacro_GetPropertyValue_1177465342820(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode affectedConcept = SLinkOperations.getTarget(_context.getNode(), "affectedInstanceConcept", false);
-    return NameUtil.nodeFQName(affectedConcept);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1177464650516(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ScriptNameUtil.getMigrationScriptClassName(_context.getNode());
+  public static boolean ifMacro_Condition_1206121352567(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "affectedInstancePredicate", true) != null);
   }
 
   public static SNode sourceNodeQuery_1172287555052(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
