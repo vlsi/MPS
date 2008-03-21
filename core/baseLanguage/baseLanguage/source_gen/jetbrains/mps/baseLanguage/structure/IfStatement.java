@@ -6,12 +6,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
 public class IfStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.IfStatement";
   public static String CONDITION = "condition";
   public static String IF_FALSE_STATEMENT = "ifFalseStatement";
   public static String IF_TRUE = "ifTrue";
+  public static String ELSIF_CLAUSES = "elsifClauses";
 
   public  IfStatement(SNode node) {
     super(node);
@@ -48,6 +51,26 @@ public class IfStatement extends Statement {
 
   public void setIfTrue(StatementList node) {
     super.setChild(IfStatement.IF_TRUE, node);
+  }
+
+  public int getElsifClausesesCount() {
+    return this.getChildCount(IfStatement.ELSIF_CLAUSES);
+  }
+
+  public Iterator<ElsifClause> elsifClauseses() {
+    return this.children(IfStatement.ELSIF_CLAUSES);
+  }
+
+  public List<ElsifClause> getElsifClauseses() {
+    return this.getChildren(IfStatement.ELSIF_CLAUSES);
+  }
+
+  public void addElsifClauses(ElsifClause node) {
+    this.addChild(IfStatement.ELSIF_CLAUSES, node);
+  }
+
+  public void insertElsifClauses(ElsifClause prev, ElsifClause node) {
+    this.insertChild(prev, IfStatement.ELSIF_CLAUSES, node);
   }
 
 }

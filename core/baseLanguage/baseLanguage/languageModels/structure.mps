@@ -418,6 +418,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123159">
     <property name="name" value="IfStatement" />
+    <property name="package" value="if" />
     <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107216657940">
       <property name="value" value="if" />
@@ -443,6 +444,12 @@
       <property name="role" value="ifTrue" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206060520071">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="elsifClauses" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1206060495898" resolveInfo="ElsIfClause" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123163">
@@ -2639,6 +2646,23 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1206036041805">
     <property name="package" value="type" />
     <property name="name" value="IInternalType" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206060495898">
+    <property name="package" value="if" />
+    <property name="name" value="ElsifClause" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206060619838">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="condition" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206060644605">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="statementList" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
   </node>
 </model>
 

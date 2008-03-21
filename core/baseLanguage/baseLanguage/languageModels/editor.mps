@@ -2010,6 +2010,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075379419312">
     <property name="name" value="IfStatement_Editor" />
+    <property name="package" value="if" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123159" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177555034647">
       <property name="name" value="statementBox" />
