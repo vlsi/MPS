@@ -5,9 +5,9 @@ package smodelLanguage.samples;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.IScope;
   /* package */void concept_ref_1(SNode node) {
     SNode concept1 = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement");
     SNode concept2 = SNodeOperations.getConceptDeclaration(node);
-    if(SConceptOperations.isAssignableFrom(concept1, concept2)) {
+    if(SConceptOperations.isSuperConceptOf(concept1, NameUtil.nodeFQName(concept2))) {
     }
     INodeAdapter adapter = ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept1));
   }

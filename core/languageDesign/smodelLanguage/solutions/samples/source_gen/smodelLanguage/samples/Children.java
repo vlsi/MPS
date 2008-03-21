@@ -8,6 +8,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 /* package */class Children {
 
@@ -31,6 +33,17 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
     }
     for(SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
       SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
+    }
+    {
+      ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(statementList2, "statement", true));
+      try {
+        while(_zCursor.moveToNext()) {
+          SNode statement = _zCursor.getCurrent();
+          SLinkOperations.addChild(statementList2, "statement", SequenceOperations.getFirst(SLinkOperations.getTargets(statementList2, "statement", true)));
+        }
+      } finally {
+        _zCursor.release();
+      }
     }
   }
 

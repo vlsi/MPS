@@ -14,6 +14,7 @@ import java.util.List;
     SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNodeOperations.deleteNode(condition);
     SLinkOperations.deleteChild(ifStatement, "condition");
+    SNodeOperations.deleteNode(SLinkOperations.getTarget(ifStatement, "condition", true));
   }
 
   /* package */void accessToChildNode_2(SNode ifStatement, SNode newCondition) {
@@ -39,6 +40,7 @@ import java.util.List;
     String oldMethopdName = SPropertyOperations.getString(oldMethod, "name");
     oldMethopdName = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "name");
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
+    SLinkOperations.deleteChild(methodCall, "baseMethodDeclaration");
   }
 
   /* package */void accessToParentNode_1(SNode expression) {

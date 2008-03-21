@@ -250,6 +250,23 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206060426858">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206060441643">
+            <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1206060433967">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206060428344">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206060426859">
+                  <link role="variableDeclaration" targetNodeId="1145583482393" resolveInfo="methodCall" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206060430810">
+                  <link role="link" targetNodeId="1.1068499141038" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206060443504">
+              <link role="baseMethodDeclaration" targetNodeId="5.~List.size():int" resolveInfo="size" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1145583482393">
         <property name="name" value="methodCall" />

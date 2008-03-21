@@ -11,10 +11,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 
 public class PropertyRefQualifier extends BaseConcept implements IPropertyAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier";
+  public static String PROPERTY = "property";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String PROPERTY = "property";
 
   public  PropertyRefQualifier(SNode node) {
     super(node);
@@ -28,6 +28,14 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
     return PropertyRefQualifier.newInstance(sm, false);
   }
 
+
+  public PropertyDeclaration getProperty() {
+    return (PropertyDeclaration)this.getReferent(PropertyRefQualifier.PROPERTY);
+  }
+
+  public void setProperty(PropertyDeclaration node) {
+    super.setReferent(PropertyRefQualifier.PROPERTY, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(PropertyRefQualifier.SHORT_DESCRIPTION);
@@ -51,14 +59,6 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
 
   public void setVirtualPackage(String value) {
     this.setProperty(PropertyRefQualifier.VIRTUAL_PACKAGE, value);
-  }
-
-  public PropertyDeclaration getProperty() {
-    return (PropertyDeclaration)this.getReferent(PropertyRefQualifier.PROPERTY);
-  }
-
-  public void setProperty(PropertyDeclaration node) {
-    super.setReferent(PropertyRefQualifier.PROPERTY, node);
   }
 
 }

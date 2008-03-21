@@ -20,7 +20,7 @@ public class Replace_ListType_withNodeListType_Intention extends BaseIntention i
   }
 
   public String getDescription(SNode node, EditorContext editorContext) {
-    return "replace with snodes< >";
+    return "replace with nlist < >";
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
