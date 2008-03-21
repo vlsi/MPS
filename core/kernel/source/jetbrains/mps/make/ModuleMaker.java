@@ -7,6 +7,7 @@ import jetbrains.mps.make.MakeScheduleBuilder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -240,43 +241,7 @@ public class ModuleMaker {
   }
 
   private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {
-    Set<IModule> dependOnModules = new LinkedHashSet<IModule>();
-    dependOnModules.addAll(modules);
-    for (IModule m : modules) {
-      dependOnModules.addAll(m.getAllDependOnModules(IModule.class));
-    }
-    dependOnModules.addAll(BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore());
-
-    CompositeClassPathItem classPathItems = new CompositeClassPathItem();
-    
-    classPathItems.add(ClassLoaderManager.getInstance().getRTJar());
-    classPathItems.add(ClassLoaderManager.getInstance().getMPSPath());
-
-    for (IModule m : dependOnModules) {
-      classPathItems.add(m.getModuleWithDependenciesClassPathItem());
-    }
-
-    Set<Language> allExtendedLanguages = new LinkedHashSet<Language>();
-    for (IModule m : modules) {
-      if (m instanceof Language) {
-        allExtendedLanguages.addAll(((Language) m).getAllExtendedLanguages());
-      }
-    }
-    for (Language l : allExtendedLanguages) {
-      classPathItems.add(l.getRuntimeClasspath());
-    }
-
-    classPathItems = classPathItems.optimize();
-
-    System.out.println("classpath:");
-    for (IClassPathItem item : classPathItems.getChildren()) {
-      System.out.println("item = " + item);
-    }
-    System.out.println("---------------------------");
-    System.out.println("");
-    System.out.println("");
-
-    return classPathItems;
+    return AbstractModule.getDependenciesClasspath(modules);
   }
 
   private boolean isUpToDate(IModule m) {

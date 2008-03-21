@@ -817,12 +817,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return null;
   }
 
-  protected void addAdditionalModuleWithDependenciesClassPath(CompositeClassPathItem item) {
-    for (Language extendedLanguage : getExtendedLanguages()) {
-      item.add(extendedLanguage.getRuntimeClasspath());
-    }
-  }
-
   private class LanguageModelsAdapter extends SModelsAdapter {
     public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {
     }

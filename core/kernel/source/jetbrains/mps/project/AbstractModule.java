@@ -31,6 +31,44 @@ import java.util.*;
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
+  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules) {
+    Set<IModule> dependOnModules = new LinkedHashSet<IModule>();
+    dependOnModules.addAll(modules);
+    for (IModule m : modules) {
+      dependOnModules.addAll(m.getAllDependOnModules(IModule.class));
+    }
+    dependOnModules.addAll(BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore());
+
+    CompositeClassPathItem result = new CompositeClassPathItem();
+
+    result.add(ClassLoaderManager.getInstance().getRTJar());
+    result.add(ClassLoaderManager.getInstance().getMPSPath());
+
+    for (IModule m : dependOnModules) {
+      result.add(m.getJavaStubsClassPathItem());
+    }
+
+    Set<Language> allExtendedLanguages = new LinkedHashSet<Language>();
+    for (IModule m : modules) {
+      if (m instanceof Language) {
+        allExtendedLanguages.addAll(((Language) m).getAllExtendedLanguages());
+      }
+    }
+    for (Language l : allExtendedLanguages) {
+      result.add(l.getRuntimeClasspath());
+    }
+
+    System.out.println("classpath:");
+    for (IClassPathItem item : result.getChildren()) {
+      System.out.println("item = " + item);
+    }
+    System.out.println("---------------------------");
+    System.out.println("");
+    System.out.println("");
+
+    return result;
+  }
+
   private boolean myModelsRead = false;
   private boolean myInitialized = false;
   protected IFile myDescriptorFile;
@@ -413,34 +451,7 @@ public abstract class AbstractModule implements IModule {
   }
   
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
-    CompositeClassPathItem item = new CompositeClassPathItem();
-    for (IModule m : getScope().getVisibleModules()) {
-      for (String s : ((AbstractModule) m).getClassPath()) {
-        IClassPathItem classPathItem = createClassPathItem(s);
-        if (classPathItem != null) {
-          item.add(classPathItem);
-        }
-      }
-    }
-
-    for (Language l : getScope().getVisibleLanguages()) {
-      for (String s : l.getClassPath()) {
-        IClassPathItem classPathItem = createClassPathItem(s);
-        if (classPathItem != null) {
-          item.add(classPathItem);
-        }
-      }
-    }
-
-    addAdditionalModuleWithDependenciesClassPath(item);
-
-    item.add(getJavaStubsClassPathItem());
-
-    return item;
-  }
-
-  protected void addAdditionalModuleWithDependenciesClassPath(CompositeClassPathItem item) {
-
+    return getDependenciesClasspath(CollectionUtil.asSet((IModule) this));
   }
 
   protected IClassPathItem createClassPathItem(String s) {
@@ -659,6 +670,8 @@ public abstract class AbstractModule implements IModule {
     myScope.invalidateCaches();
     myClassesCache.clear();    
   }
+
+
 
   //TODO: make private (was made visible for usages view to save view scope by Mihail Muhin)
   public class ModuleScope extends BaseScope {
