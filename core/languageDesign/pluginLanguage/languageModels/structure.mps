@@ -1043,6 +1043,72 @@
       <property name="value" value="LOG"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1206110434025">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206110063106">
+    <property name="name" value="CustomPlugin"/>
+    <property name="package" value="Custom"/>
+    <property name="rootable" value="true"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1206110209276">
+      <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1206110253508">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="initBlock"/>
+      <link role="target" targetNodeId="1206110093589" resolveInfo="InitBlock"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1206110260441">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="disposeBlock"/>
+      <link role="target" targetNodeId="1206110108761" resolveInfo="DisposeBlock"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206110093589">
+    <property name="package" value="Custom"/>
+    <property name="name" value="InitBlock"/>
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1206110179712">
+      <property name="value" value="init"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1206110184190">
+      <property name="value" value="init"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
+          id="1206110174875">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206110176648"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206110108761">
+    <property name="package" value="Custom"/>
+    <property name="name" value="DisposeBlock"/>
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
+          id="1206110157077">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206110159006"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1206110136680">
+      <property name="value" value="dispose"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1206110151196">
+      <property name="value" value="dispose"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
   </node>
 </model>
 
