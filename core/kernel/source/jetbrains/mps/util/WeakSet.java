@@ -19,6 +19,7 @@ public class WeakSet<T> extends AbstractSet<T> {
   }
 
   public WeakSet(Collection<? extends T> collection) {
+    this();
     if (collection != null) {
       for (T t : collection) {
         add(t);
