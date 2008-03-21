@@ -15,7 +15,7 @@ public class typeOf_thisExpr_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode thisExpr) {
-    if((SLinkOperations.getTarget(thisExpr, "classConcept", false) != null)) {
+    if ((SLinkOperations.getTarget(thisExpr, "classConcept", false) != null)) {
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_17().createNode(SLinkOperations.getTarget(thisExpr, "classConcept", false)), thisExpr, "jetbrains.mps.baseLanguage.helgins", "1182985650714");
     } else
     {

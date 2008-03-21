@@ -21,16 +21,16 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
   public void applyRule(final SNode baseMethodDeclaration) {
     CFGBuilder cfgBuilder = new CFGBuilder(baseMethodDeclaration);
     for(BasicBlock basicBlock : cfgBuilder.getUnreachableBasicBlocks()) {
-      if(!(basicBlock.isFake())) {
+      if (!(basicBlock.isFake())) {
         TypeChecker.getInstance().reportTypeError(basicBlock.getSourceNode(), "unreachable statement", "jetbrains.mps.baseLanguage.helgins", "1196169269696");
       }
     }
-    if(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(SNodeOperations.isInstanceOf(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(SNodeOperations.isInstanceOf(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
       IControlFlowGraph controlFlowGraph = cfgBuilder.getControlFlowGraph();
       Set<BasicBlock> lastBlocks = RulesFunctions_BaseLanguage.findLastBlocks(controlFlowGraph);
       for(BasicBlock basicBlock : lastBlocks) {
         SNode node = basicBlock.getSourceNode();
-        if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
           TypeChecker.getInstance().reportTypeError(basicBlock.getSourceNode(), "function should return a value", "jetbrains.mps.baseLanguage.helgins", "1196175172960");
         }
       }

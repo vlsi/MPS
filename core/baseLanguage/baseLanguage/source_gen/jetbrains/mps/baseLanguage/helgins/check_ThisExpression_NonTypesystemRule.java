@@ -13,7 +13,7 @@ public class check_ThisExpression_NonTypesystemRule implements NonTypesystemRule
   }
 
   public void applyRule(final SNode thisExpression) {
-    if(!(!(RulesFunctions_BaseLanguage.isWithinStatic(thisExpression)))) {
+    if (!(!(RulesFunctions_BaseLanguage.isWithinStatic(thisExpression)))) {
       TypeChecker.getInstance().reportTypeError(thisExpression, "this-expression is not allowed in a static context ", "jetbrains.mps.baseLanguage.helgins", "1201700958007");
     }
   }

@@ -17,10 +17,10 @@ public class check_ContinueStatement_InferenceRule implements InferenceRule_Runt
 
   public void applyRule(final SNode nodeToCheck) {
     final zClosureContext2 _zClosureContext2 = new zClosureContext2();
-    if(!(SPropertyOperations.hasValue(nodeToCheck, "label", null))) {
+    if (!(SPropertyOperations.hasValue(nodeToCheck, "label", null))) {
       _zClosureContext2.lbl = SPropertyOperations.getString(nodeToCheck, "label");
       Iterable<SNode> matchingLoops = SequenceOperations.where(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zPredicate2(check_ContinueStatement_InferenceRule.this, _zClosureContext2));
-      if(!(!(SequenceOperations.isEmpty(matchingLoops)))) {
+      if (!(!(SequenceOperations.isEmpty(matchingLoops)))) {
         TypeChecker.getInstance().reportTypeError(nodeToCheck, "No such label", "jetbrains.mps.baseLanguage.helgins", "1199470337258");
       }
     }

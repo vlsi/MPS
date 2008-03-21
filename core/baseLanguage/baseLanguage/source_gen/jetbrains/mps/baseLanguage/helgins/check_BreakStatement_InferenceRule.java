@@ -17,10 +17,10 @@ public class check_BreakStatement_InferenceRule implements InferenceRule_Runtime
 
   public void applyRule(final SNode nodeToCheck) {
     final zClosureContext1 _zClosureContext1 = new zClosureContext1();
-    if(!(SPropertyOperations.hasValue(nodeToCheck, "label", null))) {
+    if (!(SPropertyOperations.hasValue(nodeToCheck, "label", null))) {
       _zClosureContext1.lbl = SPropertyOperations.getString(nodeToCheck, "label");
       Iterable<SNode> matchingLoops = SequenceOperations.where(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zPredicate1(check_BreakStatement_InferenceRule.this, _zClosureContext1));
-      if(!(!(SequenceOperations.isEmpty(matchingLoops)))) {
+      if (!(!(SequenceOperations.isEmpty(matchingLoops)))) {
         TypeChecker.getInstance().reportTypeError(nodeToCheck, "No such label", "jetbrains.mps.baseLanguage.helgins", "1199469904373");
       }
     }

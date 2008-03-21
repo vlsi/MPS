@@ -14,7 +14,7 @@ public class typeOf_CastExpression_InferenceRule implements InferenceRule_Runtim
   }
 
   public void applyRule(final SNode castExpression) {
-    if((SLinkOperations.getTarget(castExpression, "type", true) != null)) {
+    if ((SLinkOperations.getTarget(castExpression, "type", true) != null)) {
       TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(castExpression, "type", true), castExpression, "jetbrains.mps.baseLanguage.helgins", "1178271952457");
       TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1178271928128", true), SLinkOperations.getTarget(castExpression, "type", true), castExpression, null, "jetbrains.mps.baseLanguage.helgins", "1178271928127");
     }

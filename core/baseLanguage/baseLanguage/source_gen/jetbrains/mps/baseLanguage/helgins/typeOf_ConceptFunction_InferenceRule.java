@@ -22,7 +22,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
   public void applyRule(final SNode func) {
     SNode expectedRetType = ConceptFunction_Behavior.call_getExpectedReturnType_1178571276073(func);
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_72().createNode()));
-    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
+    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       // function is expected to return value of any type
       expectedRetType = null;
     }
@@ -31,14 +31,14 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     boolean somethingReturned = !(SequenceOperations.isEmpty(returnStatements));
     // =============
     final SNode LCS_typevar_1186052624152 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    if(noReturnExpected) {
+    if (noReturnExpected) {
       // shouldn't return any values
       {
         ICursor<SNode> _zCursor3 = CursorFactory.createCursor(returnStatements);
         try {
           while(_zCursor3.moveToNext()) {
             SNode returnStatement = _zCursor3.getCurrent();
-            if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
+            if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "jetbrains.mps.baseLanguage.helgins", "1186053278842");
             }
           }
@@ -56,7 +56,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
         try {
           while(_zCursor4.moveToNext()) {
             SNode returnStatement = _zCursor4.getCurrent();
-            if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
+            if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
               TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "jetbrains.mps.baseLanguage.helgins", "1186053304501");
             } else
             {
@@ -69,12 +69,12 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
       }
       // last expression statement can serve as return statement
       SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(func, "body", true), "statement", true));
-      if(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+      if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode expression = SLinkOperations.getTarget(lastStatement, "expression", true);
         TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), TypeChecker.getInstance().getRuntimeSupport().typeOf(expression, "jetbrains.mps.baseLanguage.helgins", "1186053084979", true), expression, null, "jetbrains.mps.baseLanguage.helgins", "1186053063874");
         somethingReturned = true;
       }
-      if(!(somethingReturned)) {
+      if (!(somethingReturned)) {
         String whatExpected = ((expectedRetType == null) ?
           "some value" :
           "" + expectedRetType
@@ -82,7 +82,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
         TypeChecker.getInstance().reportTypeError(func, "function should return " + whatExpected, "jetbrains.mps.baseLanguage.helgins", "1179436928064");
       }
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(func, "jetbrains.mps.baseLanguage.helgins", "1186053169643", true), TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), func, null, "jetbrains.mps.baseLanguage.helgins", "1186053174208");
-      if((expectedRetType != null)) {
+      if ((expectedRetType != null)) {
         TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(func, "jetbrains.mps.baseLanguage.helgins", "1186053540851", true), expectedRetType, func, null, "jetbrains.mps.baseLanguage.helgins", "1186053540847");
       }
     }

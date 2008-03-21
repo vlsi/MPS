@@ -18,10 +18,10 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
   }
 
   public void applyRule(final SNode imco) {
-    if(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false) == null) {
+    if (SLinkOperations.getTarget(imco, "baseMethodDeclaration", false) == null) {
       return;
     }
-    if(!(SLinkOperations.getCount(imco, "actualArgument") == SLinkOperations.getCount(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "parameter"))) {
+    if (!(SLinkOperations.getCount(imco, "actualArgument") == SLinkOperations.getCount(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "parameter"))) {
       TypeChecker.getInstance().reportTypeError(imco, "wrong number of parameters", "jetbrains.mps.baseLanguage.helgins", "1204064546506");
     }
     // ---
