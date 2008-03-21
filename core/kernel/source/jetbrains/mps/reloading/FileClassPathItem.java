@@ -5,6 +5,7 @@ import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.*;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -63,6 +64,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
 
   public URL getResource(String name) {
     try {
+      //todo convert to IFiles
       File file = new File(myClassPath + File.separator + name.replace('/', File.separatorChar));
       if (!file.exists()) return null;
       return file.toURL();
@@ -92,11 +94,11 @@ public class FileClassPathItem extends AbstractClassPathItem {
   private void buildCacheFor(String namespace) {
     Set<String> subpacks = new HashSet<String>();
     Set<String> classes = new HashSet<String>();
-    File dir = getModelDir(namespace);
+    IFile dir = getModelDir(namespace);
 
-    File[] files = dir.listFiles();
+    List<IFile> files = dir.list();
     if (files != null) {
-      for (File file : files) {
+      for (IFile file : files) {
         String name = file.getName();
         if (!name.endsWith(".class") && file.isDirectory()) { //isDirectory is quite expensive operation
           if (namespace.length() > 0) {
@@ -117,10 +119,10 @@ public class FileClassPathItem extends AbstractClassPathItem {
   }
 
   public long getClassesTimestamp(String namespace) {
-    File dir = getModelDir(namespace);
+    IFile dir = getModelDir(namespace);
     long result = dir.lastModified();
     if (dir.exists()) {
-      for (File file : dir.listFiles()) {
+      for (IFile file : dir.list()) {
         if (file.getName().endsWith(".class")) {
           result = Math.max(result, file.lastModified());
         }
@@ -129,9 +131,9 @@ public class FileClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
-  private File getModelDir(String namespace) {
+  private IFile getModelDir(String namespace) {
     if (namespace == null) namespace = "";
-    return new File(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));
+    return FileSystem.getFile(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));
   }
 
 
