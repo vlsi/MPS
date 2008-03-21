@@ -14,9 +14,9 @@ public class typeof_MigrationScriptPart_node_InferenceRule implements InferenceR
   public  typeof_MigrationScriptPart_node_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode affectedConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance", false, false), "affectedInstanceConcept", false);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(affectedConcept), argument, "jetbrains.mps.ide.scriptLanguage.helgins", "1177463243158");
+  public void applyRule(final SNode node) {
+    SNode affectedConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance", false, false), "affectedInstanceConcept", false);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(affectedConcept), node, "jetbrains.mps.ide.scriptLanguage.helgins", "1177463243158");
   }
 
   public String getApplicableConceptFQName() {

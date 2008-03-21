@@ -239,15 +239,6 @@
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1203640759821">
       <property name="description" value="DotExpression: convert SNodeOperationExpression " />
       <link role="affectedInstanceConcept" targetNodeId="1.1138055978872" resolveInfo="SNodeOperationExpression" />
-      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1203640759822">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203640759823">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204668026197">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204668026198">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1203640759824">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203640759825">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203640842646">

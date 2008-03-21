@@ -239,6 +239,7 @@
             <property name="textFgColor" value="DARK_BLUE" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1177551438484">
+            <property name="noTargetText" value="&lt;no condition&gt;" />
             <link role="relationDeclaration" targetNodeId="1.1177457957478" />
           </node>
         </node>

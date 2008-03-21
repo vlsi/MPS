@@ -114,7 +114,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177457957478">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="affectedInstancePredicate" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1177458061340" resolveInfo="MigrationScriptPart_Instance_Predicate" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177458005323">

@@ -21,6 +21,26 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177460842247");
+  }
+
+  private static void setupBasic_ConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177461567284");
+  }
+
+  private static void setupBasic_ColumnCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421958");
+    editorCell.setSelectable(false);
+    editorCell.setDrawBrackets(true);
+    editorCell.setBracketsColor(Color.lightGray);
+  }
+
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421959");
+    editorCell.setSelectable(false);
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421960");
   }
@@ -34,8 +54,8 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421962");
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421959");
+  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438475");
     editorCell.setSelectable(false);
   }
 
@@ -52,8 +72,8 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438478");
   }
 
-  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438475");
+  private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438481");
     editorCell.setSelectable(false);
   }
 
@@ -70,8 +90,8 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438484");
   }
 
-  private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438481");
+  private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438485");
     editorCell.setSelectable(false);
   }
 
@@ -88,24 +108,9 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438488");
   }
 
-  private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551438485");
-    editorCell.setSelectable(false);
-  }
-
-  private static void setupBasic_ColumnCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177551421958");
-    editorCell.setSelectable(false);
-    editorCell.setDrawBrackets(true);
-    editorCell.setBracketsColor(Color.lightGray);
-  }
-
-  private static void setupBasic_ConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177461567284");
-  }
-
-  private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177460842247");
+  private static void setupLabel_ConstantCell8(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.setEditable(false);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -153,14 +158,33 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
   private static void setupLabel_AffectedInstanceUpdaterCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell8(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(false);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
+  }
+
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    MigrationScriptPart_Instance_Editor.setupBasic_ColumnCell(editorCell, node, context);
+    editorCell.setGridLayout(true);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createColumnCell1(context, node));
+    editorCell.addEditorCell(this.createConstantCell8(context, node, ";"));
+    return editorCell;
+  }
+
+  public EditorCell createColumnCell1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    MigrationScriptPart_Instance_Editor.setupBasic_ColumnCell1(editorCell, node, context);
+    editorCell.setGridLayout(true);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.createRowCell2(context, node));
+    editorCell.addEditorCell(this.createRowCell3(context, node));
+    return editorCell;
   }
 
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -211,27 +235,11 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createColumnCell1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    MigrationScriptPart_Instance_Editor.setupBasic_ColumnCell1(editorCell, node, context);
-    editorCell.setGridLayout(true);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.addEditorCell(this.createRowCell2(context, node));
-    editorCell.addEditorCell(this.createRowCell3(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createColumnCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    MigrationScriptPart_Instance_Editor.setupBasic_ColumnCell(editorCell, node, context);
-    editorCell.setGridLayout(true);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createColumnCell1(context, node));
-    editorCell.addEditorCell(this.createConstantCell8(context, node, ";"));
+  public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    MigrationScriptPart_Instance_Editor.setupBasic_ConstantCell8(editorCell, node, context);
+    MigrationScriptPart_Instance_Editor.setupLabel_ConstantCell8(editorCell, node, context);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -299,20 +307,12 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    MigrationScriptPart_Instance_Editor.setupBasic_ConstantCell8(editorCell, node, context);
-    MigrationScriptPart_Instance_Editor.setupLabel_ConstantCell8(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createDescriptionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     MigrationScriptPart_Instance_Editor.setupBasic_DescriptionCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       MigrationScriptPart_Instance_Editor.setupLabel_DescriptionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -328,7 +328,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createDescriptionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -341,7 +341,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new MigrationScriptPart_Instance_Editor._Inline1());
     EditorCell editorCell = provider.createEditorCell(context);
     MigrationScriptPart_Instance_Editor.setupBasic_AffectedInstanceConceptReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       MigrationScriptPart_Instance_Editor.setupLabel_AffectedInstanceConceptReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -357,7 +357,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createAffectedInstanceConceptReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -370,7 +370,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     MigrationScriptPart_Instance_Editor.setupBasic_AffectedInstancePredicateCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       MigrationScriptPart_Instance_Editor.setupLabel_AffectedInstancePredicateCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -380,13 +380,13 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
   public EditorCell createAffectedInstancePredicateCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("affectedInstancePredicate");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no condition>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createAffectedInstancePredicateCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -399,7 +399,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     MigrationScriptPart_Instance_Editor.setupBasic_AffectedInstanceUpdaterCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       MigrationScriptPart_Instance_Editor.setupLabel_AffectedInstanceUpdaterCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -415,7 +415,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createAffectedInstanceUpdaterCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -451,7 +451,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       MigrationScriptPart_Instance_Editor._Inline1.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         MigrationScriptPart_Instance_Editor._Inline1.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -467,7 +467,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
