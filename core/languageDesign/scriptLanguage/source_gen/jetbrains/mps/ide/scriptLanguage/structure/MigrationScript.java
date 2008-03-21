@@ -14,6 +14,8 @@ import java.util.List;
 public class MigrationScript extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript";
   public static String TITLE = "title";
+  public static String MIGRATION_FROM_BUILD = "migrationFromBuild";
+  public static String CATEGORY = "category";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -39,6 +41,22 @@ public class MigrationScript extends BaseConcept implements INamedConcept {
 
   public void setTitle(String value) {
     this.setProperty(MigrationScript.TITLE, value);
+  }
+
+  public String getMigrationFromBuild() {
+    return this.getProperty(MigrationScript.MIGRATION_FROM_BUILD);
+  }
+
+  public void setMigrationFromBuild(String value) {
+    this.setProperty(MigrationScript.MIGRATION_FROM_BUILD, value);
+  }
+
+  public String getCategory() {
+    return this.getProperty(MigrationScript.CATEGORY);
+  }
+
+  public void setCategory(String value) {
+    this.setProperty(MigrationScript.CATEGORY, value);
   }
 
   public String getName() {

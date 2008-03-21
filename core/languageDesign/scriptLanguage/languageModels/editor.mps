@@ -150,10 +150,44 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177460463182">
         <property name="selectable" value="false" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1177460558030">
-        <property name="noTargetText" value="&lt;no title&gt;" />
-        <property name="textFgColor" value="DARK_GREEN" />
-        <link role="relationDeclaration" targetNodeId="1.1177457669450" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206123424119">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1206124890713">
+          <property name="noTargetText" value="&lt;no category&gt;" />
+          <property name="textFgColor" value="DARK_GREEN" />
+          <property name="allowEmptyText" value="true" />
+          <property name="drawBorder" value="true" />
+          <link role="relationDeclaration" targetNodeId="1.1206123296179" resolveInfo="category" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206124949480">
+          <property name="text" value=":" />
+          <property name="selectable" value="false" />
+          <property name="textFgColor" value="DARK_GREEN" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1206124974387">
+          <property name="noTargetText" value="&lt;no title&gt;" />
+          <property name="textFgColor" value="DARK_GREEN" />
+          <property name="drawBorder" value="true" />
+          <link role="relationDeclaration" targetNodeId="1.1177457669450" resolveInfo="title" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206124993919">
+          <property name="text" value="[migrate form b." />
+          <property name="selectable" value="false" />
+          <property name="textFgColor" value="DARK_GREEN" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1206125033998">
+          <property name="noTargetText" value="&lt;not specified&gt;" />
+          <property name="textFgColor" value="DARK_GREEN" />
+          <property name="allowEmptyText" value="true" />
+          <property name="drawBorder" value="true" />
+          <link role="relationDeclaration" targetNodeId="1.1206123256132" resolveInfo="migrationFromBuild" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206125043374">
+          <property name="text" value="]" />
+          <property name="selectable" value="false" />
+          <property name="textFgColor" value="DARK_GREEN" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177460588595">
         <property name="selectable" value="false" />
