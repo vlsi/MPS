@@ -79,7 +79,15 @@ public class ScriptsActionGroup extends ActionGroup {
       byCategory.get(cat).add(migrationScript);
     }
 
-    for (String cat : byCategory.keySet()) {
+    Set<String> sorted = new TreeSet<String>(new Comparator<String>() {
+      public int compare(String o1, String o2) {
+        if ("<uncategorized>".equals(o1)) return 1;
+        if ("<uncategorized>".equals(o2)) return -1;
+        return o1.compareTo(o2);
+      }
+    });
+    sorted.addAll(byCategory.keySet());
+    for (String cat : sorted) {
       ActionGroup categoryGroup = new ActionGroup(cat);
       for (MigrationScript script : byCategory.get(cat)) {
         categoryGroup.add(new RunMigrationScriptAction(script,
@@ -108,7 +116,8 @@ public class ScriptsActionGroup extends ActionGroup {
       byBuild.get(build).add(migrationScript);
     }
 
-    for (String build : byBuild.keySet()) {
+    Set<String> sorted = new TreeSet<String>(byBuild.keySet());
+    for (String build : sorted) {
       ActionGroup categoryGroup = new ActionGroup("migrate from b." + build);
       for (MigrationScript script : byBuild.get(build)) {
         categoryGroup.add(new RunMigrationScriptAction(script,
