@@ -411,7 +411,7 @@ public abstract class AbstractModule implements IModule {
   public IClassPathItem getJavaStubsClassPathItem() {
     return myJavaStubsClassPathItem;
   }
-
+  
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
     CompositeClassPathItem item = new CompositeClassPathItem();
     for (IModule m : getScope().getVisibleModules()) {
@@ -433,6 +433,8 @@ public abstract class AbstractModule implements IModule {
     }
 
     addAdditionalModuleWithDependenciesClassPath(item);
+
+    item.add(getJavaStubsClassPathItem());
 
     return item;
   }
