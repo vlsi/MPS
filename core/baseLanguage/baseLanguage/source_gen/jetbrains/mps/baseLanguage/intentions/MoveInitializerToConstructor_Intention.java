@@ -27,10 +27,10 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention implem
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    if(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null) {
+    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null) {
       return false;
     }
-    if(SLinkOperations.getTarget(node, "initializer", true) == null) {
+    if (SLinkOperations.getTarget(node, "initializer", true) == null) {
       return false;
     }
     return true;
