@@ -16,7 +16,6 @@ public class MigrationScript extends BaseConcept implements INamedConcept {
   public static String TITLE = "title";
   public static String MIGRATION_FROM_BUILD = "migrationFromBuild";
   public static String CATEGORY = "category";
-  public static String LONG_CAPTION = "longCaption";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -58,14 +57,6 @@ public class MigrationScript extends BaseConcept implements INamedConcept {
 
   public void setCategory(String value) {
     this.setProperty(MigrationScript.CATEGORY, value);
-  }
-
-  public String getLongCaption() {
-    return this.getProperty(MigrationScript.LONG_CAPTION);
-  }
-
-  public void setLongCaption(String value) {
-    this.setProperty(MigrationScript.LONG_CAPTION, value);
   }
 
   public String getName() {

@@ -105,7 +105,7 @@ public class Concept_IsSuperConceptOfOperation_Editor extends DefaultNodeEditor 
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     Concept_IsSuperConceptOfOperation_Editor.setupBasic_ConceptArgumentCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       Concept_IsSuperConceptOfOperation_Editor.setupLabel_ConceptArgumentCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -121,7 +121,7 @@ public class Concept_IsSuperConceptOfOperation_Editor extends DefaultNodeEditor 
     EditorCell cellWithRole = this.createConceptArgumentCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

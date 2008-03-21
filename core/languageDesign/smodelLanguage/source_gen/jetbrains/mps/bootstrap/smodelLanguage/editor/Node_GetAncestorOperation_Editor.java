@@ -280,7 +280,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createOperationParameters_ComponentCell(EditorContext context, SNode node) {
-    if(this.myOperationParameters_Component5 == null) {
+    if (this.myOperationParameters_Component5 == null) {
       this.myOperationParameters_Component5 = new OperationParameters_Component(node);
     }
     EditorCell editorCell = this.myOperationParameters_Component5.createEditorCell(context);

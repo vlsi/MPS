@@ -30,8 +30,8 @@ public class RunMigrationScriptAction extends RefactoringAction {
   private MigrationScript myScript;
   private BaseMigrationScript myScriptInstance;
 
-  public RunMigrationScriptAction(MigrationScript script) {
-    super(script.getLongCaption());
+  public RunMigrationScriptAction(MigrationScript script, String name) {
+    super(name);
     myScript = script;
   }
 

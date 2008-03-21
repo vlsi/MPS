@@ -99,10 +99,6 @@
       <property name="name" value="category" />
       <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1206126126385">
-      <property name="name" value="longCaption" />
-      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177457199228">
       <property name="value" value="language migration script" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

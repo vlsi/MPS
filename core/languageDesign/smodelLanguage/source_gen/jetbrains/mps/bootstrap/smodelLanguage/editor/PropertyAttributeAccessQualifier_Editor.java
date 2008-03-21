@@ -90,7 +90,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new PropertyAttributeAccessQualifier_Editor._Inline33());
     EditorCell editorCell = provider.createEditorCell(context);
     PropertyAttributeAccessQualifier_Editor.setupBasic_AnnotationLinkReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       PropertyAttributeAccessQualifier_Editor.setupLabel_AnnotationLinkReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -106,7 +106,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createAnnotationLinkReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -119,7 +119,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     PropertyAttributeAccessQualifier_Editor.setupBasic_PropertyQualifierCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       PropertyAttributeAccessQualifier_Editor.setupLabel_PropertyQualifierCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -135,7 +135,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createPropertyQualifierCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -170,7 +170,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       PropertyAttributeAccessQualifier_Editor._Inline33.setupBasic_RoleCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         PropertyAttributeAccessQualifier_Editor._Inline33.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -186,7 +186,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createRoleCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

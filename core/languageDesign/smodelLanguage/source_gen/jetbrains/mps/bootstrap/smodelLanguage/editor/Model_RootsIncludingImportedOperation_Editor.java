@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.bootstrap.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEditor {
@@ -122,7 +123,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     Model_RootsIncludingImportedOperation_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       Model_RootsIncludingImportedOperation_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -138,7 +139,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
     EditorCell cellWithRole = this.createCellModel_ConceptPropertyinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -151,7 +152,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
     provider.setAuxiliaryCellProvider(new Model_RootsIncludingImportedOperation_Editor._Inline26());
     EditorCell editorCell = provider.createEditorCell(context);
     Model_RootsIncludingImportedOperation_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       Model_RootsIncludingImportedOperation_Editor.setupLabel_ConceptReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -167,7 +168,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
     EditorCell cellWithRole = this.createConceptReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -180,7 +181,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     Model_RootsIncludingImportedOperation_Editor.setupBasic_ScopeCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       Model_RootsIncludingImportedOperation_Editor.setupLabel_ScopeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -196,7 +197,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
     EditorCell cellWithRole = this.createScopeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -212,6 +213,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176109745364");
+      SharedStyles_StyleSheet.REFERENCE_ON_CONCEPT.apply(editorCell);
       editorCell.setDrawBorder(false);
     }
 
@@ -232,7 +234,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       Model_RootsIncludingImportedOperation_Editor._Inline26.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         Model_RootsIncludingImportedOperation_Editor._Inline26.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -248,7 +250,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

@@ -30,7 +30,7 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_InsertedNodeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1143224155413");
     editorCell.setDrawBorder(false);
-    if(true) {
+    if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
@@ -89,7 +89,7 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     Node_InsertNextSiblingOperation_Editor.setupBasic_InsertedNodeCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       Node_InsertNextSiblingOperation_Editor.setupLabel_InsertedNodeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -105,7 +105,7 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createInsertedNodeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

@@ -2006,6 +2006,7 @@
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+            <link role="styleClass" targetNodeId="10.1203541385314" resolveInfo="ReferenceOnConcept" />
           </node>
         </node>
       </node>
