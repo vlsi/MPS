@@ -241,6 +241,7 @@ public class ModuleMaker {
 
   private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {
     Set<IModule> dependOnModules = new LinkedHashSet<IModule>();
+    dependOnModules.addAll(modules);
     for (IModule m : modules) {
       dependOnModules.addAll(m.getAllDependOnModules(IModule.class));
     }
@@ -265,7 +266,17 @@ public class ModuleMaker {
       classPathItems.add(l.getRuntimeClasspath());
     }
 
-    return classPathItems.optimize();
+    classPathItems = classPathItems.optimize();
+
+    System.out.println("classpath:");
+    for (IClassPathItem item : classPathItems.getChildren()) {
+      System.out.println("item = " + item);
+    }
+    System.out.println("---------------------------");
+    System.out.println("");
+    System.out.println("");
+
+    return classPathItems;
   }
 
   private boolean isUpToDate(IModule m) {
