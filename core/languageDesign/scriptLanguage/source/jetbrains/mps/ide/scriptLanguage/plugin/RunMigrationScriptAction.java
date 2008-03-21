@@ -44,7 +44,7 @@ public class RunMigrationScriptAction extends RefactoringAction {
     Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
 
     if (l == null) {
-      LOG.error("Can't find a language " + languageNamespace);
+      LOG.error("can't find a language " + languageNamespace);
       return;
     }
 

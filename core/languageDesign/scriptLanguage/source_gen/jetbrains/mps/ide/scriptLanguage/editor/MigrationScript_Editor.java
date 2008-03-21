@@ -16,12 +16,20 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class MigrationScript_Editor extends DefaultNodeEditor {
 
@@ -325,6 +333,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       MigrationScript_Editor.setupLabel_CategoryCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new MigrationScript_Editor.MigrationScript_category_cellMenu()}));
     return editorCell;
   }
 
@@ -443,6 +452,16 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
 
     public EditorCell createSeparatorCell(EditorContext context) {
       return super.createSeparatorCell(context);
+    }
+
+}
+  public static class MigrationScript_category_cellMenu extends AbstractCellMenuPart_PropertyValues {
+
+    public  MigrationScript_category_cellMenu() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return SequenceOperations.toList(SequenceOperations.select(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(node), scope, "jetbrains.mps.ide.scriptLanguage.structure.MigrationScript"), new zSelector(null, null)));
     }
 
 }

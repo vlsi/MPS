@@ -9,8 +9,11 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
+  <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.ide.scriptLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -159,6 +162,50 @@
           <property name="allowEmptyText" value="true" />
           <property name="drawBorder" value="true" />
           <link role="relationDeclaration" targetNodeId="1.1206123296179" resolveInfo="category" />
+          <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1206126087802">
+            <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyValues" id="1206126104835">
+              <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyValues_GetValues" id="1206126104836">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206126104837">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206126156582">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206126294511">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206126189514">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206126161228">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206126157163">
+                            <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract_editedNode" id="1206126156583" />
+                            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1206126159915" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsIncludingImportedOperation" id="1206126170996">
+                            <link role="concept" targetNodeId="1.1177457067821" resolveInfo="MigrationScript" />
+                            <node role="scope" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1206126174982" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SelectOperation" id="1206126278103">
+                          <node role="selector" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SelectorBlock" id="1206126278104">
+                            <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1206126278105">
+                              <property name="name" value="it" />
+                            </node>
+                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206126278106">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206126281624">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206126282675">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1206126281625">
+                                    <link role="closureParameter" targetNodeId="1206126278105" resolveInfo="it" />
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1206126284492">
+                                    <link role="property" targetNodeId="1.1206123296179" resolveInfo="category" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1206126298390" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206124949480">
           <property name="text" value=":" />

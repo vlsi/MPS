@@ -235,7 +235,9 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1203640442563">
     <property name="name" value="Replace_SNodeOperationExpression" />
-    <property name="title" value="DotExpression: convert old SNodeOperationExpression [migrate form b.470] " />
+    <property name="title" value="convert old SNodeOperationExpression" />
+    <property name="category" value="DotExpression" />
+    <property name="migrationFromBuild" value="470" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1203640759821">
       <property name="description" value="DotExpression: convert SNodeOperationExpression " />
       <link role="affectedInstanceConcept" targetNodeId="1.1138055978872" resolveInfo="SNodeOperationExpression" />
