@@ -21,7 +21,7 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
   public List<SNode> getSubOrSuperTypes(SNode type) {
     List<SNode> supertypes = ListOperations.<SNode>createList();
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
-    if(elementConcept != null) {
+    if (elementConcept != null) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(elementConcept);
       {
         ICursor<SNode> _zCursor = CursorFactory.createCursor(superConcepts);

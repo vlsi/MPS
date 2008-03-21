@@ -15,12 +15,12 @@ public class typeof_Node_ConceptMethodCall_InferenceRule implements InferenceRul
   }
 
   public void applyRule(final SNode conceptMethodCall) {
-    if(!((SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false) != null))) {
+    if (!((SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false) != null))) {
       TypeChecker.getInstance().reportTypeError(conceptMethodCall, "no method declaration", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410829052");
     }
     int actCount = SLinkOperations.getCount(conceptMethodCall, "actualArgument");
     int expCount = SLinkOperations.getCount(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "parameter");
-    if(!(actCount == expCount)) {
+    if (!(actCount == expCount)) {
       TypeChecker.getInstance().reportTypeError(conceptMethodCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410886099");
     }
     {
@@ -29,10 +29,10 @@ public class typeof_Node_ConceptMethodCall_InferenceRule implements InferenceRul
       Iterator<SNode> arg_iterator = SLinkOperations.getTargets(conceptMethodCall, "actualArgument", true).iterator();
       Iterator<SNode> parameter_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "parameter", true).iterator();
       while(true) {
-        if(!(arg_iterator.hasNext())) {
+        if (!(arg_iterator.hasNext())) {
           break;
         }
-        if(!(parameter_iterator.hasNext())) {
+        if (!(parameter_iterator.hasNext())) {
           break;
         }
         arg = arg_iterator.next();

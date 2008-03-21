@@ -14,13 +14,14 @@ public class typeOf_Link_DeleteChildOperation_InferenceRule implements Inference
 
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedTo_LinkAccess_aggregation(op);
-    final SNode expectedConcept = RulesUtil.get_inputNodeConcept(op);
+    final SNode Concept_typevar_1206099630117 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099630117));
     {
-      final SNode _representatorVar6 = expectedConcept;
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar6, new Runnable() {
+      final SNode C = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099630117);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
 
         public void run() {
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931094", true), new QuotationClass_78().createNode(expectedConcept), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931092");
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931094", true), new QuotationClass_77().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931092");
         }
 
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205528931049");

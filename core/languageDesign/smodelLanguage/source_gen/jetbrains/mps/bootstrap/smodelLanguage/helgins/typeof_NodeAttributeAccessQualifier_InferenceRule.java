@@ -17,7 +17,7 @@ public class typeof_NodeAttributeAccessQualifier_InferenceRule implements Infere
 
   public void applyRule(final SNode nodeToCheck) {
     SNode annotationLink = SLinkOperations.getTarget(nodeToCheck, "annotationLink", false);
-    if(annotationLink == null) {
+    if (annotationLink == null) {
       return;
     }
     // assign type
@@ -27,7 +27,7 @@ public class typeof_NodeAttributeAccessQualifier_InferenceRule implements Infere
     SPropertyOperations.set(T, "aggregation", "" + (true));
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205266078203", true), T, nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205266078201");
     // ---
-    if(!(SPropertyOperations.hasValue(annotationLink, "stereotype", "node", "node"))) {
+    if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "node", "node"))) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "node annotation link is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204764593904");
     }
   }

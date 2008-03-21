@@ -16,10 +16,11 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule implements Inferenc
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedTo_LinkListAccess_aggregation(op);
     SNode parameter = SLinkOperations.getTarget(op, "parameter", true);
-    if((parameter != null)) {
-      SNode expectedType = RulesUtil.get_inputNodeType(op);
+    if ((parameter != null)) {
+      final SNode ExpectedType_typevar_1206101161890 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+      RulesUtil.equate_inputNodeType(op, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890));
       SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205272443654", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, expectedType, op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205272443656");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205272443656");
     }
   }
 

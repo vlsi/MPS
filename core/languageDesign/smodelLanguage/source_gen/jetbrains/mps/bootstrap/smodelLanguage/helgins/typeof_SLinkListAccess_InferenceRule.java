@@ -22,7 +22,7 @@ public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runti
 
   public void applyRule(final SNode op) {
     final SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
-    if(linkDecl == null) {
+    if (linkDecl == null) {
       return;
     }
     // assign type
@@ -33,16 +33,16 @@ public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runti
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206053536883", true), T, op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206053536881");
     // ---
     RulesUtil.checkAppliedCorrectly_generic(op);
-    final SNode C_typevar_1186062842230 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062842230), RulesUtil.get_inputNodeConcept(op), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062847014");
+    final SNode Concept_typevar_1186062842230 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1186062842230));
     {
-      final SNode _representatorVar3 = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062842230);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar3, new Runnable() {
+      final SNode C = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1186062842230);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
 
         public void run() {
-          SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062842230);
+          SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C);
           List<LinkDeclaration> declaredLinks = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
-          if(!(declaredLinks.contains(((LinkDeclaration)SNodeOperations.getAdapter(linkDecl))))) {
+          if (!(declaredLinks.contains(((LinkDeclaration)SNodeOperations.getAdapter(linkDecl))))) {
             TypeChecker.getInstance().reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062887864");
           }
         }

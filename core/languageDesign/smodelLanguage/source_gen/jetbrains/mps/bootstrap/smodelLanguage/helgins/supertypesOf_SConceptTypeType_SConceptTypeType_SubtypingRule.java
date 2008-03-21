@@ -22,20 +22,20 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
   public List<SNode> getSubOrSuperTypes(SNode type) {
     List<SNode> list = ListOperations.<SNode>createList();
     SNode concept = SLinkOperations.getTarget(type, "conceptDeclaraton", false);
-    if(SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept);
       {
         ICursor<SNode> _zCursor2 = CursorFactory.createCursor(superConcepts);
         try {
           while(_zCursor2.moveToNext()) {
             SNode superConcept = _zCursor2.getCurrent();
-            ListOperations.addElement(list, new QuotationClass_58().createNode(superConcept));
+            ListOperations.addElement(list, new QuotationClass_57().createNode(superConcept));
           }
         } finally {
           _zCursor2.release();
         }
       }
-      ListOperations.addElement(list, new QuotationClass_59().createNode());
+      ListOperations.addElement(list, new QuotationClass_58().createNode());
     }
     return list;
   }

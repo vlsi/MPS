@@ -21,7 +21,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRu
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar, new Runnable() {
 
         public void run() {
-          if(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new QuotationClass_1().createNode(), false, false)) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new QuotationClass_1().createNode(), false, false)) {
             TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712082190", true), new QuotationClass_().createNode(SLinkOperations.getTarget(expr, "concept", false)), expr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712082188");
           } else
           {

@@ -18,7 +18,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule implements Infere
 
   public void applyRule(final SNode nodeToCheck) {
     SNode annotationLink = SLinkOperations.getTarget(nodeToCheck, "annotationLink", false);
-    if(annotationLink == null) {
+    if (annotationLink == null) {
       return;
     }
     // assign type
@@ -28,13 +28,13 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule implements Infere
     SPropertyOperations.set(T, "aggregation", "" + (true));
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204926978425", true), T, nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204926978423");
     // ---
-    if(!(SPropertyOperations.hasValue(annotationLink, "stereotype", "link", "node"))) {
+    if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "link", "node"))) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "link annotation link is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792143");
     }
     SNode linkQualifier = SLinkOperations.getTarget(nodeToCheck, "linkQualifier", true);
-    if(SNodeOperations.isInstanceOf(linkQualifier, "jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier")) {
+    if (SNodeOperations.isInstanceOf(linkQualifier, "jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier")) {
       // link role expected
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(linkQualifier, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792163", false), new QuotationClass_75().createNode(), SLinkOperations.getTarget(linkQualifier, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792161");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(linkQualifier, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792163", false), new QuotationClass_74().createNode(), SLinkOperations.getTarget(linkQualifier, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792161");
     }
   }
 

@@ -16,7 +16,7 @@ public class typeof_PropertyRefQualifier_InferenceRule implements InferenceRule_
   public void applyRule(final SNode nodeToCheck) {
     SNode op = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", false, false);
     SNode propAAQ = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier", false, false);
-    if(op == null || propAAQ == null) {
+    if (op == null || propAAQ == null) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204909225630");
       return;
     }

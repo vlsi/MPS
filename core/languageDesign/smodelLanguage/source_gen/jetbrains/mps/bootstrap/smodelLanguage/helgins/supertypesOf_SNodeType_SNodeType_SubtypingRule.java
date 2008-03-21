@@ -23,7 +23,7 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
     List<SNode> list = ListOperations.<SNode>createList();
     SNode concept = SLinkOperations.getTarget(type, "concept", false);
     // DO NOT TOUCH THIS. CONCEPT MIGHT BE A TYPE VARIABLE
-    if(concept != null && SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
+    if (concept != null && SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept);
       {
         ICursor<SNode> _zCursor1 = CursorFactory.createCursor(superConcepts);
