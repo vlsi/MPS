@@ -792,11 +792,11 @@
     <property name="name" value="SNodeListCreator" />
     <link role="extends" targetNodeId="2.1145552809883" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1145567483100">
-      <property name="value" value="snodes" />
+      <property name="value" value="nlist" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1145567500180">
-      <property name="value" value="list of snodes" />
+      <property name="value" value="list of (s)nodes" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1145567471833">
@@ -1635,11 +1635,11 @@
     <property name="name" value="SNodeCreator" />
     <link role="extends" targetNodeId="2.1145552809883" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1180636770614">
-      <property name="value" value="snode" />
+      <property name="value" value="node &lt; &gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1180636770615">
-      <property name="value" value="create new node" />
+      <property name="value" value="create new (s)node" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1180636770616">

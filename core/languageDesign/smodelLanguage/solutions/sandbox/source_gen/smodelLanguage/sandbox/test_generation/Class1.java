@@ -36,8 +36,8 @@ public class Class1 {
   public void method4(SNode node) {
     SNode conceptDeclaration = SLinkOperations.getTarget(node, "conceptDeclaration", false);
     SLinkOperations.setTarget(node, "conceptDeclaration", null, false);
-    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), null, false);
-    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), SConceptOperations.createNewNode("jetbrains.mps.transformation.TLBase.structure.ReferenceMacro", null), false);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), null, true);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), SConceptOperations.createNewNode("jetbrains.mps.transformation.TLBase.structure.ReferenceMacro", null), true);
   }
 
   public void method5(SNode node) {
@@ -88,6 +88,11 @@ public class Class1 {
         _zCursor.release();
       }
     }
+  }
+
+  public void method8(SNode es, SNode imco) {
+    SLinkOperations.setTarget(es, "expression", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
+    SLinkOperations.setTarget(imco, "baseMethodDeclaration", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null), false);
   }
 
 }

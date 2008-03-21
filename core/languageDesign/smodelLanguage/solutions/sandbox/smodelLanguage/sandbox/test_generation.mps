@@ -845,6 +845,67 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206057505696">
+      <property name="name" value="method8" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206057505697" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206057505698" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206057505699">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206057557611">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206057563085">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206057558629">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206057557612">
+                <link role="variableDeclaration" targetNodeId="1206057516153" resolveInfo="es" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206057561896">
+                <link role="link" targetNodeId="4.1068580123156" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1206057566581">
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206057571802">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1206057594648">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206057594649">
+                    <link role="concept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206057888120">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206057899937">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206057889559">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206057888121">
+                <link role="variableDeclaration" targetNodeId="1206057537358" resolveInfo="imco" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206057897718">
+                <link role="link" targetNodeId="4.1202948736718" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1206057902486">
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206057906207">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1206057909021">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206057909022">
+                    <link role="concept" targetNodeId="4.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206057516153">
+        <property name="name" value="es" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206057516154">
+          <link role="concept" targetNodeId="4.1068580123155" resolveInfo="ExpressionStatement" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206057537358">
+        <property name="name" value="imco" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206057541735">
+          <link role="concept" targetNodeId="4.1202948039474" resolveInfo="InstanceMethodCallOperation" />
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205367917535" />
   </node>
 </model>
