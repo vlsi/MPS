@@ -38,7 +38,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule implements Inferenc
                 TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206059653548", true), new QuotationClass_83().createNode(), expr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206059653546");
               } else
               {
-                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206060275785", true), new QuotationClass_84().createNode(), expr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206060275783");
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206060275785", true), new QuotationClass_84().createNode(SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "targetConcept", false)), expr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206060275783");
               }
             } else
             {
