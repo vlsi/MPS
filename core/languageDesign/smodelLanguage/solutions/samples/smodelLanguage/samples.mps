@@ -167,6 +167,23 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206059471203">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206060126786">
+            <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1206060120503">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206059472705">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206059471204">
+                  <link role="variableDeclaration" targetNodeId="1145583462061" resolveInfo="ifStatement" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206059475816">
+                  <link role="link" targetNodeId="1.1068580123160" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206060132285">
+              <link role="baseMethodDeclaration" targetNodeId="4.~SNode.getId():java.lang.String" resolveInfo="getId" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1145576838829">
