@@ -92,9 +92,8 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1145576838809">
               <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1145576838810">
-              <link role="baseMethodDeclaration" targetNodeId="4.~SNode.getId():java.lang.String" resolveInfo="getId" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1145576838811">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206059246362">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1145576838811">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1145576838812">
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1145576838813">
                     <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
@@ -113,6 +112,9 @@
                     </node>
                   </node>
                 </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206059246363">
+                <link role="baseMethodDeclaration" targetNodeId="4.~SNode.getId():java.lang.String" resolveInfo="getId" />
               </node>
             </node>
           </node>
