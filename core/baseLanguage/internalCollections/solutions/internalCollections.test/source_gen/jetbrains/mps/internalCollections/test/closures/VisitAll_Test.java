@@ -68,11 +68,11 @@ public class VisitAll_Test extends Util_Test {
       public void visit(Integer it) {
 __skip__:
         do {
-          if(it % 2 == 1) {
+          if (it % 2 == 1) {
             break __skip__;
           }
           res.add(it * 2);
-          if(it > 5) {
+          if (it > 5) {
             throw new StopIteratingException();
           }
         } while(false);

@@ -226,21 +226,21 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      if(it % 2 == 1) {
+                      if (it % 2 == 1) {
                         this.__CP__ = 5;
                         break;
                       }
                       this.__CP__ = 6;
                       break;
                     case 8:
-                      if(it > 5) {
+                      if (it > 5) {
                         this.__CP__ = 9;
                         break;
                       }
                       this.__CP__ = 3;
                       break;
                     case 3:
-                      if(false) {
+                      if (false) {
                         this.__CP__ = 2;
                         break;
                       }

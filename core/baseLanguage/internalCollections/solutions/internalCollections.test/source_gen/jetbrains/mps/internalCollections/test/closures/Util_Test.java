@@ -52,7 +52,7 @@ public class Util_Test extends TestCase {
       T next = testIt.next();
       Integer card = cardMap.remove(next);
       Assert.assertFalse(card == null);
-      if(card > 1) {
+      if (card > 1) {
         cardMap.put(next, card - 1);
       }
     }
