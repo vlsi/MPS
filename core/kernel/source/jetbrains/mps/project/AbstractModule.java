@@ -58,14 +58,6 @@ public abstract class AbstractModule implements IModule {
       result.add(l.getRuntimeClasspath());
     }
 
-    System.out.println("classpath:");
-    for (IClassPathItem item : result.getChildren()) {
-      System.out.println("item = " + item);
-    }
-    System.out.println("---------------------------");
-    System.out.println("");
-    System.out.println("");
-
     return result;
   }
 
