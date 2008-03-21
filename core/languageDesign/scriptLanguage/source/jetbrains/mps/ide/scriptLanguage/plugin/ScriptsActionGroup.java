@@ -47,6 +47,11 @@ public class ScriptsActionGroup extends ActionGroup {
     add(byCategoryGroup);
     populateByCategoryGroup(languages, byCategoryGroup);
 
+    // -- by 'migrate from' build --
+    ActionGroup byBuildGroup = new ActionGroup("By Build");
+    add(byBuildGroup);
+    populateByBuildGroup(languages, byBuildGroup);
+
     // -- by language --
     ActionGroup byLanguageGroup = new ActionGroup("By Language");
     add(byLanguageGroup);
@@ -79,6 +84,35 @@ public class ScriptsActionGroup extends ActionGroup {
       for (MigrationScript script : byCategory.get(cat)) {
         categoryGroup.add(new RunMigrationScriptAction(script,
           makeScriptActionName(null, script.getTitle(), script.getMigrationFromBuild())));
+      }
+      ownerGroup.add(categoryGroup);
+    }
+  }
+
+  private static void populateByBuildGroup(List<Language> languages, ActionGroup ownerGroup) {
+    List<MigrationScript> migrationScripts = new ArrayList<MigrationScript>();
+    for (Language language : languages) {
+      SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
+      if (scriptsModel == null) continue;
+      migrationScripts.addAll(scriptsModel.getSModel().getRootsAdapters(MigrationScript.class));
+    }
+    Map<String, List<MigrationScript>> byBuild = new HashMap<String, List<MigrationScript>>();
+    for (MigrationScript migrationScript : migrationScripts) {
+      String build = migrationScript.getMigrationFromBuild();
+      if (build == null) {
+        build = "<unspecified>";
+      }
+      if (!byBuild.containsKey(build)) {
+        byBuild.put(build, new ArrayList<MigrationScript>());
+      }
+      byBuild.get(build).add(migrationScript);
+    }
+
+    for (String build : byBuild.keySet()) {
+      ActionGroup categoryGroup = new ActionGroup("migrate from b." + build);
+      for (MigrationScript script : byBuild.get(build)) {
+        categoryGroup.add(new RunMigrationScriptAction(script,
+          makeScriptActionName(script.getCategory(), script.getTitle(), null)));
       }
       ownerGroup.add(categoryGroup);
     }
