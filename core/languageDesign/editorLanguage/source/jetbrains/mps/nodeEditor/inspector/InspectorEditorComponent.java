@@ -19,7 +19,7 @@ import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
 import java.util.List;
 
-final public class InspectorEditorComponent extends AbstractEditorComponent implements IEditor {
+public class InspectorEditorComponent extends AbstractEditorComponent implements IEditor {
   private NodeEditorComponent myContainer;
 
   public InspectorEditorComponent() {

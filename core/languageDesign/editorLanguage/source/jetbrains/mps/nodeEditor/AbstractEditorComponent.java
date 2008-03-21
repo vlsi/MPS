@@ -246,8 +246,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }, KeyStroke.getKeyStroke("control Q"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        getHighlightManager().clearForOwner(myOwner);
+      public void actionPerformed(ActionEvent e) {                        
+        if (!getHighlightManager().clearForOwner(myOwner)) {
+          onEscape();
+        }
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
@@ -372,6 +374,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     ToolTipManager.sharedInstance().registerComponent(this);
     CaretBlinker.getInstance().registerEditor(this);
     addRebuildListener(UndoManager.instance().rebuildListener());
+  }
+
+  protected void onEscape() {    
   }
 
   public SNode getSelectedNode() {
