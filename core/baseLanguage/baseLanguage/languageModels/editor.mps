@@ -2109,6 +2109,25 @@
           <link role="relationDeclaration" targetNodeId="17.1068580123161" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1206063692153">
+        <property name="vertical" value="true" />
+        <link role="relationDeclaration" targetNodeId="17.1206060520071" />
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1206063712466">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206063712467">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206063719624">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206063728176">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206063721423">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1206063719625" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206063725863">
+                    <link role="link" targetNodeId="17.1206060520071" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1206063731709" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177555034679">
         <property name="editable" value="true" />
         <property name="text" value="}" />
@@ -14182,7 +14201,8 @@
           <property name="text" value="}" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206061059815">
-          <property name="text" value="elseif" />
+          <property name="text" value="elsif" />
+          <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206061068802">
           <property name="text" value="(" />

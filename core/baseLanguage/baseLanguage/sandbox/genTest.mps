@@ -378,9 +378,17 @@
             <property name="value" value="true" />
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206062489145" />
-          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1206063472704">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1206063472705" />
-            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206063472706" />
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1206064734300">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206064736709">
+              <property name="value" value="true" />
+            </node>
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206064734302" />
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1206064740585">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206064742166">
+              <property name="value" value="false" />
+            </node>
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206064740587" />
           </node>
         </node>
       </node>
