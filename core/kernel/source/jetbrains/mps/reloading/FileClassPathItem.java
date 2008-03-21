@@ -2,6 +2,7 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
+import jetbrains.mps.vfs.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -41,12 +42,12 @@ public class FileClassPathItem extends AbstractClassPathItem {
     }
 
     String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + ".class";
-    File file = new File(path);
+    IFile file = FileSystem.getFile(path);
     try {
       byte[] result = new byte[(int) file.length()];
       InputStream inp = null;
       try {
-        inp = new FileInputStream(file);
+        inp = file.openInputStream();
         ReadUtil.read(result, inp);
       } finally {
         if (inp != null) {
