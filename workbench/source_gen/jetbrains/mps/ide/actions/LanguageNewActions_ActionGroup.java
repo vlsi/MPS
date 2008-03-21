@@ -13,7 +13,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 public class LanguageNewActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.LanguageNewActions";
 
-  public  LanguageNewActions_ActionGroup(MPSProject project) {
+  public LanguageNewActions_ActionGroup(MPSProject project) {
     super("New", LanguageNewActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new NewGeneratorAction(), this);
@@ -26,7 +26,7 @@ public class LanguageNewActions_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup(LanguageActions_ActionGroup.ID);
       ActionGroup gWhat = manager.getGroup(LanguageNewActions_ActionGroup.ID);
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       {

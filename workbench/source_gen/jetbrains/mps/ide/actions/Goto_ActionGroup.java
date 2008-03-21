@@ -21,7 +21,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 public class Goto_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Goto";
 
-  public  Goto_ActionGroup(MPSProject project) {
+  public Goto_ActionGroup(MPSProject project) {
     super("Go To", Goto_ActionGroup.ID);
     this.setMnemonic("O".charAt(0));
     this.setInternal(false);
@@ -44,7 +44,7 @@ public class Goto_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup(MainMenu_ActionGroup.ID);
       ActionGroup gWhat = manager.getGroup(Goto_ActionGroup.ID);
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       {

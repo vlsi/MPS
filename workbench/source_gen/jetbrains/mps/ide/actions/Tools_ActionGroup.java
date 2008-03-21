@@ -16,7 +16,7 @@ public class Tools_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Tools";
   public static final String INTERNAL_LABEL_ID_Internal = "Internal";
 
-  public  Tools_ActionGroup(MPSProject project) {
+  public Tools_ActionGroup(MPSProject project) {
     super("Tools", Tools_ActionGroup.ID);
     this.setMnemonic("T".charAt(0));
     this.setInternal(false);
@@ -31,7 +31,7 @@ public class Tools_ActionGroup extends BaseActionGroup {
     {
       ActionGroup gTo = manager.getGroup(MainMenu_ActionGroup.ID);
       ActionGroup gWhat = manager.getGroup(Tools_ActionGroup.ID);
-      if(gTo == null || gWhat == null) {
+      if (gTo == null || gWhat == null) {
         return;
       }
       {

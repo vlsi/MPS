@@ -948,6 +948,10 @@
     <property name="package" value="Actions.Action"/>
     <property name="name" value="ActionParameterDeclaration"/>
     <link role="extends" targetNodeId="2.1068390468200" resolveInfo="FieldDeclaration"/>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1206092616187">
+      <link role="intfc" targetNodeId="14.1205752032448" resolveInfo="IMember"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205681149025">
     <property name="package" value="Actions.Action.Methods"/>
@@ -989,25 +993,6 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1205870741334"/>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205685036103">
-    <property name="package" value="Actions.Action"/>
-    <property name="name" value="ActionParameterReference"/>
-    <link role="extends" targetNodeId="2.1068498886296" resolveInfo="VariableReference"/>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1205685162389">
-      <property name="value" value="ref parameter"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1205685162390">
-      <property name="value" value="action parameter reference"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="short_description"/>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
-          id="1205685162391">
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1146528679895" resolveInfo="lvalue"/>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205852320419">
     <property name="package" value="Actions.Action"/>
     <property name="name" value="ActionType"/>
@@ -1022,6 +1007,26 @@
       <property name="role" value="action"/>
       <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1203071646776" resolveInfo="ActionDeclaration"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206092561075">
+    <property name="package" value="Actions.Action"/>
+    <property name="name" value="ActionParameterReferenceOperation"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1206092665971">
+      <link role="intfc" targetNodeId="14.1205756064662" resolveInfo="IMemberOperation"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1206092780679">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1197029536315" resolveInfo="lvalue"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1206092795071">
+      <property name="role" value="parameterDeclaration"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="1205679047295" resolveInfo="ActionParameterDeclaration"/>
+      <link role="specializedLink" targetNodeId="14.1205756909548"/>
     </node>
   </node>
 </model>
