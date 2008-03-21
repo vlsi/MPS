@@ -332,6 +332,16 @@
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_DeleteOperation" id="1205968631799" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206064922036">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206064923882">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206064922037">
+              <link role="variableDeclaration" targetNodeId="1145577408546" resolveInfo="ifStatement" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccessAsNode" id="1206064932040">
+              <link role="link" targetNodeId="1.1068580123160" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1145577408546">
         <property name="name" value="ifStatement" />

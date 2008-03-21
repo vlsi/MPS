@@ -106,7 +106,7 @@ public class SLinkOperations {
   }
 
   /**
-   * actually only remove chald from parent (node become 'in-air')
+   * actually only remove child from parent (node become 'in-air')
    */
   public static SNode deleteChild(SNode parent, String role) {
     if (parent != null) {

@@ -1669,6 +1669,10 @@
     <link role="conceptDeclaration" targetNodeId="1.1171478925269" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171478971357">
       <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206064979092">
+        <property name="text" value="!" />
+        <property name="textFgColor" value="red" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1171478971358">
         <property name="noTargetText" value="&lt;no link&gt;" />
         <property name="drawBorder" value="false" />
