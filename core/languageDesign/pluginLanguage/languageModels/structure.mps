@@ -952,6 +952,11 @@
           id="1206092616187">
       <link role="intfc" targetNodeId="14.1205752032448" resolveInfo="IMember"/>
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
+          id="1206109499618">
+      <link role="conceptLinkDeclaration" targetNodeId="14.1205921683134" resolveInfo="operationConcept"/>
+      <link role="target" targetNodeId="1206092561075" resolveInfo="ActionParameterReferenceOperation"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205681149025">
     <property name="package" value="Actions.Action.Methods"/>
@@ -1027,6 +1032,16 @@
       <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1205679047295" resolveInfo="ActionParameterDeclaration"/>
       <link role="specializedLink" targetNodeId="14.1205756909548"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206106212999">
+    <property name="package" value="Actions.Action"/>
+    <property name="name" value="Log"/>
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1206106226156">
+      <property name="value" value="LOG"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
 </model>

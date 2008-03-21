@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.uiActions.GoToTypeErrorRuleAction;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
@@ -39,6 +38,8 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
+import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -246,7 +247,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }, KeyStroke.getKeyStroke("control Q"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {                        
+      public void actionPerformed(ActionEvent e) {
         if (!getHighlightManager().clearForOwner(myOwner)) {
           onEscape();
         }
@@ -376,7 +377,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     addRebuildListener(UndoManager.instance().rebuildListener());
   }
 
-  protected void onEscape() {    
+  protected void onEscape() {
   }
 
   public SNode getSelectedNode() {
@@ -1396,7 +1397,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                       public void actionPerformed(ActionEvent e) {
                         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
                           public void run() {
-                            GoToTypeErrorRuleAction.goToTypeErrorRule(myOperationContext, herror);
+                            GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, GoToTypeErrorRule_Action.LOG);
                             dialog.dispose();
                           }
                         });

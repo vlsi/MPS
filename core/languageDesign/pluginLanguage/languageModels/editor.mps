@@ -1370,5 +1370,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206106872556">
+    <property name="package" value="Actions.Action"/>
+    <link role="conceptDeclaration" targetNodeId="1.1206106212999" resolveInfo="Log"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+          id="1206106884609">
+      <property name="text" value="LOG"/>
+    </node>
+  </node>
 </model>
 

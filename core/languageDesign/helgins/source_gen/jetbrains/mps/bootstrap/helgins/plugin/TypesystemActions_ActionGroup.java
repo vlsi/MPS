@@ -5,7 +5,6 @@ package jetbrains.mps.bootstrap.helgins.plugin;
 import jetbrains.mps.plugins.actions.BaseActionGroup;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.nodes.ShowNodeTypeAction;
-import jetbrains.mps.helgins.uiActions.GoToTypeErrorRuleAction;
 import jetbrains.mps.helgins.uiActions.ShowRulesWhichAffectNodeTypeAction;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
@@ -19,7 +18,7 @@ public class TypesystemActions_ActionGroup extends BaseActionGroup {
     super("Type System", TypesystemActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new ShowNodeTypeAction(), this);
-    this.add(new GoToTypeErrorRuleAction(), this);
+    this.add(new GoToTypeErrorRule_Action(project), this);
     this.add(new ShowRulesWhichAffectNodeTypeAction(), this);
     this.add(new GoToNodeThisDependsOn_Action(project), this);
     this.add(new ShowSupertypes_Action(project), this);
