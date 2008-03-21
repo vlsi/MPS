@@ -49,7 +49,7 @@ public class ApplicationsTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
-  public void testUILAnguage() {
+  public void testUILanguage() {
     String res = testProject(new File("platform/uiLanguage/uiLanguage.mpr"));
     assertTrue(res, res == null);
   }
