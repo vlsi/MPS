@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
@@ -34,12 +35,16 @@ public class SPropertyAccess_property_ReferentConstraint implements IModelConstr
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    SNode dotOperandConcept = null;
     SNode dotOperand = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
-    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(dotOperand), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-    if(nodeType == null) {
-      return null;
+    SNode dotOperandType = TypeChecker.getInstance().getTypeOf(dotOperand);
+    if(SNodeOperations.isInstanceOf(dotOperandType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
+      dotOperandConcept = SLinkOperations.getTarget(dotOperandType, "targetConcept", false);
+    } else
+    {
+      SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(dotOperandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
+      dotOperandConcept = SLinkOperations.getTarget(nodeType, "concept", false);
     }
-    SNode dotOperandConcept = SLinkOperations.getTarget(nodeType, "concept", false);
     if(dotOperandConcept == null) {
       dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
     }

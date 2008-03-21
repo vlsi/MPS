@@ -4,6 +4,7 @@ package smodelLanguage.samples;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import java.util.List;
 
 /* package */class SemanticDowncast {
@@ -19,10 +20,10 @@ import java.util.List;
   }
 
   /* package */void countChildren(SNode methodCall) {
-    int count_verbose_not_efficient = ((List<SNode>)SLinkOperations.getTargets(methodCall, "actualArgument", true)).size();
-    int count_not_efficient = SLinkOperations.getTargets(methodCall, "actualArgument", true).size();
+    int count_verbose_not_efficient = SequenceOperations.getSize(((List<SNode>)SLinkOperations.getTargets(methodCall, "actualArgument", true)));
+    int count_not_efficient = SequenceOperations.getSize(SLinkOperations.getTargets(methodCall, "actualArgument", true));
+    int count_not_efficient2 = SLinkOperations.getTargets(methodCall, "actualArgument", true).size();
     int count_best = SLinkOperations.getCount(methodCall, "actualArgument");
-    SLinkOperations.getTargets(methodCall, "actualArgument", true).size();
   }
 
 }

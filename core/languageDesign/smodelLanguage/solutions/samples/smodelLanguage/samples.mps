@@ -166,23 +166,40 @@
                   </node>
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206055089765">
-                <link role="baseMethodDeclaration" targetNodeId="5.~List.size():int" resolveInfo="size" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1206065588554" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206064836921">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206064836922">
+            <property name="name" value="count_not_efficient" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1206064836923" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206064836924">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206064836926">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206064836927">
+                  <link role="variableDeclaration" targetNodeId="1145583482393" resolveInfo="methodCall" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206064836928">
+                  <link role="link" targetNodeId="1.1068499141038" />
+                </node>
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation" id="1206064844946" />
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1145576838845">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1145576838846">
-            <property name="name" value="count_not_efficient" />
+            <property name="name" value="count_not_efficient2" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1145576838847" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206055087418">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227884866">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194376746834">
-                  <link role="variableDeclaration" targetNodeId="1145583482393" resolveInfo="methodCall" />
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206063005426">
-                  <link role="link" targetNodeId="1.1068499141038" />
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1206065598696">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227884866">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194376746834">
+                    <link role="variableDeclaration" targetNodeId="1145583482393" resolveInfo="methodCall" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206063005426">
+                    <link role="link" targetNodeId="1.1068499141038" />
+                  </node>
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206055087419">
@@ -205,23 +222,6 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_GetCountOperation" id="1145576838860" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206060426858">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206060441643">
-            <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1206060433967">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206060428344">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206060426859">
-                  <link role="variableDeclaration" targetNodeId="1145583482393" resolveInfo="methodCall" />
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206060430810">
-                  <link role="link" targetNodeId="1.1068499141038" />
-                </node>
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206060443504">
-              <link role="baseMethodDeclaration" targetNodeId="5.~List.size():int" resolveInfo="size" />
             </node>
           </node>
         </node>
