@@ -30,6 +30,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
   }
 
   public void doUpdate(@NotNull()ActionContext context) {
+    super.doUpdate(context);
     if (!(this.fillFieldsIfNecessary(context))) {
       this.setEnabled(false);
       this.setVisible(false);

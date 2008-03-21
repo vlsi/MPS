@@ -17,7 +17,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperati
 
 import java.util.ArrayList;
 
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
@@ -55,6 +54,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
   }
 
   public void doUpdate(@NotNull()ActionContext context) {
+    super.doUpdate(context);
     if (!(this.fillFieldsIfNecessary(context))) {
       this.setEnabled(false);
       this.setVisible(false);
@@ -85,7 +85,6 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
     }
     {
       List<SNode> statements = (List<SNode>) this.nodes;
-      SModel model = context.getModel().getSModel();
       SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(SequenceOperations.getFirst(statements), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
       SLinkOperations.addAll(commentedStatementsBlock, "statement", statements);
       SNodeOperations.deleteNode(ListOperations.getElement(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true), 0));
