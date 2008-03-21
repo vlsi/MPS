@@ -10,6 +10,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.ide.scriptLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.intentionsLanguage" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
@@ -298,6 +299,61 @@
                   <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1203640886238" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1203640902602">
                     <link role="link" targetNodeId="1.1138411864174" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1206062542908">
+    <property name="name" value="Replace_deprecatedLinkAccessOperations" />
+    <property name="title" value="LinkAccess: convert deprecated &lt;link&gt;/list and &lt;link&gt;/node [migrate form b.470] " />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1206062740882">
+      <property name="description" value="convert SLinkListAccessAsList to SLinkListAccess" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1168901043992" resolveInfo="SLinkListAccessAsList" />
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1206062740883">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206062740884">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206062813699">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206062813700">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1206062740885">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206062740886">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206062833421">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206062833422">
+              <property name="name" value="linkListAccess" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206062833423">
+                <link role="concept" targetNodeId="1.1138056282393" resolveInfo="SLinkListAccess" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206062833424">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1206062833425">
+                  <link role="concept" targetNodeId="1.1138056282393" resolveInfo="SLinkListAccess" />
+                </node>
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1206062836718" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206062833427">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206062833428">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206062833429">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206062833430">
+                  <link role="variableDeclaration" targetNodeId="1206062833422" resolveInfo="linkListAccess" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206062833431">
+                  <link role="link" targetNodeId="1.1138056546658" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1206062833432">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206062833433">
+                  <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1206062838892" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206062833435">
+                    <link role="link" targetNodeId="1.1138056546658" />
                   </node>
                 </node>
               </node>
