@@ -378,6 +378,10 @@
             <property name="value" value="true" />
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206062489145" />
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1206063472704">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1206063472705" />
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206063472706" />
+          </node>
         </node>
       </node>
     </node>
