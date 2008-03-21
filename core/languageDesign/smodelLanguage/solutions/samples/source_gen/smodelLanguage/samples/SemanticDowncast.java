@@ -15,9 +15,7 @@ import java.util.List;
 
   /* package */void invoke_getID_method_2(SNode ifStatement) {
     String id_verbose = ((SNode)((SNode)SLinkOperations.getTarget(ifStatement, "condition", true))).getId();
-    String id_better1 = SLinkOperations.getTarget(ifStatement, "condition", true).getId();
-    String id_better2 = SLinkOperations.getTarget(ifStatement, "condition", true).getId();
-    SLinkOperations.getTarget(ifStatement, "condition", true).getId();
+    String id_better = SLinkOperations.getTarget(ifStatement, "condition", true).getId();
   }
 
   /* package */void countChildren(SNode methodCall) {

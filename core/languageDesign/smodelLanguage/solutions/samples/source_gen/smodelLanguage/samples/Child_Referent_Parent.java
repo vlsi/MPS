@@ -14,7 +14,6 @@ import java.util.List;
     SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNodeOperations.deleteNode(condition);
     SLinkOperations.deleteChild(ifStatement, "condition");
-    SNodeOperations.deleteNode(SLinkOperations.getTarget(ifStatement, "condition", true));
   }
 
   /* package */void accessToChildNode_2(SNode ifStatement, SNode newCondition) {
