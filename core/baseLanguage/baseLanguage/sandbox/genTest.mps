@@ -5,13 +5,9 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.baseLanguageInternal" />
-  <language namespace="jetbrains.mps.regexp" />
-  <language namespace="webr.css" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="webr.templateLanguage.structure" version="0" />
   <maxImportIndex value="6" />
-  <import index="5" modelUID="jetbrains.mps.ide.command@java_stub" version="-1" />
   <import index="6" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1196072461367">
     <property name="name" value="ABC" />
@@ -215,16 +211,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205321108666">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205321108667">
-            <property name="value" value="1" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205321109560">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205321109561">
-            <property name="value" value="2" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205321105549">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205321105550">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205321107506">
@@ -348,6 +334,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1203676475130">
     <property name="name" value="NOTWORKING" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1203676480632">
+      <property name="name" value="f" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203676480633" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203676480634" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203676480635">
@@ -357,6 +344,7 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203676484514">
               <link role="classifier" targetNodeId="6.~Object" resolveInfo="Object" />
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206062379620" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203676485860">
