@@ -234,7 +234,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203082903663">
     <property name="name" value="ConceptFunctionParameter_ActionContext"/>
-    <property name="package" value="Actions.Action.Methods"/>
+    <property name="package" value="Shared"/>
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter"/>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1205179132154">
@@ -545,7 +545,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203853034639">
-    <property name="package" value="EditorTab.Methods"/>
+    <property name="package" value="Shared"/>
     <property name="name" value="ConceptFunctionParameter_node"/>
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
@@ -627,7 +627,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204039194827">
-    <property name="package" value="EditorTab.Methods"/>
+    <property name="package" value="Shared"/>
     <property name="name" value="ConceptFunctionParameter_OperationContext"/>
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
@@ -837,7 +837,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204477759787">
-    <property name="package" value="ProjectPane.Methods"/>
+    <property name="package" value="Shared"/>
     <property name="name" value="ConceptFunctionParameter_SNode"/>
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
@@ -851,7 +851,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204477852167">
-    <property name="package" value="ProjectPane.Methods"/>
+    <property name="package" value="Shared"/>
     <property name="name" value="ConceptFunctionParameter_IModule"/>
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
@@ -865,7 +865,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204478074808">
-    <property name="package" value="ProjectPane.Methods"/>
+    <property name="package" value="Shared"/>
     <property name="name" value="ConceptFunctionParameter_MPSProject"/>
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
@@ -1050,7 +1050,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206106212999">
-    <property name="package" value="Actions.Action"/>
+    <property name="package" value="Shared"/>
     <property name="name" value="Log"/>
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
@@ -1088,6 +1088,7 @@
           id="1206112250032">
       <property name="metaClass" value="aggregation"/>
       <property name="role" value="fieldDeclaration"/>
+      <property name="sourceCardinality" value="0..n"/>
       <link role="target" targetNodeId="1206111530559" resolveInfo="PluginFieldDeclaration"/>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
@@ -1113,7 +1114,13 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
           id="1206110174875">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206110176648"/>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206116875398"/>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
+          id="1206116876978">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
+            resolveInfo="applicableConceptFunctionParameter"/>
+      <link role="target" targetNodeId="1204478074808" resolveInfo="ConceptFunctionParameter_MPSProject"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206110108761">
@@ -1124,6 +1131,12 @@
           id="1206110157077">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
       <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206110159006"/>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
+          id="1206116885839">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
+            resolveInfo="applicableConceptFunctionParameter"/>
+      <link role="target" targetNodeId="1204478074808" resolveInfo="ConceptFunctionParameter_MPSProject"/>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1206110136680">

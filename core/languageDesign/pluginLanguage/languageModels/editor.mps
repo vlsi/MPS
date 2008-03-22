@@ -296,14 +296,18 @@
                                   type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation"
                                   id="1205845890501"/>
                           </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall"
-                                id="1205845890502">
-                            <link role="baseMethodDeclaration"
-                                  targetNodeId="2.~EditorContext.getScope():jetbrains.mps.smodel.IScope"
-                                  resolveInfo="getScope"/>
-                            <node role="instance"
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                id="1206114772554">
+                            <node role="operand"
                                   type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext"
                                   id="1205845890503"/>
+                            <node role="operation"
+                                  type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
+                                  id="1206114772555">
+                              <link role="baseMethodDeclaration"
+                                    targetNodeId="2.~EditorContext.getScope():jetbrains.mps.smodel.IScope"
+                                    resolveInfo="getScope"/>
+                            </node>
                           </node>
                         </node>
                         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205845890495">
@@ -333,36 +337,47 @@
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement"
                           id="1205845890510">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall"
-                            id="1205845890511">
-                        <link role="baseMethodDeclaration"
-                              targetNodeId="9.~Macros.expandPath(java.lang.String,java.io.File):java.lang.String"
-                              resolveInfo="expandPath"/>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                              id="1205845890513">
-                          <link role="variableDeclaration" targetNodeId="1205845890505" resolveInfo="iconPath"/>
-                        </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall"
-                              id="1205845890514">
-                          <link role="baseMethodDeclaration" targetNodeId="12.~IFile.toFile():java.io.File"
-                                resolveInfo="toFile"/>
-                          <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall"
-                                id="1205845890515">
-                            <link role="baseMethodDeclaration"
-                                  targetNodeId="4.~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile"
-                                  resolveInfo="getDescriptorFile"/>
-                            <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                                  id="1205845890516">
-                              <link role="variableDeclaration" targetNodeId="1205845890494" resolveInfo="language"/>
-                            </node>
-                          </node>
-                        </node>
-                        <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                            id="1206114770037">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
                               id="1205845890512">
                           <link role="baseMethodDeclaration"
                                 targetNodeId="9.~Macros.languageDescriptor():jetbrains.mps.util.Macros"
                                 resolveInfo="languageDescriptor"/>
                           <link role="classConcept" targetNodeId="9.~Macros" resolveInfo="Macros"/>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
+                              id="1206114770038">
+                          <link role="baseMethodDeclaration"
+                                targetNodeId="9.~Macros.expandPath(java.lang.String,java.io.File):java.lang.String"
+                                resolveInfo="expandPath"/>
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                                id="1205845890513">
+                            <link role="variableDeclaration" targetNodeId="1205845890505" resolveInfo="iconPath"/>
+                          </node>
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                id="1206114775056">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                  id="1206114777574">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                                    id="1205845890516">
+                                <link role="variableDeclaration" targetNodeId="1205845890494" resolveInfo="language"/>
+                              </node>
+                              <node role="operation"
+                                    type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
+                                    id="1206114777575">
+                                <link role="baseMethodDeclaration"
+                                      targetNodeId="4.~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile"
+                                      resolveInfo="getDescriptorFile"/>
+                              </node>
+                            </node>
+                            <node role="operation"
+                                  type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
+                                  id="1206114775057">
+                              <link role="baseMethodDeclaration" targetNodeId="12.~IFile.toFile():java.io.File"
+                                    resolveInfo="toFile"/>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -471,15 +486,20 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203088085791">
     <property name="package" value="Actions.Groups.GroupMembers"/>
     <link role="conceptDeclaration" targetNodeId="1.1203088046679" resolveInfo="ActionReference"/>
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1203088109480">
-      <link role="relationDeclaration" targetNodeId="1.1203088061055"/>
-      <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent"
-            id="1203088109481">
-        <link role="conceptDeclaration" targetNodeId="1.1203071646776" resolveInfo="ActionDeclaration"/>
-        <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
-              id="1203088121187">
-          <property name="readOnly" value="true"/>
-          <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+          id="1206113671258">
+      <property name="vertical" value="false"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell"
+            id="1206113671946">
+        <link role="relationDeclaration" targetNodeId="1.1203088061055"/>
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent"
+              id="1206113671947">
+          <link role="conceptDeclaration" targetNodeId="1.1203071646776" resolveInfo="ActionDeclaration"/>
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+                id="1206113671948">
+            <property name="readOnly" value="true"/>
+            <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
+          </node>
         </node>
       </node>
     </node>
@@ -1371,7 +1391,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206106872556">
-    <property name="package" value="Actions.Action"/>
+    <property name="package" value="Shared"/>
     <link role="conceptDeclaration" targetNodeId="1.1206106212999" resolveInfo="Log"/>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
           id="1206106884609">
@@ -1402,13 +1422,9 @@
             id="1206110320296">
         <property name="selectable" value="false"/>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-            id="1206112220879">
-        <property name="text" value="fields"/>
-        <property name="selectable" value="false"/>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1206113109487">
+        <property name="noTargetText" value="&lt;fields&gt;"/>
         <link role="relationDeclaration" targetNodeId="1.1206112250032"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
