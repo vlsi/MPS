@@ -86,7 +86,13 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
       if (this.editorsPane == null) {
         return false;
       }
-      this.project = context.getOperationContext().getProject();
+      {
+        MPSProject project = null;
+        if (context.getOperationContext() != null) {
+          project = context.getOperationContext().getProject();
+        }
+        this.project = project;
+      }
       if (this.project == null) {
         return false;
       }
