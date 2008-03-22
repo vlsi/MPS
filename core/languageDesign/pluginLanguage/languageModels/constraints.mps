@@ -1886,7 +1886,7 @@
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression"
                     id="1206111917161"/>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
-                    id="1206111925169">
+                    id="1206191135145">
                 <link role="link" targetNodeId="7.1206111659667"/>
               </node>
             </node>
