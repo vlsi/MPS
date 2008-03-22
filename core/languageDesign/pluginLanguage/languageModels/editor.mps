@@ -1159,9 +1159,10 @@
               id="1204384480616">
           <property name="text" value="internal-id"/>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
-              id="1204384487618">
-          <link role="relationDeclaration" targetNodeId="1.1204384361462" resolveInfo="groupID"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+              id="1206193956881">
+          <property name="noTargetText" value="&lt;id&gt;"/>
+          <link role="relationDeclaration" targetNodeId="1.1206193920040"/>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
@@ -1205,9 +1206,10 @@
             id="1204398265593">
         <property name="text" value="internal-id"/>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
-            id="1204398269658">
-        <link role="relationDeclaration" targetNodeId="1.1204397873283" resolveInfo="pointID"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+            id="1206194351790">
+        <property name="noTargetText" value="&lt;id&gt;"/>
+        <link role="relationDeclaration" targetNodeId="1.1206194300534"/>
       </node>
     </node>
   </node>

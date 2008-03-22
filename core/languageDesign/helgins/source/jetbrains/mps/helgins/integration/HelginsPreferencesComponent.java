@@ -17,19 +17,16 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 04.07.2007
- * Time: 16:35:21
- * To change this template use File | Settings | File Templates.
- */
 public class HelginsPreferencesComponent extends DefaultExternalizableComponent implements IComponentWithPreferences {
 
   //private @Externalizable boolean myUsesIncrementalAlgorithm = false;
 
-  private @Externalizable boolean myUsesDebugHighlighting = false;
-  private @Externalizable boolean myGenerationOptimizationEnabled = true;
+  private
+  @Externalizable
+  boolean myUsesDebugHighlighting = false;
+  private
+  @Externalizable
+  boolean myGenerationOptimizationEnabled = true;
 
   public static HelginsPreferencesComponent getInstance() {
     return ApplicationComponents.getInstance().getComponent(HelginsPreferencesComponent.class);
@@ -56,17 +53,17 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
   }
 
   private class MyPreferencesPage implements IPreferencesPage {
-  //  private JCheckBox myIncrementalCheckBox = new JCheckBox("Use incremental algorithm");
+    //  private JCheckBox myIncrementalCheckBox = new JCheckBox("Use incremental algorithm");
     private JCheckBox myHighlightingCheckBox = new JCheckBox("Use debug highlighting");
     private JCheckBox myGeneratorOptimizationCheckBox = new JCheckBox("Use optimization for generation");
     private JPanel myComponent = new JPanel(new BorderLayout());
 
     public MyPreferencesPage() {
-      JPanel panel = new JPanel(new GridLayout(2,1));
-   //   myIncrementalCheckBox.setSelected(myUsesIncrementalAlgorithm);
+      JPanel panel = new JPanel(new GridLayout(2, 1));
+      //   myIncrementalCheckBox.setSelected(myUsesIncrementalAlgorithm);
       myHighlightingCheckBox.setSelected(myUsesDebugHighlighting);
       myGeneratorOptimizationCheckBox.setSelected(myGenerationOptimizationEnabled);
-   //   panel.add(myIncrementalCheckBox);
+      //   panel.add(myIncrementalCheckBox);
       panel.add(myHighlightingCheckBox);
       panel.add(myGeneratorOptimizationCheckBox);
       myComponent.add(panel, BorderLayout.NORTH);
@@ -85,8 +82,8 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
     }
 
     public void commit() {
-  //    boolean selectedIncremental = myIncrementalCheckBox.isSelected();
-  //    boolean changedIncremental = (myUsesIncrementalAlgorithm != selectedIncremental);
+      //    boolean selectedIncremental = myIncrementalCheckBox.isSelected();
+      //    boolean changedIncremental = (myUsesIncrementalAlgorithm != selectedIncremental);
       boolean selectedHighlighting = myHighlightingCheckBox.isSelected();
       boolean changedHighlighting = (myUsesDebugHighlighting != selectedHighlighting);
       if (changedHighlighting) {
@@ -97,7 +94,7 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
       if (changedOptimization) {
         myGenerationOptimizationEnabled = selectedOptimization;
       }
-     /* if (changedIncremental) {
+      /* if (changedIncremental) {
         myUsesIncrementalAlgorithm = selectedIncremental;
         NodeTypesComponentsRepository.getInstance().clear();
         TypeChecker.getInstance().clearForReload();

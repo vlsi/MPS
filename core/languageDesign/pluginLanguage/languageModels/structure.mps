@@ -659,11 +659,6 @@
     <property name="name" value="BootstrapActionGroup"/>
     <property name="rootable" value="true"/>
     <link role="extends" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration"/>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
-          id="1204384361462">
-      <property name="name" value="groupID"/>
-      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
           id="1205511365503">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
@@ -672,6 +667,13 @@
           id="1205511379581">
       <property name="value" value="Bootstrap Group"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1206193920040">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="groupID"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1204391079391">
@@ -682,11 +684,6 @@
     <property name="package" value="Actions.Groups.GroupModification.bootstrap"/>
     <property name="name" value="BootstrapExtentionPoint"/>
     <link role="extends" targetNodeId="1203680534665" resolveInfo="ExtentionPoint"/>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
-          id="1204397873283">
-      <property name="name" value="pointID"/>
-      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
           id="1205510728384">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
@@ -695,6 +692,13 @@
           id="1205511435887">
       <property name="value" value="bootstrap -&gt;"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1206194300534">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="pointID"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204465124142">
@@ -765,6 +769,10 @@
           id="1204472970200">
       <property name="value" value="instance"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1206194696130">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204477594372">
@@ -916,6 +924,10 @@
           id="1204478405232">
       <property name="value" value="instance"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1206194716352">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204903488751">

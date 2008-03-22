@@ -4,9 +4,7 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage" />
   </models>
-  <accessoryModels>
-    <model modelUID="jetbrains.mps.bootstrap.pluginLanguage.bootstrapGroups" />
-  </accessoryModels>
+  <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.bootstrap.pluginLanguage#1203080439937" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
@@ -39,6 +37,7 @@
     <dependency reexport="false">jetbrains.mps.baseLanguage.strings</dependency>
     <dependency reexport="false">jetbrains.mpslite</dependency>
     <dependency reexport="true">jetbrains.mps.baseLanguage.classifiers</dependency>
+    <dependency reexport="false">webr.notifications</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>
