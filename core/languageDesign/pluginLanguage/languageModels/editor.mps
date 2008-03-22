@@ -594,27 +594,6 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
-            id="1206183272526">
-        <property name="selectable" value="false"/>
-        <property name="vertical" value="false"/>
-        <property name="gridLayout" value="true"/>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-              id="1206183272527">
-          <property name="text" value="SModel"/>
-          <property name="selectable" value="false"/>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-              id="1206183272528">
-          <property name="text" value="-"/>
-          <property name="selectable" value="false"/>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-              id="1206183272529">
-          <property name="selectable" value="false"/>
-          <property name="text" value="current model (same as model)"/>
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
             id="1206183272530">
         <property name="selectable" value="false"/>
         <property name="vertical" value="false"/>
