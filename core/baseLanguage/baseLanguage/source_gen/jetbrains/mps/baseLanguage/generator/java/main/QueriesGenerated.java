@@ -31,7 +31,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201570306027(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_p_get_" + Property_Behavior.call_getPropertyNameWithId_1202008955205(_context.getNode());
+    return "get" + Property_Behavior.call_getPropertyNameWithId_1202008955205(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1201571350771(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -39,7 +39,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1202008885748(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_p_set_" + Property_Behavior.call_getPropertyNameWithId_1202008955205(_context.getNode());
+    return "set" + Property_Behavior.call_getPropertyNameWithId_1202008955205(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1201387048833(final IOperationContext operationContext, final ReferenceMacroContext _context) {

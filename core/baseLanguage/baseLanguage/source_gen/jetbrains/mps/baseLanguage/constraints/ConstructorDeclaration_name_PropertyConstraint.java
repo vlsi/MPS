@@ -25,7 +25,7 @@ public class ConstructorDeclaration_name_PropertyConstraint implements IModelCon
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     SNode parent = SNodeOperations.getParent(node, null, false, false);
-    if(parent != null) {
+    if (parent != null) {
       return SPropertyOperations.getString(parent, "name");
     }
     return "?constructor?";

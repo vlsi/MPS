@@ -35,7 +35,7 @@ public class AnnotationInstanceValue_key_ReferentConstraint implements IModelCon
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     SNode parent = _context.getEnclosingNode();
-    if(SLinkOperations.getTarget(parent, "annotation", false) != null) {
+    if (SLinkOperations.getTarget(parent, "annotation", false) != null) {
       ListOperations.addAllElements(result, SLinkOperations.getTargets(SLinkOperations.getTarget(parent, "annotation", false), "method", true));
     }
     return new SimpleSearchScope(result);

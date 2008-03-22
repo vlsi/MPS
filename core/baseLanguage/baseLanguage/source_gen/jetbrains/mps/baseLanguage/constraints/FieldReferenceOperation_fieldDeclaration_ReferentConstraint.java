@@ -32,7 +32,7 @@ public class FieldReferenceOperation_fieldDeclaration_ReferentConstraint impleme
 
   public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode operand = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
-    if(operand == null) {
+    if (operand == null) {
       return false;
     }
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(operand), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);

@@ -33,7 +33,7 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
   }
 
   public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    if(!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+    if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return false;
     }
     return (DotExpression_Behavior.call_getClassifier_1201997214164(_context.getEnclosingNode()) != null);
@@ -48,7 +48,7 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
       try {
         while(_zCursor4.moveToNext()) {
           SNode classifier = _zCursor4.getCurrent();
-          if(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+          if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
             SNode classConcept = classifier;
             List<SNode> properties = SLinkOperations.getTargets(classConcept, "property", true);
             {
@@ -56,7 +56,7 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
               try {
                 while(_zCursor5.moveToNext()) {
                   SNode property = _zCursor5.getCurrent();
-                  if(VisibilityUtil.isVisible(_context.getEnclosingNode(), property)) {
+                  if (VisibilityUtil.isVisible(_context.getEnclosingNode(), property)) {
                     ListOperations.addElement(resultProperties, property);
                   }
                 }

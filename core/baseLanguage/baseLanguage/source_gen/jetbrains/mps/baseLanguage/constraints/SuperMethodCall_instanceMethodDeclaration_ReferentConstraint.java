@@ -35,7 +35,7 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implem
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode enclosingClass = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     SNode superclass = SLinkOperations.getTarget(SLinkOperations.getTarget(enclosingClass, "superclass", true), "classifier", false);
-    if(superclass == null) {
+    if (superclass == null) {
       return new EmptySearchScope();
     }
     return new SuperMethodCall_InstanceMethodScope(((Classifier)SNodeOperations.getAdapter(superclass)), ((SuperMethodCall)SNodeOperations.getAdapter(_context.getReferenceNode())));
