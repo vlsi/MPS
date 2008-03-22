@@ -724,6 +724,7 @@
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration"
           id="1206101064420">
       <property name="name" value="node"/>
+      <property name="isFinal" value="true"/>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206101064421"/>
       <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206101064422"/>
     </node>
