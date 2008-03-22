@@ -411,31 +411,8 @@
           id="1206094600860">
       <property name="name" value="node"/>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206094600861"/>
-      <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206094615995"/>
-    </node>
-    <node role="updateBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.IsApplicableBlock"
-          id="1206094641605">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206094641606">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206094643686">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206094647316">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206094644969">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson"
-                    id="1206094643687"/>
-              <node role="operation"
-                    type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation"
-                    id="1206094646049">
-                <link role="member" targetNodeId="1206094600860" resolveInfo="node"/>
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation"
-                  id="1206094650302">
-              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference"
-                    id="1206094652523">
-                <link role="conceptDeclaration" targetNodeId="1.1177326519037" resolveInfo="CommentedStatementsBlock"/>
-              </node>
-            </node>
-          </node>
-        </node>
+      <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206094615995">
+        <link role="concept" targetNodeId="1.1177326519037" resolveInfo="CommentedStatementsBlock"/>
       </node>
     </node>
   </node>

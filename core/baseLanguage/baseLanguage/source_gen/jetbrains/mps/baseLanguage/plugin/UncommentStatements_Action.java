@@ -27,10 +27,6 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     return "control shift SLASH";
   }
 
-  public boolean isApplicable(ActionContext context) {
-    return SNodeOperations.isInstanceOf(this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
-  }
-
   public void doUpdate(@NotNull()ActionContext context) {
     super.doUpdate(context);
     if (!(this.fillFieldsIfNecessary(context))) {
@@ -38,11 +34,8 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
       this.setVisible(false);
       return;
     }
-    {
-      boolean enabled = this.isApplicable(context);
-      this.setEnabled(enabled);
-      this.setVisible(enabled);
-    }
+    this.setEnabled(true);
+    this.setVisible(true);
   }
 
   public boolean fillFieldsIfNecessary(ActionContext context) {
@@ -50,6 +43,9 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
       {
         SNode node = context.getNode();
         if (node == null) {
+          return false;
+        }
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"))) {
           return false;
         }
         /*
