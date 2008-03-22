@@ -52,11 +52,6 @@ public class QueriesGenerated {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(node, "mn_property_getter");
   }
 
-  public static Object referenceMacro_GetReferent_1202097765258(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode inputNode = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operation", true), "property", false);
-    return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(inputNode, "mn_property_setter");
-  }
-
   public static boolean ifMacro_Condition_1201570447832(final IOperationContext operationContext, final IfMacroContext _context) {
     return Property_Behavior.call_isCustomImplementation_1202009265236(_context.getNode());
   }
@@ -103,14 +98,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1202009151075(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1202097741114(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "operand", true);
-  }
-
-  public static SNode sourceNodeQuery_1202097755093(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "rValue", true);
   }
 
   public static SNode sourceNodeQuery_1206153169167(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
