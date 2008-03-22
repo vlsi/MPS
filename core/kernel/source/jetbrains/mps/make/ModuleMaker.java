@@ -78,6 +78,7 @@ public class ModuleMaker {
 
     for (IModule c : candidates) {
       if (!isUpToDate(c)) {
+        isUpToDate(c);
         toCompile.add(c);
       }
     }
@@ -245,15 +246,6 @@ public class ModuleMaker {
   }
 
   private boolean isUpToDate(IModule m) {
-    //don't compile generators and transient modules
-    if (!(m instanceof Solution) && !(m instanceof Language)) {
-      return true;
-    }
-
-    if (m.isPackaged()) {
-      return true;
-    }
-
     if (!isClassesUpToDate(m)) {
       return false;
     }
@@ -268,6 +260,14 @@ public class ModuleMaker {
   }
 
   private boolean isClassesUpToDate(IModule m) {
+    if (!(m instanceof Solution) && !(m instanceof Language)) {
+      return true;
+    }
+
+    if (m.isPackaged()) {
+      return true;
+    }
+
     if (myClassesUpToDateStatus.containsKey(m)) {
       return myClassesUpToDateStatus.get(m);
     }
