@@ -31,7 +31,12 @@ import java.util.*;
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
+
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules) {
+    return getDependenciesClasspath(modules, true, true);
+  }
+
+  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeJDK, boolean includeMPS) {
     Set<IModule> dependOnModules = new LinkedHashSet<IModule>();
     dependOnModules.addAll(modules);
     for (IModule m : modules) {
@@ -41,8 +46,12 @@ public abstract class AbstractModule implements IModule {
 
     CompositeClassPathItem result = new CompositeClassPathItem();
 
-    result.add(ClassLoaderManager.getInstance().getRTJar());
-    result.add(ClassLoaderManager.getInstance().getMPSPath());
+    if (includeJDK) {
+      result.add(ClassLoaderManager.getInstance().getRTJar());
+    }
+    if (includeMPS) {
+      result.add(ClassLoaderManager.getInstance().getMPSPath());
+    }
 
     for (IModule m : dependOnModules) {
       result.add(m.getJavaStubsClassPathItem());
@@ -58,7 +67,7 @@ public abstract class AbstractModule implements IModule {
       result.add(l.getRuntimeClasspath());
     }
 
-    return result;
+    return result.optimize();
   }
 
   private boolean myModelsRead = false;
@@ -72,7 +81,7 @@ public abstract class AbstractModule implements IModule {
 
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
 
-  
+
   protected void reload() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
@@ -81,7 +90,7 @@ public abstract class AbstractModule implements IModule {
     updateRuntimeClassPath();
     reloadStubs();
 
-    createManifest();    
+    createManifest();
   }
 
   public void convert() {
@@ -441,9 +450,9 @@ public abstract class AbstractModule implements IModule {
   public IClassPathItem getJavaStubsClassPathItem() {
     return myJavaStubsClassPathItem;
   }
-  
+
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
-    return getDependenciesClasspath(CollectionUtil.asSet((IModule) this));
+    return getDependenciesClasspath(CollectionUtil.asSet((IModule) this), false, false);
   }
 
   protected IClassPathItem createClassPathItem(String s) {
@@ -647,7 +656,7 @@ public abstract class AbstractModule implements IModule {
     File bundleHome = getBundleHome();
 
     assert bundleHome != null;
-    if (bundleHome.isFile()) { //i.e. packaged      
+    if (bundleHome.isFile()) { //i.e. packaged
       return;
     }
 
@@ -660,10 +669,8 @@ public abstract class AbstractModule implements IModule {
 
   public void invalidateCaches() {
     myScope.invalidateCaches();
-    myClassesCache.clear();    
+    myClassesCache.clear();
   }
-
-
 
   //TODO: make private (was made visible for usages view to save view scope by Mihail Muhin)
   public class ModuleScope extends BaseScope {
