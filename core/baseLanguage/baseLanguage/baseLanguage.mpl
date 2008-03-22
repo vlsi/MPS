@@ -10,6 +10,9 @@
         <modelRoot path="${language_descriptor}\generator\java\templates" namespacePrefix="jetbrains.mps.baseLanguage.generator.java" />
       </models>
       <external-templates />
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+      </usedLanguages>
       <mapping-priorities />
     </generator>
   </generators>
