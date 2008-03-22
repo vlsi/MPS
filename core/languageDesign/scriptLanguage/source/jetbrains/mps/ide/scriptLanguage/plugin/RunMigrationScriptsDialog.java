@@ -62,7 +62,7 @@ public class RunMigrationScriptsDialog extends JDialog {
 
     myTable = new JTable(new MyTableModel());
 //    myTable.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
-    myTable.setAutoCreateRowSorter(true);
+//    myTable.setAutoCreateRowSorter(true);
     TableColumnModel columnModel = myTable.getColumnModel();
     columnModel.getColumn(0).setMaxWidth(20);
     columnModel.getColumn(0).setResizable(false);
@@ -166,8 +166,8 @@ public class RunMigrationScriptsDialog extends JDialog {
     List<MigrationScript> list = new ArrayList<MigrationScript>();
     int[] ints = myTable.getSelectedRows();
     for (int anInt : ints) {
-      int modelIndex = myTable.convertRowIndexToModel(anInt);
-      list.add(myScripts.get(modelIndex));
+//      int modelIndex = myTable.convertRowIndexToModel(anInt);
+//      list.add(myScripts.get(modelIndex));
 //      System.out.println("selected [" + modelIndex + "] " + myScripts.get(modelIndex).getTitle());
     }
     return list;
