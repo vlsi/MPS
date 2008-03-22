@@ -5,6 +5,7 @@ import jetbrains.mps.logging.Logger;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.net.ServerSocket;
 
 /**
  * @author Kostik
@@ -39,10 +40,10 @@ public class MPSPlugin {
     }
 
     if (myPlugin == null) {
-      try {        
+      try {
         myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
       } catch (Exception e) {
-        //ignore it's ok not to have IDEA
+        LOG.info("Wasn't able to connect to IDEA");       
       }
     }
     return myPlugin;
