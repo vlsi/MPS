@@ -1422,9 +1422,9 @@
             id="1206110320296">
         <property name="selectable" value="false"/>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
-            id="1206113109487">
-        <property name="noTargetText" value="&lt;fields&gt;"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList"
+            id="1206180593454">
+        <property name="vertical" value="true"/>
         <link role="relationDeclaration" targetNodeId="1.1206112250032"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
