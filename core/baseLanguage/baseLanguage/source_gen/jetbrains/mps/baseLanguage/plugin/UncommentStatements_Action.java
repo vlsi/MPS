@@ -42,18 +42,17 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     try {
       {
         SNode node = context.getNode();
-        if (node == null) {
-          return false;
+        if (node != null) {
+          if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"))) {
+            node = null;
+          }
         }
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"))) {
-          return false;
-        }
+        this.node = node;
         /*
           if (!(<!IsSubtypeExpression TextGen not found!>)) {
             return false;
           }
         */
-        this.node = node;
       }
       if (this.node == null) {
         return false;
