@@ -17,9 +17,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.quotation" />
-  <language namespace="jetbrains.mps.bootstrap.findUsagesLanguage" />
-  <language namespace="jetbrains.mps.core" />
-  <maxImportIndex value="41" />
+  <maxImportIndex value="42" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
@@ -37,8 +35,8 @@
   <import index="35" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="36" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="37" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="40" modelUID="jetbrains.mps.cfg@java_stub" version="-1" />
   <import index="41" modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+  <import index="42" modelUID="jetbrains.mps.cfg@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1156246260769">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1156246279317">
@@ -7144,10 +7142,10 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197462706485">
             <property name="name" value="cfgBuilder" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197462713630">
-              <link role="classifier" targetNodeId="40.~CFGBuilder" resolveInfo="CFGBuilder" />
+              <link role="classifier" targetNodeId="42.~CFGBuilder" resolveInfo="CFGBuilder" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1197462706487">
-              <link role="baseMethodDeclaration" targetNodeId="40.~CFGBuilder.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="CFGBuilder" />
+              <link role="baseMethodDeclaration" targetNodeId="42.~CFGBuilder.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="CFGBuilder" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197462730006" />
             </node>
           </node>
@@ -7156,14 +7154,14 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197462654722">
             <property name="name" value="controlFlowGraph" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197462687951">
-              <link role="classifier" targetNodeId="40.~IControlFlowGraph" resolveInfo="IControlFlowGraph" />
+              <link role="classifier" targetNodeId="42.~IControlFlowGraph" resolveInfo="IControlFlowGraph" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332444486">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197462738679">
                 <link role="variableDeclaration" targetNodeId="1197462706485" resolveInfo="cfgBuilder" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332444487">
-                <link role="baseMethodDeclaration" targetNodeId="40.~CFGBuilder.getControlFlowGraph():jetbrains.mps.cfg.IControlFlowGraph" resolveInfo="getControlFlowGraph" />
+                <link role="baseMethodDeclaration" targetNodeId="42.~CFGBuilder.getControlFlowGraph():jetbrains.mps.cfg.IControlFlowGraph" resolveInfo="getControlFlowGraph" />
               </node>
             </node>
           </node>
@@ -7174,7 +7172,7 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197462789087">
               <link role="classifier" targetNodeId="6.~Set" resolveInfo="Set" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197462792058">
-                <link role="classifier" targetNodeId="40.~BasicBlock" resolveInfo="BasicBlock" />
+                <link role="classifier" targetNodeId="42.~BasicBlock" resolveInfo="BasicBlock" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197462654730">
@@ -7715,6 +7713,48 @@
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1206151838652">
                 <link role="property" targetNodeId="1.1201371481316" resolveInfo="propertyName" />
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206152348095">
+      <property name="name" value="getGetterMethodName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206152425772">
+        <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206152348097">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206152448961">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1206152453634">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206152483648">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206152482851" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206152489057">
+                <link role="conceptMethodDeclaration" targetNodeId="1202008955205" resolveInfo="getPropertyNameWithId" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206152448962">
+              <property name="value" value="get" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206152502448">
+      <property name="name" value="getSetterMethodName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206152502449">
+        <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206152502450">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206152502451">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1206152502452">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206152502453">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206152502454" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1206152502455">
+                <link role="conceptMethodDeclaration" targetNodeId="1202008955205" resolveInfo="getPropertyNameWithId" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206152502456">
+              <property name="value" value="set" />
             </node>
           </node>
         </node>
