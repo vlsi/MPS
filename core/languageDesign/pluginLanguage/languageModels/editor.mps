@@ -1339,6 +1339,245 @@
         <property name="selectable" value="false"/>
       </node>
     </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+          id="1206181961526">
+      <property name="vertical" value="true"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1206181965402">
+        <property name="text" value="available parameter types:"/>
+        <property name="selectable" value="false"/>
+        <property name="textBgColor" value="orange"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1206182302417">
+        <property name="text" value="  (it's checked that parameters with theese types are present in the context"/>
+        <property name="selectable" value="false"/>
+        <property name="textFgColor" value="gray"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1206182478859">
+        <property name="text"
+                  value="  and they are extracted from it, otherwise the action is disabled and invisible)"/>
+        <property name="selectable" value="false"/>
+        <property name="textFgColor" value="gray"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1206181989138">
+        <property name="selectable" value="false"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206181995453">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182045725">
+          <property name="text" value="node &lt;type&gt;"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182049587">
+          <property name="text" value="-"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182057198">
+          <property name="text" value="current node (type is checked)"/>
+          <property name="selectable" value="false"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206182151650">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182151651">
+          <property name="text" value="nlist &lt;type&gt;"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182151652">
+          <property name="text" value="-"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182151653">
+          <property name="selectable" value="false"/>
+          <property name="text" value="selected nodes (type is not checked)"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206182070314">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182070315">
+          <property name="text" value="model"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182070316">
+          <property name="text" value="-"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182070317">
+          <property name="selectable" value="false"/>
+          <property name="text" value="current model"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206182071850">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182071851">
+          <property name="text" value="SNode"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182071852">
+          <property name="text" value="-"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182071853">
+          <property name="selectable" value="false"/>
+          <property name="text" value="curent node (same as node &lt;type&gt;)"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206182073168">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182073169">
+          <property name="text" value="SModel"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182073170">
+          <property name="text" value="-"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182073171">
+          <property name="selectable" value="false"/>
+          <property name="text" value="current model (same as model)"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206182157238">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182157239">
+          <property name="text" value="SModelDescriptor"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182157240">
+          <property name="text" value="-"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182157241">
+          <property name="selectable" value="false"/>
+          <property name="text" value="current model descriptor"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206182158743">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182158744">
+          <property name="text" value="IOperationContext"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182158745">
+          <property name="text" value="-"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182158746">
+          <property name="selectable" value="false"/>
+          <property name="text" value="operation context"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206182159904">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182159905">
+          <property name="text" value="MPSProject"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182159906">
+          <property name="text" value="-"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182159907">
+          <property name="selectable" value="false"/>
+          <property name="text" value="current project"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206182220878">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182220879">
+          <property name="text" value="IDEProjectFrame"/>
+          <property name="selectable" value="false"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206182223588">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182223589">
+          <property name="text" value="EditorPane"/>
+          <property name="selectable" value="false"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206182225936">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182225937">
+          <property name="text" value="AbstractEditorComponent"/>
+          <property name="selectable" value="false"/>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1206182275052">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <property name="gridLayout" value="true"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1206182275053">
+          <property name="text" value="Frame"/>
+          <property name="selectable" value="false"/>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1205853248114">
     <property name="package" value="Actions.Action"/>
