@@ -65,7 +65,7 @@ public class FileTreePath extends TreePath<File> {
     }
 
     public static IFilter<File> getInstance() {
-      if(FileTreePath.DIR_NodeKindTrigger.instance == null) {
+      if (FileTreePath.DIR_NodeKindTrigger.instance == null) {
         FileTreePath.DIR_NodeKindTrigger.instance = new FileTreePath.DIR_NodeKindTrigger();
       }
       return FileTreePath.DIR_NodeKindTrigger.instance;
@@ -91,7 +91,7 @@ public class FileTreePath extends TreePath<File> {
     }
 
     public static IFilter<File> getInstance() {
-      if(FileTreePath.FILE_NodeKindTrigger.instance == null) {
+      if (FileTreePath.FILE_NodeKindTrigger.instance == null) {
         FileTreePath.FILE_NodeKindTrigger.instance = new FileTreePath.FILE_NodeKindTrigger();
       }
       return FileTreePath.FILE_NodeKindTrigger.instance;
@@ -107,7 +107,7 @@ public class FileTreePath extends TreePath<File> {
 
     public static IFilter<File> getMatcher(final String matchValue) {
       IFilter filter;
-      if(matchValue != null) {
+      if (matchValue != null) {
         filter = new IFilter() {
 
           public boolean accept(Object n) {
@@ -153,7 +153,7 @@ public class FileTreePath extends TreePath<File> {
 
     public static IFilter<File> getMatcher(final String matchValue) {
       IFilter filter;
-      if(matchValue != null) {
+      if (matchValue != null) {
         filter = new IFilter() {
 
           public boolean accept(Object n) {
@@ -192,7 +192,7 @@ public class FileTreePath extends TreePath<File> {
         String name = node.getName();
         int indexOfLastDot = name.lastIndexOf(".");
         String ext = "";
-        if(indexOfLastDot >= 0 && indexOfLastDot < name.length()) {
+        if (indexOfLastDot >= 0 && indexOfLastDot < name.length()) {
           ext = name.substring(indexOfLastDot);
         }
         return ext;

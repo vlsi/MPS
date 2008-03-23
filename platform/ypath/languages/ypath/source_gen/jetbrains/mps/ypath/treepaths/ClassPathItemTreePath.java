@@ -49,7 +49,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
     }
 
     public static Iterable<IClassPathItem> children(IClassPathItem node) {
-      if(node instanceof CompositeClassPathItem) {
+      if (node instanceof CompositeClassPathItem) {
         return ((CompositeClassPathItem)node).getChildren();
       } else
       {
@@ -72,7 +72,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
     }
 
     public static IFilter<IClassPathItem> getInstance() {
-      if(ClassPathItemTreePath.COMPOSITE_NodeKindTrigger.instance == null) {
+      if (ClassPathItemTreePath.COMPOSITE_NodeKindTrigger.instance == null) {
         ClassPathItemTreePath.COMPOSITE_NodeKindTrigger.instance = new ClassPathItemTreePath.COMPOSITE_NodeKindTrigger();
       }
       return ClassPathItemTreePath.COMPOSITE_NodeKindTrigger.instance;
@@ -98,7 +98,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
     }
 
     public static IFilter<IClassPathItem> getInstance() {
-      if(ClassPathItemTreePath.FILE_NodeKindTrigger.instance == null) {
+      if (ClassPathItemTreePath.FILE_NodeKindTrigger.instance == null) {
         ClassPathItemTreePath.FILE_NodeKindTrigger.instance = new ClassPathItemTreePath.FILE_NodeKindTrigger();
       }
       return ClassPathItemTreePath.FILE_NodeKindTrigger.instance;
@@ -124,7 +124,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
     }
 
     public static IFilter<IClassPathItem> getInstance() {
-      if(ClassPathItemTreePath.JAR_NodeKindTrigger.instance == null) {
+      if (ClassPathItemTreePath.JAR_NodeKindTrigger.instance == null) {
         ClassPathItemTreePath.JAR_NodeKindTrigger.instance = new ClassPathItemTreePath.JAR_NodeKindTrigger();
       }
       return ClassPathItemTreePath.JAR_NodeKindTrigger.instance;
