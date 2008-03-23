@@ -11,15 +11,15 @@ public class RulesUtil {
   public static final Object MAY_BE_VARIABLE = new Object();
 
   public static boolean withinInferenceItem(SNode node) {
-    if((SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.InferenceRule", false, false) != null)) {
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.InferenceRule", false, false) != null)) {
       return true;
     }
-    if((SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule", false, false) != null)) {
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule", false, false) != null)) {
       return true;
     }
     List<SNode> annotations = SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "annotation", true);
     for(SNode annotation : annotations) {
-      if(SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_15().createNode(), "classifier", false)) {
+      if (SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_15().createNode(), "classifier", false)) {
         return true;
       }
     }

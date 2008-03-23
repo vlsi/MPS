@@ -15,7 +15,6 @@ import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import java.util.Iterator;
 import jetbrains.mps.util.Pair;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Set;
 import jetbrains.mps.cfg.BasicBlock;
 import jetbrains.mps.cfg.IControlFlowGraph;
@@ -104,7 +103,7 @@ public class RulesFunctions_BaseLanguage {
 
   @InferenceMethod()
   public static void inference_matchConcreteTypesWithTypeVariables(SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
-    if ((genericClassifier != null) && mmap != null) {
+    if ((genericClassifier != null) && mmap != null && !(mmap.isEmpty())) {
       {
         Pattern_9 pattern_1203433053192 = new Pattern_9(genericClassifier);
         SNode coercedNode_1203433035924 = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_1203433053192);
@@ -130,8 +129,7 @@ public class RulesFunctions_BaseLanguage {
   }
 
   @InferenceMethod()
-  public static Map<SNode, List<SNode>> inference_equateParametersAndReturnType(SNode mc, SNode returnType) {
-    Map<SNode, List<SNode>> mmap = null;
+  public static void inference_equateParametersAndReturnType(SNode mc, SNode returnType, Map<SNode, List<SNode>> mmap) {
     {
       SNode arg;
       SNode param;
@@ -147,9 +145,7 @@ public class RulesFunctions_BaseLanguage {
         arg = arg_iterator.next();
         param = param_iterator.next();
         {
-          Pair<SNode, Map<SNode, List<SNode>>> pair = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(SLinkOperations.getTarget(param, "type", true), mmap);
-          SNode matchedType = pair.o1;
-          mmap = pair.o2;
+          SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(SLinkOperations.getTarget(param, "type", true), mmap);
           if (RulesFunctions_BaseLanguage.TRACE_METHOD_TYPES) {
             System.out.println("-1- TYPEOF(" + BaseConcept_Behavior.call_getPresentation_1180102203531(arg) + ") :<=: " + BaseConcept_Behavior.call_getPresentation_1180102203531(matchedType));
           }
@@ -158,15 +154,13 @@ public class RulesFunctions_BaseLanguage {
       }
     }
     if (returnType != null) {
-      Pair<SNode, Map<SNode, List<SNode>>> pair = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(returnType, mmap);
-      SNode matchedType = pair.o1;
-      mmap = pair.o2;
+      Pair<SNode, Map<SNode, List<SNode>>> pair;
+      SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(returnType, mmap);
       if (RulesFunctions_BaseLanguage.TRACE_METHOD_TYPES) {
         System.out.println("-1- TYPEOF(" + BaseConcept_Behavior.call_getPresentation_1180102203531(mc) + ") :==: " + BaseConcept_Behavior.call_getPresentation_1180102203531(matchedType));
       }
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(mc, "jetbrains.mps.baseLanguage.helgins", "1203441371361", true), matchedType, mc, null, "jetbrains.mps.baseLanguage.helgins", "1203441371359");
     }
-    return mmap;
   }
 
   @InferenceMethod()
@@ -205,43 +199,33 @@ public class RulesFunctions_BaseLanguage {
     }
   }
 
-  @InferenceMethod()
-  private static Pair<SNode, Map<SNode, List<SNode>>> inference_matchTypeWithTypeVariables(SNode type, Map<SNode, List<SNode>> mmap) {
+  private static SNode inference_matchTypeWithTypeVariables(SNode type, Map<SNode, List<SNode>> mmap) {
     SNode resType = SNodeOperations.copyNode(type);
     if (SNodeOperations.isInstanceOf(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203439588896 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
       SNode tvd = SLinkOperations.getTarget(resType, "typeVariableDeclaration", false);
-      RulesFunctions_BaseLanguage.inference_mapTypeVariable(tvd, TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203439588896), (mmap = RulesFunctions_BaseLanguage.getMMap(mmap)));
+      RulesFunctions_BaseLanguage.inference_mapTypeVariable(tvd, TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203439588896), mmap);
       resType = TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203439588896);
     } else
     {
-      mmap = RulesFunctions_BaseLanguage.inference_mapTypeVariables(resType, mmap);
+      RulesFunctions_BaseLanguage.inference_mapTypeVariables(resType, mmap);
     }
-    return new Pair<SNode, Map<SNode, List<SNode>>>(resType, mmap);
+    return resType;
   }
 
-  @InferenceMethod()
-  private static Map<SNode, List<SNode>> inference_mapTypeVariables(SNode type, Map<SNode, List<SNode>> mmap) {
+  private static void inference_mapTypeVariables(SNode type, Map<SNode, List<SNode>> mmap) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203431658168 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
       SNode tvd = SLinkOperations.getTarget(type, "typeVariableDeclaration", false);
-      RulesFunctions_BaseLanguage.inference_mapTypeVariable(tvd, TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203431658168), (mmap = RulesFunctions_BaseLanguage.getMMap(mmap)));
+      RulesFunctions_BaseLanguage.inference_mapTypeVariable(tvd, TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203431658168), mmap);
       SNodeOperations.replaceWithAnother(type, TypeChecker.getInstance().getEquationManager().getRepresentator(tvar_typevar_1203431658168));
     } else
     {
       List<SNode> children = new ArrayList<SNode>(SNodeOperations.getChildren(type));
       for(SNode chld : children) {
-        mmap = RulesFunctions_BaseLanguage.inference_mapTypeVariables(chld, mmap);
+        RulesFunctions_BaseLanguage.inference_mapTypeVariables(chld, mmap);
       }
     }
-    return mmap;
-  }
-
-  private static Map<SNode, List<SNode>> getMMap(Map<SNode, List<SNode>> mmap) {
-    if (mmap == null) {
-      return new HashMap<SNode, List<SNode>>();
-    }
-    return mmap;
   }
 
   private static void inference_mapTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {

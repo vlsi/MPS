@@ -17,7 +17,7 @@ public class typeOf_CoerceExpression_InferenceRule implements InferenceRule_Runt
   public void applyRule(final SNode coerceExpression) {
     SNode concept;
     SNode pattern = SLinkOperations.getTarget(coerceExpression, "pattern", true);
-    if(SNodeOperations.isInstanceOf(pattern, "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
+    if (SNodeOperations.isInstanceOf(pattern, "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
       concept = SLinkOperations.getTarget(pattern, "concept", false);
     } else
     {

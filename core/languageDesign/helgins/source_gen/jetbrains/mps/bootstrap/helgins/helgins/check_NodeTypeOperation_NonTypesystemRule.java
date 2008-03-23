@@ -13,7 +13,7 @@ public class check_NodeTypeOperation_NonTypesystemRule implements NonTypesystemR
   }
 
   public void applyRule(final SNode node_TypeOperation) {
-    if(!(!(RulesUtil.withinInferenceItem(node_TypeOperation)))) {
+    if (!(!(RulesUtil.withinInferenceItem(node_TypeOperation)))) {
       TypeChecker.getInstance().reportTypeError(node_TypeOperation, "don't use typeOperation within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1196099140505");
     }
   }

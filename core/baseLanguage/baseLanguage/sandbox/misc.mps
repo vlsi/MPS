@@ -8615,6 +8615,40 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206297375541">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206297375542">
+            <property name="name" value="m" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206297375543">
+              <link role="classifier" targetNodeId="3.~Map" resolveInfo="Map" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206297380811">
+                <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+              </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206297385610">
+                <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206297391581">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206297392692">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206297391582">
+              <link role="variableDeclaration" targetNodeId="1206297375542" resolveInfo="m" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206297396882">
+              <link role="baseMethodDeclaration" targetNodeId="3.~Map.get(java.lang.Object):java.lang.Object" resolveInfo="get" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206297406228">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206297406245">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206297406229">
+              <link role="variableDeclaration" targetNodeId="1206297375542" resolveInfo="m" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206297408794">
+              <link role="baseMethodDeclaration" targetNodeId="3.~Map.entrySet():java.util.Set" resolveInfo="entrySet" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205760020955" />

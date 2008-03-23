@@ -10,6 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
 import java.util.Map;
 import java.util.List;
+import java.util.HashMap;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_InstanceMethodCallOperation_InferenceRule implements InferenceRule_Runtime {
@@ -35,7 +36,8 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar4, new Runnable() {
 
         public void run() {
-          Map<SNode, List<SNode>> mmap = RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(imco, SLinkOperations.getTarget(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "returnType", true));
+          Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
+          RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(imco, SLinkOperations.getTarget(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "returnType", true), mmap);
           RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(methodClassifier, TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), mmap);
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
         }
