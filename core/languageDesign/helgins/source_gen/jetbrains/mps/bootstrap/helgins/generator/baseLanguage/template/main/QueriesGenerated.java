@@ -483,6 +483,18 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "whenConcreteVar", false), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1206360235947(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "checkOnly");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1206360318681(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "checkOnly");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1206360365967(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "checkOnly");
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     SNode method = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(rule, "mainMethodForRule");

@@ -17,7 +17,7 @@ public class NormalTypeClause extends TypeClause {
   }
 
   public static NormalTypeClause newInstance(SModel sm, boolean init) {
-    return ((NormalTypeClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (NormalTypeClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NormalTypeClause newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class NormalTypeClause extends TypeClause {
 
 
   public Expression getNormalType() {
-    return ((Expression)this.getChild(NormalTypeClause.NORMAL_TYPE));
+    return (Expression)this.getChild(NormalTypeClause.NORMAL_TYPE);
   }
 
   public void setNormalType(Expression node) {

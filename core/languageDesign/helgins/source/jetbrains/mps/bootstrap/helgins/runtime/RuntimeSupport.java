@@ -127,16 +127,31 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addEquation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId));
   }
 
+  @Deprecated
   public void createLessThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId));
   }
 
+  public void createLessThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly) {
+    myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, checkOnly));
+  }
+
+  @Deprecated
   public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId), false);
   }
 
+  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly) {
+    myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, checkOnly), false);
+  }
+
+  @Deprecated
   public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
     myTypeChecker.getEquationManager().addInequation(node2, node1, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId));
+  }
+
+  public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly) {
+    myTypeChecker.getEquationManager().addInequation(node2, node1, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, checkOnly));
   }
 
   public void createComparableEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {

@@ -18,7 +18,7 @@ public class PropertyPatternVariableReference extends Expression {
   }
 
   public static PropertyPatternVariableReference newInstance(SModel sm, boolean init) {
-    return ((PropertyPatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.PropertyPatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (PropertyPatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.PropertyPatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyPatternVariableReference newInstance(SModel sm) {
@@ -27,7 +27,7 @@ public class PropertyPatternVariableReference extends Expression {
 
 
   public PropertyPatternVariableDeclaration getPatternVarDecl() {
-    return ((PropertyPatternVariableDeclaration)this.getReferent(PropertyPatternVariableReference.PATTERN_VAR_DECL));
+    return (PropertyPatternVariableDeclaration)this.getReferent(PropertyPatternVariableReference.PATTERN_VAR_DECL);
   }
 
   public void setPatternVarDecl(PropertyPatternVariableDeclaration node) {

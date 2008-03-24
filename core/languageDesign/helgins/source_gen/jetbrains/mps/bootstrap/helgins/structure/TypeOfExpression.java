@@ -18,7 +18,7 @@ public class TypeOfExpression extends Expression {
   }
 
   public static TypeOfExpression newInstance(SModel sm, boolean init) {
-    return ((TypeOfExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (TypeOfExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeOfExpression newInstance(SModel sm) {
@@ -35,7 +35,7 @@ public class TypeOfExpression extends Expression {
   }
 
   public Expression getTerm() {
-    return ((Expression)this.getChild(TypeOfExpression.TERM));
+    return (Expression)this.getChild(TypeOfExpression.TERM);
   }
 
   public void setTerm(Expression node) {

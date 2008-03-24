@@ -21,7 +21,7 @@ public class WhenConcreteStatement extends Statement {
   }
 
   public static WhenConcreteStatement newInstance(SModel sm, boolean init) {
-    return ((WhenConcreteStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (WhenConcreteStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WhenConcreteStatement newInstance(SModel sm) {
@@ -30,7 +30,7 @@ public class WhenConcreteStatement extends Statement {
 
 
   public StatementList getBody() {
-    return ((StatementList)this.getChild(WhenConcreteStatement.BODY));
+    return (StatementList)this.getChild(WhenConcreteStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -38,7 +38,7 @@ public class WhenConcreteStatement extends Statement {
   }
 
   public Expression getArgument() {
-    return ((Expression)this.getChild(WhenConcreteStatement.ARGUMENT));
+    return (Expression)this.getChild(WhenConcreteStatement.ARGUMENT);
   }
 
   public void setArgument(Expression node) {
@@ -46,7 +46,7 @@ public class WhenConcreteStatement extends Statement {
   }
 
   public WhenConcreteVariableDeclaration getArgumentRepresentator() {
-    return ((WhenConcreteVariableDeclaration)this.getChild(WhenConcreteStatement.ARGUMENT_REPRESENTATOR));
+    return (WhenConcreteVariableDeclaration)this.getChild(WhenConcreteStatement.ARGUMENT_REPRESENTATOR);
   }
 
   public void setArgumentRepresentator(WhenConcreteVariableDeclaration node) {

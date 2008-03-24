@@ -19,7 +19,7 @@ public class MatchStatementItem extends BaseConcept {
   }
 
   public static MatchStatementItem newInstance(SModel sm, boolean init) {
-    return ((MatchStatementItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (MatchStatementItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchStatementItem newInstance(SModel sm) {
@@ -28,7 +28,7 @@ public class MatchStatementItem extends BaseConcept {
 
 
   public ApplicableNodeCondition getCondition() {
-    return ((ApplicableNodeCondition)this.getChild(MatchStatementItem.CONDITION));
+    return (ApplicableNodeCondition)this.getChild(MatchStatementItem.CONDITION);
   }
 
   public void setCondition(ApplicableNodeCondition node) {
@@ -36,7 +36,7 @@ public class MatchStatementItem extends BaseConcept {
   }
 
   public StatementList getIfTrue() {
-    return ((StatementList)this.getChild(MatchStatementItem.IF_TRUE));
+    return (StatementList)this.getChild(MatchStatementItem.IF_TRUE);
   }
 
   public void setIfTrue(StatementList node) {

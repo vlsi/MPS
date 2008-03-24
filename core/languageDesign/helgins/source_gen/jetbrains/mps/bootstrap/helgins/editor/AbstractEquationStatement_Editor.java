@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -16,6 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
@@ -76,6 +79,24 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180447348975");
   }
 
+  private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206359724772");
+    editorCell.setSelectable(false);
+  }
+
+  private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206359742337");
+    editorCell.setSelectable(false);
+  }
+
+  private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206359748167");
+  }
+
+  private static void setupBasic_CheckOnlyCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206359768593");
+  }
+
   private static void setupLabel_LeftExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -86,6 +107,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_CellModel_ConceptProperty(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(AbstractEquationStatement_Editor._QueryFunction_Color_1206359795157(node, context));
   }
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -98,6 +120,24 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ErrorStringCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_CheckOnlyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Color _QueryFunction_Color_1206359795157(SNode node, EditorContext editorContext) {
+    if (SPropertyOperations.getBoolean(node, "checkOnly")) {
+      return Color.GRAY;
+    } else
+    {
+      return Color.BLACK;
+    }
   }
 
 
@@ -130,6 +170,8 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createRowCell2(context, node));
+    editorCell.addEditorCell(this.createConstantCell3(context, node, ""));
+    editorCell.addEditorCell(this.createRowCell3(context, node));
     return editorCell;
   }
 
@@ -155,6 +197,17 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createRowCell3(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    AbstractEquationStatement_Editor.setupBasic_RowCell3(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell4(context, node, "check only"));
+    editorCell.addEditorCell(this.createCheckOnlyCell(context, node));
+    return editorCell;
+  }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     AbstractEquationStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -175,6 +228,22 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     AbstractEquationStatement_Editor.setupBasic_ConstantCell2(editorCell, node, context);
     AbstractEquationStatement_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    AbstractEquationStatement_Editor.setupBasic_ConstantCell3(editorCell, node, context);
+    AbstractEquationStatement_Editor.setupLabel_ConstantCell3(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    AbstractEquationStatement_Editor.setupBasic_ConstantCell4(editorCell, node, context);
+    AbstractEquationStatement_Editor.setupLabel_ConstantCell4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -315,6 +384,35 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createErrorStringCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createCheckOnlyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    AbstractEquationStatement_Editor.setupBasic_CheckOnlyCell(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      AbstractEquationStatement_Editor.setupLabel_CheckOnlyCell((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createCheckOnlyCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("checkOnly");
+    provider.setNoTargetText("");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createCheckOnlyCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

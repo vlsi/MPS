@@ -15,7 +15,7 @@ public class NonTypesystemRule extends AbstractCheckingRule {
   }
 
   public static NonTypesystemRule newInstance(SModel sm, boolean init) {
-    return ((NonTypesystemRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (NonTypesystemRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NonTypesystemRule newInstance(SModel sm) {

@@ -534,10 +534,41 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1174664114276">
         <property name="drawBorder" value="false" />
+        <property name="textFgColor" value="query" />
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1174664145542">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1174664147918">
             <link role="replacementConcept" targetNodeId="1.1174660718586" />
+          </node>
+        </node>
+        <node role="cellForegroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1206359795157">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206359795158">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206359825472">
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206359825473">
+                <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1206359825474" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1206359830967">
+                  <link role="property" targetNodeId="1.1206359757216" resolveInfo="checkOnly" />
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206359825476">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206359825477">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1206359825478">
+                    <link role="classifier" targetNodeId="21.~Color" resolveInfo="Color" />
+                    <link role="variableDeclaration" targetNodeId="21.~Color.GRAY" resolveInfo="GRAY" />
+                  </node>
+                </node>
+              </node>
+              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1206359825479">
+                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206359825480">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206359825481">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1206359825482">
+                      <link role="classifier" targetNodeId="21.~Color" resolveInfo="Color" />
+                      <link role="variableDeclaration" targetNodeId="21.~Color.BLACK" resolveInfo="BLACK" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -571,6 +602,19 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1180447348975">
           <link role="relationDeclaration" targetNodeId="1.1180447237840" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206359724772">
+        <property name="selectable" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206359742337">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206359748167">
+          <property name="text" value="check only" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1206359768593">
+          <link role="relationDeclaration" targetNodeId="1.1206359757216" resolveInfo="checkOnly" />
         </node>
       </node>
     </node>

@@ -31,16 +31,16 @@ public enum EquationDirection_Enum {
   }
 
   public static EquationDirection_Enum parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return EquationDirection_Enum.getDefault();
     }
-    if(value.equals(EquationDirection_Enum.none.getValueAsString())) {
+    if (value.equals(EquationDirection_Enum.none.getValueAsString())) {
       return EquationDirection_Enum.none;
     }
-    if(value.equals(EquationDirection_Enum.left.getValueAsString())) {
+    if (value.equals(EquationDirection_Enum.left.getValueAsString())) {
       return EquationDirection_Enum.left;
     }
-    if(value.equals(EquationDirection_Enum.right.getValueAsString())) {
+    if (value.equals(EquationDirection_Enum.right.getValueAsString())) {
       return EquationDirection_Enum.right;
     }
     return EquationDirection_Enum.getDefault();

@@ -18,7 +18,7 @@ public class AbstractCheckingRule extends AbstractRule {
   }
 
   public static AbstractCheckingRule newInstance(SModel sm, boolean init) {
-    return ((AbstractCheckingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractCheckingRule", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (AbstractCheckingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractCheckingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractCheckingRule newInstance(SModel sm) {
@@ -35,7 +35,7 @@ public class AbstractCheckingRule extends AbstractRule {
   }
 
   public StatementList getBody() {
-    return ((StatementList)this.getChild(AbstractCheckingRule.BODY));
+    return (StatementList)this.getChild(AbstractCheckingRule.BODY);
   }
 
   public void setBody(StatementList node) {

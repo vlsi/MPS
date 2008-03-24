@@ -16,7 +16,7 @@ public class FindSourceBlock extends ConceptFunction {
   }
 
   public static FindSourceBlock newInstance(SModel sm, boolean init) {
-    return ((FindSourceBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.FindSourceBlock", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (FindSourceBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.FindSourceBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FindSourceBlock newInstance(SModel sm) {

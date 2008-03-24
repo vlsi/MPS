@@ -21,7 +21,7 @@ public class RuntimeListVariable extends BaseConcept implements INamedConcept {
   }
 
   public static RuntimeListVariable newInstance(SModel sm, boolean init) {
-    return ((RuntimeListVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeListVariable", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (RuntimeListVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeListVariable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RuntimeListVariable newInstance(SModel sm) {

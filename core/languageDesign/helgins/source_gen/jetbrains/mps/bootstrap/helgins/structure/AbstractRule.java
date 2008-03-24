@@ -17,7 +17,7 @@ public class AbstractRule extends NamedConcept {
   }
 
   public static AbstractRule newInstance(SModel sm, boolean init) {
-    return ((AbstractRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractRule", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (AbstractRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractRule newInstance(SModel sm) {
@@ -26,7 +26,7 @@ public class AbstractRule extends NamedConcept {
 
 
   public ApplicableNodeCondition getApplicableNode() {
-    return ((ApplicableNodeCondition)this.getChild(AbstractRule.APPLICABLE_NODE));
+    return (ApplicableNodeCondition)this.getChild(AbstractRule.APPLICABLE_NODE);
   }
 
   public void setApplicableNode(ApplicableNodeCondition node) {

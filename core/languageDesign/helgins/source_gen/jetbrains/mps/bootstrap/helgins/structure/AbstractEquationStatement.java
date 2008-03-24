@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AbstractEquationStatement extends Statement {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement";
+  public static String CHECK_ONLY = "checkOnly";
   public static String LEFT_EXPRESSION = "leftExpression";
   public static String RIGHT_EXPRESSION = "rightExpression";
   public static String NODE_TO_CHECK = "nodeToCheck";
@@ -21,7 +22,7 @@ public class AbstractEquationStatement extends Statement {
   }
 
   public static AbstractEquationStatement newInstance(SModel sm, boolean init) {
-    return ((AbstractEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter());
+    return (AbstractEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractEquationStatement newInstance(SModel sm) {
@@ -29,8 +30,16 @@ public class AbstractEquationStatement extends Statement {
   }
 
 
+  public boolean getCheckOnly() {
+    return this.getBooleanProperty(AbstractEquationStatement.CHECK_ONLY);
+  }
+
+  public void setCheckOnly(boolean value) {
+    this.setBooleanProperty(AbstractEquationStatement.CHECK_ONLY, value);
+  }
+
   public TypeClause getLeftExpression() {
-    return ((TypeClause)this.getChild(AbstractEquationStatement.LEFT_EXPRESSION));
+    return (TypeClause)this.getChild(AbstractEquationStatement.LEFT_EXPRESSION);
   }
 
   public void setLeftExpression(TypeClause node) {
@@ -38,7 +47,7 @@ public class AbstractEquationStatement extends Statement {
   }
 
   public TypeClause getRightExpression() {
-    return ((TypeClause)this.getChild(AbstractEquationStatement.RIGHT_EXPRESSION));
+    return (TypeClause)this.getChild(AbstractEquationStatement.RIGHT_EXPRESSION);
   }
 
   public void setRightExpression(TypeClause node) {
@@ -46,7 +55,7 @@ public class AbstractEquationStatement extends Statement {
   }
 
   public Expression getNodeToCheck() {
-    return ((Expression)this.getChild(AbstractEquationStatement.NODE_TO_CHECK));
+    return (Expression)this.getChild(AbstractEquationStatement.NODE_TO_CHECK);
   }
 
   public void setNodeToCheck(Expression node) {
@@ -54,7 +63,7 @@ public class AbstractEquationStatement extends Statement {
   }
 
   public Expression getErrorString() {
-    return ((Expression)this.getChild(AbstractEquationStatement.ERROR_STRING));
+    return (Expression)this.getChild(AbstractEquationStatement.ERROR_STRING);
   }
 
   public void setErrorString(Expression node) {
