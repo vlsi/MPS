@@ -8649,6 +8649,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206363761090">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206363762217">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1206363764845">
+              <link role="baseMethodDeclaration" targetNodeId="3.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206363779581">
+                <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+              </node>
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206363783442">
+                <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206363761091">
+              <link role="variableDeclaration" targetNodeId="1206297375542" resolveInfo="m" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205760020955" />

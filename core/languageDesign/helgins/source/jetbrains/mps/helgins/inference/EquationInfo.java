@@ -19,7 +19,6 @@ public class EquationInfo {
   private String myRuleModel;
   private String myRuleId;
 
-  private boolean myCheckOnly = false;
 
   public EquationInfo(SNode nodeWithError, String errorString) {
     myErrorString = errorString;
@@ -31,14 +30,6 @@ public class EquationInfo {
     myNodeWithError = nodeWithError;
     myRuleModel = ruleModel;
     myRuleId = ruleId;
-  }
-
-  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId, boolean checkOnly) {
-    myErrorString = errorString;
-    myNodeWithError = nodeWithError;
-    myRuleModel = ruleModel;
-    myRuleId = ruleId;
-    myCheckOnly = checkOnly;
   }
 
   public String getErrorString() {
