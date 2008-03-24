@@ -314,6 +314,10 @@ public class ModuleMaker {
       return true;
     }
 
+    if (!m.isCompileInMPS()) {
+      return true;
+    }
+
     return false;
   }
 
