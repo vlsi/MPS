@@ -57,7 +57,7 @@ public class ModuleMaker {
         monitor.addText("Compiling modules: " + cycle + "...");
         errorCount += compile(cycle).getErrors();
         if (errorCount != 0) {
-          break;
+          monitor.addText("There were compilation errors in these modules. See messages view for more information.");          
         }
       }
 
