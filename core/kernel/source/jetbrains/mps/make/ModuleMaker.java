@@ -55,10 +55,11 @@ public class ModuleMaker {
       int errorCount = 0;
       for (Set<IModule> cycle : new MakeScheduleBuilder().buildSchedule(toCompile)) {
         monitor.addText("Compiling modules: " + cycle + "...");
-        errorCount += compile(cycle).getErrors();
-        if (errorCount != 0) {
-          monitor.addText("There were compilation errors in these modules. See messages view for more information.");          
+        int currentErrorsCount = compile(cycle).getErrors();
+        if (currentErrorsCount != 0) {
+          monitor.addText("There were compilation errors in these modules. See messages view for more information.");
         }
+        errorCount += currentErrorsCount;
       }
 
       return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
@@ -78,7 +79,6 @@ public class ModuleMaker {
 
     for (IModule c : candidates) {
       if (!isUpToDate(c)) {
-        isUpToDate(c);
         toCompile.add(c);
       }
     }
