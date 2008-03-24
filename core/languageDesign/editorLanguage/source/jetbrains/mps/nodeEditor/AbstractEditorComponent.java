@@ -1555,19 +1555,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     int x0;
     int width;
-    if (getDeepestSelectedCell() instanceof EditorCell_Label && cell.getWidth() > viewportWidth) {
-      EditorCell_Label cellLabel = (EditorCell_Label) getDeepestSelectedCell();
 
+    if (cell instanceof EditorCell_Label) {
+      EditorCell_Label cellLabel = (EditorCell_Label) cell;
       int caretX = cellLabel.getCaretX();
       int charWidth = cellLabel.getCharWidth();
-
+      width = 4 * charWidth;
+      x0 = caretX - 2 * charWidth;
+    } else if (getDeepestSelectedCell() instanceof EditorCell_Label && cell.getWidth() > viewportWidth) {
+      EditorCell_Label cellLabel = (EditorCell_Label) getDeepestSelectedCell();
+      int caretX = cellLabel.getCaretX();
+      int charWidth = cellLabel.getCharWidth();
       x0 = Math.max(cell.getX(), caretX + 2 * charWidth - viewportWidth);
-
-      if (cell instanceof EditorCell_Label) {
-        width = ((EditorCell_Label) cell).getTextLineWidth();
-      } else {
-        width = viewportWidth;
-      }
+      width = viewportWidth;
     } else {
       x0 = cell.getX();
       width = cell.getWidth();
