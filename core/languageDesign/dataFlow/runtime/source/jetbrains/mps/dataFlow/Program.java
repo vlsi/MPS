@@ -44,7 +44,7 @@ public class Program {
       }
     }
 
-    return new AnalysisResult<E>(this, result);
+    return new AnalysisResult<E>(this, analyzer, result);
   }
 
   void add(Instruction instruction) {

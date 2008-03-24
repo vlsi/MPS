@@ -11,13 +11,13 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.LinkedHashSet;
 
-public class LivenessAnalyzer implements DataFlowAnalyzer<Set<Object>> {
+public class LivenessAnalyzer extends BaseDataFlowAnalyzer<Set<Object>> {
   public Set<Object> getInitial() {
     return new HashSet<Object>();
   }
 
   public Set<Object> join(Instruction instruction, Set<Set<Object>> input) {
-    Set<Object> result = new TreeSet<Object>();
+    Set<Object> result = new HashSet<Object>();
     for (Set<Object> inputSet : input) {
       result.addAll(inputSet);      
     }

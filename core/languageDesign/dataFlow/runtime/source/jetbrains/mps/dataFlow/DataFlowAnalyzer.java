@@ -8,4 +8,6 @@ public interface DataFlowAnalyzer<E> {
   E getInitial();
   E join(Instruction instruction, Set<E> input);
   AnalysisDirection getDirection();
+
+  String toString(E e);
 }

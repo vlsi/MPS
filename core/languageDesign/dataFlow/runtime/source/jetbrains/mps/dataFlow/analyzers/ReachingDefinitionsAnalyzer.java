@@ -9,13 +9,13 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteInstruction>> {
+public class ReachingDefinitionsAnalyzer extends BaseDataFlowAnalyzer<Set<WriteInstruction>> {
   public Set<WriteInstruction> getInitial() {
     return new HashSet<WriteInstruction>();
   }
 
   public Set<WriteInstruction> join(Instruction instruction, Set<Set<WriteInstruction>> input) {
-    Set<WriteInstruction> result = new TreeSet<WriteInstruction>();
+    Set<WriteInstruction> result = new HashSet<WriteInstruction>();
     for (Set<WriteInstruction> i : input) {
       result.addAll(i);
     }
