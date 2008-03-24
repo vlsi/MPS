@@ -1866,7 +1866,9 @@
         <root url="jar://$PROJECT_DIR$/lib/mime-util/mime-util.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/mime-util/mime-util-src.jar!/" />
+      </SOURCES>
     </library>
     <library name="SVNKit">
       <CLASSES>

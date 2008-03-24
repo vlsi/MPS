@@ -267,45 +267,6 @@
             <property name="text" value="(..)" />
           </node>
         </node>
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1205872021679">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205872021680">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205872063217">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1205873040708">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1205873040709">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1205873040710">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205873040711">
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1205873040712">
-                        <link role="property" targetNodeId="1.1152722085357" resolveInfo="mappingId" />
-                      </node>
-                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1205873040713" />
-                    </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205873040714" />
-                  </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1205873040715">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205873040716">
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation" id="1205873040717" />
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205873040718">
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1205873040719">
-                          <link role="link" targetNodeId="1.1200912223215" />
-                        </node>
-                        <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1205873040720" />
-                      </node>
-                    </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1205873040721">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205873040722">
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1205873040723">
-                          <link role="property" targetNodeId="1.1090493180053" resolveInfo="sourceQueryAspectMethodName" />
-                        </node>
-                        <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1205873040724" />
-                      </node>
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205873040725" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1149865862287">
