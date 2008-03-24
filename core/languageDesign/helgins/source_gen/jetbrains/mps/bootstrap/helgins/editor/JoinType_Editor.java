@@ -82,7 +82,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createArgumentList(EditorContext context, SNode node) {
-    if(this.myArgumentListHandler_argumentList_ == null) {
+    if (this.myArgumentListHandler_argumentList_ == null) {
       this.myArgumentListHandler_argumentList_ = new JoinType_Editor._RefNodeListHandler3(node, "argument", context);
     }
     EditorCell_Collection editorCell = this.myArgumentListHandler_argumentList_.createCells(context, new CellLayout_Horizontal(), false);
@@ -119,15 +119,15 @@ public class JoinType_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
           elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, "|"));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }

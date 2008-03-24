@@ -175,7 +175,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createLoopVariableList(EditorContext context, SNode node) {
-    if(this.myLoopVariableListHandler_loopVariableList_ == null) {
+    if (this.myLoopVariableListHandler_loopVariableList_ == null) {
       this.myLoopVariableListHandler_loopVariableList_ = new MultipleForeachLoop_Editor._RefNodeListHandler1(node, "loopVariable", context);
     }
     EditorCell_Collection editorCell = this.myLoopVariableListHandler_loopVariableList_.createCells(context, new CellLayout_Horizontal(), false);
@@ -192,7 +192,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     MultipleForeachLoop_Editor.setupBasic_BodyCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       MultipleForeachLoop_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -208,7 +208,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createBodyCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -241,15 +241,15 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
           elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ";"));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }

@@ -35,7 +35,7 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell create_NotInRules_ComponentCell(EditorContext context, SNode node) {
-    if(this.my_NotInRules_Component == null) {
+    if (this.my_NotInRules_Component == null) {
       this.my_NotInRules_Component = new _NotInRules_Component(node);
     }
     EditorCell editorCell = this.my_NotInRules_Component.createEditorCell(context);

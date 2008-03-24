@@ -12,19 +12,19 @@ import jetbrains.mps.smodel.SModelUID;
 * Time: 17:28:56
 * To change this template use File | Settings | File Templates.
 */
-public class ErrorInfo {
+public class EquationInfo {
   private String myErrorString;
   private SNode myNodeWithError;
 
   private String myRuleModel;
   private String myRuleId;
 
-  public ErrorInfo(SNode nodeWithError, String errorString) {
+  public EquationInfo(SNode nodeWithError, String errorString) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
   }
 
-  public ErrorInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
+  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
     myRuleModel = ruleModel;

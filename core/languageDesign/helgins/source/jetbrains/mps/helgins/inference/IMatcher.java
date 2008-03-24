@@ -1,6 +1,6 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.helgins.inference.ErrorInfo;
+import jetbrains.mps.helgins.inference.EquationInfo;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -11,5 +11,5 @@ import org.jetbrains.annotations.Nullable;
  * To change this template use File | Settings | File Templates.
  */
 public interface IMatcher {
-  public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo);
+  public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo);
 }

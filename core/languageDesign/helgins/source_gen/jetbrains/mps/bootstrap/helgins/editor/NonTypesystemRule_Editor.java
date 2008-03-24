@@ -99,7 +99,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ApplicableNodeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198242185699");
     editorCell.setDrawBorder(false);
-    if(true) {
+    if (true) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
     }
   }
@@ -458,7 +458,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     NonTypesystemRule_Editor.setupBasic_NameCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       NonTypesystemRule_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -475,7 +475,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -488,7 +488,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     NonTypesystemRule_Editor.setupBasic_ApplicableNodeCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       NonTypesystemRule_Editor.setupLabel_ApplicableNodeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -504,7 +504,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createApplicableNodeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -517,7 +517,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     NonTypesystemRule_Editor.setupBasic_OverridesCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       NonTypesystemRule_Editor.setupLabel_OverridesCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -533,7 +533,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createOverridesCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -546,7 +546,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     NonTypesystemRule_Editor.setupBasic_BodyCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       NonTypesystemRule_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -562,7 +562,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createBodyCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -577,9 +577,9 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> result = ListOperations.<String>createList();
-      if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
         SNode concept = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "applicableNode", true), "concept", false);
-        if((concept != null) && SPropertyOperations.getString(concept, "name") != null) {
+        if ((concept != null) && SPropertyOperations.getString(concept, "name") != null) {
           ListOperations.addElement(result, "typeof_" + SPropertyOperations.getString(concept, "name"));
           ListOperations.addElement(result, "check_" + SPropertyOperations.getString(concept, "name"));
         }

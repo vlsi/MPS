@@ -33,7 +33,7 @@ public class WhenConcreteVariableReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new WhenConcreteVariableReference_Editor._Inline9());
     EditorCell editorCell = provider.createEditorCell(context);
     WhenConcreteVariableReference_Editor.setupBasic_WhenConcreteVarReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       WhenConcreteVariableReference_Editor.setupLabel_WhenConcreteVarReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -49,7 +49,7 @@ public class WhenConcreteVariableReference_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createWhenConcreteVarReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -84,7 +84,7 @@ public class WhenConcreteVariableReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       WhenConcreteVariableReference_Editor._Inline9.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         WhenConcreteVariableReference_Editor._Inline9.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -100,7 +100,7 @@ public class WhenConcreteVariableReference_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

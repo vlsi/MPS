@@ -21,7 +21,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 public class TypeOfExpression_Editor extends DefaultNodeEditor {
 
   public static Color _QueryFunction_Color_1195144572322(SNode node, EditorContext editorContext) {
-    if(SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
+    if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
       return Color.GRAY;
     } else
     {
@@ -155,7 +155,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     TypeOfExpression_Editor.setupBasic_TermCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       TypeOfExpression_Editor.setupLabel_TermCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -171,7 +171,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createTermCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -184,7 +184,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     TypeOfExpression_Editor.setupBasic_SkipDependencyOnCurrentCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       TypeOfExpression_Editor.setupLabel_SkipDependencyOnCurrentCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -200,7 +200,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createSkipDependencyOnCurrentCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

@@ -20,12 +20,6 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
-import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
-import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -33,6 +27,12 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class InferenceRule_Editor extends DefaultNodeEditor {
 
@@ -108,7 +108,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ApplicableNodeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198243759892");
     editorCell.setDrawBorder(false);
-    if(true) {
+    if (true) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
     }
   }
@@ -452,7 +452,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createDependencyList(EditorContext context, SNode node) {
-    if(this.myDependencyListHandler_dependencyList_ == null) {
+    if (this.myDependencyListHandler_dependencyList_ == null) {
       this.myDependencyListHandler_dependencyList_ = new InferenceRule_Editor._RefNodeListHandler6(node, "dependency", context);
     }
     EditorCell_Collection editorCell = this.myDependencyListHandler_dependencyList_.createCells(context, new CellLayout_Vertical(), false);
@@ -469,7 +469,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     InferenceRule_Editor.setupBasic_NameCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       InferenceRule_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -486,7 +486,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -499,7 +499,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     InferenceRule_Editor.setupBasic_ApplicableNodeCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       InferenceRule_Editor.setupLabel_ApplicableNodeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -515,7 +515,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createApplicableNodeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -528,7 +528,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     InferenceRule_Editor.setupBasic_OverridesCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       InferenceRule_Editor.setupLabel_OverridesCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -544,7 +544,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createOverridesCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -557,7 +557,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     InferenceRule_Editor.setupBasic_BodyCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       InferenceRule_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -573,7 +573,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createBodyCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -581,6 +581,24 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public static class InferenceRule_name_cellMenu extends AbstractCellMenuPart_PropertyValues {
+
+    public  InferenceRule_name_cellMenu() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> result = ListOperations.<String>createList();
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
+        SNode concept = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "applicableNode", true), "concept", false);
+        if ((concept != null) && SPropertyOperations.getString(concept, "name") != null) {
+          ListOperations.addElement(result, "typeof_" + SPropertyOperations.getString(concept, "name"));
+          ListOperations.addElement(result, "check_" + SPropertyOperations.getString(concept, "name"));
+        }
+      }
+      return result;
+    }
+
+}
   public static class _RefNodeListHandler6 extends RefNodeListHandler {
 
     public  _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
@@ -606,14 +624,14 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -621,24 +639,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
 
     public EditorCell createSeparatorCell(EditorContext context) {
       return super.createSeparatorCell(context);
-    }
-
-}
-  public static class InferenceRule_name_cellMenu extends AbstractCellMenuPart_PropertyValues {
-
-    public  InferenceRule_name_cellMenu() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result = ListOperations.<String>createList();
-      if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
-        SNode concept = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "applicableNode", true), "concept", false);
-        if((concept != null) && SPropertyOperations.getString(concept, "name") != null) {
-          ListOperations.addElement(result, "typeof_" + SPropertyOperations.getString(concept, "name"));
-          ListOperations.addElement(result, "check_" + SPropertyOperations.getString(concept, "name"));
-        }
-      }
-      return result;
     }
 
 }

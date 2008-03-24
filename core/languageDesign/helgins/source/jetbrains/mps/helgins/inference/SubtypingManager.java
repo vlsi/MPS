@@ -3,7 +3,7 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.bootstrap.helgins.runtime.*;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.util.*;
-import jetbrains.mps.helgins.inference.ErrorInfo;
+import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.IMatchingPattern;
@@ -51,14 +51,14 @@ public class SubtypingManager {
       NodeWrapper.createWrapperFromNode(supertype, null), null, null, isWeak);
   }
 
-  public boolean isSubtype(IWrapper subtype, IWrapper supertype, EquationManager equationManager, ErrorInfo errorInfo) {
+  public boolean isSubtype(IWrapper subtype, IWrapper supertype, EquationManager equationManager, EquationInfo errorInfo) {
     return isSubtype(subtype, supertype, equationManager, errorInfo, true);
   }
 
   /**
    * may produce side effects, such as creating new type equations
    */
-  public boolean isSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo, boolean isWeak) {
+  public boolean isSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
 
     IWrapper subRepresentator = subtype;
     IWrapper superRepresentator = supertype;
@@ -82,7 +82,7 @@ public class SubtypingManager {
   /**
    * may produce side effects, such as creating new type equations
    */
-  public boolean isStrictSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo, boolean isWeak) {
+  public boolean isStrictSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
     IWrapper subRepresentator = subtype;
     IWrapper superRepresentator = supertype;
     if (equationManager != null) {
@@ -117,7 +117,7 @@ public class SubtypingManager {
   }
 
 
-  private boolean searchInSupertypes(NodeWrapper subRepresentator, IMatcher superRepresentator, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo, boolean isWeak) {
+  private boolean searchInSupertypes(NodeWrapper subRepresentator, IMatcher superRepresentator, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
@@ -372,7 +372,7 @@ public class SubtypingManager {
     return coerceSubtyping(subtype, pattern, true, equationManager);
   }
 
-  public boolean isComparableWRTRules(IWrapper wrapper1, IWrapper wrapper2, EquationManager equationManager, ErrorInfo errorInfo, boolean isWeak) {
+  public boolean isComparableWRTRules(IWrapper wrapper1, IWrapper wrapper2, EquationManager equationManager, EquationInfo errorInfo, boolean isWeak) {
     if (wrapper1 == null || wrapper2 == null) {
       return false;
     }
@@ -405,7 +405,7 @@ public class SubtypingManager {
       myPattern = pattern;
     }
 
-    public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo)  {
+    public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo)  {
       if (!(wrapper instanceof NodeWrapper)) {
         return false;
       }

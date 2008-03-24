@@ -2,7 +2,7 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeListVariable;
-import jetbrains.mps.helgins.inference.ErrorInfo;
+import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.IMatchModifier;
 import jetbrains.mps.patterns.util.MatchingUtil;
@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -77,7 +76,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     return this;
   }
 
-  public boolean matchesWith(IWrapper wrapper, final @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo) {
+  public boolean matchesWith(IWrapper wrapper, final @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo) {
     if (wrapper == null) return false;
     if (wrapper instanceof NodeWrapper) {
       final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();

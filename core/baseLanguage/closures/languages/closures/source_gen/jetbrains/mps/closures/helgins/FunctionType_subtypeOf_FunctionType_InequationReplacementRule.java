@@ -4,9 +4,10 @@ package jetbrains.mps.closures.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.ErrorInfo;
+import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+
 import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -15,7 +16,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
   public  FunctionType_subtypeOf_FunctionType_InequationReplacementRule() {
   }
 
-  public void processInequation(SNode subtype, SNode supertype, ErrorInfo errorInfo) {
+  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo) {
     if(SLinkOperations.getCount(subtype, "parameterType") != SLinkOperations.getCount(supertype, "parameterType")) {
       TypeChecker.getInstance().reportTypeError(errorInfo.getNodeWithError(), "different parameter numbers", "jetbrains.mps.closures.helgins", "1201618945543");
       return;

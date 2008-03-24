@@ -1,7 +1,7 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.ErrorInfo;
+import jetbrains.mps.helgins.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,7 +11,7 @@ import jetbrains.mps.helgins.inference.ErrorInfo;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoApplicableNodes {
-  public abstract void processInequation(SNode suptype, SNode supertype, ErrorInfo errorInfo);
+  public abstract void processInequation(SNode suptype, SNode supertype, EquationInfo errorInfo);
 
   public boolean isApplicable(SNode subtype, SNode supertype) {
     return isApplicableSubtype(subtype) && isApplicableSupertype(supertype);

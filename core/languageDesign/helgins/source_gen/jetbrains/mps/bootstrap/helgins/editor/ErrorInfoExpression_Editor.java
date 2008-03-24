@@ -22,7 +22,7 @@ public class ErrorInfoExpression_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "errorInfo");
+    return this.createConstantCell(context, node, "equationInfo");
   }
 
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {

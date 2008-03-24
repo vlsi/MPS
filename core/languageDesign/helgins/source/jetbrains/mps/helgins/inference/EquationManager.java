@@ -29,13 +29,13 @@ public class EquationManager {
   private static final boolean COLLECT_WHEN_CONCRETES = false;
   private TypeChecker myTypeChecker;
 
-  private Map<IWrapper, Map<IWrapper, ErrorInfo>> mySubtypesToSupertypesMap = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
-  private Map<IWrapper, Map<IWrapper, ErrorInfo>> mySupertypesToSubtypesMap = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
-  private Map<IWrapper, Map<IWrapper, ErrorInfo>> mySubtypesToSupertypesMapStrong = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
-  private Map<IWrapper, Map<IWrapper, ErrorInfo>> mySupertypesToSubtypesMapStrong = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySubtypesToSupertypesMap = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySupertypesToSubtypesMap = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySubtypesToSupertypesMapStrong = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> mySupertypesToSubtypesMapStrong = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
 
-  private Map<IWrapper, Map<IWrapper, ErrorInfo>> myComparableTypesMap = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
-  private Map<IWrapper, Map<IWrapper, ErrorInfo>> myComparableTypesMapStrong = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> myComparableTypesMap = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
+  private Map<IWrapper, Map<IWrapper, EquationInfo>> myComparableTypesMapStrong = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
 
   private Map<IWrapper, IWrapper> myEquations = new HashMap<IWrapper, IWrapper>();
   private Map<SNode, SNode> myRegisteredVariables = new HashMap<SNode, SNode>();
@@ -164,15 +164,15 @@ public class EquationManager {
     addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), nodeToCheck, true);
   }
 
-  public void addInequation(SNode subType, SNode supertype, ErrorInfo errorInfo) {
+  public void addInequation(SNode subType, SNode supertype, EquationInfo errorInfo) {
     addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), errorInfo, true);
   }
 
   public void addInequation(SNode subType, SNode supertype, SNode nodeToCheck, boolean isWeak) {
-    addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), new ErrorInfo(nodeToCheck, null), isWeak);
+    addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), new EquationInfo(nodeToCheck, null), isWeak);
   }
 
-  public void addInequation(SNode subType, SNode supertype, ErrorInfo errorInfo, boolean isWeak) {
+  public void addInequation(SNode subType, SNode supertype, EquationInfo errorInfo, boolean isWeak) {
     addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), errorInfo, isWeak);
   }
 
@@ -183,19 +183,19 @@ public class EquationManager {
     addInequation(subType, supertype, nodeToCheck, true);
   }
 
-  public void addInequation(IWrapper subType, IWrapper supertype, ErrorInfo errorInfo) {
+  public void addInequation(IWrapper subType, IWrapper supertype, EquationInfo errorInfo) {
     addInequation(subType, supertype, errorInfo, true);
   }
 
   public void addInequation(IWrapper subType, IWrapper supertype, SNode nodeToCheck, boolean isWeak) {
-    addInequation(subType, supertype, new ErrorInfo(nodeToCheck, null), isWeak);
+    addInequation(subType, supertype, new EquationInfo(nodeToCheck, null), isWeak);
   }
 
-  public void addInequation(IWrapper subType, IWrapper supertype, ErrorInfo errorInfo, boolean isWeak) {
+  public void addInequation(IWrapper subType, IWrapper supertype, EquationInfo errorInfo, boolean isWeak) {
     addInequation(subType, supertype, errorInfo, isWeak, true);
   }
 
-  public void addInequation(IWrapper subType, IWrapper supertype, ErrorInfo errorInfo, boolean isWeak, boolean solveOnlyConcrete) {
+  public void addInequation(IWrapper subType, IWrapper supertype, EquationInfo errorInfo, boolean isWeak, boolean solveOnlyConcrete) {
     IWrapper subtypeRepresentator = getRepresentatorWrapper(subType);
     IWrapper supertypeRepresentator = getRepresentatorWrapper(supertype);
 
@@ -273,15 +273,15 @@ public class EquationManager {
     addInequationComparable(NodeWrapper.createWrapperFromNode(type1, this), NodeWrapper.createWrapperFromNode(type2, this), nodeToCheck, true);
   }
 
-  public void addInequationComparable(SNode type1, SNode type2, ErrorInfo errorInfo) {
+  public void addInequationComparable(SNode type1, SNode type2, EquationInfo errorInfo) {
     addInequationComparable(NodeWrapper.createWrapperFromNode(type1, this), NodeWrapper.createWrapperFromNode(type2, this), errorInfo, true);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck, boolean isWeak) {
-    addInequationComparable(NodeWrapper.createWrapperFromNode(type1, this), NodeWrapper.createWrapperFromNode(type2, this), new ErrorInfo(nodeToCheck, null), isWeak);
+    addInequationComparable(NodeWrapper.createWrapperFromNode(type1, this), NodeWrapper.createWrapperFromNode(type2, this), new EquationInfo(nodeToCheck, null), isWeak);
   }
 
-  public void addInequationComparable(SNode type1, SNode type2, ErrorInfo errorInfo, boolean isWeak) {
+  public void addInequationComparable(SNode type1, SNode type2, EquationInfo errorInfo, boolean isWeak) {
     addInequationComparable(NodeWrapper.createWrapperFromNode(type1, this), NodeWrapper.createWrapperFromNode(type2, this), errorInfo, isWeak);
   }
 
@@ -291,15 +291,15 @@ public class EquationManager {
     addInequationComparable(type1, type2, nodeToCheck, true);
   }
 
-  public void addInequationComparable(IWrapper type1, IWrapper type2, ErrorInfo errorInfo) {
+  public void addInequationComparable(IWrapper type1, IWrapper type2, EquationInfo errorInfo) {
     addInequationComparable(type1, type2, errorInfo, true);
   }
 
   public void addInequationComparable(IWrapper type1, IWrapper type2, SNode nodeToCheck, boolean isWeak) {
-    addInequationComparable(type1, type2, new ErrorInfo(nodeToCheck, null), isWeak);
+    addInequationComparable(type1, type2, new EquationInfo(nodeToCheck, null), isWeak);
   }
 
-  public void addInequationComparable(IWrapper type1, IWrapper type2, ErrorInfo errorInfo, boolean isWeak) {
+  public void addInequationComparable(IWrapper type1, IWrapper type2, EquationInfo errorInfo, boolean isWeak) {
     IWrapper representator1 = getRepresentatorWrapper(type1);
     IWrapper representator2 = getRepresentatorWrapper(type2);
 
@@ -410,18 +410,18 @@ public class EquationManager {
   }
 
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck) {
-    addEquation(NodeWrapper.createWrapperFromNode(lhs, this), NodeWrapper.createWrapperFromNode(rhs, this), new ErrorInfo(nodeToCheck, null));
+    addEquation(NodeWrapper.createWrapperFromNode(lhs, this), NodeWrapper.createWrapperFromNode(rhs, this), new EquationInfo(nodeToCheck, null));
   }
 
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck, String errorString) {
-    addEquation(lhs, rhs, new ErrorInfo(nodeToCheck, errorString, null, null));
+    addEquation(lhs, rhs, new EquationInfo(nodeToCheck, errorString, null, null));
   }
 
-  public void addEquation(SNode lhs, SNode rhs, ErrorInfo errorInfo) {
+  public void addEquation(SNode lhs, SNode rhs, EquationInfo errorInfo) {
     addEquation(NodeWrapper.createWrapperFromNode(lhs, this), NodeWrapper.createWrapperFromNode(rhs, this), errorInfo);
   }
 
-  public void addEquation(IWrapper lhs, IWrapper rhs, ErrorInfo errorInfo) {
+  public void addEquation(IWrapper lhs, IWrapper rhs, EquationInfo errorInfo) {
     IWrapper lhsRepresentator = getRepresentatorWrapper(lhs);
     IWrapper rhsRepresentator = getRepresentatorWrapper(rhs);
     if (PREPARE_TYPES) {
@@ -468,13 +468,13 @@ public class EquationManager {
     }
   }
 
-  void addChildEquations(Set<Pair<SNode, SNode>> childEqs, ErrorInfo errorInfo) {
+  void addChildEquations(Set<Pair<SNode, SNode>> childEqs, EquationInfo errorInfo) {
     for (Pair<SNode, SNode> eq : childEqs) {
       addEquation(NodeWrapper.fromNode(eq.o2, this), NodeWrapper.fromNode(eq.o1, this), errorInfo);
     }
   }
 
-  private void processEquation(IWrapper var, IWrapper type, ErrorInfo errorInfo) {
+  private void processEquation(IWrapper var, IWrapper type, EquationInfo errorInfo) {
     setParent(var, type);
     keepInequationsAndEffects(var, type);
     RuntimeTypeVariable typeVar = var.getVariable();
@@ -488,10 +488,10 @@ public class EquationManager {
   private void keepInequationsAndEffects(IWrapper var, IWrapper type) {
 
     if (mySubtypesToSupertypesMap.get(var) != null) {
-      Map<IWrapper,ErrorInfo> supertypes = mySubtypesToSupertypesMap.get(var);
+      Map<IWrapper, EquationInfo> supertypes = mySubtypesToSupertypesMap.get(var);
       mySubtypesToSupertypesMap.remove(var);
       for (IWrapper supertype : supertypes.keySet()) {
-        Map<IWrapper, ErrorInfo> map = mySupertypesToSubtypesMap.get(supertype);
+        Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMap.get(supertype);
         if (map != null) {
           map.remove(var);
         }
@@ -501,10 +501,10 @@ public class EquationManager {
       }
     }
     if (mySupertypesToSubtypesMap.get(var) != null) {
-      Map<IWrapper,ErrorInfo> subtypes = mySupertypesToSubtypesMap.get(var);
+      Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMap.get(var);
       mySupertypesToSubtypesMap.remove(var);
       for (IWrapper subtype : subtypes.keySet()) {
-        Map<IWrapper, ErrorInfo> map = mySubtypesToSupertypesMap.get(subtype);
+        Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMap.get(subtype);
         if (map != null) {
           map.remove(var);
         }
@@ -514,10 +514,10 @@ public class EquationManager {
       }
     }
     if (mySubtypesToSupertypesMapStrong.get(var) != null) {
-      Map<IWrapper,ErrorInfo> supertypes = mySubtypesToSupertypesMapStrong.get(var);
+      Map<IWrapper, EquationInfo> supertypes = mySubtypesToSupertypesMapStrong.get(var);
       mySubtypesToSupertypesMapStrong.remove(var);
       for (IWrapper supertype : supertypes.keySet()) {
-        Map<IWrapper, ErrorInfo> map = mySupertypesToSubtypesMapStrong.get(supertype);
+        Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMapStrong.get(supertype);
         if (map != null) {
           map.remove(var);
         }
@@ -527,10 +527,10 @@ public class EquationManager {
       }
     }
     if (mySupertypesToSubtypesMapStrong.get(var) != null) {
-      Map<IWrapper,ErrorInfo> subtypes = mySupertypesToSubtypesMapStrong.get(var);
+      Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMapStrong.get(var);
       mySupertypesToSubtypesMapStrong.remove(var);
       for (IWrapper subtype : subtypes.keySet()) {
-        Map<IWrapper, ErrorInfo> map = mySubtypesToSupertypesMapStrong.get(subtype);
+        Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMapStrong.get(subtype);
         if (map != null) {
           map.remove(var);
         }
@@ -541,10 +541,10 @@ public class EquationManager {
     }
 
     if (myComparableTypesMap.get(var) != null) {
-      Map<IWrapper,ErrorInfo> comparables = myComparableTypesMap.get(var);
+      Map<IWrapper, EquationInfo> comparables = myComparableTypesMap.get(var);
       myComparableTypesMap.remove(var);
       for (IWrapper comparable : comparables.keySet()) {
-        Map<IWrapper, ErrorInfo> map = myComparableTypesMap.get(comparable);
+        Map<IWrapper, EquationInfo> map = myComparableTypesMap.get(comparable);
         if (map != null) {
           map.remove(var);
         }
@@ -555,10 +555,10 @@ public class EquationManager {
     }
 
     if (myComparableTypesMapStrong.get(var) != null) {
-      Map<IWrapper,ErrorInfo> comparables = myComparableTypesMapStrong.get(var);
+      Map<IWrapper, EquationInfo> comparables = myComparableTypesMapStrong.get(var);
       myComparableTypesMapStrong.remove(var);
       for (IWrapper comparable : comparables.keySet()) {
-        Map<IWrapper, ErrorInfo> map = myComparableTypesMapStrong.get(comparable);
+        Map<IWrapper, EquationInfo> map = myComparableTypesMapStrong.get(comparable);
         if (map != null) {
           map.remove(var);
         }
@@ -588,7 +588,7 @@ public class EquationManager {
     myRegisteredVariables.clear();
   }
 
-  private boolean compareWrappers(IWrapper wrapper1, IWrapper wrapper2, ErrorInfo errorInfo) {
+  private boolean compareWrappers(IWrapper wrapper1, IWrapper wrapper2, EquationInfo errorInfo) {
     if (wrapper1 == wrapper2) return true;
     if (wrapper1 == null) {
       return wrapper2.matchesWith(wrapper1, this, errorInfo);
@@ -624,66 +624,66 @@ public class EquationManager {
     return result;
   }
 
-  private void addSubtyping(IWrapper subtype, IWrapper supertype, ErrorInfo errorInfo) {
-    Map<IWrapper,ErrorInfo> supertypes = mySubtypesToSupertypesMap.get(subtype);
+  private void addSubtyping(IWrapper subtype, IWrapper supertype, EquationInfo errorInfo) {
+    Map<IWrapper, EquationInfo> supertypes = mySubtypesToSupertypesMap.get(subtype);
     if (supertypes == null) {
-      supertypes = new HashMap<IWrapper, ErrorInfo>();
+      supertypes = new HashMap<IWrapper, EquationInfo>();
       mySubtypesToSupertypesMap.put(subtype, supertypes);
     }
     supertypes.put(supertype, errorInfo);
 
-    Map<IWrapper,ErrorInfo> subtypes = mySupertypesToSubtypesMap.get(supertype);
+    Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMap.get(supertype);
     if (subtypes == null) {
-      subtypes = new HashMap<IWrapper, ErrorInfo>();
+      subtypes = new HashMap<IWrapper, EquationInfo>();
       mySupertypesToSubtypesMap.put(supertype, subtypes);
     }
     subtypes.put(subtype, errorInfo);
   }
 
-  private void addStrongSubtyping(IWrapper subtype, IWrapper supertype, ErrorInfo errorInfo) {
-    Map<IWrapper,ErrorInfo> supertypes = mySubtypesToSupertypesMapStrong.get(subtype);
+  private void addStrongSubtyping(IWrapper subtype, IWrapper supertype, EquationInfo errorInfo) {
+    Map<IWrapper, EquationInfo> supertypes = mySubtypesToSupertypesMapStrong.get(subtype);
     if (supertypes == null) {
-      supertypes = new HashMap<IWrapper, ErrorInfo>();
+      supertypes = new HashMap<IWrapper, EquationInfo>();
       mySubtypesToSupertypesMapStrong.put(subtype, supertypes);
     }
     supertypes.put(supertype, errorInfo);
 
-    Map<IWrapper,ErrorInfo> subtypes = mySupertypesToSubtypesMapStrong.get(supertype);
+    Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMapStrong.get(supertype);
     if (subtypes == null) {
-      subtypes = new HashMap<IWrapper, ErrorInfo>();
+      subtypes = new HashMap<IWrapper, EquationInfo>();
       mySupertypesToSubtypesMapStrong.put(supertype, subtypes);
     }
     subtypes.put(subtype, errorInfo);
     addSubtyping(subtype, supertype, errorInfo);
   }
 
-  private void addComparable(IWrapper type1, IWrapper type2, ErrorInfo errorInfo) {
-    Map<IWrapper,ErrorInfo> comparables1 = myComparableTypesMap.get(type1);
+  private void addComparable(IWrapper type1, IWrapper type2, EquationInfo errorInfo) {
+    Map<IWrapper, EquationInfo> comparables1 = myComparableTypesMap.get(type1);
     if (comparables1 == null) {
-      comparables1 = new HashMap<IWrapper, ErrorInfo>();
+      comparables1 = new HashMap<IWrapper, EquationInfo>();
       myComparableTypesMap.put(type1, comparables1);
     }
     comparables1.put(type2, errorInfo);
 
-    Map<IWrapper,ErrorInfo> comparables2 = myComparableTypesMap.get(type2);
+    Map<IWrapper, EquationInfo> comparables2 = myComparableTypesMap.get(type2);
     if (comparables2 == null) {
-      comparables2 = new HashMap<IWrapper, ErrorInfo>();
+      comparables2 = new HashMap<IWrapper, EquationInfo>();
       myComparableTypesMap.put(type2, comparables2);
     }
     comparables2.put(type1, errorInfo);
   }
 
-  private void addStrongComparable(IWrapper type1, IWrapper type2, ErrorInfo errorInfo) {
-    Map<IWrapper,ErrorInfo> comparables1 = myComparableTypesMapStrong.get(type1);
+  private void addStrongComparable(IWrapper type1, IWrapper type2, EquationInfo errorInfo) {
+    Map<IWrapper, EquationInfo> comparables1 = myComparableTypesMapStrong.get(type1);
     if (comparables1 == null) {
-      comparables1 = new HashMap<IWrapper, ErrorInfo>();
+      comparables1 = new HashMap<IWrapper, EquationInfo>();
       myComparableTypesMapStrong.put(type1, comparables1);
     }
     comparables1.put(type2, errorInfo);
 
-    Map<IWrapper,ErrorInfo> comparables2 = myComparableTypesMapStrong.get(type2);
+    Map<IWrapper, EquationInfo> comparables2 = myComparableTypesMapStrong.get(type2);
     if (comparables2 == null) {
-      comparables2 = new HashMap<IWrapper, ErrorInfo>();
+      comparables2 = new HashMap<IWrapper, EquationInfo>();
       myComparableTypesMapStrong.put(type2, comparables2);
     }
     comparables2.put(type1, errorInfo);
@@ -693,7 +693,7 @@ public class EquationManager {
     Set<IWrapper> nodes = new HashSet<IWrapper>(mySubtypesToSupertypesMap.keySet());
     Set<IWrapper> result = new HashSet<IWrapper>();
     for (IWrapper node : nodes) {
-      Map<IWrapper, ErrorInfo> map = mySubtypesToSupertypesMap.get(node);
+      Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMap.get(node);
       if (map == null || map.isEmpty()) {
         mySubtypesToSupertypesMap.remove(node);
       } else {
@@ -702,7 +702,7 @@ public class EquationManager {
     }
     nodes = new HashSet<IWrapper>(mySupertypesToSubtypesMap.keySet());
     for (IWrapper node : nodes) {
-      Map<IWrapper, ErrorInfo> map = mySupertypesToSubtypesMap.get(node);
+      Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMap.get(node);
       if (map == null || map.isEmpty()) {
         mySupertypesToSubtypesMap.remove(node);
       } else {
@@ -711,7 +711,7 @@ public class EquationManager {
     }
     nodes = new HashSet<IWrapper>(mySubtypesToSupertypesMapStrong.keySet());
     for (IWrapper node : nodes) {
-      Map<IWrapper, ErrorInfo> map = mySubtypesToSupertypesMapStrong.get(node);
+      Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMapStrong.get(node);
       if (map == null || map.isEmpty()) {
         mySubtypesToSupertypesMapStrong.remove(node);
       } else {
@@ -720,7 +720,7 @@ public class EquationManager {
     }
     nodes = new HashSet<IWrapper>(mySupertypesToSubtypesMapStrong.keySet());
     for (IWrapper node : nodes) {
-      Map<IWrapper, ErrorInfo> map = mySupertypesToSubtypesMapStrong.get(node);
+      Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMapStrong.get(node);
       if (map == null || map.isEmpty()) {
         mySupertypesToSubtypesMapStrong.remove(node);
       } else {
@@ -762,39 +762,39 @@ public class EquationManager {
       if (type == null) continue;
       assert !type.isConcrete();
 
-      Map<IWrapper, ErrorInfo> supertypes = mySubtypesToSupertypesMap.get(type);
+      Map<IWrapper, EquationInfo> supertypes = mySubtypesToSupertypesMap.get(type);
       if (supertypes != null) {
         mySubtypesToSupertypesMap.remove(type);
         for (IWrapper supertype : supertypes.keySet()) {
           mySupertypesToSubtypesMap.get(supertype).remove(type);
-          ErrorInfo errorInfo = supertypes.get(supertype);
+          EquationInfo errorInfo = supertypes.get(supertype);
           addEquation(type, supertype, errorInfo);
         }
       }
-      Map<IWrapper, ErrorInfo> subtypes = mySupertypesToSubtypesMap.get(type);
+      Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMap.get(type);
       if (subtypes != null) {
         mySupertypesToSubtypesMap.remove(type);
         for (IWrapper subtype : subtypes.keySet()) {
           mySubtypesToSupertypesMap.get(subtype).remove(type);
-          ErrorInfo errorInfo = subtypes.get(subtype);
+          EquationInfo errorInfo = subtypes.get(subtype);
           addEquation(type,  subtype, errorInfo);
         }
       }
-      Map<IWrapper, ErrorInfo> supertypesStrong = mySubtypesToSupertypesMapStrong.get(type);
+      Map<IWrapper, EquationInfo> supertypesStrong = mySubtypesToSupertypesMapStrong.get(type);
       if (supertypesStrong != null) {
         mySubtypesToSupertypesMapStrong.remove(type);
         for (IWrapper supertype : supertypesStrong.keySet()) {
           mySupertypesToSubtypesMapStrong.get(supertype).remove(type);
-          ErrorInfo errorInfo = supertypesStrong.get(supertype);
+          EquationInfo errorInfo = supertypesStrong.get(supertype);
           addEquation(type, supertype, errorInfo);
         }
       }
-      Map<IWrapper, ErrorInfo> subtypesStrong = mySupertypesToSubtypesMapStrong.get(type);
+      Map<IWrapper, EquationInfo> subtypesStrong = mySupertypesToSubtypesMapStrong.get(type);
       if (subtypesStrong != null) {
         mySupertypesToSubtypesMapStrong.remove(type);
         for (IWrapper subtype : subtypesStrong.keySet()) {
           mySubtypesToSupertypesMapStrong.get(subtype).remove(type);
-          ErrorInfo errorInfo = subtypesStrong.get(subtype);
+          EquationInfo errorInfo = subtypesStrong.get(subtype);
           addEquation(type,  subtype, errorInfo);
         }
       }
@@ -802,12 +802,12 @@ public class EquationManager {
   }
 
   private interface IActionPerformer {
-    public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, ErrorInfo> errorInfoMap, boolean isWeak, ErrorInfo errorInfo);
+    public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo);
   }
 
   private void typeLessThanVar(IWrapper var, boolean isWeak) {
     typeLessThanThis(var, isWeak, new IActionPerformer() {
-      public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, ErrorInfo> errorInfoMap, boolean isWeak, ErrorInfo errorInfo) {
+      public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         //  T,S <: c => c = lcs(T,S)
         addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(concreteSubtypes, isWeak, EquationManager.this),
           errorInfo);
@@ -817,7 +817,7 @@ public class EquationManager {
 
   private void typeLessThanConcrete(IWrapper concreteType, boolean isWeak) {
     typeLessThanThis(concreteType, isWeak, new IActionPerformer() {
-      public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, ErrorInfo> errorInfoMap, boolean isWeak, ErrorInfo errorInfo) {
+      public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         for (IWrapper subtype : concreteSubtypes) {
           // "T <: S" => T <: S
           addInequation(subtype, type, errorInfoMap.get(subtype), isWeak, false);
@@ -827,8 +827,8 @@ public class EquationManager {
   }
 
   private void typeLessThanThis(IWrapper thisType, boolean isWeak, IActionPerformer action) {
-    final Map<IWrapper, Map<IWrapper, ErrorInfo>> supertypesToSubtypesMap;
-    final Map<IWrapper, Map<IWrapper, ErrorInfo>> subtypesToSupertypesMap;
+    final Map<IWrapper, Map<IWrapper, EquationInfo>> supertypesToSubtypesMap;
+    final Map<IWrapper, Map<IWrapper, EquationInfo>> subtypesToSupertypesMap;
     if (isWeak) {
       supertypesToSubtypesMap = mySupertypesToSubtypesMap;
       subtypesToSupertypesMap = mySubtypesToSupertypesMap;
@@ -838,7 +838,7 @@ public class EquationManager {
     }
 
 
-    Map<IWrapper, ErrorInfo> subtypes = supertypesToSubtypesMap.get(thisType);
+    Map<IWrapper, EquationInfo> subtypes = supertypesToSubtypesMap.get(thisType);
     if (subtypes == null) {
       return;
     }
@@ -855,12 +855,12 @@ public class EquationManager {
     }
     if (concreteSubtypes.isEmpty()) return;
 
-    Map<IWrapper, ErrorInfo> errorInfoMap = new HashMap<IWrapper, ErrorInfo>();
+    Map<IWrapper, EquationInfo> errorInfoMap = new HashMap<IWrapper, EquationInfo>();
     for (IWrapper concreteSubtype : concreteSubtypes) {
-      ErrorInfo errorInfo = subtypesToSupertypesMap.get(concreteSubtype).get(thisType);
+      EquationInfo errorInfo = subtypesToSupertypesMap.get(concreteSubtype).get(thisType);
       errorInfoMap.put(concreteSubtype, errorInfo);
     }
-    ErrorInfo errorInfo = subtypesToSupertypesMap.get(concreteSubtypes.iterator().next()).get(thisType);
+    EquationInfo errorInfo = subtypesToSupertypesMap.get(concreteSubtypes.iterator().next()).get(thisType);
 
     for (IWrapper subtypeNode : concreteSubtypes) {
       supertypesToSubtypesMap.get(thisType).remove(subtypeNode);
@@ -871,7 +871,7 @@ public class EquationManager {
 
   private void varLessThanType(IWrapper var, boolean isWeak) {
     thisLessThanType(var, isWeak, new IActionPerformer() {
-      public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, ErrorInfo> errorInfoMap, boolean isWeak, ErrorInfo errorInfo) {
+      public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         // c :< T => c = T
         addEquation(type, concreteSupertypes.iterator().next(), errorInfo);
       }
@@ -880,7 +880,7 @@ public class EquationManager {
 
   private void concreteLessThanType(IWrapper concreteType, boolean isWeak) {
     thisLessThanType(concreteType, isWeak, new IActionPerformer() {
-      public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, ErrorInfo> errorInfoMap, boolean isWeak, ErrorInfo errorInfo) {
+      public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         for (IWrapper supertype : concreteSupertypes) {
           // "T <: S" => T <: S
           addInequation(type, supertype, errorInfoMap.get(supertype), isWeak, false);
@@ -890,8 +890,8 @@ public class EquationManager {
   }
 
   private void thisLessThanType(IWrapper thisType, boolean isWeak, IActionPerformer actionPerformer) {
-    final Map<IWrapper, Map<IWrapper, ErrorInfo>> supertypesToSubtypesMap;
-    final Map<IWrapper, Map<IWrapper, ErrorInfo>> subtypesToSupertypesMap;
+    final Map<IWrapper, Map<IWrapper, EquationInfo>> supertypesToSubtypesMap;
+    final Map<IWrapper, Map<IWrapper, EquationInfo>> subtypesToSupertypesMap;
     if (isWeak) {
       supertypesToSubtypesMap = mySupertypesToSubtypesMap;
       subtypesToSupertypesMap = mySubtypesToSupertypesMap;
@@ -900,7 +900,7 @@ public class EquationManager {
       subtypesToSupertypesMap = mySubtypesToSupertypesMapStrong;
     }
 
-    Map<IWrapper, ErrorInfo> supertypes = subtypesToSupertypesMap.get(thisType);
+    Map<IWrapper, EquationInfo> supertypes = subtypesToSupertypesMap.get(thisType);
     if (supertypes == null) {
       return;
     }
@@ -917,14 +917,14 @@ public class EquationManager {
     }
     if (concreteSupertypes.isEmpty()) return;
 
-    Map<IWrapper, ErrorInfo> errorInfoMap = new HashMap<IWrapper, ErrorInfo>();
+    Map<IWrapper, EquationInfo> errorInfoMap = new HashMap<IWrapper, EquationInfo>();
     for (IWrapper concreteSupertype : concreteSupertypes) {
-      ErrorInfo errorInfo = supertypesToSubtypesMap.get(concreteSupertype).get(thisType);
+      EquationInfo errorInfo = supertypesToSubtypesMap.get(concreteSupertype).get(thisType);
       errorInfoMap.put(concreteSupertype, errorInfo);
     }
 
     IWrapper supertype = concreteSupertypes.iterator().next();
-    ErrorInfo errorInfo = supertypes.get(supertype);
+    EquationInfo errorInfo = supertypes.get(supertype);
     assert errorInfo == errorInfoMap.get(supertype);
     errorInfo = errorInfoMap.get(supertype);
 

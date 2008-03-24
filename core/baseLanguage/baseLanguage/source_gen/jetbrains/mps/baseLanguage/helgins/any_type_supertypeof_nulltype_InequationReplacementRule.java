@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.ErrorInfo;
+import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class any_type_supertypeof_nulltype_InequationReplacementRule extends InequationReplacementRule_Runtime {
@@ -12,7 +12,7 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Ine
   public  any_type_supertypeof_nulltype_InequationReplacementRule() {
   }
 
-  public void processInequation(SNode subtype, SNode supertype, ErrorInfo errorInfo) {
+  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo) {
     // truth
   }
 

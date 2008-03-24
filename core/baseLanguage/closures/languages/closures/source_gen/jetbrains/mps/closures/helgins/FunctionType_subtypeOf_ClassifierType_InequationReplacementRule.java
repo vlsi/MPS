@@ -4,7 +4,7 @@ package jetbrains.mps.closures.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.ErrorInfo;
+import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -19,7 +19,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
   public  FunctionType_subtypeOf_ClassifierType_InequationReplacementRule() {
   }
 
-  public void processInequation(SNode subtype, SNode supertype, ErrorInfo errorInfo) {
+  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo) {
     SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);
     String errorMsg = "";
     if(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
