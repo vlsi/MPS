@@ -4,6 +4,8 @@ import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.ide.settings.IdeAppearanceSettings;
+import jetbrains.mps.ide.actions.tools.MakeAllModulesAction;
+import jetbrains.mps.ide.action.ActionContext;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -48,18 +50,19 @@ public class IdeMain {
 
         IdeAppearanceSettings.instance().applySettings();
 
-//        SimpleIDEProjectFrame projectWindow = new SimpleIDEProjectFrame();
-//        if (loadOldProject) {
-//          projectWindow.loadLastProjectIfAny();
-//        }
-//        projectWindow.show();
-
         IDEProjectFrame projectWindow = new IDEProjectFrame();
         if (loadOldProject) {
           projectWindow.loadLastProjectIfAny();
         }
+
         SplashScreen.getInstance().hideSplashScreen();
         projectWindow.show();
+
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            new MakeAllModulesAction().execute(new ActionContext());
+          }
+        });
 
         long end = System.currentTimeMillis();
         System.out.println("MPS Started in " + (end - start) + " ms");
