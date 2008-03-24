@@ -12,7 +12,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 public class SolutionNewActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.SolutionNewActions";
 
-  public SolutionNewActions_ActionGroup(MPSProject project) {
+  public  SolutionNewActions_ActionGroup(MPSProject project) {
     super("New", SolutionNewActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new NewModelAction(), this);

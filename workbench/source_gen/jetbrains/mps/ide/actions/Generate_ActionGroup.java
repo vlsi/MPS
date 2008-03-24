@@ -15,7 +15,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 public class Generate_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Generate";
 
-  public Generate_ActionGroup(MPSProject project) {
+  public  Generate_ActionGroup(MPSProject project) {
     super("Generate", Generate_ActionGroup.ID);
     this.setMnemonic("G".charAt(0));
     this.setInternal(false);
