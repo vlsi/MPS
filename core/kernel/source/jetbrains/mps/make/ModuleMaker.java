@@ -340,7 +340,6 @@ public class ModuleMaker {
         File destination = new File(destinationName);
 
         if (!destination.exists()){
-          System.out.println("file " + destination + " doesn't exist");
           return false;
         }
       } else {
@@ -348,7 +347,6 @@ public class ModuleMaker {
         File destination = new File(destinationName);
 
         if (!destination.exists()){
-          System.out.println("file " + destination + "doesn't exits!");
           return false;
         }
 
