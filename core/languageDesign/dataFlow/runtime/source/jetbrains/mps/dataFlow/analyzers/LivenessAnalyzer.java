@@ -9,15 +9,16 @@ import jetbrains.mps.dataFlow.instructions.WriteInstruction;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.LinkedHashSet;
 
-public class LivenessAnalyzer implements DataFlowAnalyzer<Set<String>> {
-  public Set<String> getInitial() {
-    return new HashSet<String>();
+public class LivenessAnalyzer implements DataFlowAnalyzer<Set<Object>> {
+  public Set<Object> getInitial() {
+    return new HashSet<Object>();
   }
 
-  public Set<String> join(Instruction instruction, Set<Set<String>> input) {
-    Set<String> result = new TreeSet<String>();
-    for (Set<String> inputSet : input) {
+  public Set<Object> join(Instruction instruction, Set<Set<Object>> input) {
+    Set<Object> result = new TreeSet<Object>();
+    for (Set<Object> inputSet : input) {
       result.addAll(inputSet);      
     }
 

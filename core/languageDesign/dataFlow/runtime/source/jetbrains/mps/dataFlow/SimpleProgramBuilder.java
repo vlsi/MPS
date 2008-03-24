@@ -5,12 +5,12 @@ import jetbrains.mps.dataFlow.instructions.*;
 public class SimpleProgramBuilder {
   private Program myProgram = new Program();
 
-  public SimpleProgramBuilder emitRead(final String var) {
+  public SimpleProgramBuilder emitRead(final Object var) {
     myProgram.add(new ReadInstruction(var));
     return this;
   }
 
-  public SimpleProgramBuilder emitWrite(final String var) {
+  public SimpleProgramBuilder emitWrite(final Object var) {
     myProgram.add(new WriteInstruction(var));
     return this;
   }

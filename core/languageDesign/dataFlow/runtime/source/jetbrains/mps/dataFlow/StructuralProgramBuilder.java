@@ -59,13 +59,13 @@ public abstract class StructuralProgramBuilder<N> {
     myProgram.add(instruction);
   }
 
-  protected void emitRead(String var) {
+  protected void emitRead(Object var) {
     ReadInstruction instruction = new ReadInstruction(var);
     instruction.setSource(getCurrentNode());
     myProgram.add(instruction);
   }
 
-  protected void emitWrite(String var) {
+  protected void emitWrite(Object var) {
     WriteInstruction instruction = new WriteInstruction(var);
     instruction.setSource(getCurrentNode());
     myProgram.add(instruction);

@@ -21,7 +21,7 @@ public class LivenessAnalysisTest {
         .emitRead("z")
         .buildProgram();
 
-      AnalysisResult<Set<String>> analysisResult = p.analyze(new LivenessAnalyzer());
+      AnalysisResult<Set<Object>> analysisResult = p.analyze(new LivenessAnalyzer());
 
     Assert.assertEquals(
       "0: read x [x, z]\n" +
@@ -39,7 +39,7 @@ public class LivenessAnalysisTest {
         .emitWrite("x")
         .buildProgram();
 
-      AnalysisResult<Set<String>> analysisResult = p.analyze(new LivenessAnalyzer());
+      AnalysisResult<Set<Object>> analysisResult = p.analyze(new LivenessAnalyzer());
 
     Assert.assertEquals(
       "0: read x [x]\n" +
@@ -57,7 +57,7 @@ public class LivenessAnalysisTest {
         .emitIfJump(0)
         .buildProgram();
 
-      AnalysisResult<Set<String>> analysisResult = p.analyze(new LivenessAnalyzer());
+      AnalysisResult<Set<Object>> analysisResult = p.analyze(new LivenessAnalyzer());
 
     Assert.assertEquals(
       "0: read y [x, y]\n" +

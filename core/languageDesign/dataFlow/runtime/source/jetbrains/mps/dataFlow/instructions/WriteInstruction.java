@@ -1,13 +1,13 @@
 package jetbrains.mps.dataFlow.instructions;
 
 public class WriteInstruction extends Instruction {
-  private String myVar;
+  private Object myVar;
 
-  public WriteInstruction(String var) {
+  public WriteInstruction(Object var) {
     myVar = var;
   }
 
-  public String getVariable() {
+  public Object getVariable() {
     return myVar;
   }
 

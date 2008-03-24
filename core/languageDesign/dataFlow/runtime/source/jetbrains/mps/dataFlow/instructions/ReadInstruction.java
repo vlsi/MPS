@@ -1,13 +1,13 @@
 package jetbrains.mps.dataFlow.instructions;
 
 public class ReadInstruction extends Instruction {
-  private String myVar;
+  private Object myVar;
 
-  public ReadInstruction(String var) {
+  public ReadInstruction(Object var) {
     myVar = var;
   }
 
-  public String getVariable() {
+  public Object getVariable() {
     return myVar;
   }
 
