@@ -18,8 +18,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -43,7 +43,7 @@ public class QueriesGenerated {
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
     boolean alreadyHasParms = SLinkOperations.getCount(_context.getSourceNode(), "parameter") > 0;
-    if(alreadyHasParms) {
+    if (alreadyHasParms) {
       return false;
     }
     return SequenceOperations.getSize(SLinkOperations.getConceptLinkTargets(_context.getSourceNode(), "applicableParameter")) > 0;
@@ -56,23 +56,23 @@ public class QueriesGenerated {
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535648215(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
     SNode expressionType = TypeChecker.getInstance().getTypeOf(_context.getSourceNode());
-    if(SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
+    if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
       return true;
     }
-    if(SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+    if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
       return true;
     }
-    if(SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
+    if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
       return true;
     }
-    if(SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType")) {
+    if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType")) {
       return true;
     }
     return false;
   }
 
   public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
       List<SNode> parms = SLinkOperations.getTargets(_context.getSampleNode(), "parameter", true);
       {
         ICursor<SNode> _zCursor = CursorFactory.createCursor(parms);
@@ -89,33 +89,33 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_Concept_IsSuperConceptOfOperation_1203553726915(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsAssignableFromOperation")) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsAssignableFromOperation")) {
       SNode conceptExpression = SLinkOperations.getTarget(_context.getSampleNode(), "sconceptExpression", true);
       SNode refConceptExpression = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression", null);
       SLinkOperations.setTarget(refConceptExpression, "expression", conceptExpression, true);
       SLinkOperations.setTarget(_context.getNewNode(), "conceptArgument", refConceptExpression, true);
     }
-    if(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSubConceptOfOperation")) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSubConceptOfOperation")) {
       SLinkOperations.setTarget(_context.getNewNode(), "conceptArgument", SLinkOperations.getTarget(_context.getSampleNode(), "conceptArgument", true), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_Concept_IsSubConceptOfOperation_1203553739271(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation")) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation")) {
       SLinkOperations.setTarget(_context.getNewNode(), "conceptArgument", SLinkOperations.getTarget(_context.getSampleNode(), "conceptArgument", true), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_SNodeListType_1205353787834(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType")) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType")) {
       SNode elementType = SLinkOperations.getTarget(_context.getSampleNode(), "elementType", true);
-      if(SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+      if (SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
         SLinkOperations.setTarget(_context.getNewNode(), "elementConcept", SLinkOperations.getTarget(elementType, "concept", false), false);
       }
     }
-    if(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType")) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType")) {
       SNode elementType = SLinkOperations.getTarget(_context.getSampleNode(), "elementType", true);
-      if(SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+      if (SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
         SLinkOperations.setTarget(_context.getNewNode(), "elementConcept", SLinkOperations.getTarget(elementType, "concept", false), false);
       }
     }
@@ -123,6 +123,41 @@ public class QueriesGenerated {
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1138413233760(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    final ApplicableTypesInfo appTypesInfo;
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          ApplicableTypesInfo result = new ApplicableTypesInfo();
+          SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
+          if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+            leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
+          }
+          SNode leftOperation = SLinkOperations.getTarget(leftExpression, "operation", true);
+          if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+            leftOperation = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+          }
+          SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
+          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
+          result.myLinkAccessT = linkAccessT;
+          // is concept ?
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false) != null) {
+            result.myToConcept = true;
+          }
+          // is node ?
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false) != null) {
+            result.myToNode = true;
+          }
+          // is smodel ?
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType"), false) != null) {
+            result.myToModel = true;
+          }
+          return result;
+        }
+
+      };
+      appTypesInfo = (ApplicableTypesInfo)calc.calculate();
+    }
     return result;
   }
 
@@ -135,13 +170,13 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
-          if(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+          if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
             // old
             leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
           }
           SNode maybeConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
-          if(maybeConceptType != null) {
-            if(SLinkOperations.getTarget(maybeConceptType, "conceptDeclaraton", false) != null) {
+          if (maybeConceptType != null) {
+            if (SLinkOperations.getTarget(maybeConceptType, "conceptDeclaraton", false) != null) {
               return SLinkOperations.getTarget(maybeConceptType, "conceptDeclaraton", false);
             } else
             {
@@ -149,8 +184,8 @@ public class QueriesGenerated {
             }
           }
           SNode maybeNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-          if(maybeNodeType != null) {
-            if(SLinkOperations.getTarget(maybeNodeType, "concept", false) != null) {
+          if (maybeNodeType != null) {
+            if (SLinkOperations.getTarget(maybeNodeType, "concept", false) != null) {
               return SLinkOperations.getTarget(maybeNodeType, "concept", false);
             } else
             {
@@ -176,7 +211,7 @@ public class QueriesGenerated {
     {
       AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess", operationContext.getScope());
       SNode childConcept = (SNode)_context.getChildConcept();
-      if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
@@ -203,7 +238,7 @@ public class QueriesGenerated {
     {
       AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess", operationContext.getScope());
       SNode childConcept = (SNode)_context.getChildConcept();
-      if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
@@ -235,7 +270,7 @@ public class QueriesGenerated {
     {
       AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall", operationContext.getScope());
       SNode childConcept = (SNode)_context.getChildConcept();
-      if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
@@ -360,6 +395,41 @@ public class QueriesGenerated {
   }
 
   public static void removeActionsByCondition_1180467401112(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
+    final ApplicableTypesInfo appTypesInfo;
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          ApplicableTypesInfo result = new ApplicableTypesInfo();
+          SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
+          if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+            leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
+          }
+          SNode leftOperation = SLinkOperations.getTarget(leftExpression, "operation", true);
+          if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+            leftOperation = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+          }
+          SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
+          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
+          result.myLinkAccessT = linkAccessT;
+          // is concept ?
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false) != null) {
+            result.myToConcept = true;
+          }
+          // is node ?
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false) != null) {
+            result.myToNode = true;
+          }
+          // is smodel ?
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType"), false) != null) {
+            result.myToModel = true;
+          }
+          return result;
+        }
+
+      };
+      appTypesInfo = (ApplicableTypesInfo)calc.calculate();
+    }
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
@@ -370,55 +440,53 @@ public class QueriesGenerated {
         public boolean met(Object object) {
           SNode parameterOp = (SNode)concept;
           SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
-          if(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+          if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
             leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
           }
           SNode leftOperation = SLinkOperations.getTarget(leftExpression, "operation", true);
-          if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
+          if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
             leftOperation = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
           }
           // ---
-          if(leftOperation != null) {
-            if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
+          if (leftOperation != null) {
+            if (SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
               SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(leftOperation, "property", false), "dataType", false);
-              if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration")) {
+              if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration")) {
                 return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_enum_property"));
               } else
               {
                 return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_simple_property"));
               }
             }
-            if(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess")) {
+            if (SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess")) {
               return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_concept_property"));
             }
           }
           // ==========
-          SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-          // link or link-list access?
-          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
-          if(linkAccessT != null) {
-            if(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
+          SNode linkAccessT = appTypesInfo.myLinkAccessT;
+          if (linkAccessT != null) {
+            if (SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
               return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link"));
             }
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_linkList"));
           }
           // is concept ?
-          if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false) != null) {
+          if (appTypesInfo.myToConcept) {
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_concept"));
           }
           // is node ?
-          if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false) != null) {
+          if (appTypesInfo.myToNode) {
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_node"));
           }
           // is smodel ?
-          if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType"), false) != null) {
+          if (appTypesInfo.myToModel) {
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_model"));
           }
           return true;
         }
 
       };
-      if(SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
+      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
         actions.remove();
       }
     }
