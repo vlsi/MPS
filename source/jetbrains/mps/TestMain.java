@@ -51,9 +51,14 @@ public class TestMain {
       throw new RuntimeException("Can't find a project in file " + projectFile.getAbsolutePath());
     }
 
-    new ModuleMaker().make(
-      new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
-      new NullAdaptiveProgressMonitor());
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        new ModuleMaker().make(
+          new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
+          new NullAdaptiveProgressMonitor());
+      }
+    });
+
 
     MPSProject project = new MPSProject(projectFile);
     return project;
