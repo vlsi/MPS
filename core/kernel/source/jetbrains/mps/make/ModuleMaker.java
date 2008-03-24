@@ -14,6 +14,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -37,6 +38,7 @@ public class ModuleMaker {
     try {
       monitor.start("Clean", 2000);
       for (IModule m : modules) {
+        if (isExcluded(m)) continue;
         monitor.addText("Cleaning " + m.getModuleUID() + "...");
         FileUtil.delete(m.getClassesGen().toFile());
       }
@@ -51,6 +53,13 @@ public class ModuleMaker {
       monitor.start("Compiling...", 1000 * modules.size());
 
       Set<IModule> toCompile = getModulesToCompile(modules);
+
+      for (IModule m : toCompile) {
+        if (m instanceof Generator) {
+          isUpToDate(m);
+          System.out.println("!!!");
+        }
+      }
 
       int errorCount = 0;
       for (Set<IModule> cycle : new MakeScheduleBuilder().buildSchedule(toCompile)) {
@@ -246,6 +255,10 @@ public class ModuleMaker {
   }
 
   private boolean isUpToDate(IModule m) {
+    if (isExcluded(m)) {
+      return true;
+    }
+
     if (!isClassesUpToDate(m)) {
       return false;
     }
@@ -260,11 +273,7 @@ public class ModuleMaker {
   }
 
   private boolean isClassesUpToDate(IModule m) {
-    if (!(m instanceof Solution) && !(m instanceof Language)) {
-      return true;
-    }
-
-    if (m.isPackaged()) {
+    if (isExcluded(m)) {
       return true;
     }
 
@@ -294,6 +303,18 @@ public class ModuleMaker {
     }
     myClassesUpToDateStatus.put(m, result);
     return result;
+  }
+
+  private boolean isExcluded(IModule m) {
+    if (!(m instanceof Solution) && !(m instanceof Language)) {
+      return true;
+    }
+
+    if (m.isPackaged()) {
+      return true;
+    }
+
+    return false;
   }
 
   boolean isAllClassesPresented(File sourcedir, File classdir, String sourceSuffix, String destinationSuffix){
