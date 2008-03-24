@@ -11,6 +11,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.Language;
@@ -104,7 +105,7 @@ public class ModuleMaker {
 
     if (!hasAnythingToCompile) {
       return new jetbrains.mps.plugin.CompilationResult(0, 0, false);
-    }
+    }   
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
     JavaCompiler compiler = new JavaCompiler(classPathItems);
@@ -142,7 +143,7 @@ public class ModuleMaker {
           }
         }
         
-        errorCount += cr.getErrors().length;
+        errorCount += cr.getErrors().length;               
       }
 
       for (ClassFile cf : cr.getClassFiles()) {
@@ -175,6 +176,11 @@ public class ModuleMaker {
 
     for (IModule module : modules){
       copyResources(module, JAVA_SUFFIX);
+    }
+
+    for (IModule module : modules) {
+      module.reloadStubs();
+      ((AbstractModule) module).updateRuntimeClassPath();
     }
 
     return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
@@ -250,7 +256,7 @@ public class ModuleMaker {
     }
   }
 
-  private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {
+  private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {   
     return AbstractModule.getDependenciesClasspath(modules);
   }
 
