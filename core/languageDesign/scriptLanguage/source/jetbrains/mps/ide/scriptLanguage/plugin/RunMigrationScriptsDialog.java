@@ -167,7 +167,8 @@ public class RunMigrationScriptsDialog extends JDialog {
     int[] ints = myTable.getSelectedRows();
     for (int anInt : ints) {
 //      int modelIndex = myTable.convertRowIndexToModel(anInt);
-//      list.add(myScripts.get(modelIndex));
+      int modelIndex = anInt;
+      list.add(myScripts.get(modelIndex));
 //      System.out.println("selected [" + modelIndex + "] " + myScripts.get(modelIndex).getTitle());
     }
     return list;

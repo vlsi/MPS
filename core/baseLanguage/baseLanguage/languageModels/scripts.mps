@@ -24,7 +24,7 @@
   <import index="8" modelUID="java.lang@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1178545978658">
-    <property name="title" value="set visibility in methods" />
+    <property name="title" value="Set visibility in methods" />
     <property name="name" value="SetVisibilityInMethods" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1178545978659">
       <property name="description" value="set visibility to public" />
@@ -137,7 +137,7 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1178550381098">
     <property name="name" value="SetVisibilityInClassifiers" />
-    <property name="title" value="set visibility in classifiers" />
+    <property name="title" value="Set visibility in classifiers" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1178550391115">
       <property name="description" value="set public" />
       <link role="affectedInstanceConcept" targetNodeId="1.1107461130800" />
@@ -177,7 +177,7 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1182160680111">
     <property name="name" value="RemoveOldAnonymousClasses" />
-    <property name="title" value="remove old anonymous" />
+    <property name="title" value="Remove old anonymous" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1182160692393">
       <property name="description" value="remove old anonymous" />
       <link role="affectedInstanceConcept" targetNodeId="1.1170346941296" />
@@ -303,7 +303,7 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1199821750695">
     <property name="name" value="RefactorAbstractClasses" />
-    <property name="title" value="refactor abstract classes" />
+    <property name="title" value="Refactor abstract classes" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1199821771399">
       <link role="affectedInstanceConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
       <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1199821771400">
@@ -341,7 +341,7 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1204244561565">
     <property name="name" value="ConvertFieldReferenceToDotExpression" />
-    <property name="title" value="convert old FieldReference" />
+    <property name="title" value="Convert old FieldReference" />
     <property name="package" value="dotExpression" />
     <property name="category" value="DotExpression" />
     <property name="migrationFromBuild" value="470" />
@@ -690,7 +690,7 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1204325408416">
     <property name="name" value="ConvertInstanceMethodCallToDotExpression" />
-    <property name="title" value="convert old InstanceMethodCall" />
+    <property name="title" value="Convert old InstanceMethodCall" />
     <property name="package" value="dotExpression" />
     <property name="category" value="DotExpression" />
     <property name="migrationFromBuild" value="470" />

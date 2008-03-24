@@ -89,7 +89,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1177461782622">
-    <property name="title" value="convert deprecated nodes" />
+    <property name="title" value="Convert deprecated nodes" />
     <property name="name" value="SmodelLangMigration339" />
     <property name="migrationFromBuild" value="339" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1177462133415">
@@ -236,7 +236,7 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1203640442563">
     <property name="name" value="Replace_SNodeOperationExpression" />
-    <property name="title" value="convert old SNodeOperationExpression" />
+    <property name="title" value="Convert old SNodeOperationExpression" />
     <property name="category" value="DotExpression" />
     <property name="migrationFromBuild" value="470" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1203640759821">
@@ -304,7 +304,7 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1206062542908">
     <property name="name" value="Replace_deprecatedLinkAccessOperations" />
-    <property name="title" value="convert deprecated &lt;link&gt;/list and &lt;link&gt;/node" />
+    <property name="title" value="Convert deprecated &lt;link&gt;/list and &lt;link&gt;/node" />
     <property name="category" value="LinkAccess" />
     <property name="migrationFromBuild" value="470" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1206062740882">
