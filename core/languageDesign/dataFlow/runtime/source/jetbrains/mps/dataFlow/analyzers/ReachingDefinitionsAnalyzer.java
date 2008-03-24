@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class ReachingDefinitionsAnalyzer extends BaseDataFlowAnalyzer<Set<WriteInstruction>> {
+public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteInstruction>> {
   public Set<WriteInstruction> getInitial() {
     return new HashSet<WriteInstruction>();
   }

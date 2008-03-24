@@ -8,10 +8,8 @@ import jetbrains.mps.dataFlow.instructions.WriteInstruction;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
-import java.util.LinkedHashSet;
 
-public class LivenessAnalyzer extends BaseDataFlowAnalyzer<Set<Object>> {
+public class LivenessAnalyzer implements DataFlowAnalyzer<Set<Object>> {
   public Set<Object> getInitial() {
     return new HashSet<Object>();
   }
