@@ -4,6 +4,7 @@ import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.IdeMain;
@@ -13,8 +14,10 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.structure.ClassPathEntry;
+import jetbrains.mps.make.ModuleMaker;
 
 import java.io.File;
+import java.util.LinkedHashSet;
 
 public class TestMain {
   private static boolean ourTestMode;
@@ -47,10 +50,12 @@ public class TestMain {
     if (!projectFile.exists()) {
       throw new RuntimeException("Can't find a project in file " + projectFile.getAbsolutePath());
     }
+
+    new ModuleMaker().make(
+      new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
+      new NullAdaptiveProgressMonitor());
+
     MPSProject project = new MPSProject(projectFile);
-
-    project.make(new NullAdaptiveProgressMonitor());
-
     return project;
   }
 
