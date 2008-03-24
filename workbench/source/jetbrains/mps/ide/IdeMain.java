@@ -50,7 +50,7 @@ public class IdeMain {
 
         IdeAppearanceSettings.instance().applySettings();
 
-        IDEProjectFrame projectWindow = new IDEProjectFrame();
+        final IDEProjectFrame projectWindow = new IDEProjectFrame();
         if (loadOldProject) {
           projectWindow.loadLastProjectIfAny();
         }
@@ -60,7 +60,11 @@ public class IdeMain {
 
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            new MakeAllModulesAction().execute(new ActionContext());
+            MakeAllModulesAction action = new MakeAllModulesAction();
+            action.setCloseOnExit(true);
+            ActionContext context = new ActionContext();
+            context.put(IDEProjectFrame.class, projectWindow);            
+            action.execute(context);
           }
         });
 
