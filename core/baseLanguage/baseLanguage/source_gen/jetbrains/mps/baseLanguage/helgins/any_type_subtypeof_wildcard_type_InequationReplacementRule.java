@@ -12,7 +12,7 @@ public class any_type_subtypeof_wildcard_type_InequationReplacementRule extends 
   public  any_type_subtypeof_wildcard_type_InequationReplacementRule() {
   }
 
-  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo) {
+  public void processInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
     // do I have to say more? 
   }
 

@@ -528,6 +528,62 @@ public class EquationManager {
       }
     }
 
+    //check only--------
+    if (mySubtypesToSupertypesMap_check.get(var) != null) {
+      Map<IWrapper, EquationInfo> supertypes = mySubtypesToSupertypesMap_check.get(var);
+      mySubtypesToSupertypesMap_check.remove(var);
+      for (IWrapper supertype : supertypes.keySet()) {
+        Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMap_check.get(supertype);
+        if (map != null) {
+          map.remove(var);
+        }
+      }
+      for (IWrapper supertype : supertypes.keySet()) {
+        addInequation(type, supertype, supertypes.get(supertype));
+      }
+    }
+    if (mySupertypesToSubtypesMap_check.get(var) != null) {
+      Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMap_check.get(var);
+      mySupertypesToSubtypesMap_check.remove(var);
+      for (IWrapper subtype : subtypes.keySet()) {
+        Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMap_check.get(subtype);
+        if (map != null) {
+          map.remove(var);
+        }
+      }
+      for (IWrapper subtype : subtypes.keySet()) {
+        addInequation(subtype, type, subtypes.get(subtype));
+      }
+    }
+    if (mySubtypesToSupertypesMapStrong_check.get(var) != null) {
+      Map<IWrapper, EquationInfo> supertypes = mySubtypesToSupertypesMapStrong_check.get(var);
+      mySubtypesToSupertypesMapStrong_check.remove(var);
+      for (IWrapper supertype : supertypes.keySet()) {
+        Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMapStrong_check.get(supertype);
+        if (map != null) {
+          map.remove(var);
+        }
+      }
+      for (IWrapper supertype : supertypes.keySet()) {
+        addInequation(type, supertype, supertypes.get(supertype), false);
+      }
+    }
+    if (mySupertypesToSubtypesMapStrong_check.get(var) != null) {
+      Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMapStrong_check.get(var);
+      mySupertypesToSubtypesMapStrong_check.remove(var);
+      for (IWrapper subtype : subtypes.keySet()) {
+        Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMapStrong_check.get(subtype);
+        if (map != null) {
+          map.remove(var);
+        }
+      }
+      for (IWrapper subtype : subtypes.keySet()) {
+        addInequation(subtype, type, subtypes.get(subtype), false);
+      }
+    }
+
+    //--------
+
     if (myComparableTypesMap.get(var) != null) {
       Map<IWrapper, EquationInfo> comparables = myComparableTypesMap.get(var);
       myComparableTypesMap.remove(var);
@@ -568,6 +624,10 @@ public class EquationManager {
     mySupertypesToSubtypesMap.clear();
     mySubtypesToSupertypesMapStrong.clear();
     mySupertypesToSubtypesMapStrong.clear();
+    mySubtypesToSupertypesMap_check.clear();
+    mySupertypesToSubtypesMap_check.clear();
+    mySubtypesToSupertypesMapStrong_check.clear();
+    mySupertypesToSubtypesMapStrong_check.clear();
     myComparableTypesMap.clear();
     myEquations.clear();
     myWhenConcreteEntities.clear();

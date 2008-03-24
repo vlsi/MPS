@@ -22,7 +22,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
 
   public void applyRule(final SNode bmd) {
     for(SNode throwsItem : SLinkOperations.getTargets(bmd, "throwsItem", true)) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_31().createNode(), bmd, null, "jetbrains.mps.baseLanguage.helgins", "1176898076811");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_31().createNode(), bmd, null, "jetbrains.mps.baseLanguage.helgins", "1176898076811", false);
     }
     // ==========
     if (SLinkOperations.getTarget(bmd, "body", true) == null) {
@@ -70,7 +70,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
             } else
             {
               SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1178765405776", true);
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, SLinkOperations.getTarget(returnStatement, "expression", true), "" + expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1185363921400");
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, SLinkOperations.getTarget(returnStatement, "expression", true), "" + expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1185363921400", false);
             }
           }
         } finally {
@@ -84,7 +84,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
       SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(bmd, "body", true), "statement", true));
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStatement, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1178765601477", true);
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, SLinkOperations.getTarget(lastStatement, "expression", true), expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1185363855090");
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, SLinkOperations.getTarget(lastStatement, "expression", true), expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1185363855090", false);
       }
     }
   }

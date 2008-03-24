@@ -12,7 +12,7 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Ine
   public  any_type_supertypeof_nulltype_InequationReplacementRule() {
   }
 
-  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo) {
+  public void processInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
     // truth
   }
 
