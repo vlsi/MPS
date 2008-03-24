@@ -7,17 +7,19 @@ import jetbrains.mps.smodel.SModelUID;
 
 /**
  * Created by IntelliJ IDEA.
-* User: Cyril.Konopko
-* Date: 29.01.2008
-* Time: 17:28:56
-* To change this template use File | Settings | File Templates.
-*/
+ * User: Cyril.Konopko
+ * Date: 29.01.2008
+ * Time: 17:28:56
+ * To change this template use File | Settings | File Templates.
+ */
 public class EquationInfo {
   private String myErrorString;
   private SNode myNodeWithError;
 
   private String myRuleModel;
   private String myRuleId;
+
+  private boolean myCheckOnly = false;
 
   public EquationInfo(SNode nodeWithError, String errorString) {
     myErrorString = errorString;
@@ -29,6 +31,14 @@ public class EquationInfo {
     myNodeWithError = nodeWithError;
     myRuleModel = ruleModel;
     myRuleId = ruleId;
+  }
+
+  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId, boolean checkOnly) {
+    myErrorString = errorString;
+    myNodeWithError = nodeWithError;
+    myRuleModel = ruleModel;
+    myRuleId = ruleId;
+    myCheckOnly = checkOnly;
   }
 
   public String getErrorString() {

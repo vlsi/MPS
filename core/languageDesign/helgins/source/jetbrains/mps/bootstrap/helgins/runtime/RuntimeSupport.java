@@ -121,66 +121,6 @@ public class RuntimeSupport {
     return meetWrapper;
   }
 
-  @Deprecated
-  public void createEquation(SNode node1, SNode node2, SNode nodeToCheck) {
-    myTypeChecker.getEquationManager().addEquation(node1, node2, nodeToCheck);
-  }
-
-  @Deprecated
-  public void createLessThanInequation(SNode node1, SNode node2, SNode nodeToCheck) {
-    myTypeChecker.getEquationManager().addInequation(node1, node2, nodeToCheck);
-  }
-
-  @Deprecated
-  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck) {
-    myTypeChecker.getEquationManager().addInequation(node1, node2, nodeToCheck, false);
-  }
-
-  @Deprecated
-  public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck) {
-    myTypeChecker.getEquationManager().addInequation(node2, node1, nodeToCheck);
-  }
-
-  @Deprecated
-  public void createComparableEquation(SNode node1, SNode node2, SNode nodeToCheck) {
-    myTypeChecker.getEquationManager().addInequationComparable(node1, node2, nodeToCheck);
-  }
-
-  @Deprecated
-  public void createComparableEquationStrong(SNode node1, SNode node2, SNode nodeToCheck) {
-    myTypeChecker.getEquationManager().addInequationComparable(node1, node2, nodeToCheck, false);
-  }
-
-  @Deprecated
-  public void createEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
-    myTypeChecker.getEquationManager().addEquation(node1, node2, nodeToCheck, errorString);
-  }
-
-  @Deprecated
-  public void createLessThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
-    myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString));
-  }
-
-  @Deprecated
-  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
-    myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString), false);
-  }
-
-  @Deprecated
-  public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
-    myTypeChecker.getEquationManager().addInequation(node2, node1, new EquationInfo(nodeToCheck, errorString));
-  }
-
-  @Deprecated
-  public void createComparableEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
-    myTypeChecker.getEquationManager().addInequationComparable(node1, node2, new EquationInfo(nodeToCheck, errorString));
-  }
-
-  @Deprecated
-  public void createComparableEquationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString) {
-    myTypeChecker.getEquationManager().addInequationComparable(node1, node2, new EquationInfo(nodeToCheck, errorString), false);
-  }
-
   //-------------------- equations
 
   public void createEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
@@ -207,33 +147,6 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequationComparable(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId), false);
   }
 
-  //-------------------- conditional equations
-
-  public void createEquation(IWrapper node1, IWrapper node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
-    myTypeChecker.getEquationManager().addEquation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId));
-  }
-
-  public void createLessThanInequation(IWrapper node1, IWrapper node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
-    myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId));
-  }
-
-  public void createLessThanInequationStrong(IWrapper node1, IWrapper node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
-    myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId), false);
-  }
-
-  public void createGreaterThanInequation(IWrapper node1, IWrapper node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
-    myTypeChecker.getEquationManager().addInequation(node2, node1, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId));
-  }
-
-  public void createComparableEquation(IWrapper node1, IWrapper node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
-    myTypeChecker.getEquationManager().addInequationComparable(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId));
-  }
-
-  public void createComparableEquationStrong(IWrapper node1, IWrapper node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
-    myTypeChecker.getEquationManager().addInequationComparable(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId), false);
-  }
-
-  //--------------------
 
   @Deprecated
   public void givetype(SNode type, SNode node) {
