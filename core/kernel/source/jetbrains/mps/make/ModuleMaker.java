@@ -55,13 +55,6 @@ public class ModuleMaker {
 
       Set<IModule> toCompile = getModulesToCompile(modules);
 
-      for (IModule m : toCompile) {
-        if (m instanceof Generator) {
-          isUpToDate(m);
-          System.out.println("!!!");
-        }
-      }
-
       int errorCount = 0;
       for (Set<IModule> cycle : new MakeScheduleBuilder().buildSchedule(toCompile)) {
         monitor.addText("Compiling modules: " + cycle + "...");
@@ -80,7 +73,7 @@ public class ModuleMaker {
 
   public Set<IModule> getModulesToCompile(Set<IModule> modules) {
     Set<IModule> toCompile = new LinkedHashSet<IModule>();
-    Set<IModule> candidates = new HashSet<IModule>();
+    Set<IModule> candidates = new LinkedHashSet<IModule>();
     candidates.addAll(modules);
 
     for (IModule m : modules) {
@@ -184,7 +177,7 @@ public class ModuleMaker {
     }
 
     return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
-  }
+  }                               
 
   private void copyResources(IModule module, final String sourceSuffix) {
     File destination = module.getClassesGen().toFile();
@@ -347,6 +340,7 @@ public class ModuleMaker {
         File destination = new File(destinationName);
 
         if (!destination.exists()){
+          System.out.println("file " + destination + " doesn't exist");
           return false;
         }
       } else {
@@ -354,10 +348,13 @@ public class ModuleMaker {
         File destination = new File(destinationName);
 
         if (!destination.exists()){
+          System.out.println("file " + destination + "doesn't exits!");
           return false;
         }
 
-        isAllClassesPresented(source, destination, sourceSuffix, destinationSuffix);
+        if (!isAllClassesPresented(source, destination, sourceSuffix, destinationSuffix)) {
+          return false;
+        }
       }
     }
 
