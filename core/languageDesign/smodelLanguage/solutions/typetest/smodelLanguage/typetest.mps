@@ -81,6 +81,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925870" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170371339846">
       <property name="name" value="err_1" />
@@ -131,6 +132,7 @@
         <property name="name" value="model" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1170376583559" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925915" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170376985737">
       <property name="name" value="ok_2" />
@@ -169,15 +171,17 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1170377414427">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1170377434433">
-            <link role="baseMethodDeclaration" targetNodeId="3.~SModel.addLanguage(java.lang.String):void" resolveInfo="addLanguage" />
-            <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1170377422852">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206475933836">
+            <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1170377422852">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1170377414428">
                 <link role="variableDeclaration" targetNodeId="1170376997552" resolveInfo="model" />
               </node>
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1170377437090">
-              <property name="value" value="..." />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206475933837">
+              <link role="baseMethodDeclaration" targetNodeId="3.~SModel.addLanguage(java.lang.String):void" resolveInfo="addLanguage" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1170377437090">
+                <property name="value" value="..." />
+              </node>
             </node>
           </node>
         </node>
@@ -186,6 +190,7 @@
         <property name="name" value="model" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1170376997553" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925961" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170377037602">
       <property name="name" value="err_2" />
@@ -212,6 +217,7 @@
           <link role="concept" targetNodeId="6.1068580123136" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925913" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173387510785">
       <property name="name" value="ok_3" />
@@ -278,6 +284,7 @@
         <property name="name" value="model" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1173387517835" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925919" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173888664872">
       <property name="name" value="ok_4" />
@@ -303,7 +310,9 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1173888686471" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925914" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475929390" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170377640954">
     <property name="name" value="snode_test" />
@@ -363,15 +372,17 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1173397249004">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1173397258790">
-            <link role="baseMethodDeclaration" targetNodeId="3.~SModel.addRoot(jetbrains.mps.smodel.SNode):void" resolveInfo="addRoot" />
-            <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1173397251193">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206475933812">
+            <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1173397251193">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1173397249005">
                 <link role="variableDeclaration" targetNodeId="1173300672163" resolveInfo="model" />
               </node>
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1173397263369">
-              <link role="variableDeclaration" targetNodeId="1170377711989" resolveInfo="node" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206475933813">
+              <link role="baseMethodDeclaration" targetNodeId="3.~SModel.addRoot(jetbrains.mps.smodel.SNode):void" resolveInfo="addRoot" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1173397263369">
+                <link role="variableDeclaration" targetNodeId="1170377711989" resolveInfo="node" />
+              </node>
             </node>
           </node>
         </node>
@@ -381,12 +392,14 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1173389694314">
               <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1173397299314">
-              <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getId():java.lang.String" resolveInfo="getId" />
-              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1173397286701">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206475933838">
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1173397286701">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1173397282560">
                   <link role="variableDeclaration" targetNodeId="1170377711989" resolveInfo="node" />
                 </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206475933839">
+                <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getId():java.lang.String" resolveInfo="getId" />
               </node>
             </node>
           </node>
@@ -521,6 +534,7 @@
           <link role="concept" targetNodeId="6.1068431474542" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925874" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170377936436">
       <property name="name" value="err_1" />
@@ -603,6 +617,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925990" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170378088919">
       <property name="name" value="ok_2" />
@@ -647,6 +662,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925911" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170378121858">
       <property name="name" value="err_2" />
@@ -670,6 +686,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925872" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170380844552">
       <property name="name" value="ok_3" />
@@ -687,12 +704,14 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170380958762">
               <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1170380933289">
-              <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getParent():jetbrains.mps.smodel.SNode" resolveInfo="getParent" />
-              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1170380904067">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206475933816">
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1170380904067">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1170380897801">
                   <link role="variableDeclaration" targetNodeId="1170380861766" resolveInfo="node" />
                 </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206475933817">
+                <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getParent():jetbrains.mps.smodel.SNode" resolveInfo="getParent" />
               </node>
             </node>
           </node>
@@ -740,6 +759,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925939" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173209615488">
       <property name="name" value="err_3" />
@@ -766,6 +786,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925871" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173211423877">
       <property name="name" value="ok_4" />
@@ -802,6 +823,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925943" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173212435501">
       <property name="name" value="err_4" />
@@ -823,6 +845,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925986" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173305401754">
       <property name="name" value="ok_5" />
@@ -893,6 +916,7 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1173305408399" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925987" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173306542132">
       <property name="name" value="err_5" />
@@ -918,6 +942,7 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1173306552870" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925918" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173307411060">
       <property name="name" value="ok_6" />
@@ -1001,6 +1026,7 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1173307422768" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925850" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173386657349">
       <property name="name" value="ok_7" />
@@ -1027,7 +1053,9 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1173386666588" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925963" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475929370" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170378849411">
     <property name="name" value="snode_property_test" />
@@ -1093,9 +1121,8 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1173224680123">
             <property name="name" value="ch" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.CharType" id="1173224540154" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1170380758058">
-              <link role="baseMethodDeclaration" targetNodeId="1.~String.charAt(int):char" resolveInfo="charAt" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227957972">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206475933818">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227957972">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1170380724005">
                   <link role="variableDeclaration" targetNodeId="1170378882805" resolveInfo="node" />
                 </node>
@@ -1103,8 +1130,11 @@
                   <link role="property" targetNodeId="6.1083152972672" />
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1170380760450">
-                <property name="value" value="10" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206475933819">
+                <link role="baseMethodDeclaration" targetNodeId="1.~String.charAt(int):char" resolveInfo="charAt" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1170380760450">
+                  <property name="value" value="10" />
+                </node>
               </node>
             </node>
           </node>
@@ -1136,6 +1166,7 @@
           <link role="concept" targetNodeId="6.1068580123132" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925941" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170378905395">
       <property name="name" value="err_string" />
@@ -1294,6 +1325,7 @@
           <link role="concept" targetNodeId="6.1068580123132" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925964" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170379265316">
       <property name="name" value="ok_int" />
@@ -1433,6 +1465,7 @@
           <link role="concept" targetNodeId="6.1068580320020" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925869" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170379501136">
       <property name="name" value="err_int" />
@@ -1510,6 +1543,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925992" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170379628198">
       <property name="name" value="ok_bool" />
@@ -1671,6 +1705,7 @@
           <link role="concept" targetNodeId="6.1068580123137" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925916" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170381501026">
       <property name="name" value="err_bool" />
@@ -1767,6 +1802,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925937" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170380218709">
       <property name="name" value="ok_enum" />
@@ -1833,6 +1869,7 @@
           <link role="concept" targetNodeId="13.1071489288298" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925912" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170380453607">
       <property name="name" value="err_enum" />
@@ -1925,7 +1962,9 @@
           <link role="concept" targetNodeId="13.1071489288298" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925988" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475929388" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170381203537">
     <property name="name" value="snode_link_test" />
@@ -1970,9 +2009,8 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1173287321145">
               <link role="classifier" targetNodeId="3.~SModel" resolveInfo="SModel" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1170382174604">
-              <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
-              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1170382027185">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206475933840">
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1170382027185">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227958807">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1170381976883">
                     <link role="variableDeclaration" targetNodeId="1170381635476" resolveInfo="node" />
@@ -1981,6 +2019,9 @@
                     <link role="link" targetNodeId="6.1070568237987" />
                   </node>
                 </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206475933841">
+                <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
               </node>
             </node>
           </node>
@@ -2036,6 +2077,7 @@
           <link role="concept" targetNodeId="6.1068580123158" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925967" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170381664681">
       <property name="name" value="err_ref_1" />
@@ -2099,15 +2141,17 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1170382205947">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1170382205948">
-            <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227890535">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206475933814">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227890535">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1170382205952">
                 <link role="variableDeclaration" targetNodeId="1170381673161" resolveInfo="node" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1170382205953">
                 <link role="link" targetNodeId="6.1070568237987" />
               </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206475933815">
+              <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
             </node>
           </node>
         </node>
@@ -2165,6 +2209,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925877" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173898491915">
       <property name="name" value="ok_ref_2" />
@@ -2198,6 +2243,7 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1173898516540" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925965" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173296321341">
       <property name="name" value="ok_child_1" />
@@ -2280,6 +2326,7 @@
           <link role="concept" targetNodeId="6.1068580123159" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925966" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1180031223493">
       <property name="name" value="err_child_1" />
@@ -2339,7 +2386,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1173298169325">
                 <link role="variableDeclaration" targetNodeId="1173298018939" resolveInfo="node" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList" id="1174701817350">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206475946576">
                 <link role="link" targetNodeId="6.1068581517665" />
               </node>
             </node>
@@ -2477,6 +2524,7 @@
           <link role="concept" targetNodeId="6.1068580123136" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925989" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1178214557141">
       <property name="name" value="err_children_1" />
@@ -2557,7 +2605,9 @@
           <link role="concept" targetNodeId="6.1068580123136" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925938" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475929369" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1173393962476">
     <property name="name" value="snode_concept_property_test" />
@@ -2588,7 +2638,9 @@
           <link role="concept" targetNodeId="7.1133920641626" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925985" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475929368" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1173394291996">
     <property name="name" value="sconcept_test" />
@@ -2661,6 +2713,7 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1173394308735" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925852" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1180030378060">
       <property name="name" value="err_1" />
@@ -2731,6 +2784,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925942" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173394939914">
       <property name="name" value="err_2" />
@@ -2775,6 +2829,7 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1178060901588" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925917" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1177012329419">
       <property name="name" value="ok_3" />
@@ -2817,6 +2872,7 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1177012356287" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925851" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1177012470796">
       <property name="name" value="err_3" />
@@ -2872,6 +2928,7 @@
         <property name="name" value="node" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1177012470814" />
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925968" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1177012671539">
       <property name="name" value="ok_4" />
@@ -2990,6 +3047,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925894" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1177013082285">
       <property name="name" value="err_4" />
@@ -3029,7 +3087,9 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925960" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475929371" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1173812149120">
     <property name="name" value="type_assignment_nodes_and_collections" />
@@ -3312,6 +3372,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925876" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173812227053">
       <property name="name" value="err_1" />
@@ -3429,6 +3490,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925878" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173832089803">
       <property name="name" value="ok_2" />
@@ -3556,6 +3618,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925944" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197810419645">
       <property name="name" value="err_2" />
@@ -3595,6 +3658,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925962" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173829630036">
       <property name="name" value="ok_3" />
@@ -3698,6 +3762,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925873" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173831593379">
       <property name="name" value="err_3" />
@@ -3777,6 +3842,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925991" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1174063409964">
       <property name="name" value="ok_4" />
@@ -3830,6 +3896,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925920" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1174063554984">
       <property name="name" value="ok_5" />
@@ -3895,6 +3962,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925875" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1174063723028">
       <property name="name" value="ok_6" />
@@ -3971,7 +4039,9 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475925940" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206475929389" />
   </node>
 </model>
 

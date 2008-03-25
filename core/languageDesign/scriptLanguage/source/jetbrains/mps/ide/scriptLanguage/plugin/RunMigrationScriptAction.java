@@ -7,7 +7,6 @@ import jetbrains.mps.ide.scriptLanguage.util.ScriptNameUtil;
 import jetbrains.mps.refactoring.CompositeRefactoring;
 import jetbrains.mps.refactoring.IRefactoring;
 import jetbrains.mps.refactoring.ObsoleteRefactoringContext;
-import jetbrains.mps.refactoring.common.RefactoringAction;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
@@ -23,10 +22,9 @@ import java.lang.reflect.InvocationTargetException;
  * Igor Alshannikov
  * Date: Apr 24, 2007
  */
-public class RunMigrationScriptAction extends RefactoringAction {
+public class RunMigrationScriptAction extends AbstractMigrationScriptAction {
   public static final Logger LOG = Logger.getLogger(RunMigrationScriptAction.class);
 
-  private static final String SMODEL_UID = "SMODEL_UID";
   private MigrationScript myScript;
   private BaseMigrationScript myScriptInstance;
 
@@ -70,23 +68,11 @@ public class RunMigrationScriptAction extends RefactoringAction {
 
     super.doExecute(actionContext);
   }
-  
-  protected IRefactoring createRefactoring(ActionContext context) {
-    ObsoleteRefactoringContext refactoringContext = new ObsoleteRefactoringContext(context.getOperationContext());
 
-    List selection = context.get(List.class);
-    if (selection != null && !selection.isEmpty()) {
-        StringBuilder sb = new StringBuilder ();
-        String sep = "";
-        for (Object o : selection) {
-            if (o instanceof SModelDescriptor) {
-                SModelUID uid = ((SModelDescriptor) o).getModelUID();
-                sb.append (sep).append(uid.toString());
-                sep = "\n";
-            }
-        }
-        refactoringContext.put(SMODEL_UID, sb.toString());
-    }
+  protected IRefactoring createRefactoring(ActionContext actionContext) {
+    ObsoleteRefactoringContext refactoringContext = new ObsoleteRefactoringContext(actionContext.getOperationContext());
+
+    setupRefactoringContext(refactoringContext, actionContext);
 
     CompositeRefactoring compositeRefactoring = new CompositeRefactoring(refactoringContext);
     List<IRefactoring> list = myScriptInstance.getRefactorings();
@@ -95,4 +81,5 @@ public class RunMigrationScriptAction extends RefactoringAction {
     }
     return compositeRefactoring;
   }
+
 }

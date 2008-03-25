@@ -203,7 +203,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1170438409571(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
       return NameUtil.nodeFQName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true), "conceptDeclaration", false));
     }
     // deprecated reference on concept
@@ -391,7 +391,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1180028472291(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
       return NameUtil.nodeFQName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true), "conceptDeclaration", false));
     }
     _context.getGenerator().showErrorMessage(_context.getNode(), _context.getTemplateNode(), "unexpected type of 'conceptArgumant' : " + SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true));
@@ -399,7 +399,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1180032004502(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
       return NameUtil.nodeFQName(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true), "conceptDeclaration", false));
     }
     _context.getGenerator().showErrorMessage(_context.getNode(), _context.getTemplateNode(), "unexpected type of 'conceptArgumant' : " + SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true));
@@ -422,7 +422,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1183618936210(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
-    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.constraintsLanguage.structure.SuperNodeExpression")) {
+    if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.constraintsLanguage.structure.SuperNodeExpression")) {
       return ConceptMethodDeclaration_Behavior.call_getSuperCallerMethodName_1193402369204(SLinkOperations.getTarget(_context.getNode(), "conceptMethodDeclaration", false));
     } else
     {
@@ -483,7 +483,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1205440206252(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parmConcept = SLinkOperations.getTarget(_context.getNode(), "concept", false);
-    if(parmConcept == null) {
+    if (parmConcept == null) {
       SNode operandType = TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode()));
       parmConcept = SLinkOperations.getTarget(operandType, "targetConcept", false);
     }
@@ -501,7 +501,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1205530218487(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parmConcept = SLinkOperations.getTarget(_context.getNode(), "concept", false);
-    if(parmConcept == null) {
+    if (parmConcept == null) {
       SNode operandType = TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode()));
       parmConcept = SLinkOperations.getTarget(operandType, "targetConcept", false);
     }
@@ -828,7 +828,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1176463628326(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode n = _QueriesUtil.operationGetParm_ConceptExpression_conceptExpression(_context.getNode());
-    if((n == null)) {
+    if ((n == null)) {
       _context.getGenerator().showErrorMessage(_context.getNode(), "concept expression is undefined");
     }
     return n;
