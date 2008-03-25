@@ -444,12 +444,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : moduleSequence) {
         IModule currentModule = moduleAndDescriptors.o1;
 
-        ModuleMaker maker = new ModuleMaker();
-        if (!maker.getModulesToCompile(CollectionUtil.asSet(currentModule)).isEmpty()) {
-          new ModuleMaker().make(CollectionUtil.asSet(currentModule), new MessagesOnlyAdaptiveProgressMonitorWrapper(progress));
-          ReloadUtils.reloadAll();
-        }
-
         IOperationContext invocationContext = modulesToContexts.get(currentModule);
         Long estimated = modulesToGenerationTimes.get(currentModule);
         if (estimated == null) {
@@ -557,7 +551,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             } else {
               progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
               progress.addText("compiling in JetBrains MPS...");
-              compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
+
+              if (!ModuleMaker.isMakeTurnedOff()) {
+                compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
+              } else {
+                compilationResult = new CompilationResult(0, 0, false);
+              }
+              
               progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
             }
 

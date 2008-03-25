@@ -20,7 +20,7 @@
   <import index="4" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206442055221">
-    <property name="name" value="DataFlowBuilder" />
+    <property name="name" value="DataFlowBuilderDeclaration" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206442812839">

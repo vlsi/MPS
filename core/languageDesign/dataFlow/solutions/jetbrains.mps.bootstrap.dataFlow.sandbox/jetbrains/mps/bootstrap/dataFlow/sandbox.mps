@@ -7,7 +7,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilder" id="1206443195068">
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1206443195068">
     <link role="conceptDeclaration" targetNodeId="1.1068499141036" resolveInfo="BaseMethodCall" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1206443195069">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206443195070">

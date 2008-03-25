@@ -522,6 +522,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return LanguageAspect.CONSTRAINTS.get(this);
   }
 
+  public SModelDescriptor getDataFlowModelDescriptor() {
+    return LanguageAspect.DATA_FLOW.get(this);
+  }
+
   public SModelDescriptor getIntentionsModelDescriptor() {
     return LanguageAspect.INTENTIONS.get(this);
   }

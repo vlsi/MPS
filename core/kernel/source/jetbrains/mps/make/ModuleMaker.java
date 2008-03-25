@@ -27,6 +27,10 @@ import java.io.FilenameFilter;
 import java.util.*;
 
 public class ModuleMaker {
+  public static boolean isMakeTurnedOff() {
+    return "true".equals(System.getProperty("mps.noMake"));    
+  }
+
   private static Logger LOG = Logger.getLogger(ModuleMaker.class);
 
   private static final String JAVA_SUFFIX = ".java";
