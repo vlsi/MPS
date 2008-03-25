@@ -78,7 +78,7 @@ public class IntelligentInputUtil {
             if (errorCell instanceof EditorCell_Label) {
               EditorCell_Label label = (EditorCell_Label) errorCell;
               if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
-                label.changeText(label.getText() + tail);
+                label.changeText(smallPattern + tail);
               }
               label.getRenderedTextLine().setCaretPositionToLast();
             }
