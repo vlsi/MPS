@@ -10,12 +10,14 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
 
 public class QueryMethodGenerated {
   private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
 
   private static Map<Pair<SModelUID, String>, Method> ourMethods = new HashMap<Pair<SModelUID, String>, Method>();
-
+  private static Set<String> ourClassesReportedAsNotFound = new HashSet<String>();
 
   public static IModule findModuleForModel(SModel sourceModel) {
     SModelDescriptor smd = sourceModel.getModelDescriptor();
@@ -36,6 +38,7 @@ public class QueryMethodGenerated {
 
   public static void clearCaches() {
     ourMethods.clear();
+    ourClassesReportedAsNotFound.clear();
   }
 
   public static Class getQueriesGeneratedClassFor(SModelDescriptor sm) {
@@ -62,7 +65,10 @@ public class QueryMethodGenerated {
 
     if (queriesClass == null) {
       if (!suppressErrorLogging) {
-        LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getUID() + "' : TRY TO GENERATE");
+        if (!ourClassesReportedAsNotFound.contains(queriesClassName)) {
+          LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getUID() + "' : TRY TO GENERATE");
+        }
+        ourClassesReportedAsNotFound.add(queriesClassName);
       }
       throw new ClassNotFoundException("Can't find " + queriesClassName + " in module " + module.getModuleUID());
     }

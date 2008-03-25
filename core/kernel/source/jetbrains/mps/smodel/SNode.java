@@ -1667,8 +1667,6 @@ public final class SNode {
       LOG.error(t);
     }
 
-    LOG.error("couldn't find adapter for " + this.getDebugText(), this);
-
     return new BaseAdapter(this) {
     };
   }
