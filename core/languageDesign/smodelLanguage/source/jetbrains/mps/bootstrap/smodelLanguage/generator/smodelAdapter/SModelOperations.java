@@ -71,7 +71,7 @@ public class SModelOperations {
 
     return model.allNodesIncludingImported(scope, new Condition<SNode>() {
       public boolean met(SNode n) {
-        return n.isInstanceOfConcept(concept);                    
+        return n.isInstanceOfConcept(concept);
       }
     });
   }
@@ -114,9 +114,10 @@ public class SModelOperations {
     return newNode;
   }
 
-  public static void addRootNode(SModel model, SNode node) {
-    if (model == null) return;
-    if (node == null) return;
-    model.addRoot(node);
+  public static SNode addRootNode(SModel model, SNode node) {
+    if (model != null && node != null) {
+      model.addRoot(node);
+    }
+    return node;
   }
 }

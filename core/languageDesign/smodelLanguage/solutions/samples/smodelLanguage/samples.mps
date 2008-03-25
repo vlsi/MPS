@@ -3195,6 +3195,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206482876601">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206482878041">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206482876602">
+              <link role="variableDeclaration" targetNodeId="1171315527256" resolveInfo="model" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_AddRootOperation" id="1206482881058">
+              <node role="nodeToAdd" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206484292858">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1206484294719">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206484294720">
+                    <link role="concept" targetNodeId="1.1068580123157" resolveInfo="Statement" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679248" />
     </node>

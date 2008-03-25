@@ -13,17 +13,17 @@ import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IScope;
 
-/* package */class ConceptRef {
+public class ConceptRef {
 
-  /* package */void concept_ref_1(SNode node) {
+  public void concept_ref_1(SNode node) {
     SNode concept1 = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement");
     SNode concept2 = SNodeOperations.getConceptDeclaration(node);
-    if(SConceptOperations.isSuperConceptOf(concept1, NameUtil.nodeFQName(concept2))) {
+    if (SConceptOperations.isSuperConceptOf(concept1, NameUtil.nodeFQName(concept2))) {
     }
     INodeAdapter adapter = ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept1));
   }
 
-  /* package */void instanceOf_1(SNode node, SNode concept1, SNode concept2) {
+  public void instanceOf_1(SNode node, SNode concept1, SNode concept2) {
     SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement");
     SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")));
     SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node)));

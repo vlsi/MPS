@@ -11,9 +11,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
-/* package */class Children {
+public class Children {
 
-  /* package */void accessToChildren_1(SNode statementList) {
+  public void accessToChildren_1(SNode statementList) {
     BaseConcept_Behavior.call_getPresentation_1180102203531(statementList);
     int count1 = SLinkOperations.getCount(statementList, "statement");
     List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
@@ -21,7 +21,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
     int count3 = ((List<SNode>)statements).size();
   }
 
-  /* package */void accessToChildren_2(SNode statementList1, SNode statementList2) {
+  public void accessToChildren_2(SNode statementList1, SNode statementList2) {
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.IfStatement");
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
@@ -47,7 +47,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
     }
   }
 
-  /* package */void accessToChildren_3(SNode statement) {
+  public void accessToChildren_3(SNode statement) {
     List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, "expression", true), null, false);
     List<SNode> children2 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false);
     List<SNode> children3 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", true);
@@ -55,7 +55,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
     SNode abcdef;
   }
 
-  /* package */void accessToChildren_4(SNode statement) {
+  public void accessToChildren_4(SNode statement) {
     List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, false);
     List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true);
   }

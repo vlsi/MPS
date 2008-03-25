@@ -8,13 +8,13 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
-/* package */class ListOfNodes {
+public class ListOfNodes {
 
-  /* package */void newList(SNode e1, SNode e2) {
+  public void newList(SNode e1, SNode e2) {
     List<SNode> list = ListOperations.<SNode>createList(e1, e2);
   }
 
-  /* package */void first(SNode sl) {
+  public void first(SNode sl) {
     SequenceOperations.getFirst(SLinkOperations.getTargets(sl, "statement", true));
     Iterable<SNode> nodes = SequenceOperations.where(SLinkOperations.getTargets(sl, "statement", true), new zPredicate3(ListOfNodes.this, null));
   }

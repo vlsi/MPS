@@ -10,15 +10,15 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 
-/* package */class NewNode {
+public class NewNode {
 
-  /* package */void newNode1(SModel model) {
+  public void newNode1(SModel model) {
     SNode newClass = SModelOperations.createNewRootNode(model, "jetbrains.mps.baseLanguage.structure.ClassConcept", null);
     SLinkOperations.addNewChild(newClass, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
     SLinkOperations.addNewChild(SLinkOperations.addNewChild(newClass, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
   }
 
-  /* package */void newNode2(SNode node) {
+  public void newNode2(SNode node) {
     SNode newIfStatement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SNode newCondition = SLinkOperations.setNewChild(newIfStatement, "condition", "jetbrains.mps.baseLanguage.structure.Expression");
     SNode newCondition2 = SNodeOperations.replaceWithNewChild(newCondition, "jetbrains.mps.baseLanguage.structure.AndExpression");

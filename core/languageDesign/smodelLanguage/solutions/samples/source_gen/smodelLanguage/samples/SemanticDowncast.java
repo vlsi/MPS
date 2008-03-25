@@ -7,19 +7,19 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import java.util.List;
 
-/* package */class SemanticDowncast {
+public class SemanticDowncast {
 
-  /* package */void invoke_getID_method_1(SNode ifStatement) {
+  public void invoke_getID_method_1(SNode ifStatement) {
     String id_verbose = ((SNode)ifStatement).getId();
     String id_briefly = ifStatement.getId();
   }
 
-  /* package */void invoke_getID_method_2(SNode ifStatement) {
+  public void invoke_getID_method_2(SNode ifStatement) {
     String id_verbose = ((SNode)((SNode)SLinkOperations.getTarget(ifStatement, "condition", true))).getId();
     String id_better = SLinkOperations.getTarget(ifStatement, "condition", true).getId();
   }
 
-  /* package */void countChildren(SNode methodCall) {
+  public void countChildren(SNode methodCall) {
     int count_verbose_not_efficient = SequenceOperations.getSize(((List<SNode>)SLinkOperations.getTargets(methodCall, "actualArgument", true)));
     int count_not_efficient = SequenceOperations.getSize(SLinkOperations.getTargets(methodCall, "actualArgument", true));
     int count_not_efficient2 = SLinkOperations.getTargets(methodCall, "actualArgument", true).size();

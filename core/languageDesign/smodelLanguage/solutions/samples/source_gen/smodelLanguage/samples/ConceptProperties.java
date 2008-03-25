@@ -5,18 +5,18 @@ package smodelLanguage.samples;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 
-/* package */class ConceptProperties {
+public class ConceptProperties {
 
-  /* package */void stringConceptProperty(SNode node) {
+  public void stringConceptProperty(SNode node) {
     boolean hasAlias = SConceptPropertyOperations.getString(node, "alias") != null;
     String alias = SConceptPropertyOperations.getString(node, "alias");
     String text = "alias is " + SConceptPropertyOperations.getString(node, "alias");
     int length = SConceptPropertyOperations.getString(node, "alias").length();
   }
 
-  /* package */void booleanConceptProperty(SNode node) {
+  public void booleanConceptProperty(SNode node) {
     boolean isAbstract = false;
-    if(SConceptPropertyOperations.getBoolean(node, "abstract")) {
+    if (SConceptPropertyOperations.getBoolean(node, "abstract")) {
       isAbstract = true;
     }
     boolean isAbstract2 = SConceptPropertyOperations.getBoolean(node, "abstract");

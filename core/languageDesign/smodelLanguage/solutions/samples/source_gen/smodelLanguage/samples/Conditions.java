@@ -6,21 +6,21 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
-/* package */class Conditions {
+public class Conditions {
 
-  /* package */void checkTypeOfNode(SNode node) {
+  public void checkTypeOfNode(SNode node) {
     boolean b = SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement");
     boolean b2 = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
   }
 
-  /* package */void checkRoleAndTypeOfDirectParent(SNode node) {
+  public void checkRoleAndTypeOfDirectParent(SNode node) {
     boolean b = SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "condition");
   }
 
-  /* package */boolean checkIsNull(SNode node) {
-    if((node == null)) {
+  public boolean checkIsNull(SNode node) {
+    if ((node == null)) {
     } else
-    if((node != null)) {
+    if ((node != null)) {
     }
     return (node == null) || (node != null);
   }

@@ -6,34 +6,34 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 
-/* package */class TypeCast {
+public class TypeCast {
 
-  /* package */void cast_snode_to_SNode(SNode ifStatement) {
+  public void cast_snode_to_SNode(SNode ifStatement) {
     SNode nodeObject1 = ifStatement;
     SNode nodeObject2 = (SNode)SLinkOperations.getTarget(ifStatement, "condition", true);
     SNode nodeObject3 = SLinkOperations.getTarget(ifStatement, "condition", true);
   }
 
-  /* package */void cast_SNode_to_snode(SNode node) {
+  public void cast_SNode_to_snode(SNode node) {
     SNode snode1 = node;
     SNode snode2 = (SNode)node;
   }
 
-  /* package */void upcast_snode(SNode snode) {
+  public void upcast_snode(SNode snode) {
     SNode ifStatement = (SNode)snode;
     SNode ifStatement1 = snode;
   }
 
-  /* package */void cast_children_to_snodes(SNode statementList) {
+  public void cast_children_to_snodes(SNode statementList) {
     List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
   }
 
-  /* package */void cast_snodes_to_List(List<SNode> statements) {
+  public void cast_snodes_to_List(List<SNode> statements) {
     List list1 = statements;
     List<SNode> list2 = statements;
   }
 
-  /* package */void cast_children_to_List(SNode statements) {
+  public void cast_children_to_List(SNode statements) {
     List list1 = SLinkOperations.getTargets(statements, "statement", true);
     List<SNode> list2 = SLinkOperations.getTargets(statements, "statement", true);
     List<SNode> list3 = (List<SNode>)SLinkOperations.getTargets(statements, "statement", true);
