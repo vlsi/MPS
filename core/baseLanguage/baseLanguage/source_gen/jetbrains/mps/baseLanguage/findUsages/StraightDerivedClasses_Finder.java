@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.IScope;
 
 import java.util.ArrayList;
 
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
@@ -45,8 +45,6 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
 
   protected List<SNode> doFind(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
-    ListOperations.addElement(_results, node);
-    // null
     for (SNode nodeUsage : this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(node, scope)) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
@@ -59,6 +57,7 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
 
   public List<SNode> getSearchedNodes(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     return _results;
   }
 

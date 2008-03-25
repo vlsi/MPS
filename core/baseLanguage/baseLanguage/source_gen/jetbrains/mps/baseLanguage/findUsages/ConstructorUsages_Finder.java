@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.IScope;
 
 import java.util.ArrayList;
 
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
@@ -50,7 +50,6 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   protected List<SNode> doFind(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
     {
-      ListOperations.addElement(_results, node);
       // search for straight usages & search for SUPER calls
       // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS
       {
@@ -148,6 +147,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
 
   public List<SNode> getSearchedNodes(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     return _results;
   }
 

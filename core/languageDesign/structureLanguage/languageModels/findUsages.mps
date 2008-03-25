@@ -152,16 +152,6 @@
     <property name="description" value="Node Usages"/>
     <property name="isVisible" value="true"/>
     <link role="forConcept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept"/>
-    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
-          id="1197636141663">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197636141664">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197636172739">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1197636174851">
-            <property name="value" value="true"/>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="findFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FindBlock" id="1197636141665">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197636141666">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
@@ -282,16 +272,6 @@
     <property name="description" value="Node &amp; Descendants Usages"/>
     <property name="isVisible" value="true"/>
     <link role="forConcept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept"/>
-    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
-          id="1198430852442">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198430852443">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198430904301">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198430907272">
-            <property name="value" value="true"/>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="findFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FindBlock" id="1198430852444">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198430852445">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"

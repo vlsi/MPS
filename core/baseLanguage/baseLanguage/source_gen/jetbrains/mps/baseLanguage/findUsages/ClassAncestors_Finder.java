@@ -43,7 +43,6 @@ public class ClassAncestors_Finder extends GeneratedFinder {
     List<SNode> _results = new ArrayList<SNode>();
     {
       SNode current = node;
-      ListOperations.addElement(_results, current);
       while (current != null) {
         current = SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false);
         if (current != null) {
@@ -56,6 +55,7 @@ public class ClassAncestors_Finder extends GeneratedFinder {
 
   public List<SNode> getSearchedNodes(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     return _results;
   }
 

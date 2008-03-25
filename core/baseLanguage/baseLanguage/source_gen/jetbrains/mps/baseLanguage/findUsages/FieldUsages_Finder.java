@@ -59,7 +59,9 @@ public class FieldUsages_Finder extends GeneratedFinder {
       }
       // null
       for (SNode fieldDeclaration : fieldDeclarations) {
-        ListOperations.addElement(_results, fieldDeclaration);
+        /*
+          ListOperations.addElement(_results, fieldDeclaration);
+        */
         {
           ICursor<SNode> _zCursor3 = CursorFactory.createCursor(this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(fieldDeclaration, scope));
           try {

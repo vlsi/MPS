@@ -13,8 +13,8 @@ import jetbrains.mps.smodel.IScope;
 
 import java.util.ArrayList;
 
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
 
 public class BaseMethod_Finder extends GeneratedFinder {
@@ -49,7 +49,6 @@ public class BaseMethod_Finder extends GeneratedFinder {
   protected List<SNode> doFind(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
     {
-      ListOperations.addElement(_results, node);
       // traverse ancestors
       List<SearchResult> ancestors = new ArrayList<SearchResult>();
       if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
@@ -62,6 +61,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
 
   public List<SNode> getSearchedNodes(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     return _results;
   }
 

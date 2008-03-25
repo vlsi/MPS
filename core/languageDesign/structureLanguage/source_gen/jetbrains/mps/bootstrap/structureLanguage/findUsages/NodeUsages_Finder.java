@@ -48,13 +48,13 @@ public class NodeUsages_Finder extends GeneratedFinder {
       for (SReference reference : resRefs) {
         ListOperations.addElement(_results, reference.getSourceNode());
       }
-      ListOperations.addElement(_results, node);
     }
     return _results;
   }
 
   public List<SNode> getSearchedNodes(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     return _results;
   }
 

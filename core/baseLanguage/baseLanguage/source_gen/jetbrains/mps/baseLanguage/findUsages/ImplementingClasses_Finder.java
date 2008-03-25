@@ -51,7 +51,9 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
       // null
       List<SNode> derivedInterfacesUsages = new ArrayList<SNode>();
       for (SNode derivedInterface : derivedInterfaces) {
-        ListOperations.addElement(_results, derivedInterface);
+        /*
+          ListOperations.addElement(_results, derivedInterface);
+        */
         ListOperations.addAllElements(derivedInterfacesUsages, this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(derivedInterface, scope));
       }
       // null

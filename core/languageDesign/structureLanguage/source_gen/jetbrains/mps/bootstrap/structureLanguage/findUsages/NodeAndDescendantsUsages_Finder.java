@@ -11,12 +11,10 @@ import java.util.List;
 import jetbrains.mps.smodel.IScope;
 
 import java.util.ArrayList;
-
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-
 import java.util.Set;
 import java.util.HashSet;
 
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import org.jetbrains.annotations.Nullable;
@@ -47,7 +45,6 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   protected List<SNode> doFind(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
     {
-      ListOperations.addElement(_results, node);
       Set<SNode> nodes = new HashSet<SNode>();
       nodes.add(node);
       for (SNode child : ((SNode) node).allChildren()) {
@@ -67,6 +64,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
 
   public List<SNode> getSearchedNodes(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     return _results;
   }
 

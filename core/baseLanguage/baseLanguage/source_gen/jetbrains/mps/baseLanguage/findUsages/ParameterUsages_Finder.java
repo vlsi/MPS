@@ -67,7 +67,9 @@ public class ParameterUsages_Finder extends GeneratedFinder {
             SNode methodNode = _zCursor10.getCurrent();
             {
               SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
-              ListOperations.addElement(_results, parameterNode);
+              /*
+                ListOperations.addElement(_results, parameterNode);
+              */
               {
                 ICursor<SNode> _zCursor11 = CursorFactory.createCursor(this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(parameterNode, scope));
                 try {

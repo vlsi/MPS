@@ -47,8 +47,6 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
   protected List<SNode> doFind(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
     {
-      ListOperations.addElement(_results, node);
-      // null
       List<SNode> derived = new ArrayList<SNode>();
       ListOperations.addElement(derived, node);
       // null
@@ -73,6 +71,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
 
   public List<SNode> getSearchedNodes(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     return _results;
   }
 

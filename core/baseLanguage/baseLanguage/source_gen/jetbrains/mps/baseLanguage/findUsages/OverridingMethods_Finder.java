@@ -13,12 +13,12 @@ import jetbrains.mps.smodel.IScope;
 
 import java.util.ArrayList;
 
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.constraints.BaseMethodDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
@@ -54,8 +54,6 @@ public class OverridingMethods_Finder extends GeneratedFinder {
 
   protected List<SNode> doFind(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
-    ListOperations.addElement(_results, node);
-    // null
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(this.executejetbrainsMpsBaseLanguageFindUsagesDerivedClasses_Finder(SNodeOperations.getParent(node, null, false, false), scope));
       try {
@@ -94,6 +92,7 @@ public class OverridingMethods_Finder extends GeneratedFinder {
 
   public List<SNode> getSearchedNodes(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     return _results;
   }
 

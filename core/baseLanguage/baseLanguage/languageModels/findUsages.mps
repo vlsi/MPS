@@ -367,16 +367,6 @@
     <property name="description" value="Implementing Classes"/>
     <property name="isVisible" value="true"/>
     <link role="forConcept" targetNodeId="1.1107796713796" resolveInfo="Interface"/>
-    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
-          id="1200310248825">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200310248826">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200310311367">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1200310311368">
-            <property name="value" value="true"/>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="findFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FindBlock" id="1200310248827">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200310248828">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
@@ -574,16 +564,6 @@
     <property name="description" value="Derived Interfaces"/>
     <property name="isVisible" value="true"/>
     <link role="forConcept" targetNodeId="1.1107796713796" resolveInfo="Interface"/>
-    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
-          id="1200310287392">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200310287393">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200310306084">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1200310306085">
-            <property name="value" value="true"/>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="findFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FindBlock" id="1200310287394">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200310287395">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
@@ -830,16 +810,6 @@
     <property name="description" value="Derived Classes"/>
     <property name="isVisible" value="true"/>
     <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept"/>
-    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
-          id="1200310473078">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200310473079">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200310878309">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1200310878310">
-            <property name="value" value="true"/>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="findFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FindBlock" id="1200310473080">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200310473081">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
@@ -2153,12 +2123,6 @@
                   id="1206444627206"/>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NodeStatement"
-              id="1204900249763">
-          <node role="foundNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204900252343">
-            <link role="variableDeclaration" targetNodeId="1200502177137" resolveInfo="current"/>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1200502163110">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1200502228697">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1200502230966"/>
@@ -2228,6 +2192,17 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206463170241">
             <property name="value" value="Ancestor"/>
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="searchedNodesBlock" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.SearchedNodesBlock"
+          id="1206470652560">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206470652561">
+        <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NodeStatement"
+              id="1206470655515">
+          <node role="foundNode"
+                type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node"
+                id="1206470655893"/>
         </node>
       </node>
     </node>
@@ -3322,16 +3297,6 @@
     <property name="name" value="StraightDerivedClasses"/>
     <property name="description" value="Straight Derivatives"/>
     <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept"/>
-    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
-          id="1204122859724">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204122859725">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204123005240">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204123005241">
-            <property name="value" value="true"/>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="findFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FindBlock" id="1204122859726">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204122859727">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1204123335972">

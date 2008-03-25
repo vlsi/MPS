@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.IScope;
 
 import java.util.ArrayList;
 
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -52,8 +52,6 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
   protected List<SNode> doFind(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
     {
-      ListOperations.addElement(_results, node);
-      // null
       List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
       {
         ICursor<SNode> _zCursor6 = CursorFactory.createCursor(this.executejetbrainsMpsBaseLanguageFindUsagesImplementingClasses_Finder(SNodeOperations.getParent(node, null, false, false), scope));
@@ -110,6 +108,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
 
   public List<SNode> getSearchedNodes(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     return _results;
   }
 

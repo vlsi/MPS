@@ -47,13 +47,13 @@ public class ConceptInstances_Finder extends GeneratedFinder {
       for (SNode resNode : resNodes) {
         ListOperations.addElement(_results, resNode);
       }
-      ListOperations.addElement(_results, node);
     }
     return _results;
   }
 
   public List<SNode> getSearchedNodes(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     return _results;
   }
 
