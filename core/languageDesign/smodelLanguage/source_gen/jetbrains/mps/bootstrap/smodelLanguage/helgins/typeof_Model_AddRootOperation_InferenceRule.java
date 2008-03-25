@@ -14,7 +14,7 @@ public class typeof_Model_AddRootOperation_InferenceRule implements InferenceRul
   }
 
   public void applyRule(final SNode op) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "nodeToAdd", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206484129815", true), new QuotationClass_90().createNode(), SLinkOperations.getTarget(op, "nodeToAdd", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206484150884", false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "nodeToAdd", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206484129815", true), new QuotationClass_89().createNode(), SLinkOperations.getTarget(op, "nodeToAdd", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206484150884", false);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206484335084", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "nodeToAdd", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206484354108", true), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206484350009");
   }
 

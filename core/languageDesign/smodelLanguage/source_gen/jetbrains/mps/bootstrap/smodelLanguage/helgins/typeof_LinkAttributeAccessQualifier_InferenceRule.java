@@ -34,7 +34,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule implements Infere
     SNode linkQualifier = SLinkOperations.getTarget(nodeToCheck, "linkQualifier", true);
     if (SNodeOperations.isInstanceOf(linkQualifier, "jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier")) {
       // link role expected
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(linkQualifier, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792163", false), new QuotationClass_74().createNode(), SLinkOperations.getTarget(linkQualifier, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792161", false);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(linkQualifier, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792163", false), new QuotationClass_73().createNode(), SLinkOperations.getTarget(linkQualifier, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204849792161", false);
     }
   }
 

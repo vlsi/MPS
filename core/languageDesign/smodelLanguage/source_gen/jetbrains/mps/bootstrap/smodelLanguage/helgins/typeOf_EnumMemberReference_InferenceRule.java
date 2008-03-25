@@ -13,7 +13,7 @@ public class typeOf_EnumMemberReference_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(final SNode node) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711941826", true), new QuotationClass_43().createNode(), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711941824");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711941826", true), new QuotationClass_42().createNode(), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711941824");
   }
 
   public String getApplicableConceptFQName() {

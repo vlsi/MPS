@@ -4,8 +4,8 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule implements InferenceRule_Runtime {
@@ -15,10 +15,7 @@ public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule implements In
 
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
-    SNode parameter = SLinkOperations.getTarget(op, "parameter", true);
-    if (!((parameter == null))) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057036825", true), new QuotationClass_16().createNode(), parameter, "incompatible type: snode expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057036823", false);
-    }
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "parameter", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206488003353", true), new QuotationClass_90().createNode(), SLinkOperations.getTarget(op, "parameter", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206488011466", false);
   }
 
   public String getApplicableConceptFQName() {

@@ -37,17 +37,17 @@ public class RulesUtil {
           String applicableErrorString = "operation is not applicable to expression";
           boolean isGood = false;
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_38().createNode(), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_37().createNode(), false, false)) {
               isGood = true;
             }
           }
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_39().createNode(), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_38().createNode(), false, false)) {
               isGood = true;
             }
           }
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_40().createNode(), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_39().createNode(), false, false)) {
               isGood = true;
             }
           }
@@ -210,11 +210,11 @@ public class RulesUtil {
   public static void equate_inputNodeType(SNode op, SNode TypeToEquate) {
     final SNode Concept_typevar_1206099042246 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246));
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_84().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_83().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408");
   }
 
   public static SNode get_SNodeType_fromOpParameter(SNode op) {
-    SNode type = new QuotationClass_41().createNode();
+    SNode type = new QuotationClass_40().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate(null, null)));
     if (parm != null) {
       SLinkOperations.setTarget(type, "concept", SLinkOperations.getTarget(parm, "concept", false), false);
@@ -223,7 +223,7 @@ public class RulesUtil {
   }
 
   public static SNode get_SNodeListType_fromOpParameter(SNode op) {
-    SNode type = new QuotationClass_42().createNode();
+    SNode type = new QuotationClass_41().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate1(null, null)));
     if (parm != null) {
       SLinkOperations.setTarget(type, "elementConcept", SLinkOperations.getTarget(parm, "concept", false), false);
