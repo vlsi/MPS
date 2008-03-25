@@ -18,8 +18,8 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\closures.mpl" token="{mps_home}\core\baseLanguage\closures\classes" value="{language_descriptor}\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\closures.mpl" token="{language_descriptor}\runtime\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.closures.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\closures.mpl" token="{mps_home}\core\baseLanguage\closures\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp" />
     <mkdir dir="core\baseLanguage\closures\languages\closures\runtime\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.runtime.jar">
@@ -149,8 +149,8 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp\collections.mpl" token="{mps_home}\core\baseLanguage\internalCollections\classes" value="{language_descriptor}\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp\collections.mpl" token="{language_descriptor}\runtime\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.internal.collections.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp\collections.mpl" token="{mps_home}\core\baseLanguage\internalCollections\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.tmp" />
     <mkdir dir="core\baseLanguage\internalCollections\languages\collections\runtime\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.internal.collections.runtime.jar">
@@ -334,8 +334,8 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp\annotations.mpl" token="{mps_home}\core\languageDesign\annotations\classes" value="{language_descriptor}\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp\annotations.mpl" token="{mps_home}\core\languageDesign\annotations\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.annotations.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp\annotations.mpl" token="{mps_home}\core\languageDesign\annotations\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp" />
     <mkdir dir="core\languageDesign\annotations\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.runtime.jar">
@@ -425,8 +425,8 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp\mpslite.mpl" token="{mps_home}\core\languageDesign\mps-lite\classes" value="{language_descriptor}\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp\mpslite.mpl" token="{mps_home}\core\languageDesign\mps-lite\classes" value="{mps_home}\core\languageDesign\jetbrains.mpslite.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp\mpslite.mpl" token="{mps_home}\core\languageDesign\mps-lite\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.tmp" />
     <mkdir dir="core\languageDesign\mps-lite\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mpslite.runtime.jar">
@@ -512,7 +512,15 @@
       <fileset dir="core\languageDesign\scriptLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\languageDesign\scriptLanguage" includes="*.mpl, *.msd, *.devkit" />
     </copy>
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp\scriptLanguage.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.ide.scriptLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp\scriptLanguage.mpl" token="{language_descriptor}\runtime\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.ide.scriptLanguage.runtime.jar" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp" />
+    <mkdir dir="core\languageDesign\scriptLanguage\classes" />
+    <mkdir dir="core\languageDesign\scriptLanguage\runtime\classes" />
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.runtime.jar">
+      <fileset dir="core\languageDesign\scriptLanguage\classes" />
+      <fileset dir="core\languageDesign\scriptLanguage\runtime\classes" />
+    </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.ide.scriptLanguage.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ide.scriptLanguageInternal">
@@ -657,8 +665,8 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.tmp\META-INF\MANIFEST.MF" token="/solutions\classes/" value="/solutions\classes/,/solutions/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.tmp\main.msd" token="{mps_home}\platform\ypath\solutions\classes" value="{solution_descriptor}\solutions\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.tmp\main.msd" token="{mps_home}\platform\ypath\solutions\classes" value="{mps_home}\platform\ypath.main.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.tmp\main.msd" token="{mps_home}\platform\ypath\solutions\classes" value="{solution_descriptor}\solutions\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.tmp" />
     <mkdir dir="platform\ypath\solutions\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.main.runtime.jar">
@@ -675,9 +683,9 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp\META-INF\MANIFEST.MF" token="/solutions\classes/" value="/solutions\classes/,/solutions/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp\test.msd" token="{mps_home}\platform\ypath\solutions\classes" value="{solution_descriptor}\solutions\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp\test.msd" token="{mps_home}\platform\ypath\classes" value="{mps_home}\platform\ypath.test.runtime.jar" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp\test.msd" token="{mps_home}\platform\ypath\solutions\classes" value="{mps_home}\platform\ypath.test.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp\test.msd" token="{mps_home}\platform\ypath\solutions\classes" value="{solution_descriptor}\solutions\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\ypath.test.tmp" />
     <mkdir dir="platform\ypath\classes" />
     <mkdir dir="platform\ypath\solutions\classes" />
@@ -700,10 +708,10 @@
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp\META-INF\MANIFEST.MF" token="/runtime\classes/" value="/runtime\classes/,/runtime/classes/" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp\ypath.mpl" token="{mps_home}\platform\ypath\runtime\classes" value="{language_descriptor}\runtime\classes" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp\ypath.mpl" token="{mps_home}\platform\ypath\classes" value="{language_descriptor}\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp\ypath.mpl" token="{mps_home}\platform\ypath\classes" value="{mps_home}\platform\jetbrains.mps.ypath.runtime.jar" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp\ypath.mpl" token="{mps_home}\platform\ypath\runtime\classes" value="{mps_home}\platform\jetbrains.mps.ypath.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp\ypath.mpl" token="{mps_home}\platform\ypath\runtime\classes" value="{language_descriptor}\runtime\classes" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp\ypath.mpl" token="{mps_home}\platform\ypath\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.ypath.tmp" />
     <mkdir dir="platform\ypath\classes" />
     <mkdir dir="platform\ypath\runtime\classes" />
@@ -722,8 +730,8 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp\buildlanguage.mpl" token="{mps_home}\platform\buildlanguage\classes" value="{language_descriptor}\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp\buildlanguage.mpl" token="{mps_home}\platform\buildlanguage\classes" value="{mps_home}\platform\jetbrains.mps.buildlanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp\buildlanguage.mpl" token="{mps_home}\platform\buildlanguage\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.tmp" />
     <mkdir dir="platform\buildlanguage\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.buildlanguage.runtime.jar">
@@ -766,8 +774,8 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp\propertylanguage.mpl" token="{mps_home}\platform\buildlanguage\classes" value="{language_descriptor}\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp\propertylanguage.mpl" token="{mps_home}\platform\buildlanguage\classes" value="{mps_home}\platform\jetbrains.mps.propertylanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp\propertylanguage.mpl" token="{mps_home}\platform\buildlanguage\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.tmp" />
     <mkdir dir="platform\buildlanguage\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.propertylanguage.runtime.jar">
@@ -784,8 +792,8 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp\bookLanguage.mpl" token="{mps_home}\platform\textLanguage\classes" value="{language_descriptor}\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp\bookLanguage.mpl" token="{mps_home}\platform\textLanguage\classes" value="{mps_home}\platform\jetbrains.mps.bookLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp\bookLanguage.mpl" token="{mps_home}\platform\textLanguage\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.tmp" />
     <mkdir dir="platform\textLanguage\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.bookLanguage.runtime.jar">
@@ -831,8 +839,8 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp\textLanguage.mpl" token="{mps_home}\platform\textLanguage\classes" value="{language_descriptor}\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp\textLanguage.mpl" token="{mps_home}\platform\textLanguage\classes" value="{mps_home}\platform\jetbrains.mps.textLanguage.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp\textLanguage.mpl" token="{mps_home}\platform\textLanguage\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.tmp" />
     <mkdir dir="platform\textLanguage\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.runtime.jar">
@@ -849,8 +857,8 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp\formula.mpl" token="{mps_home}\platform\textLanguage\classes" value="{language_descriptor}\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp\formula.mpl" token="{mps_home}\platform\textLanguage\classes" value="{mps_home}\platform\jetbrains.mps.textLanguage.formula.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp\formula.mpl" token="{mps_home}\platform\textLanguage\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.tmp" />
     <mkdir dir="platform\textLanguage\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.formula.runtime.jar">
@@ -867,8 +875,8 @@
       </fileset>
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp\table.mpl" token="{mps_home}\platform\textLanguage\classes" value="{language_descriptor}\classes" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp\table.mpl" token="{mps_home}\platform\textLanguage\classes" value="{mps_home}\platform\jetbrains.mps.textLanguage.table.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp\table.mpl" token="{mps_home}\platform\textLanguage\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.tmp" />
     <mkdir dir="platform\textLanguage\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.textLanguage.table.runtime.jar">
