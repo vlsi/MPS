@@ -666,13 +666,16 @@ public abstract class MPSTree extends JTree {
 
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
       Color foreground;
+      Color additionalForeground;
       if (selected) {
         foreground = UIManager.getColor("Tree.selectionForeground");
+        additionalForeground = foreground;
       } else {
         foreground = UIManager.getColor("Tree.textForeground");
+        additionalForeground = Color.GRAY;
       }
       myMainTextLabel.setForeground(foreground);
-      myAdditionalTextLabel.setForeground(Color.GRAY);
+      myAdditionalTextLabel.setForeground(additionalForeground);
 
       Icon icon = null;
       String text = value.toString();
@@ -687,7 +690,9 @@ public abstract class MPSTree extends JTree {
         myMainTextLabel.setFont(newFont);
         myAdditionalTextLabel.setFont(newFont);
 
-        myMainTextLabel.setForeground(treeNode.getColor());
+        if (!selected) {
+          myMainTextLabel.setForeground(treeNode.getColor());
+        }
       } else {
         myMainTextLabel.setFont(tree.getFont());
         myAdditionalTextLabel.setFont(tree.getFont());
