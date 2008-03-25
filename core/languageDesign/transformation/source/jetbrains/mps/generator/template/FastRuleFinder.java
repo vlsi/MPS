@@ -106,14 +106,6 @@ public class FastRuleFinder {
     }
   }
 
-//  private List<Reduction_MappingRule> updateRulesForInheritor(ConceptDeclaration concept, List<Reduction_MappingRule> addRulesForInheritor) {
-//    List<Reduction_MappingRule> currentRulesForInheritor = myRules_applicableInheritor.get(concept);
-//    if (addRulesForInheritor != null) {
-//      currentRulesForInheritor.addAll(addRulesForInheritor);
-//    }
-//    return currentRulesForInheritor;
-//  }
-
   public SNode findReductionRule(SNode node, ITemplateGenerator generator) {
     AbstractConceptDeclaration concept = (AbstractConceptDeclaration) node.getConceptDeclarationAdapter();
     if (concept == null) {
@@ -133,7 +125,6 @@ public class FastRuleFinder {
     }
 
     for (Reduction_MappingRule rule : allRules) {
-//      if (GeneratorUtil.checkConditionForBaseMappingRule(node, rule, generator)) {
       if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, node, rule.getNode(), generator)) {
         return BaseAdapter.fromAdapter(rule);
       }

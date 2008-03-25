@@ -8,6 +8,7 @@ import java.util.LinkedList;
 public enum UseInTest {
   test1("test1", "test1"),
   getPrevInputTest("getPrevInputTest", "getPrevInputTest"),
+  reduceInheritors("reduceInheritors", "reduceInheritors"),
   none("none", "none");
 
   /* package */String myName;
@@ -22,6 +23,7 @@ public enum UseInTest {
     List<UseInTest> list = new LinkedList<UseInTest>();
     list.add(UseInTest.test1);
     list.add(UseInTest.getPrevInputTest);
+    list.add(UseInTest.reduceInheritors);
     list.add(UseInTest.none);
     return list;
   }
@@ -31,16 +33,19 @@ public enum UseInTest {
   }
 
   public static UseInTest parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return UseInTest.getDefault();
     }
-    if(value.equals(UseInTest.test1.getValueAsString())) {
+    if (value.equals(UseInTest.test1.getValueAsString())) {
       return UseInTest.test1;
     }
-    if(value.equals(UseInTest.getPrevInputTest.getValueAsString())) {
+    if (value.equals(UseInTest.getPrevInputTest.getValueAsString())) {
       return UseInTest.getPrevInputTest;
     }
-    if(value.equals(UseInTest.none.getValueAsString())) {
+    if (value.equals(UseInTest.reduceInheritors.getValueAsString())) {
+      return UseInTest.reduceInheritors;
+    }
+    if (value.equals(UseInTest.none.getValueAsString())) {
       return UseInTest.none;
     }
     return UseInTest.getDefault();

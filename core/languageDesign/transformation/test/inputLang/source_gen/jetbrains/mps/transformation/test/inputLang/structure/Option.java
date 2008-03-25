@@ -31,16 +31,16 @@ public enum Option {
   }
 
   public static Option parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return Option.getDefault();
     }
-    if(value.equals(Option.option_default.getValueAsString())) {
+    if (value.equals(Option.option_default.getValueAsString())) {
       return Option.option_default;
     }
-    if(value.equals(Option.option_1.getValueAsString())) {
+    if (value.equals(Option.option_1.getValueAsString())) {
       return Option.option_1;
     }
-    if(value.equals(Option.drop_it.getValueAsString())) {
+    if (value.equals(Option.drop_it.getValueAsString())) {
       return Option.drop_it;
     }
     return Option.getDefault();

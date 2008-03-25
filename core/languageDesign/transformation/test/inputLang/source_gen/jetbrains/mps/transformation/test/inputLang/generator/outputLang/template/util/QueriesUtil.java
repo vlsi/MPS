@@ -19,7 +19,7 @@ public class QueriesUtil {
       try {
         while(_zCursor.moveToNext()) {
           SNode node = _zCursor.getCurrent();
-          if(SPropertyOperations.hasValue(node, "useInTest", "test1", "none")) {
+          if (SPropertyOperations.hasValue(node, "useInTest", "test1", "none")) {
             return true;
           }
         }

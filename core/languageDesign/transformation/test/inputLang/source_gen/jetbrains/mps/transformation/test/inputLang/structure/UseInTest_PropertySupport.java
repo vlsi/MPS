@@ -8,13 +8,13 @@ import java.util.Iterator;
 public class UseInTest_PropertySupport extends PropertySupport {
 
   public boolean canSetValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return true;
     }
     Iterator<UseInTest> constants = UseInTest.getConstants().iterator();
     while(constants.hasNext()) {
       UseInTest constant = constants.next();
-      if(value.equals(constant.getName())) {
+      if (value.equals(constant.getName())) {
         return true;
       }
     }
@@ -22,13 +22,13 @@ public class UseInTest_PropertySupport extends PropertySupport {
   }
 
   public String toInternalValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return null;
     }
     Iterator<UseInTest> constants = UseInTest.getConstants().iterator();
     while(constants.hasNext()) {
       UseInTest constant = constants.next();
-      if(value.equals(constant.getName())) {
+      if (value.equals(constant.getName())) {
         return constant.getValueAsString();
       }
     }
@@ -37,7 +37,7 @@ public class UseInTest_PropertySupport extends PropertySupport {
 
   public String fromInternalValue(String value) {
     UseInTest constant = UseInTest.parseValue(value);
-    if(constant != null) {
+    if (constant != null) {
       return constant.getName();
     }
     return null;

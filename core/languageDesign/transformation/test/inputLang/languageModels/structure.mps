@@ -81,10 +81,22 @@
       <property name="internalValue" value="getPrevInputTest" />
       <property name="externalValue" value="getPrevInputTest" />
     </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1206459825805">
+      <property name="externalValue" value="reduceInheritors" />
+      <property name="internalValue" value="reduceInheritors" />
+    </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1202242822699">
       <property name="externalValue" value="none" />
       <property name="internalValue" value="none" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206459872650">
+    <property name="name" value="InputNode_B" />
+    <link role="extends" targetNodeId="1195171011194" resolveInfo="InputNode_A" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206462895210">
+    <property name="name" value="InputNode_C" />
+    <link role="extends" targetNodeId="1206459872650" resolveInfo="InputNode_B" />
   </node>
 </model>
 
