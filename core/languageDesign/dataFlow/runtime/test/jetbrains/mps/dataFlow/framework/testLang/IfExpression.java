@@ -1,4 +1,4 @@
-package jetbrains.mps.dataFlow.testLang;
+package jetbrains.mps.dataFlow.framework.testLang;
 
 public class IfExpression extends Expression {
   private Expression myCondition;

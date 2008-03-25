@@ -1,6 +1,6 @@
-package jetbrains.mps.dataFlow;
+package jetbrains.mps.dataFlow.framework;
 
-import jetbrains.mps.dataFlow.instructions.Instruction;
+import jetbrains.mps.dataFlow.framework.instructions.Instruction;
 
 import java.util.Set;
 

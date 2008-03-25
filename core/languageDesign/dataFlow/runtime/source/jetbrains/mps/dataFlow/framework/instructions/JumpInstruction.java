@@ -1,4 +1,4 @@
-package jetbrains.mps.dataFlow.instructions;
+package jetbrains.mps.dataFlow.framework.instructions;
 
 public class JumpInstruction extends Instruction {
   private int myJumpTo;

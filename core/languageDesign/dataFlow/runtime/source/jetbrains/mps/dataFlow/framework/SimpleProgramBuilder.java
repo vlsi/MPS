@@ -1,6 +1,6 @@
-package jetbrains.mps.dataFlow;
+package jetbrains.mps.dataFlow.framework;
 
-import jetbrains.mps.dataFlow.instructions.*;
+import jetbrains.mps.dataFlow.framework.instructions.*;
 
 public class SimpleProgramBuilder {
   private Program myProgram = new Program();

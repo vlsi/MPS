@@ -1,9 +1,9 @@
-package jetbrains.mps.dataFlow;
+package jetbrains.mps.dataFlow.framework;
 
 import org.junit.Test;
 import org.junit.Assert;
-import jetbrains.mps.dataFlow.testLang.*;
-import jetbrains.mps.dataFlow.Program;
+import jetbrains.mps.dataFlow.framework.testLang.*;
+import jetbrains.mps.dataFlow.framework.Program;
 
 public class StructuralProgramBuilderTest {
 

@@ -1,10 +1,10 @@
-package jetbrains.mps.dataFlow.analyzers;
+package jetbrains.mps.dataFlow.framework.analyzers;
 
-import jetbrains.mps.dataFlow.AnalysisDirection;
-import jetbrains.mps.dataFlow.DataFlowAnalyzer;
-import jetbrains.mps.dataFlow.instructions.Instruction;
-import jetbrains.mps.dataFlow.instructions.ReadInstruction;
-import jetbrains.mps.dataFlow.instructions.WriteInstruction;
+import jetbrains.mps.dataFlow.framework.AnalysisDirection;
+import jetbrains.mps.dataFlow.framework.DataFlowAnalyzer;
+import jetbrains.mps.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.dataFlow.framework.instructions.ReadInstruction;
+import jetbrains.mps.dataFlow.framework.instructions.WriteInstruction;
 
 import java.util.HashSet;
 import java.util.Set;

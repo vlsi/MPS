@@ -1,6 +1,6 @@
-package jetbrains.mps.dataFlow.instructions;
+package jetbrains.mps.dataFlow.framework.instructions;
 
-import jetbrains.mps.dataFlow.Program;
+import jetbrains.mps.dataFlow.framework.Program;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;

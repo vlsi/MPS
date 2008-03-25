@@ -1,6 +1,6 @@
-package jetbrains.mps.dataFlow.testLang;
+package jetbrains.mps.dataFlow.framework.testLang;
 
-import jetbrains.mps.dataFlow.StructuralProgramBuilder;
+import jetbrains.mps.dataFlow.framework.StructuralProgramBuilder;
 
 public class ExpressionProgramBuilder extends StructuralProgramBuilder<Expression> {
   protected void doBuild(Expression expr) {    

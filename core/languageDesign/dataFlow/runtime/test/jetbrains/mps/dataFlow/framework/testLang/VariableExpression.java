@@ -1,4 +1,4 @@
-package jetbrains.mps.dataFlow.testLang;
+package jetbrains.mps.dataFlow.framework.testLang;
 
 public class VariableExpression extends Expression {
   private String myName;

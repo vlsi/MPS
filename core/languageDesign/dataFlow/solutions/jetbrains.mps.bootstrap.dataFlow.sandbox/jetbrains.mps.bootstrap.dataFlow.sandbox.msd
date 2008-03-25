@@ -6,8 +6,8 @@
   <classPath />
   <runtimeClassPath />
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">jetbrains.mps.bootstrap.dataFlow</dependency>
-  </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.bootstrap.dataFlow</usedLanguages>
+  </usedLanguages>
 </solution>
 

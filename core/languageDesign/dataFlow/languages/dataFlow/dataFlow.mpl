@@ -7,8 +7,17 @@
   <accessoryModels />
   <generators />
   <classPath />
-  <runtimeClassPath />
+  <runtimeClassPath>
+    <entry path="${mps_home}\core\languageDesign\dataFlow\classes" />
+  </runtimeClassPath>
   <sourcePath />
-  <extendedLanguages />
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
+  <extendedLanguages>
+    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+    <extendedLanguage>jetbrains.mps.bootstrap.smodelLanguage</extendedLanguage>
+  </extendedLanguages>
 </language>
 

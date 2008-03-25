@@ -1,10 +1,10 @@
-package jetbrains.mps.dataFlow;
+package jetbrains.mps.dataFlow.framework;
 
-import jetbrains.mps.dataFlow.instructions.WriteInstruction;
-import jetbrains.mps.dataFlow.analyzers.ReachingDefinitionsAnalyzer;
-import jetbrains.mps.dataFlow.Program;
-import jetbrains.mps.dataFlow.SimpleProgramBuilder;
-import jetbrains.mps.dataFlow.AnalysisResult;
+import jetbrains.mps.dataFlow.framework.instructions.WriteInstruction;
+import jetbrains.mps.dataFlow.framework.analyzers.ReachingDefinitionsAnalyzer;
+import jetbrains.mps.dataFlow.framework.SimpleProgramBuilder;
+import jetbrains.mps.dataFlow.framework.Program;
+import jetbrains.mps.dataFlow.framework.AnalysisResult;
 import org.junit.Assert;
 import org.junit.Test;
 

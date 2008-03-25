@@ -1,6 +1,6 @@
-package jetbrains.mps.dataFlow;
+package jetbrains.mps.dataFlow.framework;
 
-import jetbrains.mps.dataFlow.instructions.*;
+import jetbrains.mps.dataFlow.framework.instructions.*;
 
 import java.util.*;
 
@@ -29,7 +29,7 @@ public abstract class StructuralProgramBuilder<N> {
     return myProgram;
   }
 
-  protected void build(N node) {
+  public void build(N node) {
     myNodes.push(node);
     myStarts.put(node, getCurrentPosition());
     doBuild(node);
@@ -37,7 +37,7 @@ public abstract class StructuralProgramBuilder<N> {
     myNodes.pop();
   }
 
-  protected Position before(final N node) {
+  public Position before(final N node) {
     return new Position() {
       public int getPosition() {
         return myStarts.get(node);
@@ -45,7 +45,7 @@ public abstract class StructuralProgramBuilder<N> {
     };
   }
 
-  protected Position after(final N node) {
+  public Position after(final N node) {
     return new Position() {
       public int getPosition() {
         return myEnds.get(node);
@@ -53,25 +53,25 @@ public abstract class StructuralProgramBuilder<N> {
     };
   }
 
-  protected void emitNop() {
+  public void emitNop() {
     NopInstruction instruction = new NopInstruction();
     instruction.setSource(getCurrentNode());
     myProgram.add(instruction);
   }
 
-  protected void emitRead(Object var) {
+  public void emitRead(Object var) {
     ReadInstruction instruction = new ReadInstruction(var);
     instruction.setSource(getCurrentNode());
     myProgram.add(instruction);
   }
 
-  protected void emitWrite(Object var) {
+  public void emitWrite(Object var) {
     WriteInstruction instruction = new WriteInstruction(var);
     instruction.setSource(getCurrentNode());
     myProgram.add(instruction);
   }
 
-  protected void emitJump(final Position position) {
+  public void emitJump(final Position position) {
     final JumpInstruction instruction = new JumpInstruction();
     instruction.setSource(getCurrentNode());
     myProgram.add(instruction);
@@ -82,7 +82,7 @@ public abstract class StructuralProgramBuilder<N> {
     });
   }
 
-  protected void emitIfJump(final Position position) {
+  public void emitIfJump(final Position position) {
     final IfJumpInstruction instruction = new IfJumpInstruction();
     instruction.setSource(getCurrentNode());
     myProgram.add(instruction);

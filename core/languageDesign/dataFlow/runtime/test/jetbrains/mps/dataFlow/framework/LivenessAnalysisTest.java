@@ -1,14 +1,14 @@
-package jetbrains.mps.dataFlow;
+package jetbrains.mps.dataFlow.framework;
 
 import org.junit.Test;
 import org.junit.Assert;
 
 import java.util.Set;
 
-import jetbrains.mps.dataFlow.analyzers.LivenessAnalyzer;
-import jetbrains.mps.dataFlow.Program;
-import jetbrains.mps.dataFlow.SimpleProgramBuilder;
-import jetbrains.mps.dataFlow.AnalysisResult;
+import jetbrains.mps.dataFlow.framework.analyzers.LivenessAnalyzer;
+import jetbrains.mps.dataFlow.framework.Program;
+import jetbrains.mps.dataFlow.framework.SimpleProgramBuilder;
+import jetbrains.mps.dataFlow.framework.AnalysisResult;
 
 public class LivenessAnalysisTest {
 
