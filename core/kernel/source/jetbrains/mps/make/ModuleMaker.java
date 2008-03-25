@@ -84,7 +84,7 @@ public class ModuleMaker {
       if (!isUpToDate(c)) {
         toCompile.add(c);
       }
-    }
+    }                                         
     return toCompile;
   }
 
@@ -292,6 +292,11 @@ public class ModuleMaker {
 
     for (String s : m.getSourcePaths()) {
       sourcesTimeStamp = Math.max(sourcesTimeStamp, FileUtil.getNewestFileTime(new File(s)));
+    }
+
+    if (sourcesTimeStamp == 0) {      
+      //i.e. we have excluded all the sources
+      return true;
     }
 
     boolean result = classesTimeStamp >= sourcesTimeStamp;
