@@ -9,6 +9,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
@@ -53,14 +54,21 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   protected abstract String getModulePresentation();
 
   public boolean generationRequired() {
-    for (SModelDescriptor sm : getModule().getOwnModelDescriptors()) {
-      SModelTreeNode modelNode = (SModelTreeNode) findDescendantWith(sm);
-      if (modelNode != null) {
-        if (modelNode.generationRequired()) {
-          return true;
-        }
+    return generationRequired(this);
+  }
+
+  private boolean generationRequired(MPSTreeNode node) {
+    if (node instanceof SModelTreeNode) {
+      SModelTreeNode smodelTreeNode = (SModelTreeNode) node;
+      return smodelTreeNode.generationRequired();
+    }
+
+    for (int i = 0; i < node.getChildCount(); i++) {
+      if (generationRequired((MPSTreeNode) node.getChildAt(i))) {
+        return true;
       }
     }
+
     return false;
   }
 
