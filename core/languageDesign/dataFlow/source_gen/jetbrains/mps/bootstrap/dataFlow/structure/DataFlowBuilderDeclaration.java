@@ -12,8 +12,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class DataFlowBuilderDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration";
-  public static String CONCEPT_DECLARATION = "conceptDeclaration";
   public static String BUILDER_BLOCK = "builderBlock";
+  public static String CONCEPT_DECLARATION = "conceptDeclaration";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -32,20 +32,20 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
   }
 
 
-  public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(DataFlowBuilderDeclaration.CONCEPT_DECLARATION);
-  }
-
-  public void setConceptDeclaration(AbstractConceptDeclaration node) {
-    super.setReferent(DataFlowBuilderDeclaration.CONCEPT_DECLARATION, node);
-  }
-
   public BuilderBlock getBuilderBlock() {
     return (BuilderBlock)this.getChild(DataFlowBuilderDeclaration.BUILDER_BLOCK);
   }
 
   public void setBuilderBlock(BuilderBlock node) {
     super.setChild(DataFlowBuilderDeclaration.BUILDER_BLOCK, node);
+  }
+
+  public AbstractConceptDeclaration getConceptDeclaration() {
+    return (AbstractConceptDeclaration)this.getReferent(DataFlowBuilderDeclaration.CONCEPT_DECLARATION);
+  }
+
+  public void setConceptDeclaration(AbstractConceptDeclaration node) {
+    super.setReferent(DataFlowBuilderDeclaration.CONCEPT_DECLARATION, node);
   }
 
   public String getName() {

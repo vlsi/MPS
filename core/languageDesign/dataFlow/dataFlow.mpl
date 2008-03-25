@@ -5,8 +5,23 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.dataFlow" />
   </models>
   <accessoryModels />
-  <generators />
-  <classPath />
+  <generators>
+    <generator generatorUID="jetbrains.mps.bootstrap.dataFlow#1206455293228" targetLanguage="jetbrains.mps.baseLanguage">
+      <models>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.dataFlow.generator.baseLanguage.template" />
+      </models>
+      <external-templates />
+      <dependencies>
+        <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="false">jetbrains.mps.baseLanguage#1129914002933</dependency>
+      </dependencies>
+      <mapping-priorities />
+    </generator>
+  </generators>
+  <classPath>
+    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}\runtime\classes" />
+  </classPath>
   <runtimeClassPath>
     <entry path="${language_descriptor}\classes" />
   </runtimeClassPath>
