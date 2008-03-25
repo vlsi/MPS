@@ -149,19 +149,23 @@
     <link role="conceptDeclaration" targetNodeId="1.1138661924179" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1138661974653">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1138661978216">
-        <property name="editable" value="true" />
-        <property name="text" value="set (" />
-        <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206487990991">
+        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487990992">
+        <property name="layoutConstraint" value="punctuation" />
+        <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1138662130034">
         <property name="noTargetText" value="&lt;no value&gt;" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1138662048170" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1138662136645">
-        <property name="editable" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206488004275">
         <property name="text" value=")" />
+        <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
@@ -203,10 +207,14 @@
     <link role="conceptDeclaration" targetNodeId="1.1138757581985" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1139880110903">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1139880110904">
-        <property name="editable" value="true" />
-        <property name="text" value="set new (" />
-        <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206487847415">
+        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487847416">
+        <property name="layoutConstraint" value="punctuation" />
+        <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1139880110905">
         <property name="noTargetText" value="&lt;default&gt;" />
@@ -222,9 +230,9 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1139880110908">
-        <property name="editable" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487861526">
         <property name="text" value=")" />
+        <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
@@ -233,10 +241,14 @@
     <link role="conceptDeclaration" targetNodeId="1.1139184414036" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1139877768037">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1139877769323">
-        <property name="editable" value="true" />
-        <property name="text" value="add new (" />
-        <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206487762220">
+        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487762221">
+        <property name="layoutConstraint" value="punctuation" />
+        <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1139877775154">
         <property name="noTargetText" value="&lt;default&gt;" />
@@ -252,9 +264,9 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1139877793189">
-        <property name="editable" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487772285">
         <property name="text" value=")" />
+        <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
@@ -539,18 +551,22 @@
     <link role="conceptDeclaration" targetNodeId="1.1139870260207" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1139870427663">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1139870427664">
-        <property name="editable" value="true" />
-        <property name="text" value="add (" />
-        <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206487753718">
+        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487753719">
+        <property name="layoutConstraint" value="punctuation" />
+        <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1139870441857">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1139870362308" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1139870427668">
-        <property name="editable" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487744639">
         <property name="text" value=")" />
+        <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
@@ -559,18 +575,22 @@
     <link role="conceptDeclaration" targetNodeId="1.1140029532506" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1140029629082">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1140029629083">
-        <property name="editable" value="true" />
-        <property name="text" value="insert first (" />
-        <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206487836132">
+        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487836133">
+        <property name="layoutConstraint" value="punctuation" />
+        <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1140029629084">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1139870362308" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1140029629085">
-        <property name="editable" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487826349">
         <property name="text" value=")" />
+        <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
@@ -701,18 +721,22 @@
     <link role="conceptDeclaration" targetNodeId="1.1140725362528" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1140725455180">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1140725455181">
-        <property name="editable" value="true" />
-        <property name="text" value="set (" />
-        <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206487883216">
+        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487883217">
+        <property name="layoutConstraint" value="punctuation" />
+        <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1140725455182">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1140725362529" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1140725455183">
-        <property name="editable" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487874371">
         <property name="text" value=")" />
+        <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
@@ -1267,19 +1291,23 @@
     <link role="conceptDeclaration" targetNodeId="1.1146171026731" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1146171170036">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1146171170037">
-        <property name="editable" value="true" />
-        <property name="text" value="is (" />
-        <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206487951704">
+        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487951705">
+        <property name="layoutConstraint" value="punctuation" />
+        <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1146171170038">
         <property name="noTargetText" value="&lt;no value&gt;" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1146171026732" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1146171170039">
-        <property name="editable" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487964378">
         <property name="text" value=")" />
+        <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
@@ -1288,19 +1316,23 @@
     <link role="conceptDeclaration" targetNodeId="1.1146253292180" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1146253646906">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1146253646907">
-        <property name="editable" value="true" />
-        <property name="text" value="is (" />
-        <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206487983630">
+        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487983631">
+        <property name="layoutConstraint" value="punctuation" />
+        <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1146253646908">
         <property name="noTargetText" value="&lt;no value&gt;" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1146253292181" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1146253646909">
-        <property name="editable" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487972988">
         <property name="text" value=")" />
+        <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
@@ -1811,18 +1843,22 @@
     <link role="conceptDeclaration" targetNodeId="1.1172244025706" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1172244089058">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1172244089059">
-        <property name="editable" value="true" />
-        <property name="text" value="add all (" />
-        <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206487728793">
+        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487728794">
+        <property name="layoutConstraint" value="punctuation" />
+        <property name="text" value="(" />
+        <property name="fontStyle" value="PLAIN" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1172244089060">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1139870362308" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1172244089061">
-        <property name="editable" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206487737076">
         <property name="text" value=")" />
+        <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
