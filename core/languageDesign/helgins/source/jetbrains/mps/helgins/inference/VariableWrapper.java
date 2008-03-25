@@ -82,7 +82,7 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
         }
       }
     } else {
-      LOG.warning("becomes concrete event not my shallow concrete representator");
+      LOG.warning("becomesDeplyConcrete event: a wrapper which just became concrete is not my shallow-concrete representator");
     }
   }
 

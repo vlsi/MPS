@@ -4,9 +4,7 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.CurrentProjectMPSAction;
 import jetbrains.mps.logging.Logger;
-
 import java.util.List;
-
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
@@ -15,9 +13,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
@@ -26,7 +22,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
 
   private List<SNode> nodes;
 
-  public CommentStatements_Action(MPSProject project) {
+  public  CommentStatements_Action(MPSProject project) {
     super(project, "Comment Statements");
   }
 
@@ -39,7 +35,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(this.nodes);
       try {
-        while (_zCursor.moveToNext()) {
+        while(_zCursor.moveToNext()) {
           SNode node = _zCursor.getCurrent();
           if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
             return false;
@@ -55,7 +51,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     super.doUpdate(context);
     if (!(this.fillFieldsIfNecessary(context))) {
       this.setEnabled(false);
@@ -81,12 +77,12 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     if (!(this.fillFieldsIfNecessary(context))) {
       return;
     }
     {
-      List<SNode> statements = (List<SNode>) this.nodes;
+      List<SNode> statements = (List<SNode>)this.nodes;
       SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(SequenceOperations.getFirst(statements), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
       SLinkOperations.addAll(commentedStatementsBlock, "statement", statements);
       SNodeOperations.deleteNode(ListOperations.getElement(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true), 0));

@@ -13,7 +13,7 @@ import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 public class BaseLanguageEditorPopupInternal_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal";
 
-  public BaseLanguageEditorPopupInternal_ActionGroup(MPSProject project) {
+  public  BaseLanguageEditorPopupInternal_ActionGroup(MPSProject project) {
     super("", BaseLanguageEditorPopupInternal_ActionGroup.ID);
     this.setInternal(false);
     this.add(new TestReferenceResolvingPerformance(TestReferenceResolvingPerformance.EDITOR), this);

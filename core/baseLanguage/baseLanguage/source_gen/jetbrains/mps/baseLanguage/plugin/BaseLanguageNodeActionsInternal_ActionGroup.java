@@ -13,7 +13,7 @@ import jetbrains.mps.ide.actions.ProjectPaneNodeActionsInternal_ActionGroup;
 public class BaseLanguageNodeActionsInternal_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal";
 
-  public BaseLanguageNodeActionsInternal_ActionGroup(MPSProject project) {
+  public  BaseLanguageNodeActionsInternal_ActionGroup(MPSProject project) {
     super("", BaseLanguageNodeActionsInternal_ActionGroup.ID);
     this.setInternal(false);
     this.add(new TestReferenceResolvingPerformance(TestReferenceResolvingPerformance.NODE), this);
