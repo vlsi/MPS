@@ -43,122 +43,122 @@
   </target>
   <target name="do.the.job" depends="folders.create">
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\kernel\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\kernel\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="workbench\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="workbench\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\core\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\core\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\kernel\vcs\generic\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\kernel\vcs\generic\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\kernel\vcs\svn\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\kernel\vcs\svn\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\actionsLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\actionsLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\editorLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\editorLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\annotations\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\annotations\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\cfaLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\cfaLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\constraintsLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\constraintsLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\editorLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\editorLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\findUsagesLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\findUsagesLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\helgins\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\helgins\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\intentionsLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\intentionsLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\patternLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\patternLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\pluginLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\pluginLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\quotation\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\quotation\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\refactoring\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\refactoring\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\scriptLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\scriptLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\scriptLanguage\runtime\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\scriptLanguage\runtime\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\sharedConcepts\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\sharedConcepts\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\smodelLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\smodelLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\structureLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\structureLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\transformation\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\languageDesign\transformation\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\projectLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\projectLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\baseLanguage\baseLanguage\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\baseLanguage\baseLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\baseLanguage\collections\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\baseLanguage\collections\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\baseLanguage\collections\runtime\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\baseLanguage\collections\runtime\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\baseLanguage\classifiers\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\baseLanguage\classifiers\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="MPSPlugin\MPSSupport\classes" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="MPSPlugin\MPSSupport\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar" filesonly="true">
-      <fileset dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib">
-      <fileset dir="lib" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="lib" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\agreement">
-      <fileset dir="app\agreement" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="app\agreement" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\complexLanguage">
-      <fileset dir="app\complexLanguage" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="app\complexLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\dslbook_example">
-      <fileset dir="app\dslbook_example" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="app\dslbook_example" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\fibonacci">
-      <fileset dir="app\fibonacci" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="app\fibonacci" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\fixedLengthReader">
-      <fileset dir="app\fixedLengthReader" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="app\fixedLengthReader" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\app\formulaLanguage">
-      <fileset dir="app\formulaLanguage" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="app\formulaLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <antcall target="pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="pack.jetbrains.mps.closures" />
@@ -209,10 +209,10 @@
     <antcall target="pack.smodelLanguage-samples" />
     <antcall target="pack.smodelLanguage_typetest" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\configuration">
-      <fileset dir="core\configuration" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\configuration" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\configurations">
-      <fileset dir="core\configurations" excludes="**/*.java, **/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="core\configurations" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <antcall target="pack.jetbrains.mps.vcs" />
     <antcall target="pack.jetbrains.mps.projectLanguage" />
@@ -230,22 +230,22 @@
     <antcall target="pack.jetbrains.mps.baseLanguage.unitTest" />
     <antcall target="pack.jetbrains.mps.xml" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\docs">
-      <fileset dir="docs" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="docs" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\META-INF">
-      <fileset dir="META-INF" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="META-INF" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\plugin">
-      <fileset dir="plugin" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="plugin" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\.configuration">
-      <fileset dir=".configuration" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir=".configuration" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <antcall target="pack.jetbrains.mps.ide.uiLanguage" />
     <antcall target="pack.jetbrains.mps.monitorLanguage" />
     <antcall target="pack.jetbrains.mps.ide" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\log">
-      <fileset dir="log" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="log" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <echo file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\build.number">build.number=${build.number}${line.separator}revision.number=${build.vcs.number.1}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
     <copy file="changelog.txt" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\changelog.txt" />
@@ -257,7 +257,7 @@
     <copy file="runMPS.bat" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\runMPS.bat" />
     <copy file="runMPS.sh" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\runMPS.sh" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip" filesonly="true">
-      <fileset dir="${deploy.dir}\MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.ipr, **/*.java" />
+      <fileset dir="${deploy.dir}\MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.ipr" includes="" />
     </zip>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp" />
   </target>
