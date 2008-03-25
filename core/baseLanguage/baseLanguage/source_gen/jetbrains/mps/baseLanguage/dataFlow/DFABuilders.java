@@ -11,6 +11,9 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.VariableReference", new VariableReference_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.IfStatement", new IfStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.WhileStatement", new WhileStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.Statement", new Statement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.Expression", new Expression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.ExpressionStatement", new ExpressionStatement_DataFlow());
   }
 
 }
