@@ -191,6 +191,7 @@
     <antcall target="pack.jetbrains.mps.bootstrap.findUsagesLanguage" />
     <antcall target="pack.jetbrains.mps.bootstrap.helgins" />
     <antcall target="pack.jetbrains.mps.bootstrap.intentionsLanguage" />
+    <antcall target="pack.jetbrains.mps.bootstrap.dataFlow" />
     <antcall target="pack.jetbrains.mpslite" />
     <antcall target="pack.jetbrains.mps.nanoj" />
     <antcall target="pack.jetbrains.mps.patterns" />
