@@ -35,7 +35,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206459712475">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206459712476">
-                <link role="baseMethodDeclaration" targetNodeId="2.~DataFlowManager.buildDFAFor(jetbrains.mps.smodel.SNode):jetbrains.mps.dataFlow.framework.Program" resolveInfo="buildDFAFor" />
+                <link role="baseMethodDeclaration" targetNodeId="2.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.SNode):jetbrains.mps.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206459712477">
                   <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1206459712478">
                     <link role="member" targetNodeId="1206459493888" resolveInfo="node" />
@@ -63,7 +63,10 @@
                   <link role="variableDeclaration" targetNodeId="1206459712473" resolveInfo="program" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206459897228">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~Program.toString():java.lang.String" resolveInfo="toString" />
+                  <link role="baseMethodDeclaration" targetNodeId="5.~Program.toString(boolean):java.lang.String" resolveInfo="toString" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206465823487">
+                    <property name="value" value="true" />
+                  </node>
                 </node>
               </node>
             </node>

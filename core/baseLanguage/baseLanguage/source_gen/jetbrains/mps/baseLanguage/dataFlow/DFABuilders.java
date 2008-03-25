@@ -19,6 +19,14 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.AssignmentExpression", new AssignmentExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.CastExpression", new CastExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.BinaryOperation", new BinaryOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.ReturnStatement", new ReturnStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.ForStatement", new ForStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.ForeachStatement", new ForeachStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.DoWhileStatement", new DoWhileStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.AssertStatement", new AssertStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.ThrowStatement", new ThrowStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.BreakStatement", new BreakStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.ContinueStatement", new ContinueStatement_DataFlow());
   }
 
 }

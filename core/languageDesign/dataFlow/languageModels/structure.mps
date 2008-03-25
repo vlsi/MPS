@@ -199,5 +199,14 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206462858103">
+    <property name="package" value="Instructions" />
+    <property name="name" value="EmitRetStatement" />
+    <link role="extends" targetNodeId="1206443583064" resolveInfo="EmitStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206462906637">
+      <property name="value" value="ret" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

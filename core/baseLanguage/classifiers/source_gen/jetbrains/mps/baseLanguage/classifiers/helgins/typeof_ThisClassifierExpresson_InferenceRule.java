@@ -16,7 +16,7 @@ public class typeof_ThisClassifierExpresson_InferenceRule implements InferenceRu
 
   public void applyRule(final SNode nodeToCheck) {
     SNode classifier = ThisClassifierExpresson_Behavior.call_getClassifier_1205753961441(nodeToCheck);
-    if(classifier != null) {
+    if (classifier != null) {
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.baseLanguage.classifiers.helgins", "1205753197519", true), IClassifier_Behavior.call_createType_1205753057931(classifier), nodeToCheck, null, "jetbrains.mps.baseLanguage.classifiers.helgins", "1205753196184");
     } else
     {

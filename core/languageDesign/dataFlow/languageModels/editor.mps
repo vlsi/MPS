@@ -153,5 +153,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206462910372">
+    <property name="package" value="Instructions" />
+    <link role="conceptDeclaration" targetNodeId="1.1206462858103" resolveInfo="EmitReturnStatement" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206462913500">
+      <property name="text" value="ret" />
+      <link role="styleClass" targetNodeId="1206443699820" resolveInfo="Instruction" />
+    </node>
+  </node>
 </model>
 

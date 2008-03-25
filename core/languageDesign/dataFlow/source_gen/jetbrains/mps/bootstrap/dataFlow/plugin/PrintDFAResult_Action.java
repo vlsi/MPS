@@ -63,8 +63,8 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
       return;
     }
     {
-      Program program = DataFlowManager.getInstance().buildDFAFor(this.node);
-      System.out.println(program.toString());
+      Program program = DataFlowManager.getInstance().buildProgramFor(this.node);
+      System.out.println(program.toString(true));
     }
   }
 

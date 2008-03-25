@@ -5,19 +5,17 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
-public class StatementList_DataFlow extends DataFlowBuilder {
+public class ForeachStatement_DataFlow extends DataFlowBuilder {
 
-  public  StatementList_DataFlow() {
+  public  ForeachStatement_DataFlow() {
   }
 
   public void build(IOperationContext operationContext, DataFlowBuilderContext _context) {
-    _context.getBuilder().emitNop();
-    for(SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {
-      _context.getBuilder().build(s);
-    }
+    _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "iterable", true));
+    _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().emitIfJump(_context.getBuilder().before(_context.getNode()));
   }
 
 }

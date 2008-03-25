@@ -23,18 +23,18 @@ public class typeof_DefaultMethodCallOperation_InferenceRule implements Inferenc
       Iterator<SNode> parameter_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true).iterator();
       Iterator<SNode> argument_iterator = SLinkOperations.getTargets(nodeToCheck, "actualArgument", true).iterator();
       while(true) {
-        if(!(parameter_iterator.hasNext())) {
+        if (!(parameter_iterator.hasNext())) {
           break;
         }
-        if(!(argument_iterator.hasNext())) {
+        if (!(argument_iterator.hasNext())) {
           break;
         }
         parameter = parameter_iterator.next();
         argument = argument_iterator.next();
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.classifiers.helgins", "1205854575356", true), SLinkOperations.getTarget(parameter, "type", true), argument, null, "jetbrains.mps.baseLanguage.classifiers.helgins", "1205854571586");
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.classifiers.helgins", "1205854575356", true), SLinkOperations.getTarget(parameter, "type", true), argument, null, "jetbrains.mps.baseLanguage.classifiers.helgins", "1205854571586", false);
       }
     }
-    if(SequenceOperations.count(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)) != SLinkOperations.getCount(nodeToCheck, "actualArgument")) {
+    if (SequenceOperations.count(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)) != SLinkOperations.getCount(nodeToCheck, "actualArgument")) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "Number of parameters doesn't match", "jetbrains.mps.baseLanguage.classifiers.helgins", "1205854659855");
     }
   }

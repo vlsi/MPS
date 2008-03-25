@@ -12,6 +12,14 @@ public class Program {
     return Collections.unmodifiableList((List<? extends Instruction>) myInstructions);
   }
 
+  public Instruction getStart() {
+    return myInstructions.get(0);
+  }
+
+  public Instruction getEnd() {
+    return myInstructions.get(myInstructions.size() - 1);
+  }
+
   public <E> AnalysisResult<E> analyze(DataFlowAnalyzer<E> analyzer) {
     final Map<Instruction, E> result = new HashMap<Instruction, E>();
     for (Instruction i : myInstructions) {
@@ -59,9 +67,17 @@ public class Program {
   }
 
   public String toString() {
+    return toString(false);
+  }
+
+  public String toString(boolean showSource) {
     StringBuilder result = new StringBuilder();
-    for (Instruction myInstruction : myInstructions) {
-      result.append(myInstruction).append("\n");
+    for (Instruction instruction : myInstructions) {
+      result.append(instruction);
+      if (instruction.getSource() != null && showSource) {
+        result.append(" ").append(instruction.getSource());
+      }
+      result.append("\n");
     }
     return result.toString();
   }
