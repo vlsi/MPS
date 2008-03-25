@@ -38,6 +38,7 @@
     <property name="name" value="migrate_SOE_to_DE" />
     <property name="title" value="Replace all occurrences of SequenceOperationExpression with DotExpression" />
     <property name="category" value="DotExpression" />
+    <property name="migrationFromBuild" value="470" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1205257458913">
       <property name="description" value="For each SOE" />
       <link role="affectedInstanceConcept" targetNodeId="1.1151701773464" resolveInfo="SequenceOperationExpression" />

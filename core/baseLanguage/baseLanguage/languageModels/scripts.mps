@@ -178,6 +178,7 @@
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1182160680111">
     <property name="name" value="RemoveOldAnonymousClasses" />
     <property name="title" value="Remove old anonymous" />
+    <property name="migrationFromBuild" value="470" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1182160692393">
       <property name="description" value="remove old anonymous" />
       <link role="affectedInstanceConcept" targetNodeId="1.1170346941296" />
