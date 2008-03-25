@@ -83,7 +83,7 @@ public class FastRuleFinder {
 
         for (Reduction_MappingRule rule : rulesApplicableExactly) {
           if (rule.getApplyToConceptInheritors()) {
-            rulesForInheritor.add(rule);  // may be more concrete rules must go first?
+            rulesForInheritor.add(0, rule);  // more concrete rules overrides less concrete rules
           }
         }
       }
