@@ -125,8 +125,7 @@
                 id="1200413446950">
             <property name="name" value="classNode"/>
           </node>
-          <node role="inputSequence"
-                type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+          <node role="inputSequence" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                 id="1206455641560">
             <link role="finder" targetNodeId="1200310473077" resolveInfo="DerivedClasses"/>
             <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206455652137">
@@ -374,8 +373,7 @@
                 id="1200411695013">
             <property name="name" value="derivedInterfaces"/>
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1206454981527"/>
-            <node role="initializer"
-                  type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+            <node role="initializer" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                   id="1206454992933">
               <link role="finder" targetNodeId="1200310287391" resolveInfo="DerivedInterfaces"/>
               <node role="queryNode"
@@ -433,7 +431,7 @@
                       type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation"
                       id="1206455070051">
                   <node role="argument"
-                        type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+                        type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                         id="1206455072870">
                     <link role="finder" targetNodeId="5.1197636141662" resolveInfo="NodeUsages"/>
                     <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
@@ -494,7 +492,7 @@
                         </node>
                       </node>
                       <node role="iterable"
-                            type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+                            type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                             id="1206455157610">
                         <link role="finder" targetNodeId="1200310473077" resolveInfo="DerivedClasses"/>
                         <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
@@ -738,8 +736,7 @@
                   </node>
                 </node>
               </node>
-              <node role="iterable"
-                    type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+              <node role="iterable" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                     id="1206455481704">
                 <link role="finder" targetNodeId="5.1197636141662" resolveInfo="NodeUsages"/>
                 <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
@@ -939,8 +936,7 @@
                   </node>
                 </node>
               </node>
-              <node role="iterable"
-                    type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+              <node role="iterable" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                     id="1206454913819">
                 <link role="finder" targetNodeId="1204122859723" resolveInfo="StraightDerivedClasses"/>
                 <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
@@ -1122,8 +1118,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206454481765">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression"
                     id="1206454485535">
-                <node role="rValue"
-                      type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+                <node role="rValue" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                       id="1206454486711">
                   <link role="finder" targetNodeId="1200309609796" resolveInfo="OverridingMethods"/>
                   <node role="queryNode"
@@ -1173,7 +1168,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression"
                       id="1206454579570">
                   <node role="rValue"
-                        type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+                        type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                         id="1206454581184">
                     <link role="finder" targetNodeId="1200425321273" resolveInfo="InterfaceMethodImplementations"/>
                     <node role="queryNode"
@@ -1206,7 +1201,7 @@
                 <property name="name" value="nodeUsage"/>
               </node>
               <node role="inputSequence"
-                    type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+                    type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                     id="1206454291333">
                 <link role="finder" targetNodeId="5.1197636141662" resolveInfo="NodeUsages"/>
                 <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
@@ -1391,7 +1386,7 @@
                       <link role="elementConcept" targetNodeId="1.1068431474542" resolveInfo="VariableDeclaration"/>
                     </node>
                     <node role="expression"
-                          type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+                          type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                           id="1206453739323">
                       <link role="finder" targetNodeId="1200420731716" resolveInfo="OverridingFields"/>
                       <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType"
@@ -1438,7 +1433,7 @@
                 <property name="name" value="fieldUsage"/>
               </node>
               <node role="inputSequence"
-                    type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+                    type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                     id="1206454363802">
                 <link role="finder" targetNodeId="5.1197636141662" resolveInfo="NodeUsages"/>
                 <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
@@ -1768,8 +1763,7 @@
               </node>
             </node>
           </node>
-          <node role="inputSequence"
-                type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+          <node role="inputSequence" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                 id="1206454652426">
             <link role="finder" targetNodeId="1200310473077" resolveInfo="DerivedClasses"/>
             <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206454661831">
@@ -1855,8 +1849,7 @@
                 id="1200503699301">
             <property name="name" value="implementor"/>
           </node>
-          <node role="inputSequence"
-                type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+          <node role="inputSequence" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                 id="1206455209386">
             <link role="finder" targetNodeId="1200310248824" resolveInfo="ImplementingClasses"/>
             <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206455216101">
@@ -1897,7 +1890,7 @@
                       type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation"
                       id="1206455307500">
                   <node role="argument"
-                        type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+                        type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                         id="1206455310460">
                     <link role="finder" targetNodeId="1200502085335" resolveInfo="ClassAncestors"/>
                     <node role="queryNode"
@@ -2305,8 +2298,7 @@
                 id="1201108396686">
             <property name="name" value="overridingMethods"/>
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1206455538540"/>
-            <node role="initializer"
-                  type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+            <node role="initializer" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                   id="1206455564742">
               <link role="finder" targetNodeId="1200309609796" resolveInfo="OverridingMethods"/>
               <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
@@ -2395,7 +2387,7 @@
                 <property name="name" value="parameterUsage"/>
               </node>
               <node role="inputSequence"
-                    type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+                    type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                     id="1206453855976">
                 <link role="finder" targetNodeId="5.1197636141662" resolveInfo="NodeUsages"/>
                 <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
@@ -2501,8 +2493,7 @@
               </node>
             </node>
           </node>
-          <node role="inputSequence"
-                type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+          <node role="inputSequence" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                 id="1206454203628">
             <link role="finder" targetNodeId="5.1197636141662" resolveInfo="NodeUsages"/>
             <node role="queryNode"
@@ -2896,8 +2887,7 @@
               </node>
             </node>
           </node>
-          <node role="inputSequence"
-                type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+          <node role="inputSequence" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                 id="1206453939288">
             <link role="finder" targetNodeId="1204122859723" resolveInfo="StraightDerivedClasses"/>
             <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206453951399">
@@ -3305,7 +3295,7 @@
               </node>
             </node>
           </node>
-          <node role="iterable" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+          <node role="iterable" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                 id="1206455387748">
             <link role="finder" targetNodeId="5.1197636141662" resolveInfo="NodeUsages"/>
             <node role="queryNode"
@@ -3538,7 +3528,7 @@
                 <property name="name" value="ancestorAncestor"/>
               </node>
               <node role="inputSequence"
-                    type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+                    type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                     id="1206455450772">
                 <link role="finder" targetNodeId="1204899453042" resolveInfo="InterfaceAncestors"/>
                 <node role="queryNode"

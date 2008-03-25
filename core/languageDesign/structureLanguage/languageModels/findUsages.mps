@@ -705,7 +705,7 @@
               </node>
             </node>
           </node>
-          <node role="iterable" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NewExecuteFinderExpression"
+          <node role="iterable" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression"
                 id="1206454796581">
             <link role="finder" targetNodeId="1197632773078" resolveInfo="ConceptInstances"/>
             <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
