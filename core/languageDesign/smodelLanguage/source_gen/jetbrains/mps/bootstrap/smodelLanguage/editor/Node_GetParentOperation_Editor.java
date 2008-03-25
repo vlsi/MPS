@@ -327,7 +327,6 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     Node_GetParentOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
     Node_GetParentOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new Node_GetParentOperation_Editor.Node_GetParentOperation_replaceWith_SNodeOperation_cellMenu()}));
     return editorCell;
   }
 
@@ -336,7 +335,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     Node_GetParentOperation_Editor.setupBasic_ConstantCell1(editorCell, node, context);
     Node_GetParentOperation_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new Node_GetParentOperation_Editor.Node_GetParentOperation_replaceWith_SNodeOperation_cellMenu1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new Node_GetParentOperation_Editor.Node_GetParentOperation_replaceWith_SNodeOperation_cellMenu()}));
     return editorCell;
   }
 
@@ -447,16 +446,6 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   public static class Node_GetParentOperation_replaceWith_SNodeOperation_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
     public  Node_GetParentOperation_replaceWith_SNodeOperation_cellMenu() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation";
-    }
-
-}
-  public static class Node_GetParentOperation_replaceWith_SNodeOperation_cellMenu1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
-    public  Node_GetParentOperation_replaceWith_SNodeOperation_cellMenu1() {
     }
 
     public String getReplacementConceptName() {

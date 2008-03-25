@@ -7,21 +7,15 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myOperationParameters_Component6;
+  /* package */AbstractCellProvider myReplaceableAlias_Comp15;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851696");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851697");
     editorCell.setDrawBorder(false);
   }
 
@@ -30,8 +24,8 @@ public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
+  private static void setupBasic_ReplaceableAlias_CompCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206486910625");
   }
 
 
@@ -45,7 +39,7 @@ public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "ancestors"));
+    editorCell.addEditorCell(this.createReplaceableAlias_CompCell(context, node));
     editorCell.addEditorCell(this.createOperationParameters_ComponentCell(context, node));
     return editorCell;
   }
@@ -59,11 +53,12 @@ public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    Node_GetAncestorsOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    Node_GetAncestorsOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
-    editorCell.setDefaultText("");
+  public EditorCell createReplaceableAlias_CompCell(EditorContext context, SNode node) {
+    if (this.myReplaceableAlias_Comp15 == null) {
+      this.myReplaceableAlias_Comp15 = new ReplaceableAlias_Comp(node);
+    }
+    EditorCell editorCell = this.myReplaceableAlias_Comp15.createEditorCell(context);
+    Node_GetAncestorsOperation_Editor.setupBasic_ReplaceableAlias_CompCell(editorCell, node, context);
     return editorCell;
   }
 

@@ -12,14 +12,11 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
-import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myOperationParameters_Component5;
+  /* package */AbstractCellProvider myReplaceableAlias_Comp14;
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171407548388");
@@ -132,14 +129,13 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell13(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171414677371");
-    editorCell.setDrawBorder(false);
-  }
-
   private static void setupBasic_OperationParameters_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171414677372");
     editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_ReplaceableAlias_CompCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206486893858");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -181,10 +177,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell12(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ConstantCell13(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
   }
 
 
@@ -274,7 +266,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell13(context, node, "ancestor"));
+    editorCell.addEditorCell(this.createReplaceableAlias_CompCell(context, node));
     editorCell.addEditorCell(this.createOperationParameters_ComponentCell(context, node));
     return editorCell;
   }
@@ -285,6 +277,15 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     }
     EditorCell editorCell = this.myOperationParameters_Component5.createEditorCell(context);
     Node_GetAncestorOperation_Editor.setupBasic_OperationParameters_ComponentCell(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell createReplaceableAlias_CompCell(EditorContext context, SNode node) {
+    if (this.myReplaceableAlias_Comp14 == null) {
+      this.myReplaceableAlias_Comp14 = new ReplaceableAlias_Comp(node);
+    }
+    EditorCell editorCell = this.myReplaceableAlias_Comp14.createEditorCell(context);
+    Node_GetAncestorOperation_Editor.setupBasic_ReplaceableAlias_CompCell(editorCell, node, context);
     return editorCell;
   }
 
@@ -391,25 +392,5 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
-  public EditorCell createConstantCell13(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    Node_GetAncestorOperation_Editor.setupBasic_ConstantCell13(editorCell, node, context);
-    Node_GetAncestorOperation_Editor.setupLabel_ConstantCell13(editorCell, node, context);
-    editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new Node_GetAncestorOperation_Editor.Node_GetAncestorOperation_replaceWith_SNodeOperation_cellMenu()}));
-    return editorCell;
-  }
-
-  public static class Node_GetAncestorOperation_replaceWith_SNodeOperation_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
-    public  Node_GetAncestorOperation_replaceWith_SNodeOperation_cellMenu() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation";
-    }
-
-}
 
 }
