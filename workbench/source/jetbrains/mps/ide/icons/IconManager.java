@@ -13,14 +13,19 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.io.File;
+import java.io.InputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.awt.image.BufferedImage;
+
 
 /**
  * @author Kostik
@@ -58,7 +63,33 @@ public class IconManager {
           if (icon != null) return icon;
           IFile file = FileSystem.getFile(iconPath);
           if (file.exists()) {
-            icon = new ImageIcon(iconPath);
+            byte[] image = new byte[(int) file.length()];
+            InputStream is = null;
+            try {
+              is = file.openInputStream();
+              int current = 0;
+
+              while (true) {
+                int result = is.read(image, current, image.length - current);
+                if (result == -1 || result == 0) {
+                  break;
+                } else {
+                  current += result;
+                }
+              }
+            } catch (IOException e) {
+              LOG.error(e);
+            } finally {
+              try {
+                if (is != null) {
+                  is.close();
+                }
+              } catch (IOException e) {
+                LOG.error(e);
+              }
+            }
+
+            icon = new ImageIcon(image);
             ourPathsToIcons.put(iconPath, icon);
             return icon;
           }
