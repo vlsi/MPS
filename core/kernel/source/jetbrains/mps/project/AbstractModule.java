@@ -650,6 +650,28 @@ public abstract class AbstractModule implements IModule {
     });
   }
 
+  public void addUsedLanguage(final String languageNamespace) {
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        ModuleDescriptor md = getModuleDescriptor();
+
+        for (LanguageReference r : md.getUsedLanguages()) {
+          if (languageNamespace.equals(r.getName())) {
+            return;
+          }
+        }
+
+        LanguageReference ref = LanguageReference.newInstance(md.getModel());
+        ref.setName(languageNamespace);
+        md.addUsedLanguage(ref);
+
+        setModuleDescriptor(md);
+
+        save();
+      }
+    });
+  }
+
   protected void createManifest() {
     String manifestContents = generateManifest();
 
