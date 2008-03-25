@@ -77,6 +77,12 @@ public enum LanguageAspect {
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapModule.CFA.getUID());
     }
+  },
+
+  DATA_FLOW("Data Flow") {
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.DATA_FLOW.getUID());
+    }
   };
 
   private String myName;
