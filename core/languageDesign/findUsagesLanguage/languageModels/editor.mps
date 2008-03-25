@@ -123,7 +123,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1206462329958">
-        <property name="noTargetText" value="&lt;searched nodes block&gt;"/>
+        <property name="noTargetText" value="&lt;searched nodes default={query node}&gt;"/>
         <link role="relationDeclaration" targetNodeId="1.1206462278155"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"

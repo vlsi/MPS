@@ -135,17 +135,6 @@
         </node>
       </node>
     </node>
-    <node role="searchedNodesBlock" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.SearchedNodesBlock"
-          id="1206468638494">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206468638495">
-        <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NodeStatement"
-              id="1206468638840">
-          <node role="foundNode"
-                type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node"
-                id="1206468638841"/>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1197636141662">
     <property name="name" value="NodeUsages"/>
@@ -252,17 +241,6 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206463395558">
             <property name="value" value="Node Usages"/>
           </node>
-        </node>
-      </node>
-    </node>
-    <node role="searchedNodesBlock" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.SearchedNodesBlock"
-          id="1206468667382">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206468667383">
-        <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NodeStatement"
-              id="1206468667790">
-          <node role="foundNode"
-                type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node"
-                id="1206468667791"/>
         </node>
       </node>
     </node>
@@ -461,17 +439,6 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206463382766">
             <property name="value" value="Node Descendants Usages"/>
           </node>
-        </node>
-      </node>
-    </node>
-    <node role="searchedNodesBlock" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.SearchedNodesBlock"
-          id="1206468660329">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206468660330">
-        <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NodeStatement"
-              id="1206468660722">
-          <node role="foundNode"
-                type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node"
-                id="1206468660723"/>
         </node>
       </node>
     </node>
@@ -726,17 +693,6 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206463366334">
             <property name="value" value="Link Examples"/>
           </node>
-        </node>
-      </node>
-    </node>
-    <node role="searchedNodesBlock" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.SearchedNodesBlock"
-          id="1206468649577">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206468649578">
-        <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NodeStatement"
-              id="1206468651172">
-          <node role="foundNode"
-                type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node"
-                id="1206468652565"/>
         </node>
       </node>
     </node>

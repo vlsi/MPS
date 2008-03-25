@@ -128,9 +128,17 @@
                       id="1206447251156"/>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation"
                       id="1206447251157">
-                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"
-                        id="1206447251158">
-                    <link role="concept" targetNodeId="1.1197044488840" resolveInfo="FindBlock"/>
+                  <node role="parameter"
+                        type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList"
+                        id="1206471463715">
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference"
+                          id="1206471463716">
+                      <link role="concept" targetNodeId="1.1197044488840" resolveInfo="FindBlock"/>
+                    </node>
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference"
+                          id="1206471479077">
+                      <link role="concept" targetNodeId="1.1206461516825" resolveInfo="SearchedNodesBlock"/>
+                    </node>
                   </node>
                 </node>
               </node>

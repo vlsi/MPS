@@ -80,6 +80,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
 
   public List<SNode> getSearchedNodes(SNode node, IScope scope) {
     List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     return _results;
   }
 
