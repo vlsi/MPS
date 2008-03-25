@@ -20,7 +20,6 @@ public abstract class StructuralProgramBuilder<N> {
     lastNop.setSource(node);
     myProgram.add(lastNop);
 
-
     for (Runnable r : myInvokeLater) {
       r.run();
     }
