@@ -254,9 +254,7 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="jetbrains.mps.baseLanguage.structure"/>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206197950998">
-    <property name="package" value="new"/>
     <link role="conceptDeclaration" targetNodeId="1.1206197741569" resolveInfo="NewExecuteFinderStatement"/>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
           id="1206198176435">
@@ -306,16 +304,6 @@
         <property name="text" value=")"/>
         <property name="fontStyle" value="BOLD"/>
         <property name="selectable" value="false"/>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-            id="1206441595568">
-        <property name="text" value="-&gt;"/>
-        <property name="selectable" value="false"/>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
-            id="1206441607055">
-        <property name="noTargetText" value="&lt;result&gt;"/>
-        <link role="relationDeclaration" targetNodeId="2v.1083152972671" resolveInfo="name"/>
       </node>
     </node>
   </node>

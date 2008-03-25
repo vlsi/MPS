@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
 public class InterfaceAncestors_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder");
@@ -46,52 +47,49 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
     SNode current = node;
     results.getSearchedNodePointers().add(new SNodePointer(current));
     {
-      ICursor<SNode> _zCursor16 = CursorFactory.createCursor(SLinkOperations.getTargets(current, "extendedInterface", true));
+      ICursor<SNode> _zCursor17 = CursorFactory.createCursor(SLinkOperations.getTargets(current, "extendedInterface", true));
       try {
-        while (_zCursor16.moveToNext()) {
-          SNode ancestor = _zCursor16.getCurrent();
+        while (_zCursor17.moveToNext()) {
+          SNode ancestor = _zCursor17.getCurrent();
+          results.getSearchResults().add(new SearchResult(new SNodePointer(ancestor), "Ancestor"));
           {
-            results.getSearchResults().add(new SearchResult(new SNodePointer(ancestor), "Ancestor"));
-            List<SearchResult> ancestorAncestors = new ArrayList<SearchResult>();
+            ICursor<SNode> _zCursor18 = CursorFactory.createCursor(this.executejetbrainsMpsBaseLanguageFindUsagesInterfaceAncestors_Finder(ancestor, scope));
             try {
-              GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder").newInstance();
-              SNode _node = ancestor;
-              IScope _scope;
-              _scope = scope;
-              boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Interface");
-              if (!(rightConcept)) {
-                InterfaceAncestors_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
-              } else {
-                boolean isApplicable = _finder.isApplicable(_node);
-                if (!(isApplicable)) {
-                  InterfaceAncestors_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
-                } else {
-                  SearchResults results_19 = _finder.find(new SearchQuery(_node, _scope));
-                  for (SearchResult result : results_19.getSearchResults()) {
-                    ancestorAncestors.add(result);
-                  }
-                }
+              while (_zCursor18.moveToNext()) {
+                SNode ancestorAncestor = _zCursor18.getCurrent();
+                results.getSearchResults().add(new SearchResult(new SNodePointer(ancestorAncestor), "Ancestor"));
               }
-            } catch (Throwable t) {
-              InterfaceAncestors_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder" + "\"  Message:" + t.getMessage());
-            }
-            {
-              ICursor<SearchResult> _zCursor17 = CursorFactory.createCursor(ancestorAncestors);
-              try {
-                while (_zCursor17.moveToNext()) {
-                  SearchResult ancestorAncestor = _zCursor17.getCurrent();
-                  results.getSearchResults().add(new SearchResult(new SNodePointer(ancestorAncestor.getNode()), "Ancestor"));
-                }
-              } finally {
-                _zCursor17.release();
-              }
+            } finally {
+              _zCursor18.release();
             }
           }
+          /*statement: [statement] Statement <no name>[1206458967994] in jetbrains.mps.baseLanguage.findUsages@2_1*/
         }
       } finally {
-        _zCursor16.release();
+        _zCursor17.release();
       }
     }
+  }
+
+  public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesInterfaceAncestors_Finder(SNode node, IScope scope) {
+    List<SNode> result = new ArrayList<SNode>();
+    try {
+      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder").newInstance();
+      {
+        ICursor<SearchResult> _zCursor38 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
+        try {
+          while (_zCursor38.moveToNext()) {
+            SearchResult searchResult = _zCursor38.getCurrent();
+            ListOperations.addElement(result, searchResult.getNode());
+          }
+        } finally {
+          _zCursor38.release();
+        }
+      }
+    } catch (Throwable t) {
+      InterfaceAncestors_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder" + "\"  Message:" + t.getMessage());
+    }
+    return result;
   }
 
 }

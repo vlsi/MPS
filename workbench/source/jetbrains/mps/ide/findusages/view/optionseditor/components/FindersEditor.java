@@ -1,20 +1,13 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
+import jetbrains.mps.ide.findusages.subsystem.FindersManager;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.intentions.IntentionsManager;
 
 import javax.swing.*;
-import javax.swing.plaf.metal.MetalBorders.ToolBarBorder;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuKeyEvent;
@@ -23,10 +16,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.Dimension;
-import java.awt.GridLayout;
 
 public abstract class FindersEditor extends BaseEditor<FindersOptions> {
   public FindersEditor(FindersOptions defaultOptions, final SNode node, ActionContext context) {
@@ -40,7 +29,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
         BorderFactory.createTitledBorder("Finders"),
         BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
-    Set<GeneratedFinder> availableFinders = FindUsagesManager.getInstance().getAvailableFinders(node);
+    Set<GeneratedFinder> availableFinders = FindersManager.getInstance().getAvailableFinders(node);
 
     List<GeneratedFinder> sortedFinders = new ArrayList<GeneratedFinder>(availableFinders);
     Collections.sort(sortedFinders, new Comparator<GeneratedFinder>() {

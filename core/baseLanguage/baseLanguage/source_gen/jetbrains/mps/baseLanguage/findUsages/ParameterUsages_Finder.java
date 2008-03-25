@@ -11,16 +11,16 @@ import jetbrains.mps.ide.findusages.model.result.SearchResults;
 
 import java.util.List;
 
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 
 import java.util.ArrayList;
 
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class ParameterUsages_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ParameterUsages_Finder");
@@ -56,81 +56,76 @@ public class ParameterUsages_Finder extends GeneratedFinder {
       nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
     }
     // null
-    List<SearchResult> overridingMethods = new ArrayList<SearchResult>();
-    overridingMethods.add(new SearchResult(nodeParentMethod, ""));
-    try {
-      GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder").newInstance();
-      SNode _node = nodeParentMethod;
-      IScope _scope;
-      _scope = scope;
-      boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-      if (!(rightConcept)) {
-        ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
-      } else {
-        boolean isApplicable = _finder.isApplicable(_node);
-        if (!(isApplicable)) {
-          ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
-        } else {
-          SearchResults results_14 = _finder.find(new SearchQuery(_node, _scope));
-          for (SearchResult result : results_14.getSearchResults()) {
-            overridingMethods.add(result);
-          }
-        }
-      }
-    } catch (Throwable t) {
-      ParameterUsages_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder" + "\"  Message:" + t.getMessage());
-    }
-    // null
-    List<SearchResult> parameterUsages = new ArrayList<SearchResult>();
-    {
-      ICursor<SearchResult> _zCursor9 = CursorFactory.createCursor(overridingMethods);
-      try {
-        while (_zCursor9.moveToNext()) {
-          SearchResult methodResult = _zCursor9.getCurrent();
-          {
-            SNode methodNode = (SNode) methodResult.getNode();
-            SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
-            results.getSearchedNodePointers().add(new SNodePointer(parameterNode));
-            try {
-              GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
-              SNode _node = parameterNode;
-              IScope _scope;
-              _scope = scope;
-              boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.core.structure.BaseConcept");
-              if (!(rightConcept)) {
-                ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
-              } else {
-                boolean isApplicable = _finder.isApplicable(_node);
-                if (!(isApplicable)) {
-                  ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
-                } else {
-                  SearchResults results_15 = _finder.find(new SearchQuery(_node, _scope));
-                  for (SearchResult result : results_15.getSearchResults()) {
-                    parameterUsages.add(result);
-                  }
-                }
-              }
-            } catch (Throwable t) {
-              ParameterUsages_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder" + "\"  Message:" + t.getMessage());
-            }
-          }
-        }
-      } finally {
-        _zCursor9.release();
-      }
-    }
+    List<SNode> overridingMethods = this.executejetbrainsMpsBaseLanguageFindUsagesOverridingMethods_Finder(nodeParentMethod, scope);
+    ListOperations.addElement(overridingMethods, nodeParentMethod);
     // null
     {
-      ICursor<SearchResult> _zCursor10 = CursorFactory.createCursor(parameterUsages);
+      ICursor<SNode> _zCursor10 = CursorFactory.createCursor(overridingMethods);
       try {
         while (_zCursor10.moveToNext()) {
-          SearchResult usage = _zCursor10.getCurrent();
-          results.getSearchResults().add(new SearchResult(new SNodePointer(usage.getNode()), "Parameter Usages"));
+          SNode methodNode = _zCursor10.getCurrent();
+          {
+            SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
+            results.getSearchedNodePointers().add(new SNodePointer(parameterNode));
+            {
+              ICursor<SNode> _zCursor11 = CursorFactory.createCursor(this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(parameterNode, scope));
+              try {
+                while (_zCursor11.moveToNext()) {
+                  SNode parameterUsage = _zCursor11.getCurrent();
+                  results.getSearchResults().add(new SearchResult(new SNodePointer(parameterUsage), "Parameter Usages"));
+                }
+              } finally {
+                _zCursor11.release();
+              }
+            }
+          }
         }
       } finally {
         _zCursor10.release();
       }
     }
+  }
+
+  public List<SNode> executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(SNode node, IScope scope) {
+    List<SNode> result = new ArrayList<SNode>();
+    try {
+      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+      {
+        ICursor<SearchResult> _zCursor33 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
+        try {
+          while (_zCursor33.moveToNext()) {
+            SearchResult searchResult = _zCursor33.getCurrent();
+            ListOperations.addElement(result, searchResult.getNode());
+          }
+        } finally {
+          _zCursor33.release();
+        }
+      }
+    } catch (Throwable t) {
+      ParameterUsages_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder" + "\"  Message:" + t.getMessage());
+    }
+    return result;
+  }
+
+  public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesOverridingMethods_Finder(SNode node, IScope scope) {
+    List<SNode> result = new ArrayList<SNode>();
+    try {
+      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder").newInstance();
+      {
+        ICursor<SearchResult> _zCursor34 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
+        try {
+          while (_zCursor34.moveToNext()) {
+            SearchResult searchResult = _zCursor34.getCurrent();
+            ListOperations.addElement(result, searchResult.getNode());
+          }
+        } finally {
+          _zCursor34.release();
+        }
+      }
+    } catch (Throwable t) {
+      ParameterUsages_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder" + "\"  Message:" + t.getMessage());
+    }
+    return result;
   }
 
 }

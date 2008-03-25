@@ -111,24 +111,24 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder"
-          id="1206198461797">
+          id="1206447251149">
       <property name="useNewActions" value="true"/>
       <link role="applicableConcept" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
       <node role="precondition"
             type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction"
-            id="1206198471658">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206198471659">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206198471660">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1206198471661">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206198471662"/>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206198471663">
+            id="1206447251150">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206447251151">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206447251152">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1206447251153">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206447251154"/>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206447251155">
                 <node role="operand"
                       type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode"
-                      id="1206198471664"/>
+                      id="1206447251156"/>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation"
-                      id="1206198471665">
+                      id="1206447251157">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"
-                        id="1206198471666">
+                        id="1206447251158">
                     <link role="concept" targetNodeId="1.1197044488840" resolveInfo="FindBlock"/>
                   </node>
                 </node>
@@ -138,8 +138,8 @@
         </node>
       </node>
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart"
-            id="1206198475917">
-        <link role="concept" targetNodeId="1.1206199015561" resolveInfo="ExecuteFinderExpressionReference"/>
+            id="1206447251159">
+        <link role="concept" targetNodeId="1.1206197741569" resolveInfo="NewExecuteFinderExpression"/>
       </node>
     </node>
   </node>

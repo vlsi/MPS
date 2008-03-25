@@ -10,13 +10,16 @@ import jetbrains.mps.ide.findusages.model.result.SearchResults;
 
 import java.util.List;
 
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
 import java.util.ArrayList;
 
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
 public class ImplementingClasses_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
@@ -42,94 +45,88 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
   }
 
   public void doFind(SNode node, IScope scope, SearchResults results) {
-    List<SearchResult> derivedInterfaces = new ArrayList<SearchResult>();
-    derivedInterfaces.add(new SearchResult(new SNodePointer(node), ""));
-    try {
-      GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder").newInstance();
-      SNode _node = node;
-      IScope _scope;
-      _scope = scope;
-      boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Interface");
-      if (!(rightConcept)) {
-        ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
-      } else {
-        boolean isApplicable = _finder.isApplicable(_node);
-        if (!(isApplicable)) {
-          ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
-        } else {
-          SearchResults results_1 = _finder.find(new SearchQuery(_node, _scope));
-          for (SearchResult result : results_1.getSearchResults()) {
-            derivedInterfaces.add(result);
+    List<SNode> derivedInterfaces = this.executejetbrainsMpsBaseLanguageFindUsagesDerivedInterfaces_Finder(node, scope);
+    ListOperations.addElement(derivedInterfaces, node);
+    // null
+    List<SNode> derivedInterfacesUsages = new ArrayList<SNode>();
+    for (SNode derivedInterface : derivedInterfaces) {
+      results.getSearchedNodePointers().add(new SNodePointer(derivedInterface));
+      ListOperations.addAllElements(derivedInterfacesUsages, this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(derivedInterface, scope));
+    }
+    // null
+    for (SNode interfaceNode : derivedInterfacesUsages) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(interfaceNode, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        if (SNodeOperations.hasRole(interfaceNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
+          results.getSearchResults().add(new SearchResult(new SNodePointer(SNodeOperations.getParent(interfaceNode, null, false, false)), "Implementing Classes"));
+          for (SNode classNode : this.executejetbrainsMpsBaseLanguageFindUsagesDerivedClasses_Finder(interfaceNode, scope)) {
+            results.getSearchResults().add(new SearchResult(new SNodePointer(classNode), "Implementing Classes"));
           }
+        }
+      }
+    }
+  }
+
+  public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesDerivedInterfaces_Finder(SNode node, IScope scope) {
+    List<SNode> result = new ArrayList<SNode>();
+    try {
+      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder").newInstance();
+      {
+        ICursor<SearchResult> _zCursor20 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
+        try {
+          while (_zCursor20.moveToNext()) {
+            SearchResult searchResult = _zCursor20.getCurrent();
+            ListOperations.addElement(result, searchResult.getNode());
+          }
+        } finally {
+          _zCursor20.release();
         }
       }
     } catch (Throwable t) {
       ImplementingClasses_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder" + "\"  Message:" + t.getMessage());
     }
-    // null
-    List<SearchResult> derivedInterfacesUsages = new ArrayList<SearchResult>();
-    for (SearchResult derivedInterface : derivedInterfaces) {
-      results.getSearchedNodePointers().add(new SNodePointer(derivedInterface.getNode()));
-      try {
-        GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
-        SNode _node = derivedInterface.getNode();
-        IScope _scope;
-        _scope = scope;
-        boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.core.structure.BaseConcept");
-        if (!(rightConcept)) {
-          ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
-        } else {
-          boolean isApplicable = _finder.isApplicable(_node);
-          if (!(isApplicable)) {
-            ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
-          } else {
-            SearchResults results_2 = _finder.find(new SearchQuery(_node, _scope));
-            for (SearchResult result : results_2.getSearchResults()) {
-              derivedInterfacesUsages.add(result);
-            }
+    return result;
+  }
+
+  public List<SNode> executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(SNode node, IScope scope) {
+    List<SNode> result = new ArrayList<SNode>();
+    try {
+      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+      {
+        ICursor<SearchResult> _zCursor21 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
+        try {
+          while (_zCursor21.moveToNext()) {
+            SearchResult searchResult = _zCursor21.getCurrent();
+            ListOperations.addElement(result, searchResult.getNode());
           }
-        }
-      } catch (Throwable t) {
-        ImplementingClasses_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder" + "\"  Message:" + t.getMessage());
-      }
-    }
-    // null
-    for (SearchResult interfaceResult : derivedInterfacesUsages) {
-      SNode resNode = interfaceResult.getNode();
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(resNode, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        if (SNodeOperations.hasRole(resNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
-          results.getSearchResults().add(new SearchResult(new SNodePointer(SNodeOperations.getParent(resNode, null, false, false)), "Implementing Classes"));
-          // null
-          List<SearchResult> classesResult = new ArrayList<SearchResult>();
-          try {
-            GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
-            SNode _node = SNodeOperations.getParent(resNode, null, false, false);
-            IScope _scope;
-            _scope = scope;
-            boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ClassConcept");
-            if (!(rightConcept)) {
-              ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
-            } else {
-              boolean isApplicable = _finder.isApplicable(_node);
-              if (!(isApplicable)) {
-                ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
-              } else {
-                SearchResults results_3 = _finder.find(new SearchQuery(_node, _scope));
-                for (SearchResult result : results_3.getSearchResults()) {
-                  classesResult.add(result);
-                }
-              }
-            }
-          } catch (Throwable t) {
-            ImplementingClasses_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder" + "\"  Message:" + t.getMessage());
-          }
-          // null
-          for (SearchResult classResult : classesResult) {
-            results.getSearchResults().add(new SearchResult(new SNodePointer(classResult.getNode()), "Implementing Classes"));
-          }
+        } finally {
+          _zCursor21.release();
         }
       }
+    } catch (Throwable t) {
+      ImplementingClasses_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder" + "\"  Message:" + t.getMessage());
     }
+    return result;
+  }
+
+  public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesDerivedClasses_Finder(SNode node, IScope scope) {
+    List<SNode> result = new ArrayList<SNode>();
+    try {
+      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
+      {
+        ICursor<SearchResult> _zCursor22 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
+        try {
+          while (_zCursor22.moveToNext()) {
+            SearchResult searchResult = _zCursor22.getCurrent();
+            ListOperations.addElement(result, searchResult.getNode());
+          }
+        } finally {
+          _zCursor22.release();
+        }
+      }
+    } catch (Throwable t) {
+      ImplementingClasses_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder" + "\"  Message:" + t.getMessage());
+    }
+    return result;
   }
 
 }

@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
 public class DerivedClasses_Finder extends GeneratedFinder {
@@ -48,39 +50,36 @@ public class DerivedClasses_Finder extends GeneratedFinder {
     // null
     int passed = 0;
     while (SequenceOperations.getSize(derived) != passed) {
-      List<SearchResult> nodeUsagesRes = new ArrayList<SearchResult>();
       SNode passingNode = ListOperations.getElement(derived, passed);
-      try {
-        GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder").newInstance();
-        SNode _node = passingNode;
-        IScope _scope;
-        _scope = scope;
-        boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ClassConcept");
-        if (!(rightConcept)) {
-          DerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
-        } else {
-          boolean isApplicable = _finder.isApplicable(_node);
-          if (!(isApplicable)) {
-            DerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
-          } else {
-            SearchResults results_5 = _finder.find(new SearchQuery(_node, _scope));
-            for (SearchResult result : results_5.getSearchResults()) {
-              nodeUsagesRes.add(result);
-            }
-          }
-        }
-      } catch (Throwable t) {
-        DerivedClasses_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder" + "\"  Message:" + t.getMessage());
-      }
-      for (SearchResult result : nodeUsagesRes) {
-        SNode resNode = (SNode) result.getNode();
-        ListOperations.addElement(derived, resNode);
+      for (SNode classNode : this.executejetbrainsMpsBaseLanguageFindUsagesStraightDerivedClasses_Finder(passingNode, scope)) {
+        ListOperations.addElement(derived, classNode);
       }
       if (passingNode != node) {
         results.getSearchResults().add(new SearchResult(new SNodePointer(passingNode), "Derived Classes"));
       }
       passed = passed + 1;
     }
+  }
+
+  public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesStraightDerivedClasses_Finder(SNode node, IScope scope) {
+    List<SNode> result = new ArrayList<SNode>();
+    try {
+      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder").newInstance();
+      {
+        ICursor<SearchResult> _zCursor24 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
+        try {
+          while (_zCursor24.moveToNext()) {
+            SearchResult searchResult = _zCursor24.getCurrent();
+            ListOperations.addElement(result, searchResult.getNode());
+          }
+        } finally {
+          _zCursor24.release();
+        }
+      }
+    } catch (Throwable t) {
+      DerivedClasses_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder" + "\"  Message:" + t.getMessage());
+    }
+    return result;
   }
 
 }

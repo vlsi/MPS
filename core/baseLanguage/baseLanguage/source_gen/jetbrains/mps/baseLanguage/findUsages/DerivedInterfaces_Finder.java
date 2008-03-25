@@ -14,9 +14,11 @@ import java.util.ArrayList;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
 public class DerivedInterfaces_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
@@ -49,35 +51,11 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
     // null
     int passed = 0;
     while (SequenceOperations.getSize(derived) != passed) {
-      List<SearchResult> nodeUsagesRes = new ArrayList<SearchResult>();
       SNode passingNode = ListOperations.getElement(derived, passed);
-      try {
-        GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
-        SNode _node = passingNode;
-        IScope _scope;
-        _scope = scope;
-        boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.core.structure.BaseConcept");
-        if (!(rightConcept)) {
-          DerivedInterfaces_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
-        } else {
-          boolean isApplicable = _finder.isApplicable(_node);
-          if (!(isApplicable)) {
-            DerivedInterfaces_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
-          } else {
-            SearchResults results_4 = _finder.find(new SearchQuery(_node, _scope));
-            for (SearchResult result : results_4.getSearchResults()) {
-              nodeUsagesRes.add(result);
-            }
-          }
-        }
-      } catch (Throwable t) {
-        DerivedInterfaces_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder" + "\"  Message:" + t.getMessage());
-      }
-      for (SearchResult result : nodeUsagesRes) {
-        SNode resNode = result.getNode();
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(resNode, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {
-          if (SNodeOperations.hasRole(resNode, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
-            ListOperations.addElement(derived, SNodeOperations.getParent(resNode, null, false, false));
+      for (SNode nodeUsage : this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(passingNode, scope)) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {
+          if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
+            ListOperations.addElement(derived, SNodeOperations.getParent(nodeUsage, null, false, false));
           }
         }
       }
@@ -86,6 +64,27 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
       }
       passed = passed + 1;
     }
+  }
+
+  public List<SNode> executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(SNode node, IScope scope) {
+    List<SNode> result = new ArrayList<SNode>();
+    try {
+      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+      {
+        ICursor<SearchResult> _zCursor23 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
+        try {
+          while (_zCursor23.moveToNext()) {
+            SearchResult searchResult = _zCursor23.getCurrent();
+            ListOperations.addElement(result, searchResult.getNode());
+          }
+        } finally {
+          _zCursor23.release();
+        }
+      }
+    } catch (Throwable t) {
+      DerivedInterfaces_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder" + "\"  Message:" + t.getMessage());
+    }
+    return result;
   }
 
 }

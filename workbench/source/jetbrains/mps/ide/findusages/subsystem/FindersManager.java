@@ -3,7 +3,6 @@ package jetbrains.mps.ide.findusages.subsystem;
 import jetbrains.mps.bootstrap.findUsagesLanguage.constraints.FinderDeclaration_Behavior;
 import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;
 import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -12,22 +11,21 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.intentions.Intention;
 import org.jdom.Element;
 
 import java.util.*;
 
-public class FindUsagesManager implements IExternalizableComponent {
-  private static final Logger LOG = Logger.getLogger(FindUsagesManager.class);
+public class FindersManager implements IExternalizableComponent {
+  private static final Logger LOG = Logger.getLogger(FindersManager.class);
 
   private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
   private Map<GeneratedFinder, SNode> myNodesByFinder = new HashMap<GeneratedFinder, SNode>();
 
-  public static FindUsagesManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(FindUsagesManager.class);
+  public static FindersManager getInstance() {
+    return ApplicationComponents.getInstance().getComponent(FindersManager.class);
   }
 
-  public FindUsagesManager() {
+  public FindersManager() {
 
   }
 

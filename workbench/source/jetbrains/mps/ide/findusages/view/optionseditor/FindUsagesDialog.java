@@ -6,7 +6,7 @@ import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
-import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
+import jetbrains.mps.ide.findusages.subsystem.FindersManager;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.QueryEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEditor;
@@ -19,10 +19,7 @@ import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.BoxLayout;
-import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
 
 public class FindUsagesDialog extends BaseDialog {
   private JPanel myPanel;
@@ -43,7 +40,7 @@ public class FindUsagesDialog extends BaseDialog {
 
             CommandProcessor.instance().executeLightweightCommand(new Runnable() {
               public void run() {
-                finderNode[0] = FindUsagesManager.getInstance().getNodeByFinder(finder);
+                finderNode[0] = FindersManager.getInstance().getNodeByFinder(finder);
               }
             });
 

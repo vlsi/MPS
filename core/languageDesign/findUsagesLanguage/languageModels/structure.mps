@@ -241,8 +241,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206197741569">
     <property name="name" value="NewExecuteFinderExpression"/>
-    <property name="package" value="new"/>
-    <link role="extends" targetNodeId="2.1068581242863" resolveInfo="LocalVariableDeclaration"/>
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1206197741572">
       <property name="metaClass" value="aggregation"/>

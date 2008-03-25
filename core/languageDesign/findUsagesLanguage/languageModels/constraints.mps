@@ -160,34 +160,5 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="jetbrains.mps.baseLanguage.structure"/>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1206198510123">
-    <property name="package" value="new"/>
-    <link role="concept" targetNodeId="7.1206197741569" resolveInfo="NewExecuteFinderExpression"/>
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration"
-          id="1206198510124">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206198510125">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206198525502">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206198609377">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206198526379">
-              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression"
-                    id="1206198525503"/>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
-                    id="1206198782785">
-                <link role="link" targetNodeId="2v.1068431790188"/>
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation"
-                  id="1206198611577">
-              <node role="parameter" type="jetbrains.mps.quotation.structure.Quotation" id="1206198612158">
-                <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType"
-                      id="1206198736460"/>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
 </model>
 
