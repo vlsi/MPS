@@ -5,13 +5,17 @@ package jetbrains.mps.baseLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.smodel.SNodePointer;
+
 import java.util.List;
+
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
+
 import java.util.ArrayList;
-import jetbrains.mps.smodel.IScope;
+
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class StraightDerivedClasses_Finder extends GeneratedFinder {
@@ -37,28 +41,25 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SearchQuery searchQuery, SearchResults results) {
-    SNode searchedNode = searchQuery.getNodePointer().getNode();
-    results.getSearchedNodePointers().add(new SNodePointer(searchedNode));
+  public void doFind(SNode node, IScope scope, SearchResults results) {
+    results.getSearchedNodePointers().add(new SNodePointer(node));
     // null
     List<SearchResult> nodeUsagesRes = new ArrayList<SearchResult>();
     try {
-      GeneratedFinder _finder = (GeneratedFinder)Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
-      SNode _node = searchedNode;
+      GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+      SNode _node = node;
       IScope _scope;
-      _scope = searchQuery.getScope();
+      _scope = scope;
       boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.core.structure.BaseConcept");
-      if(!(rightConcept)) {
-        StraightDerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-      } else
-      {
+      if (!(rightConcept)) {
+        StraightDerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
+      } else {
         boolean isApplicable = _finder.isApplicable(_node);
-        if(!(isApplicable)) {
-          StraightDerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-        } else
-        {
+        if (!(isApplicable)) {
+          StraightDerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
+        } else {
           SearchResults results_18 = _finder.find(new SearchQuery(_node, _scope));
-          for(SearchResult result : results_18.getSearchResults()) {
+          for (SearchResult result : results_18.getSearchResults()) {
             nodeUsagesRes.add(result);
           }
         }
@@ -66,11 +67,11 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
     } catch (Throwable t) {
       StraightDerivedClasses_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder" + "\"  Message:" + t.getMessage());
     }
-    for(SearchResult result : nodeUsagesRes) {
-      SNode node = result.getNode();
-      if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        if(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
-          results.getSearchResults().add(new SearchResult(new SNodePointer(SNodeOperations.getParent(node, null, false, false)), "Straight Derivatives"));
+    for (SearchResult result : nodeUsagesRes) {
+      SNode resNode = result.getNode();
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(resNode, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        if (SNodeOperations.hasRole(resNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
+          results.getSearchResults().add(new SearchResult(new SNodePointer(SNodeOperations.getParent(resNode, null, false, false)), "Straight Derivatives"));
         }
       }
     }

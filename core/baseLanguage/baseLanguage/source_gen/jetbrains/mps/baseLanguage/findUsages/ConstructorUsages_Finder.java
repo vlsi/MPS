@@ -6,13 +6,17 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.smodel.SNodePointer;
+
 import java.util.List;
+
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
+
 import java.util.ArrayList;
-import jetbrains.mps.smodel.IScope;
+
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -40,34 +44,30 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    SNode queryNode = (SNode)node;
+    SNode queryNode = (SNode) node;
     return SNodeOperations.getAncestor(queryNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null;
   }
 
-  public void doFind(SearchQuery searchQuery, SearchResults results) {
-    SNode queryNode = (SNode)searchQuery.getNode();
-    // null
-    results.getSearchedNodePointers().add(new SNodePointer(queryNode));
+  public void doFind(SNode node, IScope scope, SearchResults results) {
+    results.getSearchedNodePointers().add(new SNodePointer(node));
     // search for straight usages & search for SUPER calls
     // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS
     List<SearchResult> straightUsagesRes = new ArrayList<SearchResult>();
     try {
-      GeneratedFinder _finder = (GeneratedFinder)Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
-      SNode _node = queryNode;
+      GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+      SNode _node = node;
       IScope _scope;
-      _scope = searchQuery.getScope();
+      _scope = scope;
       boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.core.structure.BaseConcept");
-      if(!(rightConcept)) {
-        ConstructorUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-      } else
-      {
+      if (!(rightConcept)) {
+        ConstructorUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
+      } else {
         boolean isApplicable = _finder.isApplicable(_node);
-        if(!(isApplicable)) {
-          ConstructorUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-        } else
-        {
+        if (!(isApplicable)) {
+          ConstructorUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
+        } else {
           SearchResults results_16 = _finder.find(new SearchQuery(_node, _scope));
-          for(SearchResult result : results_16.getSearchResults()) {
+          for (SearchResult result : results_16.getSearchResults()) {
             straightUsagesRes.add(result);
           }
         }
@@ -78,7 +78,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     {
       ICursor<SearchResult> _zCursor11 = CursorFactory.createCursor(straightUsagesRes);
       try {
-        while(_zCursor11.moveToNext()) {
+        while (_zCursor11.moveToNext()) {
           SearchResult usage = _zCursor11.getCurrent();
           results.getSearchResults().add(new SearchResult(new SNodePointer(usage.getNode()), "Constructor Usages"));
         }
@@ -89,22 +89,20 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     // WORKAROUND - FIND SUPER() CALLS
     List<SearchResult> strightSubclassesRes = new ArrayList<SearchResult>();
     try {
-      GeneratedFinder _finder = (GeneratedFinder)Class.forName("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder").newInstance();
-      SNode _node = SNodeOperations.getAncestor(queryNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder").newInstance();
+      SNode _node = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       IScope _scope;
-      _scope = searchQuery.getScope();
+      _scope = scope;
       boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ClassConcept");
-      if(!(rightConcept)) {
-        ConstructorUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-      } else
-      {
+      if (!(rightConcept)) {
+        ConstructorUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
+      } else {
         boolean isApplicable = _finder.isApplicable(_node);
-        if(!(isApplicable)) {
-          ConstructorUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-        } else
-        {
+        if (!(isApplicable)) {
+          ConstructorUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
+        } else {
           SearchResults results_17 = _finder.find(new SearchQuery(_node, _scope));
-          for(SearchResult result : results_17.getSearchResults()) {
+          for (SearchResult result : results_17.getSearchResults()) {
             strightSubclassesRes.add(result);
           }
         }
@@ -115,32 +113,33 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     {
       ICursor<SearchResult> _zCursor12 = CursorFactory.createCursor(strightSubclassesRes);
       try {
-        while(_zCursor12.moveToNext()) {
+        while (_zCursor12.moveToNext()) {
           SearchResult subclassResult = _zCursor12.getCurrent();
           {
-            SNode classNode = (SNode)subclassResult.getNode();
+            SNode classNode = (SNode) subclassResult.getNode();
             {
               ICursor<SNode> _zCursor13 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "constructor", true));
               try {
-                while(_zCursor13.moveToNext()) {
+                while (_zCursor13.moveToNext()) {
                   SNode constructorNode = _zCursor13.getCurrent();
                   {
                     ICursor<SNode> _zCursor14 = CursorFactory.createCursor(SequenceOperations.where(SNodeOperations.getDescendants(constructorNode, null, false), new zPredicate(null, null)));
                     try {
-                      while(_zCursor14.moveToNext()) {
+                      while (_zCursor14.moveToNext()) {
                         SNode invocation = _zCursor14.getCurrent();
                         {
                           boolean thisConstructor = true;
-                          SNode invocationNode = (SNode)invocation;
-                          if(SequenceOperations.getSize(SLinkOperations.getTargets(invocationNode, "actualArgument", true)) == SequenceOperations.getSize(SLinkOperations.getTargets(queryNode, "parameter", true))) {
-                            for(int i = 0 ; i < SequenceOperations.getSize(SLinkOperations.getTargets(invocationNode, "actualArgument", true)) ; i = i + 1) {
+                          SNode invocationNode = (SNode) invocation;
+                          if (SequenceOperations.getSize(SLinkOperations.getTargets(invocationNode, "actualArgument", true)) == SequenceOperations.getSize(SLinkOperations.getTargets(node, "parameter", true))) {
+                            for (int i = 0; i < SequenceOperations.getSize(SLinkOperations.getTargets(invocationNode, "actualArgument", true)); i = i + 1)
+                            {
                               SNode actualArgument = ListOperations.getElement(SLinkOperations.getTargets(invocationNode, "actualArgument", true), i);
-                              SNode formalArgument = ListOperations.getElement(SLinkOperations.getTargets(queryNode, "parameter", true), i);
-                              if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
+                              SNode formalArgument = ListOperations.getElement(SLinkOperations.getTargets(node, "parameter", true), i);
+                              if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
                                 thisConstructor = false;
                               }
                             }
-                            if(thisConstructor) {
+                            if (thisConstructor) {
                               results.getSearchResults().add(new SearchResult(new SNodePointer(invocationNode), "Constructor Usages"));
                             }
                           }
@@ -162,24 +161,25 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
       }
     }
     // search for enum constants creation
-    SNode enumNode = SNodeOperations.getAncestor(queryNode, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
-    if(enumNode != null) {
+    SNode enumNode = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
+    if (enumNode != null) {
       {
         ICursor<SNode> _zCursor15 = CursorFactory.createCursor(SLinkOperations.getTargets(enumNode, "enumConstant", true));
         try {
-          while(_zCursor15.moveToNext()) {
+          while (_zCursor15.moveToNext()) {
             SNode enumConstant = _zCursor15.getCurrent();
             {
               boolean thisConstructor = true;
-              if(SequenceOperations.getSize(SLinkOperations.getTargets(enumConstant, "actualArgument", true)) == SequenceOperations.getSize(SLinkOperations.getTargets(queryNode, "parameter", true))) {
-                for(int i = 0 ; i < SequenceOperations.getSize(SLinkOperations.getTargets(enumConstant, "actualArgument", true)) ; i = i + 1) {
+              if (SequenceOperations.getSize(SLinkOperations.getTargets(enumConstant, "actualArgument", true)) == SequenceOperations.getSize(SLinkOperations.getTargets(node, "parameter", true))) {
+                for (int i = 0; i < SequenceOperations.getSize(SLinkOperations.getTargets(enumConstant, "actualArgument", true)); i = i + 1)
+                {
                   SNode actualArgument = ListOperations.getElement(SLinkOperations.getTargets(enumConstant, "actualArgument", true), i);
-                  SNode formalArgument = ListOperations.getElement(SLinkOperations.getTargets(queryNode, "parameter", true), i);
-                  if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
+                  SNode formalArgument = ListOperations.getElement(SLinkOperations.getTargets(node, "parameter", true), i);
+                  if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
                     thisConstructor = false;
                   }
                 }
-                if(thisConstructor) {
+                if (thisConstructor) {
                   results.getSearchResults().add(new SearchResult(new SNodePointer(enumConstant), "Constructor Usages"));
                 }
               }

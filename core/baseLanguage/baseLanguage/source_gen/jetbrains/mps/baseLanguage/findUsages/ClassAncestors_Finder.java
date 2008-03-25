@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
@@ -34,12 +34,12 @@ public class ClassAncestors_Finder extends GeneratedFinder {
     return SLinkOperations.getTarget(node, "superclass", true) != null;
   }
 
-  public void doFind(SearchQuery searchQuery, SearchResults results) {
-    SNode current = (SNode)searchQuery.getNode();
+  public void doFind(SNode node, IScope scope, SearchResults results) {
+    SNode current = node;
     results.getSearchedNodePointers().add(new SNodePointer(current));
-    while(current != null) {
+    while (current != null) {
       current = SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false);
-      if(current != null) {
+      if (current != null) {
         results.getSearchResults().add(new SearchResult(new SNodePointer(current), "Ancestor"));
       }
     }

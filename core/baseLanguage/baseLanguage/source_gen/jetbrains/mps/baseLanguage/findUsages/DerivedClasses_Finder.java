@@ -5,15 +5,17 @@ package jetbrains.mps.baseLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.smodel.SNodePointer;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
 public class DerivedClasses_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
@@ -38,34 +40,31 @@ public class DerivedClasses_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SearchQuery searchQuery, SearchResults results) {
-    SNode searchedNode = searchQuery.getNodePointer().getNode();
-    results.getSearchedNodePointers().add(new SNodePointer(searchedNode));
+  public void doFind(SNode node, IScope scope, SearchResults results) {
+    results.getSearchedNodePointers().add(new SNodePointer(node));
     // null
     List<SNode> derived = new ArrayList<SNode>();
-    ListOperations.addElement(derived, (SNode)searchedNode);
+    ListOperations.addElement(derived, (SNode) node);
     // null
     int passed = 0;
-    while(SequenceOperations.getSize(derived) != passed) {
+    while (SequenceOperations.getSize(derived) != passed) {
       List<SearchResult> nodeUsagesRes = new ArrayList<SearchResult>();
       SNode passingNode = ListOperations.getElement(derived, passed);
       try {
-        GeneratedFinder _finder = (GeneratedFinder)Class.forName("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder").newInstance();
+        GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder").newInstance();
         SNode _node = passingNode;
         IScope _scope;
-        _scope = searchQuery.getScope();
+        _scope = scope;
         boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ClassConcept");
-        if(!(rightConcept)) {
-          DerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-        } else
-        {
+        if (!(rightConcept)) {
+          DerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
+        } else {
           boolean isApplicable = _finder.isApplicable(_node);
-          if(!(isApplicable)) {
-            DerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-          } else
-          {
+          if (!(isApplicable)) {
+            DerivedClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
+          } else {
             SearchResults results_5 = _finder.find(new SearchQuery(_node, _scope));
-            for(SearchResult result : results_5.getSearchResults()) {
+            for (SearchResult result : results_5.getSearchResults()) {
               nodeUsagesRes.add(result);
             }
           }
@@ -73,11 +72,11 @@ public class DerivedClasses_Finder extends GeneratedFinder {
       } catch (Throwable t) {
         DerivedClasses_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder" + "\"  Message:" + t.getMessage());
       }
-      for(SearchResult result : nodeUsagesRes) {
-        SNode node = (SNode)result.getNode();
-        ListOperations.addElement(derived, node);
+      for (SearchResult result : nodeUsagesRes) {
+        SNode resNode = (SNode) result.getNode();
+        ListOperations.addElement(derived, resNode);
       }
-      if(passingNode != searchedNode) {
+      if (passingNode != node) {
         results.getSearchResults().add(new SearchResult(new SNodePointer(passingNode), "Derived Classes"));
       }
       passed = passed + 1;

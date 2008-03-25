@@ -6,12 +6,16 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import java.util.List;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
+
+import java.util.List;
+
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
+
+import java.util.ArrayList;
+
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -38,41 +42,37 @@ public class ParameterUsages_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    if(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false) == null) {
+    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false) == null) {
       return false;
     }
     return true;
   }
 
-  public void doFind(SearchQuery searchQuery, SearchResults results) {
-    SNode node = (SNode)searchQuery.getNode();
+  public void doFind(SNode node, IScope scope, SearchResults results) {
     SNode nodeParentMethod;
-    if(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) != null) {
+    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) != null) {
       nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
-    } else
-    {
+    } else {
       nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
     }
     // null
     List<SearchResult> overridingMethods = new ArrayList<SearchResult>();
     overridingMethods.add(new SearchResult(nodeParentMethod, ""));
     try {
-      GeneratedFinder _finder = (GeneratedFinder)Class.forName("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder").newInstance();
+      GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder").newInstance();
       SNode _node = nodeParentMethod;
       IScope _scope;
-      _scope = searchQuery.getScope();
+      _scope = scope;
       boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-      if(!(rightConcept)) {
-        ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-      } else
-      {
+      if (!(rightConcept)) {
+        ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
+      } else {
         boolean isApplicable = _finder.isApplicable(_node);
-        if(!(isApplicable)) {
-          ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-        } else
-        {
+        if (!(isApplicable)) {
+          ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
+        } else {
           SearchResults results_14 = _finder.find(new SearchQuery(_node, _scope));
-          for(SearchResult result : results_14.getSearchResults()) {
+          for (SearchResult result : results_14.getSearchResults()) {
             overridingMethods.add(result);
           }
         }
@@ -85,29 +85,27 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     {
       ICursor<SearchResult> _zCursor9 = CursorFactory.createCursor(overridingMethods);
       try {
-        while(_zCursor9.moveToNext()) {
+        while (_zCursor9.moveToNext()) {
           SearchResult methodResult = _zCursor9.getCurrent();
           {
-            SNode methodNode = (SNode)methodResult.getNode();
+            SNode methodNode = (SNode) methodResult.getNode();
             SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
             results.getSearchedNodePointers().add(new SNodePointer(parameterNode));
             try {
-              GeneratedFinder _finder = (GeneratedFinder)Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+              GeneratedFinder _finder = (GeneratedFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
               SNode _node = parameterNode;
               IScope _scope;
-              _scope = searchQuery.getScope();
+              _scope = scope;
               boolean rightConcept = _node.isInstanceOfConcept("jetbrains.mps.core.structure.BaseConcept");
-              if(!(rightConcept)) {
-                ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-              } else
-              {
+              if (!(rightConcept)) {
+                ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; concept: " + node.getConceptFqName());
+              } else {
                 boolean isApplicable = _finder.isApplicable(_node);
-                if(!(isApplicable)) {
-                  ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-                } else
-                {
+                if (!(isApplicable)) {
+                  ParameterUsages_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + _finder.getDescription() + "\" ; node: " + node.toString());
+                } else {
                   SearchResults results_15 = _finder.find(new SearchQuery(_node, _scope));
-                  for(SearchResult result : results_15.getSearchResults()) {
+                  for (SearchResult result : results_15.getSearchResults()) {
                     parameterUsages.add(result);
                   }
                 }
@@ -125,7 +123,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     {
       ICursor<SearchResult> _zCursor10 = CursorFactory.createCursor(parameterUsages);
       try {
-        while(_zCursor10.moveToNext()) {
+        while (_zCursor10.moveToNext()) {
           SearchResult usage = _zCursor10.getCurrent();
           results.getSearchResults().add(new SearchResult(new SNodePointer(usage.getNode()), "Parameter Usages"));
         }

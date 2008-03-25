@@ -5,11 +5,13 @@ package jetbrains.mps.bootstrap.structureLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.smodel.SNodePointer;
+
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SNodePointer;
+
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
@@ -37,18 +39,18 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SearchQuery searchQuery, SearchResults results) {
+  public void doFind(SNode node, IScope scope, SearchResults results) {
+    results.getSearchedNodePointers().add(new SNodePointer(node));
     Set<SNode> nodes = new HashSet<SNode>();
-    results.getSearchedNodePointers().add(new SNodePointer(searchQuery.getNodePointer().getNode()));
-    nodes.add(searchQuery.getNodePointer().getNode());
-    for(SNode node : searchQuery.getNodePointer().getNode().allChildren()) {
-      results.getSearchedNodePointers().add(new SNodePointer(node));
-      nodes.add(node);
+    nodes.add(node);
+    for (SNode child : ((SNode) node).allChildren()) {
+      results.getSearchedNodePointers().add(new SNodePointer(child));
+      nodes.add(child);
     }
     // null
-    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, searchQuery.getScope(), null);
-    for(SReference reference : resRefs) {
-      if(!(nodes.contains(reference.getSourceNode()))) {
+    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, null);
+    for (SReference reference : resRefs) {
+      if (!(nodes.contains(reference.getSourceNode()))) {
         results.getSearchResults().add(new SearchResult(new SNodePointer(reference.getSourceNode()), "Node Descendants Usages"));
       }
     }
