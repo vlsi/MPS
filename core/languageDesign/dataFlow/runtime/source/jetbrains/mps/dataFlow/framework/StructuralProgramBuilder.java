@@ -70,6 +70,12 @@ public abstract class StructuralProgramBuilder<N> {
     myProgram.add(instruction);
   }
 
+  public void emitRet() {
+    RetInstruction instruction = new RetInstruction();
+    instruction.setSource(getCurrentNode());
+    myProgram.add(instruction);
+  }
+
   public void emitJump(final Position position) {
     final JumpInstruction instruction = new JumpInstruction();
     instruction.setSource(getCurrentNode());

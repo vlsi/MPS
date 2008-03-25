@@ -8,11 +8,11 @@ import jetbrains.mps.dataFlow.framework.Program;
 public class ProgramTest {
 
   @Test
-  public void simpleProgramBuilding() {
-      SimpleProgramBuilder builder = new SimpleProgramBuilder();
-    builder.emitRead("x")
-           .emitWrite("y");
-    Program program = builder.buildProgram();
+  public void simpleProgramBuilding() {    
+    Program program = new SimpleProgramBuilder()
+      .emitRead("x")
+      .emitWrite("y")
+      .buildProgram();
 
     Assert.assertEquals(
       "0: read x\n" +

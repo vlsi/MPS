@@ -24,7 +24,13 @@ public class SimpleProgramBuilder {
 
   public SimpleProgramBuilder emitIfJump(int jumpTo) {
     IfJumpInstruction instruction = new IfJumpInstruction();
-    instruction.setJumpTo(jumpTo  );
+    instruction.setJumpTo(jumpTo);
+    myProgram.add(instruction);
+    return this;
+  }
+
+  public SimpleProgramBuilder emitRet() {
+    RetInstruction instruction = new RetInstruction();
     myProgram.add(instruction);
     return this;
   }
