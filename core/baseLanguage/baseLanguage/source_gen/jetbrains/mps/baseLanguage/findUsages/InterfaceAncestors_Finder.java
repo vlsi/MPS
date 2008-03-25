@@ -7,18 +7,19 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
 
 import java.util.List;
+
+import jetbrains.mps.smodel.IScope;
+
 import java.util.ArrayList;
 
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
 public class InterfaceAncestors_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder");
@@ -43,32 +44,49 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
     return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "extendedInterface", true)));
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    SNode current = node;
-    results.getSearchedNodePointers().add(new SNodePointer(current));
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
     {
-      ICursor<SNode> _zCursor17 = CursorFactory.createCursor(SLinkOperations.getTargets(current, "extendedInterface", true));
-      try {
-        while (_zCursor17.moveToNext()) {
-          SNode ancestor = _zCursor17.getCurrent();
-          results.getSearchResults().add(new SearchResult(new SNodePointer(ancestor), "Ancestor"));
-          {
-            ICursor<SNode> _zCursor18 = CursorFactory.createCursor(this.executejetbrainsMpsBaseLanguageFindUsagesInterfaceAncestors_Finder(ancestor, scope));
-            try {
-              while (_zCursor18.moveToNext()) {
-                SNode ancestorAncestor = _zCursor18.getCurrent();
-                results.getSearchResults().add(new SearchResult(new SNodePointer(ancestorAncestor), "Ancestor"));
+      SNode current = node;
+      ListOperations.addElement(_results, current);
+      {
+        ICursor<SNode> _zCursor17 = CursorFactory.createCursor(SLinkOperations.getTargets(current, "extendedInterface", true));
+        try {
+          while (_zCursor17.moveToNext()) {
+            SNode ancestor = _zCursor17.getCurrent();
+            ListOperations.addElement(_results, ancestor);
+            {
+              ICursor<SNode> _zCursor18 = CursorFactory.createCursor(this.executejetbrainsMpsBaseLanguageFindUsagesInterfaceAncestors_Finder(ancestor, scope));
+              try {
+                while (_zCursor18.moveToNext()) {
+                  SNode ancestorAncestor = _zCursor18.getCurrent();
+                  ListOperations.addElement(_results, ancestorAncestor);
+                }
+              } finally {
+                _zCursor18.release();
               }
-            } finally {
-              _zCursor18.release();
             }
           }
-          /*statement: [statement] Statement <no name>[1206458967994] in jetbrains.mps.baseLanguage.findUsages@2_1*/
+        } finally {
+          _zCursor17.release();
         }
-      } finally {
-        _zCursor17.release();
       }
     }
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Ancestor";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
   public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesInterfaceAncestors_Finder(SNode node, IScope scope) {

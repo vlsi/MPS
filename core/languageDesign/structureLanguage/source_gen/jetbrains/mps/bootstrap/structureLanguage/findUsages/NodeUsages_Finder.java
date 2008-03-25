@@ -5,15 +5,18 @@ package jetbrains.mps.bootstrap.structureLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
 
+import java.util.List;
+
+import jetbrains.mps.smodel.IScope;
+
+import java.util.ArrayList;
 import java.util.Set;
 
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import org.jetbrains.annotations.Nullable;
 
 public class NodeUsages_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder");
@@ -38,12 +41,30 @@ public class NodeUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(node, scope);
-    for (SReference reference : resRefs) {
-      results.getSearchResults().add(new SearchResult(new SNodePointer(reference.getSourceNode()), "Node Usages"));
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    {
+      Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(node, scope);
+      for (SReference reference : resRefs) {
+        ListOperations.addElement(_results, reference.getSourceNode());
+      }
+      ListOperations.addElement(_results, node);
     }
-    results.getSearchedNodePointers().add(new SNodePointer(node));
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Node Usages";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
 }

@@ -5,19 +5,20 @@ package jetbrains.mps.baseLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
 
 import java.util.List;
+
+import jetbrains.mps.smodel.IScope;
+
 import java.util.ArrayList;
 
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
 public class StraightDerivedClasses_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder");
@@ -42,16 +43,32 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    results.getSearchedNodePointers().add(new SNodePointer(node));
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     // null
     for (SNode nodeUsage : this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(node, scope)) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
-          results.getSearchResults().add(new SearchResult(new SNodePointer(SNodeOperations.getParent(nodeUsage, null, false, false)), "Straight Derivatives"));
+          ListOperations.addElement(_results, SNodeOperations.getParent(nodeUsage, null, false, false));
         }
       }
     }
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Straight Derivatives";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
   public List<SNode> executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(SNode node, IScope scope) {

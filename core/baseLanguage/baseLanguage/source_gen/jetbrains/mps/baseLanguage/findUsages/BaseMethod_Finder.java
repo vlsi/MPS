@@ -6,15 +6,16 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.List;
 
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.smodel.IScope;
 
 import java.util.ArrayList;
+
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import org.jetbrains.annotations.Nullable;
 
 public class BaseMethod_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder");
@@ -45,14 +46,32 @@ public class BaseMethod_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    results.getSearchedNodePointers().add(new SNodePointer(node));
-    // traverse ancestors
-    List<SearchResult> ancestors = new ArrayList<SearchResult>();
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-    } else {
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    {
+      ListOperations.addElement(_results, node);
+      // traverse ancestors
+      List<SearchResult> ancestors = new ArrayList<SearchResult>();
+      if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
+      } else {
+      }
+      // traverse self
     }
-    // traverse self
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Uncategorized";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
 }

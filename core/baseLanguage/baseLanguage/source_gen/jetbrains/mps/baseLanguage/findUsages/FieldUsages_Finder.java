@@ -6,16 +6,17 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
 
 import java.util.List;
+
+import jetbrains.mps.smodel.IScope;
+
 import java.util.ArrayList;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
@@ -48,27 +49,45 @@ public class FieldUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    List<SNode> fieldDeclarations = new ArrayList<SNode>();
-    ListOperations.addElement(fieldDeclarations, node);
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-      ListOperations.addAllElements(fieldDeclarations, (List<SNode>) this.executejetbrainsMpsBaseLanguageFindUsagesOverridingFields_Finder(node, scope));
-    }
-    // null
-    for (SNode fieldDeclaration : fieldDeclarations) {
-      results.getSearchedNodePointers().add(new SNodePointer(fieldDeclaration));
-      {
-        ICursor<SNode> _zCursor3 = CursorFactory.createCursor(this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(fieldDeclaration, scope));
-        try {
-          while (_zCursor3.moveToNext()) {
-            SNode fieldUsage = _zCursor3.getCurrent();
-            results.getSearchResults().add(new SearchResult(new SNodePointer(fieldUsage), "Field Usages"));
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    {
+      List<SNode> fieldDeclarations = new ArrayList<SNode>();
+      ListOperations.addElement(fieldDeclarations, node);
+      if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
+        ListOperations.addAllElements(fieldDeclarations, (List<SNode>) this.executejetbrainsMpsBaseLanguageFindUsagesOverridingFields_Finder(node, scope));
+      }
+      // null
+      for (SNode fieldDeclaration : fieldDeclarations) {
+        ListOperations.addElement(_results, fieldDeclaration);
+        {
+          ICursor<SNode> _zCursor3 = CursorFactory.createCursor(this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(fieldDeclaration, scope));
+          try {
+            while (_zCursor3.moveToNext()) {
+              SNode fieldUsage = _zCursor3.getCurrent();
+              ListOperations.addElement(_results, fieldUsage);
+            }
+          } finally {
+            _zCursor3.release();
           }
-        } finally {
-          _zCursor3.release();
         }
       }
     }
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Field Usages";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
   public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesOverridingFields_Finder(SNode node, IScope scope) {

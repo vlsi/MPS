@@ -7,8 +7,9 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1"/>
   <maxImportIndex value="8"/>
-  <import index="1" modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="-1"/>
+  <import index="1" modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1"/>
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="4" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
@@ -116,6 +117,33 @@
             id="1197044918407">
         <link role="relationDeclaration" targetNodeId="1.1197044488850"/>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1206462329957">
+        <property name="selectable" value="false"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+            id="1206462329958">
+        <property name="noTargetText" value="&lt;searched nodes block&gt;"/>
+        <link role="relationDeclaration" targetNodeId="1.1206462278155"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1206462333587">
+        <property name="selectable" value="false"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+            id="1206462333588">
+        <property name="noTargetText" value="&lt;categorize block&gt;"/>
+        <link role="relationDeclaration" targetNodeId="1.1206462296687"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1206462357074">
+        <property name="selectable" value="false"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+            id="1206462357075">
+        <property name="noTargetText" value="&lt;presentation block&gt;"/>
+        <link role="relationDeclaration" targetNodeId="1.1206462297657"/>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1200242474757">
@@ -131,15 +159,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1200242543903">
         <link role="relationDeclaration" targetNodeId="1.1200242376867"/>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-            id="1200306935611">
-        <property name="text" value=","/>
-        <property name="selectable" value="false"/>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
-            id="1200306708889">
-        <link role="relationDeclaration" targetNodeId="1.1200306472989"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1204129117461">

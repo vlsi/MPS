@@ -5,18 +5,19 @@ package jetbrains.mps.baseLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.List;
+
+import jetbrains.mps.smodel.IScope;
+
 import java.util.ArrayList;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
@@ -43,27 +44,45 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    results.getSearchedNodePointers().add(new SNodePointer(node));
-    // null
-    List<SNode> derived = new ArrayList<SNode>();
-    ListOperations.addElement(derived, node);
-    // null
-    int passed = 0;
-    while (SequenceOperations.getSize(derived) != passed) {
-      SNode passingNode = ListOperations.getElement(derived, passed);
-      for (SNode nodeUsage : this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(passingNode, scope)) {
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {
-          if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
-            ListOperations.addElement(derived, SNodeOperations.getParent(nodeUsage, null, false, false));
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    {
+      ListOperations.addElement(_results, node);
+      // null
+      List<SNode> derived = new ArrayList<SNode>();
+      ListOperations.addElement(derived, node);
+      // null
+      int passed = 0;
+      while (SequenceOperations.getSize(derived) != passed) {
+        SNode passingNode = ListOperations.getElement(derived, passed);
+        for (SNode nodeUsage : this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(passingNode, scope)) {
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {
+            if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
+              ListOperations.addElement(derived, SNodeOperations.getParent(nodeUsage, null, false, false));
+            }
           }
         }
+        if (passingNode != node) {
+          ListOperations.addElement(_results, passingNode);
+        }
+        passed = passed + 1;
       }
-      if (passingNode != node) {
-        results.getSearchResults().add(new SearchResult(new SNodePointer(passingNode), "Derived Interfaces"));
-      }
-      passed = passed + 1;
     }
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Derived Interfaces";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
   public List<SNode> executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(SNode node, IScope scope) {

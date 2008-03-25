@@ -6,22 +6,23 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.List;
+
+import jetbrains.mps.smodel.IScope;
+
 import java.util.ArrayList;
 
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
 import java.util.Set;
 import java.util.HashSet;
 
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.constraints.BaseMethodDeclaration_Behavior;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
@@ -48,59 +49,77 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "method");
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    results.getSearchedNodePointers().add(new SNodePointer(node));
-    // null
-    List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
     {
-      ICursor<SNode> _zCursor6 = CursorFactory.createCursor(this.executejetbrainsMpsBaseLanguageFindUsagesImplementingClasses_Finder(SNodeOperations.getParent(node, null, false, false), scope));
-      try {
-        while (_zCursor6.moveToNext()) {
-          SNode implementor = _zCursor6.getCurrent();
-          ListOperations.addElement(implementorsAndAncestorsList, implementor);
-          ListOperations.addAllElements(implementorsAndAncestorsList, this.executejetbrainsMpsBaseLanguageFindUsagesClassAncestors_Finder(implementor, scope));
+      ListOperations.addElement(_results, node);
+      // null
+      List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
+      {
+        ICursor<SNode> _zCursor6 = CursorFactory.createCursor(this.executejetbrainsMpsBaseLanguageFindUsagesImplementingClasses_Finder(SNodeOperations.getParent(node, null, false, false), scope));
+        try {
+          while (_zCursor6.moveToNext()) {
+            SNode implementor = _zCursor6.getCurrent();
+            ListOperations.addElement(implementorsAndAncestorsList, implementor);
+            ListOperations.addAllElements(implementorsAndAncestorsList, this.executejetbrainsMpsBaseLanguageFindUsagesClassAncestors_Finder(implementor, scope));
+          }
+        } finally {
+          _zCursor6.release();
         }
-      } finally {
-        _zCursor6.release();
       }
-    }
-    // null
-    Set<SNode> implementorsAndAncestorsNodes = new HashSet<SNode>();
-    {
-      ICursor<SNode> _zCursor7 = CursorFactory.createCursor(implementorsAndAncestorsList);
-      try {
-        while (_zCursor7.moveToNext()) {
-          SNode implementorOrAncestor = _zCursor7.getCurrent();
-          implementorsAndAncestorsNodes.add(implementorOrAncestor);
+      // null
+      Set<SNode> implementorsAndAncestorsNodes = new HashSet<SNode>();
+      {
+        ICursor<SNode> _zCursor7 = CursorFactory.createCursor(implementorsAndAncestorsList);
+        try {
+          while (_zCursor7.moveToNext()) {
+            SNode implementorOrAncestor = _zCursor7.getCurrent();
+            implementorsAndAncestorsNodes.add(implementorOrAncestor);
+          }
+        } finally {
+          _zCursor7.release();
         }
-      } finally {
-        _zCursor7.release();
       }
-    }
-    // null
-    {
-      ICursor<SNode> _zCursor8 = CursorFactory.createCursor(implementorsAndAncestorsNodes);
-      try {
-        while (_zCursor8.moveToNext()) {
-          SNode classNode = _zCursor8.getCurrent();
-          {
-            ICursor<SNode> _zCursor9 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "method", true));
-            try {
-              while (_zCursor9.moveToNext()) {
-                SNode sMethod = _zCursor9.getCurrent();
-                if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, node)) {
-                  results.getSearchResults().add(new SearchResult(new SNodePointer(sMethod), "Method Implementation"));
+      // null
+      {
+        ICursor<SNode> _zCursor8 = CursorFactory.createCursor(implementorsAndAncestorsNodes);
+        try {
+          while (_zCursor8.moveToNext()) {
+            SNode classNode = _zCursor8.getCurrent();
+            {
+              ICursor<SNode> _zCursor9 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "method", true));
+              try {
+                while (_zCursor9.moveToNext()) {
+                  SNode sMethod = _zCursor9.getCurrent();
+                  if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, node)) {
+                    ListOperations.addElement(_results, sMethod);
+                  }
                 }
+              } finally {
+                _zCursor9.release();
               }
-            } finally {
-              _zCursor9.release();
             }
           }
+        } finally {
+          _zCursor8.release();
         }
-      } finally {
-        _zCursor8.release();
       }
     }
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Method Implementation";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
   public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesImplementingClasses_Finder(SNode node, IScope scope) {

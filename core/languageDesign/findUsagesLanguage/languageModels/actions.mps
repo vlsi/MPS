@@ -9,8 +9,9 @@
   <language namespace="jetbrains.mps.baseLanguage"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1"/>
   <maxImportIndex value="3"/>
-  <import index="1" modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="-1"/>
+  <import index="1" modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1200308879248">
     <property name="name" value="AddFindStatementsInFindBlock"/>
@@ -33,7 +34,7 @@
                       id="1200309169963">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"
                         id="1200309169964">
-                    <link role="concept" targetNodeId="1.1197044488840" resolveInfo="FindBlock"/>
+                    <link role="concept" targetNodeId="1.1206461516825" resolveInfo="SearchedNodesBlock"/>
                   </node>
                 </node>
               </node>

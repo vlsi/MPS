@@ -5,19 +5,18 @@ package jetbrains.mps.baseLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
 
 import java.util.List;
 
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.smodel.IScope;
 
 import java.util.ArrayList;
 
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
@@ -44,26 +43,44 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    List<SNode> derivedInterfaces = this.executejetbrainsMpsBaseLanguageFindUsagesDerivedInterfaces_Finder(node, scope);
-    ListOperations.addElement(derivedInterfaces, node);
-    // null
-    List<SNode> derivedInterfacesUsages = new ArrayList<SNode>();
-    for (SNode derivedInterface : derivedInterfaces) {
-      results.getSearchedNodePointers().add(new SNodePointer(derivedInterface));
-      ListOperations.addAllElements(derivedInterfacesUsages, this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(derivedInterface, scope));
-    }
-    // null
-    for (SNode interfaceNode : derivedInterfacesUsages) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(interfaceNode, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        if (SNodeOperations.hasRole(interfaceNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
-          results.getSearchResults().add(new SearchResult(new SNodePointer(SNodeOperations.getParent(interfaceNode, null, false, false)), "Implementing Classes"));
-          for (SNode classNode : this.executejetbrainsMpsBaseLanguageFindUsagesDerivedClasses_Finder(interfaceNode, scope)) {
-            results.getSearchResults().add(new SearchResult(new SNodePointer(classNode), "Implementing Classes"));
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    {
+      List<SNode> derivedInterfaces = this.executejetbrainsMpsBaseLanguageFindUsagesDerivedInterfaces_Finder(node, scope);
+      ListOperations.addElement(derivedInterfaces, node);
+      // null
+      List<SNode> derivedInterfacesUsages = new ArrayList<SNode>();
+      for (SNode derivedInterface : derivedInterfaces) {
+        ListOperations.addElement(_results, derivedInterface);
+        ListOperations.addAllElements(derivedInterfacesUsages, this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(derivedInterface, scope));
+      }
+      // null
+      for (SNode interfaceNode : derivedInterfacesUsages) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(interfaceNode, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+          if (SNodeOperations.hasRole(interfaceNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
+            ListOperations.addElement(_results, SNodeOperations.getParent(interfaceNode, null, false, false));
+            for (SNode classNode : this.executejetbrainsMpsBaseLanguageFindUsagesDerivedClasses_Finder(interfaceNode, scope)) {
+              ListOperations.addElement(_results, classNode);
+            }
           }
         }
       }
     }
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Implementing Classes";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
   public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesDerivedInterfaces_Finder(SNode node, IScope scope) {

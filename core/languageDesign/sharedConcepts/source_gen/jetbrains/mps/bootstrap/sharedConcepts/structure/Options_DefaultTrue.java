@@ -9,10 +9,10 @@ public enum Options_DefaultTrue {
   default_("<default>", null),
   true_("true", "true");
 
-  /* package */String myName;
-  /* package */String myValue;
+  /* package */ String myName;
+  /* package */ String myValue;
 
- Options_DefaultTrue(String name, String value) {
+  Options_DefaultTrue(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
@@ -29,13 +29,13 @@ public enum Options_DefaultTrue {
   }
 
   public static Options_DefaultTrue parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return Options_DefaultTrue.getDefault();
     }
-    if(value.equals(Options_DefaultTrue.default_.getValueAsString())) {
+    if (value.equals(Options_DefaultTrue.default_.getValueAsString())) {
       return Options_DefaultTrue.default_;
     }
-    if(value.equals(Options_DefaultTrue.true_.getValueAsString())) {
+    if (value.equals(Options_DefaultTrue.true_.getValueAsString())) {
       return Options_DefaultTrue.true_;
     }
     return Options_DefaultTrue.getDefault();

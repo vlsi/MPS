@@ -74,13 +74,18 @@ public class GenericRefactoring {
           if (toReturn[0]) return;
           ThreadUtils.runInUIThreadAndWait(new Runnable() {
             public void run() {
-              SearchResults usages = usagesContainer[0];
-              if (usages != null) {
-                refactoringContext.setUsages(usages);
-                NewRefactoringView.showRefactoringView(GenericRefactoring.this, context, refactoringContext);
-              } else {
-                doExecute(context, refactoringContext);
-              }
+              CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+                public void run() {
+
+                  SearchResults usages = usagesContainer[0];
+                  if (usages != null) {
+                    refactoringContext.setUsages(usages);
+                    NewRefactoringView.showRefactoringView(GenericRefactoring.this, context, refactoringContext);
+                  } else {
+                    doExecute(context, refactoringContext);
+                  }
+                }
+              });
             }
           });
         }

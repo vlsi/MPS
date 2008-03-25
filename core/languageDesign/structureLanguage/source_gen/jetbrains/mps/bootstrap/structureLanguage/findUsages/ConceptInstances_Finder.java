@@ -6,14 +6,16 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
 
 import java.util.List;
 
+import jetbrains.mps.smodel.IScope;
+
+import java.util.ArrayList;
+
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import org.jetbrains.annotations.Nullable;
 
 public class ConceptInstances_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder");
@@ -38,12 +40,30 @@ public class ConceptInstances_Finder extends GeneratedFinder {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    List<SNode> resNodes = FindUsagesManager.getInstance().findInstances(node, scope);
-    for (SNode resNode : resNodes) {
-      results.getSearchResults().add(new SearchResult(new SNodePointer(resNode), "Concept Instances"));
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    {
+      List<SNode> resNodes = FindUsagesManager.getInstance().findInstances(node, scope);
+      for (SNode resNode : resNodes) {
+        ListOperations.addElement(_results, resNode);
+      }
+      ListOperations.addElement(_results, node);
     }
-    results.getSearchedNodePointers().add(new SNodePointer(node));
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Concept Instances";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
 }

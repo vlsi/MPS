@@ -6,20 +6,19 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
 
 import java.util.List;
+
+import jetbrains.mps.smodel.IScope;
+
+import java.util.ArrayList;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
-
-import java.util.ArrayList;
-
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
 public class ParameterUsages_Finder extends GeneratedFinder {
@@ -48,42 +47,60 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    SNode nodeParentMethod;
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) != null) {
-      nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
-    } else {
-      nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
-    }
-    // null
-    List<SNode> overridingMethods = this.executejetbrainsMpsBaseLanguageFindUsagesOverridingMethods_Finder(nodeParentMethod, scope);
-    ListOperations.addElement(overridingMethods, nodeParentMethod);
-    // null
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
     {
-      ICursor<SNode> _zCursor10 = CursorFactory.createCursor(overridingMethods);
-      try {
-        while (_zCursor10.moveToNext()) {
-          SNode methodNode = _zCursor10.getCurrent();
-          {
-            SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
-            results.getSearchedNodePointers().add(new SNodePointer(parameterNode));
+      SNode nodeParentMethod;
+      if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) != null) {
+        nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
+      } else {
+        nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
+      }
+      // null
+      List<SNode> overridingMethods = this.executejetbrainsMpsBaseLanguageFindUsagesOverridingMethods_Finder(nodeParentMethod, scope);
+      ListOperations.addElement(overridingMethods, nodeParentMethod);
+      // null
+      {
+        ICursor<SNode> _zCursor10 = CursorFactory.createCursor(overridingMethods);
+        try {
+          while (_zCursor10.moveToNext()) {
+            SNode methodNode = _zCursor10.getCurrent();
             {
-              ICursor<SNode> _zCursor11 = CursorFactory.createCursor(this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(parameterNode, scope));
-              try {
-                while (_zCursor11.moveToNext()) {
-                  SNode parameterUsage = _zCursor11.getCurrent();
-                  results.getSearchResults().add(new SearchResult(new SNodePointer(parameterUsage), "Parameter Usages"));
+              SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
+              ListOperations.addElement(_results, parameterNode);
+              {
+                ICursor<SNode> _zCursor11 = CursorFactory.createCursor(this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(parameterNode, scope));
+                try {
+                  while (_zCursor11.moveToNext()) {
+                    SNode parameterUsage = _zCursor11.getCurrent();
+                    ListOperations.addElement(_results, parameterUsage);
+                  }
+                } finally {
+                  _zCursor11.release();
                 }
-              } finally {
-                _zCursor11.release();
               }
             }
           }
+        } finally {
+          _zCursor10.release();
         }
-      } finally {
-        _zCursor10.release();
       }
     }
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Parameter Usages";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
   public List<SNode> executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(SNode node, IScope scope) {

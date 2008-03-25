@@ -6,10 +6,15 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+
+import java.util.List;
+
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
+
+import java.util.ArrayList;
+
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import org.jetbrains.annotations.Nullable;
 
 public class ClassAncestors_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder");
@@ -34,15 +39,33 @@ public class ClassAncestors_Finder extends GeneratedFinder {
     return SLinkOperations.getTarget(node, "superclass", true) != null;
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    SNode current = node;
-    results.getSearchedNodePointers().add(new SNodePointer(current));
-    while (current != null) {
-      current = SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false);
-      if (current != null) {
-        results.getSearchResults().add(new SearchResult(new SNodePointer(current), "Ancestor"));
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    {
+      SNode current = node;
+      ListOperations.addElement(_results, current);
+      while (current != null) {
+        current = SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false);
+        if (current != null) {
+          ListOperations.addElement(_results, current);
+        }
       }
     }
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Ancestor";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
 }

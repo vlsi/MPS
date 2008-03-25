@@ -5,17 +5,18 @@ package jetbrains.mps.baseLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.List;
+
+import jetbrains.mps.smodel.IScope;
+
 import java.util.ArrayList;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
@@ -42,23 +43,41 @@ public class DerivedClasses_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    results.getSearchedNodePointers().add(new SNodePointer(node));
-    // null
-    List<SNode> derived = new ArrayList<SNode>();
-    ListOperations.addElement(derived, (SNode) node);
-    // null
-    int passed = 0;
-    while (SequenceOperations.getSize(derived) != passed) {
-      SNode passingNode = ListOperations.getElement(derived, passed);
-      for (SNode classNode : this.executejetbrainsMpsBaseLanguageFindUsagesStraightDerivedClasses_Finder(passingNode, scope)) {
-        ListOperations.addElement(derived, classNode);
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    {
+      ListOperations.addElement(_results, node);
+      // null
+      List<SNode> derived = new ArrayList<SNode>();
+      ListOperations.addElement(derived, (SNode) node);
+      // null
+      int passed = 0;
+      while (SequenceOperations.getSize(derived) != passed) {
+        SNode passingNode = ListOperations.getElement(derived, passed);
+        for (SNode classNode : this.executejetbrainsMpsBaseLanguageFindUsagesStraightDerivedClasses_Finder(passingNode, scope)) {
+          ListOperations.addElement(derived, classNode);
+        }
+        if (passingNode != node) {
+          ListOperations.addElement(_results, passingNode);
+        }
+        passed = passed + 1;
       }
-      if (passingNode != node) {
-        results.getSearchResults().add(new SearchResult(new SNodePointer(passingNode), "Derived Classes"));
-      }
-      passed = passed + 1;
     }
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Derived Classes";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
   public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesStraightDerivedClasses_Finder(SNode node, IScope scope) {

@@ -9,10 +9,10 @@ public enum Options_DefaultCustom {
   default_("<default>", null),
   custom_("custom", "custom");
 
-  /* package */String myName;
-  /* package */String myValue;
+  /* package */ String myName;
+  /* package */ String myValue;
 
- Options_DefaultCustom(String name, String value) {
+  Options_DefaultCustom(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
@@ -29,13 +29,13 @@ public enum Options_DefaultCustom {
   }
 
   public static Options_DefaultCustom parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return Options_DefaultCustom.getDefault();
     }
-    if(value.equals(Options_DefaultCustom.default_.getValueAsString())) {
+    if (value.equals(Options_DefaultCustom.default_.getValueAsString())) {
       return Options_DefaultCustom.default_;
     }
-    if(value.equals(Options_DefaultCustom.custom_.getValueAsString())) {
+    if (value.equals(Options_DefaultCustom.custom_.getValueAsString())) {
       return Options_DefaultCustom.custom_;
     }
     return Options_DefaultCustom.getDefault();

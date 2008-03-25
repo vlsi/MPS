@@ -6,21 +6,22 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+
+import java.util.List;
+
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.smodel.SNodePointer;
+
+import java.util.ArrayList;
+
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.constraints.BaseMethodDeclaration_Behavior;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
-
-import java.util.List;
-import java.util.ArrayList;
-
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
 public class OverridingMethods_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
@@ -51,8 +52,9 @@ public class OverridingMethods_Finder extends GeneratedFinder {
     return true;
   }
 
-  public void doFind(SNode node, IScope scope, SearchResults results) {
-    results.getSearchedNodePointers().add(new SNodePointer(node));
+  protected List<SNode> doFind(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    ListOperations.addElement(_results, node);
     // null
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(this.executejetbrainsMpsBaseLanguageFindUsagesDerivedClasses_Finder(SNodeOperations.getParent(node, null, false, false), scope));
@@ -73,7 +75,7 @@ public class OverridingMethods_Finder extends GeneratedFinder {
                   SNode sMethod = _zCursor1.getCurrent();
                   if (SPropertyOperations.getString(sMethod, "name").equals(SPropertyOperations.getString(node, "name")) && SLinkOperations.getCount(sMethod, "parameter") == SLinkOperations.getCount(node, "parameter")) {
                     if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, node)) {
-                      results.getSearchResults().add(new SearchResult(new SNodePointer(sMethod), "Overriding Methods"));
+                      ListOperations.addElement(_results, sMethod);
                     }
                   }
                 }
@@ -87,6 +89,21 @@ public class OverridingMethods_Finder extends GeneratedFinder {
         _zCursor.release();
       }
     }
+    return _results;
+  }
+
+  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
+    List<SNode> _results = new ArrayList<SNode>();
+    return _results;
+  }
+
+  public String getNodeCategory(SNode node) {
+    return "Overriding Methods";
+  }
+
+  @Nullable()
+  public String getNodePresentation(SNode node) {
+    return null;
   }
 
   public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesDerivedClasses_Finder(SNode node, IScope scope) {
