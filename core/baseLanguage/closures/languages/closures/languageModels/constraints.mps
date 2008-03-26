@@ -1908,18 +1908,21 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203276018783">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203682250639">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203682250640">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203276086086">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227908107">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203276092608">
-                          <link role="baseMethodDeclaration" targetNodeId="11.~List.get(int):java.lang.Object" resolveInfo="get" />
-                          <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203276088425">
-                            <link role="variableDeclaration" targetNodeId="1203272102323" resolveInfo="declTypes" />
-                          </node>
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203276101323">
-                            <link role="variableDeclaration" targetNodeId="1203276070555" resolveInfo="idx" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206463081563">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206463116781">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1206463090406">
+                          <link role="baseMethodDeclaration" targetNodeId="1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1206463100250">
+                            <link role="baseMethodDeclaration" targetNodeId="11.~List.get(int):java.lang.Object" resolveInfo="get" />
+                            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206463100251">
+                              <link role="variableDeclaration" targetNodeId="1203272102323" resolveInfo="actTypes" />
+                            </node>
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206463100252">
+                              <link role="variableDeclaration" targetNodeId="1203276070555" resolveInfo="idx" />
+                            </node>
                           </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1203276106566" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1206463119796" />
                       </node>
                     </node>
                   </node>

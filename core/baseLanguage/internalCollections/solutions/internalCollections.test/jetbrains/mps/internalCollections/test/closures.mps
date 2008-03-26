@@ -1976,6 +1976,38 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205949300713">
+      <property name="name" value="expect5" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1205949303149">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205949306604">
+          <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205949300715" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205949300716">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1205949316702">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205949316703">
+            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
+            <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205949316704">
+              <property name="value" value="1" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205949316705">
+              <property name="value" value="2" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205949316706">
+              <property name="value" value="3" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205949316707">
+              <property name="value" value="4" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205949316708">
+              <property name="value" value="5" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204793880605">
       <property name="name" value="expectOdd5" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204793880607" />

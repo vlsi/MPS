@@ -28,4 +28,11 @@ public class Chunks_Test extends Util_Test {
     this.assertIterableEquals(Sequence.fromIterable(input).skip(3).take(5), Sequence.fromIterable(input).page(3, 8));
   }
 
+  public void test_pageOperationNoSideEffects() throws Exception {
+    Iterable<Integer> input = this.input10();
+    int from = 3;
+    int to = 8;
+    this.assertIterableEquals(Arrays.asList(5, 6, 7), Sequence.fromIterable(input).page((from = from + 1), (to = to - 1)));
+  }
+
 }

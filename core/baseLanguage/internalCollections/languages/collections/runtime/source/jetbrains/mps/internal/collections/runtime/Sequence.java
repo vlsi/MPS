@@ -11,11 +11,16 @@ import java.util.Arrays;
  */
 public abstract class Sequence<T> implements Iterable<T> {
     
+    public static final boolean RELAXED_NULL = false;
+    
     public static <U> Sequence <U> fromArray (U...array) {
         return new BasicSequence<U> (Arrays.asList(array));
     }    
     
     public static <U> Sequence <U> fromIterable (Iterable<U> iterable) {
+        if (iterable instanceof Sequence) {
+            return (Sequence<U>) iterable;
+        }
         return new BasicSequence<U> (iterable);
     }
     

@@ -1,0 +1,187 @@
+/*
+ * Created Mar 19, 2008 at 1:48:41 PM
+ */
+package jetbrains.mps.internal.collections.runtime;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+
+/**
+ * Implementation of a sequence backed by <code>java.util.List</code>. 
+ * The methods in this class are not synchronized, the user is expected to provide
+ * necessary synchronization if needed.
+ * @author fyodor
+ */
+public class ListSequence<T> extends CollectionSequence<T> implements List<T>, Iterable<T>{
+
+    private List<T> list;
+    
+    public static <U> ListSequence<U> fromArray (U...array) {
+        return new ListSequence<U> (new ArrayList<U> (Arrays.asList(array)));
+    }
+
+    public static <U> ListSequence<U> fromList (List<U> list) {
+        if (list instanceof ListSequence) {
+            return (ListSequence<U>) list;
+        }
+        return new ListSequence<U> (list);
+    }
+    
+    public static <U> ListSequence<U> fromIterable (Iterable<U> it) {
+        List<U> list = new ArrayList<U> ();
+        for (U u: it) {
+            list.add(u);
+        }
+        return new ListSequence<U> (list);
+    }
+    
+    // Delegated methods
+    
+    public void add(int index, T element) {
+        list.add(index, element);
+    }
+
+    public boolean add(T e) {
+        return list.add(e);
+    }
+
+    public boolean addAll(Collection<? extends T> c) {
+        return list.addAll(c);
+    }
+
+    public boolean addAll(int index, Collection<? extends T> c) {
+        return list.addAll(index, c);
+    }
+
+    public void clear() {
+        list.clear();
+    }
+
+    public boolean contains(Object o) {
+        return list.contains(o);
+    }
+
+    public boolean containsAll(Collection<?> c) {
+        return list.containsAll(c);
+    }
+
+    public boolean equals(Object o) {
+        return list.equals(o);
+    }
+
+    public int hashCode() {
+        return list.hashCode();
+    }
+
+    public int indexOf(Object o) {
+        return list.indexOf(o);
+    }
+
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+
+    public T get (int index) {
+        return list.get(index);
+    }
+    
+    public int lastIndexOf(Object o) {
+        return list.lastIndexOf(o);
+    }
+
+    public ListIterator<T> listIterator() {
+        return list.listIterator();
+    }
+
+    public ListIterator<T> listIterator(int index) {
+        return list.listIterator(index);
+    }
+
+    public T remove(int index) {
+        return list.remove(index);
+    }
+
+    public boolean remove(Object o) {
+        return list.remove(o);
+    }
+
+    public boolean removeAll(Collection<?> c) {
+        return list.removeAll(c);
+    }
+
+    public boolean retainAll(Collection<?> c) {
+        return list.retainAll(c);
+    }
+
+    public T set(int index, T element) {
+        return list.set(index, element);
+    }
+
+    public int size() {
+        return list.size();
+    }
+
+    public List<T> subList(int fromIndex, int toIndex) {
+        return list.subList(fromIndex, toIndex);
+    }
+
+    public Object[] toArray() {
+        return list.toArray();
+    }
+
+    public <U> U[] toArray(U[] a) {
+        return list.toArray(a);
+    }
+    
+    // Additional methods
+    
+    public void addAll (Sequence<T> seq) {
+        for (T t : seq.toIterable()) {
+            list.add(t);
+        }
+    }
+    
+    public void removeAll (Sequence<T> seq) {
+        for (T t : seq.toIterable()) {
+            list.remove(t);
+        }
+    }
+    
+    public ListSequence<T> getReversed () {
+        ListSequence<T> reversed = new ListSequence<T> (this);
+        reversed._reverse();
+        return reversed;
+    }
+    
+    public Iterator<T> iterator() {
+        return Collections.unmodifiableList(list).iterator();
+    }
+
+    protected ListSequence (List<T> list) {
+        this.list = list;
+    }
+    
+    /**
+     * Copy constructor.
+     * @param other
+     */
+    protected ListSequence (ListSequence<T> other) {
+        this.list = new ArrayList<T> (other.list);
+    }
+    
+    @Override
+    protected Collection<T> getCollection() {
+        return list;
+    }
+    
+    private void _reverse () {
+        Collections.reverse(list);
+    }
+
+}
