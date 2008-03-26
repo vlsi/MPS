@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.findusages.view;
 
-import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.IDEProjectFrame;
@@ -12,24 +11,30 @@ import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
-import jetbrains.mps.ide.findusages.view.util.AnonymButton;
-import jetbrains.mps.ide.findusages.view.usagesTree.path.IPathProvider;
 import jetbrains.mps.ide.findusages.view.treewrapper.UsagesTreeWrapper;
 import jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions;
+import jetbrains.mps.ide.findusages.view.usagesTree.path.IPathProvider;
+import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JToolBar;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class UsageView implements IExternalizableComponent {
+public abstract class UsageView {
   private static final Logger LOG = Logger.getLogger(UsageView.class);
 
   //read/write constants
@@ -151,7 +156,7 @@ public abstract class UsageView implements IExternalizableComponent {
     return models;
   }
 
-  public void read(Element element, MPSProject project) {
+  public void read(Element element, MPSProject project) throws FinderClassNotFoundException {
     assert !myIsInitialized;
     myIsInitialized = true;
 
@@ -166,6 +171,7 @@ public abstract class UsageView implements IExternalizableComponent {
       myResultProvider.read(resultProviderXML, project);
     } catch (Exception e) {
       LOG.error("Can't instantiate result provider: " + className);
+      throw new FinderClassNotFoundException(className);
     }
 
     Element queryXML = element.getChild(QUERY);

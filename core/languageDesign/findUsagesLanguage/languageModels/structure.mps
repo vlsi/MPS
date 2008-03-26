@@ -4,19 +4,13 @@
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage"/>
   <language namespace="jetbrains.mps.baseLanguage"/>
-  <language namespace="jetbrains.mps.core"/>
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
-  </language>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   <maxImportIndex value="13"/>
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
-  <import index="10" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
   <import index="11" modelUID="java.lang@java_stub" version="-1"/>
-  <import index="12" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
-  <import index="13" modelUID="java.util@java_stub" version="-1"/>
   <visible index="2" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure"/>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197044488840">
     <property name="name" value="FindBlock"/>

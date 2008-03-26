@@ -6,12 +6,9 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-
-import java.util.List;
-
 import jetbrains.mps.smodel.IScope;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -50,8 +47,7 @@ public class OverridingFields_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected List<SNode> doFind(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
     {
       ICursor<SNode> _zCursor4 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope));
       try {
@@ -83,13 +79,10 @@ public class OverridingFields_Finder extends GeneratedFinder {
         _zCursor4.release();
       }
     }
-    return _results;
   }
 
-  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListOperations.addElement(_results, node);
-    return _results;
   }
 
   public String getNodeCategory(SNode node) {

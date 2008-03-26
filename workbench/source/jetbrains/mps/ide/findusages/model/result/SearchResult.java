@@ -1,13 +1,12 @@
 package jetbrains.mps.ide.findusages.model.result;
 
-import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 
-public class SearchResult implements IExternalizableComponent {
+public class SearchResult {
   private static final String CATEGORY = "category";
   private static final String ATTRIBUTES = "attributes";
   private static final String NODE = "node";

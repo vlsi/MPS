@@ -1,8 +1,8 @@
 package jetbrains.mps.ide.findusages.view.util;
 
-import javax.swing.JToggleButton;
-import javax.swing.Icon;
 import javax.swing.AbstractAction;
+import javax.swing.Icon;
+import javax.swing.JToggleButton;
 import java.awt.event.ActionEvent;
 
 public abstract class AnonymToggleButton extends JToggleButton {

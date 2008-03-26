@@ -4,8 +4,8 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions;
 import jetbrains.mps.smodel.SNode;
 
-import javax.swing.JPanel;
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 
 public abstract class BaseEditor<Options extends BaseOptions> {
   protected Options myOptions;

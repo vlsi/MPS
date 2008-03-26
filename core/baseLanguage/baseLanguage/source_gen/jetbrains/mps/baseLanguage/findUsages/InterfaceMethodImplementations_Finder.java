@@ -6,11 +6,9 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-
-import java.util.List;
-
 import jetbrains.mps.smodel.IScope;
 
+import java.util.List;
 import java.util.ArrayList;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
@@ -47,67 +45,61 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "method");
   }
 
-  protected List<SNode> doFind(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+    List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
     {
-      List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
-      {
-        ICursor<SNode> _zCursor6 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope));
-        try {
-          while (_zCursor6.moveToNext()) {
-            SNode implementor = _zCursor6.getCurrent();
-            ListOperations.addElement(implementorsAndAncestorsList, implementor);
-            ListOperations.addAllElements(implementorsAndAncestorsList, this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", implementor, scope));
-          }
-        } finally {
-          _zCursor6.release();
+      ICursor<SNode> _zCursor6 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope));
+      try {
+        while (_zCursor6.moveToNext()) {
+          SNode implementor = _zCursor6.getCurrent();
+          ListOperations.addElement(implementorsAndAncestorsList, implementor);
+          ListOperations.addAllElements(implementorsAndAncestorsList, this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", implementor, scope));
         }
-      }
-      // null
-      Set<SNode> implementorsAndAncestorsNodes = new HashSet<SNode>();
-      {
-        ICursor<SNode> _zCursor7 = CursorFactory.createCursor(implementorsAndAncestorsList);
-        try {
-          while (_zCursor7.moveToNext()) {
-            SNode implementorOrAncestor = _zCursor7.getCurrent();
-            implementorsAndAncestorsNodes.add(implementorOrAncestor);
-          }
-        } finally {
-          _zCursor7.release();
-        }
-      }
-      // null
-      {
-        ICursor<SNode> _zCursor8 = CursorFactory.createCursor(implementorsAndAncestorsNodes);
-        try {
-          while (_zCursor8.moveToNext()) {
-            SNode classNode = _zCursor8.getCurrent();
-            {
-              ICursor<SNode> _zCursor9 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "method", true));
-              try {
-                while (_zCursor9.moveToNext()) {
-                  SNode sMethod = _zCursor9.getCurrent();
-                  if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, node)) {
-                    ListOperations.addElement(_results, sMethod);
-                  }
-                }
-              } finally {
-                _zCursor9.release();
-              }
-            }
-          }
-        } finally {
-          _zCursor8.release();
-        }
+      } finally {
+        _zCursor6.release();
       }
     }
-    return _results;
+    // null
+    Set<SNode> implementorsAndAncestorsNodes = new HashSet<SNode>();
+    {
+      ICursor<SNode> _zCursor7 = CursorFactory.createCursor(implementorsAndAncestorsList);
+      try {
+        while (_zCursor7.moveToNext()) {
+          SNode implementorOrAncestor = _zCursor7.getCurrent();
+          implementorsAndAncestorsNodes.add(implementorOrAncestor);
+        }
+      } finally {
+        _zCursor7.release();
+      }
+    }
+    // null
+    {
+      ICursor<SNode> _zCursor8 = CursorFactory.createCursor(implementorsAndAncestorsNodes);
+      try {
+        while (_zCursor8.moveToNext()) {
+          SNode classNode = _zCursor8.getCurrent();
+          {
+            ICursor<SNode> _zCursor9 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "method", true));
+            try {
+              while (_zCursor9.moveToNext()) {
+                SNode sMethod = _zCursor9.getCurrent();
+                if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, node)) {
+                  ListOperations.addElement(_results, sMethod);
+                }
+              }
+            } finally {
+              _zCursor9.release();
+            }
+          }
+        }
+      } finally {
+        _zCursor8.release();
+      }
+    }
   }
 
-  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListOperations.addElement(_results, node);
-    return _results;
   }
 
   public String getNodeCategory(SNode node) {

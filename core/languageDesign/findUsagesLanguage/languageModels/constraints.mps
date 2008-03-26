@@ -11,12 +11,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
   </language>
-  <language namespace="jetbrains.mps.quotation"/>
-  <language namespace="jetbrains.mps.core"/>
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
-  </language>
-  <language namespace="jetbrains.mps.bootstrap.helgins"/>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1"/>
   <maxImportIndex value="10"/>
   <import index="1" modelUID="jetbrains.mps.core.constraints" version="-1"/>
@@ -25,8 +20,6 @@
   <import index="5" modelUID="jetbrains.mps.util@java_stub" version="-1"/>
   <import index="7" modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1"/>
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
-  <import index="9" modelUID="java.util@java_stub" version="-1"/>
-  <import index="10" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1197390197651">
     <link role="concept" targetNodeId="7.1197044488845" resolveInfo="FinderDeclaration"/>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration"

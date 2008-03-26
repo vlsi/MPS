@@ -4,9 +4,9 @@ import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Fin
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.HintDialog;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.HintDialog;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
@@ -14,12 +14,12 @@ import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
@@ -251,7 +251,11 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     if (tabsXML != null) {
       for (Element tabXML : (List<Element>) tabsXML.getChildren()) {
         UsageViewData usageViewData = new UsageViewData();
-        usageViewData.read(tabXML, project);
+        try {
+          usageViewData.read(tabXML, project);
+        } catch (FinderClassNotFoundException e) {
+          continue;
+        }
         myUsageViewsData.add(usageViewData);
         myTabbedPane.add(usageViewData.myUsageView.getComponent());
 
@@ -261,7 +265,11 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     }
 
     Element defaultFindOptionsXML = element.getChild(DEFAULT_FIND_OPTIONS);
-    myDefaultFindOptions.read(defaultFindOptionsXML, project);
+    try {
+      myDefaultFindOptions.read(defaultFindOptionsXML, project);
+    } catch (FinderClassNotFoundException e) {
+      myDefaultFindOptions = new FindUsagesOptions();
+    }
 
     Element defaultViewOptionsXML = element.getChild(DEFAULT_VIEW_OPTIONS);
     myDefaultViewOptions.read(defaultViewOptionsXML, project);
@@ -355,7 +363,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       };
     }
 
-    public void read(Element element, MPSProject project) {
+    public void read(Element element, MPSProject project) throws FinderClassNotFoundException {
       Element usageViewXML = element.getChild(USAGE_VIEW);
       createUsageView();
       myUsageView.read(usageViewXML, project);

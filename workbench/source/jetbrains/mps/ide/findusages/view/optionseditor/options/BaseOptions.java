@@ -1,9 +1,9 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
-import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.components.IExternalizableComponent;
 import org.jdom.Element;
 
 public abstract class BaseOptions<Result> implements Cloneable, IExternalizableComponent {

@@ -5,12 +5,9 @@ package jetbrains.mps.bootstrap.structureLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-
-import java.util.List;
-
 import jetbrains.mps.smodel.IScope;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -42,30 +39,24 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected List<SNode> doFind(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
-    {
-      Set<SNode> nodes = new HashSet<SNode>();
-      nodes.add(node);
-      for (SNode child : ((SNode) node).allChildren()) {
-        ListOperations.addElement(_results, child);
-        nodes.add(child);
-      }
-      // null
-      Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, null);
-      for (SReference reference : resRefs) {
-        if (!(nodes.contains(reference.getSourceNode()))) {
-          ListOperations.addElement(_results, reference.getSourceNode());
-        }
+  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+    Set<SNode> nodes = new HashSet<SNode>();
+    nodes.add(node);
+    for (SNode child : ((SNode) node).allChildren()) {
+      ListOperations.addElement(_results, child);
+      nodes.add(child);
+    }
+    // null
+    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, null);
+    for (SReference reference : resRefs) {
+      if (!(nodes.contains(reference.getSourceNode()))) {
+        ListOperations.addElement(_results, reference.getSourceNode());
       }
     }
-    return _results;
   }
 
-  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListOperations.addElement(_results, node);
-    return _results;
   }
 
   public String getNodeCategory(SNode node) {

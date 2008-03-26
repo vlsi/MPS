@@ -6,12 +6,9 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-
-import java.util.List;
-
 import jetbrains.mps.smodel.IScope;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -45,108 +42,102 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     return SNodeOperations.getAncestor(queryNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null;
   }
 
-  protected List<SNode> doFind(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+    // search for straight usages & search for SUPER calls
+    // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS
     {
-      // search for straight usages & search for SUPER calls
-      // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS
-      {
-        ICursor<SNode> _zCursor12 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", node, scope));
-        try {
-          while (_zCursor12.moveToNext()) {
-            SNode nodeUsage = _zCursor12.getCurrent();
-            ListOperations.addElement(_results, nodeUsage);
-          }
-        } finally {
-          _zCursor12.release();
+      ICursor<SNode> _zCursor12 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", node, scope));
+      try {
+        while (_zCursor12.moveToNext()) {
+          SNode nodeUsage = _zCursor12.getCurrent();
+          ListOperations.addElement(_results, nodeUsage);
         }
+      } finally {
+        _zCursor12.release();
       }
-      // WORKAROUND - FIND SUPER() CALLS
-      {
-        ICursor<SNode> _zCursor13 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope));
-        try {
-          while (_zCursor13.moveToNext()) {
-            SNode subclassResult = _zCursor13.getCurrent();
-            {
-              ICursor<SNode> _zCursor14 = CursorFactory.createCursor(SLinkOperations.getTargets(subclassResult, "constructor", true));
-              try {
-                while (_zCursor14.moveToNext()) {
-                  SNode constructorNode = _zCursor14.getCurrent();
-                  {
-                    ICursor<SNode> _zCursor15 = CursorFactory.createCursor(SequenceOperations.where(SNodeOperations.getDescendants(constructorNode, null, false), new zPredicate(null, null)));
-                    try {
-                      while (_zCursor15.moveToNext()) {
-                        SNode invocation = _zCursor15.getCurrent();
-                        {
-                          boolean thisConstructor = true;
-                          SNode invocationNode = (SNode) invocation;
-                          if (SequenceOperations.getSize(SLinkOperations.getTargets(invocationNode, "actualArgument", true)) == SequenceOperations.getSize(SLinkOperations.getTargets(node, "parameter", true))) {
-                            for (int i = 0; i < SequenceOperations.getSize(SLinkOperations.getTargets(invocationNode, "actualArgument", true)); i = i + 1)
-                            {
-                              SNode actualArgument = ListOperations.getElement(SLinkOperations.getTargets(invocationNode, "actualArgument", true), i);
-                              SNode formalArgument = ListOperations.getElement(SLinkOperations.getTargets(node, "parameter", true), i);
-                              if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
-                                thisConstructor = false;
-                              }
+    }
+    // WORKAROUND - FIND SUPER() CALLS
+    {
+      ICursor<SNode> _zCursor13 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope));
+      try {
+        while (_zCursor13.moveToNext()) {
+          SNode subclassResult = _zCursor13.getCurrent();
+          {
+            ICursor<SNode> _zCursor14 = CursorFactory.createCursor(SLinkOperations.getTargets(subclassResult, "constructor", true));
+            try {
+              while (_zCursor14.moveToNext()) {
+                SNode constructorNode = _zCursor14.getCurrent();
+                {
+                  ICursor<SNode> _zCursor15 = CursorFactory.createCursor(SequenceOperations.where(SNodeOperations.getDescendants(constructorNode, null, false), new zPredicate(null, null)));
+                  try {
+                    while (_zCursor15.moveToNext()) {
+                      SNode invocation = _zCursor15.getCurrent();
+                      {
+                        boolean thisConstructor = true;
+                        SNode invocationNode = (SNode) invocation;
+                        if (SequenceOperations.getSize(SLinkOperations.getTargets(invocationNode, "actualArgument", true)) == SequenceOperations.getSize(SLinkOperations.getTargets(node, "parameter", true))) {
+                          for (int i = 0; i < SequenceOperations.getSize(SLinkOperations.getTargets(invocationNode, "actualArgument", true)); i = i + 1)
+                          {
+                            SNode actualArgument = ListOperations.getElement(SLinkOperations.getTargets(invocationNode, "actualArgument", true), i);
+                            SNode formalArgument = ListOperations.getElement(SLinkOperations.getTargets(node, "parameter", true), i);
+                            if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
+                              thisConstructor = false;
                             }
-                            if (thisConstructor) {
-                              ListOperations.addElement(_results, invocationNode);
-                            }
+                          }
+                          if (thisConstructor) {
+                            ListOperations.addElement(_results, invocationNode);
                           }
                         }
                       }
-                    } finally {
-                      _zCursor15.release();
                     }
+                  } finally {
+                    _zCursor15.release();
                   }
                 }
-              } finally {
-                _zCursor14.release();
+              }
+            } finally {
+              _zCursor14.release();
+            }
+          }
+        }
+      } finally {
+        _zCursor13.release();
+      }
+    }
+    // search for enum constants creation
+    SNode enumNode = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
+    if (enumNode != null) {
+      {
+        ICursor<SNode> _zCursor16 = CursorFactory.createCursor(SLinkOperations.getTargets(enumNode, "enumConstant", true));
+        try {
+          while (_zCursor16.moveToNext()) {
+            SNode enumConstant = _zCursor16.getCurrent();
+            {
+              boolean thisConstructor = true;
+              if (SequenceOperations.getSize(SLinkOperations.getTargets(enumConstant, "actualArgument", true)) == SequenceOperations.getSize(SLinkOperations.getTargets(node, "parameter", true))) {
+                for (int i = 0; i < SequenceOperations.getSize(SLinkOperations.getTargets(enumConstant, "actualArgument", true)); i = i + 1)
+                {
+                  SNode actualArgument = ListOperations.getElement(SLinkOperations.getTargets(enumConstant, "actualArgument", true), i);
+                  SNode formalArgument = ListOperations.getElement(SLinkOperations.getTargets(node, "parameter", true), i);
+                  if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
+                    thisConstructor = false;
+                  }
+                }
+                if (thisConstructor) {
+                  ListOperations.addElement(_results, enumConstant);
+                }
               }
             }
           }
         } finally {
-          _zCursor13.release();
-        }
-      }
-      // search for enum constants creation
-      SNode enumNode = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
-      if (enumNode != null) {
-        {
-          ICursor<SNode> _zCursor16 = CursorFactory.createCursor(SLinkOperations.getTargets(enumNode, "enumConstant", true));
-          try {
-            while (_zCursor16.moveToNext()) {
-              SNode enumConstant = _zCursor16.getCurrent();
-              {
-                boolean thisConstructor = true;
-                if (SequenceOperations.getSize(SLinkOperations.getTargets(enumConstant, "actualArgument", true)) == SequenceOperations.getSize(SLinkOperations.getTargets(node, "parameter", true))) {
-                  for (int i = 0; i < SequenceOperations.getSize(SLinkOperations.getTargets(enumConstant, "actualArgument", true)); i = i + 1)
-                  {
-                    SNode actualArgument = ListOperations.getElement(SLinkOperations.getTargets(enumConstant, "actualArgument", true), i);
-                    SNode formalArgument = ListOperations.getElement(SLinkOperations.getTargets(node, "parameter", true), i);
-                    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
-                      thisConstructor = false;
-                    }
-                  }
-                  if (thisConstructor) {
-                    ListOperations.addElement(_results, enumConstant);
-                  }
-                }
-              }
-            }
-          } finally {
-            _zCursor16.release();
-          }
+          _zCursor16.release();
         }
       }
     }
-    return _results;
   }
 
-  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListOperations.addElement(_results, node);
-    return _results;
   }
 
   public String getNodeCategory(SNode node) {

@@ -1,8 +1,8 @@
 package jetbrains.mps.ide.findusages.view.util;
 
-import javax.swing.JButton;
-import javax.swing.Icon;
 import javax.swing.AbstractAction;
+import javax.swing.Icon;
+import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 
 public abstract class AnonymButton extends JButton {

@@ -1,11 +1,10 @@
 package jetbrains.mps.ide.findusages.model.result;
 
-import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SModel;
 import org.jdom.Element;
 
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class SearchResults implements IExternalizableComponent {
+public class SearchResults {
   private static final String RESULTS = "results";
   private static final String SEARCHED_NODES = "searched_nodes";
   private static final String RESULT = "result";

@@ -1,9 +1,8 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
-import jetbrains.mps.components.IExternalizableComponent;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.action.ActionContext;
 import org.jdom.Element;
 
 public class ViewOptions extends BaseOptions<ViewOptions> {

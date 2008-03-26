@@ -6,12 +6,9 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-
-import java.util.List;
-
 import jetbrains.mps.smodel.IScope;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
@@ -45,54 +42,48 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected List<SNode> doFind(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+    SNode nodeParentMethod;
+    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) != null) {
+      nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
+    } else {
+      nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
+    }
+    // null
+    List<SNode> overridingMethods = this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope);
+    ListOperations.addElement(overridingMethods, nodeParentMethod);
+    // null
     {
-      SNode nodeParentMethod;
-      if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) != null) {
-        nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
-      } else {
-        nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
-      }
-      // null
-      List<SNode> overridingMethods = this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope);
-      ListOperations.addElement(overridingMethods, nodeParentMethod);
-      // null
-      {
-        ICursor<SNode> _zCursor10 = CursorFactory.createCursor(overridingMethods);
-        try {
-          while (_zCursor10.moveToNext()) {
-            SNode methodNode = _zCursor10.getCurrent();
+      ICursor<SNode> _zCursor10 = CursorFactory.createCursor(overridingMethods);
+      try {
+        while (_zCursor10.moveToNext()) {
+          SNode methodNode = _zCursor10.getCurrent();
+          {
+            SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
+            /*
+              ListOperations.addElement(_results, parameterNode);
+            */
             {
-              SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
-              /*
-                ListOperations.addElement(_results, parameterNode);
-              */
-              {
-                ICursor<SNode> _zCursor11 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", parameterNode, scope));
-                try {
-                  while (_zCursor11.moveToNext()) {
-                    SNode parameterUsage = _zCursor11.getCurrent();
-                    ListOperations.addElement(_results, parameterUsage);
-                  }
-                } finally {
-                  _zCursor11.release();
+              ICursor<SNode> _zCursor11 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", parameterNode, scope));
+              try {
+                while (_zCursor11.moveToNext()) {
+                  SNode parameterUsage = _zCursor11.getCurrent();
+                  ListOperations.addElement(_results, parameterUsage);
                 }
+              } finally {
+                _zCursor11.release();
               }
             }
           }
-        } finally {
-          _zCursor10.release();
         }
+      } finally {
+        _zCursor10.release();
       }
     }
-    return _results;
   }
 
-  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListOperations.addElement(_results, node);
-    return _results;
   }
 
   public String getNodeCategory(SNode node) {

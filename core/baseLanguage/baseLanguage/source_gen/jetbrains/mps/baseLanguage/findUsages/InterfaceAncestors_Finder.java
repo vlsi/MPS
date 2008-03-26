@@ -7,12 +7,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-
-import java.util.List;
-
 import jetbrains.mps.smodel.IScope;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -42,40 +39,34 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
     return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "extendedInterface", true)));
   }
 
-  protected List<SNode> doFind(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+    SNode current = node;
     {
-      SNode current = node;
-      {
-        ICursor<SNode> _zCursor17 = CursorFactory.createCursor(SLinkOperations.getTargets(current, "extendedInterface", true));
-        try {
-          while (_zCursor17.moveToNext()) {
-            SNode ancestor = _zCursor17.getCurrent();
-            ListOperations.addElement(_results, ancestor);
-            {
-              ICursor<SNode> _zCursor18 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestor, scope));
-              try {
-                while (_zCursor18.moveToNext()) {
-                  SNode ancestorAncestor = _zCursor18.getCurrent();
-                  ListOperations.addElement(_results, ancestorAncestor);
-                }
-              } finally {
-                _zCursor18.release();
+      ICursor<SNode> _zCursor17 = CursorFactory.createCursor(SLinkOperations.getTargets(current, "extendedInterface", true));
+      try {
+        while (_zCursor17.moveToNext()) {
+          SNode ancestor = _zCursor17.getCurrent();
+          ListOperations.addElement(_results, ancestor);
+          {
+            ICursor<SNode> _zCursor18 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestor, scope));
+            try {
+              while (_zCursor18.moveToNext()) {
+                SNode ancestorAncestor = _zCursor18.getCurrent();
+                ListOperations.addElement(_results, ancestorAncestor);
               }
+            } finally {
+              _zCursor18.release();
             }
           }
-        } finally {
-          _zCursor17.release();
         }
+      } finally {
+        _zCursor17.release();
       }
     }
-    return _results;
   }
 
-  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListOperations.addElement(_results, node);
-    return _results;
   }
 
   public String getNodeCategory(SNode node) {

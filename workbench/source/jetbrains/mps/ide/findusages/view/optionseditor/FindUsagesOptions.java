@@ -1,17 +1,18 @@
 package jetbrains.mps.ide.findusages.view.optionseditor;
 
 import jetbrains.mps.components.IExternalizableComponent;
+import jetbrains.mps.ide.findusages.view.FinderClassNotFoundException;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.ArrayList;
 
-public class FindUsagesOptions implements IExternalizableComponent, Cloneable {
+public class FindUsagesOptions implements Cloneable {
   private static Logger LOG = Logger.getLogger(FindUsagesOptions.class);
 
   private static final String OPTION = "option";
@@ -19,7 +20,7 @@ public class FindUsagesOptions implements IExternalizableComponent, Cloneable {
 
   private Map<Class, BaseOptions> myOptions = new HashMap<Class, BaseOptions>();
 
-  public FindUsagesOptions(Element element, MPSProject project) {
+  public FindUsagesOptions(Element element, MPSProject project) throws FinderClassNotFoundException {
     read(element, project);
   }
 
@@ -45,7 +46,7 @@ public class FindUsagesOptions implements IExternalizableComponent, Cloneable {
     return (T) myOptions.get(optionClass);
   }
 
-  public void read(Element element, MPSProject project) {
+  public void read(Element element, MPSProject project) throws FinderClassNotFoundException {
     for (Element optionXML : (List<Element>) element.getChildren(OPTION)) {
       String className = optionXML.getAttribute(CLASS_NAME).getValue();
       try {
@@ -54,6 +55,7 @@ public class FindUsagesOptions implements IExternalizableComponent, Cloneable {
         myOptions.put(o.getClass(), (BaseOptions) o);
       } catch (ClassNotFoundException e) {
         LOG.error("Couldn't instantiate option with class name " + className);
+        throw new FinderClassNotFoundException(className);
       } catch (IllegalAccessException e) {
         e.printStackTrace();
       } catch (InstantiationException e) {

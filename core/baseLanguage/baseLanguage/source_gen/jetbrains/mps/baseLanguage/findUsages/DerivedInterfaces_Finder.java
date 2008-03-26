@@ -5,11 +5,9 @@ package jetbrains.mps.baseLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-
-import java.util.List;
-
 import jetbrains.mps.smodel.IScope;
 
+import java.util.List;
 import java.util.ArrayList;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -40,35 +38,29 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected List<SNode> doFind(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
-    {
-      List<SNode> derived = new ArrayList<SNode>();
-      ListOperations.addElement(derived, node);
-      // null
-      int passed = 0;
-      while (SequenceOperations.getSize(derived) != passed) {
-        SNode passingNode = ListOperations.getElement(derived, passed);
-        for (SNode nodeUsage : this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", passingNode, scope)) {
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {
-            if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
-              ListOperations.addElement(derived, SNodeOperations.getParent(nodeUsage, null, false, false));
-            }
+  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+    List<SNode> derived = new ArrayList<SNode>();
+    ListOperations.addElement(derived, node);
+    // null
+    int passed = 0;
+    while (SequenceOperations.getSize(derived) != passed) {
+      SNode passingNode = ListOperations.getElement(derived, passed);
+      for (SNode nodeUsage : this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", passingNode, scope)) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {
+          if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
+            ListOperations.addElement(derived, SNodeOperations.getParent(nodeUsage, null, false, false));
           }
         }
-        if (passingNode != node) {
-          ListOperations.addElement(_results, passingNode);
-        }
-        passed = passed + 1;
       }
+      if (passingNode != node) {
+        ListOperations.addElement(_results, passingNode);
+      }
+      passed = passed + 1;
     }
-    return _results;
   }
 
-  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListOperations.addElement(_results, node);
-    return _results;
   }
 
   public String getNodeCategory(SNode node) {

@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.findusages.model.searchquery;
 
-import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.AbstractModule.ModuleScope;
@@ -12,9 +11,7 @@ import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.AbstractAction;
-
-public class SearchQuery implements IExternalizableComponent {
+public class SearchQuery {
   private static final String NODE = "node";
   private static final String SCOPE = "scope";
   private static final String SCOPE_TYPE = "scope_type";
@@ -29,7 +26,7 @@ public class SearchQuery implements IExternalizableComponent {
 
   private SNodePointer myNodePointer;
   private IScope myScope;
-  
+
   private transient Runnable myAction;
 
   public SearchQuery(@NotNull SNodePointer nodePointer, IScope scope) {

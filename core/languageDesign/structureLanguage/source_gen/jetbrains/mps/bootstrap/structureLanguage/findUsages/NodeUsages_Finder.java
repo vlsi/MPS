@@ -5,12 +5,9 @@ package jetbrains.mps.bootstrap.structureLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-
-import java.util.List;
-
 import jetbrains.mps.smodel.IScope;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import jetbrains.mps.smodel.SReference;
@@ -41,21 +38,15 @@ public class NodeUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected List<SNode> doFind(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
-    {
-      Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(node, scope);
-      for (SReference reference : resRefs) {
-        ListOperations.addElement(_results, reference.getSourceNode());
-      }
+  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(node, scope);
+    for (SReference reference : resRefs) {
+      ListOperations.addElement(_results, reference.getSourceNode());
     }
-    return _results;
   }
 
-  public List<SNode> getSearchedNodes(SNode node, IScope scope) {
-    List<SNode> _results = new ArrayList<SNode>();
+  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListOperations.addElement(_results, node);
-    return _results;
   }
 
   public String getNodeCategory(SNode node) {

@@ -1,8 +1,8 @@
 package jetbrains.mps.ide.findusages.view.optionseditor;
 
 import jetbrains.mps.ide.BaseDialog;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
