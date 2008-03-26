@@ -12,8 +12,10 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <maxImportIndex value="1" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage@java_stub" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1206453981840">
     <link role="conceptDeclaration" targetNodeId="1.1068498886296" resolveInfo="VariableReference" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1206453981841">
@@ -234,6 +236,52 @@
                 <link role="variableDeclaration" targetNodeId="1206460272133" resolveInfo="s" />
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206563315886">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206563315887">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206563394489">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206563394490">
+                <property name="name" value="lastStatement" />
+                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206563394491">
+                  <link role="concept" targetNodeId="1.1068580123157" resolveInfo="Statement" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206563409388">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206563407869">
+                    <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206563407462" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206563408996">
+                      <link role="link" targetNodeId="1.1068581517665" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetLastOperation" id="1206563410405" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206563414221">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206563414222">
+                <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitRetStatement" id="1206563438458" />
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206563418226">
+                <link role="baseMethodDeclaration" targetNodeId="2.~LastStatementUtil.canMakeReturnStatement(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope):boolean" resolveInfo="canMakeReturnStatement" />
+                <link role="classConcept" targetNodeId="2.~LastStatementUtil" resolveInfo="LastStatementUtil" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206563419899">
+                  <link role="variableDeclaration" targetNodeId="1206563394490" resolveInfo="lastStatement" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206563434770">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
+                  <link role="classConcept" targetNodeId="3.~GlobalScope" resolveInfo="GlobalScope" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206563325303">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206563323238">
+              <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206563316858" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206563324333">
+                <link role="link" targetNodeId="1.1068581517665" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1206563335687" />
           </node>
         </node>
       </node>
@@ -599,11 +647,11 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1206537031480">
-          <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition" id="1206537038420">
-            <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206537039782">
-              <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206537039422" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206537041362">
-                <link role="link" targetNodeId="1.1163668922816" />
+          <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.BeforePosition" id="1206563644181">
+            <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206563647469">
+              <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206563646750" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206563655037">
+                <link role="link" targetNodeId="1.1163668934364" />
               </node>
             </node>
           </node>

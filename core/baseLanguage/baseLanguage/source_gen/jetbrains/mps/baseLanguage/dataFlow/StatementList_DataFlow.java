@@ -7,6 +7,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.baseLanguage.LastStatementUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class StatementList_DataFlow extends DataFlowBuilder {
 
@@ -17,6 +20,12 @@ public class StatementList_DataFlow extends DataFlowBuilder {
     _context.getBuilder().emitNop();
     for(SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {
       _context.getBuilder().build(s);
+    }
+    if (!(SequenceOperations.isEmpty(SLinkOperations.getTargets(_context.getNode(), "statement", true)))) {
+      SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(_context.getNode(), "statement", true));
+      if (LastStatementUtil.canMakeReturnStatement(lastStatement, GlobalScope.getInstance())) {
+        _context.getBuilder().emitRet();
+      }
     }
   }
 
