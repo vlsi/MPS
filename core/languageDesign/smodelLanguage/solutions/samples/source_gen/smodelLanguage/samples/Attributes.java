@@ -8,7 +8,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class Attributes {
 
@@ -24,10 +23,9 @@ public class Attributes {
   }
 
   public void accessToPropertyAttribute_2(SNode node) {
-    /*
-      SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), true) = SConceptOperations.createNewNode("jetbrains.mps.transformation.TLBase.structure.PropertyMacro", null);
-      SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), true) = SConceptOperations.createNewNode("jetbrains.mps.transformation.TLBase.structure.PropertyMacro", null);
-    */
+    SNode propMacro;
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), propMacro, true);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), propMacro, true);
   }
 
   public void other(SNode node) {
