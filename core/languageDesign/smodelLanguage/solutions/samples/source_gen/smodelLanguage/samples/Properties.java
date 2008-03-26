@@ -23,6 +23,10 @@ public class Properties {
     boolean ok = SPropertyOperations.getString(clazz1, "name") == SPropertyOperations.getString(clazz2, "name");
   }
 
+  public void stringProperty3(SNode node) {
+    SPropertyOperations.set(node, "name", "Class1");
+  }
+
   public void booleanProperty(SNode boolConst) {
     boolean isTrue = false;
     if (SPropertyOperations.getBoolean(boolConst, "value")) {
@@ -33,12 +37,20 @@ public class Properties {
     SPropertyOperations.set(boolConst, "value", "" + (!(SPropertyOperations.getBoolean(boolConst, "value"))));
   }
 
+  public void booleanProperty2(SNode node) {
+    SPropertyOperations.set(node, "value", "" + true);
+  }
+
   public void integerProperty(SNode intConst) {
     int i = SPropertyOperations.getInteger(intConst, "value");
     int i2 = SPropertyOperations.getInteger(intConst, "value") + 10;
     if (SPropertyOperations.getInteger(intConst, "value") > 100) {
       SPropertyOperations.set(intConst, "value", "" + (SPropertyOperations.getInteger(intConst, "value") - 100));
     }
+  }
+
+  public void integerProperty2(SNode node) {
+    SPropertyOperations.set(node, "value", "" + 10);
   }
 
   public void enumProperty_string(SNode link) {
