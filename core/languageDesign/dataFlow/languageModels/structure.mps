@@ -22,6 +22,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206442055221">
     <property name="name" value="DataFlowBuilderDeclaration" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}\icon\goRound.png" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206442812839">
       <property name="metaClass" value="aggregation" />
