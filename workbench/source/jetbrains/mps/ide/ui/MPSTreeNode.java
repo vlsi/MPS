@@ -136,13 +136,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   final void disposeThisAndChildren() {
-    if (!isInitialized()) return;
     dispose();
+    if (!isInitialized()) {
+      return;
+    }
     for (int i = 0; i < getChildCount(); i++) {
       MPSTreeNode node = (MPSTreeNode) getChildAt(i);
       node.disposeThisAndChildren();
     }
-    dispose();
   }
 
   public boolean isLeaf() {

@@ -409,7 +409,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   protected void dispose() {
-    getSModel().removeModelCommandListener(myModelListener);
+    if (getSModelDescriptor() != null) {
+      getSModelDescriptor().removeModelCommandListener(myModelListener);
+    }
   }
 
   private SNodeTreeNode findRootSNodeTreeNode(SNode node) {
