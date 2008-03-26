@@ -22,7 +22,7 @@ public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_StaticFieldReference_getParameterObjects(SNode node) {
     List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(node, "classifier", false);
-    if(classifier == null) {
+    if (classifier == null) {
       return result;
     }
     ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
@@ -32,13 +32,13 @@ public class QueriesUtil {
   }
 
   public static SNode replaceNodeMenu_StaticFieldReference_createReplacementNode(SNode node, SNode parameterObject) {
-    if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+    if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(newNode, "baseMethodDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "classConcept", SLinkOperations.getTarget(node, "classifier", false), false);
       return newNode;
     }
-    if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
+    if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
       SLinkOperations.setTarget(newNode, "enumConstantDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "enumClass", SLinkOperations.getTarget(node, "classifier", false), false);
@@ -50,7 +50,7 @@ public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_StaticMethodCall_getParameterObjects(SNode node) {
     List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(node, "classConcept", false);
-    if(classifier == null) {
+    if (classifier == null) {
       return result;
     }
     ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
@@ -60,13 +60,13 @@ public class QueriesUtil {
   }
 
   public static SNode replaceNodeMenu_StaticMethodCall_createReplacementNode(SNode node, SNode parameterObject) {
-    if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+    if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
       SLinkOperations.setTarget(newNode, "variableDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "classifier", SLinkOperations.getTarget(node, "classConcept", false), false);
       return newNode;
     }
-    if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
+    if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
       SLinkOperations.setTarget(newNode, "enumConstantDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "enumClass", SLinkOperations.getTarget(node, "classConcept", false), false);
@@ -78,7 +78,7 @@ public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_EnumConstantReference_getParameterObjects(SNode node) {
     List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(node, "enumClass", false);
-    if(classifier == null) {
+    if (classifier == null) {
       return result;
     }
     ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
@@ -88,13 +88,13 @@ public class QueriesUtil {
   }
 
   public static SNode replaceNodeMenu_EnumConstantReference_createReplacementNode(SNode node, SNode parameterObject) {
-    if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+    if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
       SLinkOperations.setTarget(newNode, "variableDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "classifier", SLinkOperations.getTarget(node, "enumClass", false), false);
       return newNode;
     }
-    if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+    if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(newNode, "baseMethodDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "classConcept", SLinkOperations.getTarget(node, "enumClass", false), false);
@@ -106,7 +106,7 @@ public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_FieldReference_getParameterObjects(SNode node) {
     SNode instance = SLinkOperations.getTarget(node, "instance", true);
     SNode instanceType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    if(instanceType == null) {
+    if (instanceType == null) {
       return new ArrayList<SNode>();
     }
     ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), node, IClassifiersSearchScope.INSTANCE_METHOD);
@@ -114,7 +114,7 @@ public class QueriesUtil {
   }
 
   public static SNode replaceNodeMenu_FieldReference_createReplacementNode(SNode node, SNode parameterObject) {
-    if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+    if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.InstanceMethodCall", null);
       SLinkOperations.setTarget(newNode, "baseMethodDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "instance", SLinkOperations.getTarget(node, "instance", true), true);
@@ -126,7 +126,7 @@ public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_InstanceMethodCall_getParameterObjects(SNode referenceNode) {
     SNode instance = SLinkOperations.getTarget(referenceNode, "instance", true);
     SNode instanceType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    if(instanceType == null) {
+    if (instanceType == null) {
       return new ArrayList<SNode>();
     }
     ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), referenceNode, IClassifiersSearchScope.INSTANCE_FIELD);
@@ -134,7 +134,7 @@ public class QueriesUtil {
   }
 
   public static SNode replaceNodeMenu_InstanceMethodCall_createReplacementNode(SNode node, SNode parameterObject) {
-    if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+    if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.FieldReference", null);
       SLinkOperations.setTarget(newNode, "variableDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "instance", SLinkOperations.getTarget(node, "instance", true), true);

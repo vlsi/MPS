@@ -23,7 +23,7 @@ public class Expression_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCellModel_Custom(EditorContext context, SNode node) {
-    if(this.myCellProvider == null) {
+    if (this.myCellProvider == null) {
       this.myCellProvider = this._cellProviderFactory_1198574536104(node, context);
     }
     EditorCell editorCell = this.myCellProvider.createEditorCell(context);

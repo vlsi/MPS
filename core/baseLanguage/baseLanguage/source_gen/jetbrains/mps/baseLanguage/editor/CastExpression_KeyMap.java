@@ -36,14 +36,14 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.CastExpression")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.CastExpression")) {
         return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
       }
       return false;

@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorCell;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
@@ -29,6 +29,14 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   public  ConceptFunction_Component(SNode node) {
     super(node);
+  }
+
+  public static Color _QueryFunction_Color_1196975453900(SNode node, EditorContext editorContext) {
+    return Color.white;
+  }
+
+  public static Color _QueryFunction_Color_1196975453904(SNode node, EditorContext editorContext) {
+    return new Color(238, 238, 238);
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -83,14 +91,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   }
 
   private static void setupLabel_BodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Color _QueryFunction_Color_1196975453900(SNode node, EditorContext editorContext) {
-    return Color.white;
-  }
-
-  public static Color _QueryFunction_Color_1196975453904(SNode node, EditorContext editorContext) {
-    return new Color(238, 238, 238);
   }
 
 
@@ -177,14 +177,14 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
       public String getText() {
         StringBuilder result = new StringBuilder();
-        if(SConceptPropertyOperations.getString(node, "conceptFunctionName") != null) {
+        if (SConceptPropertyOperations.getString(node, "conceptFunctionName") != null) {
           result.append(SConceptPropertyOperations.getString(node, "conceptFunctionName"));
         }
         result.append("(");
         List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1197312191473(node);
         boolean isFirst = true;
         for(SNode cfp : parameters) {
-          if(!(isFirst)) {
+          if (!(isFirst)) {
             result.append(", ");
           }
           isFirst = false;
@@ -192,7 +192,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
         }
         result.append(")->");
         SNode expectedReturnType = (SNode)ConceptFunction_Behavior.call_getExpectedReturnType_1178571276073(node);
-        if(expectedReturnType == null) {
+        if (expectedReturnType == null) {
           result.append("void");
         } else
         {
@@ -216,7 +216,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptFunction_Component.setupBasic_BodyCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptFunction_Component.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -232,7 +232,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     EditorCell cellWithRole = this.createBodyCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

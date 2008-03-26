@@ -32,7 +32,7 @@ public class StaticMethodCall_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode classConcept1 = SLinkOperations.getTarget(node, "classConcept", false);
       SNode classConcept2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      if(classConcept1 == classConcept2) {
+      if (classConcept1 == classConcept2) {
         SNode localStaticMethodCall = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
         SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
         {

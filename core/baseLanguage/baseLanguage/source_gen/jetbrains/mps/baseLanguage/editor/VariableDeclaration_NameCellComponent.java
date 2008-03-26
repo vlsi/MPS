@@ -50,7 +50,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     VariableDeclaration_NameCellComponent.setupBasic_NameCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       VariableDeclaration_NameCellComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -67,7 +67,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -83,7 +83,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
-      if(nodeType != null) {
+      if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1182416669983(nodeType);
       } else
       {
@@ -91,7 +91,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       }
       // we need this because of smart input
       // DO NOT REMOVE IT
-      if(SPropertyOperations.getString(node, "name") != null) {
+      if (SPropertyOperations.getString(node, "name") != null) {
         ListOperations.addElement(result, SPropertyOperations.getString(node, "name"));
       }
       return result;

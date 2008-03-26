@@ -38,14 +38,14 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
         return true;
       }
       return false;
@@ -81,14 +81,14 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
         return true;
       }
       return false;

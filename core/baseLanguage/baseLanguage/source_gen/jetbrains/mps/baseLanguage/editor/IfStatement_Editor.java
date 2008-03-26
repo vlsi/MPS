@@ -4,16 +4,16 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -31,6 +31,35 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 public class IfStatement_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myElsifClausesListHandler_elsifClausesList_;
+
+  public static boolean _QueryFunction_NodeCondition_1177555034652(SNode node, EditorContext editorContext, IScope scope) {
+    SNode parent = SNodeOperations.getParent(node, null, false, false);
+    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.IfStatement") && SLinkOperations.getTarget(parent, "ifFalseStatement", true) == node;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177555034680(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "ifFalseStatement", true) == null;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177555034689(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.IfStatement");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177555034698(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "ifFalseStatement", true) != null;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177555034711(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1177555034725(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1206063712466(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "elsifClauses", true)));
+  }
 
   private static void setupBasic_StatementBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177555034647");
@@ -229,35 +258,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupLabel_ElsifClausesList(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean _QueryFunction_NodeCondition_1177555034652(SNode node, EditorContext editorContext, IScope scope) {
-    SNode parent = SNodeOperations.getParent(node, null, false, false);
-    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.IfStatement") && SLinkOperations.getTarget(parent, "ifFalseStatement", true) == node;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177555034680(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "ifFalseStatement", true) == null;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177555034689(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.IfStatement");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177555034698(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "ifFalseStatement", true) != null;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177555034711(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1177555034725(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1206063712466(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "elsifClauses", true)));
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createStatementBox(context, node);
@@ -267,7 +267,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     boolean alternationCondition = true;
     alternationCondition = IfStatement_Editor._QueryFunction_NodeCondition_1177555034689(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
-    if(alternationCondition) {
+    if (alternationCondition) {
       editorCell = this.createIfFalseStatementCell1(context, node);
     } else
     {
@@ -285,13 +285,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
     editorCell.addEditorCell(this.createIfTrueBox(context, node));
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1206063712466(node, context, context.getOperationContext().getScope())) {
+    if (IfStatement_Editor._QueryFunction_NodeCondition_1206063712466(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createElsifClausesList(context, node));
     }
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1177555034680(node, context, context.getOperationContext().getScope())) {
+    if (IfStatement_Editor._QueryFunction_NodeCondition_1177555034680(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell5(context, node, "}"));
     }
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1177555034698(node, context, context.getOperationContext().getScope())) {
+    if (IfStatement_Editor._QueryFunction_NodeCondition_1177555034698(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCellAlternation(context, node));
     }
     return editorCell;
@@ -303,7 +303,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1177555034652(node, context, context.getOperationContext().getScope())) {
+    if (IfStatement_Editor._QueryFunction_NodeCondition_1177555034652(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell2(context, node, "if"));
@@ -355,7 +355,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell6(context, node, "}"));
     editorCell.addEditorCell(this.createConstantCell7(context, node, "else"));
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1177555034711(node, context, context.getOperationContext().getScope())) {
+    if (IfStatement_Editor._QueryFunction_NodeCondition_1177555034711(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell8(context, node, "{"));
     }
     return editorCell;
@@ -378,7 +378,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if(IfStatement_Editor._QueryFunction_NodeCondition_1177555034725(node, context, context.getOperationContext().getScope())) {
+    if (IfStatement_Editor._QueryFunction_NodeCondition_1177555034725(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell10(context, node, "}"));
     }
     return editorCell;
@@ -481,7 +481,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createElsifClausesList(EditorContext context, SNode node) {
-    if(this.myElsifClausesListHandler_elsifClausesList_ == null) {
+    if (this.myElsifClausesListHandler_elsifClausesList_ == null) {
       this.myElsifClausesListHandler_elsifClausesList_ = new IfStatement_Editor._RefNodeListHandler69(node, "elsifClauses", context);
     }
     EditorCell_Collection editorCell = this.myElsifClausesListHandler_elsifClausesList_.createCells(context, new CellLayout_Vertical(), false);
@@ -498,7 +498,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_ConditionCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       IfStatement_Editor.setupLabel_ConditionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -514,7 +514,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createConditionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -527,7 +527,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_IfTrueCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       IfStatement_Editor.setupLabel_IfTrueCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -543,7 +543,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createIfTrueCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -556,7 +556,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_IfFalseStatementCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       IfStatement_Editor.setupLabel_IfFalseStatementCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -572,7 +572,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createIfFalseStatementCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -585,7 +585,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_IfFalseStatementCell1(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       IfStatement_Editor.setupLabel_IfFalseStatementCell1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -601,7 +601,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createIfFalseStatementCell1internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -634,14 +634,14 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }

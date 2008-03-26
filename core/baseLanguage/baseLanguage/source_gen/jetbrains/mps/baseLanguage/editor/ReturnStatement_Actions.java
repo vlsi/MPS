@@ -33,7 +33,7 @@ public class ReturnStatement_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if(SLinkOperations.getTarget(node, "expression", true) == null) {
+      if (SLinkOperations.getTarget(node, "expression", true) == null) {
         SLinkOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
       }
     }

@@ -22,7 +22,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createConceptFunction_ComponentCell(EditorContext context, SNode node) {
-    if(this.myConceptFunction_Component == null) {
+    if (this.myConceptFunction_Component == null) {
       this.myConceptFunction_Component = new ConceptFunction_Component(node);
     }
     EditorCell editorCell = this.myConceptFunction_Component.createEditorCell(context);

@@ -30,7 +30,7 @@ public class StaticFieldReference_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode classifier1 = SLinkOperations.getTarget(node, "classifier", false);
       SNode classifier2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      if(classifier1 == classifier2) {
+      if (classifier1 == classifier2) {
         SNode localStaticFieldReference = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
         SLinkOperations.setTarget(localStaticFieldReference, "variableDeclaration", SLinkOperations.getTarget(node, "variableDeclaration", false), false);
       }

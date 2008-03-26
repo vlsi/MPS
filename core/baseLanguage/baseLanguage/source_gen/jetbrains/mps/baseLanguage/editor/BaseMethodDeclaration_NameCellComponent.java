@@ -47,7 +47,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     BaseMethodDeclaration_NameCellComponent.setupBasic_NameCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       BaseMethodDeclaration_NameCellComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -64,7 +64,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -80,7 +80,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);
-      if(nodeType != null) {
+      if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1182416669983(nodeType);
       } else
       {

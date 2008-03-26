@@ -47,11 +47,11 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
@@ -69,10 +69,10 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode method = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
       SNode declClassifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      if((declClassifier != null)) {
+      if ((declClassifier != null)) {
         ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(declClassifier)), IClassifiersSearchScope.INSTANCE_METHOD);
         List<BaseMethodDeclaration> list = scope.getOverriddenMethods(((InstanceMethodDeclaration)SNodeOperations.getAdapter(method)));
-        if(list.size() > 0) {
+        if (list.size() > 0) {
           SNode overriden = ((SNode)list.get(0).getNode());
           NavigationActionProcessor.navigateToNode(overriden, editorContext, true);
         }
@@ -100,11 +100,11 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
@@ -144,11 +144,11 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
       return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
