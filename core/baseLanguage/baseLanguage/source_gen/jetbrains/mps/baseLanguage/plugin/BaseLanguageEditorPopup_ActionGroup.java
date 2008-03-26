@@ -17,7 +17,7 @@ public class BaseLanguageEditorPopup_ActionGroup extends BaseActionGroup {
     this.setInternal(false);
     this.add(new CommentStatements_Action(project), this);
     this.add(new UncommentStatements_Action(project), this);
-    this.add(new RunClassConpt_Action(project), this);
+    this.add(new RunClassConcept_Action(project), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
