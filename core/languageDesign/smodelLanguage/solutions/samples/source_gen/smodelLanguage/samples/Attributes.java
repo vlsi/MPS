@@ -26,6 +26,12 @@ public class Attributes {
     SNode propMacro;
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), propMacro, true);
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), propMacro, true);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), propMacro, true);
+  }
+
+  public void accessToReferenceAttribute_1(SNode node) {
+    SNode referenceMacro = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), true);
+    SNode referenceMacro = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), true);
   }
 
   public void other(SNode node) {
