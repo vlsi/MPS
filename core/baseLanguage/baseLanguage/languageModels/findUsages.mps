@@ -1451,7 +1451,7 @@
               <link role="concept" targetNodeId="1.1068431474542" resolveInfo="VariableDeclaration"/>
             </node>
           </node>
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206450300692">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206532272820">
             <link role="variableDeclaration" targetNodeId="1206450127073" resolveInfo="fieldDeclarations"/>
           </node>
         </node>

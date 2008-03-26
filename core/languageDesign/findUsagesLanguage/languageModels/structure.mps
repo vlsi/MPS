@@ -158,13 +158,6 @@
       <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1206465185991">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="category"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
           id="1200309278247">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault"/>
@@ -307,12 +300,12 @@
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1206461481989">
-      <property name="value" value="getPresentation"/>
+      <property name="value" value="getPresentation(not implemented)"/>
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1206461491163">
-      <property name="value" value="getPresentation"/>
+      <property name="value" value="getPresentation(not implemented)"/>
       <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName"/>
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"

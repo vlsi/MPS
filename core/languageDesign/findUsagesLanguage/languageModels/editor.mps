@@ -141,7 +141,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1206462357075">
-        <property name="noTargetText" value="&lt;presentation block&gt;"/>
+        <property name="noTargetText" value="&lt;presentation block(not implemented)&gt;"/>
         <link role="relationDeclaration" targetNodeId="1.1206462297657"/>
       </node>
     </node>
