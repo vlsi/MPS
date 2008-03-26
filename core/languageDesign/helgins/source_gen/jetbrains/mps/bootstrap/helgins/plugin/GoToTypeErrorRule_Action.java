@@ -21,7 +21,7 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
   private EditorsPane editorsPane;
   private MPSProject project;
 
-  public GoToTypeErrorRule_Action(MPSProject project) {
+  public  GoToTypeErrorRule_Action(MPSProject project) {
     super(project, "Go To Rule Which Caused Error");
   }
 
@@ -35,7 +35,7 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
     return !(error == null || error.getRuleId() == null || error.getRuleModel() == null);
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     super.doUpdate(context);
     if (!(this.fillFieldsIfNecessary(context))) {
       this.setEnabled(false);
@@ -79,7 +79,7 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     if (!(this.fillFieldsIfNecessary(context))) {
       return;
     }

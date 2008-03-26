@@ -194,10 +194,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1174698110415(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode enumerationType = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    if(SPropertyOperations.hasValue(enumerationType, "memberIdentifierPolicy", "derive_from_internal_value", "derive_from_presentation")) {
+    if (SPropertyOperations.hasValue(enumerationType, "memberIdentifierPolicy", "derive_from_internal_value", "derive_from_presentation")) {
       return NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), "internalValue"));
     }
-    if(SPropertyOperations.hasValue(enumerationType, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation")) {
+    if (SPropertyOperations.hasValue(enumerationType, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation")) {
       return NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), "externalValue"));
     }
     return SPropertyOperations.getString(_context.getNode(), "javaIdentifier");
@@ -216,11 +216,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1198507396463(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if(_context.getNode() == SLinkOperations.getTarget(new QuotationClass_().createNode(), "concept", false)) {
+    if (_context.getNode() == SLinkOperations.getTarget(new QuotationClass_().createNode(), "concept", false)) {
       return "jetbrains.mps.smodel.BaseAdapter";
     }
     SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "extends", false);
-    if((conceptDeclaration == null)) {
+    if ((conceptDeclaration == null)) {
       return "jetbrains.mps.core.structure.BaseConcept";
     }
     return SNodeOperations.getModel(conceptDeclaration).getLongName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
@@ -682,8 +682,8 @@ public class QueriesGenerated {
     SNode memberDataType = SLinkOperations.getTarget(enumDataType, "memberDataType", false);
     SNode targetInternalValueExpression = null;
     SModel targetModel = _context.getGenerator().getTargetModel();
-    if(SPropertyOperations.hasValue(memberDataType, "name", "string")) {
-      if(internalValue == null) {
+    if (SPropertyOperations.hasValue(memberDataType, "name", "string")) {
+      if (internalValue == null) {
         targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.NullLiteral", null);
       } else
       {
@@ -691,25 +691,25 @@ public class QueriesGenerated {
         SPropertyOperations.set(targetInternalValueExpression, "value", internalValue);
       }
     } else
-    if(SPropertyOperations.hasValue(memberDataType, "name", "boolean")) {
+    if (SPropertyOperations.hasValue(memberDataType, "name", "boolean")) {
       targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
-      if(internalValue == null) {
+      if (internalValue == null) {
         SPropertyOperations.set(targetInternalValueExpression, "value", "" + (true));
       } else
       {
         SPropertyOperations.set(targetInternalValueExpression, "value", "" + (Boolean.parseBoolean(internalValue)));
       }
     } else
-    if(SPropertyOperations.hasValue(memberDataType, "name", "integer")) {
+    if (SPropertyOperations.hasValue(memberDataType, "name", "integer")) {
       targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-      if(internalValue == null) {
+      if (internalValue == null) {
         SPropertyOperations.set(targetInternalValueExpression, "value", "" + (0));
       } else
       {
         SPropertyOperations.set(targetInternalValueExpression, "value", "" + (Integer.parseInt(internalValue)));
       }
     }
-    if((targetInternalValueExpression == null)) {
+    if ((targetInternalValueExpression == null)) {
       _context.getGenerator().showErrorMessage(enumDataType, "Can't generate value for type " + SPropertyOperations.getString(memberDataType, "name"));
     }
     return targetInternalValueExpression;
@@ -722,7 +722,7 @@ public class QueriesGenerated {
       try {
         while(_zCursor9.moveToNext()) {
           SNode method = _zCursor9.getCurrent();
-          if("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
+          if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
             return SLinkOperations.getTarget(method, "body", true);
           }
         }
@@ -740,7 +740,7 @@ public class QueriesGenerated {
       try {
         while(_zCursor10.moveToNext()) {
           SNode method = _zCursor10.getCurrent();
-          if("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
+          if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
             return SLinkOperations.getTarget(method, "body", true);
           }
         }
@@ -758,7 +758,7 @@ public class QueriesGenerated {
       try {
         while(_zCursor11.moveToNext()) {
           SNode method = _zCursor11.getCurrent();
-          if("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
+          if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
             return SLinkOperations.getTarget(method, "body", true);
           }
         }

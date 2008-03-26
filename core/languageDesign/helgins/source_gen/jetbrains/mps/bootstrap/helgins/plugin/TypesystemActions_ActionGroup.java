@@ -13,7 +13,7 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 public class TypesystemActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.bootstrap.helgins.plugin.TypesystemActions";
 
-  public TypesystemActions_ActionGroup(MPSProject project) {
+  public  TypesystemActions_ActionGroup(MPSProject project) {
     super("Type System", TypesystemActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new ShowNodeTypeAction(), this);

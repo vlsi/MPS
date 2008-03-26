@@ -17,7 +17,7 @@ public class RefactorModel_Action extends CurrentProjectMPSAction {
 
   private SModelDescriptor model;
 
-  public RefactorModel_Action(MPSProject project) {
+  public  RefactorModel_Action(MPSProject project) {
     super(project, "Refactor Helgins Model");
   }
 
@@ -31,7 +31,7 @@ public class RefactorModel_Action extends CurrentProjectMPSAction {
     return languageAspect == LanguageAspect.HELGINS_TYPESYSTEM;
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     super.doUpdate(context);
     if (!(this.fillFieldsIfNecessary(context))) {
       this.setEnabled(false);
@@ -57,7 +57,7 @@ public class RefactorModel_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     if (!(this.fillFieldsIfNecessary(context))) {
       return;
     }

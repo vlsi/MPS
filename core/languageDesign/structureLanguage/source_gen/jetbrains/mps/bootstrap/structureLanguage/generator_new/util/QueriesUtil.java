@@ -22,10 +22,10 @@ public class QueriesUtil {
 
   public static boolean propertyDataType_isString(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
-    if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration")) {
+    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration")) {
       return PropertySupport.isString(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
     }
-    if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration")) {
+    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration")) {
       return true;
     }
     return false;
@@ -33,7 +33,7 @@ public class QueriesUtil {
 
   public static boolean propertyDataType_isBoolean(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
-    if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration")) {
+    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration")) {
       return PropertySupport.isBoolean(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
     }
     return false;
@@ -41,7 +41,7 @@ public class QueriesUtil {
 
   public static boolean propertyDataType_isInteger(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
-    if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration")) {
+    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration")) {
       return PropertySupport.isInteger(((PrimitiveDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
     }
     return false;
@@ -49,15 +49,15 @@ public class QueriesUtil {
 
   public static boolean propertyDataType_isEnum(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
-    if(SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration")) {
+    if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration")) {
       return true;
     }
     return false;
   }
 
   public static boolean isRefLink_card_1_nospec(SNode link) {
-    if(SPropertyOperations.hasValue(link, "metaClass", null, null)) {
-      if(SPropertyOperations.hasValue(link, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1")) {
+    if (SPropertyOperations.hasValue(link, "metaClass", null, null)) {
+      if (SPropertyOperations.hasValue(link, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1")) {
         return SLinkOperations.getTarget(link, "specializedLink", false) == null;
       }
     }
@@ -65,10 +65,10 @@ public class QueriesUtil {
   }
 
   public static boolean isRefLink_card_1_spec(SNode link) {
-    if(SLinkOperations.getTarget(link, "specializedLink", false) != null) {
+    if (SLinkOperations.getTarget(link, "specializedLink", false) != null) {
       SNode genuineLink = (SNode)SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
-      if(SPropertyOperations.hasValue(genuineLink, "metaClass", null, null)) {
-        if(SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1")) {
+      if (SPropertyOperations.hasValue(genuineLink, "metaClass", null, null)) {
+        if (SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1")) {
           return true;
         }
       }
@@ -77,8 +77,8 @@ public class QueriesUtil {
   }
 
   public static boolean isAggLink_card_1_nospec(SNode link) {
-    if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
-      if(SPropertyOperations.hasValue(link, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1")) {
+    if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
+      if (SPropertyOperations.hasValue(link, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1")) {
         return SLinkOperations.getTarget(link, "specializedLink", false) == null;
       }
     }
@@ -86,8 +86,8 @@ public class QueriesUtil {
   }
 
   public static boolean isAggLink_card_n_nospec(SNode link) {
-    if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
-      if(SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1")) {
+    if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
+      if (SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1")) {
         return SLinkOperations.getTarget(link, "specializedLink", false) == null;
       }
     }
@@ -95,10 +95,10 @@ public class QueriesUtil {
   }
 
   public static boolean isAggLink_card_1_spec(SNode link) {
-    if(SLinkOperations.getTarget(link, "specializedLink", false) != null) {
+    if (SLinkOperations.getTarget(link, "specializedLink", false) != null) {
       SNode genuineLink = (SNode)SModelUtil_new.getGenuineLinkDeclaration(((LinkDeclaration)SNodeOperations.getAdapter(link))).getNode();
-      if(SPropertyOperations.hasValue(genuineLink, "metaClass", "aggregation", null)) {
-        if(SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1")) {
+      if (SPropertyOperations.hasValue(genuineLink, "metaClass", "aggregation", null)) {
+        if (SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1")) {
           return true;
         }
       }
@@ -149,14 +149,14 @@ public class QueriesUtil {
   }
 
   public static String conceptClassFQName(SNode conceptDeclaration) {
-    if((conceptDeclaration == null)) {
+    if ((conceptDeclaration == null)) {
       return "jetbrains.mps.core.structure.BaseConcept";
     }
     return SNodeOperations.getModel(conceptDeclaration).getLongName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
   public static String enumClassFQName(SNode enumDeclaration) {
-    if((enumDeclaration == null)) {
+    if ((enumDeclaration == null)) {
       return "jetbrains.mps.core.structure.BaseConcept";
     }
     return SNodeOperations.getModel(enumDeclaration).getLongName() + "." + SPropertyOperations.getString(enumDeclaration, "name");
@@ -172,7 +172,7 @@ public class QueriesUtil {
   }
 
   public static String AL_class_setterName(SNode node) {
-    if(QueriesUtil.AL_isSingular(node)) {
+    if (QueriesUtil.AL_isSingular(node)) {
       return "set" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
     }
     return "add" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
