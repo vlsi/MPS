@@ -29,7 +29,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule implements Inferen
     final SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     final SNode instanceType_typevar_1204064731338 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1197028596169(imco), "jetbrains.mps.baseLanguage.helgins", "1204064784351", false), IOperation_Behavior.call_getOperand_1197028596169(imco), null, "jetbrains.mps.baseLanguage.helgins", "1204064763142");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_85().createNode(methodClassifier), imco, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120", false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_84().createNode(methodClassifier), imco, null, "jetbrains.mps.baseLanguage.helgins", "1204065906120", false);
     // --- following piece of cake is identical for any method call ---
     {
       final SNode _representatorVar4 = TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338);

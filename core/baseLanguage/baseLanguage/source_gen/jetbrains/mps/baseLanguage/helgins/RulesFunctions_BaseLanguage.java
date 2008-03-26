@@ -199,7 +199,7 @@ public class RulesFunctions_BaseLanguage {
     }
   }
 
-  private static SNode inference_matchTypeWithTypeVariables(SNode type, Map<SNode, List<SNode>> mmap) {
+  /* package */static SNode inference_matchTypeWithTypeVariables(SNode type, Map<SNode, List<SNode>> mmap) {
     SNode resType = SNodeOperations.copyNode(type);
     if (SNodeOperations.isInstanceOf(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203439588896 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);

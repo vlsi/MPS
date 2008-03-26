@@ -8,6 +8,10 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.constraints.IOperation_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRule_Runtime {
@@ -16,10 +20,28 @@ public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRu
   }
 
   public void applyRule(final SNode fieldReference) {
-    SNode fieldDeclaration = SLinkOperations.getTarget(fieldReference, "fieldDeclaration", false);
-    if ((fieldDeclaration != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(fieldReference, "jetbrains.mps.baseLanguage.helgins", "1197036343060", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(fieldDeclaration, "jetbrains.mps.baseLanguage.helgins", "1197036351707", true), fieldReference, null, "jetbrains.mps.baseLanguage.helgins", "1197036348646");
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1197028596169(fieldReference), "jetbrains.mps.baseLanguage.helgins", "1197030122319", true), new QuotationClass_77().createNode(SNodeOperations.getAncestor(fieldDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), IOperation_Behavior.call_getOperand_1197028596169(fieldReference), null, "jetbrains.mps.baseLanguage.helgins", "1197030157476", false);
+    final SNode fieldDeclaration = SLinkOperations.getTarget(fieldReference, "fieldDeclaration", false);
+    if ((fieldDeclaration == null)) {
+      return;
+    }
+    final SNode InstanceType_typevar_1206554174334 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1197028596169(fieldReference), "jetbrains.mps.baseLanguage.helgins", "1206554174339", true), TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), IOperation_Behavior.call_getOperand_1197028596169(fieldReference), null, "jetbrains.mps.baseLanguage.helgins", "1206554174335");
+    final SNode fieldClassifier = SNodeOperations.getAncestor(fieldDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new QuotationClass_88().createNode(fieldClassifier), fieldReference, null, "jetbrains.mps.baseLanguage.helgins", "1206554174350", false);
+    {
+      final SNode IT = TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(IT, new Runnable() {
+
+        public void run() {
+          Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
+          Pair<SNode, Map<SNode, List<SNode>>> pair;
+          SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(SLinkOperations.getTarget(fieldDeclaration, "type", true), mmap);
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(fieldReference, "jetbrains.mps.baseLanguage.helgins", "1206554174385", true), matchedType, fieldReference, null, "jetbrains.mps.baseLanguage.helgins", "1206554174383");
+          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(fieldClassifier, TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), mmap);
+          RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
+        }
+
+      }, "jetbrains.mps.baseLanguage.helgins", "1206554174358");
     }
   }
 
