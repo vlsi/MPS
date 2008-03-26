@@ -935,6 +935,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206555397012">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206555397013">
+            <property name="name" value="expression" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206555397014">
+              <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1206555397015">
+              <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206555397016">
+                <link role="variableDeclaration" targetNodeId="1145579716250" resolveInfo="nodeObject3" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1145579470753">
         <property name="name" value="ifStatement" />

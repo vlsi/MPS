@@ -12,6 +12,7 @@ public class TypeCast {
     SNode nodeObject1 = ifStatement;
     SNode nodeObject2 = (SNode)SLinkOperations.getTarget(ifStatement, "condition", true);
     SNode nodeObject3 = SLinkOperations.getTarget(ifStatement, "condition", true);
+    SNode expression = nodeObject3;
   }
 
   public void cast_SNode_to_snode(SNode node) {
