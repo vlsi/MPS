@@ -35,14 +35,14 @@ public class CommentedStatementsBlock_Actions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       {
-        ICursor<SNode> _zCursor13 = CursorFactory.createCursor(SLinkOperations.getTargets(node, "statement", true));
+        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(node, "statement", true));
         try {
-          while(_zCursor13.moveToNext()) {
-            SNode statement = _zCursor13.getCurrent();
+          while(_zCursor1.moveToNext()) {
+            SNode statement = _zCursor1.getCurrent();
             SNodeOperations.insertPrevSiblingChild(node, statement);
           }
         } finally {
-          _zCursor13.release();
+          _zCursor1.release();
         }
       }
       SNodeOperations.deleteNode(node);

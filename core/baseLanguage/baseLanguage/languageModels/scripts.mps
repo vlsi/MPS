@@ -439,7 +439,7 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204244697697">
-                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204244697698">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206572405296">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204244697700">
                     <link role="variableDeclaration" targetNodeId="1204244697670" resolveInfo="attPairs" />
                   </node>
@@ -788,7 +788,7 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204325544487">
-                <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204325544488">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206572405810">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204325544490">
                     <link role="variableDeclaration" targetNodeId="1204325544460" resolveInfo="attPairs" />
                   </node>
@@ -899,7 +899,7 @@
             </node>
             <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204325544533">
               <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1204325577129" />
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList" id="1204325544535">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206572417745">
                 <link role="link" targetNodeId="1.1068499141038" />
               </node>
             </node>
