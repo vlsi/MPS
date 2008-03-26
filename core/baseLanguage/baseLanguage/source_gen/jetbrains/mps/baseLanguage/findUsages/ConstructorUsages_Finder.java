@@ -20,8 +20,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
 public class ConstructorUsages_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder");
@@ -53,7 +51,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
       // search for straight usages & search for SUPER calls
       // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS
       {
-        ICursor<SNode> _zCursor12 = CursorFactory.createCursor(this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(node, scope));
+        ICursor<SNode> _zCursor12 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", node, scope));
         try {
           while (_zCursor12.moveToNext()) {
             SNode nodeUsage = _zCursor12.getCurrent();
@@ -65,7 +63,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
       }
       // WORKAROUND - FIND SUPER() CALLS
       {
-        ICursor<SNode> _zCursor13 = CursorFactory.createCursor(this.executejetbrainsMpsBaseLanguageFindUsagesStraightDerivedClasses_Finder(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope));
+        ICursor<SNode> _zCursor13 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope));
         try {
           while (_zCursor13.moveToNext()) {
             SNode subclassResult = _zCursor13.getCurrent();
@@ -158,48 +156,6 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   @Nullable()
   public String getNodePresentation(SNode node) {
     return null;
-  }
-
-  public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesStraightDerivedClasses_Finder(SNode node, IScope scope) {
-    List<SNode> result = new ArrayList<SNode>();
-    try {
-      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder").newInstance();
-      {
-        ICursor<SearchResult> _zCursor35 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
-        try {
-          while (_zCursor35.moveToNext()) {
-            SearchResult searchResult = _zCursor35.getCurrent();
-            ListOperations.addElement(result, searchResult.getNode());
-          }
-        } finally {
-          _zCursor35.release();
-        }
-      }
-    } catch (Throwable t) {
-      ConstructorUsages_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder" + "\"  Message:" + t.getMessage());
-    }
-    return result;
-  }
-
-  public List<SNode> executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(SNode node, IScope scope) {
-    List<SNode> result = new ArrayList<SNode>();
-    try {
-      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
-      {
-        ICursor<SearchResult> _zCursor36 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
-        try {
-          while (_zCursor36.moveToNext()) {
-            SearchResult searchResult = _zCursor36.getCurrent();
-            ListOperations.addElement(result, searchResult.getNode());
-          }
-        } finally {
-          _zCursor36.release();
-        }
-      }
-    } catch (Throwable t) {
-      ConstructorUsages_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder" + "\"  Message:" + t.getMessage());
-    }
-    return result;
   }
 
 }

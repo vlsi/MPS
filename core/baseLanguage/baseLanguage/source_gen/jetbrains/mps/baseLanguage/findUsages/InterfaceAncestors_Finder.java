@@ -18,8 +18,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
 public class InterfaceAncestors_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder");
@@ -55,7 +53,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
             SNode ancestor = _zCursor17.getCurrent();
             ListOperations.addElement(_results, ancestor);
             {
-              ICursor<SNode> _zCursor18 = CursorFactory.createCursor(this.executejetbrainsMpsBaseLanguageFindUsagesInterfaceAncestors_Finder(ancestor, scope));
+              ICursor<SNode> _zCursor18 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestor, scope));
               try {
                 while (_zCursor18.moveToNext()) {
                   SNode ancestorAncestor = _zCursor18.getCurrent();
@@ -87,27 +85,6 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
   @Nullable()
   public String getNodePresentation(SNode node) {
     return null;
-  }
-
-  public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesInterfaceAncestors_Finder(SNode node, IScope scope) {
-    List<SNode> result = new ArrayList<SNode>();
-    try {
-      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder").newInstance();
-      {
-        ICursor<SearchResult> _zCursor38 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
-        try {
-          while (_zCursor38.moveToNext()) {
-            SearchResult searchResult = _zCursor38.getCurrent();
-            ListOperations.addElement(result, searchResult.getNode());
-          }
-        } finally {
-          _zCursor38.release();
-        }
-      }
-    } catch (Throwable t) {
-      InterfaceAncestors_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder" + "\"  Message:" + t.getMessage());
-    }
-    return result;
   }
 
 }

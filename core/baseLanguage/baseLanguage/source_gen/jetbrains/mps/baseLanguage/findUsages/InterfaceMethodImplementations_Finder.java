@@ -23,8 +23,6 @@ import java.util.HashSet;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.constraints.BaseMethodDeclaration_Behavior;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
 public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
@@ -54,12 +52,12 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     {
       List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
       {
-        ICursor<SNode> _zCursor6 = CursorFactory.createCursor(this.executejetbrainsMpsBaseLanguageFindUsagesImplementingClasses_Finder(SNodeOperations.getParent(node, null, false, false), scope));
+        ICursor<SNode> _zCursor6 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope));
         try {
           while (_zCursor6.moveToNext()) {
             SNode implementor = _zCursor6.getCurrent();
             ListOperations.addElement(implementorsAndAncestorsList, implementor);
-            ListOperations.addAllElements(implementorsAndAncestorsList, this.executejetbrainsMpsBaseLanguageFindUsagesClassAncestors_Finder(implementor, scope));
+            ListOperations.addAllElements(implementorsAndAncestorsList, this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", implementor, scope));
           }
         } finally {
           _zCursor6.release();
@@ -119,48 +117,6 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
   @Nullable()
   public String getNodePresentation(SNode node) {
     return null;
-  }
-
-  public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesImplementingClasses_Finder(SNode node, IScope scope) {
-    List<SNode> result = new ArrayList<SNode>();
-    try {
-      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder").newInstance();
-      {
-        ICursor<SearchResult> _zCursor31 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
-        try {
-          while (_zCursor31.moveToNext()) {
-            SearchResult searchResult = _zCursor31.getCurrent();
-            ListOperations.addElement(result, searchResult.getNode());
-          }
-        } finally {
-          _zCursor31.release();
-        }
-      }
-    } catch (Throwable t) {
-      InterfaceMethodImplementations_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder" + "\"  Message:" + t.getMessage());
-    }
-    return result;
-  }
-
-  public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesClassAncestors_Finder(SNode node, IScope scope) {
-    List<SNode> result = new ArrayList<SNode>();
-    try {
-      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder").newInstance();
-      {
-        ICursor<SearchResult> _zCursor32 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
-        try {
-          while (_zCursor32.moveToNext()) {
-            SearchResult searchResult = _zCursor32.getCurrent();
-            ListOperations.addElement(result, searchResult.getNode());
-          }
-        } finally {
-          _zCursor32.release();
-        }
-      }
-    } catch (Throwable t) {
-      InterfaceMethodImplementations_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder" + "\"  Message:" + t.getMessage());
-    }
-    return result;
   }
 
 }

@@ -18,8 +18,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 
 public class ParameterUsages_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ParameterUsages_Finder");
@@ -57,7 +55,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
         nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
       }
       // null
-      List<SNode> overridingMethods = this.executejetbrainsMpsBaseLanguageFindUsagesOverridingMethods_Finder(nodeParentMethod, scope);
+      List<SNode> overridingMethods = this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope);
       ListOperations.addElement(overridingMethods, nodeParentMethod);
       // null
       {
@@ -71,7 +69,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
                 ListOperations.addElement(_results, parameterNode);
               */
               {
-                ICursor<SNode> _zCursor11 = CursorFactory.createCursor(this.executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(parameterNode, scope));
+                ICursor<SNode> _zCursor11 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", parameterNode, scope));
                 try {
                   while (_zCursor11.moveToNext()) {
                     SNode parameterUsage = _zCursor11.getCurrent();
@@ -104,48 +102,6 @@ public class ParameterUsages_Finder extends GeneratedFinder {
   @Nullable()
   public String getNodePresentation(SNode node) {
     return null;
-  }
-
-  public List<SNode> executejetbrainsMpsBootstrapStructureLanguageFindUsagesNodeUsages_Finder(SNode node, IScope scope) {
-    List<SNode> result = new ArrayList<SNode>();
-    try {
-      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
-      {
-        ICursor<SearchResult> _zCursor33 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
-        try {
-          while (_zCursor33.moveToNext()) {
-            SearchResult searchResult = _zCursor33.getCurrent();
-            ListOperations.addElement(result, searchResult.getNode());
-          }
-        } finally {
-          _zCursor33.release();
-        }
-      }
-    } catch (Throwable t) {
-      ParameterUsages_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder" + "\"  Message:" + t.getMessage());
-    }
-    return result;
-  }
-
-  public List<SNode> executejetbrainsMpsBaseLanguageFindUsagesOverridingMethods_Finder(SNode node, IScope scope) {
-    List<SNode> result = new ArrayList<SNode>();
-    try {
-      GeneratedFinder finder = (GeneratedFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder").newInstance();
-      {
-        ICursor<SearchResult> _zCursor34 = CursorFactory.createCursor(finder.find(new SearchQuery(node, scope)).getSearchResults());
-        try {
-          while (_zCursor34.moveToNext()) {
-            SearchResult searchResult = _zCursor34.getCurrent();
-            ListOperations.addElement(result, searchResult.getNode());
-          }
-        } finally {
-          _zCursor34.release();
-        }
-      }
-    } catch (Throwable t) {
-      ParameterUsages_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder" + "\"  Message:" + t.getMessage());
-    }
-    return result;
   }
 
 }
