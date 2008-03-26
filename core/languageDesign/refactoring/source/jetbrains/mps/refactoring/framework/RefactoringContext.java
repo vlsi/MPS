@@ -481,9 +481,12 @@ public class RefactoringContext {
         Element keyElement = new Element(KEY);
         Element valueElement = new Element(VALUE);
         entry.getKey().toElement(keyElement);
-        entry.getValue().toElement(valueElement);
         entryElement.addContent(keyElement);
-        entryElement.addContent(valueElement);
+        ConceptFeature valueFeature = entry.getValue();
+        if (valueFeature != null) {
+          valueFeature.toElement(valueElement);
+          entryElement.addContent(valueElement);
+        }
         featureMapElement.addContent(entryElement);
       }
       refactoringContextElement.addContent(featureMapElement);
@@ -559,7 +562,8 @@ public class RefactoringContext {
         for (Element entryElement : (List<Element>) featureMapElement.getChildren(ENTRY)) {
           Element keyElement = entryElement.getChild(KEY);
           Element valueElement = entryElement.getChild(VALUE);
-          myConceptFeatureMap.put(new ConceptFeature(keyElement), new ConceptFeature(valueElement));
+          ConceptFeature valueFeature = valueElement == null ? null : new ConceptFeature(valueElement);
+          myConceptFeatureMap.put(new ConceptFeature(keyElement), valueFeature);
         }
       }
     }
