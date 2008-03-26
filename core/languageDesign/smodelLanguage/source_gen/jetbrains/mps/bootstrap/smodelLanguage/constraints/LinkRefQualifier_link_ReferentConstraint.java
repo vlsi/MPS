@@ -40,11 +40,11 @@ public class LinkRefQualifier_link_ReferentConstraint implements IModelConstrain
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode dotOperand = IOperation_Behavior.call_getOperand_1197028596169(SNodeOperations.getParent(_context.getEnclosingNode(), null, false, false));
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(dotOperand), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), true);
-    if(nodeType == null) {
+    if (nodeType == null) {
       return null;
     }
     SNode dotOperandConcept = SLinkOperations.getTarget(nodeType, "concept", false);
-    if(dotOperandConcept == null) {
+    if (dotOperandConcept == null) {
       dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
     }
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarationsExcludingOverridden_1196820678380(dotOperandConcept);

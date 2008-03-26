@@ -40,14 +40,14 @@ public class SLinkListAccess_link_ReferentConstraint implements IModelConstraint
     SNode dotOperand = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
     SNode dotOperandConcept = null;
     SNode dotOperandType = TypeChecker.getInstance().getTypeOf(dotOperand);
-    if(SNodeOperations.isInstanceOf(dotOperandType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
+    if (SNodeOperations.isInstanceOf(dotOperandType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
       dotOperandConcept = SLinkOperations.getTarget(dotOperandType, "targetConcept", false);
     } else
     {
       SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(dotOperandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
       dotOperandConcept = SLinkOperations.getTarget(nodeType, "concept", false);
     }
-    if(dotOperandConcept == null) {
+    if (dotOperandConcept == null) {
       dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
     }
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarationsExcludingOverridden_1196820678380(dotOperandConcept);

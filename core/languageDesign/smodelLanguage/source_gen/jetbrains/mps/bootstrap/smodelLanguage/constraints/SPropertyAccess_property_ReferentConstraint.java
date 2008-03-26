@@ -38,14 +38,14 @@ public class SPropertyAccess_property_ReferentConstraint implements IModelConstr
     SNode dotOperandConcept = null;
     SNode dotOperand = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
     SNode dotOperandType = TypeChecker.getInstance().getTypeOf(dotOperand);
-    if(SNodeOperations.isInstanceOf(dotOperandType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
+    if (SNodeOperations.isInstanceOf(dotOperandType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
       dotOperandConcept = SLinkOperations.getTarget(dotOperandType, "targetConcept", false);
     } else
     {
       SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(dotOperandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
       dotOperandConcept = SLinkOperations.getTarget(nodeType, "concept", false);
     }
-    if(dotOperandConcept == null) {
+    if (dotOperandConcept == null) {
       dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
     }
     return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarationsExcludingOverridden_1203539034160(dotOperandConcept));

@@ -31,9 +31,9 @@ public class EnumMemberReference_enumMember_ReferentConstraint implements IModel
   }
 
   public boolean canCreateNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    if(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum")) {
+    if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum")) {
       DataTypeDeclaration datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(((SNodeOperation)SNodeOperations.getAdapter(_context.getEnclosingNode())));
-      if(DataTypeUtil.isEnum(datatype)) {
+      if (DataTypeUtil.isEnum(datatype)) {
         return true;
       }
     }
