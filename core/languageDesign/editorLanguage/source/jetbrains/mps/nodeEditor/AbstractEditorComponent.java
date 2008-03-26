@@ -684,7 +684,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private ActionContext createActionContext() {
-    ActionContext context = null;
+    ActionContext context = new ActionContext(getOperationContext());
     EditorCell cell_ = getSelectedCell();
     if (cell_ != null) {
       final SNode selectedNode = cell_.getSNode();
@@ -694,7 +694,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (selectedNodes.size() == 0) {
           selectedNodes.add(selectedNode);
         }
-        context = new ActionContext(getOperationContext(), selectedNode, selectedNodes);
+        context.put(SNode.class, selectedNode);
+        context.put(List.class, selectedNodes);
         context.put(EditorContext.class, editorContext_);
         context.put(EditorCell.class, cell_);
       }
