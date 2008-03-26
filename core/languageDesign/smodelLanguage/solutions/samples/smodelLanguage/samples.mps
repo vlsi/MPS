@@ -2439,6 +2439,34 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679282" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206551631220">
+      <property name="name" value="booleanProperty2" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206551631221" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206551631222" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206551631223">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206551663085">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206551670231">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206551672875">
+              <property name="value" value="true" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206551664306">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206551663086">
+                <link role="variableDeclaration" targetNodeId="1206551650568" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1206551667714">
+                <link role="property" targetNodeId="1.1068580123138" resolveInfo="value" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206551650568">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206551650569">
+          <link role="concept" targetNodeId="1.1068580123137" resolveInfo="BooleanConstant" />
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1146081100025">
       <property name="name" value="integerProperty" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1146081102387" />
@@ -2528,6 +2556,34 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679191" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206551695844">
+      <property name="name" value="integerProperty2" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206551695845" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206551695846" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206551695847">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206551719069">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206551724168">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206551726437">
+              <property name="value" value="10" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206551720196">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206551719070">
+                <link role="variableDeclaration" targetNodeId="1206551707880" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1206551722386">
+                <link role="property" targetNodeId="1.1068580320021" resolveInfo="value" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206551707880">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206551707881">
+          <link role="concept" targetNodeId="1.1068580320020" resolveInfo="IntegerConstant" />
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1146086375054">
       <property name="name" value="enumProperty_string" />

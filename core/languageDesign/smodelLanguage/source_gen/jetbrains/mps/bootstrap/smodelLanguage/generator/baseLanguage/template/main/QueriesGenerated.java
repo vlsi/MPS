@@ -184,6 +184,17 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(TypeChecker.getInstance().getTypeOf(_context.getNode()), "singularCradinality");
   }
 
+  public static boolean baseMappingRule_Condition_1206552037838(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    SNode lvalue = SLinkOperations.getTarget(_context.getNode(), "lValue", true);
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lvalue, "operation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess");
+  }
+
+  public static boolean baseMappingRule_Condition_1206552173985(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    // apply rule if the value is string
+    SNode typeOfValue = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rValue", true));
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfValue, new QuotationClass_2().createNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_1168981884180(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "enumMember", false), "internalValue");
   }
@@ -532,6 +543,14 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1206050125884(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode link = LinkDeclaration_Behavior.call_getGenuineLink_1203463866634(SLinkOperations.getTarget(_context.getNode(), "link", false));
     return SPropertyOperations.hasValue(link, "metaClass", "aggregation", null);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1206552330304(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    // <expr>.<property-access>.<operation>
+    SNode lvalue = SLinkOperations.getTarget(_context.getNode(), "lValue", true);
+    SNode operation = SLinkOperations.getTarget(lvalue, "operation", true);
+    SNode op = operation;
+    return SPropertyOperations.getString(SLinkOperations.getTarget(op, "property", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1104,6 +1123,15 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1206484808823(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "nodeToAdd", true);
+  }
+
+  public static SNode sourceNodeQuery_1206552330295(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode lvalue = SLinkOperations.getTarget(_context.getNode(), "lValue", true);
+    return SLinkOperations.getTarget(lvalue, "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_1206552330326(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "rValue", true);
   }
 
   public static List sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

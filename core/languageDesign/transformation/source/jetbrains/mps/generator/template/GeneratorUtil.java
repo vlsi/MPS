@@ -108,6 +108,9 @@ public class GeneratorUtil {
         new BaseMappingRuleContext(inputNode, generator.getInputModel(), generator),
         ruleNode.getModel());
       return res;
+    } catch (NoSuchMethodException e) {
+      generator.showWarningMessage(ruleNode, "couldn't evaluate rule condition. method '" + methodName + "' not found");
+      return false;
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule condition");
       LOG.error(e);
