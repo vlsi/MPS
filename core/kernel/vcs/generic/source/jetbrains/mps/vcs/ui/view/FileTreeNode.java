@@ -19,17 +19,16 @@ public class FileTreeNode extends AbstractFileTreeNode {
     ICONS.put("devkit", Icons.DEVKIT_ICON);
     ICONS.put("mpl", Icons.LANGUAGE_ICON);
     ICONS.put("mps", Icons.MODEL_ICON);
+    ICONS.put("", Icons.DEFAULT_ICON);
   }
 
   public FileTreeNode(IOperationContext operationContext, IFileController provider, IFile file) {
     super(operationContext, provider, file);
-
-    setAllowsChildren(false);
   }
 
   @Override
-  public boolean getAllowsChildren(){
-    return false;
+  public boolean isLeaf() {
+    return true;
   }
 
   @Override
@@ -37,7 +36,6 @@ public class FileTreeNode extends AbstractFileTreeNode {
     super.updatePresentation();
     Icon icon = getIcon();
     if (icon != null) setIcon(icon);
-    setAutoExpandable(true);
   }
 
   private Icon getIcon() {
