@@ -47,6 +47,10 @@ public class Child_Referent_Parent {
     SLinkOperations.deleteChild(methodCall, "baseMethodDeclaration");
   }
 
+  public void accessToReferentNode_2(SNode methodCall, SNode method) {
+    SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
+  }
+
   public void accessToParentNode_1(SNode expression) {
     SNode parent_IfStatement = null;
     SNode mayBe_IfStatement = SNodeOperations.getParent(expression, null, false, false);

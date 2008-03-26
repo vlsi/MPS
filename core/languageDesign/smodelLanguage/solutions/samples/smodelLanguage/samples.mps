@@ -636,6 +636,40 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679273" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206559463496">
+      <property name="name" value="accessToReferentNode_2" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206559463497" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206559463498">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206559479792">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206559495228">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206559531733">
+              <link role="variableDeclaration" targetNodeId="1206559463534" resolveInfo="method" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206559486326">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206559479793">
+                <link role="variableDeclaration" targetNodeId="1206559463532" resolveInfo="methodCall" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206559492336">
+                <link role="link" targetNodeId="1.1070568044740" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206559463532">
+        <property name="name" value="methodCall" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206559463533">
+          <link role="concept" targetNodeId="1.1068580123163" resolveInfo="InstanceMethodCall" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206559463534">
+        <property name="name" value="method" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206559463535">
+          <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206559463536" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1145578543179">
       <property name="name" value="accessToParentNode_1" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1145578576769">
