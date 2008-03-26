@@ -6,6 +6,7 @@ import jetbrains.mps.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNode;
 
 public class IfStatement_DataFlow extends DataFlowBuilder {
 
@@ -30,6 +31,9 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
 
       });
       _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true));
+    }
+    for(SNode elseIf : SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true)) {
+      _context.getBuilder().build(elseIf);
     }
   }
 

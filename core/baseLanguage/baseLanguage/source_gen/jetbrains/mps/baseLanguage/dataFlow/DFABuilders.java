@@ -36,6 +36,10 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", new ParenthesizedExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.DotExpression", new DotExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.IMethodCall", new IMethodCall_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", new ArrayAccessExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.ArrayLiteral", new ArrayLiteral_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.DimensionExpression", new DimensionExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", new InstanceOfExpression_DataFlow());
   }
 
 }

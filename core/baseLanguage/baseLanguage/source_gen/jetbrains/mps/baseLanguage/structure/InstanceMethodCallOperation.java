@@ -12,11 +12,11 @@ import java.util.List;
 
 public class InstanceMethodCallOperation extends BaseConcept implements IOperation, IMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
-  public static String ACTUAL_ARGUMENT = "actualArgument";
-  public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String ACTUAL_ARGUMENT = "actualArgument";
+  public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
 
   public  InstanceMethodCallOperation(SNode node) {
     super(node);
@@ -30,6 +30,30 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
     return InstanceMethodCallOperation.newInstance(sm, false);
   }
 
+
+  public String getShortDescription() {
+    return this.getProperty(InstanceMethodCallOperation.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(InstanceMethodCallOperation.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(InstanceMethodCallOperation.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(InstanceMethodCallOperation.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(InstanceMethodCallOperation.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(InstanceMethodCallOperation.VIRTUAL_PACKAGE, value);
+  }
 
   public int getActualArgumentsCount() {
     return this.getChildCount(InstanceMethodCallOperation.ACTUAL_ARGUMENT);
@@ -65,30 +89,6 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
 
   public void setInstanceMethodDeclaration(InstanceMethodDeclaration node) {
     this.setBaseMethodDeclaration(node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(InstanceMethodCallOperation.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(InstanceMethodCallOperation.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(InstanceMethodCallOperation.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(InstanceMethodCallOperation.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(InstanceMethodCallOperation.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(InstanceMethodCallOperation.VIRTUAL_PACKAGE, value);
   }
 
 }
