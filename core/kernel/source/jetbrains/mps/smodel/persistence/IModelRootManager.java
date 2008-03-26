@@ -40,6 +40,8 @@ public interface IModelRootManager {
   boolean containsString(@NotNull SModelDescriptor modelDescriptor,
                          @NotNull String string);
 
+  boolean isEmpty(SModelDescriptor modelDescriptor);
+
   boolean isNewModelsSupported();
 
   long timestamp(@NotNull SModelDescriptor modelDescriptor);

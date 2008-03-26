@@ -102,7 +102,29 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       LOG.error(e);
     }
     return true;
+  }
 
+  public boolean isEmpty(SModelDescriptor modelDescriptor) {
+    if (modelDescriptor.isInitialized()) {
+      return modelDescriptor.getSModel().getRoots().isEmpty();
+    }
+    IFile modelFile = modelDescriptor.getModelFile();
+    if (!modelFile.exists()) {
+      return true;
+    }
+    try {
+      BufferedReader r = new BufferedReader(modelFile.openReader());
+      String line;
+      while ((line = r.readLine()) != null) {
+        if (line.contains("<node")) {
+          return false;
+        }
+      }
+      r.close();
+    } catch (IOException e) {
+      LOG.error(e);
+    }
+    return true;
   }
 
   public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {

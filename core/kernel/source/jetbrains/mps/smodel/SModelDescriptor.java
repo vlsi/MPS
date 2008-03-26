@@ -75,6 +75,8 @@ public interface SModelDescriptor {
 
   boolean isNotEditable();
 
+  boolean isEmpty();
+
   boolean hasSModelCommandListener(SModelCommandListener listener);
 
   boolean isTransient();

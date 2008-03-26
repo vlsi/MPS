@@ -133,6 +133,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return ourStructuralState;
   }
 
+  public boolean isEmpty() {
+    return myModelRootManager.isEmpty(this);
+  }
+
   protected void checkModelDuplication() {
     SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelUID);
     if (anotherModel != null) {

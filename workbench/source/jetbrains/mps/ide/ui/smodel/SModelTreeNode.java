@@ -339,7 +339,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       return;
     }
 
-    myGenerationRequired = FileGenerationUtil.generationRequired(getSModelDescriptor());
+    myGenerationRequired = FileGenerationUtil.generationRequired(getSModelDescriptor());        
 
     if (myGenerationRequired && getTree() != null) {
       updateAncestorsPresentationInTree();
