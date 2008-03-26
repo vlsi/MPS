@@ -2,8 +2,10 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.pathVariables.PathVariableManager;
 
 import java.io.File;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -50,12 +52,24 @@ public abstract class Macros {
   }
 
   protected String expandPath_internal(String path, IFile anchorFile) {
-    IFile result;
+    IFile result = null;
     if (path.startsWith("${mps_home}")) {
       String relativePath = removePrefix(path, "${mps_home}");
       result = FileSystem.getFile(PathManager.getHomePath()).child(relativePath);
     } else {
-      result = FileSystem.getFile(path);
+      Map<String, String> pathMacros = PathVariableManager.getInstance().getPathVariables();
+      for (String macro : pathMacros.keySet()) {
+        String prefix = "${" + macro + "}";
+        if (path.startsWith(prefix)) {
+          String relativePath = removePrefix(path, prefix);
+          result = FileSystem.getFile(pathMacros.get(macro)).child(relativePath);
+          break;
+        }
+      }
+      
+      if (result == null) {
+        result = FileSystem.getFile(path);
+      }
     }
     return result.getCanonicalPath();
   }
@@ -66,6 +80,15 @@ public abstract class Macros {
       String relationalPath = shrink(absolutePath, PathManager.getHomePath());
       fileName = "${mps_home}" + relationalPath;
     } else {
+      Map<String, String> pathMacros = PathVariableManager.getInstance().getPathVariables();
+      for (String macro : pathMacros.keySet()){
+        String path = pathMacros.get(macro);
+        if (pathStartsWith(absolutePath, path)){
+          String relationalPath = shrink(absolutePath, path);
+          fileName = "${" + macro + "}" + relationalPath;
+          return fileName;
+        }
+      }
       fileName = absolutePath;
     }
     return fileName;
