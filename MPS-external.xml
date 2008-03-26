@@ -118,6 +118,12 @@
       <fileset dir="core\languageDesign\transformation\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
+      <fileset dir="core\languageDesign\dataFlow\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
+      <fileset dir="core\languageDesign\dataFlow\runtime\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
+    </copy>
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
       <fileset dir="core\projectLanguage\classes" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">

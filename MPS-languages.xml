@@ -366,7 +366,15 @@
       <fileset dir="core\languageDesign\dataFlow" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\languageDesign\dataFlow" includes="*.mpl, *.msd, *.devkit" />
     </copy>
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.tmp\dataFlow.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.tmp\dataFlow.mpl" token="{language_descriptor}\runtime\classes" value="{mps_home}\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.runtime.jar" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.tmp" />
+    <mkdir dir="core\languageDesign\dataFlow\classes" />
+    <mkdir dir="core\languageDesign\dataFlow\runtime\classes" />
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.runtime.jar">
+      <fileset dir="core\languageDesign\dataFlow\classes" />
+      <fileset dir="core\languageDesign\dataFlow\runtime\classes" />
+    </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.dataFlow.tmp" />
   </target>
   <target name="pack.jetbrains.mpslite">
