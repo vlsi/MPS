@@ -80,38 +80,6 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder"
-          id="1200407841124">
-      <property name="useNewActions" value="true"/>
-      <link role="applicableConcept" targetNodeId="2.1068580123157" resolveInfo="Statement"/>
-      <node role="precondition"
-            type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction"
-            id="1200407854548">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200407854549">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200407854987">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1200407854988">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1200407854989"/>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227946734">
-                <node role="operand"
-                      type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode"
-                      id="1200407854993"/>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation"
-                      id="1200407854991">
-                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"
-                        id="1200407854992">
-                    <link role="concept" targetNodeId="1.1197044488840" resolveInfo="FindBlock"/>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart"
-            id="1200407858822">
-        <link role="concept" targetNodeId="1.1200396324422" resolveInfo="ExecuteFinderStatement"/>
-      </node>
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder"
           id="1206447251149">
       <property name="useNewActions" value="true"/>
       <link role="applicableConcept" targetNodeId="2.1068431790191" resolveInfo="Expression"/>

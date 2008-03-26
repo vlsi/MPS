@@ -182,52 +182,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200396324422">
-    <property name="name" value="ExecuteFinderStatement"/>
-    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement"/>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1200396629897">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="nodes"/>
-      <property name="sourceCardinality" value="0..1"/>
-      <link role="target" targetNodeId="2.1068498886296" resolveInfo="VariableReference"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1200396682929">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="results"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="2.1068498886296" resolveInfo="VariableReference"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1200416500677">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="queryNode"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1200416522066">
-      <property name="metaClass" value="aggregation"/>
-      <property name="role" value="queryScope"/>
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
-          id="1200396324424">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault"/>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
-          id="1200396324425">
-      <property name="value" value="execute(old)"/>
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1200396451599">
-      <property name="role" value="finder"/>
-      <property name="sourceCardinality" value="1"/>
-      <link role="target" targetNodeId="1197044488845" resolveInfo="FinderDeclaration"/>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206197741569">
     <property name="name" value="ExecuteFinderExpression"/>
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
