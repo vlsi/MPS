@@ -18,7 +18,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
 
   private SNode node;
 
-  public  UncommentStatements_Action(MPSProject project) {
+  public UncommentStatements_Action(MPSProject project) {
     super(project, "Uncomment Statements");
   }
 
@@ -27,18 +27,24 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     return "control shift SLASH";
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
-    super.doUpdate(context);
-    if (!(this.fillFieldsIfNecessary(context))) {
+  public void doUpdate(@NotNull()ActionContext context) {
+    try {
+      super.doUpdate(context);
+      if (!(this.fillFieldsIfNecessary(context))) {
+        this.setEnabled(false);
+        this.setVisible(false);
+        return;
+      }
+      this.setEnabled(true);
+      this.setVisible(true);
+    } catch (Throwable t) {
+      UncommentStatements_Action.LOG.error("User's action doUpdate method failed. Action:" + "UncommentStatements", t);
       this.setEnabled(false);
       this.setVisible(false);
-      return;
     }
-    this.setEnabled(true);
-    this.setVisible(true);
   }
 
-  public boolean fillFieldsIfNecessary(ActionContext context) {
+  private boolean fillFieldsIfNecessary(ActionContext context) {
     try {
       {
         SNode node = context.getNode();
@@ -63,22 +69,26 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
-    if (!(this.fillFieldsIfNecessary(context))) {
-      return;
-    }
-    {
-      ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(this.node, "statement", true));
-      try {
-        while(_zCursor1.moveToNext()) {
-          SNode statement = _zCursor1.getCurrent();
-          SNodeOperations.insertPrevSiblingChild(this.node, statement);
-        }
-      } finally {
-        _zCursor1.release();
+  public void doExecute(@NotNull()ActionContext context) {
+    try {
+      if (!(this.fillFieldsIfNecessary(context))) {
+        return;
       }
+      {
+        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(this.node, "statement", true));
+        try {
+          while (_zCursor1.moveToNext()) {
+            SNode statement = _zCursor1.getCurrent();
+            SNodeOperations.insertPrevSiblingChild(this.node, statement);
+          }
+        } finally {
+          _zCursor1.release();
+        }
+      }
+      SNodeOperations.deleteNode(this.node);
+    } catch (Throwable t) {
+      UncommentStatements_Action.LOG.error("User's action execute method failed. Action:" + "UncommentStatements", t);
     }
-    SNodeOperations.deleteNode(this.node);
   }
 
 }
