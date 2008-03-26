@@ -660,8 +660,7 @@
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1203705246855">
               <link role="concept" targetNodeId="1.1154546950173" resolveInfo="ConceptReference" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203705504792">
-                <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1203705501755">
-                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1203705503681" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206573100949">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203705214178">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203705214179">
                       <link role="variableDeclaration" targetNodeId="1203705048413" resolveInfo="listNode" />
@@ -670,6 +669,7 @@
                       <link role="link" targetNodeId="1.1154546920563" />
                     </node>
                   </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1203705503681" />
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1203705515893">
                   <link role="concept" targetNodeId="1.1154546950173" resolveInfo="ConceptReference" />
