@@ -156,13 +156,19 @@ public class NodeTypesComponent implements IGutterMessageOwner, Cloneable {
     return myFullyCheckedNodes.contains(node);
   }
 
-  boolean loadTypesystemRules(SNode root) {
-    List<Language> languages = root.getModel().getLanguages(GlobalScope.getInstance());
+  private boolean loadTypesystemRules(SNode root) {
+    SModel model = root.getModel();
+    RulesManager rulesManager = myTypeChecker.getRulesManager();
+    if (rulesManager.hasModelLoadedRules(model)) {
+      return true;
+    }
+    List<Language> languages = model.getLanguages(GlobalScope.getInstance());
     boolean isLoadedAnyLanguage = false;
     for (Language language : languages) {
-      boolean b = myTypeChecker.getRulesManager().loadLanguage(language);
+      boolean b = rulesManager.loadLanguage(language);
       isLoadedAnyLanguage = isLoadedAnyLanguage || b;
     }
+    rulesManager.markModelHasLoadedRules(model);
     if (!isLoadedAnyLanguage) return false;
     return true;
   }

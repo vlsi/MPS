@@ -1,8 +1,6 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.bootstrap.helgins.runtime.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
@@ -29,6 +27,7 @@ public class RulesManager {
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
   private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
   private DependenciesContainer myDependenciesContainer = new DependenciesContainer();
+  private Set<SModel> myModelsWithLoadedRules = new HashSet<SModel>();
 
   private Map<String,IVariableProvider> myConceptsToVariableProviders = new HashMap<String, IVariableProvider>(5);
 
@@ -40,6 +39,7 @@ public class RulesManager {
 
   public void clear() {
     myLoadedLanguages.clear();
+    myModelsWithLoadedRules.clear();
     myInferenceRules.clear();
     myNonTypesystemRules.clear();
     mySubtypingRules.clear();
@@ -47,6 +47,14 @@ public class RulesManager {
     myReplacementRules.clear();
     myDependenciesContainer.clear();
     myConceptsToVariableProviders.clear();
+  }
+
+  public boolean hasModelLoadedRules(SModel model) {
+    return myModelsWithLoadedRules.contains(model);
+  }
+
+  void markModelHasLoadedRules(SModel model) {
+    myModelsWithLoadedRules.add(model);
   }
 
   public boolean loadLanguage(Language l) {
