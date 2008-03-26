@@ -11,10 +11,10 @@ import java.util.List;
 
 public class SwitchStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.SwitchStatement";
-  public static String LABEL = "label";
   public static String EXPRESSION = "expression";
   public static String DEFAULT_BLOCK = "defaultBlock";
   public static String CASE = "case";
+  public static String LABEL = "label";
 
   public  SwitchStatement(SNode node) {
     super(node);
@@ -28,14 +28,6 @@ public class SwitchStatement extends Statement {
     return SwitchStatement.newInstance(sm, false);
   }
 
-
-  public String getLabel() {
-    return this.getProperty(SwitchStatement.LABEL);
-  }
-
-  public void setLabel(String value) {
-    this.setProperty(SwitchStatement.LABEL, value);
-  }
 
   public Expression getExpression() {
     return (Expression)this.getChild(SwitchStatement.EXPRESSION);
@@ -71,6 +63,14 @@ public class SwitchStatement extends Statement {
 
   public void insertCase(SwitchCase prev, SwitchCase node) {
     this.insertChild(prev, SwitchStatement.CASE, node);
+  }
+
+  public String getLabel() {
+    return this.getProperty(SwitchStatement.LABEL);
+  }
+
+  public void setLabel(String value) {
+    this.setProperty(SwitchStatement.LABEL, value);
   }
 
 }

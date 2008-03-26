@@ -8,7 +8,7 @@ public class _CharConstant_String_PropertySupport extends PropertySupport {
 
   public boolean canSetValue(String value) {
     String testValue = null;
-    if(value == null) {
+    if (value == null) {
       testValue = "";
     } else
     {
