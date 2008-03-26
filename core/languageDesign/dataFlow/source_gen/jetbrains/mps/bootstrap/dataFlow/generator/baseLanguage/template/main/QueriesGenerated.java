@@ -60,6 +60,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "jumpTo", true);
   }
 
+  public static SNode sourceNodeQuery_1206535717257(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "emitStatement", true);
+  }
+
   public static List sourceNodesQuery_1206456525472(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getSourceModel(), "jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration");
   }

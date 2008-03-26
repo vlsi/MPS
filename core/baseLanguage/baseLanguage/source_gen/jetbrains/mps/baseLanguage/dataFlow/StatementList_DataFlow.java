@@ -13,7 +13,7 @@ public class StatementList_DataFlow extends DataFlowBuilder {
   public  StatementList_DataFlow() {
   }
 
-  public void build(IOperationContext operationContext, DataFlowBuilderContext _context) {
+  public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitNop();
     for(SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {
       _context.getBuilder().build(s);

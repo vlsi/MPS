@@ -2,10 +2,7 @@ package jetbrains.mps.dataFlow.framework.instructions;
 
 import jetbrains.mps.dataFlow.framework.Program;
 
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class Instruction implements Comparable<Instruction> {
   private Program myProgram;
@@ -14,6 +11,8 @@ public abstract class Instruction implements Comparable<Instruction> {
 
   private Set<Instruction> myPred = new LinkedHashSet<Instruction>();
   private Set<Instruction> mySucc = new LinkedHashSet<Instruction>();
+
+  private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
 
   Instruction() {
   }
@@ -63,6 +62,14 @@ public abstract class Instruction implements Comparable<Instruction> {
 
   public int compareTo(Instruction o) {
     return new Integer(getIndex()).compareTo(o.getIndex());
+  }
+
+  public void putUserObject(Object key, Object value) {
+    myUserObjects.put(key, value);
+  }
+
+  public Object getUserObject(Object key) {
+    return myUserObjects.get(key);
   }
 
   public String toString() {

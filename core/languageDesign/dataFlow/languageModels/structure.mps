@@ -208,5 +208,19 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206534235764">
+    <property name="package" value="Instructions" />
+    <property name="name" value="EmitMayBeUnreachable" />
+    <link role="extends" targetNodeId="3.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206534244140">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="emitStatement" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1206443583064" resolveInfo="EmitStatement" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1206534252437">
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 

@@ -54,31 +54,31 @@ public abstract class StructuralProgramBuilder<N> {
 
   public void emitNop() {
     NopInstruction instruction = new NopInstruction();
-    instruction.setSource(getCurrentNode());
+    onInstructionEmitted(instruction);
     myProgram.add(instruction);
   }
 
   public void emitRead(Object var) {
     ReadInstruction instruction = new ReadInstruction(var);
-    instruction.setSource(getCurrentNode());
+    onInstructionEmitted(instruction);
     myProgram.add(instruction);
   }
 
   public void emitWrite(Object var) {
     WriteInstruction instruction = new WriteInstruction(var);
-    instruction.setSource(getCurrentNode());
+    onInstructionEmitted(instruction);
     myProgram.add(instruction);
   }
 
   public void emitRet() {
     RetInstruction instruction = new RetInstruction();
-    instruction.setSource(getCurrentNode());
+    onInstructionEmitted(instruction);
     myProgram.add(instruction);
   }
 
   public void emitJump(final Position position) {
     final JumpInstruction instruction = new JumpInstruction();
-    instruction.setSource(getCurrentNode());
+    onInstructionEmitted(instruction);
     myProgram.add(instruction);
     invokeLater(new Runnable() {
       public void run() {
@@ -89,13 +89,17 @@ public abstract class StructuralProgramBuilder<N> {
 
   public void emitIfJump(final Position position) {
     final IfJumpInstruction instruction = new IfJumpInstruction();
-    instruction.setSource(getCurrentNode());
+    onInstructionEmitted(instruction);
     myProgram.add(instruction);
     invokeLater(new Runnable() {
       public void run() {
         instruction.setJumpTo(position.getPosition());
       }
     });
+  }
+
+  protected void onInstructionEmitted(Instruction instruction) {
+    instruction.setSource(getCurrentNode());
   }
 
   private N getCurrentNode() {

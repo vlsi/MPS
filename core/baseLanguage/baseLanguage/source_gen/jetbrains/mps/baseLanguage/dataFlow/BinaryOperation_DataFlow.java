@@ -12,7 +12,7 @@ public class BinaryOperation_DataFlow extends DataFlowBuilder {
   public  BinaryOperation_DataFlow() {
   }
 
-  public void build(IOperationContext operationContext, DataFlowBuilderContext _context) {
+  public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
   }

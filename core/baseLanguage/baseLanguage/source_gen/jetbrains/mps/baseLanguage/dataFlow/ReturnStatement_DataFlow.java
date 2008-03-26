@@ -12,7 +12,7 @@ public class ReturnStatement_DataFlow extends DataFlowBuilder {
   public  ReturnStatement_DataFlow() {
   }
 
-  public void build(IOperationContext operationContext, DataFlowBuilderContext _context) {
+  public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "expression", true));
     _context.getBuilder().emitRet();
   }

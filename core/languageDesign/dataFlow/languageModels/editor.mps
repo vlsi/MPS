@@ -92,6 +92,12 @@
         <property name="color" value="blue" />
       </node>
     </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1206534328233">
+      <property name="name" value="MayBeUnreachable" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1206534333421">
+        <property name="color" value="lightGray" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206444686645">
     <property name="package" value="Instructions.Variable" />
@@ -159,6 +165,26 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206462913500">
       <property name="text" value="ret" />
       <link role="styleClass" targetNodeId="1206443699820" resolveInfo="Instruction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206534256454">
+    <property name="package" value="Instructions" />
+    <link role="conceptDeclaration" targetNodeId="1.1206534235764" resolveInfo="EmitMayBeUnreachable" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206534258518">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206534311340">
+        <property name="text" value="{" />
+        <property name="selectable" value="false" />
+        <link role="styleClass" targetNodeId="1206534328233" resolveInfo="MayBeUnreachable" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206534283286">
+        <link role="relationDeclaration" targetNodeId="1.1206534244140" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206534319498">
+        <property name="text" value="}" />
+        <property name="selectable" value="false" />
+        <link role="styleClass" targetNodeId="1206534328233" resolveInfo="MayBeUnreachable" />
+      </node>
     </node>
   </node>
 </model>

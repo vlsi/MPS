@@ -12,10 +12,16 @@ public class ForeachStatement_DataFlow extends DataFlowBuilder {
   public  ForeachStatement_DataFlow() {
   }
 
-  public void build(IOperationContext operationContext, DataFlowBuilderContext _context) {
+  public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "iterable", true));
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
-    _context.getBuilder().emitIfJump(_context.getBuilder().before(_context.getNode()));
+    _context.getBuilder().emitMayBeUnreachable(new Runnable() {
+
+      public void run() {
+        _context.getBuilder().emitIfJump(_context.getBuilder().before(_context.getNode()));
+      }
+
+    });
   }
 
 }

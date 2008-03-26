@@ -12,7 +12,7 @@ public class ContinueStatement_DataFlow extends DataFlowBuilder {
   public  ContinueStatement_DataFlow() {
   }
 
-  public void build(IOperationContext operationContext, DataFlowBuilderContext _context) {
+  public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if ((ContinueStatement_Behavior.call_getLoop_1206465092861(_context.getNode()) != null)) {
       _context.getBuilder().emitJump(_context.getBuilder().before(ContinueStatement_Behavior.call_getLoop_1206465092861(_context.getNode())));
     } else

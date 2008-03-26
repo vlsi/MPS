@@ -12,11 +12,11 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class DataFlowBuilderDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration";
-  public static String BUILDER_BLOCK = "builderBlock";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String BUILDER_BLOCK = "builderBlock";
   public static String CONCEPT_DECLARATION = "conceptDeclaration";
 
   public  DataFlowBuilderDeclaration(SNode node) {
@@ -31,14 +31,6 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
     return DataFlowBuilderDeclaration.newInstance(sm, false);
   }
 
-
-  public BuilderBlock getBuilderBlock() {
-    return (BuilderBlock)this.getChild(DataFlowBuilderDeclaration.BUILDER_BLOCK);
-  }
-
-  public void setBuilderBlock(BuilderBlock node) {
-    super.setChild(DataFlowBuilderDeclaration.BUILDER_BLOCK, node);
-  }
 
   public String getName() {
     return this.getProperty(DataFlowBuilderDeclaration.NAME);
@@ -70,6 +62,14 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
 
   public void setVirtualPackage(String value) {
     this.setProperty(DataFlowBuilderDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public BuilderBlock getBuilderBlock() {
+    return (BuilderBlock)this.getChild(DataFlowBuilderDeclaration.BUILDER_BLOCK);
+  }
+
+  public void setBuilderBlock(BuilderBlock node) {
+    super.setChild(DataFlowBuilderDeclaration.BUILDER_BLOCK, node);
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {

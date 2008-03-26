@@ -12,7 +12,7 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
   public  IfStatement_DataFlow() {
   }
 
-  public void build(IOperationContext operationContext, DataFlowBuilderContext _context) {
+  public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "condition", true));
     if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) == null)) {
       _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
@@ -22,7 +22,13 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
     }
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "ifTrue", true));
     if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null)) {
-      _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
+      _context.getBuilder().emitMayBeUnreachable(new Runnable() {
+
+        public void run() {
+          _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
+        }
+
+      });
       _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true));
     }
   }

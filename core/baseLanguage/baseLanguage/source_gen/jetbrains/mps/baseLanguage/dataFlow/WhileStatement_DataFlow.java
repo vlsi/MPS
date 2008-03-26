@@ -12,10 +12,16 @@ public class WhileStatement_DataFlow extends DataFlowBuilder {
   public  WhileStatement_DataFlow() {
   }
 
-  public void build(IOperationContext operationContext, DataFlowBuilderContext _context) {
+  public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "condition", true));
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
-    _context.getBuilder().emitIfJump(_context.getBuilder().before(SLinkOperations.getTarget(_context.getNode(), "body", true)));
+    _context.getBuilder().emitMayBeUnreachable(new Runnable() {
+
+      public void run() {
+        _context.getBuilder().emitIfJump(_context.getBuilder().before(SLinkOperations.getTarget(_context.getNode(), "body", true)));
+      }
+
+    });
   }
 
 }
