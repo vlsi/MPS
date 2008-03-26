@@ -145,7 +145,7 @@ public abstract class UsageView {
   private List<SModelDescriptor> collectModels(List<SearchResult> results) {
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SearchResult res : results) {
-      SNode node = res.getNodePointer().getNode();
+      SNode node = res.getNode();
       if (node != null) {
         SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
         if (!models.contains(modelDescriptor)) {
@@ -156,7 +156,7 @@ public abstract class UsageView {
     return models;
   }
 
-  public void read(Element element, MPSProject project) throws FinderClassNotFoundException {
+  public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
     assert !myIsInitialized;
     myIsInitialized = true;
 
@@ -171,7 +171,7 @@ public abstract class UsageView {
       myResultProvider.read(resultProviderXML, project);
     } catch (Exception e) {
       LOG.error("Can't instantiate result provider: " + className);
-      throw new FinderClassNotFoundException(className);
+      throw new ContainerInnerPartClassNotFoundException(className);
     }
 
     Element queryXML = element.getChild(QUERY);

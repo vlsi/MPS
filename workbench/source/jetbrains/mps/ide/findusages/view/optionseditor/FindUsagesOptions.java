@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.findusages.view.optionseditor;
 
 import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.ide.findusages.view.FinderClassNotFoundException;
+import jetbrains.mps.ide.findusages.view.ContainerInnerPartClassNotFoundException;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -20,7 +20,7 @@ public class FindUsagesOptions implements Cloneable {
 
   private Map<Class, BaseOptions> myOptions = new HashMap<Class, BaseOptions>();
 
-  public FindUsagesOptions(Element element, MPSProject project) throws FinderClassNotFoundException {
+  public FindUsagesOptions(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
     read(element, project);
   }
 
@@ -46,7 +46,7 @@ public class FindUsagesOptions implements Cloneable {
     return (T) myOptions.get(optionClass);
   }
 
-  public void read(Element element, MPSProject project) throws FinderClassNotFoundException {
+  public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
     for (Element optionXML : (List<Element>) element.getChildren(OPTION)) {
       String className = optionXML.getAttribute(CLASS_NAME).getValue();
       try {
@@ -55,7 +55,7 @@ public class FindUsagesOptions implements Cloneable {
         myOptions.put(o.getClass(), (BaseOptions) o);
       } catch (ClassNotFoundException e) {
         LOG.error("Couldn't instantiate option with class name " + className);
-        throw new FinderClassNotFoundException(className);
+        throw new ContainerInnerPartClassNotFoundException(className);
       } catch (IllegalAccessException e) {
         e.printStackTrace();
       } catch (InstantiationException e) {

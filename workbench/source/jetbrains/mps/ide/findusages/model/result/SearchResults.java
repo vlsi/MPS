@@ -60,7 +60,7 @@ public class SearchResults {
   public List<SearchResult> getAliveResults() {
     List<SearchResult> alive = new ArrayList<SearchResult>();
     for (SearchResult result : mySearchResults) {
-      if (result.getNodePointer().getNode() != null) {
+      if (result.getNode() != null) {
         alive.add(result);
       }
     }

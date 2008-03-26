@@ -19,16 +19,12 @@ public class SearchResult {
   }
 
   public SearchResult(SNodePointer nodePointer, String category) {
-    myNodePointer = nodePointer;
+    myNodePointer = new SNodePointer(nodePointer.getNode());
     myCategory = category;
   }
 
   public SearchResult(SNode node, String category) {
     this(new SNodePointer(node), category);
-  }
-
-  public SNodePointer getNodePointer() {
-    return myNodePointer;
   }
 
   public SNode getNode() {

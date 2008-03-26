@@ -211,7 +211,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     } else if (resCount == 1 && !showOne) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          SNode node = searchResults.getSearchResults().get(0).getNodePointer().getNode();
+          SNode node = searchResults.getSearchResults().get(0).getNode();
           if (node != null) {
             NavigationActionProcessor.executeNavigationAction(
               new EditorNavigationCommand(node, myProjectFrame.getEditorsPane().getCurrentEditor(), myProjectFrame.getEditorsPane()),
@@ -253,7 +253,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
         UsageViewData usageViewData = new UsageViewData();
         try {
           usageViewData.read(tabXML, project);
-        } catch (FinderClassNotFoundException e) {
+        } catch (ContainerInnerPartClassNotFoundException e) {
           continue;
         }
         myUsageViewsData.add(usageViewData);
@@ -267,7 +267,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     Element defaultFindOptionsXML = element.getChild(DEFAULT_FIND_OPTIONS);
     try {
       myDefaultFindOptions.read(defaultFindOptionsXML, project);
-    } catch (FinderClassNotFoundException e) {
+    } catch (ContainerInnerPartClassNotFoundException e) {
       myDefaultFindOptions = new FindUsagesOptions();
     }
 
@@ -363,7 +363,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       };
     }
 
-    public void read(Element element, MPSProject project) throws FinderClassNotFoundException {
+    public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
       Element usageViewXML = element.getChild(USAGE_VIEW);
       createUsageView();
       myUsageView.read(usageViewXML, project);
