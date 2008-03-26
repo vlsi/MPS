@@ -10,6 +10,7 @@ import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -65,7 +66,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
         }
         this.node = node;
         /*
-          if (!(<!IsSubtypeExpression TextGen not found!>)) {
+          if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(node), <!Quotation TextGen not found!>))) {
             return false;
           }
         */
