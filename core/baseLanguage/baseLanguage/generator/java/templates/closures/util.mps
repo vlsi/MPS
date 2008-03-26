@@ -92,12 +92,15 @@
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170730182568">
                   <link role="variableDeclaration" targetNodeId="1170730182546" resolveInfo="enclosingClass" />
                 </node>
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204329604368">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170730182570">
-                    <link role="variableDeclaration" targetNodeId="1170730182559" resolveInfo="adapter" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204329604369">
-                    <link role="baseMethodDeclaration" targetNodeId="2.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+                <node role="rValue" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1206573746706">
+                  <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204329604368">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170730182570">
+                      <link role="variableDeclaration" targetNodeId="1170730182559" resolveInfo="adapter" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204329604369">
+                      <link role="baseMethodDeclaration" targetNodeId="2.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -199,7 +202,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170869730059">
               <link role="variableDeclaration" targetNodeId="1170730182546" resolveInfo="enclosingClass" />
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList" id="1170869730058">
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206573590322">
               <link role="link" targetNodeId="1.1109279881614" />
             </node>
           </node>
@@ -302,12 +305,15 @@
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170874244177">
                   <link role="variableDeclaration" targetNodeId="1170874244153" resolveInfo="enclosingClass" />
                 </node>
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204329604366">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170874244179">
-                    <link role="variableDeclaration" targetNodeId="1170874244166" resolveInfo="adapter" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204329604367">
-                    <link role="baseMethodDeclaration" targetNodeId="2.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+                <node role="rValue" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1206573695189">
+                  <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204329604366">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170874244179">
+                      <link role="variableDeclaration" targetNodeId="1170874244166" resolveInfo="adapter" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204329604367">
+                      <link role="baseMethodDeclaration" targetNodeId="2.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -319,7 +325,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170874257310">
               <link role="variableDeclaration" targetNodeId="1170874244153" resolveInfo="enclosingClass" />
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList" id="1170874261132">
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206573590325">
               <link role="link" targetNodeId="1.1109279881614" />
             </node>
           </node>

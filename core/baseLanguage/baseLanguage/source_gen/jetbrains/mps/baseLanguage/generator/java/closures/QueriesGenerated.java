@@ -22,7 +22,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1170198286262(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode parent = SNodeOperations.getParent(_context.getNode(), null, false, false);
-    if(ClosuresUtil.isClosureContextOwner(parent)) {
+    if (ClosuresUtil.isClosureContextOwner(parent)) {
       return ClosuresUtil.hasVariablesUsedInClosure(parent, _context.getGenerator());
     }
     return false;
@@ -35,7 +35,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1170198665539(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode var = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
-    if(contextOwner != null) {
+    if (contextOwner != null) {
       return ClosuresUtil.isVariableUsedInClosure(contextOwner, ((VariableDeclaration)SNodeOperations.getAdapter(var)), _context.getGenerator());
     }
     return false;
@@ -44,7 +44,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1170198858690(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode var = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
-    if(contextOwner != null) {
+    if (contextOwner != null) {
       return ClosuresUtil.isVariableUsedInClosure(contextOwner, ((VariableDeclaration)SNodeOperations.getAdapter(var)), _context.getGenerator());
     }
     return false;
@@ -52,9 +52,9 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1170199119856(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode var = SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true);
-    if(SLinkOperations.getTarget(var, "initializer", true) != null) {
+    if (SLinkOperations.getTarget(var, "initializer", true) != null) {
       SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
-      if(contextOwner != null) {
+      if (contextOwner != null) {
         return ClosuresUtil.isVariableUsedInClosure(contextOwner, ((VariableDeclaration)SNodeOperations.getAdapter(var)), _context.getGenerator());
       }
     }
@@ -62,7 +62,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1170282061477(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if(!(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Closure"))) {
+    if (!(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Closure"))) {
       return ClosuresUtil.hasVariablesUsedInClosure(_context.getNode(), _context.getGenerator());
     }
     return false;
