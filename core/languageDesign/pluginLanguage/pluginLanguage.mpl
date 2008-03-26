@@ -40,7 +40,6 @@
     <dependency reexport="false">jetbrains.mpslite</dependency>
     <dependency reexport="false">jetbrains.mps.ide</dependency>
     <dependency reexport="true">jetbrains.mps.baseLanguage.classifiers</dependency>
-    <dependency reexport="false">webr.notifications</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>
