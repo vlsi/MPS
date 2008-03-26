@@ -16,6 +16,12 @@ import java.util.Arrays;
 
 public abstract class CompletionTextField extends JTextField {
   private PopupHint myHint = new PopupHint();
+  private Window myContainerWindow;
+  private ComponentListener myListener = new ComponentAdapter() {
+    public void componentMoved(ComponentEvent e) {
+      myHint.updateBounds();
+    }
+  };
 
   public CompletionTextField() {
     super(20);
@@ -85,6 +91,17 @@ public abstract class CompletionTextField extends JTextField {
         myHint.hide();
       }
     });
+  }
+
+  public void addNotify() {
+    super.addNotify();
+    myContainerWindow = SwingUtilities.getWindowAncestor(this);
+    myContainerWindow.addComponentListener(myListener);
+  }
+
+  public void removeNotify() {
+    myContainerWindow.removeComponentListener(myListener);    
+    super.removeNotify();
   }
 
   protected abstract List<String> getProposals(String text);
