@@ -8564,5 +8564,29 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1206536732916">
+    <property name="package" value="if" />
+    <link role="concept" targetNodeId="1.1206060495898" resolveInfo="ElsifClause" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206536734450">
+      <property name="name" value="getIfStatement" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206536787924">
+        <link role="concept" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206536734452">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206536795581">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1206536814462">
+            <link role="concept" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206536801459">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206536801161" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1206536812336" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1206536732917">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206536732918" />
+    </node>
+  </node>
 </model>
 

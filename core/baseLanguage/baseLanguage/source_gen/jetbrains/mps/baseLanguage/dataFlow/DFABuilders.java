@@ -27,6 +27,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.ThrowStatement", new ThrowStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.BreakStatement", new BreakStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ContinueStatement", new ContinueStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.ElsifClause", new ElsifClause_DataFlow());
   }
 
 }
