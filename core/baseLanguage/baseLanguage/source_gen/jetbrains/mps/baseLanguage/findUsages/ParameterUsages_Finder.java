@@ -54,36 +54,53 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     ListOperations.addElement(overridingMethods, nodeParentMethod);
     // null
     {
-      ICursor<SNode> _zCursor10 = CursorFactory.createCursor(overridingMethods);
+      ICursor<SNode> _zCursor14 = CursorFactory.createCursor(overridingMethods);
       try {
-        while (_zCursor10.moveToNext()) {
-          SNode methodNode = _zCursor10.getCurrent();
+        while (_zCursor14.moveToNext()) {
+          SNode methodNode = _zCursor14.getCurrent();
           {
             SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
-            /*
-              ListOperations.addElement(_results, parameterNode);
-            */
             {
-              ICursor<SNode> _zCursor11 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", parameterNode, scope));
+              ICursor<SNode> _zCursor15 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", parameterNode, scope));
               try {
-                while (_zCursor11.moveToNext()) {
-                  SNode parameterUsage = _zCursor11.getCurrent();
+                while (_zCursor15.moveToNext()) {
+                  SNode parameterUsage = _zCursor15.getCurrent();
                   ListOperations.addElement(_results, parameterUsage);
                 }
               } finally {
-                _zCursor11.release();
+                _zCursor15.release();
               }
             }
           }
         }
       } finally {
-        _zCursor10.release();
+        _zCursor14.release();
       }
     }
   }
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    ListOperations.addElement(_results, node);
+    SNode nodeParentMethod;
+    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) != null) {
+      nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
+    } else {
+      nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
+    }
+    // null
+    List<SNode> overridingMethods = this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope);
+    ListOperations.addElement(overridingMethods, nodeParentMethod);
+    // null
+    {
+      ICursor<SNode> _zCursor16 = CursorFactory.createCursor(overridingMethods);
+      try {
+        while (_zCursor16.moveToNext()) {
+          SNode methodNode = _zCursor16.getCurrent();
+          ListOperations.addElement(_results, ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node)));
+        }
+      } finally {
+        _zCursor16.release();
+      }
+    }
   }
 
   public String getNodeCategory(SNode node) {

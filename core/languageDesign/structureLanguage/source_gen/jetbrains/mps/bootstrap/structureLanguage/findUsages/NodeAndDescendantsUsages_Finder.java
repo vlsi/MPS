@@ -11,9 +11,12 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
 
 public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
@@ -42,9 +45,16 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results) {
     Set<SNode> nodes = new HashSet<SNode>();
     nodes.add(node);
-    for (SNode child : ((SNode) node).allChildren()) {
-      ListOperations.addElement(_results, child);
-      nodes.add(child);
+    {
+      ICursor<SNode> _zCursor = CursorFactory.createCursor(SNodeOperations.getDescendants(node, null, false));
+      try {
+        while (_zCursor.moveToNext()) {
+          SNode child = _zCursor.getCurrent();
+          nodes.add(child);
+        }
+      } finally {
+        _zCursor.release();
+      }
     }
     // null
     Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, null);
@@ -56,7 +66,17 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   }
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    ListOperations.addElement(_results, node);
+    {
+      ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SNodeOperations.getDescendants(node, null, false));
+      try {
+        while (_zCursor1.moveToNext()) {
+          SNode child = _zCursor1.getCurrent();
+          ListOperations.addElement(_results, child);
+        }
+      } finally {
+        _zCursor1.release();
+      }
+    }
   }
 
   public String getNodeCategory(SNode node) {

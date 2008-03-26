@@ -49,10 +49,10 @@ public class OverridingFields_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results) {
     {
-      ICursor<SNode> _zCursor4 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope));
+      ICursor<SNode> _zCursor8 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope));
       try {
-        while (_zCursor4.moveToNext()) {
-          SNode classNode = _zCursor4.getCurrent();
+        while (_zCursor8.moveToNext()) {
+          SNode classNode = _zCursor8.getCurrent();
           {
             Iterable<SNode> fieldsOfSameKind;
             if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
@@ -61,22 +61,22 @@ public class OverridingFields_Finder extends GeneratedFinder {
               fieldsOfSameKind = SLinkOperations.getTargets(classNode, "staticField", true);
             }
             {
-              ICursor<SNode> _zCursor5 = CursorFactory.createCursor(fieldsOfSameKind);
+              ICursor<SNode> _zCursor9 = CursorFactory.createCursor(fieldsOfSameKind);
               try {
-                while (_zCursor5.moveToNext()) {
-                  SNode field = _zCursor5.getCurrent();
+                while (_zCursor9.moveToNext()) {
+                  SNode field = _zCursor9.getCurrent();
                   if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(field, "type", true)).equals(Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(node, "type", true)))) {
                     ListOperations.addElement(_results, field);
                   }
                 }
               } finally {
-                _zCursor5.release();
+                _zCursor9.release();
               }
             }
           }
         }
       } finally {
-        _zCursor4.release();
+        _zCursor8.release();
       }
     }
   }
