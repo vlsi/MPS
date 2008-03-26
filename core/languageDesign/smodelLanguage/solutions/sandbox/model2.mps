@@ -57,6 +57,7 @@
           <link role="concept" targetNodeId="1.1138676077309" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206574355060" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170455942976">
       <property name="name" value="bbb" />
@@ -82,6 +83,7 @@
           <link role="concept" targetNodeId="1.1138676077309" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206574355041" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1179351056139">
       <property name="name" value="ccc" />
@@ -149,6 +151,7 @@
         </node>
       </node>
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206574358519" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1204763824500">
     <property name="name" value="TestAttr" />

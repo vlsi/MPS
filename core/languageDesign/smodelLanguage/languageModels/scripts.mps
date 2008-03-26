@@ -89,7 +89,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1177461782622">
-    <property name="title" value="Convert deprecated nodes" />
+    <property name="title" value="Convert deprecated nodes in smodel lang" />
     <property name="name" value="SmodelLangMigration339" />
     <property name="migrationFromBuild" value="339" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1177462133415">
@@ -543,6 +543,27 @@
                   <link role="conceptDeclaration" targetNodeId="1.1140133623887" resolveInfo="Node_DeleteOperation" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1206574633788">
+    <property name="name" value="SmodelLangMigration470" />
+    <property name="title" value="Convert deprecated nodes in smodel lang" />
+    <property name="migrationFromBuild" value="470" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1206574673352">
+      <property name="description" value="replace &quot;IsAssignableFrom&quot; with 'isSuberConceptOf'" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1172421306145" resolveInfo="Concept_IsAssignableFromOperation" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1206574673353">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206574673354">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206574876830">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206574876831">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1206574876832">
+                <link role="concept" targetNodeId="1.1180028149140" resolveInfo="Concept_IsSuperConceptOfOperation" />
+              </node>
+              <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1206574880818" />
             </node>
           </node>
         </node>

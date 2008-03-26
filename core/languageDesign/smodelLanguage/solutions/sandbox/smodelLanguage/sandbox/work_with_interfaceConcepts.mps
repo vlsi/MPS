@@ -93,9 +93,11 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1173137355178" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsAssignableFromOperation" id="1173137359008">
-                    <node role="sconceptExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1173137366682">
-                      <link role="variableDeclaration" targetNodeId="1173137233286" resolveInfo="namedConcept" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation" id="1206575106772">
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression" id="1206575106773">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206575106774">
+                        <link role="variableDeclaration" targetNodeId="1173137233286" resolveInfo="namedConcept" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -126,6 +128,7 @@
           <link role="concept" targetNodeId="1.1169194658468" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206574355061" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1173918529983">
       <property name="name" value="m2" />
@@ -211,7 +214,9 @@
           <link role="concept" targetNodeId="1.1169194658468" />
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206574355039" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206574358537" />
   </node>
 </model>
 

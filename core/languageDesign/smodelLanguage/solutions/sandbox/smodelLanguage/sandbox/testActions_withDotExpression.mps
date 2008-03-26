@@ -146,7 +146,7 @@
               <link role="elementConcept" targetNodeId="1.1068580123157" resolveInfo="Statement" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203540626502">
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList" id="1203540626503">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206574376133">
                 <link role="link" targetNodeId="1.1068581517665" />
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203540626504">

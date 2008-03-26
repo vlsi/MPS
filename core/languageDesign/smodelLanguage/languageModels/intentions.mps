@@ -511,15 +511,6 @@
         </node>
       </node>
     </node>
-    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1203552540439">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203552540440">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203552655163">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1203552655164">
-            <property name="value" value="true" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1203552540441">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203552540442">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203553855633">
