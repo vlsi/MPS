@@ -2776,9 +2776,11 @@
             <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1173394887282">
               <link role="conceptDeclaration" targetNodeId="6.1068580123159" />
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsAssignableFromOperation" id="1173394893721">
-              <node role="sconceptExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1173394955082">
-                <link role="conceptDeclaration" targetNodeId="6.1068580123157" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation" id="1206575286720">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression" id="1206575286721">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1206575286722">
+                  <link role="conceptDeclaration" targetNodeId="6.1068580123157" resolveInfo="Statement" />
+                </node>
               </node>
             </node>
           </node>
@@ -2805,9 +2807,11 @@
             <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1173394949079">
               <link role="conceptDeclaration" targetNodeId="6.1068580123159" />
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsAssignableFromOperation" id="1173394949080">
-              <node role="sconceptExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1173394949081">
-                <property name="value" value="10" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation" id="1206575286717">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression" id="1206575286718">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206575286719">
+                  <property name="value" value="10" />
+                </node>
               </node>
             </node>
           </node>
@@ -2817,9 +2821,11 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178060907448">
               <link role="variableDeclaration" targetNodeId="1178060901587" resolveInfo="node" />
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsAssignableFromOperation" id="1178060863681">
-              <node role="sconceptExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1178060863682">
-                <link role="conceptDeclaration" targetNodeId="6.1068580123157" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation" id="1206575286714">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression" id="1206575286715">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1206575286716">
+                  <link role="conceptDeclaration" targetNodeId="6.1068580123157" resolveInfo="Statement" />
+                </node>
               </node>
             </node>
           </node>
