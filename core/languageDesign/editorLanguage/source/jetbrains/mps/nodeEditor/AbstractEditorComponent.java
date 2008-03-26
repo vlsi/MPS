@@ -493,6 +493,27 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myNodePointer;
   }
 
+  public String getToolTipText(final MouseEvent event) {
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
+      public String calculate() {
+        EditorCell cell = myRootCell.findCell(event.getX(), event.getY());
+        if (cell == null) {
+          return null;
+        }        
+        SNode node = cell.getSNode();
+        while (node != null) {
+          final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(node);
+          if (herror != null) {
+            return herror.reportError();
+          }
+          node = node.getParent();
+        }
+
+        return null;
+      }
+    });
+  }
+
   public void editNode(SNode node, IOperationContext operationContext) {
     if (operationContext == null) {
       LOG.errorWithTrace("Opening editor with null context");
@@ -1387,10 +1408,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             while (selectedNode != null) {
               final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
               if (herror != null) {
-//                final SNode selectedNode1 = selectedNode;
                 SwingUtilities.invokeLater(new Runnable() {
                   public void run() {
-                    // String nodeClassName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
                     String s = herror.reportError();
                     final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR", false);
                     JButton button = new JButton(new AbstractAction("Go To Rule") {

@@ -33,7 +33,6 @@ public class SModelRepository extends SModelAdapter {
   private Map<SModelDescriptor, Set<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, Set<ModelOwner>>();
   private Map<ModelOwner, Set<SModelDescriptor>> myOwnerToModelMap = new HashMap<ModelOwner, Set<SModelDescriptor>>();
 
-
   private MPSModuleRepository myModuleRepository;
 
   private Map<String, List<SModelCommandListener>> myCommandListeners = new HashMap<String, List<SModelCommandListener>>();

@@ -60,7 +60,19 @@
                 <property name="value" value="true" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206536258990">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1206536279210" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206539438591">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206539438592">
+                    <property name="name" value="i" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1206539438593" />
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1206539852487" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206539441517">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206539441518">
+                    <property name="name" value="zj" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1206539441519" />
+                  </node>
+                </node>
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.DoWhileStatement" id="1206536326445">

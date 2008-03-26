@@ -120,6 +120,13 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable" id="1206536285196">
+          <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1206455229720">
+            <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition" id="1206539350917">
+              <node role="relativeTo" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206539351779" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1206455224916">
           <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206455226294">
             <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206455226027" />
@@ -128,16 +135,9 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable" id="1206536285196">
-          <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1206455229720">
-            <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.BeforePosition" id="1206455231956">
-              <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206455233240">
-                <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206455232896" />
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206455234117">
-                  <link role="link" targetNodeId="1.1154032183016" />
-                </node>
-              </node>
-            </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1206539361128">
+          <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.BeforePosition" id="1206539362692">
+            <node role="relativeTo" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206539363601" />
           </node>
         </node>
       </node>
