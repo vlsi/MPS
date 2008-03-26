@@ -158,8 +158,8 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     provider.setAuxiliaryCellProvider(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline28());
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.setupBasic_ReplacementConceptReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.setupLabel_ReplacementConceptReferenceCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.setupLabel_ReplacementConceptReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -174,7 +174,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     EditorCell cellWithRole = this.createReplacementConceptReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -210,8 +210,8 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline28.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
-        CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline28.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+      if (editorCell instanceof EditorCell_Label) {
+        CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline28.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -226,7 +226,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

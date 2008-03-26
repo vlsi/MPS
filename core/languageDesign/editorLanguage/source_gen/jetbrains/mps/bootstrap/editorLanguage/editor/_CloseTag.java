@@ -57,7 +57,7 @@ public class _CloseTag extends AbstractCellProvider {
     return new ModelAccessor() {
 
       public String getText() {
-        return EditorCellTags.getClosingText((((EditorCellModel)SNodeOperations.getAdapter(node))));
+        return EditorCellTags.getClosingText(((EditorCellModel)SNodeOperations.getAdapter(node)));
       }
 
       public void setText(String text) {

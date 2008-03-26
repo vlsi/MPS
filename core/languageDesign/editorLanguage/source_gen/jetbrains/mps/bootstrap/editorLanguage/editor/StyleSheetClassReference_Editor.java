@@ -33,8 +33,8 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new StyleSheetClassReference_Editor._Inline52());
     EditorCell editorCell = provider.createEditorCell(context);
     StyleSheetClassReference_Editor.setupBasic_StyleSheetClassReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      StyleSheetClassReference_Editor.setupLabel_StyleSheetClassReferenceCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      StyleSheetClassReference_Editor.setupLabel_StyleSheetClassReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -49,7 +49,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createStyleSheetClassReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -84,8 +84,8 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       StyleSheetClassReference_Editor._Inline52.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
-        StyleSheetClassReference_Editor._Inline52.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+      if (editorCell instanceof EditorCell_Label) {
+        StyleSheetClassReference_Editor._Inline52.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -100,7 +100,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

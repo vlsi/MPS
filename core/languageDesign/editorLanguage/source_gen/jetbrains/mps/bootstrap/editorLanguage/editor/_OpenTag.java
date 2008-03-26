@@ -58,7 +58,7 @@ public class _OpenTag extends AbstractCellProvider {
     return new ModelAccessor() {
 
       public String getText() {
-        return EditorCellTags.getOpeningText((((EditorCellModel)SNodeOperations.getAdapter(node))));
+        return EditorCellTags.getOpeningText(((EditorCellModel)SNodeOperations.getAdapter(node)));
       }
 
       public void setText(String text) {

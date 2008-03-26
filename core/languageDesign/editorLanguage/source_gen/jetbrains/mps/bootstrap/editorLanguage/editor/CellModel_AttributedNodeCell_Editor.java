@@ -231,8 +231,8 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_AttributedNodeCell_Editor.setupBasic_DrawBracketsCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      CellModel_AttributedNodeCell_Editor.setupLabel_DrawBracketsCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      CellModel_AttributedNodeCell_Editor.setupLabel_DrawBracketsCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -247,7 +247,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createDrawBracketsCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -260,8 +260,8 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     CellModel_AttributedNodeCell_Editor.setupBasic_BracketsColorCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      CellModel_AttributedNodeCell_Editor.setupLabel_BracketsColorCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      CellModel_AttributedNodeCell_Editor.setupLabel_BracketsColorCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -276,7 +276,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createBracketsColorCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

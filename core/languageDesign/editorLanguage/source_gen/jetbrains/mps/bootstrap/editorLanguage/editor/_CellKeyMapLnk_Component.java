@@ -41,8 +41,8 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(new _CellKeyMapLnk_Component._Inline25());
     EditorCell editorCell = provider.createEditorCell(context);
     _CellKeyMapLnk_Component.setupBasic_KeyMapReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      _CellKeyMapLnk_Component.setupLabel_KeyMapReferenceCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      _CellKeyMapLnk_Component.setupLabel_KeyMapReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -57,7 +57,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     EditorCell cellWithRole = this.createKeyMapReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -93,8 +93,8 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       _CellKeyMapLnk_Component._Inline25.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
-        _CellKeyMapLnk_Component._Inline25.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+      if (editorCell instanceof EditorCell_Label) {
+        _CellKeyMapLnk_Component._Inline25.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -109,7 +109,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

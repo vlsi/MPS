@@ -463,8 +463,8 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ModelAccessor_Editor.setupBasic_SetterCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      ModelAccessor_Editor.setupLabel_SetterCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      ModelAccessor_Editor.setupLabel_SetterCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -479,7 +479,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createSetterCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -492,8 +492,8 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ModelAccessor_Editor.setupBasic_GetterCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      ModelAccessor_Editor.setupLabel_GetterCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      ModelAccessor_Editor.setupLabel_GetterCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -508,7 +508,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createGetterCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -521,8 +521,8 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ModelAccessor_Editor.setupBasic_ValidatorCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      ModelAccessor_Editor.setupLabel_ValidatorCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      ModelAccessor_Editor.setupLabel_ValidatorCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -537,7 +537,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createValidatorCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

@@ -68,8 +68,8 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     InlineEditorComponent_Editor.setupBasic_CellModelCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      InlineEditorComponent_Editor.setupLabel_CellModelCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      InlineEditorComponent_Editor.setupLabel_CellModelCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -84,7 +84,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createCellModelCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

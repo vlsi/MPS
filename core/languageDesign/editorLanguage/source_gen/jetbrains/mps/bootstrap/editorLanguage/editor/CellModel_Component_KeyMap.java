@@ -32,14 +32,14 @@ public class CellModel_Component_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component")) {
         return true;
       }
       return false;

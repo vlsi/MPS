@@ -38,14 +38,14 @@ public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant")) {
         return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
       }
       return false;

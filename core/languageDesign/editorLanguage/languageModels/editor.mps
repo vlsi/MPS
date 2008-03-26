@@ -6539,6 +6539,7 @@
               <property name="readOnly" value="true" />
               <property name="drawBorder" value="true" />
               <link role="relationDeclaration" targetNodeId="3.1169194664001" />
+              <link role="styleClass" targetNodeId="2v.1203541385314" resolveInfo="ReferenceOnConcept" />
             </node>
           </node>
         </node>

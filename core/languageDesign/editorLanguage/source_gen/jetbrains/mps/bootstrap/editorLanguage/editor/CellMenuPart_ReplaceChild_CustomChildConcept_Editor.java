@@ -156,8 +156,8 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuPart_ReplaceChild_CustomChildConcept_Editor.setupBasic_ChildConceptFunctionCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      CellMenuPart_ReplaceChild_CustomChildConcept_Editor.setupLabel_ChildConceptFunctionCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      CellMenuPart_ReplaceChild_CustomChildConcept_Editor.setupLabel_ChildConceptFunctionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -172,7 +172,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     EditorCell cellWithRole = this.createChildConceptFunctionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

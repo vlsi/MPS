@@ -124,8 +124,8 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     CellKeyMapKeystroke_Editor.setupBasic_ModifiersCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      CellKeyMapKeystroke_Editor.setupLabel_ModifiersCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      CellKeyMapKeystroke_Editor.setupLabel_ModifiersCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_modifiers_cellMenu()}));
@@ -141,7 +141,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createModifiersCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -154,8 +154,8 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     CellKeyMapKeystroke_Editor.setupBasic_KeycodeCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      CellKeyMapKeystroke_Editor.setupLabel_KeycodeCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      CellKeyMapKeystroke_Editor.setupLabel_KeycodeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_keycode_cellMenu()}));
@@ -171,7 +171,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createKeycodeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

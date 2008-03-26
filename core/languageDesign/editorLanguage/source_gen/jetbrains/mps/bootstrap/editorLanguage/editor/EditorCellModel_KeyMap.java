@@ -39,14 +39,14 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
         return true;
       }
       return false;
@@ -58,7 +58,7 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
-      if(!(SPropertyOperations.hasValue(node, "attractsFocus", "1", "0"))) {
+      if (!(SPropertyOperations.hasValue(node, "attractsFocus", "1", "0"))) {
         SPropertyOperations.set(node, "attractsFocus", "1");
       } else
       {
@@ -87,14 +87,14 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
         return true;
       }
       return false;
@@ -106,7 +106,7 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
-      if(!(SPropertyOperations.hasValue(node, "attractsFocus", "2", "0"))) {
+      if (!(SPropertyOperations.hasValue(node, "attractsFocus", "2", "0"))) {
         SPropertyOperations.set(node, "attractsFocus", "2");
       } else
       {
@@ -135,14 +135,14 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
 
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      if((contextCell == null)) {
+      if ((contextCell == null)) {
         return false;
       }
       SNode contextNode = contextCell.getSNode();
-      if(contextNode == null) {
+      if (contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
         return true;
       }
       return false;
@@ -154,7 +154,7 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
-      if(SPropertyOperations.hasValue(node, "selectable", "false", null)) {
+      if (SPropertyOperations.hasValue(node, "selectable", "false", null)) {
         SPropertyOperations.set(node, "selectable", "true");
       } else
       {

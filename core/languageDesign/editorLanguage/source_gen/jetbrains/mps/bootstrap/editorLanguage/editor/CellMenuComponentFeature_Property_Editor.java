@@ -35,8 +35,8 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
     provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Property_Editor._Inline30());
     EditorCell editorCell = provider.createEditorCell(context);
     CellMenuComponentFeature_Property_Editor.setupBasic_PropertyDeclarationReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      CellMenuComponentFeature_Property_Editor.setupLabel_PropertyDeclarationReferenceCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      CellMenuComponentFeature_Property_Editor.setupLabel_PropertyDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -51,7 +51,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
     EditorCell cellWithRole = this.createPropertyDeclarationReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -87,8 +87,8 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       CellMenuComponentFeature_Property_Editor._Inline30.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
-        CellMenuComponentFeature_Property_Editor._Inline30.setupLabel_NameCell(((EditorCell_Label)editorCell), node, context);
+      if (editorCell instanceof EditorCell_Label) {
+        CellMenuComponentFeature_Property_Editor._Inline30.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -103,7 +103,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

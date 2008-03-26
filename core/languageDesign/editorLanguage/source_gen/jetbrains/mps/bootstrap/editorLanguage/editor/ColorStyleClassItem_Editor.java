@@ -75,10 +75,10 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCellModel_ConceptProperty(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
-    if(ColorStyleClassItem_Editor._QueryFunction_NodeCondition_1186412612771(node, context, context.getOperationContext().getScope())) {
+    if (ColorStyleClassItem_Editor._QueryFunction_NodeCondition_1186412612771(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createColorCell(context, node));
     }
-    if(ColorStyleClassItem_Editor._QueryFunction_NodeCondition_1186412621877(node, context, context.getOperationContext().getScope())) {
+    if (ColorStyleClassItem_Editor._QueryFunction_NodeCondition_1186412621877(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createQueryCell(context, node));
     }
     return editorCell;
@@ -97,8 +97,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ColorStyleClassItem_Editor.setupBasic_CellModel_ConceptProperty(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      ColorStyleClassItem_Editor.setupLabel_CellModel_ConceptProperty(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      ColorStyleClassItem_Editor.setupLabel_CellModel_ConceptProperty((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -113,7 +113,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createCellModel_ConceptPropertyinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -126,8 +126,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ColorStyleClassItem_Editor.setupBasic_ColorCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      ColorStyleClassItem_Editor.setupLabel_ColorCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      ColorStyleClassItem_Editor.setupLabel_ColorCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -142,7 +142,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createColorCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -155,8 +155,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ColorStyleClassItem_Editor.setupBasic_QueryCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      ColorStyleClassItem_Editor.setupLabel_QueryCell(((EditorCell_Label)editorCell), node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      ColorStyleClassItem_Editor.setupLabel_QueryCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -171,7 +171,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createQueryCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

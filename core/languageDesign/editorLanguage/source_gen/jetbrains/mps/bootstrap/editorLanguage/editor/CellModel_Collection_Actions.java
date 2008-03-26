@@ -35,7 +35,7 @@ public class CellModel_Collection_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
         SNode p = SNodeOperations.getParent(node, null, false, false);
         List<SNode> children = SLinkOperations.getTargets(node, "childCellModel", true);
         {
