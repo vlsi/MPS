@@ -4286,31 +4286,31 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206563707608" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206563707609" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206563707610">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1206563839189">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206563716985">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206563730773">
-              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206563750340">
-                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1206563752373">
-                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206563752374">
-                    <link role="concept" targetNodeId="27.1087833241328" resolveInfo="PropertyMacro" />
-                  </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206566460894">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206566460895">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206566460896">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1206566460897">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206566460898">
+                  <link role="concept" targetNodeId="27.1087833241328" resolveInfo="PropertyMacro" />
                 </node>
               </node>
-              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206563718252">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206563716986">
-                  <link role="variableDeclaration" targetNodeId="1206563707638" resolveInfo="node" />
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1206563722208">
-                  <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1206563723459">
-                    <link role="annotationLink" targetNodeId="27.1149694466802" resolveInfo="propertyMacro" />
-                    <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier" id="1206563727194">
-                      <link role="property" targetNodeId="6.1169194664001" resolveInfo="name" />
-                    </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206566460899">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206566460900">
+                <link role="variableDeclaration" targetNodeId="1206563707638" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1206566460901">
+                <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1206566460902">
+                  <link role="annotationLink" targetNodeId="27.1149694466802" resolveInfo="propertyMacro" />
+                  <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier" id="1206566460903">
+                    <link role="property" targetNodeId="6.1169194664001" resolveInfo="name" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1206563839189">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206563781516">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206563797760">
               <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206563801263">
