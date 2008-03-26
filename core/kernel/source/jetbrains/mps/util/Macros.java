@@ -179,7 +179,7 @@ public abstract class Macros {
 
   private static boolean pathStartsWith(String path, String with) {
     if (path.equals(with)) return true;
-    return path.startsWith(with + File.separator);
+    return path.startsWith(with + ((with != null) && with.endsWith(File.separator) ? "" : File.separator));
   }
 
   private static String shrink(String path, String prefix) {
