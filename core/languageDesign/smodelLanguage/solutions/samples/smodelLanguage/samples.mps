@@ -503,6 +503,38 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679277" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206556966506">
+      <property name="name" value="accessToChildNode_5" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206556966507" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206556966508">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206556986910">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206556993259">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206557003137">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1206557005733">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206557005734">
+                  <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206556988381">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206556986911">
+                <link role="variableDeclaration" targetNodeId="1206556966531" resolveInfo="ifStatement" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206556990414">
+                <link role="link" targetNodeId="1.1068580123160" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206556966531">
+        <property name="name" value="ifStatement" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206556966532">
+          <link role="concept" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206556966533" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1145580908119">
       <property name="name" value="accessToReferentNode_1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1145580908120" />

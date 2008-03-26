@@ -109,7 +109,7 @@ public class GeneratorUtil {
         ruleNode.getModel());
       return res;
     } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(ruleNode, "couldn't evaluate rule condition. method '" + methodName + "' not found");
+      generator.showWarningMessage(ruleNode, "condition query method '" + methodName + "' not found. evaluate to FALSE");
       return false;
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule condition");

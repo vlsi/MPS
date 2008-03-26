@@ -5,6 +5,7 @@ package smodelLanguage.samples;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 
@@ -32,6 +33,10 @@ public class Child_Referent_Parent {
     SNode newCondition1 = SLinkOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.Expression");
     SNode newCondition2 = SLinkOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.EqualsExpression");
     SNode newCondition3 = SNodeOperations.replaceWithNewChild(newCondition1, "jetbrains.mps.baseLanguage.structure.NotExpression");
+  }
+
+  public void accessToChildNode_5(SNode ifStatement) {
+    SLinkOperations.setTarget(ifStatement, "condition", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
   }
 
   public void accessToReferentNode_1(SNode methodCall, SNode method) {

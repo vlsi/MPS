@@ -104,6 +104,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1178552624954">
       <link role="conceptPropertyDeclaration" targetNodeId="1172326539502" resolveInfo="applicable_to_concept" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1206556926047">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1197029536315" resolveInfo="lvalue" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1138056516764">
       <property name="targetCardinality" value="0..n" />
       <property name="sourceCardinality" value="1" />
