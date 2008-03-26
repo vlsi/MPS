@@ -1162,6 +1162,9 @@
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitutePreconditionFunction" id="1179535189126">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179535189127">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1206554349366">
+            <property name="value" value="use weak coerce because we want ':' to be applicable to SNode (class), linkAccess etc." />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1179535189128">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179535189129">
               <property name="name" value="nodeType" />
