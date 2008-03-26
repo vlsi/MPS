@@ -34,6 +34,13 @@ public class Attributes {
     SNode referenceMacro = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), true);
   }
 
+  public void accessToReferenceAttribute_2(SNode node) {
+    SNode refMacro;
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), refMacro, true);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), refMacro, true);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), refMacro, true);
+  }
+
   public void other(SNode node) {
     SNodeOperations.isAttribute(node);
     List<SNode> nodes = SNodeOperations.getAllAttributes(node);
