@@ -1168,14 +1168,14 @@
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1179535189130">
                 <link role="concept" targetNodeId="1.1138055754698" />
               </node>
-              <node role="initializer" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStrongExpression" id="1179535189131">
-                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203648260562">
-                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1179535189133" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1179535189134" />
+              <node role="initializer" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1206554157507">
+                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206554157508">
+                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1206554157509" />
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1206554157510" />
                 </node>
-                <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1179535189135">
+                <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1206554157511">
                   <property name="name" value="v1" />
-                  <link role="concept" targetNodeId="1.1138055754698" />
+                  <link role="concept" targetNodeId="1.1138055754698" resolveInfo="SNodeType" />
                 </node>
               </node>
             </node>
