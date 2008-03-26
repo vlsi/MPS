@@ -33,19 +33,19 @@ public enum Cardinality {
   }
 
   public static Cardinality parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return Cardinality.getDefault();
     }
-    if(value.equals(Cardinality._0__1.getValueAsString())) {
+    if (value.equals(Cardinality._0__1.getValueAsString())) {
       return Cardinality._0__1;
     }
-    if(value.equals(Cardinality._1.getValueAsString())) {
+    if (value.equals(Cardinality._1.getValueAsString())) {
       return Cardinality._1;
     }
-    if(value.equals(Cardinality._0__n.getValueAsString())) {
+    if (value.equals(Cardinality._0__n.getValueAsString())) {
       return Cardinality._0__n;
     }
-    if(value.equals(Cardinality._1__n.getValueAsString())) {
+    if (value.equals(Cardinality._1__n.getValueAsString())) {
       return Cardinality._1__n;
     }
     return Cardinality.getDefault();

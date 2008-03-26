@@ -8,13 +8,13 @@ import java.util.Iterator;
 public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
 
   public boolean canSetValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return true;
     }
     Iterator<AnnotationLinkStereotype> constants = AnnotationLinkStereotype.getConstants().iterator();
     while(constants.hasNext()) {
       AnnotationLinkStereotype constant = constants.next();
-      if(value.equals(constant.getName())) {
+      if (value.equals(constant.getName())) {
         return true;
       }
     }
@@ -22,13 +22,13 @@ public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
   }
 
   public String toInternalValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return null;
     }
     Iterator<AnnotationLinkStereotype> constants = AnnotationLinkStereotype.getConstants().iterator();
     while(constants.hasNext()) {
       AnnotationLinkStereotype constant = constants.next();
-      if(value.equals(constant.getName())) {
+      if (value.equals(constant.getName())) {
         return constant.getValueAsString();
       }
     }
@@ -37,7 +37,7 @@ public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
 
   public String fromInternalValue(String value) {
     AnnotationLinkStereotype constant = AnnotationLinkStereotype.parseValue(value);
-    if(constant != null) {
+    if (constant != null) {
       return constant.getName();
     }
     return null;

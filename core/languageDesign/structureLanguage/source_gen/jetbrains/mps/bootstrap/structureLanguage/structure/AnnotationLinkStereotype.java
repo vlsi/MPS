@@ -31,16 +31,16 @@ public enum AnnotationLinkStereotype {
   }
 
   public static AnnotationLinkStereotype parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return AnnotationLinkStereotype.getDefault();
     }
-    if(value.equals(AnnotationLinkStereotype.node.getValueAsString())) {
+    if (value.equals(AnnotationLinkStereotype.node.getValueAsString())) {
       return AnnotationLinkStereotype.node;
     }
-    if(value.equals(AnnotationLinkStereotype.link.getValueAsString())) {
+    if (value.equals(AnnotationLinkStereotype.link.getValueAsString())) {
       return AnnotationLinkStereotype.link;
     }
-    if(value.equals(AnnotationLinkStereotype.property.getValueAsString())) {
+    if (value.equals(AnnotationLinkStereotype.property.getValueAsString())) {
       return AnnotationLinkStereotype.property;
     }
     return AnnotationLinkStereotype.getDefault();

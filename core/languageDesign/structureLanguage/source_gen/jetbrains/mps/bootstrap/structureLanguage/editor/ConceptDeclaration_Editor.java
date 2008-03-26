@@ -4,19 +4,19 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import javax.swing.JComponent;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Component;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -55,6 +55,22 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myImplementsListHandler_implementsList_;
   /* package */AbstractCellListHandler myLinkDeclarationListHandler_linkDeclarationList_;
   /* package */AbstractCellListHandler myLinkDeclarationListHandler_linkDeclarationList1_;
+
+  public static boolean _QueryFunction_NodeCondition_1161165530948(SNode node, EditorContext editorContext, IScope scope) {
+    Language l = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), scope);
+    if (l == null) {
+      return false;
+    }
+    String s = Macros.languageDescriptor().expandPath(SPropertyOperations.getString(node, "iconPath"), l.getDescriptorFile());
+    if (s == null) {
+      return false;
+    }
+    return new File(s).exists();
+  }
+
+  public static JComponent _QueryFunction_JComponent_1176492331666(SNode node, EditorContext editorContext) {
+    return EditorUtil.createSelectIconButton(node, editorContext);
+  }
 
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1087215312704");
@@ -436,22 +452,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return Macros.languageDescriptor().expandPath(iconPath, language.getDescriptorFile());
   }
 
-  public static boolean _QueryFunction_NodeCondition_1161165530948(SNode node, EditorContext editorContext, IScope scope) {
-    Language l = SModelUtil_new.getDeclaringLanguage(((ConceptDeclaration)SNodeOperations.getAdapter(node)), scope);
-    if(l == null) {
-      return false;
-    }
-    String s = Macros.languageDescriptor().expandPath(SPropertyOperations.getString(node, "iconPath"), l.getDescriptorFile());
-    if(s == null) {
-      return false;
-    }
-    return new File(s).exists();
-  }
-
-  public static JComponent _QueryFunction_JComponent_1176492331666(SNode node, EditorContext editorContext) {
-    return EditorUtil.createSelectIconButton(node, editorContext);
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNodeBox(context, node);
@@ -465,7 +465,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     boolean alternationCondition = true;
     alternationCondition = ConceptDeclaration_Editor._QueryFunction_NodeCondition_1161165530948(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
-    if(alternationCondition) {
+    if (alternationCondition) {
       editorCell = this.createImageCell(context, node);
     } else
     {
@@ -800,7 +800,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createConceptPropertyList(EditorContext context, SNode node) {
-    if(this.myConceptPropertyListHandler_conceptPropertyList_ == null) {
+    if (this.myConceptPropertyListHandler_conceptPropertyList_ == null) {
       this.myConceptPropertyListHandler_conceptPropertyList_ = new ConceptDeclaration_Editor._RefNodeListHandler(node, "conceptProperty", context);
     }
     EditorCell_Collection editorCell = this.myConceptPropertyListHandler_conceptPropertyList_.createCells(context, new CellLayout_Vertical(), false);
@@ -813,7 +813,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createConceptLinkList(EditorContext context, SNode node) {
-    if(this.myConceptLinkListHandler_conceptLinkList_ == null) {
+    if (this.myConceptLinkListHandler_conceptLinkList_ == null) {
       this.myConceptLinkListHandler_conceptLinkList_ = new ConceptDeclaration_Editor._RefNodeListHandler1(node, "conceptLink", context);
     }
     EditorCell_Collection editorCell = this.myConceptLinkListHandler_conceptLinkList_.createCells(context, new CellLayout_Vertical(), false);
@@ -826,7 +826,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createPropertyDeclarationList(EditorContext context, SNode node) {
-    if(this.myPropertyDeclarationListHandler_propertyDeclarationList_ == null) {
+    if (this.myPropertyDeclarationListHandler_propertyDeclarationList_ == null) {
       this.myPropertyDeclarationListHandler_propertyDeclarationList_ = new ConceptDeclaration_Editor._RefNodeListHandler2(node, "propertyDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myPropertyDeclarationListHandler_propertyDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
@@ -839,7 +839,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createConceptPropertyDeclarationList(EditorContext context, SNode node) {
-    if(this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_ == null) {
+    if (this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_ == null) {
       this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_ = new ConceptDeclaration_Editor._RefNodeListHandler3(node, "conceptPropertyDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myConceptPropertyDeclarationListHandler_conceptPropertyDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
@@ -852,7 +852,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createConceptLinkDeclarationList(EditorContext context, SNode node) {
-    if(this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_ == null) {
+    if (this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_ == null) {
       this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_ = new ConceptDeclaration_Editor._RefNodeListHandler4(node, "conceptLinkDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myConceptLinkDeclarationListHandler_conceptLinkDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
@@ -865,7 +865,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createImplementsList(EditorContext context, SNode node) {
-    if(this.myImplementsListHandler_implementsList_ == null) {
+    if (this.myImplementsListHandler_implementsList_ == null) {
       this.myImplementsListHandler_implementsList_ = new ConceptDeclaration_Editor._RefNodeListHandler12(node, "implements", context);
     }
     EditorCell_Collection editorCell = this.myImplementsListHandler_implementsList_.createCells(context, new CellLayout_Vertical(), false);
@@ -878,7 +878,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createLinkDeclarationList(EditorContext context, SNode node) {
-    if(this.myLinkDeclarationListHandler_linkDeclarationList_ == null) {
+    if (this.myLinkDeclarationListHandler_linkDeclarationList_ == null) {
       this.myLinkDeclarationListHandler_linkDeclarationList_ = new ConceptDeclaration_Editor._RefNodeListHandler13(node, "linkDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myLinkDeclarationListHandler_linkDeclarationList_.createCells(context, new CellLayout_Vertical(), false);
@@ -891,7 +891,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createLinkDeclarationList1(EditorContext context, SNode node) {
-    if(this.myLinkDeclarationListHandler_linkDeclarationList1_ == null) {
+    if (this.myLinkDeclarationListHandler_linkDeclarationList1_ == null) {
       this.myLinkDeclarationListHandler_linkDeclarationList1_ = new ConceptDeclaration_Editor._RefNodeListHandler14(node, "linkDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myLinkDeclarationListHandler_linkDeclarationList1_.createCells(context, new CellLayout_Vertical(), false);
@@ -908,7 +908,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptDeclaration_Editor.setupBasic_NameCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptDeclaration_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -924,7 +924,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -937,7 +937,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new ConceptDeclaration_Editor._Inline());
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptDeclaration_Editor.setupBasic_ExtendsReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptDeclaration_Editor.setupLabel_ExtendsReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -953,7 +953,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createExtendsReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -966,7 +966,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptDeclaration_Editor.setupBasic_RootableCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptDeclaration_Editor.setupLabel_RootableCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -982,7 +982,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createRootableCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -995,7 +995,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptDeclaration_Editor.setupBasic_IconPathCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptDeclaration_Editor.setupLabel_IconPathCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1011,7 +1011,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createIconPathCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1048,7 +1048,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       ConceptDeclaration_Editor._Inline.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         ConceptDeclaration_Editor._Inline.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1064,7 +1064,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1098,14 +1098,14 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -1141,14 +1141,14 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -1184,14 +1184,14 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -1227,14 +1227,14 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -1270,14 +1270,14 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -1313,14 +1313,14 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -1362,10 +1362,10 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
@@ -1413,10 +1413,10 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }

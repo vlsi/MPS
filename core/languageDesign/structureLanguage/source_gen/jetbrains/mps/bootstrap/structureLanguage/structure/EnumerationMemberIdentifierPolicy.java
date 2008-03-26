@@ -31,16 +31,16 @@ public enum EnumerationMemberIdentifierPolicy {
   }
 
   public static EnumerationMemberIdentifierPolicy parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return EnumerationMemberIdentifierPolicy.getDefault();
     }
-    if(value.equals(EnumerationMemberIdentifierPolicy.derive_from_presentation.getValueAsString())) {
+    if (value.equals(EnumerationMemberIdentifierPolicy.derive_from_presentation.getValueAsString())) {
       return EnumerationMemberIdentifierPolicy.derive_from_presentation;
     }
-    if(value.equals(EnumerationMemberIdentifierPolicy.derive_from_internal_value.getValueAsString())) {
+    if (value.equals(EnumerationMemberIdentifierPolicy.derive_from_internal_value.getValueAsString())) {
       return EnumerationMemberIdentifierPolicy.derive_from_internal_value;
     }
-    if(value.equals(EnumerationMemberIdentifierPolicy.custom.getValueAsString())) {
+    if (value.equals(EnumerationMemberIdentifierPolicy.custom.getValueAsString())) {
       return EnumerationMemberIdentifierPolicy.custom;
     }
     return EnumerationMemberIdentifierPolicy.getDefault();

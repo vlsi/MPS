@@ -4,15 +4,15 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -32,6 +32,10 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myMemberListHandler_memberList_;
+
+  public static boolean _QueryFunction_NodeCondition_1197593498320(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation");
+  }
 
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476028");
@@ -221,10 +225,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextColor(Color.red);
   }
 
-  public static boolean _QueryFunction_NodeCondition_1197593498320(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation");
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNodeBox(context, node);
@@ -321,7 +321,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell3(context, node, "member identifier"));
     editorCell.addEditorCell(this.createIndent3(context, node, ":"));
     editorCell.addEditorCell(this.createMemberIdentifierPolicyCell(context, node));
-    if(EnumerationDataTypeDeclaration_Editor._QueryFunction_NodeCondition_1197593498320(node, context, context.getOperationContext().getScope())) {
+    if (EnumerationDataTypeDeclaration_Editor._QueryFunction_NodeCondition_1197593498320(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell4(context, node, "(not recommended)"));
     }
     return editorCell;
@@ -416,7 +416,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createMemberList(EditorContext context, SNode node) {
-    if(this.myMemberListHandler_memberList_ == null) {
+    if (this.myMemberListHandler_memberList_ == null) {
       this.myMemberListHandler_memberList_ = new EnumerationDataTypeDeclaration_Editor._RefNodeListHandler5(node, "member", context);
     }
     EditorCell_Collection editorCell = this.myMemberListHandler_memberList_.createCells(context, new CellLayout_Vertical(), false);
@@ -433,7 +433,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     EnumerationDataTypeDeclaration_Editor.setupBasic_NameCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       EnumerationDataTypeDeclaration_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -449,7 +449,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -462,7 +462,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline10());
     EditorCell editorCell = provider.createEditorCell(context);
     EnumerationDataTypeDeclaration_Editor.setupBasic_MemberDataTypeReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       EnumerationDataTypeDeclaration_Editor.setupLabel_MemberDataTypeReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -478,7 +478,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createMemberDataTypeReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -491,7 +491,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline11());
     EditorCell editorCell = provider.createEditorCell(context);
     EnumerationDataTypeDeclaration_Editor.setupBasic_DefaultMemberReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       EnumerationDataTypeDeclaration_Editor.setupLabel_DefaultMemberReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -507,7 +507,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createDefaultMemberReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -520,7 +520,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     EnumerationDataTypeDeclaration_Editor.setupBasic_MemberIdentifierPolicyCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       EnumerationDataTypeDeclaration_Editor.setupLabel_MemberIdentifierPolicyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -536,7 +536,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createMemberIdentifierPolicyCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -572,7 +572,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       EnumerationDataTypeDeclaration_Editor._Inline10.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         EnumerationDataTypeDeclaration_Editor._Inline10.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -588,7 +588,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -627,7 +627,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       EnumerationDataTypeDeclaration_Editor._Inline11.setupBasic_ExternalValueCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         EnumerationDataTypeDeclaration_Editor._Inline11.setupLabel_ExternalValueCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -643,7 +643,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createExternalValueCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -677,14 +677,14 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }

@@ -45,7 +45,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if(SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration")) {
       return true;
     } else
     {
@@ -106,7 +106,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       SModel model = actionContext.getNode().getModel();
       Language language = Language.getLanguageFor(model.getModelDescriptor());
-      if(language != null) {
+      if (language != null) {
         List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(language.getAspectModelDescriptors())), new zSelector5(null, null)));
         result.put(language, aspectList);
       }
@@ -124,7 +124,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
 
   public String newName_initialValue(ActionContext actionContext) {
     SNode node = actionContext.getNode();
-    if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"))) {
       return "";
     }
     return SPropertyOperations.getString(node, "name");

@@ -29,13 +29,13 @@ public enum LinkMetaclass {
   }
 
   public static LinkMetaclass parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return LinkMetaclass.getDefault();
     }
-    if(value.equals(LinkMetaclass.reference.getValueAsString())) {
+    if (value.equals(LinkMetaclass.reference.getValueAsString())) {
       return LinkMetaclass.reference;
     }
-    if(value.equals(LinkMetaclass.aggregation.getValueAsString())) {
+    if (value.equals(LinkMetaclass.aggregation.getValueAsString())) {
       return LinkMetaclass.aggregation;
     }
     return LinkMetaclass.getDefault();

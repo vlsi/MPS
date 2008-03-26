@@ -54,7 +54,7 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if(SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
       return true;
     } else
     {
@@ -103,24 +103,24 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
       IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
       SearchResults searchResults = resultProvider.getResults(searchQuery, projectFrame.createAdaptiveProgressMonitor());
       refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor()));
-      if(((Language)refactoringContext.getParameter("sourceLanguage")) != null) {
+      if (((Language)refactoringContext.getParameter("sourceLanguage")) != null) {
         SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
-        if(editorModelDescriptor != null) {
+        if (editorModelDescriptor != null) {
           refactoringContext.setParameter("conceptEditorDeclaration", SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node))));
-          if(((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")) != null) {
+          if (((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")) != null) {
             searchResults.remove(((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")).getNode());
           }
         }
         SModelDescriptor constraintsModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getConstraintsModelDescriptor();
-        if(constraintsModelDescriptor != null) {
+        if (constraintsModelDescriptor != null) {
           refactoringContext.setParameter("conceptBehavior", SModelUtil_new.findBehaviorDeclaration(constraintsModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node))));
-          if(((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")) != null) {
+          if (((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")) != null) {
             searchResults.remove(((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")).getNode());
           }
         }
       }
       List<SearchResult> aliveResults = searchResults.getAliveResults();
-      if(!(aliveResults.isEmpty())) {
+      if (!(aliveResults.isEmpty())) {
         return searchResults;
       }
       return null;
@@ -130,10 +130,10 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SNode node = actionContext.getNode();
-      if(((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")) != null) {
+      if (((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")) != null) {
         ((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")).delete();
       }
-      if(((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")) != null) {
+      if (((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")) != null) {
         ((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")).delete();
       }
       SNodeOperations.deleteNode(node);
@@ -143,18 +143,18 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
-      if(((Language)refactoringContext.getParameter("sourceLanguage")) == null) {
+      if (((Language)refactoringContext.getParameter("sourceLanguage")) == null) {
         return result;
       }
       ArrayList<SModel> list = new ArrayList<SModel>();
       result.put(((Language)refactoringContext.getParameter("sourceLanguage")), list);
       list.add(((Language)refactoringContext.getParameter("sourceLanguage")).getStructureModelDescriptor().getSModel());
       SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
-      if(editorModelDescriptor != null) {
+      if (editorModelDescriptor != null) {
         list.add(editorModelDescriptor.getSModel());
       }
       SModelDescriptor constraintsModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getConstraintsModelDescriptor();
-      if(constraintsModelDescriptor != null) {
+      if (constraintsModelDescriptor != null) {
         list.add(constraintsModelDescriptor.getSModel());
       }
       return result;

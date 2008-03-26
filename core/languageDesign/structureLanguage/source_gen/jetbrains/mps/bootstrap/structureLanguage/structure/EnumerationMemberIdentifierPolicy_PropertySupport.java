@@ -8,13 +8,13 @@ import java.util.Iterator;
 public class EnumerationMemberIdentifierPolicy_PropertySupport extends PropertySupport {
 
   public boolean canSetValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return true;
     }
     Iterator<EnumerationMemberIdentifierPolicy> constants = EnumerationMemberIdentifierPolicy.getConstants().iterator();
     while(constants.hasNext()) {
       EnumerationMemberIdentifierPolicy constant = constants.next();
-      if(value.equals(constant.getName())) {
+      if (value.equals(constant.getName())) {
         return true;
       }
     }
@@ -22,13 +22,13 @@ public class EnumerationMemberIdentifierPolicy_PropertySupport extends PropertyS
   }
 
   public String toInternalValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return null;
     }
     Iterator<EnumerationMemberIdentifierPolicy> constants = EnumerationMemberIdentifierPolicy.getConstants().iterator();
     while(constants.hasNext()) {
       EnumerationMemberIdentifierPolicy constant = constants.next();
-      if(value.equals(constant.getName())) {
+      if (value.equals(constant.getName())) {
         return constant.getValueAsString();
       }
     }
@@ -37,7 +37,7 @@ public class EnumerationMemberIdentifierPolicy_PropertySupport extends PropertyS
 
   public String fromInternalValue(String value) {
     EnumerationMemberIdentifierPolicy constant = EnumerationMemberIdentifierPolicy.parseValue(value);
-    if(constant != null) {
+    if (constant != null) {
       return constant.getName();
     }
     return null;

@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -60,7 +59,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if(SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
       return true;
     } else
     {
@@ -96,11 +95,11 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       List<SNode> nodes = actionContext.getNodes();
-      if(SequenceOperations.isEmpty(nodes)) {
+      if (SequenceOperations.isEmpty(nodes)) {
         return false;
       }
       for(SNode node : nodes) {
-        if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"))) {
           return false;
         }
       }
@@ -134,11 +133,11 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       List<SNode> behaviors = new ArrayList<SNode>();
       // collecting editors:
       SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
-      if(editorModelDescriptor != null) {
+      if (editorModelDescriptor != null) {
         for(SNode node : nodes) {
-          if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
-            ConceptEditorDeclaration conceptEditorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node)));
-            if(conceptEditorDeclaration != null) {
+          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
+            ConceptEditorDeclaration conceptEditorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node)));
+            if (conceptEditorDeclaration != null) {
               SNode editor = (SNode)conceptEditorDeclaration.getNode();
               ListOperations.addElement(editors, editor);
             }
@@ -147,10 +146,10 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       }
       // collecting behaviors:
       SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
-      if(constraintsModelDescriptor != null) {
+      if (constraintsModelDescriptor != null) {
         for(SNode node : nodes) {
           ConceptBehavior conceptBehavior = SModelUtil_new.findBehaviorDeclaration(constraintsModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node)));
-          if(conceptBehavior != null) {
+          if (conceptBehavior != null) {
             SNode behavior = (SNode)conceptBehavior.getNode();
             ListOperations.addElement(behaviors, behavior);
           }
@@ -161,9 +160,9 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       for(SNode node : nodes) {
         refactoringContext.changeFeatureName(node, ((SModelDescriptor)refactoringContext.getParameter("targetModel")) + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
       }
-      if(!(SequenceOperations.isEmpty(editors))) {
+      if (!(SequenceOperations.isEmpty(editors))) {
         SModelDescriptor targetEditorModelDescriptor = targetLanguage.getEditorModelDescriptor();
-        if(targetEditorModelDescriptor == null) {
+        if (targetEditorModelDescriptor == null) {
           targetEditorModelDescriptor = LanguageAspect.EDITOR.createNew(targetLanguage);
         }
         SModel editorModel = targetEditorModelDescriptor.getSModel();
@@ -171,9 +170,9 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         refactoringContext.computeCaches();
         refactoringContext.updateModelWithMaps(editorModel);
       }
-      if(!(SequenceOperations.isEmpty(behaviors))) {
+      if (!(SequenceOperations.isEmpty(behaviors))) {
         SModelDescriptor targetConstraintsModelDescriptor = targetLanguage.getConstraintsModelDescriptor();
-        if(targetConstraintsModelDescriptor == null) {
+        if (targetConstraintsModelDescriptor == null) {
           targetConstraintsModelDescriptor = LanguageAspect.CONSTRAINTS.createNew(targetLanguage);
         }
         SModel constraintsModel = targetConstraintsModelDescriptor.getSModel();
@@ -189,12 +188,12 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
-      if(sourceLanguage != null) {
+      if (sourceLanguage != null) {
         List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(sourceLanguage.getAspectModelDescriptors())), new zSelector1(null, null)));
         result.put(sourceLanguage, aspectList);
       }
       Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
-      if(targetLanguage != null) {
+      if (targetLanguage != null) {
         List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(targetLanguage.getAspectModelDescriptors())), new zSelector2(null, null)));
         result.put(targetLanguage, aspectList);
       }

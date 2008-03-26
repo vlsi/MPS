@@ -29,13 +29,13 @@ public enum AnnotationLinkCardinality {
   }
 
   public static AnnotationLinkCardinality parseValue(String value) {
-    if(value == null) {
+    if (value == null) {
       return AnnotationLinkCardinality.getDefault();
     }
-    if(value.equals(AnnotationLinkCardinality._0__1.getValueAsString())) {
+    if (value.equals(AnnotationLinkCardinality._0__1.getValueAsString())) {
       return AnnotationLinkCardinality._0__1;
     }
-    if(value.equals(AnnotationLinkCardinality._0__n.getValueAsString())) {
+    if (value.equals(AnnotationLinkCardinality._0__n.getValueAsString())) {
       return AnnotationLinkCardinality._0__n;
     }
     return AnnotationLinkCardinality.getDefault();

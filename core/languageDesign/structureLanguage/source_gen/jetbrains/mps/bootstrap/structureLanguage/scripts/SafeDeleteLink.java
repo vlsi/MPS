@@ -45,7 +45,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if(SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration")) {
       return true;
     } else
     {
@@ -93,7 +93,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
       IResultProvider resultProvider = TreeBuilder.forFinders(new LinkExamples_Finder(), new NodeAndDescendantsUsages_Finder());
       IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
       SearchResults searchResults = resultProvider.getResults(searchQuery, projectFrame.createAdaptiveProgressMonitor());
-      if(!(searchResults.getAliveResults().isEmpty())) {
+      if (!(searchResults.getAliveResults().isEmpty())) {
         return searchResults;
       }
       return null;
@@ -110,18 +110,18 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
-      if(((Language)refactoringContext.getParameter("sourceLanguage")) == null) {
+      if (((Language)refactoringContext.getParameter("sourceLanguage")) == null) {
         return result;
       }
       ArrayList<SModel> list = new ArrayList<SModel>();
       result.put(((Language)refactoringContext.getParameter("sourceLanguage")), list);
       list.add(((Language)refactoringContext.getParameter("sourceLanguage")).getStructureModelDescriptor().getSModel());
       SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
-      if(editorModelDescriptor != null) {
+      if (editorModelDescriptor != null) {
         list.add(editorModelDescriptor.getSModel());
       }
       SModelDescriptor constraintsModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getConstraintsModelDescriptor();
-      if(constraintsModelDescriptor != null) {
+      if (constraintsModelDescriptor != null) {
         list.add(constraintsModelDescriptor.getSModel());
       }
       return result;
