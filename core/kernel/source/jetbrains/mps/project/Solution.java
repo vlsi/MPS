@@ -177,10 +177,11 @@ public class Solution extends AbstractModule {
   }
 
   public List<String> getClassPath() {
-    List<String> result = super.getClassPath();
+    List<String> result = new ArrayList<String>();
     if (getClassesGen() != null && getClassesGen().exists()) {
       result.add(getClassesGen().getPath());
     }
+    result.addAll(super.getClassPath());
     return result;
   }
 

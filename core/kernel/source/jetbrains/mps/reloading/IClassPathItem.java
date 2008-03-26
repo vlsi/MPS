@@ -19,7 +19,6 @@ public interface IClassPathItem {
 
   long getTimestamp();
 
-
   IClassPathItem optimize();
 
 }

@@ -14,7 +14,7 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class FileClassPathItem extends AbstractClassPathItem {
+public class FileClassPathItem extends AbstractClassPathItem {    
   private String myClassPath;
 
   private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();

@@ -291,6 +291,10 @@ public abstract class AbstractModule implements IModule {
   public List<String> getRuntimeClassPathItems() {
     ArrayList<String> result = new ArrayList<String>();
 
+    if (getClassesGen() != null) {
+      result.add(getClassesGen().getPath());
+    }
+
     if (getModuleDescriptor() != null) {
       for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(getModuleDescriptor().runtimeClassPathEntrys())) {
         result.add(entry.getPath());
@@ -299,10 +303,6 @@ public abstract class AbstractModule implements IModule {
 
     if (BootstrapLanguagesManager.getInstance().getLanguagesUIDsUsedInCore().contains(getModuleUID())) {
       result.add(ClassLoaderManager.getInstance().getBaseMPSPath());
-    }
-
-    if (getClassesGen() != null) {
-      result.add(getClassesGen().getPath());
     }
 
     return result;
