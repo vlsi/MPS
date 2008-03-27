@@ -3,14 +3,15 @@
   <models>
     <modelRoot path="${solution_descriptor}\models\postingrules" namespacePrefix="postingrules" />
   </models>
-  <module />
-  <languages />
   <classPath />
   <runtimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency>jetbrains.mps.formulaLanguage</dependency>
-    <dependency>agreementLanguage</dependency>
+    <dependency reexport="true">jetbrains.mps.formulaLanguage</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>agreementLanguage</usedLanguages>
+    <usedLanguages>jetbrains.mps.formulaLanguage</usedLanguages>
+  </usedLanguages>
 </solution>
 
