@@ -12,8 +12,6 @@ import org.junit.Test;
 import org.junit.Assert;
 
 public class MakeScheduleBuilderTest {
-
-
   @Test
   public void oneItem() {
     Module a = new Module("a");

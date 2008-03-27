@@ -502,6 +502,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             }
             generationSession.discardTransients();
             progress.finishTask(taskName);
+
+            NodeTypesComponentsRepository.getInstance().clear();
+            TypeChecker.getInstance().clearForReload();
           }
         } finally {
           if (wasLoggingThreshold != null) {
