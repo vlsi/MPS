@@ -2611,6 +2611,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181704973">
+    <property name="package" value="classConcept" />
     <link role="concept" targetNodeId="1.1170345865475" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704974">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181704975" />
@@ -4732,6 +4733,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178610164825">
+    <property name="package" value="classConcept" />
     <link role="concept" targetNodeId="1.1068390468198" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1178610171302">
       <property name="name" value="isAbstract" />

@@ -82,6 +82,7 @@
     <property name="name" value="ClassConcept" />
     <property name="iconPath" value="${language_descriptor}\icons\class.png" />
     <property name="rootable" value="true" />
+    <property name="package" value="classConcept" />
     <link role="extends" targetNodeId="1107461130800" resolveInfo="Classifier" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107215907103">
       <property name="value" value="class" />
@@ -1972,6 +1973,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1170345865475">
     <property name="name" value="AnonymousClass" />
     <property name="rootable" value="false" />
+    <property name="package" value="classConcept" />
     <link role="extends" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1174396595294">
       <property name="value" value="new..." />
@@ -2671,6 +2673,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206629501431">
     <property name="name" value="InstanceInitializer" />
+    <property name="package" value="classConcept" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206629521979">
       <property name="metaClass" value="aggregation" />
