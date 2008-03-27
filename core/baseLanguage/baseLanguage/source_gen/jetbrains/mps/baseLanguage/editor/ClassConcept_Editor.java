@@ -35,6 +35,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component1;
   /* package */AbstractCellProvider my_Component_Visibility3;
+  /* package */AbstractCellProvider myClassConcept_instanceInitializer1;
   /* package */AbstractCellListHandler myFieldListHandler_fieldsList_;
   /* package */AbstractCellListHandler myConstructorListHandler_constructorsList_;
   /* package */AbstractCellListHandler myMethodListHandler_methodsList_;
@@ -450,6 +451,10 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(false);
   }
 
+  private static void setupBasic_ClassConcept_instanceInitializerCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206631166879");
+  }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
@@ -617,6 +622,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createColumnCell(context, node));
     }
     editorCell.addEditorCell(this.createHeaderRow(context, node));
+    editorCell.addEditorCell(this.createClassConcept_instanceInitializerCell(context, node));
     editorCell.addEditorCell(this.createRowCell2(context, node));
     editorCell.addEditorCell(this.createFieldsArea(context, node));
     editorCell.addEditorCell(this.createRowCell3(context, node));
@@ -899,6 +905,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell editorCell = this.my_Component_Visibility3.createEditorCell(context);
     ClassConcept_Editor.setupBasic__Component_VisibilityCell(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell createClassConcept_instanceInitializerCell(EditorContext context, SNode node) {
+    if (this.myClassConcept_instanceInitializer1 == null) {
+      this.myClassConcept_instanceInitializer1 = new ClassConcept_instanceInitializer(node);
+    }
+    EditorCell editorCell = this.myClassConcept_instanceInitializer1.createEditorCell(context);
+    ClassConcept_Editor.setupBasic_ClassConcept_instanceInitializerCell(editorCell, node, context);
     return editorCell;
   }
 
