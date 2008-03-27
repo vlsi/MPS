@@ -15,18 +15,10 @@
     <orderEntry type="library" name="Equinox" level="project" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="module" module-name="pluginLanguage" />
     <orderEntry type="module" module-name="generic" />
     <orderEntry type="module" module-name="svn" exported="" />
+    <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntryProperties />
   </component>
 </module>

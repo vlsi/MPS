@@ -106,6 +106,14 @@ public class CollectionUtil {
     return result;
   }
 
+  public static <T> Set<T> asStableSet(T... ts) {
+    Set<T> result = new LinkedHashSet<T>();
+    for (T t : ts) {
+      result.add(t);
+    }
+    return result;
+  }
+
   public static <T> List<T> asList(T... ts) {
     List<T> result = new ArrayList<T>();
     for (T t : ts) {

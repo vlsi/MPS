@@ -60,7 +60,13 @@ public class ModuleMaker {
       Set<IModule> toCompile = getModulesToCompile(modules);
 
       int errorCount = 0;
-      for (Set<IModule> cycle : new MakeScheduleBuilder().buildSchedule(toCompile)) {
+      List<Set<IModule>> schedule = new MakeScheduleBuilder<IModule>() {
+        protected List<IModule> getDependOnModules(IModule m) {
+          return m.getExplicitlyDependOnModules();
+        }
+      }.buildSchedule(toCompile);
+
+      for (Set<IModule> cycle : schedule) {
         monitor.addText("Compiling modules: " + cycle + "...");
         int currentErrorsCount = compile(cycle).getErrors();
         if (currentErrorsCount != 0) {
@@ -70,7 +76,7 @@ public class ModuleMaker {
       }
 
       return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
-    } finally {    
+    } finally {
       monitor.finish();
     }
   }
