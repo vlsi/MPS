@@ -50,7 +50,7 @@ public class SortDirection_Editor extends DefaultNodeEditor {
     boolean alternationCondition = true;
     alternationCondition = SortDirection_Editor._QueryFunction_NodeCondition_1178286394776(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
-    if(alternationCondition) {
+    if (alternationCondition) {
       editorCell = this.createConstantCell(context, node, "asc");
     } else
     {

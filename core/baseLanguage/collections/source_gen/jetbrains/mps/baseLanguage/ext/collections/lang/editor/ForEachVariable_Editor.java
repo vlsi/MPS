@@ -56,7 +56,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ForEachVariable_Editor.setupBasic_NameCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ForEachVariable_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -73,7 +73,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -88,7 +88,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> postfixes = ListOperations.<String>createList();
-      if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
+      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
         ListOperations.addAllElements(postfixes, Type_Behavior.call_getVariableSuffixes_1182416669983(TypeChecker.getInstance().getTypeOf(node)));
       }
       return postfixes;

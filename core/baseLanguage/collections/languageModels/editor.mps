@@ -1093,6 +1093,24 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197686928565">
         <property name="text" value="&gt;" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206657825075">
+        <link role="relationDeclaration" targetNodeId="1.1206655950512" />
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1206657832592">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206657832593">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206657867512">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206657874407">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206657870045">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1206657867513" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206657873391">
+                    <link role="link" targetNodeId="1.1206655950512" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1206657875675" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197932601785">
@@ -1155,6 +1173,39 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1201872488234">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
       <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206657685199">
+    <property name="package" value="mapType" />
+    <link role="conceptDeclaration" targetNodeId="1.1206655735055" resolveInfo="MapEntry" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206657697449">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206657701029">
+        <link role="relationDeclaration" targetNodeId="1.1206655844556" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206657703109">
+        <property name="text" value="=&gt;" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206657736486">
+        <link role="relationDeclaration" targetNodeId="1.1206655853135" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206657744800">
+    <property name="package" value="mapType" />
+    <link role="conceptDeclaration" targetNodeId="1.1206655653991" resolveInfo="MapInitializer" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206657755458">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206657757507">
+        <property name="text" value="{" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1206657763839">
+        <property name="separatorText" value="," />
+        <link role="relationDeclaration" targetNodeId="1.1206655902276" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206657759618">
+        <property name="text" value="}" />
+      </node>
     </node>
   </node>
 </model>
