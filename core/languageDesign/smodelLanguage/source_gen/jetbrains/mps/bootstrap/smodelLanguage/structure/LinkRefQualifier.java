@@ -11,10 +11,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 
 public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier";
+  public static String LINK = "link";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String LINK = "link";
 
   public  LinkRefQualifier(SNode node) {
     super(node);
@@ -28,6 +28,14 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
     return LinkRefQualifier.newInstance(sm, false);
   }
 
+
+  public LinkDeclaration getLink() {
+    return (LinkDeclaration)this.getReferent(LinkRefQualifier.LINK);
+  }
+
+  public void setLink(LinkDeclaration node) {
+    super.setReferent(LinkRefQualifier.LINK, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(LinkRefQualifier.SHORT_DESCRIPTION);
@@ -51,14 +59,6 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
 
   public void setVirtualPackage(String value) {
     this.setProperty(LinkRefQualifier.VIRTUAL_PACKAGE, value);
-  }
-
-  public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(LinkRefQualifier.LINK);
-  }
-
-  public void setLink(LinkDeclaration node) {
-    super.setReferent(LinkRefQualifier.LINK, node);
   }
 
 }

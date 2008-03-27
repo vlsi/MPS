@@ -2490,7 +2490,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1204835157357">
-    <property name="package" value="attribute" />
+    <property name="package" value="operation.parameter" />
     <link role="conceptDeclaration" targetNodeId="1.1204834851141" resolveInfo="ExpressionArg" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204835162156">
       <property name="drawBorder" value="false" />

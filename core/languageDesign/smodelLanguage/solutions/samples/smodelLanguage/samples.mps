@@ -3719,6 +3719,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206660310271">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206660311804">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206660310272">
+              <link role="variableDeclaration" targetNodeId="1177011766342" resolveInfo="node" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1206660314791">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1206659684900">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206660281581">
+                  <link role="variableDeclaration" targetNodeId="1177034215996" resolveInfo="concept2" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1177011766342">
         <property name="name" value="node" />

@@ -1138,6 +1138,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true);
   }
 
+  public static SNode sourceNodeQuery_1206660454913(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
+  }
+
   public static List sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }

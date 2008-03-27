@@ -29,6 +29,7 @@ public class ConceptRef {
     SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node)));
     SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept1));
     SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept2));
+    SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept2));
   }
 
   public void concept_conceptProperties(SNode exprConcept) {
