@@ -144,6 +144,11 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1107535904670" resolveInfo="ClassifierType" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206629658424">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="instanceInitializer" />
+      <link role="target" targetNodeId="1206629501431" resolveInfo="InstanceInitializer" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1171626359898">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..1" />
