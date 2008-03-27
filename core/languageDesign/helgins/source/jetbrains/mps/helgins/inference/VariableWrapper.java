@@ -73,8 +73,8 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
 
   public void becomesDeeplyConcrete(IWrapper wrapper, EquationManager equationManager) {
     if (EqualUtil.equals(wrapper, myShallowConcreteRepresentator)) {//must be always true
-      Set<SNode> typeVariables = equationManager.getTypeChecker().getRuntimeSupport().getRegisteredTypeVariables(getNode().getName());
-      for (SNode var : typeVariables) {
+      SNode[] typeVariables = equationManager.getTypeChecker().getRuntimeSupport().getRegisteredTypeVariables(getNode().getName());
+      for (final SNode var : typeVariables) {
         SNode parent = var.getParent();
         while (parent != null) {
           equationManager.checkConcrete(NodeWrapper.createWrapperFromNode(parent, equationManager));

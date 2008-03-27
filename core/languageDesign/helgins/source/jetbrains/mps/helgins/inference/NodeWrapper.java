@@ -25,7 +25,8 @@ import java.util.List;
 public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
   private static Logger LOG = Logger.getLogger(NodeWrapper.class);
 
-  private SNode myNode;
+  private final SNode myNode;
+  private int myHashCode = Integer.MAX_VALUE;
 
   public static IWrapper createWrapperFromNode(SNode node, EquationManager equationManager) {
     if (node == null) return null;
@@ -136,12 +137,15 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
   }
 
   public int hashCode() {
+    if (myHashCode != Integer.MAX_VALUE) {
+      return myHashCode;
+    }
     if (!isVariable()) {
-      return myNode.hashCode();
+      return (myHashCode = myNode.hashCode());
     }
     String name = myNode.getName();
-    if (name == null) return 0;
-    return name.hashCode();
+    if (name == null) return (myHashCode = 0);
+    return (myHashCode = name.hashCode());
   }
 
   public boolean equals(Object obj) {
@@ -152,6 +156,9 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     }
     if (!wrapper.isVariable()) {
       return myNode.equals(wrapper.myNode);
+    }
+    if (myNode == wrapper.myNode) {
+      return true;
     }
     String name = myNode.getName();
     String wrapperName = wrapper.myNode.getName();

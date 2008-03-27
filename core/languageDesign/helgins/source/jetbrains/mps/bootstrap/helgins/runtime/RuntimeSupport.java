@@ -96,12 +96,12 @@ public class RuntimeSupport {
     }
   }
 
-  public Set<SNode> getRegisteredTypeVariables(String varName) {
+  public SNode[] getRegisteredTypeVariables(String varName) {
     NodeTypesComponent typesComponent = myTypeChecker.getCurrentTypesComponent();
     if (typesComponent != null) {
       return typesComponent.getVariables(varName);
     } else {
-      return new HashSet<SNode>();
+      return SNode.EMPTY_ARRAY;
     }
   }
 

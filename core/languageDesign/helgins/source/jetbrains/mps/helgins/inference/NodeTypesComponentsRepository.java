@@ -6,6 +6,8 @@ import jetbrains.mps.component.Dependency;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,14 +17,15 @@ import java.util.HashSet;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeTypesComponentsRepository {
-  private Set<NodeTypesComponent> myNodeTypesComponents = new HashSet<NodeTypesComponent>();
+  private Map<SNode, NodeTypesComponent> myNodesToComponents = new HashMap<SNode, NodeTypesComponent>();
   private TypeChecker myTypeChecker;
   private SModelRepositoryAdapter myModelRepositoryListener = new SModelRepositoryAdapter() {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
-      for (NodeTypesComponent nodeTypesComponent : new HashSet<NodeTypesComponent>(myNodeTypesComponents)) {
+      for (final NodeTypesComponent nodeTypesComponent :
+        myNodesToComponents.values().toArray(new NodeTypesComponent[myNodesToComponents.size()])) {
         if (nodeTypesComponent.getNode().getModel().getUID().equals(modelDescriptor.getModelUID())) {
           nodeTypesComponent.clearListeners();
-          myNodeTypesComponents.remove(nodeTypesComponent);
+          myNodesToComponents.remove(nodeTypesComponent.getNode());
         }
       }
     }
@@ -32,7 +35,9 @@ public class NodeTypesComponentsRepository {
 
   }
 
-  public @Dependency void setTypeChecker(TypeChecker typeChecker) {
+  public
+  @Dependency
+  void setTypeChecker(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
   }
 
@@ -42,13 +47,7 @@ public class NodeTypesComponentsRepository {
 
   public NodeTypesComponent getNodeTypesComponent(SNode node) {
     if (node == null) return null;
-    SNode root = node.getContainingRoot();
-    for (NodeTypesComponent nodeTypesComponent : myNodeTypesComponents) {
-      if (nodeTypesComponent.getNode() == root) {
-        return nodeTypesComponent;
-      }
-    }
-    return null;
+    return myNodesToComponents.get(node.getContainingRoot());
   }
 
   public NodeTypesComponent createNodeTypesComponent(SNode node) {
@@ -59,33 +58,22 @@ public class NodeTypesComponentsRepository {
       return nodeTypesComponent;
     }
     nodeTypesComponent = NodeTypesComponentsFactory.createNodeTypesComponent(root, myTypeChecker);
-    myNodeTypesComponents.add(nodeTypesComponent);
+    myNodesToComponents.put(nodeTypesComponent.getNode(), nodeTypesComponent);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
     return nodeTypesComponent;
   }
 
   public void clear() {
-    for (NodeTypesComponent nodeTypesComponent : myNodeTypesComponents) {
+    for (final NodeTypesComponent nodeTypesComponent : myNodesToComponents.values()) {
       nodeTypesComponent.clearListeners();
     }
-    myNodeTypesComponents.clear();
+    myNodesToComponents.clear();
   }
 
   public NodeTypesComponent swapTypesComponentForRoot(SNode containingRoot, NodeTypesComponent newComponent) {
     if (newComponent == null) return null;
     assert containingRoot == newComponent.getNode();
-    NodeTypesComponent componentToRemove = null;
-    for (NodeTypesComponent nodeTypesComponent : myNodeTypesComponents) {
-      if (nodeTypesComponent.getNode() == containingRoot) {
-        componentToRemove = nodeTypesComponent;
-        break;
-      }
-    }
-    if (componentToRemove != null) {
-      myNodeTypesComponents.remove(componentToRemove);
-    }
-    myNodeTypesComponents.add(newComponent);
-    return componentToRemove;
+    return myNodesToComponents.put(containingRoot, newComponent);
   }
 }

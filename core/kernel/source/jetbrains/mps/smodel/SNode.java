@@ -37,6 +37,8 @@ public final class SNode {
 
   public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
 
+  public static final SNode[] EMPTY_ARRAY = new SNode[0]; 
+
   private static long ourCounter = 0;
 
   private static Set<Pair<SNode, String>> ourPropertySettersInProgress = new HashSet<Pair<SNode, String>>();
@@ -58,6 +60,7 @@ public final class SNode {
   private Map<Object, Object> myUserObjects;
 
   private String myConceptFqName;
+  private String myLanguageNamespace;
 
   private BaseAdapter myAdapter;
 
@@ -1404,12 +1407,16 @@ public final class SNode {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
-    return NameUtil.namespaceFromConceptFQName(myConceptFqName);
+    if (myLanguageNamespace != null) {
+      return myLanguageNamespace;
+    }
+    return (myLanguageNamespace = InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName)));
   }
 
   @UseCarefully
   void setConceptFqName(String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
+    myLanguageNamespace = null;
     myAdapter = null;
     SModelRepository.getInstance().markChanged(getModel());
   }

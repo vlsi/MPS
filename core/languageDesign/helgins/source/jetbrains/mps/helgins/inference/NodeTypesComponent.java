@@ -572,12 +572,12 @@ public class NodeTypesComponent implements IGutterMessageOwner, Cloneable {
     variables.add(variable);
   }
 
-  public Set<SNode> getVariables(String varName) {
-    Set<SNode> variables = myRegisteredVariables.get(varName);
+  public SNode[] getVariables(String varName) {
+    final Set<SNode> variables = myRegisteredVariables.get(varName);
     if (variables == null) {
-      return new HashSet<SNode>();
+      return SNode.EMPTY_ARRAY;
     } else {
-      return new HashSet<SNode>(variables);
+      return variables.toArray(new SNode[variables.size()]);
     }
   }
 

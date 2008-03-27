@@ -19,20 +19,25 @@ public abstract class DefaultAbstractWrapper implements IWrapper {
     return equationManager.getWrapperListeners(this);
   }
 
+  private IWrapperListener[] getWrapperListenersArray(EquationManager equationManager) {
+    final Set<IWrapperListener> listeners = getWrapperListeners(equationManager);
+    return listeners.toArray(new IWrapperListener[listeners.size()]);
+  }
+
   public void fireRepresentatorSet(IWrapper representator, EquationManager equationManager) {
-    for (IWrapperListener listener : new HashSet<IWrapperListener>(getWrapperListeners(equationManager))) {
+    for (IWrapperListener listener : getWrapperListenersArray(equationManager)) {
       listener.representatorSet(this, representator, equationManager);
     }
   }
 
   public void fireBecomesDeeplyConcrete(EquationManager equationManager) {
-    for (IWrapperListener listener : new HashSet<IWrapperListener>(getWrapperListeners(equationManager))) {
+    for (final IWrapperListener listener : getWrapperListenersArray(equationManager)) {
       listener.becomesDeeplyConcrete(this, equationManager);
     }
   }
 
   public void fireWeakParentAdded(IWrapper parent, EquationManager equationManager) {
-    for (IWrapperListener listener : new HashSet<IWrapperListener>(getWrapperListeners(equationManager))) {
+    for (IWrapperListener listener : getWrapperListenersArray(equationManager)) {
       listener.weakParentAdded(this, parent, equationManager);
     }
   }
