@@ -466,6 +466,21 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1206631951466">
     <property name="name" value="InstanceInitializerTest" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206631951467" />
+    <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="1206633128801">
+      <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206633128802">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206633180040">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206633180041">
+            <property name="name" value="string" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206633180042">
+              <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206633180043">
+              <property name="value" value="hey!" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
