@@ -656,6 +656,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206655950512">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="initializer" />
+      <link role="target" targetNodeId="1206655653991" resolveInfo="MapInitializer" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197686889666">
       <property name="value" value="hashmap" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -743,6 +748,34 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1201872468914">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206655653991">
+    <property name="package" value="mapType" />
+    <property name="name" value="MapInitializer" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206655902276">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="entries" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1206655735055" resolveInfo="MapEntry" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206655735055">
+    <property name="package" value="mapType" />
+    <property name="name" value="MapEntry" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206655844556">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="key" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206655853135">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="value" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
 </model>

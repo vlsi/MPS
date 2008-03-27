@@ -13,6 +13,7 @@ public class HashMapCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator";
   public static String KEY_TYPE = "keyType";
   public static String VALUE_TYPE = "valueType";
+  public static String INITIALIZER = "initializer";
 
   public  HashMapCreator(SNode node) {
     super(node);
@@ -41,6 +42,14 @@ public class HashMapCreator extends AbstractCreator {
 
   public void setValueType(Type node) {
     super.setChild(HashMapCreator.VALUE_TYPE, node);
+  }
+
+  public MapInitializer getInitializer() {
+    return (MapInitializer)this.getChild(HashMapCreator.INITIALIZER);
+  }
+
+  public void setInitializer(MapInitializer node) {
+    super.setChild(HashMapCreator.INITIALIZER, node);
   }
 
 }
