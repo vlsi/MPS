@@ -7,8 +7,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.nodes.TestNodePathAction;
 import jetbrains.mps.ide.actions.cells.CellPropertiesAction;
 import jetbrains.mps.ide.actions.cells.ShowCellInCellExplorerAction;
-import jetbrains.mps.cfg.uiActions.ShowCFGTreeAction;
-import jetbrains.mps.cfg.uiActions.HighlightUnreachableBlocksAction;
 import jetbrains.mps.ide.actions.nodes.PrintNodeIDAction;
 import jetbrains.mps.ide.actions.nodes.PrintTextPresentationAction;
 import jetbrains.mps.ide.actions.nodes.HighlightCellDependenciesAction;
@@ -26,8 +24,6 @@ public class EditorInternal_ActionGroup extends BaseActionGroup {
     this.add(new CellPropertiesAction(), this);
     this.add(new ShowCellInCellExplorerAction(), this);
     this.addSeparator();
-    this.add(new ShowCFGTreeAction(), this);
-    this.add(new HighlightUnreachableBlocksAction(), this);
     this.add(new PrintNodeIDAction(), this);
     this.add(new PrintTextPresentationAction(), this);
     this.add(new HighlightCellDependenciesAction(), this);

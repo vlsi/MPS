@@ -918,7 +918,6 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/platform/businessRules/businessRules.iml" filepath="$PROJECT_DIR$/platform/businessRules/businessRules.iml" group="platform/businessRules" />
       <module fileurl="file://$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" filepath="$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" group="platform/businessRules" />
-      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/cfaLanguage/cfaLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/cfaLanguage/cfaLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$CHARISMA_HOME$/charisma.iml" filepath="$CHARISMA_HOME$/charisma.iml" group="app/charisma" />
       <module fileurl="file://$CHARISMA_HOME$/charisma-agent/charisma-agent.iml" filepath="$CHARISMA_HOME$/charisma-agent/charisma-agent.iml" group="app/charisma" />
       <module fileurl="file://$CHARISMA_HOME$/charisma-app/charisma-app.iml" filepath="$CHARISMA_HOME$/charisma-app/charisma-app.iml" group="app/charisma" />

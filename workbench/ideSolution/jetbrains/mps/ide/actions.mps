@@ -23,7 +23,6 @@
   <import index="14" modelUID="jetbrains.mps.ide.actions.generate@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.ide.actions.cells@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.ide.actions.baseLanguage@java_stub" version="-1" />
-  <import index="17" modelUID="jetbrains.mps.cfg.uiActions@java_stub" version="-1" />
   <import index="18" modelUID="jetbrains.mps.ide.actions" version="-1" />
   <import index="19" modelUID="jetbrains.mps.ide.actions@java_stub" version="-1" />
   <import index="20" modelUID="jetbrains.mps.ide.actions.navigation@java_stub" version="-1" />
@@ -477,12 +476,6 @@
       <link role="javaClass" targetNodeId="15.~ShowCellInCellExplorerAction" resolveInfo="ShowCellInCellExplorerAction" />
     </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204981265733" />
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981294286">
-      <link role="javaClass" targetNodeId="17.~ShowCFGTreeAction" resolveInfo="ShowCFGTreeAction" />
-    </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981300007">
-      <link role="javaClass" targetNodeId="17.~HighlightUnreachableBlocksAction" resolveInfo="HighlightUnreachableBlocksAction" />
-    </node>
     <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204981304743">
       <link role="javaClass" targetNodeId="1.~PrintNodeIDAction" resolveInfo="PrintNodeIDAction" />
     </node>

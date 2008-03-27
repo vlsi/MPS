@@ -510,10 +510,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return LanguageAspect.HELGINS_TYPESYSTEM.get(this);
   }
 
-  public SModelDescriptor getCFAModelDescriptor() {
-    return LanguageAspect.CFA.get(this);
-  }
-
   public SModelDescriptor getActionsModelDescriptor() {
     return LanguageAspect.ACTIONS.get(this);
   }

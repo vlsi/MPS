@@ -10,7 +10,6 @@
     <dependency reexport="false">jetbrains.mps.projectLanguage</dependency>
     <dependency reexport="false">jetbrains.mpslite</dependency>
     <dependency reexport="false">jetbrains.mps.logging.refactoring</dependency>
-    <dependency reexport="false">jetbrains.mps.bootstrap.cfaLanguage</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>

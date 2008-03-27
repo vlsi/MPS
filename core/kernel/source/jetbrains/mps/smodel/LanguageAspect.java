@@ -73,12 +73,6 @@ public enum LanguageAspect {
     }
   },
 
-  CFA("cfa") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.CFA.getUID());
-    }
-  },
-
   DATA_FLOW("dataFlow") {
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapModule.DATA_FLOW.getUID());

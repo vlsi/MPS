@@ -15,10 +15,6 @@ import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import java.util.Iterator;
 import jetbrains.mps.util.Pair;
 import java.util.ArrayList;
-import java.util.Set;
-import jetbrains.mps.cfg.BasicBlock;
-import jetbrains.mps.cfg.IControlFlowGraph;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class RulesFunctions_BaseLanguage {
@@ -239,33 +235,6 @@ public class RulesFunctions_BaseLanguage {
       mmap.put(tvd, nodes);
     }
     ListOperations.addElement(nodes, tvar);
-  }
-
-  public static Set<BasicBlock> findLastBlocks(IControlFlowGraph controlFlowGraph) {
-    BasicBlock exit = controlFlowGraph.getExitBlock();
-    Set<BasicBlock> lastBlocks = new HashSet<BasicBlock>();
-    Set<BasicBlock> newLastBlocks = new HashSet<BasicBlock>();
-    Set<BasicBlock> foundBlocks = new HashSet<BasicBlock>();
-    Set<BasicBlock> passed = new HashSet<BasicBlock>();
-    lastBlocks.add(exit);
-    while(!(lastBlocks.isEmpty())) {
-      for(BasicBlock lastBlock : lastBlocks) {
-        passed.add(lastBlock);
-        if (lastBlock.isFake()) {
-          for(BasicBlock entry : lastBlock.getEntryStar()) {
-            if (!(passed.contains(entry))) {
-              newLastBlocks.add(entry);
-            }
-          }
-        } else
-        {
-          foundBlocks.add(lastBlock);
-        }
-      }
-      lastBlocks = newLastBlocks;
-      newLastBlocks = new HashSet<BasicBlock>();
-    }
-    return foundBlocks;
   }
 
   public static boolean isWithinStatic(SNode node) {

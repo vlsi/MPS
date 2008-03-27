@@ -43,7 +43,6 @@
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
     <orderEntry type="module" module-name="actionsLanguage" exported="" />
-    <orderEntry type="module" module-name="cfaLanguage" exported="" />
     <orderEntry type="module" module-name="constraintsLanguage" exported="" />
     <orderEntry type="module" module-name="editorLanguage" exported="" />
     <orderEntry type="module" module-name="helgins" exported="" />
