@@ -29,6 +29,24 @@ public class MakeScheduleBuilderTest {
   }
 
   @Test
+  public void dependencyWithoutCycle() {
+    Module a = new Module("a");
+    Module b = new Module("b");
+
+    b.addDependency(a);
+
+    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.asStableSet(a, b));
+
+    Assert.assertEquals(
+      CollectionUtil.asList(
+        CollectionUtil.asSet(a),
+        CollectionUtil.asSet(b)
+      ),
+      schedule
+    );
+  }
+
+  @Test
   public void cycle() {
     Module a = new Module("a");
     Module b = new Module("b");
@@ -45,6 +63,28 @@ public class MakeScheduleBuilderTest {
       schedule
     );
   }
+
+  @Test
+  public void moduleWithTwoDependents() {
+    Module a = new Module("a");
+    Module b = new Module("b");
+    Module c = new Module("c");
+
+    b.addDependency(a);
+    c.addDependency(a);
+
+    List<Set<Module>> schedule = new MyMakeScheduleBuilder().buildSchedule(CollectionUtil.asStableSet(a, b, c));
+
+    Assert.assertEquals(
+      CollectionUtil.asList(
+        CollectionUtil.asSet(a),
+        CollectionUtil.asSet(b),
+        CollectionUtil.asSet(c)
+      ),
+      schedule
+    );
+  }
+
 
   @Test
   public void cycleWhichContainsCrossEdges() {
