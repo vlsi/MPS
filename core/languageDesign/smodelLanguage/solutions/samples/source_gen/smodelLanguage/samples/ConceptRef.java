@@ -70,6 +70,7 @@ public class ConceptRef {
     // ======
     boolean yes1 = SConceptOperations.isSuperConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
     boolean yes2 = SConceptOperations.isSubConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), "jetbrains.mps.baseLanguage.structure.Expression");
+    boolean yes3 = SConceptOperations.isSubConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression")));
   }
 
   public void concept_hierarchy2() {
