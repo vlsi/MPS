@@ -829,14 +829,14 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1169579427535">
-          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1169579427536">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206577009949">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1169579427537">
+              <link role="variableDeclaration" targetNodeId="1169579427518" resolveInfo="result" />
+            </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation" id="1169579427538">
               <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1169579427539">
                 <link role="variableDeclaration" targetNodeId="1169579427527" resolveInfo="interfaces" />
               </node>
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1169579427537">
-              <link role="variableDeclaration" targetNodeId="1169579427518" resolveInfo="result" />
             </node>
           </node>
         </node>
