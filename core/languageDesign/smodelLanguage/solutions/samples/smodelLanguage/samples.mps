@@ -4031,9 +4031,27 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206655034854">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206655034855">
+            <property name="name" value="yes2" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1206655034856" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206655034857">
+              <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1206655034858">
+                <link role="conceptDeclaration" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation" id="1206655034859">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression" id="1206655049787">
+                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1206655055695">
+                    <link role="conceptDeclaration" targetNodeId="1.1081773326031" resolveInfo="BinaryOperation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1180546895943">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1180546895944">
-            <property name="name" value="yes2" />
+            <property name="name" value="yes3" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1180546895945" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227941285">
               <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1180546864219">
@@ -4049,7 +4067,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206654587116">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206654587117">
-            <property name="name" value="yes3" />
+            <property name="name" value="yes4" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1206654587118" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206654587119">
               <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1206654587120">
