@@ -7,9 +7,10 @@
   </language>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="webr.templateLanguage.structure" version="0" />
-  <maxImportIndex value="7" />
+  <maxImportIndex value="8" />
   <import index="6" modelUID="java.lang@java_stub" version="-1" />
   <import index="7" modelUID="java.io@java_stub" version="-1" />
+  <import index="8" modelUID="java.util@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1196072461367">
     <property name="name" value="ABC" />
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1201384189984">
@@ -465,6 +466,47 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1206631951466">
     <property name="name" value="InstanceInitializerTest" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206633374390">
+      <property name="name" value="f" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206633374391" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206633374392" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206633374393">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206633378582">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206633378583">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1206633380210">
+              <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1206633380211">
+                <link role="classifier" targetNodeId="8.~HashMap" resolveInfo="HashMap" />
+                <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206633380212" />
+                <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="1206633410632">
+                  <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206633410633">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206633418368">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206633418369">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206633418370">
+                          <link role="baseMethodDeclaration" targetNodeId="8.~HashMap.put(java.lang.Object,java.lang.Object):java.lang.Object" resolveInfo="put" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206633419981">
+                            <property name="value" value="key" />
+                          </node>
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206633423077">
+                            <property name="value" value="value" />
+                          </node>
+                        </node>
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1206633418371" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206633431314">
+                  <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
+                </node>
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206633434284">
+                  <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206631951467" />
     <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="1206633128801">
       <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206633128802">
