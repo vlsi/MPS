@@ -2664,5 +2664,15 @@
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206629501431">
+    <property name="name" value="InstanceInitializer" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206629521979">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="statementList" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
+  </node>
 </model>
 
