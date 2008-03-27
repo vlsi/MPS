@@ -49,7 +49,7 @@ public class FunctionTypeUtil {
     String trgFQname = (String)FunctionTypeUtil.getPrepData(expr, generator);
     SNode trg = null;
     for(SNode ct : targets) {
-      if(trgFQname.equals(INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(ct, "classifier", false)))) {
+      if (trgFQname.equals(INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(ct, "classifier", false)))) {
         trg = ct;
         break;
       }
@@ -69,8 +69,8 @@ public class FunctionTypeUtil {
     SNode prev = null;
     for(Iterator it = typesList.iterator() ; it.hasNext() ; ) {
       SNode next = ((SNode)it.next());
-      if(prev != null) {
-        if(Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1199633062014(((SNode)prev)), FunctionType_Behavior.call_getSignature_1199633062014(((SNode)next))) == 0) {
+      if (prev != null) {
+        if (Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1199633062014(((SNode)prev)), FunctionType_Behavior.call_getSignature_1199633062014(((SNode)next))) == 0) {
           it.remove();
           continue;
         }
@@ -82,26 +82,26 @@ public class FunctionTypeUtil {
 
   public static void addAdaptableClassifierTypeTarget(SNode adaptable, SNode target, ITemplateGenerator generator) {
     List<SNode> allAdaptable = FunctionTypeUtil.getAllAdaptableClassifierTypes(generator);
-    if(allAdaptable == null) {
+    if (allAdaptable == null) {
       allAdaptable = new ArrayList<SNode>();
       generator.getGeneratorSessionContext().putSessionObject("all_needs_adapted", allAdaptable);
     }
-    if(!(allAdaptable.contains(adaptable))) {
+    if (!(allAdaptable.contains(adaptable))) {
       allAdaptable.add(adaptable);
     }
     List<SNode> trgList = (List<SNode>)generator.getGeneratorSessionContext().getSessionObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(adaptable, "classifier", false)));
-    if(trgList == null) {
+    if (trgList == null) {
       trgList = new ArrayList<SNode>();
       generator.getGeneratorSessionContext().putSessionObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(adaptable, "classifier", false)), trgList);
     }
     boolean hasOneAlready = false;
     for(SNode ct : trgList) {
-      if(INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(target, "classifier", false)).equals(INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(ct, "classifier", false)))) {
+      if (INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(target, "classifier", false)).equals(INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(ct, "classifier", false)))) {
         hasOneAlready = true;
         break;
       }
     }
-    if(!(hasOneAlready)) {
+    if (!(hasOneAlready)) {
       SNode trg = SNodeOperations.copyNode(target);
       trgList.add(trg);
       ((SNode)trg).putUserObject("adaptable", adaptable);

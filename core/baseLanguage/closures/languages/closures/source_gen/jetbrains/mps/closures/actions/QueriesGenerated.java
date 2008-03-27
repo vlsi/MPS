@@ -61,7 +61,7 @@ public class QueriesGenerated {
     {
       AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", operationContext.getScope());
       SNode childConcept = (SNode)_context.getChildConcept();
-      if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
         Calculable calc = new Calculable() {
 
           public Object calculate() {

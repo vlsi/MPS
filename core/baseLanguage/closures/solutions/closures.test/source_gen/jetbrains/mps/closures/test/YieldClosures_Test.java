@@ -15,17 +15,17 @@ public class YieldClosures_Test extends ClosuresBase_Test {
 
       public void invoke(List<Integer> exp) {
         exp.add(1);
-        if(true) {
+        if (true) {
           exp.add(2);
         }
-        if(false) {
+        if (false) {
           exp.add(3);
         } else
         {
           exp.add(4);
         }
         exp.add(5);
-        if(false) {
+        if (false) {
           exp.add(6);
         }
       }
@@ -49,21 +49,21 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 3:
-                      if(true) {
+                      if (true) {
                         this.__CP__ = 4;
                         break;
                       }
                       this.__CP__ = 5;
                       break;
                     case 5:
-                      if(false) {
+                      if (false) {
                         this.__CP__ = 7;
                         break;
                       }
                       this.__CP__ = 8;
                       break;
                     case 12:
-                      if(false) {
+                      if (false) {
                         this.__CP__ = 13;
                         break;
                       }
@@ -165,14 +165,14 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 5:
-                      if(this._3_i > 0) {
+                      if (this._3_i > 0) {
                         this.__CP__ = 6;
                         break;
                       }
                       this.__CP__ = 16;
                       break;
                     case 10:
-                      if(this._8_j <= 3) {
+                      if (this._8_j <= 3) {
                         this.__CP__ = 11;
                         break;
                       }
@@ -269,7 +269,7 @@ __switch__:
 
               private int __CP__ = 0;
               private int _4_i;
-              private int _9_j;
+              private int _10_j;
 
               protected boolean moveToNext() {
 __loop__:
@@ -280,18 +280,18 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 7:
-                      if(this._4_i > 0) {
+                      if (this._4_i > 0) {
                         this.__CP__ = 6;
                         break;
                       }
-                      this.__CP__ = 17;
+                      this.__CP__ = 8;
                       break;
-                    case 12:
-                      if(this._9_j > 0) {
-                        this.__CP__ = 11;
+                    case 13:
+                      if (this._10_j > 0) {
+                        this.__CP__ = 12;
                         break;
                       }
-                      this.__CP__ = 16;
+                      this.__CP__ = 14;
                       break;
                     case 2:
                       this.__CP__ = 3;
@@ -301,17 +301,17 @@ __switch__:
                       this.__CP__ = 6;
                       this.yield(this._4_i);
                       return true;
-                    case 10:
-                      this.__CP__ = 11;
-                      this.yield(this._9_j);
-                      return true;
-                    case 13:
-                      this.__CP__ = 14;
-                      this.yield(this._9_j * this._4_i);
+                    case 11:
+                      this.__CP__ = 12;
+                      this.yield(this._10_j);
                       return true;
                     case 15:
-                      this.__CP__ = 12;
-                      this.yield(this._9_j + this._4_i);
+                      this.__CP__ = 16;
+                      this.yield(this._10_j * this._4_i);
+                      return true;
+                    case 17:
+                      this.__CP__ = 13;
+                      this.yield(this._10_j + this._4_i);
                       return true;
                     case 18:
                       this.__CP__ = 19;
@@ -324,7 +324,7 @@ __switch__:
                       this._4_i = 3;
                       this.__CP__ = 5;
                       break;
-                    case 17:
+                    case 8:
                       this._4_i = 0;
                       this.__CP__ = 18;
                       break;
@@ -333,19 +333,19 @@ __switch__:
                       this.__CP__ = 1;
                       break;
                     case 6:
-                      this._9_j = this._4_i;
-                      this.__CP__ = 10;
+                      this._10_j = this._4_i;
+                      this.__CP__ = 11;
                       break;
-                    case 16:
+                    case 14:
                       this._4_i = this._4_i - 1;
                       this.__CP__ = 7;
                       break;
-                    case 11:
-                      this.__CP__ = 13;
-                      break;
-                    case 14:
-                      this._9_j = this._9_j - 1;
+                    case 12:
                       this.__CP__ = 15;
+                      break;
+                    case 16:
+                      this._10_j = this._10_j - 1;
+                      this.__CP__ = 17;
                       break;
                     default:
                       break __loop__;
@@ -398,7 +398,7 @@ __switch__:
                     case 2:
                       this._2_i = 0;
                     case 3:
-                      if(!(this._2_i < 3)) {
+                      if (!(this._2_i < 3)) {
                         this.__CP__ = 1;
                         break;
                       }
@@ -411,7 +411,7 @@ __switch__:
                     case 6:
                       this._6_j = 0;
                     case 7:
-                      if(!(this._6_j < 3)) {
+                      if (!(this._6_j < 3)) {
                         this.__CP__ = 5;
                         break;
                       }
@@ -495,7 +495,7 @@ __switch__:
                     case 2:
                       this._2_i_it = data1.iterator();
                     case 3:
-                      if(!(this._2_i_it.hasNext())) {
+                      if (!(this._2_i_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
@@ -505,7 +505,7 @@ __switch__:
                     case 6:
                       this._6_j_it = data2.iterator();
                     case 7:
-                      if(!(this._6_j_it.hasNext())) {
+                      if (!(this._6_j_it.hasNext())) {
                         this.__CP__ = 11;
                         break;
                       }
@@ -560,10 +560,10 @@ __switch__:
         int a = 0;
         for(int i = 0 ; i < 10 ; i = i + 1) {
           for(int j = 0 ; j < 10 ; j = j + 1) {
-            if(i + j < 5) {
+            if (i + j < 5) {
               continue;
             }
-            if(i < j) {
+            if (i < j) {
               a = a + i + j;
               exp.add(a);
             }
@@ -595,7 +595,7 @@ __switch__:
                     case 4:
                       this._4_i = 0;
                     case 5:
-                      if(!(this._4_i < 10)) {
+                      if (!(this._4_i < 10)) {
                         this.__CP__ = 1;
                         break;
                       }
@@ -608,7 +608,7 @@ __switch__:
                     case 8:
                       this._8_j = 0;
                     case 9:
-                      if(!(this._8_j < 10)) {
+                      if (!(this._8_j < 10)) {
                         this.__CP__ = 7;
                         break;
                       }
@@ -619,14 +619,14 @@ __switch__:
                       this.__CP__ = 9;
                       break;
                     case 14:
-                      if(this._4_i < this._8_j) {
+                      if (this._4_i < this._8_j) {
                         this.__CP__ = 16;
                         break;
                       }
                       this.__CP__ = 11;
                       break;
                     case 12:
-                      if(this._4_i + this._8_j < 5) {
+                      if (this._4_i + this._8_j < 5) {
                         this.__CP__ = 13;
                         break;
                       }
@@ -712,7 +712,7 @@ __switch__:
                     case 2:
                       this._2_fr_it = Arrays.asList(new Fruits[]{Fruits.APPLES,Fruits.ORANGES,Fruits.CARS}).iterator();
                     case 3:
-                      if(!(this._2_fr_it.hasNext())) {
+                      if (!(this._2_fr_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }

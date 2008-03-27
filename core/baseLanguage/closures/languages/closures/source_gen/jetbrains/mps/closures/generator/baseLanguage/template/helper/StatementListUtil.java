@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 public class StatementListUtil {
 
   public static List<SNode> selectStatementsUntilControlStatement(SNode slist) {
-    if(SLinkOperations.getCount(slist, "statement") > 0) {
+    if (SLinkOperations.getCount(slist, "statement") > 0) {
       return StatementListUtil.selectStatementsUntilControlStatement(slist, ((List<SNode>)SLinkOperations.getTargets(slist, "statement", true)).get(0));
     }
     return Collections.emptyList();
@@ -22,11 +22,11 @@ public class StatementListUtil {
     List<SNode> res = new ArrayList<SNode>();
     boolean foundStart = false;
     for(SNode stmt : ((List<SNode>)SLinkOperations.getTargets(slist, "statement", true))) {
-      if(stmt == start) {
+      if (stmt == start) {
         foundStart = true;
       }
-      if(foundStart) {
-        if(StatementListUtil.isControlStatement(stmt)) {
+      if (foundStart) {
+        if (StatementListUtil.isControlStatement(stmt)) {
           break;
         }
         res.add(stmt);
@@ -36,25 +36,25 @@ public class StatementListUtil {
   }
 
   public static boolean isControlStatement(SNode stmt) {
-    if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.WhileStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.WhileStatement")) {
       return true;
     }
-    if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.DoWhileStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.DoWhileStatement")) {
       return true;
     }
-    if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForStatement")) {
       return true;
     }
-    if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForeachStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForeachStatement")) {
       return true;
     }
-    if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.SwitchStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.SwitchStatement")) {
       return true;
     }
-    if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
       return true;
     }
-    if(SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.closures.structure.YieldStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.closures.structure.YieldStatement")) {
       return true;
     }
     return false;
