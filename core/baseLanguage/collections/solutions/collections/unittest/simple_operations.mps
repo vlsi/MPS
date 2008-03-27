@@ -9,6 +9,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.unitTest" />
+  <language namespace="jetbrains.mps.baseLanguage.strings" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="java.util@java_stub" version="-1" />
@@ -3258,7 +3259,46 @@
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1206658590895">
         <property name="methodName" value="initializer" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206658590896" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206658590897" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206658590897">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206658746577">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206658746578">
+              <property name="name" value="map" />
+              <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapType" id="1206658746579">
+                <node role="keyType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1206658746580" />
+                <node role="valueType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1206658746581" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206658746582">
+                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator" id="1206658746583">
+                  <node role="keyType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1206658746584" />
+                  <node role="valueType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1206658746585" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapInitializer" id="1206658746586">
+                    <node role="entries" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapEntry" id="1206658746587">
+                      <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206658746588">
+                        <property name="value" value="value1" />
+                      </node>
+                      <node role="key" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206658746589">
+                        <property name="value" value="key1" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1206658761653">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206658761654">
+              <property name="value" value="value1" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement" id="1206658761655">
+              <node role="key" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206658761656">
+                <property name="value" value="key1" />
+              </node>
+              <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206658761657">
+                <link role="variableDeclaration" targetNodeId="1206658746578" resolveInfo="map" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
