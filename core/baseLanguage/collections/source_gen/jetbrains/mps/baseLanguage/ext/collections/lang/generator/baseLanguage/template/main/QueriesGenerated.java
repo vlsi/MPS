@@ -47,7 +47,8 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1197933661521(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator");
+    SNode creator = SLinkOperations.getTarget(_context.getNode(), "creator", true);
+    return SNodeOperations.isInstanceOf(creator, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator") && (SLinkOperations.getTarget(creator, "initializer", true) == null);
   }
 
   public static boolean baseMappingRule_Condition_1197935213886(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -60,6 +61,11 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1205249925954(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation");
+  }
+
+  public static boolean baseMappingRule_Condition_1206659475567(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    SNode creator = SLinkOperations.getTarget(_context.getNode(), "creator", true);
+    return SNodeOperations.isInstanceOf(creator, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator") && (SLinkOperations.getTarget(creator, "initializer", true) != null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1167778587376(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -129,7 +135,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170982686718(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.resolve_ForEachVariableReference(((ForEachVariableReference)SNodeOperations.getAdapter(_context.getNode())), _context.getTemplateNode(), _context.getGenerator());
+    return (SNode)_QueriesUtil.resolve_ForEachVariableReference(((ForEachVariableReference)SNodeOperations.getAdapter(_context.getNode())), _context.getTemplateNode(), _context.getGenerator());
   }
 
   public static Object referenceMacro_GetReferent_1172276865420(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -486,9 +492,29 @@ public class QueriesGenerated {
     return IOperation_Behavior.call_getOperand_1197028596169(_context.getNode());
   }
 
+  public static SNode sourceNodeQuery_1206659143420(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "keyType", true);
+  }
+
+  public static SNode sourceNodeQuery_1206659161900(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "valueType", true);
+  }
+
+  public static SNode sourceNodeQuery_1206659385482(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "key", true);
+  }
+
+  public static SNode sourceNodeQuery_1206659396898(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "value", true);
+  }
+
   public static List sourceNodesQuery_1200500184872(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode creator = SLinkOperations.getTarget(_context.getNode(), "creator", true);
     return SLinkOperations.getTargets(creator, "initValue", true);
+  }
+
+  public static List sourceNodesQuery_1206659368360(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "initializer", true), "entries", true);
   }
 
   public static SNode mapSrcMacro_mapper_1170959169275(final IOperationContext operationContext, final MapSrcMacroContext _context) {
