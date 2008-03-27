@@ -159,7 +159,7 @@ public class NodeTypesComponent implements IGutterMessageOwner, Cloneable {
   private boolean loadTypesystemRules(SNode root) {
     SModel model = root.getModel();
     RulesManager rulesManager = myTypeChecker.getRulesManager();
-    if (rulesManager.hasModelLoadedRules(model)) {
+    if (rulesManager.hasModelLoadedRules(model.getModelDescriptor())) {
       return true;
     }
     List<Language> languages = model.getLanguages(GlobalScope.getInstance());
@@ -168,7 +168,7 @@ public class NodeTypesComponent implements IGutterMessageOwner, Cloneable {
       boolean b = rulesManager.loadLanguage(language);
       isLoadedAnyLanguage = isLoadedAnyLanguage || b;
     }
-    rulesManager.markModelHasLoadedRules(model);
+    rulesManager.markModelHasLoadedRules(model.getModelDescriptor());
     if (!isLoadedAnyLanguage) return false;
     return true;
   }

@@ -23,9 +23,9 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
     List<SNode> supertypes = Collections.emptyList();
     String rtSig = "FunctionTypes." + FunctionType_Behavior.call_getRuntimeSignature_1202756382806(ft);
     for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QuotationClass_5().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      if(rtSig.equals(SPropertyOperations.getString(ice, "name"))) {
+      if (rtSig.equals(SPropertyOperations.getString(ice, "name"))) {
         SNode ct = new QuotationClass_6().createNode(ice);
-        if((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+        if ((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
           SLinkOperations.addChild(ct, "parameter", SNodeOperations.copyNode(SLinkOperations.getTarget(ft, "resultType", true)));
         }
         for(SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {

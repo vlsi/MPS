@@ -19,30 +19,30 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
   public  FunctionType_subtypeOf_ClassifierType_InequationReplacementRule() {
   }
 
-  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo) {
+  public void processInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
     SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);
     String errorMsg = "";
-    if(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
+    if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-      if(methods != null && methods.size() == 1) {
+      if (methods != null && methods.size() == 1) {
         SNode md = methods.get(0);
-        if(SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), errorInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202742499735");
+        if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), equationInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202742499735", false);
           {
             SNode fpt;
             SNode mpt;
             Iterator<SNode> fpt_iterator = SLinkOperations.getTargets(subtype, "parameterType", true).iterator();
             Iterator<SNode> mpt_iterator = SLinkOperations.getTargets(md, "parameter", true).iterator();
             while(true) {
-              if(!(fpt_iterator.hasNext())) {
+              if (!(fpt_iterator.hasNext())) {
                 break;
               }
-              if(!(mpt_iterator.hasNext())) {
+              if (!(mpt_iterator.hasNext())) {
                 break;
               }
               fpt = fpt_iterator.next();
               mpt = mpt_iterator.next();
-              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), fpt, errorInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202746383183");
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), fpt, equationInfo.getNodeWithError(), null, "jetbrains.mps.closures.helgins", "1202746383183", false);
             }
           }
           return;
@@ -58,7 +58,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     {
       errorMsg = ": not an interface";
     }
-    TypeChecker.getInstance().reportTypeError(errorInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1180102203531(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1180102203531(supertype) + errorMsg, "jetbrains.mps.closures.helgins", "1202742336483");
+    TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1180102203531(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1180102203531(supertype) + errorMsg, "jetbrains.mps.closures.helgins", "1202742336483");
   }
 
   public boolean isWeak() {

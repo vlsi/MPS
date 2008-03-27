@@ -27,7 +27,7 @@ public class RulesManager {
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
   private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
   private DependenciesContainer myDependenciesContainer = new DependenciesContainer();
-  private Set<SModel> myModelsWithLoadedRules = new HashSet<SModel>();
+  private Set<SModelDescriptor> myModelsWithLoadedRules = new HashSet<SModelDescriptor>();
 
   private Map<String,IVariableProvider> myConceptsToVariableProviders = new HashMap<String, IVariableProvider>(5);
 
@@ -35,6 +35,11 @@ public class RulesManager {
 
   public RulesManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
+    SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
+      public void modelRemoved(SModelDescriptor modelDescriptor) {
+        myModelsWithLoadedRules.remove(modelDescriptor);
+      }
+    });
   }
 
   public void clear() {
@@ -49,11 +54,11 @@ public class RulesManager {
     myConceptsToVariableProviders.clear();
   }
 
-  public boolean hasModelLoadedRules(SModel model) {
+  public boolean hasModelLoadedRules(SModelDescriptor model) {
     return myModelsWithLoadedRules.contains(model);
   }
 
-  void markModelHasLoadedRules(SModel model) {
+  void markModelHasLoadedRules(SModelDescriptor model) {
     myModelsWithLoadedRules.add(model);
   }
 
