@@ -794,5 +794,49 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1206658014161">
+    <property name="package" value="mapType" />
+    <property name="name" value="CreateInitializer" />
+    <link role="forConcept" targetNodeId="1.1197686869805" resolveInfo="HashMapCreator" />
+    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1206658014162">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206658014163">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206658123836">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206658123837">
+            <property name="value" value="create initializer" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1206658014164">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206658014165">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206658141941">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206658145384">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206658143037">
+              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1206658141942" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206658144477">
+                <link role="link" targetNodeId="1.1206655950512" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1206658148698" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1206658129556">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206658129557">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206658132121">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206658135610">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206658133232">
+              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1206658132122" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206658134922">
+                <link role="link" targetNodeId="1.1206655950512" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation" id="1206658136956" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
