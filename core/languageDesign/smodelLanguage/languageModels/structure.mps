@@ -1601,7 +1601,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="conceptArgument" />
-      <link role="target" targetNodeId="1177026804130" resolveInfo="RefConcept_Abstract" />
+      <link role="target" targetNodeId="1206659704055" resolveInfo="IRefConceptArg" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1180031783298">
       <property name="value" value="isSubConceptOf" />

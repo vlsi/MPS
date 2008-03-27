@@ -4097,6 +4097,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206661620799">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206661622489">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206661620800">
+              <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSubConceptOfOperation" id="1206661626803">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1206661642601">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206661904379">
+                  <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1180457006292">
         <property name="name" value="concept" />
