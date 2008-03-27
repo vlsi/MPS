@@ -347,7 +347,7 @@ public class RefactoringContext {
           if (!delete) {
             newRole = newConceptFeature.getFeatureName();
           }
-          for (SNode child : node.getChildren()) {
+          for (SNode child : new ArrayList<SNode>(node.getChildren())) {
             String childRole = child.getRole_();
             if (childRole != null && childRole.equals(oldRole)) {
               if (delete) {
