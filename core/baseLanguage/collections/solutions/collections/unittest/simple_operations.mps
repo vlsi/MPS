@@ -3255,6 +3255,11 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1206658590895">
+        <property name="methodName" value="initializer" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206658590896" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206658590897" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1205789243372">
