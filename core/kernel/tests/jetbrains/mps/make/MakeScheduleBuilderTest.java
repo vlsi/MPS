@@ -23,8 +23,8 @@ public class MakeScheduleBuilderTest {
 
     Assert.assertEquals(
       CollectionUtil.asList(
-        CollectionUtil.asStableSet(a),
-        CollectionUtil.asStableSet(b)
+        CollectionUtil.asSet(a),
+        CollectionUtil.asSet(b)
       ),
       schedule
     );
@@ -42,7 +42,7 @@ public class MakeScheduleBuilderTest {
 
     Assert.assertEquals(
       CollectionUtil.asList(
-        CollectionUtil.asStableSet(a, b)
+        CollectionUtil.asSet(a, b)
       ),
       schedule
     );
