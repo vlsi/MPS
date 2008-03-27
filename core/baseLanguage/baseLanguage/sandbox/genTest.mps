@@ -303,18 +303,6 @@
                 <property name="value" value="239" />
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206626324061">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206626324062">
-                <property name="name" value="a" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1206626324063" />
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206626325581">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206626325582">
-                <property name="name" value="b" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1206626325583" />
-              </node>
-            </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206626303274">
             <property name="value" value="false" />
@@ -474,6 +462,10 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206062473638" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1206631951466">
+    <property name="name" value="InstanceInitializerTest" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206631951467" />
   </node>
 </model>
 
