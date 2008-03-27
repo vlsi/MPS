@@ -8648,5 +8648,32 @@
       <property name="name" value="T" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1206633947004">
+    <property name="name" value="Foo1" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1206633986412">
+      <property name="name" value="bar" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206633986413" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206633986414" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206633986415" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206633947005" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1206633960292">
+    <property name="name" value="Foo2" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206633963716">
+      <property name="name" value="baz" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206633963717" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206633963718" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206633963719">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206633995291">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206633996246">
+            <link role="baseMethodDeclaration" targetNodeId="1206633986412" resolveInfo="bar" />
+            <link role="classConcept" targetNodeId="1206633947004" resolveInfo="Foo1" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206633960293" />
+  </node>
 </model>
 

@@ -6,6 +6,7 @@ import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
@@ -74,18 +75,23 @@ public class GenericRefactoring {
           if (toReturn[0]) return;
           ThreadUtils.runInUIThreadAndWait(new Runnable() {
             public void run() {
-              CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-                public void run() {
-
+              SearchResults u = CommandProcessor.instance().executeLightweightCommand(new Calculable<SearchResults>() {
+                public SearchResults calculate() {
                   SearchResults usages = usagesContainer[0];
                   if (usages != null) {
                     refactoringContext.setUsages(usages);
                     NewRefactoringView.showRefactoringView(GenericRefactoring.this, context, refactoringContext);
-                  } else {
-                    doExecute(context, refactoringContext);
                   }
+                  return usages;
                 }
               });
+              if (u == null) {
+                CommandProcessor.instance().executeCommand(new Runnable() {
+                  public void run() {
+                    doExecute(context, refactoringContext);                    
+                  }
+                });
+              }
             }
           });
         }
