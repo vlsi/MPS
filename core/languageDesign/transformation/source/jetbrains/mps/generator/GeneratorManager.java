@@ -499,7 +499,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               }
             } else if (!(status.isCanceled() || status.isError())) {
               generationType.handleEmptyOutput(status, outputFolder, invocationContext, progress, messages);
-            }
+            }                                                                                                
             generationSession.discardTransients();
             progress.finishTask(taskName);
 
