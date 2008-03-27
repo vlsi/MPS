@@ -30,7 +30,7 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
     for (ISubstituteInfoPart menuPart : myParts) {
       try {
         actions.addAll(menuPart.createActions(myCellContext, getEditorContext()));
-      } catch (Exception e) {
+      } catch (Throwable e) {
         LOG.error(e);
       }
     }
