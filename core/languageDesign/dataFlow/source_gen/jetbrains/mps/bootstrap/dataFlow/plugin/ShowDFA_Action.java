@@ -10,14 +10,15 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.DataFlowManager;
+import jetbrains.mps.dataFlow.presentation.ShowCFGDialog;
 
-public class PrintDFAResult_Action extends CurrentProjectMPSAction {
-  public static final Logger LOG = Logger.getLogger(PrintDFAResult_Action.class);
+public class ShowDFA_Action extends CurrentProjectMPSAction {
+  public static final Logger LOG = Logger.getLogger(ShowDFA_Action.class);
 
   private SNode node;
 
-  public  PrintDFAResult_Action(MPSProject project) {
-    super(project, "Print DFA");
+  public  ShowDFA_Action(MPSProject project) {
+    super(project, "Show DFA (under construction)");
   }
 
   @NotNull()
@@ -36,7 +37,7 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
       this.setEnabled(true);
       this.setVisible(true);
     } catch (Throwable t) {
-      PrintDFAResult_Action.LOG.error("User's action doUpdate method failed. Action:" + "PrintDFAResult", t);
+      ShowDFA_Action.LOG.error("User's action doUpdate method failed. Action:" + "ShowDFA", t);
       this.setEnabled(false);
       this.setVisible(false);
     }
@@ -71,10 +72,10 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
       }
       {
         Program program = DataFlowManager.getInstance().buildProgramFor(this.node);
-        System.out.println(program.toString(true));
+        new ShowCFGDialog(program);
       }
     } catch (Throwable t) {
-      PrintDFAResult_Action.LOG.error("User's action execute method failed. Action:" + "PrintDFAResult", t);
+      ShowDFA_Action.LOG.error("User's action execute method failed. Action:" + "ShowDFA", t);
     }
   }
 
