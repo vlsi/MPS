@@ -67,7 +67,6 @@ public class MakeScheduleBuilderTest {
       ),
       schedule
     );
-    
   }
 
   private class Module {
