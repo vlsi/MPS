@@ -18,13 +18,9 @@ public class SearchResult {
 
   }
 
-  public SearchResult(SNodePointer nodePointer, String category) {
-    myNodePointer = new SNodePointer(nodePointer.getNode());
-    myCategory = category;
-  }
-
   public SearchResult(SNode node, String category) {
-    this(new SNodePointer(node), category);
+    myNodePointer = new SNodePointer(node);
+    myCategory = category;
   }
 
   public SNode getNode() {

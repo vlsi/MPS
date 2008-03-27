@@ -7,7 +7,6 @@ import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 
 import java.util.Collection;
@@ -21,7 +20,7 @@ public class ConstantFinder extends BaseFinder {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         for (SNode node : nodes) {
-          myResults.getSearchResults().add(new SearchResult(new SNodePointer(node), categoryName));
+          myResults.getSearchResults().add(new SearchResult(node, categoryName));
         }
       }
     });

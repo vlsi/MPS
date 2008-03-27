@@ -237,48 +237,6 @@ public abstract class UsageView {
 
   public abstract void close();
 
-  private class ActionsToolbar extends MPSToolBar {
-    private ActionsToolbar(ButtonConfiguration buttonConfiguration) {
-      super(JToolBar.VERTICAL);
-      createButtons(buttonConfiguration);
-    }
-
-    private void createButtons(ButtonConfiguration buttonConfiguration) {
-      if (buttonConfiguration.isShowRerunButton()) {
-        add(new AnonymButton(Icons.RERUN_ICON, "Rerun search") {
-          public void action() {
-            new Thread() {
-              public void run() {
-                rerun();
-              }
-            }.start();
-          }
-        });
-      }
-      if (buttonConfiguration.isShowRegenerateButton()) {
-        add(new AnonymButton(Icons.REGENERATE_ICON, "Regenerate models") {
-          public void action() {
-            regenerate();
-          }
-        });
-      }
-      add(myTreeWrapper.getActionsToolbar(JToolBar.VERTICAL));
-      if (buttonConfiguration.isShowCloseButton()) {
-        add(new AnonymButton(Icons.CLOSE_ICON, "Close") {
-          public void action() {
-            close();
-          }
-        });
-      }
-
-      setFloatable(false);
-    }
-
-    protected EmptyBorder createBorder() {
-      return new EmptyBorder(2, 1, 2, 1);
-    }
-  }
-
   public static class ButtonConfiguration {
     private boolean myShowRerunButton;
     private boolean myShowRegenerateButton;
@@ -306,6 +264,50 @@ public abstract class UsageView {
 
     public boolean isShowCloseButton() {
       return myShowCloseButton;
+    }
+  }
+
+  private class ActionsToolbar extends MPSToolBar {
+    private ActionsToolbar(ButtonConfiguration buttonConfiguration) {
+      super(JToolBar.VERTICAL);
+      createButtons(buttonConfiguration);
+    }
+
+    private void createButtons(ButtonConfiguration buttonConfiguration) {
+      if (buttonConfiguration.isShowRerunButton()) {
+        add(new AnonymButton(Icons.RERUN_ICON, "Rerun search") {
+          public void action() {
+            new Thread() {
+              public void run() {
+                rerun();
+              }
+            }.start();
+          }
+        });
+      }
+      if (buttonConfiguration.isShowRegenerateButton()) {
+        add(new AnonymButton(Icons.REGENERATE_ICON, "Regenerate models") {
+          public void action() {
+            regenerate();
+          }
+        });
+      }
+
+      add(myTreeWrapper.getActionsToolbar(JToolBar.VERTICAL));
+
+      if (buttonConfiguration.isShowCloseButton()) {
+        add(new AnonymButton(Icons.CLOSE_ICON, "Close") {
+          public void action() {
+            close();
+          }
+        });
+      }
+
+      setFloatable(false);
+    }
+
+    protected EmptyBorder createBorder() {
+      return new EmptyBorder(2, 1, 2, 1);
     }
   }
 }

@@ -5,7 +5,10 @@ import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 
 import java.util.ArrayList;
@@ -43,7 +46,7 @@ public class AspectMethodsFinder extends BaseFinder {
   private void findNodes(SearchResults res, SNode node, String methodName) {
     for (String value : node.getProperties().values()) {
       if (methodName.endsWith(value)) {
-        res.getSearchResults().add(new SearchResult(new SNodePointer(node), "Aspect methods"));
+        res.getSearchResults().add(new SearchResult(node, "Aspect methods"));
         break;
       }
     }

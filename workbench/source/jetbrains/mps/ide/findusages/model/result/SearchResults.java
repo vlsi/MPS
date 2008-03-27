@@ -38,6 +38,7 @@ public class SearchResults {
     return mySearchResults;
   }
 
+  @Deprecated
   public Set<SModel> getModelsWithResults() {
     Set<SModel> result = new HashSet<SModel>();
     for (SearchResult searchResult : mySearchResults) {
