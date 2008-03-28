@@ -1468,7 +1468,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177025403857">
     <property name="name" value="RefConcept_Expression" />
     <property name="package" value="operation.parameter" />
-    <link role="extends" targetNodeId="1177026804130" resolveInfo="RefConcept_Abstract" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177028393740">
       <property name="value" value="# &lt;expr&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -1487,18 +1487,10 @@
       <link role="intfc" targetNodeId="1206659704055" resolveInfo="IRefConceptArg" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177026804130">
-    <property name="name" value="RefConcept_Abstract" />
-    <property name="package" value="operation.parameter" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1177033651536">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177026924588">
     <property name="name" value="RefConcept_Reference" />
     <property name="package" value="operation.parameter" />
-    <link role="extends" targetNodeId="1177026804130" resolveInfo="RefConcept_Abstract" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177026940964">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="conceptDeclaration" />

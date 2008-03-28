@@ -2140,12 +2140,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177027229174">
-    <link role="conceptDeclaration" targetNodeId="1.1177026804130" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1177027231755">
-      <property name="text" value="&lt;no concept&gt;" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1179168156925">
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1179168000618" />
