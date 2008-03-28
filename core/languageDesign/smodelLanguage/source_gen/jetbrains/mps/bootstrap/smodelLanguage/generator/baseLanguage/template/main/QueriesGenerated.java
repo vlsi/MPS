@@ -320,10 +320,6 @@ public class QueriesGenerated {
     return "" + _QueriesUtil.operationHasParm_Root(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1172329155840(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1173119412100(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
@@ -531,6 +527,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1206653862745(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1206733086091(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
 
@@ -761,10 +761,6 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1172323662440(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
-  }
-
-  public static SNode sourceNodeQuery_1172329130127(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
@@ -1140,6 +1136,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1206660454913(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1206733086083(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperation_Behavior.call_getLeftExpression_1200920411564(_context.getNode());
   }
 
   public static List sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

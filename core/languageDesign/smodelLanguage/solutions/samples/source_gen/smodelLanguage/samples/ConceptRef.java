@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.List;
@@ -20,7 +19,9 @@ public class ConceptRef {
     SNode concept2 = SNodeOperations.getConceptDeclaration(node);
     if (SConceptOperations.isSuperConceptOf(concept1, NameUtil.nodeFQName(concept2))) {
     }
-    INodeAdapter adapter = ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept1));
+    if (SConceptOperations.isExactly(concept1, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+    }
+    AbstractConceptDeclaration adapter = ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept1));
   }
 
   public void instanceOf_1(SNode node, SNode concept1, SNode concept2) {
