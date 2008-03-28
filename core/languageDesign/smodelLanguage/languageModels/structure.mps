@@ -1491,6 +1491,9 @@
       <property name="value" value="replaced with PoundExpression" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1206652974901" resolveInfo="deprecated_next_after_504" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1206735500347">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177025447014">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />

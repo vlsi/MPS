@@ -21,6 +21,7 @@ public class ConceptRef {
     }
     boolean b1 = SConceptOperations.isExactly(concept1, "jetbrains.mps.baseLanguage.structure.IfStatement");
     boolean b2 = SConceptOperations.isExactly(concept1, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    boolean b3 = SConceptOperations.isExactly(concept1, NameUtil.nodeFQName(concept2));
     AbstractConceptDeclaration adapter = ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept1));
   }
 
