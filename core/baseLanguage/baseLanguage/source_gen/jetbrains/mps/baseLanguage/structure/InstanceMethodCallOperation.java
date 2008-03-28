@@ -12,10 +12,10 @@ import java.util.List;
 
 public class InstanceMethodCallOperation extends BaseConcept implements IOperation, IMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
-  public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static String ACTUAL_ARGUMENT = "actualArgument";
 
   public  InstanceMethodCallOperation(SNode node) {
@@ -30,22 +30,6 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
     return InstanceMethodCallOperation.newInstance(sm, false);
   }
 
-
-  public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(InstanceMethodCallOperation.BASE_METHOD_DECLARATION);
-  }
-
-  public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
-    super.setReferent(InstanceMethodCallOperation.BASE_METHOD_DECLARATION, node);
-  }
-
-  public InstanceMethodDeclaration getInstanceMethodDeclaration() {
-    return (InstanceMethodDeclaration)this.getBaseMethodDeclaration();
-  }
-
-  public void setInstanceMethodDeclaration(InstanceMethodDeclaration node) {
-    this.setBaseMethodDeclaration(node);
-  }
 
   public String getShortDescription() {
     return this.getProperty(InstanceMethodCallOperation.SHORT_DESCRIPTION);
@@ -69,6 +53,22 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
 
   public void setVirtualPackage(String value) {
     this.setProperty(InstanceMethodCallOperation.VIRTUAL_PACKAGE, value);
+  }
+
+  public BaseMethodDeclaration getBaseMethodDeclaration() {
+    return (BaseMethodDeclaration)this.getReferent(InstanceMethodCallOperation.BASE_METHOD_DECLARATION);
+  }
+
+  public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
+    super.setReferent(InstanceMethodCallOperation.BASE_METHOD_DECLARATION, node);
+  }
+
+  public InstanceMethodDeclaration getInstanceMethodDeclaration() {
+    return (InstanceMethodDeclaration)this.getBaseMethodDeclaration();
+  }
+
+  public void setInstanceMethodDeclaration(InstanceMethodDeclaration node) {
+    this.setBaseMethodDeclaration(node);
   }
 
   public int getActualArgumentsCount() {
