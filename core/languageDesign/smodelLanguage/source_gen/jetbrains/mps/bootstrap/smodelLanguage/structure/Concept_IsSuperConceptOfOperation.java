@@ -24,11 +24,11 @@ public class Concept_IsSuperConceptOfOperation extends SNodeOperation {
   }
 
 
-  public RefConcept_Abstract getConceptArgument() {
-    return (RefConcept_Abstract)this.getChild(Concept_IsSuperConceptOfOperation.CONCEPT_ARGUMENT);
+  public IRefConceptArg getConceptArgument() {
+    return (IRefConceptArg)this.getChild(Concept_IsSuperConceptOfOperation.CONCEPT_ARGUMENT);
   }
 
-  public void setConceptArgument(RefConcept_Abstract node) {
+  public void setConceptArgument(IRefConceptArg node) {
     super.setChild(Concept_IsSuperConceptOfOperation.CONCEPT_ARGUMENT, node);
   }
 
