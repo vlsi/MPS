@@ -4,7 +4,6 @@ import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.todoview.icons.Icons;
-import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.ide.findusages.view.UsageView;
 import jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions;
 import jetbrains.mps.ide.findusages.view.usagesTree.path.IPathProvider;
@@ -16,12 +15,10 @@ import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
@@ -104,7 +101,7 @@ public class TodoViewer extends DefaultTool {
   public static class MyIPathProvider implements IPathProvider {
     public List<PathItem> getPathForNode(SearchResult result) {
       List<PathItem> res = new ArrayList<PathItem>();
-      res.add(new PathItem("<font color=blue>" + result.getNode().getProperty("value") + "</font>", result.getNode(), true, ""));
+      res.add(new PathItem("<font color=blue>" + result.getNode().getProperty("value") + "</font>", result.getNode(), true, "", false));
       return res;
     }
   }

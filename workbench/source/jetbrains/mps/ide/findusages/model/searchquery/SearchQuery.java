@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.findusages.model.searchquery;
 
 import jetbrains.mps.ide.components.ComponentsUtil;
+import jetbrains.mps.ide.findusages.view.ContainerInnerPartClassNotFoundException;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.AbstractModule.ModuleScope;
 import jetbrains.mps.project.GlobalScope;
@@ -44,7 +45,7 @@ public class SearchQuery {
     this(new SNodePointer(node), scope);
   }
 
-  public SearchQuery(Element element, MPSProject project) {
+  public SearchQuery(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
     read(element, project);
   }
 
@@ -88,7 +89,7 @@ public class SearchQuery {
     }
   }
 
-  public void read(Element element, MPSProject project) {
+  public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
     Element scopeXML = element.getChild(SCOPE);
     String scopeType = scopeXML.getAttribute(SCOPE_TYPE).getValue();
     if (scopeType.equals(SCOPE_TYPE_GLOBAL)) {
@@ -104,11 +105,15 @@ public class SearchQuery {
         }
       }
       if (myScope == null) {
-        throw new RuntimeException("module scope not found for module  " + moduleUID);
+        throw new ContainerInnerPartClassNotFoundException("module scope not found for module  " + moduleUID);
       }
     } else if (scopeType.equals(SCOPE_TYPE_MODEL)) {
       String modelUID = scopeXML.getAttribute(MODEL_ID).getValue();
-      myScope = new ModelScope(project.getScope(), project.getScope().getModelDescriptor(SModelUID.fromString(modelUID)));
+      SModelDescriptor sModelDescriptor = project.getScope().getModelDescriptor(SModelUID.fromString(modelUID));
+      if (sModelDescriptor == null) {
+        throw new ContainerInnerPartClassNotFoundException("model scope not found for model  " + modelUID);
+      }
+      myScope = new ModelScope(project.getScope(), sModelDescriptor);
     }
 
     Element nodeXML = element.getChild(NODE);
@@ -117,6 +122,9 @@ public class SearchQuery {
       node = null;
     } else {
       node = ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0));
+    }
+    if (node == null) {
+      throw new ContainerInnerPartClassNotFoundException("node not found");
     }
     myNodePointer = new SNodePointer(node);
   }

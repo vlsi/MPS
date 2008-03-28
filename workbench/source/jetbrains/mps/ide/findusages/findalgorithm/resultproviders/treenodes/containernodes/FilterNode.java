@@ -6,6 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.base
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseNode;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.view.ContainerInnerPartClassNotFoundException;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
@@ -76,7 +77,11 @@ public class FilterNode extends BaseNode {
   }
 
   public void read(Element element, MPSProject project) {
-    super.read(element, project);
+    try {
+      super.read(element, project);
+    } catch (ContainerInnerPartClassNotFoundException e) {
+      e.printStackTrace();
+    }
     Element filterXML = element.getChild(FILTER);
     String filterName = filterXML.getAttribute(CLASS_NAME).getValue();
     try {

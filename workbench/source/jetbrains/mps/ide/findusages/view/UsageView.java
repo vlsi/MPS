@@ -171,11 +171,15 @@ public abstract class UsageView {
       myResultProvider.read(resultProviderXML, project);
     } catch (Exception e) {
       LOG.error("Can't instantiate result provider: " + className);
-      throw new ContainerInnerPartClassNotFoundException(className);
+      throw new ContainerInnerPartClassNotFoundException("");
     }
 
     Element queryXML = element.getChild(QUERY);
-    mySearchQuery = new SearchQuery(queryXML, project);
+    try {
+      mySearchQuery = new SearchQuery(queryXML, project);
+    } catch (ContainerInnerPartClassNotFoundException e) {
+      throw new ContainerInnerPartClassNotFoundException("");
+    }
 
     Element modelsXML = element.getChild(MODELS);
     for (Element modelXML : (List<Element>) modelsXML.getChildren()) {

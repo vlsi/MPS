@@ -53,13 +53,9 @@ public class FindUsagesOptions implements Cloneable {
         Object o = Class.forName(className).newInstance();
         ((IExternalizableComponent) o).read(optionXML, project);
         myOptions.put(o.getClass(), (BaseOptions) o);
-      } catch (ClassNotFoundException e) {
+      } catch (Exception e) {
         LOG.error("Couldn't instantiate option with class name " + className);
         throw new ContainerInnerPartClassNotFoundException(className);
-      } catch (IllegalAccessException e) {
-        e.printStackTrace();
-      } catch (InstantiationException e) {
-        e.printStackTrace();
       }
     }
   }

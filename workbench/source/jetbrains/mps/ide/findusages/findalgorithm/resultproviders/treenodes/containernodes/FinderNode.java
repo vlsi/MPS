@@ -6,6 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseLeaf;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.view.ContainerInnerPartClassNotFoundException;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
@@ -73,7 +74,7 @@ public class FinderNode extends BaseLeaf {
     element.addContent(finderXML);
   }
 
-  public void read(Element element, MPSProject project) {
+  public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
     super.read(element, project);
     Element finderXML = element.getChild(FINDER);
     String finderName = finderXML.getAttribute(CLASS_NAME).getValue();
@@ -82,6 +83,7 @@ public class FinderNode extends BaseLeaf {
       myFinder.read(finderXML, project);
     } catch (Exception e) {
       LOG.error("Can't find finder " + finderName);
+      throw new ContainerInnerPartClassNotFoundException("finder not found");
     }
   }
 }

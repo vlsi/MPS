@@ -5,6 +5,7 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.view.ContainerInnerPartClassNotFoundException;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -121,7 +122,7 @@ public abstract class BaseNode implements IResultProvider {
     element.addContent(childrenXML);
   }
 
-  public void read(Element element, MPSProject project) {
+  public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
     Element childrenXML = element.getChild(CHILDREN);
     for (Element childXML : (List<Element>) childrenXML.getChildren()) {
       try {
@@ -131,6 +132,7 @@ public abstract class BaseNode implements IResultProvider {
         child.setParent(this);
       } catch (Exception e) {
         Logger.getLogger(this.getClass().getName()).error("Error while instantiating node: " + e.getMessage());
+        throw new ContainerInnerPartClassNotFoundException("");
       }
     }
   }
