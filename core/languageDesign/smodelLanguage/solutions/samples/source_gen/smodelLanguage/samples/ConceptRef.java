@@ -19,8 +19,8 @@ public class ConceptRef {
     SNode concept2 = SNodeOperations.getConceptDeclaration(node);
     if (SConceptOperations.isSuperConceptOf(concept1, NameUtil.nodeFQName(concept2))) {
     }
-    if (SConceptOperations.isExactly(concept1, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-    }
+    boolean b1 = SConceptOperations.isExactly(concept1, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    boolean b2 = SConceptOperations.isExactly(concept1, "jetbrains.mps.baseLanguage.structure.IfStatement");
     AbstractConceptDeclaration adapter = ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept1));
   }
 
