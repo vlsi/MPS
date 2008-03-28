@@ -12,12 +12,12 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class _LinkAccessT extends Type implements IInternalType {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT";
-  public static String TARGET_CONCEPT = "targetConcept";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String SINGULAR_CRADINALITY = "singularCradinality";
   public static String AGGREGATION = "aggregation";
+  public static String TARGET_CONCEPT = "targetConcept";
 
   public  _LinkAccessT(SNode node) {
     super(node);
@@ -31,14 +31,6 @@ public class _LinkAccessT extends Type implements IInternalType {
     return _LinkAccessT.newInstance(sm, false);
   }
 
-
-  public AbstractConceptDeclaration getTargetConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(_LinkAccessT.TARGET_CONCEPT);
-  }
-
-  public void setTargetConcept(AbstractConceptDeclaration node) {
-    super.setReferent(_LinkAccessT.TARGET_CONCEPT, node);
-  }
 
   public String getShortDescription() {
     return this.getProperty(_LinkAccessT.SHORT_DESCRIPTION);
@@ -78,6 +70,14 @@ public class _LinkAccessT extends Type implements IInternalType {
 
   public void setAggregation(boolean value) {
     this.setBooleanProperty(_LinkAccessT.AGGREGATION, value);
+  }
+
+  public AbstractConceptDeclaration getTargetConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(_LinkAccessT.TARGET_CONCEPT);
+  }
+
+  public void setTargetConcept(AbstractConceptDeclaration node) {
+    super.setReferent(_LinkAccessT.TARGET_CONCEPT, node);
   }
 
 }

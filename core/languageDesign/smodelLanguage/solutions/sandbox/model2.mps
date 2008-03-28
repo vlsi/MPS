@@ -195,7 +195,7 @@
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1204833106011">
               <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1204833111684">
                 <link role="annotationLink" targetNodeId="4.1149694466802" resolveInfo="propertyMacro" />
-                <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1204835129683">
+                <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1204835129683">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1204835289622">
                     <link role="classifier" targetNodeId="1170455697846" resolveInfo="AAA" />
                   </node>
@@ -212,7 +212,7 @@
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1204836692554">
               <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1204836697368">
                 <link role="annotationLink" targetNodeId="4.1149694466802" resolveInfo="propertyMacro" />
-                <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1204848538498">
+                <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1204848538498">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204848544251">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204848543156">
                       <link role="variableDeclaration" targetNodeId="1204763884209" resolveInfo="node" />
@@ -281,7 +281,7 @@
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205263433589">
                 <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1205263433590">
                   <link role="annotationLink" targetNodeId="4.1149694518242" resolveInfo="referenceMacro" />
-                  <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1205263433591">
+                  <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1205263433591">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205263433592">
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1205263433593">
                         <link role="property" targetNodeId="3.1156235010670" resolveInfo="alias" />
@@ -308,7 +308,7 @@
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205265485736">
                 <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1205265490721">
                   <link role="annotationLink" targetNodeId="4.1149694518242" resolveInfo="referenceMacro" />
-                  <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1205265494925">
+                  <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1205265494925">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205265497693">
                       <property name="value" value="aaa" />
                     </node>

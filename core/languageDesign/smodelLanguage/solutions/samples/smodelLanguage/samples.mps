@@ -3725,7 +3725,7 @@
               <link role="variableDeclaration" targetNodeId="1177011766342" resolveInfo="node" />
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1206660314791">
-              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1206659684900">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1206659684900">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206660281581">
                   <link role="variableDeclaration" targetNodeId="1177034215996" resolveInfo="concept2" />
                 </node>
@@ -4103,7 +4103,7 @@
               <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSubConceptOfOperation" id="1206661626803">
-              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1206661642601">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1206661642601">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206661904379">
                   <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
                 </node>
@@ -4117,7 +4117,7 @@
               <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation" id="1206663152781">
-              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1206663156923">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1206663156923">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206663170597">
                   <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
                 </node>
@@ -4338,7 +4338,7 @@
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1206563679663">
                 <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1206563679664">
                   <link role="annotationLink" targetNodeId="27.1149694466802" resolveInfo="propertyMacro" />
-                  <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1206563679665">
+                  <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1206563679665">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206563679666">
                       <property name="value" value="name" />
                     </node>
@@ -4404,7 +4404,7 @@
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1206563784645">
                 <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1206563786881">
                   <link role="annotationLink" targetNodeId="27.1149694466802" resolveInfo="propertyMacro" />
-                  <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1206563789179">
+                  <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1206563789179">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206563791446">
                       <property name="value" value="name" />
                     </node>
@@ -4480,7 +4480,7 @@
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1206570389108">
                 <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1206570389109">
                   <link role="annotationLink" targetNodeId="27.1149694518242" resolveInfo="referenceMacro" />
-                  <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1206570392675">
+                  <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1206570392675">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206570398614">
                       <property name="value" value="conceptDeclaration" />
                     </node>
@@ -4565,7 +4565,7 @@
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1206570457545">
                 <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1206570457546">
                   <link role="annotationLink" targetNodeId="27.1149694518242" resolveInfo="referenceMacro" />
-                  <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1206570457547">
+                  <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1206570457547">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206570457548">
                       <property name="value" value="conceptDeclaration" />
                     </node>

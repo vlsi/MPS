@@ -3191,7 +3191,7 @@
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205880414052">
                   <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1205880414053">
                     <link role="annotationLink" targetNodeId="1.1149694466802" resolveInfo="propertyMacro" />
-                    <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1205880414054">
+                    <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1205880414054">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205880414055">
                         <link role="variableDeclaration" targetNodeId="1205880205376" resolveInfo="propertyName" />
                       </node>
@@ -3282,7 +3282,7 @@
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205877337161">
                     <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" id="1205877337162">
                       <link role="annotationLink" targetNodeId="1.1149694466802" resolveInfo="propertyMacro" />
-                      <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1205877337163">
+                      <node role="propertyQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1205877337163">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205877337164">
                           <link role="variableDeclaration" targetNodeId="1205877271618" resolveInfo="propertyName" />
                         </node>
@@ -3408,7 +3408,7 @@
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205882067303">
                   <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1205882072039">
                     <link role="annotationLink" targetNodeId="1.1149694518242" resolveInfo="referenceMacro" />
-                    <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1205882078055">
+                    <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1205882078055">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205882079729">
                         <link role="variableDeclaration" targetNodeId="1205880550466" resolveInfo="linkRole" />
                       </node>
@@ -3520,7 +3520,7 @@
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" id="1205880957772">
                     <node role="attributeQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" id="1205880960414">
                       <link role="annotationLink" targetNodeId="1.1149694518242" resolveInfo="referenceMacro" />
-                      <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1205880963243">
+                      <node role="linkQualifier" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1205880963243">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205880967808">
                           <link role="variableDeclaration" targetNodeId="1205880658847" resolveInfo="linkRole" />
                         </node>

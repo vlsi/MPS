@@ -16,7 +16,7 @@ public class typeof_Concept_IsSubConceptOfOperation_InferenceRule implements Inf
 
   public void applyRule(final SNode op) {
     SNode conceptArg = SLinkOperations.getTarget(op, "conceptArgument", true);
-    if (SNodeOperations.isInstanceOf(conceptArg, "jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier")) {
+    if (SNodeOperations.isInstanceOf(conceptArg, "jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression")) {
       // concept expected
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(conceptArg, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206661693386", false), new QuotationClass_92().createNode(), SLinkOperations.getTarget(conceptArg, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206661693384", false);
     }
