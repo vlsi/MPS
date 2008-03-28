@@ -201,14 +201,6 @@
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp" />
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.annotations.tmp" />
   </target>
-  <target name="pack.jetbrains.mps.bootstrap.cfaLanguage">
-    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.tmp">
-      <fileset dir="core\languageDesign\cfaLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
-      <fileset dir="core\languageDesign\cfaLanguage" includes="*.mpl, *.msd, *.devkit" />
-    </copy>
-    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.tmp" />
-    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.cfaLanguage.tmp" />
-  </target>
   <target name="pack.jetbrains.mps.bootstrap.constraintsLanguage">
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\languageDesign\jetbrains.mps.bootstrap.constraintsLanguage.tmp">
       <fileset dir="core\languageDesign\constraintsLanguage" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />

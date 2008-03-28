@@ -73,9 +73,6 @@
       <fileset dir="core\languageDesign\annotations\classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
-      <fileset dir="core\languageDesign\cfaLanguage\classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="" />
-    </copy>
-    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
       <fileset dir="core\languageDesign\constraintsLanguage\classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
@@ -191,7 +188,6 @@
     <antcall target="pack.jetbrains.mps.baseLanguage.classifiers" />
     <antcall target="pack.jetbrains.mps.bootstrap.actionsLanguage" />
     <antcall target="pack.jetbrains.mps.annotations" />
-    <antcall target="pack.jetbrains.mps.bootstrap.cfaLanguage" />
     <antcall target="pack.jetbrains.mps.bootstrap.constraintsLanguage" />
     <antcall target="pack.jetbrains.mps.bootstrap.editorLanguage" />
     <antcall target="pack.jetbrains.mps.bootstrap.findUsagesLanguage" />
