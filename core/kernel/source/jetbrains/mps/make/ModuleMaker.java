@@ -111,6 +111,14 @@ public class ModuleMaker {
     }   
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
+
+    CompositeClassPathItem classPath = (CompositeClassPathItem) classPathItems;
+    System.out.println("compiling " + modules + " with classpath:");
+    for (IClassPathItem item : classPath.getChildren()) {
+      System.out.println(item);
+    }
+    System.out.println("----\n\n");
+
     JavaCompiler compiler = new JavaCompiler(classPathItems);
 
     for (IModule m : modules) {
