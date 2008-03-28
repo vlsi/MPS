@@ -168,7 +168,14 @@ public abstract class Macros {
     }
 
     protected String shrinkPath_internal(String absolutePath, IFile projectDescriptor) {
-      String prefix = projectDescriptor.getParent().getCanonicalPath();
+      String prefix;
+
+      if (projectDescriptor.isFile()) {
+        prefix = projectDescriptor.getParent().getCanonicalPath();
+      } else {
+        prefix = projectDescriptor.getCanonicalPath();
+      }
+        
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
         return "${project}" + relationalPath;
