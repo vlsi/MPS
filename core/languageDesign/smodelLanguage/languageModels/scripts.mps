@@ -89,7 +89,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1177461782622">
-    <property name="title" value="Convert deprecated nodes in smodel lang" />
+    <property name="title" value="Convert deprecated nodes (smodel lang)" />
     <property name="name" value="SmodelLangMigration339" />
     <property name="migrationFromBuild" value="339" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1177462133415">
@@ -551,7 +551,7 @@
   </node>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1206574633788">
     <property name="name" value="SmodelLangMigration470" />
-    <property name="title" value="Convert deprecated nodes in smodel lang" />
+    <property name="title" value="Convert deprecated nodes (smodel lang)" />
     <property name="migrationFromBuild" value="470" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1206574673352">
       <property name="description" value="replace &quot;IsAssignableFrom&quot; with 'isSuberConceptOf'" />
@@ -564,6 +564,51 @@
                 <link role="concept" targetNodeId="1.1180028149140" resolveInfo="Concept_IsSuperConceptOfOperation" />
               </node>
               <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1206574880818" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1206732362886">
+    <property name="name" value="SmodelLangMigration504" />
+    <property name="migrationFromBuild" value="504" />
+    <property name="title" value="Convert deprecated nodes (smodel lang)" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1206732504319">
+      <property name="description" value="replace RefConcept_Expression with PoundExpression ('# expr')" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1177025403857" resolveInfo="RefConcept_Expression" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1206732504320">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206732504321">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206732589339">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206732589340">
+              <property name="name" value="poundExpression" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206732589341">
+                <link role="concept" targetNodeId="1.1204834851141" resolveInfo="PoundExpression" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206732589342">
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" id="1206732589343">
+                  <link role="concept" targetNodeId="1.1204834851141" resolveInfo="PoundExpression" />
+                </node>
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1206732593587" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206732589345">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206732589346">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206732589347">
+                <node role="operand" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1206732595463" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206732589349">
+                  <link role="link" targetNodeId="1.1177025447014" />
+                </node>
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206732589350">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206732589351">
+                  <link role="variableDeclaration" targetNodeId="1206732589340" resolveInfo="poundExpression" />
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206732589352">
+                  <link role="link" targetNodeId="1.1204834868751" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
