@@ -99,7 +99,7 @@ public class EquationManager {
     /*package*/ Set<IWrapperListener> getWrapperListeners(IWrapper wrapper) {
     Set<IWrapperListener> listeners = myWrapperListeners.get(wrapper);
     if (listeners == null) {
-      listeners = new HashSet();//new WeakSet<IWrapperListener>();
+      listeners = new WeakSet<IWrapperListener>();
       myWrapperListeners.put(wrapper, listeners);
     }
     return listeners;
