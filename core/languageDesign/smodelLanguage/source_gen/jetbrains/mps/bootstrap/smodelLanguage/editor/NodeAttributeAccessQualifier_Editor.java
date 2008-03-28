@@ -30,7 +30,7 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationLinkReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new NodeAttributeAccessQualifier_Editor._Inline32());
+    provider.setAuxiliaryCellProvider(new NodeAttributeAccessQualifier_Editor._Inline31());
     EditorCell editorCell = provider.createEditorCell(context);
     NodeAttributeAccessQualifier_Editor.setupBasic_AnnotationLinkReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -57,9 +57,9 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline32 extends AbstractCellProvider {
+  public static class _Inline31 extends AbstractCellProvider {
 
-    public  _Inline32() {
+    public  _Inline31() {
       super();
     }
 
@@ -83,9 +83,9 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      NodeAttributeAccessQualifier_Editor._Inline32.setupBasic_RoleCell(editorCell, node, context);
+      NodeAttributeAccessQualifier_Editor._Inline31.setupBasic_RoleCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        NodeAttributeAccessQualifier_Editor._Inline32.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
+        NodeAttributeAccessQualifier_Editor._Inline31.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

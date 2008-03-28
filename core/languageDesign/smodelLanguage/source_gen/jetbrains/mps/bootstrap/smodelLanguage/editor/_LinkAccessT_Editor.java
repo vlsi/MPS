@@ -126,7 +126,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
 
   public EditorCell createTargetConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new _LinkAccessT_Editor._Inline37());
+    provider.setAuxiliaryCellProvider(new _LinkAccessT_Editor._Inline36());
     EditorCell editorCell = provider.createEditorCell(context);
     _LinkAccessT_Editor.setupBasic_TargetConceptReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -211,9 +211,9 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline37 extends AbstractCellProvider {
+  public static class _Inline36 extends AbstractCellProvider {
 
-    public  _Inline37() {
+    public  _Inline36() {
       super();
     }
 
@@ -237,9 +237,9 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      _LinkAccessT_Editor._Inline37.setupBasic_NameCell(editorCell, node, context);
+      _LinkAccessT_Editor._Inline36.setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        _LinkAccessT_Editor._Inline37.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        _LinkAccessT_Editor._Inline36.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

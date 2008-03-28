@@ -1300,6 +1300,12 @@
       <property name="role" value="conceptDeclaration" />
       <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206733650006">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="conceptArgument" />
+      <link role="target" targetNodeId="1206659704055" resolveInfo="IRefConceptArg" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1172326559519">
       <property name="value" value="isExactly" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -1310,6 +1316,10 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1172326607351">
       <link role="conceptPropertyDeclaration" targetNodeId="1172326539502" resolveInfo="applicable_to_concept" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206733683961">
+      <property name="value" value="reference 'conceptDeclaration' is deprecated. now child 'conceptArgument'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1193783916915" resolveInfo="deprecated_504" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1179356403775">
       <link role="conceptLinkDeclaration" targetNodeId="1179351420610" resolveInfo="returnType" />

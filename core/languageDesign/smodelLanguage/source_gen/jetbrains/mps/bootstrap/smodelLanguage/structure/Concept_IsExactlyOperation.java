@@ -10,6 +10,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class Concept_IsExactlyOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation";
+  public static String CONCEPT_ARGUMENT = "conceptArgument";
   public static String CONCEPT_DECLARATION = "conceptDeclaration";
 
   public  Concept_IsExactlyOperation(SNode node) {
@@ -24,6 +25,14 @@ public class Concept_IsExactlyOperation extends SNodeOperation {
     return Concept_IsExactlyOperation.newInstance(sm, false);
   }
 
+
+  public IRefConceptArg getConceptArgument() {
+    return (IRefConceptArg)this.getChild(Concept_IsExactlyOperation.CONCEPT_ARGUMENT);
+  }
+
+  public void setConceptArgument(IRefConceptArg node) {
+    super.setChild(Concept_IsExactlyOperation.CONCEPT_ARGUMENT, node);
+  }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
     return (AbstractConceptDeclaration)this.getReferent(Concept_IsExactlyOperation.CONCEPT_DECLARATION);

@@ -9,12 +9,16 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
@@ -24,11 +28,6 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172326619308");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_ConceptDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172326806350");
     editorCell.setDrawBorder(false);
   }
 
@@ -43,19 +42,48 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("punctuation");
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206486133250");
+  private static void setupBasic_ConceptArgumentCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206733827041");
+  }
+
+  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206733878245");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
 
-  private static void setupLabel_ConceptDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206733900340");
+    editorCell.setSelectable(false);
+  }
+
+  private static void setupBasic_ConceptDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206733900341");
+    editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206733909392");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_ConceptArgumentCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConceptDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(Color.red);
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1206734683127(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "conceptDeclaration", false) != null;
   }
 
 
@@ -71,8 +99,22 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createReplaceableAlias_CompCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "("));
+    if (Concept_IsExactlyOperation_Editor._QueryFunction_NodeCondition_1206734683127(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRowCell1(context, node));
+    }
+    editorCell.addEditorCell(this.createConceptArgumentCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell2(context, node, ")"));
+    return editorCell;
+  }
+
+  public EditorCell createRowCell1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    Concept_IsExactlyOperation_Editor.setupBasic_RowCell1(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "!"));
     editorCell.addEditorCell(this.createConceptDeclarationReferenceCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
     return editorCell;
   }
 
@@ -93,6 +135,14 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    Concept_IsExactlyOperation_Editor.setupBasic_ConstantCell2(editorCell, node, context);
+    Concept_IsExactlyOperation_Editor.setupLabel_ConstantCell2(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Concept_IsExactlyOperation_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -101,9 +151,38 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConceptArgumentCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    Concept_IsExactlyOperation_Editor.setupBasic_ConceptArgumentCell(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      Concept_IsExactlyOperation_Editor.setupLabel_ConceptArgumentCell((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createConceptArgumentCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("conceptArgument");
+    provider.setNoTargetText("<no concept>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createConceptArgumentCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
   public EditorCell createConceptDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Concept_IsExactlyOperation_Editor._Inline23());
+    provider.setAuxiliaryCellProvider(new Concept_IsExactlyOperation_Editor._Inline39());
     EditorCell editorCell = provider.createEditorCell(context);
     Concept_IsExactlyOperation_Editor.setupBasic_ConceptDeclarationReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -130,14 +209,14 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline23 extends AbstractCellProvider {
+  public static class _Inline39 extends AbstractCellProvider {
 
-    public  _Inline23() {
+    public  _Inline39() {
       super();
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172326810916");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206733900343");
       editorCell.setDrawBorder(false);
     }
 
@@ -158,9 +237,9 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      Concept_IsExactlyOperation_Editor._Inline23.setupBasic_NameCell(editorCell, node, context);
+      Concept_IsExactlyOperation_Editor._Inline39.setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        Concept_IsExactlyOperation_Editor._Inline23.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        Concept_IsExactlyOperation_Editor._Inline39.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
