@@ -131,23 +131,7 @@ public class IconManager {
   public static Icon getIconFor(SModelDescriptor modelDescriptor) {
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
     if (aspect != null) {
-      if (aspect == LanguageAspect.EDITOR) {
-        return Icons.EDITOR_MODEL_ICON;
-      } else if (aspect == LanguageAspect.STRUCTURE) {
-        return Icons.STRUCTURE_MODEL_ICON;
-      } else if (aspect == LanguageAspect.ACTIONS) {
-        return Icons.ACTIONS_MODEL_ICON;
-      } else if (aspect == LanguageAspect.HELGINS_TYPESYSTEM) {
-        return Icons.TYPESYSTEM_MODEL_ICON;
-      } else if (aspect == LanguageAspect.CONSTRAINTS) {
-        return Icons.CONSTRAINTS_MODEL_ICON;
-      } else if (aspect == LanguageAspect.INTENTIONS) {
-        return Icons.INTENTIONS_MODEL_ICON;
-      } else if (aspect == LanguageAspect.FIND_USAGES) {
-        return Icons.FIND_USAGES_MODEL_ICON;
-      } else if (aspect == LanguageAspect.PLUGIN) {
-        return Icons.PLUGIN_MODEL_ICON;
-      }
+      return aspect.getIcon();
     } else if (modelDescriptor.getStereotype() != null &&
       modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
       return Icons.TEMPLATES_MODEL_ICON;
