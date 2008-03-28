@@ -2114,8 +2114,8 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177027260554">
         <property name="editable" value="false" />
-        <property name="textFgColor" value="DARK_MAGENTA" />
-        <property name="text" value="#" />
+        <property name="textFgColor" value="red" />
+        <property name="text" value="!#" />
         <property name="fontStyle" value="ITALIC" />
         <property name="drawBorder" value="false" />
       </node>

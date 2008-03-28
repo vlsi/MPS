@@ -1477,6 +1477,10 @@
       <property name="value" value="expression of type 'sconcept'" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206731565095">
+      <property name="value" value="replaced with PoundExpression" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1206652974901" resolveInfo="deprecated_next_after_504" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177025447014">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
