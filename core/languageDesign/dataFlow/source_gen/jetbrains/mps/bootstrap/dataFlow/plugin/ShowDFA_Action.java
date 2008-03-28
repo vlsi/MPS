@@ -72,7 +72,7 @@ public class ShowDFA_Action extends CurrentProjectMPSAction {
       }
       {
         Program program = DataFlowManager.getInstance().buildProgramFor(this.node);
-        new ShowCFGDialog(program);
+        new ShowCFGDialog(program, context.getOperationContext());
       }
     } catch (Throwable t) {
       ShowDFA_Action.LOG.error("User's action execute method failed. Action:" + "ShowDFA", t);
