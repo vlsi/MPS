@@ -1048,14 +1048,14 @@
   </node>
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1206734229149">
     <property name="package" value="operation.concept" />
-    <property name="name" value="Replace_conceptArg_inIsExactly" />
+    <property name="name" value="Convert_conceptArg_inIsExactly" />
     <property name="isErrorIntention" value="true" />
     <link role="forConcept" targetNodeId="1.1172326502327" resolveInfo="Concept_IsExactlyOperation" />
     <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1206734229150">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206734229151">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206734282279">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206734282280">
-            <property name="value" value="update concept argument" />
+            <property name="value" value="convert concept argument" />
           </node>
         </node>
       </node>

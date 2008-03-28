@@ -3624,20 +3624,6 @@
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1173133630405" />
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206734892318">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206734892319">
-            <property name="name" value="b1" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1206734892320" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206734892321">
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" id="1206734892322">
-                <link role="conceptDeclaration" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206734892323">
-                <link role="variableDeclaration" targetNodeId="1173133388685" resolveInfo="concept1" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206734902872">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206734902873">
             <property name="name" value="b2" />
