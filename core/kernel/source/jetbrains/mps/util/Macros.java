@@ -102,7 +102,6 @@ public abstract class Macros {
 
   private static class LanguageDescriptorMacros extends Macros {
     protected String expandPath_internal(String path, IFile languageDescriptor) {
-
       if (path.startsWith("${language_descriptor}")) {
         String modelRelativePath = removePrefix(path, "${language_descriptor}");
         return languageDescriptor.getParent().child(modelRelativePath).getCanonicalPath();

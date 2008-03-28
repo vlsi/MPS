@@ -83,12 +83,12 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\platform\ypath\classes" />
-    <entry path="${mps_home}\platform\ypath\runtime\classes" />
+    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}\runtime\classes" />
   </classPath>
   <runtimeClassPath>
-    <entry path="${mps_home}\platform\ypath\runtime\classes" />
-    <entry path="${mps_home}\platform\ypath\classes" />
+    <entry path="${language_descriptor}\runtime\classes" />
+    <entry path="${language_descriptor}\classes" />
   </runtimeClassPath>
   <sourcePath />
   <osgiOptions>

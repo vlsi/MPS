@@ -94,7 +94,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void convert() {
-
   }
 
   public boolean isPackaged() {
@@ -694,7 +693,6 @@ public abstract class AbstractModule implements IModule {
     myClassesCache.clear();
   }
 
-  //TODO: make private (was made visible for usages view to save view scope by Mihail Muhin)
   public class ModuleScope extends BaseScope {
     public ModelOwner getModelOwner() {
       return AbstractModule.this;
