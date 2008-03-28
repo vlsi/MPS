@@ -4111,6 +4111,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206663146746">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206663148201">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206663146747">
+              <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation" id="1206663152781">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExpressionQualifier" id="1206663156923">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206663170597">
+                  <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1180457006292">
         <property name="name" value="concept" />
