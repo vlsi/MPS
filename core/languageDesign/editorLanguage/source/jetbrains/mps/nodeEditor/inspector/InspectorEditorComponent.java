@@ -63,10 +63,17 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
   }
 
   public void inspectNode(final SNode node, final IOperationContext context) {
+    inspectNode(node, context, new Runnable() {
+      public void run() {
+      }
+    });
+  }
+
+  public void inspectNode(final SNode node, final IOperationContext context, final Runnable afterInspect) {
     if (node != null && getEditedNode() == node) {
       return;
     }
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
       public void run() {
         if (node == null) {
           setOperationContext(null);
@@ -78,6 +85,8 @@ public class InspectorEditorComponent extends AbstractEditorComponent implements
 
         reinitEditor();
         repaint();
+
+        afterInspect.run();
       }
     });
   }

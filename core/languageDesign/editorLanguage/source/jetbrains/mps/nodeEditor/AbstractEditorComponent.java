@@ -362,13 +362,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     addCellSelectionListener(new ICellSelectionListener() {
       public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        if (getSelectedCell() != null) {
-          setLightBulbVisibility(!getEnabledIntentions().isEmpty());
-          myShowIntentionsAction.setEnabled(!getAvailableIntentions().isEmpty());
-        } else {
-          hideLightBulb();
-          myShowIntentionsAction.setEnabled(false);
-        }
+        CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+          public void run() {
+            if (getSelectedCell() != null) {
+              setLightBulbVisibility(!getEnabledIntentions().isEmpty());
+              myShowIntentionsAction.setEnabled(!getAvailableIntentions().isEmpty());
+            } else {
+              hideLightBulb();
+              myShowIntentionsAction.setEnabled(false);
+            }
+          }
+        });
       }
     });
 
@@ -419,14 +423,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private Set<Intention> getEnabledIntentions() {
     final Set<Intention> result = new LinkedHashSet<Intention>();
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {
-        SNode node = getSelectedNode();
-        if (node != null) {
-          result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentions(node, getEditorContext()));
-        }
-      }
-    });
+    SNode node = getSelectedNode();
+    if (node != null) {
+      result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentions(node, getEditorContext()));
+    }
     return result;
   }
 
@@ -2334,11 +2334,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-        setLightBulbVisibility(!getEnabledIntentions().isEmpty());
+        CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+          public void run() {
+            setLightBulbVisibility(!getEnabledIntentions().isEmpty());
+          }
+        });
       }
 
       public void popupMenuCanceled(PopupMenuEvent e) {
-        setLightBulbVisibility(!getEnabledIntentions().isEmpty());
+        CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+          public void run() {
+            setLightBulbVisibility(!getEnabledIntentions().isEmpty());
+          }
+        });
       }
     });
 
