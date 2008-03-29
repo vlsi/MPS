@@ -66,7 +66,7 @@
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1202117999988">
-                <node role="operation" type="jetbrains.mps.internal.collections.structure.MappingOperation" id="1202118002768">
+                <node role="operation" type="jetbrains.mps.internal.collections.structure.TranslateOperation" id="1202118002768">
                   <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202118032635">
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1202118040179">
                       <property name="name" value="i" />

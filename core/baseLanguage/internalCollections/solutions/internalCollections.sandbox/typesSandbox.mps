@@ -33,7 +33,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204815954811">
           <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204815958342">
-            <node role="operation" type="jetbrains.mps.internal.collections.structure.MappingOperation" id="1204815958343">
+            <node role="operation" type="jetbrains.mps.internal.collections.structure.TranslateOperation" id="1204815958343">
               <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204815958344">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204815958345">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204816026742">

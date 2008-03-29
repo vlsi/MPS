@@ -18,22 +18,27 @@ import java.util.ListIterator;
  * necessary synchronization if needed.
  * @author fyodor
  */
-public class ListSequence<T> extends CollectionSequence<T> implements List<T>, Iterable<T>{
+public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, List<T> {
 
-    private List<T> list;
+    List<T> list;
     
-    public static <U> ListSequence<U> fromArray (U...array) {
+    public static <U> IListSequence<U> fromArray (U...array) {
         return new ListSequence<U> (new ArrayList<U> (Arrays.asList(array)));
     }
 
-    public static <U> ListSequence<U> fromList (List<U> list) {
+    public static <U> IListSequence<U> fromList (List<U> list) {
+        if (Sequence.RELAXED_NULL) {
+            if (list == null) {
+                return new NullListSequence<U> ();
+            }
+        }
         if (list instanceof ListSequence) {
             return (ListSequence<U>) list;
         }
         return new ListSequence<U> (list);
     }
     
-    public static <U> ListSequence<U> fromIterable (Iterable<U> it) {
+    public static <U> IListSequence<U> fromIterable (Iterable<U> it) {
         List<U> list = new ArrayList<U> ();
         for (U u: it) {
             list.add(u);
@@ -141,32 +146,40 @@ public class ListSequence<T> extends CollectionSequence<T> implements List<T>, I
     
     // Additional methods
     
-    public void addAll (Sequence<T> seq) {
+    public void addAll (ISequence<T> seq) {
         for (T t : seq.toIterable()) {
             list.add(t);
         }
     }
     
-    public void removeAll (Sequence<T> seq) {
+    public void removeAll (ISequence<T> seq) {
         for (T t : seq.toIterable()) {
             list.remove(t);
         }
     }
     
-    public ListSequence<T> getReversed () {
+    public IListSequence<T> getReversed () {
         ListSequence<T> reversed = new ListSequence<T> (this);
         reversed._reverse();
         return reversed;
     }
     
     public Iterator<T> iterator() {
-        return Collections.unmodifiableList(list).iterator();
+        return list.iterator();
     }
 
     protected ListSequence (List<T> list) {
         this.list = list;
     }
     
+    public List<T> toList() {
+        return this;
+    }
+    
+    public Collection<T> getCollection() {
+        return list;
+    }
+
     /**
      * Copy constructor.
      * @param other
@@ -175,12 +188,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements List<T>, I
         this.list = new ArrayList<T> (other.list);
     }
     
-    @Override
-    protected Collection<T> getCollection() {
-        return list;
-    }
-    
-    private void _reverse () {
+    void _reverse () {
         Collections.reverse(list);
     }
 

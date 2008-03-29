@@ -131,12 +131,12 @@ public class ClosureLiteralUtil {
   public static Map<String, SNode> matchReturnType(SNode absType, SNode realType, Map<String, SNode> map) {
     Set<String> visited = new HashSet<String>();
     LinkedList<SNode> queue = new LinkedList<SNode>();
-    queue.addLast(realType);
+    queue.addLast(absType);
     while(!(queue.isEmpty())) {
       SNode candidate = queue.removeFirst();
       if (!(visited.contains(BaseConcept_Behavior.call_getPresentation_1180102203531(candidate)))) {
-        if (SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || (SNodeOperations.getConceptDeclaration(absType) == SNodeOperations.getConceptDeclaration(candidate) && (!(SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) || SLinkOperations.getTarget(absType, "classifier", false) == SLinkOperations.getTarget(candidate, "classifier", false)))) {
-          map = ClosureLiteralUtil.matchType(absType, candidate, map);
+        if (SNodeOperations.isInstanceOf(candidate, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || (SNodeOperations.getConceptDeclaration(realType) == SNodeOperations.getConceptDeclaration(candidate) && (!(SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) || (SLinkOperations.getTarget(realType, "classifier", false) == SLinkOperations.getTarget(candidate, "classifier", false) && SLinkOperations.getCount(realType, "parameter") == SLinkOperations.getCount(candidate, "parameter"))))) {
+          map = ClosureLiteralUtil.matchType(candidate, realType, map);
           return map;
         }
         visited.add(BaseConcept_Behavior.call_getPresentation_1180102203531(candidate));
@@ -150,7 +150,7 @@ public class ClosureLiteralUtil {
 
   private static Map<String, SNode> matchType(SNode absType, SNode realType, Map<String, SNode> map) {
     if (SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      (map = ClosureLiteralUtil.getMap(map)).put(SPropertyOperations.getString(SLinkOperations.getTarget(absType, "typeVariableDeclaration", false), "name"), realType);
+      (map = ClosureLiteralUtil.getMap(map)).put(SPropertyOperations.getString(SLinkOperations.getTarget(absType, "typeVariableDeclaration", false), "name"), SNodeOperations.copyNode(realType));
     } else
     if (SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(absType, "classifier", false) == SLinkOperations.getTarget(realType, "classifier", false)) {
       int idx = 0;

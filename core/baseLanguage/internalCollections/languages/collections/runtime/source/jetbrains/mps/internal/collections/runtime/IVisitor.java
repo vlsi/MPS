@@ -3,10 +3,10 @@
  */
 package jetbrains.mps.internal.collections.runtime;
 
-
 /**
  * @author fyodor
  */
 public interface IVisitor<T> {
-    void visit (T t);
+
+    void visit(T t);
 }

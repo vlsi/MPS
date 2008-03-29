@@ -76,6 +76,10 @@ public class Util_Test extends TestCase {
     return Arrays.asList(1, 2, 3, 4, 5);
   }
 
+  public Iterable<Integer> expect10() {
+    return Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+  }
+
   public Iterable<Integer> expectOdd5() {
     return Arrays.asList(1, 3, 5);
   }

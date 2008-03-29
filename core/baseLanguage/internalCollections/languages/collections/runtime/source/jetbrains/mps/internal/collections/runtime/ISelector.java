@@ -6,6 +6,8 @@ package jetbrains.mps.internal.collections.runtime;
 /**
  * @author fyodor
  */
-public interface ISelector<T,S> {
+public interface ISelector<T, S> {
+
     S select(T t);
+
 }

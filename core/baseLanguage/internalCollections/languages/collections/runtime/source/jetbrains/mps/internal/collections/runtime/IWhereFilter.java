@@ -7,5 +7,6 @@ package jetbrains.mps.internal.collections.runtime;
  * @author fyodor
  */
 public interface IWhereFilter<T> {
-    boolean accept (T t);
+
+    boolean accept(T t);
 }

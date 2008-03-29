@@ -29,14 +29,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203883107825">
               <property name="name" value="seq" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203883107826">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203883107828">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203883107829">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204793841938">
                   <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204793841939" />
@@ -48,13 +48,13 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203883107833">
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203883107834">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203883107836">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203883107837">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.where(jetbrains.mps.internal.collections.runtime.IWhereFilter):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="where" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.where(jetbrains.mps.internal.collections.runtime.IWhereFilter):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="where" />
                 <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1203883107838">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203883107839">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203883121582">
@@ -93,7 +93,7 @@
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204794106271" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203883107868">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203883107869">
                   <link role="variableDeclaration" targetNodeId="1203883107833" resolveInfo="test" />
                 </node>
@@ -110,14 +110,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204735219222">
               <property name="name" value="seq" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204735219223">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204735219225">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204735219226">
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204793850382">
                   <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204793850383" />
@@ -163,7 +163,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204735219229">
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204735219230">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204735219232">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
@@ -173,7 +173,7 @@
                   <link role="variableDeclaration" targetNodeId="1204735219222" resolveInfo="seq" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204735285866">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.where(jetbrains.mps.internal.collections.runtime.IWhereFilter):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="where" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.where(jetbrains.mps.internal.collections.runtime.IWhereFilter):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="where" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204735229844">
                     <link role="variableDeclaration" targetNodeId="1204735229829" resolveInfo="where" />
                   </node>
@@ -195,7 +195,7 @@
                     <link role="variableDeclaration" targetNodeId="1204735219229" resolveInfo="test" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204735290522">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
+                    <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
                   </node>
                 </node>
               </node>
@@ -320,14 +320,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203687746947">
               <property name="name" value="seq" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203687746948">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203687746950">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203687746951">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204794247494">
                   <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204794247495" />
@@ -344,7 +344,7 @@
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204794256567" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203687961491">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203687958643">
                   <link role="variableDeclaration" targetNodeId="1203687746947" resolveInfo="ss" />
                 </node>
@@ -370,14 +370,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203688764225">
               <property name="name" value="seq" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203688764226">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203688764228">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203688764229">
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204794206446">
                   <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204794206447" />
@@ -389,13 +389,13 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203688904915">
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203688904916">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203688926767">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203688904919">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.map(jetbrains.mps.internal.collections.runtime.IMapper):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="map" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
                 <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1203688904920">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203688904921">
                     <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1203688904922">
@@ -478,7 +478,7 @@
                 <link role="variableDeclaration" targetNodeId="1203689005470" resolveInfo="expected" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203689031518">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203689027658">
                   <link role="variableDeclaration" targetNodeId="1203688904915" resolveInfo="test" />
                 </node>
@@ -495,14 +495,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203689079730">
               <property name="name" value="seq" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203689079731">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203689079733">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203689079734">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204794218359">
                   <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204794218360" />
@@ -512,9 +512,9 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203688860708">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203688860709">
-              <property name="name" value="mapper" />
+              <property name="name" value="trans" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203688860710">
-                <link role="classifier" targetNodeId="3.~IMapper" resolveInfo="IMapper" />
+                <link role="classifier" targetNodeId="3.~ITranslator" resolveInfo="ITranslator" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203688860711">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
@@ -600,9 +600,9 @@
                 <link role="variableDeclaration" targetNodeId="1203689087222" resolveInfo="expected" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203689105290">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203689095850">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.map(jetbrains.mps.internal.collections.runtime.IMapper):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="map" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203689093164">
                     <link role="variableDeclaration" targetNodeId="1203689079730" resolveInfo="seq" />
                   </node>
@@ -621,13 +621,13 @@
                 <link role="variableDeclaration" targetNodeId="1203689087222" resolveInfo="expected" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203883642105">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203883647550">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203883642107">
                     <link role="variableDeclaration" targetNodeId="1203689079730" resolveInfo="seq" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1203883648706">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.map(jetbrains.mps.internal.collections.runtime.IMapper):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="map" />
+                    <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203883650420">
                       <link role="variableDeclaration" targetNodeId="1203688860709" resolveInfo="mapper" />
                     </node>
@@ -651,7 +651,7 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204739142388">
-                <node role="operation" type="jetbrains.mps.internal.collections.structure.MappingOperation" id="1204739142389">
+                <node role="operation" type="jetbrains.mps.internal.collections.structure.TranslateOperation" id="1204739142389">
                   <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204739142390">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204739142391">
                       <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1204739142392">
@@ -909,242 +909,6 @@
           </node>
         </node>
       </node>
-      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1203884002064">
-        <property name="methodName" value="weirdness" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1203884002065" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203884002066">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204046272629">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204046272630">
-              <property name="name" value="input" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1204046272631">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204046272632">
-                  <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
-                </node>
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204046272633">
-                <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
-                <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204046272634">
-                  <property name="value" value="1" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204046272635">
-                  <property name="value" value="12" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204046272636">
-                  <property name="value" value="3" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204046272637">
-                  <property name="value" value="14" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204046272638">
-                  <property name="value" value="5" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1203884222012">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204075089782">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204075089783">
-                <property name="name" value="output" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204075089784">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.where(jetbrains.mps.internal.collections.runtime.IWhereFilter):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="where" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204075089785">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.map(jetbrains.mps.internal.collections.runtime.IMapper):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="map" />
-                    <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204075089786">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204075089787">
-                        <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1204075089788">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204075089789">
-                            <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
-                            <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204075089790">
-                              <link role="variableDeclaration" targetNodeId="1204075089791" resolveInfo="it2" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1204075089791">
-                        <property name="name" value="it2" />
-                        <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204075089792" />
-                      </node>
-                    </node>
-                    <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204075089793">
-                      <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
-                      <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204075089794">
-                        <link role="variableDeclaration" targetNodeId="1204046272630" resolveInfo="input" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204075089795">
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204075089796">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204075089797">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204075089798">
-                          <property name="value" value="false" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1204075089799">
-                      <property name="name" value="it3" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204075089800" />
-                    </node>
-                  </node>
-                </node>
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204075096578">
-                  <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204075077670">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204075077671">
-                <property name="name" value="output2" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204075077672">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.where(jetbrains.mps.internal.collections.runtime.IWhereFilter):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="where" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204075077673">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.map(jetbrains.mps.internal.collections.runtime.IMapper):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="map" />
-                    <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204075077674">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204075077675">
-                        <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1204075077676">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204075077677">
-                            <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
-                            <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204075077678">
-                              <link role="variableDeclaration" targetNodeId="1204075077679" resolveInfo="it2" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1204075077679">
-                        <property name="name" value="it2" />
-                        <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204075077680" />
-                      </node>
-                    </node>
-                    <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204075077682">
-                      <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
-                      <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204075077683">
-                        <link role="variableDeclaration" targetNodeId="1204046272630" resolveInfo="input" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204075077684">
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204075077685">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204075077686">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204075077687">
-                          <property name="value" value="false" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1204075077688">
-                      <property name="name" value="it3" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204075077689" />
-                    </node>
-                  </node>
-                </node>
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204075077690">
-                  <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204046286229">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204046286230">
-                <property name="name" value="output3" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204049372627">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.where(jetbrains.mps.internal.collections.runtime.IWhereFilter):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="where" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204046286233">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.map(jetbrains.mps.internal.collections.runtime.IMapper):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="map" />
-                    <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204046286234">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204046286235">
-                        <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1204046286236">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204046286237">
-                            <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
-                            <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204046286238">
-                              <link role="variableDeclaration" targetNodeId="1204046286239" resolveInfo="it" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1204046286239">
-                        <property name="name" value="it2" />
-                        <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204046286240" />
-                      </node>
-                    </node>
-                    <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204046286241">
-                      <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
-                      <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204046286242">
-                        <link role="variableDeclaration" targetNodeId="1204046272630" resolveInfo="input" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204049378003">
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204049378004">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204049456349">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204049456350">
-                          <property name="value" value="false" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1204049382297">
-                      <property name="name" value="it3" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204049382298" />
-                    </node>
-                  </node>
-                </node>
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204074947230">
-                  <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204075045509" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204074997149">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204074997772">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.where(jetbrains.mps.internal.collections.runtime.IWhereFilter):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="where" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204074997773">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.map(jetbrains.mps.internal.collections.runtime.IMapper):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="map" />
-                  <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204074997774">
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204074997775">
-                      <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1204074997776">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204074997777">
-                          <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
-                          <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204074997778">
-                            <link role="variableDeclaration" targetNodeId="1204074997779" resolveInfo="it2" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1204074997779">
-                      <property name="name" value="it2" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204074997780" />
-                    </node>
-                  </node>
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204074997781">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
-                    <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204074997782">
-                      <link role="variableDeclaration" targetNodeId="1204046272630" resolveInfo="input" />
-                    </node>
-                  </node>
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204074997783">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204074997784">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204074997785">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1204074997786">
-                        <property name="value" value="false" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1204074997787">
-                    <property name="name" value="it3" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1204074997788" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204130933818">
       <link role="classifier" targetNodeId="1204129267857" resolveInfo="Util_Test" />
@@ -1162,13 +926,13 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204129169609">
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204129169610">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204129169612">
                   <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204129169613">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.where(jetbrains.mps.internal.collections.runtime.IWhereFilter):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="where" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.where(jetbrains.mps.internal.collections.runtime.IWhereFilter):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="where" />
                 <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204129169614">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204129169615">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204129169616">
@@ -1191,18 +955,18 @@
                   </node>
                 </node>
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204129169623">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.map(jetbrains.mps.internal.collections.runtime.IMapper):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="map" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204796033444">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204129169624">
-                      <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
                       <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                      <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204795937760">
                         <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
                         <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204795937761" />
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204796035420">
-                      <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.select(jetbrains.mps.internal.collections.runtime.ISelector):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="select" />
+                      <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.select(jetbrains.mps.internal.collections.runtime.ISelector):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="select" />
                       <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204796037813">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204796037814">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204796050606">
@@ -1258,10 +1022,12 @@
                   <property name="value" value="15" />
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204129192006">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204129189437">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206730081561">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204129189437">
                   <link role="variableDeclaration" targetNodeId="1204129169609" resolveInfo="test" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206730081562">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
                 </node>
               </node>
             </node>
@@ -1307,7 +1073,7 @@
                   </node>
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1204797574886">
-                  <node role="operation" type="jetbrains.mps.internal.collections.structure.MappingOperation" id="1204797574887">
+                  <node role="operation" type="jetbrains.mps.internal.collections.structure.TranslateOperation" id="1204797574887">
                     <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204797574888">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204797574889">
                         <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1204797574890">
@@ -2008,6 +1774,53 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206730471291">
+      <property name="name" value="expect10" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1206730477498">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206730480627">
+          <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206730471293" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206730471294">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206730488670">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206730488671">
+            <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object[]):java.util.List" resolveInfo="asList" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206730488672">
+              <property name="value" value="1" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206730488673">
+              <property name="value" value="2" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206730488674">
+              <property name="value" value="3" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206730488675">
+              <property name="value" value="4" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206730488676">
+              <property name="value" value="5" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206730488677">
+              <property name="value" value="6" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206730488678">
+              <property name="value" value="7" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206730488679">
+              <property name="value" value="8" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206730488680">
+              <property name="value" value="9" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206730488681">
+              <property name="value" value="10" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204793880605">
       <property name="name" value="expectOdd5" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204793880607" />
@@ -2079,14 +1892,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204285480049">
               <property name="name" value="seq" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204285480050">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204285480052">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204285480053">
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204794171121">
                   <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204794171122" />
@@ -2098,13 +1911,13 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204286012437">
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204286012438">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204286023449">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204286012441">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.select(jetbrains.mps.internal.collections.runtime.ISelector):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="select" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.select(jetbrains.mps.internal.collections.runtime.ISelector):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="select" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204286012442">
                   <link role="variableDeclaration" targetNodeId="1204285480049" resolveInfo="seq" />
                 </node>
@@ -2176,7 +1989,7 @@
                 </node>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204285548386">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204286028730">
                   <link role="variableDeclaration" targetNodeId="1204286012437" resolveInfo="test" />
                 </node>
@@ -2261,14 +2074,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204567602774">
               <property name="name" value="seq" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204567602775">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204567602777">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204567602778">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204567602779">
                   <link role="variableDeclaration" targetNodeId="1204567357171" resolveInfo="input" />
                 </node>
@@ -2279,7 +2092,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204567448645">
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204567448646">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204567457790">
                   <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                 </node>
@@ -2289,7 +2102,7 @@
                   <link role="variableDeclaration" targetNodeId="1204567602774" resolveInfo="sequence" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204567469805">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.select(jetbrains.mps.internal.collections.runtime.ISelector):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="select" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.select(jetbrains.mps.internal.collections.runtime.ISelector):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="select" />
                   <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1204567471859">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204567471860">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204567506889">
@@ -2352,7 +2165,7 @@
                   <link role="variableDeclaration" targetNodeId="1204567448645" resolveInfo="test" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204567551517">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
                 </node>
               </node>
             </node>
@@ -2367,14 +2180,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204566280513">
               <property name="name" value="seq" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204566280514">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204566280516">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204566280517">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204794189867">
                   <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204794189868" />
@@ -2441,13 +2254,13 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204566280521">
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204566280522">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204566280524">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204566280525">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.select(jetbrains.mps.internal.collections.runtime.ISelector):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="select" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.select(jetbrains.mps.internal.collections.runtime.ISelector):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="select" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204566280526">
                   <link role="variableDeclaration" targetNodeId="1204566280513" resolveInfo="seq" />
                 </node>
@@ -2481,7 +2294,7 @@
                 </node>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204566280553">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.toIterable():java.lang.Iterable" resolveInfo="toIterable" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204566280554">
                   <link role="variableDeclaration" targetNodeId="1204566280521" resolveInfo="test" />
                 </node>
@@ -2628,14 +2441,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204981149254">
               <property name="name" value="seq" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204981149255">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204981149256">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204981149257">
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204981149258">
                   <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204981149259" />
@@ -2719,14 +2532,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204981460744">
               <property name="name" value="seq" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204981460745">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204981460746">
                   <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204981460747">
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromIterable" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1204981460748">
                   <link role="baseMethodDeclaration" targetNodeId="1204793778541" resolveInfo="input5" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1204981460749" />
@@ -2794,7 +2607,7 @@
                 <link role="variableDeclaration" targetNodeId="1204981460744" resolveInfo="seq" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204981460759">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.visitAll(jetbrains.mps.internal.collections.runtime.IVisitor):void" resolveInfo="visitAll" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.visitAll(jetbrains.mps.internal.collections.runtime.IVisitor):void" resolveInfo="visitAll" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204981468153">
                   <link role="variableDeclaration" targetNodeId="1204981468133" resolveInfo="visitor" />
                 </node>
@@ -3093,14 +2906,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205686939429">
               <property name="name" value="input" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205686939430">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205686941883">
                   <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205686951326">
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromArray" />
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205686952130">
                   <property name="value" value="ZZZ" />
                 </node>
@@ -3120,7 +2933,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205687012363">
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205687012364">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205687014873">
                   <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                 </node>
@@ -3130,7 +2943,7 @@
                   <link role="variableDeclaration" targetNodeId="1205686939429" resolveInfo="input" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205687024678">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.sort(jetbrains.mps.internal.collections.runtime.ISelector,boolean):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="sort" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.sort(jetbrains.mps.internal.collections.runtime.ISelector,boolean):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="sort" />
                   <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1205687027624">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205687027625">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205687039732">
@@ -3162,7 +2975,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205687058087">
                   <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromArray" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205687058091">
                     <property name="value" value="XXXX" />
                   </node>
@@ -3193,14 +3006,14 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205693992438">
               <property name="name" value="input" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205693992439">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205693992440">
                   <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205693992441">
                 <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromArray" />
+                <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205693992442">
                   <property name="value" value="ZZZ" />
                 </node>
@@ -3253,7 +3066,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205693992448">
               <property name="name" value="test" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205693992449">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205693992450">
                   <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                 </node>
@@ -3263,7 +3076,7 @@
                   <link role="variableDeclaration" targetNodeId="1205693992438" resolveInfo="input" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205693992453">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.sort(jetbrains.mps.internal.collections.runtime.ISelector,boolean):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="sort" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.sort(jetbrains.mps.internal.collections.runtime.ISelector,boolean):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="sort" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205694004164">
                     <link role="variableDeclaration" targetNodeId="1205694004151" resolveInfo="tocomp" />
                   </node>
@@ -3306,7 +3119,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205751784982">
               <property name="name" value="test2" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205751784983">
-                <link role="classifier" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                <link role="classifier" targetNodeId="3.~ISequence" resolveInfo="ISequence" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205751784984">
                   <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                 </node>
@@ -3316,7 +3129,7 @@
                   <link role="variableDeclaration" targetNodeId="1205693992438" resolveInfo="input" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205751784987">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.sort(jetbrains.mps.internal.collections.runtime.ISelector,boolean):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="sort" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.sort(jetbrains.mps.internal.collections.runtime.ISelector,boolean):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="sort" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205751789090">
                     <link role="variableDeclaration" targetNodeId="1205751769124" resolveInfo="itself" />
                   </node>
@@ -3333,7 +3146,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205693992466">
                   <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromArray" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205693992467">
                     <property name="value" value="XXXX" />
                   </node>
@@ -3359,8 +3172,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205738190895">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205752091588">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromArray" />
                   <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205752092652">
                     <property name="value" value="Y" />
                   </node>
@@ -3379,7 +3192,7 @@
                     <link role="variableDeclaration" targetNodeId="1205693992448" resolveInfo="test" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205738196489">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.sort(jetbrains.mps.internal.collections.runtime.ISelector,boolean):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="sort" />
+                    <link role="baseMethodDeclaration" targetNodeId="3.~ISequence.sort(jetbrains.mps.internal.collections.runtime.ISelector,boolean):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="sort" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205738200359">
                       <link role="variableDeclaration" targetNodeId="1205694004151" resolveInfo="tocomp" />
                     </node>
@@ -3397,8 +3210,8 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205751804626">
                 <link role="baseMethodDeclaration" targetNodeId="1204129289579" resolveInfo="assertIterableEquals" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205751804627">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.Sequence" resolveInfo="fromArray" />
                   <link role="classConcept" targetNodeId="3.~Sequence" resolveInfo="Sequence" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Sequence.fromArray(java.lang.Object[]):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromArray" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205751820941">
                     <property name="value" value="WW" />
                   </node>

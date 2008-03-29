@@ -9,15 +9,20 @@ import java.util.Arrays;
 /**
  * @author fyodor
  */
-public abstract class Sequence<T> implements Iterable<T> {
+public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     
     public static final boolean RELAXED_NULL = false;
     
-    public static <U> Sequence <U> fromArray (U...array) {
+    public static <U> ISequence<U> fromArray (U...array) {
         return new BasicSequence<U> (Arrays.asList(array));
     }    
     
-    public static <U> Sequence <U> fromIterable (Iterable<U> iterable) {
+    public static <U> ISequence<U> fromIterable (Iterable<U> iterable) {
+        if (RELAXED_NULL) {
+            if (iterable == null) {
+                return new NullSequence<U> ();
+            }
+        }
         if (iterable instanceof Sequence) {
             return (Sequence<U>) iterable;
         }
@@ -25,25 +30,25 @@ public abstract class Sequence<T> implements Iterable<T> {
     }
     
     // public Sequence<T,T> where (IWhereFilter<? super T> filter)
-    public Sequence<T> where (IWhereFilter<T> filter) {
+    public ISequence<T> where (IWhereFilter<T> filter) {
         return new FilteringSequence<T> (this, filter);
     }
     
     // public <U> Sequence<T,U> map (IMapper<? super T,U> mapper)
-    public <U> Sequence<U> map (IMapper<T,U> mapper) {
-        return new MappingSequence<T,U> (this, mapper);
+    public <U> ISequence<U> translate (ITranslator<T,U> translator) {
+        return new TranslatingSequence<T,U> (this, translator);
     }
     
     // public <U> Sequence<T,U> select (ISelector<? super T,U> selector)
-    public <U> Sequence<U> select (ISelector<T,U> selector){
+    public <U> ISequence<U> select (ISelector<T,U> selector){
         return new SelectingSequence<T,U> (this, selector);
     }
     
-    public Sequence<T> sort (ISelector<T, Comparable<?>> selector, boolean ascending){
+    public ISequence<T> sort (ISelector<T, Comparable<?>> selector, boolean ascending){
         return new SortingSequence<T> (this, selector, ascending);
     }
     
-    public Sequence<T> distinct () {
+    public ISequence<T> distinct () {
         return new LimitedCardinalitySequence<T> (this, 1);
     }
 
@@ -51,45 +56,45 @@ public abstract class Sequence<T> implements Iterable<T> {
         IterableUtils.visitAll(toIterable(), visitor);
     }
 
-    public Sequence<T> take (int length) {
+    public ISequence<T> take (int length) {
         return new PagingSequence<T> (this, PagingSequence.Page.TAKE, length);
     }
     
-    public Sequence<T> skip (int length) {
+    public ISequence<T> skip (int length) {
         return new PagingSequence<T> (this, PagingSequence.Page.SKIP, length);
     }
     
-    public Sequence<T> cut (int length) {
+    public ISequence<T> cut (int length) {
         return new PagingSequence<T> (this, PagingSequence.Page.CUT, length);
     }
     
-    public Sequence<T> tail (int length) {
+    public ISequence<T> tail (int length) {
         return new PagingSequence<T> (this, PagingSequence.Page.TAIL, length);
     }
 
     // curse the page operation
-    public Sequence<T> page (int skip, int skipplustake) {
+    public ISequence<T> page (int skip, int skipplustake) {
         int take = skipplustake-skip;
         return skip (skip).take (take);
     }
 
-    public Sequence<T> concat (Sequence<T> that) {
+    public ISequence<T> concat (ISequence<T> that) {
         return new ConcatingSequence<T> (this, that);
     }
     
-    public Sequence<T> intersect (Sequence<T> that) {
+    public ISequence<T> intersect (ISequence<T> that) {
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.INTERSECTION);
     }
     
-    public Sequence<T> substract (Sequence<T> that) {
+    public ISequence<T> substract (ISequence<T> that) {
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.SUBSTRACTION);        
     }
     
-    public Sequence<T> union (Sequence<T> that) {
+    public ISequence<T> union (ISequence<T> that) {
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.UNION);
     }
     
-    public Sequence<T> disjunction (Sequence<T> that) {
+    public ISequence<T> disjunction (ISequence<T> that) {
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.DISJUNCTION);
     }
 
