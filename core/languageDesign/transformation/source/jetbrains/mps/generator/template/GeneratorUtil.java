@@ -26,6 +26,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class GeneratorUtil {
   private static final Logger LOG = Logger.getLogger(GeneratorUtil.class);
 
@@ -112,8 +113,8 @@ public class GeneratorUtil {
       generator.showWarningMessage(ruleNode, "condition query method '" + methodName + "' not found. evaluate to FALSE");
       return false;
     } catch (Exception e) {
-      generator.showWarningMessage(ruleNode, "couldn't evaluate rule condition '" + methodName + "'. evaluate to FALSE");
-//      LOG.error(e);
+      generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule condition");
+      LOG.error(e);
       return false;
     } finally {
       Statistics.getStatistic(Statistics.TPL).add(ruleNode.getModel(), methodName, startTime, res);
