@@ -1997,7 +1997,7 @@
     <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206482823746">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="nodeToAdd" />
+      <property name="role" value="nodeArgument" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>

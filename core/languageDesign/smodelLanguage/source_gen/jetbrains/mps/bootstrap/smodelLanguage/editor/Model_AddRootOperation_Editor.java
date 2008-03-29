@@ -29,7 +29,7 @@ public class Model_AddRootOperation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206482604995");
   }
 
-  private static void setupBasic_NodeToAddCell(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_NodeArgumentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206482605000");
   }
 
@@ -46,7 +46,7 @@ public class Model_AddRootOperation_Editor extends DefaultNodeEditor {
     editorCell.setLayoutConstraint("punctuation");
   }
 
-  private static void setupLabel_NodeToAddCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_NodeArgumentCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -68,7 +68,7 @@ public class Model_AddRootOperation_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createReplaceableAlias_CompCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "("));
-    editorCell.addEditorCell(this.createNodeToAddCell(context, node));
+    editorCell.addEditorCell(this.createNodeArgumentCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
     return editorCell;
   }
@@ -98,25 +98,25 @@ public class Model_AddRootOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createNodeToAddCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createNodeArgumentCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    Model_AddRootOperation_Editor.setupBasic_NodeToAddCell(editorCell, node, context);
+    Model_AddRootOperation_Editor.setupBasic_NodeArgumentCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      Model_AddRootOperation_Editor.setupLabel_NodeToAddCell((EditorCell_Label)editorCell, node, context);
+      Model_AddRootOperation_Editor.setupLabel_NodeArgumentCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createNodeToAddCell(EditorContext context, SNode node) {
+  public EditorCell createNodeArgumentCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("nodeToAdd");
+    provider.setRole("nodeArgument");
     provider.setNoTargetText("<no prototype>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createNodeToAddCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createNodeArgumentCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

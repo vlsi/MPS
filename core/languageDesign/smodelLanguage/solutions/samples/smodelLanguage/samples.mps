@@ -3367,7 +3367,7 @@
               <link role="variableDeclaration" targetNodeId="1171315527256" resolveInfo="model" />
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_AddRootOperation" id="1206482881058">
-              <node role="nodeToAdd" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206484292858">
+              <node role="nodeArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206484292858">
                 <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1206484294719">
                   <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206484294720">
                     <link role="concept" targetNodeId="1.1068580123157" resolveInfo="Statement" />

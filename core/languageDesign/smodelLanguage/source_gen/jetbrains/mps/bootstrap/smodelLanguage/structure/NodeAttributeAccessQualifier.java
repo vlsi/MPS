@@ -11,10 +11,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclara
 
 public class NodeAttributeAccessQualifier extends BaseConcept implements IAttributeAccessQualifier {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.NodeAttributeAccessQualifier";
+  public static String ANNOTATION_LINK = "annotationLink";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ANNOTATION_LINK = "annotationLink";
 
   public  NodeAttributeAccessQualifier(SNode node) {
     super(node);
@@ -28,6 +28,14 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
     return NodeAttributeAccessQualifier.newInstance(sm, false);
   }
 
+
+  public AnnotationLinkDeclaration getAnnotationLink() {
+    return (AnnotationLinkDeclaration)this.getReferent(NodeAttributeAccessQualifier.ANNOTATION_LINK);
+  }
+
+  public void setAnnotationLink(AnnotationLinkDeclaration node) {
+    super.setReferent(NodeAttributeAccessQualifier.ANNOTATION_LINK, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(NodeAttributeAccessQualifier.SHORT_DESCRIPTION);
@@ -51,14 +59,6 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
 
   public void setVirtualPackage(String value) {
     this.setProperty(NodeAttributeAccessQualifier.VIRTUAL_PACKAGE, value);
-  }
-
-  public AnnotationLinkDeclaration getAnnotationLink() {
-    return (AnnotationLinkDeclaration)this.getReferent(NodeAttributeAccessQualifier.ANNOTATION_LINK);
-  }
-
-  public void setAnnotationLink(AnnotationLinkDeclaration node) {
-    super.setReferent(NodeAttributeAccessQualifier.ANNOTATION_LINK, node);
   }
 
 }
