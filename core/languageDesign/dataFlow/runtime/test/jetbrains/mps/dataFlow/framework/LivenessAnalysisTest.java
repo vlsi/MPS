@@ -26,7 +26,8 @@ public class LivenessAnalysisTest {
     Assert.assertEquals(
       "0: read x [x, z]\n" +
       "1: write y [z]\n" +
-      "2: read z [z]\n",
+      "2: read z [z]\n" +
+      "3: end []\n",
       analysisResult.toString()
     );
   }
@@ -43,7 +44,8 @@ public class LivenessAnalysisTest {
 
     Assert.assertEquals(
       "0: read x [x]\n" +
-      "1: write x []\n",
+      "1: write x []\n" +
+      "2: end []\n",
       analysisResult.toString()
     );
   }
@@ -62,7 +64,8 @@ public class LivenessAnalysisTest {
     Assert.assertEquals(
       "0: read y [x, y]\n" +
       "1: read x [x, y]\n" +
-      "2: ifjump 0 [x, y]\n",      
+      "2: ifjump 0 [x, y]\n" +
+      "3: end []\n",      
       analysisResult.toString()
     );
   }

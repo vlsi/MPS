@@ -1,10 +1,7 @@
 package jetbrains.mps.dataFlow.framework;
 
 
-import jetbrains.mps.dataFlow.framework.instructions.Instruction;
-import jetbrains.mps.dataFlow.framework.instructions.TryInstruction;
-import jetbrains.mps.dataFlow.framework.instructions.FinallyInstruction;
-import jetbrains.mps.dataFlow.framework.instructions.EndTryInstruction;
+import jetbrains.mps.dataFlow.framework.instructions.*;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -93,6 +90,8 @@ public class Program {
   }
 
   void init() {
+    add(new EndInstruction());
+    
     buildEdges();
     buildTryFinallyInfo();
   }

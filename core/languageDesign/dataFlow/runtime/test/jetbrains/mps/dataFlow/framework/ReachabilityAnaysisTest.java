@@ -19,7 +19,8 @@ public class ReachabilityAnaysisTest {
     Assert.assertEquals(
       "0: jump 2 true\n" +
       "1: nop false\n" +
-      "2: nop true\n",
+      "2: nop true\n" +
+      "3: end true\n",
       result.toString()
     );
   }
@@ -42,7 +43,8 @@ public class ReachabilityAnaysisTest {
       "1: ret true\n" +
       "2: finally true\n" +
       "3: nop true\n" +
-      "3: endTry true\n",
+      "3: endTry true\n" +
+      "4: end true\n",
       result.toString()
     );
   }

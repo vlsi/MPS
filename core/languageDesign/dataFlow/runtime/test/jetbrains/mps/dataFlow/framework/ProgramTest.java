@@ -16,7 +16,8 @@ public class ProgramTest {
 
     Assert.assertEquals(
       "0: read x\n" +
-      "1: write y\n",
+      "1: write y\n" +
+      "2: end\n",
       
       program.toString()
     );
@@ -38,7 +39,8 @@ public class ProgramTest {
       "1: read x\n" +
       "2: finally\n" +
       "3: read x\n" +
-      "4: endTry\n",
+      "4: endTry\n" +
+      "5: end\n",
       program.toString()
     );
   }

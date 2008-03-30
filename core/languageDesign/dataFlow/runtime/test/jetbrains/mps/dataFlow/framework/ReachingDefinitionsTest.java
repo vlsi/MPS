@@ -23,7 +23,8 @@ public class ReachingDefinitionsTest {
 
     Assert.assertEquals(
       "0: write x [0: write x]\n" +
-      "1: write x [1: write x]\n",            
+      "1: write x [1: write x]\n" +
+      "2: end [1: write x]\n",
       result.toString()
     );
   }
@@ -42,7 +43,8 @@ public class ReachingDefinitionsTest {
     Assert.assertEquals(
       "0: write x [0: write x, 1: write y]\n" +
       "1: write y [0: write x, 1: write y]\n" +
-      "2: ifjump 0 [0: write x, 1: write y]\n",
+      "2: ifjump 0 [0: write x, 1: write y]\n" +
+      "3: end [0: write x, 1: write y]\n",
       result.toString()
     );
   }
