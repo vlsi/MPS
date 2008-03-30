@@ -27,7 +27,7 @@ public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteIn
     if (instruction instanceof WriteInstruction) {
       WriteInstruction write = (WriteInstruction) instruction;
 
-      for (WriteInstruction item : new TreeSet<WriteInstruction>(result)) {
+      for (WriteInstruction item : new HashSet<WriteInstruction>(result)) {
         if (write.getVariable().equals(item.getVariable())) {
           result.remove(item);
         }

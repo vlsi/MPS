@@ -23,4 +23,27 @@ public class ReachabilityAnaysisTest {
       result.toString()
     );
   }
+
+//  @Test
+  public void tryWithReturn() {
+    Program program = new SimpleProgramBuilder()
+      .emitTry()
+      .emitRet()
+      .emitFinally()
+      .emitNop()
+      .emitEndTry()
+      .buildProgram();
+
+
+    AnalysisResult<Boolean> result = program.analyze(new ReachabilityAnalyzer());
+
+    Assert.assertEquals(
+      "0: try true\n" +
+      "1: ret true\n" +
+      "2: finally true\n" +
+      "3: nop true\n" +
+      "3: endTry true\n",
+      result.toString()
+    );
+  }
 }

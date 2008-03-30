@@ -3,7 +3,7 @@ package jetbrains.mps.dataFlow.framework;
 import jetbrains.mps.dataFlow.framework.instructions.Instruction;
 
 import java.util.Set;
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 
 public class ProgramState {
   private Instruction myInstruction;
@@ -17,7 +17,7 @@ public class ProgramState {
   }
 
   public Set<ProgramState> pred() {
-    Set<ProgramState> result = new LinkedHashSet<ProgramState>();
+    Set<ProgramState> result = new HashSet<ProgramState>();
     for (Instruction i : myInstruction.pred()) {
       result.add(new ProgramState(i));
     }
@@ -25,7 +25,7 @@ public class ProgramState {
   }
 
   public Set<ProgramState> succ() {
-    Set<ProgramState> result = new LinkedHashSet<ProgramState>();
+    Set<ProgramState> result = new HashSet<ProgramState>();
     for (Instruction i : myInstruction.succ()) {
       result.add(new ProgramState(i));
     }

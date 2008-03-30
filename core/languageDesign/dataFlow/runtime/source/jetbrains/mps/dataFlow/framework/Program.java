@@ -40,7 +40,7 @@ public class Program {
     while (!workList.isEmpty()) {
       ProgramState current = workList.pop();
 
-      Set<E> input = new LinkedHashSet<E>();
+      Set<E> input = new HashSet<E>();
       for (ProgramState s : direction.dependencies(current)) {
         if (stateValues.containsKey(s)) {
           input.add(stateValues.get(s));
