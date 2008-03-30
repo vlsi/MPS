@@ -6,12 +6,10 @@ import java.util.*;
 
 public class AnalysisResult<E> {
   private Map<Instruction, E> myResult;
-  private DataFlowAnalyzer<E> myAnalyzer;
   private Program myProgram;
 
-  AnalysisResult(Program program, DataFlowAnalyzer<E> analyzer, Map<Instruction, E> result) {
+  AnalysisResult(Program program, Map<Instruction, E> result) {
     myProgram = program;
-    myAnalyzer = analyzer;
     myResult = result;
   }
 

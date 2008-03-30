@@ -72,7 +72,7 @@ public class Program {
       result.put(entry.getKey(), analyzer.merge(entry.getValue()));
     }
 
-    return new AnalysisResult<E>(this, analyzer, result);
+    return new AnalysisResult<E>(this, result);
   }
 
   void add(Instruction instruction) {
