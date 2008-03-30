@@ -47,17 +47,18 @@ class EDTLightweighCommandExecutor extends Thread {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        synchronized (myLock) {
-          CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {
-            public void run() {
-              List<Runnable> toExecute = new ArrayList<Runnable>(myToExecute);
+        CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {
+          public void run() {
+            List<Runnable> toExecute = new ArrayList<Runnable>();
+            synchronized (myLock) {
+              toExecute.addAll(toExecute);
               myToExecute.clear();
-              for (Runnable r : toExecute) {
-                r.run();
-              }
             }
-          });
-        }
+            for (Runnable r : toExecute) {
+              r.run();
+            }
+          }
+        });
       }
     });
   }  
