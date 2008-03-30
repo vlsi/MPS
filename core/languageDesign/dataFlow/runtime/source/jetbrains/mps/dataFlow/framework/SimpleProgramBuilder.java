@@ -35,6 +35,24 @@ public class SimpleProgramBuilder {
     return this;
   }
 
+  public SimpleProgramBuilder emitTry() {
+    TryInstruction instruction = new TryInstruction();
+    myProgram.add(instruction);
+    return this;
+  }
+
+  public SimpleProgramBuilder emitFinally() {
+    FinallyInstruction instruction = new FinallyInstruction();
+    myProgram.add(instruction);
+    return this;
+  }
+
+  public SimpleProgramBuilder emitEndTry() {
+    EndTryInstruction instruction = new EndTryInstruction();
+    myProgram.add(instruction);
+    return this;
+  }
+
   public SimpleProgramBuilder emitNop() {
     myProgram.add(new NopInstruction());
     return this;

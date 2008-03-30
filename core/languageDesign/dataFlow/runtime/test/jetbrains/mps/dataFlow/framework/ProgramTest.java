@@ -22,4 +22,45 @@ public class ProgramTest {
     );
   }
 
+  @Test
+  public void programWithTryFinally() {
+    Program program = new SimpleProgramBuilder()
+      .emitTry()
+      .emitRead("x")
+      .emitFinally()
+      .emitRead("x")
+      .emitEndTry()
+      .buildProgram();
+
+
+    Assert.assertEquals(
+      "0: try\n" +
+      "1: read x\n" +
+      "2: finally\n" +
+      "3: read x\n" +
+      "4: endTry\n",
+      program.toString()
+    );
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void danglingTry() {
+    new SimpleProgramBuilder()
+      .emitTry()
+      .buildProgram();
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void unexpectedFinally() {
+    new SimpleProgramBuilder()
+        .emitFinally()
+        .buildProgram();
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void unexpectedEndTry() {
+    new SimpleProgramBuilder()
+        .emitEndTry()
+        .buildProgram();
+  }
 }
