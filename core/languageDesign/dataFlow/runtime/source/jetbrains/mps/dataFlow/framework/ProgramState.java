@@ -16,20 +16,12 @@ public class ProgramState {
     return myInstruction;
   }
 
-  public Set<ProgramState> pred() {
-    Set<ProgramState> result = new HashSet<ProgramState>();
-    for (Instruction i : myInstruction.pred()) {
-      result.add(new ProgramState(i));
-    }
-    return result;
+  public Set<ProgramState> succ() {
+    return myInstruction.succ(this);
   }
 
-  public Set<ProgramState> succ() {
-    Set<ProgramState> result = new HashSet<ProgramState>();
-    for (Instruction i : myInstruction.succ()) {
-      result.add(new ProgramState(i));
-    }
-    return result;
+  public Set<ProgramState> pred() {
+    return myInstruction.pred(this);
   }
 
   public boolean equals(Object obj) {

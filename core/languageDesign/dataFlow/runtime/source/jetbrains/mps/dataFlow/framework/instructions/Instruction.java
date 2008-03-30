@@ -1,6 +1,7 @@
 package jetbrains.mps.dataFlow.framework.instructions;
 
 import jetbrains.mps.dataFlow.framework.Program;
+import jetbrains.mps.dataFlow.framework.ProgramState;
 
 import java.util.*;
 
@@ -46,12 +47,20 @@ public abstract class Instruction {
     }
   }
 
-  public Set<Instruction> succ() {
-    return Collections.unmodifiableSet(mySucc);
+  public Set<ProgramState> succ(ProgramState s) {
+    Set<ProgramState> result = new HashSet<ProgramState>();
+    for (Instruction i : mySucc) {
+      result.add(new ProgramState(i));
+    }
+    return result;
   }
 
-  public Set<Instruction> pred() {
-    return Collections.unmodifiableSet(myPred);
+  public Set<ProgramState> pred(ProgramState s) {
+    Set<ProgramState> result = new HashSet<ProgramState>();
+    for (Instruction i : myPred) {
+      result.add(new ProgramState(i));
+    }
+    return result;
   }
 
   int getIndex() {
