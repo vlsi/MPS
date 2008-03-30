@@ -51,7 +51,7 @@ class EDTLightweighCommandExecutor extends Thread {
           public void run() {
             List<Runnable> toExecute = new ArrayList<Runnable>();
             synchronized (myLock) {
-              toExecute.addAll(toExecute);
+              toExecute.addAll(myToExecute);
               myToExecute.clear();
             }
             for (Runnable r : toExecute) {
