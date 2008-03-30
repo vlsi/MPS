@@ -41,7 +41,7 @@ public class SimpleProgramBuilder {
   }
 
   public Program buildProgram() {
-    myProgram.buildEdges();
+    myProgram.init();
     return myProgram;
   }
 }

@@ -60,7 +60,11 @@ public class Program {
     myInstructions.add(instruction);
   }
 
-  void buildEdges() {
+  void init() {
+    buildEdges();
+  }
+
+  private void buildEdges() {
     for (Instruction i : myInstructions) {
       i.buildEdges();
     }

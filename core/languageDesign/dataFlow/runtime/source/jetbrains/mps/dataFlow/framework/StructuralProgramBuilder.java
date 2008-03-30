@@ -24,7 +24,7 @@ public abstract class StructuralProgramBuilder<N> {
       r.run();
     }
 
-    myProgram.buildEdges();
+    myProgram.init();
     return myProgram;
   }
 
