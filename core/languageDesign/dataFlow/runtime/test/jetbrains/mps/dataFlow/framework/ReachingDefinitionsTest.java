@@ -38,7 +38,7 @@ public class ReachingDefinitionsTest {
         .emitIfJump(0)
         .buildProgram();
 
-      AnalysisResult<Set<WriteInstruction>> result = p.analyze(new ReachingDefinitionsAnalyzer());
+    AnalysisResult<Set<WriteInstruction>> result = p.analyze(new ReachingDefinitionsAnalyzer());
 
     Assert.assertEquals(
       "0: write x [0: write x, 1: write y]\n" +
@@ -47,5 +47,5 @@ public class ReachingDefinitionsTest {
       "3: end [0: write x, 1: write y]\n",
       result.toString()
     );
-  }
+  }    
 }

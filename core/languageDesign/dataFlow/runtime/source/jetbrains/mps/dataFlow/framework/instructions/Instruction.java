@@ -2,6 +2,7 @@ package jetbrains.mps.dataFlow.framework.instructions;
 
 import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.framework.ProgramState;
+import jetbrains.mps.dataFlow.framework.Program.TryFinallyInfo;
 
 import java.util.*;
 
@@ -11,8 +12,8 @@ public abstract class Instruction {
   private Object mySource;
 
   private Set<Instruction> myJumps = new HashSet<Instruction>();
-
   private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
+  private TryFinallyInfo myTryFinallyInfo;
 
   Instruction() {
   }
@@ -38,21 +39,36 @@ public abstract class Instruction {
   }
 
   public void buildCaches() {
+    TryFinallyInfo bestMatch = null;
+    int index = getIndex();
+    for (TryFinallyInfo info : getProgram().getTryFinallyInfos()) {
+      if (index > info.getTry().getIndex() && index < info.getFinally().getIndex()) {
+        bestMatch = info;
+      }
+    }
+    myTryFinallyInfo = bestMatch;
+  }
+
+  public TryFinallyInfo getEnclosingTryFinally() {
+    return myTryFinallyInfo;
   }
 
   public Set<ProgramState> succ(ProgramState s) {
     Set<ProgramState> result = new HashSet<ProgramState>();
-    result.add(new ProgramState(getProgram().get(getIndex() + 1)));
+    result.add(new ProgramState(getProgram().get(getIndex() + 1), s.isReturnMode()));
     return result;
   }
 
   public Set<ProgramState> pred(ProgramState s) {
     Set<ProgramState> result = new HashSet<ProgramState>();
     if (this != getProgram().start()) {
-      result.add(new ProgramState(getProgram().get(getIndex() - 1)));      
+      Instruction prev = getProgram().get(getIndex() - 1);
+      if (!(prev instanceof RetInstruction)) {
+        result.add(new ProgramState(prev, s.isReturnMode()));
+      }
     }
     for (Instruction jump : myJumps) {
-      result.add(new ProgramState(jump));
+      result.add(new ProgramState(jump, s.isReturnMode()));
     }
     return result;
   }

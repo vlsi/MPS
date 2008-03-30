@@ -19,12 +19,13 @@ public class IfJumpInstruction extends Instruction {
   }
 
   public void buildCaches() {
+    super.buildCaches();
     getProgram().get(myJumpTo).addJump(this);
   }
 
   public Set<ProgramState> succ(ProgramState s) {
     Set<ProgramState> result = super.succ(s);
-    result.add(new ProgramState(getProgram().get(myJumpTo)));
+    result.add(new ProgramState(getProgram().get(myJumpTo), s.isReturnMode()));
     return result;    
   }
 

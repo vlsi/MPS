@@ -37,12 +37,12 @@ public class Program {
   public <E> AnalysisResult<E> analyze(DataFlowAnalyzer<E> analyzer) {
     final Map<ProgramState, E> stateValues = new HashMap<ProgramState, E>();
     for (Instruction i : myInstructions) {
-      stateValues.put(new ProgramState(i), analyzer.initial());
+      stateValues.put(new ProgramState(i, false), analyzer.initial());
     }
 
-    Stack<ProgramState> workList = new Stack<ProgramState>();
+    Stack<ProgramState> workList = new Stack<ProgramState>();    
     for (Instruction i : myInstructions) {
-      workList.push(new ProgramState(i));
+      workList.push(new ProgramState(i, false));
     }
 
     AnalysisDirection direction = analyzer.getDirection();
@@ -106,9 +106,13 @@ public class Program {
     Stack<TryFinallyInfo> stack = new Stack<TryFinallyInfo>();
     for (Instruction i : myInstructions) {
       if (i instanceof TryInstruction) {
-        stack.push(new TryFinallyInfo());
-        stack.peek().myTry = (TryInstruction) i;
-        myTryFinallyInfo.add(stack.peek());
+        Program.TryFinallyInfo info = new TryFinallyInfo();
+        info.myTry = (TryInstruction) i;
+        myTryFinallyInfo.add(info);
+        if (!stack.isEmpty()) {
+          info.myParent = stack.peek();
+        }
+        stack.push(info);
       }
 
       if (i instanceof FinallyInstruction) {
@@ -151,10 +155,15 @@ public class Program {
     return result.toString();
   }
 
-  private class TryFinallyInfo {
+  public List<TryFinallyInfo> getTryFinallyInfos() {
+    return Collections.unmodifiableList(myTryFinallyInfo);
+  }
+
+  public class TryFinallyInfo {
     private TryInstruction myTry;
     private FinallyInstruction myFinally;
     private EndTryInstruction myEndTry;
+    private TryFinallyInfo myParent;
 
     public TryInstruction getTry() {
       return myTry;
@@ -166,6 +175,10 @@ public class Program {
 
     public EndTryInstruction getEndTry() {
       return myEndTry;
+    }
+
+    public TryFinallyInfo getParent() {
+      return myParent;
     }
   }
 }
