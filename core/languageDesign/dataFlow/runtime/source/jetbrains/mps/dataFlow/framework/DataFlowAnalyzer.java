@@ -5,7 +5,8 @@ import jetbrains.mps.dataFlow.framework.instructions.Instruction;
 import java.util.Set;
 
 public interface DataFlowAnalyzer<E> {
-  E getInitial();
-  E join(Instruction instruction, Set<E> input);
+  E initial();
+  E merge(Set<E> input);
+  E fun(Instruction instruction, E input);
   AnalysisDirection getDirection();
 }

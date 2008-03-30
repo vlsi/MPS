@@ -7,6 +7,7 @@ import jetbrains.mps.dataFlow.framework.instructions.FinallyInstruction;
 import jetbrains.mps.dataFlow.framework.instructions.EndTryInstruction;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class Program {
   private List<Instruction> myInstructions = new ArrayList<Instruction>();
@@ -16,44 +17,59 @@ public class Program {
     return Collections.unmodifiableList((List<? extends Instruction>) myInstructions);
   }
 
-  public Instruction getStart() {
+  public Instruction start() {
     return myInstructions.get(0);
   }
 
-  public Instruction getEnd() {
+  public Instruction end() {
     return myInstructions.get(myInstructions.size() - 1);
   }
 
   public <E> AnalysisResult<E> analyze(DataFlowAnalyzer<E> analyzer) {
-    final Map<Instruction, E> result = new HashMap<Instruction, E>();
+    final Map<ProgramState, E> stateValues = new HashMap<ProgramState, E>();
     for (Instruction i : myInstructions) {
-      result.put(i, analyzer.getInitial());
+      stateValues.put(new ProgramState(i), analyzer.initial());
     }
 
-    Queue<Instruction> workList = new LinkedList<Instruction>();
+    Stack<ProgramState> workList = new Stack<ProgramState>();
     for (Instruction i : myInstructions) {
-      workList.add(i);
+      workList.push(new ProgramState(i));
     }
 
     AnalysisDirection direction = analyzer.getDirection();
-
     while (!workList.isEmpty()) {
-      Instruction current = workList.remove();
+      ProgramState current = workList.pop();
 
       Set<E> input = new LinkedHashSet<E>();
-      for (Instruction d : direction.getDependencies(current)) {
-        input.add(result.get(d));
-      }
-
-      E oldValue = result.get(current);
-      E newValue = analyzer.join(current, input);
-
-      if (!newValue.equals(oldValue)) {
-        result.put(current, newValue);
-        for (Instruction d : direction.getDependents(current)) {
-          workList.add(d);
+      for (ProgramState s : direction.dependencies(current)) {
+        if (stateValues.containsKey(s)) {
+          input.add(stateValues.get(s));
         }
       }
+
+      E oldValue = stateValues.get(current);
+      E mergedValue = analyzer.merge(input);
+      E newValue = analyzer.fun(current.instruction(), mergedValue);
+
+      if (!newValue.equals(oldValue)) {
+        stateValues.put(current, newValue);
+        for (ProgramState s : direction.dependents(current)) {
+          workList.add(s);
+        }
+      }
+    }
+
+    Map<Instruction, Set<E>> possibleValues = new HashMap<Instruction, Set<E>>();
+    for (Map.Entry<ProgramState, E> entry : stateValues.entrySet()) {
+      if (!possibleValues.containsKey(entry.getKey().instruction())) {
+        possibleValues.put(entry.getKey().instruction(), new HashSet<E>());
+      }
+      possibleValues.get(entry.getKey().instruction()).add(entry.getValue());
+    }
+
+    Map<Instruction, E> result = new HashMap<Instruction, E>();
+    for (Entry<Instruction, Set<E>> entry : possibleValues.entrySet()) {
+      result.put(entry.getKey(), analyzer.merge(entry.getValue()));
     }
 
     return new AnalysisResult<E>(this, analyzer, result);

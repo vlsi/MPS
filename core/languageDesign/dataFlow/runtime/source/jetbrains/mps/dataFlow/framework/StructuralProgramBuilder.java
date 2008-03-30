@@ -30,9 +30,9 @@ public abstract class StructuralProgramBuilder<N> {
 
   public void build(N node) {
     myNodes.push(node);
-    myStarts.put(node, getCurrentPosition());
+    myStarts.put(node, currentPosition());
     doBuild(node);
-    myEnds.put(node, getCurrentPosition());
+    myEnds.put(node, currentPosition());
     myNodes.pop();
   }
 
@@ -99,14 +99,14 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   protected void onInstructionEmitted(Instruction instruction) {
-    instruction.setSource(getCurrentNode());
+    instruction.setSource(currentNode());
   }
 
-  private N getCurrentNode() {
+  private N currentNode() {
     return myNodes.peek();
   }
 
-  private int getCurrentPosition() {
+  private int currentPosition() {
     return myProgram.getInstructions().size();
   }
 

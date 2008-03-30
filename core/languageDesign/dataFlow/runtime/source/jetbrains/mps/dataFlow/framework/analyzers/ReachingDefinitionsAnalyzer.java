@@ -10,16 +10,20 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteInstruction>> {
-  public Set<WriteInstruction> getInitial() {
+  public Set<WriteInstruction> initial() {
     return new HashSet<WriteInstruction>();
   }
 
-  public Set<WriteInstruction> join(Instruction instruction, Set<Set<WriteInstruction>> input) {
+  public Set<WriteInstruction> merge(Set<Set<WriteInstruction>> input) {
     Set<WriteInstruction> result = new HashSet<WriteInstruction>();
     for (Set<WriteInstruction> i : input) {
       result.addAll(i);
     }
+    return result;
+  }
 
+  public Set<WriteInstruction> fun(Instruction instruction, Set<WriteInstruction> input) {
+    Set<WriteInstruction> result = new HashSet<WriteInstruction>(input); 
     if (instruction instanceof WriteInstruction) {
       WriteInstruction write = (WriteInstruction) instruction;
 

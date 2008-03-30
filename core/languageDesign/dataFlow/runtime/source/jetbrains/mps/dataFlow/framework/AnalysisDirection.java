@@ -7,26 +7,26 @@ import java.util.Set;
 public enum AnalysisDirection {
 
   FORWARD() {
-    public Set<Instruction> getDependencies(Instruction i) {
-      return i.pred();
+    public Set<ProgramState> dependencies(ProgramState s) {
+      return s.pred();
     }
 
-    public Set<Instruction> getDependents(Instruction i) {
-      return i.succ();
+    public Set<ProgramState> dependents(ProgramState s) {
+      return s.succ();
     }
   },
 
   BACKWARD() {
-    public Set<Instruction> getDependencies(Instruction i) {
-      return i.succ();
+    public Set<ProgramState> dependencies(ProgramState s) {
+      return s.succ();
     }
 
-    public Set<Instruction> getDependents(Instruction i) {
-      return i.pred();
+    public Set<ProgramState> dependents(ProgramState s) {
+      return s.pred();
     }
   };
 
-  public abstract Set<Instruction> getDependencies(Instruction i);
-  public abstract Set<Instruction> getDependents(Instruction i);
+  public abstract Set<ProgramState> dependencies(ProgramState s);
+  public abstract Set<ProgramState> dependents(ProgramState s);
 
 }

@@ -10,15 +10,20 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LivenessAnalyzer implements DataFlowAnalyzer<Set<Object>> {
-  public Set<Object> getInitial() {
+  public Set<Object> initial() {
     return new HashSet<Object>();
   }
 
-  public Set<Object> join(Instruction instruction, Set<Set<Object>> input) {
+  public Set<Object> merge(Set<Set<Object>> input) {
     Set<Object> result = new HashSet<Object>();
     for (Set<Object> inputSet : input) {
-      result.addAll(inputSet);      
+      result.addAll(inputSet);
     }
+    return result;
+  }
+
+  public Set<Object> fun(Instruction instruction, Set<Object> input) {
+    Set<Object> result = new HashSet<Object>(input);
 
     if (instruction instanceof ReadInstruction) {
       ReadInstruction read = (ReadInstruction) instruction;
