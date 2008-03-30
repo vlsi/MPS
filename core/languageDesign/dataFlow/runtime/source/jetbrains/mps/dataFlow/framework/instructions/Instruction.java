@@ -10,8 +10,7 @@ public abstract class Instruction {
 
   private Object mySource;
 
-  private Set<Instruction> myPred = new HashSet<Instruction>();
-  private Set<Instruction> mySucc = new HashSet<Instruction>();
+  private Set<Instruction> myJumps = new HashSet<Instruction>();
 
   private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
 
@@ -34,29 +33,26 @@ public abstract class Instruction {
     mySource = source;
   }
 
-  void addEdgeTo(Instruction instruction) {
-    mySucc.add(instruction);
-    instruction.myPred.add(this);
+  void addJump(Instruction instruction) {
+    myJumps.add(instruction);
   }
 
-  public void buildEdges() {
-    if (this != getProgram().end()) {
-      addEdgeTo(getProgram().get(getIndex() + 1));
-    }
+  public void buildCaches() {
   }
 
   public Set<ProgramState> succ(ProgramState s) {
     Set<ProgramState> result = new HashSet<ProgramState>();
-    for (Instruction i : mySucc) {
-      result.add(new ProgramState(i));
-    }
+    result.add(new ProgramState(getProgram().get(getIndex() + 1)));
     return result;
   }
 
   public Set<ProgramState> pred(ProgramState s) {
     Set<ProgramState> result = new HashSet<ProgramState>();
-    for (Instruction i : myPred) {
-      result.add(new ProgramState(i));
+    if (this != getProgram().start()) {
+      result.add(new ProgramState(getProgram().get(getIndex() - 1)));      
+    }
+    for (Instruction jump : myJumps) {
+      result.add(new ProgramState(jump));
     }
     return result;
   }

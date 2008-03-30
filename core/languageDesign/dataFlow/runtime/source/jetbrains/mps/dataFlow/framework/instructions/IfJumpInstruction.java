@@ -1,5 +1,9 @@
 package jetbrains.mps.dataFlow.framework.instructions;
 
+import jetbrains.mps.dataFlow.framework.ProgramState;
+
+import java.util.Set;
+
 public class IfJumpInstruction extends Instruction {
   private int myJumpTo;
 
@@ -14,9 +18,14 @@ public class IfJumpInstruction extends Instruction {
     myJumpTo = jumpTo;
   }
 
-  public void buildEdges() {
-    super.buildEdges();
-    addEdgeTo(getProgram().get(myJumpTo));
+  public void buildCaches() {
+    getProgram().get(myJumpTo).addJump(this);
+  }
+
+  public Set<ProgramState> succ(ProgramState s) {
+    Set<ProgramState> result = super.succ(s);
+    result.add(new ProgramState(getProgram().get(myJumpTo)));
+    return result;    
   }
 
   String commandPresentation() {

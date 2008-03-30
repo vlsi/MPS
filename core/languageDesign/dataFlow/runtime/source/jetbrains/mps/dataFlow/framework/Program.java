@@ -91,14 +91,14 @@ public class Program {
 
   void init() {
     add(new EndInstruction());
-    
-    buildEdges();
+
     buildTryFinallyInfo();
+    buildInstructionCaches();
   }
 
-  private void buildEdges() {
+  private void buildInstructionCaches() {
     for (Instruction i : myInstructions) {
-      i.buildEdges();
+      i.buildCaches();
     }
   }
 
