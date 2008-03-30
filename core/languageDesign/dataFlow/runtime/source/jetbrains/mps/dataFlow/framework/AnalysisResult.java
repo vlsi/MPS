@@ -19,8 +19,8 @@ public class AnalysisResult<E> {
 
   public String toString() {
     StringBuilder r = new StringBuilder();
-    for (int i = 0; i < myProgram.getInstructions().size(); i++) {
-      Instruction instruction = myProgram.getInstructions().get(i);
+    for (int i = 0; i < myProgram.size(); i++) {
+      Instruction instruction = myProgram.get(i);
       r.append(instruction).append(" ");
       r.append(toString(myResult.get(instruction)));
       r.append("\n");

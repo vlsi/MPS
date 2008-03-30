@@ -11,7 +11,7 @@ public class JumpInstruction extends Instruction {
   }
 
   public void buildEdges() {
-    addEdgeTo(getProgram().getInstructions().get(myJumpTo));
+    addEdgeTo(getProgram().get(myJumpTo));
   }
 
   String commandPresentation() {

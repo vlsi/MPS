@@ -107,7 +107,7 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   private int currentPosition() {
-    return myProgram.getInstructions().size();
+    return myProgram.size();
   }
 
   private void invokeLater(Runnable r) {

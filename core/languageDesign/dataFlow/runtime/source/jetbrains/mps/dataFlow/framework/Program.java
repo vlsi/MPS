@@ -17,6 +17,18 @@ public class Program {
     return Collections.unmodifiableList((List<? extends Instruction>) myInstructions);
   }
 
+  public Instruction get(int index) {
+    return myInstructions.get(index);
+  }
+
+  public int size() {
+    return myInstructions.size();
+  }
+
+  public int indexOf(Instruction i) {
+    return myInstructions.indexOf(i);
+  }
+
   public Instruction start() {
     return myInstructions.get(0);
   }

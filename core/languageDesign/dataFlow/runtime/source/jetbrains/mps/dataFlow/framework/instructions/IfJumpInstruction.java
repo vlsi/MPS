@@ -16,7 +16,7 @@ public class IfJumpInstruction extends Instruction {
 
   public void buildEdges() {
     super.buildEdges();
-    addEdgeTo(getProgram().getInstructions().get(myJumpTo));
+    addEdgeTo(getProgram().get(myJumpTo));
   }
 
   String commandPresentation() {

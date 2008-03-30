@@ -7,8 +7,7 @@ public class RetInstruction extends Instruction {
   }
 
   public void buildEdges() {
-    List<Instruction> instructions = getProgram().getInstructions();
-    addEdgeTo(instructions.get(instructions.size() - 1));
+    addEdgeTo(getProgram().end());
   }
 
   String commandPresentation() {

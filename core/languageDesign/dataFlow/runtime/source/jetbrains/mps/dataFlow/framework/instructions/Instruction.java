@@ -40,10 +40,8 @@ public abstract class Instruction {
   }
 
   public void buildEdges() {
-    List<Instruction> instructions = myProgram.getInstructions();
-    int index = instructions.indexOf(this);
-    if (index != instructions.size() - 1) {
-      addEdgeTo(instructions.get(index + 1));
+    if (this != getProgram().end()) {
+      addEdgeTo(getProgram().get(getIndex() + 1));
     }
   }
 
@@ -64,7 +62,7 @@ public abstract class Instruction {
   }
 
   int getIndex() {
-    return myProgram.getInstructions().indexOf(this);
+    return myProgram.indexOf(this);
   }
 
   abstract String commandPresentation();
