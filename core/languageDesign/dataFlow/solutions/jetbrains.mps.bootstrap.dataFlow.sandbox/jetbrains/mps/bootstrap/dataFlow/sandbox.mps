@@ -45,40 +45,18 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206464422845">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1206465413479">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206465413480">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206543728022">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206543728023">
-                <property name="name" value="a" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1206543728024" />
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206543729995">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206543729996">
-                <property name="name" value="b" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1206543729997" />
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206543731827">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206543731828">
-                <property name="name" value="c" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1206543731829" />
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206543722403">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206543722404">
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206543722405">
-                  <link role="baseMethodDeclaration" targetNodeId="1206464422842" resolveInfo="abc" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206543739252">
-                    <link role="variableDeclaration" targetNodeId="1206543728023" resolveInfo="a" />
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206543740114">
-                    <link role="variableDeclaration" targetNodeId="1206543729996" resolveInfo="b" />
-                  </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206543741647">
-                    <link role="variableDeclaration" targetNodeId="1206543731828" resolveInfo="c" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryStatement" id="1206957745950">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206957745951">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206957748376">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206957748377">
+                    <property name="value" value="3" />
                   </node>
                 </node>
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1206543722406" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206957756926">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206957756927" />
+                </node>
               </node>
+              <node role="finallyBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206957745953" />
             </node>
           </node>
         </node>

@@ -35,53 +35,7 @@ public class Program {
   }
 
   public <E> AnalysisResult<E> analyze(DataFlowAnalyzer<E> analyzer) {
-    final Map<ProgramState, E> stateValues = new HashMap<ProgramState, E>();
-    for (Instruction i : myInstructions) {
-      stateValues.put(new ProgramState(i, false), analyzer.initial());
-    }
-
-    Stack<ProgramState> workList = new Stack<ProgramState>();    
-    for (Instruction i : myInstructions) {
-      workList.push(new ProgramState(i, false));
-    }
-
-    AnalysisDirection direction = analyzer.getDirection();
-    while (!workList.isEmpty()) {
-      ProgramState current = workList.pop();
-
-      Set<E> input = new HashSet<E>();
-      for (ProgramState s : direction.dependencies(current)) {
-        if (stateValues.containsKey(s)) {
-          input.add(stateValues.get(s));
-        }
-      }
-
-      E oldValue = stateValues.get(current);
-      E mergedValue = analyzer.merge(input);
-      E newValue = analyzer.fun(current.instruction(), mergedValue);
-
-      if (!newValue.equals(oldValue)) {
-        stateValues.put(current, newValue);
-        for (ProgramState s : direction.dependents(current)) {
-          workList.add(s);
-        }
-      }
-    }
-
-    Map<Instruction, Set<E>> possibleValues = new HashMap<Instruction, Set<E>>();
-    for (Map.Entry<ProgramState, E> entry : stateValues.entrySet()) {
-      if (!possibleValues.containsKey(entry.getKey().instruction())) {
-        possibleValues.put(entry.getKey().instruction(), new HashSet<E>());
-      }
-      possibleValues.get(entry.getKey().instruction()).add(entry.getValue());
-    }
-
-    Map<Instruction, E> result = new HashMap<Instruction, E>();
-    for (Entry<Instruction, Set<E>> entry : possibleValues.entrySet()) {
-      result.put(entry.getKey(), analyzer.merge(entry.getValue()));
-    }
-
-    return new AnalysisResult<E>(this, result);
+    return new AnalysisRunner<E>(this, analyzer).analyze();
   }
 
   void add(Instruction instruction) {
