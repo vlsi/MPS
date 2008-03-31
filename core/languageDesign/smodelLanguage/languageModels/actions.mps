@@ -1965,5 +1965,42 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206377804309" />
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1206996873883">
+    <property name="package" value="substitute" />
+    <property name="name" value="operationParameter" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1206996889215">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1144100743722" resolveInfo="AbstractOperationParameter" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1206996939326">
+        <link role="concept" targetNodeId="1.1144100743722" resolveInfo="AbstractOperationParameter" />
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptsSubstituteMenuPart" id="1206996959250">
+          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_Query" id="1206996959251">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206996959252">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206996975737">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1206997007434">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1206997007435">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206997007436">
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess" id="1206997007437">
+                        <link role="conceptLinkDeclaration" targetNodeId="1.1144102537873" resolveInfo="applicableParameter" />
+                      </node>
+                      <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1206997007438">
+                        <link role="concept" targetNodeId="1.1138411891628" resolveInfo="SNodeOperation" />
+                        <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1206997007439" />
+                      </node>
+                    </node>
+                    <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1206997013002">
+                      <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1206997016239">
+                        <link role="conceptDeclaraton" targetNodeId="1.1144100743722" resolveInfo="AbstractOperationParameter" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

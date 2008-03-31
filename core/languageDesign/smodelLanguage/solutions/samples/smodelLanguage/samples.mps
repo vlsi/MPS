@@ -4051,11 +4051,11 @@
             <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1180458007464">
               <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1180458007465" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227842003">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206998838305">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1180457989335">
                 <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetAllSuperConcepts" id="1180457994332" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetAllSuperConcepts" id="1206998843557" />
             </node>
           </node>
         </node>

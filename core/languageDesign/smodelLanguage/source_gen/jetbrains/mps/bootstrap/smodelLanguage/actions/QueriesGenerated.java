@@ -31,6 +31,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.constraints.StaticConceptMethodCall_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -305,6 +307,27 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AbstractOperationParameter_1206996889215(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.AbstractOperationParameter", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return ((List<SNode>)SLinkOperations.getConceptLinkTargets(_context.getParentNode(), "applicableParameter"));
+        }
+
+      };
+      Iterable queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
+      for(Object item : queryResult) {
+        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+        result.addAll(defaultActions);
+      }
+    }
+    return result;
+  }
+
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SNodeOperation_1144103719164(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
@@ -321,7 +344,7 @@ public class QueriesGenerated {
         }
 
         public String getDescriptionText(String pattern) {
-          return "add operation parameters";
+          return "add operation parameter(s)";
         }
 
       });
