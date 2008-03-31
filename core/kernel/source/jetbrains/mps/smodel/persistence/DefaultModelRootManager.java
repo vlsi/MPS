@@ -23,6 +23,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.Reader;
 import java.rmi.RemoteException;
 import java.util.*;
 
@@ -113,14 +114,20 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       return true;
     }
     try {
-      BufferedReader r = new BufferedReader(modelFile.openReader());
-      String line;
-      while ((line = r.readLine()) != null) {
-        if (line.contains("<node")) {
-          return false;
+      Reader reader = modelFile.openReader();
+      BufferedReader r = new BufferedReader(reader);
+      try {
+        String line;
+        while ((line = r.readLine()) != null) {
+          if (line.contains("<node")) {
+            return false;
+          }
         }
+        r.close();
+      } catch (IOException e) {
+        LOG.error(e);
+        r.close();
       }
-      r.close();
     } catch (IOException e) {
       LOG.error(e);
     }
