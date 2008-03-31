@@ -73,6 +73,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
         public void keyPressed(KeyEvent e) {
           if ((e.getKeyCode() == MenuKeyEvent.VK_B) && (e.getID() == MenuKeyEvent.KEY_PRESSED) && (e.isControlDown())) {
             goToFinder(finder);
+            e.consume();
           }
         }
       });
