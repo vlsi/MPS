@@ -52,6 +52,7 @@ import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
+import java.lang.reflect.Field;
 import java.util.*;
 import java.util.List;
 
@@ -512,6 +513,30 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         return null;
       }
     });
+  }
+
+  public void showMessageTooltip() {
+    try {
+      //todo this is a hack but I don't know other way to show tooltip programatically
+      EditorCell cell = getSelectedCell();
+      if (cell == null) {
+        return;
+      }
+
+      ToolTipManager toolTipManager = ToolTipManager.sharedInstance();
+
+      Field showImmediatelyField = toolTipManager.getClass().getDeclaredField("showImmediately");
+      showImmediatelyField.setAccessible(true);
+      showImmediatelyField.set(toolTipManager, true);
+
+      toolTipManager.mouseMoved(new MouseEvent(
+        this,
+        Event.MOUSE_MOVE, 0, 0,
+        cell.getX(), cell.getY(), 0, false));
+    } catch (Exception e) {
+      LOG.error(e);
+    }
+
   }
 
   public void editNode(SNode node, IOperationContext operationContext) {

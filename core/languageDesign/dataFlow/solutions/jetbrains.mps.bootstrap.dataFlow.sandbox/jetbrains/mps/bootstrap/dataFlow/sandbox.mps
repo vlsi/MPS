@@ -45,17 +45,15 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206464422845">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1206465413479">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206465413480">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1206969714458">
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206969716086">
-                <property name="value" value="true" />
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206969714460">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryStatement" id="1206971522992">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206971522993">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206969717540">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206969722183">
                     <property name="value" value="23" />
                   </node>
                 </node>
               </node>
+              <node role="finallyBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206971522994" />
             </node>
           </node>
         </node>

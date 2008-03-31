@@ -64,6 +64,12 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       boolean strictMatching = endEditKeystroke || EditorCellAction.RIGHT_TRANSFORM.equals(actionType);
 
 
+      if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
+        editorContext.getNodeEditorComponent().showMessageTooltip();
+        return true;
+      }
+
+
       if (!EditorUtil.isValidCell(selectedCell)) {
         if (endEditKeystroke ||
                 EditorCellAction.INSERT.equals(actionType) ||
