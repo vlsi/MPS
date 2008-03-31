@@ -23,7 +23,7 @@ public class Attributes {
   }
 
   public void accessToPropertyAttribute_2(SNode node) {
-    SNode propMacro;
+    SNode propMacro = null;
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), propMacro, true);
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), propMacro, true);
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "name"), propMacro, true);
@@ -31,11 +31,11 @@ public class Attributes {
 
   public void accessToReferenceAttribute_1(SNode node) {
     SNode referenceMacro = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), true);
-    SNode referenceMacro = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), true);
+    SNode referenceMacro1 = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), true);
   }
 
   public void accessToReferenceAttribute_2(SNode node) {
-    SNode refMacro;
+    SNode refMacro = null;
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), refMacro, true);
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), refMacro, true);
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", "conceptDeclaration"), refMacro, true);

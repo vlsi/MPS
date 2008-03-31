@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.IScope;
@@ -16,6 +17,7 @@ public class Model {
     SNode new_stmt = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SNode new_class = SModelOperations.createNewRootNode(model, "jetbrains.mps.baseLanguage.structure.ClassConcept", null);
     SModelOperations.addRootNode(model, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null));
+    SModelOperations.addRootNode(model, SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement")), null));
   }
 
   public void roots_access_1(SModel model) {
