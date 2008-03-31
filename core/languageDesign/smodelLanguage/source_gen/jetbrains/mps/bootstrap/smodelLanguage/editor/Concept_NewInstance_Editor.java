@@ -112,7 +112,7 @@ public class Concept_NewInstance_Editor extends DefaultNodeEditor {
   public EditorCell createPrototypeNodeCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("prototypeNode");
-    provider.setNoTargetText("<global scope>");
+    provider.setNoTargetText("<no prototype>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createPrototypeNodeCellinternal(context, node, provider);

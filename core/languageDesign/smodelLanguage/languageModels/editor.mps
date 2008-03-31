@@ -2347,7 +2347,7 @@
         <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206486226040">
-        <property name="noTargetText" value="&lt;global scope&gt;" />
+        <property name="noTargetText" value="&lt;no prototype&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1181949561194" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206486226041">
