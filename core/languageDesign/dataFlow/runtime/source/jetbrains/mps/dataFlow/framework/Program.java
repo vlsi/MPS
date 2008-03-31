@@ -2,8 +2,10 @@ package jetbrains.mps.dataFlow.framework;
 
 
 import jetbrains.mps.dataFlow.framework.instructions.*;
+import jetbrains.mps.dataFlow.framework.analyzers.ReachabilityAnalyzer;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class Program {
   private List<Instruction> myInstructions = new ArrayList<Instruction>();
@@ -90,6 +92,27 @@ public class Program {
     if (!stack.isEmpty()) {
       throw new IllegalStateException("incomplete try blocks");
     }
+  }
+
+  public Set<Instruction> getUnreachableInstructions() {
+    AnalysisResult<Boolean> analysisResult = analyze(new ReachabilityAnalyzer());
+    Set<Instruction> result = new HashSet<Instruction>();
+    for (Entry<Instruction, Boolean> entry : analysisResult.getMap().entrySet()) {
+      if (!entry.getValue()) {
+        result.add(entry.getKey());
+      }
+    }
+    return result;
+  }
+
+  public Set<Instruction> getExpectedReturns() {
+    ProgramState endWithoutReturn = new ProgramState(end(), false);
+    Set<Instruction> result = new HashSet<Instruction>();
+    for (ProgramState pred : endWithoutReturn.pred()) {
+      result.add(pred.instruction());
+    }
+    result.removeAll(getUnreachableInstructions());
+    return result;
   }
 
   public String toString() {

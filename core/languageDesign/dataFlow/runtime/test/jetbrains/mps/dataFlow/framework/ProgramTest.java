@@ -5,6 +5,8 @@ import org.junit.Assert;
 import jetbrains.mps.dataFlow.framework.SimpleProgramBuilder;
 import jetbrains.mps.dataFlow.framework.Program;
 
+import java.util.Collections;
+
 public class ProgramTest {
 
   @Test
@@ -64,5 +66,44 @@ public class ProgramTest {
     new SimpleProgramBuilder()
         .emitEndTry()
         .buildProgram();
+  }
+
+  @Test
+  public void unreachable() {
+    Program program = new SimpleProgramBuilder()
+      .emitRet()
+      .emitNop()
+      .buildProgram();
+
+
+    Assert.assertEquals(
+      Collections.singleton(program.get(1)),
+      program.getUnreachableInstructions()      
+    );
+  }
+
+  @Test
+  public void expectedReturns() {
+    Program program = new SimpleProgramBuilder()
+      .emitNop()
+      .buildProgram();
+
+    Assert.assertEquals(
+      Collections.singleton(program.get(0)),
+      program.getExpectedReturns()      
+    );
+  }
+
+  @Test
+  public void expectedReturnInUnreachableCode() {
+    Program program = new SimpleProgramBuilder()
+      .emitRet()
+      .emitNop()
+      .buildProgram();
+
+    Assert.assertEquals(
+      Collections.EMPTY_SET,
+      program.getExpectedReturns()
+    );
   }
 }

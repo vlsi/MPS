@@ -29,14 +29,18 @@ public class EndInstruction extends Instruction {
   }
 
   public Set<ProgramState> pred(ProgramState s) {
-    Set<ProgramState> result = super.pred(s);    
-    for (RetInstruction ret : myReturns) {
-      if (ret.getEnclosingTryFinally() == null) {
-        result.add(new ProgramState(ret, false));
+    Set<ProgramState> result = new HashSet<ProgramState>();
+    if (s.isReturnMode()) {
+      for (RetInstruction ret : myReturns) {
+        if (ret.getEnclosingTryFinally() == null) {
+          result.add(new ProgramState(ret, false));
+        }
       }
-    }
-    for (TryFinallyInfo info : myRootTryFinallies) {
-      result.add(new ProgramState(info.getEndTry(), true));
+      for (TryFinallyInfo info : myRootTryFinallies) {
+        result.add(new ProgramState(info.getEndTry(), true));
+      }
+    } else {
+      result.addAll(super.pred(s));
     }
     return result;
   }
