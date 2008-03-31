@@ -66,9 +66,9 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206989034257">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206989035072">
-            <property name="value" value="239" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206989393986">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206989395019">
+            <property name="value" value="23" />
           </node>
         </node>
       </node>

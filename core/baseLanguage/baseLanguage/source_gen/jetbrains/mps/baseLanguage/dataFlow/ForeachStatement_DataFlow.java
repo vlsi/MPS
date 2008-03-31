@@ -15,6 +15,7 @@ public class ForeachStatement_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     // todo hack
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "iterable", true));
+    _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "variable", true));
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
 

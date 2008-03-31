@@ -517,6 +517,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitWriteStatement" id="1206989539741">
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206989541729">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206989541243" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206989542371">
+              <link role="link" targetNodeId="1.1144230900587" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1206463774571">
           <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206463778090">
             <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206463776479" />
