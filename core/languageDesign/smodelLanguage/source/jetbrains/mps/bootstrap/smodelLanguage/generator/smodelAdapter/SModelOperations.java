@@ -105,11 +105,11 @@ public class SModelOperations {
       enclosingNode = prototypeNode.getParent();
     }
 
-    return NodeFactoryManager.createNode(conceptFqName, prototypeNode, enclosingNode, model, GlobalScope.getInstance());
+    return NodeFactoryManager.createNode(conceptFqName, prototypeNode, enclosingNode, model);
   }
 
   public static SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
-    SNode newNode = NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, model, GlobalScope.getInstance());
+    SNode newNode = NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, model);
     model.addRoot(newNode);
     return newNode;
   }

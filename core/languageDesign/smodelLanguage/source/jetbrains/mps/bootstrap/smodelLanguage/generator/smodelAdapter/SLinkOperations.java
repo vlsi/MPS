@@ -1,6 +1,5 @@
 package jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter;
 
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 
@@ -45,9 +44,8 @@ public class SLinkOperations {
 
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
-      GlobalScope scope = GlobalScope.getInstance();
       SNode prototypeNode = node.getChild(role);
-      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel(), scope);
+      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
       node.setChild(role, newChild);
       return newChild;
     }
@@ -71,8 +69,7 @@ public class SLinkOperations {
 
   public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
-      GlobalScope scope = GlobalScope.getInstance();
-      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, null, node, node.getModel(), scope);
+      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, null, node, node.getModel());
       node.addChild(role, newChild);
       return newChild;
     }

@@ -101,7 +101,7 @@ public final class SConceptOperations {
   }
 
   public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
-    return NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, null, GlobalScope.getInstance());
+    return NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, null);
   }
 
 }

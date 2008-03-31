@@ -297,7 +297,7 @@ public class SNodeOperations {
   public static SNode insertNewNextSiblingChild(SNode node, String conceptFQName) {
     if (node == null || node.getParent() == null) return null;
     SNode parent = node.getParent();
-    SNode newChild = NodeFactoryManager.createNode(conceptFQName, null, parent, node.getModel(), GlobalScope.getInstance());
+    SNode newChild = NodeFactoryManager.createNode(conceptFQName, null, parent, node.getModel());
     if (newChild == null) return null;
     String role = node.getRole_();
     assert parent != null && role != null;
@@ -309,8 +309,7 @@ public class SNodeOperations {
     if (node == null) return null;
     SNode parent = node.getParent();
     if (parent == null) return null;
-    GlobalScope scope = GlobalScope.getInstance();
-    SNode newChild = NodeFactoryManager.createNode(conceptFqName, null, parent, node.getModel(), scope);
+    SNode newChild = NodeFactoryManager.createNode(conceptFqName, null, parent, node.getModel());
     if (newChild == null) return null;
     String role = node.getRole_();
     assert role != null;
@@ -351,7 +350,7 @@ public class SNodeOperations {
       return null;
     }
     SModel model = oldChild.getModel();
-    SNode newChild = NodeFactoryManager.createNode(conceptFqName, oldChild, oldChildParent, model, GlobalScope.getInstance());
+    SNode newChild = NodeFactoryManager.createNode(conceptFqName, oldChild, oldChildParent, model);
     if (newChild == null) return null;
     if (oldChildParent == null) {
       model.addRoot(newChild);

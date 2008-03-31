@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
@@ -20,19 +21,12 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 02.11.2005
- * Time: 15:16:46
- * To change this template use File | Settings | File Templates.
- */
 public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   private static Logger LOG = Logger.getLogger(NodeFactoryManager.class);
 
-  public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
-    AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
-    return createNode(conceptDeclaration, sampleNode, enclosingNode, model, scope);
+  public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
+    AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    return createNode(conceptDeclaration, sampleNode, enclosingNode, model, GlobalScope.getInstance());
   }
 
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
@@ -69,7 +63,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     if (newNode == null) return null;
     BehaviorManager.getInstance().initNode(newNode);
     if (sampleNode != null) {
-      sampleNode = CopyUtil.copy(sampleNode, model);
+      sampleNode = CopyUtil.copy(sampleNode);
     }
     nodeConcept = newNode.getConceptDeclarationAdapter(); // default concrete concept could change nodeConcept
     setupNode((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
