@@ -14,8 +14,7 @@ public class StructuralProgramBuilderTest {
     Program p = new ExpressionProgramBuilder().buildProgram(program);
 
     Assert.assertEquals(
-      "0: nop\n" +
-      "1: end\n",
+      "0: end\n",
       p.toString()
     );
   }
@@ -35,8 +34,7 @@ public class StructuralProgramBuilderTest {
       "1: write a\n" +
       "2: jump 4\n" +
       "3: write b\n" +
-      "4: nop\n" +
-      "5: end\n",
+      "4: end\n",
       p.toString()
     );
   }
@@ -54,8 +52,7 @@ public class StructuralProgramBuilderTest {
       "0: read a\n" +
       "1: ifjump 3\n" +
       "2: write b\n" +
-      "3: nop\n" +
-      "4: end\n",
+      "3: end\n",
       p.toString()
     );
   }
@@ -72,8 +69,7 @@ public class StructuralProgramBuilderTest {
     Assert.assertEquals(
       "0: read a\n" +
       "1: read b\n" +
-      "2: nop\n" +
-      "3: end\n",
+      "2: end\n",
       p.toString()
     );    
   }

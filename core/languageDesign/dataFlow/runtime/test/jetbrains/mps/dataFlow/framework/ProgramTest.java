@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.Assert;
 import jetbrains.mps.dataFlow.framework.SimpleProgramBuilder;
 import jetbrains.mps.dataFlow.framework.Program;
+import jetbrains.mps.dataFlow.framework.analyzers.ReachabilityAnalyzer;
 
 import java.util.Collections;
 
@@ -81,7 +82,7 @@ public class ProgramTest {
       program.getUnreachableInstructions()      
     );
   }
-
+  
   @Test
   public void expectedReturns() {
     Program program = new SimpleProgramBuilder()
@@ -105,5 +106,17 @@ public class ProgramTest {
       Collections.EMPTY_SET,
       program.getExpectedReturns()
     );
+  }
+
+  @Test
+  public void noExpectedReturnInTryFinallyWithReturn() {
+    Program program = new SimpleProgramBuilder()
+      .emitTry()
+      .emitRet()
+      .emitFinally()
+      .emitEndTry()
+      .buildProgram();
+
+    Assert.assertTrue(program.getExpectedReturns().isEmpty());
   }
 }

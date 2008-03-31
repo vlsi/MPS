@@ -97,7 +97,7 @@ public class Program {
   public Set<Instruction> getUnreachableInstructions() {
     AnalysisResult<Boolean> analysisResult = analyze(new ReachabilityAnalyzer());
     Set<Instruction> result = new HashSet<Instruction>();
-    for (Entry<Instruction, Boolean> entry : analysisResult.getMap().entrySet()) {
+    for (Entry<Instruction, Boolean> entry : analysisResult.getInstructionMap().entrySet()) {
       if (!entry.getValue()) {
         result.add(entry.getKey());
       }
@@ -106,12 +106,16 @@ public class Program {
   }
 
   public Set<Instruction> getExpectedReturns() {
+    AnalysisResult<Boolean> analysisResult = analyze(new ReachabilityAnalyzer());
     ProgramState endWithoutReturn = new ProgramState(end(), false);
     Set<Instruction> result = new HashSet<Instruction>();
-    for (ProgramState pred : endWithoutReturn.pred()) {
-      result.add(pred.instruction());
+    if (analysisResult.getStateMap().get(endWithoutReturn)) {    
+      for (ProgramState pred : endWithoutReturn.pred()) {
+        if (analysisResult.getStateMap().get(pred)) {
+          result.add(pred.instruction());
+        }
+      }
     }
-    result.removeAll(getUnreachableInstructions());
     return result;
   }
 

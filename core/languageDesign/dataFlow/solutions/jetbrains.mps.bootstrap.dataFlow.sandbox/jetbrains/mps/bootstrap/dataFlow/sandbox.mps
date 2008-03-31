@@ -45,18 +45,15 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206464422845">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1206465413479">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206465413480">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryStatement" id="1206957745950">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206957745951">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206957748376">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206957748377">
-                    <property name="value" value="3" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryStatement" id="1206961972376">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206961972377">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206963218215">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206963219264">
+                    <property name="value" value="23" />
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206957756926">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206957756927" />
-                </node>
               </node>
-              <node role="finallyBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206957745953" />
+              <node role="finallyBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206961972380" />
             </node>
           </node>
         </node>

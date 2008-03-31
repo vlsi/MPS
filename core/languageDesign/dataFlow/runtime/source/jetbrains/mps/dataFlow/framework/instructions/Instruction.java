@@ -63,7 +63,10 @@ public abstract class Instruction {
     Set<ProgramState> result = new HashSet<ProgramState>();
     if (this != getProgram().start()) {
       Instruction prev = getProgram().get(getIndex() - 1);
-      if (!(prev instanceof RetInstruction)) {
+
+      if (!(prev instanceof RetInstruction) &&
+          !(prev instanceof JumpInstruction) &&
+          !(prev instanceof EndTryInstruction && s.isReturnMode())) {
         result.add(new ProgramState(prev, s.isReturnMode()));
       }
     }

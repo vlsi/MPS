@@ -1,6 +1,6 @@
 package jetbrains.mps.dataFlow.framework;
 
-import jetbrains.mps.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.dataFlow.framework.instructions.*;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -29,7 +29,7 @@ class AnalyzerRunner<E> {
       result.put(entry.getKey(), myAnalyzer.merge(entry.getValue()));
     }
 
-    return new AnalysisResult<E>(myProgram, result);
+    return new AnalysisResult<E>(myProgram, stateValues, result);
   }
 
   private Map<ProgramState, E> doAnalyze() {
@@ -38,14 +38,14 @@ class AnalyzerRunner<E> {
       stateValues.put(new ProgramState(i, false), myAnalyzer.initial());
     }
 
-    Stack<ProgramState> workList = new Stack<ProgramState>();
+    Queue<ProgramState> workList = new LinkedList<ProgramState>();
     for (Instruction i : myProgram.getInstructions()) {
-      workList.push(new ProgramState(i, false));
+      workList.add(new ProgramState(i, false));
     }
 
     AnalysisDirection direction = myAnalyzer.getDirection();
     while (!workList.isEmpty()) {
-      ProgramState current = workList.pop();
+      ProgramState current = workList.remove();
 
       Set<E> input = new HashSet<E>();
       for (ProgramState s : direction.dependencies(current)) {

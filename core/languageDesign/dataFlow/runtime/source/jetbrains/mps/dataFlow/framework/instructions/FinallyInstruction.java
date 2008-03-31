@@ -6,6 +6,7 @@ import jetbrains.mps.dataFlow.framework.Program.TryFinallyInfo;
 import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class FinallyInstruction extends Instruction {
   private TryFinallyInfo myInfo;
@@ -41,12 +42,16 @@ public class FinallyInstruction extends Instruction {
   }
 
   public Set<ProgramState> pred(ProgramState s) {
-    Set<ProgramState> result = super.pred(s);
-    for (RetInstruction ret : myReturns) {
-      result.add(new ProgramState(ret, false));
-    }
-    for (TryFinallyInfo childInfo : myChildTryFinallies) {
-      result.add(new ProgramState(childInfo.getEndTry(), true));
+    Set<ProgramState> result = new HashSet<ProgramState>();
+    if (s.isReturnMode()) {
+      for (RetInstruction ret : myReturns) {
+        result.add(new ProgramState(ret, false));
+      }
+      for (TryFinallyInfo childInfo : myChildTryFinallies) {
+        result.add(new ProgramState(childInfo.getEndTry(), true));
+      }
+    } else {
+      return super.pred(s);
     }
     return result;
   }

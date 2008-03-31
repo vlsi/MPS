@@ -30,16 +30,20 @@ public class ProgramState {
     return myInstruction.pred(this);
   }
 
+  public String toString() {
+    return "(state " + myInstruction + ", " + myReturnMode + ")";
+  }
+
   public boolean equals(Object obj) {
     if (!(obj instanceof ProgramState)) {
       return false;
     }
 
     ProgramState s = (ProgramState) obj;
-    return s.myInstruction.equals(myInstruction);
+    return s.myInstruction.equals(myInstruction) && s.myReturnMode == myReturnMode;
   }
 
   public int hashCode() {
-    return myInstruction.hashCode();
+    return myInstruction.hashCode() + ((myReturnMode) ? 1 : 0);
   }
 }

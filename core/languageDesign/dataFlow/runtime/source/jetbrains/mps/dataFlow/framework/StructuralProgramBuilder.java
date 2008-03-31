@@ -16,10 +16,6 @@ public abstract class StructuralProgramBuilder<N> {
   public Program buildProgram(N node) {
     build(node);
 
-    NopInstruction lastNop = new NopInstruction();
-    lastNop.setSource(node);
-    myProgram.add(lastNop);
-
     for (Runnable r : myInvokeLater) {
       r.run();
     }

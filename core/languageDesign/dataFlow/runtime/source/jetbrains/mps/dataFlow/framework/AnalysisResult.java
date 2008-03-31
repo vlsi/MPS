@@ -5,15 +5,21 @@ import jetbrains.mps.dataFlow.framework.instructions.Instruction;
 import java.util.*;
 
 public class AnalysisResult<E> {
-  private Map<Instruction, E> myResult;
+  private Map<ProgramState, E> myResult;
+  private Map<Instruction, E> myInstructionsResult;
   private Program myProgram;
 
-  AnalysisResult(Program program, Map<Instruction, E> result) {
+  AnalysisResult(Program program, Map<ProgramState, E> result, Map<Instruction, E> instrResult) {
     myProgram = program;
-    myResult = result;
+    myResult = new HashMap<ProgramState,E>(result);
+    myInstructionsResult = new HashMap<Instruction, E>(instrResult);
   }
 
-  public Map<Instruction, E> getMap() {
+  public Map<Instruction, E> getInstructionMap() {
+    return Collections.unmodifiableMap(myInstructionsResult);
+  }
+
+  public Map<ProgramState, E> getStateMap() {
     return Collections.unmodifiableMap(myResult);
   }
 
@@ -22,7 +28,7 @@ public class AnalysisResult<E> {
     for (int i = 0; i < myProgram.size(); i++) {
       Instruction instruction = myProgram.get(i);
       r.append(instruction).append(" ");
-      r.append(toString(myResult.get(instruction)));
+      r.append(toString(myInstructionsResult.get(instruction)));
       r.append("\n");
     }
     return r.toString();
