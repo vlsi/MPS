@@ -31,6 +31,7 @@ public class MPSErrorDialog extends JDialog {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
           dispose();
+          e.consume();
         }
       }
     };

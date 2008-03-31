@@ -106,9 +106,11 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_F4 && e.getModifiers() == 0) {
           openEditor();
+          e.consume();
         }
         if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0) {
           openEditor();
+          e.consume();
         }
       }
     });
