@@ -18,7 +18,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1170351924342(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     String alias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
-    if(alias == null) {
+    if (alias == null) {
       _context.getGenerator().showErrorMessage(_context.getNode(), _context.getTemplateNode(), "concept function parm has no <alias> - can't map it to method parameter");
     }
     return alias;
