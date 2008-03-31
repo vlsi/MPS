@@ -187,5 +187,40 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206956556233">
+    <property name="package" value="Instructions" />
+    <link role="conceptDeclaration" targetNodeId="1.1206956528885" resolveInfo="EmitTryFinallyStatement" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206956582760">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206956583685">
+        <property name="text" value="try" />
+        <link role="styleClass" targetNodeId="1206443699820" resolveInfo="Instruction" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206956592092">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1206956592093" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206956597228">
+          <link role="relationDeclaration" targetNodeId="1.1206956559912" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206956598998">
+        <property name="text" value="finally" />
+        <link role="styleClass" targetNodeId="1206443699820" resolveInfo="Instruction" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206956601957">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1206956601958" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206956601959">
+          <link role="relationDeclaration" targetNodeId="1.1206956567220" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206956607386">
+        <property name="text" value="end" />
+        <link role="styleClass" targetNodeId="1206443699820" resolveInfo="Instruction" />
+      </node>
+    </node>
+  </node>
 </model>
 

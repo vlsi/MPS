@@ -223,5 +223,26 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206956528885">
+    <property name="package" value="Instructions" />
+    <property name="name" value="EmitTryFinallyStatement" />
+    <link role="extends" targetNodeId="1206443583064" resolveInfo="EmitStatement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206956559912">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="tryPart" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1206956567220">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="finallyPart" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1206956550098">
+      <property name="value" value="try" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

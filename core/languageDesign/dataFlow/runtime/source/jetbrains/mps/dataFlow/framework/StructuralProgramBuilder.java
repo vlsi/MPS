@@ -98,6 +98,24 @@ public abstract class StructuralProgramBuilder<N> {
     });
   }
 
+  public void emitTry() {
+    TryInstruction instruction = new TryInstruction();
+    onInstructionEmitted(instruction);
+    myProgram.add(instruction);
+  }
+
+  public void emitFinally() {
+    FinallyInstruction instruction = new FinallyInstruction();
+    onInstructionEmitted(instruction);
+    myProgram.add(instruction);
+  }
+
+  public void emitEndTry() {
+    EndTryInstruction instruction = new EndTryInstruction();
+    onInstructionEmitted(instruction);
+    myProgram.add(instruction);
+  }
+
   protected void onInstructionEmitted(Instruction instruction) {
     instruction.setSource(currentNode());
   }

@@ -13,7 +13,7 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.dataFlow.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.dataFlow@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.plugins@java_stub" version="-1" />
@@ -22,6 +22,7 @@
   <import index="6" modelUID="java.io@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.ide.actions" version="-1" />
   <import index="8" modelUID="jetbrains.mps.dataFlow.presentation@java_stub" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1206459480619">
     <property name="name" value="PrintDFAResult" />
     <property name="caption" value="Print DFA" />
@@ -129,9 +130,15 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206642324441">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1206642324442">
-            <link role="baseMethodDeclaration" targetNodeId="8.~ShowCFGDialog.&lt;init&gt;(jetbrains.mps.dataFlow.framework.Program)" resolveInfo="ShowCFGDialog" />
+            <link role="baseMethodDeclaration" targetNodeId="8.~ShowCFGDialog.&lt;init&gt;(jetbrains.mps.dataFlow.framework.Program,jetbrains.mps.smodel.IOperationContext)" resolveInfo="ShowCFGDialog" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206642517900">
               <link role="variableDeclaration" targetNodeId="1206642304931" resolveInfo="program" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206957196306">
+              <node role="operand" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_ActionContext" id="1206957192832" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206957197871">
+                <link role="baseMethodDeclaration" targetNodeId="9.~ActionContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+              </node>
             </node>
           </node>
         </node>

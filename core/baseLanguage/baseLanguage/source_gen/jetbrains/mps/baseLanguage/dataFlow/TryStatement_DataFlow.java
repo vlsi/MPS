@@ -13,8 +13,11 @@ public class TryStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
+    _context.getBuilder().emitTry();
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().emitFinally();
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "finallyBody", true));
+    _context.getBuilder().emitEndTry();
   }
 
 }
