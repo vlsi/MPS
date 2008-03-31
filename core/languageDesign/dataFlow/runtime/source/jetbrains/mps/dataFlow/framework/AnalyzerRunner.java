@@ -5,11 +5,11 @@ import jetbrains.mps.dataFlow.framework.instructions.Instruction;
 import java.util.*;
 import java.util.Map.Entry;
 
-class AnalysisRunner<E> {
+class AnalyzerRunner<E> {
   private Program myProgram;
   private DataFlowAnalyzer<E> myAnalyzer;
 
-  AnalysisRunner(Program program, DataFlowAnalyzer<E> analyzer) {
+  AnalyzerRunner(Program program, DataFlowAnalyzer<E> analyzer) {
     myProgram = program;
     myAnalyzer = analyzer;
   }

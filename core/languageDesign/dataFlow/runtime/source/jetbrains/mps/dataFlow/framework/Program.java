@@ -4,7 +4,6 @@ package jetbrains.mps.dataFlow.framework;
 import jetbrains.mps.dataFlow.framework.instructions.*;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 public class Program {
   private List<Instruction> myInstructions = new ArrayList<Instruction>();
@@ -35,7 +34,7 @@ public class Program {
   }
 
   public <E> AnalysisResult<E> analyze(DataFlowAnalyzer<E> analyzer) {
-    return new AnalysisRunner<E>(this, analyzer).analyze();
+    return new AnalyzerRunner<E>(this, analyzer).analyze();
   }
 
   void add(Instruction instruction) {
