@@ -2,12 +2,13 @@ package jetbrains.mps.dataFlow.framework.analyzers;
 
 import jetbrains.mps.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.dataFlow.framework.AnalysisDirection;
+import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.framework.instructions.Instruction;
 
 import java.util.Set;
 
 public class ReachabilityAnalyzer implements DataFlowAnalyzer<Boolean> {
-  public Boolean initial() {
+  public Boolean initial(Program p) {
     return false;
   }
 

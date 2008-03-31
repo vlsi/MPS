@@ -2,6 +2,7 @@ package jetbrains.mps.dataFlow.framework.analyzers;
 
 import jetbrains.mps.dataFlow.framework.AnalysisDirection;
 import jetbrains.mps.dataFlow.framework.DataFlowAnalyzer;
+import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.dataFlow.framework.instructions.WriteInstruction;
@@ -10,7 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LivenessAnalyzer implements DataFlowAnalyzer<Set<Object>> {
-  public Set<Object> initial() {
+  public Set<Object> initial(Program p) {
     return new HashSet<Object>();
   }
 

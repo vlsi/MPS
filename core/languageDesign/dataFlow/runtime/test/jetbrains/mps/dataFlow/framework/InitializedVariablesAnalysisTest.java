@@ -59,4 +59,25 @@ public class InitializedVariablesAnalysisTest {
       result.toString()
     );
   }
+
+  @Test
+  public void cycle() {
+    Program p = new SimpleProgramBuilder()
+      .emitNop()
+      .emitWrite("x")
+      .emitRead("x")
+      .emitIfJump(2)
+      .buildProgram();
+
+    AnalysisResult<Set<Object>> result = p.analyze(new InitializedVariablesAnalyzer());
+
+    Assert.assertEquals(
+      "0: nop []\n" +
+      "1: write x [x]\n" +
+      "2: read x [x]\n" +
+      "3: ifjump 2 [x]\n" +
+      "4: end [x]\n",
+      result.toString()
+    );
+  }
 }

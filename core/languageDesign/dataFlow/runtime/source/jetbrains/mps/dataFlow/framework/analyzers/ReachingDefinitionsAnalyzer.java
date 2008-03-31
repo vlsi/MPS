@@ -2,15 +2,15 @@ package jetbrains.mps.dataFlow.framework.analyzers;
 
 import jetbrains.mps.dataFlow.framework.AnalysisDirection;
 import jetbrains.mps.dataFlow.framework.DataFlowAnalyzer;
+import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.dataFlow.framework.instructions.WriteInstruction;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteInstruction>> {
-  public Set<WriteInstruction> initial() {
+  public Set<WriteInstruction> initial(Program p) {
     return new HashSet<WriteInstruction>();
   }
 

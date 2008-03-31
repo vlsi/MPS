@@ -35,7 +35,7 @@ class AnalyzerRunner<E> {
   private Map<ProgramState, E> doAnalyze() {
     final Map<ProgramState, E> stateValues = new HashMap<ProgramState, E>();
     for (Instruction i : myProgram.getInstructions()) {
-      stateValues.put(new ProgramState(i, false), myAnalyzer.initial());
+      stateValues.put(new ProgramState(i, false), myAnalyzer.initial(myProgram));
     }
 
     Queue<ProgramState> workList = new LinkedList<ProgramState>();

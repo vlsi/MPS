@@ -7,22 +7,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
-public class ForeachStatement_DataFlow extends DataFlowBuilder {
+public class BaseMethodDeclaration_DataFlow extends DataFlowBuilder {
 
-  public  ForeachStatement_DataFlow() {
+  public  BaseMethodDeclaration_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    // todo hack
-    _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "iterable", true));
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
-    _context.getBuilder().emitMayBeUnreachable(new Runnable() {
-
-      public void run() {
-        _context.getBuilder().emitIfJump(_context.getBuilder().before(_context.getNode()));
-      }
-
-    });
   }
 
 }

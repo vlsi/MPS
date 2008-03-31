@@ -455,6 +455,17 @@
     <link role="conceptDeclaration" targetNodeId="1.1144231330558" resolveInfo="ForStatement" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1206463694663">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206463694664">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1206987770209">
+          <property name="value" value="todo hack" />
+        </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1206987765749">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206987767799">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206987767564" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206987768660">
+              <link role="link" targetNodeId="1.1144230900587" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1206463701665">
           <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206463703543">
             <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206463703214" />
@@ -495,6 +506,9 @@
     <link role="conceptDeclaration" targetNodeId="1.1144226303539" resolveInfo="ForeachStatement" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1206463758606">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206463758607">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1206987755705">
+          <property name="value" value="todo hack" />
+        </node>
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1206463763783">
           <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206463765067">
             <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206463764769" />
@@ -1004,6 +1018,22 @@
             </node>
             <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitWriteStatement" id="1206987180651">
               <node role="variable" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206987184622" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1206987602762">
+    <property name="package" value="method" />
+    <link role="conceptDeclaration" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1206987602763">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206987602764">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1206987605109">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206987606487">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206987606267" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206987607724">
+              <link role="link" targetNodeId="1.1068580123135" />
             </node>
           </node>
         </node>

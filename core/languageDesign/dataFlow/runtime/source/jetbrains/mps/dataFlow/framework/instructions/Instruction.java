@@ -34,6 +34,10 @@ public abstract class Instruction {
     mySource = source;
   }
 
+  public boolean isStart() {
+    return getIndex() == 0;
+  }
+
   void addJump(Instruction instruction) {
     myJumps.add(instruction);
   }

@@ -40,6 +40,19 @@ public class Program {
     return new AnalyzerRunner<E>(this, analyzer).analyze();
   }
 
+  public Set<Object> getVariables() {
+    Set<Object> result = new HashSet<Object>();
+    for (Instruction i : myInstructions) {
+      if (i instanceof ReadInstruction) {
+        result.add(((ReadInstruction) i).getVariable());
+      }
+      if (i instanceof WriteInstruction) {
+        result.add(((WriteInstruction) i).getVariable());
+      }
+    }
+    return result;
+  }
+
   void add(Instruction instruction) {
     instruction.setProgram(this);
     myInstructions.add(instruction);
