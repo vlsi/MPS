@@ -123,9 +123,9 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
             return false;
           }
         }
-        r.close();
       } catch (IOException e) {
         LOG.error(e);
+      } finally {
         r.close();
       }
     } catch (IOException e) {
