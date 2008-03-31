@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * @author fyodor
  */
-public interface IMapSequence<U, V, T extends IMapping<U, V>> extends ISequence<T>, Map<U, V> {
+public interface IMapSequence<U, V> extends ISequence<IMapping<U, V>>, Map<U, V> {
 
     Map<U, V> toMap();
 }

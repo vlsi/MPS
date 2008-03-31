@@ -13,26 +13,57 @@ import java.util.Set;
 /**
  * @author fyodor
  */
-public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSequence<U,V,IMapping<U,V>>, Map<U,V> {
+public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSequence<U,V>, Map<U,V> {
     
     private Map<U, V> map;
     
-    public static <P,Q> IMapSequence<P, Q, IMapping<P,Q>> fromMap (Map<P,Q> map) {
+    public static class MapSequenceInitializer<P,Q> {
+        
+        private final P[] keys;
+        private final IMapSequence<P, Q> mapSeq;
+        
+        private MapSequenceInitializer (IMapSequence<P, Q> mapSeq, P...keys) {
+            this.mapSeq = mapSeq;
+            this.keys = keys;
+        }
+        
+        public IMapSequence<P, Q> withValues (Q...values) {
+            for (int i=0; i<keys.length && i<values.length; i++) {
+                mapSeq.put (keys[i], values[i]);
+            }
+            return mapSeq;
+        }
+    }
+    
+    public static <P,Q> MapSequenceInitializer<P,Q> fromKeysArray (P...keys) {
+        Map<P, Q> map = new HashMap<P,Q> ();
+        return new MapSequenceInitializer<P,Q> (new MapSequence<P, Q> (map), keys);
+    }
+    
+    public static <P,Q> IMapSequence<P, Q> fromArray (IMapping<P,Q>...mappings) {
+        Map<P, Q> map = new HashMap<P,Q> (); 
+        for (IMapping<P, Q> mp : mappings) {
+            map.put(mp.key(), mp.value());
+        }
+        return new MapSequence<P, Q> (map);
+    }
+    
+    public static <P,Q> IMapSequence<P, Q> fromIterable (Iterable<IMapping<P, Q>> it) {
+        Map<P,Q> map = new HashMap<P, Q> ();
+        for (IMapping<P, Q> mpng: it) {
+            map.put(mpng.key(), mpng.value());
+        }
+        return new MapSequence<P, Q> (map);
+    }
+    
+    public static <P,Q> IMapSequence<P, Q> fromMap (Map<P,Q> map) {
         if (Sequence.RELAXED_NULL) {
             if (map == null) {
                 return new NullMapSequence<P, Q> ();
             }
         }
         if (map instanceof MapSequence) {
-            return (IMapSequence<P, Q, IMapping<P, Q>>) map;
-        }
-        return new MapSequence<P, Q> (map);
-    }
-    
-    public static <P,Q> IMapSequence<P, Q, IMapping<P,Q>> fromIterable (Iterable<IMapping<P, Q>> it) {
-        Map<P,Q> map = new HashMap<P, Q> ();
-        for (IMapping<P, Q> mpng: it) {
-            map.put(mpng.key(), mpng.value());
+            return (IMapSequence<P, Q>) map;
         }
         return new MapSequence<P, Q> (map);
     }
