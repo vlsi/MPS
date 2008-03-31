@@ -85,8 +85,9 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   public boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor, @NotNull Set<String> strings) {
     if (SModelRepository.getInstance().isChanged(modelDescriptor)) return true;
     if (modelDescriptor.getModelFile() == null || !modelDescriptor.getModelFile().exists()) return true;
+    BufferedReader r = null;
     try {
-      BufferedReader r = new BufferedReader(modelDescriptor.getModelFile().openReader());
+      r = new BufferedReader(modelDescriptor.getModelFile().openReader());
       String line;
       boolean result = false;
       while ((line = r.readLine()) != null) {
@@ -97,10 +98,17 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
           }
         }
       }
-      r.close();
       return result;
     } catch (IOException e) {
       LOG.error(e);
+    } finally {
+      if (r != null) {
+        try {
+          r.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
     }
     return true;
   }
@@ -113,23 +121,26 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     if (!modelFile.exists()) {
       return true;
     }
+    Reader reader = null;
     try {
-      Reader reader = modelFile.openReader();
+      reader = modelFile.openReader();
       BufferedReader r = new BufferedReader(reader);
-      try {
-        String line;
-        while ((line = r.readLine()) != null) {
-          if (line.contains("<node")) {
-            return false;
-          }
+      String line;
+      while ((line = r.readLine()) != null) {
+        if (line.contains("<node")) {
+          return false;
         }
-      } catch (IOException e) {
-        LOG.error(e);
-      } finally {
-        r.close();
       }
     } catch (IOException e) {
       LOG.error(e);
+    } finally {
+      if (reader != null) {
+        try {
+          reader.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
     }
     return true;
   }
@@ -159,8 +170,6 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       modelDescriptors.add(modelDescriptor);
     }
     for (IFile childDir : files) {
-      
-
       if (childDir.isDirectory()) {
         readModelDescriptors(modelDescriptors, childDir, modelRoot, owner);
       }
