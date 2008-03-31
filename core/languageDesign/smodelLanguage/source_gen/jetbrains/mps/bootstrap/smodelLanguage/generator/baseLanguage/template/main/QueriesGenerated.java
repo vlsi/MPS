@@ -539,6 +539,14 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1206991997681(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1206992455419(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getGenerator().getScope());
   }

@@ -1547,6 +1547,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1179350172619">
       <link role="conceptPropertyDeclaration" targetNodeId="1172326539502" resolveInfo="applicable_to_concept" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1206991868482">
+      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
+      <link role="target" targetNodeId="1144100932627" resolveInfo="OperationParm_Inclusion" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1179353368598">
       <link role="conceptLinkDeclaration" targetNodeId="1179351420610" resolveInfo="returnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1179353434194">
@@ -1634,6 +1638,10 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1180457472469">
       <link role="conceptPropertyDeclaration" targetNodeId="1172326539502" resolveInfo="applicable_to_concept" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1206993087993">
+      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
+      <link role="target" targetNodeId="1144100932627" resolveInfo="OperationParm_Inclusion" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1180457458950">
       <link role="conceptLinkDeclaration" targetNodeId="1179351420610" resolveInfo="returnType" />

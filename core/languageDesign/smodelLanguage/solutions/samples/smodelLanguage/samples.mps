@@ -4059,6 +4059,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206992723518">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206992723519">
+            <property name="name" value="supers_all_inclusive" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1206992723520">
+              <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1206992723521" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206992723522">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206992723523">
+                <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetAllSuperConcepts" id="1206992723524">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1206993758832" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1180542852385">
           <property name="value" value="direct supers" />
         </node>
@@ -4073,6 +4089,22 @@
                 <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetDirectSuperConcepts" id="1180457388178" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206993017954">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206993017955">
+            <property name="name" value="supers_direct_inclusive" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1206993017956">
+              <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1206993017957" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206993017958">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206993017959">
+                <link role="variableDeclaration" targetNodeId="1180457006292" resolveInfo="concept" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetDirectSuperConcepts" id="1206993017960">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1206993766038" />
+              </node>
             </node>
           </node>
         </node>

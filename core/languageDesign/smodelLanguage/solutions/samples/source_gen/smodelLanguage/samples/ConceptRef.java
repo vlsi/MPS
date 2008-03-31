@@ -67,9 +67,11 @@ public class ConceptRef {
     // concept and all its supers
     List<SNode> hierarchy = SConceptOperations.getConceptHierarchy(concept);
     // supers
-    List<SNode> supers_all = SConceptOperations.getAllSuperConcepts(concept);
+    List<SNode> supers_all = SConceptOperations.getAllSuperConcepts(concept, false);
+    List<SNode> supers_all_inclusive = SConceptOperations.getAllSuperConcepts(concept, true);
     // direct supers
-    List<SNode> supers_direct = SConceptOperations.getDirectSuperConcepts(concept);
+    List<SNode> supers_direct = SConceptOperations.getDirectSuperConcepts(concept, false);
+    List<SNode> supers_direct_inclusive = SConceptOperations.getDirectSuperConcepts(concept, true);
     // ======
     boolean yes1 = SConceptOperations.isSuperConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
     boolean yes2 = SConceptOperations.isSuperConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation")));
