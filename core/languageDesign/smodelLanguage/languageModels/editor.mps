@@ -8,8 +8,10 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -2179,15 +2181,10 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1179350233276">
     <property name="package" value="operation.concept" />
     <link role="conceptDeclaration" targetNodeId="1.1179350041460" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206993122322">
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206995074238">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206993122323">
-        <property name="editable" value="true" />
-        <property name="text" value="super-concepts/direct" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206993123715">
-        <property name="drawBorder" value="false" />
-        <link role="editorComponent" targetNodeId="1144105329976" resolveInfo="OperationParameters_Component" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206995074239">
+        <link role="editorComponent" targetNodeId="1206994531943" resolveInfo="ReplaceableAliasAndParms_Comp" />
       </node>
     </node>
   </node>
@@ -2301,15 +2298,10 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1180457501143">
     <property name="package" value="operation.concept" />
     <link role="conceptDeclaration" targetNodeId="1.1180457458947" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206993165013">
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206996255986">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206993165014">
-        <property name="editable" value="true" />
-        <property name="text" value="super-concepts/all" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206993166452">
-        <property name="drawBorder" value="false" />
-        <link role="editorComponent" targetNodeId="1144105329976" resolveInfo="OperationParameters_Component" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206996255987">
+        <link role="editorComponent" targetNodeId="1206994531943" resolveInfo="ReplaceableAliasAndParms_Comp" />
       </node>
     </node>
   </node>
@@ -2741,6 +2733,70 @@
         <property name="text" value=")" />
         <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.EditorComponentDeclaration" id="1206994531943">
+    <property name="name" value="ReplaceableAliasAndParms_Comp" />
+    <link role="conceptDeclaration" targetNodeId="1.1138411891628" resolveInfo="SNodeOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206995930398">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1206995930399">
+        <property name="fontStyle" value="BOLD" />
+        <property name="noTargetText" value="&lt;no alias&gt;" />
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1206995930400">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1206995930401">
+            <link role="replacementConcept" targetNodeId="1.1138411891628" resolveInfo="SNodeOperation" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1206995959902">
+        <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
+        <property name="drawBorder" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206995959903">
+          <property name="textFgColor" value="lightGray" />
+          <property name="text" value="&lt;" />
+          <property name="fontStyle" value="BOLD" />
+          <property name="selectable" value="false" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1206995959904">
+          <property name="separatorText" value="," />
+          <property name="vertical" value="false" />
+          <property name="drawBorder" value="false" />
+          <link role="relationDeclaration" targetNodeId="1.1144104376918" />
+          <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206995959905">
+            <property name="editable" value="true" />
+            <property name="textFgColor" value="lightGray" />
+            <property name="text" value="no params" />
+            <property name="fontStyle" value="ITALIC" />
+            <property name="drawBorder" value="false" />
+            <property name="defaultCaretPosition" value="FIRST" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206995959906">
+          <property name="textFgColor" value="lightGray" />
+          <property name="text" value="&gt;" />
+          <property name="fontStyle" value="BOLD" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1206995967611">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206995967612">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206995979662">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206995987105">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206995980602">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1206995979663" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1206995983135">
+                    <link role="link" targetNodeId="1.1144104376918" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1206995990044" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

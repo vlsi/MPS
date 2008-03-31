@@ -4,14 +4,14 @@ package jetbrains.mps.bootstrap.smodelLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -25,6 +25,10 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myReplaceableAlias_Comp5;
+
+  public static boolean _QueryFunction_NodeCondition_1206734683127(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "conceptDeclaration", false) != null;
+  }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172326619308");
@@ -80,10 +84,6 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.red);
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1206734683127(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "conceptDeclaration", false) != null;
   }
 
 

@@ -784,7 +784,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179536582886">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1179536584831">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1179536584832">
-                  <property name="value" value="add operation parameters" />
+                  <property name="value" value="add operation parameter(s)" />
                 </node>
               </node>
             </node>

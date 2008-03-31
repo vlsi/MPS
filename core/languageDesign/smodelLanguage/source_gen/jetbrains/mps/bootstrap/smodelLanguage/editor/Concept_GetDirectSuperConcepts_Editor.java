@@ -7,29 +7,18 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Concept_GetDirectSuperConcepts_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myOperationParameters_Component7;
+  /* package */AbstractCellProvider myReplaceableAliasAndParms_Comp;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206993122322");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206995074238");
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206993122323");
-  }
-
-  private static void setupBasic_OperationParameters_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206993123715");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
+  private static void setupBasic_ReplaceableAliasAndParms_CompCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206995074239");
   }
 
 
@@ -43,25 +32,16 @@ public class Concept_GetDirectSuperConcepts_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "super-concepts/direct"));
-    editorCell.addEditorCell(this.createOperationParameters_ComponentCell(context, node));
+    editorCell.addEditorCell(this.createReplaceableAliasAndParms_CompCell(context, node));
     return editorCell;
   }
 
-  public EditorCell createOperationParameters_ComponentCell(EditorContext context, SNode node) {
-    if (this.myOperationParameters_Component7 == null) {
-      this.myOperationParameters_Component7 = new OperationParameters_Component(node);
+  public EditorCell createReplaceableAliasAndParms_CompCell(EditorContext context, SNode node) {
+    if (this.myReplaceableAliasAndParms_Comp == null) {
+      this.myReplaceableAliasAndParms_Comp = new ReplaceableAliasAndParms_Comp(node);
     }
-    EditorCell editorCell = this.myOperationParameters_Component7.createEditorCell(context);
-    Concept_GetDirectSuperConcepts_Editor.setupBasic_OperationParameters_ComponentCell(editorCell, node, context);
-    return editorCell;
-  }
-
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    Concept_GetDirectSuperConcepts_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    Concept_GetDirectSuperConcepts_Editor.setupLabel_ConstantCell(editorCell, node, context);
-    editorCell.setDefaultText("");
+    EditorCell editorCell = this.myReplaceableAliasAndParms_Comp.createEditorCell(context);
+    Concept_GetDirectSuperConcepts_Editor.setupBasic_ReplaceableAliasAndParms_CompCell(editorCell, node, context);
     return editorCell;
   }
 
