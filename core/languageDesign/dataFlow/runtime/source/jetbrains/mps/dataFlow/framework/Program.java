@@ -3,6 +3,7 @@ package jetbrains.mps.dataFlow.framework;
 
 import jetbrains.mps.dataFlow.framework.instructions.*;
 import jetbrains.mps.dataFlow.framework.analyzers.ReachabilityAnalyzer;
+import jetbrains.mps.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -113,6 +114,21 @@ public class Program {
       for (ProgramState pred : endWithoutReturn.pred()) {
         if (analysisResult.getStateMap().get(pred)) {
           result.add(pred.instruction());
+        }
+      }
+    }
+    return result;
+  }
+
+  public Set<ReadInstruction> getUninitializedReads() {
+    AnalysisResult<Set<Object>> analysisResult = analyze(new InitializedVariablesAnalyzer());
+    Set<ReadInstruction> result = new HashSet<ReadInstruction>();
+    for (Instruction i : myInstructions) {
+      if (i instanceof ReadInstruction) {
+        ReadInstruction read = (ReadInstruction) i;
+        Set<Object> initializedVars = analysisResult.getInstructionMap().get(read);
+        if (!initializedVars.contains(read.getVariable())) {
+          result.add(read);
         }
       }
     }

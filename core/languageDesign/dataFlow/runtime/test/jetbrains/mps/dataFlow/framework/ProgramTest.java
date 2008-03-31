@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.Assert;
 import jetbrains.mps.dataFlow.framework.SimpleProgramBuilder;
 import jetbrains.mps.dataFlow.framework.Program;
+import jetbrains.mps.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.dataFlow.framework.analyzers.ReachabilityAnalyzer;
 
 import java.util.Collections;
@@ -118,5 +119,17 @@ public class ProgramTest {
       .buildProgram();
 
     Assert.assertTrue(program.getExpectedReturns().isEmpty());
-  } 
+  }
+
+  @Test
+  public void unitializedRaeds() {
+    Program program = new SimpleProgramBuilder()
+      .emitRead("x")
+      .buildProgram();
+
+    Assert.assertEquals(
+      Collections.singleton((ReadInstruction) program.get(0)),
+      program.getUninitializedReads()
+    );
+  }
 }
