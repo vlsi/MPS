@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.constraints.StatementList_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import jetbrains.mps.dataFlow.DataFlow;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule implements NonTypesystemRule_Runtime {
@@ -20,16 +17,7 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
   public void applyRule(final SNode nodeToCheck) {
     StatementList_Behavior.call_checkDataFlow_1206985459773(SLinkOperations.getTarget(nodeToCheck, "body", true));
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(SNodeOperations.isInstanceOf(nodeToCheck, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
-      Set<SNode> expectedReturns = DataFlow.getExpectedReturns(SLinkOperations.getTarget(nodeToCheck, "body", true));
-      for(SNode n : expectedReturns) {
-        SNode statement = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.Statement", true, false);
-        if (statement != null) {
-          TypeChecker.getInstance().reportTypeError(statement, "Return expected", "jetbrains.mps.baseLanguage.helgins", "1206464291934");
-        } else
-        {
-          TypeChecker.getInstance().reportTypeError(n, "Return expected", "jetbrains.mps.baseLanguage.helgins", "1206464542173");
-        }
-      }
+      StatementList_Behavior.call_checkReturns_1206989696423(SLinkOperations.getTarget(nodeToCheck, "body", true));
     }
   }
 

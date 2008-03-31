@@ -1005,6 +1005,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1068581242863" resolveInfo="LocalVariableDeclaration" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1206987156908">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206987156909">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitNopStatement" id="1206990208534" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206987165525">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206987168157">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206987166544">
