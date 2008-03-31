@@ -10,6 +10,7 @@ import java.util.Set;
 import jetbrains.mps.dataFlow.DataFlow;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.constraints.StatementList_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptFunction_NonTypesystemRule implements NonTypesystemRule_Runtime {
@@ -24,10 +25,7 @@ public class check_ConceptFunction_NonTypesystemRule implements NonTypesystemRul
         TypeChecker.getInstance().reportTypeError(expectedReturn, "Return expected", "jetbrains.mps.baseLanguage.helgins", "1206984321887");
       }
     }
-    Set<SNode> unreachableNodes = DataFlow.getUnreachableNodes(SLinkOperations.getTarget(nodeToCheck, "body", true));
-    for(SNode unreachable : unreachableNodes) {
-      TypeChecker.getInstance().reportTypeError(unreachable, "Unreachable node", "jetbrains.mps.baseLanguage.helgins", "1206984356560");
-    }
+    StatementList_Behavior.call_checkDataFlow_1206985459773(SLinkOperations.getTarget(nodeToCheck, "body", true));
   }
 
   public String getApplicableConceptFQName() {

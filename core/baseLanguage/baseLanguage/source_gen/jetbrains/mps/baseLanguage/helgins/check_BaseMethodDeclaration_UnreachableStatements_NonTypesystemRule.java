@@ -4,11 +4,12 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.constraints.StatementList_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.dataFlow.DataFlow;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule implements NonTypesystemRule_Runtime {
@@ -17,10 +18,7 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    Set<SNode> unreachable = DataFlow.getUnreachableNodes(SLinkOperations.getTarget(nodeToCheck, "body", true));
-    for(SNode n : unreachable) {
-      TypeChecker.getInstance().reportTypeError(n, "Unreachable node", "jetbrains.mps.baseLanguage.helgins", "1206464217913");
-    }
+    StatementList_Behavior.call_checkDataFlow_1206985459773(SLinkOperations.getTarget(nodeToCheck, "body", true));
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(SNodeOperations.isInstanceOf(nodeToCheck, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
       Set<SNode> expectedReturns = DataFlow.getExpectedReturns(SLinkOperations.getTarget(nodeToCheck, "body", true));
       for(SNode n : expectedReturns) {

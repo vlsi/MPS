@@ -17,7 +17,7 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.quotation" />
-  <maxImportIndex value="42" />
+  <maxImportIndex value="43" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
@@ -37,6 +37,7 @@
   <import index="37" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="41" modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
   <import index="42" modelUID="jetbrains.mps.cfg@java_stub" version="-1" />
+  <import index="43" modelUID="jetbrains.mps.dataFlow@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1156246260769">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1156246279317">
@@ -7136,6 +7137,47 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1197462236379">
     <link role="concept" targetNodeId="1.1068580123136" resolveInfo="StatementList" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1206985459773">
+      <property name="name" value="checkDataFlow" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206985510662" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206985459775">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206985610296">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206985610297">
+            <property name="name" value="unreachable" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206985610298">
+              <link role="classifier" targetNodeId="6.~Set" resolveInfo="Set" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206985610299">
+                <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206985610300">
+              <link role="baseMethodDeclaration" targetNodeId="43.~DataFlow.getUnreachableNodes(jetbrains.mps.smodel.SNode):java.util.Set" resolveInfo="getUnreachableNodes" />
+              <link role="classConcept" targetNodeId="43.~DataFlow" resolveInfo="DataFlow" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1206985617719" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1206985610304">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206985610305">
+            <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.ReportErrorStatement" id="1206985610306">
+              <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206985610307">
+                <property name="value" value="Unreachable node" />
+              </node>
+              <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206985610308">
+                <link role="variableDeclaration" targetNodeId="1206985610310" resolveInfo="n" />
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206985610309">
+            <link role="variableDeclaration" targetNodeId="1206985610297" resolveInfo="unreachable" />
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206985610310">
+            <property name="name" value="n" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206985610311" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197462236380">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197462236381" />
     </node>
