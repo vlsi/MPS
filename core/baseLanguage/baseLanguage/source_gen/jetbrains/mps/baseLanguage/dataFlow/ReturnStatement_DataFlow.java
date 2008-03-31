@@ -6,8 +6,6 @@ import jetbrains.mps.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.constraints.ReturnStatement_Behavior;
 
 public class ReturnStatement_DataFlow extends DataFlowBuilder {
 
@@ -16,9 +14,6 @@ public class ReturnStatement_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "expression", true));
-    for(SNode finallyBlock : ReturnStatement_Behavior.call_getFinallyBlocks_1206626417012(_context.getNode())) {
-      _context.getBuilder().build(finallyBlock);
-    }
     _context.getBuilder().emitRet();
   }
 

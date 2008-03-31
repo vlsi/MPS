@@ -53,7 +53,14 @@
                   </node>
                 </node>
               </node>
-              <node role="finallyBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206961972380" />
+              <node role="finallyBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206961972380">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206966953043">
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206966956015">
+                    <property name="value" value="true" />
+                  </node>
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206966953045" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
