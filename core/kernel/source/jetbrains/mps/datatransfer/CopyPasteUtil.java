@@ -262,16 +262,16 @@ public class CopyPasteUtil {
         LOG.error("Exception", e);
       }
     } else if (content.isDataFlavorSupported(SModelDataFlavor.stringFlavor)
-            && canReceiveText(model)) {// string -> text lang nodes
+      && canReceiveText(model)) {// string -> text lang nodes
       String s = TextPasteUtil.getStringFromTransferable(content);
       if (s == null || s.length() <= 0) return PasteNodeData.emptyPasteNodeData(model);
       @Hack List<SNode> nodes = Parser.parse(s, model, "jetbrains.mpswiki");
       if (nodes == null) return PasteNodeData.emptyPasteNodeData(model);
       return new PasteNodeData(nodes,
-              new HashSet<SReference>(), model,
-              new HashSet<String>(),
-              new HashSet<SModelUID>(),
-              new HashSet<String>());
+        new HashSet<SReference>(), model,
+        new HashSet<String>(),
+        new HashSet<SModelUID>(),
+        new HashSet<String>());
     }
 
     return PasteNodeData.emptyPasteNodeData(model);
@@ -295,7 +295,7 @@ public class CopyPasteUtil {
 
 
     for (SModelUID modelUID : importsFromPattern) {
-      if (!(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID)))
+      if (modelUID != null && !(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID)))
         additionalModels.add(modelUID);
     }
     for (String devKit : devKitsFromPattern) {
@@ -314,11 +314,11 @@ public class CopyPasteUtil {
 
     if ((!additionalModels.isEmpty()) || (!additionalLanguages.isEmpty())) {
       AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getMainFrame(), targetModel,
-              additionalModels,
-              additionalLanguages,
-              additionalDevKits,
-              necessaryImports,
-              necessaryLanguages);
+        additionalModels,
+        additionalLanguages,
+        additionalDevKits,
+        necessaryImports,
+        necessaryLanguages);
       dialog.setModal(true);
       dialog.showDialog();
       return (!dialog.isCanceled());
@@ -355,6 +355,6 @@ public class CopyPasteUtil {
   @Hack
   public static boolean canReceiveText(SModel model) {
     return (model.getLanguageNamespaces(GlobalScope.getInstance()).contains("jetbrains.textLanguage")
-            || model.getLanguageNamespaces(GlobalScope.getInstance()).contains("jetbrains.mpswiki"));
+      || model.getLanguageNamespaces(GlobalScope.getInstance()).contains("jetbrains.mpswiki"));
   }
 }
