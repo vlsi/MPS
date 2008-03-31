@@ -518,6 +518,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void showMessageTooltip() {
     try {
       //todo this is a hack but I don't know other way to show tooltip programatically
+      //probably we should create our own tooltip facility instead
       EditorCell cell = getSelectedCell();
       if (cell == null) {
         return;
@@ -533,6 +534,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         this,
         Event.MOUSE_MOVE, 0, 0,
         cell.getX(), cell.getY(), 0, false));
+    } catch (Exception e) {
+      LOG.error(e);
+    }
+  }
+
+  public void hideMessageToolTip() {
+    try {
+      //todo this is a hack but I don't know other way to show tooltip programatically
+      ToolTipManager toolTipManager = ToolTipManager.sharedInstance();
+      toolTipManager.mousePressed(new MouseEvent(
+        this,
+        Event.MOUSE_MOVE, 0, 0,
+        0, 0, 0, false));
     } catch (Exception e) {
       LOG.error(e);
     }

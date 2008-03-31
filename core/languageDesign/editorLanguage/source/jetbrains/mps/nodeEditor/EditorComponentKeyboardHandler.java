@@ -22,7 +22,10 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   }
 
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
+    editorContext.getNodeEditorComponent().hideMessageToolTip();
+    
     if (keyEvent.isConsumed()) return false;
+
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     SNodePointer pointer = editor.getRootCell().getSNodePointer();
     boolean notEditable = pointer != null && pointer.getModel().isNotEditable();
