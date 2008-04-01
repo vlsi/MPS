@@ -238,13 +238,13 @@ public class EquationManager {
     if (subtypeRepresentator instanceof NodeWrapper) {
       NodeWrapper subtypeNodeWrapper = (NodeWrapper) subtypeRepresentator;
       SModel typesModel = myTypeChecker.getRuntimeTypesModel();
-      NodeWrapper representatorCopy = NodeWrapper.fromNode(CopyUtil.copy(subtypeNodeWrapper.getNode(), typesModel), this);
+      NodeWrapper representatorCopy = NodeWrapper.fromNode(CopyUtil.copy(subtypeNodeWrapper.getNode()), this);
       subtypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
     }
     if (supertypeRepresentator instanceof NodeWrapper) {
       NodeWrapper supertypeNodeWrapper = (NodeWrapper) supertypeRepresentator;
       SModel typesModel = myTypeChecker.getRuntimeTypesModel();
-      NodeWrapper representatorCopy = NodeWrapper.fromNode(CopyUtil.copy(supertypeNodeWrapper.getNode(), typesModel), this);
+      NodeWrapper representatorCopy = NodeWrapper.fromNode(CopyUtil.copy(supertypeNodeWrapper.getNode()), this);
       supertypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
     }
 
@@ -1007,7 +1007,7 @@ public class EquationManager {
       MeetType meetType = MeetType.newInstance(typesModel);
       for (IWrapper wrapper : meetWrapper.getArguments()) {
         BaseConcept argument = (BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
-        meetType.addArgument(CopyUtil.copy(argument, meetType.getModel()));
+        meetType.addArgument(CopyUtil.copy(argument));
       }
       return NodeWrapper.createNodeWrapper(meetType.getNode(), this);
     }
@@ -1016,7 +1016,7 @@ public class EquationManager {
       JoinType joinType = JoinType.newInstance(typesModel);
       for (IWrapper wrapper : joinWrapper.getArguments()) {
         BaseConcept argument = (BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
-        joinType.addArgument(CopyUtil.copy(argument, joinType.getModel()));
+        joinType.addArgument(CopyUtil.copy(argument));
       }
       return NodeWrapper.createNodeWrapper(joinType.getNode(), this);
     }
@@ -1075,7 +1075,7 @@ public class EquationManager {
       String roleInParent = child.getRole_();
       assert roleInParent != null;
       SNode childReplacement = childrenReplacement.get(child);
-      childReplacement = CopyUtil.copy(childReplacement, parent.getModel());
+      childReplacement = CopyUtil.copy(childReplacement);
       parent.replaceChild(child, childReplacement);
       //parent.addChild(roleInParent, childReplacement);
     }
