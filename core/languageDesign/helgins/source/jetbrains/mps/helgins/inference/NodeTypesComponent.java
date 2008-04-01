@@ -508,10 +508,10 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
     return myEquationManager;
   }
 
-  public Set<Pair<SNode, String>> getNodesWithErrorStrings() {
-    return CollectionUtil.map(myNodesToErrorsMap.keySet(), new Mapper<SNode, Pair<SNode, String>>() {
-      public Pair<SNode, String> map(SNode sNode) {
-        return new Pair<SNode, String>(sNode, myNodesToErrorsMap.get(sNode).reportError());
+  public Set<Pair<SNode, IErrorReporter>> getNodesWithErrorStrings() {
+    return CollectionUtil.map(myNodesToErrorsMap.keySet(), new Mapper<SNode, Pair<SNode, IErrorReporter>>() {
+      public Pair<SNode, IErrorReporter> map(SNode sNode) {
+        return new Pair<SNode, IErrorReporter>(sNode, myNodesToErrorsMap.get(sNode));
       }
     });
   }

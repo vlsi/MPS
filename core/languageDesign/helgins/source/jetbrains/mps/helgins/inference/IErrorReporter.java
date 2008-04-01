@@ -11,4 +11,5 @@ public interface IErrorReporter {
   public String reportError();
   public String getRuleId();
   public String getRuleModel();
+  public boolean isWarning();
 }

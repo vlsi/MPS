@@ -11,11 +11,17 @@ public class SimpleErrorReporter implements IErrorReporter {
   private String myErrorString;
   private String myRuleModel;
   private String myRuleId;
+  private boolean myIsWarning = false;
 
   public SimpleErrorReporter(String s, String ruleModel, String ruleId) {
     myErrorString = s;
     myRuleModel = ruleModel;
     myRuleId = ruleId;
+  }
+
+  public SimpleErrorReporter(String s, String ruleModel, String ruleId, boolean isWarning) {
+    this(s, ruleModel, ruleId);
+    myIsWarning = isWarning;
   }
 
   public String reportError() {
@@ -28,5 +34,9 @@ public class SimpleErrorReporter implements IErrorReporter {
 
   public String getRuleModel() {
     return myRuleModel;
+  }
+
+  public boolean isWarning() {
+    return myIsWarning;
   }
 }

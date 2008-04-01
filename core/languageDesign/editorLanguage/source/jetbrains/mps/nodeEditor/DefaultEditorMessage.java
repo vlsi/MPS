@@ -19,6 +19,7 @@ public class DefaultEditorMessage implements IEditorMessage {
   private IEditorMessageOwner myOwner;
   private IEditorComponent myEditor;
   private SNodePointer myNodePointer;
+  private MessageStatus myStatus = MessageStatus.OK;
 
 
   public DefaultEditorMessage(SNode node, Color color, String message, IEditorMessageOwner owner, IEditorComponent editor) {
@@ -27,6 +28,11 @@ public class DefaultEditorMessage implements IEditorMessage {
     myColor = color;
     myMessage = message;
     myOwner = owner;
+  }
+
+  public DefaultEditorMessage(SNode node, MessageStatus status, Color color, String message, IEditorMessageOwner owner, IEditorComponent editor) {
+    this(node, color, message, owner, editor);
+    myStatus = status;
   }
 
   public String getMessage() {
@@ -55,6 +61,10 @@ public class DefaultEditorMessage implements IEditorMessage {
 
   public void doNavigate() {
     myEditor.changeSelection(getCell());
+  }
+
+  public MessageStatus getStatus() {
+    return myStatus;
   }
 
   public EditorCell getCell() {

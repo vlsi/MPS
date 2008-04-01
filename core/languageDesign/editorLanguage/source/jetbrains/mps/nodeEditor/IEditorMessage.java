@@ -12,6 +12,8 @@ public interface IEditorMessage {
 
   boolean isValid();
 
+  MessageStatus getStatus();
+
   Color getColor();
 
   IEditorMessageOwner getOwner();

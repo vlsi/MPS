@@ -146,6 +146,10 @@ public class TypeChecker {
     reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId));
   }
 
+  public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
+    reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId, true));
+  }
+
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
     myCurrentTypesComponent.reportTypeError(nodeWithError, errorReporter);
     myCurrentTypesComponent.addDependcyOnCurrent(nodeWithError);

@@ -18,6 +18,7 @@ import java.util.HashMap;
  */
 public class NodeTypesComponentsRepository {
   private Map<SNode, NodeTypesComponent> myNodesToComponents = new HashMap<SNode, NodeTypesComponent>();
+  private Set<TypesComponentRepositoryListener> myListeners = new HashSet<TypesComponentRepositoryListener>();
   private TypeChecker myTypeChecker;
   private SModelRepositoryAdapter myModelRepositoryListener = new SModelRepositoryAdapter() {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
@@ -26,6 +27,7 @@ public class NodeTypesComponentsRepository {
         if (nodeTypesComponent.getNode().getModel().getUID().equals(modelDescriptor.getModelUID())) {
           nodeTypesComponent.clearListeners();
           myNodesToComponents.remove(nodeTypesComponent.getNode());
+          fireComponentRemoved(nodeTypesComponent);
         }
       }
     }
@@ -68,7 +70,12 @@ public class NodeTypesComponentsRepository {
     for (final NodeTypesComponent nodeTypesComponent : myNodesToComponents.values()) {
       nodeTypesComponent.clearListeners();
     }
-    myNodesToComponents.clear();
+    for (SNode node : new HashSet<SNode>(myNodesToComponents.keySet())) {
+      NodeTypesComponent typesComponent = myNodesToComponents.remove(node);
+      if (typesComponent != null) {
+        fireComponentRemoved(typesComponent);
+      }
+    }
   }
 
   public NodeTypesComponent swapTypesComponentForRoot(SNode containingRoot, NodeTypesComponent newComponent) {
@@ -76,4 +83,20 @@ public class NodeTypesComponentsRepository {
     assert containingRoot == newComponent.getNode();
     return myNodesToComponents.put(containingRoot, newComponent);
   }
+
+  private void fireComponentRemoved(NodeTypesComponent component) {
+    for (TypesComponentRepositoryListener listener : myListeners) {
+      listener.typesComponentRemoved(component);
+    }
+  }
+
+  public void addTypesComponentListener(TypesComponentRepositoryListener listener) {
+    myListeners.add(listener);
+  }
+
+  public void removeTypesComponentListener(TypesComponentRepositoryListener listener) {
+    myListeners.remove(listener);
+  }
+
+
 }

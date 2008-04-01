@@ -2,6 +2,9 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.nodeEditor.icons.Icons;
+import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.helgins.inference.TypesComponentRepositoryListener;
+import jetbrains.mps.helgins.inference.NodeTypesComponent;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,10 +14,8 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Kostik
@@ -24,6 +25,8 @@ public class MessagesGutter extends JPanel {
   private JLabel myErrosLabel = new JLabel(Icons.OK);
   private List<IEditorMessage> myMessages = new ArrayList<IEditorMessage>();
   private Map<IEditorMessage, IEditorMessageOwner> myOwners = new HashMap<IEditorMessage, IEditorMessageOwner>();
+  private boolean myStatusIsDirty = false;
+  private Set<IEditorMessage> myMessagesToRemove = new HashSet<IEditorMessage>();
 
   public MessagesGutter(AbstractEditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -32,16 +35,48 @@ public class MessagesGutter extends JPanel {
 
     add(myErrosLabel, BorderLayout.NORTH);
     add(new MyMessagesGutter(), BorderLayout.CENTER);
+    NodeTypesComponentsRepository.getInstance().addTypesComponentListener(new TypesComponentRepositoryListener() {
+      public void typesComponentRemoved(NodeTypesComponent component) {
+        removeMessages(component);
+      }
+    });
   }
 
   public AbstractEditorComponent getEditorComponent() {
     return myEditorComponent;
   }
 
-  public void setStatus(Status status) {
+  private void validateStatus() {
+    GutterStatus status = GutterStatus.OK;
+    for (IEditorMessage message : myMessages) {
+      if (message.getStatus() == MessageStatus.WARNING) {
+        status = GutterStatus.WARNING;
+      }
+      if (message.getStatus() == MessageStatus.ERROR) {
+        status = GutterStatus.ERROR;
+        break;
+      }
+    }
+    setStatus(status);
+    myStatusIsDirty = false;
+  }
+
+  private void removeLater(Set<IEditorMessage> messages) {
+    myMessagesToRemove.addAll(messages);
+    invalidateStatus();
+  }
+
+  private void invalidateStatus() {
+    myStatusIsDirty = true;
+  }
+
+  public void setStatus(GutterStatus status) {
     switch (status) {
       case OK:
         myErrosLabel.setIcon(Icons.OK);
+        break;
+      case WARNING:
+        myErrosLabel.setIcon(Icons.WARNINGS);
         break;
       case ERROR:
         myErrosLabel.setIcon(Icons.ERRORS);
@@ -55,15 +90,25 @@ public class MessagesGutter extends JPanel {
   public void add(IEditorMessage message) {
     myMessages.add(message);
     myOwners.put(message, message.getOwner());
+    validateStatus();
   }
 
   public void remove(IEditorMessage message) {
     myMessages.remove(message);
     myOwners.remove(message);
+    validateStatus();
+  }
+
+  public void removeBadMessages() {
+    if (myStatusIsDirty) {
+      myMessages.removeAll(myMessagesToRemove);
+      myMessagesToRemove.clear();
+      validateStatus();
+    }
   }
 
   public boolean removeMessages(IEditorMessageOwner owner) {
-    boolean removedAnything = false;
+   boolean removedAnything = false;
     for (IEditorMessage m : new ArrayList<IEditorMessage>(myMessages)) {
       if (myOwners.get(m) == owner) {
         myMessages.remove(m);
@@ -71,6 +116,7 @@ public class MessagesGutter extends JPanel {
         removedAnything = true;
       }
     }
+    validateStatus();
     return removedAnything;
   }
 
@@ -101,9 +147,10 @@ public class MessagesGutter extends JPanel {
     }
 
     protected void paintComponent(Graphics graphics) {
+      removeBadMessages();
       super.paintComponent(graphics);
       Graphics2D g = (Graphics2D) graphics;
-      List<IEditorMessage> messagesToRemove = new ArrayList<IEditorMessage>();
+      Set<IEditorMessage> messagesToRemove = new HashSet<IEditorMessage>();
       for (IEditorMessage msg : myMessages) {
         if (!msg.isValid()) {
           continue;
@@ -119,7 +166,7 @@ public class MessagesGutter extends JPanel {
         g.setColor(msg.getColor());
         g.fillRect(0, messageY - 1, getWidth() - 2, 2);
       }
-      myMessages.removeAll(messagesToRemove);
+      removeLater(messagesToRemove);
     }
 
     private int getMessageHeight(IEditorMessage msg) {
@@ -150,7 +197,7 @@ public class MessagesGutter extends JPanel {
 
     private List<IEditorMessage> getMessagesAt(int y) {
       List<IEditorMessage> result = new ArrayList<IEditorMessage>();
-      List<IEditorMessage> messagesToRemove = new ArrayList<IEditorMessage>();
+      Set<IEditorMessage> messagesToRemove = new HashSet<IEditorMessage>();
       for (IEditorMessage msg : myMessages) {
         if (!msg.isValid()) continue;
         int start = getMessageStart(msg);
@@ -159,7 +206,7 @@ public class MessagesGutter extends JPanel {
           result.add(msg);
         }
       }
-      myMessages.removeAll(messagesToRemove);
+      removeLater(messagesToRemove);
       return result;
     }
 
@@ -169,8 +216,9 @@ public class MessagesGutter extends JPanel {
   }
 
 
-  public enum Status {
+  public enum GutterStatus {
     OK,
+    WARNING,
     ERROR,
     IN_PROGRESS
   }

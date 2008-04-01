@@ -2262,5 +2262,34 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1207055586167">
+    <link role="conceptDeclaration" targetNodeId="1.1207055528241" resolveInfo="WarningStatement" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1207055587763">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207055587764">
+        <property name="textFgColor" value="DARK_GREEN" />
+        <property name="drawBorder" value="false" />
+        <property name="text" value="WARNING" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1207055587765">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;error string&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1207055552304" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207055587766">
+        <property name="text" value="-&gt;" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1207055587767">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;node to highlight&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1207055552305" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207055587768">
+        <property name="text" value=";" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 

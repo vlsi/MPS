@@ -19,6 +19,7 @@ public class EquationErrorReporter implements IErrorReporter {
   private IWrapper myWrapper2;
   private String myRuleId;
   private String myRuleModel;
+  private boolean myIsWarning = false;
 
   public EquationErrorReporter(EquationManager equationManager, String before,
                                IWrapper wrapper1, String between, IWrapper wrapper2, String after, String ruleModel, String ruleId) {
@@ -30,6 +31,12 @@ public class EquationErrorReporter implements IErrorReporter {
     myWrapper2 = wrapper2;
     myRuleId = ruleId;
     myRuleModel = ruleModel;
+  }
+
+  public EquationErrorReporter(EquationManager equationManager, String before,
+                               IWrapper wrapper1, String between, IWrapper wrapper2, String after, String ruleModel, String ruleId, boolean isWarning) {
+    this(equationManager, before, wrapper1, between, wrapper2, after, ruleModel, ruleId);
+    myIsWarning = isWarning;
   }
 
 
@@ -52,5 +59,9 @@ public class EquationErrorReporter implements IErrorReporter {
 
   public String getRuleModel() {
     return myRuleModel;
+  }
+
+  public boolean isWarning() {
+    return myIsWarning;
   }
 }
