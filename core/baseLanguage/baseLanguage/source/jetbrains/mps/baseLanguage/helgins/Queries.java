@@ -99,7 +99,7 @@ public class Queries {
     List<TypeVariableDeclaration> declarations = cls.getTypeVariableDeclarations();
     List<Type> typeParameters = subType.getParameters();
     SModel model = TypeChecker.getInstance().getRuntimeTypesModel();
-    ClassifierType result = CopyUtil.copy(declaredSupertype, model);
+    ClassifierType result = CopyUtil.copy(declaredSupertype);
     for (Type t : result.getParameters()) {
       if (t instanceof TypeVariableReference) {
         TypeVariableReference ref = (TypeVariableReference) t;
@@ -109,7 +109,7 @@ public class Queries {
           newT = typeParameters.get(i);
         }
         if (newT != null) {
-          newT = CopyUtil.copy(newT, model);
+          newT = CopyUtil.copy(newT);
           result.replaceChild(t, newT);
         } else {
           result.removeChild(t);

@@ -23,25 +23,6 @@ public final class CopyUtil {
     return result;
   }
 
-  /*
-    public static List<SNode> copyAndPreserveId(List<SNode> nodes, SModel targetModel) {
-      HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-      List<SNode> result = clone(nodes, mapping);
-      for (SNode sourceNode : mapping.keySet()) {
-        mapping.get(sourceNode).setId(sourceNode.getSNodeId());
-      }
-      addReferences(nodes, mapping, true);
-      return result;
-    }
-
-  */
-
-  @Deprecated
-  // copy(BA) should be used
-  public static <BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {
-    return (BA) copy(node.getNode()).getAdapter();
-  }
-
   public static <BA extends BaseAdapter> BA copy(BA node) {
     return (BA) copy(node.getNode()).getAdapter();
   }
