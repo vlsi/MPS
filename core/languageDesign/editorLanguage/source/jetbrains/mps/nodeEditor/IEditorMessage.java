@@ -21,4 +21,6 @@ public interface IEditorMessage {
   EditorCell getCell();
 
   void paint(Graphics g);
+
+  boolean isBackGround();
 }

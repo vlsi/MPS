@@ -89,4 +89,8 @@ public class DefaultEditorMessage implements IEditorMessage {
     g.setColor(color);
     g.fillRect(x, y, width - 1, height - 1);
   }
+
+  public boolean isBackGround() {
+    return false;
+  }
 }
