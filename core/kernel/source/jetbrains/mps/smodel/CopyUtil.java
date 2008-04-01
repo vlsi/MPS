@@ -46,12 +46,6 @@ public final class CopyUtil {
     return (BA) copy(node.getNode()).getAdapter();
   }
 
-  @Deprecated
-  // copy(SNode) should be used
-  public static SNode copy(SNode node, SModel targetModel) {
-    return copy(node);
-  }
-
   public static SNode copy(SNode node) {
     return copy(node, new HashMap<SNode, SNode>(), true);
   }
