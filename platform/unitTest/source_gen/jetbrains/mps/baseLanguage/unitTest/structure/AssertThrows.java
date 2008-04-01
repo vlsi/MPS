@@ -11,12 +11,12 @@ import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class AssertThrows extends Statement implements MessageHolder {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String STATEMENT = "statement";
   public static String EXCEPTION_TYPE = "exceptionType";
   public static String MESSAGE = "message";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  AssertThrows(SNode node) {
     super(node);
@@ -30,30 +30,6 @@ public class AssertThrows extends Statement implements MessageHolder {
     return AssertThrows.newInstance(sm, false);
   }
 
-
-  public String getShortDescription() {
-    return this.getProperty(AssertThrows.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(AssertThrows.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(AssertThrows.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(AssertThrows.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(AssertThrows.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(AssertThrows.VIRTUAL_PACKAGE, value);
-  }
 
   public Statement getStatement() {
     return (Statement)this.getChild(AssertThrows.STATEMENT);
@@ -77,6 +53,30 @@ public class AssertThrows extends Statement implements MessageHolder {
 
   public void setMessage(Message node) {
     super.setChild(AssertThrows.MESSAGE, node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(AssertThrows.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(AssertThrows.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(AssertThrows.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(AssertThrows.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(AssertThrows.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(AssertThrows.VIRTUAL_PACKAGE, value);
   }
 
 }

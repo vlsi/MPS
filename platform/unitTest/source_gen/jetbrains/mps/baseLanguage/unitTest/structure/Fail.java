@@ -10,10 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Fail extends Statement implements MessageHolder {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.Fail";
+  public static String MESSAGE = "message";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String MESSAGE = "message";
 
   public  Fail(SNode node) {
     super(node);
@@ -27,6 +27,14 @@ public class Fail extends Statement implements MessageHolder {
     return Fail.newInstance(sm, false);
   }
 
+
+  public Message getMessage() {
+    return (Message)this.getChild(Fail.MESSAGE);
+  }
+
+  public void setMessage(Message node) {
+    super.setChild(Fail.MESSAGE, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(Fail.SHORT_DESCRIPTION);
@@ -50,14 +58,6 @@ public class Fail extends Statement implements MessageHolder {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Fail.VIRTUAL_PACKAGE, value);
-  }
-
-  public Message getMessage() {
-    return (Message)this.getChild(Fail.MESSAGE);
-  }
-
-  public void setMessage(Message node) {
-    super.setChild(Fail.MESSAGE, node);
   }
 
 }

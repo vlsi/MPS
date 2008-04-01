@@ -36,8 +36,8 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createTestMethodList(EditorContext context, SNode node) {
-    if(this.myTestMethodListHandler_testMethodList_ == null) {
-      this.myTestMethodListHandler_testMethodList_ = new TestMethodList_Editor._RefNodeListHandler2(node, "testMethod", context);
+    if (this.myTestMethodListHandler_testMethodList_ == null) {
+      this.myTestMethodListHandler_testMethodList_ = new TestMethodList_Editor._RefNodeListHandler(node, "testMethod", context);
     }
     EditorCell_Collection editorCell = this.myTestMethodListHandler_testMethodList_.createCells(context, new CellLayout_Vertical(), false);
     TestMethodList_Editor.setupBasic_TestMethodList(editorCell, node, context);
@@ -48,9 +48,9 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _RefNodeListHandler2 extends RefNodeListHandler {
+  public static class _RefNodeListHandler extends RefNodeListHandler {
 
-    public  _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -86,14 +86,14 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -105,8 +105,8 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      TestMethodList_Editor._RefNodeListHandler2.setupBasic_ConstantCell(editorCell, node, context);
-      TestMethodList_Editor._RefNodeListHandler2.setupLabel_ConstantCell(editorCell, node, context);
+      TestMethodList_Editor._RefNodeListHandler.setupBasic_ConstantCell(editorCell, node, context);
+      TestMethodList_Editor._RefNodeListHandler.setupLabel_ConstantCell(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
