@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.baseLanguage.scripts">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
@@ -11,8 +13,10 @@
   </language>
   <language namespace="jetbrains.mps.ide.scriptLanguage" />
   <language namespace="jetbrains.mps.bootstrap.intentionsLanguage" />
+  <language namespace="jetbrains.mps.logging.refactoring" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -1034,6 +1038,11 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1207051442122">
+    <property name="name" value="ExtractMethod" />
+    <property name="userFriendlyName" value="Extract Method" />
+    <link role="applicableConcept" targetNodeId="1.1068580123157" resolveInfo="Statement" />
   </node>
 </model>
 
