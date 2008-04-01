@@ -18,7 +18,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
 
   private SNode node;
 
-  public UncommentStatements_Action(MPSProject project) {
+  public  UncommentStatements_Action(MPSProject project) {
     super(project, "Uncomment Statements");
   }
 
@@ -27,7 +27,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     return "control shift SLASH";
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -69,7 +69,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
@@ -77,7 +77,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
       {
         ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(this.node, "statement", true));
         try {
-          while (_zCursor1.moveToNext()) {
+          while(_zCursor1.moveToNext()) {
             SNode statement = _zCursor1.getCurrent();
             SNodeOperations.insertPrevSiblingChild(this.node, statement);
           }

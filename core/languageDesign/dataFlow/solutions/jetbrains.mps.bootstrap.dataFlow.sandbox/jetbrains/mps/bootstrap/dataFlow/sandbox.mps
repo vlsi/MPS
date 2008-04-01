@@ -64,10 +64,19 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206989393986">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207047660698">
-            <link role="variableDeclaration" targetNodeId="1207047213058" resolveInfo="i" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207053408614">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207053412758">
+              <link role="variableDeclaration" targetNodeId="1207053405799" resolveInfo="j" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207047660698">
+              <link role="variableDeclaration" targetNodeId="1207047213058" resolveInfo="i" />
+            </node>
           </node>
         </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1207053405799">
+        <property name="name" value="j" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207053405800" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206990127250">

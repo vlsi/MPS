@@ -17,6 +17,7 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends BaseActionGroup
     super("", BaseLanguageEditorPopupInternal_ActionGroup.ID);
     this.setInternal(false);
     this.add(new TestReferenceResolvingPerformance(TestReferenceResolvingPerformance.EDITOR), this);
+    this.add(new ShowInternalExtractMethodStuff_Action(project), this);
   }
 
   public void adjust(ActionManager manager, IActionGroupElementOwner owner) {
