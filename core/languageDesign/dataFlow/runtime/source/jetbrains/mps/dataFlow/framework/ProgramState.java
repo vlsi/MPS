@@ -14,7 +14,7 @@ public class ProgramState {
     myReturnMode = returnMode;
   }
 
-  public Instruction instruction() {
+  public Instruction getInstruction() {
     return myInstruction;
   }
 

@@ -18,10 +18,10 @@ class AnalyzerRunner<E> {
     Map<ProgramState, E> stateValues = doAnalyze();
     Map<Instruction, Set<E>> possibleValues = new HashMap<Instruction, Set<E>>();
     for (Map.Entry<ProgramState, E> entry : stateValues.entrySet()) {
-      if (!possibleValues.containsKey(entry.getKey().instruction())) {
-        possibleValues.put(entry.getKey().instruction(), new HashSet<E>());
+      if (!possibleValues.containsKey(entry.getKey().getInstruction())) {
+        possibleValues.put(entry.getKey().getInstruction(), new HashSet<E>());
       }
-      possibleValues.get(entry.getKey().instruction()).add(entry.getValue());
+      possibleValues.get(entry.getKey().getInstruction()).add(entry.getValue());
     }
 
     Map<Instruction, E> result = new HashMap<Instruction, E>();
@@ -56,7 +56,7 @@ class AnalyzerRunner<E> {
 
       E oldValue = stateValues.get(current);
       E mergedValue = myAnalyzer.merge(input);
-      E newValue = myAnalyzer.fun(current.instruction(), mergedValue);
+      E newValue = myAnalyzer.fun(current.getInstruction(), mergedValue);
 
       if (!newValue.equals(oldValue)) {
         stateValues.put(current, newValue);

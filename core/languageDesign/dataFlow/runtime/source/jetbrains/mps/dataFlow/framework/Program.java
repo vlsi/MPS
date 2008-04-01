@@ -98,6 +98,13 @@ public class Program {
     return myEnds.get(o);
   }
 
+  public List<Instruction> getInstructionsFor(Object o) {
+    if (myStarts.containsKey(o)) {
+      return new ArrayList<Instruction>(myInstructions.subList(getStart(o), getEnd(o)));      
+    }
+    return new ArrayList<Instruction>();
+  }
+
   void init() {
     add(new EndInstruction());
 
@@ -166,7 +173,7 @@ public class Program {
     if (analysisResult.get(endWithoutReturn)) {
       for (ProgramState pred : endWithoutReturn.pred()) {
         if (analysisResult.get(pred)) {
-          result.add(pred.instruction());
+          result.add(pred.getInstruction());
         }
       }
     }
@@ -192,8 +199,8 @@ public class Program {
     AnalysisResult<Set<Object>> analysisResult = analyze(new LivenessAnalyzer());
     Set<WriteInstruction> result = new HashSet<WriteInstruction>();
     for (ProgramState s : analysisResult.getStates()) {
-      if (s.instruction() instanceof WriteInstruction) {
-        WriteInstruction write = (WriteInstruction) s.instruction();
+      if (s.getInstruction() instanceof WriteInstruction) {
+        WriteInstruction write = (WriteInstruction) s.getInstruction();
         Set<Object> liveAfter = new HashSet<Object>();
         for (ProgramState succ : s.succ()) {
           liveAfter.addAll(analysisResult.get(succ));

@@ -58,8 +58,8 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207047213058">
             <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207047213059" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207047215015">
-              <property name="value" value="239" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207057807603">
+              <link role="variableDeclaration" targetNodeId="1207053405799" resolveInfo="j" />
             </node>
           </node>
         </node>

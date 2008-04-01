@@ -57,6 +57,28 @@ public abstract class Instruction {
     return myTryFinallyInfo;
   }
 
+  public Set<Instruction> succ() {
+    Set<Instruction> result = new HashSet<Instruction>();
+    for (ProgramState ps : new ProgramState(this, false).succ()) {
+      result.add(ps.getInstruction());
+    }
+    for (ProgramState ps : new ProgramState(this, true).succ()) {
+      result.add(ps.getInstruction());
+    }
+    return result;
+  }
+
+  public Set<Instruction> pred() {
+    Set<Instruction> result = new HashSet<Instruction>();
+    for (ProgramState ps : new ProgramState(this, false).pred()) {
+      result.add(ps.getInstruction());
+    }
+    for (ProgramState ps : new ProgramState(this, true).pred()) {
+      result.add(ps.getInstruction());
+    }
+    return result;
+  }
+
   public Set<ProgramState> succ(ProgramState s) {
     Set<ProgramState> result = new HashSet<ProgramState>();
     result.add(new ProgramState(getProgram().get(getIndex() + 1), s.isReturnMode()));
