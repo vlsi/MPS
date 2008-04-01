@@ -94,7 +94,9 @@
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1207074640225">
           <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207074641384">
             <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207074641149" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetIndexInParentOperation" id="1207074642527" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207075089598">
+              <link role="link" targetNodeId="1.1197932525128" />
+            </node>
           </node>
         </node>
       </node>

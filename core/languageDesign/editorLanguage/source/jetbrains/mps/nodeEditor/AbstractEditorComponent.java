@@ -1331,6 +1331,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void rebuildEditorContent() {
     clearCaches();
+    clearUserData();
     updateModelCheckerMessages();
     updateMPSActionsWithKeyStrokes();
     rebuildEditorContent(null);
@@ -1788,6 +1789,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void putUserData(Object key, Object data) {
     myUserDataMap.put(key, data);
+  }
+
+  public void clearUserData() {
+    myUserDataMap.clear();
   }
 
   // ---- keyboard handling ---
