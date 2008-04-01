@@ -244,5 +244,31 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1207062474157">
+    <property name="package" value="Instructions" />
+    <property name="name" value="EmitLabelStatement" />
+    <link role="extends" targetNodeId="1206443583064" resolveInfo="EmitStatement" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1207062486362">
+      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1207062519354">
+      <property name="value" value="label" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1207062697254">
+    <property name="package" value="Positions" />
+    <property name="name" value="LabelPosition" />
+    <link role="extends" targetNodeId="1206444875712" resolveInfo="Position" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1207062703832">
+      <property name="role" value="label" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1207062474157" resolveInfo="EmitLabelStatement" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1207062735451">
+      <property name="value" value="after label" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

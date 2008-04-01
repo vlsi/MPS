@@ -63,5 +63,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1207062862628">
+    <link role="conceptDeclaration" targetNodeId="1.1160666733551" resolveInfo="AddAllElementsOperation" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1207062862629">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207062862630">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1207062865350">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207062866540">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207062866289" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207062870198">
+              <link role="link" targetNodeId="1.1160666822012" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

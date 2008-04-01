@@ -8,6 +8,8 @@ public abstract class StructuralProgramBuilder<N> {
   private Program myProgram = new Program();
   private List<Runnable> myInvokeLater = new ArrayList<Runnable>();
 
+  private Map<N, Map<String, Integer>> myLabels = new HashMap<N, Map<String, Integer>>();
+
   protected abstract void doBuild(N node);
 
   public Program buildProgram(N node) {
@@ -41,6 +43,24 @@ public abstract class StructuralProgramBuilder<N> {
         return myProgram.getEnd(node);
       }
     };
+  }
+
+  public Position label(final N node, final String label) {
+    return new Position() {
+      public int getPosition() {
+        if (!myLabels.containsKey(node) || !myLabels.get(node).containsKey(label)) {
+          throw new RuntimeException("Can't find a label " + label + " for node " + node);
+        }
+        return myLabels.get(node).get(label);
+      }
+    };
+  }
+
+  public void emitLabel(String label) {
+    if (!myLabels.containsKey((N) myProgram.getCurrent())) {
+      myLabels.put((N) myProgram.getCurrent(), new HashMap<String, Integer>());
+    }
+    myLabels.get((N) myProgram.getCurrent()).put(label, myProgram.size());
   }
 
   public void emitNop() {

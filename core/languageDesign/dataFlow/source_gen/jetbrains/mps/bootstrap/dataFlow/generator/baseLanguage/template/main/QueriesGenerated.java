@@ -24,6 +24,14 @@ public class QueriesGenerated {
     return INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1207063014986(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1207063142468(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object referenceMacro_GetReferent_1206456619706(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getGenerator().findOutputNodeByInputNodeAndMappingName(_context.getNode(), "dataFlowBuilderConstructor");
   }

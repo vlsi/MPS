@@ -478,6 +478,9 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitLabelStatement" id="1207063213423">
+          <property name="name" value="start" />
+        </node>
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1206463701665">
           <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206463703543">
             <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206463703214" />
@@ -506,8 +509,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable" id="1206536503347">
           <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1206463783421">
-            <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.BeforePosition" id="1206463785704">
-              <node role="relativeTo" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206463786909" />
+            <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition" id="1207063218095">
+              <link role="label" targetNodeId="1207063213423" resolveInfo="start" />
             </node>
           </node>
         </node>
@@ -1133,6 +1136,13 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1207061421586">
+    <property name="package" value="conceptFunction" />
+    <link role="conceptDeclaration" targetNodeId="1.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1207061421587">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207061421588" />
     </node>
   </node>
 </model>

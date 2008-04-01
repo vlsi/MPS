@@ -102,7 +102,7 @@ public abstract class Instruction {
     return result;
   }
 
-  int getIndex() {
+  public int getIndex() {
     return myProgram.indexOf(this);
   }
 

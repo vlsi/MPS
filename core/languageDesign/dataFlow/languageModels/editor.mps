@@ -98,6 +98,12 @@
         <property name="color" value="lightGray" />
       </node>
     </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1207062499431">
+      <property name="name" value="Label" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1207062501917">
+        <property name="color" value="DARK_GREEN" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206444686645">
     <property name="package" value="Instructions.Variable" />
@@ -219,6 +225,41 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206956607386">
         <property name="text" value="end" />
         <link role="styleClass" targetNodeId="1206443699820" resolveInfo="Instruction" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1207062488784">
+    <property name="package" value="Instructions" />
+    <link role="conceptDeclaration" targetNodeId="1.1207062474157" resolveInfo="EmitLabelStatement" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1207062492803">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207062492804">
+        <property name="text" value="label" />
+        <link role="styleClass" targetNodeId="1207062499431" resolveInfo="Label" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1207062494415">
+        <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1207062713395">
+    <property name="package" value="Positions" />
+    <link role="conceptDeclaration" targetNodeId="1.1207062697254" resolveInfo="LabelPosition" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1207062720523">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207062720524">
+        <property name="text" value="after" />
+        <link role="styleClass" targetNodeId="1206444940926" resolveInfo="Position" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1207062721854">
+        <link role="relationDeclaration" targetNodeId="1.1207062703832" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1207062721855">
+          <link role="conceptDeclaration" targetNodeId="1.1207062474157" resolveInfo="EmitLabelStatement" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1207062722716">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
       </node>
     </node>
   </node>

@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public  ConstraintsDescriptor() {
     this.myConstraints.add(new DataFlowBuilderDeclaration_name_PropertyConstraint());
+    this.myConstraints.add(new LabelPosition_label_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

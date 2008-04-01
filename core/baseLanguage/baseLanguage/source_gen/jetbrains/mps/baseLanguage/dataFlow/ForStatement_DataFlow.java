@@ -15,6 +15,7 @@ public class ForStatement_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     // todo hack
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "variable", true));
+    _context.getBuilder().emitLabel("start");
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "condition", true));
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
@@ -27,7 +28,7 @@ public class ForStatement_DataFlow extends DataFlowBuilder {
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
 
       public void run() {
-        _context.getBuilder().emitIfJump(_context.getBuilder().before(_context.getNode()));
+        _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "start"));
       }
 
     });
