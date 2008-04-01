@@ -11,6 +11,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", new ForEachStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation", new WhereOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation", new AddAllElementsOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement", new MapElement_DataFlow());
   }
 
 }
