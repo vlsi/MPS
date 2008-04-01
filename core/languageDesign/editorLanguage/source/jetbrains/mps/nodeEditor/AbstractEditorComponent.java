@@ -89,7 +89,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Set<EditorCell> myFoldedCells = new HashSet<EditorCell>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
-  private IGutterMessageOwner myMessageOwner = new IGutterMessageOwner() {
+  private IEditorMessageOwner myMessageOwner = new IEditorMessageOwner() {
   };
 
   private boolean myHasLastCaretX = false;
@@ -131,7 +131,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private List<RebuildListener> myRebuildListeners;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
-  private final IGutterMessageOwner myOwner = new IGutterMessageOwner() {
+  private final IEditorMessageOwner myOwner = new IEditorMessageOwner() {
   };
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
@@ -446,7 +446,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyStrokes(group, actionContext);
   }
 
-  public IGutterMessageOwner getGutterMessageOwner() {
+  public IEditorMessageOwner getGutterMessageOwner() {
     return myOwner;
   }
 
@@ -1356,8 +1356,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     for (final ModelCheckerMessage m : res.getMessages()) {
       if (m.getNode().getContainingRoot() == rootNode) {
-        getHighlightManager().mark(new NodeHighlightManager.HighlighterMessage(m.getNode(), Color.PINK, m.getMessage(), myMessageOwner, this) {
-          public void paint(Graphics g, EditorCell cell) {
+        getHighlightManager().mark(new DefaultEditorMessage(m.getNode(), Color.PINK, m.getMessage(), myMessageOwner, this) {
+          public void paint(Graphics g) {
+            EditorCell cell = getCell();
             int x = cell.getX();
             int y = cell.getY();
             int height = cell.getHeight();

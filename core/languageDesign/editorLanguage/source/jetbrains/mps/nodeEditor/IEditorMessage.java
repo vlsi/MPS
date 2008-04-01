@@ -2,10 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import java.awt.*;
 
-/**
- * @author Kostik
- */
-public interface IGutterMessage {
+public interface IEditorMessage {
   int getStart();
   int getHeight();
 
@@ -17,5 +14,9 @@ public interface IGutterMessage {
 
   Color getColor();
 
-  void paint(Graphics g, EditorCell cell);
+  IEditorMessageOwner getOwner();
+
+  EditorCell getCell();
+
+  void paint(Graphics g);
 }

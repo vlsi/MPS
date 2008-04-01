@@ -19,7 +19,7 @@ import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.nodeEditor.IGutterMessageOwner;
+import jetbrains.mps.nodeEditor.IEditorMessageOwner;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 
@@ -36,7 +36,7 @@ import org.jetbrains.annotations.Nullable;
  * Time: 13:50:13
  * To change this template use File | Settings | File Templates.
  */
-public class NodeTypesComponent implements IGutterMessageOwner, Cloneable {
+public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
 
   private static final char A_CHAR = 'a';
   private static final char Z_CHAR = 'z';

@@ -232,12 +232,12 @@
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                       id="1205606133668">
                   <link role="baseMethodDeclaration"
-                        targetNodeId="10.~NodeHighlightManager.mark(jetbrains.mps.nodeEditor.NodeHighlightManager$HighlighterMessage):void"
+                        targetNodeId="10.~NodeHighlightManager.mark(jetbrains.mps.nodeEditor.DefaultEditorMessage):void"
                         resolveInfo="mark"/>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
                         id="1205606138497">
                     <link role="baseMethodDeclaration"
-                          targetNodeId="10.~NodeHighlightManager$HighlighterMessage.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.awt.Color,java.lang.String,jetbrains.mps.nodeEditor.IGutterMessageOwner,jetbrains.mps.nodeEditor.IEditorComponent)"
+                          targetNodeId="10.~NodeHighlightManager$HighlighterMessage.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.awt.Color,java.lang.String,jetbrains.mps.nodeEditor.IEditorMessageOwner,jetbrains.mps.nodeEditor.IEditorComponent)"
                           resolveInfo="NodeHighlightManager.HighlighterMessage"/>
                     <node role="actualArgument"
                           type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference"
@@ -260,7 +260,7 @@
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                             id="1205606237235">
                         <link role="baseMethodDeclaration"
-                              targetNodeId="10.~AbstractEditorComponent.getGutterMessageOwner():jetbrains.mps.nodeEditor.IGutterMessageOwner"
+                              targetNodeId="10.~AbstractEditorComponent.getGutterMessageOwner():jetbrains.mps.nodeEditor.IEditorMessageOwner"
                               resolveInfo="getGutterMessageOwner"/>
                       </node>
                     </node>

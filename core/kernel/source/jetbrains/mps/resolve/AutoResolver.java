@@ -20,7 +20,7 @@ import java.util.Set;
  * Time: 15:11:31
  * To change this template use File | Settings | File Templates.
  */
-public class AutoResolver extends GenericEditorUpdater implements IGutterMessageOwner {
+public class AutoResolver extends GenericEditorUpdater implements IEditorMessageOwner {
 
   private static final int CHECK_DELAY = 600;
 
@@ -70,7 +70,7 @@ public class AutoResolver extends GenericEditorUpdater implements IGutterMessage
 
     // highlight nodes with errors
     for (SReference ref : yetBadReferences) {
-      NodeHighlightManager.HighlighterMessage message =
+      DefaultEditorMessage message =
               new MyResolverMessage(ref.getSourceNode(), Color.RED, "unresolved reference", editor, this);
       highlightManager.mark(message);
     }
@@ -90,12 +90,12 @@ public class AutoResolver extends GenericEditorUpdater implements IGutterMessage
     return result;
   }
 
-  private static class MyResolverMessage extends NodeHighlightManager.HighlighterMessage {
+  private static class MyResolverMessage extends DefaultEditorMessage {
     public MyResolverMessage(SNode errorNode, Color color, String string, IEditorComponent editor, AutoResolver autoResolver) {
       super(errorNode, color, string, autoResolver, editor);
     }
 
-    public void paint(Graphics g, EditorCell cell) {
+    public void paint(Graphics g) {
     }
   }
 

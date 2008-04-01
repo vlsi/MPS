@@ -22,8 +22,8 @@ import java.util.Map;
 public class MessagesGutter extends JPanel {
   private AbstractEditorComponent myEditorComponent;
   private JLabel myErrosLabel = new JLabel(Icons.OK);
-  private List<IGutterMessage> myMessages = new ArrayList<IGutterMessage>();
-  private Map<IGutterMessage, IGutterMessageOwner> myOwners = new HashMap<IGutterMessage, IGutterMessageOwner>();
+  private List<IEditorMessage> myMessages = new ArrayList<IEditorMessage>();
+  private Map<IEditorMessage, IEditorMessageOwner> myOwners = new HashMap<IEditorMessage, IEditorMessageOwner>();
 
 
   public MessagesGutter(AbstractEditorComponent editorComponent) {
@@ -53,19 +53,19 @@ public class MessagesGutter extends JPanel {
     }
   }
 
-  public void add(IGutterMessage message, IGutterMessageOwner owner) {
+  public void add(IEditorMessage message) {
     myMessages.add(message);
-    myOwners.put(message, owner);
+    myOwners.put(message, message.getOwner());
   }
 
-  public void remove(IGutterMessage message) {
+  public void remove(IEditorMessage message) {
     myMessages.remove(message);
     myOwners.remove(message);
   }
 
-  public boolean removeMessages(IGutterMessageOwner owner) {
+  public boolean removeMessages(IEditorMessageOwner owner) {
     boolean removedAnything = false;
-    for (IGutterMessage m : new ArrayList<IGutterMessage>(myMessages)) {
+    for (IEditorMessage m : new ArrayList<IEditorMessage>(myMessages)) {
       if (myOwners.get(m) == owner) {
         myMessages.remove(m);
         myOwners.remove(m);
@@ -82,7 +82,7 @@ public class MessagesGutter extends JPanel {
 
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
-          List<IGutterMessage> messages = getMessagesAt(e.getY());
+          List<IEditorMessage> messages = getMessagesAt(e.getY());
           if (messages.size() > 0) {
             messages.get(0).doNavigate();
           }
@@ -91,7 +91,7 @@ public class MessagesGutter extends JPanel {
 
       addMouseMotionListener(new MouseMotionAdapter() {
         public void mouseMoved(MouseEvent e) {
-          List<IGutterMessage> messages = getMessagesAt(e.getY());
+          List<IEditorMessage> messages = getMessagesAt(e.getY());
           if (messages.size() > 0) {
             setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
           } else {
@@ -104,8 +104,8 @@ public class MessagesGutter extends JPanel {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       Graphics2D g = (Graphics2D) graphics;
-      List<IGutterMessage> messagesToRemove = new ArrayList<IGutterMessage>();
-      for (IGutterMessage msg : myMessages) {
+      List<IEditorMessage> messagesToRemove = new ArrayList<IEditorMessage>();
+      for (IEditorMessage msg : myMessages) {
         if (!msg.isValid()) {
           continue;
         }
@@ -123,21 +123,21 @@ public class MessagesGutter extends JPanel {
       myMessages.removeAll(messagesToRemove);
     }
 
-    private int getMessageHeight(IGutterMessage msg) {
+    private int getMessageHeight(IEditorMessage msg) {
       return (int) (Math.max(2.0d, msg.getHeight() * (((double) getHeight()) / ((double) myEditorComponent.getHeight()))));
     }
 
-    private int getMessageStart(IGutterMessage msg) {
+    private int getMessageStart(IEditorMessage msg) {
       return (int) (msg.getStart() * (((double) getHeight()) / ((double) myEditorComponent.getHeight())));
     }
 
     public String getToolTipText(MouseEvent event) {
       int y = event.getY();
 
-      List<IGutterMessage> messages = getMessagesAt(y);
+      List<IEditorMessage> messages = getMessagesAt(y);
       if (messages.size() > 0) {
         StringBuffer text = new StringBuffer();
-        for (IGutterMessage msg : messages) {
+        for (IEditorMessage msg : messages) {
           if (text.length() > 0) {
             text.append("\n");
           }
@@ -149,10 +149,10 @@ public class MessagesGutter extends JPanel {
       return null;
     }
 
-    private List<IGutterMessage> getMessagesAt(int y) {
-      List<IGutterMessage> result = new ArrayList<IGutterMessage>();
-      List<IGutterMessage> messagesToRemove = new ArrayList<IGutterMessage>();
-      for (IGutterMessage msg : myMessages) {
+    private List<IEditorMessage> getMessagesAt(int y) {
+      List<IEditorMessage> result = new ArrayList<IEditorMessage>();
+      List<IEditorMessage> messagesToRemove = new ArrayList<IEditorMessage>();
+      for (IEditorMessage msg : myMessages) {
         if (!msg.isValid()) continue;
         int start = getMessageStart(msg);
         int height = getMessageHeight(msg);
