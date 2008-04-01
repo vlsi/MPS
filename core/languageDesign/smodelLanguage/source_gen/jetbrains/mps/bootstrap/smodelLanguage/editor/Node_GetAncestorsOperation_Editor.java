@@ -11,8 +11,8 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 
 public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myOperationParameters_Component6;
-  /* package */AbstractCellProvider myReplaceableAlias_Comp15;
+  /* package */AbstractCellProvider myOperationParameters_Component4;
+  /* package */AbstractCellProvider myReplaceableAlias_Comp13;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851696");
@@ -45,19 +45,19 @@ public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createOperationParameters_ComponentCell(EditorContext context, SNode node) {
-    if (this.myOperationParameters_Component6 == null) {
-      this.myOperationParameters_Component6 = new OperationParameters_Component(node);
+    if (this.myOperationParameters_Component4 == null) {
+      this.myOperationParameters_Component4 = new OperationParameters_Component(node);
     }
-    EditorCell editorCell = this.myOperationParameters_Component6.createEditorCell(context);
+    EditorCell editorCell = this.myOperationParameters_Component4.createEditorCell(context);
     Node_GetAncestorsOperation_Editor.setupBasic_OperationParameters_ComponentCell(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createReplaceableAlias_CompCell(EditorContext context, SNode node) {
-    if (this.myReplaceableAlias_Comp15 == null) {
-      this.myReplaceableAlias_Comp15 = new ReplaceableAlias_Comp(node);
+    if (this.myReplaceableAlias_Comp13 == null) {
+      this.myReplaceableAlias_Comp13 = new ReplaceableAlias_Comp(node);
     }
-    EditorCell editorCell = this.myReplaceableAlias_Comp15.createEditorCell(context);
+    EditorCell editorCell = this.myReplaceableAlias_Comp13.createEditorCell(context);
     Node_GetAncestorsOperation_Editor.setupBasic_ReplaceableAlias_CompCell(editorCell, node, context);
     return editorCell;
   }

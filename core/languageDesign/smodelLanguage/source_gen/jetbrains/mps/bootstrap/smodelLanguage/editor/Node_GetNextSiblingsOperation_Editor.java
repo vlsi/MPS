@@ -4,23 +4,19 @@ package jetbrains.mps.bootstrap.smodelLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_GetNextSiblingsOperation_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myOperationParameters_Component1;
-  /* package */AbstractCellProvider myReplaceableAlias_Comp17;
-
-  public static boolean _QueryFunction_NodeCondition_1146258668392(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "parameter") == 0;
-  }
+  /* package */AbstractCellProvider myReplaceableAlias_Comp15;
 
   private static void setupBasic_CellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145571027556");
@@ -48,6 +44,10 @@ public class Node_GetNextSiblingsOperation_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1146258668392(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "parameter") == 0;
   }
 
 
@@ -90,10 +90,10 @@ public class Node_GetNextSiblingsOperation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createReplaceableAlias_CompCell(EditorContext context, SNode node) {
-    if (this.myReplaceableAlias_Comp17 == null) {
-      this.myReplaceableAlias_Comp17 = new ReplaceableAlias_Comp(node);
+    if (this.myReplaceableAlias_Comp15 == null) {
+      this.myReplaceableAlias_Comp15 = new ReplaceableAlias_Comp(node);
     }
-    EditorCell editorCell = this.myReplaceableAlias_Comp17.createEditorCell(context);
+    EditorCell editorCell = this.myReplaceableAlias_Comp15.createEditorCell(context);
     Node_GetNextSiblingsOperation_Editor.setupBasic_ReplaceableAlias_CompCell(editorCell, node, context);
     return editorCell;
   }

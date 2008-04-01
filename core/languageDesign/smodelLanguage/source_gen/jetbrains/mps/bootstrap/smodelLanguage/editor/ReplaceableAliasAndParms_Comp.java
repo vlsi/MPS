@@ -5,14 +5,14 @@ package jetbrains.mps.bootstrap.smodelLanguage.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -31,6 +30,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerEl
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.CaretPosition;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
@@ -38,10 +38,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
   public  ReplaceableAliasAndParms_Comp(SNode node) {
     super(node);
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1206995967611(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "parameter", true)));
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -89,6 +85,10 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.lightGray);
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1206995967611(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "parameter", true)));
   }
 
 
@@ -184,16 +184,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     return cellWithRole;
   }
 
-  public static class SNodeOperation_replaceWith_SNodeOperation_cellMenu1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
-    public  SNodeOperation_replaceWith_SNodeOperation_cellMenu1() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation";
-    }
-
-}
   public static class _RefNodeListHandler4 extends RefNodeListHandler {
 
     public  _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
@@ -265,6 +255,16 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       editorCell.setDefaultText("");
       editorCell.setDefaultCaretPosition(CaretPosition.FIRST);
       return editorCell;
+    }
+
+}
+  public static class SNodeOperation_replaceWith_SNodeOperation_cellMenu1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public  SNodeOperation_replaceWith_SNodeOperation_cellMenu1() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation";
     }
 
 }

@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAlias_Comp28;
+  /* package */AbstractCellProvider myReplaceableAlias_Comp26;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139870427663");
@@ -75,10 +75,10 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createReplaceableAlias_CompCell(EditorContext context, SNode node) {
-    if (this.myReplaceableAlias_Comp28 == null) {
-      this.myReplaceableAlias_Comp28 = new ReplaceableAlias_Comp(node);
+    if (this.myReplaceableAlias_Comp26 == null) {
+      this.myReplaceableAlias_Comp26 = new ReplaceableAlias_Comp(node);
     }
-    EditorCell editorCell = this.myReplaceableAlias_Comp28.createEditorCell(context);
+    EditorCell editorCell = this.myReplaceableAlias_Comp26.createEditorCell(context);
     LinkList_AddChildOperation_Editor.setupBasic_ReplaceableAlias_CompCell(editorCell, node, context);
     return editorCell;
   }

@@ -1882,7 +1882,7 @@
                 <link role="variableDeclaration" targetNodeId="1145584454874" />
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAllSiblingsOperation" id="1145584461519">
-                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1145584468928" />
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1207000644742" />
               </node>
             </node>
           </node>

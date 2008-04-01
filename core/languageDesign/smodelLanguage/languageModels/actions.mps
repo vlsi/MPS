@@ -854,6 +854,32 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207070726269">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207070726270">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207070743108">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207070746551">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207070744360">
+                    <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1207070743109" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1207070745347">
+                      <link role="link" targetNodeId="1.1144104376918" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation" id="1207070783568">
+                    <link role="concept" targetNodeId="1.1144101972840" resolveInfo="OperationParm_Concept" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207070734761">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207070731149">
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1207070729507" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1207070733229">
+                  <link role="link" targetNodeId="1.1144104376918" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsEmptyOperation" id="1207070738623" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

@@ -89,6 +89,9 @@ public class QueriesGenerated {
         }
       }
     }
+    if (SequenceOperations.isEmpty(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true))) {
+      SLinkOperations.addNewChild(_context.getNewNode(), "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept");
+    }
   }
 
   public static void nodeFactory_NodeSetup_Concept_IsSuperConceptOfOperation_1203553726915(final IOperationContext operationContext, final NodeSetupContext _context) {

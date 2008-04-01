@@ -1231,43 +1231,8 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1145573389679">
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1145573345940" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1145573795271">
-      <property name="drawBorder" value="false" />
-      <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1145573795272">
-        <property name="editable" value="true" />
-        <property name="text" value="siblings" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1145573795273">
-        <property name="drawBorder" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206486853576">
-          <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1145573795275">
-          <property name="drawBorder" value="false" />
-          <link role="editorComponent" targetNodeId="1144105329976" resolveInfo="OperationParameters_Component" />
-        </node>
-      </node>
-      <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1146258729757">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1146258729758">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1146258730877">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1146258730878">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1146258942266">
-                <property name="value" value="0" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227866362">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227840975">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1146258730882" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1146258730883">
-                    <link role="link" targetNodeId="1.1144104376918" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_GetCountOperation" id="1146258730884" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1207000523060">
+      <link role="editorComponent" targetNodeId="1206994531943" resolveInfo="ReplaceableAliasAndParms_Comp" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1145994905462">
@@ -1722,15 +1687,8 @@
         </node>
       </node>
     </node>
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171414677370">
-      <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206486893858">
-        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1171414677372">
-        <property name="drawBorder" value="false" />
-        <link role="editorComponent" targetNodeId="1144105329976" resolveInfo="OperationParameters_Component" />
-      </node>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1207070865189">
+      <link role="editorComponent" targetNodeId="1206994531943" resolveInfo="ReplaceableAliasAndParms_Comp" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1171478968496">
