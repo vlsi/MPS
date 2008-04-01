@@ -29,7 +29,7 @@ class AnalyzerRunner<E> {
       result.put(entry.getKey(), myAnalyzer.merge(entry.getValue()));
     }
 
-    return new AnalysisResult<E>(myProgram, stateValues, result);
+    return new AnalysisResult<E>(myProgram, myAnalyzer, stateValues, result);
   }
 
   private Map<ProgramState, E> doAnalyze() {

@@ -112,9 +112,9 @@ public class Program {
   public Set<Instruction> getUnreachableInstructions() {
     AnalysisResult<Boolean> analysisResult = analyze(new ReachabilityAnalyzer());
     Set<Instruction> result = new HashSet<Instruction>();
-    for (Entry<Instruction, Boolean> entry : analysisResult.getInstructionMap().entrySet()) {
-      if (!entry.getValue()) {
-        result.add(entry.getKey());
+    for (Instruction i : myInstructions) {
+      if (!analysisResult.get(i)) {
+        result.add(i);
       }
     }
     return result;
@@ -124,9 +124,9 @@ public class Program {
     AnalysisResult<Boolean> analysisResult = analyze(new ReachabilityAnalyzer());
     ProgramState endWithoutReturn = new ProgramState(end(), false);
     Set<Instruction> result = new HashSet<Instruction>();
-    if (analysisResult.getStateMap().get(endWithoutReturn)) {    
+    if (analysisResult.get(endWithoutReturn)) {
       for (ProgramState pred : endWithoutReturn.pred()) {
-        if (analysisResult.getStateMap().get(pred)) {
+        if (analysisResult.get(pred)) {
           result.add(pred.instruction());
         }
       }
@@ -140,7 +140,7 @@ public class Program {
     for (Instruction i : myInstructions) {
       if (i instanceof ReadInstruction) {
         ReadInstruction read = (ReadInstruction) i;
-        Set<Object> initializedVars = analysisResult.getInstructionMap().get(read);
+        Set<Object> initializedVars = analysisResult.get(read);
         if (!initializedVars.contains(read.getVariable())) {
           result.add(read);
         }
@@ -152,10 +152,14 @@ public class Program {
   public Set<WriteInstruction> getUnusedAssignments() {
     AnalysisResult<Set<Object>> analysisResult = analyze(new LivenessAnalyzer());
     Set<WriteInstruction> result = new HashSet<WriteInstruction>();
-    for (Instruction i : myInstructions) {
-      if (i instanceof WriteInstruction) {
-        WriteInstruction write = (WriteInstruction) i;
-        if (!analysisResult.getInstructionMap().get(write).contains(write.getVariable())) {
+    for (ProgramState s : analysisResult.getStates()) {
+      if (s.instruction() instanceof WriteInstruction) {
+        WriteInstruction write = (WriteInstruction) s.instruction();
+        Set<Object> liveAfter = new HashSet<Object>();
+        for (ProgramState succ : s.succ()) {
+          liveAfter.addAll(analysisResult.get(succ));
+        }        
+        if (!liveAfter.contains(write.getVariable())) {
           result.add(write);
         }
       }

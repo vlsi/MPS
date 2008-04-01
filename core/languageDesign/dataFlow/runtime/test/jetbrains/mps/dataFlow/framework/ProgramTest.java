@@ -147,7 +147,7 @@ public class ProgramTest {
   }
 
   @Test
-  public void writeWithReadIsntUnusedAssignment() {
+  public void writeWithReadIsNotUnusedAssignment() {
     Program program = new SimpleProgramBuilder()
       .emitWrite("x")
       .emitRead("x")

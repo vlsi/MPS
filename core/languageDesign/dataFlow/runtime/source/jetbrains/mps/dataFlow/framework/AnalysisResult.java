@@ -6,21 +6,33 @@ import java.util.*;
 
 public class AnalysisResult<E> {
   private Map<ProgramState, E> myResult;
+  private DataFlowAnalyzer<E> myAnalyzer;
   private Map<Instruction, E> myInstructionsResult;
   private Program myProgram;
 
-  AnalysisResult(Program program, Map<ProgramState, E> result, Map<Instruction, E> instrResult) {
+  AnalysisResult(Program program, DataFlowAnalyzer<E> analyzer, Map<ProgramState, E> result, Map<Instruction, E> instrResult) {
     myProgram = program;
+    myAnalyzer = analyzer;
     myResult = new HashMap<ProgramState,E>(result);
     myInstructionsResult = new HashMap<Instruction, E>(instrResult);
   }
 
-  public Map<Instruction, E> getInstructionMap() {
-    return Collections.unmodifiableMap(myInstructionsResult);
+  public E get(Instruction i) {
+    if (myInstructionsResult.containsKey(i)) {
+      return myInstructionsResult.get(i);
+    }
+    return myAnalyzer.initial(myProgram);
   }
 
-  public Map<ProgramState, E> getStateMap() {
-    return Collections.unmodifiableMap(myResult);
+  public E get(ProgramState s) {
+    if (myResult.containsKey(s)) {
+      return myResult.get(s);
+    }
+    return myAnalyzer.initial(myProgram);
+  }
+
+  public Set<ProgramState> getStates() {
+    return Collections.unmodifiableSet(myResult.keySet());
   }
 
   public String toString() {
