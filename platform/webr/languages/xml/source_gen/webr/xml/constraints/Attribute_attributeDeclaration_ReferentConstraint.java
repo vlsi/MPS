@@ -35,7 +35,7 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     ISearchScope searchScope;
     SNode element = SNodeOperations.getAncestor(_context.getEnclosingNode(), "webr.xml.structure.Element", false, false);
-    if((element == null)) {
+    if ((element == null)) {
       searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());
     } else
     {

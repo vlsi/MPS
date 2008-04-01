@@ -38,7 +38,7 @@ public class Element_elementDeclaration_ReferentConstraint implements IModelCons
     ISearchScope searchScope;
     SNode element = SNodeOperations.getAncestor(_context.getEnclosingNode(), "webr.xml.structure.Element", false, false);
     List<SNode> elementDeclarations = ElementUtil.getElementDeclarations(SLinkOperations.getTarget(element, "elementDeclaration", false), _context.getEnclosingNode(), operationContext.getScope());
-    if(SequenceOperations.isEmpty(elementDeclarations)) {
+    if (SequenceOperations.isEmpty(elementDeclarations)) {
       searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());
     } else
     {
