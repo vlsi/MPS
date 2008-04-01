@@ -9,6 +9,7 @@ import jetbrains.mps.vcs.ui.view.FileTreeNode;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.LinkedList;
 
 public class FolderTreeNode extends AbstractFileTreeNode {
   private static final Set<String> myExcluded = new HashSet<String>();
@@ -21,7 +22,12 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     super(operationContext, provider, folder);
 
     for (IFile f : myFile.list()){
-      if (!myExcluded.contains(f.getName())){
+      if (!myExcluded.contains(f.getName()) && f.isDirectory()){
+        this.add(createNode(operationContext, provider, f));
+      }
+    }
+    for (IFile f : myFile.list()){
+      if (!myExcluded.contains(f.getName()) && !f.isDirectory()){
         this.add(createNode(operationContext, provider, f));
       }
     }
