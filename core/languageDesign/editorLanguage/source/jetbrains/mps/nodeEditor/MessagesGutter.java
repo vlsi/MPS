@@ -35,11 +35,11 @@ public class MessagesGutter extends JPanel {
 
     add(myErrosLabel, BorderLayout.NORTH);
     add(new MyMessagesGutter(), BorderLayout.CENTER);
-    NodeTypesComponentsRepository.getInstance().addTypesComponentListener(new TypesComponentRepositoryListener() {
+    /*NodeTypesComponentsRepository.getInstance().addTypesComponentListener(new TypesComponentRepositoryListener() {
       public void typesComponentRemoved(NodeTypesComponent component) {
         removeMessages(component);
       }
-    });
+    });*/
   }
 
   public AbstractEditorComponent getEditorComponent() {
@@ -150,8 +150,14 @@ public class MessagesGutter extends JPanel {
       removeBadMessages();
       super.paintComponent(graphics);
       Graphics2D g = (Graphics2D) graphics;
-      Set<IEditorMessage> messagesToRemove = new HashSet<IEditorMessage>();
-      for (IEditorMessage msg : myMessages) {
+      //Set<IEditorMessage> messagesToRemove = new HashSet<IEditorMessage>();
+      List<IEditorMessage> iEditorMessages = new ArrayList<IEditorMessage>(myMessages);
+      Collections.sort(iEditorMessages, new Comparator<IEditorMessage>() {
+        public int compare(IEditorMessage o1, IEditorMessage o2) {
+          return o1.getStatus().ordinal() - o2.getStatus().ordinal();
+        }
+      });
+      for (IEditorMessage msg : iEditorMessages) {
         if (!msg.isValid()) {
           continue;
         }
@@ -166,7 +172,7 @@ public class MessagesGutter extends JPanel {
         g.setColor(msg.getColor());
         g.fillRect(0, messageY - 1, getWidth() - 2, 2);
       }
-      removeLater(messagesToRemove);
+      //removeLater(messagesToRemove);
     }
 
     private int getMessageHeight(IEditorMessage msg) {
