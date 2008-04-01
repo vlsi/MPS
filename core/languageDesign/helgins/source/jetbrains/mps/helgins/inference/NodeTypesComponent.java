@@ -228,7 +228,7 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
       for (SNode node : new HashSet<SNode>(myNodesToErrorsMap.keySet())) {
         IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
         String errorString = iErrorReporter.reportError();
-        myNodesToErrorsMap.put(node, new SimpleErrorReporter(errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId()));
+        myNodesToErrorsMap.put(node, new SimpleErrorReporter(errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(), iErrorReporter.isWarning()));
       }
 
       //write access listeners

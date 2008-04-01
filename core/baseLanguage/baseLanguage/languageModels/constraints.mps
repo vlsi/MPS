@@ -7397,11 +7397,11 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1207047119120">
                       <property name="value" value="todo need report warning instead of this" />
                     </node>
-                    <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.ReportErrorStatement" id="1207047110160">
-                      <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207047111428">
+                    <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.WarningStatement" id="1207057762735">
+                      <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207057766067">
                         <property name="value" value="Unused assignment" />
                       </node>
-                      <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207047116711">
+                      <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207057782883">
                         <link role="variableDeclaration" targetNodeId="1207047074437" resolveInfo="assignment" />
                       </node>
                     </node>
@@ -7453,11 +7453,11 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207047127842">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207047127843">
-                <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.ReportErrorStatement" id="1207047155453">
-                  <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207047156487">
+                <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.WarningStatement" id="1207057789199">
+                  <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207057792937">
                     <property name="value" value="Unused assignment" />
                   </node>
-                  <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207047162052">
+                  <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207057796954">
                     <link role="variableDeclaration" targetNodeId="1207047051074" resolveInfo="write" />
                   </node>
                 </node>
