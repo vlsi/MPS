@@ -6,16 +6,17 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vcs.ui.IFileController;
 import jetbrains.mps.vcs.ui.IFileListener;
 import jetbrains.mps.vcs.ui.IUpdatedAction;
+import jetbrains.mps.vcs.ui.IFileProvider;
 import jetbrains.mps.vcs.Status;
 
 import javax.swing.JPopupMenu;
 import javax.swing.Action;
 import java.awt.Color;
-import java.util.Collection;
+import java.util.*;
 
-public abstract class AbstractFileTreeNode extends MPSTreeNode {
+public abstract class AbstractFileTreeNode extends MPSTreeNode implements IFileProvider {
   protected IFile myFile;
-  private IFileController myProvider;
+  protected IFileController myProvider;
   private JPopupMenu myPopupMenu;
   private Collection<? extends IUpdatedAction> myActions;
 
@@ -42,7 +43,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
   }
 
   private void createUI() {
-    myActions = myProvider.createFileActions(myFile, new IFileListener() {
+    myActions = myProvider.createFileActions(this, new IFileListener() {
       public void updateStatus() {
         updateNodeStatus();
       }
@@ -81,5 +82,19 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
         return new Color(153, 51, 0);
     }
     return Color.RED;
+  }
+
+  public IFile getRootFile() {
+    return myFile;
+  }
+
+  public List<IFile> getFilesWithStatus(Status ... statuses) {
+    if (Arrays.asList(statuses).contains(myProvider.getStatus(myFile))) {
+      LinkedList<IFile> files = new LinkedList<IFile>();
+      files.add(myFile);
+      return files;
+    } else {
+      return Collections.EMPTY_LIST;
+    }
   }
 }

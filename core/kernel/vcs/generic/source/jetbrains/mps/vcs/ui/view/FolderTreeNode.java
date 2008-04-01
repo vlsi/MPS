@@ -6,10 +6,13 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vcs.ui.IFileController;
 import jetbrains.mps.vcs.ui.view.AbstractFileTreeNode;
 import jetbrains.mps.vcs.ui.view.FileTreeNode;
+import jetbrains.mps.vcs.Status;
 
+import javax.swing.tree.TreeNode;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 
 public class FolderTreeNode extends AbstractFileTreeNode {
   private static final Set<String> myExcluded = new HashSet<String>();
@@ -39,5 +42,19 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     } else {
       return new FileTreeNode(operationContext, provider, file);
     }
+  }
+
+  public List<IFile> getFilesWithStatus(Status... statuses) {
+    List<IFile> files = new LinkedList<IFile>();
+    files.addAll(super.getFilesWithStatus(statuses));
+    for (int i = 0; i < getChildCount(); i++){
+      TreeNode child = getChildAt(i);
+      if (!(child instanceof AbstractFileTreeNode)){
+        throw new IllegalStateException("Tree only consists of file or folder nodes");
+      } else {
+        files.addAll(((AbstractFileTreeNode)child).getFilesWithStatus(statuses));
+      }
+    }
+    return files;
   }
 }

@@ -4,11 +4,11 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vcs.ui.IFileController;
 import jetbrains.mps.vcs.ui.view.AbstractFileTreeNode;
+import jetbrains.mps.vcs.Status;
 import jetbrains.mps.ide.projectPane.Icons;
 
 import javax.swing.Icon;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
 
 public class FileTreeNode extends AbstractFileTreeNode {
   private static final Map<String, Icon> ICONS = new HashMap<String, Icon>();
@@ -51,4 +51,5 @@ public class FileTreeNode extends AbstractFileTreeNode {
   private Icon getDefaultIcon() {
     return ICONS.get("");
   }
+
 }
