@@ -128,7 +128,7 @@ public class Queries {
             collectImmediateSupertypes(BaseAdapter.fromAdapter(art.getComponentType()))) {
       if (BaseAdapter.isInstance(type, Type.class)) {
         ArrayType arrayType = ArrayType.newInstance(model);
-        arrayType.setComponentType((Type) BaseAdapter.fromNode(CopyUtil.copy(type, model)));
+        arrayType.setComponentType((Type) BaseAdapter.fromNode(CopyUtil.copy(type)));
         result.add(arrayType.getNode());
       }
     }

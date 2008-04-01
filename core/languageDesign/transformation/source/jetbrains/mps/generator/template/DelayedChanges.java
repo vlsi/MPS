@@ -53,7 +53,7 @@ public class DelayedChanges {
         if (child != null) {
           if (child.isRegistered()) {
             // must be "in air"
-            child = CopyUtil.copy(child, child.getModel());
+            child = CopyUtil.copy(child);
           }
           // check child because it's manual and thus error prone mapping
           validateReferences(child);
