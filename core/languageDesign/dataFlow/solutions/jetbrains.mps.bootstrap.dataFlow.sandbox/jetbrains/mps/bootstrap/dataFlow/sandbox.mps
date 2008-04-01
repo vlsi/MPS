@@ -54,21 +54,18 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206989019627" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1206987820494">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206987820495" />
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206987830318">
-            <link role="variableDeclaration" targetNodeId="1206987818163" resolveInfo="set" />
-          </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206987820498">
-            <property name="name" value="o" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206987828707">
-              <link role="classifier" targetNodeId="3.~Object" resolveInfo="Object" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207047213057">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207047213058">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207047213059" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207047215015">
+              <property name="value" value="239" />
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206989393986">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206989395019">
-            <property name="value" value="23" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207047660698">
+            <link role="variableDeclaration" targetNodeId="1207047213058" resolveInfo="i" />
           </node>
         </node>
       </node>

@@ -947,7 +947,7 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206544652763">
             <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1206544659289">
-              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206544661525">
+              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207048030563">
                 <link role="variableDeclaration" targetNodeId="1206544652761" resolveInfo="item" />
               </node>
             </node>
