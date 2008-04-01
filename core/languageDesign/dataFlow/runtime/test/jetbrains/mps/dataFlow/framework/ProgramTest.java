@@ -5,6 +5,7 @@ import org.junit.Assert;
 import jetbrains.mps.dataFlow.framework.SimpleProgramBuilder;
 import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.framework.instructions.ReadInstruction;
+import jetbrains.mps.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.dataFlow.framework.analyzers.ReachabilityAnalyzer;
 
 import java.util.Collections;
@@ -122,7 +123,7 @@ public class ProgramTest {
   }
 
   @Test
-  public void unitializedRaeds() {
+  public void unitializedReads() {
     Program program = new SimpleProgramBuilder()
       .emitRead("x")
       .buildProgram();
@@ -131,5 +132,27 @@ public class ProgramTest {
       Collections.singleton((ReadInstruction) program.get(0)),
       program.getUninitializedReads()
     );
+  }
+
+  @Test
+  public void unusedAssignments() {
+    Program program = new SimpleProgramBuilder()
+      .emitWrite("x")
+      .buildProgram();
+
+    Assert.assertEquals(
+      Collections.singleton((WriteInstruction) program.get(0)),
+      program.getUnusedAssignments()
+    );
+  }
+
+  @Test
+  public void writeWithReadIsntUnusedAssignment() {
+    Program program = new SimpleProgramBuilder()
+      .emitWrite("x")
+      .emitRead("x")
+      .buildProgram();
+
+    Assert.assertTrue(program.getUnusedAssignments().isEmpty());
   }
 }

@@ -25,7 +25,6 @@ public class MessagesGutter extends JPanel {
   private List<IEditorMessage> myMessages = new ArrayList<IEditorMessage>();
   private Map<IEditorMessage, IEditorMessageOwner> myOwners = new HashMap<IEditorMessage, IEditorMessageOwner>();
 
-
   public MessagesGutter(AbstractEditorComponent editorComponent) {
     myEditorComponent = editorComponent;
 

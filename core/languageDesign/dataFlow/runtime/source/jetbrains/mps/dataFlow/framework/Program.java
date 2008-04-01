@@ -4,6 +4,7 @@ package jetbrains.mps.dataFlow.framework;
 import jetbrains.mps.dataFlow.framework.instructions.*;
 import jetbrains.mps.dataFlow.framework.analyzers.ReachabilityAnalyzer;
 import jetbrains.mps.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
+import jetbrains.mps.dataFlow.framework.analyzers.LivenessAnalyzer;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -142,6 +143,20 @@ public class Program {
         Set<Object> initializedVars = analysisResult.getInstructionMap().get(read);
         if (!initializedVars.contains(read.getVariable())) {
           result.add(read);
+        }
+      }
+    }
+    return result;
+  }
+
+  public Set<WriteInstruction> getUnusedAssignments() {
+    AnalysisResult<Set<Object>> analysisResult = analyze(new LivenessAnalyzer());
+    Set<WriteInstruction> result = new HashSet<WriteInstruction>();
+    for (Instruction i : myInstructions) {
+      if (i instanceof WriteInstruction) {
+        WriteInstruction write = (WriteInstruction) i;
+        if (!analysisResult.getInstructionMap().get(write).contains(write.getVariable())) {
+          result.add(write);
         }
       }
     }
