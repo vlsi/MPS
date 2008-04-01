@@ -77,20 +77,7 @@
       <property name="name" value="test" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206990127251" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206990127252" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206990127253">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1206990129488">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206990130460">
-            <property name="value" value="true" />
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206990129490" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206990136416">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206990136417">
-            <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1206990136418" />
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206990127253" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206443792482" />
   </node>
