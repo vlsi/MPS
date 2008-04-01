@@ -89,6 +89,7 @@ public class QueriesGenerated {
         }
       }
     }
+    // init default parms
     if (SequenceOperations.isEmpty(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true))) {
       SLinkOperations.addNewChild(_context.getNewNode(), "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept");
     }
@@ -124,6 +125,28 @@ public class QueriesGenerated {
       if (SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
         SLinkOperations.setTarget(_context.getNewNode(), "elementConcept", SLinkOperations.getTarget(elementType, "concept", false), false);
       }
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_Node_GetAncestorsOperation_1207071335915(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
+      List<SNode> parms = SLinkOperations.getTargets(_context.getSampleNode(), "parameter", true);
+      {
+        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(parms);
+        try {
+          while(_zCursor1.moveToNext()) {
+            SNode parm = _zCursor1.getCurrent();
+            SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
+          }
+        } finally {
+          _zCursor1.release();
+        }
+      }
+    }
+    // init default parms
+    if (SequenceOperations.isEmpty(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true))) {
+      SLinkOperations.addNewChild(_context.getNewNode(), "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion");
+      SLinkOperations.addNewChild(_context.getNewNode(), "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept");
     }
   }
 
