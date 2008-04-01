@@ -65,7 +65,7 @@ public abstract class Instruction {
 
   public Set<ProgramState> pred(ProgramState s) {
     Set<ProgramState> result = new HashSet<ProgramState>();
-    if (this != getProgram().start()) {
+    if (this != getProgram().getStart()) {
       Instruction prev = getProgram().get(getIndex() - 1);
 
       if (!(prev instanceof RetInstruction) &&

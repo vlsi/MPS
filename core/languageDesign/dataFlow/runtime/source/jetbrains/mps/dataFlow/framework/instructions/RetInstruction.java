@@ -14,7 +14,7 @@ public class RetInstruction extends Instruction {
     Set<ProgramState> result = new HashSet<ProgramState>();
     Program.TryFinallyInfo tryFinally = getEnclosingTryFinally();
     if (tryFinally == null) {
-      result.add(new ProgramState(getProgram().end(), true));
+      result.add(new ProgramState(getProgram().getEnd(), true));
     } else {
       result.add(new ProgramState(tryFinally.getFinally(), true));      
     }

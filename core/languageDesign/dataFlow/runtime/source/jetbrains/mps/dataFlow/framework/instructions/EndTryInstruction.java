@@ -20,7 +20,7 @@ public class EndTryInstruction extends Instruction {
       if (info != null) {
         result.add(new ProgramState(info.getFinally(), true));
       } else {
-        result.add(new ProgramState(getProgram().end(), true));
+        result.add(new ProgramState(getProgram().getEnd(), true));
       }
       return result;
     }

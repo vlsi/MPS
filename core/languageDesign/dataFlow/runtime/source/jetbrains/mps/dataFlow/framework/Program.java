@@ -7,11 +7,14 @@ import jetbrains.mps.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
 import jetbrains.mps.dataFlow.framework.analyzers.LivenessAnalyzer;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 public class Program {
   private List<Instruction> myInstructions = new ArrayList<Instruction>();
   private List<TryFinallyInfo> myTryFinallyInfo = new ArrayList<TryFinallyInfo>();
+
+  private Map<Object, Integer> myStarts = new HashMap<Object, Integer>();
+  private Map<Object, Integer> myEnds = new HashMap<Object, Integer>();  
+  private Stack<Object> myCreationStack = new Stack<Object>();
 
   public List<Instruction> getInstructions() {
     return Collections.unmodifiableList((List<? extends Instruction>) myInstructions);
@@ -29,11 +32,11 @@ public class Program {
     return myInstructions.indexOf(i);
   }
 
-  public Instruction start() {
+  public Instruction getStart() {
     return myInstructions.get(0);
   }
 
-  public Instruction end() {
+  public Instruction getEnd() {
     return myInstructions.get(myInstructions.size() - 1);
   }
 
@@ -56,7 +59,43 @@ public class Program {
 
   void add(Instruction instruction) {
     instruction.setProgram(this);
+    instruction.setSource(getCurrent());
     myInstructions.add(instruction);
+  }
+
+  void start(Object o) {
+    if (myCreationStack.contains(o)) {
+      throw new RuntimeException("Cycle!");
+    }
+    myCreationStack.push(o);
+    myStarts.put(o, getCurrentPosition());
+  }
+
+  void end(Object o) {
+    if (myCreationStack.isEmpty() || myCreationStack.peek() != o) {
+      throw new RuntimeException("Unexpected end");
+    }
+    myCreationStack.pop();
+    myEnds.put(o, getCurrentPosition());    
+  }
+
+  Object getCurrent() {
+    if (myCreationStack.isEmpty()) {
+      return null;
+    }
+    return myCreationStack.peek();
+  }
+
+  private int getCurrentPosition() {
+    return myInstructions.size();
+  }
+
+  public int getStart(Object o) {
+    return myStarts.get(o);
+  }
+
+  public int getEnd(Object o) {
+    return myEnds.get(o);
   }
 
   void init() {
@@ -122,7 +161,7 @@ public class Program {
 
   public Set<Instruction> getExpectedReturns() {
     AnalysisResult<Boolean> analysisResult = analyze(new ReachabilityAnalyzer());
-    ProgramState endWithoutReturn = new ProgramState(end(), false);
+    ProgramState endWithoutReturn = new ProgramState(getEnd(), false);
     Set<Instruction> result = new HashSet<Instruction>();
     if (analysisResult.get(endWithoutReturn)) {
       for (ProgramState pred : endWithoutReturn.pred()) {

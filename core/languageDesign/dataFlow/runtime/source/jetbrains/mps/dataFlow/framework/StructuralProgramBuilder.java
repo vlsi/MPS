@@ -6,9 +6,6 @@ import java.util.*;
 
 public abstract class StructuralProgramBuilder<N> {
   private Program myProgram = new Program();
-  private Stack<N> myNodes = new Stack<N>();
-  private Map<N, Integer> myStarts = new HashMap<N, Integer>();
-  private Map<N, Integer> myEnds = new HashMap<N, Integer>();
   private List<Runnable> myInvokeLater = new ArrayList<Runnable>();
 
   protected abstract void doBuild(N node);
@@ -25,21 +22,15 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   public void build(N node) {
-    if (myNodes.contains(node)) {
-      throw new RuntimeException("There is a cycle in program building");
-    }
-
-    myNodes.push(node);
-    myStarts.put(node, currentPosition());
+    myProgram.start(node);
     doBuild(node);
-    myEnds.put(node, currentPosition());
-    myNodes.pop();
+    myProgram.end(node);
   }
 
   public Position before(final N node) {
     return new Position() {
       public int getPosition() {
-        return myStarts.get(node);
+        return myProgram.getStart(node);
       }
     };
   }
@@ -47,7 +38,7 @@ public abstract class StructuralProgramBuilder<N> {
   public Position after(final N node) {
     return new Position() {
       public int getPosition() {
-        return myEnds.get(node);
+        return myProgram.getEnd(node);
       }
     };
   }
@@ -117,15 +108,6 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   protected void onInstructionEmitted(Instruction instruction) {
-    instruction.setSource(currentNode());
-  }
-
-  private N currentNode() {
-    return myNodes.peek();
-  }
-
-  private int currentPosition() {
-    return myProgram.size();
   }
 
   private void invokeLater(Runnable r) {
