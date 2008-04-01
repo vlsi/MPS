@@ -25,6 +25,10 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   public void build(N node) {
+    if (myNodes.contains(node)) {
+      throw new RuntimeException("There is a cycle in program building");
+    }
+
     myNodes.push(node);
     myStarts.put(node, currentPosition());
     doBuild(node);
