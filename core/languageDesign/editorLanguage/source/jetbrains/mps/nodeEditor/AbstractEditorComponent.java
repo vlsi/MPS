@@ -269,6 +269,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
+        goToNextErrorCell(false);
+      }
+    }, KeyStroke.getKeyStroke("F2"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        goToNextErrorCell(true);
+      }
+    }, KeyStroke.getKeyStroke("shift F2"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
         EditorCell cell = getSelectedCell();
         if (cell == null) return;
         showPopupMenu(cell.getX(), cell.getY());
@@ -483,6 +495,52 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), true).move();
   }
 
+  private void goToNextErrorCell(boolean backwards) {
+    EditorCell current = mySelectedCell;
+    EditorCell_Collection parent = mySelectedCell.getParent();
+    if (parent == null) {
+      if (mySelectedCell instanceof EditorCell_Collection) {
+        parent = (EditorCell_Collection) mySelectedCell;
+        current = null;
+      } else {
+        return;
+      }
+    }
+    while (parent != null) {
+      EditorCell result = findNextCellWithError(parent, current, backwards);
+      if (result != null) {
+        changeSelection(result);
+        return;
+      }
+      current = parent;
+      parent = parent.getParent();
+    }
+  }
+
+  private EditorCell findNextCellWithError(EditorCell_Collection parent, EditorCell current, boolean backwards) {
+    boolean currentMet = current == null;
+    Iterator<EditorCell> iterator = backwards ? parent.reverseCellIterator() : parent.iterator();
+    for (EditorCell cell : CollectionUtil.iteratorAsIterable(iterator)) {
+      if (currentMet) {
+        IEditorMessage message = cell.getMessage();
+        if (message != null && message.getStatus() == MessageStatus.ERROR) {
+          return cell;
+        }
+        if (cell instanceof EditorCell_Collection) {
+          EditorCell cellFromCollection = findNextCellWithError((EditorCell_Collection) cell, null, backwards);
+          if (cellFromCollection != null) {
+            return cellFromCollection;
+          }
+        }
+      } else {
+        if (cell == current) {
+          currentMet = true;
+        }
+      }
+    }
+    return null;
+  }
+
   public SNode getEditedNode() {
     if (myNodePointer != null) {
       return myNodePointer.getNode();
@@ -500,7 +558,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         EditorCell cell = myRootCell.findCell(event.getX(), event.getY());
         if (cell == null) {
           return null;
-        }        
+        }
         SNode node = cell.getSNode();
         while (node != null) {
           final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(node);
@@ -1860,7 +1918,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return;
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_F12 && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_F11 && keyEvent.getModifiers() == 0) {
       relayout();
       keyEvent.consume();
       return;
