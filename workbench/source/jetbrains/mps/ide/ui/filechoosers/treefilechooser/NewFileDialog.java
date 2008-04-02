@@ -2,15 +2,14 @@ package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.awt.HeadlessException;
-import java.awt.BorderLayout;
-
-import org.jetbrains.annotations.Nullable;
 
 public class NewFileDialog extends BaseDialog {
   private JPanel myPanel;
@@ -23,9 +22,13 @@ public class NewFileDialog extends BaseDialog {
 
     myPanel = new JPanel(new BorderLayout());
 
-    myTextArea = new JTextField("New Folder", 30);
+    myTextArea = new JTextField("New Folder", 20);
 
     myPanel.add(myTextArea, BorderLayout.CENTER);
+
+    setPreferredSize(getDefaultDimensionSettings().getDimensions());
+    setSize(getDefaultDimensionSettings().getDimensions());
+    setModal(true);
   }
 
 
@@ -46,7 +49,9 @@ public class NewFileDialog extends BaseDialog {
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(300, 300, 200, 100);
+    int w = (int) Math.round(myTextArea.getPreferredSize().getWidth());
+    int h = (int) Math.round(myTextArea.getPreferredSize().getHeight());
+    return new DialogDimensions(300, 300, w + 50, h + 90);
   }
 
   protected JComponent getMainComponent() {
