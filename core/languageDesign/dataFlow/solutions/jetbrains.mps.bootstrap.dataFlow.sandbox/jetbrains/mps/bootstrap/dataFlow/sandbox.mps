@@ -59,8 +59,8 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207124266178">
               <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207125823793">
-              <property name="value" value="abc" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207136708349">
+              <property name="value" value="12" />
             </node>
           </node>
         </node>
@@ -92,6 +92,21 @@
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207124285245">
                         <link role="variableDeclaration" targetNodeId="1207124266177" resolveInfo="s" />
                       </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207136685217">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1207136685937">
+                      <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207136686644">
+                        <property name="value" value="23" />
+                      </node>
+                      <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207136685218">
+                        <link role="variableDeclaration" targetNodeId="1207124266177" resolveInfo="s" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207136714039">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1207136714040">
+                      <property name="value" value="true" />
                     </node>
                   </node>
                 </node>

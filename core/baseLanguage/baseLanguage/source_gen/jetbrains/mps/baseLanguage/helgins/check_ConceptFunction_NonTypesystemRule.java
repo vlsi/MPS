@@ -4,9 +4,8 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.constraints.Closure_Behavior;
 import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.constraints.StatementList_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -17,9 +16,6 @@ public class check_ConceptFunction_NonTypesystemRule implements NonTypesystemRul
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    if (SNodeOperations.isInstanceOf(nodeToCheck, "jetbrains.mps.baseLanguage.structure.Closure") && Closure_Behavior.call_isControlFlowClosure_1207133672003(nodeToCheck)) {
-      return;
-    }
     if (ConceptFunction_Behavior.call_getExpectedReturnType_1178571276073(nodeToCheck) != null && !(SNodeOperations.isInstanceOf(ConceptFunction_Behavior.call_getExpectedReturnType_1178571276073(nodeToCheck), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       StatementList_Behavior.call_checkReturns_1206989696423(SLinkOperations.getTarget(nodeToCheck, "body", true));
     }
