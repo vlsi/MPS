@@ -19,7 +19,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     super(owner);
 
     setUndecorated(true);
-    setModal(true);
+    setModal(false);
 
     myTextArea = new JTextArea(createNodeInfo(node));
 
