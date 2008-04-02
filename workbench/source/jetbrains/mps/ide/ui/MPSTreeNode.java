@@ -12,6 +12,7 @@ import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.MutableTreeNode;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Rectangle;
@@ -105,7 +106,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
   }
 
-  protected void dispose() {
+  protected void onRemove() {
+  }
+
+  protected void onAdd() {
   }
 
   public void init() {
@@ -131,18 +135,35 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void remove(int childIndex) {
-    ((MPSTreeNode) getChildAt(childIndex)).disposeThisAndChildren();
+    ((MPSTreeNode) getChildAt(childIndex)).removeThisAndChildren();
     super.remove(childIndex);
   }
 
-  final void disposeThisAndChildren() {
-    dispose();
+
+  public void insert(MutableTreeNode newChild, int childIndex) {
+    super.insert(newChild, childIndex);
+    ((MPSTreeNode) getChildAt(childIndex)).addThisAndChildren();
+  }
+
+  final void removeThisAndChildren() {
+    onRemove();
     if (!isInitialized()) {
       return;
     }
     for (int i = 0; i < getChildCount(); i++) {
       MPSTreeNode node = (MPSTreeNode) getChildAt(i);
-      node.disposeThisAndChildren();
+      node.removeThisAndChildren();
+    }
+  }
+
+  final void addThisAndChildren() {
+    onAdd();
+    if (!isInitialized()) {
+      return;
+    }
+    for (int i = 0; i < getChildCount(); i++) {
+      MPSTreeNode node = (MPSTreeNode) getChildAt(i);
+      node.addThisAndChildren();
     }
   }
 

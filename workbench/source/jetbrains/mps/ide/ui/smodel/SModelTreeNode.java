@@ -79,9 +79,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     super(operationContext);
     myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
-    if (myModelDescriptor != null) {
-      myModelDescriptor.addModelCommandListener(myModelListener);
-    }
     myLabel = label;
     myNodesCondition = condition;
     
@@ -408,9 +405,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
             getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
   }
 
-  protected void dispose() {
+  protected void onRemove() {
     if (getSModelDescriptor() != null) {
       getSModelDescriptor().removeModelCommandListener(myModelListener);
+    }
+  }
+
+  protected void onAdd() {
+    if (myModelDescriptor != null && !myModelDescriptor.hasSModelCommandListener(myModelListener)) {
+      myModelDescriptor.addModelCommandListener(myModelListener);
     }
   }
 

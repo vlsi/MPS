@@ -53,7 +53,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     setAutoExpandable(false);
   }
 
-  protected void dispose() {
+  protected void onRemove() {
     SNode node = myNodePointer.getNode();
     if (node != null && !node.isRegistered()) {
       SModel sModel = node.getModel();

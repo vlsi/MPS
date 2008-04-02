@@ -5,7 +5,6 @@ import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.tooltip.TreeToolTipHandler;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
@@ -460,7 +459,7 @@ public abstract class MPSTree extends JTree {
     runRebuildAction(new Runnable() {
       public void run() {
         if (getModel().getRoot() instanceof MPSTreeNode) {
-          (getRootNode()).disposeThisAndChildren();
+          (getRootNode()).removeThisAndChildren();
         }
 
         MPSTreeNode root = rebuild();
