@@ -1924,38 +1924,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return;
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_F2) {
-      final Condition<EditorCell> editorCellCondition = new Condition<EditorCell>() {
-        public boolean met(EditorCell object) {
-          SNode sNode = object.getSNode();
-          if (sNode == null) return false;
-          IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(sNode);
-          return herror != null;
-        }
-      };
-      final EditorCell cell = getSelectedCell();
-      if (keyEvent.getModifiers() == 0) { //F2
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            EditorCell editorCell = findNextCellWhichMeetsCondition(cell, editorCellCondition);
-            if (editorCell != null) {
-              NavigationActionProcessor.navigateToNode(editorCell.getSNode(), myEditorContext, true);
-            }
-          }
-        });
-      }
-      if (keyEvent.isShiftDown() && (keyEvent.getModifiers() & ~Event.SHIFT_MASK) == 0) { //Shift-F2
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
-            EditorCell editorCell = findPrevCellWhichMeetsCondition(cell, editorCellCondition);
-            if (editorCell != null) {
-              NavigationActionProcessor.navigateToNode(editorCell.getSNode(), myEditorContext, true);
-            }
-          }
-        });
-      }
-    }
-
     // dump cells tree starting from current
     if (keyEvent.getKeyCode() == KeyEvent.VK_D && keyEvent.isControlDown()) {
       if (mySelectedCell != null) {
