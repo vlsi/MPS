@@ -9284,7 +9284,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207138977001" />
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1207138978268">
-      <property name="name" value="isReferencedFromClosure" />
+      <property name="name" value="isClosureReference" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1207138978269" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207138978270">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207138978271">
