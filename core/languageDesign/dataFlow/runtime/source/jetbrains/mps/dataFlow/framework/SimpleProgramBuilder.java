@@ -58,6 +58,11 @@ public class SimpleProgramBuilder {
     return this;
   }
 
+  public SimpleProgramBuilder emitStopRet() {
+    myProgram.add(new StopRetInstruction());
+    return this;
+  }
+
   public Program buildProgram() {
     myProgram.init();
     return myProgram;

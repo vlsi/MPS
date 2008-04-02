@@ -92,10 +92,17 @@ public abstract class Instruction {
 
       if (!(prev instanceof RetInstruction) &&
           !(prev instanceof JumpInstruction) &&
-          !(prev instanceof EndTryInstruction && s.isReturnMode())) {
+          !(prev instanceof EndTryInstruction && s.isReturnMode()) &&
+          !(prev instanceof StopRetInstruction)) {
         result.add(new ProgramState(prev, s.isReturnMode()));
       }
+
+      if (prev instanceof StopRetInstruction && !s.isReturnMode()) {
+        result.add(new ProgramState(prev, true));
+        result.add(new ProgramState(prev, false));
+      }
     }
+
     for (Instruction jump : myJumps) {
       result.add(new ProgramState(jump, s.isReturnMode()));
     }
