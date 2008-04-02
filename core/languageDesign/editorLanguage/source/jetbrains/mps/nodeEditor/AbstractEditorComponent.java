@@ -427,7 +427,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void run() {
         SNode node = getSelectedNode();
         if (node != null) {
-          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, getEditorContext()));
+          EditorContext editorContext = getEditorContext();
+          assert editorContext != null : "editor context is null";
+          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext));
         }
       }
     });
