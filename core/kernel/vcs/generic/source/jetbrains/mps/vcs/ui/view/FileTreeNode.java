@@ -3,8 +3,8 @@ package jetbrains.mps.vcs.ui.view;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vcs.ui.IFileController;
+import jetbrains.mps.vcs.ui.VCSIcons;
 import jetbrains.mps.vcs.ui.view.AbstractFileTreeNode;
-import jetbrains.mps.vcs.Status;
 import jetbrains.mps.ide.projectPane.Icons;
 
 import javax.swing.Icon;
@@ -19,7 +19,7 @@ public class FileTreeNode extends AbstractFileTreeNode {
     ICONS.put("devkit", Icons.DEVKIT_ICON);
     ICONS.put("mpl", Icons.LANGUAGE_ICON);
     ICONS.put("mps", Icons.MODEL_ICON);
-    ICONS.put("", Icons.DEFAULT_ICON);
+    ICONS.put("", VCSIcons.FILE_ICON);
   }
 
   public FileTreeNode(IOperationContext operationContext, IFileController provider, IFile file) {
