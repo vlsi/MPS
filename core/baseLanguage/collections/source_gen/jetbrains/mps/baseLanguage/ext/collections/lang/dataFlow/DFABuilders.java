@@ -13,6 +13,11 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation", new AddAllElementsOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement", new MapElement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ContainsOperation", new ContainsOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachOperation", new ForEachOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MappingOperation", new MappingOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SelectOperation", new SelectOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation", new SortOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceCreatorWithSupplier", new SequenceCreatorWithSupplier_DataFlow());
   }
 
 }

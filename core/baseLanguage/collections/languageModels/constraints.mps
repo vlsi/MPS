@@ -635,5 +635,11 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203966719908" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1207135080871">
+    <link role="concept" targetNodeId="1.1153513461623" resolveInfo="ForEachBlock" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1207135080872">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207135080873" />
+    </node>
+  </node>
 </model>
 
