@@ -82,6 +82,11 @@
       <property name="name" value="caption"/>
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1207149998849">
+      <property name="name" value="isAlwaysVisible"/>
+      <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean"/>
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
           id="1205850901791">
       <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier"/>

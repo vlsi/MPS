@@ -426,9 +426,38 @@
             id="1205677550475">
         <property name="selectable" value="false"/>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-            id="1205679424723">
-        <property name="text" value="action context parameters"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1207150041327">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1207150043579">
+          <property name="text" value="action context parameters"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1207150050331">
+          <property name="text" value="("/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1207150054302">
+          <property name="text" value="always visible"/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1207150084027">
+          <property name="text" value="="/>
+          <property name="selectable" value="false"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+              id="1207150068867">
+          <link role="relationDeclaration" targetNodeId="1.1207149998849" resolveInfo="isAlwaysVisible"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1207150076010">
+          <property name="text" value=")"/>
+          <property name="selectable" value="false"/>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
             id="1205679451413">
