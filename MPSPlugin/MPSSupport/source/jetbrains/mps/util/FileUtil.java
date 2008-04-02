@@ -274,6 +274,20 @@ public class FileUtil {
     }
   }
 
+  public static boolean isParent(File parent, File child){
+    if (!parent.isDirectory()){
+      return false;
+    }
+
+    if (parent.equals(child)) return true;
+
+    for (File f : parent.listFiles()){
+      if (isParent(f, child)) return true;
+    }
+
+    return false;
+  }
+
   public static void main(String[] args) {
     zip(new File("C:/aaaaa"), new File("C:/temp/test.zip"));
   }

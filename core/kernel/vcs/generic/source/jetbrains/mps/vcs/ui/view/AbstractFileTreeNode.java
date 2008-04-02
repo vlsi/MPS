@@ -88,13 +88,14 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements IFileP
     return myFile;
   }
 
-  public List<IFile> getFilesWithStatus(Status ... statuses) {
-    if (Arrays.asList(statuses).contains(myProvider.getStatus(myFile))) {
-      LinkedList<IFile> files = new LinkedList<IFile>();
-      files.add(myFile);
+  public Map<IFile, Status> getFilesWithStatus(Status ... statuses) {
+    Status status = myProvider.getStatus(myFile);
+    if (Arrays.asList(statuses).contains(status)) {
+      Map<IFile, Status> files = new LinkedHashMap<IFile, Status>();
+      files.put(myFile, status);
       return files;
     } else {
-      return Collections.EMPTY_LIST;
+      return Collections.EMPTY_MAP;
     }
   }
 }
