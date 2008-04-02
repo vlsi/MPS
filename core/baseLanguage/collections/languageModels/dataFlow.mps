@@ -55,11 +55,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1207061048724">
-          <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.BeforePosition" id="1207061049773">
-            <node role="relativeTo" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207061050509" />
-          </node>
-        </node>
       </node>
     </node>
   </node>
