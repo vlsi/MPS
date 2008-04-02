@@ -13,7 +13,7 @@ public class typeOf_NullLiteral_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode nullLiteral) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nullLiteral, "jetbrains.mps.baseLanguage.helgins", "1204200864517", true), new QuotationClass_86().createNode(), nullLiteral, null, "jetbrains.mps.baseLanguage.helgins", "1204200864515");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nullLiteral, "jetbrains.mps.baseLanguage.helgins", "1204200864517", true), new QuotationClass_85().createNode(), nullLiteral, null, "jetbrains.mps.baseLanguage.helgins", "1204200864515");
   }
 
   public String getApplicableConceptFQName() {

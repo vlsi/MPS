@@ -372,6 +372,7 @@ public class EquationManager {
 
   /*package*/ boolean isConcrete(IWrapper wrapper) {
     if (wrapper == null) return false;
+    if (!(wrapper instanceof NodeWrapper)) return false;
     if (wrapper.isVariable()) {
       return false;
     }
