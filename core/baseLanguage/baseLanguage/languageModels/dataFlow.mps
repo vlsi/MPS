@@ -816,6 +816,29 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206542922862">
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitTryFinallyStatement" id="1206957590308">
           <node role="tryPart" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206957590309">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1207140987790">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207140987791">
+                <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1207141005368">
+                  <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.BeforePosition" id="1207141008620">
+                    <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207141010138">
+                      <link role="variableDeclaration" targetNodeId="1207140987794" resolveInfo="c" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207141001270">
+                <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207141000955" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1207141001710">
+                  <link role="link" targetNodeId="1.1164903700860" />
+                </node>
+              </node>
+              <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207140987794">
+                <property name="name" value="c" />
+                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207140998250">
+                  <link role="concept" targetNodeId="1.1164903280175" resolveInfo="CatchClause" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1206957593483">
               <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206957593484">
                 <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206957593485" />
@@ -823,6 +846,44 @@
                   <link role="link" targetNodeId="1.1153952416686" />
                 </node>
               </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable" id="1207141276961">
+              <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1207141036944">
+                <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition" id="1207141040930">
+                  <link role="label" targetNodeId="1207141025407" resolveInfo="afterCatches" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1207141013640">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207141013641">
+                <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1207141031643">
+                  <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207141033223">
+                    <link role="variableDeclaration" targetNodeId="1207141013644" resolveInfo="c" />
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable" id="1207141436796">
+                  <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1207141053010">
+                    <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition" id="1207141058749">
+                      <link role="label" targetNodeId="1207141025407" resolveInfo="afterCatches" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207141018682">
+                <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207141018399" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1207141019389">
+                  <link role="link" targetNodeId="1.1164903700860" />
+                </node>
+              </node>
+              <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207141013644">
+                <property name="name" value="c" />
+                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207141014396">
+                  <link role="concept" targetNodeId="1.1164903280175" resolveInfo="CatchClause" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitLabelStatement" id="1207141025407">
+              <property name="name" value="afterCatches" />
             </node>
           </node>
           <node role="finallyPart" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206957590310">
