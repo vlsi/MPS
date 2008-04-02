@@ -21,7 +21,7 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
   private EditorsPane editorsPane;
   private MPSProject project;
 
-  public  GoToTypeErrorRule_Action(MPSProject project) {
+  public GoToTypeErrorRule_Action(MPSProject project) {
     super(project, "Go To Rule Which Caused Error");
   }
 
@@ -35,21 +35,27 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
     return !(error == null || error.getRuleId() == null || error.getRuleModel() == null);
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
-    super.doUpdate(context);
-    if (!(this.fillFieldsIfNecessary(context))) {
+  public void doUpdate(@NotNull()ActionContext context) {
+    try {
+      super.doUpdate(context);
+      if (!(this.fillFieldsIfNecessary(context))) {
+        this.setEnabled(false);
+        this.setVisible(false);
+        return;
+      }
+      {
+        boolean enabled = this.isApplicable(context);
+        this.setEnabled(enabled);
+        this.setVisible(enabled);
+      }
+    } catch (Throwable t) {
+      GoToTypeErrorRule_Action.LOG.error("User's action doUpdate method failed. Action:" + "GoToTypeErrorRule", t);
       this.setEnabled(false);
       this.setVisible(false);
-      return;
-    }
-    {
-      boolean enabled = this.isApplicable(context);
-      this.setEnabled(enabled);
-      this.setVisible(enabled);
     }
   }
 
-  public boolean fillFieldsIfNecessary(ActionContext context) {
+  private boolean fillFieldsIfNecessary(ActionContext context) {
     try {
       this.node = context.getNode();
       if (this.node == null) {
@@ -79,13 +85,17 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
-    if (!(this.fillFieldsIfNecessary(context))) {
-      return;
-    }
-    {
-      IErrorReporter error = TypeChecker.getInstance().getTypeErrorDontCheck(this.node);
-      GoToTypeErrorRuleUtil.goToTypeErrorRule(this.operationContext, error, GoToTypeErrorRule_Action.LOG);
+  public void doExecute(@NotNull()ActionContext context) {
+    try {
+      if (!(this.fillFieldsIfNecessary(context))) {
+        return;
+      }
+      {
+        IErrorReporter error = TypeChecker.getInstance().getTypeErrorDontCheck(this.node);
+        GoToTypeErrorRuleUtil.goToTypeErrorRule(this.operationContext, error, GoToTypeErrorRule_Action.LOG);
+      }
+    } catch (Throwable t) {
+      GoToTypeErrorRule_Action.LOG.error("User's action execute method failed. Action:" + "GoToTypeErrorRule", t);
     }
   }
 

@@ -10,14 +10,17 @@ import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+
 import java.util.Set;
+
 import jetbrains.mps.util.Pair;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -28,6 +31,7 @@ import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.helgins.uiActions.MyMenu;
 import jetbrains.mps.nodeEditor.EditorCell;
+
 import java.awt.Component;
 
 public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction {
@@ -38,7 +42,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
   private EditorsPane editorsPane;
   private MPSProject project;
 
-  public  ShowRulesWhichAffectNodeType_Action(MPSProject project) {
+  public ShowRulesWhichAffectNodeType_Action(MPSProject project) {
     super(project, "Show Rules Which Affect Node's Type");
   }
 
@@ -47,18 +51,24 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
     return "";
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
-    super.doUpdate(context);
-    if (!(this.fillFieldsIfNecessary(context))) {
+  public void doUpdate(@NotNull()ActionContext context) {
+    try {
+      super.doUpdate(context);
+      if (!(this.fillFieldsIfNecessary(context))) {
+        this.setEnabled(false);
+        this.setVisible(false);
+        return;
+      }
+      this.setEnabled(true);
+      this.setVisible(true);
+    } catch (Throwable t) {
+      ShowRulesWhichAffectNodeType_Action.LOG.error("User's action doUpdate method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
       this.setEnabled(false);
       this.setVisible(false);
-      return;
     }
-    this.setEnabled(true);
-    this.setVisible(true);
   }
 
-  public boolean fillFieldsIfNecessary(ActionContext context) {
+  private boolean fillFieldsIfNecessary(ActionContext context) {
     try {
       {
         SNode node = context.getNode();
@@ -66,7 +76,7 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
         }
         this.node = node;
         /*
-          if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(node), <!Quotation TextGen not found!>))) {
+          if (!(<!IsSubtypeExpression TextGen not found!>)) {
             return false;
           }
         */
@@ -98,63 +108,66 @@ public class ShowRulesWhichAffectNodeType_Action extends CurrentProjectMPSAction
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
-    if (!(this.fillFieldsIfNecessary(context))) {
-      return;
-    }
-    {
-      NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().getNodeTypesComponent(SNodeOperations.getContainingRoot(this.node));
-      if (component == null) {
+  public void doExecute(@NotNull()ActionContext context) {
+    try {
+      if (!(this.fillFieldsIfNecessary(context))) {
         return;
       }
-      Set<Pair<String, String>> rulesIds = component.getRulesWhichAffectNodeType(this.node);
-      if (rulesIds == null) {
-        return;
-      }
-      List<SNode> rules = new ArrayList<SNode>();
       {
-        ICursor<Pair<String, String>> _zCursor1 = CursorFactory.createCursor(rulesIds);
-        try {
-          while(_zCursor1.moveToNext()) {
-            Pair<String, String> ruleId = _zCursor1.getCurrent();
-            {
-              SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(ruleId.o1));
-              if (modelDescriptor == null) {
-                continue;
-              }
-              SNode rule = modelDescriptor.getSModel().getNodeById(ruleId.o2);
-              if (rule != null) {
-                rules.add(rule);
+        NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().getNodeTypesComponent(SNodeOperations.getContainingRoot(this.node));
+        if (component == null) {
+          return;
+        }
+        Set<Pair<String, String>> rulesIds = component.getRulesWhichAffectNodeType(this.node);
+        if (rulesIds == null) {
+          return;
+        }
+        List<SNode> rules = new ArrayList<SNode>();
+        {
+          ICursor<Pair<String, String>> _zCursor1 = CursorFactory.createCursor(rulesIds);
+          try {
+            while (_zCursor1.moveToNext()) {
+              Pair<String, String> ruleId = _zCursor1.getCurrent();
+              {
+                SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(ruleId.o1));
+                if (modelDescriptor == null) {
+                  continue;
+                }
+                SNode rule = modelDescriptor.getSModel().getNodeById(ruleId.o2);
+                if (rule != null) {
+                  rules.add(rule);
+                }
               }
             }
+          } finally {
+            _zCursor1.release();
           }
-        } finally {
-          _zCursor1.release();
         }
+        IEditor currentEditor = this.editorsPane.getCurrentEditor();
+        // single rule
+        if (rules.size() == 1) {
+          NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(rules.get(0), currentEditor, this.editorsPane), this.project);
+          return;
+        }
+        // multiple rules
+        MyMenu m = new MyMenu(rules, this.operationContext);
+        int x = 0;
+        int y = 0;
+        EditorCell cell = context.get(EditorCell.class);
+        if (cell != null) {
+          x = cell.getX();
+          y = cell.getY();
+        }
+        Component invoker;
+        if (currentEditor == null) {
+          invoker = context.getFrame();
+        } else {
+          invoker = currentEditor.getCurrentEditorComponent();
+        }
+        m.show(invoker, x, y);
       }
-      IEditor currentEditor = this.editorsPane.getCurrentEditor();
-      // single rule
-      if (rules.size() == 1) {
-        NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(rules.get(0), currentEditor, this.editorsPane), this.project);
-        return;
-      }
-      // multiple rules
-      MyMenu m = new MyMenu(rules, this.operationContext);
-      int x = 0;
-      int y = 0;
-      EditorCell cell = context.get(EditorCell.class);
-      if (cell != null) {
-        x = cell.getX();
-        y = cell.getY();
-      }
-      Component invoker;
-      if (currentEditor == null) {
-        invoker = context.getFrame();
-      } else
-      {
-        invoker = currentEditor.getCurrentEditorComponent();
-      }
-      m.show(invoker, x, y);
+    } catch (Throwable t) {
+      ShowRulesWhichAffectNodeType_Action.LOG.error("User's action execute method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
     }
   }
 

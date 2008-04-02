@@ -17,7 +17,7 @@ public class RefactorModel_Action extends CurrentProjectMPSAction {
 
   private SModelDescriptor model;
 
-  public  RefactorModel_Action(MPSProject project) {
+  public RefactorModel_Action(MPSProject project) {
     super(project, "Refactor Helgins Model");
   }
 
@@ -31,21 +31,27 @@ public class RefactorModel_Action extends CurrentProjectMPSAction {
     return languageAspect == LanguageAspect.HELGINS_TYPESYSTEM;
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
-    super.doUpdate(context);
-    if (!(this.fillFieldsIfNecessary(context))) {
+  public void doUpdate(@NotNull()ActionContext context) {
+    try {
+      super.doUpdate(context);
+      if (!(this.fillFieldsIfNecessary(context))) {
+        this.setEnabled(false);
+        this.setVisible(false);
+        return;
+      }
+      {
+        boolean enabled = this.isApplicable(context);
+        this.setEnabled(enabled);
+        this.setVisible(enabled);
+      }
+    } catch (Throwable t) {
+      RefactorModel_Action.LOG.error("User's action doUpdate method failed. Action:" + "RefactorModel", t);
       this.setEnabled(false);
       this.setVisible(false);
-      return;
-    }
-    {
-      boolean enabled = this.isApplicable(context);
-      this.setEnabled(enabled);
-      this.setVisible(enabled);
     }
   }
 
-  public boolean fillFieldsIfNecessary(ActionContext context) {
+  private boolean fillFieldsIfNecessary(ActionContext context) {
     try {
       this.model = context.getModel();
       if (this.model == null) {
@@ -57,11 +63,15 @@ public class RefactorModel_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
-    if (!(this.fillFieldsIfNecessary(context))) {
-      return;
+  public void doExecute(@NotNull()ActionContext context) {
+    try {
+      if (!(this.fillFieldsIfNecessary(context))) {
+        return;
+      }
+      RefactorModelUtil.refactorModel(this.model);
+    } catch (Throwable t) {
+      RefactorModel_Action.LOG.error("User's action execute method failed. Action:" + "RefactorModel", t);
     }
-    RefactorModelUtil.refactorModel(this.model);
   }
 
 }

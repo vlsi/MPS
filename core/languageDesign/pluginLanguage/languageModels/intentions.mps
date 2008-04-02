@@ -10,8 +10,9 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   </language>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="0"/>
   <maxImportIndex value="2"/>
-  <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="-1"/>
+  <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="0"/>
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1204990433124">
     <property name="name" value="ExtractGroup"/>
@@ -80,26 +81,26 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204990992075">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205510383899">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207148802021">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204990993140">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
                     id="1204990992076">
                 <link role="variableDeclaration" targetNodeId="1204990880224" resolveInfo="rootGroup"/>
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess"
-                    id="1204991005969">
-                <link role="link" targetNodeId="1.1203087991474"/>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
+                    id="1207148798379">
+                <link role="link" targetNodeId="1.1207145245948"/>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddAllOperation"
-                  id="1204991016942">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204991022788">
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation"
+                  id="1207148803554">
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207148806416">
                 <node role="operand"
                       type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node"
-                      id="1204991021959"/>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess"
-                      id="1204991024650">
-                  <link role="link" targetNodeId="1.1203087991474"/>
+                      id="1207148805415"/>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
+                      id="1207148807965">
+                  <link role="link" targetNodeId="1.1207145245948"/>
                 </node>
               </node>
             </node>

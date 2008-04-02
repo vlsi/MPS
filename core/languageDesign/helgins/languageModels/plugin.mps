@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.bootstrap.helgins.plugin">
   <persistence version="1"/>
   <refactoringHistory/>
-  <language namespace="jetbrains.mps.bootstrap.pluginLanguage"/>
+  <language namespace="jetbrains.mps.bootstrap.pluginLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="0"/>
+  </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   </language>
@@ -43,25 +45,28 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205244087094">
     <property name="name" value="TypesystemActions"/>
     <property name="caption" value="Type System"/>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205244660047">
-      <link role="javaClass" targetNodeId="3.~ShowNodeTypeAction" resolveInfo="ShowNodeTypeAction"/>
-    </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1206108013514">
-      <link role="action" targetNodeId="1206101816406" resolveInfo="GoToTypeErrorRule"/>
-    </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1206185060411">
-      <link role="action" targetNodeId="1206184013394" resolveInfo="ShowRulesWhichAffectNodeType"/>
-    </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1206101742154">
-      <link role="action" targetNodeId="1206101064404" resolveInfo="GoToNodeThisDependsOn"/>
-    </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1205606669810">
-      <link role="action" targetNodeId="1205606256131" resolveInfo="ShowSupertypes"/>
-    </node>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1205245247513">
       <property name="additionType" value="false"/>
       <link role="modifiedGroup" targetNodeId="4.1204991231476" resolveInfo="EditorPopup"/>
+    </node>
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
+          id="1207148465303">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205244660047">
+        <link role="javaClass" targetNodeId="3.~ShowNodeTypeAction" resolveInfo="ShowNodeTypeAction"/>
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1206108013514">
+        <link role="action" targetNodeId="1206101816406" resolveInfo="GoToTypeErrorRule"/>
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1206185060411">
+        <link role="action" targetNodeId="1206184013394" resolveInfo="ShowRulesWhichAffectNodeType"/>
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1206101742154">
+        <link role="action" targetNodeId="1206101064404" resolveInfo="GoToNodeThisDependsOn"/>
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1205606669810">
+        <link role="action" targetNodeId="1205606256131" resolveInfo="ShowSupertypes"/>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205244470519">
@@ -70,24 +75,30 @@
           id="1205245180119">
       <link role="modifiedGroup" targetNodeId="4.1204991215587" resolveInfo="ProjectPaneNodeActions"/>
     </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1206107912144">
-      <link role="action" targetNodeId="1206101816406" resolveInfo="GoToTypeErrorRule"/>
-    </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1205606649807">
-      <link role="action" targetNodeId="1205605492950" resolveInfo="HighlightDependentLeaves"/>
-    </node>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1206101735997">
-      <link role="action" targetNodeId="1206101064404" resolveInfo="GoToNodeThisDependsOn"/>
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
+          id="1207148360291">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1206107912144">
+        <link role="action" targetNodeId="1206101816406" resolveInfo="GoToTypeErrorRule"/>
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1205606649807">
+        <link role="action" targetNodeId="1205605492950" resolveInfo="HighlightDependentLeaves"/>
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1206101735997">
+        <link role="action" targetNodeId="1206101064404" resolveInfo="GoToNodeThisDependsOn"/>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205245331359">
     <property name="name" value="HelginsEditorPopupInternal"/>
-    <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1205606657683">
-      <link role="action" targetNodeId="1205605492950" resolveInfo="HighlightDependentLeaves"/>
-    </node>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
           id="1205245368690">
       <link role="modifiedGroup" targetNodeId="4.1204991231476" resolveInfo="EditorPopup"/>
+    </node>
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
+          id="1207148358868">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1205606657683">
+        <link role="action" targetNodeId="1205605492950" resolveInfo="HighlightDependentLeaves"/>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1205605492950">
@@ -237,8 +248,8 @@
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
                         id="1205606138497">
                     <link role="baseMethodDeclaration"
-                          targetNodeId="10.~NodeHighlightManager$HighlighterMessage.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.awt.Color,java.lang.String,jetbrains.mps.nodeEditor.IEditorMessageOwner,jetbrains.mps.nodeEditor.IEditorComponent)"
-                          resolveInfo="NodeHighlightManager.HighlighterMessage"/>
+                          targetNodeId="10.~DefaultEditorMessage.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.awt.Color,java.lang.String,jetbrains.mps.nodeEditor.IEditorMessageOwner,jetbrains.mps.nodeEditor.IEditorComponent)"
+                          resolveInfo="DefaultEditorMessage"/>
                     <node role="actualArgument"
                           type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference"
                           id="1205606182896">
