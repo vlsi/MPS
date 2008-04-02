@@ -5,6 +5,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
@@ -30,7 +31,7 @@ public class ConstantFinder extends BaseFinder {
     myResults.getSearchResults().addAll(searchResults);
   }
 
-  public SearchResults find(SearchQuery query) {
+  public SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
     return myResults;
   }
 

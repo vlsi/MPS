@@ -12,6 +12,7 @@ import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
 
 public class FinderNode extends BaseLeaf {
@@ -42,24 +43,23 @@ public class FinderNode extends BaseLeaf {
     return "finder";
   }
 
-  public SearchResults doGetResults(final SearchQuery query, IAdaptiveProgressMonitor monitor) {
+  public SearchResults doGetResults(final SearchQuery query, final IAdaptiveProgressMonitor monitor) {
     monitor.addText(getTaskName() + " started");
     monitor.startLeafTask(getTaskName(), getTaskKind());
-    final SearchResults[] results = new SearchResults[1];
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {
+    final SearchResults results = CommandProcessor.instance().executeLightweightCommand(new Calculable<SearchResults>() {
+      public SearchResults calculate() {
         try {
-          results[0] = myFinder.find(query);
+          return myFinder.find(query, monitor);
         } catch (Throwable t) {
           LOG.error(t.getMessage(), t);
-          results[0] = new SearchResults();
+          return new SearchResults();
         }
       }
     });
     monitor.finishTask();
     monitor.addText(getTaskName() + " finished");
 
-    return results[0];
+    return results;
   }
 
   public long getEstimatedTime(IScope scope) {

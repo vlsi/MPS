@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IScope;
 
 import java.util.List;
 
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -47,9 +48,9 @@ public class OverridingFields_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     {
-      ICursor<SNode> _zCursor8 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope));
+      ICursor<SNode> _zCursor8 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope, monitor));
       try {
         while (_zCursor8.moveToNext()) {
           SNode classNode = _zCursor8.getCurrent();

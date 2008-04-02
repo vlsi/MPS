@@ -6,9 +6,14 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+
 import java.util.List;
+
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+
 import java.util.Set;
 import java.util.HashSet;
+
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -40,13 +45,13 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     Set<SNode> nodes = new HashSet<SNode>();
     nodes.add(node);
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(SNodeOperations.getDescendants(node, null, false));
       try {
-        while(_zCursor.moveToNext()) {
+        while (_zCursor.moveToNext()) {
           SNode child = _zCursor.getCurrent();
           nodes.add(child);
         }
@@ -56,7 +61,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
     }
     // null
     Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, null);
-    for(SReference reference : resRefs) {
+    for (SReference reference : resRefs) {
       if (!(nodes.contains(reference.getSourceNode()))) {
         ListOperations.addElement(_results, reference.getSourceNode());
       }
@@ -67,7 +72,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
     {
       ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SNodeOperations.getDescendants(node, null, false));
       try {
-        while(_zCursor1.moveToNext()) {
+        while (_zCursor1.moveToNext()) {
           SNode child = _zCursor1.getCurrent();
           ListOperations.addElement(_results, child);
         }

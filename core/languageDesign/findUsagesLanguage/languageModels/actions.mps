@@ -55,6 +55,10 @@
             id="1200309249159">
         <link role="concept" targetNodeId="1.1200242336756" resolveInfo="ResultStatement"/>
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart"
+            id="1207141972394">
+        <link role="concept" targetNodeId="1.1207141825411" resolveInfo="CheckCancelledStatusStatement"/>
+      </node>
       <node role="precondition"
             type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction"
             id="1200309262503">

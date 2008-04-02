@@ -241,5 +241,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1207141875089">
+    <link role="conceptDeclaration" targetNodeId="1.1207141825411" resolveInfo="CheckCancelledStatusStatement"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+          id="1207141899185">
+      <property name="text" value="check cancelled status;"/>
+    </node>
+  </node>
 </model>
 

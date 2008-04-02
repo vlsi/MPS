@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.IScope;
 
 import java.util.List;
 
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -39,7 +40,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
     return !(SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "extendedInterface", true)));
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     SNode current = node;
     {
       ICursor<SNode> _zCursor22 = CursorFactory.createCursor(SLinkOperations.getTargets(current, "extendedInterface", true));
@@ -48,7 +49,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
           SNode ancestor = _zCursor22.getCurrent();
           ListOperations.addElement(_results, ancestor);
           {
-            ICursor<SNode> _zCursor23 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestor, scope));
+            ICursor<SNode> _zCursor23 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestor, scope, monitor));
             try {
               while (_zCursor23.moveToNext()) {
                 SNode ancestorAncestor = _zCursor23.getCurrent();

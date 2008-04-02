@@ -7,7 +7,10 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
+
 import java.util.List;
+
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
@@ -35,9 +38,9 @@ public class ConceptInstances_Finder extends GeneratedFinder {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     List<SNode> resNodes = FindUsagesManager.getInstance().findInstances(node, scope);
-    for(SNode resNode : resNodes) {
+    for (SNode resNode : resNodes) {
       ListOperations.addElement(_results, resNode);
     }
   }

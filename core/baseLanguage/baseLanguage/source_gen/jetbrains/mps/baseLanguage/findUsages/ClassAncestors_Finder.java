@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IScope;
 
 import java.util.List;
 
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,7 +37,7 @@ public class ClassAncestors_Finder extends GeneratedFinder {
     return SLinkOperations.getTarget(node, "superclass", true) != null;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     SNode current = node;
     while (current != null) {
       current = SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false);

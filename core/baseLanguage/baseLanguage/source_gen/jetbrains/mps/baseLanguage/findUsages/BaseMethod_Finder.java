@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IScope;
 
 import java.util.List;
 
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     // traverse ancestors
     List<SearchResult> ancestors = new ArrayList<SearchResult>();
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {

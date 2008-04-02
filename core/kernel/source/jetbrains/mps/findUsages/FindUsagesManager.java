@@ -123,6 +123,22 @@ public class FindUsagesManager {
   }
 
   /**
+   * Fully equivalent to <code>findInstances((ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null)</code>
+   * <p>
+   * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
+   * </p>
+   *
+   * @param conceptDeclaration
+   * @param scope
+   * @param monitor
+   * @return
+   */
+  public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, IAdaptiveProgressMonitor monitor) {
+    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, monitor);
+    return new ArrayList<SNode>(set);
+  }
+
+  /**
    * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
    *
    * @param concept

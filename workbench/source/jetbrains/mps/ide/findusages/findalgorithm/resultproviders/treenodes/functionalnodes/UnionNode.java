@@ -9,6 +9,7 @@ public class UnionNode extends BaseNode {
   public SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
     SearchResults results = new SearchResults();
     for (BaseNode child : myChildren) {
+      if (monitor.isCanceled()) break;
       SearchResults childResults = child.getResults(query, monitor);
       results.getSearchResults().addAll(childResults.getSearchResults());
       results.getSearchedNodePointers().addAll(childResults.getSearchedNodePointers());

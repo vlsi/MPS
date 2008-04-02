@@ -8,6 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 
 import java.util.List;
+
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+
 import java.util.ArrayList;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -37,14 +40,14 @@ public class DerivedClasses_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     List<SNode> derived = new ArrayList<SNode>();
     ListOperations.addElement(derived, (SNode) node);
     // null
     int passed = 0;
     while (SequenceOperations.getSize(derived) != passed) {
       SNode passingNode = ListOperations.getElement(derived, passed);
-      for (SNode classNode : this.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope)) {
+      for (SNode classNode : this.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope, monitor)) {
         ListOperations.addElement(derived, classNode);
       }
       if (passingNode != node) {

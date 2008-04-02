@@ -9,11 +9,15 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.smodel.IScope;
 
 import java.util.List;
+
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+
 import java.util.ArrayList;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import org.jetbrains.annotations.Nullable;
 
 public class FieldUsages_Finder extends GeneratedFinder {
@@ -45,11 +49,11 @@ public class FieldUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     List<SNode> fieldDeclarations = new ArrayList<SNode>();
     ListOperations.addElement(fieldDeclarations, node);
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-      ListOperations.addAllElements(fieldDeclarations, (List<SNode>) this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope));
+      ListOperations.addAllElements(fieldDeclarations, (List<SNode>) this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, monitor));
     }
     // null
     {
@@ -58,7 +62,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
         while (_zCursor5.moveToNext()) {
           SNode fieldDeclaration = _zCursor5.getCurrent();
           {
-            ICursor<SNode> _zCursor6 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", fieldDeclaration, scope));
+            ICursor<SNode> _zCursor6 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", fieldDeclaration, scope, monitor));
             try {
               while (_zCursor6.moveToNext()) {
                 SNode fieldUsage = _zCursor6.getCurrent();
@@ -79,7 +83,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
     ListOperations.addElement(_results, node);
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
       {
-        ICursor<SNode> _zCursor7 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope));
+        ICursor<SNode> _zCursor7 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, new NullAdaptiveProgressMonitor()));
         try {
           while (_zCursor7.moveToNext()) {
             SNode fieldNode = _zCursor7.getCurrent();

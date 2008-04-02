@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IScope;
 
 import java.util.List;
 
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import org.jetbrains.annotations.Nullable;
 
 public class ImplementingClasses_Finder extends GeneratedFinder {
@@ -41,13 +43,13 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
-    List<SNode> derivedInterfaces = this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope);
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
+    List<SNode> derivedInterfaces = this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope, monitor);
     ListOperations.addElement(derivedInterfaces, node);
     // null
     List<SNode> derivedInterfacesUsages = new ArrayList<SNode>();
     for (SNode derivedInterface : derivedInterfaces) {
-      ListOperations.addAllElements(derivedInterfacesUsages, this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", derivedInterface, scope));
+      ListOperations.addAllElements(derivedInterfacesUsages, this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", derivedInterface, scope, monitor));
     }
     // null
     for (SNode interfaceNode : derivedInterfacesUsages) {
@@ -55,7 +57,7 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
         if (SNodeOperations.hasRole(interfaceNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
           ListOperations.addElement(_results, SNodeOperations.getParent(interfaceNode, null, false, false));
           {
-            ICursor<SNode> _zCursor2 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", interfaceNode, scope));
+            ICursor<SNode> _zCursor2 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", interfaceNode, scope, monitor));
             try {
               while (_zCursor2.moveToNext()) {
                 SNode classNode = _zCursor2.getCurrent();
@@ -73,7 +75,7 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListOperations.addElement(_results, node);
     {
-      ICursor<SNode> _zCursor3 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope));
+      ICursor<SNode> _zCursor3 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope, new NullAdaptiveProgressMonitor()));
       try {
         while (_zCursor3.moveToNext()) {
           SNode derivedInterface = _zCursor3.getCurrent();

@@ -9,6 +9,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.smodel.IScope;
 
 import java.util.List;
+
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+
 import java.util.ArrayList;
 
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
@@ -45,15 +48,15 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "method");
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
     {
-      ICursor<SNode> _zCursor10 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope));
+      ICursor<SNode> _zCursor10 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope, monitor));
       try {
         while (_zCursor10.moveToNext()) {
           SNode implementor = _zCursor10.getCurrent();
           ListOperations.addElement(implementorsAndAncestorsList, implementor);
-          ListOperations.addAllElements(implementorsAndAncestorsList, this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", implementor, scope));
+          ListOperations.addAllElements(implementorsAndAncestorsList, this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", implementor, scope, monitor));
         }
       } finally {
         _zCursor10.release();

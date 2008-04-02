@@ -6,8 +6,13 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+
 import java.util.List;
+
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+
 import java.util.Set;
+
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -36,9 +41,9 @@ public class NodeUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(node, scope);
-    for(SReference reference : resRefs) {
+    for (SReference reference : resRefs) {
       ListOperations.addElement(_results, reference.getSourceNode());
     }
   }

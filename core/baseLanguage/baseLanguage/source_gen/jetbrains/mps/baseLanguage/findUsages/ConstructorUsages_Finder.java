@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IScope;
 
 import java.util.List;
 
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -42,11 +43,11 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     return SNodeOperations.getAncestor(queryNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     // search for straight usages & search for SUPER calls
     // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS
     {
-      ICursor<SNode> _zCursor17 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", node, scope));
+      ICursor<SNode> _zCursor17 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", node, scope, monitor));
       try {
         while (_zCursor17.moveToNext()) {
           SNode nodeUsage = _zCursor17.getCurrent();
@@ -58,7 +59,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     }
     // WORKAROUND - FIND SUPER() CALLS
     {
-      ICursor<SNode> _zCursor18 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope));
+      ICursor<SNode> _zCursor18 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, monitor));
       try {
         while (_zCursor18.moveToNext()) {
           SNode subclassResult = _zCursor18.getCurrent();

@@ -4,13 +4,15 @@
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage"/>
   <language namespace="jetbrains.mps.baseLanguage"/>
+  <language namespace="jetbrains.mps.core"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
-  <maxImportIndex value="13"/>
+  <maxImportIndex value="14"/>
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
   <import index="11" modelUID="java.lang@java_stub" version="-1"/>
+  <import index="14" modelUID="jetbrains.mps.ide.progress@java_stub" version="-1"/>
   <visible index="2" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure"/>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197044488840">
     <property name="name" value="FindBlock"/>
@@ -300,6 +302,19 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
             resolveInfo="applicableConceptFunctionParameter"/>
       <link role="target" targetNodeId="2v.1161622878565" resolveInfo="ConceptFunctionParameter_scope"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1207141825411">
+    <property name="name" value="CheckCancelledStatusStatement"/>
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1207141825413">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1207141825414">
+      <property name="value" value="check cancelled status"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
 </model>

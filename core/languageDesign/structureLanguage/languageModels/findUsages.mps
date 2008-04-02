@@ -352,7 +352,7 @@
                 <node role="actualArgument"
                       type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope"
                       id="1206463374367"/>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198431443527"/>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207144469910"/>
               </node>
             </node>
           </node>
