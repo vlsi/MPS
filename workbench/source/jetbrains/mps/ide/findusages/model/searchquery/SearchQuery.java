@@ -28,8 +28,6 @@ public class SearchQuery {
   private SNodePointer myNodePointer;
   private IScope myScope;
 
-  private transient Runnable myAction;
-
   public SearchQuery(@NotNull SNodePointer nodePointer, IScope scope) {
     myNodePointer = nodePointer;
     myScope = scope;
@@ -38,7 +36,6 @@ public class SearchQuery {
   public SearchQuery(@NotNull SNodePointer nodePointer, IScope scope, Runnable action) {
     myNodePointer = nodePointer;
     myScope = scope;
-    myAction = action;
   }
 
   public SearchQuery(SNode node, IScope scope) {
@@ -59,10 +56,6 @@ public class SearchQuery {
 
   public IScope getScope() {
     return myScope;
-  }
-
-  public Runnable getAction() {
-    return myAction;
   }
 
   public void write(Element element, MPSProject project) {
