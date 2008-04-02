@@ -147,6 +147,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1200242474757">
+    <property name="package" value="Statements"/>
     <link role="conceptDeclaration" targetNodeId="1.1200242336756" resolveInfo="ResultStatement"/>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
           id="1200242485056">
@@ -168,6 +169,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1200242594265">
+    <property name="package" value="Statements"/>
     <link role="conceptDeclaration" targetNodeId="1.1200242562138" resolveInfo="NodeStatement"/>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
           id="1200242597610">
@@ -189,6 +191,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1206197950998">
+    <property name="package" value="Statements"/>
     <link role="conceptDeclaration" targetNodeId="1.1206197741569" resolveInfo="NewExecuteFinderStatement"/>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
           id="1206198176435">
@@ -242,6 +245,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1207141875089">
+    <property name="package" value="Statements"/>
     <link role="conceptDeclaration" targetNodeId="1.1207141825411" resolveInfo="CheckCancelledStatusStatement"/>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
           id="1207141899185">

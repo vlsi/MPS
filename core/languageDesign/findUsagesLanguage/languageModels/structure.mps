@@ -146,6 +146,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200242336756">
     <property name="name" value="ResultStatement"/>
+    <property name="package" value="Statements"/>
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1200242376867">
@@ -166,6 +167,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200242562138">
     <property name="name" value="NodeStatement"/>
+    <property name="package" value="Statements"/>
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1200242582311">
@@ -186,6 +188,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206197741569">
     <property name="name" value="ExecuteFinderExpression"/>
+    <property name="package" value="Statements"/>
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
           id="1206197741572">
@@ -306,6 +309,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1207141825411">
     <property name="name" value="CheckCancelledStatusStatement"/>
+    <property name="package" value="Statements"/>
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
           id="1207141825413">
