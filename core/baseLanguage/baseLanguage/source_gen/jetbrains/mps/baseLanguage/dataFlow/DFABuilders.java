@@ -50,6 +50,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.NotExpression", new NotExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.InstanceMethodCall", new InstanceMethodCall_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.Closure", new Closure_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.CatchClause", new CatchClause_DataFlow());
   }
 
 }

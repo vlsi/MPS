@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.dataFlow.DataFlowBuilderContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class TryCatchStatement_DataFlow extends DataFlowBuilder {
@@ -13,7 +14,14 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
+    for(SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
+      _context.getBuilder().emitIfJump(_context.getBuilder().before(c));
+    }
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
+    for(SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
+      _context.getBuilder().build(c);
+      _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
+    }
   }
 
 }
