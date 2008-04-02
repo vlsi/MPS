@@ -59,9 +59,11 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207124266178">
               <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207136708349">
-              <property name="value" value="12" />
-            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207138839560">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207138839561">
+            <link role="variableDeclaration" targetNodeId="1207124266177" resolveInfo="s" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207124236927">

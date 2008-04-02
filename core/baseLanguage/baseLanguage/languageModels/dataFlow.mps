@@ -1200,29 +1200,7 @@
   <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1207125045369">
     <link role="conceptDeclaration" targetNodeId="1.1152728232947" resolveInfo="Closure" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1207125045370">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207125045371">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1207125057903">
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207125067132">
-            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207125066802" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207125069010">
-              <link role="conceptMethodDeclaration" targetNodeId="2v.1207124406334" resolveInfo="getClosureParameterReads" />
-            </node>
-          </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207125057905">
-            <property name="name" value="paramRead" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207125058737">
-              <link role="concept" targetNodeId="1.1068498886296" resolveInfo="VariableReference" />
-            </node>
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207125057907">
-            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1207125070700">
-              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207125072124">
-                <link role="variableDeclaration" targetNodeId="1207125057905" resolveInfo="paramReads" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207125045371" />
     </node>
   </node>
 </model>
