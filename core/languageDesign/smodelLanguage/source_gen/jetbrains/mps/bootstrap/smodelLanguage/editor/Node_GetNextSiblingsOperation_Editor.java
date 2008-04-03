@@ -7,102 +7,26 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Node_GetNextSiblingsOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myOperationParameters_Component1;
-  /* package */AbstractCellProvider myReplaceableAlias_Comp13;
+  /* package */AbstractCellProvider myReplaceableAliasAndParms_Comp6;
 
-  private static void setupBasic_CellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145571027556");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145571027557");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145571027558");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_OperationParameters_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145571027560");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_ReplaceableAlias_CompCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206486981924");
-  }
-
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.setEditable(true);
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1146258668392(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "parameter") == 0;
+  private static void setupBasic_ReplaceableAliasAndParms_CompCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207249313004");
   }
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCellAlternation(context, node);
+    return this.createReplaceableAliasAndParms_CompCell(context, node);
   }
 
-  public EditorCell createCellAlternation(EditorContext context, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = Node_GetNextSiblingsOperation_Editor._QueryFunction_NodeCondition_1146258668392(node, context, context.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstantCell(context, node, "next-siblings");
-    } else
-    {
-      editorCell = this.createRowCell(context, node);
+  public EditorCell createReplaceableAliasAndParms_CompCell(EditorContext context, SNode node) {
+    if (this.myReplaceableAliasAndParms_Comp6 == null) {
+      this.myReplaceableAliasAndParms_Comp6 = new ReplaceableAliasAndParms_Comp(node);
     }
-    Node_GetNextSiblingsOperation_Editor.setupBasic_CellAlternation(editorCell, node, context);
-    return editorCell;
-  }
-
-  public EditorCell createRowCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    Node_GetNextSiblingsOperation_Editor.setupBasic_RowCell(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createReplaceableAlias_CompCell(context, node));
-    editorCell.addEditorCell(this.createOperationParameters_ComponentCell(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createOperationParameters_ComponentCell(EditorContext context, SNode node) {
-    if (this.myOperationParameters_Component1 == null) {
-      this.myOperationParameters_Component1 = new OperationParameters_Component(node);
-    }
-    EditorCell editorCell = this.myOperationParameters_Component1.createEditorCell(context);
-    Node_GetNextSiblingsOperation_Editor.setupBasic_OperationParameters_ComponentCell(editorCell, node, context);
-    return editorCell;
-  }
-
-  public EditorCell createReplaceableAlias_CompCell(EditorContext context, SNode node) {
-    if (this.myReplaceableAlias_Comp13 == null) {
-      this.myReplaceableAlias_Comp13 = new ReplaceableAlias_Comp(node);
-    }
-    EditorCell editorCell = this.myReplaceableAlias_Comp13.createEditorCell(context);
-    Node_GetNextSiblingsOperation_Editor.setupBasic_ReplaceableAlias_CompCell(editorCell, node, context);
-    return editorCell;
-  }
-
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    Node_GetNextSiblingsOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    Node_GetNextSiblingsOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
-    editorCell.setDefaultText("");
+    EditorCell editorCell = this.myReplaceableAliasAndParms_Comp6.createEditorCell(context);
+    Node_GetNextSiblingsOperation_Editor.setupBasic_ReplaceableAliasAndParms_CompCell(editorCell, node, context);
     return editorCell;
   }
 

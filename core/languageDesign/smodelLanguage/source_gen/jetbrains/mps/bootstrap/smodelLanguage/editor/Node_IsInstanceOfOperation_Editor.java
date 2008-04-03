@@ -24,7 +24,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAlias_Comp19;
+  /* package */AbstractCellProvider myReplaceableAlias_Comp17;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139621567253");
@@ -137,10 +137,10 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createReplaceableAlias_CompCell(EditorContext context, SNode node) {
-    if (this.myReplaceableAlias_Comp19 == null) {
-      this.myReplaceableAlias_Comp19 = new ReplaceableAlias_Comp(node);
+    if (this.myReplaceableAlias_Comp17 == null) {
+      this.myReplaceableAlias_Comp17 = new ReplaceableAlias_Comp(node);
     }
-    EditorCell editorCell = this.myReplaceableAlias_Comp19.createEditorCell(context);
+    EditorCell editorCell = this.myReplaceableAlias_Comp17.createEditorCell(context);
     Node_IsInstanceOfOperation_Editor.setupBasic_ReplaceableAlias_CompCell(editorCell, node, context);
     return editorCell;
   }
