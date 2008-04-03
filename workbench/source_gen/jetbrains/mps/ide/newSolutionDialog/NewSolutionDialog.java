@@ -22,7 +22,7 @@ public class NewSolutionDialog extends BaseDialog {
   }
 
   public JComponent getMainComponent() {
-    if(this.myContentPane == null) {
+    if (this.myContentPane == null) {
       this.myContentPane = new NewSolutionDialogContentPane();
       this.myContentPane.setDialog(this);
     }

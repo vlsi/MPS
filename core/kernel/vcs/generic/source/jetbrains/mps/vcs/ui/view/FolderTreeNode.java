@@ -40,18 +40,4 @@ public class FolderTreeNode extends AbstractFileTreeNode {
       return new FileTreeNode(operationContext, provider, file);
     }
   }
-
-  public Map<IFile, Status> getFilesWithStatus(Status... statuses) {
-    Map<IFile, Status> files = new LinkedHashMap<IFile, Status>();
-    files.putAll(super.getFilesWithStatus(statuses));
-    for (int i = 0; i < getChildCount(); i++){
-      TreeNode child = getChildAt(i);
-      if (!(child instanceof AbstractFileTreeNode)){
-        throw new IllegalStateException("Tree only consists of file or folder nodes");
-      } else {
-        files.putAll(((AbstractFileTreeNode)child).getFilesWithStatus(statuses));
-      }
-    }
-    return files;
-  }
 }

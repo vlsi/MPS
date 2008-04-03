@@ -91,7 +91,7 @@ public class NewSolutionDialogContentPane extends JPanel {
 
   private void unbind() {
     for(AutoBinding binding : this.myBindings) {
-      if(binding.isBound()) {
+      if (binding.isBound()) {
         binding.unbind();
       }
     }
@@ -186,37 +186,37 @@ public class NewSolutionDialogContentPane extends JPanel {
   }
 
   /* package */void onOk() {
-    if(myThis.getSolutionPath().length() == 0) {
+    if (myThis.getSolutionPath().length() == 0) {
       myThis.getDialog().setErrorText("Enter solution directory");
       return;
     }
-    if(myThis.getSolutionName().length() == 0) {
+    if (myThis.getSolutionName().length() == 0) {
       myThis.getDialog().setErrorText("Enter solution name");
       return;
     }
-    if(MPSModuleRepository.getInstance().getModuleByUID(myThis.getSolutionName()) != null) {
+    if (MPSModuleRepository.getInstance().getModuleByUID(myThis.getSolutionName()) != null) {
       myThis.getDialog().setErrorText("Duplicate solution name");
       return;
     }
     String descriptorPath = myThis.getSolutionPath() + File.separator + myThis.getSolutionName() + ".msd";
     File file = new File(descriptorPath);
-    if(file.exists()) {
+    if (file.exists()) {
       myThis.getDialog().setErrorText("Solution file already exists");
       return;
     }
     File dir = file.getParentFile();
-    if(!(dir.isAbsolute())) {
+    if (!(dir.isAbsolute())) {
       myThis.getDialog().setErrorText("Path should be absolute");
       return;
     }
-    if(!(dir.exists())) {
-      if(!(DirectoryUtil.askToCreateNewDirectory(((Frame)myThis.getDialog().getOwner()), dir))) {
+    if (!(dir.exists())) {
+      if (!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir))) {
         myThis.getDialog().setErrorText("Enter correct path");
         return;
       }
     }
     final File descriptorFile = myThis.prepareToCreateNewSolutionDescriptorFile(descriptorPath);
-    if(descriptorFile == null) {
+    if (descriptorFile == null) {
       myThis.getDialog().setErrorText("Can't create " + descriptorPath);
       return;
     }
@@ -237,7 +237,7 @@ public class NewSolutionDialogContentPane extends JPanel {
   /* package */File prepareToCreateNewSolutionDescriptorFile(String path) {
     File solutionDescriptorFile = new File(path);
     File dir = solutionDescriptorFile.getParentFile();
-    if(!(dir.exists())) {
+    if (!(dir.exists())) {
       dir.mkdirs();
     }
     return solutionDescriptorFile;
@@ -253,17 +253,17 @@ public class NewSolutionDialogContentPane extends JPanel {
     SPropertyOperations.set(modelRoot, "prefix", "");
     SPropertyOperations.set(modelRoot, "path", solutionDescriptorFile.getParent().getAbsolutePath());
     SLinkOperations.addChild(solutionDescriptor, "modelRoot", modelRoot);
-    DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, (((SolutionDescriptor)SNodeOperations.getAdapter(solutionDescriptor))));
+    DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, ((SolutionDescriptor)SNodeOperations.getAdapter(solutionDescriptor)));
     return myThis.getProject().addProjectSolution(solutionDescriptorFile.toFile());
   }
 
   /* package */void updateSolutionPath() {
-    if(myThis.getProject() == null) {
+    if (myThis.getProject() == null) {
       return;
     }
     String path = FileUtil.getCanonicalPath(myThis.getProject().getProjectFile().getParentFile());
     String prefix = path + File.separator + "solutions" + File.separator;
-    if(myThis.getSolutionPath().length() == 0 || myThis.getSolutionPath().startsWith(prefix)) {
+    if (myThis.getSolutionPath().length() == 0 || myThis.getSolutionPath().startsWith(prefix)) {
       myThis.setSolutionPath(prefix + myThis.getSolutionName());
     }
   }

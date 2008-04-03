@@ -22,7 +22,7 @@ public class NewLanguageDialog extends BaseDialog {
   }
 
   public JComponent getMainComponent() {
-    if(this.myContentPane == null) {
+    if (this.myContentPane == null) {
       this.myContentPane = new NewLanguageDialogContentPane();
       this.myContentPane.setDialog(this);
     }

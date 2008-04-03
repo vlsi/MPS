@@ -21,7 +21,7 @@ public class NewDevKitDialog extends BaseDialog {
   }
 
   public JComponent getMainComponent() {
-    if(this.myContentPane == null) {
+    if (this.myContentPane == null) {
       this.myContentPane = new NewDevKitDialogContentPane();
       this.myContentPane.setDialog(this);
     }

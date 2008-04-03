@@ -17,6 +17,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 public class Tools_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Tools";
   public static final String INTERNAL_LABEL_ID_Internal = "Internal";
+  public static final String INTERNAL_LABEL_ID_VersionControl = "VersionControl";
 
   public  Tools_ActionGroup(MPSProject project) {
     super("Tools", Tools_ActionGroup.ID);
@@ -29,6 +30,7 @@ public class Tools_ActionGroup extends BaseActionGroup {
     this.add(new CleanAllModulesAction(), this);
     this.add(new Label(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal));
     this.addSeparator();
+    this.add(new Label(Tools_ActionGroup.INTERNAL_LABEL_ID_VersionControl));
     this.add(new SVNCheckOutAction(), this);
   }
 

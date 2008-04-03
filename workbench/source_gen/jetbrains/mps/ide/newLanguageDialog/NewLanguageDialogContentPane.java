@@ -88,7 +88,7 @@ public class NewLanguageDialogContentPane extends JPanel {
 
   private void unbind() {
     for(AutoBinding binding : this.myBindings) {
-      if(binding.isBound()) {
+      if (binding.isBound()) {
         binding.unbind();
       }
     }
@@ -184,24 +184,24 @@ public class NewLanguageDialogContentPane extends JPanel {
 
   /* package */void onOk() {
     File dir = new File(myThis.getLanguagePath());
-    if(!(dir.isAbsolute())) {
+    if (!(dir.isAbsolute())) {
       myThis.getDialog().setErrorText("Path should path");
       return;
     }
-    if(myThis.getLanguageNamespace().length() == 0) {
+    if (myThis.getLanguageNamespace().length() == 0) {
       myThis.getDialog().setErrorText("Enter namespace");
       return;
     }
-    if(MPSModuleRepository.getInstance().getModuleByUID(myThis.getLanguageNamespace()) != null) {
+    if (MPSModuleRepository.getInstance().getModuleByUID(myThis.getLanguageNamespace()) != null) {
       myThis.getDialog().setErrorText("Language namespace already exists");
       return;
     }
-    if(NameUtil.shortNameFromLongName(myThis.getLanguageNamespace()).length() == 0) {
+    if (NameUtil.shortNameFromLongName(myThis.getLanguageNamespace()).length() == 0) {
       myThis.getDialog().setErrorText("Enter valid namespace");
       return;
     }
-    if(!(dir.exists())) {
-      if(!(DirectoryUtil.askToCreateNewDirectory(((Frame)myThis.getDialog().getOwner()), dir))) {
+    if (!(dir.exists())) {
+      if (!(DirectoryUtil.askToCreateNewDirectory((Frame)myThis.getDialog().getOwner(), dir))) {
         return;
       }
     }
@@ -220,12 +220,12 @@ public class NewLanguageDialogContentPane extends JPanel {
   }
 
   /* package */void updateLanguagePath() {
-    if(myThis.getProject() == null) {
+    if (myThis.getProject() == null) {
       return;
     }
     String path = FileUtil.getCanonicalPath(myThis.getProject().getProjectFile().getParentFile());
     String prefix = path + File.separator + "languages" + File.separator;
-    if(myThis.getLanguagePath().length() == 0 || myThis.getLanguagePath().startsWith(prefix)) {
+    if (myThis.getLanguagePath().length() == 0 || myThis.getLanguagePath().startsWith(prefix)) {
       myThis.setLanguagePath(prefix + NameUtil.shortNameFromLongName(myThis.getLanguageNamespace()));
     }
   }
@@ -234,17 +234,17 @@ public class NewLanguageDialogContentPane extends JPanel {
     String descriptorFileName = NameUtil.shortNameFromLongName(myThis.getLanguageNamespace());
     File descriptorFile = new File(myThis.getLanguagePath(), descriptorFileName + ".mpl");
     File dir = descriptorFile.getParentFile();
-    if(!(dir.exists())) {
+    if (!(dir.exists())) {
       dir.mkdirs();
     }
     Language language = Language.createLanguage(myThis.getLanguageNamespace(), descriptorFile, myThis.getProject());
-    SNode languageDescriptor = ((SNode)language.getLanguageDescriptor().getNode());
+    SNode languageDescriptor = (SNode)language.getLanguageDescriptor().getNode();
     SPropertyOperations.set(languageDescriptor, "compileInMPS", "" + (myThis.getCompileInMPS()));
     LanguageAspect.STRUCTURE.createNew(language);
     LanguageAspect.EDITOR.createNew(language);
     LanguageAspect.CONSTRAINTS.createNew(language);
     LanguageAspect.HELGINS_TYPESYSTEM.createNew(language);
-    language.setLanguageDescriptor(((LanguageDescriptor)(((LanguageDescriptor)SNodeOperations.getAdapter(languageDescriptor)))));
+    language.setLanguageDescriptor((LanguageDescriptor)((LanguageDescriptor)SNodeOperations.getAdapter(languageDescriptor)));
     myThis.getProject().addProjectLanguage(language);
     language.save();
     myThis.setResult(language);

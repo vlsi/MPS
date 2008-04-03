@@ -3,13 +3,20 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}\core\kernel\vcs\generic\classes" />
+  </classPath>
   <runtimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">jetbrains.mps.projectLanguage</dependency>
     <dependency reexport="false">jetbrains.mpslite</dependency>
     <dependency reexport="false">jetbrains.mps.logging.refactoring</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
+    <dependency reexport="false">MPS.Classpath</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.uiLanguage</usedLanguages>
