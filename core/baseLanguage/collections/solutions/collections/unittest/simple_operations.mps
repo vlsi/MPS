@@ -764,27 +764,30 @@
                 <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205784684203">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170978754653">
-                <link role="variableDeclaration" targetNodeId="1170977737762" resolveInfo="list" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation" id="1170978759124">
-                <node role="comparable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortBlock" id="1170978759125">
-                  <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1170978759126">
-                    <property name="name" value="it" />
-                  </node>
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170978759127">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1170979076332">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1170979076333">
-                        <link role="closureParameter" targetNodeId="1170978759126" resolveInfo="it" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207233258340">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205784684203">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170978754653">
+                  <link role="variableDeclaration" targetNodeId="1170977737762" resolveInfo="list" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation" id="1170978759124">
+                  <node role="comparable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortBlock" id="1170978759125">
+                    <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1170978759126">
+                      <property name="name" value="it" />
+                    </node>
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170978759127">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1170979076332">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1170979076333">
+                          <link role="closureParameter" targetNodeId="1170978759126" resolveInfo="it" />
+                        </node>
                       </node>
                     </node>
                   </node>
-                </node>
-                <node role="order" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1171973470998">
-                  <property name="value" value="true" />
+                  <node role="order" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1171973470998">
+                    <property name="value" value="true" />
+                  </node>
                 </node>
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1207233259538" />
             </node>
           </node>
         </node>
@@ -920,28 +923,31 @@
                 <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
               </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205784684554">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170979239280">
-                <link role="variableDeclaration" targetNodeId="1170979239264" resolveInfo="list" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation" id="1170979239281">
-                <property name="reverseOrder" value="true" />
-                <node role="comparable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortBlock" id="1170979239282">
-                  <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1170979239283">
-                    <property name="name" value="it" />
-                  </node>
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170979239284">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1170979239285">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1170979239286">
-                        <link role="closureParameter" targetNodeId="1170979239283" resolveInfo="it" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207233263857">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205784684554">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1170979239280">
+                  <link role="variableDeclaration" targetNodeId="1170979239264" resolveInfo="list" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation" id="1170979239281">
+                  <property name="reverseOrder" value="true" />
+                  <node role="comparable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortBlock" id="1170979239282">
+                    <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1170979239283">
+                      <property name="name" value="it" />
+                    </node>
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170979239284">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1170979239285">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1170979239286">
+                          <link role="closureParameter" targetNodeId="1170979239283" resolveInfo="it" />
+                        </node>
                       </node>
                     </node>
                   </node>
-                </node>
-                <node role="order" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1171973475265">
-                  <property name="value" value="false" />
+                  <node role="order" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1171973475265">
+                    <property name="value" value="false" />
+                  </node>
                 </node>
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1207233265101" />
             </node>
           </node>
         </node>
