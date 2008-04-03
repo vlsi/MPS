@@ -32,7 +32,6 @@
   </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.ide</dependency>
-    <dependency reexport="false">webr.webl</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
