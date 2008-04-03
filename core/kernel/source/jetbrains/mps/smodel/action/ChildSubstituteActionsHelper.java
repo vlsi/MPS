@@ -149,11 +149,6 @@ public class ChildSubstituteActionsHelper {
     List<NodeSubstituteActionsBuilder> extendedBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
     List<Language> languages = parentNode.getModel().getLanguages(scope);
     for (Language language : languages) {
-
-      if (language.equals("jetbrains.mps.baseLanguage")) {
-        System.out.println("!!!");
-      }
-
       if (language == primaryLanguage) {
         continue;
       }

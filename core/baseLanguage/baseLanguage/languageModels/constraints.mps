@@ -5814,7 +5814,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1202207155608">
-              <link role="concept" targetNodeId="1.1146644602865" resolveInfo="PublicVisibility" />
+              <link role="concept" targetNodeId="1.1146644623116" resolveInfo="PrivateVisibility" />
             </node>
           </node>
         </node>

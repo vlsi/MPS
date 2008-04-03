@@ -21,6 +21,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
   public static final Logger LOG = Logger.getLogger(CommentStatements_Action.class);
 
   private List<SNode> nodes;
+  private boolean isAlwaysVisible = false;
 
   public  CommentStatements_Action(MPSProject project) {
     super(project, "Comment Statements");
@@ -56,18 +57,18 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
         this.setEnabled(false);
-        this.setVisible(false);
+        this.setVisible(this.isAlwaysVisible);
         return;
       }
       {
         boolean enabled = this.isApplicable(context);
         this.setEnabled(enabled);
-        this.setVisible(enabled);
+        this.setVisible(enabled || this.isAlwaysVisible);
       }
     } catch (Throwable t) {
       CommentStatements_Action.LOG.error("User's action doUpdate method failed. Action:" + "CommentStatements", t);
       this.setEnabled(false);
-      this.setVisible(false);
+      this.setVisible(this.isAlwaysVisible);
     }
   }
 

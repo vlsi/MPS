@@ -17,6 +17,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
   public static final Logger LOG = Logger.getLogger(UncommentStatements_Action.class);
 
   private SNode node;
+  private boolean isAlwaysVisible = false;
 
   public  UncommentStatements_Action(MPSProject project) {
     super(project, "Uncomment Statements");
@@ -32,7 +33,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
         this.setEnabled(false);
-        this.setVisible(false);
+        this.setVisible(this.isAlwaysVisible);
         return;
       }
       this.setEnabled(true);
@@ -40,7 +41,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     } catch (Throwable t) {
       UncommentStatements_Action.LOG.error("User's action doUpdate method failed. Action:" + "UncommentStatements", t);
       this.setEnabled(false);
-      this.setVisible(false);
+      this.setVisible(this.isAlwaysVisible);
     }
   }
 
