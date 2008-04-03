@@ -1027,6 +1027,7 @@ public class EquationManager {
   private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
                                  boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
     if (wrapper == null) return null;
+    wrapper = processJoinsAndMeets(term, wrapper, typesModel, finalExpansion, nodeTypesComponent);
 
     if (wrapper.isVariable()) {
       IWrapper type = this.getRepresentatorWrapper(wrapper);
@@ -1056,7 +1057,11 @@ public class EquationManager {
       }
     }
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
-    List<SNode> children = new ArrayList<SNode>(wrapper.getNode().getChildren());
+    SNode node = wrapper.getNode();
+    if (node == null) {
+      return (NodeWrapper) wrapper;
+    }
+    List<SNode> children = new ArrayList<SNode>(node.getChildren());
     for (SNode child : children) {
       SNode newChild = expandNode(term, NodeWrapper.createWrapperFromNode(child, this),
         representator, depth + 1, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
@@ -1103,6 +1108,32 @@ public class EquationManager {
     }
 
     return (NodeWrapper) wrapper;
+  }
+
+  private NodeWrapper processJoinsAndMeets(SNode term, IWrapper wrapper, SModel typesModel, boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
+    if (wrapper instanceof MeetWrapper) {
+      MeetWrapper meetWrapper = (MeetWrapper) wrapper;
+      MeetType meetType = MeetType.newInstance(typesModel);
+      for (IWrapper argwrapper : meetWrapper.getArguments()) {
+        BaseConcept argument = (BaseConcept) expandWrapper(term, argwrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
+        meetType.addArgument(CopyUtil.copy(argument));
+      }
+      return NodeWrapper.createNodeWrapper(meetType.getNode(), this);
+    }
+    if (wrapper instanceof JoinWrapper) {
+      JoinWrapper joinWrapper = (JoinWrapper) wrapper;
+      JoinType joinType = JoinType.newInstance(typesModel);
+      for (IWrapper argwrapper : joinWrapper.getArguments()) {
+        BaseConcept argument = (BaseConcept) expandWrapper(term, argwrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
+        joinType.addArgument(CopyUtil.copy(argument));
+      }
+      return NodeWrapper.createNodeWrapper(joinType.getNode(), this);
+    }
+    if (wrapper instanceof NodeWrapper) {
+      return (NodeWrapper) wrapper;
+    }
+    //can't be true
+    return null;
   }
 
   private void processConcretes() {

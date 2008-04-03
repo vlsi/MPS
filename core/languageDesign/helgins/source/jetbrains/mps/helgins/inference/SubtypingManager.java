@@ -121,6 +121,9 @@ public class SubtypingManager {
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
+    if (subRepresentator == null) {
+      return false;
+    }
     frontier.add(subRepresentator.getNode());
     while (!frontier.isEmpty()) {
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
@@ -363,6 +366,14 @@ public class SubtypingManager {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
     CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
+    if ("jetbrains.mps.bootstrap.helgins.structure.MeetType".equals(subtype.getConceptFqName())) {
+      List<SNode> children = subtype.getChildren("argument");
+      for (SNode child : children) {
+        SNode result = coerceSubtyping(child, pattern, isWeak, equationManager);
+        if (result != null) return result;
+      }
+      return null;
+    }
     boolean success = searchInSupertypes(NodeWrapper.fromNode(subtype, equationManager), coersionMatcher, null, null, isWeak);
     if (!success) return null;
     return coersionMatcher.getResult();
