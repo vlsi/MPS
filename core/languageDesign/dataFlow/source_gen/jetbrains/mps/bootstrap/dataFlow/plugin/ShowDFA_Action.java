@@ -16,6 +16,7 @@ public class ShowDFA_Action extends CurrentProjectMPSAction {
   public static final Logger LOG = Logger.getLogger(ShowDFA_Action.class);
 
   private SNode node;
+  private boolean isAlwaysVisible = false;
 
   public  ShowDFA_Action(MPSProject project) {
     super(project, "Show DFA (under construction)");
@@ -31,7 +32,7 @@ public class ShowDFA_Action extends CurrentProjectMPSAction {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
         this.setEnabled(false);
-        this.setVisible(false);
+        this.setVisible(this.isAlwaysVisible);
         return;
       }
       this.setEnabled(true);
@@ -39,7 +40,7 @@ public class ShowDFA_Action extends CurrentProjectMPSAction {
     } catch (Throwable t) {
       ShowDFA_Action.LOG.error("User's action doUpdate method failed. Action:" + "ShowDFA", t);
       this.setEnabled(false);
-      this.setVisible(false);
+      this.setVisible(this.isAlwaysVisible);
     }
   }
 

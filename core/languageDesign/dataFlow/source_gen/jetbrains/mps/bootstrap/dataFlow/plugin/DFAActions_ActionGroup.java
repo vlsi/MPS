@@ -16,6 +16,7 @@ public class DFAActions_ActionGroup extends BaseActionGroup {
     super("", DFAActions_ActionGroup.ID);
     this.setInternal(false);
     this.add(new PrintDFAResult_Action(project), this);
+    this.add(new PrintInitializationInformation_Action(project), this);
     this.add(new ShowDFA_Action(project), this);
   }
 

@@ -10,15 +10,18 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.DataFlowManager;
+import jetbrains.mps.dataFlow.framework.AnalysisResult;
+import java.util.Set;
+import jetbrains.mps.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
 
-public class PrintDFAResult_Action extends CurrentProjectMPSAction {
-  public static final Logger LOG = Logger.getLogger(PrintDFAResult_Action.class);
+public class PrintInitializationInformation_Action extends CurrentProjectMPSAction {
+  public static final Logger LOG = Logger.getLogger(PrintInitializationInformation_Action.class);
 
   private SNode node;
   private boolean isAlwaysVisible = false;
 
-  public  PrintDFAResult_Action(MPSProject project) {
-    super(project, "Print DFA");
+  public  PrintInitializationInformation_Action(MPSProject project) {
+    super(project, "Print DFA Initialization Information");
   }
 
   @NotNull()
@@ -37,7 +40,7 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
       this.setEnabled(true);
       this.setVisible(true);
     } catch (Throwable t) {
-      PrintDFAResult_Action.LOG.error("User's action doUpdate method failed. Action:" + "PrintDFAResult", t);
+      PrintInitializationInformation_Action.LOG.error("User's action doUpdate method failed. Action:" + "PrintInitializationInformation", t);
       this.setEnabled(false);
       this.setVisible(this.isAlwaysVisible);
     }
@@ -72,10 +75,11 @@ public class PrintDFAResult_Action extends CurrentProjectMPSAction {
       }
       {
         Program program = DataFlowManager.getInstance().buildProgramFor(this.node);
-        System.out.println(program.toString(true));
+        AnalysisResult<Set<Object>> result = program.analyze(new InitializedVariablesAnalyzer());
+        System.out.println(result.toString());
       }
     } catch (Throwable t) {
-      PrintDFAResult_Action.LOG.error("User's action execute method failed. Action:" + "PrintDFAResult", t);
+      PrintInitializationInformation_Action.LOG.error("User's action execute method failed. Action:" + "PrintInitializationInformation", t);
     }
   }
 
