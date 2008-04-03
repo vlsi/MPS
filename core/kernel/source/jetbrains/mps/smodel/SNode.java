@@ -37,7 +37,7 @@ public final class SNode {
 
   public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
 
-  public static final SNode[] EMPTY_ARRAY = new SNode[0]; 
+  public static final SNode[] EMPTY_ARRAY = new SNode[0];
 
   private static long ourCounter = 0;
 
@@ -794,7 +794,7 @@ public final class SNode {
 
   @NotNull
   public List<SNode> getChildren() {
-     return getChildren(true);
+    return getChildren(true);
   }
 
   @NotNull
@@ -804,11 +804,11 @@ public final class SNode {
     fireNodeUnclassifiedReadAccess();
 
     List<SNode> result = new ArrayList<SNode>(_children());
-    if(!includeAttributes) {
+    if (!includeAttributes) {
       Iterator<SNode> it = result.iterator();
       while (it.hasNext()) {
         SNode child = it.next();
-        if(child.isAttribute()) it.remove();
+        if (child.isAttribute()) it.remove();
       }
     }
     return result;
@@ -1214,10 +1214,10 @@ public final class SNode {
     return allChildren.iterator();
   }
 
-  private void putAggregationTree2List(@NotNull SNode semanticNode, @NotNull List<SNode> allChildren, boolean addThis) {
-    List<SNode> list = semanticNode.getChildren();
+  private void putAggregationTree2List(@NotNull SNode node, @NotNull List<SNode> allChildren, boolean addThis) {
+    List<SNode> list = node.getChildren();
     if (addThis) {
-      allChildren.add(semanticNode);
+      allChildren.add(node);
     }
     for (SNode child : list) {
       allChildren.add(child);
@@ -1626,46 +1626,6 @@ public final class SNode {
       return null;
     }
     return language;
-  }
-
-  public List<SNode> getLinkAttributes(Condition<SNode> c) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (String role : getReferenceRoles()) {
-      SNode linkAttribute = getLinkAttribute(role);
-      if (c.met(linkAttribute)) {
-        result.add(linkAttribute);
-      }
-    }
-    return result;
-  }
-
-  public List<SNode> findLinkAttributes(Condition<SNode> c) {
-    ArrayList<SNode> result = new ArrayList<SNode>();
-    result.addAll(getLinkAttributes(c));
-    for (SNode child : CollectionUtil.iteratorAsIterable(depthFirstChildren())) {
-      result.addAll(child.getLinkAttributes(c));
-    }
-    return result;
-  }
-
-  public List<SNode> getPropertyAttributes(Condition<SNode> c) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (String propertyName : getPropertyNames()) {
-      SNode propertyAttribute = getPropertyAttribute(propertyName);
-      if (c.met(propertyAttribute)) {
-        result.add(propertyAttribute);
-      }
-    }
-    return result;
-  }
-
-  public List<SNode> findPropertyAttributes(Condition<SNode> c) {
-    ArrayList<SNode> result = new ArrayList<SNode>();
-    result.addAll(getPropertyAttributes(c));
-    for (SNode child : CollectionUtil.iteratorAsIterable(depthFirstChildren())) {
-      result.addAll(child.getPropertyAttributes(c));
-    }
-    return result;
   }
 
   public synchronized BaseAdapter getAdapter() {
