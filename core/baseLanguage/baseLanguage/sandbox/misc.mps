@@ -8768,11 +8768,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205760026222" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205760026223" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205760026224">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207057980457">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207057980458">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207227573451">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207227573452">
             <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207057980459" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207057981945">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207227573453" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207227573454">
               <property name="value" value="239" />
             </node>
           </node>
