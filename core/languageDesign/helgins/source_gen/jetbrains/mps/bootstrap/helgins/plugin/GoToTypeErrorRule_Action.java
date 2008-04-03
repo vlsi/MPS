@@ -20,8 +20,9 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
   private IOperationContext operationContext;
   private EditorsPane editorsPane;
   private MPSProject project;
+  private boolean isAlwaysVisible = false;
 
-  public GoToTypeErrorRule_Action(MPSProject project) {
+  public  GoToTypeErrorRule_Action(MPSProject project) {
     super(project, "Go To Rule Which Caused Error");
   }
 
@@ -35,23 +36,23 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
     return !(error == null || error.getRuleId() == null || error.getRuleModel() == null);
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
         this.setEnabled(false);
-        this.setVisible(false);
+        this.setVisible(this.isAlwaysVisible);
         return;
       }
       {
         boolean enabled = this.isApplicable(context);
         this.setEnabled(enabled);
-        this.setVisible(enabled);
+        this.setVisible(enabled || this.isAlwaysVisible);
       }
     } catch (Throwable t) {
       GoToTypeErrorRule_Action.LOG.error("User's action doUpdate method failed. Action:" + "GoToTypeErrorRule", t);
       this.setEnabled(false);
-      this.setVisible(false);
+      this.setVisible(this.isAlwaysVisible);
     }
   }
 
@@ -85,7 +86,7 @@ public class GoToTypeErrorRule_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
