@@ -2,6 +2,7 @@ package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
@@ -336,7 +337,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       return;
     }
 
-    myGenerationRequired = FileGenerationUtil.generationRequired(getSModelDescriptor());        
+    myGenerationRequired = ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor());        
 
     if (myGenerationRequired && getTree() != null) {
       updateAncestorsPresentationInTree();

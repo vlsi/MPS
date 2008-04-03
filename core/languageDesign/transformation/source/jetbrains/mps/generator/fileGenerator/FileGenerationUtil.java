@@ -27,37 +27,6 @@ import java.util.*;
 public class FileGenerationUtil {
   public static final Logger LOG = Logger.getLogger(FileGenerationUtil.class);
 
-  public static long getLastGenerationTime(SModelDescriptor sm) {
-    Set<IModule> modules = sm.getModules();
-    if (modules.size() != 1) {
-      LOG.warning("model " + sm.getModelUID() + " has to many owners : " + modules);
-    }
-    IModule module = modules.iterator().next();
-    String outputPath = module.getGeneratorOutputPath();
-    String sourcesDir = outputPath + File.separator + sm.getLongName().replace('.', File.separatorChar);
-    return FileUtil.getNewestFileTime(new File(sourcesDir));
-  }
-
-  public static boolean generationRequired(SModelDescriptor sm) {
-    if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) {
-      return false;
-    }
-
-    if (sm.getModelFile() == null) {
-      return false;
-    }
-
-    if (Language.isAccessoryModel(sm)) {
-      return false;
-    }
-
-    if (sm.isEmpty()) {
-      return false;
-    }
-
-    return sm.lastChangeTime() >= getLastGenerationTime(sm);
-  }
-
   public static boolean handleOutput(IOperationContext context,
                                   GenerationStatus status,
                                   String outputDir) {

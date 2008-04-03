@@ -571,6 +571,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           }
         }
 
+        for (SModelDescriptor sm : modelsToContexts.keySet()) {
+          ModelGenerationStatusManager.getInstance().invalidateData(sm);
+        }
+
         if (generatedAndCompiledSuccessfully && needToReload) {
           progress.addText("");
           progress.addText("reloading MPS classes...");

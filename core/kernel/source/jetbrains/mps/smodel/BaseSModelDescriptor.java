@@ -10,6 +10,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 import java.util.Map;
 import java.util.HashMap;
