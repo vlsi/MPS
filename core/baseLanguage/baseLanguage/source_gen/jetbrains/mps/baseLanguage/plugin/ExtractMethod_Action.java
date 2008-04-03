@@ -24,7 +24,7 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
 
   @NotNull()
   public String getKeyStroke() {
-    return "";
+    return "control alt M";
   }
 
   public void doUpdate(@NotNull() ActionContext context) {
@@ -68,6 +68,9 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
       }
       {
         ExtractMethodRefactoringProcessor processor = new ExtractMethodRefactoringProcessor((List<SNode>)this.nodes);
+        if (!(processor.collectInputParameters(context.getOperationContext()))) {
+          return;
+        }
         processor.doExtract();
       }
     } catch (Throwable t) {

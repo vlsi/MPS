@@ -207,8 +207,8 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
         deactivate();
       }
-      // eat it anyway
-      return true;
+      // eat it anyway (WTF?)
+      return false;
     }
 
     boolean next = (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT || keyEvent.getKeyCode() == KeyEvent.VK_DOWN);

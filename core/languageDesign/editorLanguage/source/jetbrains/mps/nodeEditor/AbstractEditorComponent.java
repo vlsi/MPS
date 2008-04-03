@@ -784,23 +784,27 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private ActionContext createActionContext() {
-    ActionContext context = new ActionContext(getOperationContext());
-    EditorCell cell_ = getSelectedCell();
-    if (cell_ != null) {
-      final SNode selectedNode = cell_.getSNode();
-      if (selectedNode != null) {
-        EditorContext editorContext_ = createEditorContextForActions();
-        List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
-        if (selectedNodes.size() == 0) {
-          selectedNodes.add(selectedNode);
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<ActionContext>() {
+      public ActionContext calculate() {
+        ActionContext context = new ActionContext(getOperationContext());
+        EditorCell cell_ = getSelectedCell();
+        if (cell_ != null) {
+          final SNode selectedNode = cell_.getSNode();
+          if (selectedNode != null) {
+            EditorContext editorContext_ = createEditorContextForActions();
+            List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
+            if (selectedNodes.size() == 0) {
+              selectedNodes.add(selectedNode);
+            }
+            context.put(SNode.class, selectedNode);
+            context.put(List.class, selectedNodes);
+            context.put(EditorContext.class, editorContext_);
+            context.put(EditorCell.class, cell_);
+          }
         }
-        context.put(SNode.class, selectedNode);
-        context.put(List.class, selectedNodes);
-        context.put(EditorContext.class, editorContext_);
-        context.put(EditorCell.class, cell_);
+        return context;
       }
-    }
-    return context;
+    });
   }
 
   private EditorContext createEditorContextForActions() {
