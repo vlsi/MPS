@@ -139,7 +139,7 @@ public class SNodeOperations {
     }
 
     if (childConceptFqName == null) {
-      result = (List<SNode>) node.allChildren();
+      result = (List<SNode>) node.getSubnodes();
       if (inclusion) {
         result.add(0, node);
       }

@@ -1450,7 +1450,7 @@ public final class SNode {
 
   public <BA extends INodeAdapter> List<BA> allChildrenByAdaptor(Class<BA> clazz) {
     List<BA> result = new ArrayList<BA>();
-    for (SNode child : allChildren()) {
+    for (SNode child : getSubnodes()) {
       if (clazz.isInstance(child.getAdapter())) {
         result.add((BA) child.getAdapter());
       }
