@@ -18,10 +18,22 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
       _context.getBuilder().emitIfJump(_context.getBuilder().before(c));
     }
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
-    _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
+    _context.getBuilder().emitMayBeUnreachable(new Runnable() {
+
+      public void run() {
+        _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
+      }
+
+    });
     for(SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
       _context.getBuilder().build(c);
-      _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
+      _context.getBuilder().emitMayBeUnreachable(new Runnable() {
+
+        public void run() {
+          _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
+        }
+
+      });
     }
   }
 

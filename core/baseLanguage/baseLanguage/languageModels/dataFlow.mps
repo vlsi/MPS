@@ -935,9 +935,11 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1207218496728">
-          <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition" id="1207218498355">
-            <node role="relativeTo" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207218499466" />
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable" id="1207218708174">
+          <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1207218496728">
+            <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition" id="1207218498355">
+              <node role="relativeTo" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207218499466" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1207140763814">
@@ -947,9 +949,11 @@
                 <link role="variableDeclaration" targetNodeId="1207140763818" resolveInfo="c" />
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1207140797125">
-              <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition" id="1207140797893">
-                <node role="relativeTo" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207140798645" />
+            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable" id="1207218760159">
+              <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1207140797125">
+                <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition" id="1207140797893">
+                  <node role="relativeTo" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207140798645" />
+                </node>
               </node>
             </node>
           </node>
