@@ -1326,6 +1326,10 @@ public final class SNode {
 
   @NotNull
   public List<SNode> getSubnodes(Condition<SNode> condition) {
+    ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+
     List<SNode> list = new ArrayList<SNode>();
     collectSubnodes(condition, list);
     return list;
