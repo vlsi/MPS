@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Property_HasValue_Simple_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAlias_Comp31;
+  /* package */AbstractCellProvider myReplaceableAlias_Comp30;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146253646906");
@@ -75,10 +75,10 @@ public class Property_HasValue_Simple_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createReplaceableAlias_CompCell(EditorContext context, SNode node) {
-    if (this.myReplaceableAlias_Comp31 == null) {
-      this.myReplaceableAlias_Comp31 = new ReplaceableAlias_Comp(node);
+    if (this.myReplaceableAlias_Comp30 == null) {
+      this.myReplaceableAlias_Comp30 = new ReplaceableAlias_Comp(node);
     }
-    EditorCell editorCell = this.myReplaceableAlias_Comp31.createEditorCell(context);
+    EditorCell editorCell = this.myReplaceableAlias_Comp30.createEditorCell(context);
     Property_HasValue_Simple_Editor.setupBasic_ReplaceableAlias_CompCell(editorCell, node, context);
     return editorCell;
   }

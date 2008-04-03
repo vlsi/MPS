@@ -1477,43 +1477,8 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1171305550276">
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1171305280644" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1171305552386">
-      <property name="drawBorder" value="false" />
-      <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1171305552387">
-        <property name="editable" value="true" />
-        <property name="text" value="descendants" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171305552388">
-        <property name="drawBorder" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1206486933657">
-          <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1171305552390">
-          <property name="drawBorder" value="false" />
-          <link role="editorComponent" targetNodeId="1144105329976" resolveInfo="OperationParameters_Component" />
-        </node>
-      </node>
-      <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1171305552391">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171305552392">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1171305552393">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1171305552394">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1171305552395">
-                <property name="value" value="0" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227904855">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227837581">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1171305552398" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1171305552399">
-                    <link role="link" targetNodeId="1.1144104376918" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_GetCountOperation" id="1171305552400" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1207248924093">
+      <link role="editorComponent" targetNodeId="1206994531943" resolveInfo="ReplaceableAliasAndParms_Comp" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1171310362800">

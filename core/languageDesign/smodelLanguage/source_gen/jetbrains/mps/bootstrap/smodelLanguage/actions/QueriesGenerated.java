@@ -128,7 +128,7 @@ public class QueriesGenerated {
     }
   }
 
-  public static void nodeFactory_NodeSetup_Node_GetAncestorsOperation_1207071335915(final IOperationContext operationContext, final NodeSetupContext _context) {
+  public static void nodeFactory_NodeSetup_Node_GetDescendantsOperation_1207248813875(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
       List<SNode> parms = SLinkOperations.getTargets(_context.getSampleNode(), "parameter", true);
       {
@@ -145,7 +145,6 @@ public class QueriesGenerated {
     }
     // init default parms
     if (SequenceOperations.isEmpty(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true))) {
-      SLinkOperations.addNewChild(_context.getNewNode(), "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion");
       SLinkOperations.addNewChild(_context.getNewNode(), "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept");
     }
   }
