@@ -521,15 +521,20 @@
     <link role="conceptDeclaration" targetNodeId="1.1144226303539" resolveInfo="ForeachStatement" />
     <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1206463758606">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206463758607">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1206987755705">
-          <property name="value" value="todo hack" />
-        </node>
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1206463763783">
           <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206463765067">
             <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206463764769" />
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1206463772194">
               <link role="link" targetNodeId="1.1144226360166" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitLabelStatement" id="1207221470329">
+          <property name="name" value="condition" />
+        </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1207221459040">
+          <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.AfterPosition" id="1207221460323">
+            <node role="relativeTo" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1207221461606" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitWriteStatement" id="1206989539741">
@@ -549,9 +554,9 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitMayBeUnreachable" id="1206536188858">
-          <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1206463791646">
-            <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.BeforePosition" id="1206463792413">
-              <node role="relativeTo" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1206463793493" />
+          <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1207221465420">
+            <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition" id="1207221479162">
+              <link role="label" targetNodeId="1207221470329" resolveInfo="condition" />
             </node>
           </node>
         </node>
