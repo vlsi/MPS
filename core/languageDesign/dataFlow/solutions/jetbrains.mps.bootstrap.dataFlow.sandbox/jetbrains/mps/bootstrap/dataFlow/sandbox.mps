@@ -117,8 +117,28 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207228658383">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207228659714">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207234572494">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1207234573074">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207234575828">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="1207234579145">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207234579882">
+                  <property name="value" value="2" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207234577862">
+                  <link role="variableDeclaration" targetNodeId="1207231044454" resolveInfo="p" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207234573749">
+                <link role="variableDeclaration" targetNodeId="1207226421536" resolveInfo="i" />
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207234572495">
+              <link role="variableDeclaration" targetNodeId="1207226421536" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207234585118">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207234585119">
             <link role="variableDeclaration" targetNodeId="1207226421536" resolveInfo="i" />
           </node>
         </node>
@@ -126,6 +146,71 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1207231044454">
         <property name="name" value="p" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207231044455" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1207234740485">
+      <property name="name" value="newMethod" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207234740486" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207234740487">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207234740493">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1207234740494">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207234740503">
+              <link role="variableDeclaration" targetNodeId="1207234740491" resolveInfo="i" />
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207234740496">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207234740504">
+                <link role="variableDeclaration" targetNodeId="1207234740491" resolveInfo="i" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="1207234740498">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207234740505">
+                  <link role="variableDeclaration" targetNodeId="1207234740489" resolveInfo="p" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207234740500">
+                  <property name="value" value="2" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207234740501">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207234740521">
+            <link role="variableDeclaration" targetNodeId="1207234740491" resolveInfo="i" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207234740488" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1207234740489">
+        <property name="name" value="p" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207234740490" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1207234740491">
+        <property name="name" value="i" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207234740492" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1207234130092">
+      <property name="name" value="newMethod" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207234130093" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207234130094">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207234130100">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207234130101">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207234130104">
+              <link role="variableDeclaration" targetNodeId="1207234130098" resolveInfo="i" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207234130105">
+              <link role="variableDeclaration" targetNodeId="1207234130096" resolveInfo="p" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207234130095" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1207234130096">
+        <property name="name" value="p" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207234130097" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1207234130098">
+        <property name="name" value="i" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207234130099" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206443792482" />
