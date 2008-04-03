@@ -1262,14 +1262,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "argument", true);
   }
 
-  public static SNode sourceNodeQuery_1205927725629(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
-  public static SNode sourceNodeQuery_1205927759915(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_1206451286946(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
@@ -1385,14 +1377,6 @@ public class QueriesGenerated {
       ListOperations.addAllElements(result, SLinkOperations.getTargets(varProviders, "item", true));
     }
     return result;
-  }
-
-  public static List sourceNodesQuery_1205927703244(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "argument", true);
-  }
-
-  public static List sourceNodesQuery_1205927759908(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "argument", true);
   }
 
   public static List sourceNodesQuery_1206451286909(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

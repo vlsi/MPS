@@ -14,8 +14,8 @@ public class typeof_WarningStatement_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode nodeToCheck) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "warningText", true), "jetbrains.mps.bootstrap.helgins.helgins", "1207055636653", true), new QuotationClass_27().createNode(), SLinkOperations.getTarget(nodeToCheck, "warningText", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1207055636648", false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "nodeToReport", true), "jetbrains.mps.bootstrap.helgins.helgins", "1207055636662", true), new QuotationClass_28().createNode(), SLinkOperations.getTarget(nodeToCheck, "nodeToReport", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1207055636657", false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "warningText", true), "jetbrains.mps.bootstrap.helgins.helgins", "1207055636653", true), new QuotationClass_26().createNode(), SLinkOperations.getTarget(nodeToCheck, "warningText", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1207055636648", false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "nodeToReport", true), "jetbrains.mps.bootstrap.helgins.helgins", "1207055636662", true), new QuotationClass_27().createNode(), SLinkOperations.getTarget(nodeToCheck, "nodeToReport", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1207055636657", false);
   }
 
   public String getApplicableConceptFQName() {

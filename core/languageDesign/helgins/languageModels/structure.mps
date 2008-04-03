@@ -668,14 +668,6 @@
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1185788772981">
-    <property name="name" value="ConditionTypeClause" />
-    <link role="extends" targetNodeId="1185788561607" resolveInfo="TypeClause" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1185788791731">
-      <property name="value" value="COND" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1185805035213">
     <property name="name" value="WhenConcreteStatement" />
     <link role="extends" targetNodeId="2.1068580123157" />
@@ -937,35 +929,6 @@
       <property name="role" value="whenConcreteVar" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1205762105978" resolveInfo="WhenConcreteVariableDeclaration" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205924809891">
-    <property name="name" value="TypeCompositionTypeClause" />
-    <link role="extends" targetNodeId="1185788561607" resolveInfo="TypeClause" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1205924883753">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="argument" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1205924925379">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205924973690">
-    <property name="name" value="MeetTypeClause" />
-    <link role="extends" targetNodeId="1205924809891" resolveInfo="TypeCompositionTypeClause" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205924996066">
-      <property name="value" value="meet" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1205925010770">
-    <property name="name" value="JoinTypeClause" />
-    <link role="extends" targetNodeId="1205924809891" resolveInfo="TypeCompositionTypeClause" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1205925023365">
-      <property name="value" value="join" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1207055528241">
