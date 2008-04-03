@@ -71,7 +71,7 @@ public class AutoResolver extends GenericEditorUpdater implements IEditorMessage
     // highlight nodes with errors
     for (SReference ref : yetBadReferences) {
       DefaultEditorMessage message =
-              new MyResolverMessage(ref.getSourceNode(), Color.RED, "unresolved reference", editor, this);
+        new MyResolverMessage(ref.getSourceNode(), Color.RED, "unresolved reference", editor, this);
       highlightManager.mark(message);
     }
 
@@ -80,7 +80,10 @@ public class AutoResolver extends GenericEditorUpdater implements IEditorMessage
 
   private Set<SReference> collectBadReferences(IEditorComponent editor) {
     Set<SReference> result = new HashSet<SReference>();
-    for (SNode node : CollectionUtil.iteratorAsIterable(editor.getRootCell().getSNode().depthFirstChildren(true))) {
+    SNode cellNode = editor.getRootCell().getSNode();
+    List<SNode> list = cellNode.getSubnodes();
+    list.add(0, cellNode);
+    for (SNode node : list) {
       for (SReference ref : node.getReferences()) {
         if (ref.getTargetNode() == null) {
           result.add(ref);

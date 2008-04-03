@@ -106,7 +106,7 @@ public class NodeHighlightManager implements IEditorMessageOwner {
       node = node.getParent();
     }
     Set<DefaultEditorMessage> messagesToRemove = new HashSet<DefaultEditorMessage>();
-    for (SNode childNode : CollectionUtil.iteratorAsIterable(nodeToHighlight.depthFirstChildren())) {
+    for (SNode childNode : nodeToHighlight.getSubnodes()) {
       for (DefaultEditorMessage msg : myMessages()) {
         if (msg.getNode() == childNode && msg.getColor().equals(color)) messagesToRemove.add(msg);
       }

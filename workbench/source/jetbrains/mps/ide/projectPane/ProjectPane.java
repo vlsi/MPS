@@ -533,11 +533,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     for (SNode node : selectedNodes) {
       if (node == null) continue;
       if (unselectedNodes.contains(node)) continue;
-      Iterator<? extends SNode> dfChildren = node.depthFirstChildren();
-      while (dfChildren.hasNext()) {
-        SNode child = dfChildren.next();
-        unselectedNodes.add(child);
-      }
+      unselectedNodes.addAll(node.getSubnodes());
     }
     selectedNodes.removeAll(unselectedNodes);
     return selectedNodes;

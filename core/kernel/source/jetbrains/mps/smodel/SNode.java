@@ -1325,6 +1325,11 @@ public final class SNode {
   }
 
   @NotNull
+  public List<SNode> getSubnodes() {
+    return getSubnodes(null);
+  }
+
+  @NotNull
   public List<SNode> getSubnodes(Condition<SNode> condition) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -1337,6 +1342,7 @@ public final class SNode {
 
   private void collectSubnodes(@Nullable Condition<SNode> condition,
                                @NotNull List<SNode> list) {
+    // depth-first traversal
     for (SNode child : _children()) {
       if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
         list.add(child);
