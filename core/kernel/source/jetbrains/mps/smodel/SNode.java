@@ -1331,10 +1331,10 @@ public final class SNode {
     return list;
   }
 
-  private void collectSubnodes(@NotNull Condition<SNode> condition,
+  private void collectSubnodes(@Nullable Condition<SNode> condition,
                                @NotNull List<SNode> list) {
     for (SNode child : _children()) {
-      if (condition.met(child)) {
+      if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
         list.add(child);
       }
       child.collectSubnodes(condition, list);
@@ -1343,21 +1343,17 @@ public final class SNode {
 
   public boolean isDescendantOf(SNode node, boolean includeThis) {
     SNode current;
-
     if (includeThis) {
       current = this;
     } else {
       current = getParent();
     }
-
     while (current != null) {
       if (current == node) {
         return true;
       }
-
       current = current.getParent();
     }
-
     return false;
   }
 
@@ -1649,26 +1645,6 @@ public final class SNode {
 
     return new BaseAdapter(this) {
     };
-  }
-
-  public SNode findLeastCommonParent(SNode node2) {
-    SNode commonParent = this;
-    while (commonParent != node2 && !commonParent.isParent(node2)) {
-      commonParent = commonParent.getParent();
-      if (commonParent == null) {
-        return null;
-      }
-    }
-    return commonParent;
-  }
-
-  public boolean isParent(SNode child) {
-    SNode node = child.getParent();
-    while (node != null &&
-      node != this) {
-      node = node.getParent();
-    }
-    return (node == this);
   }
 
   void clearAdapters() {
