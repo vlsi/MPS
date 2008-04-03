@@ -802,6 +802,9 @@
           <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207222873612">
             <link role="javaClass" targetNodeId="29.~UpdateAction" resolveInfo="UpdateAction" />
           </node>
+          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207235203645">
+            <link role="javaClass" targetNodeId="29.~ShowHistoryAction" resolveInfo="ShowHistoryAction" />
+          </node>
         </node>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1205846213311">
