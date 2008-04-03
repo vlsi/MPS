@@ -1228,5 +1228,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1207236167840">
+    <link role="conceptDeclaration" targetNodeId="1.1207236100912" resolveInfo="ToIteratorOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1207236171678">
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 
