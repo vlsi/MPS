@@ -1199,12 +1199,12 @@ public final class SNode {
   }
 
   @NotNull
-  public Iterator<SNode> depthFirstChildren() {
+  private Iterator<SNode> depthFirstChildren() {
     return depthFirstChildren(false);
   }
 
   @NotNull
-  public Iterator<SNode> depthFirstChildren(boolean addThis) {
+  private Iterator<SNode> depthFirstChildren(boolean addThis) {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
