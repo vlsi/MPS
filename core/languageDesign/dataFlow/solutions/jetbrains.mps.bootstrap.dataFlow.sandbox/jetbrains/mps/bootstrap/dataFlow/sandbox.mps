@@ -108,16 +108,11 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207228643091">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1207228643984">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207228645691">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207231046644">
-                <link role="variableDeclaration" targetNodeId="1207231044454" resolveInfo="p" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207228644518">
-                <link role="variableDeclaration" targetNodeId="1207226421536" resolveInfo="i" />
-              </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207228645691">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207231046644">
+              <link role="variableDeclaration" targetNodeId="1207231044454" resolveInfo="p" />
             </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207228643092">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207228644518">
               <link role="variableDeclaration" targetNodeId="1207226421536" resolveInfo="i" />
             </node>
           </node>
