@@ -67,9 +67,10 @@ public class AttributesRolesUtil {
   }
 
   public static boolean isAttributeRole(String role) {
-    return (AttributesRolesUtil.isNodeAttributeRole(role) ||
-            AttributesRolesUtil.isLinkAttributeRole(role) ||
-            AttributesRolesUtil.isPropertyAttributeRole(role));
+    return role.contains(AttributesRolesUtil.STEREOTYPE_DELIM) &&
+      (AttributesRolesUtil.isNodeAttributeRole(role) ||
+        AttributesRolesUtil.isLinkAttributeRole(role) ||
+        AttributesRolesUtil.isPropertyAttributeRole(role));
   }
 
   public static String replaceLinkRoleInLinkAttributeRole(String attributeRole, String linkRole) {
