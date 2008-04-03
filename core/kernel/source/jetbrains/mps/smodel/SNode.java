@@ -794,11 +794,24 @@ public final class SNode {
 
   @NotNull
   public List<SNode> getChildren() {
-    ModelAccess.assertLegalRead(this);
+     return getChildren(true);
+  }
 
+  @NotNull
+  public List<SNode> getChildren(boolean includeAttributes) {
+    ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    return Collections.unmodifiableList(_children());
+
+    List<SNode> result = new ArrayList<SNode>(_children());
+    if(!includeAttributes) {
+      Iterator<SNode> it = result.iterator();
+      while (it.hasNext()) {
+        SNode child = it.next();
+        if(child.isAttribute()) it.remove();
+      }
+    }
+    return result;
   }
 
   private void fireNodeUnclassifiedReadAccess() {

@@ -57,10 +57,9 @@ public final class CopyUtil {
     SNode result = new SNode(node.getModel(), node.getConceptFqName(), false);
     mapping.put(node, result);
     result.putProperties(node);
-    for (SNode child : node.getChildren()) {
+    for (SNode child : node.getChildren(copyAttributes)) {
       String role = child.getRole_();
       assert role != null;
-      if (!copyAttributes && child.isAttribute()) continue;
       result.addChild(role, clone(child, mapping, copyAttributes));
     }
 
@@ -75,39 +74,33 @@ public final class CopyUtil {
     return results;
   }
 
-  private static void addReferences(List<? extends SNode> sourceNodes, Map<SNode, SNode> mapping, boolean copyAttributes) {
-    for (SNode node : sourceNodes) {
-      if (node == null) {
+  private static void addReferences(List<? extends SNode> inputNodes, Map<SNode, SNode> mapping, boolean copyAttributes) {
+    for (SNode inputNode : inputNodes) {
+      if (inputNode == null) {
         continue;
       }
-      SNode target = mapping.get(node);
+      SNode outputNode = mapping.get(inputNode);
 
-      for (SReference ref : node.getReferences()) {
-        SNode targetNode = ref.getTargetNode();
-        if (targetNode == null) {//broken reference
-          if (ref instanceof StaticReference) {//copy a broken static reference
+      for (SReference ref : inputNode.getReferences()) {
+        SNode inputTargetNode = ref.getTargetNode();
+        if (inputTargetNode == null) {//broken reference
+          if (ref instanceof StaticReference) {//copy broken static reference
             StaticReference staticReference = (StaticReference) ref;
-            target.addReference(new StaticReference(
+            outputNode.addReference(new StaticReference(
               staticReference.getRole(),
               staticReference.getSourceNode(),
               staticReference.getTargetModelUID(),
               staticReference.getTargetNodeId(),
               staticReference.getResolveInfo()));
           }
-        } else if (mapping.containsKey(targetNode)) {
-          target.setReferent(ref.getRole(), mapping.get(targetNode), false);
+        } else if (mapping.containsKey(inputTargetNode)) {
+          outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
         } else {
-          target.setReferent(ref.getRole(), targetNode, false);
+          outputNode.setReferent(ref.getRole(), inputTargetNode, false);
         }
       }
 
-      List<SNode> childList = new ArrayList<SNode>();
-      for (String role : node.getChildRoles(copyAttributes)) {
-        for (SNode child : node.getChildren(role)) {
-          childList.add(child);
-        }
-      }
-      addReferences(childList, mapping, copyAttributes);
+      addReferences(inputNode.getChildren(copyAttributes), mapping, copyAttributes);
     }
   }
 }
