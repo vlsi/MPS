@@ -323,10 +323,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201048260874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      IMatchingPattern pattern_1207244574966 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1207244574948 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1207244574966);
-      if (coercedNode_1207244574948 != null) {
-        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1207244574948, "elementType", true));
+      IMatchingPattern pattern_1207250303629 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1207250303611 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1207250303629);
+      if (coercedNode_1207250303611 != null) {
+        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1207250303611, "elementType", true));
       }
     }
     return null;
@@ -1373,6 +1373,9 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1202836874171(final IOperationContext operationContext, final MappingScriptContext _context) {
+    if (true) {
+      return;
+    }
     for(SNode te : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ThisExpression")) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(te, null, false, false), "jetbrains.mps.baseLanguage.structure.FieldReference") && (SLinkOperations.getTarget(te, "classConcept", false) == null)) {
         SNode cl = SNodeOperations.getAncestor(te, "jetbrains.mps.closures.structure.ClosureLiteral", false, false);
@@ -1494,12 +1497,9 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1207161784299(final IOperationContext operationContext, final MappingScriptContext _context) {
-    if (true) {
-      return;
-    }
     List<SNode> telist = new ArrayList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ThisExpression"));
     for(SNode te : telist) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(te, null, false, false), "jetbrains.mps.baseLanguage.structure.FieldReference") && (SLinkOperations.getTarget(te, "classConcept", false) == null)) {
+      if ((SLinkOperations.getTarget(te, "classConcept", false) == null)) {
         SNode cl = SNodeOperations.getAncestor(te, "jetbrains.mps.closures.structure.ClosureLiteral", false, false);
         SNode thisCC = SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
         if ((cl != null)) {
@@ -1507,7 +1507,20 @@ public class QueriesGenerated {
           for(SNode cc : SNodeOperations.getAncestors(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)) {
             if (cc == thisCC) {
               if (SNodeOperations.isInstanceOf(thisCC, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-                SNodeOperations.replaceWithNewChild(te, "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression");
+                SNode parent = SNodeOperations.getParent(te, null, false, false);
+                if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.FieldReference")) {
+                  SNode ifr = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference");
+                  SLinkOperations.setNewChild(ifr, "instance", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression");
+                  SPropertyOperations.set(ifr, "fieldName", SPropertyOperations.getString(SLinkOperations.getTarget(parent, "variableDeclaration", false), "name"));
+                } else
+                if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.InstanceMethodCall")) {
+                  SNode imc = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall");
+                  SLinkOperations.setNewChild(imc, "instance", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression");
+                  SPropertyOperations.set(imc, "methodName", "" + (SLinkOperations.getTarget(parent, "baseMethodDeclaration", false)));
+                } else
+                if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parent, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
+                  _context.getGenerator().showErrorMessage(te, "'this' expression coulnd't be removed");
+                }
               } else
               {
                 SLinkOperations.setTarget(te, "classConcept", thisCC, false);

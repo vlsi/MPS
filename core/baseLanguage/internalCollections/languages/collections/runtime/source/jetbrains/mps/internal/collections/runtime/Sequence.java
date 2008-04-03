@@ -17,6 +17,10 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
         return new BasicSequence<U> (Arrays.asList(array));
     }    
     
+    public static <U> ISequence<U> fromClosure (ISequenceClosure<U> cls) {
+        return Sequence.fromIterable(cls.iterable());
+    }
+    
     public static <U> ISequence<U> fromIterable (Iterable<U> iterable) {
         if (RELAXED_NULL) {
             if (iterable == null) {

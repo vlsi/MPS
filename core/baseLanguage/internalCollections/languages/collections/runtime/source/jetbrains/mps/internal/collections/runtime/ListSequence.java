@@ -39,6 +39,14 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     }
     
     public static <U> IListSequence<U> fromIterable (Iterable<U> it) {
+        if (Sequence.RELAXED_NULL) {
+            if (it == null) {
+                return new NullListSequence<U> ();
+            }
+        }
+        if (it instanceof ListSequence) {
+            return (ListSequence<U>) it;
+        }
         List<U> list = new ArrayList<U> ();
         for (U u: it) {
             list.add(u);
@@ -146,13 +154,13 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     
     // Additional methods
     
-    public void addAll (ISequence<T> seq) {
+    public void addSequence (ISequence<T> seq) {
         for (T t : seq.toIterable()) {
             list.add(t);
         }
     }
     
-    public void removeAll (ISequence<T> seq) {
+    public void removeSequence (ISequence<T> seq) {
         for (T t : seq.toIterable()) {
             list.remove(t);
         }

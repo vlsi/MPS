@@ -10,9 +10,9 @@ import java.util.List;
  */
 public interface IListSequence<T> extends ISequence<T>, List<T> {
 
-    void addAll(ISequence<T> seq);
+    void addSequence(ISequence<T> seq);
 
-    void removeAll(ISequence<T> seq);
+    void removeSequence(ISequence<T> seq);
 
     IListSequence<T> getReversed();
 

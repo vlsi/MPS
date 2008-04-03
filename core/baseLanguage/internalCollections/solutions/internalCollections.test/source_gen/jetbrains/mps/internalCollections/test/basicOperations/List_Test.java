@@ -26,7 +26,7 @@ public class List_Test extends Util_Test {
 
   public void test_addAll() throws Exception {
     List<Integer> test = ListSequence.<Integer>fromArray();
-    ListSequence.fromList(test).addAll(Sequence.fromIterable(this.input5()));
+    ListSequence.fromList(test).addSequence(Sequence.fromIterable(this.input5()));
     this.assertIterableEquals(this.expect5(), test);
   }
 
@@ -42,7 +42,7 @@ public class List_Test extends Util_Test {
 
   public void test_removeAll() throws Exception {
     List<Integer> test = ListSequence.<Integer>fromArray(1, 2, 3, 4, 5);
-    ListSequence.fromList(test).removeAll(Sequence.fromIterable(this.input5()));
+    ListSequence.fromList(test).removeSequence(Sequence.fromIterable(this.input5()));
     Assert.assertTrue(ListSequence.fromList(test).isEmpty());
     Assert.assertSame(0, ListSequence.fromList(test).count());
     Assert.assertSame(0, ListSequence.fromList(test).count());
@@ -57,9 +57,9 @@ public class List_Test extends Util_Test {
   public void test_sameList() throws Exception {
     List<Integer> test = ListSequence.<Integer>fromArray(1, 2, 3, 4, 5);
     List<Integer> test2 = test;
-    ListSequence.fromList(test2).removeAll(Sequence.fromIterable(this.input5()));
+    ListSequence.fromList(test2).removeSequence(Sequence.fromIterable(this.input5()));
     this.assertIterableEquals(test, test2);
-    ListSequence.fromList(test2).addAll(Sequence.fromIterable(this.input5()));
+    ListSequence.fromList(test2).addSequence(Sequence.fromIterable(this.input5()));
     this.assertIterableEquals(this.input5(), test);
     this.assertIterableEquals(test, test2);
   }

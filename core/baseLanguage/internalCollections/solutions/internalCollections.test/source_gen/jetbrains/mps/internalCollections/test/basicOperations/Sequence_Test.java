@@ -7,6 +7,12 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
 import java.util.Collections;
+import jetbrains.mps.closures.runtime.FunctionTypes;
+import java.util.Iterator;
+import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Sequence_Test extends Util_Test {
 
@@ -26,6 +32,126 @@ public class Sequence_Test extends Util_Test {
     Assert.assertEquals(false, Sequence.fromIterable(Collections.emptyList()).isNotEmpty());
   }
 
+  public void test_sequenceFromClosure() throws Exception {
+    Iterable<Integer> seq = new FunctionTypes._R <Iterable<Integer>>() {
+
+      public Iterable<Integer> invoke() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _2_i;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_i = 1;
+                    case 3:
+                      if (!(this._2_i <= 5)) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._2_i = this._2_i + 1;
+                      this.__CP__ = 3;
+                      break;
+                    case 6:
+                      this.__CP__ = 5;
+                      this.yield(this._2_i);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 6;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    }.invoke();
+    this.assertIterableEquals(this.expect5(), seq);
+  }
+
+  public void test_sequenceInitializer() throws Exception {
+    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _2_i;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_i = 1;
+                    case 3:
+                      if (!(this._2_i <= 5)) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._2_i = this._2_i + 1;
+                      this.__CP__ = 3;
+                      break;
+                    case 6:
+                      this.__CP__ = 5;
+                      this.yield(this._2_i);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 6;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    this.assertIterableEquals(this.expect5(), seq);
+  }
+
   public void test_sequenceOperations() throws Exception {
     Iterable<Integer> input = this.input5();
     Assert.assertEquals(((Integer)1), Sequence.fromIterable(input).first());
@@ -40,6 +166,19 @@ public class Sequence_Test extends Util_Test {
     Assert.assertEquals(true, Sequence.fromIterable(input).isNotEmpty());
     Assert.assertEquals(true, Sequence.fromIterable(this.inputEmpty()).isEmpty());
     Assert.assertEquals(false, Sequence.fromIterable(this.inputEmpty()).isNotEmpty());
+  }
+
+  public void test_toOperations() throws Exception {
+    Iterable<Integer> input = this.input5();
+    Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, ListSequence.fromIterable(Sequence.fromIterable(input)).toArray()));
+    this.assertIterableEquals(this.expect5(), ListSequence.fromIterable(input));
+  }
+
+  public void test_toSetList() throws Exception {
+    Iterable<Integer> input = Arrays.asList(5, 3, 2, 5, 1, 1, 4, 5);
+    this.assertIterableEquals(Arrays.asList(5, 3, 2, 1, 4), ListSequence.fromIterable(Sequence.fromIterable(input).distinct()));
+    this.assertIterableEquals(Sequence.fromIterable(input).distinct(), ListSequence.fromIterable(Sequence.fromIterable(input).distinct()));
+    Assert.assertEquals(ListSequence.fromIterable(Sequence.fromIterable(input).distinct()), ListSequence.fromIterable(Sequence.fromIterable(input).distinct()));
   }
 
 }
