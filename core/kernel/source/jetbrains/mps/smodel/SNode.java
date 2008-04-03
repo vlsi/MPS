@@ -1198,33 +1198,6 @@ public final class SNode {
     return (_references().size() == 0) && myParent == null && !getModel().isRoot(this);
   }
 
-  @NotNull
-  private Iterator<SNode> depthFirstChildren() {
-    return depthFirstChildren(false);
-  }
-
-  @NotNull
-  private Iterator<SNode> depthFirstChildren(boolean addThis) {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    List<SNode> allChildren = new ArrayList<SNode>();
-    putAggregationTree2List(this, allChildren, addThis);
-    return allChildren.iterator();
-  }
-
-  private void putAggregationTree2List(@NotNull SNode node, @NotNull List<SNode> allChildren, boolean addThis) {
-    List<SNode> list = node.getChildren();
-    if (addThis) {
-      allChildren.add(node);
-    }
-    for (SNode child : list) {
-      allChildren.add(child);
-      putAggregationTree2List(child, allChildren, false);
-    }
-  }
-
   //
   // -----------------------
   //
@@ -1485,18 +1458,6 @@ public final class SNode {
     return result;
   }
 
-
-  public List<SNode> allChildren(Condition<SNode> condition) {
-    List<SNode> resultNodes = new ArrayList<SNode>();
-    Iterator<SNode> nodes = depthFirstChildren();
-    while (nodes.hasNext()) {
-      SNode node = nodes.next();
-      if (condition.met(node)) {
-        resultNodes.add(node);
-      }
-    }
-    return resultNodes;
-  }
 
   public SNode findParent(Condition<SNode> condition) {
     SNode parent = getParent();

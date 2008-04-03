@@ -53,8 +53,6 @@ public interface INodeAdapter {
 
   <BA extends INodeAdapter> List<BA> allChildren(Class<BA> cls);
 
-  <BA extends INodeAdapter> List<BA> allChildren(Condition<BA> c);
-
   @NotNull
   <E extends INodeAdapter> List<E> getSubnodes(Condition<INodeAdapter> condition);
 
