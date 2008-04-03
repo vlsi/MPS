@@ -52,21 +52,16 @@ public final class CopyUtil {
   }
 
   private static SNode clone(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
-    SNode result;
-    if (node == null) {
-      result = null;
-    } else {
-      result = new SNode(node.getModel(), node.getConceptFqName(), false);
-      mapping.put(node, result);
+    if (node == null) return null;
 
-      result.putProperties(node);
-
-      for (SNode child : node.getChildren()) {
-        String role = child.getRole_();
-        assert role != null;
-        if (!copyAttributes && child.isAttribute()) continue;
-        result.addChild(role, clone(child, mapping, copyAttributes));
-      }
+    SNode result = new SNode(node.getModel(), node.getConceptFqName(), false);
+    mapping.put(node, result);
+    result.putProperties(node);
+    for (SNode child : node.getChildren()) {
+      String role = child.getRole_();
+      assert role != null;
+      if (!copyAttributes && child.isAttribute()) continue;
+      result.addChild(role, clone(child, mapping, copyAttributes));
     }
 
     return result;
