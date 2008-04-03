@@ -5,6 +5,9 @@ package jetbrains.mps.closures.test;
 import junit.framework.TestCase;
 import jetbrains.mps.closures.runtime.FunctionTypes;
 import junit.framework.Assert;
+import jetbrains.mps.closures.runtime.Wrappers;
+import java.util.Iterator;
+import jetbrains.mps.closures.runtime.YieldingIterator;
 
 public class ExternalReferences_Test extends TestCase {
 
@@ -18,6 +21,70 @@ public class ExternalReferences_Test extends TestCase {
 
     }.invoke();
     Assert.assertEquals(foo, bar);
+  }
+
+  public void test_alteredLocalvariable() throws Exception {
+    final Wrappers._int res = new Wrappers._int(0);
+    for(int i = 1 ; i <= 5 ; i = i + 1) {
+      new FunctionTypes._R <Integer>() {
+
+        public Integer invoke() {
+          return res.value = res.value + 1;
+        }
+
+      }.invoke();
+    }
+    res.value = res.value - 5;
+    Assert.assertEquals(0, res.value);
+  }
+
+  public void test_alteredLocalVariable2() throws Exception {
+    final Wrappers._int res = new Wrappers._int(0);
+    for(int i = 1 ; i <= 5 ; i = i + 1) {
+      for(int j : new FunctionTypes._R <Iterable<Integer>>() {
+
+        public Iterable<Integer> invoke() {
+          return new Iterable <Integer>() {
+
+            public Iterator<Integer> iterator() {
+              return new YieldingIterator <Integer>() {
+
+                private int __CP__ = 0;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 3:
+                        this.__CP__ = 1;
+                        this.yield(-1);
+                        return true;
+                      case 0:
+                        res.value = res.value + 1;
+                        this.__CP__ = 3;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while(true);
+                  return false;
+                }
+
+              };
+            }
+
+          };
+        }
+
+      }.invoke()) {
+      }
+    }
+    res.value = res.value - 5;
+    Assert.assertEquals(0, res.value);
   }
 
   public void test_methodParameter() throws Exception {

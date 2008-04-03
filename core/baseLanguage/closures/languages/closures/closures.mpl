@@ -14,6 +14,7 @@
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="true">jetbrains.mps.baseLanguage.ext.csharp</dependency>
+        <dependency reexport="false">jetbrains.mps.baseLanguageInternal</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>

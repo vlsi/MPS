@@ -6,8 +6,8 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class PrepStatementUtil {
@@ -31,6 +31,23 @@ public class PrepStatementUtil {
 
   public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
     return generator.getGeneratorSessionContext().getSessionObject("closure_data_" + ((SNode)sn).getId());
+  }
+
+  public static void copyPrepData(SNode from, SNode to, ITemplateGenerator generator) {
+    PrepStatementUtil.copyPrepDataNoRecursion(from, to, generator);
+    List<SNode> toDescendants = new ArrayList<SNode>(SNodeOperations.getDescendants(to, null, false));
+    int idx = 0;
+    for(SNode fromDesc : SNodeOperations.getDescendants(from, null, false)) {
+      PrepStatementUtil.copyPrepDataNoRecursion(fromDesc, toDescendants.get(idx), generator);
+      idx = idx + 1;
+    }
+  }
+
+  private static void copyPrepDataNoRecursion(SNode from, SNode to, ITemplateGenerator generator) {
+    Object data = PrepStatementUtil.getPrepData(from, generator);
+    if (data != null) {
+      PrepStatementUtil.putPrepData(to, data, generator);
+    }
   }
 
   public static void setFlag(SNode sn, ITemplateGenerator generator, Object flag) {

@@ -61,10 +61,10 @@ public final class CopyUtil {
 
       result.putProperties(node);
 
-      for (String role : node.getChildRoles(copyAttributes)) {
-        for (SNode child : node.getChildren(role)) {
+      for (SNode child : node.getChildren()) {
+          String role = child.getRole_();
+          assert role != null;
           result.addChild(role, clone(child, mapping, copyAttributes));
-        }
       }
     }
 

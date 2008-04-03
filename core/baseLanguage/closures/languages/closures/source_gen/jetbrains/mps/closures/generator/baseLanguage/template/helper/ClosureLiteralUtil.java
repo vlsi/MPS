@@ -118,7 +118,10 @@ public class ClosureLiteralUtil {
       if (SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
         if (idx < varDecls.size()) {
           SNode tvd = varDecls.get(idx);
-          SLinkOperations.addChild(ctNoParams, "parameter", map.get(SPropertyOperations.getString(tvd, "name")));
+          SLinkOperations.addChild(ctNoParams, "parameter", (map != null ?
+            map.get(SPropertyOperations.getString(tvd, "name")) :
+            null
+          ));
         }
       } else
       {
