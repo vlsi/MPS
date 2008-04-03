@@ -18,19 +18,19 @@ public class TypeUtil_Collections {
 
   public static SNode coerceTo_SequenceType(SNode type) {
     SNode sequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), true);
-    if(sequenceType != null) {
+    if (sequenceType != null) {
       return sequenceType;
     }
-    if(sequenceType == null) {
+    if (sequenceType == null) {
       return null;
     }
     // the following code is not reachable 
-    if(type == null) {
+    if (type == null) {
       return null;
     }
     // ==========
     // TEMP FIX FOR DNQ 1
-    if("jetbrains.teamsys.dnq.structure.PListType".equals(type.getConceptFqName())) {
+    if ("jetbrains.teamsys.dnq.structure.PListType".equals(type.getConceptFqName())) {
       SNode classifierType = type.getChild("classifierType");
       return new QuotationClass_40().createNode(SNodeOperations.copyNode(classifierType));
     }
@@ -39,11 +39,11 @@ public class TypeUtil_Collections {
     // ==========
     // TEMP FIX FOR DNQ
     // TODO: extract generics information
-    if(type != null) {
+    if (type != null) {
       SModel model = TypeChecker.getInstance().getRuntimeTypesModel();
       GlobalScope scope = GlobalScope.getInstance();
       SNode entity = BaseAdapter.fromAdapter(SModelUtil_new.findNodeByFQName("com.jetbrains.teamsys.database.Entity", Classifier.class, scope));
-      if(entity == null) {
+      if (entity == null) {
         return null;
       }
       SNode entityType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
@@ -52,14 +52,14 @@ public class TypeUtil_Collections {
       SNode javaIterableType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(javaIterableType, "classifier", javaIterable, false);
       SLinkOperations.addChild(javaIterableType, "parameter", entityType);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, javaIterableType)) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, javaIterableType)) {
         return new QuotationClass_41().createNode(SNodeOperations.copyNode(entity));
       }
       // ==========
       SNode entityIterable = BaseAdapter.fromAdapter(SModelUtil_new.findNodeByFQName("com.jetbrains.teamsys.database.EntityIterable", Classifier.class, scope));
       SNode entityIterableType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(entityIterableType, "classifier", entityIterable, false);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, entityIterableType)) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, entityIterableType)) {
         return new QuotationClass_42().createNode(SNodeOperations.copyNode(entity));
       }
     }

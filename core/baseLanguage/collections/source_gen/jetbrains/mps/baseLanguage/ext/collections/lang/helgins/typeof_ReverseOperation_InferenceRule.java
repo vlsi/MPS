@@ -15,7 +15,7 @@ public class typeof_ReverseOperation_InferenceRule implements InferenceRule_Runt
   public void applyRule(final SNode op) {
     final SNode elementType_typevar_1184856571984 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     SNode input = RulesFunctions_Collections.getInput(op);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856579804", true), new QuotationClass_32().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184856571984)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856612680");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856579804", true), new QuotationClass_32().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184856571984)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856612680", false);
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856630356", true), new QuotationClass_33().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184856571984)), op, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856636291");
   }
 

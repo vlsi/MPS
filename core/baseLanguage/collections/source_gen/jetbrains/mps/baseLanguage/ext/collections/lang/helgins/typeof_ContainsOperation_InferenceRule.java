@@ -20,7 +20,7 @@ public class typeof_ContainsOperation_InferenceRule implements InferenceRule_Run
       {
         boolean matches_1205249543839 = false;
         matches_1205249543839 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
-        if(matches_1205249543839) {
+        if (matches_1205249543839) {
           TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_60().createNode(), op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1205249554164");
           break;
         }
@@ -28,7 +28,7 @@ public class typeof_ContainsOperation_InferenceRule implements InferenceRule_Run
       {
         boolean matches_1178725705171 = false;
         matches_1178725705171 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.DotExpression");
-        if(matches_1178725705171) {
+        if (matches_1178725705171) {
           TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_14().createNode(), op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705174");
           break;
         }

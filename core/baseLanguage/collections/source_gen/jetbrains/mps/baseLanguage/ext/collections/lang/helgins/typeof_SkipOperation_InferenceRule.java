@@ -14,7 +14,7 @@ public class typeof_SkipOperation_InferenceRule implements InferenceRule_Runtime
   }
 
   public void applyRule(final SNode op) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "elementsToSkip", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847100456", true), new QuotationClass_6().createNode(), SLinkOperations.getTarget(op, "elementsToSkip", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847107857");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "elementsToSkip", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847100456", true), new QuotationClass_6().createNode(), SLinkOperations.getTarget(op, "elementsToSkip", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847107857", false);
     RulesFunctions_Collections.setInputSequenceType(op, op);
   }
 

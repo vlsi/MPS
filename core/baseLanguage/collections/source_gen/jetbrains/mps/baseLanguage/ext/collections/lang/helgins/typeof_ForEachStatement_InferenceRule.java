@@ -16,9 +16,9 @@ public class typeof_ForEachStatement_InferenceRule implements InferenceRule_Runt
   public void applyRule(final SNode forEachStatement) {
     SNode variable = SLinkOperations.getTarget(forEachStatement, "variable", true);
     SNode inputSequence = SLinkOperations.getTarget(forEachStatement, "inputSequence", true);
-    if((inputSequence != null) && (variable != null)) {
+    if ((inputSequence != null) && (variable != null)) {
       final SNode elementType_typevar_1184771826645 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(new QuotationClass_20().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184771826645)), TypeChecker.getInstance().getRuntimeSupport().typeOf(inputSequence, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184772149783", true), inputSequence, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184772149777");
+      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(new QuotationClass_20().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184771826645)), TypeChecker.getInstance().getRuntimeSupport().typeOf(inputSequence, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184772149783", true), inputSequence, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184772149777", false);
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(variable, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184771942551", true), TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184771826645), variable, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184772002733");
     }
   }

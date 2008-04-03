@@ -19,7 +19,7 @@ public class typeof_IsNotEmptyOperation_InferenceRule implements InferenceRule_R
       {
         boolean matches_1205249567349 = false;
         matches_1205249567349 = SModelUtil_new.isAssignableConcept(SNodeOperations.getParent(op, null, false, false).getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
-        if(matches_1205249567349) {
+        if (matches_1205249567349) {
           TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_62().createNode(), op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1205249567352");
           break;
         }
@@ -27,7 +27,7 @@ public class typeof_IsNotEmptyOperation_InferenceRule implements InferenceRule_R
       {
         boolean matches_1178725705671 = false;
         matches_1178725705671 = SModelUtil_new.isAssignableConcept(SNodeOperations.getParent(op, null, false, false).getConceptFqName(), "jetbrains.mps.baseLanguage.structure.DotExpression");
-        if(matches_1178725705671) {
+        if (matches_1178725705671) {
           TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(), op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705674");
           break;
         }
