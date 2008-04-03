@@ -110,8 +110,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207228643091">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1207228643984">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207228645691">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207228646600">
-                <property name="value" value="2" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207231046644">
+                <link role="variableDeclaration" targetNodeId="1207231044454" resolveInfo="p" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207228644518">
                 <link role="variableDeclaration" targetNodeId="1207226421536" resolveInfo="i" />
@@ -127,6 +127,10 @@
             <link role="variableDeclaration" targetNodeId="1207226421536" resolveInfo="i" />
           </node>
         </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1207231044454">
+        <property name="name" value="p" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207231044455" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206443792482" />
