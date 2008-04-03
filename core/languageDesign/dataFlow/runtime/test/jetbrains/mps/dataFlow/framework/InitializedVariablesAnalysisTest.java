@@ -80,4 +80,23 @@ public class InitializedVariablesAnalysisTest {
       result.toString()
     );
   }
+
+  @Test
+  public void emptyEntrySet() {
+    Program p = new SimpleProgramBuilder()
+     .emitWrite("x")
+     .emitRet()
+     .emitJump(3)
+     .buildProgram();
+
+    AnalysisResult<Set<Object>> result = p.analyze(new InitializedVariablesAnalyzer());
+
+    Assert.assertEquals(
+      "0: write x [x]\n" +
+      "1: ret [x]\n" +
+      "2: jump 3 [x]\n" +
+      "3: end [x]\n",
+      result.toString()
+    );
+  }
 }

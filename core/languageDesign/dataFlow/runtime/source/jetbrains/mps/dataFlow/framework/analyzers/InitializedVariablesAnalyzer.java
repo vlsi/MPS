@@ -15,14 +15,9 @@ public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<Set<Object
     return new HashSet<Object>(p.getVariables());
   }
 
-  public Set<Object> merge(Set<Set<Object>> input) {
-    Set<Object> result = new HashSet<Object>();
-    boolean first = true;
+  public Set<Object> merge(Program p, Set<Set<Object>> input) {
+    Set<Object> result = initial(p);
     for (Set<Object> item : input) {
-      if (first) {
-        result.addAll(item);
-        first = false;
-      }
       result.retainAll(item);
     }
     return result;

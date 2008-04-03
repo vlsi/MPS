@@ -14,7 +14,7 @@ public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteIn
     return new HashSet<WriteInstruction>();
   }
 
-  public Set<WriteInstruction> merge(Set<Set<WriteInstruction>> input) {
+  public Set<WriteInstruction> merge(Program p, Set<Set<WriteInstruction>> input) {
     Set<WriteInstruction> result = new HashSet<WriteInstruction>();
     for (Set<WriteInstruction> i : input) {
       result.addAll(i);

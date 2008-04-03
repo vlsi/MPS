@@ -15,7 +15,7 @@ public class LivenessAnalyzer implements DataFlowAnalyzer<Set<Object>> {
     return new HashSet<Object>();
   }
 
-  public Set<Object> merge(Set<Set<Object>> input) {
+  public Set<Object> merge(Program p, Set<Set<Object>> input) {
     Set<Object> result = new HashSet<Object>();
     for (Set<Object> inputSet : input) {
       result.addAll(inputSet);

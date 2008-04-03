@@ -12,7 +12,7 @@ public class ReachabilityAnalyzer implements DataFlowAnalyzer<Boolean> {
     return false;
   }
 
-  public Boolean merge(Set<Boolean> input) {
+  public Boolean merge(Program p, Set<Boolean> input) {
     for (Boolean value : input) {
       if (value) {
         return true;

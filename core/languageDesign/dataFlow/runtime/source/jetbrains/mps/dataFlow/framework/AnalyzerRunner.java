@@ -26,7 +26,7 @@ class AnalyzerRunner<E> {
 
     Map<Instruction, E> result = new HashMap<Instruction, E>();
     for (Entry<Instruction, Set<E>> entry : possibleValues.entrySet()) {
-      result.put(entry.getKey(), myAnalyzer.merge(entry.getValue()));
+      result.put(entry.getKey(), myAnalyzer.merge(myProgram, entry.getValue()));
     }
 
     return new AnalysisResult<E>(myProgram, myAnalyzer, stateValues, result);
@@ -55,7 +55,7 @@ class AnalyzerRunner<E> {
       }
 
       E oldValue = stateValues.get(current);
-      E mergedValue = myAnalyzer.merge(input);
+      E mergedValue = myAnalyzer.merge(myProgram, input);
       E newValue = myAnalyzer.fun(current.getInstruction(), mergedValue);
 
       if (!newValue.equals(oldValue)) {
