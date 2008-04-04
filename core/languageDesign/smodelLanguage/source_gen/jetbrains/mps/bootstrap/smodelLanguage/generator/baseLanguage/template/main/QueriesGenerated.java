@@ -184,12 +184,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false) != null;
   }
 
-  public static boolean baseMappingRule_Condition_1207338310770(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SequenceOperations.isEmpty(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)));
-  }
-
   public static boolean baseMappingRule_Condition_1207338310789(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return !(SequenceOperations.isEmpty(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptExpression", false)));
+  }
+
+  public static boolean baseMappingRule_Condition_1207342110781(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(SequenceOperations.isEmpty(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)));
   }
 
   public static Object propertyMacro_GetPropertyValue_1168981884180(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -544,8 +544,9 @@ public class QueriesGenerated {
     return _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1207338310782(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _QueriesUtil.operationGetParm_Concept_conceptFqName(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_1207342110793(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode parm = SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false));
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(parm, "concept", false));
   }
 
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
