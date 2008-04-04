@@ -9300,8 +9300,13 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206465092893">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206465092894" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207321068467">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207321069453">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1207321068468" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207321071236">
+              <link role="conceptMethodDeclaration" targetNodeId="1206465092861" resolveInfo="getLoop" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

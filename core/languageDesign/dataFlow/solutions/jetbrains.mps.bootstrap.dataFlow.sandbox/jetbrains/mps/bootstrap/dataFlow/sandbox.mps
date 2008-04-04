@@ -48,6 +48,34 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1206443792481">
     <property name="name" value="ABC" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1207320884179">
+      <property name="name" value="abcdef" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1207320884180" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207320884181" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207320884182">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207320887277">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207320887278">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207320887279" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207320894210">
+              <link role="baseMethodDeclaration" targetNodeId="1207320894204" resolveInfo="azd" />
+              <link role="classConcept" targetNodeId="1206443792481" resolveInfo="ABC" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1207320894204">
+      <property name="name" value="azd" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207320894206" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207320894207">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207320894208">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207320894209">
+            <property name="value" value="230" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206464422842">
       <property name="name" value="abc" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207223822176" />
