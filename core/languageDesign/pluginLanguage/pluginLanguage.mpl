@@ -16,6 +16,7 @@
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="false">jetbrains.mps.baseLanguage.classifiers</dependency>
+        <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
@@ -40,6 +41,7 @@
     <dependency reexport="false">jetbrains.mpslite</dependency>
     <dependency reexport="false">jetbrains.mps.ide</dependency>
     <dependency reexport="true">jetbrains.mps.baseLanguage.classifiers</dependency>
+    <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>

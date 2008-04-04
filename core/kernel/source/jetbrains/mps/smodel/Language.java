@@ -51,7 +51,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private boolean myUpToDate = true;
 
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
-  private @Nullable Set<ILoggableRefactoring> myCachedRefactorings = null;
+  private
+  @Nullable
+  Set<ILoggableRefactoring> myCachedRefactorings = null;
 
   private Map<String, Set<String>> myAncestorsNamesMap = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
@@ -398,7 +400,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return getLanguageDescriptor().getLanguagePluginClass();
   }
 
-  public String getGeneratedPluginClass() {
+  public String getGeneratedPluginClassName() {
     return getPluginModelDescriptor().getLongName() + "." + "GeneratedPlugin";
   }
 

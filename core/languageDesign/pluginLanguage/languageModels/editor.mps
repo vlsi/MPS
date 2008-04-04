@@ -2043,5 +2043,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1207321275399">
+    <property name="package" value="FileGenerator"/>
+    <link role="conceptDeclaration" targetNodeId="1.1207320991007" resolveInfo="FileGeneratorDeclaration"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+          id="1207321297841">
+      <property name="vertical" value="true"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1207321316970">
+        <property name="text" value="file generator plugin"/>
+        <property name="selectable" value="false"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1207321324957">
+        <property name="selectable" value="false"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+            id="1207321301624">
+        <link role="relationDeclaration" targetNodeId="1.1207321253960"/>
+      </node>
+    </node>
+  </node>
 </model>
 
