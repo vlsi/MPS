@@ -14,7 +14,8 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.baseLanguage.refactoring.ExtractMethodRefactoringProcessor;
+import jetbrains.mps.baseLanguage.refactoring.ExtractMethodDialog;
+import jetbrains.mps.baseLanguage.refactoring.ExtractMethodKind;
 
 public class ExtractMethod_Action extends CurrentProjectMPSAction {
   public static final Logger LOG = Logger.getLogger(ExtractMethod_Action.class);
@@ -83,8 +84,8 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
             _zCursor2.release();
           }
         }
-        ExtractMethodRefactoringProcessor processor = new ExtractMethodRefactoringProcessor(statementes);
-        processor.doRefactor();
+        ExtractMethodDialog dialog = new ExtractMethodDialog(ExtractMethodKind.FROM_STATEMENTS, context);
+        dialog.showDialog();
       }
     } catch (Throwable t) {
       ExtractMethod_Action.LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);

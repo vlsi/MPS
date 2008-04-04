@@ -16,7 +16,7 @@
   </language>
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <maxImportIndex value="29" />
+  <maxImportIndex value="30" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1" />
@@ -46,6 +46,7 @@
   <import index="27" modelUID="jetbrains.mps.dataFlow.framework.analyzers@java_stub" version="-1" />
   <import index="28" modelUID="jetbrains.mps.dataFlow.framework.instructions@java_stub" version="-1" />
   <import index="29" modelUID="jetbrains.mps.baseLanguage.refactoring@java_stub" version="-1" />
+  <import index="30" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1205247338363">
@@ -3740,27 +3741,29 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207300089414">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207300089415">
-            <property name="name" value="processor" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207300089416">
-              <link role="classifier" targetNodeId="29.~ExtractMethodRefactoringProcessor" resolveInfo="ExtractMethodRefactoringProcessor" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207309763639">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207309763640">
+            <property name="name" value="dialog" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207309763641">
+              <link role="classifier" targetNodeId="29.~ExtractMethodDialog" resolveInfo="ExtractMethodDialog" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1207300094918">
-              <link role="baseMethodDeclaration" targetNodeId="29.~ExtractMethodRefactoringProcessor.&lt;init&gt;(java.util.List)" resolveInfo="ExtractMethodRefactoringProcessor" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207300213488">
-                <link role="variableDeclaration" targetNodeId="1207300145924" resolveInfo="statementes" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1207309766768">
+              <link role="baseMethodDeclaration" targetNodeId="29.~ExtractMethodDialog.&lt;init&gt;(jetbrains.mps.baseLanguage.refactoring.ExtractMethodKind,jetbrains.mps.ide.action.ActionContext)" resolveInfo="ExtractMethodDialog" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1207311459268">
+                <link role="enumConstantDeclaration" targetNodeId="29.~ExtractMethodKind.FROM_STATEMENTS" resolveInfo="FROM_STATEMENTS" />
+                <link role="enumClass" targetNodeId="29.~ExtractMethodKind" resolveInfo="ExtractMethodKind" />
               </node>
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_ActionContext" id="1207311474646" />
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207300215888">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207300216531">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207300215889">
-              <link role="variableDeclaration" targetNodeId="1207300089415" resolveInfo="processor" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207309779024">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207309789685">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207309779025">
+              <link role="variableDeclaration" targetNodeId="1207309763640" resolveInfo="dialog" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207300218213">
-              <link role="baseMethodDeclaration" targetNodeId="29.~ExtractMethodRefactoringProcessor.doRefactor():void" resolveInfo="doRefactor" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207309798075">
+              <link role="baseMethodDeclaration" targetNodeId="30.~BaseDialog.showDialog():void" resolveInfo="showDialog" />
             </node>
           </node>
         </node>

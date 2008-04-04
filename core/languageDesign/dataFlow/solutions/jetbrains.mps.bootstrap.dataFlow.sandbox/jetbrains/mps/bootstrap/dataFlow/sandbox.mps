@@ -59,7 +59,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207219760111">
               <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207219761566" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207309893331">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1207309893332" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207309893333">
+                <link role="baseMethodDeclaration" targetNodeId="1207309893322" resolveInfo="testExtractMethod" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207305638178">
@@ -99,6 +104,17 @@
             <property name="value" value="239" />
           </node>
         </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1207309893322">
+      <property name="name" value="testExtractMethod" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207309893323">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207309893329">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207309893334" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207309893324">
+        <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1207305638165">
