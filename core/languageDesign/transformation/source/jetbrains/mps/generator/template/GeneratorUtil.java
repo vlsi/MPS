@@ -377,10 +377,9 @@ public class GeneratorUtil {
 
   private static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
     List<TemplateFragment> templateFragments = new ArrayList<TemplateFragment>(1);
-    for (SNode subnode : template.getNode().getSubnodes()) {
-      INodeAdapter templateFragment = BaseAdapter.fromNode(subnode);
-      if (templateFragment instanceof TemplateFragment) {
-        templateFragments.add((TemplateFragment) templateFragment);
+    for (INodeAdapter subnode : template.getSubnodes()) {
+      if (subnode instanceof TemplateFragment) {
+        templateFragments.add((TemplateFragment) subnode);
       }
     }
     return templateFragments;

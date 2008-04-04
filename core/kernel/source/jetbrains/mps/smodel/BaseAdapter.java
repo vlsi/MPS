@@ -157,6 +157,11 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   @NotNull
+  public <E extends INodeAdapter> List<E> getSubnodes() {
+    return toAdapters(myNode.getSubnodes());
+  }
+
+  @NotNull
   public <E extends INodeAdapter> List<E> getSubnodes(final Condition<INodeAdapter> condition) {
     return toAdapters(myNode.getSubnodes(new Condition<SNode>() {
       public boolean met(SNode object) {

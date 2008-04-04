@@ -1470,19 +1470,6 @@ public final class SNode {
     return null;
   }
 
-  /**
-   * all descendants actually
-   */
-  public List<SNode> allChildren() {
-    List<SNode> result = new ArrayList<SNode>();
-    List<SNode> children = this.getChildren();
-    result.addAll(children);
-    for (SNode child : children) {
-      result.addAll(child.allChildren());
-    }
-    return result;
-  }
-
   // -----------------------------
   // concept properties support
   // -----------------------------

@@ -54,6 +54,9 @@ public interface INodeAdapter {
   <BA extends INodeAdapter> List<BA> allChildren(Class<BA> cls);
 
   @NotNull
+  <E extends INodeAdapter> List<E> getSubnodes();
+
+  @NotNull
   <E extends INodeAdapter> List<E> getSubnodes(Condition<INodeAdapter> condition);
 
   void delete();
