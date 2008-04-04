@@ -17,6 +17,10 @@ public final class CopyUtil {
     return copy(nodes, new HashMap<SNode, SNode>());
   }
 
+  public static<NA extends INodeAdapter> List<NA> copyAdapters(List<NA> adapters) {
+    return (List<NA>) BaseAdapter.toAdapters(copy(BaseAdapter.toNodes(adapters)));
+  }
+
   public static List<SNode> copy(List<SNode> nodes, Map<SNode, SNode> mapping) {
     List<SNode> result = clone(nodes, mapping);
     addReferences(nodes, mapping, true);

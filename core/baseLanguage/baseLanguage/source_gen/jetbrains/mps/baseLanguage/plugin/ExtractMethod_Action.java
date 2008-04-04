@@ -11,6 +11,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.structure.Statement;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.baseLanguage.refactoring.ExtractMethodRefactoringProcessor;
 
 public class ExtractMethod_Action extends CurrentProjectMPSAction {
   public static final Logger LOG = Logger.getLogger(ExtractMethod_Action.class);
@@ -67,11 +71,20 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
         return;
       }
       {
-        ExtractMethodRefactoringProcessor processor = new ExtractMethodRefactoringProcessor((List<SNode>)this.nodes);
-        if (!(processor.collectInputParameters(context.getOperationContext()))) {
-          return;
+        List<Statement> statementes = new ArrayList<Statement>();
+        {
+          ICursor<SNode> _zCursor2 = CursorFactory.createCursor(this.nodes);
+          try {
+            while(_zCursor2.moveToNext()) {
+              SNode st = _zCursor2.getCurrent();
+              statementes.add(((Statement)SNodeOperations.getAdapter(st)));
+            }
+          } finally {
+            _zCursor2.release();
+          }
         }
-        processor.doExtract();
+        ExtractMethodRefactoringProcessor processor = new ExtractMethodRefactoringProcessor(statementes);
+        processor.doRefactor();
       }
     } catch (Throwable t) {
       ExtractMethod_Action.LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
