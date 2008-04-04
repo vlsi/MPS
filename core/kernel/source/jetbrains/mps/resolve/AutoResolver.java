@@ -4,7 +4,6 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.util.CollectionUtil;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -81,7 +80,7 @@ public class AutoResolver extends GenericEditorUpdater implements IEditorMessage
   private Set<SReference> collectBadReferences(IEditorComponent editor) {
     Set<SReference> result = new HashSet<SReference>();
     SNode cellNode = editor.getRootCell().getSNode();
-    List<SNode> list = cellNode.getSubnodes();
+    List<SNode> list = cellNode.getDescendants();
     list.add(0, cellNode);
     for (SNode node : list) {
       for (SReference ref : node.getReferences()) {

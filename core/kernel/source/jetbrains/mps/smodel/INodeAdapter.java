@@ -50,13 +50,13 @@ public interface INodeAdapter {
   INodeAdapter getContainingRoot();
 
   @NotNull
-  <E extends INodeAdapter> List<E> getSubnodes(final Class<E> cls);
+  <E extends INodeAdapter> List<E> getDescendants(Class<E> cls);
 
   @NotNull
-  <E extends INodeAdapter> List<E> getSubnodes();
+  <E extends INodeAdapter> List<E> getDescendants();
 
   @NotNull
-  <E extends INodeAdapter> List<E> getSubnodes(Condition<INodeAdapter> condition);
+  <E extends INodeAdapter> List<E> getDescendants(Condition<INodeAdapter> condition);
 
   void delete();
 

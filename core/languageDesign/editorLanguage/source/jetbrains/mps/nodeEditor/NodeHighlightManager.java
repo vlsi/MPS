@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 import java.awt.*;
@@ -106,7 +105,7 @@ public class NodeHighlightManager implements IEditorMessageOwner {
       node = node.getParent();
     }
     Set<DefaultEditorMessage> messagesToRemove = new HashSet<DefaultEditorMessage>();
-    for (SNode childNode : nodeToHighlight.getSubnodes()) {
+    for (SNode childNode : nodeToHighlight.getDescendants()) {
       for (DefaultEditorMessage msg : myMessages()) {
         if (msg.getNode() == childNode && msg.getColor().equals(color)) messagesToRemove.add(msg);
       }

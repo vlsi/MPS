@@ -1298,29 +1298,29 @@ public final class SNode {
   }
 
   @NotNull
-  public List<SNode> getSubnodes() {
-    return getSubnodes(null);
+  public List<SNode> getDescendants() {
+    return getDescendants(null);
   }
 
   @NotNull
-  public List<SNode> getSubnodes(Condition<SNode> condition) {
+  public List<SNode> getDescendants(Condition<SNode> condition) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
 
     List<SNode> list = new ArrayList<SNode>();
-    collectSubnodes(condition, list);
+    collectDescendants(condition, list);
     return list;
   }
 
-  private void collectSubnodes(@Nullable Condition<SNode> condition,
+  private void collectDescendants(@Nullable Condition<SNode> condition,
                                @NotNull List<SNode> list) {
     // depth-first traversal
     for (SNode child : _children()) {
       if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
         list.add(child);
       }
-      child.collectSubnodes(condition, list);
+      child.collectDescendants(condition, list);
     }
   }
 

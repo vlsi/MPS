@@ -377,7 +377,7 @@ public class EquationManager {
       return false;
     }
     if (!myNonConcreteVars.containsKey(wrapper)) {
-      for (RuntimeTypeVariable var : wrapper.getNode().getAdapter().getSubnodes(RuntimeTypeVariable.class)) {
+      for (RuntimeTypeVariable var : wrapper.getNode().getAdapter().getDescendants(RuntimeTypeVariable.class)) {
         addNonConcreteVariable(wrapper, new SNodePointer(var.getNode()));
       }
     }
@@ -394,7 +394,7 @@ public class EquationManager {
           getRepresentatorWrapper(NodeWrapper.createWrapperFromNode(var.getNode(), this));
         if (varRepresentatorWrapper.isConcrete()) {
           variables.remove(var);
-          for (RuntimeTypeVariable varChild : varRepresentatorWrapper.getNode().getAdapter().getSubnodes(RuntimeTypeVariable.class)) {
+          for (RuntimeTypeVariable varChild : varRepresentatorWrapper.getNode().getAdapter().getDescendants(RuntimeTypeVariable.class)) {
             variables.add(new SNodePointer(varChild.getNode()));
           }
         }

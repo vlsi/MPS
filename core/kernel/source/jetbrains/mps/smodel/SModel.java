@@ -1255,7 +1255,7 @@ public class SModel implements Iterable<SNode> {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode root : model.getRoots()) {
       result.add(root);
-      result.addAll(root.getSubnodes());
+      result.addAll(root.getDescendants());
     }
 
     return result;
@@ -1268,7 +1268,7 @@ public class SModel implements Iterable<SNode> {
       if (condition.met(node)) {
         resultNodes.add(node);
       }
-      resultNodes.addAll(node.getSubnodes(condition));
+      resultNodes.addAll(node.getDescendants(condition));
     }
 
     return resultNodes;

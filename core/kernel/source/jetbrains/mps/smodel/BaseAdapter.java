@@ -125,7 +125,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   @NotNull
-  public <E extends INodeAdapter> List<E> getSubnodes(final Class<E> cls) {
+  public <E extends INodeAdapter> List<E> getDescendants(Class<E> cls) {
     // this strategy is very effective when model doesn't contain too many nodes of required type
     FastNodeFinder finder = getModel().getModelDescriptor().getFastNodeFinder();
     AbstractConceptDeclaration acd = SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance());
@@ -141,7 +141,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return result;
 
 // this strategy must be more effective for small subtree     
-//    return toAdapters(myNode.getSubnodes(new Condition<SNode>() {
+//    return toAdapters(myNode.getDescendants(new Condition<SNode>() {
 //      public boolean met(SNode node) {
 //        return cls.isInstance(node.getAdapter());
 //      }
@@ -149,13 +149,13 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   @NotNull
-  public <E extends INodeAdapter> List<E> getSubnodes() {
-    return toAdapters(myNode.getSubnodes());
+  public <E extends INodeAdapter> List<E> getDescendants() {
+    return toAdapters(myNode.getDescendants());
   }
 
   @NotNull
-  public <E extends INodeAdapter> List<E> getSubnodes(final Condition<INodeAdapter> condition) {
-    return toAdapters(myNode.getSubnodes(new Condition<SNode>() {
+  public <E extends INodeAdapter> List<E> getDescendants(final Condition<INodeAdapter> condition) {
+    return toAdapters(myNode.getDescendants(new Condition<SNode>() {
       public boolean met(SNode object) {
         return condition.met(BaseAdapter.fromNode(object));
       }

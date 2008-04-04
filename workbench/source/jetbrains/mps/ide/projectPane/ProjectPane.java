@@ -2,7 +2,6 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
-import jetbrains.mps.ide.findusages.view.icons.*;
 import jetbrains.mps.ide.settings.GlobalIdeSettings;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
@@ -36,7 +35,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -533,7 +531,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     for (SNode node : selectedNodes) {
       if (node == null) continue;
       if (unselectedNodes.contains(node)) continue;
-      unselectedNodes.addAll(node.getSubnodes());
+      unselectedNodes.addAll(node.getDescendants());
     }
     selectedNodes.removeAll(unselectedNodes);
     return selectedNodes;
