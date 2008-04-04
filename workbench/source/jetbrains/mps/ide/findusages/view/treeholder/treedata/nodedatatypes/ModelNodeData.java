@@ -39,12 +39,13 @@ public class ModelNodeData extends BaseNodeData {
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
+    Element modelXML = new Element(MODEL);
     if (myModelDescriptor.getSModel() == null) {
       LOG.warning("model descriptor is null");
-      throw new CantSaveSomethingException("model descriptor is null");
+      //throw new CantSaveSomethingException("model descriptor is null");
+    } else {
+      modelXML.setAttribute(UID, myModelDescriptor.getModelUID().toString());
     }
-    Element modelXML = new Element(MODEL);
-    modelXML.setAttribute(UID, myModelDescriptor.getModelUID().toString());
     element.addContent(modelXML);
   }
 
@@ -55,7 +56,7 @@ public class ModelNodeData extends BaseNodeData {
     myModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (myModelDescriptor == null) {
       LOG.warning("model descriptor is null");
-      throw new CantLoadSomethingException("model descriptor is null");
+      //throw new CantLoadSomethingException("model descriptor is null");
     }
   }
 }

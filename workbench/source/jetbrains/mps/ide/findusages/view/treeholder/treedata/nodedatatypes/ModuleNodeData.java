@@ -37,7 +37,12 @@ public class ModuleNodeData extends BaseNodeData {
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
-    element.setAttribute(UID, myModule.getModuleUID());
+    if (myModule == null) {
+      LOG.warning("module is null");
+      //throw new CantSaveSomethingException("module is null");
+    } else {
+      element.setAttribute(UID, myModule.getModuleUID());
+    }
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
@@ -46,7 +51,7 @@ public class ModuleNodeData extends BaseNodeData {
     myModule = MPSModuleRepository.getInstance().getModuleByUID(uid);
     if (myModule == null) {
       LOG.warning("module is null");
-      throw new CantLoadSomethingException("module is null");
+      //throw new CantLoadSomethingException("module is null");
     }
   }
 

@@ -257,11 +257,23 @@ public abstract class UsagesTree extends MPSTree {
   private void changeCurrentNodeExclusion() {
     UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
-    BaseNodeData nodeData = treeNode.getUserObject().getData();
-    nodeData.setExcluded(!nodeData.isExcluded());
+
+    DataNode node = treeNode.getUserObject();
+    myContents.setAdjusting(true);
+    setExcluded(node, !node.getData().isExcluded());
+    myContents.setAdjusting(false);
+
     //todo: make it faster, do not rebuild all the tree
     rebuildLater();
   }
+
+  private void setExcluded(DataNode node, boolean state) {
+    node.getData().setExcluded(state);
+    for (DataNode child : node.getChildren()) {
+      setExcluded(child, state);
+    }
+  }
+
 
   private void openCurrentNodeLinkIfLeaf(boolean inProject) {
     UsagesTreeNode treeNode = getCurrentNode();

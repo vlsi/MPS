@@ -13,6 +13,7 @@ import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
 
 import javax.swing.Icon;
+import java.util.List;
 
 public class NodeNodeData extends BaseNodeData {
   private static Logger LOG = Logger.getLogger(NodeNodeData.class);
@@ -59,19 +60,25 @@ public class NodeNodeData extends BaseNodeData {
     Element nodeXML = new Element(NODE);
     if (myNodePointer.getNode() == null) {
       LOG.warning("node is null");
-      throw new CantSaveSomethingException("node is null");
+      //throw new CantSaveSomethingException("node is null");
+    } else {
+      nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
     }
-    nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
     element.addContent(nodeXML);
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     super.read(element, project);
-    myNodePointer = new SNodePointer(ComponentsUtil.nodeFromElement((Element) element.getChild(NODE).getChildren().get(0)));
-    if (myNodePointer.getNode() == null) {
-      LOG.warning("node is null");
-      throw new CantLoadSomethingException("node is null");
+    List children = element.getChild(NODE).getChildren();
+    SNode node = null;
+    if (!children.isEmpty()) {
+      node = ComponentsUtil.nodeFromElement((Element) children.get(0));
+      if (node == null) {
+        LOG.warning("node is null");
+        //throw new CantLoadSomethingException("node is null");
+      }
     }
+    myNodePointer = new SNodePointer(node);
     myIsResultNode = Boolean.parseBoolean(element.getAttributeValue(RESULT));
   }
 
