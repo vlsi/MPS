@@ -67,7 +67,9 @@
         <property name="vertical" value="false" />
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="2v.1205770614681" />
-        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205770756352" />
+        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205770756352">
+          <property name="editable" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1205769437461">
         <property name="text" value=")" />
