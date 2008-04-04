@@ -172,6 +172,15 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
         return reversed;
     }
     
+    public T getByIndex(int idx) {
+        if (Sequence.EMPTY_NULL) {
+            if (size() == 0 && (idx == 0 || idx == -1)) {
+                return null;
+            }
+        }
+        return get (idx);
+    }
+    
     public Iterator<T> iterator() {
         return list.iterator();
     }

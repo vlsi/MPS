@@ -13,6 +13,8 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     
     public static final boolean RELAXED_NULL = true;
     
+    public static final boolean EMPTY_NULL = true;    
+    
     public static <U> ISequence<U> fromArray (U...array) {
         return new BasicSequence<U> (Arrays.asList(array));
     }    

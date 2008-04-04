@@ -15,6 +15,8 @@ public interface IListSequence<T> extends ISequence<T>, List<T> {
     void removeSequence(ISequence<T> seq);
 
     IListSequence<T> getReversed();
+    
+    T getByIndex (int idx);
 
     List<T> toList();
 }
