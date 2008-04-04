@@ -24,7 +24,7 @@ class TemplateQueriesOnlyScanner extends AbstractModelScanner {
   public List<SNode> getDescendantsToScan(SNode node) {
     if(node.getAdapter() instanceof TemplateDeclaration) {
       // ignore content, take queries from macros
-      return node.getSubnodes(new Condition<SNode>() {
+      return node.getDescendants(new Condition<SNode>() {
         public boolean met(SNode object) {
           BaseAdapter adapter = object.getAdapter();
           return adapter instanceof NodeMacro || adapter instanceof PropertyMacro || adapter instanceof ReferenceMacro;

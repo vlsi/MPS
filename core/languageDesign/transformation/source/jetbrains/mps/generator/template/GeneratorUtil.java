@@ -22,7 +22,6 @@ import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -377,7 +376,7 @@ public class GeneratorUtil {
 
   private static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
     List<TemplateFragment> templateFragments = new ArrayList<TemplateFragment>(1);
-    for (INodeAdapter subnode : template.getSubnodes()) {
+    for (INodeAdapter subnode : template.getDescendants()) {
       if (subnode instanceof TemplateFragment) {
         templateFragments.add((TemplateFragment) subnode);
       }

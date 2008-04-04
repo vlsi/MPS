@@ -4,7 +4,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
@@ -54,7 +53,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
       if (condition.met(node.getNode())) {
         result.add(node.getNode());
       }
-      result.addAll(node.getNode().getSubnodes(condition));
+      result.addAll(node.getNode().getDescendants(condition));
     }
     return result;
   }

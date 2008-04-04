@@ -47,7 +47,7 @@ public class Substitution {
   }
 
   private void goInsideList_internal(SNode attributedNode, HashSet loopVarSet) {
-    for (AttributeConcept patternVar : (List<AttributeConcept>) (List) attributedNode.getSubnodes(new Condition<SNode>() {
+    for (AttributeConcept patternVar : (List<AttributeConcept>) (List) attributedNode.getDescendants(new Condition<SNode>() {
       public boolean met(SNode object) {
         return BaseAdapter.isInstance(object,PatternVariableDeclaration.class) ||
                 BaseAdapter.isInstance(object, LinkPatternVariableDeclaration.class) ||

@@ -48,11 +48,11 @@ import java.util.*;
     Set<SNode> conceptsToRemove = new HashSet<SNode>();
     // for each builder create actions and apply all filters
     for (RTransformHintSubstituteActionsBuilder builder : actionsBuilders) {
-      for (RemovePart rp : builder.getSubnodes(RemovePart.class)) {
+      for (RemovePart rp : builder.getDescendants(RemovePart.class)) {
         conceptsToRemove.add(rp.getConceptToRemove().getNode());
       }
 
-      for (RemoveRTByConditionPart rp : builder.getSubnodes(RemoveRTByConditionPart.class)) {
+      for (RemoveRTByConditionPart rp : builder.getDescendants(RemoveRTByConditionPart.class)) {
         removesByCondition.add(rp);
       }
 

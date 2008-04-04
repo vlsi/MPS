@@ -7,7 +7,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -207,7 +206,7 @@ public class ChildSubstituteActionsHelper {
 
   private static boolean containsRemoveDefaults(List<NodeSubstituteActionsBuilder> list) {
     for (NodeSubstituteActionsBuilder builder : list) {
-      if (!builder.getSubnodes(RemoveDefaultsPart.class).isEmpty()) {
+      if (!builder.getDescendants(RemoveDefaultsPart.class).isEmpty()) {
         return true;
       }
     }
@@ -384,7 +383,7 @@ public class ChildSubstituteActionsHelper {
                                                                IOperationContext context) {
     // remove banned concepts
     Set<SNode> conceptsToRemove = new HashSet<SNode>();
-    for (RemovePart rp : substituteActionsBuilder.getSubnodes(RemovePart.class)) {
+    for (RemovePart rp : substituteActionsBuilder.getDescendants(RemovePart.class)) {
       conceptsToRemove.add(rp.getConceptToRemove().getNode());
     }
     if (!conceptsToRemove.isEmpty()) {
@@ -405,7 +404,7 @@ public class ChildSubstituteActionsHelper {
     }
 
     // apply custom filters
-    List<RemoveByConditionPart> removesByCondition = substituteActionsBuilder.getSubnodes(RemoveByConditionPart.class);
+    List<RemoveByConditionPart> removesByCondition = substituteActionsBuilder.getDescendants(RemoveByConditionPart.class);
     for (RemoveByConditionPart part : removesByCondition) {
       String methodName = "removeActionsByCondition_" + part.getId();
       try {
