@@ -23,6 +23,9 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule", new InequationReplacementRule_DataFlow());
     manager.register("jetbrains.mps.bootstrap.helgins.structure.ComparisonRule", new ComparisonRule_DataFlow());
     manager.register("jetbrains.mps.bootstrap.helgins.structure.PatternCondition", new PatternCondition_DataFlow());
+    manager.register("jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", new CoerceStatement_DataFlow());
+    manager.register("jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", new WhenConcreteStatement_DataFlow());
+    manager.register("jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoop", new MultipleForeachLoop_DataFlow());
   }
 
 }

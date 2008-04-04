@@ -180,16 +180,18 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206534311340">
         <property name="text" value="{" />
-        <property name="selectable" value="false" />
+        <property name="selectable" value="true" />
         <link role="styleClass" targetNodeId="1206534328233" resolveInfo="MayBeUnreachable" />
+        <link role="actionMap" targetNodeId="1207318139353" resolveInfo="DataFlowEditorAction_DeleteMayBeUnreachable" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1206534283286">
         <link role="relationDeclaration" targetNodeId="1.1206534244140" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1206534319498">
         <property name="text" value="}" />
-        <property name="selectable" value="false" />
+        <property name="selectable" value="true" />
         <link role="styleClass" targetNodeId="1206534328233" resolveInfo="MayBeUnreachable" />
+        <link role="actionMap" targetNodeId="1207318139353" resolveInfo="DataFlowEditorAction_DeleteMayBeUnreachable" />
       </node>
     </node>
   </node>
@@ -258,6 +260,30 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1207062722716">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1207318139353">
+    <property name="name" value="DataFlowEditorAction_DeleteMayBeUnreachable" />
+    <link role="applicableConcept" targetNodeId="1.1206534235764" resolveInfo="EmitMayBeUnreachable" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1207318150951">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1207318150952">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207318150953">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207318182220">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207318195070">
+              <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1207318182221" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1207318224927">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207318227665">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1207318226773" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207318228230">
+                    <link role="link" targetNodeId="1.1206534244140" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

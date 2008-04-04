@@ -27,13 +27,15 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206534311340");
     DataFlow_StyleSheet.MAY_BE_UNREACHABLE.apply(editorCell);
-    editorCell.setSelectable(false);
+    editorCell.setSelectable(true);
+    DataFlowEditorAction_DeleteMayBeUnreachable.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1206534319498");
     DataFlow_StyleSheet.MAY_BE_UNREACHABLE.apply(editorCell);
-    editorCell.setSelectable(false);
+    editorCell.setSelectable(true);
+    DataFlowEditorAction_DeleteMayBeUnreachable.setCellActions(editorCell, node, context);
   }
 
   private static void setupLabel_EmitStatementCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

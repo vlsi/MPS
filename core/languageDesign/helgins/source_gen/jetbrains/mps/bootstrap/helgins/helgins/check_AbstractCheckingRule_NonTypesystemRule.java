@@ -8,17 +8,17 @@ import jetbrains.mps.baseLanguage.constraints.StatementList_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_WhenConcreteStatement_NonTypesystemRule implements NonTypesystemRule_Runtime {
+public class check_AbstractCheckingRule_NonTypesystemRule implements NonTypesystemRule_Runtime {
 
-  public  check_WhenConcreteStatement_NonTypesystemRule() {
+  public  check_AbstractCheckingRule_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode whenConcreteStatement) {
-    StatementList_Behavior.call_checkDataFlow_1206985459773(SLinkOperations.getTarget(whenConcreteStatement, "body", true));
+  public void applyRule(final SNode abstractCheckingRule) {
+    StatementList_Behavior.call_checkDataFlow_1206985459773(SLinkOperations.getTarget(abstractCheckingRule, "body", true));
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement";
+    return "jetbrains.mps.bootstrap.helgins.structure.AbstractCheckingRule";
   }
 
   public boolean isApplicable(SNode argument) {
