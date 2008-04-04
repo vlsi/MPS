@@ -73,7 +73,6 @@ public class Child_Referent_Parent {
 
   public void accessToAncestorNode_1(SNode expression) {
     SNode parent_IfStatement = SNodeOperations.getAncestor(expression, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false);
-    SNodeOperations.getAncestor(expression, null, false, false);
   }
 
   public void accessToAncestorNode_2(SNode expression) {
