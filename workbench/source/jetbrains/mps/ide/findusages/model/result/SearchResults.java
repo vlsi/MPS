@@ -1,11 +1,7 @@
 package jetbrains.mps.ide.findusages.model.result;
 
-import jetbrains.mps.ide.components.ComponentsUtil;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
-import org.jdom.Element;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -13,25 +9,27 @@ import java.util.List;
 import java.util.Set;
 
 public class SearchResults {
+  /*
   private static final String RESULTS = "results";
   private static final String SEARCHED_NODES = "searched_nodes";
   private static final String RESULT = "result";
   private static final String NODE = "node";
+  */
 
-  private Set<SNodePointer> mySearchedNodePointers = new HashSet<SNodePointer>();
+  private Set<SNode> mySearchedNodes = new HashSet<SNode>();
   private List<SearchResult> mySearchResults = new ArrayList<SearchResult>();
 
   public SearchResults() {
 
   }
 
-  public SearchResults(Set<SNodePointer> searchedNodePointers, List<SearchResult> searchResults) {
-    mySearchedNodePointers = searchedNodePointers;
+  public SearchResults(Set<SNode> searchedNodePointers, List<SearchResult> searchResults) {
+    mySearchedNodes = searchedNodePointers;
     mySearchResults = searchResults;
   }
 
-  public Set<SNodePointer> getSearchedNodePointers() {
-    return mySearchedNodePointers;
+  public Set<SNode> getSearchedNodes() {
+    return mySearchedNodes;
   }
 
   public List<SearchResult> getSearchResults() {
@@ -68,11 +66,11 @@ public class SearchResults {
     return alive;
   }
 
-  public Set<SNodePointer> getAliveNodePointers() {
-    Set<SNodePointer> alive = new HashSet<SNodePointer>();
-    for (SNodePointer nodePointer : mySearchedNodePointers) {
-      if (nodePointer.getNode() != null) {
-        alive.add(nodePointer);
+  public Set<SNode> getAliveNodes() {
+    Set<SNode> alive = new HashSet<SNode>();
+    for (SNode node : mySearchedNodes) {
+      if (node != null) {
+        alive.add(node);
       }
     }
     return alive;
@@ -82,6 +80,7 @@ public class SearchResults {
     mySearchResults = new ArrayList(new HashSet(mySearchResults));
   }
 
+  /*
   public void write(Element element, MPSProject project) {
     Element resultsXML = new Element(RESULTS);
 
@@ -93,9 +92,9 @@ public class SearchResults {
     element.addContent(resultsXML);
 
     Element searchedNodesXML = new Element(SEARCHED_NODES);
-    for (SNodePointer nodePointer : getAliveNodePointers()) {
+    for (SNode node : getAliveNodes()) {
       Element nodeXML = new Element(NODE);
-      nodeXML.addContent(ComponentsUtil.nodeToElement(nodePointer.getNode()));
+      nodeXML.addContent(ComponentsUtil.nodeToElement(node));
       searchedNodesXML.addContent(nodeXML);
     }
     element.addContent(searchedNodesXML);
@@ -112,13 +111,14 @@ public class SearchResults {
 
     mySearchResults = getAliveResults();
 
-    mySearchedNodePointers.clear();
+    mySearchedNodes.clear();
     Element searchedNodesXML = element.getChild(SEARCHED_NODES);
     for (Element nodeXML : (List<Element>) searchedNodesXML.getChildren(NODE)) {
-      SNodePointer nodePointer = new SNodePointer(ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0)));
-      mySearchedNodePointers.add(nodePointer);
+      SNode node = ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0));
+      mySearchedNodes.add(node);
     }
 
-    mySearchedNodePointers = getAliveNodePointers();
+    mySearchedNodes = getAliveNodes();
   }
+  */
 }

@@ -1,12 +1,13 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.containernodes;
 
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseLeaf;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.findusages.view.ContainerInnerPartClassNotFoundException;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
@@ -66,7 +67,7 @@ public class FinderNode extends BaseLeaf {
     return TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
   }
 
-  public void write(Element element, MPSProject project) {
+  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
     Element finderXML = new Element(FINDER);
     finderXML.setAttribute(CLASS_NAME, myFinder.getClass().getName());
@@ -74,16 +75,16 @@ public class FinderNode extends BaseLeaf {
     element.addContent(finderXML);
   }
 
-  public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
+  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     super.read(element, project);
     Element finderXML = element.getChild(FINDER);
     String finderName = finderXML.getAttribute(CLASS_NAME).getValue();
     try {
       myFinder = (BaseFinder) Class.forName(finderName).newInstance();
       myFinder.read(finderXML, project);
-    } catch (Exception e) {
-      LOG.error("Can't find finder " + finderName);
-      throw new ContainerInnerPartClassNotFoundException("finder not found");
+    } catch (Throwable t) {
+      LOG.error("Can't find or read finder " + finderName, t);
+      throw new CantLoadSomethingException("Can't find or read finder " + finderName, t);
     }
   }
 }

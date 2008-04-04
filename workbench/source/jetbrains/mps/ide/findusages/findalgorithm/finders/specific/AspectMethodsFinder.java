@@ -1,5 +1,7 @@
 package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
@@ -57,7 +59,7 @@ public class AspectMethodsFinder extends BaseFinder {
     }
   }
 
-  public void read(Element element, MPSProject project) {
+  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     super.read(element, project);
 
     Element modelsXML = element.getChild(MODELS);
@@ -74,7 +76,7 @@ public class AspectMethodsFinder extends BaseFinder {
     myMethodName = methodXML.getAttribute(METHOD_NAME).getValue();
   }
 
-  public void write(Element element, MPSProject project) {
+  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
 
     Element modelsXML = new Element(MODELS);

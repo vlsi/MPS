@@ -1,28 +1,31 @@
 package jetbrains.mps.ide.todoview;
 
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.todoview.icons.Icons;
-import jetbrains.mps.ide.findusages.view.UsageView;
-import jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions;
-import jetbrains.mps.ide.findusages.view.usagesTree.path.IPathProvider;
-import jetbrains.mps.ide.findusages.view.usagesTree.PathItem;
-import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.view.UsageView;
+import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
+import jetbrains.mps.ide.findusages.view.treeholder.path.IPathProvider;
+import jetbrains.mps.ide.findusages.view.treeholder.path.PathItem;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.todoview.icons.Icons;
+import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TodoViewer extends DefaultTool {
   private IDEProjectFrame myProjectFrame;
@@ -101,7 +104,7 @@ public class TodoViewer extends DefaultTool {
   public static class MyIPathProvider implements IPathProvider {
     public List<PathItem> getPathForNode(SearchResult result) {
       List<PathItem> res = new ArrayList<PathItem>();
-      res.add(new PathItem("<font color=blue>" + result.getNode().getProperty("value") + "</font>", result.getNode(), true, "", false));
+      //res.add(new PathItem("<font color=blue>" + result.getNode().getProperty("value") + "</font>", result.getNode(), true, ""));
       return res;
     }
   }

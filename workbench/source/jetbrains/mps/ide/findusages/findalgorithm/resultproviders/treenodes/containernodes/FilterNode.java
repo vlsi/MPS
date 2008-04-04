@@ -1,12 +1,13 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.containernodes;
 
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseLeaf;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseNode;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.findusages.view.ContainerInnerPartClassNotFoundException;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
@@ -68,7 +69,7 @@ public class FilterNode extends BaseNode {
     return TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
   }
 
-  public void write(Element element, MPSProject project) {
+  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
     Element filterXML = new Element(FILTER);
     filterXML.setAttribute(CLASS_NAME, myFilter.getClass().getName());
@@ -76,19 +77,16 @@ public class FilterNode extends BaseNode {
     element.addContent(filterXML);
   }
 
-  public void read(Element element, MPSProject project) {
-    try {
-      super.read(element, project);
-    } catch (ContainerInnerPartClassNotFoundException e) {
-      e.printStackTrace();
-    }
+  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+    super.read(element, project);
     Element filterXML = element.getChild(FILTER);
     String filterName = filterXML.getAttribute(CLASS_NAME).getValue();
     try {
       myFilter = (BaseFilter) Class.forName(filterName).newInstance();
       myFilter.read(filterXML, project);
-    } catch (Exception e) {
-      LOG.error("Can't find filter " + filterName);
+    } catch (Throwable t) {
+      LOG.error("Can't instantiate or read filter " + filterName, t);
+      throw new CantLoadSomethingException("Can't instantiate or read filter " + filterName, t);
     }
   }
 }

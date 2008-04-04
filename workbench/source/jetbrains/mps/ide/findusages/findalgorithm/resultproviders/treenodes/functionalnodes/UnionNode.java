@@ -12,7 +12,7 @@ public class UnionNode extends BaseNode {
       if (monitor.isCanceled()) break;
       SearchResults childResults = child.getResults(query, monitor);
       results.getSearchResults().addAll(childResults.getSearchResults());
-      results.getSearchedNodePointers().addAll(childResults.getSearchedNodePointers());
+      results.getSearchedNodes().addAll(childResults.getSearchedNodes());
     }
     return results;
   }

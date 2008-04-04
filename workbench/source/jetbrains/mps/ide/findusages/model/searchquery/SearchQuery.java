@@ -1,7 +1,10 @@
 package jetbrains.mps.ide.findusages.model.searchquery;
 
 import jetbrains.mps.ide.components.ComponentsUtil;
-import jetbrains.mps.ide.findusages.view.ContainerInnerPartClassNotFoundException;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.IExternalizeable;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.AbstractModule.ModuleScope;
 import jetbrains.mps.project.GlobalScope;
@@ -12,7 +15,9 @@ import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-public class SearchQuery {
+public class SearchQuery implements IExternalizeable {
+  private static final Logger LOG = Logger.getLogger(SearchQuery.class);
+
   private static final String NODE = "node";
   private static final String SCOPE = "scope";
   private static final String SCOPE_TYPE = "scope_type";
@@ -33,21 +38,12 @@ public class SearchQuery {
     myScope = scope;
   }
 
-  public SearchQuery(@NotNull SNodePointer nodePointer, IScope scope, Runnable action) {
-    myNodePointer = nodePointer;
-    myScope = scope;
-  }
-
   public SearchQuery(SNode node, IScope scope) {
     this(new SNodePointer(node), scope);
   }
 
-  public SearchQuery(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
+  public SearchQuery(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
-  }
-
-  public SNodePointer getNodePointer() {
-    return myNodePointer;
   }
 
   public SNode getNode() {
@@ -58,7 +54,7 @@ public class SearchQuery {
     return myScope;
   }
 
-  public void write(Element element, MPSProject project) {
+  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     Element scopeXML = new Element(SCOPE);
     if (myScope instanceof GlobalScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_GLOBAL);
@@ -66,23 +62,34 @@ public class SearchQuery {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_PROJECT);
     } else if (myScope instanceof ModuleScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODULE);
-      scopeXML.setAttribute(MODULE_ID, ((AbstractModule) ((ModuleScope) myScope).getModelOwner()).getModuleUID());
+      AbstractModule abstractModule = (AbstractModule) ((ModuleScope) myScope).getModelOwner();
+      if (abstractModule == null) {
+        LOG.warning("Owner is not found for module");
+        throw new CantSaveSomethingException("Module is not found for module. Maybe the module was deleted.");
+      }
+      scopeXML.setAttribute(MODULE_ID, abstractModule.getModuleUID());
     } else if (myScope instanceof ModelScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODEL);
-      scopeXML.setAttribute(MODEL_ID, ((ModelScope) myScope).getModelDescriptor().getModelUID().toString());
+      SModelDescriptor sModelDescriptor = ((ModelScope) myScope).getModelDescriptor();
+      if (sModelDescriptor == null) {
+        LOG.warning("No model descriptor for model. Maybe the model was deleted");
+        throw new CantSaveSomethingException("Module is not found for module. Maybe the model was deleted");
+      }
+      scopeXML.setAttribute(MODEL_ID, sModelDescriptor.getModelUID().toString());
     } else {
       throw new RuntimeException("unsupported scope " + myScope.getClass());
     }
     element.addContent(scopeXML);
 
-    if (myNodePointer.getNode() != null) {
-      Element nodeXML = new Element(NODE);
-      nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
-      element.addContent(nodeXML);
+    if (myNodePointer.getNode() == null) {
+      throw new CantSaveSomethingException("node is null");
     }
+    Element nodeXML = new Element(NODE);
+    nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
+    element.addContent(nodeXML);
   }
 
-  public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
+  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     Element scopeXML = element.getChild(SCOPE);
     String scopeType = scopeXML.getAttribute(SCOPE_TYPE).getValue();
     if (scopeType.equals(SCOPE_TYPE_GLOBAL)) {
@@ -98,26 +105,24 @@ public class SearchQuery {
         }
       }
       if (myScope == null) {
-        throw new ContainerInnerPartClassNotFoundException("module scope not found for module  " + moduleUID);
+        LOG.warning("module scope not found for module  " + moduleUID);
+        throw new CantLoadSomethingException("module scope not found for module  " + moduleUID);
       }
     } else if (scopeType.equals(SCOPE_TYPE_MODEL)) {
       String modelUID = scopeXML.getAttribute(MODEL_ID).getValue();
       SModelDescriptor sModelDescriptor = project.getScope().getModelDescriptor(SModelUID.fromString(modelUID));
       if (sModelDescriptor == null) {
-        throw new ContainerInnerPartClassNotFoundException("model scope not found for model  " + modelUID);
+        LOG.warning("model scope not found for model " + modelUID);
+        throw new CantLoadSomethingException("model scope not found for model " + modelUID);
       }
       myScope = new ModelScope(project.getScope(), sModelDescriptor);
     }
 
     Element nodeXML = element.getChild(NODE);
-    SNode node;
-    if (nodeXML == null) {
-      node = null;
-    } else {
-      node = ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0));
-    }
+    SNode node = ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0));
     if (node == null) {
-      throw new ContainerInnerPartClassNotFoundException("node not found");
+      LOG.warning("node is null");
+      throw new CantLoadSomethingException("node is null");
     }
     myNodePointer = new SNodePointer(node);
   }

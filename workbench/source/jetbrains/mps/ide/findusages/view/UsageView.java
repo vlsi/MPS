@@ -6,21 +6,21 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
-import jetbrains.mps.ide.findusages.view.treewrapper.UsagesTreeWrapper;
-import jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions;
-import jetbrains.mps.ide.findusages.view.usagesTree.path.IPathProvider;
+import jetbrains.mps.ide.findusages.view.treeholder.path.IPathProvider;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeHolder;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 
@@ -34,78 +34,72 @@ import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class UsageView {
+public abstract class UsageView implements IExternalizeable {
   private static final Logger LOG = Logger.getLogger(UsageView.class);
 
   //read/write constants
   private static final String QUERY = "query";
   private static final String RESULT_PROVIDER = "result_provider";
   private static final String CLASS_NAME = "class_name";
-  private static final String OPTIONS = "options";
-  private static final String RERUNNABLE = "rerunnable";
+  private static final String BUTTONS = "buttons";
   private static final String TREE_WRAPPER = "tree_wrapper";
-  private static final String MODELS = "models";
-  private static final String MODEL = "model";
-  private static final String UID = "uid";
 
   //connection with other components
   private IDEProjectFrame myProjectFrame;
 
   //my components
   private JPanel myPanel;
-  private UsagesTreeWrapper myTreeWrapper;
+  private UsagesTreeHolder myTreeHolder;
 
   //model components
   private IResultProvider myResultProvider;
   private SearchQuery mySearchQuery;
-  private boolean myIsRerunnable;
+  private ButtonConfiguration myButtonConfiguration;
 
   //for assertions - check invariant - constructor -> read|setRunOpts
   private boolean myIsInitialized = false;
-
-  //last results
-  List<SModelDescriptor> myFoundModelDescriptors = new ArrayList<SModelDescriptor>();
 
   public UsageView(IDEProjectFrame projectFrame, ViewOptions defaultOptions) {
     myProjectFrame = projectFrame;
 
     myPanel = new JPanel(new BorderLayout());
 
-    myTreeWrapper = new UsagesTreeWrapper(defaultOptions) {
+    myTreeHolder = new UsagesTreeHolder(defaultOptions) {
       public IDEProjectFrame getProjectFrame() {
         return myProjectFrame;
       }
     };
-    myTreeWrapper.setEmptyContents();
+    myTreeHolder.setEmptyContents();
 
     JPanel treeWrapperPanel = new JPanel(new BorderLayout());
     JPanel treeToolbarPanel = new JPanel(new BorderLayout());
-    treeToolbarPanel.add(myTreeWrapper.getViewToolbar(JToolBar.VERTICAL), BorderLayout.NORTH);
+    treeToolbarPanel.add(myTreeHolder.getViewToolbar(JToolBar.VERTICAL), BorderLayout.NORTH);
     treeWrapperPanel.add(treeToolbarPanel, BorderLayout.WEST);
-    treeWrapperPanel.add(myTreeWrapper, BorderLayout.CENTER);
+    treeWrapperPanel.add(myTreeHolder, BorderLayout.CENTER);
     myPanel.add(treeWrapperPanel, BorderLayout.CENTER);
 
     myPanel.setMinimumSize(new Dimension());
   }
+
+  //----RUN STUFF----
 
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration) {
     assert !myIsInitialized;
     myIsInitialized = true;
     myResultProvider = resultProvider;
     mySearchQuery = searchQuery;
-    myIsRerunnable = buttonConfiguration.isShowRerunButton();
+    myButtonConfiguration = buttonConfiguration;
     myPanel.add(new ActionsToolbar(buttonConfiguration), BorderLayout.WEST);
   }
 
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration, SearchResults results) {
     assert !ThreadUtils.isEventDispatchThread();
     setRunOptions(resultProvider, searchQuery, buttonConfiguration);
-    myFoundModelDescriptors = collectModels(results.getSearchResults());
-    myTreeWrapper.setContents(results);
+    myTreeHolder.setContents(results);
   }
 
   public void setCustomPlainPathProvider(IPathProvider pathProvider) {
-    myTreeWrapper.setCustomPlainPathProvider(pathProvider);
+    myTreeHolder.setCustomPlainPathProvider(pathProvider);
   }
 
   public void run() {
@@ -115,16 +109,14 @@ public abstract class UsageView {
       public void run() {
         SearchResults myLastResults = myResultProvider.getResults(mySearchQuery, myProjectFrame.createAdaptiveProgressMonitor());
         myLastResults.removeDuplicates();
-        myFoundModelDescriptors = collectModels(myLastResults.getSearchResults());
-        myTreeWrapper.setContents(myLastResults);
+        myTreeHolder.setContents(myLastResults);
       }
     });
   }
 
   public void rerun() {
-    if (!myIsRerunnable) return;
     if (mySearchQuery == null) return;
-    if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNodePointer().getNode() == null)) return;
+    if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNode() == null)) return;
     run();
   }
 
@@ -137,66 +129,67 @@ public abstract class UsageView {
     new Thread() {
       public void run() {
         GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
-        manager.generateModelsFromDifferentModules(project.createOperationContext(), myFoundModelDescriptors, IGenerationType.FILES);
+        List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+        for (SModelDescriptor modelDescriptor : myTreeHolder.getIncludedModels()) {
+          models.add(modelDescriptor);
+        }
+        manager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
       }
     }.start();
   }
 
-  private List<SModelDescriptor> collectModels(List<SearchResult> results) {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    for (SearchResult res : results) {
-      SNode node = res.getNode();
-      if (node != null) {
-        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
-        if (!models.contains(modelDescriptor)) {
-          models.add(modelDescriptor);
-        }
-      }
-    }
-    return models;
+  //----COMPONENT STUFF----
+
+  public JComponent getComponent() {
+    return myPanel;
   }
 
-  public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
+  public String getCaption() {
+    SNode node = mySearchQuery.getNode();
+    if (node == null) return "<null>";
+    return node.toString();
+  }
+
+  public Icon getIcon() {
+    SNode node = mySearchQuery.getNode();
+    if (node == null) {
+      return null;
+    }
+    return IconManager.getIconFor(node);
+  }
+
+  public abstract void close();
+
+  //----SAVE/LOAD STUFF----
+
+  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     assert !myIsInitialized;
     myIsInitialized = true;
 
-    Element optionsXML = element.getChild(OPTIONS);
-    myIsRerunnable = Boolean.parseBoolean(optionsXML.getAttributeValue(RERUNNABLE));
-    myPanel.add(new ActionsToolbar(new ButtonConfiguration(myIsRerunnable)), BorderLayout.WEST);
+    Element optionsXML = element.getChild(BUTTONS);
+    myButtonConfiguration = new ButtonConfiguration(optionsXML, project);
+    myPanel.add(new ActionsToolbar(myButtonConfiguration), BorderLayout.WEST);
 
     Element resultProviderXML = element.getChild(RESULT_PROVIDER);
     String className = resultProviderXML.getAttributeValue(CLASS_NAME);
     try {
       myResultProvider = (IResultProvider) Class.forName(className).newInstance();
-      myResultProvider.read(resultProviderXML, project);
-    } catch (Exception e) {
-      LOG.error("Can't instantiate result provider: " + className);
-      throw new ContainerInnerPartClassNotFoundException("");
+    } catch (Throwable t) {
+      LOG.error("Can't instantiate result provider: " + className, t);
+      throw new CantLoadSomethingException("Can't instantiate result provider: " + className, t);
     }
+    myResultProvider.read(resultProviderXML, project);
 
     Element queryXML = element.getChild(QUERY);
-    try {
-      mySearchQuery = new SearchQuery(queryXML, project);
-    } catch (ContainerInnerPartClassNotFoundException e) {
-      throw new ContainerInnerPartClassNotFoundException("");
-    }
-
-    Element modelsXML = element.getChild(MODELS);
-    for (Element modelXML : (List<Element>) modelsXML.getChildren()) {
-      SModelUID modelUID = SModelUID.fromString(modelXML.getAttributeValue(UID));
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
-      if (modelDescriptor != null) {
-        myFoundModelDescriptors.add(modelDescriptor);
-      }
-    }
+    mySearchQuery = new SearchQuery(queryXML, project);
 
     Element treeWrapperXML = element.getChild(TREE_WRAPPER);
-    myTreeWrapper.read(treeWrapperXML, project);
+    myTreeHolder.read(treeWrapperXML, project);
   }
 
-  public void write(Element element, MPSProject project) {
-    Element optionsXML = new Element(OPTIONS);
-    optionsXML.setAttribute(RERUNNABLE, Boolean.toString(myIsRerunnable));
+  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+    Element optionsXML = new Element(BUTTONS);
+    myButtonConfiguration.write(optionsXML, project);
     element.addContent(optionsXML);
 
     Element resultProviderXML = new Element(RESULT_PROVIDER);
@@ -208,40 +201,16 @@ public abstract class UsageView {
     mySearchQuery.write(queryXML, project);
     element.addContent(queryXML);
 
-    Element modelsXML = new Element(MODELS);
-    for (SModelDescriptor modelDescriptor : myFoundModelDescriptors) {
-      Element modelXML = new Element(MODEL);
-      modelXML.setAttribute(UID, modelDescriptor.getModelUID().toString());
-      modelsXML.addContent(modelXML);
-    }
-    element.addContent(modelsXML);
-
     Element treeWrapperXML = new Element(TREE_WRAPPER);
-    myTreeWrapper.write(treeWrapperXML, project);
+    myTreeHolder.write(treeWrapperXML, project);
     element.addContent(treeWrapperXML);
   }
 
-  public JComponent getComponent() {
-    return myPanel;
-  }
+  public static class ButtonConfiguration implements IExternalizeable {
+    private static final String RERUN = "rerun";
+    private static final String REGENERATE = "regenerate";
+    private static final String CLOSE = "close";
 
-  public String getCaption() {
-    SNode node = mySearchQuery.getNodePointer().getNode();
-    if (node == null) return "<null>";
-    return node.toString();
-  }
-
-  public Icon getIcon() {
-    SNode node = mySearchQuery.getNodePointer().getNode();
-    if (node == null) {
-      return null;
-    }
-    return IconManager.getIconFor(node);
-  }
-
-  public abstract void close();
-
-  public static class ButtonConfiguration {
     private boolean myShowRerunButton;
     private boolean myShowRegenerateButton;
     private boolean myShowCloseButton;
@@ -258,6 +227,10 @@ public abstract class UsageView {
       myShowCloseButton = true;
     }
 
+    public ButtonConfiguration(Element optionsXML, MPSProject project) {
+      read(optionsXML, project);
+    }
+
     public boolean isShowRegenerateButton() {
       return myShowRegenerateButton;
     }
@@ -268,6 +241,18 @@ public abstract class UsageView {
 
     public boolean isShowCloseButton() {
       return myShowCloseButton;
+    }
+
+    public void read(Element element, MPSProject project) {
+      myShowRerunButton = Boolean.parseBoolean(element.getAttributeValue(RERUN));
+      myShowRegenerateButton = Boolean.parseBoolean(element.getAttributeValue(REGENERATE));
+      myShowCloseButton = Boolean.parseBoolean(element.getAttributeValue(CLOSE));
+    }
+
+    public void write(Element element, MPSProject project) {
+      element.setAttribute(RERUN, Boolean.toString(myShowRerunButton));
+      element.setAttribute(REGENERATE, Boolean.toString(myShowRegenerateButton));
+      element.setAttribute(CLOSE, Boolean.toString(myShowCloseButton));
     }
   }
 
@@ -297,7 +282,7 @@ public abstract class UsageView {
         });
       }
 
-      add(myTreeWrapper.getActionsToolbar(JToolBar.VERTICAL));
+      add(myTreeHolder.getActionsToolbar(JToolBar.VERTICAL));
 
       if (buttonConfiguration.isShowCloseButton()) {
         add(new AnonymButton(Icons.CLOSE_ICON, "Close") {

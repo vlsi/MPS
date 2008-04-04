@@ -9,6 +9,8 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -37,7 +39,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.98";
+  private static final String VERSION_NUMBER = "0.985";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
@@ -53,7 +55,9 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
   private JTabbedPane myTabbedPane;
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
   private FindUsagesOptions myDefaultFindOptions = new FindUsagesOptions();
-  private jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions myDefaultViewOptions = new jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions();
+  private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions = new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
+
+  //----CONSTRUCT STUFF----
 
   public NewUsagesView(IDEProjectFrame projectFrame) {
     super();
@@ -79,17 +83,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     myDefaultFindOptions.setOption(queryOptions);
   }
 
-  private int currentTabIndex() {
-    return myTabbedPane.getSelectedIndex();
-  }
-
-  public void closeTab(int index) {
-    myTabbedPane.remove(index);
-    myUsageViewsData.remove(index);
-    if (myUsageViewsData.isEmpty()) {
-      hideTool();
-    }
-  }
+  //----TOOL STUFF----
 
   public void hideTool() {
     myProjectFrame.getToolsPane().closeTool(this);
@@ -102,6 +96,18 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
           myProjectFrame.showNewUsagesView();
         }
       });
+    }
+  }
+
+  private int currentTabIndex() {
+    return myTabbedPane.getSelectedIndex();
+  }
+
+  public void closeTab(int index) {
+    myTabbedPane.remove(index);
+    myUsageViewsData.remove(index);
+    if (myUsageViewsData.isEmpty()) {
+      hideTool();
     }
   }
 
@@ -141,6 +147,8 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     closeAll();
     hideTool();
   }
+
+  //---FIND USAGES STUFF----
 
   public void findUsages(final ActionContext context) {
     final SNode[] semanticNode = new SNode[1];
@@ -253,7 +261,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
         UsageViewData usageViewData = new UsageViewData();
         try {
           usageViewData.read(tabXML, project);
-        } catch (ContainerInnerPartClassNotFoundException e) {
+        } catch (CantLoadSomethingException e) {
           continue;
         }
         myUsageViewsData.add(usageViewData);
@@ -267,8 +275,8 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     Element defaultFindOptionsXML = element.getChild(DEFAULT_FIND_OPTIONS);
     try {
       myDefaultFindOptions.read(defaultFindOptionsXML, project);
-    } catch (ContainerInnerPartClassNotFoundException e) {
-      myDefaultFindOptions = new FindUsagesOptions();
+    } catch (CantLoadSomethingException e) {
+      myDefaultFindOptions = new FindUsagesOptions(new FindersOptions(), new QueryOptions(), new ViewOptions());
     }
 
     Element defaultViewOptionsXML = element.getChild(DEFAULT_VIEW_OPTIONS);
@@ -283,13 +291,22 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     Element tabsXML = new Element(TABS);
     for (UsageViewData usageViewData : myUsageViewsData) {
       Element tabXML = new Element(TAB);
-      usageViewData.write(tabXML, project);
-      tabsXML.addContent(tabXML);
+      boolean error = false;
+      try {
+        usageViewData.write(tabXML, project);
+      } catch (CantSaveSomethingException e) {
+        error = true;
+      }
+      if (!error) tabsXML.addContent(tabXML);
     }
     element.addContent(tabsXML);
 
     Element defaultFindOptionsXML = new Element(DEFAULT_FIND_OPTIONS);
-    myDefaultFindOptions.write(defaultFindOptionsXML, project);
+    try {
+      myDefaultFindOptions.write(defaultFindOptionsXML, project);
+    } catch (CantSaveSomethingException e) {
+      throw new RuntimeException("this exception shouldn't be thrown");
+    }
     element.addContent(defaultFindOptionsXML);
 
     Element defaultViewOptionsXML = new Element(DEFAULT_VIEW_OPTIONS);
@@ -363,7 +380,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       };
     }
 
-    public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
+    public void read(Element element, MPSProject project) throws CantLoadSomethingException {
       Element usageViewXML = element.getChild(USAGE_VIEW);
       createUsageView();
       myUsageView.read(usageViewXML, project);
@@ -372,7 +389,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       myOptions = new FindUsagesOptions(usageViewOptionsXML, project);
     }
 
-    public void write(Element element, MPSProject project) {
+    public void write(Element element, MPSProject project) throws CantSaveSomethingException {
       Element usageViewXML = new Element(USAGE_VIEW);
       myUsageView.write(usageViewXML, project);
       element.addContent(usageViewXML);

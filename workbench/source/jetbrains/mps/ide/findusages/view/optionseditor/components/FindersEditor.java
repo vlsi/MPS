@@ -40,8 +40,6 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
 
     List<String> correctEnabledFinders = new ArrayList<String>();
 
-    //List<JToolBar> finderHolders = new ArrayList<JToolBar>();
-
     for (final GeneratedFinder finder : sortedFinders) {
       boolean isEnabled = false;
 
@@ -101,22 +99,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       finderHolder.setBackground(myPanel.getBackground());
 
       myPanel.add(finderHolder);
-      //finderHolders.add(finderHolder);
-      //myPanel.add(finderCheckBox);
     }
-
-    /*
-    int maxwidth = 0;
-    for (JToolBar finderHolder : finderHolders) {
-      maxwidth = Math.max(maxwidth, (int)Math.round(finderHolder.getSize().getWidth()));
-    }
-    for (JToolBar finderHolder : finderHolders) {
-      finderHolder.setPreferredSize(new Dimension(maxwidth,finderHolder.getPreferredSize().height));
-    }
-    */
-
-    //JLabel hintLabel = new JLabel("<html><small><font color=black><b>ctrl+b</b> to go to finder declaration</font></small></html>");
-    //myPanel.add(hintLabel);
 
     myOptions.setFindersClassNames(correctEnabledFinders);
   }

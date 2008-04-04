@@ -1,0 +1,472 @@
+package jetbrains.mps.ide.findusages.view.treeholder.treeview;
+
+import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.MPSToolBar;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.ide.findusages.view.icons.Icons;
+import jetbrains.mps.ide.findusages.view.treeholder.path.IPathProvider;
+import jetbrains.mps.ide.findusages.view.treeholder.path.concretepathproviders.*;
+import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.DataTree;
+import jetbrains.mps.ide.findusages.view.treeholder.treedata.tree.IChangeListener;
+import jetbrains.mps.ide.findusages.view.util.AnonymButton;
+import jetbrains.mps.ide.findusages.view.util.AnonymToggleButton;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNodePointer;
+import org.jdom.Element;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.BorderLayout;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public abstract class UsagesTreeHolder extends JPanel implements IChangeListener {
+  private static Logger LOG = Logger.getLogger(UsagesTreeHolder.class);
+
+  private static final String CONTENTS = "contents";
+  private static final String VIEW_OPTIONS = "view_options";
+  private static final String PLAIN_PATH_PROVIDER = "plain_path_provider";
+  private static final String CLASS_NAME = "class_name";
+
+  private Class myPlainPathProviderClass;
+
+  private UsagesTree myTree;
+  private DataTree myContents = new DataTree();
+  private Set<String> myPathProvider = new HashSet<String>();
+
+  private ViewToolbar myViewToolbar;
+  private ActionsToolbar myActionsToolbar;
+
+  private ViewOptions myViewOptions = new ViewOptions();
+  private ViewOptions myDefaultOptions;
+
+  private boolean myIsAdjusting = false;
+
+  public UsagesTreeHolder(ViewOptions defaultOptions) {
+    super(new BorderLayout());
+
+    myTree = new UsagesTree() {
+      public IDEProjectFrame getProjectFrame() {
+        return UsagesTreeHolder.this.getProjectFrame();
+      }
+    };
+    myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
+
+    JScrollPane treePane = new JScrollPane(myTree);
+
+    setEmptyContents();
+
+    myPathProvider.add("");
+    myPathProvider.add(PlainPath.class.getName());
+    myPlainPathProviderClass = PlainPath.class;
+
+    myViewToolbar = new ViewToolbar();
+    myActionsToolbar = new ActionsToolbar();
+
+    myDefaultOptions = defaultOptions;
+    myViewOptions.setValues(myDefaultOptions);
+
+    setComponentsViewOptions(myViewOptions);
+
+    add(treePane, BorderLayout.CENTER);
+
+    myContents.addChangeListener(this);
+  }
+
+  public void setEmptyContents() {
+    myContents.clearContents();
+  }
+
+  public void setContents(SearchResults contents) {
+    myContents.setContents(contents);
+  }
+
+  public void changed() {
+    myTree.setContents(myContents, myPathProvider);
+  }
+
+  public void addPathComponent(Class pathProviderClass) {
+    if (!myPathProvider.contains(pathProviderClass.getName())) {
+      myPathProvider.add(pathProviderClass.getName());
+    }
+    myTree.setResultPathProvider(myPathProvider);
+  }
+
+  public void removePathComponent(Class pathProviderClass) {
+    myPathProvider.remove(pathProviderClass.getName());
+    myTree.setResultPathProvider(myPathProvider);
+  }
+
+  //MUST be called in construction time, introduced for "to do" functionality
+  public void setCustomPlainPathProvider(IPathProvider pathProvider) {
+    removePathComponent(myPlainPathProviderClass);
+    addPathComponent(pathProvider.getClass());
+    myPlainPathProviderClass = pathProvider.getClass();
+  }
+
+  public void setComponentsViewOptions(ViewOptions options) {
+    myIsAdjusting = true;
+    myViewToolbar.setViewOptions(options);
+    myActionsToolbar.setViewOptions(options);
+    myIsAdjusting = false;
+  }
+
+  public void getComponentsViewOptions(ViewOptions options) {
+    myViewToolbar.getViewOptions(options);
+    myActionsToolbar.getViewOptions(options);
+  }
+
+  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+    Element plainPathProviderClass = element.getChild(PLAIN_PATH_PROVIDER);
+    removePathComponent(myPlainPathProviderClass);
+    String className = plainPathProviderClass.getAttribute(CLASS_NAME).getValue();
+    try {
+      Class plainPathProvider = (Class) Class.forName(className);
+      myPlainPathProviderClass = plainPathProvider;
+    } catch (Exception e) {
+      LOG.error("Can't instantiate custom plain path provider class " + className + ". Using default", e);
+      myPlainPathProviderClass = PlainPath.class;
+    }
+    addPathComponent(myPlainPathProviderClass);
+
+    Element viewOptionsXML = element.getChild(VIEW_OPTIONS);
+    myViewOptions.read(viewOptionsXML, project);
+    setComponentsViewOptions(myViewOptions);
+
+    Element contentsXML = element.getChild(CONTENTS);
+    myContents.read(contentsXML, project);
+
+    myTree.setContents(myContents, myPathProvider);
+  }
+
+  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+    Element plainPathProviderClass = new Element(PLAIN_PATH_PROVIDER);
+    plainPathProviderClass.setAttribute(CLASS_NAME, myPlainPathProviderClass.getName());
+    element.addContent(plainPathProviderClass);
+
+    Element viewOptionsXML = new Element(VIEW_OPTIONS);
+    getComponentsViewOptions(myViewOptions);
+    myViewOptions.write(viewOptionsXML, project);
+    element.addContent(viewOptionsXML);
+
+    Element contentsXML = new Element(CONTENTS);
+    myContents.write(contentsXML, project);
+    element.addContent(contentsXML);
+  }
+
+  public List<SModelDescriptor> getIncludedModels() {
+    return myContents.getIncludedModels();
+  }
+
+  public List<SModelDescriptor> getAllModels() {
+    return myContents.getAllModels();
+  }
+
+  public List<SNodePointer> getIncludedNodes() {
+    return myContents.getIncludedNodes();
+  }
+
+  public List<SNodePointer> getAllNodes() {
+    return myContents.getAllNodes();
+  }
+
+  public JToolBar getActionsToolbar(int orientation) {
+    myActionsToolbar.setOrientation(orientation);
+    return myActionsToolbar;
+  }
+
+  public JToolBar getViewToolbar(int orientation) {
+    myViewToolbar.setOrientation(orientation);
+    return myViewToolbar;
+  }
+
+  public abstract IDEProjectFrame getProjectFrame();
+
+  class ViewToolbar extends MPSToolBar {
+    private PathOptionsToolbar myPathOptionsToolbar;
+    private ViewOptionsToolbar myViewOptionsToolbar;
+
+    private boolean myIsConstructed = false;
+
+    public ViewToolbar() {
+      myPathOptionsToolbar = new PathOptionsToolbar();
+      myViewOptionsToolbar = new ViewOptionsToolbar();
+
+      setBorderPainted(false);
+      setFloatable(false);
+      add(myPathOptionsToolbar);
+      add(new JSeparator());
+      add(myViewOptionsToolbar);
+
+      myIsConstructed = true;
+    }
+
+    public void setOrientation(int o) {
+      super.setOrientation(o);
+      if (myIsConstructed) {
+        myPathOptionsToolbar.setOrientation(o);
+        myViewOptionsToolbar.setOrientation(o);
+      }
+    }
+
+    public void setViewOptions(ViewOptions options) {
+      myPathOptionsToolbar.setViewOptions(options);
+      myViewOptionsToolbar.setViewOptions(options);
+    }
+
+    public void getViewOptions(ViewOptions options) {
+      myPathOptionsToolbar.getViewOptions(options);
+      myViewOptionsToolbar.getViewOptions(options);
+    }
+
+    class ViewOptionsToolbar extends MPSToolBar {
+      private AnonymToggleButton myCountNeededButton;
+      private AnonymToggleButton myAdditionalInfoNeededButton;
+      private AnonymToggleButton myShowSearchedNodesButton;
+      private AnonymToggleButton myGroupSearchedNodesButton;
+
+      public ViewOptionsToolbar() {
+        setBorderPainted(false);
+        myCountNeededButton = new MyAnonymToggleButton(Icons.NUM_ICON, "Counters") {
+          public void actionSelected() {
+            myTree.setCountNeeded(true);
+          }
+
+          public void actionDeselected() {
+            myTree.setCountNeeded(false);
+          }
+        };
+        add(myCountNeededButton);
+
+        myAdditionalInfoNeededButton = new MyAnonymToggleButton(Icons.INFO_ICON, "Additional node info") {
+          public void actionSelected() {
+            myTree.setAdditionalInfoNeeded(true);
+          }
+
+          public void actionDeselected() {
+            myTree.setAdditionalInfoNeeded(false);
+          }
+        };
+        add(myAdditionalInfoNeededButton);
+
+        myShowSearchedNodesButton = new MyAnonymToggleButton(Icons.SHOW_SEARCHED_ICON, "Show searched nodes") {
+          public void actionSelected() {
+            myTree.setShowSearchedNodes(true);
+            myGroupSearchedNodesButton.setState(true);
+          }
+
+          public void actionDeselected() {
+            if (myGroupSearchedNodesButton.getState()) {
+              myGroupSearchedNodesButton.setState(false);
+            }
+            myTree.setShowSearchedNodes(false);
+          }
+        };
+        add(myShowSearchedNodesButton);
+
+        myGroupSearchedNodesButton = new MyAnonymToggleButton(Icons.GROUP_SEARCHED_ICON, "Group searched nodes") {
+          public void actionSelected() {
+            myTree.startAdjusting();
+            myTree.setGroupSearchedNodes(true);
+            myShowSearchedNodesButton.setState(true);
+            myTree.finishAdjusting();
+          }
+
+          public void actionDeselected() {
+            myTree.setGroupSearchedNodes(false);
+          }
+        };
+        add(myGroupSearchedNodesButton);
+      }
+
+      protected EmptyBorder createBorder() {
+        return new EmptyBorder(2, 1, 2, 1);
+      }
+
+      public void setViewOptions(ViewOptions options) {
+        myTree.startAdjusting();
+
+        myCountNeededButton.setState(options.myCount);
+        myAdditionalInfoNeededButton.setState(options.myInfo);
+        myShowSearchedNodesButton.setState(options.myShowSearchedNodes);
+        myGroupSearchedNodesButton.setState(options.myGroupSearchedNodes);
+
+        myTree.finishAdjusting();
+      }
+
+      public void getViewOptions(ViewOptions options) {
+        options.myCount = myCountNeededButton.getState();
+        options.myInfo = myAdditionalInfoNeededButton.getState();
+        options.myShowSearchedNodes = myShowSearchedNodesButton.getState();
+        options.myGroupSearchedNodes = myGroupSearchedNodesButton.getState();
+      }
+    }
+
+    class PathOptionsToolbar extends MPSToolBar {
+      private AnonymToggleButton myCategoryPathButton;
+      private AnonymToggleButton myModulePathButton;
+      private AnonymToggleButton myModelPathButton;
+      private AnonymToggleButton myRootPathButton;
+      private AnonymToggleButton myNamedConceptPathButton;
+
+      public PathOptionsToolbar() {
+        setBorderPainted(false);
+        myCategoryPathButton = new MyAnonymToggleButton(Icons.CATEGORY_ICON, "Group by category") {
+          public void actionSelected() {
+            addPathComponent(CategoryPath.class);
+          }
+
+          public void actionDeselected() {
+            removePathComponent(CategoryPath.class);
+          }
+        };
+        add(myCategoryPathButton);
+
+        myModulePathButton = new MyAnonymToggleButton(Icons.MODULE_ICON, "Group by module") {
+          public void actionSelected() {
+            addPathComponent(ModulePath.class);
+          }
+
+          public void actionDeselected() {
+            removePathComponent(ModulePath.class);
+          }
+        };
+        add(myModulePathButton);
+
+        myModelPathButton = new MyAnonymToggleButton(Icons.MODEL_ICON, "Group by model") {
+          public void actionSelected() {
+            addPathComponent(ModelPath.class);
+          }
+
+          public void actionDeselected() {
+            removePathComponent(ModelPath.class);
+          }
+        };
+        add(myModelPathButton);
+
+        myRootPathButton = new MyAnonymToggleButton(Icons.ROOT_ICON, "Group by root node") {
+          public void actionSelected() {
+            addPathComponent(RootNodePath.class);
+          }
+
+          public void actionDeselected() {
+            if (myNamedConceptPathButton.getModel().isSelected()) {
+              getModel().setSelected(true);
+            } else {
+              removePathComponent(RootNodePath.class);
+            }
+          }
+        };
+        add(myRootPathButton);
+
+        myNamedConceptPathButton = new MyAnonymToggleButton(Icons.PATH_ICON, "Group by path") {
+          public void actionSelected() {
+            myTree.startAdjusting();
+            addPathComponent(RootToNodePath.class);
+            myRootPathButton.setState(true);
+            myTree.finishAdjusting();
+          }
+
+          public void actionDeselected() {
+            removePathComponent(RootToNodePath.class);
+          }
+        };
+        add(myNamedConceptPathButton);
+      }
+
+      protected EmptyBorder createBorder() {
+        return new EmptyBorder(2, 1, 2, 1);
+      }
+
+      public void setViewOptions(ViewOptions options) {
+        myTree.startAdjusting();
+
+        myCategoryPathButton.setState(options.myCategory);
+        myModulePathButton.setState(options.myModule);
+        myModelPathButton.setState(options.myModel);
+        myRootPathButton.setState(options.myRoot);
+        myNamedConceptPathButton.setState(options.myNamedPath);
+
+        myTree.finishAdjusting();
+      }
+
+      public void getViewOptions(ViewOptions options) {
+        options.myCategory = myCategoryPathButton.getState();
+        options.myModule = myModulePathButton.getState();
+        options.myModel = myModelPathButton.getState();
+        options.myRoot = myRootPathButton.getState();
+        options.myNamedPath = myNamedConceptPathButton.getState();
+      }
+    }
+  }
+
+  class ActionsToolbar extends MPSToolBar {
+    private AnonymToggleButton myAutoscrollButton;
+
+    public ActionsToolbar() {
+      setBorderPainted(false);
+      add(new AnonymButton(Icons.COLLAPSE_ICON, "Collapse") {
+        public void action() {
+          myTree.collapseResults();
+        }
+      });
+      add(new AnonymButton(Icons.EXPAND_ICON, "Expand") {
+        public void action() {
+          myTree.expandResults();
+        }
+      });
+      add(new AnonymButton(Icons.PREVIOUS_ICON, "Previous occurence") {
+        public void action() {
+          myTree.navigateToPreviousResult();
+        }
+      });
+      add(new AnonymButton(Icons.NEXT_ICON, "Next occurence") {
+        public void action() {
+          myTree.navigateToNextResult();
+        }
+      });
+      myAutoscrollButton = new MyAnonymToggleButton(Icons.AUTOSCROLL_ICON, "Autoscroll to source") {
+        public void actionSelected() {
+          myTree.setAutoscroll(true);
+        }
+
+        public void actionDeselected() {
+          myTree.setAutoscroll(false);
+        }
+      };
+      add(myAutoscrollButton);
+    }
+
+    protected EmptyBorder createBorder() {
+      return new EmptyBorder(2, 1, 2, 1);
+    }
+
+    public void setViewOptions(ViewOptions options) {
+      myTree.startAdjusting();
+      myAutoscrollButton.setState(options.myAutoscrolls);
+      myTree.finishAdjusting();
+    }
+
+    public void getViewOptions(ViewOptions options) {
+      options.myAutoscrolls = myAutoscrollButton.getState();
+    }
+  }
+
+  abstract class MyAnonymToggleButton extends AnonymToggleButton {
+    public MyAnonymToggleButton(Icon icon, String tooltip) {
+      super(icon, tooltip);
+    }
+
+    public void change() {
+      if (!myIsAdjusting) {
+        getComponentsViewOptions(myViewOptions);
+        myDefaultOptions.setValues(myViewOptions);
+      }
+    }
+  }
+}

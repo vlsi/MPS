@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -30,7 +31,7 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
 
   }
 
-  public FindersOptions(Element element, MPSProject project) {
+  public FindersOptions(Element element, MPSProject project) throws CantLoadSomethingException {
     super(element, project);
   }
 
@@ -75,7 +76,7 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
           LOG.error(t);
         }
       } else {
-        LOG.error("Can't find a class " + finderClassName + " in " + languageNamespace);
+        LOG.warning("Can't find a class " + finderClassName + " in " + languageNamespace + ". The finder is disabled.");
       }
     }
     return TreeBuilder.forFinders(finders);

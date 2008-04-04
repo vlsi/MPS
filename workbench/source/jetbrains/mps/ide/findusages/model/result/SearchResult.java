@@ -1,17 +1,15 @@
 package jetbrains.mps.ide.findusages.model.result;
 
-import jetbrains.mps.ide.components.ComponentsUtil;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
-import org.jdom.Element;
 
 public class SearchResult {
+  /*
   private static final String CATEGORY = "category";
   private static final String ATTRIBUTES = "attributes";
   private static final String NODE = "node";
+  */
 
-  protected SNodePointer myNodePointer;
+  protected SNode myNode;
   protected String myCategory;
 
   public SearchResult() {
@@ -19,12 +17,12 @@ public class SearchResult {
   }
 
   public SearchResult(SNode node, String category) {
-    myNodePointer = new SNodePointer(node);
+    myNode = node;
     myCategory = category;
   }
 
   public SNode getNode() {
-    return myNodePointer.getNode();
+    return myNode;
   }
 
   public String getCategory() {
@@ -42,6 +40,7 @@ public class SearchResult {
     return true;
   }
 
+  /*
   public void write(Element element, MPSProject project) {
     Element attributesXML = new Element(ATTRIBUTES);
     attributesXML.setAttribute(CATEGORY, myCategory);
@@ -65,4 +64,5 @@ public class SearchResult {
       myNodePointer = new SNodePointer(ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0)));
     }
   }
+  */
 }

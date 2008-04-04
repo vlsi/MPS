@@ -2,7 +2,9 @@ package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
@@ -11,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class QueryOptions extends BaseOptions<SearchQuery> {
+  private static final Logger LOG = Logger.getLogger(QueryOptions.class);
+
   public static final String SCOPE_TYPE = "scope_type";
 
   public static final String GLOBAL_SCOPE = "global_scope";
@@ -83,14 +87,24 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
       if (myModule.equals(DEFAULT_VALUE)) {
         scope = operationContext.getModule().getScope();
       } else {
-        scope = MPSModuleRepository.getInstance().getModuleByUID(myModule).getScope();
+        IModule module = MPSModuleRepository.getInstance().getModuleByUID(myModule);
+        if (module == null) {
+          myModule = operationContext.getModule().getModuleUID();
+          module = MPSModuleRepository.getInstance().getModuleByUID(myModule);
+          LOG.error("Module is not found for " + myModule + ". Using current module.");
+        }
+        scope = module.getScope();
       }
     } else if (myScopeType.equals(MODEL_SCOPE)) {
       if (myModel.equals(DEFAULT_VALUE)) {
         scope = new ModelScope(operationContext.getModule().getScope(), context.getModel());
       } else {
         List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
-        assert !models.isEmpty();
+        if (models.isEmpty()) {
+          myModel = context.getModel().getModelUID().toString();
+          models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
+          LOG.error("Model is not found for " + myModel + ". Using current model.");
+        }
         SModelDescriptor modelDescriptor = models.get(0);
         scope = new ModelScope(modelDescriptor.getModule().getScope(), modelDescriptor);
       }

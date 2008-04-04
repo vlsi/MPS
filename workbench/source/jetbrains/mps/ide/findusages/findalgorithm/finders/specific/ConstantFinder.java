@@ -1,6 +1,8 @@
 package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
@@ -35,17 +37,19 @@ public class ConstantFinder extends BaseFinder {
     return myResults;
   }
 
-  public void read(Element element, MPSProject project) {
+  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     super.read(element, project);
-    Element resultsXML = element.getChild(RESULTS);
-    myResults.read(resultsXML, project);
+    throw new CantLoadSomethingException("do not call read on ConstantFinder!!!");
+    //Element resultsXML = element.getChild(RESULTS);
+    //myResults.read(resultsXML, project);
   }
 
-  public void write(Element element, MPSProject project) {
+  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
-    Element resultsXML = new Element(RESULTS);
-    myResults.write(resultsXML, project);
-    element.addContent(resultsXML);
+    throw new CantSaveSomethingException("do not call write on ConstantFinder!!!");
+    //Element resultsXML = new Element(RESULTS);
+    //myResults.write(resultsXML, project);
+    //element.addContent(resultsXML);
   }
 
   public String getDescription() {

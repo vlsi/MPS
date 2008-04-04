@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.findusages.view.optionseditor;
 
-import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.ide.findusages.view.ContainerInnerPartClassNotFoundException;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -20,7 +20,7 @@ public class FindUsagesOptions implements Cloneable {
 
   private Map<Class, BaseOptions> myOptions = new HashMap<Class, BaseOptions>();
 
-  public FindUsagesOptions(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
+  public FindUsagesOptions(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -46,21 +46,24 @@ public class FindUsagesOptions implements Cloneable {
     return (T) myOptions.get(optionClass);
   }
 
-  public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
+  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     for (Element optionXML : (List<Element>) element.getChildren(OPTION)) {
       String className = optionXML.getAttribute(CLASS_NAME).getValue();
       try {
         Object o = Class.forName(className).newInstance();
-        ((IExternalizableComponent) o).read(optionXML, project);
+        ((BaseOptions) o).read(optionXML, project);
         myOptions.put(o.getClass(), (BaseOptions) o);
-      } catch (Exception e) {
-        LOG.error("Couldn't instantiate option with class name " + className);
-        throw new ContainerInnerPartClassNotFoundException(className);
+      } catch (ClassNotFoundException e) {
+        LOG.error("Couldn't instantiate option with class name " + className, e);
+      } catch (IllegalAccessException e) {
+        e.printStackTrace();
+      } catch (InstantiationException e) {
+        e.printStackTrace();
       }
     }
   }
 
-  public void write(Element element, MPSProject project) {
+  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     for (BaseOptions option : myOptions.values()) {
       Element optionXML = new Element(OPTION);
       optionXML.setAttribute(CLASS_NAME, option.getClass().getName());

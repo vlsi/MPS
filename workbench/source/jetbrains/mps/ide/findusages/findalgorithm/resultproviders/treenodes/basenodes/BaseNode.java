@@ -1,11 +1,12 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes;
 
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.findusages.view.ContainerInnerPartClassNotFoundException;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -30,6 +31,8 @@ public abstract class BaseNode implements IResultProvider {
   public BaseNode() {
 
   }
+
+  //----TREE STUFF----
 
   public void setParent(BaseNode parent) {
     myParent = parent;
@@ -59,7 +62,7 @@ public abstract class BaseNode implements IResultProvider {
     return myParent == null;
   }
 
-  public abstract SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor);
+  //----SEARCH STUFF----
 
   public SearchResults getResults(SearchQuery query, final IAdaptiveProgressMonitor monitor) {
     assert !ThreadUtils.isEventDispatchThread();
@@ -72,9 +75,9 @@ public abstract class BaseNode implements IResultProvider {
     results = doGetResults(query, monitor);
 
     //no null pointer exception will occure!!
-    if (results.getSearchedNodePointers().contains(null)) {
+    if (results.getSearchedNodes().contains(null)) {
       LOG.error("GetResults returned nodes containing null, which means that some of your filters and finders is incorrect");
-      results.getSearchedNodePointers().remove(null);
+      results.getSearchedNodes().remove(null);
     }
     boolean error = false;
     for (SearchResult result : results.getSearchResults()) {
@@ -90,7 +93,7 @@ public abstract class BaseNode implements IResultProvider {
           newResults.add(result);
         }
       }
-      results = new SearchResults(results.getSearchedNodePointers(), newResults);
+      results = new SearchResults(results.getSearchedNodes(), newResults);
     }
 
     if (isRoot()) {
@@ -104,6 +107,8 @@ public abstract class BaseNode implements IResultProvider {
     return results;
   }
 
+  public abstract SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor);
+
   public long getEstimatedTime(IScope scope) {
     long sumTime = 0;
     for (BaseNode child : myChildren) {
@@ -112,7 +117,9 @@ public abstract class BaseNode implements IResultProvider {
     return sumTime;
   }
 
-  public void write(Element element, MPSProject project) {
+  //----SAVE/LOAD STUFF----
+
+  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     Element childrenXML = new Element(CHILDREN);
     for (BaseNode child : myChildren) {
       Element childXML = new Element(child.getClass().getName());
@@ -122,7 +129,7 @@ public abstract class BaseNode implements IResultProvider {
     element.addContent(childrenXML);
   }
 
-  public void read(Element element, MPSProject project) throws ContainerInnerPartClassNotFoundException {
+  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     Element childrenXML = element.getChild(CHILDREN);
     for (Element childXML : (List<Element>) childrenXML.getChildren()) {
       try {
@@ -130,9 +137,9 @@ public abstract class BaseNode implements IResultProvider {
         child.read(childXML, project);
         myChildren.add(child);
         child.setParent(this);
-      } catch (Exception e) {
-        Logger.getLogger(this.getClass().getName()).error("Error while instantiating node: " + e.getMessage());
-        throw new ContainerInnerPartClassNotFoundException("");
+      } catch (Throwable t) {
+        LOG.error("Error while instantiating node: " + t.getMessage(), t);
+        throw new CantLoadSomethingException("Error while instantiating node: " + t.getMessage(), t);
       }
     }
   }

@@ -1,20 +1,22 @@
 package jetbrains.mps.refactoring;
 
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.findusages.view.UsageView;
-import jetbrains.mps.ide.findusages.view.treewrapper.ViewOptions;
-import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.ide.findusages.view.UsageView;
+import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.toolsPane.DefaultTool;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.GenericRefactoring;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.logging.Logger;
+import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -22,9 +24,6 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.util.Map;
 import java.util.WeakHashMap;
-
-import org.jetbrains.annotations.NotNull;
-import org.jdom.Element;
 
 /**
  * Created by IntelliJ IDEA.
