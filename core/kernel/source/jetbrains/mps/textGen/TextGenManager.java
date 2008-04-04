@@ -52,8 +52,9 @@ public class TextGenManager {
     }
 
     SNodeTextGen nodeTextGen = loadNodeTextGen(context,  node);
-    LOG.assertLog(nodeTextGen != null, "Couldn't find text generator for " + node.getDebugText());
-
+    if(nodeTextGen == null) {
+      LOG.error("couldn't find text generator for " + node.getDebugText(), node);
+    }
     assert nodeTextGen != null;
 
     nodeTextGen.setBuffer(buffer);
@@ -63,8 +64,7 @@ public class TextGenManager {
       nodeTextGen.setSNode(null);
     } catch (Exception e) {
       buffer.foundError();
-      LOG.error("Exception during text generation on node ", node);
-      e.printStackTrace();
+      LOG.error("failed to generate text for " + node.getDebugText(), e, node);
     }
   }
 

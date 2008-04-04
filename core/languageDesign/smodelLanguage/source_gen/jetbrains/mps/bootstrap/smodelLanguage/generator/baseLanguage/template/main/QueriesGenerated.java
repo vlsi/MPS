@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.constraints.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -76,10 +77,6 @@ public class QueriesGenerated {
     return QueriesUtil.isProperty_hasValueEnum_nullDefaultValue(_context.getNode(), _context.getGenerator());
   }
 
-  public static boolean baseMappingRule_Condition_1169074670328(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return _QueriesUtil.operationHasParm_Concept(_context.getNode());
-  }
-
   public static boolean baseMappingRule_Condition_1171323169610(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "concept", false) != null;
   }
@@ -126,10 +123,6 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1176109870968(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "concept", false) == null;
-  }
-
-  public static boolean baseMappingRule_Condition_1176463204705(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return _QueriesUtil.operationHasParm_ConceptExpression(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_1179413366438(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -189,6 +182,14 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1206735080886(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // deprecated
     return SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false) != null;
+  }
+
+  public static boolean baseMappingRule_Condition_1207338310770(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(SequenceOperations.isEmpty(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)));
+  }
+
+  public static boolean baseMappingRule_Condition_1207338310789(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(SequenceOperations.isEmpty(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptExpression", false)));
   }
 
   public static Object propertyMacro_GetPropertyValue_1168981884180(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -356,10 +357,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1177115336225(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1177115874157(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _QueriesUtil.operationGetParm_Concept_conceptFqName(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1179412031170(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -545,6 +542,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1206992455419(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _QueriesUtil.operationHasParm_Inclusion(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1207338310782(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _QueriesUtil.operationGetParm_Concept_conceptFqName(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {

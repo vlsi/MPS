@@ -46,7 +46,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
       TextGenManager.instance().appendNodeText(
         myContext, myBuffer, BaseAdapter.fromAdapter(ba), getSNode());
     } catch (Exception e) {
-      LOG.error(e);      
+      LOG.error(e);
     }
   }
 
@@ -83,6 +83,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
   }
 
   protected void foundError() {
+    LOG.error("error generating text for " + getSNode().getDebugText(), getSNode());
     getBuffer().foundError();
   }
 
