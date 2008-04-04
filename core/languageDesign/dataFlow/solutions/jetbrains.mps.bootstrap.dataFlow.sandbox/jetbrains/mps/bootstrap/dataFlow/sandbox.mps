@@ -214,8 +214,13 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207304249744">
                 <property name="name" value="j" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207304249745" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207304251247">
-                  <property name="value" value="40" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207324203883">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207324205042">
+                    <link role="variableDeclaration" targetNodeId="1207231044454" resolveInfo="p" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207304251247">
+                    <property name="value" value="40" />
+                  </node>
                 </node>
               </node>
             </node>
