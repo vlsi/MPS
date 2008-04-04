@@ -125,14 +125,10 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public <BA extends INodeAdapter> List<BA> allChildren(Class<BA> cls, Condition<BA> cond) {
-    return CollectionUtil.filter(allChildren(cls), cond);
+    return CollectionUtil.filter(getSubnodes(cls), cond);
   }
 
-
-  public <BA extends INodeAdapter> List<BA> allChildren(Class<BA> cls) {
-    return myNode.allChildrenByAdaptor(cls);
-  }
-
+  @NotNull
   public <E extends INodeAdapter> List<E> getSubnodes(final Class<E> cls) {
     // this strategy is very effective when model doesn't contain too many nodes of required type
     FastNodeFinder finder = getModel().getModelDescriptor().getFastNodeFinder();
