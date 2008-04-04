@@ -20,17 +20,19 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
 
+import javax.swing.AbstractAction;
+import javax.swing.KeyStroke;
 import javax.swing.tree.TreePath;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public abstract class UsagesTree extends MPSTree {
+  private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
+  private static final String COMMAND_OPEN_NODE_IN_TREE = "open_node_in_tree";
+
   private DataTree myContents = new DataTree();
   private HashSet<String> myResultPathProvider = new HashSet<String>();
 
@@ -49,19 +51,22 @@ public abstract class UsagesTree extends MPSTree {
 
     setRootVisible(false);
 
-    addKeyListener(new KeyAdapter() {
-      public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-          openCurrentNodeLink(false);
-        }
-        if (e.getKeyCode() == KeyEvent.VK_F4) {
-          openCurrentNodeLink(false);
-        }
-        if ((e.getKeyCode() == KeyEvent.VK_F1) && e.isAltDown()) {
-          openCurrentNodeLink(true);
-        }
+    getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_OPEN_NODE_IN_PROJECT);
+    getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0), COMMAND_OPEN_NODE_IN_PROJECT);
+    getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_F1, InputEvent.ALT_MASK), COMMAND_OPEN_NODE_IN_TREE);
+
+    getActionMap().put(COMMAND_OPEN_NODE_IN_PROJECT, new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        openCurrentNodeLink(false);
       }
     });
+
+    getActionMap().put(COMMAND_OPEN_NODE_IN_TREE, new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        openCurrentNodeLink(true);
+      }
+    });
+
 
     addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
@@ -69,13 +74,8 @@ public abstract class UsagesTree extends MPSTree {
           openCurrentNodeLink(false);
         }
         if (e.getButton() == MouseEvent.BUTTON3) {
-          //changeCurrentNodeExclusion();
+          changeCurrentNodeExclusion();
         }
-      }
-    });
-
-    addMouseListener(new MouseAdapter() {
-      public void mouseClicked(MouseEvent e) {
       }
     });
   }
@@ -257,17 +257,17 @@ public abstract class UsagesTree extends MPSTree {
     return (UsagesTreeNode) super.getCurrentNode();
   }
 
-  /*
   private void changeCurrentNodeExclusion() {
-    UsagesTreeNode treeNode = getCurrentNode();
+    /*UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
-    PathItem pathItem = treeNode.getUserObject();
+    //PathItem pathItem = treeNode.getUserObject();
     if (pathItem==null) return;
     pathItem.setIsExcluded(!pathItem.isExcluded());
     //todo: make it faster, do not rebuild all the tree
     rebuildLater();
+    */
   }
-  */
+
   private void openCurrentNodeLinkIfLeaf(boolean inProject) {
     UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
