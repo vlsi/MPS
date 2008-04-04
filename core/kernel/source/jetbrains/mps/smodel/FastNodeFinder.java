@@ -15,13 +15,14 @@ public class FastNodeFinder {
   private SModelDescriptor myModelDescriptor;
   private long myStructuralState;
   private boolean myInitialized;
+  private SModelListener myListener;
 
   private WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> myNodesAll = new WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>>();
   private WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>> myNodesNoInheritance = new WeakHashMap<AbstractConceptDeclaration, WeakSet<SNode>>();
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
-    modelDescriptor.addWeakModelListener(new SModelAdapter() {
+    modelDescriptor.addWeakModelListener(myListener = new SModelAdapter() {
       public void childAdded(SModelChildEvent event) {
         buildCache(event.getChild(), new HashSet<AbstractConceptDeclaration>());
       }
