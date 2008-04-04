@@ -531,8 +531,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1206183272508">
-        <property name="text"
-                  value="  and they are extracted from it, otherwise the action is disabled and invisible)"/>
+        <property name="text" value="  and they are extracted from it, otherwise the action is disabled)"/>
         <property name="selectable" value="false"/>
         <property name="textFgColor" value="gray"/>
       </node>

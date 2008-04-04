@@ -16,7 +16,7 @@
   </language>
   <language namespace="jetbrains.mps.baseLanguage.classifiers"/>
   <language namespace="jetbrains.mps.bootstrap.helgins"/>
-  <maxImportIndex value="30"/>
+  <maxImportIndex value="32"/>
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1"/>
@@ -47,6 +47,8 @@
   <import index="28" modelUID="jetbrains.mps.dataFlow.framework.instructions@java_stub" version="-1"/>
   <import index="29" modelUID="jetbrains.mps.baseLanguage.refactoring@java_stub" version="-1"/>
   <import index="30" modelUID="jetbrains.mps.ide@java_stub" version="-1"/>
+  <import index="31" modelUID="jetbrains.mps.baseLanguage.plugin" version="-1"/>
+  <import index="32" modelUID="jetbrains.mps.baseLanguage.plugin@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup"/>
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
@@ -4517,6 +4519,19 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207229065524"/>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.FileGeneratorPluginDeclaration" id="1207323716836">
+    <node role="getFileGeneratorBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetFileGeneratorBlock"
+          id="1207323716837">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207323716838">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207323758419">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1207323764920">
+            <link role="baseMethodDeclaration" targetNodeId="32.~JavaFileGenerator.&lt;init&gt;()"
+                  resolveInfo="JavaFileGenerator"/>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1207231065572">
     <property name="package" value="ExtractMethod"/>
