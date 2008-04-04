@@ -10,7 +10,9 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   </language>
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts"/>
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
+  </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="0"/>
   <maxImportIndex value="18"/>
   <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="0"/>
@@ -89,19 +91,18 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
-              id="1205677542440">
+              id="1207318448495">
           <property name="selectable" value="false"/>
           <property name="vertical" value="false"/>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-                id="1205677542441">
+                id="1207318448496">
             <property name="text" value="keystroke:"/>
             <property name="selectable" value="false"/>
           </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
-                id="1205677542442">
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
+                id="1207318456843">
             <property name="noTargetText" value="&lt;no keystroke&gt;"/>
-            <property name="allowEmptyText" value="true"/>
-            <link role="relationDeclaration" targetNodeId="1.1203083943150" resolveInfo="shortcut"/>
+            <link role="relationDeclaration" targetNodeId="1.1207318392425"/>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
@@ -1825,6 +1826,220 @@
             id="1207145751611">
         <property name="text" value=";"/>
         <property name="selectable" value="false"/>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1207318322675">
+    <property name="package" value="Actions.Action"/>
+    <link role="conceptDeclaration" targetNodeId="1.1207318242772" resolveInfo="KeyMapKeystroke"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+          id="1207318325522">
+      <property name="usesBraces" value="true"/>
+      <property name="name" value="nodeBox"/>
+      <property name="vertical" value="false"/>
+      <property name="drawBorder" value="false"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1207318325523">
+        <property name="selectable" value="false"/>
+        <property name="text" value="&lt;"/>
+        <property name="drawBorder" value="false"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+            id="1207318325524">
+        <property name="textBgColor" value="yellow"/>
+        <property name="allowEmptyText" value="true"/>
+        <property name="noTargetText" value="any"/>
+        <property name="drawBorder" value="false"/>
+        <property name="textBgColorSelected" value="cyan"/>
+        <link role="relationDeclaration" targetNodeId="1.1207318242773" resolveInfo="modifiers"/>
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor"
+              id="1207318325525">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyValues"
+                id="1207318325526">
+            <node role="valuesFunction"
+                  type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyValues_GetValues"
+                  id="1207318325527">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207318325528">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207318325529">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
+                        id="1207318325530">
+                    <node role="creator"
+                          type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit"
+                          id="1207318325531">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType"
+                            id="1207318325532">
+                        <link role="classifier" targetNodeId="6.~String" resolveInfo="String"/>
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                            id="1207318325533">
+                        <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                        <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_MODIFIERS_NONE"
+                              resolveInfo="KEY_MODIFIERS_NONE"/>
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                            id="1207318325534">
+                        <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                        <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_MODIFIERS_CTRL"
+                              resolveInfo="KEY_MODIFIERS_CTRL"/>
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                            id="1207318325535">
+                        <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                        <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_MODIFIERS_ALT"
+                              resolveInfo="KEY_MODIFIERS_ALT"/>
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                            id="1207318325536">
+                        <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                        <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_MODIFIERS_SHIFT"
+                              resolveInfo="KEY_MODIFIERS_SHIFT"/>
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                            id="1207318325537">
+                        <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                        <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT"
+                              resolveInfo="KEY_MODIFIERS_CTRL_ALT"/>
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                            id="1207318325538">
+                        <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                        <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT"
+                              resolveInfo="KEY_MODIFIERS_CTRL_SHIFT"/>
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                            id="1207318325539">
+                        <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                        <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT_SHIFT"
+                              resolveInfo="KEY_MODIFIERS_CTRL_ALT_SHIFT"/>
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                            id="1207318325540">
+                        <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                        <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_MODIFIERS_ALT_SHIFT"
+                              resolveInfo="KEY_MODIFIERS_ALT_SHIFT"/>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1207318325541">
+        <property name="selectable" value="false"/>
+        <property name="text" value=" &gt; + &lt;"/>
+        <property name="drawBorder" value="false"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+            id="1207318325542">
+        <property name="textBgColor" value="yellow"/>
+        <property name="noTargetText" value="&lt;keycode&gt;"/>
+        <property name="drawBorder" value="false"/>
+        <property name="textBgColorSelected" value="cyan"/>
+        <link role="relationDeclaration" targetNodeId="1.1207318242774" resolveInfo="keycode"/>
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor"
+              id="1207318325543">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyValues"
+                id="1207318325544">
+            <node role="valuesFunction"
+                  type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyValues_GetValues"
+                  id="1207318325545">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207318325546">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
+                      id="1207318325547">
+                  <node role="localVariableDeclaration"
+                        type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207318325548">
+                    <property name="name" value="keycodes"/>
+                    <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType"
+                          id="1207318325549">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType"
+                            id="1207318325550">
+                        <link role="classifier" targetNodeId="6.~String" resolveInfo="String"/>
+                      </node>
+                    </node>
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
+                          id="1207318325551">
+                      <node role="creator"
+                            type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit"
+                            id="1207318325552">
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType"
+                              id="1207318325553">
+                          <link role="classifier" targetNodeId="6.~String" resolveInfo="String"/>
+                        </node>
+                        <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                              id="1207318325554">
+                          <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                          <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_CODE_DIGIT"
+                                resolveInfo="KEY_CODE_DIGIT"/>
+                        </node>
+                        <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                              id="1207318325555">
+                          <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                          <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_CODE_LETTER"
+                                resolveInfo="KEY_CODE_LETTER"/>
+                        </node>
+                        <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                              id="1207318325556">
+                          <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                          <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_CODE_LETTER_OR_DIGIT"
+                                resolveInfo="KEY_CODE_LETTER_OR_DIGIT"/>
+                        </node>
+                        <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                              id="1207318325557">
+                          <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                          <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_CODE_SPACE"
+                                resolveInfo="KEY_CODE_SPACE"/>
+                        </node>
+                        <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference"
+                              id="1207318325558">
+                          <link role="classifier" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                          <link role="variableDeclaration" targetNodeId="2.~EditorCellKeyMap.KEY_CODE_CHAR"
+                                resolveInfo="KEY_CODE_CHAR"/>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
+                      id="1207318325559">
+                  <node role="expression"
+                        type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression"
+                        id="1207318325560">
+                    <node role="operation"
+                          type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation"
+                          id="1207318325561">
+                      <node role="argument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
+                            id="1207318325562">
+                        <link role="classConcept" targetNodeId="2.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap"/>
+                        <link role="baseMethodDeclaration"
+                              targetNodeId="2.~EditorCellKeyMap.getVirtualKeycodes():java.util.List"
+                              resolveInfo="getVirtualKeycodes"/>
+                      </node>
+                    </node>
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                          id="1207318325563">
+                      <link role="variableDeclaration" targetNodeId="1207318325548" resolveInfo="keycodes"/>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207318325564">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                        id="1207318325565">
+                    <link role="variableDeclaration" targetNodeId="1207318325548" resolveInfo="keycodes"/>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1207318325566">
+        <property name="selectable" value="false"/>
+        <property name="text" value=" &gt;"/>
+        <property name="drawBorder" value="false"/>
       </node>
     </node>
   </node>

@@ -67,14 +67,16 @@
       <property name="sourceCardinality" value="0..n"/>
       <link role="target" targetNodeId="14.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration"/>
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1207318392425">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="keystroke"/>
+      <property name="sourceCardinality" value="0..1"/>
+      <link role="target" targetNodeId="1207318242772" resolveInfo="KeyMapKeystroke"/>
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
           id="1203083803952">
       <property name="name" value="iconPath"/>
-      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
-          id="1203083943150">
-      <property name="name" value="shortcut"/>
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
@@ -1335,6 +1337,23 @@
           id="1207147686429">
       <property name="value" value="element list"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1207318242772">
+    <property name="name" value="KeyMapKeystroke"/>
+    <property name="package" value="Actions.Action"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1207318242773">
+      <property name="name" value="modifiers"/>
+      <property name="propertyType" value="string"/>
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
+          id="1207318242774">
+      <property name="name" value="keycode"/>
+      <property name="propertyType" value="string"/>
+      <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
     </node>
   </node>
 </model>
