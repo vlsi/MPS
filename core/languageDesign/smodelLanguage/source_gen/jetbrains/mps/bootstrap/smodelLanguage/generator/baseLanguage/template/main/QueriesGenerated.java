@@ -815,14 +815,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "scope", true);
   }
 
-  public static SNode sourceNodeQuery_1176463628326(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode n = _QueriesUtil.operationGetParm_ConceptExpression_conceptExpression(_context.getNode());
-    if ((n == null)) {
-      _context.getGenerator().showErrorMessage(_context.getNode(), "concept expression is undefined");
-    }
-    return n;
-  }
-
   public static SNode sourceNodeQuery_1177113386164(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
@@ -1163,6 +1155,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1206735145659(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "conceptArgument", true);
+  }
+
+  public static SNode sourceNodeQuery_1207342919715(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptExpression", false)), "conceptExpression", true);
   }
 
   public static List sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
