@@ -175,6 +175,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207304859605">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207304859606">
+            <link role="variableDeclaration" targetNodeId="1207231044454" resolveInfo="p" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1207231044454">
         <property name="name" value="p" />
