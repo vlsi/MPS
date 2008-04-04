@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     
-    public static final boolean RELAXED_NULL = false;
+    public static final boolean RELAXED_NULL = true;
     
     public static <U> ISequence<U> fromArray (U...array) {
         return new BasicSequence<U> (Arrays.asList(array));
@@ -83,22 +83,47 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     }
 
     public ISequence<T> concat (ISequence<T> that) {
+        if (RELAXED_NULL) {
+            if (that == null) {
+                return this;
+            }
+        }
         return new ConcatingSequence<T> (this, that);
     }
     
     public ISequence<T> intersect (ISequence<T> that) {
+        if (RELAXED_NULL) {
+            if (that == null) {
+                return new NullSequence<T> ();
+            }
+        }        
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.INTERSECTION);
     }
     
     public ISequence<T> substract (ISequence<T> that) {
+        if (RELAXED_NULL) {
+            if (that == null) {
+                return this;
+            }
+        }
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.SUBSTRACTION);        
     }
     
     public ISequence<T> union (ISequence<T> that) {
+        if (RELAXED_NULL) {
+            if (that == null) {
+                return this;
+            }
+        }
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.UNION);
     }
     
     public ISequence<T> disjunction (ISequence<T> that) {
+        if (RELAXED_NULL) {
+            if (that == null) {
+                return this;
+            }
+        }
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.DISJUNCTION);
     }
 
