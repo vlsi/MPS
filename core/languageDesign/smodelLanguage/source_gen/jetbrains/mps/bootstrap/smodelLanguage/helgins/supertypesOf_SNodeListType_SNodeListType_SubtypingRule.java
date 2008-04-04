@@ -22,7 +22,7 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     List<SNode> supertypes = ListOperations.<SNode>createList();
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
     if (elementConcept != null) {
-      List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(elementConcept);
+      List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(elementConcept, false);
       {
         ICursor<SNode> _zCursor = CursorFactory.createCursor(superConcepts);
         try {

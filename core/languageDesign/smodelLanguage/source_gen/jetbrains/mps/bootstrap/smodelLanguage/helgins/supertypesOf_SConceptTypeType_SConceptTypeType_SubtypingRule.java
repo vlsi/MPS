@@ -23,7 +23,7 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     List<SNode> list = ListOperations.<SNode>createList();
     SNode concept = SLinkOperations.getTarget(type, "conceptDeclaraton", false);
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
-      List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept);
+      List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
       {
         ICursor<SNode> _zCursor2 = CursorFactory.createCursor(superConcepts);
         try {

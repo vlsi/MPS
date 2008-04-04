@@ -11,10 +11,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class RefConcept_Reference extends BaseConcept implements IRefConceptArg {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference";
+  public static String CONCEPT_DECLARATION = "conceptDeclaration";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String CONCEPT_DECLARATION = "conceptDeclaration";
 
   public  RefConcept_Reference(SNode node) {
     super(node);
@@ -28,6 +28,14 @@ public class RefConcept_Reference extends BaseConcept implements IRefConceptArg 
     return RefConcept_Reference.newInstance(sm, false);
   }
 
+
+  public AbstractConceptDeclaration getConceptDeclaration() {
+    return (AbstractConceptDeclaration)this.getReferent(RefConcept_Reference.CONCEPT_DECLARATION);
+  }
+
+  public void setConceptDeclaration(AbstractConceptDeclaration node) {
+    super.setReferent(RefConcept_Reference.CONCEPT_DECLARATION, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(RefConcept_Reference.SHORT_DESCRIPTION);
@@ -51,14 +59,6 @@ public class RefConcept_Reference extends BaseConcept implements IRefConceptArg 
 
   public void setVirtualPackage(String value) {
     this.setProperty(RefConcept_Reference.VIRTUAL_PACKAGE, value);
-  }
-
-  public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(RefConcept_Reference.CONCEPT_DECLARATION);
-  }
-
-  public void setConceptDeclaration(AbstractConceptDeclaration node) {
-    super.setReferent(RefConcept_Reference.CONCEPT_DECLARATION, node);
   }
 
 }
