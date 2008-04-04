@@ -14,6 +14,16 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement", new MapElement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ContainsOperation", new ContainsOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetIndexOfOperation", new GetIndexOfOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.BinaryOperation", new BinaryOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", new ForEachVariableReference_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit", new ListCreatorWithInit_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.PageOperation", new PageOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.RemoveAllElementsOperation", new RemoveAllElementsOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.RemoveElementOperation", new RemoveElementOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SkipOperation", new SkipOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TakeOperation", new TakeOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation", new AddElementOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetElementOperation", new GetElementOperation_DataFlow());
   }
 
 }
