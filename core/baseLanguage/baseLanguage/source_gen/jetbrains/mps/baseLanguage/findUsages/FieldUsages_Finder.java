@@ -7,13 +7,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
-
 import java.util.List;
-
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -53,18 +49,18 @@ public class FieldUsages_Finder extends GeneratedFinder {
     List<SNode> fieldDeclarations = new ArrayList<SNode>();
     ListOperations.addElement(fieldDeclarations, node);
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-      ListOperations.addAllElements(fieldDeclarations, (List<SNode>) this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, monitor));
+      ListOperations.addAllElements(fieldDeclarations, (List<SNode>)this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, monitor));
     }
     // null
     {
       ICursor<SNode> _zCursor5 = CursorFactory.createCursor(fieldDeclarations);
       try {
-        while (_zCursor5.moveToNext()) {
+        while(_zCursor5.moveToNext()) {
           SNode fieldDeclaration = _zCursor5.getCurrent();
           {
             ICursor<SNode> _zCursor6 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", fieldDeclaration, scope, monitor));
             try {
-              while (_zCursor6.moveToNext()) {
+              while(_zCursor6.moveToNext()) {
                 SNode fieldUsage = _zCursor6.getCurrent();
                 ListOperations.addElement(_results, fieldUsage);
               }
@@ -85,7 +81,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
       {
         ICursor<SNode> _zCursor7 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, new NullAdaptiveProgressMonitor()));
         try {
-          while (_zCursor7.moveToNext()) {
+          while(_zCursor7.moveToNext()) {
             SNode fieldNode = _zCursor7.getCurrent();
             ListOperations.addElement(_results, fieldNode);
           }

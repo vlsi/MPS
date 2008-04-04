@@ -7,20 +7,14 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
-
 import java.util.List;
-
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-
 import java.util.Set;
 import java.util.HashSet;
-
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.constraints.BaseMethodDeclaration_Behavior;
 import org.jetbrains.annotations.Nullable;
@@ -53,7 +47,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     {
       ICursor<SNode> _zCursor10 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope, monitor));
       try {
-        while (_zCursor10.moveToNext()) {
+        while(_zCursor10.moveToNext()) {
           SNode implementor = _zCursor10.getCurrent();
           ListOperations.addElement(implementorsAndAncestorsList, implementor);
           ListOperations.addAllElements(implementorsAndAncestorsList, this.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", implementor, scope, monitor));
@@ -67,7 +61,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     {
       ICursor<SNode> _zCursor11 = CursorFactory.createCursor(implementorsAndAncestorsList);
       try {
-        while (_zCursor11.moveToNext()) {
+        while(_zCursor11.moveToNext()) {
           SNode implementorOrAncestor = _zCursor11.getCurrent();
           implementorsAndAncestorsNodes.add(implementorOrAncestor);
         }
@@ -79,12 +73,12 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     {
       ICursor<SNode> _zCursor12 = CursorFactory.createCursor(implementorsAndAncestorsNodes);
       try {
-        while (_zCursor12.moveToNext()) {
+        while(_zCursor12.moveToNext()) {
           SNode classNode = _zCursor12.getCurrent();
           {
             ICursor<SNode> _zCursor13 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "method", true));
             try {
-              while (_zCursor13.moveToNext()) {
+              while(_zCursor13.moveToNext()) {
                 SNode sMethod = _zCursor13.getCurrent();
                 if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, node)) {
                   ListOperations.addElement(_results, sMethod);

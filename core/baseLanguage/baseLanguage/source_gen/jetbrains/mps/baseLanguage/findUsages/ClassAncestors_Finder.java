@@ -7,9 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IScope;
-
 import java.util.List;
-
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
@@ -39,7 +37,7 @@ public class ClassAncestors_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, IAdaptiveProgressMonitor monitor) {
     SNode current = node;
-    while (current != null) {
+    while(current != null) {
       current = SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false);
       if (current != null) {
         ListOperations.addElement(_results, current);

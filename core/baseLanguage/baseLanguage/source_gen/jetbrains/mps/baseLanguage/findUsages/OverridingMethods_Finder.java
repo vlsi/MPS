@@ -7,9 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
-
 import java.util.List;
-
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -52,19 +50,20 @@ public class OverridingMethods_Finder extends GeneratedFinder {
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node, null, false, false), scope, monitor));
       try {
-        while (_zCursor.moveToNext()) {
+        while(_zCursor.moveToNext()) {
           SNode classNode = _zCursor.getCurrent();
           {
             Iterable<SNode> methodsOfSameKind;
             if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
               methodsOfSameKind = SLinkOperations.getTargets(classNode, "method", true);
-            } else {
+            } else
+            {
               methodsOfSameKind = SLinkOperations.getTargets(classNode, "staticMethod", true);
             }
             {
               ICursor<SNode> _zCursor1 = CursorFactory.createCursor(methodsOfSameKind);
               try {
-                while (_zCursor1.moveToNext()) {
+                while(_zCursor1.moveToNext()) {
                   SNode sMethod = _zCursor1.getCurrent();
                   if (SPropertyOperations.getString(sMethod, "name").equals(SPropertyOperations.getString(node, "name")) && SLinkOperations.getCount(sMethod, "parameter") == SLinkOperations.getCount(node, "parameter")) {
                     if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1204901126405(sMethod, node)) {

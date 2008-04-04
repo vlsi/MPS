@@ -7,9 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
-
 import java.util.List;
-
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -39,7 +37,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    SNode queryNode = (SNode) node;
+    SNode queryNode = (SNode)node;
     return SNodeOperations.getAncestor(queryNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null;
   }
 
@@ -49,7 +47,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     {
       ICursor<SNode> _zCursor17 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", node, scope, monitor));
       try {
-        while (_zCursor17.moveToNext()) {
+        while(_zCursor17.moveToNext()) {
           SNode nodeUsage = _zCursor17.getCurrent();
           ListOperations.addElement(_results, nodeUsage);
         }
@@ -61,24 +59,23 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     {
       ICursor<SNode> _zCursor18 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, monitor));
       try {
-        while (_zCursor18.moveToNext()) {
+        while(_zCursor18.moveToNext()) {
           SNode subclassResult = _zCursor18.getCurrent();
           {
             ICursor<SNode> _zCursor19 = CursorFactory.createCursor(SLinkOperations.getTargets(subclassResult, "constructor", true));
             try {
-              while (_zCursor19.moveToNext()) {
+              while(_zCursor19.moveToNext()) {
                 SNode constructorNode = _zCursor19.getCurrent();
                 {
                   ICursor<SNode> _zCursor20 = CursorFactory.createCursor(SequenceOperations.where(SNodeOperations.getDescendants(constructorNode, null, false), new zPredicate(null, null)));
                   try {
-                    while (_zCursor20.moveToNext()) {
+                    while(_zCursor20.moveToNext()) {
                       SNode invocation = _zCursor20.getCurrent();
                       {
                         boolean thisConstructor = true;
-                        SNode invocationNode = (SNode) invocation;
+                        SNode invocationNode = (SNode)invocation;
                         if (SequenceOperations.getSize(SLinkOperations.getTargets(invocationNode, "actualArgument", true)) == SequenceOperations.getSize(SLinkOperations.getTargets(node, "parameter", true))) {
-                          for (int i = 0; i < SequenceOperations.getSize(SLinkOperations.getTargets(invocationNode, "actualArgument", true)); i = i + 1)
-                          {
+                          for(int i = 0 ; i < SequenceOperations.getSize(SLinkOperations.getTargets(invocationNode, "actualArgument", true)) ; i = i + 1) {
                             SNode actualArgument = ListOperations.getElement(SLinkOperations.getTargets(invocationNode, "actualArgument", true), i);
                             SNode formalArgument = ListOperations.getElement(SLinkOperations.getTargets(node, "parameter", true), i);
                             if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
@@ -111,13 +108,12 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
       {
         ICursor<SNode> _zCursor21 = CursorFactory.createCursor(SLinkOperations.getTargets(enumNode, "enumConstant", true));
         try {
-          while (_zCursor21.moveToNext()) {
+          while(_zCursor21.moveToNext()) {
             SNode enumConstant = _zCursor21.getCurrent();
             {
               boolean thisConstructor = true;
               if (SequenceOperations.getSize(SLinkOperations.getTargets(enumConstant, "actualArgument", true)) == SequenceOperations.getSize(SLinkOperations.getTargets(node, "parameter", true))) {
-                for (int i = 0; i < SequenceOperations.getSize(SLinkOperations.getTargets(enumConstant, "actualArgument", true)); i = i + 1)
-                {
+                for(int i = 0 ; i < SequenceOperations.getSize(SLinkOperations.getTargets(enumConstant, "actualArgument", true)) ; i = i + 1) {
                   SNode actualArgument = ListOperations.getElement(SLinkOperations.getTargets(enumConstant, "actualArgument", true), i);
                   SNode formalArgument = ListOperations.getElement(SLinkOperations.getTargets(node, "parameter", true), i);
                   if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {

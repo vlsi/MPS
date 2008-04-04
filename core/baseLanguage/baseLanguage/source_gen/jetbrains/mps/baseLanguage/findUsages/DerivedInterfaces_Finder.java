@@ -6,13 +6,9 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-
 import java.util.List;
-
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -46,9 +42,9 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
     ListOperations.addElement(derived, node);
     // null
     int passed = 0;
-    while (SequenceOperations.getSize(derived) != passed) {
+    while(SequenceOperations.getSize(derived) != passed) {
       SNode passingNode = ListOperations.getElement(derived, passed);
-      for (SNode nodeUsage : this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", passingNode, scope, monitor)) {
+      for(SNode nodeUsage : this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", passingNode, scope, monitor)) {
         if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {
           if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
             ListOperations.addElement(derived, SNodeOperations.getParent(nodeUsage, null, false, false));

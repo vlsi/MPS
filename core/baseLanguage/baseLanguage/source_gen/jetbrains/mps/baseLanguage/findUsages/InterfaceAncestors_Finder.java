@@ -8,9 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IScope;
-
 import java.util.List;
-
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -45,13 +43,13 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
     {
       ICursor<SNode> _zCursor22 = CursorFactory.createCursor(SLinkOperations.getTargets(current, "extendedInterface", true));
       try {
-        while (_zCursor22.moveToNext()) {
+        while(_zCursor22.moveToNext()) {
           SNode ancestor = _zCursor22.getCurrent();
           ListOperations.addElement(_results, ancestor);
           {
             ICursor<SNode> _zCursor23 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestor, scope, monitor));
             try {
-              while (_zCursor23.moveToNext()) {
+              while(_zCursor23.moveToNext()) {
                 SNode ancestorAncestor = _zCursor23.getCurrent();
                 ListOperations.addElement(_results, ancestorAncestor);
               }

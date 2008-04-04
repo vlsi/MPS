@@ -42,7 +42,7 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
     _zClosureContext.aggregation = SPropertyOperations.hasValue(_context.getReferenceNode(), "metaClass", "aggregation", null);
     List<SNode> result = new ArrayList<SNode>();
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", true, false);
-    List<SNode> directSupers = SConceptOperations.getDirectSuperConcepts(enclosingConcept);
+    List<SNode> directSupers = SConceptOperations.getDirectSuperConcepts(enclosingConcept, false);
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(directSupers);
       try {

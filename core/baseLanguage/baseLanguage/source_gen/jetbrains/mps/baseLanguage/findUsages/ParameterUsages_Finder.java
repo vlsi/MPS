@@ -7,9 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
-
 import java.util.List;
-
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
@@ -48,7 +46,8 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     SNode nodeParentMethod;
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) != null) {
       nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
-    } else {
+    } else
+    {
       nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
     }
     // null
@@ -58,14 +57,14 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     {
       ICursor<SNode> _zCursor14 = CursorFactory.createCursor(overridingMethods);
       try {
-        while (_zCursor14.moveToNext()) {
+        while(_zCursor14.moveToNext()) {
           SNode methodNode = _zCursor14.getCurrent();
           {
             SNode parameterNode = ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node));
             {
               ICursor<SNode> _zCursor15 = CursorFactory.createCursor(this.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", parameterNode, scope, monitor));
               try {
-                while (_zCursor15.moveToNext()) {
+                while(_zCursor15.moveToNext()) {
                   SNode parameterUsage = _zCursor15.getCurrent();
                   ListOperations.addElement(_results, parameterUsage);
                 }
@@ -85,7 +84,8 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     SNode nodeParentMethod;
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) != null) {
       nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
-    } else {
+    } else
+    {
       nodeParentMethod = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false);
     }
     // null
@@ -95,7 +95,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     {
       ICursor<SNode> _zCursor16 = CursorFactory.createCursor(overridingMethods);
       try {
-        while (_zCursor16.moveToNext()) {
+        while(_zCursor16.moveToNext()) {
           SNode methodNode = _zCursor16.getCurrent();
           ListOperations.addElement(_results, ListOperations.getElement(SLinkOperations.getTargets(methodNode, "parameter", true), SNodeOperations.getIndexInParent(node)));
         }
