@@ -143,7 +143,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
   public EditorCell createParameterList(EditorContext context, SNode node) {
     if (this.myParameterListHandler_parameterList_ == null) {
-      this.myParameterListHandler_parameterList_ = new ReplaceableAliasAndParms_Comp._RefNodeListHandler4(node, "parameter", context);
+      this.myParameterListHandler_parameterList_ = new ReplaceableAliasAndParms_Comp._RefNodeListHandler3(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
     ReplaceableAliasAndParms_Comp.setupBasic_ParameterList(editorCell, node, context);
@@ -184,9 +184,9 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler4 extends RefNodeListHandler {
+  public static class _RefNodeListHandler3 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -250,8 +250,8 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
     public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ReplaceableAliasAndParms_Comp._RefNodeListHandler4.setupBasic_ConstantCell1(editorCell, node, context);
-      ReplaceableAliasAndParms_Comp._RefNodeListHandler4.setupLabel_ConstantCell1(editorCell, node, context);
+      ReplaceableAliasAndParms_Comp._RefNodeListHandler3.setupBasic_ConstantCell1(editorCell, node, context);
+      ReplaceableAliasAndParms_Comp._RefNodeListHandler3.setupLabel_ConstantCell1(editorCell, node, context);
       editorCell.setDefaultText("");
       editorCell.setDefaultCaretPosition(CaretPosition.FIRST);
       return editorCell;

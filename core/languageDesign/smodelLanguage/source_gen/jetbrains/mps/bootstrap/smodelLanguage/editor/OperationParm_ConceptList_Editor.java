@@ -90,7 +90,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptList(EditorContext context, SNode node) {
     if (this.myConceptListHandler_conceptList_ == null) {
-      this.myConceptListHandler_conceptList_ = new OperationParm_ConceptList_Editor._RefNodeListHandler1(node, "concept", context);
+      this.myConceptListHandler_conceptList_ = new OperationParm_ConceptList_Editor._RefNodeListHandler(node, "concept", context);
     }
     EditorCell_Collection editorCell = this.myConceptListHandler_conceptList_.createCells(context, new CellLayout_Horizontal(), false);
     OperationParm_ConceptList_Editor.setupBasic_ConceptList(editorCell, node, context);
@@ -101,9 +101,9 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _RefNodeListHandler1 extends RefNodeListHandler {
+  public static class _RefNodeListHandler extends RefNodeListHandler {
 
-    public  _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

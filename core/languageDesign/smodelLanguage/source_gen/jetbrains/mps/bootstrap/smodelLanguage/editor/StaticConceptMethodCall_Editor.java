@@ -121,7 +121,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if (this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new StaticConceptMethodCall_Editor._RefNodeListHandler3(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new StaticConceptMethodCall_Editor._RefNodeListHandler2(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     StaticConceptMethodCall_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -294,9 +294,9 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler3 extends RefNodeListHandler {
+  public static class _RefNodeListHandler2 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -357,8 +357,8 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      StaticConceptMethodCall_Editor._RefNodeListHandler3.setupBasic_ConstantCell2(editorCell, node, context);
-      StaticConceptMethodCall_Editor._RefNodeListHandler3.setupLabel_ConstantCell2(editorCell, node, context);
+      StaticConceptMethodCall_Editor._RefNodeListHandler2.setupBasic_ConstantCell2(editorCell, node, context);
+      StaticConceptMethodCall_Editor._RefNodeListHandler2.setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
