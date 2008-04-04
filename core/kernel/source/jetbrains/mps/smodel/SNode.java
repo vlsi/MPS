@@ -1448,17 +1448,6 @@ public final class SNode {
     return SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
   }
 
-  public <BA extends INodeAdapter> List<BA> allChildrenByAdaptor(Class<BA> clazz) {
-    List<BA> result = new ArrayList<BA>();
-    for (SNode child : getSubnodes()) {
-      if (clazz.isInstance(child.getAdapter())) {
-        result.add((BA) child.getAdapter());
-      }
-    }
-    return result;
-  }
-
-
   public SNode findParent(Condition<SNode> condition) {
     SNode parent = getParent();
     while (parent != null) {

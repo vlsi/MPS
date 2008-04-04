@@ -320,7 +320,7 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
         type = getType(initialNode);
         if (type == null ||
           type.getAdapter() instanceof RuntimeTypeVariable ||
-          !type.allChildrenByAdaptor(RuntimeTypeVariable.class).isEmpty()) {
+          !type.getAdapter().getSubnodes(RuntimeTypeVariable.class).isEmpty()) {
           if (node.isRoot()) {
             computeTypes(node, refreshTypes, true, false, new ArrayList<SNode>()); //the last possibility: check the whole root
             type = getType(initialNode);
