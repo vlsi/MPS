@@ -244,9 +244,7 @@
             <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207307439799">
               <link role="classifier" targetNodeId="3.~Iterator" resolveInfo="Iterator" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207307443614">
-                <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
-              </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1207308735959" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207307449632">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207307449633">

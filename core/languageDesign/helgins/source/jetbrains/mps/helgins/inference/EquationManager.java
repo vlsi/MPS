@@ -862,7 +862,12 @@ public class EquationManager {
     typeLessThanThis(var, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         //  T,S <: c => c = lcs(T,S)
-        addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(concreteSubtypes, isWeak, EquationManager.this),
+        Set<IWrapper> expandedSubtypes = new HashSet<IWrapper>();
+        for (IWrapper subtype : concreteSubtypes) {
+          IWrapper expanded = expandWrapper(null, subtype, myTypeChecker.getRuntimeTypesModel());
+          expandedSubtypes.add(expanded);
+        }
+        addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(expandedSubtypes, isWeak, EquationManager.this),
           errorInfo);
       }
     });
