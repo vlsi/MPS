@@ -8,12 +8,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
@@ -30,9 +33,22 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
+  private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207343821830");
+    editorCell.setSelectable(false);
+  }
+
   private static void setupBasic_ConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144102087113");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207343821831");
     editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207343836679");
+  }
+
+  private static void setupBasic_ConceptArgumentCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207343883309");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -40,6 +56,17 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConceptReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(Color.red);
+  }
+
+  private static void setupLabel_ConceptArgumentCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1207343847071(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "concept", false) != null;
   }
 
 
@@ -54,6 +81,20 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "concept="));
+    if (OperationParm_Concept_Editor._QueryFunction_NodeCondition_1207343847071(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRowCell1(context, node));
+    }
+    editorCell.addEditorCell(this.createConceptArgumentCell(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createRowCell1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    OperationParm_Concept_Editor.setupBasic_RowCell1(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "!"));
     editorCell.addEditorCell(this.createConceptReferenceCell(context, node));
     return editorCell;
   }
@@ -66,9 +107,17 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    OperationParm_Concept_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    OperationParm_Concept_Editor.setupLabel_ConstantCell1(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new OperationParm_Concept_Editor._Inline11());
+    provider.setAuxiliaryCellProvider(new OperationParm_Concept_Editor._Inline39());
     EditorCell editorCell = provider.createEditorCell(context);
     OperationParm_Concept_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -95,14 +144,43 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline11 extends AbstractCellProvider {
+  public EditorCell createConceptArgumentCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    OperationParm_Concept_Editor.setupBasic_ConceptArgumentCell(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      OperationParm_Concept_Editor.setupLabel_ConceptArgumentCell((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
 
-    public  _Inline11() {
+  public EditorCell createConceptArgumentCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("conceptArgument");
+    provider.setNoTargetText("<no concept>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createConceptArgumentCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public static class _Inline39 extends AbstractCellProvider {
+
+    public  _Inline39() {
       super();
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144102099303");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207343821833");
       editorCell.setDrawBorder(false);
     }
 
@@ -123,9 +201,9 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      OperationParm_Concept_Editor._Inline11.setupBasic_NameCell(editorCell, node, context);
+      OperationParm_Concept_Editor._Inline39.setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        OperationParm_Concept_Editor._Inline11.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        OperationParm_Concept_Editor._Inline39.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

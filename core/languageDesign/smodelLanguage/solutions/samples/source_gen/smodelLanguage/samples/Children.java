@@ -55,6 +55,8 @@ public class Children {
     Iterable<SNode> children4 = SequenceOperations.where(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false), new zPredicate(Children.this, null));
     SNode abcdef;
     SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(statement)), false);
+    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(statement)), false);
+    SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false);
   }
 
   public void accessToChildren_4(SNode statement) {

@@ -182,7 +182,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Concept_IsExactlyOperation_Editor._Inline39());
+    provider.setAuxiliaryCellProvider(new Concept_IsExactlyOperation_Editor._Inline38());
     EditorCell editorCell = provider.createEditorCell(context);
     Concept_IsExactlyOperation_Editor.setupBasic_ConceptDeclarationReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -209,9 +209,9 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline39 extends AbstractCellProvider {
+  public static class _Inline38 extends AbstractCellProvider {
 
-    public  _Inline39() {
+    public  _Inline38() {
       super();
     }
 
@@ -237,9 +237,9 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      Concept_IsExactlyOperation_Editor._Inline39.setupBasic_NameCell(editorCell, node, context);
+      Concept_IsExactlyOperation_Editor._Inline38.setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        Concept_IsExactlyOperation_Editor._Inline39.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        Concept_IsExactlyOperation_Editor._Inline38.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

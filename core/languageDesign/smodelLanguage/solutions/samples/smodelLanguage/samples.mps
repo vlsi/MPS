@@ -1689,6 +1689,39 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207346967625">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207346967626">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207346967627">
+              <link role="variableDeclaration" targetNodeId="1171306220390" resolveInfo="statement" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1207346967628">
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1207346967629">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1207346972553">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207346987493">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207346975602">
+                      <link role="variableDeclaration" targetNodeId="1171306220390" resolveInfo="statement" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1207346988964" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207346906489">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207346908147">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207346906490">
+              <link role="variableDeclaration" targetNodeId="1171306220390" resolveInfo="statement" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1207346908978">
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1207346908979">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207346914651">
+                  <link role="conceptDeclaration" targetNodeId="1.1068580123137" resolveInfo="BooleanConstant" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1171306220390">
         <property name="name" value="statement" />

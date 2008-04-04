@@ -87,7 +87,7 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationLinkReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new LinkAttributeAccessQualifier_Editor._Inline34());
+    provider.setAuxiliaryCellProvider(new LinkAttributeAccessQualifier_Editor._Inline33());
     EditorCell editorCell = provider.createEditorCell(context);
     LinkAttributeAccessQualifier_Editor.setupBasic_AnnotationLinkReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -143,9 +143,9 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline34 extends AbstractCellProvider {
+  public static class _Inline33 extends AbstractCellProvider {
 
-    public  _Inline34() {
+    public  _Inline33() {
       super();
     }
 
@@ -169,9 +169,9 @@ public class LinkAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      LinkAttributeAccessQualifier_Editor._Inline34.setupBasic_RoleCell(editorCell, node, context);
+      LinkAttributeAccessQualifier_Editor._Inline33.setupBasic_RoleCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        LinkAttributeAccessQualifier_Editor._Inline34.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
+        LinkAttributeAccessQualifier_Editor._Inline33.setupLabel_RoleCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

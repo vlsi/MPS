@@ -130,7 +130,7 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Model_CreateNewRootNodeOperation_Editor._Inline18());
+    provider.setAuxiliaryCellProvider(new Model_CreateNewRootNodeOperation_Editor._Inline17());
     EditorCell editorCell = provider.createEditorCell(context);
     Model_CreateNewRootNodeOperation_Editor.setupBasic_ConceptReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -186,9 +186,9 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline18 extends AbstractCellProvider {
+  public static class _Inline17 extends AbstractCellProvider {
 
-    public  _Inline18() {
+    public  _Inline17() {
       super();
     }
 
@@ -214,9 +214,9 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      Model_CreateNewRootNodeOperation_Editor._Inline18.setupBasic_NameCell(editorCell, node, context);
+      Model_CreateNewRootNodeOperation_Editor._Inline17.setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        Model_CreateNewRootNodeOperation_Editor._Inline18.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        Model_CreateNewRootNodeOperation_Editor._Inline17.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

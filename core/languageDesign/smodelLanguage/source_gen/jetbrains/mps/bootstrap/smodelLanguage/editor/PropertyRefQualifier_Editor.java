@@ -30,7 +30,7 @@ public class PropertyRefQualifier_Editor extends DefaultNodeEditor {
 
   public EditorCell createPropertyReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new PropertyRefQualifier_Editor._Inline33());
+    provider.setAuxiliaryCellProvider(new PropertyRefQualifier_Editor._Inline32());
     EditorCell editorCell = provider.createEditorCell(context);
     PropertyRefQualifier_Editor.setupBasic_PropertyReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -57,9 +57,9 @@ public class PropertyRefQualifier_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline33 extends AbstractCellProvider {
+  public static class _Inline32 extends AbstractCellProvider {
 
-    public  _Inline33() {
+    public  _Inline32() {
       super();
     }
 
@@ -83,9 +83,9 @@ public class PropertyRefQualifier_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      PropertyRefQualifier_Editor._Inline33.setupBasic_NameCell(editorCell, node, context);
+      PropertyRefQualifier_Editor._Inline32.setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        PropertyRefQualifier_Editor._Inline33.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        PropertyRefQualifier_Editor._Inline32.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

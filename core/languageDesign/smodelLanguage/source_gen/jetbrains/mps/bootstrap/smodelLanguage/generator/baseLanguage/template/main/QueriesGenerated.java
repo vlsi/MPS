@@ -189,7 +189,15 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1207342110781(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SequenceOperations.isEmpty(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)));
+    SNode opParm = SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false));
+    // Is deprecated role 'concept' still in use?
+    return SLinkOperations.getTarget(opParm, "concept", false) != null;
+  }
+
+  public static boolean baseMappingRule_Condition_1207344880832(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    SNode opParm = SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false));
+    // Is new parameter used?
+    return opParm != null && SLinkOperations.getTarget(opParm, "concept", false) == null;
   }
 
   public static Object propertyMacro_GetPropertyValue_1168981884180(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1159,6 +1167,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1207342919715(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptExpression", false)), "conceptExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1207344929972(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)), "conceptArgument", true);
   }
 
   public static List sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

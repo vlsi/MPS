@@ -11,6 +11,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 public class OperationParm_Concept extends AbstractOperationParameter {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept";
   public static String CONCEPT = "concept";
+  public static String CONCEPT_ARGUMENT = "conceptArgument";
 
   public  OperationParm_Concept(SNode node) {
     super(node);
@@ -31,6 +32,14 @@ public class OperationParm_Concept extends AbstractOperationParameter {
 
   public void setConcept(AbstractConceptDeclaration node) {
     super.setReferent(OperationParm_Concept.CONCEPT, node);
+  }
+
+  public IRefConceptArg getConceptArgument() {
+    return (IRefConceptArg)this.getChild(OperationParm_Concept.CONCEPT_ARGUMENT);
+  }
+
+  public void setConceptArgument(IRefConceptArg node) {
+    super.setChild(OperationParm_Concept.CONCEPT_ARGUMENT, node);
   }
 
 }

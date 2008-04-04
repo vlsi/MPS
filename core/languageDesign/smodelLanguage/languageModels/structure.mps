@@ -686,10 +686,20 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1206998343969">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1207343779298">
+      <property name="value" value="reference 'concept' is deprecated. now child 'conceptArgument'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1206652974901" resolveInfo="deprecated_next_after_504" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1144102028966">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="concept" />
       <link role="target" targetNodeId="3.1169125787135" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1207343664468">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="conceptArgument" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1206659704055" resolveInfo="IRefConceptArg" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1144146199828">
