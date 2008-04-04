@@ -47,7 +47,7 @@ public class GenerationPartitioner {
       GeneratorDescriptor descriptor = (GeneratorDescriptor) generator.getModuleDescriptor();
       List<MappingPriorityRule> rules;
       if (descriptorWorkingCopy != null &&
-              descriptorWorkingCopy.getGeneratorUID().equals(descriptor.getGeneratorUID())) {
+        descriptorWorkingCopy.getGeneratorUID().equals(descriptor.getGeneratorUID())) {
         rules = descriptorWorkingCopy.getPriorityRules();
       } else {
         rules = descriptor.getPriorityRules();
@@ -138,6 +138,14 @@ public class GenerationPartitioner {
       mappingSets.add(mappingSet);
     }
     Collections.reverse(mappingSets);
+    // sort mappings within each set: generation must be deterministic
+    for (List<MappingConfiguration> mappingSet : mappingSets) {
+      Collections.sort(mappingSet, new Comparator<MappingConfiguration>() {
+        public int compare(MappingConfiguration o1, MappingConfiguration o2) {
+          return o1.getId().compareTo(o2.getId());
+        }
+      });
+    }
     return mappingSets;
   }
 
@@ -168,20 +176,7 @@ public class GenerationPartitioner {
     if (rule.getKind() == MappingPriorityRuleKind.strictly_together) {
       Set<MappingConfiguration> coherentMappings = new HashSet<MappingConfiguration>(lesserPriMappings);
       coherentMappings.addAll(greaterPriMappings);
-//      // unite with other 'strictly together' set?
-//      CoherentSetData toUnite = null;
-//      for (CoherentSetData pair : myCoherentMappings) {
-//        if (!CollectionUtil.intersection(coherentMappings, pair.myMappings).isEmpty()) {
-//          toUnite = pair;
-//          break;
-//        }
-//      }
-//      if (toUnite != null) {
-//        toUnite.myMappings.addAll(coherentMappings);
-//        toUnite.myCauseRules.add(rule);
-//      } else {
-        myCoherentMappings.add(new CoherentSetData(coherentMappings, rule));
-//      }
+      myCoherentMappings.add(new CoherentSetData(coherentMappings, rule));
 
     } else {
       // map: lesser-pri mapping -> {greater-pri mapping, .... , greater-pri mapping }
