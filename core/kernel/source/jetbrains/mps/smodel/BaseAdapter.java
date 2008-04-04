@@ -124,10 +124,6 @@ public abstract class BaseAdapter implements INodeAdapter {
     return BaseAdapter.fromNode(getNode().getContainingRoot());
   }
 
-  public <BA extends INodeAdapter> List<BA> allChildren(Class<BA> cls, Condition<BA> cond) {
-    return CollectionUtil.filter(getSubnodes(cls), cond);
-  }
-
   @NotNull
   public <E extends INodeAdapter> List<E> getSubnodes(final Class<E> cls) {
     // this strategy is very effective when model doesn't contain too many nodes of required type

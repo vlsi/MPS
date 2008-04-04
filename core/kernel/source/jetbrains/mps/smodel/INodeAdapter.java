@@ -49,8 +49,6 @@ public interface INodeAdapter {
 
   INodeAdapter getContainingRoot();
 
-  <BA extends INodeAdapter> List<BA> allChildren(Class<BA> cls, Condition<BA> cond);
-
   @NotNull
   <E extends INodeAdapter> List<E> getSubnodes(final Class<E> cls);
 
