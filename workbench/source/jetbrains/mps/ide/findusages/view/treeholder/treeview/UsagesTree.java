@@ -212,10 +212,18 @@ public abstract class UsagesTree extends MPSTree {
     if (nodeCategories.contains(data.getCreatorID())) {
       UsagesTreeNode node = new UsagesTreeNode("");
       node.setNodeIdentifier(data.getPlainText());
-      String invalid = data.isInvalid() ? "<font color=red>[Invalid]</font> " : "";
-      node.setText(invalid + data.getText(new TextOptions(myAdditionalInfoNeeded, myCountersNeeded)));
+
       node.setIcon(data.getIcon());
       node.setUserObject(root);
+
+      String invalid = data.isInvalid() ? "<font color=red>[Invalid]</font> " : "";
+      String caption = data.getText(new TextOptions(myAdditionalInfoNeeded, myCountersNeeded));
+      if (data.isExcluded()) {
+        node.setText(invalid + "<s>" + caption + "</s>");
+      } else {
+        node.setText(invalid + caption);
+      }
+
       for (UsagesTreeNode child : children) {
         node.add(child);
       }
@@ -224,17 +232,6 @@ public abstract class UsagesTree extends MPSTree {
     }
     return children;
   }
-
-  /*
-  private void showExclusion(UsagesTreeNode root,boolean rootExcluded) {
-    PathItem pathItem = root.getUserObject();
-    boolean excluded = (pathItem != null && pathItem.isExcluded()) || rootExcluded;
-    if (excluded) root.setText("<u>"+root.getText()+"</u>");
-    for (MPSTreeNode child:root){
-      showExclusion((UsagesTreeNode)child,excluded);
-    }
-  }
-  */
 
   private void setTreeIcons(UsagesTreeNode root) {
     root.setIcon(root.getUserObject().getData().getIcon());
@@ -258,14 +255,12 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   private void changeCurrentNodeExclusion() {
-    /*UsagesTreeNode treeNode = getCurrentNode();
+    UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
-    //PathItem pathItem = treeNode.getUserObject();
-    if (pathItem==null) return;
-    pathItem.setIsExcluded(!pathItem.isExcluded());
+    BaseNodeData nodeData = treeNode.getUserObject().getData();
+    nodeData.setExcluded(!nodeData.isExcluded());
     //todo: make it faster, do not rebuild all the tree
     rebuildLater();
-    */
   }
 
   private void openCurrentNodeLinkIfLeaf(boolean inProject) {
