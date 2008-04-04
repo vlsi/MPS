@@ -1043,5 +1043,14 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1207315152741">
+    <property name="name" value="ABC" />
+    <property name="userFriendlyName" value="ABC" />
+    <link role="applicableConcept" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1207315162254">
+      <property name="keycode" value="VK_F12" />
+      <property name="modifiers" value="ctrl+alt+shift" />
+    </node>
+  </node>
 </model>
 
