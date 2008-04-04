@@ -84,7 +84,7 @@ public class MatchingUtil {
           matchModifier.performAction(child1, child2);
           continue;
         }
-        if (!matchNodes(child1, child2)) return false;
+        if (!matchNodes(child1, child2, matchModifier, matchAttributes)) return false;
       }
       while (childrenIterator.hasNext()) {
         SNode child1 = childrenIterator.next();
@@ -93,7 +93,7 @@ public class MatchingUtil {
           matchModifier.performAction(child1, child2);
           continue;
         }
-        if (!matchNodes(child1, child2)) return false;
+        if (!matchNodes(child1, child2, matchModifier, matchAttributes)) return false;
       }
     }
 
