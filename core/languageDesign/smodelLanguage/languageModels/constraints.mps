@@ -1510,6 +1510,54 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1207352678202">
+      <property name="name" value="getParameter" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207352688752">
+        <link role="concept" targetNodeId="1.1144100743722" resolveInfo="AbstractOperationParameter" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207352678204">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207352743926">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207352835453">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207352752228">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207352745085">
+                <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1207352743927" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1207352750821">
+                  <link role="link" targetNodeId="1.1144104376918" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation" id="1207352754558">
+                <node role="whereClosure" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereBlock" id="1207352754559">
+                  <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1207352754560">
+                    <property name="name" value="it" />
+                  </node>
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207352754561">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207352769437">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207352770674">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1207352769438">
+                          <link role="closureParameter" targetNodeId="1207352754560" resolveInfo="it" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1207352819605">
+                          <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" id="1207352824715">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207352826295">
+                              <link role="variableDeclaration" targetNodeId="1207352705346" resolveInfo="parameterConcept" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1207352837096" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1207352705346">
+        <property name="name" value="parameterConcept" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1207352705347" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1187949800331">
       <property name="name" value="getVariableExpectedName" />
       <property name="isVirtual" value="true" />

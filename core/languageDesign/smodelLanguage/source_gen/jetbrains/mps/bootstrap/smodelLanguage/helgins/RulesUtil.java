@@ -19,6 +19,7 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.patterns.IMatchingPattern;
 
 public class RulesUtil {
 
@@ -226,9 +227,44 @@ public class RulesUtil {
     SNode type = new QuotationClass_41().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate1(null, null)));
     if (parm != null) {
-      SLinkOperations.setTarget(type, "elementConcept", SLinkOperations.getTarget(parm, "concept", false), false);
+      if (SLinkOperations.getTarget(parm, "concept", false) != null) {
+        SLinkOperations.setTarget(type, "elementConcept", SLinkOperations.getTarget(parm, "concept", false), false);
+      }
     }
     return type;
+  }
+
+  @InferenceMethod()
+  public static void equate_conceptFromOpParm(SNode op, final SNode TypeToEquate) {
+    SNode opParm = SNodeOperation_Behavior.call_getParameter_1207352678202(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"));
+    if (opParm == null) {
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352395113");
+    } else
+    if (SLinkOperations.getTarget(opParm, "concept", false) != null) {
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(opParm, "concept", false), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352428450");
+    } else
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(SLinkOperations.getTarget(opParm, "conceptArgument", true), "conceptDeclaration", false), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207352483830");
+    } else
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression")) {
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207351413582", true), SLinkOperations.getTarget(opParm, "conceptArgument", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207351398406");
+      {
+        final SNode poundExpressionType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207351580597", false);
+        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(poundExpressionType, new Runnable() {
+
+          public void run() {
+            {
+              IMatchingPattern pattern_1207351747614 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType");
+              SNode coercedNode_1207351739547 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(poundExpressionType), pattern_1207351747614);
+              if (coercedNode_1207351739547 != null) {
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SLinkOperations.getTarget(coercedNode_1207351739547, "conceptDeclaraton", false), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207351882024");
+              }
+            }
+          }
+
+        }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207351576171");
+      }
+    }
   }
 
 }

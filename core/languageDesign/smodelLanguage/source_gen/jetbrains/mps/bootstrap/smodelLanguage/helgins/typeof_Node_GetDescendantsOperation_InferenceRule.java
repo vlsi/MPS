@@ -15,7 +15,12 @@ public class typeof_Node_GetDescendantsOperation_InferenceRule implements Infere
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
     RulesUtil.checkOpParameters_generic(op);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712006154", true), RulesUtil.get_SNodeListType_fromOpParameter(op), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712006152");
+    final SNode ConceptFromOpParm_typevar_1207353217271 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    RulesUtil.equate_conceptFromOpParm(op, TypeChecker.getInstance().getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207353217271));
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207353493598", true), new QuotationClass_96().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207353217271)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207353493596");
+    /*
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712006154", true), RulesUtil.get_SNodeListType_fromOpParameter(op), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203712006152");
+    */
   }
 
   public String getApplicableConceptFQName() {
