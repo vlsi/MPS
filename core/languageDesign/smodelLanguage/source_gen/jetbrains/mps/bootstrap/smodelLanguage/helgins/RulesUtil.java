@@ -211,16 +211,7 @@ public class RulesUtil {
   public static void equate_inputNodeType(SNode op, SNode TypeToEquate) {
     final SNode Concept_typevar_1206099042246 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246));
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_82().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408");
-  }
-
-  public static SNode get_SNodeType_fromOpParameter(SNode op) {
-    SNode type = new QuotationClass_40().createNode();
-    SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate(null, null)));
-    if (parm != null) {
-      SLinkOperations.setTarget(type, "concept", SLinkOperations.getTarget(parm, "concept", false), false);
-    }
-    return type;
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_81().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408");
   }
 
   @InferenceMethod()

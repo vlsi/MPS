@@ -15,7 +15,9 @@ public class typeOf_Node_GetAncestorOperation_InferenceRule implements Inference
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
     RulesUtil.checkOpParameters_generic(op);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711989827", true), RulesUtil.get_SNodeType_fromOpParameter(op), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711989825");
+    final SNode ConceptFromOpParm_typevar_1207354629107 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    RulesUtil.equate_conceptFromOpParm(op, TypeChecker.getInstance().getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207354629107));
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207354639036", true), new QuotationClass_96().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207354629107)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207354639034");
   }
 
   public String getApplicableConceptFQName() {
