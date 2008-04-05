@@ -1067,10 +1067,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
       <link role="target" targetNodeId="1144101972840" resolveInfo="OperationParm_Concept" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1176462129753">
-      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
-      <link role="target" targetNodeId="1176461918946" resolveInfo="OperationParm_ConceptExpression" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1173118322375">
       <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
       <link role="target" targetNodeId="1154546920561" resolveInfo="OperationParm_ConceptList" />
@@ -1146,10 +1142,6 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1171407110248">
       <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
       <link role="target" targetNodeId="1144101972840" resolveInfo="OperationParm_Concept" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1176466046257">
-      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
-      <link role="target" targetNodeId="1176461918946" resolveInfo="OperationParm_ConceptExpression" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1171407110249">
       <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
@@ -1418,10 +1410,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
       <link role="target" targetNodeId="1144101972840" resolveInfo="OperationParm_Concept" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1176466027411">
-      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
-      <link role="target" targetNodeId="1176461918946" resolveInfo="OperationParm_ConceptExpression" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1173122760283">
       <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
       <link role="target" targetNodeId="1154546920561" resolveInfo="OperationParm_ConceptList" />
@@ -1498,6 +1486,10 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1206998350455">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1207356007560">
+      <property name="value" value="this concept is deprecated because now #&lt;expr&gt; is supported in OperationParm_Concept" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1206652974901" resolveInfo="deprecated_next_after_504" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177025403857">
