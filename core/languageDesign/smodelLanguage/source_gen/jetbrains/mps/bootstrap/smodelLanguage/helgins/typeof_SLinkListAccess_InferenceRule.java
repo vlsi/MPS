@@ -25,7 +25,7 @@ public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runti
       return;
     }
     // assign type
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103737722", true), new QuotationClass_86().createNode(SLinkOperations.getTarget(linkDecl, "target", false), "" + SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", null)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103745585");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103737722", true), new QuotationClass_85().createNode(SLinkOperations.getTarget(linkDecl, "target", false), "" + SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", null)), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103745585");
     // ---
     RulesUtil.checkAppliedCorrectly_generic(op);
     final SNode Concept_typevar_1186062842230 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);

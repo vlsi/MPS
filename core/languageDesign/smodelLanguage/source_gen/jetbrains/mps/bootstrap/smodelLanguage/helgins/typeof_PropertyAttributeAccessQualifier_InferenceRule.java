@@ -25,7 +25,7 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
       return;
     }
     // assign type
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103035534", true), new QuotationClass_84().createNode(SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1") + "", SLinkOperations.getTarget(annotationLink, "target", false)), nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103041053");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103035534", true), new QuotationClass_83().createNode(SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1") + "", SLinkOperations.getTarget(annotationLink, "target", false)), nodeToCheck, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206103041053");
     // ---
     if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "property", "node"))) {
       TypeChecker.getInstance().reportTypeError(nodeToCheck, "property annotation link is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204832870610");
@@ -33,7 +33,7 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule implements In
     final SNode propQ = SLinkOperations.getTarget(nodeToCheck, "propertyQualifier", true);
     if (SNodeOperations.isInstanceOf(propQ, "jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression")) {
       // # property name
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(propQ, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998062", false), new QuotationClass_72().createNode(), SLinkOperations.getTarget(propQ, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998060", false);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(propQ, "expression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998062", false), new QuotationClass_71().createNode(), SLinkOperations.getTarget(propQ, "expression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1204835998060", false);
     } else
     if (SNodeOperations.isInstanceOf(propQ, "jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier")) {
       // check that property is in scope

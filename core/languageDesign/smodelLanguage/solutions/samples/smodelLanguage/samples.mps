@@ -903,7 +903,9 @@
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation" id="1173123745826">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1173123753592" />
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1173123757188">
-                  <link role="concept" targetNodeId="1.1068580123157" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207354258362">
+                    <link role="conceptDeclaration" targetNodeId="1.1068580123157" resolveInfo="Statement" />
+                  </node>
                 </node>
               </node>
             </node>
