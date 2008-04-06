@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.logging.refactoring" compileInMPS="false">
+<language namespace="jetbrains.mps.logging.refactoring"
+          pluginClass="jetbrains.mps.refactoring.plugin.LoggingRefactoringLanguagePlugin" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.logging.refactoring" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.logging.refactoring" />
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.logging.refactoring"/>
+    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.logging.refactoring"/>
   </models>
   <accessoryModels>
-    <model modelUID="jetbrains.mps.logging.refactoring.samples" />
+    <model modelUID="jetbrains.mps.logging.refactoring.samples"/>
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.logging.refactoring#1189697379687" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.logging.refactoring#1189697379687"
+               targetLanguage="jetbrains.mps.baseLanguage">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.logging.refactoring.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template"
+                   namespacePrefix="jetbrains.mps.logging.refactoring.generator.baseLanguage.template"/>
       </models>
-      <external-templates />
+      <external-templates/>
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="false">jetbrains.mps.baseLanguageInternal</dependency>
@@ -20,19 +23,19 @@
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
-      <mapping-priorities />
+      <mapping-priorities/>
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}\classes"/>
   </classPath>
   <runtimeClassPath>
-    <entry path="${language_descriptor}\classes" />
+    <entry path="${language_descriptor}\classes"/>
   </runtimeClassPath>
-  <sourcePath />
+  <sourcePath/>
   <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
+    <requiredBundles/>
+    <exportedPackage/>
   </osgiOptions>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
