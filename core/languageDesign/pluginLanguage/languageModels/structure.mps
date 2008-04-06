@@ -1297,6 +1297,12 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
       <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1207145447023"/>
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
+          id="1207485840891">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
+            resolveInfo="applicableConceptFunctionParameter"/>
+      <link role="target" targetNodeId="1204478074808" resolveInfo="ConceptFunctionParameter_MPSProject"/>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1207145475354">
     <property name="package" value="Actions.Groups.GroupContents"/>
