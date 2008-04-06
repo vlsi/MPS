@@ -556,7 +556,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1206183272513">
-          <property name="text" value="current node (type is checked)"/>
+          <property name="text" value="current node (type is checked if present)"/>
           <property name="selectable" value="false"/>
         </node>
       </node>
@@ -578,7 +578,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
               id="1206183272517">
           <property name="selectable" value="false"/>
-          <property name="text" value="selected nodes (type is not checked)"/>
+          <property name="text" value="selected nodes (type is checked if present)"/>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"

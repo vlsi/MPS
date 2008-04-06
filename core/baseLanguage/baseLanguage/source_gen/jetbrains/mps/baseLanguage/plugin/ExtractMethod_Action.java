@@ -4,12 +4,16 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.CurrentProjectMPSAction;
 import jetbrains.mps.logging.Logger;
+
 import java.util.List;
+
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
+
 import java.util.ArrayList;
+
 import jetbrains.mps.baseLanguage.refactoring.extractMethod.ExtractMethodKind;
 import jetbrains.mps.baseLanguage.refactoring.extractMethod.ExtractMethodDialog;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -21,7 +25,7 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
   private List<SNode> nodes;
   private boolean isAlwaysVisible = false;
 
-  public  ExtractMethod_Action(MPSProject project) {
+  public ExtractMethod_Action(MPSProject project) {
     super(project, "Extract Method");
   }
 
@@ -30,7 +34,7 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
     return "";
   }
 
-  public void doUpdate(@NotNull() ActionContext context) {
+  public void doUpdate(@NotNull()ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -40,8 +44,7 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
       }
       if (!(this.isExpression(this.nodes)) && !(this.isStatements(this.nodes))) {
         this.setVisible(false);
-      } else
-      {
+      } else {
         this.setVisible(true);
       }
     } catch (Throwable t) {
@@ -53,7 +56,17 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
 
   private boolean fillFieldsIfNecessary(ActionContext context) {
     try {
-      this.nodes = new ArrayList<SNode>(context.getNodes());
+      {
+        List<SNode> nodes = context.getNodes();
+        boolean error = false;
+        if (nodes != null) {
+        }
+        if (error) {
+          this.nodes = null;
+        } else {
+          this.nodes = new ArrayList<SNode>(nodes);
+        }
+      }
       if (this.nodes == null) {
         return false;
       }
@@ -63,7 +76,7 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull() ActionContext context) {
+  public void doExecute(@NotNull()ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
@@ -72,8 +85,7 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
         ExtractMethodKind kind;
         if (this.isStatements(this.nodes)) {
           kind = ExtractMethodKind.FROM_STATEMENTS;
-        } else
-        {
+        } else {
           kind = ExtractMethodKind.FROM_EXPRESSION;
         }
         ExtractMethodDialog dialog = new ExtractMethodDialog(kind, context);
@@ -85,7 +97,7 @@ public class ExtractMethod_Action extends CurrentProjectMPSAction {
   }
 
   /* package */boolean isStatements(List<SNode> statements) {
-    for(SNode node : statements) {
+    for (SNode node : statements) {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
         return false;
       }
