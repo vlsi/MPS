@@ -823,22 +823,47 @@
               type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1207148512397">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207148512398">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207148520821">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207148526639">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207148522542">
-                  <node role="operand"
-                        type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node"
-                        id="1207148520822"/>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
-                        id="1207148525513">
-                    <link role="link" targetNodeId="1.1207145245948"/>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1207490668848">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                      id="1207490682528">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207490677187">
+                    <node role="operand"
+                          type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node"
+                          id="1207490672675"/>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
+                          id="1207490681029">
+                      <link role="link" targetNodeId="1.1207145245948"/>
+                    </node>
+                  </node>
+                  <node role="operation"
+                        type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation"
+                        id="1207490707178">
+                    <node role="conceptArgument"
+                          type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference"
+                          id="1207490713797">
+                      <link role="conceptDeclaration" targetNodeId="1.1207489456631" resolveInfo="DoUpdateGroupBlock"/>
+                    </node>
                   </node>
                 </node>
-                <node role="operation"
-                      type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation"
-                      id="1207148529703">
-                  <node role="conceptArgument"
-                        type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207148534188">
-                    <link role="conceptDeclaration" targetNodeId="1.1207145360364" resolveInfo="BuildGroupBlock"/>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                      id="1207148526639">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207148522542">
+                    <node role="operand"
+                          type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node"
+                          id="1207148520822"/>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
+                          id="1207148525513">
+                      <link role="link" targetNodeId="1.1207145245948"/>
+                    </node>
+                  </node>
+                  <node role="operation"
+                        type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation"
+                        id="1207148529703">
+                    <node role="conceptArgument"
+                          type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference"
+                          id="1207148534188">
+                      <link role="conceptDeclaration" targetNodeId="1.1207145360364" resolveInfo="BuildGroupBlock"/>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2060,6 +2085,40 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1207321301624">
         <link role="relationDeclaration" targetNodeId="1.1207321253960"/>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1207490891357">
+    <property name="package" value="Actions.Groups"/>
+    <link role="conceptDeclaration" targetNodeId="1.1207490810216" resolveInfo="GroupType"/>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+          id="1207490893216">
+      <property name="vertical" value="false"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1207490893217">
+        <property name="text" value="group"/>
+        <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1207490893218">
+        <property name="text" value="&lt;"/>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell"
+            id="1207490893219">
+        <link role="relationDeclaration" targetNodeId="1.1207490810218"/>
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent"
+              id="1207490893220">
+          <link role="conceptDeclaration" targetNodeId="1.1203087890642" resolveInfo="ActionGroupDeclaration"/>
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+                id="1207490893221">
+            <property name="readOnly" value="true"/>
+            <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name"/>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+            id="1207490893222">
+        <property name="text" value="&gt;"/>
       </node>
     </node>
   </node>

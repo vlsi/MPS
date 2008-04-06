@@ -12,60 +12,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.*;
 
-
-/**
- * Igor Alshannikov
- * Date: Apr 24, 2007
- */
-public class ScriptsActionGroup extends ActionGroup {
-  private static Logger LOG = Logger.getLogger(ScriptsActionGroup.class);
-
-  public ScriptsActionGroup() {
-    super("Scripts");
-  }
-
-  public void doUpdate(ActionContext context) {
-    clear();
-    setVisible(true);
-    if (context.get(MPSProject.class) == null) {
-      setEnabled(false);
-      return;
-    }
-
-    setEnabled(true);
-    List<Language> languages = new ArrayList(GlobalScope.getInstance().getVisibleLanguages());
-    Collections.sort(
-      languages,
-      new Comparator<Language>() {
-        public int compare(Language o1, Language o2) {
-          return o1.getNamespace().compareTo(o2.getNamespace());
-        }
-      });
-
-    List<MigrationScript> scripts = getMigrationScripts(languages);
-
-    // -- by category --
-    ActionGroup byCategoryGroup = new ActionGroup("By Category");
-    add(byCategoryGroup);
-    populateByCategoryGroup(scripts, byCategoryGroup);
-
-    // -- by 'migrate from' build --
-    ActionGroup byBuildGroup = new ActionGroup("By Build");
-    add(byBuildGroup);
-    populateByBuildGroup(scripts, byBuildGroup);
-
-    // -- by language --
-    ActionGroup byLanguageGroup = new ActionGroup("By Language");
-    add(byLanguageGroup);
-    for (Language language : languages) {
-      populateByLanguageGroup(language, byLanguageGroup);
-    }
-
-    // -- dialog
-    add(new RunMigrationScriptsAction(scripts, "More..."));
-  }
-
-  private static List<MigrationScript> getMigrationScripts(List<Language> languages) {
+public class ScriptsActionGroupHelper {
+  public static List<MigrationScript> getMigrationScripts(List<Language> languages) {
     List<MigrationScript> migrationScripts = new ArrayList<MigrationScript>();
     for (Language language : languages) {
       SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
@@ -75,7 +23,7 @@ public class ScriptsActionGroup extends ActionGroup {
     return migrationScripts;
   }
 
-  private static void populateByCategoryGroup(List<MigrationScript> migrationScripts, ActionGroup ownerGroup) {
+  public static void populateByCategoryGroup(List<MigrationScript> migrationScripts, ActionGroup ownerGroup) {
     Map<String, List<MigrationScript>> byCategory = new HashMap<String, List<MigrationScript>>();
     for (MigrationScript migrationScript : migrationScripts) {
       String cat = migrationScript.getCategory();
@@ -106,7 +54,7 @@ public class ScriptsActionGroup extends ActionGroup {
     }
   }
 
-  private static void populateByBuildGroup(List<MigrationScript> migrationScripts, ActionGroup ownerGroup) {
+  public static void populateByBuildGroup(List<MigrationScript> migrationScripts, ActionGroup ownerGroup) {
     Map<String, List<MigrationScript>> byBuild = new HashMap<String, List<MigrationScript>>();
     for (MigrationScript migrationScript : migrationScripts) {
       String build = migrationScript.getMigrationFromBuild();
@@ -130,7 +78,7 @@ public class ScriptsActionGroup extends ActionGroup {
     }
   }
 
-  private static void populateByLanguageGroup(Language language, ActionGroup ownerGroup) {
+  public static void populateByLanguageGroup(Language language, ActionGroup ownerGroup) {
     SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
     if (scriptsModel == null) return;
     List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
@@ -151,7 +99,7 @@ public class ScriptsActionGroup extends ActionGroup {
     ownerGroup.add(languageScriptsGroup);
   }
 
-  private static String makeScriptActionName(String category, String title, String build) {
+  public static String makeScriptActionName(String category, String title, String build) {
     StringBuilder sb = new StringBuilder();
     if (category != null) {
       sb.append(category).append(": ");

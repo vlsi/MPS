@@ -331,6 +331,10 @@
           id="1204996366600">
       <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember"/>
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1207490795355">
+      <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier"/>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1204989879672">
       <property name="value" value="Group"/>
@@ -1401,6 +1405,52 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207321231738">
         <link role="classifier" targetNodeId="17.~IFileGenerator" resolveInfo="IFileGenerator"/>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1207489456631">
+    <property name="package" value="Actions.Groups.GroupContents"/>
+    <property name="name" value="DoUpdateGroupBlock"/>
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1207489456632">
+      <link role="intfc" targetNodeId="1207145102141" resolveInfo="GroupContents"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1207489456633">
+      <property name="value" value="doUpdate block"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1207489456634">
+      <property name="value" value="doUpdate"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1201882037552" resolveInfo="conceptFunctionName"/>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink"
+          id="1207489456635">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1207489456636"/>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink"
+          id="1207489456637">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
+            resolveInfo="applicableConceptFunctionParameter"/>
+      <link role="target" targetNodeId="1203082903663" resolveInfo="ConceptFunctionParameter_ActionContext"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1207490810216">
+    <property name="package" value="Actions.Groups"/>
+    <property name="name" value="GroupType"/>
+    <link role="extends" targetNodeId="14.1205752813637" resolveInfo="BaseClassifierType"/>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1207490810217">
+      <property name="value" value="actiongroup&lt;&gt;"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1207490810218">
+      <property name="role" value="actionGroup"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration"/>
     </node>
   </node>
 </model>
