@@ -17,7 +17,7 @@
   <language namespace="jetbrains.mps.baseLanguage.classifiers"/>
   <languageAspect modelUID="jetbrains.mps.buildlanguage.structure" version="16"/>
   <languageAspect modelUID="jetbrains.mps.buildlanguage.constraints" version="6"/>
-  <maxImportIndex value="14"/>
+  <maxImportIndex value="15"/>
   <import index="1" modelUID="jetbrains.mps.buildlanguage.structure" version="16"/>
   <import index="2" modelUID="jetbrains.mps.mpsLayoutLanguage@java_stub" version="-1"/>
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1"/>
@@ -32,8 +32,9 @@
   <import index="12" modelUID="jetbrains.mps.ide.messages@java_stub" version="-1"/>
   <import index="13" modelUID="jetbrains.mps.buildlanguage.buildgeneration@java_stub" version="-1"/>
   <import index="14" modelUID="jetbrains.mps.util@java_stub" version="-1"/>
+  <import index="15" modelUID="jetbrains.mps.buildlanguage.tasksfromjar@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207326375796">
-    <property name="name" value="ProjectPaneModel"/>
+    <property name="name" value="ProjectPaneModelAddition"/>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207326387469">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1207328583153">
@@ -532,6 +533,33 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207488318996">
+    <property name="name" value="ProjectPaneLanguageAddition"/>
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
+          id="1207488351966">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207488472707">
+        <link role="javaClass" targetNodeId="15.~ImportAntStuffAction" resolveInfo="ImportAntStuffAction"/>
+      </node>
+    </node>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
+          id="1207488356232">
+      <link role="modifiedGroup" targetNodeId="3.1204991224874" resolveInfo="LanguageActions"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207488490270">
+    <property name="name" value="ProjectPaneProjectAddition"/>
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
+          id="1207488505397">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207488518226">
+        <link role="javaClass" targetNodeId="13.~GenerateProjectBuildFileAction"
+              resolveInfo="GenerateProjectBuildFileAction"/>
+      </node>
+    </node>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement"
+          id="1207488520102">
+      <link role="modifiedGroup" targetNodeId="3.1204991220529" resolveInfo="ProjectActions"/>
     </node>
   </node>
 </model>
