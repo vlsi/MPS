@@ -194,12 +194,11 @@ public class EquationManager {
     // no equation needed
     if (NodeWrapper.fromWrapper(subtypeRepresentator) == NodeWrapper.fromWrapper(supertypeRepresentator)) return;
 
-    RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
+   // RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
     RuntimeTypeVariable varSupertype = supertypeRepresentator == null ? null : supertypeRepresentator.getVariable();
-    Set<SNodePointer> subtypeVars = myNonConcreteVars.get(subtypeRepresentator);
-    Set<SNodePointer> supertypeVars = myNonConcreteVars.get(subtypeRepresentator);
-    boolean subtypeHasNonConcreteVars = varSubtype != null || subtypeVars != null && !subtypeVars.isEmpty();
-    boolean supertypeHasNonConcreteVars = varSupertype != null || supertypeVars != null && !supertypeVars.isEmpty();
+    isConcrete(subtypeRepresentator);
+    boolean subtypeHasNonConcreteVars = !isConcrete(subtypeRepresentator);
+    boolean supertypeHasNonConcreteVars = !isConcrete(supertypeRepresentator);
 
     //if check only
     if (checkOnly) {
@@ -370,6 +369,17 @@ public class EquationManager {
     myWhenConcreteEntities.put(representator, entityToPut);
   }
 
+  private List<SNode> getChildVariables(SNode node) {
+    if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+      return CollectionUtil.asList(node);
+    }
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode child : node.getChildren(false)) {
+      result.addAll(getChildVariables(child));
+    }
+    return result;
+  }
+
   /*package*/ boolean isConcrete(IWrapper wrapper) {
     if (wrapper == null) return false;
     if (!(wrapper instanceof NodeWrapper)) return false;
@@ -377,8 +387,8 @@ public class EquationManager {
       return false;
     }
     if (!myNonConcreteVars.containsKey(wrapper)) {
-      for (RuntimeTypeVariable var : wrapper.getNode().getAdapter().getDescendants(RuntimeTypeVariable.class)) {
-        addNonConcreteVariable(wrapper, new SNodePointer(var.getNode()));
+      for (SNode var : getChildVariables(wrapper.getNode())) {
+        addNonConcreteVariable(wrapper, new SNodePointer(var));
       }
     }
 
@@ -394,8 +404,8 @@ public class EquationManager {
           getRepresentatorWrapper(NodeWrapper.createWrapperFromNode(var.getNode(), this));
         if (varRepresentatorWrapper.isConcrete()) {
           variables.remove(var);
-          for (RuntimeTypeVariable varChild : varRepresentatorWrapper.getNode().getAdapter().getDescendants(RuntimeTypeVariable.class)) {
-            variables.add(new SNodePointer(varChild.getNode()));
+          for (SNode varChild : getChildVariables(varRepresentatorWrapper.getNode())) {
+            variables.add(new SNodePointer(varChild));
           }
         }
       }

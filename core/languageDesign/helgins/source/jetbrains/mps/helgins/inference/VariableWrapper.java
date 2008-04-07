@@ -46,7 +46,7 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
   }
 
   public void representatorSet(IWrapper wrapper, IWrapper representator, EquationManager equationManager) {
-    /*  if ("o".equals(getNode().getProperty("name"))) {
+  /*  if ("n".equals(getNode().getProperty("name"))) {
       System.err.println("BINGO!");
     }*/
 

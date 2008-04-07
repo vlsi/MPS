@@ -879,7 +879,7 @@ public final class SNode {
     }
 
     _children().remove(index);
-    wasChild.myParent = null;
+    wasChild.setParent(null);
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
@@ -920,7 +920,7 @@ public final class SNode {
     myChildren.add(index, child);
 
     child.myRoleInParent = InternUtil.intern(role);
-    child.myParent = this;
+    child.setParent(this);
 
     if (isRegistered()) {
       child.registerInModel(getModel());
@@ -943,6 +943,10 @@ public final class SNode {
     if (ModelChange.needFireEvents(getModel(), this)) {
       getModel().fireChildAddedEvent(this, role, child, index);
     }
+  }
+
+  private void setParent(SNode parent) {
+    myParent = parent;
   }
 
   /*package*/ void unRegisterFromModel() {
