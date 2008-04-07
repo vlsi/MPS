@@ -309,6 +309,7 @@ public class ModuleMaker {
     long sourcesTimeStamp = 0;
 
     for (String s : m.getSourcePaths()) {
+      if (s == null) continue;
       sourcesTimeStamp = Math.max(sourcesTimeStamp, FileUtil.getNewestFileTime(new File(s)));
     }
 
