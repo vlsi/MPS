@@ -324,6 +324,9 @@
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207141396977">
       <link role="classifier" targetNodeId="1206443792481" resolveInfo="ABC" />
     </node>
+    <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="1207556435379">
+      <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207556435380" />
+    </node>
   </node>
 </model>
 
