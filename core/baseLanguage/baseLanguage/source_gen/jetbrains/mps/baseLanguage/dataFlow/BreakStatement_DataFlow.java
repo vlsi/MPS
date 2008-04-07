@@ -16,6 +16,9 @@ public class BreakStatement_DataFlow extends DataFlowBuilder {
     if ((BreakStatement_Behavior.call_getLoop_1206464967689(_context.getNode()) != null)) {
       _context.getBuilder().emitJump(_context.getBuilder().after(BreakStatement_Behavior.call_getLoop_1206464967689(_context.getNode())));
     } else
+    if ((BreakStatement_Behavior.call_getSwitch_1207557694904(_context.getNode()) != null)) {
+      _context.getBuilder().emitJump(_context.getBuilder().after(BreakStatement_Behavior.call_getSwitch_1207557694904(_context.getNode())));
+    } else
     {
       _context.getBuilder().emitNop();
     }
