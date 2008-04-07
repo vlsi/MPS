@@ -72,6 +72,7 @@ public class FindersManager implements IExternalizableComponent {
 
   public void reload() {
     myFinders.clear();
+    myNodesByFinder.clear();
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
       SModelDescriptor findUsagesModelDescriptor = l.getFindUsagesModelDescriptor();
       if (findUsagesModelDescriptor != null) {
