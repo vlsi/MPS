@@ -1935,8 +1935,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
       public void run() {
         updateMPSActionsWithKeyStrokes(createActionContext());
+        EditorContext editorContext = getEditorContext();
+        if (editorContext == null) {
+          return; //i.e. editor is disposed
+        }
 
-        if (peekKeyboardHandler().processKeyPressed(getEditorContext(), keyEvent)) {
+        if (peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
           keyEvent.consume();
         }
       }
