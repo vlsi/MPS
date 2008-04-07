@@ -915,8 +915,11 @@ public class EquationManager {
       return;
     }
     Set<IWrapper> concreteSubtypes = new HashSet<IWrapper>();
-    for (IWrapper subtypeNode : subtypes.keySet()) {
-      if (subtypeNode == null) continue;
+    for (IWrapper subtypeNode : new HashSet<IWrapper>(subtypes.keySet())) {
+      if (subtypeNode == null) {
+        subtypes.remove(subtypeNode);
+        continue;
+      }
       if (subtypeNode.isConcrete()) {
         concreteSubtypes.add(subtypeNode);
       }
@@ -977,8 +980,11 @@ public class EquationManager {
       return;
     }
     Set<IWrapper> concreteSupertypes = new HashSet<IWrapper>();
-    for (IWrapper supertypeNode : supertypes.keySet()) {
-      if (supertypeNode == null) continue;
+    for (IWrapper supertypeNode : new HashSet<IWrapper>(supertypes.keySet())) {
+      if (supertypeNode == null) {
+        supertypes.remove(supertypeNode);
+        continue;
+      }
       if (supertypeNode.isConcrete()) {
         concreteSupertypes.add(supertypeNode);
       }
