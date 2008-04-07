@@ -18,6 +18,7 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
     modelDescriptor.getSModel().clearAdapters();
     modelDescriptor.getSModel().clearUserObjects();
+    modelDescriptor.getSModel().refreshRefactoringHistory();
     return modelDescriptor.getSModel();
   }
 

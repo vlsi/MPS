@@ -19,6 +19,7 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jdom.Element;
 
 import java.util.*;
 
@@ -1086,6 +1087,12 @@ public class SModel implements Iterable<SNode> {
 
   public RefactoringHistory getRefactoringHistory() {
     return myRefactoringHistory;
+  }
+
+  public void refreshRefactoringHistory() {
+    Element e = myRefactoringHistory.toElement();
+    myRefactoringHistory = new RefactoringHistory();
+    myRefactoringHistory.fromElement(e);
   }
 
   /*package*/
