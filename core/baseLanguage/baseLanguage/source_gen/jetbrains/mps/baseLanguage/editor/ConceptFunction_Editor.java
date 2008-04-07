@@ -7,18 +7,32 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
 
 public class ConceptFunction_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider myConceptFunction_Component;
+  /* package */AbstractCellProvider myCellProvider1;
 
   private static void setupBasic_ConceptFunction_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975582231");
   }
 
+  private static void setupBasic_CellModel_Custom(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1207577922324");
+  }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConceptFunction_ComponentCell(context, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext context, SNode node) {
+    return this.createCellModel_Custom(context, node);
   }
 
   public EditorCell createConceptFunction_ComponentCell(EditorContext context, SNode node) {
@@ -28,6 +42,41 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     EditorCell editorCell = this.myConceptFunction_Component.createEditorCell(context);
     ConceptFunction_Editor.setupBasic_ConceptFunction_ComponentCell(editorCell, node, context);
     return editorCell;
+  }
+
+  public EditorCell createCellModel_Custom(EditorContext context, SNode node) {
+    if (this.myCellProvider1 == null) {
+      this.myCellProvider1 = this._cellProviderFactory_1207577922324(node, context);
+    }
+    EditorCell editorCell = this.myCellProvider1.createEditorCell(context);
+    ConceptFunction_Editor.setupBasic_CellModel_Custom(editorCell, node, context);
+    return editorCell;
+  }
+
+  public AbstractCellProvider _cellProviderFactory_1207577922324(final SNode node, final EditorContext editorContext) {
+    return new AbstractCellProvider() {
+
+      public EditorCell createEditorCell(EditorContext editorContext) {
+        EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
+        collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Concept function help:"));
+        if (SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "short_description") != null) {
+          collection.addEditorCell(new EditorCell_Constant(editorContext, node, SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "short_description")));
+        }
+        collection.addEditorCell(new EditorCell_Constant(editorContext, node, ""));
+        collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Parameter help:"));
+        for(SNode cfp : ConceptFunction_Behavior.call_getParameters_1197312191473(node)) {
+          String alias = SConceptPropertyOperations.getString(cfp, "alias");
+          String description = SConceptPropertyOperations.getString(cfp, "short_description");
+          if (description == null) {
+            description = "<no help. use short_description concept function property to create one>";
+          }
+          EditorCell_Constant message = new EditorCell_Constant(editorContext, node, alias + " : " + description);
+          collection.addEditorCell(message);
+        }
+        return collection;
+      }
+
+    };
   }
 
 }
