@@ -39,6 +39,18 @@ public class PatternVariableReference_patternVarDecl_ReferentConstraint implemen
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition")) {
       ListOperations.addAllElements(result, SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "applicableNode", true), "pattern", true), "jetbrains.mps.patterns.structure.PatternVariableDeclaration", false));
     }
+    if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule")) {
+      SNode supertypeNode = SLinkOperations.getTarget(rule, "supertypeNode", true);
+      if (SNodeOperations.isInstanceOf(supertypeNode, "jetbrains.mps.bootstrap.helgins.structure.PatternCondition")) {
+        ListOperations.addAllElements(result, SNodeOperations.getDescendants(SLinkOperations.getTarget(supertypeNode, "pattern", true), "jetbrains.mps.patterns.structure.PatternVariableDeclaration", false));
+      }
+    }
+    if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
+      SNode anotherNode = SLinkOperations.getTarget(rule, "anotherNode", true);
+      if (SNodeOperations.isInstanceOf(anotherNode, "jetbrains.mps.bootstrap.helgins.structure.PatternCondition")) {
+        ListOperations.addAllElements(result, SNodeOperations.getDescendants(SLinkOperations.getTarget(anotherNode, "pattern", true), "jetbrains.mps.patterns.structure.PatternVariableDeclaration", false));
+      }
+    }
     SNode coerceStatement = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
     while(coerceStatement != null) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coerceStatement, "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition")) {
