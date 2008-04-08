@@ -5716,7 +5716,7 @@
         <property name="text" value=":" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1200911381903">
-        <property name="noTargetText" value="&lt;no input context&gt;" />
+        <property name="noTargetText" value="&lt;no input concept&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1200911342686" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1200911381904">
           <link role="conceptDeclaration" targetNodeId="6.1169125787135" resolveInfo="AbstractConceptDeclaration" />
