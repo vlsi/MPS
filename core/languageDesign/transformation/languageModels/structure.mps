@@ -511,7 +511,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1200923511980">
       <property name="role" value="label" />
-      <link role="target" targetNodeId="1200923014784" resolveInfo="ConditionalRootLabelDeclaration" />
+      <link role="target" targetNodeId="1200922856752" resolveInfo="BaseLabelDeclaration" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201894456441">
       <property name="value" value="create root" />
@@ -1483,7 +1483,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1200923917743">
       <property name="role" value="label" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1200923014784" resolveInfo="ConditionalRootLabelDeclaration" />
+      <link role="target" targetNodeId="1200922856752" resolveInfo="BaseLabelDeclaration" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202776937179">
