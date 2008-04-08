@@ -3148,6 +3148,7 @@
                 <link role="link" targetNodeId="13.1071599976176" />
               </node>
             </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_FindInstances" id="1207680774864" />
           </node>
         </node>
       </node>
@@ -3178,6 +3179,23 @@
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation" id="1207678649891">
               <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207678653470">
+                <link role="conceptDeclaration" targetNodeId="13.1071489288298" resolveInfo="LinkDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207681801836">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207681808899">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207681803275">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207681801837">
+                <link role="variableDeclaration" targetNodeId="1207678593446" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207681807430">
+                <link role="link" targetNodeId="6.1081773367580" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation" id="1207681811761">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207681818043">
                 <link role="conceptDeclaration" targetNodeId="13.1071489288298" resolveInfo="LinkDeclaration" />
               </node>
             </node>
