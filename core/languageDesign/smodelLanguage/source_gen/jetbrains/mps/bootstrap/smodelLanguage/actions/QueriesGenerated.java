@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
@@ -30,7 +31,6 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.constraints.StaticConceptMethodCall_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
@@ -164,6 +164,11 @@ public class QueriesGenerated {
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
           result.myLinkAccessT = linkAccessT;
+          if ((linkAccessT != null) && SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
+            if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), true) != null) {
+              result.myLinkToConcept = true;
+            }
+          }
           // is concept ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false) != null) {
             result.myToConcept = true;
@@ -453,6 +458,11 @@ public class QueriesGenerated {
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
           SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
           result.myLinkAccessT = linkAccessT;
+          if ((linkAccessT != null) && SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
+            if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), true) != null) {
+              result.myLinkToConcept = true;
+            }
+          }
           // is concept ?
           if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false) != null) {
             result.myToConcept = true;
@@ -507,6 +517,10 @@ public class QueriesGenerated {
           SNode linkAccessT = appTypesInfo.myLinkAccessT;
           if (linkAccessT != null) {
             if (SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
+              // some ops are only applicable to 'link to concept'
+              if (SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_concept") && !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_node"))) {
+                return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link") && appTypesInfo.myLinkToConcept);
+              }
               return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_link"));
             }
             return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicable_to_linkList"));
