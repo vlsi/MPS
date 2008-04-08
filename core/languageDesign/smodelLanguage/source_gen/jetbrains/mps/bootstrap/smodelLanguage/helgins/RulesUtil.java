@@ -59,7 +59,7 @@ public class RulesUtil {
               if (isGood) {
                 // some of ops applicable to 'link' require left-expr to be a concept
                 if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept") && !(SConceptPropertyOperations.getBoolean(op, "applicable_to_node"))) {
-                  isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_93().createNode());
+                  isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_91().createNode());
                 }
               }
             }
@@ -215,7 +215,7 @@ public class RulesUtil {
   public static void equate_inputNodeType(SNode op, SNode TypeToEquate) {
     final SNode Concept_typevar_1206099042246 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246));
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_77().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, new QuotationClass_75().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099071408");
   }
 
   @InferenceMethod()

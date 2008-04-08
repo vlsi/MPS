@@ -18,10 +18,10 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule implements Inference
 
   public void applyRule(final SNode node) {
     if (SLinkOperations.getTarget(node, "scope", true) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(node, "scope", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683977998", true), new QuotationClass_95().createNode(), SLinkOperations.getTarget(node, "scope", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683977996", false);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(node, "scope", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683977998", true), new QuotationClass_93().createNode(), SLinkOperations.getTarget(node, "scope", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683977996", false);
     }
     if (SLinkOperations.getTarget(node, "smodel", true) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(node, "smodel", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683989240", true), new QuotationClass_96().createNode(), SLinkOperations.getTarget(node, "smodel", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683989238", false);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(node, "smodel", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683989240", true), new QuotationClass_94().createNode(), SLinkOperations.getTarget(node, "smodel", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683989238", false);
     }
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(node);
     {
@@ -33,7 +33,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule implements Inference
             IMatchingPattern pattern_1207685633868 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType");
             SNode coercedNode_1207685633867 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), pattern_1207685633868);
             if (coercedNode_1207685633867 != null) {
-              TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207685633873", true), new QuotationClass_97().createNode(SLinkOperations.getTarget(coercedNode_1207685633867, "conceptDeclaraton", false)), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207685633871");
+              TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207685633873", true), new QuotationClass_95().createNode(SLinkOperations.getTarget(coercedNode_1207685633867, "conceptDeclaraton", false)), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207685633871");
             }
           }
         }
