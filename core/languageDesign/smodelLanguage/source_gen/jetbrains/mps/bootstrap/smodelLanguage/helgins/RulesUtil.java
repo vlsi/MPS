@@ -35,7 +35,6 @@ public class RulesUtil {
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
 
         public void run() {
-          String applicableErrorString = "operation is not applicable to expression";
           boolean isGood = false;
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_37().createNode(), false, false)) {
@@ -52,11 +51,17 @@ public class RulesUtil {
               isGood = true;
             }
           }
-          // =========== new
+          // ===========
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_link")) {
             SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT"), false);
             if (linkAccessT != null) {
               isGood = SPropertyOperations.getBoolean(linkAccessT, "singularCradinality");
+              if (isGood) {
+                // some of ops applicable to 'link' require left-expr to be a concept
+                if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept") && !(SConceptPropertyOperations.getBoolean(op, "applicable_to_node"))) {
+                  isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_97().createNode());
+                }
+              }
             }
           }
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_linkList")) {
@@ -89,7 +94,7 @@ public class RulesUtil {
             }
           }
           if (!(isGood)) {
-            TypeChecker.getInstance().reportTypeError(op, applicableErrorString, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186067417054");
+            TypeChecker.getInstance().reportTypeError(op, "operation is not applicable to " + TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186067417054");
           }
         }
 
@@ -128,7 +133,6 @@ public class RulesUtil {
     // expect access to an aggregation link with singular cardinality
     // ------------------- new (duplicates checkAppliedCorrectly_generic)
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
-    final boolean[] ok = new boolean[1];
     {
       final SNode LeftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206099156468", false);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
@@ -187,7 +191,7 @@ public class RulesUtil {
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
 
         public void run() {
-          SNode conceptDeclaration = null;
+          SNode conceptDeclaration;
           if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
             conceptDeclaration = SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "targetConcept", false);
           } else

@@ -1618,6 +1618,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1180028244127">
       <link role="conceptPropertyDeclaration" targetNodeId="1172326539502" resolveInfo="applicable_to_concept" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1207677998983">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicable_to_link" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1180028372571">
       <link role="conceptLinkDeclaration" targetNodeId="1179351420610" resolveInfo="returnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1180028374713" />
