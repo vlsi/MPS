@@ -40,7 +40,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1206442659665">
-    <property name="name" value="BuilderBlock" />
+    <property name="name" value="zBuilderBlock" />
     <property name="package" value="BuilderBlock" />
     <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1206442803478">

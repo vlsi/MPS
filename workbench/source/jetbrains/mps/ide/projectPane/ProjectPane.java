@@ -92,7 +92,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     });
 
     setLayout(new BorderLayout());
-    new TreeWithSNodesSpeedSearch(myTree);
 
     myToolbar.setFloatable(false);
     add(myToolbar, BorderLayout.NORTH);

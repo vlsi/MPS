@@ -36,6 +36,9 @@ public abstract class MPSTree extends JTree {
   private boolean myAutoOpen = false;
 
   protected MPSTree() {
+
+    new MPSTreeSpeedSearch(this);
+
     largeModel = true;
 
     TreeToolTipHandler.install(this);

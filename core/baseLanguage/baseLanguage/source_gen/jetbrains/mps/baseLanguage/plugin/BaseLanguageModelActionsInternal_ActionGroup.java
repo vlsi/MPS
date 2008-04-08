@@ -15,7 +15,7 @@ public class BaseLanguageModelActionsInternal_ActionGroup extends BaseActionGrou
   public static Logger LOG = Logger.getLogger(BaseLanguageModelActionsInternal_ActionGroup.class);
   public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal";
 
-  public BaseLanguageModelActionsInternal_ActionGroup(MPSProject project) {
+  public  BaseLanguageModelActionsInternal_ActionGroup(MPSProject project) {
     super("", BaseLanguageModelActionsInternal_ActionGroup.ID);
     this.setInternal(false);
     try {

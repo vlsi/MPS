@@ -10,17 +10,14 @@ import javax.swing.tree.DefaultMutableTreeNode;
 /**
  * @author Kostik
  */
-public class TreeWithSNodesSpeedSearch extends TreeSpeedSearch {
-  public TreeWithSNodesSpeedSearch(JTree tree) {
+public class MPSTreeSpeedSearch extends TreeSpeedSearch {
+  public MPSTreeSpeedSearch(JTree tree) {
     super(tree);
   }
 
   protected String getElementText(Object element) {
     TreePath path = (TreePath) element;
-    DefaultMutableTreeNode last = (DefaultMutableTreeNode) path.getLastPathComponent();
-    if (last.getUserObject() instanceof SNode) {
-      return last.getUserObject().toString();
-    }
-    return last.toString();
+    MPSTreeNode last = (MPSTreeNode) path.getLastPathComponent();
+    return last.getText();
   }
 }
