@@ -380,11 +380,13 @@ public class SNodeOperations {
       if (anotherNodeParent != null) {
         anotherNodeParent.removeChild(anotherNode);
       }
-      String role = node.getRole_();
-      assert role != null;
-      nodeParent.insertChild(node, role, anotherNode);
+//      String role = node.getRole_();
+//      assert role != null;
+//      nodeParent.insertChild(node, role, anotherNode);
+      nodeParent.replaceChild(node, anotherNode);
+    } else {
+      nodeParent.removeChild(node);
     }
-    nodeParent.removeChild(node);
   }
 
   public static void deleteNode(SNode node) {

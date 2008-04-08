@@ -243,11 +243,15 @@ public final class SNode {
 
   public void replaceChild(@NotNull SNode oldChild,
                            @NotNull SNode newChild) {
-    assert _children().contains(oldChild);
-    String oldChildRole = oldChild.getRole_();
-    assert oldChildRole != null;
-    insertChild(oldChild, oldChildRole, newChild);
-    removeChild(oldChild);
+//    assert _children().contains(oldChild);
+    int index = _children().indexOf(oldChild);
+    assert index >= 0;
+    String role = oldChild.getRole_();
+    assert role != null;
+//    insertChild(oldChild, role, newChild);
+//    removeChild(oldChild);
+    removeChildAt(index);
+    insertChildAt(index, role, newChild);
   }
 
   public void replaceChild(@NotNull SNode oldChild,
@@ -1262,13 +1266,15 @@ public final class SNode {
   public void setId(SNodeId id) {
     if (id.equals(myId)) return;
 
-    if (isRegistered()) {
-      LOG.error("can't set id to registered node " + getDebugText());
+//    if (isRegistered()) {
+//      LOG.error("can't set id to registered node " + getDebugText());
+//    }
+    LOG.assertLog(!isRegistered(), "can't set id to registered node " + getDebugText());
+    if (!isRegistered()) {
+      SNodeId wasId = myId;
+      myId = id;
+      UnregisteredNodes.instance().nodeIdChanged(this, wasId);
     }
-
-    SNodeId wasId = myId;
-    myId = id;
-    UnregisteredNodes.instance().nodeIdChanged(this, wasId);
   }
 
   public String getPresentation() {
@@ -1318,7 +1324,7 @@ public final class SNode {
   }
 
   private void collectDescendants(@Nullable Condition<SNode> condition,
-                               @NotNull List<SNode> list) {
+                                  @NotNull List<SNode> list) {
     // depth-first traversal
     for (SNode child : _children()) {
       if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
