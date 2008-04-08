@@ -25,4 +25,9 @@ public class ModelDifferenceDialog extends BaseDialog {
   protected JComponent getMainComponent() {
     return myDifferenceView;
   }
+
+  @Button(name = "Close", position = 0, defaultButton = true)
+  public void onClose() {
+    dispose();
+  }
 }
