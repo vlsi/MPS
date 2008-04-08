@@ -1625,6 +1625,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1152728280011">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1207665874935">
+      <link role="intfc" targetNodeId="1207665819089" resolveInfo="Closureoid" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1153179527848">
     <property name="name" value="ClosureParameter" />
@@ -2680,6 +2683,9 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1207665819089">
+    <property name="name" value="Closureoid" />
   </node>
 </model>
 

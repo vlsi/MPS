@@ -695,6 +695,9 @@
       <property name="value" value="WHEN CONCRETE" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1207666175590">
+      <link role="intfc" targetNodeId="2.1207665819089" resolveInfo="Closureoid" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1188473524530">
     <property name="name" value="MeetType" />

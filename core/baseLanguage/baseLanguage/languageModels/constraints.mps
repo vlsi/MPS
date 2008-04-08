@@ -9521,15 +9521,17 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207138978270">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207138978271">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207138978272">
-            <property name="name" value="closure" />
+            <property name="name" value="closureoid" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207138978273">
-              <link role="concept" targetNodeId="1.1152728232947" resolveInfo="Closure" />
+              <link role="concept" targetNodeId="1.1207665819089" resolveInfo="Closureoid" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207138978274">
               <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1207138978275" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1207138978276">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1207138978277">
-                  <link role="concept" targetNodeId="1.1152728232947" resolveInfo="Closure" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207665921174">
+                    <link role="conceptDeclaration" targetNodeId="1.1207665819089" resolveInfo="Closureoid" />
+                  </node>
                 </node>
               </node>
             </node>

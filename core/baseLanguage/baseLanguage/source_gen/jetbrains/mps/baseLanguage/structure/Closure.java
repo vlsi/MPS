@@ -7,8 +7,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Closure extends ConceptFunction {
+public class Closure extends ConceptFunction implements Closureoid {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Closure";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  Closure(SNode node) {
     super(node);
@@ -20,6 +23,31 @@ public class Closure extends ConceptFunction {
 
   public static Closure newInstance(SModel sm) {
     return Closure.newInstance(sm, false);
+  }
+
+
+  public String getShortDescription() {
+    return this.getProperty(Closure.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(Closure.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(Closure.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(Closure.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(Closure.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(Closure.VIRTUAL_PACKAGE, value);
   }
 
 }
