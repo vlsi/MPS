@@ -267,5 +267,15 @@
       <property name="name" value="S" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1207668425582">
+    <property name="name" value="CC1" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1207668437943">
+      <property name="name" value="bar" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1207668437944" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207668437945" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207668437946" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207668425583" />
+  </node>
 </model>
 
