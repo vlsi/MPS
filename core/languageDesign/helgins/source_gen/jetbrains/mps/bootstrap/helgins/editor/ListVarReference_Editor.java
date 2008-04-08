@@ -30,7 +30,7 @@ public class ListVarReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createListVarDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ListVarReference_Editor._Inline7());
+    provider.setAuxiliaryCellProvider(new ListVarReference_Editor._Inline6());
     EditorCell editorCell = provider.createEditorCell(context);
     ListVarReference_Editor.setupBasic_ListVarDeclarationReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
@@ -57,9 +57,9 @@ public class ListVarReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline7 extends AbstractCellProvider {
+  public static class _Inline6 extends AbstractCellProvider {
 
-    public  _Inline7() {
+    public  _Inline6() {
       super();
     }
 
@@ -83,9 +83,9 @@ public class ListVarReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ListVarReference_Editor._Inline7.setupBasic_NameCell(editorCell, node, context);
+      ListVarReference_Editor._Inline6.setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        ListVarReference_Editor._Inline7.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ListVarReference_Editor._Inline6.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

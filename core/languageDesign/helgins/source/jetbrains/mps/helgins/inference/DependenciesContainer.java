@@ -21,74 +21,76 @@ import java.util.HashSet;
  */
 public class DependenciesContainer {
 
-    Map<AbstractConceptDeclaration, Set<IDependency_Runtime>> myDependencies = new HashMap<AbstractConceptDeclaration, Set<IDependency_Runtime>>();
+  Map<AbstractConceptDeclaration, Set<IDependency_Runtime>> myDependencies = new HashMap<AbstractConceptDeclaration, Set<IDependency_Runtime>>();
 
-    public void addDependencies(Set<IDependency_Runtime> dependencies) {
-      for (IDependency_Runtime dependency : dependencies) {
-        AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(dependency.getTargetConceptFQName(), GlobalScope.getInstance());
-        Set<IDependency_Runtime> existingRules = myDependencies.get(concept);
-        if (existingRules == null) {
-          existingRules = new HashSet<IDependency_Runtime>();
-          myDependencies.put(concept,
-                  existingRules);
-        }
-        existingRules.add(dependency);
+  public void addDependencies(Set<IDependency_Runtime> dependencies) {
+    for (IDependency_Runtime dependency : dependencies) {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(dependency.getTargetConceptFQName(), GlobalScope.getInstance());
+      Set<IDependency_Runtime> existingRules = myDependencies.get(concept);
+      if (existingRules == null) {
+        existingRules = new HashSet<IDependency_Runtime>();
+        myDependencies.put(concept,
+          existingRules);
       }
+      existingRules.add(dependency);
     }
+  }
 
-    public Set<SNode> getDependencies(SNode node) {
-      AbstractConceptDeclaration conceptDeclaration = node.getConceptDeclarationAdapter();
-      Set<IDependency_Runtime> dependencies = get(conceptDeclaration);
-      Set<SNode> result = new HashSet<SNode>();
-      for (IDependency_Runtime dependency_runtime : dependencies) {
-        SNode sourceNode = dependency_runtime.getSourceNode(node);
+  public Set<SNode> getDependencies(SNode node) {
+    AbstractConceptDeclaration conceptDeclaration = node.getConceptDeclarationAdapter();
+    Set<IDependency_Runtime> dependencies = get(conceptDeclaration);
+    Set<SNode> result = new HashSet<SNode>();
+    for (IDependency_Runtime dependency_runtime : dependencies) {
+      Set<SNode> sourceNodes = dependency_runtime.getSourceNodes(node);
+      for (SNode sourceNode : sourceNodes) {
         if (sourceNode == null) continue;
         if (SModelUtil_new.isAssignableConcept(sourceNode.getConceptFqName(), dependency_runtime.getSourceConceptFQName())) {
           result.add(sourceNode);
         }
       }
-      return result;
     }
+    return result;
+  }
 
-    protected Set<IDependency_Runtime> get(AbstractConceptDeclaration key) {
-      if (key instanceof ConceptDeclaration) {
-        ConceptDeclaration conceptDeclaration = (ConceptDeclaration) key;
-        while (conceptDeclaration != null) {
-          Set<IDependency_Runtime> rules = myDependencies.get(conceptDeclaration);
-          if (rules != null) {
-            if (conceptDeclaration != key) {
-              myDependencies.put(key, rules);
-            }
-            return rules;
-          }
-          conceptDeclaration = conceptDeclaration.getExtends();
-        }
-      }
-      HashSet<IDependency_Runtime> hashSet = new HashSet<IDependency_Runtime>();
-      myDependencies.put(key, hashSet);
-      return hashSet;
-    }
-
-    public void makeConsistent() {
-      for (AbstractConceptDeclaration conceptDeclaration : myDependencies.keySet()) {
-        if (conceptDeclaration == null) {
-          continue;
-        }
+  protected Set<IDependency_Runtime> get(AbstractConceptDeclaration key) {
+    if (key instanceof ConceptDeclaration) {
+      ConceptDeclaration conceptDeclaration = (ConceptDeclaration) key;
+      while (conceptDeclaration != null) {
         Set<IDependency_Runtime> rules = myDependencies.get(conceptDeclaration);
-        if (rules == null) continue;
-        if(!(conceptDeclaration instanceof ConceptDeclaration)) continue;
-        ConceptDeclaration parent = ((ConceptDeclaration)conceptDeclaration).getExtends();
-        while (parent != null) {
-          Set<IDependency_Runtime> parentRules = myDependencies.get(parent);
-          if (parentRules != null) {
-            rules.addAll(parentRules);
+        if (rules != null) {
+          if (conceptDeclaration != key) {
+            myDependencies.put(key, rules);
           }
-          parent = parent.getExtends();
+          return rules;
         }
+        conceptDeclaration = conceptDeclaration.getExtends();
       }
     }
+    HashSet<IDependency_Runtime> hashSet = new HashSet<IDependency_Runtime>();
+    myDependencies.put(key, hashSet);
+    return hashSet;
+  }
 
-    public void clear() {
-      myDependencies.clear();
+  public void makeConsistent() {
+    for (AbstractConceptDeclaration conceptDeclaration : myDependencies.keySet()) {
+      if (conceptDeclaration == null) {
+        continue;
+      }
+      Set<IDependency_Runtime> rules = myDependencies.get(conceptDeclaration);
+      if (rules == null) continue;
+      if(!(conceptDeclaration instanceof ConceptDeclaration)) continue;
+      ConceptDeclaration parent = ((ConceptDeclaration)conceptDeclaration).getExtends();
+      while (parent != null) {
+        Set<IDependency_Runtime> parentRules = myDependencies.get(parent);
+        if (parentRules != null) {
+          rules.addAll(parentRules);
+        }
+        parent = parent.getExtends();
+      }
     }
   }
+
+  public void clear() {
+    myDependencies.clear();
+  }
+}

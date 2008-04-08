@@ -7,8 +7,10 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.core" />
+  <language namespace="jetbrains.mps.bootstrap.helgins" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -742,6 +744,10 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1193733730717">
       <property name="role" value="targetConcept" />
       <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1207648185033">
+      <property name="role" value="sourceConcept" />
       <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1193733727481">

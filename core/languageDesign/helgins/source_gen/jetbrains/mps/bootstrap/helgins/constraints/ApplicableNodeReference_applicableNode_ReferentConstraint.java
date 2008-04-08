@@ -36,14 +36,14 @@ public class ApplicableNodeReference_applicableNode_ReferentConstraint implement
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     SNode rule = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
-    if(rule != null) {
+    if (rule != null) {
       SNode appNode = SLinkOperations.getTarget(rule, "applicableNode", true);
       ListOperations.addElement(result, appNode);
-      if(SNodeOperations.isInstanceOf(rule, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
+      if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
         SNode appNode2 = SLinkOperations.getTarget(rule, "anotherNode", true);
         ListOperations.addElement(result, appNode2);
       }
-      if(SNodeOperations.isInstanceOf(rule, "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule")) {
+      if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule")) {
         SNode appNode2 = SLinkOperations.getTarget(rule, "supertypeNode", true);
         ListOperations.addElement(result, appNode2);
       }

@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
+import jetbrains.mps.bootstrap.helgins.constraints.FindSourceBlock_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -369,15 +370,20 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1193741165504(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode rule = SNodeOperations.getParent(_context.getNode(), null, false, false);
     SNode conceptDeclaration;
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
-      SNode conceptReference = SLinkOperations.getTarget(rule, "applicableNode", true);
-      conceptDeclaration = SLinkOperations.getTarget(conceptReference, "concept", false);
+    if ((SLinkOperations.getTarget(_context.getNode(), "sourceConcept", false) != null)) {
+      conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "sourceConcept", false);
     } else
     {
-      SNode patternCondition = SLinkOperations.getTarget(rule, "applicableNode", true);
-      conceptDeclaration = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(patternCondition, "pattern", true), "patternNode", true));
+      SNode rule = SNodeOperations.getParent(_context.getNode(), null, false, false);
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
+        SNode conceptReference = SLinkOperations.getTarget(rule, "applicableNode", true);
+        conceptDeclaration = SLinkOperations.getTarget(conceptReference, "concept", false);
+      } else
+      {
+        SNode patternCondition = SLinkOperations.getTarget(rule, "applicableNode", true);
+        conceptDeclaration = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(patternCondition, "pattern", true), "patternNode", true));
+      }
     }
     return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
@@ -996,6 +1002,14 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
+  public static boolean ifMacro_Condition_1207651082298(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(FindSourceBlock_Behavior.call_isSet_1207651579255(SLinkOperations.getTarget(_context.getNode(), "findSourceBlock", true)));
+  }
+
+  public static boolean ifMacro_Condition_1207655469430(final IOperationContext operationContext, final IfMacroContext _context) {
+    return FindSourceBlock_Behavior.call_isSet_1207651579255(SLinkOperations.getTarget(_context.getNode(), "findSourceBlock", true));
+  }
+
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1268,6 +1282,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1207055706981(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "warningText", true);
+  }
+
+  public static SNode sourceNodeQuery_1207651008689(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "findSourceBlock", true), "body", true);
   }
 
   public static List sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
