@@ -35,10 +35,10 @@ public class typeof_SemanticDowncastExpression_InferenceRule implements Inferenc
             } else
             if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
               if (SPropertyOperations.getBoolean(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "singularCradinality")) {
-                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206059653548", true), new QuotationClass_77().createNode(), expr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206059653546");
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206059653548", true), new QuotationClass_75().createNode(), expr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206059653546");
               } else
               {
-                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206060275785", true), new QuotationClass_78().createNode(SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "targetConcept", false)), expr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206060275783");
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206060275785", true), new QuotationClass_76().createNode(SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "targetConcept", false)), expr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206060275783");
               }
             } else
             {

@@ -15,7 +15,7 @@ public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule implements In
 
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "parameter", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206488003353", true), new QuotationClass_86().createNode(), SLinkOperations.getTarget(op, "parameter", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206488011466", false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "parameter", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206488003353", true), new QuotationClass_84().createNode(), SLinkOperations.getTarget(op, "parameter", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206488011466", false);
   }
 
   public String getApplicableConceptFQName() {
