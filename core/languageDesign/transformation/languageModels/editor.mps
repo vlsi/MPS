@@ -5785,8 +5785,16 @@
     <link role="conceptDeclaration" targetNodeId="1.1200923014784" resolveInfo="ConditionalRootLabelDeclaration" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1200923100680">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200923100681">
-        <property name="text" value="label" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1207698573049">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207698573050">
+          <property name="text" value="!" />
+          <property name="textFgColor" value="red" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200923100681">
+          <property name="text" value="label" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1200923100682">
         <property name="noTargetText" value="&lt;no name&gt;" />
