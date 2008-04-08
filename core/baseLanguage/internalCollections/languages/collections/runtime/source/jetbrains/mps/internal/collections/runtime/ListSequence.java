@@ -11,6 +11,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+import jetbrains.mps.internal.collections.runtime.impl.NullListSequence;
+
 
 /**
  * Implementation of a sequence backed by <code>java.util.List</code>. 
@@ -27,9 +29,9 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     }
 
     public static <U> IListSequence<U> fromList (List<U> list) {
-        if (Sequence.RELAXED_NULL) {
+        if (Sequence.USE_NULL_SEQUENCE) {
             if (list == null) {
-                return new NullListSequence<U> ();
+                return NullListSequence.instance();
             }
         }
         if (list instanceof ListSequence) {
@@ -39,9 +41,9 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     }
     
     public static <U> IListSequence<U> fromIterable (Iterable<U> it) {
-        if (Sequence.RELAXED_NULL) {
+        if (Sequence.USE_NULL_SEQUENCE) {
             if (it == null) {
-                return new NullListSequence<U> ();
+                return NullListSequence.instance();
             }
         }
         if (it instanceof ListSequence) {
@@ -152,15 +154,51 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
         return list.toArray(a);
     }
     
+    public Iterator<T> iterator() {
+        return list.iterator();
+    }
+    
     // Additional methods
     
+    public void addElement(T t) {
+        if (Sequence.IGNORE_NULL_VALUES) {
+            if (t == null) {
+                return;
+            }
+        }
+        list.add(t);
+    }
+    
+    public void removeElement(T t) {
+        remove((Object)t);
+    }
+    
+    public T getElement(int idx) {
+        if (Sequence.NULL_WHEN_EMPTY) {
+            if (size() == 0 && (idx == 0 || idx == -1)) {
+                return null;
+            }
+        }
+        return get (idx);
+    }
+    
     public void addSequence (ISequence<T> seq) {
+        if (Sequence.USE_NULL_SEQUENCE) {
+            if (seq == null) {
+                return;
+            }
+        }
         for (T t : seq.toIterable()) {
             list.add(t);
         }
     }
     
     public void removeSequence (ISequence<T> seq) {
+        if (Sequence.USE_NULL_SEQUENCE) {
+            if (seq == null) {
+                return;
+            }
+        }
         for (T t : seq.toIterable()) {
             list.remove(t);
         }
@@ -172,19 +210,6 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
         return reversed;
     }
     
-    public T getByIndex(int idx) {
-        if (Sequence.EMPTY_NULL) {
-            if (size() == 0 && (idx == 0 || idx == -1)) {
-                return null;
-            }
-        }
-        return get (idx);
-    }
-    
-    public Iterator<T> iterator() {
-        return list.iterator();
-    }
-
     protected ListSequence (List<T> list) {
         this.list = list;
     }
@@ -205,7 +230,7 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
         this.list = new ArrayList<T> (other.list);
     }
     
-    void _reverse () {
+    /*package*/ void _reverse () {
         Collections.reverse(list);
     }
 

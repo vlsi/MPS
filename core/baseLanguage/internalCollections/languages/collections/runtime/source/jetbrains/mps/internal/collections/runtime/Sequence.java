@@ -5,15 +5,54 @@ package jetbrains.mps.internal.collections.runtime;
 
 import java.util.Arrays;
 
+import jetbrains.mps.internal.collections.runtime.impl.BasicSequence;
+import jetbrains.mps.internal.collections.runtime.impl.ComparingSequence;
+import jetbrains.mps.internal.collections.runtime.impl.ConcatingSequence;
+import jetbrains.mps.internal.collections.runtime.impl.FilteringSequence;
+import jetbrains.mps.internal.collections.runtime.impl.LimitedCardinalitySequence;
+import jetbrains.mps.internal.collections.runtime.impl.NullSequence;
+import jetbrains.mps.internal.collections.runtime.impl.PagingSequence;
+import jetbrains.mps.internal.collections.runtime.impl.SelectingSequence;
+import jetbrains.mps.internal.collections.runtime.impl.SortingSequence;
+import jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence;
+
 
 /**
  * @author fyodor
  */
 public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     
-    public static final boolean RELAXED_NULL = true;
-    
-    public static final boolean EMPTY_NULL = true;    
+    /**
+     * <p>
+     * This constant controls whether the framework applies relaxed rules to <code>null</code> values
+     * passed as parameters to <code>from* ()</code> methods of class <code>Sequence</code> and its subclasses,
+     * and all methods that accept <code>ISequence</code> and its subclasses.
+     * </p>
+     * <p>
+     * If relaxed rules are applied, the <code>NullPointerException<code> will not be thrown, and the method
+     * is guaranteed to return non-null object.  
+     * </p>
+     */
+    public static final boolean USE_NULL_SEQUENCE = true;
+
+    /**
+     * <p>
+     * This constant controls whether <code>null</code> values in containers are ignored. In particular, 
+     * <code>ITranslator.translate ()</code> and <code>ISelector.select ()</code> methods are allowed
+     * to return null values, which will be ignored, instead of being appended to the results of 
+     * <code>translate ()</code> or <code>select ()</code>, respectively. 
+     * </p>
+     */
+    public static final boolean IGNORE_NULL_VALUES = true;    
+
+    /**
+     * <p>
+     * This constant tells the framework to return <code>null</code> from methods that return values from 
+     * a sequence, instead of throwing <code>IndexOutOfBoundsException</code> or 
+     * <code>NoSuchElementException</code>, if the underlying sequence if empty.
+     * </p>
+     */
+    public static final boolean NULL_WHEN_EMPTY = true;    
     
     public static <U> ISequence<U> fromArray (U...array) {
         return new BasicSequence<U> (Arrays.asList(array));
@@ -24,9 +63,9 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     }
     
     public static <U> ISequence<U> fromIterable (Iterable<U> iterable) {
-        if (RELAXED_NULL) {
+        if (USE_NULL_SEQUENCE) {
             if (iterable == null) {
-                return new NullSequence<U> ();
+                return NullSequence.instance();
             }
         }
         if (iterable instanceof Sequence) {
@@ -85,7 +124,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     }
 
     public ISequence<T> concat (ISequence<T> that) {
-        if (RELAXED_NULL) {
+        if (USE_NULL_SEQUENCE) {
             if (that == null) {
                 return this;
             }
@@ -94,16 +133,16 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     }
     
     public ISequence<T> intersect (ISequence<T> that) {
-        if (RELAXED_NULL) {
+        if (USE_NULL_SEQUENCE) {
             if (that == null) {
-                return new NullSequence<T> ();
+                return NullSequence.instance();
             }
         }        
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.INTERSECTION);
     }
     
     public ISequence<T> substract (ISequence<T> that) {
-        if (RELAXED_NULL) {
+        if (USE_NULL_SEQUENCE) {
             if (that == null) {
                 return this;
             }
@@ -112,7 +151,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     }
     
     public ISequence<T> union (ISequence<T> that) {
-        if (RELAXED_NULL) {
+        if (USE_NULL_SEQUENCE) {
             if (that == null) {
                 return this;
             }
@@ -121,7 +160,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     }
     
     public ISequence<T> disjunction (ISequence<T> that) {
-        if (RELAXED_NULL) {
+        if (USE_NULL_SEQUENCE) {
             if (that == null) {
                 return this;
             }

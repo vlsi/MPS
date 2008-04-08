@@ -59,7 +59,7 @@ public class IterableUtils {
         if (it.hasNext()) {
             return it.next();
         }
-        if (Sequence.EMPTY_NULL) {
+        if (Sequence.NULL_WHEN_EMPTY) {
             return null;
         }
         throw new NoSuchElementException ("Empty iterator");
@@ -69,7 +69,7 @@ public class IterableUtils {
         E last = null;
         boolean hasLast = false;
         Iterator<E> it=seq.iterator(); 
-        if (Sequence.EMPTY_NULL) {
+        if (Sequence.NULL_WHEN_EMPTY) {
             if (!it.hasNext()) {
                 return null;
             }

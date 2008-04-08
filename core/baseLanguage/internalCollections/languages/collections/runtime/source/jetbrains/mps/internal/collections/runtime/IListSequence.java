@@ -10,13 +10,17 @@ import java.util.List;
  */
 public interface IListSequence<T> extends ISequence<T>, List<T> {
 
+    void addElement (T t);
+    
+    void removeElement (T t);
+    
+    T getElement (int idx);
+
     void addSequence(ISequence<T> seq);
 
     void removeSequence(ISequence<T> seq);
 
     IListSequence<T> getReversed();
-    
-    T getByIndex (int idx);
 
     List<T> toList();
 }

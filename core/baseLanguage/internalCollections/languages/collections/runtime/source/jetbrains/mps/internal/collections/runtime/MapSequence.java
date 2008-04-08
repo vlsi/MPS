@@ -9,6 +9,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import jetbrains.mps.internal.collections.runtime.impl.NullMapSequence;
+
 
 /**
  * @author fyodor
@@ -57,9 +59,9 @@ public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSe
     }
     
     public static <P,Q> IMapSequence<P, Q> fromMap (Map<P,Q> map) {
-        if (Sequence.RELAXED_NULL) {
+        if (Sequence.USE_NULL_SEQUENCE) {
             if (map == null) {
-                return new NullMapSequence<P, Q> ();
+                return NullMapSequence.<P,Q>instance();
             }
         }
         if (map instanceof MapSequence) {

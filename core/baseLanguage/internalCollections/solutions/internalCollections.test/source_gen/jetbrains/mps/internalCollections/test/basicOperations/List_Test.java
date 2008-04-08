@@ -19,7 +19,7 @@ public class List_Test extends Util_Test {
   public void test_add() throws Exception {
     List<Integer> test = ListSequence.<Integer>fromArray();
     for(int i = 1 ; i <= 5 ; i = i + 1) {
-      ListSequence.fromList(test).add(i);
+      ListSequence.fromList(test).addElement(i);
     }
     this.assertIterableEquals(this.expect5(), test);
   }
@@ -33,7 +33,7 @@ public class List_Test extends Util_Test {
   public void test_remove() throws Exception {
     List<String> test = ListSequence.<String>fromArray("A", "B", "C", "D", "E");
     for(String s : Arrays.asList("A", "B", "C", "D", "E")) {
-      ListSequence.fromList(test).remove(s);
+      ListSequence.fromList(test).removeElement(s);
     }
     Assert.assertTrue(ListSequence.fromList(test).isEmpty());
     Assert.assertSame(0, ListSequence.fromList(test).count());
