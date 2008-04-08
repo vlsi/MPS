@@ -122,70 +122,73 @@ public class GenericRefactoring {
     final IAdaptiveProgressMonitor monitor = monitor_;
     final String refactoringTaskName = "refactoring_" + myRefactoring.getClass().getName();
     final long estimatedTime = monitor.getEstimatedTime(refactoringTaskName);
-    new Thread() {
-      public void run() {
-        monitor.start("refactoring", estimatedTime);
-        monitor.startLeafTask(refactoringTaskName, "refactoring", estimatedTime);
-      }
-    }.start();
+    try {
+      new Thread() {
+        public void run() {
+          monitor.start("refactoring", estimatedTime);
+          monitor.startLeafTask(refactoringTaskName, "refactoring", estimatedTime);
+        }
+      }.start();
 
-    CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {
-        myRefactoring.doRefactor(context, refactoringContext);
-      }
-    });
-    SModelDescriptor modelDescriptor = context.getModel();
+      CommandProcessor.instance().executeCommand(new Runnable() {
+        public void run() {
+          myRefactoring.doRefactor(context, refactoringContext);
+        }
+      });
+      SModelDescriptor modelDescriptor = context.getModel();
 
-    if (modelDescriptor == null) return;
-    SModel model = modelDescriptor.getSModel();
+      if (modelDescriptor == null) return;
+      SModel model = modelDescriptor.getSModel();
 
-    refactoringContext.computeCaches();
-    SearchResults usages = refactoringContext.getUsages();
-    Map<IModule, List<SModel>> sourceModels = CommandProcessor.instance().executeLightweightCommand(new Calculable<Map<IModule, List<SModel>>>() {
-      public Map<IModule, List<SModel>> calculate() {
-        return myRefactoring.getModelsToGenerate(context, refactoringContext);
-      }
-    });
-    if (!refactoringContext.isLocal() || usages == null) {
-      if (myRefactoring.doesUpdateModel()) {
-        writeIntoLog(model, refactoringContext);
-        for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
-          String stereotype = anotherDescriptor.getStereotype();
-          if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
-            continue;
+      refactoringContext.computeCaches();
+      SearchResults usages = refactoringContext.getUsages();
+      Map<IModule, List<SModel>> sourceModels = CommandProcessor.instance().executeLightweightCommand(new Calculable<Map<IModule, List<SModel>>>() {
+        public Map<IModule, List<SModel>> calculate() {
+          return myRefactoring.getModelsToGenerate(context, refactoringContext);
+        }
+      });
+      if (!refactoringContext.isLocal() || usages == null) {
+        if (myRefactoring.doesUpdateModel()) {
+          writeIntoLog(model, refactoringContext);
+          for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
+            String stereotype = anotherDescriptor.getStereotype();
+            if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
+              continue;
+            }
+            if (!anotherDescriptor.isInitialized()) continue;
+            SModel anotherModel = anotherDescriptor.getSModel();
+            if (model != anotherModel
+              && !anotherModel.getDependenciesModels().contains(modelDescriptor)) continue;
+            processModel(anotherModel, model, refactoringContext);
           }
-          if (!anotherDescriptor.isInitialized()) continue;
-          SModel anotherModel = anotherDescriptor.getSModel();
-          if (model != anotherModel
-            && !anotherModel.getDependenciesModels().contains(modelDescriptor)) continue;
-          processModel(anotherModel, model, refactoringContext);
+        }
+      } else {
+        if (myRefactoring.doesUpdateModel()) {
+          Set<SModel> modelsToProcess = usages.getModelsWithResults();
+
+          for (List<SModel> sModels : sourceModels.values()) {
+            modelsToProcess.addAll(sModels);
+          }
+
+          for (SModel anotherModel : modelsToProcess) {
+            processModel(anotherModel, model, refactoringContext);
+          }
         }
       }
-    } else {
-      if (myRefactoring.doesUpdateModel()) {
-        Set<SModel> modelsToProcess = usages.getModelsWithResults();
 
-        for (List<SModel> sModels : sourceModels.values()) {
-          modelsToProcess.addAll(sModels);
-        }
 
-        for (SModel anotherModel : modelsToProcess) {
-          processModel(anotherModel, model, refactoringContext);
-        }
+      if (!sourceModels.isEmpty()) {
+        generateModels(context, sourceModels, refactoringContext);
       }
+    } finally {
+      new Thread() {
+        public void run() {
+          monitor.finishTask();
+          monitor.finish();
+        }
+      }.start();
     }
 
-
-    if (!sourceModels.isEmpty()) {
-      generateModels(context, sourceModels, refactoringContext);
-    }
-
-    new Thread() {
-      public void run() {
-        monitor.finishTask();
-        monitor.finish();
-      }
-    }.start();
 
   }
 
