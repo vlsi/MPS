@@ -1554,11 +1554,6 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1207558684696">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207558684697">
-            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1207559209488">
-              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207559210568">
-                <link role="variableDeclaration" targetNodeId="1207558684700" resolveInfo="switchCase" />
-              </node>
-            </node>
             <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitIfJumpStatement" id="1207558714582">
               <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.BeforePosition" id="1207558715678">
                 <node role="relativeTo" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207558716774">

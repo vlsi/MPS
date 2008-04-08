@@ -8,6 +8,7 @@
   <sourcePath />
   <usedLanguages>
     <usedLanguages>jetbrains.mps.bootstrap.dataFlow</usedLanguages>
+    <usedLanguages>jetbrains.mps.regexp</usedLanguages>
   </usedLanguages>
 </solution>
 
