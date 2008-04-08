@@ -127,7 +127,9 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205663736298">
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1205663736299">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1205663736300">
-                    <link role="concept" targetNodeId="2v.1137021947720" resolveInfo="ConceptFunction" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207674649459">
+                      <link role="conceptDeclaration" targetNodeId="2v.1137021947720" resolveInfo="ConceptFunction" />
+                    </node>
                   </node>
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1205663736301" />
                 </node>
@@ -172,6 +174,63 @@
                   <link role="variableDeclaration" targetNodeId="1205663736296" resolveInfo="cf" />
                 </node>
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205663747229" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory" id="1207674454116">
+      <link role="applicableConcept" targetNodeId="1.1131073187192" resolveInfo="MapSrcNodeMacro" />
+      <node role="setupFunction" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction" id="1207674454117">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207674454118">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207674483510">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207674488857">
+              <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_SampleNode" id="1207674487653" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1207674489766">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207674493329">
+                  <link role="conceptDeclaration" targetNodeId="1.1087833466690" resolveInfo="NodeMacro" />
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207674483512">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207674498049">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1207674534351">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207674546279">
+                    <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1207674543027">
+                      <link role="concept" targetNodeId="1.1087833466690" resolveInfo="NodeMacro" />
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_SampleNode" id="1207674542166" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1207674549515">
+                      <link role="property" targetNodeId="1.1152722085357" resolveInfo="mappingId" />
+                    </node>
+                  </node>
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207674498957">
+                    <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1207674498050" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1207674532178">
+                      <link role="property" targetNodeId="1.1152722085357" resolveInfo="mappingId" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207674552830">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1207674558569">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207674566450">
+                    <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1207674562464">
+                      <link role="concept" targetNodeId="1.1087833466690" resolveInfo="NodeMacro" />
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_SampleNode" id="1207674560884" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207674571577">
+                      <link role="link" targetNodeId="1.1200912223215" />
+                    </node>
+                  </node>
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207674554113">
+                    <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_NewNode" id="1207674552831" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207674556709">
+                      <link role="link" targetNodeId="1.1200912223215" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
