@@ -419,17 +419,21 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
   }
 
-  public void selectModule(IModule module) {
-    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
-    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-    MPSTreeNode languageTreeNode = findModuleTreeNode(module);
-    if (languageTreeNode != null) {
-      TreePath treePath = new TreePath(languageTreeNode.getPath());
-      myTree.setSelectionPath(treePath);
-      myTree.scrollPathToVisible(treePath);
-    } else {
-      LOG.warning("Couldn't select module \"" + module + "\" : tree node not found.");
-    }
+  public void selectModule(final IModule module) {
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+      public void run() {
+        DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
+        MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
+        MPSTreeNode languageTreeNode = findModuleTreeNode(module);
+        if (languageTreeNode != null) {
+          TreePath treePath = new TreePath(languageTreeNode.getPath());
+          myTree.setSelectionPath(treePath);
+          myTree.scrollPathToVisible(treePath);
+        } else {
+          LOG.warning("Couldn't select module \"" + module + "\" : tree node not found.");
+        }
+      }
+    });
   }
 
   public SModelDescriptor getSelectedModel() {

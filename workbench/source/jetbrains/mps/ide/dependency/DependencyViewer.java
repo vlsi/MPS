@@ -2,6 +2,7 @@ package jetbrains.mps.ide.dependency;
 
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -12,18 +13,8 @@ import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 
 public class DependencyViewer extends DefaultTool {
-  private DependencyTree myTree = new DependencyTree();
-  private JScrollPane myExternalComponent = new JScrollPane(myTree) {
-    public void addNotify() {
-      super.addNotify();
-      addListeners();
-    }
-
-    public void removeNotify() {
-      removeListeners();
-      super.removeNotify();
-    }
-  };
+  private DependencyTree myTree;
+  private JScrollPane myExternalComponent;
   private ModuleRepositoryListener myListener = new ModuleRepositoryListener() {
     public void moduleAdded(IModule module) {
       myTree.rebuildLater();
@@ -40,7 +31,20 @@ public class DependencyViewer extends DefaultTool {
     }
   };
 
-  public DependencyViewer() {
+  public DependencyViewer(IDEProjectFrame frame) {
+    myTree = new DependencyTree(frame);
+    myExternalComponent = new JScrollPane(myTree) {
+      public void addNotify() {
+        super.addNotify();
+        addListeners();
+      }
+
+      public void removeNotify() {
+        removeListeners();
+        super.removeNotify();
+      }
+    };
+
     myTree.rebuildLater();
   }
 
