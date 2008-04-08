@@ -20,11 +20,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: May 11, 2006
- * Time: 8:09:10 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * May 11, 2006
  */
 public class ModelConstraintsManager implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
