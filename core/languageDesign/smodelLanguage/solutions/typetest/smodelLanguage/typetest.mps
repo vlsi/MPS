@@ -3138,6 +3138,18 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207680473490">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207680477541">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207680473992">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207680473491">
+                <link role="variableDeclaration" targetNodeId="1207678431894" resolveInfo="link" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207680476478">
+                <link role="link" targetNodeId="13.1071599976176" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1207678586831">
