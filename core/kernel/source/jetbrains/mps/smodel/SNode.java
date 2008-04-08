@@ -1594,7 +1594,7 @@ public final class SNode {
       LOG.error(t);
     }
 
-    return new BaseAdapter(this) {
+    return new BaseConcept(this) {
     };
   }
 
