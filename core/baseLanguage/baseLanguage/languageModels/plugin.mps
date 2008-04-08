@@ -65,6 +65,10 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1205837184579">
         <link role="action" targetNodeId="1205836731341" resolveInfo="RunClassConcept" />
       </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1207660282049" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1207660285645">
+        <link role="action" targetNodeId="1207231065572" resolveInfo="ExtractMethod" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247375460">
@@ -82,9 +86,6 @@
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1207053383184">
         <link role="action" targetNodeId="1207052992292" resolveInfo="ShowInternalExtractMethodStuff" />
-      </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1207231201416">
-        <link role="action" targetNodeId="1207231065572" resolveInfo="ExtractMethod" />
       </node>
     </node>
   </node>

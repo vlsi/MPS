@@ -21,7 +21,6 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends BaseActionGroup
     try {
       this.add(new TestReferenceResolvingPerformance(TestReferenceResolvingPerformance.EDITOR), this);
       this.add(new ShowInternalExtractMethodStuff_Action(project), this);
-      this.add(new ExtractMethod_Action(project), this);
     } catch (Throwable t) {
       BaseLanguageEditorPopupInternal_ActionGroup.LOG.error("User group error", t);
     }
