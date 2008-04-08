@@ -836,7 +836,12 @@
       <fileset dir="platform\xml" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="platform\xml" includes="*.mpl, *.msd, *.devkit" />
     </copy>
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.tmp\languageDescriptor.mpl" token="{language_descriptor}\classes" value="{mps_home}\platform\jetbrains.mps.xml.runtime.jar" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.tmp" />
+    <mkdir dir="platform\xml\classes" />
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.runtime.jar">
+      <fileset dir="platform\xml\classes" />
+    </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage">

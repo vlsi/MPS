@@ -70,6 +70,7 @@
     <orderEntry type="module" module-name="svn" exported="" />
     <orderEntry type="module" module-name="generic" exported="" />
     <orderEntry type="module" module-name="dataFlow" exported="" />
+    <orderEntry type="library" exported="" name="commons-lang" level="project" />
     <orderEntryProperties />
   </component>
   <component name="copyright">

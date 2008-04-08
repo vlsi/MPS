@@ -43,7 +43,7 @@
   </target>
   <target name="do.the.job" depends="folders.create">
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib">
-      <fileset dir="lib" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="beansbinding/**/*.jar, annotations/**/*.jar, ant-1.7.0/**/*.jar, asm/**/*.jar, commons-logging/**/*.jar, eclipse-compiler/**/*.jar, jdom/**/*.jar, junit/**/*.jar, junit4/**/*.jar, log4j/**/*.jar, joda-time/**/*.jar, commons-lang/**/*.jar, xstream/**/*.jar, alloy/**/*.jar, httpclient/**/*.jar, httpclient/**/*.jar, idea-rt/**/*.jar, svnkit/**/*.jar, equinox/**/*.jar, stax/**/*.jar, " />
+      <fileset dir="lib" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="beansbinding/**/*.jar, annotations/**/*.jar, ant-1.7.0/**/*.jar, asm/**/*.jar, commons-logging/**/*.jar, commons-lang/**/*.jar, eclipse-compiler/**/*.jar, jdom/**/*.jar, junit/**/*.jar, junit4/**/*.jar, log4j/**/*.jar, joda-time/**/*.jar, commons-lang/**/*.jar, xstream/**/*.jar, alloy/**/*.jar, httpclient/**/*.jar, httpclient/**/*.jar, idea-rt/**/*.jar, svnkit/**/*.jar, equinox/**/*.jar, stax/**/*.jar, " />
     </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
       <fileset dir="classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="" />
