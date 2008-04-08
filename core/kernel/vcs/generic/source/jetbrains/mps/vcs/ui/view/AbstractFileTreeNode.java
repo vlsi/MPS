@@ -70,16 +70,6 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
   }
 
   private Color getColor(Status status) {
-    switch (status) {
-      case ADDED:
-        return new Color(10, 119, 0);
-      case CHANGED:
-        return new Color(0, 50, 160);
-      case DEFAULT:
-        return Color.BLACK;
-      case UNVERSIONED:
-        return new Color(153, 51, 0);
-    }
-    return Color.RED;
+    return StatusStyles.getInstance().getColor(status);
   }
 }
