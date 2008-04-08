@@ -19,9 +19,16 @@ public class typeOf_Concept_FindInstances_InferenceRule implements InferenceRule
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(node, "scope", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061356670", true), new QuotationClass_62().createNode(), SLinkOperations.getTarget(node, "scope", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182280010621", false);
     }
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(node);
-    final SNode C_typevar_1186061393954 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061373207", true), new QuotationClass_63().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186061393954)), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061378772", false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711484278", true), new QuotationClass_64().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186061393954)), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1203711484276");
+    {
+      final SNode LeftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683067290", false);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
+
+        public void run() {
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683094342", true), new QuotationClass_96().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType)), node, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683094340");
+        }
+
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1207683063629");
+    }
   }
 
   public String getApplicableConceptFQName() {
