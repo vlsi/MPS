@@ -15,6 +15,7 @@ public class CoerceStatement_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "nodeToCoerce", true));
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "pattern", true));
+    _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
     _context.getBuilder().build(SLinkOperations.getTarget(_context.getNode(), "body", true));
   }
 
