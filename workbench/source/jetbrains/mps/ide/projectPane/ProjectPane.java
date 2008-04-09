@@ -211,7 +211,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     if (cls == List.class) {
       List result = new ArrayList();
       result.addAll(getSelectedModels());
-      result.addAll(getSelectedNodes());
+      result.addAll(getSelectedNodes());      
+      result.addAll(getSelectedModules());
       return (T) result;
     }
     if (cls == IOperationContext.class) return (T) getContextForSelection();
