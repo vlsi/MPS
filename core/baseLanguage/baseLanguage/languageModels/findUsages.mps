@@ -3781,6 +3781,7 @@
     <property name="isVisible" value="true"/>
     <property name="name" value="InterfaceAncestors"/>
     <property name="description" value="Interface Ancestors"/>
+    <property name="longDescription" value="z"/>
     <link role="forConcept" targetNodeId="1.1107796713796" resolveInfo="Interface"/>
     <node role="findFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FindBlock" id="1204899453045">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204899453046">
