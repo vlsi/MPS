@@ -1865,7 +1865,9 @@
       <CLASSES>
         <root url="file://$PROJECT_DIR$/lib/beansbinding" />
       </CLASSES>
-      <JAVADOC />
+      <JAVADOC>
+        <root url="file://$PROJECT_DIR$/lib/beansbinding/docs" />
+      </JAVADOC>
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/beansbinding/beansbinding-1.2.1-src.zip!/src" />
       </SOURCES>
