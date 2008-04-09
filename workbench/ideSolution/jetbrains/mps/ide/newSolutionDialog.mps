@@ -911,6 +911,9 @@
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1203608417492">
       <property name="name" value="compileInMPS" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1203608423968" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1207741528677">
+        <property name="value" value="true" />
+      </node>
     </node>
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1203608445166">
       <property name="name" value="project" />

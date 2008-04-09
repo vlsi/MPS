@@ -40,7 +40,7 @@ public class NewSolutionDialogContentPane extends JPanel {
   private PathField myComponent3;
   private String mySolutionName;
   private String mySolutionPath;
-  private boolean myCompileInMPS;
+  private boolean myCompileInMPS = true;
   private MPSProject myProject;
   private Solution myResult;
   private NewSolutionDialog myDialog;

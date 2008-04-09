@@ -777,6 +777,9 @@
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1203687075264">
       <property name="name" value="compileInMPS" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1203687076532" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1207741514457">
+        <property name="value" value="true" />
+      </node>
     </node>
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1203687363872">
       <property name="name" value="result" />

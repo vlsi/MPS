@@ -38,7 +38,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   private String myLanguageNamespace;
   private String myLanguagePath;
   private MPSProject myProject;
-  private boolean myCompileInMPS;
+  private boolean myCompileInMPS = true;
   private Language myResult;
   private NewLanguageDialog myDialog;
   public List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
