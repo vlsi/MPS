@@ -11,31 +11,23 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ListElements extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ListElements";
-  public static String VALUE = "value";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String VALUE = "value";
 
-  public  ListElements(SNode node) {
+  public ListElements(SNode node) {
     super(node);
   }
 
   public static ListElements newInstance(SModel sm, boolean init) {
-    return (ListElements)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ListElements", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ListElements) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ListElements", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ListElements newInstance(SModel sm) {
     return ListElements.newInstance(sm, false);
   }
 
-
-  public Expression getValue() {
-    return (Expression)this.getChild(ListElements.VALUE);
-  }
-
-  public void setValue(Expression node) {
-    super.setChild(ListElements.VALUE, node);
-  }
 
   public String getShortDescription() {
     return this.getProperty(ListElements.SHORT_DESCRIPTION);
@@ -59,6 +51,14 @@ public class ListElements extends BaseConcept implements IComponentPart {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ListElements.VIRTUAL_PACKAGE, value);
+  }
+
+  public Expression getValue() {
+    return (Expression) this.getChild(ListElements.VALUE);
+  }
+
+  public void setValue(Expression node) {
+    super.setChild(ListElements.VALUE, node);
   }
 
 }

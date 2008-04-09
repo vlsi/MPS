@@ -11,31 +11,23 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class LayoutConstraint extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.LayoutConstraint";
-  public static String CONSTRAINT = "constraint";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String CONSTRAINT = "constraint";
 
-  public  LayoutConstraint(SNode node) {
+  public LayoutConstraint(SNode node) {
     super(node);
   }
 
   public static LayoutConstraint newInstance(SModel sm, boolean init) {
-    return (LayoutConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.LayoutConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LayoutConstraint) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.LayoutConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LayoutConstraint newInstance(SModel sm) {
     return LayoutConstraint.newInstance(sm, false);
   }
 
-
-  public Expression getConstraint() {
-    return (Expression)this.getChild(LayoutConstraint.CONSTRAINT);
-  }
-
-  public void setConstraint(Expression node) {
-    super.setChild(LayoutConstraint.CONSTRAINT, node);
-  }
 
   public String getShortDescription() {
     return this.getProperty(LayoutConstraint.SHORT_DESCRIPTION);
@@ -59,6 +51,14 @@ public class LayoutConstraint extends BaseConcept implements IComponentPart {
 
   public void setVirtualPackage(String value) {
     this.setProperty(LayoutConstraint.VIRTUAL_PACKAGE, value);
+  }
+
+  public Expression getConstraint() {
+    return (Expression) this.getChild(LayoutConstraint.CONSTRAINT);
+  }
+
+  public void setConstraint(Expression node) {
+    super.setChild(LayoutConstraint.CONSTRAINT, node);
   }
 
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 
 public class ComponentDeclaration extends BaseConcept implements IClassifier {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentDeclaration";
-  public static String ROOT = "root";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -22,27 +21,20 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   public static String ACTION_COMPONENT = "actionComponent";
   public static String EXTENDED_COMPONENT = "extendedComponent";
   public static String MAP_TO = "mapTo";
+  public static String ROOT = "root";
 
-  public  ComponentDeclaration(SNode node) {
+  public ComponentDeclaration(SNode node) {
     super(node);
   }
 
   public static ComponentDeclaration newInstance(SModel sm, boolean init) {
-    return (ComponentDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentDeclaration newInstance(SModel sm) {
     return ComponentDeclaration.newInstance(sm, false);
   }
 
-
-  public IComponentInstance getRoot() {
-    return (IComponentInstance)this.getChild(ComponentDeclaration.ROOT);
-  }
-
-  public void setRoot(IComponentInstance node) {
-    super.setChild(ComponentDeclaration.ROOT, node);
-  }
 
   public String getName() {
     return this.getProperty(ComponentDeclaration.NAME);
@@ -101,7 +93,7 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   }
 
   public ComponentDeclaration getExtendedComponent() {
-    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.EXTENDED_COMPONENT);
+    return (ComponentDeclaration) this.getReferent(ComponentDeclaration.EXTENDED_COMPONENT);
   }
 
   public void setExtendedComponent(ComponentDeclaration node) {
@@ -109,11 +101,19 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   }
 
   public ClassConcept getMapTo() {
-    return (ClassConcept)this.getReferent(ComponentDeclaration.MAP_TO);
+    return (ClassConcept) this.getReferent(ComponentDeclaration.MAP_TO);
   }
 
   public void setMapTo(ClassConcept node) {
     super.setReferent(ComponentDeclaration.MAP_TO, node);
+  }
+
+  public IComponentInstance getRoot() {
+    return (IComponentInstance) this.getChild(ComponentDeclaration.ROOT);
+  }
+
+  public void setRoot(IComponentInstance node) {
+    super.setChild(ComponentDeclaration.ROOT, node);
   }
 
 }

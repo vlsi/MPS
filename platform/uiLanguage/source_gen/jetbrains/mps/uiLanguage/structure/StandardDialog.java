@@ -7,24 +7,25 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+
 import java.util.Iterator;
 import java.util.List;
 
 public class StandardDialog extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.StandardDialog";
-  public static String ROOT_COMPONENT = "rootComponent";
-  public static String BUTTON = "button";
-  public static String CONTENT = "content";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String ROOT_COMPONENT = "rootComponent";
+  public static String BUTTON = "button";
+  public static String CONTENT = "content";
 
-  public  StandardDialog(SNode node) {
+  public StandardDialog(SNode node) {
     super(node);
   }
 
   public static StandardDialog newInstance(SModel sm, boolean init) {
-    return (StandardDialog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialog", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StandardDialog) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialog", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StandardDialog newInstance(SModel sm) {
@@ -32,8 +33,32 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
   }
 
 
+  public String getShortDescription() {
+    return this.getProperty(StandardDialog.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(StandardDialog.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(StandardDialog.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(StandardDialog.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(StandardDialog.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(StandardDialog.VIRTUAL_PACKAGE, value);
+  }
+
   public IComponentInstance getRootComponent() {
-    return (IComponentInstance)this.getChild(StandardDialog.ROOT_COMPONENT);
+    return (IComponentInstance) this.getChild(StandardDialog.ROOT_COMPONENT);
   }
 
   public void setRootComponent(IComponentInstance node) {
@@ -78,30 +103,6 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, StandardDialog.CONTENT, node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(StandardDialog.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(StandardDialog.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(StandardDialog.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(StandardDialog.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(StandardDialog.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(StandardDialog.VIRTUAL_PACKAGE, value);
   }
 
 }

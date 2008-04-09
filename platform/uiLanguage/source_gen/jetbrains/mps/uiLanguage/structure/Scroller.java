@@ -7,48 +7,29 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+
 import java.util.Iterator;
 import java.util.List;
 
 public class Scroller extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.Scroller";
-  public static String CONTENT = "content";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String CONTENT = "content";
 
-  public  Scroller(SNode node) {
+  public Scroller(SNode node) {
     super(node);
   }
 
   public static Scroller newInstance(SModel sm, boolean init) {
-    return (Scroller)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Scroller", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Scroller) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Scroller", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Scroller newInstance(SModel sm) {
     return Scroller.newInstance(sm, false);
   }
 
-
-  public int getContentsCount() {
-    return this.getChildCount(Scroller.CONTENT);
-  }
-
-  public Iterator<IComponentPart> contents() {
-    return this.children(Scroller.CONTENT);
-  }
-
-  public List<IComponentPart> getContents() {
-    return this.getChildren(Scroller.CONTENT);
-  }
-
-  public void addContent(IComponentPart node) {
-    this.addChild(Scroller.CONTENT, node);
-  }
-
-  public void insertContent(IComponentPart prev, IComponentPart node) {
-    this.insertChild(prev, Scroller.CONTENT, node);
-  }
 
   public String getShortDescription() {
     return this.getProperty(Scroller.SHORT_DESCRIPTION);
@@ -72,6 +53,26 @@ public class Scroller extends BaseConcept implements IComponentInstance {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Scroller.VIRTUAL_PACKAGE, value);
+  }
+
+  public int getContentsCount() {
+    return this.getChildCount(Scroller.CONTENT);
+  }
+
+  public Iterator<IComponentPart> contents() {
+    return this.children(Scroller.CONTENT);
+  }
+
+  public List<IComponentPart> getContents() {
+    return this.getChildren(Scroller.CONTENT);
+  }
+
+  public void addContent(IComponentPart node) {
+    this.addChild(Scroller.CONTENT, node);
+  }
+
+  public void insertContent(IComponentPart prev, IComponentPart node) {
+    this.insertChild(prev, Scroller.CONTENT, node);
   }
 
 }

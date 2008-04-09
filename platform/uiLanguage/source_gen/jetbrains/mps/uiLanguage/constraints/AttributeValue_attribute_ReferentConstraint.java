@@ -10,15 +10,17 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class AttributeValue_attribute_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  AttributeValue_attribute_ReferentConstraint() {
+  public AttributeValue_attribute_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -36,7 +38,7 @@ public class AttributeValue_attribute_ReferentConstraint implements IModelConstr
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode instance = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.uiLanguage.structure.ComponentInstance", true, false);
     List<SNode> result = new ArrayList<SNode>();
-    if(instance != null) {
+    if (instance != null) {
       ListOperations.addAllElements(result, ComponentDeclaration_Behavior.call_getAttributes_1202392603201(SLinkOperations.getTarget(instance, "componentDeclaration", false)));
     }
     return new SimpleSearchScope(result);

@@ -11,15 +11,17 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class ComponentReference_component_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public  ComponentReference_component_ReferentConstraint() {
+  public ComponentReference_component_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
@@ -35,16 +37,16 @@ public class ComponentReference_component_ReferentConstraint implements IModelCo
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode container = SNodeOperations.getAncestorWhereConceptInList(_context.getEnclosingNode(), new String[]{"jetbrains.mps.uiLanguage.structure.ComponentController","jetbrains.mps.uiLanguage.structure.ComponentDeclaration"}, true, false);
+    SNode container = SNodeOperations.getAncestorWhereConceptInList(_context.getEnclosingNode(), new String[]{"jetbrains.mps.uiLanguage.structure.ComponentController", "jetbrains.mps.uiLanguage.structure.ComponentDeclaration"}, true, false);
     SNode componentDeclaration = null;
-    if(SNodeOperations.isInstanceOf(container, "jetbrains.mps.uiLanguage.structure.ComponentController")) {
+    if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.uiLanguage.structure.ComponentController")) {
       componentDeclaration = SLinkOperations.getTarget(container, "component", false);
     }
-    if(SNodeOperations.isInstanceOf(container, "jetbrains.mps.uiLanguage.structure.ComponentDeclaration")) {
+    if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.uiLanguage.structure.ComponentDeclaration")) {
       componentDeclaration = container;
     }
     List<SNode> result = new ArrayList<SNode>();
-    if(componentDeclaration != null) {
+    if (componentDeclaration != null) {
       ListOperations.addAllElements(result, SequenceOperations.where(SNodeOperations.getDescendants(componentDeclaration, "jetbrains.mps.uiLanguage.structure.ComponentInstance", false), new zPredicate2(null, null)));
     }
     return new SimpleSearchScope(result);
