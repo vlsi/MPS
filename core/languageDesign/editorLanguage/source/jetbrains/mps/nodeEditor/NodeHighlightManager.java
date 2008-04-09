@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
+import java.util.List;
 import java.awt.*;
 
 
@@ -134,6 +135,16 @@ public class NodeHighlightManager implements IEditorMessageOwner {
       if (msg.getNode() == node) return msg;
     }
     return null;
+  }
+
+  public List<IEditorMessage> getMessagesFor(SNode node) {
+    List<IEditorMessage> result = new ArrayList<IEditorMessage>();
+    for (DefaultEditorMessage msg : myMessages()) {
+      if (msg.getNode() == node) {
+        result.add(msg);
+      }
+    }
+    return result;
   }
 
 }

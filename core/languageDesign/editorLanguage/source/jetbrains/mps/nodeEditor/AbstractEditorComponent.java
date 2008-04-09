@@ -281,6 +281,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
+        goToNextHighlightedCell(false);
+      }
+    }, KeyStroke.getKeyStroke("F3"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        goToNextHighlightedCell(true);
+      }
+    }, KeyStroke.getKeyStroke("shift F3"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
         EditorCell cell = getSelectedCell();
         if (cell == null) return;
         showPopupMenu(cell.getX(), cell.getY());
@@ -461,7 +473,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyStrokes(group, actionContext);
   }
 
-  public IEditorMessageOwner getGutterMessageOwner() {
+  public IEditorMessageOwner getHighlightMessagesOwner() {
     return myOwner;
   }
 
@@ -499,49 +511,29 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void goToNextErrorCell(boolean backwards) {
-    EditorCell current = mySelectedCell;
-    EditorCell_Collection parent = mySelectedCell.getParent();
-    if (parent == null) {
-      if (mySelectedCell instanceof EditorCell_Collection) {
-        parent = (EditorCell_Collection) mySelectedCell;
-        current = null;
-      } else {
-        return;
-      }
-    }
-    while (parent != null) {
-      EditorCell result = findNextCellWithError(parent, current, backwards);
-      if (result != null) {
-        changeSelection(result);
-        return;
-      }
-      current = parent;
-      parent = parent.getParent();
-    }
-  }
-
-  private EditorCell findNextCellWithError(EditorCell_Collection parent, EditorCell current, boolean backwards) {
-    boolean currentMet = current == null;
-    Iterator<EditorCell> iterator = backwards ? parent.reverseCellIterator() : parent.iterator();
-    for (EditorCell cell : CollectionUtil.iteratorAsIterable(iterator)) {
-      if (currentMet) {
+    new CellNavigator(this) {
+      boolean isSuitableCell(EditorCell cell) {
         IEditorMessage message = cell.getMessage();
         if (message != null && message.getStatus() == MessageStatus.ERROR) {
-          return cell;
+          return true;
         }
-        if (cell instanceof EditorCell_Collection) {
-          EditorCell cellFromCollection = findNextCellWithError((EditorCell_Collection) cell, null, backwards);
-          if (cellFromCollection != null) {
-            return cellFromCollection;
+        return false;
+
+      }
+    }.goToNextCell(backwards);
+  }
+
+  private void goToNextHighlightedCell(boolean backwards) {
+    new CellNavigator(this) {
+      boolean isSuitableCell(EditorCell cell) {
+        for (IEditorMessage m : getHighlightManager().getMessagesFor(cell.getSNode())) {
+          if (m.getOwner() == getHighlightMessagesOwner()) {
+            return true;
           }
         }
-      } else {
-        if (cell == current) {
-          currentMet = true;
-        }
+        return false;
       }
-    }
-    return null;
+    }.goToNextCell(backwards);
   }
 
   public SNode getEditedNode() {
