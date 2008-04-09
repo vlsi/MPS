@@ -477,7 +477,7 @@ public class EquationManager {
 
   private void processEquation(IWrapper var, IWrapper type, EquationInfo errorInfo) {
     setParent(var, type);
-    keepInequationsAndEffects(var, type);
+    keepInequationsAndEffects(var, type, false);
     RuntimeTypeVariable typeVar = var.getVariable();
     if (typeVar instanceof RuntimeErrorType) {
       TypeChecker.getInstance().reportTypeError(
@@ -486,7 +486,7 @@ public class EquationManager {
     var.fireRepresentatorSet(type, this);
   }
 
-  private void keepInequationsAndEffects(IWrapper var, IWrapper type) {
+  private void keepInequationsAndEffects(IWrapper var, IWrapper type, boolean avoidCheckonlyMaps) {
 
     Map<IWrapper, EquationInfo> supertypes = mySubtypesToSupertypesMap.remove(var);
     if (supertypes != null) {
@@ -547,7 +547,7 @@ public class EquationManager {
         }
       }
       for (final IWrapper supertype : supertypes.keySet()) {
-        addInequation(type, supertype, supertypes.get(supertype));
+        addInequation(type, supertype, supertypes.get(supertype), true, true, !avoidCheckonlyMaps);
       }
     }
     subtypes = mySupertypesToSubtypesMap_check.remove(var);
@@ -559,7 +559,7 @@ public class EquationManager {
         }
       }
       for (final IWrapper subtype : subtypes.keySet()) {
-        addInequation(subtype, type, subtypes.get(subtype));
+        addInequation(subtype, type, subtypes.get(subtype), true, true, !avoidCheckonlyMaps);
       }
     }
     supertypes = mySubtypesToSupertypesMapStrong_check.remove(var);
@@ -571,7 +571,7 @@ public class EquationManager {
         }
       }
       for (final IWrapper supertype : supertypes.keySet()) {
-        addInequation(type, supertype, supertypes.get(supertype), false);
+        addInequation(type, supertype, supertypes.get(supertype), false, true, !avoidCheckonlyMaps);
       }
     }
     subtypes = mySupertypesToSubtypesMapStrong_check.remove(var);
@@ -583,7 +583,7 @@ public class EquationManager {
         }
       }
       for (final IWrapper subtype : subtypes.keySet()) {
-        addInequation(subtype, type, subtypes.get(subtype), false);
+        addInequation(subtype, type, subtypes.get(subtype), false, true, !avoidCheckonlyMaps);
       }
     }
 
@@ -861,6 +861,17 @@ public class EquationManager {
           addEquation(type, subtype, errorInfo);
         }
       }
+    }
+
+    processCheckingEquations();
+  }
+
+  private void processCheckingEquations() {
+    for (IWrapper wrapper : new HashSet<IWrapper>(mySubtypesToSupertypesMap_check.keySet())) {
+      keepInequationsAndEffects(wrapper, wrapper, true);
+    }
+    for (IWrapper wrapper : new HashSet<IWrapper>(mySubtypesToSupertypesMapStrong_check.keySet())) {
+       keepInequationsAndEffects(wrapper, wrapper, true);
     }
   }
 
