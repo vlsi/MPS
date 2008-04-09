@@ -1,11 +1,12 @@
 package jetbrains.mps.vcs.ui.view;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vcs.ui.IFileController;
 import jetbrains.mps.vcs.ui.IFileListener;
-import jetbrains.mps.vcs.ui.IUpdatedAction;
 import jetbrains.mps.vcs.Status;
 
 import javax.swing.JPopupMenu;
@@ -17,7 +18,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
   protected IFile myFile;
   protected IFileController myProvider;
   private JPopupMenu myPopupMenu;
-  private Collection<? extends IUpdatedAction> myActions;
+  private Collection<MPSAction> myActions;
 
   public AbstractFileTreeNode(IOperationContext operationContext, IFileController provider, IFile file) {
     super(operationContext);
@@ -30,9 +31,6 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
 
   private void updateNodeStatus() {
     updatePresentation();
-    for (IUpdatedAction action : myActions) {
-      action.update();
-    }
 
     int count = getChildCount();
     for (int i = 0; i < count; i++){
@@ -51,8 +49,8 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
     if (myActions.isEmpty()) return;
 
     myPopupMenu = new JPopupMenu();
-    for (IUpdatedAction a : myActions) {
-      if (a != null) myPopupMenu.add(a.createMenuItem());
+    for (MPSAction a : myActions) {
+      if (a != null) a.add(myPopupMenu, new ActionContext(this.getOperationContext()));
       else myPopupMenu.addSeparator();
     }
   }

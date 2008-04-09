@@ -19,6 +19,8 @@ public class FileTreeNode extends AbstractFileTreeNode {
     ICONS.put("devkit", Icons.DEVKIT_ICON);
     ICONS.put("mpl", Icons.LANGUAGE_ICON);
     ICONS.put("mps", Icons.MODEL_ICON);
+    ICONS.put("java", VCSIcons.JAVA_ICON);
+    ICONS.put("class", VCSIcons.CLASS_ICON);
     ICONS.put("", VCSIcons.FILE_ICON);
   }
 
