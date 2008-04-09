@@ -42,7 +42,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if(SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
       return true;
     } else
     {
@@ -78,7 +78,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SNode node = actionContext.getNode();
-      if(node == null) {
+      if (node == null) {
         return false;
       }
       return true;
@@ -98,7 +98,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
       IResultProvider resultProvider = TreeBuilder.forFinder(finder);
       SearchResults searchResults = resultProvider.getResults(searchQuery, monitor);
       List<SearchResult> aliveResults = searchResults.getAliveResults();
-      if(!(aliveResults.isEmpty())) {
+      if (!(aliveResults.isEmpty())) {
         return searchResults;
       } else
       {

@@ -61,7 +61,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if(SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.core.structure.BaseConcept")) {
       return true;
     } else
     {
@@ -95,10 +95,10 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
-    if(actionContext.getNodes().isEmpty()) {
+    if (actionContext.getNodes().isEmpty()) {
       return false;
     }
-    if(((Object)refactoringContext.getParameter("target")) instanceof SNode) {
+    if (((Object)refactoringContext.getParameter("target")) instanceof SNode) {
       SNode targetNode = ((SNode)((Object)refactoringContext.getParameter("target")));
       SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
       ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
@@ -107,12 +107,12 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       Iterable<String> childLinksRoles = SequenceOperations.select(childLinkDeclarations, new zSelector(null, null));
       for(SNode node : actionContext.getNodes()) {
         String childRole = node.getRole_();
-        if(!(SequenceOperations.contains(childLinksRoles, childRole))) {
+        if (!(SequenceOperations.contains(childLinksRoles, childRole))) {
           return false;
         }
         for(SNode linkDeclaration : childLinkDeclarations) {
-          if(SPropertyOperations.getString(linkDeclaration, "role").equals(childRole)) {
-            if(!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, "target", false), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))))) {
+          if (SPropertyOperations.getString(linkDeclaration, "role").equals(childRole)) {
+            if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, "target", false), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))))) {
               return false;
             }
           }
@@ -120,9 +120,9 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       }
       return true;
     }
-    if(((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
+    if (((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
       for(SNode node : actionContext.getNodes()) {
-        if(!(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
+        if (!(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
           return false;
         }
       }
@@ -152,18 +152,18 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       List<SNode> nodes = (List<SNode>)actionContext.getNodes();
       SModel targetModel = null;
       List<SNode> movedNodes = null;
-      if(((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
+      if (((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
         targetModel = ((SModelDescriptor)((Object)refactoringContext.getParameter("target"))).getSModel();
         movedNodes = refactoringContext.moveNodesToModel(nodes, targetModel);
       }
-      if(((Object)refactoringContext.getParameter("target")) instanceof SNode) {
+      if (((Object)refactoringContext.getParameter("target")) instanceof SNode) {
         movedNodes = refactoringContext.moveNodesToNode(nodes, ListOperations.getElement(nodes, 0).getRole_(), (SNode)((Object)refactoringContext.getParameter("target")));
         targetModel = ((SNode)((Object)refactoringContext.getParameter("target"))).getModel();
       }
-      if(targetModel != null) {
+      if (targetModel != null) {
         IModule module = targetModel.getModelDescriptor().getModule();
         IOperationContext operationContext = new ModuleContext(module, actionContext.getOperationContext().getProject());
-        if(operationContext != null) {
+        if (operationContext != null) {
           NavigationActionProcessor.navigateToNode(SequenceOperations.getFirst(movedNodes), operationContext, true);
         }
       }
