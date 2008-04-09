@@ -45,7 +45,7 @@ public class IntentionsManager implements IExternalizableComponent {
   public Set<Intention> getAvailableIntentions(final SNode node, final EditorContext context) {
     Set<Intention> result = new HashSet<Intention>();
 
-    assert (context == null);
+    assert (context != null);
 
     for (String conceptFQName : myIntentions.keySet()) {
       if (node.isInstanceOfConcept(conceptFQName)) {
