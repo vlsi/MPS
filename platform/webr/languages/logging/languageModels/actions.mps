@@ -7,10 +7,8 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  </language>
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="webr.logging.structure" version="-1" />
@@ -62,9 +60,11 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1178200477985">
-                    <node role="value" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178200519333">
-                      <link role="baseMethodDeclaration" targetNodeId="3.~Severity.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1178200515706" />
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207737787257">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1178200515706" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207737787258">
+                        <link role="baseMethodDeclaration" targetNodeId="3.~Severity.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -94,7 +94,9 @@
                     <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1178200612699" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1178200616420">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1178200619204">
-                        <link role="concept" targetNodeId="2.1164903280175" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207737785006">
+                          <link role="conceptDeclaration" targetNodeId="2.1164903280175" resolveInfo="CatchClause" />
+                        </node>
                       </node>
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1178200623739" />
                     </node>
@@ -197,9 +199,11 @@
           <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_String" id="1178200323241">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178200323242">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178200350843">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178200406699">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Severity.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1178200350844" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207737791866">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1178200350844" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207737791867">
+                    <link role="baseMethodDeclaration" targetNodeId="3.~Severity.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
+                  </node>
                 </node>
               </node>
             </node>

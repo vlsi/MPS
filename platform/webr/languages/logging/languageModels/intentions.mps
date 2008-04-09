@@ -13,7 +13,6 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="webr.logging.structure" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1195647359270">
     <property name="name" value="HideExceptionSection" />
     <property name="isErrorIntention" value="false" />

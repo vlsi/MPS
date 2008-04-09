@@ -13,12 +13,10 @@
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="webr.logging.structure" version="-1" />
-  <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1167245582276">
     <link role="conceptDeclaration" targetNodeId="1.1167227138527" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167245583614">
       <property name="drawBorder" value="false" />
-      <link role="keyMap" targetNodeId="1167228512722" resolveInfo="AddException_keymap" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1167245583615">
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="fontStyle" value="BOLD" />

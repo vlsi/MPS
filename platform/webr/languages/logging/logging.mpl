@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="webr.logging" compileInMPS="false">
+<language namespace="webr.logging" compileInMPS="true">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="webr.logging" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="webr.logging" />
@@ -12,19 +12,22 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
       </dependencies>
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.baseLanguage</usedLanguages>
+      </usedLanguages>
       <mapping-priorities />
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}\classes" />
     <entry path="${mps_home}\lib\commons-logging\commons-logging-1.1.jar" />
+    <entry path="${language_descriptor}\classes_gen" />
   </classPath>
-  <runtimeClassPath>
-    <entry path="${language_descriptor}\classes" />
-  </runtimeClassPath>
-  <sourcePath />
+  <runtimeClassPath />
+  <sourcePath>
+    <source path="${language_descriptor}\source" />
+  </sourcePath>
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />
