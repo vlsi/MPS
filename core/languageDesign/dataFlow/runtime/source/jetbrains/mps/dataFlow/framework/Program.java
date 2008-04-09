@@ -167,9 +167,9 @@ public class Program {
   }
 
   public Set<Instruction> getExpectedReturns() {
+    Set<Instruction> result = new HashSet<Instruction>();
     AnalysisResult<Boolean> analysisResult = analyze(new ReachabilityAnalyzer());
     ProgramState endWithoutReturn = new ProgramState(getEnd(), false);
-    Set<Instruction> result = new HashSet<Instruction>();
     if (analysisResult.get(endWithoutReturn)) {
       for (ProgramState pred : endWithoutReturn.pred()) {
         if (analysisResult.get(pred)) {

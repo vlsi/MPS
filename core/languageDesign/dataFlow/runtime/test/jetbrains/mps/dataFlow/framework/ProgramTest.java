@@ -6,7 +6,6 @@ import jetbrains.mps.dataFlow.framework.SimpleProgramBuilder;
 import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.dataFlow.framework.instructions.WriteInstruction;
-import jetbrains.mps.dataFlow.framework.analyzers.ReachabilityAnalyzer;
 
 import java.util.Collections;
 

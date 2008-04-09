@@ -125,30 +125,4 @@ public class ReachabilityAnaysisTest {
       result.toString()
     );
   }
-
-  @Test
-  public void stopRet() {
-    Program p = new SimpleProgramBuilder()
-      .emitTry()
-      .emitRet()
-      .emitFinally()
-      .emitStopRet()
-      .emitEndTry()
-      .emitNop()
-      .buildProgram();
-
-    AnalysisResult<Boolean> result = p.analyze(new ReachabilityAnalyzer());
-
-    Assert.assertEquals(
-      "0: try true\n" +
-      "1: ret true\n" +
-      "2: finally true\n" +
-      "3: stopRet true\n" +
-      "4: endTry true\n" +
-      "5: nop true\n" +
-      "6: end true\n",
-      result.toString()
-    );
-  }
-
 }
