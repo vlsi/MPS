@@ -28,7 +28,7 @@ public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<Set<Object
     Instruction instruction = s.getInstruction();
     Set<Object> result = new HashSet<Object>(input);
 
-    if (instruction.isStart()) {
+    if (s.isStart()) {
       result.clear();
     }
 

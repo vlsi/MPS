@@ -22,6 +22,10 @@ public class ProgramState {
     return myReturnMode;
   }
 
+  public boolean isStart() {
+    return !isReturnMode() && myInstruction.isStart();
+  }
+
   public Set<ProgramState> succ() {
     return myInstruction.succ(this);
   }

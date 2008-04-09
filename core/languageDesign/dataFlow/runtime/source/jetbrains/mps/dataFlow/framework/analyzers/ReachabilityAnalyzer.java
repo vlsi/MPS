@@ -23,8 +23,7 @@ public class ReachabilityAnalyzer implements DataFlowAnalyzer<Boolean> {
   }
 
   public Boolean fun(Boolean input, ProgramState s) {
-    Instruction instruction = s.getInstruction();
-    if (instruction.getProgram().get(0) == instruction) {
+    if (s.isStart()) {
       return true;
     }
     return input;
