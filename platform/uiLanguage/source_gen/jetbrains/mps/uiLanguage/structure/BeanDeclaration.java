@@ -75,19 +75,19 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
     return this.getChildCount(BeanDeclaration.ATTRIBUTE);
   }
 
-  public Iterator<BeanAttributeDeclaration> attributes() {
+  public Iterator<AttributeDeclaration> attributes() {
     return this.children(BeanDeclaration.ATTRIBUTE);
   }
 
-  public List<BeanAttributeDeclaration> getAttributes() {
+  public List<AttributeDeclaration> getAttributes() {
     return this.getChildren(BeanDeclaration.ATTRIBUTE);
   }
 
-  public void addAttribute(BeanAttributeDeclaration node) {
+  public void addAttribute(AttributeDeclaration node) {
     this.addChild(BeanDeclaration.ATTRIBUTE, node);
   }
 
-  public void insertAttribute(BeanAttributeDeclaration prev, BeanAttributeDeclaration node) {
+  public void insertAttribute(AttributeDeclaration prev, AttributeDeclaration node) {
     this.insertChild(prev, BeanDeclaration.ATTRIBUTE, node);
   }
 
