@@ -232,6 +232,55 @@
         </node>
       </node>
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1207757118239">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1152141311721" resolveInfo="SequenceCreatorWithSupplier" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitutePreconditionFunction" id="1207757132200">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207757132201">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207757139504">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207757142385">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207757140072">
+                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1207757139505" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207757141848">
+                  <link role="link" targetNodeId="1.1207756918186" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation" id="1207757143634" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1207757154565">
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleRightTransformMenuPart" id="1207757160449">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_Handler" id="1207757160450">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207757160451">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207757195164">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207757200172">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207757195817">
+                    <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1207757195165" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207757199463">
+                      <link role="link" targetNodeId="1.1207756918186" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1207757204662">
+                    <link role="concept" targetNodeId="2.1068431790189" resolveInfo="Type" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207757224696">
+                <node role="expression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1207757225932" />
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1207757173287">
+            <property name="text" value="&lt;" />
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1207757837311">
+            <property name="text" value="add type parameter" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1152143990738">
     <property name="name" value="BLC_substitute" />

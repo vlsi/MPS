@@ -133,6 +133,11 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1152141311721">
     <property name="name" value="SequenceCreatorWithSupplier" />
     <link role="extends" targetNodeId="2.1145552809883" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1207756918186">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="elementType" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1152141373004">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />

@@ -9,9 +9,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.smodel.action.RTransformPreconditionContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -58,6 +58,10 @@ public class QueriesGenerated {
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1197932868400(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getSourceNode());
     return (TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapType"), false) != null);
+  }
+
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_SequenceCreatorWithSupplier_1207757132200(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true) == null);
   }
 
   public static void nodeFactory_NodeSetup_DefaultInputElement_1174261447073(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -253,6 +257,30 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return "[";
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SequenceCreatorWithSupplier_1207757118239(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.setNewChild(_context.getSourceNode(), "elementType", "jetbrains.mps.baseLanguage.structure.Type");
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "<";
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "add type parameter";
         }
 
       });

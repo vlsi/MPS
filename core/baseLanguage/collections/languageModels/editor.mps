@@ -127,6 +127,35 @@
         <property name="text" value="sequence" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
+        <property name="rightTransformAnchorTag" value="default_RTransform" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1207756961014">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207756988012">
+          <property name="text" value="&lt;" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1207756992936">
+          <link role="relationDeclaration" targetNodeId="1.1207756918186" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1207756995577">
+          <property name="text" value="&gt;" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1207756970166">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207756970167">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207756978324">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207756983405">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207756978632">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1207756978325" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1207756980751">
+                    <link role="link" targetNodeId="1.1207756918186" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1207756984224" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1152142202769">
         <property name="editable" value="false" />

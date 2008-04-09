@@ -949,6 +949,9 @@
                       <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock" id="1207745733210">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207745733211" />
                       </node>
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207758710763">
+                        <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+                      </node>
                     </node>
                   </node>
                 </node>
