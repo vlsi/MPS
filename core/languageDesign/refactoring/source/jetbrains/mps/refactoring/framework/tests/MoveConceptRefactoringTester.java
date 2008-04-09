@@ -30,7 +30,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
     GenericRefactoring refactoring_moveConcepts = new GenericRefactoring(new MoveConcepts());
 
     System.err.println("executing a refactoring");
-    refactoring_moveConcepts.doExecute(actionContext, refactoringContext);
+    refactoring_moveConcepts.doExecuteInTest(actionContext, refactoringContext);
 
     try {
       System.err.println("checking a model");

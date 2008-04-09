@@ -33,7 +33,7 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
     RefactoringContext refactoringContext = new RefactoringContext();
     GenericRefactoring refactoring_deleteLink = new GenericRefactoring(new SafeDeleteLink());
     System.err.println("executing a refactoring");
-    refactoring_deleteLink.doExecute(actionContext, refactoringContext);
+    refactoring_deleteLink.doExecuteInTest(actionContext, refactoringContext);
 
     try {
       System.err.println("checking a model");

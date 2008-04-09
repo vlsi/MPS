@@ -31,7 +31,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
     GenericRefactoring refactoring_renameConcept = new GenericRefactoring(new RenameConcept());
 
     System.err.println("executing a refactoring");
-    refactoring_renameConcept.doExecute(actionContext, refactoringContext);
+    refactoring_renameConcept.doExecuteInTest(actionContext, refactoringContext);
 
     try {
       System.err.println("checking a model");

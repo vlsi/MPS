@@ -548,7 +548,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public String getToolTipText(final MouseEvent event) {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
+    return CommandProcessor.instance().tryToExecuteLightweightCommand(new Calculable<String>() {
       public String calculate() {
         EditorCell cell = myRootCell.findCell(event.getX(), event.getY());
         if (cell == null) {

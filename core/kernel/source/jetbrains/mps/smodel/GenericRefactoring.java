@@ -86,30 +86,33 @@ public class GenericRefactoring {
                 }
               });
               if (u == null) {
-                CommandProcessor.instance().executeCommand(new Runnable() {
-                  public void run() {
-                    doExecute(context, refactoringContext);                    
-                  }
-                });
+                    doExecuteInThread(context, refactoringContext);
               }
             }
           });
         }
       };
       thread.start();
-      /*  try {
-        thread.join();
-      } catch (InterruptedException ex) {
-        
-      }*/
-
-
     } else {
-      doExecute(context, refactoringContext);
+      doExecuteInThread(context, refactoringContext);
     }
   }
 
-  public void doExecute(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
+  public Thread doExecuteInThread(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
+    Thread result = new Thread() {
+      public void run() {
+        doExecute(context, refactoringContext);
+      }
+    };
+    result.start();
+    return result;
+  }
+
+  public void doExecuteInTest(ActionContext context, RefactoringContext refactoringContext) {
+    doExecute(context, refactoringContext);
+  }
+
+  private void doExecute(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
     SModelRepository.getInstance().saveAll();
     refactoringContext.setRefactoring(myRefactoring);
 
@@ -123,12 +126,8 @@ public class GenericRefactoring {
     final String refactoringTaskName = "refactoring_" + myRefactoring.getClass().getName();
     final long estimatedTime = monitor.getEstimatedTime(refactoringTaskName);
     try {
-      new Thread() {
-        public void run() {
-          monitor.start("refactoring", estimatedTime);
-          monitor.startLeafTask(refactoringTaskName, "refactoring", estimatedTime);
-        }
-      }.start();
+       monitor.start("refactoring", estimatedTime);
+       monitor.startLeafTask(refactoringTaskName, "refactoring", estimatedTime);
 
       CommandProcessor.instance().executeCommand(new Runnable() {
         public void run() {
@@ -181,12 +180,8 @@ public class GenericRefactoring {
         generateModels(context, sourceModels, refactoringContext);
       }
     } finally {
-      new Thread() {
-        public void run() {
-          monitor.finishTask();
-          monitor.finish();
-        }
-      }.start();
+      monitor.finishTask();
+      monitor.finish();
     }
 
 

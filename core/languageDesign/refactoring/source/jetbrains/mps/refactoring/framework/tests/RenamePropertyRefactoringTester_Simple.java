@@ -27,7 +27,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
     GenericRefactoring refactoring_renameLink = new GenericRefactoring(new RenameProperty());
 
     System.err.println("executing a refactoring");
-    refactoring_renameLink.doExecute(actionContext, refactoringContext);
+    refactoring_renameLink.doExecuteInTest(actionContext, refactoringContext);
 
     try {
       System.err.println("checking a model");
