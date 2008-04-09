@@ -2,7 +2,6 @@ package jetbrains.mps.dataFlow.framework.instructions;
 
 import jetbrains.mps.dataFlow.framework.ProgramState;
 import jetbrains.mps.dataFlow.framework.Program.TryFinallyInfo;
-import jetbrains.mps.dataFlow.framework.Program.BlockInfo;
 
 import java.util.Set;
 import java.util.List;
@@ -20,9 +19,9 @@ public class FinallyInstruction extends Instruction {
 
   public void buildCaches() {
     super.buildCaches();
-    for (BlockInfo info : getProgram().getBlockInfos()) {
-      if (info instanceof TryFinallyInfo && ((TryFinallyInfo) info).getFinally() == this) {
-        myInfo = (TryFinallyInfo) info;
+    for (TryFinallyInfo info : getProgram().getBlockInfos()) {
+      if (info.getFinally() == this) {
+        myInfo =  info;
         break;
       }
     }
@@ -35,9 +34,9 @@ public class FinallyInstruction extends Instruction {
       }
     }
 
-    for (BlockInfo info : getProgram().getBlockInfos()) {
-      if (info.getParent() == myInfo && info instanceof TryFinallyInfo) {
-        myChildTryFinallies.add((TryFinallyInfo) info);
+    for (TryFinallyInfo info : getProgram().getBlockInfos()) {
+      if (info.getParent() == myInfo) {
+        myChildTryFinallies.add(info);
       }
     }
   }
@@ -47,10 +46,12 @@ public class FinallyInstruction extends Instruction {
       Set<ProgramState> result = new HashSet<ProgramState>();
       for (RetInstruction ret : myReturns) {
         result.add(new ProgramState(ret, false));
+        result.add(new ProgramState(ret, true));
       }
       for (TryFinallyInfo childInfo : myChildTryFinallies) {
         result.add(new ProgramState(childInfo.getEndTry(), true));
       }
+      result.addAll(super.pred(s));
       return result;
     } else {
       return super.pred(s);

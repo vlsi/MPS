@@ -4,7 +4,6 @@ package jetbrains.mps.dataFlow.framework.instructions;
 import jetbrains.mps.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.framework.ProgramState;
 import jetbrains.mps.dataFlow.framework.Program.TryFinallyInfo;
-import jetbrains.mps.dataFlow.framework.Program.BlockInfo;
 
 import java.util.*;
 
@@ -15,7 +14,7 @@ public abstract class Instruction {
 
   private Set<Instruction> myJumps = new HashSet<Instruction>();
   private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
-  private BlockInfo myBlockInfo;
+  private TryFinallyInfo myBlockInfo;
 
   Instruction() {
   }
@@ -45,17 +44,17 @@ public abstract class Instruction {
   }
 
   public void buildCaches() {
-    BlockInfo bestMatch = null;
+    TryFinallyInfo bestMatch = null;
     int index = getIndex();
-    for (BlockInfo info : getProgram().getBlockInfos()) {
-      if (index > info.getStart().getIndex() && index < info.getEnd().getIndex()) {
+    for (TryFinallyInfo info : getProgram().getBlockInfos()) {
+      if (index > info.getTry().getIndex() && index < info.getFinally().getIndex()) {
         bestMatch = info;
       }
     }
     myBlockInfo = bestMatch;
   }
 
-  public BlockInfo getEnclosingBlock() {
+  public TryFinallyInfo getEnclosingBlock() {
     return myBlockInfo;
   }
 
@@ -91,16 +90,10 @@ public abstract class Instruction {
     Set<ProgramState> result = new HashSet<ProgramState>();
     if (this != getProgram().getStart()) {
       Instruction prev = getProgram().get(getIndex() - 1);
-
       if (!(prev instanceof RetInstruction) &&
           !(prev instanceof JumpInstruction) &&
           !(prev instanceof EndTryInstruction && s.isReturnMode())) {
         result.add(new ProgramState(prev, s.isReturnMode()));
-      }
-
-      if (prev instanceof EndClosureInstruction && !(s.isReturnMode())) {
-        result.add(new ProgramState(prev, true));
-        result.add(new ProgramState(prev, false));
       }
     }
 

@@ -53,18 +53,6 @@ public class SimpleProgramBuilder {
     return this;
   }
 
-  public SimpleProgramBuilder emitClosure() {
-    ClosureInstruction instruction = new ClosureInstruction();
-    myProgram.add(instruction);
-    return this;
-  }
-
-  public SimpleProgramBuilder emitEndClosure() {
-    EndClosureInstruction instruction = new EndClosureInstruction();
-    myProgram.add(instruction);
-    return this;
-  }
-
   public SimpleProgramBuilder emitNop() {
     myProgram.add(new NopInstruction());
     return this;

@@ -10,7 +10,7 @@ import java.util.*;
 
 public class Program {
   private List<Instruction> myInstructions = new ArrayList<Instruction>();
-  private List<BlockInfo> myBlockInfo = new ArrayList<BlockInfo>();
+  private List<TryFinallyInfo> myTryFinallyInfo = new ArrayList<TryFinallyInfo>();
 
   private Map<Object, Integer> myStarts = new HashMap<Object, Integer>();
   private Map<Object, Integer> myEnds = new HashMap<Object, Integer>();  
@@ -110,6 +110,8 @@ public class Program {
 
     buildBlockInfos();
     buildInstructionCaches();
+
+    sanityCheck();
   }
 
   private void buildInstructionCaches() {
@@ -119,12 +121,12 @@ public class Program {
   }
 
   private void buildBlockInfos() {
-    Stack<BlockInfo> stack = new Stack<BlockInfo>();
+    Stack<TryFinallyInfo> stack = new Stack<TryFinallyInfo>();
     for (Instruction i : myInstructions) {
       if (i instanceof TryInstruction) {
         Program.TryFinallyInfo info = new TryFinallyInfo();
         info.myTry = (TryInstruction) i;
-        myBlockInfo.add(info);
+        myTryFinallyInfo.add(info);
         if (!stack.isEmpty()) {
           info.myParent = stack.peek();
         }
@@ -132,9 +134,7 @@ public class Program {
       }
 
       if (i instanceof FinallyInstruction) {
-        if (stack.isEmpty() ||
-          !(stack.peek() instanceof TryFinallyInfo) ||
-          ((TryFinallyInfo) stack.peek()).myFinally != null) {
+        if (stack.isEmpty() || stack.peek().myFinally != null) {
           throw new IllegalStateException("unexpected finally");
         }
 
@@ -144,32 +144,11 @@ public class Program {
 
       if (i instanceof EndTryInstruction) {
         if (stack.isEmpty() ||
-          !(stack.peek() instanceof TryFinallyInfo) ||
           ((TryFinallyInfo) stack.peek()).myEndTry != null) {
           throw new IllegalStateException("unexpected endtry");
         }
 
         ((TryFinallyInfo) stack.peek()).myEndTry = (EndTryInstruction) i;
-        stack.pop();
-      }
-
-      if (i instanceof ClosureInstruction) {
-        ClosureInfo info = new ClosureInfo();
-        info.myClosure = (ClosureInstruction) i;
-        myBlockInfo.add(info);
-        if (!stack.isEmpty()) {
-          info.myParent = stack.peek();
-        }
-        stack.push(info);
-      }
-
-      if (i instanceof EndClosureInstruction) {
-        if (stack.isEmpty() ||
-            !(stack.peek() instanceof ClosureInfo)) {
-          throw new RuntimeException("unexpected endClosure");
-        }
-
-        ((ClosureInfo) stack.peek()).myEndClosure = (EndClosureInstruction) i;
         stack.pop();
       }
     }
@@ -253,21 +232,35 @@ public class Program {
     return result.toString();
   }
 
-  public List<BlockInfo> getBlockInfos() {
-    return Collections.unmodifiableList(myBlockInfo);
+  public List<TryFinallyInfo> getBlockInfos() {
+    return Collections.unmodifiableList(myTryFinallyInfo);
   }
 
-  public abstract class BlockInfo {
-    public abstract BlockInfo getParent();
-    public abstract Instruction getStart();
-    public abstract Instruction getEnd();
+  private void sanityCheck() {
+    for (Instruction i : myInstructions) {
+      sanityCheck(new ProgramState(i, true));
+      sanityCheck(new ProgramState(i, false));
+    }
   }
 
-  public class TryFinallyInfo extends BlockInfo {
+  private void sanityCheck(ProgramState ps) {
+    for (ProgramState pred : ps.pred()) {
+      if (!pred.succ().contains(ps)) {
+        throw new RuntimeException();
+      }
+    }
+    for (ProgramState succ : ps.succ()) {
+      if (!succ.pred().contains(ps)) {
+        throw new RuntimeException();
+      }
+    }
+  }
+
+  public class TryFinallyInfo {
     private TryInstruction myTry;
     private FinallyInstruction myFinally;
     private EndTryInstruction myEndTry;
-    private BlockInfo myParent;
+    private TryFinallyInfo myParent;
 
     public TryInstruction getTry() {
       return myTry;
@@ -281,41 +274,7 @@ public class Program {
       return myEndTry;
     }
 
-    public Instruction getStart() {
-      return getTry();
-    }
-
-    public Instruction getEnd() {
-      return getFinally();
-    }
-
-    public BlockInfo getParent() {
-      return myParent;
-    }
-  }
-
-  public class ClosureInfo extends BlockInfo {
-    private ClosureInstruction myClosure;
-    private EndClosureInstruction myEndClosure;
-    private BlockInfo myParent;
-
-    public ClosureInstruction getClosure() {
-      return myClosure;
-    }
-
-    public EndClosureInstruction getEndClosure() {
-      return myEndClosure;
-    }
-
-    public Instruction getStart() {
-      return getClosure();
-    }
-
-    public Instruction getEnd() {
-      return getEndClosure();
-    }
-
-    public BlockInfo getParent() {
+    public TryFinallyInfo getParent() {
       return myParent;
     }
   }
