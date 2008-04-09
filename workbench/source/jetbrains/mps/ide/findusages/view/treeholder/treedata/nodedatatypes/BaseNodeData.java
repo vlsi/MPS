@@ -58,7 +58,7 @@ public abstract class BaseNodeData implements IExternalizeable {
 
   public void setExpanded(boolean isExpanded) {
     myIsExpanded = isExpanded;
-    notifyChangeListeners();
+    //notifyChangeListeners();
   }
 
   public int getSubresultsCount() {
