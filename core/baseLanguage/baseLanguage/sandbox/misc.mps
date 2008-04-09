@@ -226,7 +226,16 @@
       <property name="name" value="bar" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1207668641160" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207668641161" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207668641162" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207668641162">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207761704745">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207761705841">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207761904600">
+              <property name="value" value="239" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207761704746" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1207668425582">
