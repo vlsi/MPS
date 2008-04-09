@@ -914,7 +914,9 @@
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205846533186">
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1205846533187">
                         <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1205846533188">
-                          <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                          <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207781905996">
+                            <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                          </node>
                         </node>
                         <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1205846533189" />
                       </node>
@@ -1828,7 +1830,9 @@
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1207229235206">
               <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1207229235207">
-                <link role="concept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207781905986">
+                  <link role="conceptDeclaration" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                </node>
               </node>
             </node>
           </node>
@@ -1878,7 +1882,9 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1207229337193">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1207229340259">
-                    <link role="concept" targetNodeId="1.1068498886296" resolveInfo="VariableReference" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207781905953">
+                      <link role="conceptDeclaration" targetNodeId="1.1068498886296" resolveInfo="VariableReference" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1962,7 +1968,9 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1207229400992">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1207229404420">
-                    <link role="concept" targetNodeId="1.1068581242863" resolveInfo="LocalVariableDeclaration" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207781905981">
+                      <link role="conceptDeclaration" targetNodeId="1.1068581242863" resolveInfo="LocalVariableDeclaration" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2868,7 +2876,9 @@
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1207233696704">
               <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1207233700708">
-                <link role="concept" targetNodeId="1.1068498886296" resolveInfo="VariableReference" />
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207781905954">
+                  <link role="conceptDeclaration" targetNodeId="1.1068498886296" resolveInfo="VariableReference" />
+                </node>
               </node>
             </node>
           </node>

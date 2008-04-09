@@ -27,7 +27,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
   }
 
   public String getLongDescription() {
-    return "";
+    return "z";
   }
 
   public String getConcept() {
