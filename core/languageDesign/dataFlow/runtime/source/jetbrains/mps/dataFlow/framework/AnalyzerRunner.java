@@ -36,11 +36,13 @@ class AnalyzerRunner<E> {
     final Map<ProgramState, E> stateValues = new HashMap<ProgramState, E>();
     for (Instruction i : myProgram.getInstructions()) {
       stateValues.put(new ProgramState(i, false), myAnalyzer.initial(myProgram));
+      stateValues.put(new ProgramState(i, true), myAnalyzer.initial(myProgram));
     }
 
     Queue<ProgramState> workList = new LinkedList<ProgramState>();
     for (Instruction i : myProgram.getInstructions()) {
       workList.add(new ProgramState(i, false));
+      workList.add(new ProgramState(i, true));
     }
 
     AnalysisDirection direction = myAnalyzer.getDirection();
@@ -56,7 +58,7 @@ class AnalyzerRunner<E> {
 
       E oldValue = stateValues.get(current);
       E mergedValue = myAnalyzer.merge(myProgram, input);
-      E newValue = myAnalyzer.fun(current.getInstruction(), mergedValue);
+      E newValue = myAnalyzer.fun(mergedValue, current);
 
       if (!newValue.equals(oldValue)) {
         stateValues.put(current, newValue);

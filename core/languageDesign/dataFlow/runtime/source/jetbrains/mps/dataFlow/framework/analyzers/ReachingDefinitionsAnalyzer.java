@@ -3,8 +3,9 @@ package jetbrains.mps.dataFlow.framework.analyzers;
 import jetbrains.mps.dataFlow.framework.AnalysisDirection;
 import jetbrains.mps.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.dataFlow.framework.Program;
-import jetbrains.mps.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.dataFlow.framework.ProgramState;
 import jetbrains.mps.dataFlow.framework.instructions.WriteInstruction;
+import jetbrains.mps.dataFlow.framework.instructions.Instruction;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +23,8 @@ public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteIn
     return result;
   }
 
-  public Set<WriteInstruction> fun(Instruction instruction, Set<WriteInstruction> input) {
+  public Set<WriteInstruction> fun(Set<WriteInstruction> input, ProgramState s) {
+    Instruction instruction = s.getInstruction();
     Set<WriteInstruction> result = new HashSet<WriteInstruction>(input); 
     if (instruction instanceof WriteInstruction) {
       WriteInstruction write = (WriteInstruction) instruction;

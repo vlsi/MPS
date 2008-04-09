@@ -3,6 +3,7 @@ package jetbrains.mps.dataFlow.framework.analyzers;
 import jetbrains.mps.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.dataFlow.framework.AnalysisDirection;
 import jetbrains.mps.dataFlow.framework.Program;
+import jetbrains.mps.dataFlow.framework.ProgramState;
 import jetbrains.mps.dataFlow.framework.instructions.Instruction;
 
 import java.util.Set;
@@ -21,7 +22,8 @@ public class ReachabilityAnalyzer implements DataFlowAnalyzer<Boolean> {
     return false;
   }
 
-  public Boolean fun(Instruction instruction, Boolean input) {
+  public Boolean fun(Boolean input, ProgramState s) {
+    Instruction instruction = s.getInstruction();
     if (instruction.getProgram().get(0) == instruction) {
       return true;
     }

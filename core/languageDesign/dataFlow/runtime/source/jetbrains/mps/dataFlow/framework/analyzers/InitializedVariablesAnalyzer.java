@@ -3,8 +3,9 @@ package jetbrains.mps.dataFlow.framework.analyzers;
 import jetbrains.mps.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.dataFlow.framework.AnalysisDirection;
 import jetbrains.mps.dataFlow.framework.Program;
-import jetbrains.mps.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.dataFlow.framework.ProgramState;
 import jetbrains.mps.dataFlow.framework.instructions.WriteInstruction;
+import jetbrains.mps.dataFlow.framework.instructions.Instruction;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -23,7 +24,8 @@ public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<Set<Object
     return result;
   }
 
-  public Set<Object> fun(Instruction instruction, Set<Object> input) {
+  public Set<Object> fun(Set<Object> input, ProgramState s) {
+    Instruction instruction = s.getInstruction();
     Set<Object> result = new HashSet<Object>(input);
 
     if (instruction.isStart()) {
