@@ -674,8 +674,13 @@
                       <node role="operation" type="jetbrains.mps.internal.collections.structure.SelectOperation" id="1207743926766">
                         <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1207743926767">
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207743926768">
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207743926769">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207743926770" />
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207750514513">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1207750514514">
+                                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207750520732">
+                                  <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+                                </node>
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207750522813" />
+                              </node>
                             </node>
                           </node>
                           <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1207743926771">
@@ -707,7 +712,12 @@
                         <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1207743956451">
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207743956452">
                             <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1207743962524">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207743964084" />
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1207750527628">
+                                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207750611459">
+                                  <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+                                </node>
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207750533745" />
+                              </node>
                             </node>
                           </node>
                           <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1207743956453">

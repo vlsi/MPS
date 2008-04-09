@@ -21,7 +21,7 @@ public class NullValues_Test extends Util_Test {
       this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).select(new ISelector <Integer, Integer>() {
 
         public Integer select(Integer it) {
-          return null;
+          return (Integer)null;
         }
 
       }));
@@ -45,7 +45,7 @@ __switch__:
                         return false;
                       case 2:
                         this.__CP__ = 1;
-                        this.yield(null);
+                        this.yield((Integer)null);
                         return true;
                       case 0:
                         this.__CP__ = 2;
