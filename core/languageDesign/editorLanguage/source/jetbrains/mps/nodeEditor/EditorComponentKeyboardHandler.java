@@ -23,7 +23,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
     editorContext.getNodeEditorComponent().hideMessageToolTip();
-    
+
     if (keyEvent.isConsumed()) return false;
 
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
@@ -45,7 +45,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         KeyMapUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
         return true;
       } else if (actionsInfo.size() > 1 ||
-              (actionsInfo.size() == 1 && actionsInfo.get(0).o1.isMenuAlwaysShown())) {
+        (actionsInfo.size() == 1 && actionsInfo.get(0).o1.isMenuAlwaysShown())) {
         // show menu
         EditorUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, selectedCell);
         return true;
@@ -75,8 +75,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
       if (!EditorUtil.isValidCell(selectedCell)) {
         if (endEditKeystroke ||
-                EditorCellAction.INSERT.equals(actionType) ||
-                EditorCellAction.INSERT_BEFORE.equals(actionType)) {
+          EditorCellAction.INSERT.equals(actionType) ||
+          EditorCellAction.INSERT_BEFORE.equals(actionType)) {
           EditorUtil.validateCell(selectedCell, editorContext, strictMatching);
           return true;
         }
@@ -99,15 +99,15 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
       if (deleteKeystroke) {
         if (!(selectedCell instanceof EditorCell_Label &&
-                ((EditorCell_Label) selectedCell).isEditable())) {
+          ((EditorCell_Label) selectedCell).isEditable())) {
           actionType = EditorCellAction.DELETE;
           keyEvent.consume();
         }
 
       } else if (backspaceKeystroke) {
         if (selectedCell instanceof EditorCell_Constant &&
-                !((EditorCell_Label) selectedCell).isEditable() &&
-                !((EditorCell_Label) selectedCell).getTextLine().isFirstCaretPosition()) {
+          !((EditorCell_Label) selectedCell).isEditable() &&
+          !((EditorCell_Label) selectedCell).getTextLine().isFirstCaretPosition()) {
           actionType = EditorCellAction.DELETE;
           keyEvent.consume();
         }
@@ -135,7 +135,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       if (!keyEvent.isConsumed()) {
         // auto-completion (AKA node substitution)
         if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) ||
-                (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && (!keyEvent.isAltDown()) && !(keyEvent.isControlDown() || keyEvent.isShiftDown()))) {
+          (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && (!keyEvent.isAltDown()) && !(keyEvent.isControlDown() || keyEvent.isShiftDown()))) {
           if (editor.activateNodeSubstituteChooser(selectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
             LOG.debug("SUBSTITUTE");
             return true;
@@ -177,7 +177,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     }
 
     // special case - don't allow kbd focus to leave editor area
-    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown() && !keyEvent.isAltDown() && !keyEvent.isShiftDown()) {
       keyEvent.consume();
     }
 

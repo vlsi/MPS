@@ -138,6 +138,14 @@ public abstract class UsageView implements IExternalizeable {
     }.start();
   }
 
+  public void goToNext() {
+    myTreeHolder.goToNext();
+  }
+
+  public void goToPrevious() {
+    myTreeHolder.goToPrevious();
+  }
+
   //----COMPONENT STUFF----
 
   public JComponent getComponent() {

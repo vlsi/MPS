@@ -6,6 +6,8 @@ import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.findusages.view.NewUsagesView;
+import jetbrains.mps.ide.findusages.view.UsageView;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -143,7 +145,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     this(operationContext, false);
   }
 
-  public AbstractEditorComponent(IOperationContext operationContext, boolean showErrorsGutter) {
+  public AbstractEditorComponent(final IOperationContext operationContext, boolean showErrorsGutter) {
     myOperationContext = operationContext;
 
     setBackground(Color.white);
@@ -298,6 +300,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         showPopupMenu(cell.getX(), cell.getY());
       }
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        NewUsagesView usagesView = operationContext.getProject().getComponent(NewUsagesView.class);
+        assert usagesView != null;
+        UsageView usageView = usagesView.getCurrentView();
+        if (usageView != null) usageView.goToPrevious();
+      }
+    }, KeyStroke.getKeyStroke("control alt UP"), WHEN_FOCUSED);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        NewUsagesView usagesView = operationContext.getProject().getComponent(NewUsagesView.class);
+        assert usagesView != null;
+        UsageView usageView = usagesView.getCurrentView();
+        if (usageView != null) usageView.goToNext();
+      }
+    }, KeyStroke.getKeyStroke("control alt DOWN"), WHEN_FOCUSED);
 
     myLightBulb = new LightBulbMenu() {
       public void activate() {

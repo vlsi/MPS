@@ -175,6 +175,14 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
     return myContents.getAllNodes();
   }
 
+  public void goToNext() {
+    myTree.navigateToNextResult();
+  }
+
+  public void goToPrevious() {
+    myTree.navigateToPreviousResult();
+  }
+
   public JToolBar getActionsToolbar(int orientation) {
     myActionsToolbar.setOrientation(orientation);
     return myActionsToolbar;

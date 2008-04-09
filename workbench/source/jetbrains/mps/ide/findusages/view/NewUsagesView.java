@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -97,6 +98,17 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
         }
       });
     }
+  }
+
+  @Nullable
+  public UsageView getCurrentView() {
+    int index = currentTabIndex();
+    if (index == -1) return null;
+
+    NewUsagesView.UsageViewData data = myUsageViewsData.get(index);
+    assert data != null;
+
+    return data.myUsageView;
   }
 
   private int currentTabIndex() {
