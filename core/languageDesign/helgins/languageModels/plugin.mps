@@ -220,7 +220,7 @@
                         <link role="variableDeclaration" targetNodeId="1205605929642" resolveInfo="editor" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205606237235">
-                        <link role="baseMethodDeclaration" targetNodeId="10.~AbstractEditorComponent.getGutterMessageOwner():jetbrains.mps.nodeEditor.IEditorMessageOwner" resolveInfo="getGutterMessageOwner" />
+                        <link role="baseMethodDeclaration" targetNodeId="10.~AbstractEditorComponent.getHighlightMessagesOwner():jetbrains.mps.nodeEditor.IEditorMessageOwner" resolveInfo="getHighlightMessagesOwner" />
                       </node>
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205606244441">
