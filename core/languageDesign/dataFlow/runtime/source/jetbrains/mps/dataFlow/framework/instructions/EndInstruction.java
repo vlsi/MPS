@@ -2,6 +2,7 @@ package jetbrains.mps.dataFlow.framework.instructions;
 
 import jetbrains.mps.dataFlow.framework.ProgramState;
 import jetbrains.mps.dataFlow.framework.Program.TryFinallyInfo;
+import jetbrains.mps.dataFlow.framework.Program.BlockInfo;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -21,9 +22,9 @@ public class EndInstruction extends Instruction {
         myReturns.add((RetInstruction) i);
       }
     }
-    for (TryFinallyInfo info : getProgram().getTryFinallyInfos()) {
-      if (info.getParent() == null) {
-        myRootTryFinallies.add(info);
+    for (BlockInfo info : getProgram().getBlockInfos()) {
+      if (info.getParent() == null && info instanceof TryFinallyInfo) {
+        myRootTryFinallies.add((TryFinallyInfo) info);
       }
     }
   }
@@ -32,7 +33,7 @@ public class EndInstruction extends Instruction {
     Set<ProgramState> result = new HashSet<ProgramState>();
     if (s.isReturnMode()) {
       for (RetInstruction ret : myReturns) {
-        if (ret.getEnclosingTryFinally() == null) {
+        if (ret.getEnclosingBlock() == null) {
           result.add(new ProgramState(ret, false));
         }
       }

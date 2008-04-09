@@ -2,6 +2,7 @@ package jetbrains.mps.dataFlow.framework.instructions;
 
 import jetbrains.mps.dataFlow.framework.ProgramState;
 import jetbrains.mps.dataFlow.framework.Program.TryFinallyInfo;
+import jetbrains.mps.dataFlow.framework.Program.BlockInfo;
 
 import java.util.Set;
 import java.util.List;
@@ -19,9 +20,9 @@ public class FinallyInstruction extends Instruction {
 
   public void buildCaches() {
     super.buildCaches();
-    for (TryFinallyInfo info : getProgram().getTryFinallyInfos()) {
-      if (info.getFinally() == this) {
-        myInfo = info;
+    for (BlockInfo info : getProgram().getBlockInfos()) {
+      if (info instanceof TryFinallyInfo && ((TryFinallyInfo) info).getFinally() == this) {
+        myInfo = (TryFinallyInfo) info;
         break;
       }
     }
@@ -29,30 +30,30 @@ public class FinallyInstruction extends Instruction {
     int start = myInfo.getTry().getIndex();
     int end = myInfo.getFinally().getIndex();
     for (Instruction i : getProgram().getInstructions().subList(start + 1, end)) {
-      if (i instanceof RetInstruction && i.getEnclosingTryFinally() == myInfo) {
+      if (i instanceof RetInstruction && i.getEnclosingBlock() == myInfo) {
         myReturns.add((RetInstruction) i);
       }
     }
 
-    for (TryFinallyInfo info : getProgram().getTryFinallyInfos()) {
-      if (info.getParent() == myInfo) {
-        myChildTryFinallies.add(info);
+    for (BlockInfo info : getProgram().getBlockInfos()) {
+      if (info.getParent() == myInfo && info instanceof TryFinallyInfo) {
+        myChildTryFinallies.add((TryFinallyInfo) info);
       }
     }
   }
 
   public Set<ProgramState> pred(ProgramState s) {
-    Set<ProgramState> result = new HashSet<ProgramState>();
     if (s.isReturnMode()) {
+      Set<ProgramState> result = new HashSet<ProgramState>();
       for (RetInstruction ret : myReturns) {
         result.add(new ProgramState(ret, false));
       }
       for (TryFinallyInfo childInfo : myChildTryFinallies) {
         result.add(new ProgramState(childInfo.getEndTry(), true));
       }
+      return result;
     } else {
       return super.pred(s);
     }
-    return result;
   }
 }
