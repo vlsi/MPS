@@ -25,7 +25,24 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     List<T> list;
     
     public static <U> IListSequence<U> fromArray (U...array) {
-        return new ListSequence<U> (new ArrayList<U> (Arrays.asList(array)));
+        if (Sequence.USE_NULL_SEQUENCE) {
+            if (array == null) {
+                return NullListSequence.instance();
+            }
+        }
+        List<U> input = Arrays.asList(array);
+        if (Sequence.IGNORE_NULL_VALUES) {
+            ArrayList<U> tmp = new ArrayList<U> ();
+            for (U u : input) {
+                if (u != null) {
+                    tmp.add(u);
+                }
+            }
+            return new ListSequence<U> (tmp);
+        }
+        else {
+            return new ListSequence<U> (new ArrayList<U> (input));
+        }
     }
 
     public static <U> IListSequence<U> fromList (List<U> list) {
@@ -189,6 +206,11 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
             }
         }
         for (T t : seq.toIterable()) {
+            if (Sequence.IGNORE_NULL_VALUES) {
+                if (t == null) {
+                    continue;
+                }
+            }
             list.add(t);
         }
     }

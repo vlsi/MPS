@@ -6,6 +6,7 @@ package jetbrains.mps.internal.collections.runtime.impl;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
@@ -78,7 +79,13 @@ public class TranslatingSequence<U,V> extends AbstractChainedSequence<U,V> imple
                 }
                 if (inputIt.hasNext()) {
                     try {
-                        this.transIt = translator.translate(inputIt.next()).toIterable().iterator();
+                        ISequence<V> transSeq = translator.translate(inputIt.next());
+                        if (Sequence.USE_NULL_SEQUENCE) {
+                            if (transSeq == null) {
+                                transSeq = NullSequence.instance();
+                            }
+                        }
+                        this.transIt = transSeq.toIterable().iterator();
                     }
                     catch (StopIteratingException illegal) {
                         // StopIteratingException might only be called from hasNext() and next()

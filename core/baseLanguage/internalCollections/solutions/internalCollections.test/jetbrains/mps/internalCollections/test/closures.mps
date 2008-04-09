@@ -1756,6 +1756,23 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1207739322344">
+      <property name="name" value="expectEmpty" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1207739325327">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207739329155">
+          <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207739322346" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207739322347">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207739334741">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207739339656">
+            <link role="baseMethodDeclaration" targetNodeId="1.~Collections.emptyList():java.util.List" resolveInfo="emptyList" />
+            <link role="classConcept" targetNodeId="1.~Collections" resolveInfo="Collections" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205949300713">
       <property name="name" value="expect5" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1205949303149">

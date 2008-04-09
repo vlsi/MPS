@@ -72,6 +72,10 @@ public class Util_Test extends TestCase {
     return Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
   }
 
+  public Iterable<Integer> expectEmpty() {
+    return Collections.emptyList();
+  }
+
   public Iterable<Integer> expect5() {
     return Arrays.asList(1, 2, 3, 4, 5);
   }
