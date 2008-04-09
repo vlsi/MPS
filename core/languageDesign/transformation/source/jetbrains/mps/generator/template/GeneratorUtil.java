@@ -40,7 +40,7 @@ public class GeneratorUtil {
   public static String getMappingName(INodeAdapter node, String defaultValue) {
     String mappingName = null;
     if (node instanceof CreateRootRule) {
-      BaseLabelDeclaration mappingLabel = ((CreateRootRule) node).getLabel();
+      MappingLabelDeclaration mappingLabel = ((CreateRootRule) node).getLabel();
       if (mappingLabel != null) {
         mappingName = mappingLabel.getName();
       } else {
