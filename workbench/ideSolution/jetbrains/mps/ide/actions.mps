@@ -176,7 +176,7 @@
         <property name="name" value="VCS" />
         <property name="caption" value="Version Control" />
         <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207743067864">
-          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207751387637">
+          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207752718780">
             <link role="javaClass" targetNodeId="29.~ModelHistoryAction" resolveInfo="ModelHistoryAction" />
           </node>
           <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207751391655">
