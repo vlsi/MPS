@@ -170,7 +170,6 @@ public abstract class CompletionTextField extends JTextField {
 
       myWindow.setLayout(new BorderLayout());
       myList = new JList();
-
       myScroller = new JScrollPane(myList);
 
       myList.addMouseListener(new MouseAdapter() {
