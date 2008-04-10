@@ -7,6 +7,7 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.integration.Highlighter;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPathsDialog;
@@ -116,6 +117,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     myEventTranslator = new ProjectEventTranslator();
     CommandProcessor.instance().addCommandListener(myEventTranslator);
+
+    Highlighter hilghlighter = new Highlighter();
+    myContext.register(Highlighter.class, hilghlighter);
+    hilghlighter.setProjects(ApplicationComponents.getInstance().getComponent(MPSProjects.class));
   }
 
   public IScope getScope() {
@@ -650,6 +655,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         // dependency error.
         MPSModuleRepository.getInstance().removeTransientModules();
 
+        myContext.get(Highlighter.class).stopUpdater();
         myPluginManager.disposePlugins();
 
         for (Object pc : getComponents()) {
