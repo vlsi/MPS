@@ -11,13 +11,6 @@ import jetbrains.mps.nodeEditor.EditorManager.EditorCell_RTHint;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 31.05.2006
- * Time: 13:20:53
- * To change this template use File | Settings | File Templates.
- */
 public class IntelligentInputUtil {
 
   private static final Logger LOG = Logger.getLogger(IntelligentInputUtil.class);
@@ -90,7 +83,7 @@ public class IntelligentInputUtil {
     }
     UndoManager.instance().markPlaceInCurrentUndoActionsWithObject(ourMarker);
     rtAction.execute(editorContext);
-    final CellFounder cellFounder = new CellFounder(editorContext, newNode, tail);
+    final CellFinder cellFounder = new CellFinder(editorContext, newNode, tail);
     EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
 
     cellFounder.run(newCellForNewNode);
@@ -165,14 +158,14 @@ public class IntelligentInputUtil {
   }
 
   
-  private static class CellFounder implements Runnable {
+  private static class CellFinder implements Runnable {
     private EditorCell_Label myFoundCell;
     private final EditorContext myEditorContext;
     private final SNode myNode;
     private final String myFoundCellText;
     private boolean myCallSelect = false;
 
-    public CellFounder(EditorContext editorContext, SNode node, String foundCellText) {
+    public CellFinder(EditorContext editorContext, SNode node, String foundCellText) {
       myEditorContext = editorContext;
       myNode = node;
       myFoundCellText = foundCellText;
