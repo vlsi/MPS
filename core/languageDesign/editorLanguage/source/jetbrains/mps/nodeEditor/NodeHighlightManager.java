@@ -12,7 +12,7 @@ import java.awt.*;
  */
 public class NodeHighlightManager implements IEditorMessageOwner {
   private AbstractEditorComponent myEditor;
-  private Map<IEditorMessageOwner, Set<DefaultEditorMessage>> myMessages = new HashMap<IEditorMessageOwner, Set<DefaultEditorMessage>>();
+  private Map<IEditorMessageOwner, Set<IEditorMessage>> myMessages = new HashMap<IEditorMessageOwner, Set<IEditorMessage>>();
 
   public NodeHighlightManager(AbstractEditorComponent edtitor) {
     myEditor = edtitor;
@@ -33,12 +33,12 @@ public class NodeHighlightManager implements IEditorMessageOwner {
     return result;
   }
 
-  private Iterable<DefaultEditorMessage> myMessages() {
-    return new Iterable<DefaultEditorMessage>() {
-      public Iterator<DefaultEditorMessage> iterator() {
-        return new Iterator<DefaultEditorMessage>() {
-          Iterator<Set<DefaultEditorMessage>> mySetIterator = myMessages.values().iterator();
-          Iterator<DefaultEditorMessage> myCurrentIterator = null;
+  private Iterable<IEditorMessage> myMessages() {
+    return new Iterable<IEditorMessage>() {
+      public Iterator<IEditorMessage> iterator() {
+        return new Iterator<IEditorMessage>() {
+          Iterator<Set<IEditorMessage>> mySetIterator = myMessages.values().iterator();
+          Iterator<IEditorMessage> myCurrentIterator = null;
           public boolean hasNext() {
             if (myCurrentIterator == null) {
               return mySetIterator.hasNext();
@@ -47,7 +47,7 @@ public class NodeHighlightManager implements IEditorMessageOwner {
             return mySetIterator.hasNext();
           }
 
-          public DefaultEditorMessage next() {
+          public IEditorMessage next() {
             if (myCurrentIterator == null) {
               myCurrentIterator = mySetIterator.next().iterator();
             }
@@ -68,20 +68,20 @@ public class NodeHighlightManager implements IEditorMessageOwner {
 
   public void mark(SNode node, Color color, String messageText, IEditorMessageOwner owner) {
     if (node == null) return;
-    DefaultEditorMessage message = new DefaultEditorMessage(node, color, messageText, owner, myEditor);
+    IEditorMessage message = new DefaultEditorMessage(node, color, messageText, owner, myEditor);
     mark(message);
   }
 
-  public void mark(DefaultEditorMessage message) {
+  public void mark(IEditorMessage message) {
     IEditorMessageOwner owner = message.getOwner();
     SNode node = message.getNode();
-    for (DefaultEditorMessage msg : myMessages()) {
+    for (IEditorMessage msg : myMessages()) {
       if (msg.getNode() == node && msg.getOwner() == owner) return;
     }
 
-    Set<DefaultEditorMessage> messages = myMessages.get(owner);
+    Set<IEditorMessage> messages = myMessages.get(owner);
     if (messages == null) {
-      messages = new HashSet<DefaultEditorMessage>();
+      messages = new HashSet<IEditorMessage>();
       myMessages.put(owner, messages);
     }
     messages.add(message);
@@ -89,8 +89,8 @@ public class NodeHighlightManager implements IEditorMessageOwner {
     myEditor.getExternalComponent().repaint();
   }
 
-  public Set<DefaultEditorMessage> getMessages() {
-    Set<DefaultEditorMessage> result = new HashSet<DefaultEditorMessage>();
+  public Set<IEditorMessage> getMessages() {
+    Set<IEditorMessage> result = new HashSet<IEditorMessage>();
     for (IEditorMessageOwner owner : myMessages.keySet()) {
       result.addAll(myMessages.get(owner));
     }
@@ -105,33 +105,33 @@ public class NodeHighlightManager implements IEditorMessageOwner {
       if (color.equals(this.getColorFor(node))) return;
       node = node.getParent();
     }
-    Set<DefaultEditorMessage> messagesToRemove = new HashSet<DefaultEditorMessage>();
+    Set<IEditorMessage> messagesToRemove = new HashSet<IEditorMessage>();
     for (SNode childNode : nodeToHighlight.getDescendants()) {
-      for (DefaultEditorMessage msg : myMessages()) {
+      for (IEditorMessage msg : myMessages()) {
         if (msg.getNode() == childNode && msg.getColor().equals(color)) messagesToRemove.add(msg);
       }
     }
-    for (DefaultEditorMessage msg : messagesToRemove) {
-      Set<DefaultEditorMessage> msgs = this.myMessages.get(msg.getOwner());
+    for (IEditorMessage msg : messagesToRemove) {
+      Set<IEditorMessage> msgs = this.myMessages.get(msg.getOwner());
       if (msgs != null) {
         msgs.remove(msg);
       }
     }
-    for (DefaultEditorMessage msg : messagesToRemove) {
+    for (IEditorMessage msg : messagesToRemove) {
       myEditor.getMessagesGutter().remove(msg);
     }
     this.mark(nodeToHighlight, color, messageText, owner);
   }
 
   public Color getColorFor(SNode node) {
-    for (DefaultEditorMessage msg : myMessages()) {
+    for (IEditorMessage msg : myMessages()) {
       if (msg.getNode() == node) return msg.getColor();
     }
     return null;
   }
 
   public IEditorMessage getMessageFor(SNode node) {
-    for (DefaultEditorMessage msg : myMessages()) {
+    for (IEditorMessage msg : myMessages()) {
       if (msg.getNode() == node) return msg;
     }
     return null;
@@ -139,7 +139,7 @@ public class NodeHighlightManager implements IEditorMessageOwner {
 
   public List<IEditorMessage> getMessagesFor(SNode node) {
     List<IEditorMessage> result = new ArrayList<IEditorMessage>();
-    for (DefaultEditorMessage msg : myMessages()) {
+    for (IEditorMessage msg : myMessages()) {
       if (msg.getNode() == node) {
         result.add(msg);
       }

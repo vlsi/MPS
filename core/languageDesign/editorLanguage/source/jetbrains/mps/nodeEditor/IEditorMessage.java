@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.smodel.SNode;
+
 import java.awt.*;
 
 public interface IEditorMessage {
@@ -7,6 +9,8 @@ public interface IEditorMessage {
   int getHeight();
 
   String getMessage();
+
+  SNode getNode();
 
   void doNavigate();
 

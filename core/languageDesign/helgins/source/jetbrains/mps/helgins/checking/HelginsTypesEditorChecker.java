@@ -1,9 +1,6 @@
 package jetbrains.mps.helgins.checking;
 
-import jetbrains.mps.nodeEditor.IEditorComponent;
-import jetbrains.mps.nodeEditor.NodeHighlightManager;
-import jetbrains.mps.nodeEditor.MessageStatus;
-import jetbrains.mps.nodeEditor.DefaultEditorMessage;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
@@ -22,10 +19,10 @@ import java.util.LinkedHashSet;
  * Time: 15:04:28
  * To change this template use File | Settings | File Templates.
  */
-public class HelginsTypesChecker implements IChecker {
-  private static Logger LOG = Logger.getLogger(HelginsTypesChecker.class);
+public class HelginsTypesEditorChecker implements IEditorChecker {
+  private static Logger LOG = Logger.getLogger(HelginsTypesEditorChecker.class);
 
-  public boolean updateEditor(IEditorComponent editor, LinkedHashSet<HighlighterMessage> messages) {
+  public boolean updateEditor(IEditorComponent editor, LinkedHashSet<IEditorMessage> messages) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }
@@ -42,13 +39,9 @@ public class HelginsTypesChecker implements IChecker {
       }
     }
 
-    // clear highlighting
-    NodeHighlightManager highlightManager = editor.getHighlightManager();
-
     // highlight nodes with errors
-    NodeTypesComponent typesComponent = NodeTypesComponentsRepository.getInstance().
-      createNodeTypesComponent(node.getContainingRoot());
-    highlightManager.clearForOwner(typesComponent);
+    NodeTypesComponent typesComponent = getNodeTypesComponent(node);
+
     for (Pair<SNode, IErrorReporter> errorNode : typesComponent.getNodesWithErrorStrings()) {
       MessageStatus status = MessageStatus.ERROR;
       Color color = Color.red;
@@ -58,9 +51,25 @@ public class HelginsTypesChecker implements IChecker {
       }
       DefaultEditorMessage message =
         new HighlighterMessage(errorNode.o1, status, color, "TYPE ERROR: " + errorNode.o2.reportError(), editor, typesComponent);
-      highlightManager.mark(message);
+      messages.add(message);
     }
 
     return true;
+  }
+
+  private NodeTypesComponent getNodeTypesComponent(SNode node) {
+    NodeTypesComponent typesComponent = NodeTypesComponentsRepository.getInstance().
+      createNodeTypesComponent(node.getContainingRoot());
+    return typesComponent;
+  }
+
+  public boolean executeInUndoableCommand() {
+    return false;
+  }
+
+  public IEditorMessageOwner getOwner(IEditorComponent editorComponent) {
+    SNode node = editorComponent.getEditedNode();
+    if (node == null) return null;
+    return getNodeTypesComponent(node);
   }
 }
