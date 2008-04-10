@@ -643,10 +643,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       myModulesPool = new ProjectModulesPoolTreeNode(getProject());
       root.add(myModulesPool);
 
-      if (ApplicationComponents.getInstance().getComponentSafe(GlobalIdeSettings.class).isLoadModelsOnProjectLoad()) {
-        myModulesPool.init();
-      }
-
       TransientModulesTreeNode transientModules = new TransientModulesTreeNode(getProject());
       root.add(transientModules);
 
