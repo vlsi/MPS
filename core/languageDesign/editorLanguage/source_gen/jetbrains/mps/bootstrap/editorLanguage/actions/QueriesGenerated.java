@@ -14,10 +14,8 @@ import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -28,6 +26,8 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.bootstrap.editorLanguage.constraints.BaseEditorComponent_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.bootstrap.editorLanguage.structure.CellActionId;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
 public class QueriesGenerated {
 
@@ -48,19 +48,19 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_CellModel_Property_1158947460473(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode parentRefCell = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell", true, false);
-    if(parentRefCell != null) {
+    if (parentRefCell != null) {
       SPropertyOperations.set(_context.getNewNode(), "readOnly", "" + (true));
     }
   }
 
   public static void nodeFactory_NodeSetup_CellModel_Collection_1159287296419(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
+    if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
       SPropertyOperations.set(_context.getNewNode(), "selectable", "false");
     }
-    if(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
       SNode innerNode = SNodeOperations.copyNode(_context.getSampleNode());
       SLinkOperations.addChild(_context.getNewNode(), "childCellModel", innerNode);
-      if(SNodeOperations.isInstanceOf(innerNode, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
+      if (SNodeOperations.isInstanceOf(innerNode, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
         SPropertyOperations.set(innerNode, "selectable", "false");
       }
     }
@@ -68,9 +68,443 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_CellModel_Alternation_1165441265076(final IOperationContext operationContext, final NodeSetupContext _context) {
     SPropertyOperations.set(_context.getNewNode(), "vertical", "" + (true));
-    if(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel")) {
       SLinkOperations.setTarget(_context.getNewNode(), "ifTrueCellModel", SNodeOperations.copyNode(_context.getSampleNode()), true);
     }
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_EditorCellModel_1177585776510(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "vertical", "" + (true));
+            return result;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "collection (vertical)";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "vertical", "" + (true));
+            if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", true, false) != null)) {
+              SPropertyOperations.set(result, "selectable", "false");
+            }
+            return result;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "collection (vertical)";
+          }
+
+          public String getMatchingText(String pattern) {
+            return "[/";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "vertical", "" + (false));
+            return result;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "collection (horizontal)";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "vertical", "" + (false));
+            if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", true, false) != null)) {
+              SPropertyOperations.set(result, "selectable", "false");
+            }
+            return result;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "collection (horizontal)";
+          }
+
+          public String getMatchingText(String pattern) {
+            return "[>";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "vertical", "" + (false));
+            SNode indent = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent", null);
+            SPropertyOperations.set(indent, "selectable", "false");
+            SLinkOperations.insertChildFirst(result, "childCellModel", indent);
+            if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", true, false) != null)) {
+              SPropertyOperations.set(result, "selectable", "false");
+            }
+            return result;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "collection (with indent)";
+          }
+
+          public String getMatchingText(String pattern) {
+            return "[_";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "vertical", "" + (true));
+            return result;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "child node list (vertical)";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "vertical", "" + (true));
+            if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
+              SPropertyOperations.set(result, "selectable", "false");
+            }
+            return result;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "child node list (vertical)";
+          }
+
+          public String getMatchingText(String pattern) {
+            return "(/";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "vertical", "" + (false));
+            return result;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "child node list (horizontal)";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "vertical", "" + (false));
+            if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
+              SPropertyOperations.set(result, "selectable", "false");
+            }
+            return result;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "child node list (horizontal)";
+          }
+
+          public String getMatchingText(String pattern) {
+            return "(>";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            return SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell", _context.getCurrentTargetNode());
+          }
+
+          public String getMatchingText(String pattern) {
+            return "referent node cell";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            return SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode", _context.getCurrentTargetNode());
+          }
+
+          public String getMatchingText(String pattern) {
+            return "child node cell";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            return SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property", _context.getCurrentTargetNode());
+          }
+
+          public String getMatchingText(String pattern) {
+            return "property";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "editable", "false");
+            return result;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "concept property";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation", _context.getCurrentTargetNode());
+            return result;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "alternation";
+          }
+
+          public String getMatchingText(String pattern) {
+            return "if";
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "text", NameUtil.stripQuotes(pattern, "\"", "\""));
+            return result;
+          }
+
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern) {
+            return pattern.startsWith("\"");
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "constant";
+          }
+
+          public String getMatchingText(String pattern) {
+            return pattern;
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error", _context.getCurrentTargetNode());
+            SPropertyOperations.set(result, "text", NameUtil.stripQuotes(pattern, "!", "!"));
+            return result;
+          }
+
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern) {
+            return pattern.startsWith("!");
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "Error label";
+          }
+
+          public String getMatchingText(String pattern) {
+            return pattern;
+          }
+
+        });
+      }
+    }
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        Calculable calc = new Calculable() {
+
+          public Object calculate() {
+            SNode container = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.BaseEditorComponent", true, false);
+            return BaseEditorComponent_Behavior.call_getApplicableComponents_1199449552893(container, operationContext.getScope());
+          }
+
+        };
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        assert queryResult != null;
+        for(final SNode item : queryResult) {
+          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+              SNode component = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component", null);
+              SLinkOperations.setTarget(component, "editorComponent", (item), false);
+              return component;
+            }
+
+            public String getMatchingText(String pattern) {
+              return "#" + SPropertyOperations.getString((item), "name") + "#";
+            }
+
+          });
+        }
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CellActionMapItem_1185874474095(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem", operationContext.getScope());
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+        Calculable calc = new Calculable() {
+
+          public Object calculate() {
+            return CellActionId.getConstants();
+          }
+
+        };
+        Iterable<CellActionId> queryResult = (Iterable)calc.calculate();
+        assert queryResult != null;
+        for(final CellActionId item : queryResult) {
+          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+              SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem", _context.getCurrentTargetNode());
+              SPropertyOperations.set(newNode, "actionId", (item).getValue());
+              return newNode;
+            }
+
+            public String getMatchingText(String pattern) {
+              return (item).getName();
+            }
+
+          });
+        }
+      }
+    }
+    return result;
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CellMenuPart_Abstract_1199894656684(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -119,440 +553,6 @@ public class QueriesGenerated {
       ConceptDeclaration conceptToAdd = ((ConceptDeclaration)SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_ReplaceChildPrimary", operationContext.getScope()));
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       result.addAll(defaultActions);
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_EditorCellModel_1177585776510(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (true));
-            return result;
-          }
-
-          public String getMatchingText(String pattern) {
-            return "collection (vertical)";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (true));
-            if((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", true, false) != null)) {
-              SPropertyOperations.set(result, "selectable", "false");
-            }
-            return result;
-          }
-
-          public String getDescriptionText(String pattern) {
-            return "collection (vertical)";
-          }
-
-          public String getMatchingText(String pattern) {
-            return "[/";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (false));
-            return result;
-          }
-
-          public String getMatchingText(String pattern) {
-            return "collection (horizontal)";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (false));
-            if((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", true, false) != null)) {
-              SPropertyOperations.set(result, "selectable", "false");
-            }
-            return result;
-          }
-
-          public String getDescriptionText(String pattern) {
-            return "collection (horizontal)";
-          }
-
-          public String getMatchingText(String pattern) {
-            return "[>";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (false));
-            SNode indent = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent", null);
-            SPropertyOperations.set(indent, "selectable", "false");
-            SLinkOperations.insertChildFirst(result, "childCellModel", indent);
-            if((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection", true, false) != null)) {
-              SPropertyOperations.set(result, "selectable", "false");
-            }
-            return result;
-          }
-
-          public String getDescriptionText(String pattern) {
-            return "collection (with indent)";
-          }
-
-          public String getMatchingText(String pattern) {
-            return "[_";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (true));
-            return result;
-          }
-
-          public String getMatchingText(String pattern) {
-            return "ref.node list (vertical)";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (true));
-            if(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
-              SPropertyOperations.set(result, "selectable", "false");
-            }
-            return result;
-          }
-
-          public String getDescriptionText(String pattern) {
-            return "ref.node list (vertical)";
-          }
-
-          public String getMatchingText(String pattern) {
-            return "(/";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (false));
-            return result;
-          }
-
-          public String getMatchingText(String pattern) {
-            return "ref.node list (horizontal)";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "vertical", "" + (false));
-            if(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection")) {
-              SPropertyOperations.set(result, "selectable", "false");
-            }
-            return result;
-          }
-
-          public String getDescriptionText(String pattern) {
-            return "ref.node list (horizontal)";
-          }
-
-          public String getMatchingText(String pattern) {
-            return "(>";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell", _context.getCurrentTargetNode());
-          }
-
-          public String getMatchingText(String pattern) {
-            return "ref.cell";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode", _context.getCurrentTargetNode());
-          }
-
-          public String getMatchingText(String pattern) {
-            return "ref.node";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property", _context.getCurrentTargetNode());
-          }
-
-          public String getMatchingText(String pattern) {
-            return "property";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "editable", "false");
-            return result;
-          }
-
-          public String getMatchingText(String pattern) {
-            return "concept property";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation", _context.getCurrentTargetNode());
-            return result;
-          }
-
-          public String getDescriptionText(String pattern) {
-            return "alternation";
-          }
-
-          public String getMatchingText(String pattern) {
-            return "if";
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "text", NameUtil.stripQuotes(pattern, "\"", "\""));
-            return result;
-          }
-
-          public boolean hasSubstitute() {
-            return true;
-          }
-
-          public boolean canSubstitute_internal(String pattern) {
-            return pattern.startsWith("\"");
-          }
-
-          public String getDescriptionText(String pattern) {
-            return "constant";
-          }
-
-          public String getMatchingText(String pattern) {
-            return pattern;
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "text", NameUtil.stripQuotes(pattern, "!", "!"));
-            return result;
-          }
-
-          public boolean hasSubstitute() {
-            return true;
-          }
-
-          public boolean canSubstitute_internal(String pattern) {
-            return pattern.startsWith("!");
-          }
-
-          public String getDescriptionText(String pattern) {
-            return "Error label";
-          }
-
-          public String getMatchingText(String pattern) {
-            return pattern;
-          }
-
-        });
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.EditorCellModel", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        Calculable calc = new Calculable() {
-
-          public Object calculate() {
-            SNode container = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bootstrap.editorLanguage.structure.BaseEditorComponent", true, false);
-            return BaseEditorComponent_Behavior.call_getApplicableComponents_1199449552893(container, operationContext.getScope());
-          }
-
-        };
-        Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        assert queryResult != null;
-        for(final SNode item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode component = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component", null);
-              SLinkOperations.setTarget(component, "editorComponent", (item), false);
-              return component;
-            }
-
-            public String getMatchingText(String pattern) {
-              return "#" + SPropertyOperations.getString((item), "name") + "#";
-            }
-
-          });
-        }
-      }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CellActionMapItem_1185874474095(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if(SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        Calculable calc = new Calculable() {
-
-          public Object calculate() {
-            return CellActionId.getConstants();
-          }
-
-        };
-        Iterable<CellActionId> queryResult = (Iterable)calc.calculate();
-        assert queryResult != null;
-        for(final CellActionId item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem", _context.getCurrentTargetNode());
-              SPropertyOperations.set(newNode, "actionId", (item).getValue());
-              return newNode;
-            }
-
-            public String getMatchingText(String pattern) {
-              return (item).getName();
-            }
-
-          });
-        }
-      }
     }
     return result;
   }

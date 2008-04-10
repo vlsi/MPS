@@ -889,7 +889,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177680474974">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177680474975">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177680474976">
-                  <property name="value" value="ref.node list (vertical)" />
+                  <property name="value" value="child node list (vertical)" />
                 </node>
               </node>
             </node>
@@ -979,7 +979,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177680921702">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177680921703">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177680921704">
-                  <property name="value" value="ref.node list (vertical)" />
+                  <property name="value" value="child node list (vertical)" />
                 </node>
               </node>
             </node>
@@ -1031,7 +1031,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177585852907">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177585853939">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177585854941">
-                  <property name="value" value="ref.node list (horizontal)" />
+                  <property name="value" value="child node list (horizontal)" />
                 </node>
               </node>
             </node>
@@ -1121,7 +1121,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177680944140">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177680944141">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177680944142">
-                  <property name="value" value="ref.node list (horizontal)" />
+                  <property name="value" value="child node list (horizontal)" />
                 </node>
               </node>
             </node>
@@ -1145,7 +1145,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180296457203">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180296472475">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1180296472476">
-                  <property name="value" value="ref.cell" />
+                  <property name="value" value="referent node cell" />
                 </node>
               </node>
             </node>
@@ -1169,7 +1169,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180297613945">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180297620293">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1180297620294">
-                  <property name="value" value="ref.node" />
+                  <property name="value" value="child node cell" />
                 </node>
               </node>
             </node>
