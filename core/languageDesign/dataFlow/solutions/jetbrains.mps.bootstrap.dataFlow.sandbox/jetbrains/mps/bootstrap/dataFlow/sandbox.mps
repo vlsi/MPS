@@ -109,6 +109,23 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207827140052">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207827140053" />
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207829897170">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1207829897171">
+            <link role="classifier" targetNodeId="3.~System" resolveInfo="System" />
+            <link role="variableDeclaration" targetNodeId="3.~System.out" resolveInfo="out" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207829929252">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207829932551">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1207829929253">
+              <link role="classifier" targetNodeId="3.~System" resolveInfo="System" />
+              <link role="variableDeclaration" targetNodeId="3.~System.out" resolveInfo="out" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207829936412">
+              <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207827090107">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207827091094">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207827093582">

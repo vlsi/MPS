@@ -43,7 +43,7 @@ public class IntelligentInputUtil {
     }
 
     EditorCell cellForNewNode;
-    SNode newNode;
+    final SNode newNode;
     if (cell.isValidText(smallPattern) && !"".equals(smallPattern)
             && substituteInfo.hasExactlyNActions(smallPattern + tail, false, 0)) {
       newNode = cell.getSNode();
@@ -55,6 +55,18 @@ public class IntelligentInputUtil {
       newNode = item.doSubstitute(smallPattern);
       assert newNode != null;
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
+      EditorCell errorCell = EditorUtil.findErrorCell(cellForNewNode);
+      if (errorCell != null && errorCell instanceof EditorCell_Label) {
+        CommandProcessor.instance().invokeLater(new Runnable() {
+          public void run() {
+            EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
+            EditorCell_Label errorCell = (EditorCell_Label) EditorUtil.findErrorCell(cellForNewNode);
+            ((EditorCell_Label) errorCell).setText(tail);
+            errorCell.getTextLine().setCaretPosition(tail.length());
+          }
+        });
+        return;
+      }
     } else if (canCompleteImmediately(substituteInfo, smallPattern, tail)) {
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern + tail, true);
       INodeSubstituteAction item = matchingActions.get(0);
