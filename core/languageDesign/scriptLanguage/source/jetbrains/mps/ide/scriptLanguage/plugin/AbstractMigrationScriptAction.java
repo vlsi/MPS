@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.IModule;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -30,6 +31,8 @@ public abstract class AbstractMigrationScriptAction extends RefactoringAction {
       for (Object o : selection) {
         if (o instanceof SModelDescriptor) {
           selectedModels.add((SModelDescriptor) o);
+        } else if (o instanceof IModule) {
+          selectedModels.addAll(((IModule) o).getOwnModelDescriptors());
         }
       }
     } else if (context.get(Language.class) != null) {
@@ -51,5 +54,5 @@ public abstract class AbstractMigrationScriptAction extends RefactoringAction {
       refactoringContext.put(SMODEL_UID, sb.toString());
     }
   }
-  
+
 }

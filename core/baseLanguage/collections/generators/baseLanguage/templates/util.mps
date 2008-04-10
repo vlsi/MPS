@@ -114,20 +114,22 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178821802347">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178821802348">
-            <link role="baseMethodDeclaration" targetNodeId="17.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178821802349">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207845252214">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178821802349">
               <link role="variableDeclaration" targetNodeId="1178821640739" resolveInfo="generator" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178821802350">
-              <link role="variableDeclaration" targetNodeId="1178821576406" resolveInfo="closure" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178821936278">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178821939239">
-                <link role="variableDeclaration" targetNodeId="1178821685575" resolveInfo="returnType" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207845252215">
+              <link role="baseMethodDeclaration" targetNodeId="17.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178821802350">
+                <link role="variableDeclaration" targetNodeId="1178821576406" resolveInfo="closure" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178821802351">
-                <property name="value" value="couldn't define closure return type: " />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178821936278">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178821939239">
+                  <link role="variableDeclaration" targetNodeId="1178821685575" resolveInfo="returnType" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178821802351">
+                  <property name="value" value="couldn't define closure return type: " />
+                </node>
               </node>
             </node>
           </node>
@@ -249,16 +251,18 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178833620973">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178833628636">
-            <link role="baseMethodDeclaration" targetNodeId="17.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178833620974">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207845252076">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178833620974">
               <link role="variableDeclaration" targetNodeId="1170975981399" resolveInfo="generator" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178833632771">
-              <link role="variableDeclaration" targetNodeId="1170975746805" resolveInfo="closureWithInput" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178833638165">
-              <property name="value" value="couldn't define input element type" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207845252077">
+              <link role="baseMethodDeclaration" targetNodeId="17.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178833632771">
+                <link role="variableDeclaration" targetNodeId="1170975746805" resolveInfo="closureWithInput" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178833638165">
+                <property name="value" value="couldn't define input element type" />
+              </node>
             </node>
           </node>
         </node>
@@ -353,20 +357,22 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178827244122">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1178827257414">
-            <link role="baseMethodDeclaration" targetNodeId="17.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178827244123">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207845252171">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178827244123">
               <link role="variableDeclaration" targetNodeId="1178826373826" resolveInfo="generator" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178827342279">
-              <link role="variableDeclaration" targetNodeId="1178826349469" resolveInfo="expression" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178827391841">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178827394575">
-                <link role="variableDeclaration" targetNodeId="1178826748740" resolveInfo="type" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207845252172">
+              <link role="baseMethodDeclaration" targetNodeId="17.~ITemplateGenerator.showErrorMessage(jetbrains.mps.smodel.SNode,java.lang.String):void" resolveInfo="showErrorMessage" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178827342279">
+                <link role="variableDeclaration" targetNodeId="1178826349469" resolveInfo="expression" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178827345394">
-                <property name="value" value="couldn't define sequence element type from expression of type: " />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178827391841">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178827394575">
+                  <link role="variableDeclaration" targetNodeId="1178826748740" resolveInfo="type" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178827345394">
+                  <property name="value" value="couldn't define sequence element type from expression of type: " />
+                </node>
               </node>
             </node>
           </node>
