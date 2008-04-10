@@ -30,9 +30,6 @@ public class AutoResolver implements IEditorChecker, IEditorMessageOwner {
 
     // if (myCheckedRoots.contains(node)) return false;
 
-    // clear highlighting
-    NodeHighlightManager highlightManager = editor.getHighlightManager();
-    highlightManager.clearForOwner(this);
     List<SReference> yetBadReferences = new ArrayList<SReference>();
 
     SReference.disableLogging();
@@ -62,8 +59,8 @@ public class AutoResolver implements IEditorChecker, IEditorMessageOwner {
     // highlight nodes with errors
     for (SReference ref : yetBadReferences) {
       DefaultEditorMessage message =
-        new MyResolverMessage(ref.getSourceNode(), Color.RED, "unresolved reference", editor, this);
-      highlightManager.mark(message);
+        new DefaultEditorMessage(ref.getSourceNode(), MessageStatus.ERROR, Color.RED, "unresolved reference", this, editor);
+      messages.add(message);
     }
 
     return true;
@@ -91,15 +88,6 @@ public class AutoResolver implements IEditorChecker, IEditorMessageOwner {
 
   public boolean executeInUndoableCommand() {
     return true;
-  }
-
-  private static class MyResolverMessage extends DefaultEditorMessage {
-    public MyResolverMessage(SNode errorNode, Color color, String string, IEditorComponent editor, AutoResolver autoResolver) {
-      super(errorNode, color, string, autoResolver, editor);
-    }
-
-    public void paint(Graphics g) {
-    }
   }
 
 }
