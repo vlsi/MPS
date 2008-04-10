@@ -113,7 +113,12 @@ public class GenericRefactoring {
   }
 
   private void doExecute(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
-    SModelRepository.getInstance().saveAll();
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        SModelRepository.getInstance().saveAll();
+      }
+    });
+    
     refactoringContext.setRefactoring(myRefactoring);
 
     AbstractProjectFrame projectFrame = context.get(AbstractProjectFrame.class);

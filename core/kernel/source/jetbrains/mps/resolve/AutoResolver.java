@@ -4,13 +4,11 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.helgins.checking.IEditorChecker;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,7 +17,7 @@ import java.util.Set;
  * Time: 15:11:31
  * To change this template use File | Settings | File Templates.
  */
-public class AutoResolver extends GenericEditorUpdater implements IEditorMessageOwner {
+public class AutoResolver implements IEditorChecker, IEditorMessageOwner {
 
   private static final int CHECK_DELAY = 600;
 
@@ -29,7 +27,7 @@ public class AutoResolver extends GenericEditorUpdater implements IEditorMessage
     return CHECK_DELAY;
   }
 
-  protected boolean updateEditor(final IEditorComponent editor) {
+  public boolean updateEditor(final IEditorComponent editor, LinkedHashSet<IEditorMessage> messages) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }
@@ -90,6 +88,15 @@ public class AutoResolver extends GenericEditorUpdater implements IEditorMessage
       }
     }
     return result;
+  }
+
+  public IEditorMessageOwner getOwner(IEditorComponent editorComponent) {
+    return this;
+    //todo is it correct?
+  }
+
+  public boolean executeInUndoableCommand() {
+    return true;
   }
 
   private static class MyResolverMessage extends DefaultEditorMessage {
