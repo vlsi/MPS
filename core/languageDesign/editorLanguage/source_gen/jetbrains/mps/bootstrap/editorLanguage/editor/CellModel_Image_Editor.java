@@ -4,13 +4,13 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import javax.swing.JComponent;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import javax.swing.JComponent;
 import jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Image;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Component;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -27,10 +27,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_CellKeyMapLnk_Component11;
   /* package */AbstractCellProvider my_FocusPolicy_Applicable10;
   /* package */AbstractCellProvider my_EditorCellModel_RTAnchor_Component9;
-
-  public static JComponent _QueryFunction_JComponent_1176475935262(SNode node, EditorContext editorContext) {
-    return new SelectImageFileButton(((CellModel_Image)SNodeOperations.getAdapter(node)));
-  }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139746611466");
@@ -492,6 +488,10 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_StyleClassReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static JComponent _QueryFunction_JComponent_1176475935262(SNode node, EditorContext editorContext) {
+    return new SelectImageFileButton(((CellModel_Image)SNodeOperations.getAdapter(node)));
   }
 
 

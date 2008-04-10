@@ -4,15 +4,15 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -31,34 +31,6 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_FocusPolicy_Applicable7;
   /* package */AbstractCellProvider my_EditorCellModel_DefaultCaretPosition_Component;
   /* package */AbstractCellProvider my_EditorCellModel_RTAnchor_Component;
-
-  public static boolean _QueryFunction_NodeCondition_1176717081541(SNode node, EditorContext editorContext, IScope scope) {
-    return EditorCellTags.getOpeningText(((CellModel_Constant)SNodeOperations.getAdapter(node))).length() > 0;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1176717095123(SNode node, EditorContext editorContext, IScope scope) {
-    return EditorCellTags.getOpeningText(((CellModel_Constant)SNodeOperations.getAdapter(node))).length() > 0;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1204800945665(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "textFgColor", "query", null);
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1204800945682(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "textFgColor", "query", null);
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1204800945699(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "textBgColor", "query", null);
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1204800945716(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "textBgColorSelected", "query", null);
-  }
-
-  public static Color _QueryFunction_Color_1176889151950(SNode node, EditorContext editorContext) {
-    return _EditorUtil.grayIfNotSelectable(node);
-  }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1080742754454");
@@ -797,6 +769,34 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_TextBgColorSelectedFunctionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1176717081541(SNode node, EditorContext editorContext, IScope scope) {
+    return EditorCellTags.getOpeningText(((CellModel_Constant)SNodeOperations.getAdapter(node))).length() > 0;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1176717095123(SNode node, EditorContext editorContext, IScope scope) {
+    return EditorCellTags.getOpeningText(((CellModel_Constant)SNodeOperations.getAdapter(node))).length() > 0;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1204800945665(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "textFgColor", "query", null);
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1204800945682(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "textFgColor", "query", null);
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1204800945699(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "textBgColor", "query", null);
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1204800945716(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "textBgColorSelected", "query", null);
+  }
+
+  public static Color _QueryFunction_Color_1176889151950(SNode node, EditorContext editorContext) {
+    return _EditorUtil.grayIfNotSelectable(node);
   }
 
 

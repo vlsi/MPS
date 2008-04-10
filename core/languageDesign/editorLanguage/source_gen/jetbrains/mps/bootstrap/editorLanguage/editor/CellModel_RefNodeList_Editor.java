@@ -4,14 +4,14 @@ package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -28,18 +28,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_EditorCellModel_CellBackground_Component12;
   /* package */AbstractCellProvider my_CellKeyMapLnk_Component12;
   /* package */AbstractCellProvider my_FocusPolicy_Applicable14;
-
-  public static boolean _QueryFunction_NodeCondition_1182191264575(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "vertical");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1182191264590(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "vertical"));
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1182948746816(SNode node, EditorContext editorContext, IScope scope) {
-    return "templates".equals(SNodeOperations.getModel(node).getStereotype());
-  }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182191264562");
@@ -879,6 +867,18 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_StyleClassReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1182191264575(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "vertical");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1182191264590(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "vertical"));
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1182948746816(SNode node, EditorContext editorContext, IScope scope) {
+    return "templates".equals(SNodeOperations.getModel(node).getStereotype());
   }
 
 
