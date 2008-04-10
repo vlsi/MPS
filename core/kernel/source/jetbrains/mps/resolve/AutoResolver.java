@@ -19,13 +19,7 @@ import java.util.*;
  */
 public class AutoResolver implements IEditorChecker, IEditorMessageOwner {
 
-  private static final int CHECK_DELAY = 600;
-
   //private WeakSet<SNode> myCheckedRoots = new WeakSet<SNode>();
-
-  protected int getCheckDelay() {
-    return CHECK_DELAY;
-  }
 
   public boolean updateEditor(final IEditorComponent editor, LinkedHashSet<IEditorMessage> messages) {
     if (editor == null || editor.getRootCell() == null) {

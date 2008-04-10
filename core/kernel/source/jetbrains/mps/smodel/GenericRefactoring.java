@@ -101,7 +101,11 @@ public class GenericRefactoring {
   public Thread doExecuteInThread(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
     Thread result = new Thread() {
       public void run() {
-        doExecute(context, refactoringContext);
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            doExecute(context, refactoringContext);
+          }
+        });
       }
     };
     result.start();
@@ -113,12 +117,7 @@ public class GenericRefactoring {
   }
 
   private void doExecute(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {
-        SModelRepository.getInstance().saveAll();
-      }
-    });
-    
+    SModelRepository.getInstance().saveAll();
     refactoringContext.setRefactoring(myRefactoring);
 
     AbstractProjectFrame projectFrame = context.get(AbstractProjectFrame.class);
