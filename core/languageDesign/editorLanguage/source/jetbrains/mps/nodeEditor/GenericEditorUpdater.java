@@ -8,6 +8,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Calculable;
 
 import javax.swing.SwingUtilities;
 
@@ -69,8 +70,8 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         CommandProcessor commandProcessor = CommandProcessor.instance();
-        commandProcessor.tryToExecuteLightweightCommand(new Runnable() {
-          public void run() {
+      /*  commandProcessor.tryToExecuteLightweightCommand(new Runnable() {
+          public void run() {*/
             if (myProjects == null) return;
             MPSProjects projects = myProjects;
             for (MPSProject project : projects.getProjects()) {
@@ -103,16 +104,20 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
                 }
               }
             }
-          }
-        });
+         /* }
+        });*/
       }
     });
   }
 
   private boolean updateEditorComponent(IEditorComponent component) {
-    SNode editedNode = component.getEditedNode();
+    final SNode editedNode = component.getEditedNode();
     if (editedNode != null) {
-      long lastChangeTime = editedNode.getModel().getModelDescriptor().lastStructuralChange();
+      long lastChangeTime = CommandProcessor.instance().executeLightweightCommand(new Calculable<Long>() {
+        public Long calculate() {
+          return editedNode.getModel().getModelDescriptor().lastStructuralChange();
+        }
+      });
       if (System.currentTimeMillis() - lastChangeTime > getCheckDelay()) {
         if (lastChangeTime > getLastUpdateTime(component)) {
           try {

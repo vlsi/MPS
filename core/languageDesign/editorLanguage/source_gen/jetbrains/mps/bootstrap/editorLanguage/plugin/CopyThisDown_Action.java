@@ -26,7 +26,7 @@ public class CopyThisDown_Action extends CurrentProjectMPSAction {
 
   @NotNull()
   public String getKeyStroke() {
-    return "control D";
+    return "";
   }
 
   public void doUpdate(@NotNull() ActionContext context) {

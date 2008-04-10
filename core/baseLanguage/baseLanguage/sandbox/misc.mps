@@ -299,6 +299,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207845053615">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207845053648">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207845055136">
+              <property name="value" value="2" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207845053616">
+              <link role="variableDeclaration" targetNodeId="1207845044456" resolveInfo="a" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
