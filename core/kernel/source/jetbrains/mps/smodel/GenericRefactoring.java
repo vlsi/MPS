@@ -86,7 +86,7 @@ public class GenericRefactoring {
                 }
               });
               if (u == null) {
-                    doExecuteInThread(context, refactoringContext);
+                doExecuteInThread(context, refactoringContext);
               }
             }
           });
@@ -101,11 +101,7 @@ public class GenericRefactoring {
   public Thread doExecuteInThread(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
     Thread result = new Thread() {
       public void run() {
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-          public void run() {
             doExecute(context, refactoringContext);
-          }
-        });
       }
     };
     result.start();
@@ -117,7 +113,12 @@ public class GenericRefactoring {
   }
 
   private void doExecute(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
-    SModelRepository.getInstance().saveAll();
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+         SModelRepository.getInstance().saveAll();
+      }
+    });
+
     refactoringContext.setRefactoring(myRefactoring);
 
     AbstractProjectFrame projectFrame = context.get(AbstractProjectFrame.class);
@@ -130,58 +131,55 @@ public class GenericRefactoring {
     final String refactoringTaskName = "refactoring_" + myRefactoring.getClass().getName();
     final long estimatedTime = monitor.getEstimatedTime(refactoringTaskName);
     try {
-       monitor.start("refactoring", estimatedTime);
-       monitor.startLeafTask(refactoringTaskName, "refactoring", estimatedTime);
+      monitor.start("refactoring", estimatedTime);
+      monitor.startLeafTask(refactoringTaskName, "refactoring", estimatedTime);
 
-      CommandProcessor.instance().executeCommand(new Runnable() {
-        public void run() {
-          myRefactoring.doRefactor(context, refactoringContext);
-        }
-      });
-      SModelDescriptor modelDescriptor = context.getModel();
-
-      if (modelDescriptor == null) return;
-      SModel model = modelDescriptor.getSModel();
-
-      refactoringContext.computeCaches();
-      SearchResults usages = refactoringContext.getUsages();
-      Map<IModule, List<SModel>> sourceModels = CommandProcessor.instance().executeLightweightCommand(new Calculable<Map<IModule, List<SModel>>>() {
+      Map<IModule, List<SModel>> calculatedSourceModels = CommandProcessor.instance().executeCommand(new Calculable<Map<IModule, List<SModel>>>() {
         public Map<IModule, List<SModel>> calculate() {
-          return myRefactoring.getModelsToGenerate(context, refactoringContext);
+          myRefactoring.doRefactor(context, refactoringContext);
+
+          SModelDescriptor modelDescriptor = context.getModel();
+
+          if (modelDescriptor == null) return null;
+          SModel model = modelDescriptor.getSModel();
+
+          refactoringContext.computeCaches();
+          SearchResults usages = refactoringContext.getUsages();
+          Map<IModule, List<SModel>> sourceModels = myRefactoring.getModelsToGenerate(context, refactoringContext);
+          if (!refactoringContext.isLocal() || usages == null) {
+            if (myRefactoring.doesUpdateModel()) {
+              writeIntoLog(model, refactoringContext);
+              for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
+                String stereotype = anotherDescriptor.getStereotype();
+                if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
+                  continue;
+                }
+                if (!anotherDescriptor.isInitialized()) continue;
+                SModel anotherModel = anotherDescriptor.getSModel();
+                if (model != anotherModel
+                  && !anotherModel.getDependenciesModels().contains(modelDescriptor)) continue;
+                processModel(anotherModel, model, refactoringContext);
+              }
+            }
+          } else {
+            if (myRefactoring.doesUpdateModel()) {
+              Set<SModel> modelsToProcess = usages.getModelsWithResults();
+
+              for (List<SModel> sModels : sourceModels.values()) {
+                modelsToProcess.addAll(sModels);
+              }
+
+              for (SModel anotherModel : modelsToProcess) {
+                processModel(anotherModel, model, refactoringContext);
+              }
+            }
+          }
+          return sourceModels;
         }
       });
-      if (!refactoringContext.isLocal() || usages == null) {
-        if (myRefactoring.doesUpdateModel()) {
-          writeIntoLog(model, refactoringContext);
-          for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
-            String stereotype = anotherDescriptor.getStereotype();
-            if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
-              continue;
-            }
-            if (!anotherDescriptor.isInitialized()) continue;
-            SModel anotherModel = anotherDescriptor.getSModel();
-            if (model != anotherModel
-              && !anotherModel.getDependenciesModels().contains(modelDescriptor)) continue;
-            processModel(anotherModel, model, refactoringContext);
-          }
-        }
-      } else {
-        if (myRefactoring.doesUpdateModel()) {
-          Set<SModel> modelsToProcess = usages.getModelsWithResults();
 
-          for (List<SModel> sModels : sourceModels.values()) {
-            modelsToProcess.addAll(sModels);
-          }
-
-          for (SModel anotherModel : modelsToProcess) {
-            processModel(anotherModel, model, refactoringContext);
-          }
-        }
-      }
-
-
-      if (!sourceModels.isEmpty()) {
-        generateModels(context, sourceModels, refactoringContext);
+      if (calculatedSourceModels != null && !calculatedSourceModels.isEmpty()) {
+        generateModels(context, calculatedSourceModels, refactoringContext);
       }
     } finally {
       monitor.finishTask();
