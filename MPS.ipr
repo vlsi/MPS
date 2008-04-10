@@ -1014,7 +1014,8 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/dxml/webr_dxml.iml" filepath="$PROJECT_DIR$/platform/webr/languages/dxml/webr_dxml.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/dxmlInternal/webr_dxmlInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/dxmlInternal/webr_dxmlInternal.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/ftl/webr_ftl.iml" filepath="$PROJECT_DIR$/platform/webr/languages/ftl/webr_ftl.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" filepath="$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" group="platform/webr/languages" />
+      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" filepath="$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" group="platform/webr/languages/gtext" />
+      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/gtext/runtime/webr_gtext_runtime.iml" filepath="$PROJECT_DIR$/platform/webr/languages/gtext/runtime/webr_gtext_runtime.iml" group="platform/webr/languages/gtext" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/javascript/webr_javascript.iml" filepath="$PROJECT_DIR$/platform/webr/languages/javascript/webr_javascript.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/javascriptInternal/webr_javascriptInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/javascriptInternal/webr_javascriptInternal.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/logging/webr_logging.iml" filepath="$PROJECT_DIR$/platform/webr/languages/logging/webr_logging.iml" group="platform/webr/languages" />
@@ -1468,7 +1469,6 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
-    <mapping directory="$CHARISMA_HOME$" vcs="svn" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
