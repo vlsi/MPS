@@ -17,7 +17,7 @@ public class IntelligentInputUtil {
   private static Object ourMarker = new Object();
   private static EditorManager ourServiceEditorManager = new EditorManager();
 
-  public static void processCell(EditorCell_Label cell, final EditorContext editorContext, String pattern) {
+  public static void processCell(EditorCell cell, final EditorContext editorContext, String pattern) {
     if (pattern == null || pattern.equals("")) {
       return;
     }
@@ -35,7 +35,7 @@ public class IntelligentInputUtil {
     processCell(cell, editorContext, smallPattern, tail);
   }
 
-  private static void processCell(EditorCell_Label cell, final EditorContext editorContext, final String smallPattern, final String tail) {
+  private static void processCell(EditorCell cell, final EditorContext editorContext, final String smallPattern, final String tail) {
     boolean sourceCellRemains = false;
     INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
@@ -44,7 +44,8 @@ public class IntelligentInputUtil {
 
     EditorCell cellForNewNode;
     final SNode newNode;
-    if (cell.isValidText(smallPattern) && !"".equals(smallPattern)
+    if (cell instanceof EditorCell_Label &&
+        ((EditorCell_Label) cell).isValidText(smallPattern) && !"".equals(smallPattern)
             && substituteInfo.hasExactlyNActions(smallPattern + tail, false, 0)) {
       newNode = cell.getSNode();
       cellForNewNode = cell;
@@ -61,7 +62,7 @@ public class IntelligentInputUtil {
           public void run() {
             EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
             EditorCell_Label errorCell = (EditorCell_Label) EditorUtil.findErrorCell(cellForNewNode);
-            ((EditorCell_Label) errorCell).setText(tail);
+            ((EditorCell_Label) errorCell).changeText(tail);
             errorCell.getTextLine().setCaretPosition(tail.length());
           }
         });
@@ -139,7 +140,7 @@ public class IntelligentInputUtil {
         return;
       }
       if (sourceCellRemains) {
-        cell.changeText(smallPattern);
+        ((EditorCell_Label) cell).changeText(smallPattern);
       }
 
       cellFounder.setCallSelect(true);

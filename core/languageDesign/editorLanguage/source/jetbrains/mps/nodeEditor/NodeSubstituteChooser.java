@@ -1,14 +1,12 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.WindowsUtil;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 import javax.swing.*;
 import javax.swing.event.ListDataListener;
@@ -189,6 +187,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       if (myPopupActivated) {
         rebuildMenuEntries();
         relayoutPopupMenu();
+        tryToApplyIntelligentInput();
       }
       return true;
     }
@@ -280,7 +279,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   private void updatePatternEditor() {
-
     if (!myMenuEmpty) {
       int oldPosition = myPatternEditor.getCaretPosition();
       String oldPattern = myPatternEditor.getPattern();
@@ -309,6 +307,31 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       myPopupWindow.getParent().remove(myPopupWindow);
       myPopupWindow.dispose();
       myPopupWindow = null;
+    }
+  }
+
+  private void tryToApplyIntelligentInput() {
+    final String pattern = getPatternEditor().getPattern();
+    if (pattern.length() == 0) {
+      return;
+    }
+
+    String prefix = pattern.substring(0, pattern.length() - 1);
+    if (myNodeSubstituteInfo.hasExactlyNActions(pattern, false, 0) &&
+      myNodeSubstituteInfo.hasExactlyNActions(prefix, true, 1)) {
+      INodeSubstituteAction action = myNodeSubstituteInfo.getMatchingActions(prefix, true).get(0);
+      final SNode node = action.doSubstitute(prefix);
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          CommandProcessor.instance().executeCommand(new Runnable() {
+            public void run() {
+              EditorCell cell = myEditorComponent.findNodeCell(node);
+              myEditorComponent.changeSelection(cell);
+              IntelligentInputUtil.processCell(cell, myEditorComponent.getEditorContext(), pattern);
+            }
+          });
+        }
+      });
     }
   }
 

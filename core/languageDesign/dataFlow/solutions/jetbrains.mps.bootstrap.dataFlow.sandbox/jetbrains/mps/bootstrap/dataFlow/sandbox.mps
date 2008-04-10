@@ -106,6 +106,17 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207836062890">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207836062891">
+            <link role="variableDeclaration" targetNodeId="1207253081827" resolveInfo="i" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207835414403">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207835414404">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1207835414405" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1207835414406" />
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207827140052">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1207827140053" />
         </node>
