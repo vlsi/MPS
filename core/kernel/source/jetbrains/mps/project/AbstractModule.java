@@ -103,6 +103,21 @@ public abstract class AbstractModule implements IModule {
     return getDescriptorFile().isReadOnly();
   }
 
+  public boolean isValid() {
+    for (Dependency dep : getDependencies()) {
+      String modelUID = dep.getModuleUID();
+      if (MPSModuleRepository.getInstance().getModuleByUID(modelUID) == null) {
+        return false;
+      }
+    }
+    for (String usedLanguage : getUsedLanguagesNamespaces()) {
+      if (MPSModuleRepository.getInstance().getModuleByUID(usedLanguage) == null) {
+        return false;
+      }      
+    }
+    return true;
+  }
+
   public String getModuleUID() {
     return toString();
   }

@@ -69,4 +69,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   boolean isPackaged();
 
   void dispose();
+
+  boolean isValid();
 }

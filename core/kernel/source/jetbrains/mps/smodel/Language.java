@@ -195,6 +195,20 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return new ArrayList<Language>(set);
   }
 
+  public boolean isValid() {
+    if (!super.isValid()) {
+      return false;
+    }
+
+    for (String lang : getExtendedLanguageNamespaces()) {
+      if (MPSModuleRepository.getInstance().getModuleByUID(lang) == null) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
   private void collectExtendedLanguages(Set<Language> result) {
     if (result.contains(this)) {
       return;

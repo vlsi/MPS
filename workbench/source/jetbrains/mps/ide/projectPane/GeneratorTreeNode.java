@@ -21,6 +21,8 @@ class GeneratorTreeNode extends MPSTreeNode {
     setIcon(Icons.GENERATOR_ICON);
     setNodeIdentifier(calculateNodeIdenifier());
     setText(calculateText());
+
+    setErrorState(!getGenerator().isValid());
   }
 
   public Generator getGenerator() {

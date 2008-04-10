@@ -36,6 +36,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private Color myColor = Color.BLACK;
   private int myFontStyle = Font.PLAIN;
   private boolean myAutoExpandable = true;
+  private boolean myErrorState = false;
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -248,6 +249,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     myColor = color;
   }
 
+  public final boolean isErrorState() {
+    return myErrorState;
+  }
+
+  public final void setErrorState(boolean errorState) {
+    myErrorState = errorState;
+  }
+
   public final int getFontStyle() {
     return myFontStyle;
   }
@@ -287,7 +296,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   public String toString() {
     return getText();
   }
-
 
   public final boolean isAutoExpandable() {
     return myAutoExpandable;

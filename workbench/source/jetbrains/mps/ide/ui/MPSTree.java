@@ -7,6 +7,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.tooltip.TreeToolTipHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.ColorAndGraphicsUtil;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -658,6 +659,7 @@ public abstract class MPSTree extends JTree {
     private JLabel myAdditionalTextLabel = new JLabel();
     private boolean mySelected;
     private boolean myHasFocus;
+    private MPSTreeNode myNode;
 
     public NewMPSTreeCellRenderer() {
       setLayout(new BorderLayout());
@@ -695,9 +697,11 @@ public abstract class MPSTree extends JTree {
         if (!selected) {
           myMainTextLabel.setForeground(treeNode.getColor());
         }
+        myNode = treeNode;
       } else {
         myMainTextLabel.setFont(tree.getFont());
         myAdditionalTextLabel.setFont(tree.getFont());
+        myNode = null;
       }
 
       myMainTextLabel.setText(text);
@@ -758,6 +762,11 @@ public abstract class MPSTree extends JTree {
       }
 
       super.paint(g);
+
+      if (myNode.isErrorState()) {
+        g.setColor(Color.RED);
+        ColorAndGraphicsUtil.drawWave(g, imageOffset, getWidth(), getHeight() - ColorAndGraphicsUtil.WAVE_HEIGHT - 1);
+      }
     }
   }
 }
