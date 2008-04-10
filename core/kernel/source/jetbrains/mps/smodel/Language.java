@@ -208,19 +208,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public void validateExtends() {
     boolean changed = false;
-    // this doesn't allow to remove structureLanguage from 'extended langauges' of baseLanguage
-//    for (SModelUID uid : getStructureModelDescriptor().getSModel().getImportedModelUIDs()) {
-//      if (uid.getLongName().endsWith(".structure")) {
-//        String languageNamespace = uid.getLongName().substring(0, uid.getLongName().length() - ".structure".length());
-//        if (!getExtendedLanguageNamespaces().contains(languageNamespace)) {
-//          LanguageReference ref = LanguageReference.newInstance(myLanguageDescriptor.getModel());
-//          ref.setName(languageNamespace);
-//          myLanguageDescriptor.addExtendedLanguage(ref);
-//          changed = true;
-//        }
-//      }
-//    }
-
     for (LanguageReference ref : myLanguageDescriptor.getExtendedLanguages()) {
       if (getNamespace().equals(ref.getName())) {
         myLanguageDescriptor.removeChild(ref);

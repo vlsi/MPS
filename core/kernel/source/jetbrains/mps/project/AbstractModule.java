@@ -55,6 +55,9 @@ public abstract class AbstractModule implements IModule {
 
     for (IModule m : dependOnModules) {
       result.add(m.getJavaStubsClassPathItem());
+      if (m instanceof Language) {
+        result.add(m.getRuntimeClasspath());
+      }
     }
 
     Set<Language> allExtendedLanguages = new LinkedHashSet<Language>();
@@ -105,11 +108,12 @@ public abstract class AbstractModule implements IModule {
   }
 
   /**
-   * @return all depends-on modules recursively + bootstrap languages
+   * @return all depend on
    */
   public <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
     Set<T> modules = new HashSet<T>();
-    collectAllExplicitlyDependOnModules(this, modules, cls);
+
+    modules.addAll(new DependencyCollector(this, cls).collect());
 
     // add bootstrap languages
     if (Language.class.isAssignableFrom(cls)) {
@@ -118,23 +122,12 @@ public abstract class AbstractModule implements IModule {
         //noinspection SuspiciousMethodCalls
         if (!modules.contains(language)) {
           modules.add((T) language);
-          collectAllExplicitlyDependOnModules(language, modules, cls);
+          modules.addAll(new DependencyCollector(this, cls).collect());
         }
       }
     }
 
     return modules;
-  }
-
-  private static <T extends IModule> void collectAllExplicitlyDependOnModules(IModule dependentModule, Set<T> modules, Class<T> cls) {
-    List<IModule> dependOnModules = dependentModule.getExplicitlyDependOnModules();
-    for (IModule dependOnModule : dependOnModules) {
-      //noinspection SuspiciousMethodCalls
-      if (cls.isInstance(dependOnModule) && !modules.contains(dependOnModule)) {
-        modules.add((T) dependOnModule);
-        collectAllExplicitlyDependOnModules(dependOnModule, modules, cls);
-      }
-    }
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {
@@ -171,7 +164,17 @@ public abstract class AbstractModule implements IModule {
 
   public List<IModule> getExplicitlyDependOnModules() {
     LinkedList<IModule> result = new LinkedList<IModule>();
+    result.addAll(getDirectlyDependOnModules());
+    for (Language usedLanguage : getUsedLanguages()) {
+      if (!result.contains(usedLanguage)) {
+        result.add(usedLanguage);
+      }
+    }
+    return result;
+  }
 
+  public List<IModule> getDirectlyDependOnModules() {
+    List<IModule> result = new ArrayList<IModule>();
     for (Dependency dep : getDependencies()) {
       IModule m = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
       if (m != null) {
@@ -180,13 +183,6 @@ public abstract class AbstractModule implements IModule {
         LOG.error("Can't load module " + dep.getModuleUID() + " from " + this);
       }
     }
-
-    for (Language usedLanguage : getUsedLanguages()) {
-      if (!result.contains(usedLanguage)) {
-        result.add(usedLanguage);
-      }
-    }
-
     return result;
   }
 

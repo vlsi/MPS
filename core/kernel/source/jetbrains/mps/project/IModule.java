@@ -30,6 +30,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   List<Dependency> getDependencies(); 
   List<IModule> getExplicitlyDependOnModules();
+  List<IModule> getDirectlyDependOnModules();
   List<String> getUsedLanguagesNamespaces();
   List<Language> getUsedLanguages();
   List<IModule> getDependOnModules();
@@ -55,6 +56,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   Class getClass(String fqName);
 
   IClassPathItem getJavaStubsClassPathItem();
+  IClassPathItem getRuntimeClasspath();
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
   boolean isCompileInMPS();
