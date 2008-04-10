@@ -1,0 +1,46 @@
+package jetbrains.mps.helgins.checking;
+
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.ColorAndGraphicsUtil;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+/**
+ * Created by IntelliJ IDEA.
+* User: Cyril.Konopko
+* Date: 10.04.2008
+* Time: 15:05:40
+* To change this template use File | Settings | File Templates.
+*/
+public class HighlighterMessage extends DefaultEditorMessage {
+  public HighlighterMessage(SNode errorNode, MessageStatus status, Color color, String string, IEditorComponent editor, IEditorMessageOwner owner) {
+    super(errorNode, status, color, string, owner, editor);
+  }
+
+  public boolean isBackGround() {
+    return isWarning();
+  }
+
+  private boolean isWarning() {
+    return getStatus() == MessageStatus.WARNING;
+  }
+
+  public void paint(Graphics g) {
+    EditorCell cell = getCell();
+    if (cell == null) return;
+    int x = cell.getX();
+    int y = cell.getY();
+    int height = cell.getHeight();
+    int leftInternalInset = cell.getLeftInternalInset();
+    int effectiveWidth = cell.getEffectiveWidth();
+    if (isWarning()) {
+      g.setColor(new Color(250,247,158));
+      g.fillRect(x + leftInternalInset, y, effectiveWidth, height);
+    } else {
+      g.setColor(getColor());
+      ColorAndGraphicsUtil.drawWave(g, x + leftInternalInset, x + leftInternalInset + effectiveWidth, y + height - ColorAndGraphicsUtil.WAVE_HEIGHT);
+    }
+  }
+}
