@@ -3,9 +3,7 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>
-  <classPath>
-    <entry path="${mps_home}\core\kernel\vcs\generic\classes" />
-  </classPath>
+  <classPath />
   <runtimeClassPath />
   <sourcePath />
   <dependencies>
