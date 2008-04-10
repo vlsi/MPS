@@ -38,6 +38,8 @@ public class SModelRepository extends SModelAdapter {
   private Map<String, List<SModelCommandListener>> myCommandListeners = new HashMap<String, List<SModelCommandListener>>();
   private Map<ILanguageModelListenerOwner, List<SModelCommandListener>> myOwnersToListeners = new HashMap<ILanguageModelListenerOwner, List<SModelCommandListener>>();
 
+  private BackgroundModelLoader myBackgroundLoader = new BackgroundModelLoader(this);
+
   private boolean myInChangedModelsReloading = false;
 
   private SModelCommandListener myListener = new SModelCommandListener() {
