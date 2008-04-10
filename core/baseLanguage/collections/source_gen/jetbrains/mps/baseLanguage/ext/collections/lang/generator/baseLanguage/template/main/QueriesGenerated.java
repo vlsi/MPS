@@ -10,7 +10,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -135,7 +134,10 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170982686718(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SNode)_QueriesUtil.resolve_ForEachVariableReference(((ForEachVariableReference)SNodeOperations.getAdapter(_context.getNode())), _context.getTemplateNode(), _context.getGenerator());
+    SNode variable_input = SLinkOperations.getTarget(_context.getNode(), "variable", false);
+    SNode forEach_input = SNodeOperations.getParent(variable_input, null, false, false);
+    SNode variable_output = _context.getGenerator().findOutputNodeByInputNodeAndMappingName(forEach_input, "loop_variable_declaration");
+    return variable_output;
   }
 
   public static Object referenceMacro_GetReferent_1172276865420(final IOperationContext operationContext, final ReferenceMacroContext _context) {
