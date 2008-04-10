@@ -272,7 +272,9 @@
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1193397282091">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1193397282092">
-                  <link role="concept" targetNodeId="1.1153944233411" resolveInfo="ForEachVariableReference" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207854191490">
+                    <link role="conceptDeclaration" targetNodeId="1.1153944233411" resolveInfo="ForEachVariableReference" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -462,7 +464,9 @@
               </node>
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" id="1204742450089">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1204742450090">
-                  <link role="concept" targetNodeId="2.1153179560115" resolveInfo="ClosureParameterReference" />
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207854191488">
+                    <link role="conceptDeclaration" targetNodeId="2.1153179560115" resolveInfo="ClosureParameterReference" />
+                  </node>
                 </node>
               </node>
             </node>

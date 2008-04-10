@@ -473,7 +473,9 @@
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" id="1198676202412" />
                     </node>
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" id="1198676206281">
-                      <link role="conceptDeclaration" targetNodeId="3.1068431790191" resolveInfo="Expression" />
+                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207854190421">
+                        <link role="conceptDeclaration" targetNodeId="3.1068431790191" resolveInfo="Expression" />
+                      </node>
                     </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227879556">

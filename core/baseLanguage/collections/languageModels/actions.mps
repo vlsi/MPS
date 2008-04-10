@@ -333,7 +333,9 @@
                     <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1177410750795" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1177410755656">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1177410757753">
-                        <link role="concept" targetNodeId="2.1152728232947" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207854191485">
+                          <link role="conceptDeclaration" targetNodeId="2.1152728232947" resolveInfo="Closure" />
+                        </node>
                       </node>
                     </node>
                   </node>
