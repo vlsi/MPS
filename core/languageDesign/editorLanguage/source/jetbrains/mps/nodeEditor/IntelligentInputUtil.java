@@ -164,7 +164,7 @@ public class IntelligentInputUtil {
   }
 
   private static boolean canCompleteImmediately(INodeSubstituteInfo info, String smallPattern, String tail) {
-    return info.hasExactlyNActions(smallPattern + tail, true, 1);
+    return info.hasExactlyNActions(smallPattern + tail, true, 1) && info.hasExactlyNActions(smallPattern + tail, false, 1);
   }
 
   
