@@ -48,6 +48,16 @@ public abstract class CompletionTextField extends JTextField {
       }
     });
 
+
+    addKeyListener(new KeyAdapter() {
+      public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0 && myHint.isVisible()) { 
+          myHint.complete();
+          e.consume();
+        }
+      }
+    });
+
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         myHint.up();
@@ -65,11 +75,6 @@ public abstract class CompletionTextField extends JTextField {
       }
     }, KeyStroke.getKeyStroke("DOWN"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        myHint.complete();
-      }
-    }, KeyStroke.getKeyStroke("ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         myHint.show();
