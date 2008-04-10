@@ -55,6 +55,11 @@ public class IntelligentInputUtil {
       newNode = item.doSubstitute(smallPattern);
       assert newNode != null;
       cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
+    } else if (canCompleteImmediately(substituteInfo, smallPattern, tail)) {
+      List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern + tail, true);
+      INodeSubstituteAction item = matchingActions.get(0);
+      editorContext.selectLaterWRTFocusPolicy(item.doSubstitute(smallPattern + tail));
+      return;
     } else {
       return;
     }
@@ -82,6 +87,7 @@ public class IntelligentInputUtil {
       return;
     }
     UndoManager.instance().markPlaceInCurrentUndoActionsWithObject(ourMarker);
+
     rtAction.execute(editorContext);
     final CellFinder cellFounder = new CellFinder(editorContext, newNode, tail);
     EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
@@ -155,6 +161,10 @@ public class IntelligentInputUtil {
     // * has special meaning in completion patterns but we often want to complete multiplication
     // operations
     return info.hasExactlyNActions(smallPattern, true, 1) && (tail.equals("*") || info.hasExactlyNActions(smallPattern + tail, false, 0));
+  }
+
+  private static boolean canCompleteImmediately(INodeSubstituteInfo info, String smallPattern, String tail) {
+    return info.hasExactlyNActions(smallPattern + tail, true, 1);
   }
 
   

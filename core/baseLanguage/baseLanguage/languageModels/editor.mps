@@ -2385,6 +2385,7 @@
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
+        <property name="attractsFocus" value="1" />
         <link role="relationDeclaration" targetNodeId="17.1070475926801" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1079623722231">
