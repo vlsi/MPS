@@ -243,6 +243,7 @@
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.csharp" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.dates.lang" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.dates.internal" />
+    <antcall target="pack.jetbrains.mps.baseLanguage.dates.runtime" />
     <antcall target="pack.dates_unittest" />
     <antcall target="pack.jetbrains.mps.internal.collections" />
     <antcall target="pack.jetbrains.accounting.money" />
@@ -305,6 +306,13 @@
     <antcall target="pack.jetbrains.mps.xml" />
     <antcall target="pack.jetbrains.springframework.configuration" />
     <antcall target="pack.jetbrains.springframework.configurationInternal" />
+    <antcall target="pack.jetbrains.mps.springframework.configuration.runtime" />
+    <antcall target="pack.webr.logging" />
+    <antcall target="pack.webr.xml" />
+    <antcall target="pack.webr.gtext" />
+    <antcall target="pack.webr.xmlInternal" />
+    <antcall target="pack.webr.xmlSchema" />
+    <antcall target="pack.jetbrains.mps.gtext.runtime" />
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\docs">
       <fileset dir="docs" excludes="**/*.java, **/*.iml, **/*.ipr" includes="" />
     </copy>

@@ -103,29 +103,29 @@
       <fileset dir="core\baseLanguage\dates" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\baseLanguage\dates" includes="*.mpl, *.msd, *.devkit" />
     </copy>
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp\dates.mpl" token="{language_descriptor}\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.runtime.jar" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp\dates.mpl" token="{language_descriptor}\runtime\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.runtime.jar" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp" />
-    <mkdir dir="core\baseLanguage\dates\classes" />
-    <mkdir dir="core\baseLanguage\dates\runtime\classes" />
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.runtime.jar">
-      <fileset dir="core\baseLanguage\dates\classes" />
-      <fileset dir="core\baseLanguage\dates\runtime\classes" />
-    </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.ext.dates.internal">
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp">
       <fileset dir="core\baseLanguage\dates\internal" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\baseLanguage\dates\internal" includes="*.mpl, *.msd, *.devkit" />
-      <fileset dir="core\baseLanguage\dates">
-        <include name="classes\" />
-      </fileset>
     </copy>
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp\internal.mpl" token="{mps_home}\core\baseLanguage\dates\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp" />
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.internal.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.dates.runtime">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.tmp">
+      <fileset dir="core\baseLanguage\dates\runtime" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="core\baseLanguage\dates\runtime" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.tmp\jetbrains.mps.baseLanguage.dates.runtime.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.tmp" />
+    <mkdir dir="core\baseLanguage\dates\runtime\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.runtime.jar">
+      <fileset dir="core\baseLanguage\dates\runtime\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.tmp" />
   </target>
   <target name="pack.dates_unittest">
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\dates_unittest.tmp">
@@ -918,37 +918,96 @@
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.tmp">
       <fileset dir="platform\springframework\languages\configuration" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="platform\springframework\languages\configuration" includes="*.mpl, *.msd, *.devkit" />
-      <fileset dir="platform\springframework">
-        <include name="classes\" />
-      </fileset>
     </copy>
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.tmp\configuration.mpl" token="{mps_home}\platform\springframework\runtime\classes" value="{mps_home}\platform\jetbrains.springframework.configuration.runtime.jar" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.tmp\configuration.mpl" token="{mps_home}\platform\springframework\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.tmp" />
-    <mkdir dir="platform\springframework\runtime\classes" />
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.runtime.jar">
-      <fileset dir="platform\springframework\runtime\classes" />
-    </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configuration.tmp" />
   </target>
   <target name="pack.jetbrains.springframework.configurationInternal">
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.tmp">
       <fileset dir="platform\springframework\languages\configurationInternal" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="platform\springframework\languages\configurationInternal" includes="*.mpl, *.msd, *.devkit" />
-      <fileset dir="platform\springframework">
-        <include name="classes\" />
-      </fileset>
     </copy>
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.tmp\META-INF\MANIFEST.MF" token="/classes/" value="/classes/,/classes/" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.tmp\configurationInternal.mpl" token="{mps_home}\platform\springframework\classes" value="{mps_home}\platform\jetbrains.springframework.configurationInternal.runtime.jar" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.tmp\configurationInternal.mpl" token="{mps_home}\platform\springframework\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.tmp" />
-    <mkdir dir="platform\springframework\classes" />
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.runtime.jar">
-      <fileset dir="platform\springframework\classes" />
-    </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.springframework.configurationInternal.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.springframework.configuration.runtime">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.springframework.configuration.runtime.tmp">
+      <fileset dir="platform\springframework\runtime" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\springframework\runtime" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.springframework.configuration.runtime.tmp\jetbrains.mps.springframework.configuration.runtime.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.springframework.configuration.runtime.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.springframework.configuration.runtime.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.springframework.configuration.runtime.tmp" />
+    <mkdir dir="platform\springframework\runtime\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.springframework.configuration.runtime.runtime.jar">
+      <fileset dir="platform\springframework\runtime\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.springframework.configuration.runtime.tmp" />
+  </target>
+  <target name="pack.webr.logging">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.tmp">
+      <fileset dir="platform\webr\languages\logging" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\webr\languages\logging" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.tmp\logging.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\webr.logging.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.tmp" />
+    <mkdir dir="platform\webr\languages\logging\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.runtime.jar">
+      <fileset dir="platform\webr\languages\logging\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.tmp" />
+  </target>
+  <target name="pack.webr.xml">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xml.tmp">
+      <fileset dir="platform\webr\languages\xml" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\webr\languages\xml" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xml.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xml.tmp" />
+    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xml.tmp" />
+  </target>
+  <target name="pack.webr.gtext">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp">
+      <fileset dir="platform\webr\languages\gtext" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\webr\languages\gtext" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp\gtext.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\webr.gtext.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp" />
+    <mkdir dir="platform\webr\languages\gtext\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.runtime.jar">
+      <fileset dir="platform\webr\languages\gtext\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp" />
+  </target>
+  <target name="pack.webr.xmlInternal">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlInternal.tmp">
+      <fileset dir="platform\webr\languages\xmlInternal" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\webr\languages\xmlInternal" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlInternal.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlInternal.tmp" />
+    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlInternal.tmp" />
+  </target>
+  <target name="pack.webr.xmlSchema">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlSchema.tmp">
+      <fileset dir="platform\webr\languages\xmlSchema" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\webr\languages\xmlSchema" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlSchema.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlSchema.tmp" />
+    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.xmlSchema.tmp" />
+  </target>
+  <target name="pack.jetbrains.mps.gtext.runtime">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp">
+      <fileset dir="platform\webr\languages\gtext\runtime" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\webr\languages\gtext\runtime" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp\jetbrains.mps.gtext.runtime.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.gtext.runtime.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp\jetbrains.mps.gtext.runtime.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.gtext.runtime.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp" />
+    <mkdir dir="platform\webr\languages\gtext\runtime\classes_gen" />
+    <mkdir dir="platform\webr\languages\gtext\runtime\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.runtime.jar">
+      <fileset dir="platform\webr\languages\gtext\runtime\classes_gen" />
+      <fileset dir="platform\webr\languages\gtext\runtime\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage">
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\workbench\jetbrains.mps.ide.uiLanguage.tmp">
