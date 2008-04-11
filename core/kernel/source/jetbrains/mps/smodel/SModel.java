@@ -617,7 +617,6 @@ public class SModel implements Iterable<SNode> {
       languages.addAll(module.getImplicitlyImportedLanguages(getModelDescriptor()));
     }
 
-    
     return new ArrayList<Language>(languages);
   }
 
@@ -751,7 +750,6 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public List<SModelUID> getImportedModelUIDs() {
-    getLanguages(GlobalScope.getInstance());
     List<SModelUID> uids = new ArrayList<SModelUID>();
     for (ImportElement importElement : myImports) {
       uids.add(importElement.getModelUID());
