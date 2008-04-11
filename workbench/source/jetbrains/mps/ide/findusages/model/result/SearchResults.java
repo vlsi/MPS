@@ -56,6 +56,10 @@ public class SearchResults {
     }
   }
 
+  public void remove(SearchResult searchResult) {
+    mySearchResults.remove(searchResult);
+  }
+
   public List<SearchResult> getAliveResults() {
     List<SearchResult> alive = new ArrayList<SearchResult>();
     for (SearchResult result : mySearchResults) {

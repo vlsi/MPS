@@ -23,14 +23,14 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import java.util.ArrayList;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import java.util.List;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
-import java.util.ArrayList;
 
 public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public static final String sourceLanguage = "sourceLanguage";
@@ -108,14 +108,24 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
         if (editorModelDescriptor != null) {
           refactoringContext.setParameter("conceptEditorDeclaration", SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node))));
           if (((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")) != null) {
-            searchResults.remove(((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")).getNode());
+            SNode editorNode = ((ConceptEditorDeclaration)refactoringContext.getParameter("conceptEditorDeclaration")).getNode();
+            for(SearchResult searchResult : new ArrayList<SearchResult>(searchResults.getSearchResults())) {
+              if (searchResult.getNode().getContainingRoot() == editorNode) {
+                searchResults.remove(searchResult);
+              }
+            }
           }
         }
         SModelDescriptor constraintsModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getConstraintsModelDescriptor();
         if (constraintsModelDescriptor != null) {
           refactoringContext.setParameter("conceptBehavior", SModelUtil_new.findBehaviorDeclaration(constraintsModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node))));
           if (((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")) != null) {
-            searchResults.remove(((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")).getNode());
+            SNode behaviorNode = ((ConceptBehavior)refactoringContext.getParameter("conceptBehavior")).getNode();
+            for(SearchResult searchResult : new ArrayList<SearchResult>(searchResults.getSearchResults())) {
+              if (searchResult.getNode().getContainingRoot() == behaviorNode) {
+                searchResults.remove(searchResult);
+              }
+            }
           }
         }
       }
