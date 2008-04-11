@@ -3,6 +3,7 @@ package jetbrains.mps.ide.dependency;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -49,11 +50,11 @@ public class DependencyViewer extends DefaultTool {
   }
 
   public String getName() {
-    return "Dependecy explorer";
+    return "Dependency explorer";
   }
 
   public Icon getIcon() {
-    return MPSAction.EMPTY_ICON;
+    return Icons.MODULE_DEPENDENCIES_ICON;
   }
 
   public JComponent getComponent() {
