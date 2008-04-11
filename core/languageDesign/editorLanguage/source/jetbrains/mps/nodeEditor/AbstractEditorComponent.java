@@ -1,26 +1,27 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
+import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.findusages.view.NewUsagesView;
-import jetbrains.mps.ide.findusages.view.UsageView;
 import jetbrains.mps.ide.action.*;
-import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
+import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
+import jetbrains.mps.ide.findusages.view.NewUsagesView;
+import jetbrains.mps.ide.findusages.view.UsageView;
 import jetbrains.mps.ide.modelchecker.ModelCheckResult;
 import jetbrains.mps.ide.modelchecker.ModelChecker;
 import jetbrains.mps.ide.modelchecker.ModelCheckerMessage;
 import jetbrains.mps.ide.navigation.FocusPolicyUtil;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
@@ -40,8 +41,6 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
-import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -458,11 +457,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         SNode node = getSelectedNode();
-        if (node != null) {
-          EditorContext editorContext = getEditorContext();
-          if (editorContext != null) {
-            result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext));
-          }
+        EditorContext editorContext = getEditorContext();
+        if (node != null && editorContext != null) {
+          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext));
         }
       }
     });
@@ -472,8 +469,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Set<Intention> getEnabledIntentions() {
     final Set<Intention> result = new LinkedHashSet<Intention>();
     SNode node = getSelectedNode();
-    if (node != null) {
-      result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentions(node, getEditorContext()));
+    EditorContext editorContext = getEditorContext();
+    if (node != null && editorContext != null) {
+      result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentions(node, editorContext));
     }
     return result;
   }
@@ -1459,7 +1457,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void run() {
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
-         /*   if (isDisplayable() && !ThreadUtils.isEventDispatchThread()) {
+            /*   if (isDisplayable() && !ThreadUtils.isEventDispatchThread()) {
               throw new RuntimeException("Editor rebuild can only happen in UI Thread");
             }*/
 
