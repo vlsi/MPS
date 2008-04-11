@@ -1455,27 +1455,31 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void rebuildEditorContent(final List<SModelEvent> events) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        if (isDisplayable() && !ThreadUtils.isEventDispatchThread()) {
-          throw new RuntimeException("Editor rebuild can only happen in UI Thread");
-        }
-
-        removeAll();
-
-        runSwapCellsActions(new Runnable() {
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
-            setRootCell(createRootCell(events));
+         /*   if (isDisplayable() && !ThreadUtils.isEventDispatchThread()) {
+              throw new RuntimeException("Editor rebuild can only happen in UI Thread");
+            }*/
+
+            removeAll();
+
+            runSwapCellsActions(new Runnable() {
+              public void run() {
+                setRootCell(createRootCell(events));
+              }
+            });
+
+            for (JComponent component : myRootCell.getSwingComponents()) {
+              AbstractEditorComponent.this.add(component);
+            }
+
+            for (RebuildListener listener : myRebuildListeners) {
+              listener.editorRebuilt(AbstractEditorComponent.this);
+            }
           }
         });
-
-        for (JComponent component : myRootCell.getSwingComponents()) {
-          AbstractEditorComponent.this.add(component);
-        }
-
-        for (RebuildListener listener : myRebuildListeners) {
-          listener.editorRebuilt(AbstractEditorComponent.this);
-        }
       }
     });
   }
