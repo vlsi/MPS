@@ -45,7 +45,6 @@
   <import index="26" modelUID="jetbrains.mps.dataFlow@java_stub" version="-1" />
   <import index="27" modelUID="jetbrains.mps.dataFlow.framework.analyzers@java_stub" version="-1" />
   <import index="28" modelUID="jetbrains.mps.dataFlow.framework.instructions@java_stub" version="-1" />
-  <import index="29" modelUID="jetbrains.mps.baseLanguage.refactoring@java_stub" version="-1" />
   <import index="30" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
   <import index="31" modelUID="jetbrains.mps.baseLanguage.plugin" version="-1" />
   <import index="32" modelUID="jetbrains.mps.baseLanguage.plugin@java_stub" version="-1" />
