@@ -10,6 +10,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Mapper;
@@ -109,7 +111,16 @@ public class DataNode implements IExternalizeable, IChangeListener {
   }
 
   public List<SModelDescriptor> getIncludedModels() {
-    return getAllModels();
+    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+    if (myData instanceof ModelNodeData) {
+      if (!myData.isInvalid() && !myData.isExcluded()) {
+        models.add(((SModel) myData.getIdObject()).getModelDescriptor());
+      }
+    }
+    for (DataNode child : myChildren) {
+      models.addAll(child.getIncludedModels());
+    }
+    return models;
   }
 
   public List<SModelDescriptor> getAllModels() {
@@ -127,7 +138,16 @@ public class DataNode implements IExternalizeable, IChangeListener {
   }
 
   public List<SNodePointer> getIncludedNodes() {
-    return getAllNodes();
+    List<SNodePointer> nodes = new ArrayList<SNodePointer>();
+    if (myData instanceof NodeNodeData) {
+      if (!myData.isInvalid() && !myData.isExcluded()) {
+        nodes.add(new SNodePointer((SNode) myData.getIdObject()));
+      }
+    }
+    for (DataNode child : myChildren) {
+      nodes.addAll(child.getIncludedNodes());
+    }
+    return nodes;
   }
 
   public List<SNodePointer> getAllNodes() {
