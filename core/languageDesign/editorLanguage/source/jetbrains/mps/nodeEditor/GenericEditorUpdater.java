@@ -113,11 +113,16 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
   private boolean updateEditorComponent(IEditorComponent component) {
     final SNode editedNode = component.getEditedNode();
     if (editedNode != null) {
-      long lastChangeTime = CommandProcessor.instance().executeLightweightCommand(new Calculable<Long>() {
+      Long lastChangeTime = CommandProcessor.instance().tryToExecuteLightweightCommand(new Calculable<Long>() {
         public Long calculate() {
           return editedNode.getModel().getModelDescriptor().lastStructuralChange();
         }
       });
+
+      if (lastChangeTime == null) {
+        return false;
+      }
+
       if (System.currentTimeMillis() - lastChangeTime > getCheckDelay()) {
         if (lastChangeTime > getLastUpdateTime(component)) {
           try {
