@@ -19,6 +19,7 @@
   <dependencies>
     <dependency reexport="false">jetbrains.mps.bootstrap.structureLanguage</dependency>
     <dependency reexport="true">MPS.Classpath</dependency>
+    <dependency reexport="false">jetbrains.mps.logging.refactoring</dependency>
   </dependencies>
   <extendedLanguages />
 </language>

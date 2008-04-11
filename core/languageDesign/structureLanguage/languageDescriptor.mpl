@@ -32,6 +32,7 @@
   </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.bootstrap.dataFlow</dependency>
+    <dependency reexport="false">jetbrains.mps.logging.refactoring</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
