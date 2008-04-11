@@ -4,7 +4,6 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.core" />
-  <language namespace="jetbrains.mps.ypath" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
@@ -12,7 +11,6 @@
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <import index="4" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="5" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1182510906722">
     <property name="name" value="ConceptDeclaration" />
