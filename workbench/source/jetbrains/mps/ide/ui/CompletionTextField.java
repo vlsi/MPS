@@ -51,7 +51,7 @@ public abstract class CompletionTextField extends JTextField {
 
     addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0 && myHint.isVisible()) { 
+        if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0 && myHint.isVisible()) {
           myHint.complete();
           e.consume();
         }
@@ -105,7 +105,7 @@ public abstract class CompletionTextField extends JTextField {
   }
 
   public void removeNotify() {
-    myContainerWindow.removeComponentListener(myListener);    
+    myContainerWindow.removeComponentListener(myListener);
     super.removeNotify();
   }
 
@@ -188,8 +188,9 @@ public abstract class CompletionTextField extends JTextField {
     }
 
     void updateBounds() {
-      Point loc = getLocationOnScreen();
+      if (myWindow == null) return;
 
+      Point loc = getLocationOnScreen();
       myWindow.setBounds(
         loc.x,
         loc.y + getHeight(),
