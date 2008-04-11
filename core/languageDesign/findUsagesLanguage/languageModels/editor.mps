@@ -8,6 +8,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1"/>
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0"/>
   <maxImportIndex value="8"/>
   <import index="1" modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1"/>
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1"/>
@@ -132,7 +134,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
             id="1206462333588">
-        <property name="noTargetText" value="&lt;categorize block&gt;"/>
+        <property name="noTargetText" value="&lt;categorize block default=&quot;Uncategorized&quot;&gt;"/>
         <link role="relationDeclaration" targetNodeId="1.1206462296687"/>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"

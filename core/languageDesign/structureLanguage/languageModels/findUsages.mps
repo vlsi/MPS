@@ -91,8 +91,7 @@
             <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ResultStatement"
                   id="1200268665345">
               <node role="foundResult" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1200268665879">
-                <link role="baseMethodDeclaration"
-                      targetNodeId="9.~SearchResult.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,java.lang.String)"
+                <link role="baseMethodDeclaration" targetNodeId="9.~SearchResult.&lt;init&gt;()"
                       resolveInfo="SearchResult"/>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
                       id="1200268665880">
@@ -183,8 +182,7 @@
             <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ResultStatement"
                   id="1200268559644">
               <node role="foundResult" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1200268560256">
-                <link role="baseMethodDeclaration"
-                      targetNodeId="9.~SearchResult.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,java.lang.String)"
+                <link role="baseMethodDeclaration" targetNodeId="9.~SearchResult.&lt;init&gt;()"
                       resolveInfo="SearchResult"/>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression"
                       id="1200268560257">
