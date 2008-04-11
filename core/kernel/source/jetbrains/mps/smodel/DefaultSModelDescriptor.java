@@ -121,6 +121,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       mySModel = loadModel();
       doPostLoadStuff();
       addListenersToNewModel();
+      mySModel.fireModelInitialized();
     }
     return mySModel;
   }
@@ -135,8 +136,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
     myDiskTimestamp = fileTimestamp();
     addListenersToNewModel();
-
-    mySModel.fireModelInitialized();
   }
 
   private void doAdditionalPostLoadStuff() {

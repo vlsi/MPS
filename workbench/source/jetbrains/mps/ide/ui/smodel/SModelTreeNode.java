@@ -308,6 +308,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       if (p.getLastPathComponent() instanceof SModelTreeNode) {
         models.add(((SModelTreeNode) p.getLastPathComponent()).getSModelDescriptor());
       }
+      
     }
 
     ActionContext context = new ActionContext(getOperationContext());
@@ -565,7 +566,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           updateNodesWithChangedPackages(nodesWithChangedPackages);
 
           updateGenerationRequiredStatus();
-
           updateAncestorsPresentationInTree();
         }
       }, false);
