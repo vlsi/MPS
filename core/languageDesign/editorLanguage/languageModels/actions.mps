@@ -897,7 +897,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177680474974">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177680474975">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177680474976">
-                  <property name="value" value="child node list (vertical)" />
+                  <property name="value" value="child node cell list (vertical)" />
                 </node>
               </node>
             </node>
@@ -987,7 +987,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177680921702">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177680921703">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177680921704">
-                  <property name="value" value="child node list (vertical)" />
+                  <property name="value" value="child node cell list (vertical)" />
                 </node>
               </node>
             </node>
@@ -1039,7 +1039,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177585852907">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177585853939">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177585854941">
-                  <property name="value" value="child node list (horizontal)" />
+                  <property name="value" value="child node cell list (horizontal)" />
                 </node>
               </node>
             </node>
@@ -1129,7 +1129,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177680944140">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177680944141">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177680944142">
-                  <property name="value" value="child node list (horizontal)" />
+                  <property name="value" value="child node cell list (horizontal)" />
                 </node>
               </node>
             </node>

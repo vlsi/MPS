@@ -207,7 +207,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            return "child node list (vertical)";
+            return "child node cell list (vertical)";
           }
 
         });
@@ -229,7 +229,7 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String pattern) {
-            return "child node list (vertical)";
+            return "child node cell list (vertical)";
           }
 
           public String getMatchingText(String pattern) {
@@ -252,7 +252,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            return "child node list (horizontal)";
+            return "child node cell list (horizontal)";
           }
 
         });
@@ -274,7 +274,7 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String pattern) {
-            return "child node list (horizontal)";
+            return "child node cell list (horizontal)";
           }
 
           public String getMatchingText(String pattern) {
