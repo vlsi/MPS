@@ -4,7 +4,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -37,7 +36,7 @@ public class ModelWriter1 implements IModelWriter {
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace);
       Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
       if (l != null) {
-        sourceModel.addAspectModelVersions(languageNamespace, l);
+        sourceModel.addAspectModelsVersions(/*languageNamespace, */l);
         List<SModelDescriptor> aspectModelDescriptors = new ArrayList<SModelDescriptor>(l.getAspectModelDescriptors());
         for (SModelDescriptor aspectModelDescriptor : aspectModelDescriptors) {
           allDirectAspectModelDescriptors.add(aspectModelDescriptor.getModelUID());

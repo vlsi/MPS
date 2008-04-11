@@ -23,7 +23,7 @@ public class ProjectModels {
     @NotNull
     public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
       SModel result = new SModel(modelDescriptor.getModelUID());
-      result.addLanguage("jetbrains.mps.projectLanguage");
+      result.addLanguage_internal("jetbrains.mps.projectLanguage");
       return result;
     }
 

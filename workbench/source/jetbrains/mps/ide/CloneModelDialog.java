@@ -143,7 +143,7 @@ public class CloneModelDialog extends BaseNodeDialog {
       assert name != null;
       Language language = getOperationContext().getScope().getLanguage(name);
       assert language != null;
-      model.addNewlyImportedLanguage(language);
+      model.addLanguage(language);
     }
     
     CloneModelUtil.cloneModel(mySModel, modelDescriptor.getSModel(), getScope());

@@ -63,8 +63,8 @@ public class SModel implements Iterable<SNode> {
   private RefactoringHistory myRefactoringHistory = new RefactoringHistory();
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
-  private Set<String> myNewLanguageNamespaces = new HashSet<String>();
-  private Set<String> myNewDevKitNamespaces = new HashSet<String>();
+ // private Set<String> myNewLanguageNamespaces = new HashSet<String>();
+ // private Set<String> myNewDevKitNamespaces = new HashSet<String>();
 
   public SModel(@NotNull SModelUID modelUID) {
     addWeakSModelListener(myEventTranslator);
@@ -477,17 +477,17 @@ public class SModel implements Iterable<SNode> {
     return false;
   }
 
-  public void addNewlyImportedLanguage(@NotNull Language language) {
-    addLanguage(language);
+  public void addLanguage(@NotNull Language language) {
+    addLanguage_internal(language);
     addAspectModelsVersions(language);
   }
 
-  public void addNewlyImportedLanguage(@NotNull String languageNamespace) {
-    addLanguage(languageNamespace);
-    myNewLanguageNamespaces.add(languageNamespace);
+  public void addLanguage(@NotNull String languageNamespace) {
+    addLanguage_internal(languageNamespace);
+    addAspectModelsVersions(GlobalScope.getInstance().getLanguage(languageNamespace));
   }
 
-  private void addAspectModelsVersions(Language language) {
+  public void addAspectModelsVersions(Language language) {
     if (myVersionedLanguages.contains(language)) {
       return;
     }
@@ -511,20 +511,21 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public void addAspectModelVersions(@NotNull String languageNamespace, @NotNull Language language) {
-    assert language.getNamespace().equals(languageNamespace);
+  @Deprecated
+  public void addAspectModelsVersions(@NotNull String languageNamespace, @NotNull Language language) {
+  /*  assert language.getNamespace().equals(languageNamespace);
     if (myNewLanguageNamespaces.contains(languageNamespace)) {
       addAspectModelsVersions(language);
       myNewLanguageNamespaces.remove(languageNamespace);
-    }
+    }*/
   }
 
 
-  public void addLanguage(@NotNull Language language) {
-    addLanguage(language.getModuleUID());
+  public void addLanguage_internal(@NotNull Language language) {
+    addLanguage_internal(language.getModuleUID());
   }
 
-  public void addLanguage(@NotNull String languageNamespace) {
+  public void addLanguage_internal(@NotNull String languageNamespace) {
     if (!myLanguages.contains(languageNamespace)) {
       myLanguages.add(languageNamespace);
       fireLanguageAddedEvent(languageNamespace);
@@ -552,17 +553,18 @@ public class SModel implements Iterable<SNode> {
     return false;
   }
 
-
+  @Deprecated
   public void addDevkitModelsVersions(@NotNull String devkitNamespace, @NotNull DevKit devKit) {
-    if (myNewDevKitNamespaces.contains(devkitNamespace)) {
+   /* if (myNewDevKitNamespaces.contains(devkitNamespace)) {
       addAspectModelsVersions(devKit);
       myNewDevKitNamespaces.remove(devkitNamespace);
-    }
+    }*/
   }
 
   public void addNewlyImportedDevKit(String fqName) {
     addDevKit(fqName);
-    myNewDevKitNamespaces.add(fqName);
+    addAspectModelsVersions(GlobalScope.getInstance().getDevKit(fqName));
+    //myNewDevKitNamespaces.add(fqName);
   }
 
   public void addDevKit(@NotNull DevKit devKit) {
@@ -590,7 +592,7 @@ public class SModel implements Iterable<SNode> {
       if (language != null) {
         languages.add(language);
         languages.addAll(language.getAllExtendedLanguages());
-        addAspectModelVersions(languageNamespace, language);
+        //addAspectModelsVersions(languageNamespace, language);
       } else {
         if (!isLoading()) {
         LOG.error("Language \"" + languageNamespace + "\" isn't visible in scope " + scope + " . Used by model \"" + getUID() +
@@ -603,7 +605,7 @@ public class SModel implements Iterable<SNode> {
     for (String dk : getDevKitNamespaces()) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
-        addDevkitModelsVersions(dk, devKit);
+        //addDevkitModelsVersions(dk, devKit);
         for (Language l : devKit.getExportedLanguages()) {
           if (!languages.contains(l)) {
             languages.add(l);
@@ -625,7 +627,7 @@ public class SModel implements Iterable<SNode> {
     for (String dk : getDevKitNamespaces()) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
-        addDevkitModelsVersions(dk, devKit);
+        //addDevkitModelsVersions(dk, devKit);
         result.add(devKit);
       } else {
         LOG.error("Can't find devkit " + dk + " in scope " + scope);
@@ -640,7 +642,7 @@ public class SModel implements Iterable<SNode> {
     for (String dk : getDevKitNamespaces()) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
-        addDevkitModelsVersions(dk, devKit);
+        //addDevkitModelsVersions(dk, devKit);
         for (Language l : devKit.getExportedLanguages()) {
           if (!result.contains(l.getNamespace())) {
             result.add(l.getNamespace());
@@ -956,7 +958,7 @@ public class SModel implements Iterable<SNode> {
       String languageNamespace = node.getLanguageNamespace();
       if (!usedLanguages.contains(languageNamespace)) {
         usedLanguages.add(languageNamespace);
-        addNewlyImportedLanguage(languageNamespace);
+        addLanguage(languageNamespace);
       }
 
       List<SReference> references = node.getReferences();
