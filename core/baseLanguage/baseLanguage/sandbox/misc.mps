@@ -271,6 +271,12 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207921849942">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207921849943">
+            <property name="name" value="v" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207921849944" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207831371459">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207831382272">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1207831371460">
@@ -299,13 +305,46 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207921869696">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207921870823">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1207921889766">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207921891503">
+                <property name="value" value="23" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="1207921882656">
+                <property name="charConstant" value="c" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207921869697">
+              <property name="value" value="23" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207921900974">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207921900975">
+            <property name="name" value="d" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207921900976">
+              <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207921903775">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207921903793">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207921904296">
+              <property name="value" value="3" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207921903776">
+              <link role="variableDeclaration" targetNodeId="1207921900975" resolveInfo="d" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207845053615">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207845053648">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1207845055136">
               <property name="value" value="2" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207845053616">
-              <link role="variableDeclaration" targetNodeId="1207845044456" resolveInfo="a" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207921838236">
+              <link role="variableDeclaration" targetNodeId="1207921849943" resolveInfo="v" />
             </node>
           </node>
         </node>
