@@ -15,10 +15,9 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.dataFlow.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.dataFlow@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.plugins@java_stub" version="-1" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.dataFlow.framework@java_stub" version="-1" />
   <import index="6" modelUID="java.io@java_stub" version="-1" />
@@ -27,10 +26,11 @@
   <import index="9" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.dataFlow.framework.analyzers@java_stub" version="-1" />
   <import index="11" modelUID="java.util@java_stub" version="-1" />
+  <import index="13" modelUID="jetbrains.mps.plugins@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1206459480619">
     <property name="name" value="PrintDFAResult" />
     <property name="caption" value="Print DFA" />
-    <link role="extendedAction" targetNodeId="3.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
+    <link role="extendedAction" targetNodeId="13.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1206459480620">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206459480621">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206459712472">
@@ -106,7 +106,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1206642260578">
     <property name="name" value="ShowDFA" />
     <property name="caption" value="Show DFA (under construction)" />
-    <link role="extendedAction" targetNodeId="3.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
+    <link role="extendedAction" targetNodeId="13.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1206642293488">
       <property name="name" value="node" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206642293489" />
@@ -157,7 +157,7 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1207219950955">
     <property name="name" value="PrintInitializationInformation" />
     <property name="caption" value="Print DFA Initialization Information" />
-    <link role="extendedAction" targetNodeId="3.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
+    <link role="extendedAction" targetNodeId="13.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1207219987386">
       <property name="name" value="node" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207219987387" />
