@@ -25,7 +25,7 @@ public class ConceptEditorDeclaration_name_PropertyConstraint implements IModelC
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     SNode editedConcept = SLinkOperations.getTarget(node, "conceptDeclaration", false);
-    if(editedConcept != null) {
+    if (editedConcept != null) {
       return SPropertyOperations.getString(editedConcept, "name") + "_Editor";
     }
     return "?_Editor";

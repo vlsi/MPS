@@ -18,7 +18,7 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule impleme
   public void applyRule(final SNode node) {
     SNode hostMenuPart = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_Abstract", false, false);
     SNode editedFeature = CellMenuUtil.getEditedFeature(hostMenuPart);
-    if(SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration")) {
+    if (SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration")) {
       SNode conceptOfChild = SLinkOperations.getTarget(editedFeature, "target", false);
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_3().createNode(conceptOfChild), node, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1179782398208");
       return;

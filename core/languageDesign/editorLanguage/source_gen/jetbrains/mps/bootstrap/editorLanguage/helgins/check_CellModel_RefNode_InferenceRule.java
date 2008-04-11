@@ -16,10 +16,10 @@ public class check_CellModel_RefNode_InferenceRule implements InferenceRule_Runt
 
   public void applyRule(final SNode refNode) {
     SNode lnk = SLinkOperations.getTarget(refNode, "relationDeclaration", false);
-    if(!(SPropertyOperations.hasValue(lnk, "metaClass", "aggregation", null))) {
+    if (!(SPropertyOperations.hasValue(lnk, "metaClass", "aggregation", null))) {
       TypeChecker.getInstance().reportTypeError(refNode, "aggregation link expected", "jetbrains.mps.bootstrap.editorLanguage.helgins", "1180280667546");
     }
-    if(!(SPropertyOperations.hasValue(lnk, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(lnk, "sourceCardinality", "1", "0..1"))) {
+    if (!(SPropertyOperations.hasValue(lnk, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(lnk, "sourceCardinality", "1", "0..1"))) {
       TypeChecker.getInstance().reportTypeError(refNode, "single cardinality expected", "jetbrains.mps.bootstrap.editorLanguage.helgins", "1180280735244");
     }
   }

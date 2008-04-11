@@ -16,7 +16,7 @@ public class typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule implem
 
   public void applyRule(final SNode node) {
     SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration", false, false), "applicableConcept", false);
-    if(applicableConcept == null) {
+    if (applicableConcept == null) {
       applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.editorLanguage.structure.BaseEditorComponent", false, false), "conceptDeclaration", false);
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(applicableConcept), node, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1179767185667");

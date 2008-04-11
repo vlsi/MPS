@@ -16,7 +16,7 @@ public class typeof_ConceptFunctionParameter_childNode_InferenceRule implements 
 
   public void applyRule(final SNode node) {
     SNode refNodeList = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList", false, false);
-    if(SLinkOperations.getTarget(refNodeList, "relationDeclaration", false) != null) {
+    if (SLinkOperations.getTarget(refNodeList, "relationDeclaration", false) != null) {
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_6().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(refNodeList, "relationDeclaration", false), "target", false)), node, "jetbrains.mps.bootstrap.editorLanguage.helgins", "1182235608638");
     }
   }

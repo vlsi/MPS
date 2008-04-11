@@ -203,7 +203,9 @@
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1177556243465">
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1158948064168" />
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1158948068608">
-                    <link role="concept" targetNodeId="1.1088013125922" />
+                    <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207872492603">
+                      <link role="conceptDeclaration" targetNodeId="1.1088013125922" resolveInfo="CellModel_RefCell" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -522,7 +524,9 @@
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1187090271188">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1187090271189" />
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1187090271190">
-                        <link role="concept" targetNodeId="1.1073389446423" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207872492601">
+                          <link role="conceptDeclaration" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -668,7 +672,9 @@
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1187090258580">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1187090258581" />
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1187090258582">
-                        <link role="concept" targetNodeId="1.1073389446423" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207872492616">
+                          <link role="conceptDeclaration" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -810,7 +816,9 @@
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1187090237717">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1187090239566" />
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1187090242184">
-                        <link role="concept" targetNodeId="1.1073389446423" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207872492604">
+                          <link role="conceptDeclaration" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -1364,11 +1372,13 @@
           <node role="canSubstitute" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_CanSubstitute" id="1177762655421">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177762655422">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1177762664192">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1177762667653">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1177762664193" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177762670389">
-                    <property name="value" value="\&quot;" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475531">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1177762664193" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475532">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177762670389">
+                      <property name="value" value="\&quot;" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1445,11 +1455,13 @@
           <node role="canSubstitute" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_CanSubstitute" id="1187248138270">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187248138271">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1187248140383">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1187248143438">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1187248140384" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1187248147796">
-                    <property name="value" value="!" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475504">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1187248140384" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475505">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1187248147796">
+                      <property name="value" value="!" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1472,7 +1484,9 @@
                     <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1199450877109" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1199450855125">
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1199450855126">
-                        <link role="concept" targetNodeId="1.1080736578640" resolveInfo="BaseEditorComponent" />
+                        <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1207872492643">
+                          <link role="conceptDeclaration" targetNodeId="1.1080736578640" resolveInfo="BaseEditorComponent" />
+                        </node>
                       </node>
                       <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1199450879877" />
                     </node>
@@ -1486,9 +1500,11 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1199450866401">
                     <link role="conceptMethodDeclaration" targetNodeId="8.1199449552893" resolveInfo="getApplicableComponents" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1199450871952">
-                      <link role="baseMethodDeclaration" targetNodeId="3.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1199450869386" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475510">
+                      <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1199450869386" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475511">
+                        <link role="baseMethodDeclaration" targetNodeId="3.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1608,9 +1624,11 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1185874883733">
-                    <node role="value" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1185875535261">
-                      <link role="baseMethodDeclaration" targetNodeId="6.~CellActionId.getValue():java.lang.String" resolveInfo="getValue" />
-                      <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1185874888613" />
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475533">
+                      <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1185874888613" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475534">
+                        <link role="baseMethodDeclaration" targetNodeId="6.~CellActionId.getValue():java.lang.String" resolveInfo="getValue" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1625,9 +1643,11 @@
           <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_String" id="1185874758194">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1185874758195">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1185874768103">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1185875520132">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~CellActionId.getName():java.lang.String" resolveInfo="getName" />
-                  <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1185874768104" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475535">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1185874768104" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475536">
+                    <link role="baseMethodDeclaration" targetNodeId="6.~CellActionId.getName():java.lang.String" resolveInfo="getName" />
+                  </node>
                 </node>
               </node>
             </node>
