@@ -34,8 +34,7 @@ import java.util.Set;
 public abstract class UsagesTree extends MPSTree {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
   private static final String COMMAND_OPEN_NODE_IN_TREE = "open_node_in_tree";
-  private static final String COMMAND_EXCLUDE = "exclude";
-  private static final String COMMAND_INCLUDE = "include";
+  private static final String COMMAND_TOGGLE = "toggle";
 
   private DataTree myContents = new DataTree();
   private HashSet<String> myResultPathProvider = new HashSet<String>();
@@ -58,8 +57,7 @@ public abstract class UsagesTree extends MPSTree {
     getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_OPEN_NODE_IN_PROJECT);
     getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0), COMMAND_OPEN_NODE_IN_PROJECT);
     getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_F1, InputEvent.ALT_MASK), COMMAND_OPEN_NODE_IN_TREE);
-    getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0), COMMAND_EXCLUDE);
-    getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_INSERT, 0), COMMAND_INCLUDE);
+    getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0), COMMAND_TOGGLE);
 
     addTreeExpansionListener(new TreeExpansionListener() {
       public void treeExpanded(TreeExpansionEvent event) {
@@ -85,15 +83,9 @@ public abstract class UsagesTree extends MPSTree {
       }
     });
 
-    getActionMap().put(COMMAND_EXCLUDE, new AbstractAction() {
+    getActionMap().put(COMMAND_TOGGLE, new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        setCurrentNodeExclusion(true);
-      }
-    });
-
-    getActionMap().put(COMMAND_INCLUDE, new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        setCurrentNodeExclusion(false);
+        changeCurrentNodeExclusion();
       }
     });
 
