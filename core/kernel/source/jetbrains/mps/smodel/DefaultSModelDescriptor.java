@@ -135,6 +135,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
     myDiskTimestamp = fileTimestamp();
     addListenersToNewModel();
+
+    mySModel.fireModelInitialized();
   }
 
   private void doAdditionalPostLoadStuff() {

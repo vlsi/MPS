@@ -32,4 +32,5 @@ public interface SModelListener {
   void loadingStateChanged(SModelDescriptor model, boolean isLoading);
 
   void modelSaved(SModelSavedEvent event);
+  void modelInitialized();
 }

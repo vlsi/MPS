@@ -42,6 +42,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private boolean myInitialized = false;
   private boolean myInitializing = false;
   private MyModelListener myModelListener = new MyModelListener();
+  private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener(); 
+
   private boolean myShowLongName;
   private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<SNodeGroupTreeNode>();
 
@@ -119,7 +121,40 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     } else {
       setNodeIdentifier("");
     }
+
+    if (myModelDescriptor.isInitialized()) {
+      setErrorState(!isValid(getSModelDescriptor()));
+    }
+
     setText(calculateText());
+  }
+
+  private boolean isValid(SModelDescriptor sm) {
+    IScope scope = getOperationContext().getScope();
+
+    SModel model = sm.getSModel();
+
+    for (SModelUID uid : model.getImportedModelUIDs()) {
+      if (scope.getModelDescriptor(uid) == null) {
+        return false;
+      }
+    }
+
+    List<String> langsToCheck = new ArrayList<String>();
+    langsToCheck.addAll(model.getExplicitlyImportedLanguages());
+    langsToCheck.addAll(model.getEngagedOnGenerationLanguages());
+    for (String lang : langsToCheck) {
+      if (scope.getLanguage(lang) == null) {
+        return false;
+      }
+    }
+
+    for (String devKit : model.getDevKitNamespaces()) {
+      if (scope.getDevKit(devKit) == null) {
+        return false;
+      }
+    }
+    return true;
   }
 
   protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
@@ -376,6 +411,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       SModel model = getSModel();
       if (!model.hasModelCommandListener(myModelListener)) {
         model.addModelCommandListener(myModelListener);
+        model.addModelListener(mySimpleModelListener);
       }
       Condition<SNode> condition = new Condition<SNode>() {
         public boolean met(SNode object) {
@@ -409,12 +445,14 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   protected void onRemove() {
     if (getSModelDescriptor() != null) {
       getSModelDescriptor().removeModelCommandListener(myModelListener);
+      getSModelDescriptor().removeModelListener(mySimpleModelListener);
     }
   }
 
   protected void onAdd() {
     if (myModelDescriptor != null && !myModelDescriptor.hasSModelCommandListener(myModelListener)) {
       myModelDescriptor.addModelCommandListener(myModelListener);
+      getSModelDescriptor().addModelListener(mySimpleModelListener);
     }
   }
 
@@ -445,6 +483,17 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return false;
   }
 
+  private class MySimpleModelListener extends SModelAdapter {
+    public void modelInitialized() {
+      CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+        public void run() {
+          updatePresentation();
+          updateNodePresentationInTree();
+        }
+      });
+    }
+  }
+
   private class MyModelListener implements SModelCommandListener {
     public MyModelListener() {
     }
@@ -466,7 +515,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           final boolean[] wasSaved = new boolean[1];
 
           for (SModelEvent event : events) {
-            event.accept(new SModelEventVisitor() {
+            event.accept(new SModelEventVisitorAdapter() {
               public void visitRootEvent(SModelRootEvent event) {
                 if (event.isAdded()) {
                   addedRoots.add(event.getRoot());
@@ -545,7 +594,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     private void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
       if (!showPropertiesAndReferences()) return;
 
-      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       for (SNode sourceNode : nodesWithChangedRefs) {
         MPSTreeNode nodeTreeNode = findDescendantWith(sourceNode);
         if (nodeTreeNode == null || !nodeTreeNode.isInitialized()) return;
