@@ -21,12 +21,12 @@ public class CopyThisDown_Action extends CurrentProjectMPSAction {
   private boolean isAlwaysVisible = false;
 
   public  CopyThisDown_Action(MPSProject project) {
-    super(project, "Copy This Down");
+    super(project, "Duplicate Node");
   }
 
   @NotNull()
   public String getKeyStroke() {
-    return "";
+    return "ctrl D";
   }
 
   public void doUpdate(@NotNull() ActionContext context) {

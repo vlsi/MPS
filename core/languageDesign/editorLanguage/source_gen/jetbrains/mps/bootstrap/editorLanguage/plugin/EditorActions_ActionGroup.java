@@ -9,6 +9,7 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.ide.actions.Edit_ActionGroup;
 
 public class EditorActions_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(EditorActions_ActionGroup.class);
@@ -32,6 +33,18 @@ public class EditorActions_ActionGroup extends BaseActionGroup {
         return;
       }
       gTo.addEveryFrom(gWhat, owner);
+    }
+    {
+      ActionGroup gTo = manager.getGroup(Edit_ActionGroup.ID);
+      ActionGroup gWhat = manager.getGroup(EditorActions_ActionGroup.ID);
+      if (gTo == null || gWhat == null) {
+        return;
+      }
+      {
+        String labelName;
+        labelName = Edit_ActionGroup.LABEL_ID_custom;
+        gTo.addEveryFrom(gWhat, owner, labelName);
+      }
     }
   }
 

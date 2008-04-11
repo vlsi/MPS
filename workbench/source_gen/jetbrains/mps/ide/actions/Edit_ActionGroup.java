@@ -9,6 +9,7 @@ import jetbrains.mps.ide.actions.nodes.CopyNodeAction;
 import jetbrains.mps.ide.actions.nodes.CopyNodeReferenceAction;
 import jetbrains.mps.ide.actions.nodes.PasteNodeAction;
 import jetbrains.mps.ide.actions.nodes.CutNodeAction;
+import jetbrains.mps.ide.action.Label;
 import jetbrains.mps.ide.actions.model.AddModelImportAction;
 import jetbrains.mps.ide.actions.model.AddLanguageImportAction;
 import jetbrains.mps.ide.action.ActionManager;
@@ -18,6 +19,7 @@ import jetbrains.mps.ide.action.ActionGroup;
 public class Edit_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(Edit_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Edit";
+  public static final String LABEL_ID_custom = "custom";
 
   public  Edit_ActionGroup(MPSProject project) {
     super("Edit", Edit_ActionGroup.ID);
@@ -33,6 +35,7 @@ public class Edit_ActionGroup extends BaseActionGroup {
       this.add(new CutNodeAction(), this);
       this.addSeparator();
       this.add(new RecentEditorsAction(), this);
+      this.add(new Label(Edit_ActionGroup.LABEL_ID_custom), this);
       this.addSeparator();
       this.add(new AddModelImportAction(), this);
       this.add(new AddLanguageImportAction(), this);

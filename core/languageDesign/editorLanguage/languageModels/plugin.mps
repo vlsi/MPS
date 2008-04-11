@@ -27,7 +27,7 @@
   <visible index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1207225803603">
     <property name="name" value="CopyThisDown" />
-    <property name="caption" value="Copy This Down" />
+    <property name="caption" value="Duplicate Node" />
     <property name="shortcut" value="control D" />
     <link role="extendedAction" targetNodeId="3.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1207226167041">
@@ -224,12 +224,20 @@
         </node>
       </node>
     </node>
+    <node role="keystroke" type="jetbrains.mps.bootstrap.pluginLanguage.structure.KeyMapKeystroke" id="1207909043755">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_D" />
+    </node>
   </node>
   <visible index="3" modelUID="jetbrains.mps.ide.actions" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207227007620">
     <property name="name" value="EditorActions" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1207227048469">
       <link role="modifiedGroup" targetNodeId="3v.1204991231476" resolveInfo="EditorPopup" />
+    </node>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1207910596238">
+      <link role="modifiedGroup" targetNodeId="3v.1204991235731" resolveInfo="Edit" />
+      <link role="point" targetNodeId="3v.1207910902706" resolveInfo="custom" />
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207227023325">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1207227037234">
