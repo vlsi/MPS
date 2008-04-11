@@ -14,6 +14,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder;
@@ -90,7 +91,7 @@ public class Rename extends AbstractLoggableRefactoring {
 
   public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
-      SearchQuery searchQuery = new SearchQuery(new SNodePointer(actionContext.getNode()), actionContext.getScope());
+      SearchQuery searchQuery = new SearchQuery(new SNodePointer(actionContext.getNode()), GlobalScope.getInstance());
       IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
       IAdaptiveProgressMonitor monitor = projectFrame.createAdaptiveProgressMonitor();
       NodeAndDescendantsUsages_Finder finder = new NodeAndDescendantsUsages_Finder();

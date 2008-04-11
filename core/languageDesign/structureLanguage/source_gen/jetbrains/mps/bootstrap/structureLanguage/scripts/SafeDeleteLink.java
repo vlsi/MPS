@@ -15,6 +15,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
 import jetbrains.mps.bootstrap.structureLanguage.findUsages.LinkExamples_Finder;
@@ -89,7 +90,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   public SearchResults getAffectedNodes(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SNode node = actionContext.getNode();
-      SearchQuery searchQuery = new SearchQuery(new SNodePointer(node), actionContext.getScope());
+      SearchQuery searchQuery = new SearchQuery(new SNodePointer(node), GlobalScope.getInstance());
       IResultProvider resultProvider = TreeBuilder.forFinders(new LinkExamples_Finder(), new NodeAndDescendantsUsages_Finder());
       IDEProjectFrame projectFrame = (IDEProjectFrame)actionContext.get(IDEProjectFrame.class);
       SearchResults searchResults = resultProvider.getResults(searchQuery, projectFrame.createAdaptiveProgressMonitor());
