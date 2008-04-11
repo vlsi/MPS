@@ -13,9 +13,6 @@ public class SModelEventVisitorAdapter implements SModelEventVisitor {
 
   public void visitReferenceEvent(SModelReferenceEvent event) {
   }
-
-  public void visitSavedEvent(SModelSavedEvent event) {
-  }
 }
 
 

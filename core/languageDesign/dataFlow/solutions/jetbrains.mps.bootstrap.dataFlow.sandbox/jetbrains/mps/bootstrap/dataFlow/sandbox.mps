@@ -82,7 +82,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207253070215">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207253081826">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207253081827">
-            <property name="name" value="i" />
+            <property name="name" value="isssss" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1207253081828" />
           </node>
         </node>

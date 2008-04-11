@@ -84,7 +84,7 @@ public class SModelAdapter implements SModelListener {
   public void modelInitialized() {
   }
 
-  public void modelSaved(SModelSavedEvent event) {
+  public void modelSaved() {
   }
 
   public void eventFired(SModelEvent event) {

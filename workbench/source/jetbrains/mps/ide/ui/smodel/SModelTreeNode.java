@@ -484,7 +484,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private class MySimpleModelListener extends SModelAdapter {
+    public void modelSaved() {
+      updatePresentation();
+    }
+
     public void modelInitialized() {
+      updatePresentation();
+    }
+
+    private void updatePresentation() {
       CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
         public void run() {
           updatePresentation();
@@ -511,8 +519,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           final Set<SNode> nodesWithChangedPackages = new LinkedHashSet<SNode>();
 
           final Set<SNode> nodesWithChangedRefs = new LinkedHashSet<SNode>();
-
-          final boolean[] wasSaved = new boolean[1];
 
           for (SModelEvent event : events) {
             event.accept(new SModelEventVisitorAdapter() {
@@ -549,10 +555,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
               public void visitReferenceEvent(SModelReferenceEvent event) {
                 nodesWithChangedRefs.add(event.getReference().getSourceNode());
               }
-
-              public void visitSavedEvent(SModelSavedEvent event) {
-                wasSaved[0] = true;
-              }
             });
           }
 
@@ -563,10 +565,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           updateNodesWithChangedPackages(nodesWithChangedPackages);
 
           updateGenerationRequiredStatus();
-
-          if (wasSaved[0]) {
-            updatePresentation();
-          }
 
           updateAncestorsPresentationInTree();
         }
