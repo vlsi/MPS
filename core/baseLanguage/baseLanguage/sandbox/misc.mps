@@ -366,6 +366,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207924904149">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1207924904150">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207924904151">
+              <link role="variableDeclaration" targetNodeId="1207921849943" resolveInfo="v" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207924904152">
+              <link role="variableDeclaration" targetNodeId="1207921900975" resolveInfo="d" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
