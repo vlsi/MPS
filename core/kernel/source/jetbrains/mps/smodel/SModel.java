@@ -945,18 +945,6 @@ public class SModel implements Iterable<SNode> {
     return myDisposed;
   }
 
-  public void validateLanguages() {
-    Set<String> usedLanguages = new HashSet<String>(getLanguageNamespaces(GlobalScope.getInstance()));
-    List<SNode> nodes = allNodes();
-    for (SNode node : nodes) {
-      String languageNamespace = node.getLanguageNamespace();
-      if (!usedLanguages.contains(languageNamespace)) {
-        usedLanguages.add(languageNamespace);
-        addNewlyImportedLanguage(languageNamespace);
-      }
-    }
-  }
-
   public void validateLanguagesAndImports() {
     Set<String> usedLanguages = new HashSet<String>(getLanguageNamespaces(GlobalScope.getInstance()));
     Set<SModelUID> importedModels = new HashSet<SModelUID>();
