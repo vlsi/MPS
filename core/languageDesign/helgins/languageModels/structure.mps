@@ -11,6 +11,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -823,7 +824,7 @@
     <property name="name" value="ErrorInfoExpression" />
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1201618317923">
-      <property name="value" value="errorInfo" />
+      <property name="value" value="equationInfo" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
