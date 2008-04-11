@@ -9,6 +9,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
 
@@ -23,6 +26,8 @@ public class NodeNodeData extends BaseNodeData {
 
   private SNodePointer myNodePointer;
   private boolean myIsResultNode;
+  private SModelListener myModelListaner;
+  private boolean myIsRemoved = false;
 
   public NodeNodeData() {
 
@@ -32,10 +37,27 @@ public class NodeNodeData extends BaseNodeData {
     super(creator, snodeRepresentation(node), nodeAdditionalInfo(node), false);
     myNodePointer = new SNodePointer(node);
     myIsResultNode = isResultNode;
+
+    myModelListaner = new SModelAdapter() {
+      public void rootRemoved(SModelRootEvent event) {
+        if (event.getRoot() == getNode()) {
+          myIsRemoved = true;
+          notifyChangeListeners();
+        }
+      }
+
+      public void childRemoved(SModelChildEvent event) {
+        if (event.getChild() == getNode()) {
+          myIsRemoved = true;
+          notifyChangeListeners();
+        }
+      }
+    };
+    node.getModel().addWeakSModelListener(myModelListaner);
   }
 
   public SNode getNode() {
-    return myNodePointer.getNode();
+    return (SNode) getIdObject();
   }
 
   public boolean isResultNode() {
@@ -43,14 +65,12 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   public Icon getIcon() {
-    if (myNodePointer.getNode() != null) {
-      return IconManager.getIconFor(myNodePointer.getNode());
-    } else {
-      return null;
-    }
+    if (myNodePointer.getNode() == null || myIsRemoved) return null;
+    return IconManager.getIconFor(myNodePointer.getNode());
   }
 
   public Object getIdObject() {
+    if (myIsRemoved) return null;
     return myNodePointer.getNode();
   }
 

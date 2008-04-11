@@ -4,10 +4,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -18,7 +15,9 @@ public class ModelNodeData extends BaseNodeData {
   private static final String MODEL = "model";
   private static final String UID = "uid";
 
-  public SModelDescriptor myModelDescriptor = null;
+  public SModelUID myModelUID = new SModelUID("");
+  private SModelRepositoryListener myModelRepositoryListener;
+  private boolean myIsRemoved = false;
 
   public ModelNodeData() {
 
@@ -26,7 +25,23 @@ public class ModelNodeData extends BaseNodeData {
 
   public ModelNodeData(String creator, SModel model) {
     super(creator, model.getModelDescriptor().getLongName(), "", false);
-    myModelDescriptor = model.getModelDescriptor();
+    myModelUID = model.getModelDescriptor().getModelUID();
+
+    myModelRepositoryListener = new SModelRepositoryAdapter() {
+      public void modelRemoved(SModelDescriptor modelDescriptor) {
+        if (modelDescriptor.getModelUID().equals(myModelUID)) {
+          myIsRemoved = true;
+          notifyChangeListeners();
+        }
+      }
+    };
+
+    SModelRepository.getInstance().addWeakModelRepositoryListener(myModelRepositoryListener);
+  }
+
+  protected void finalize() throws Throwable {
+    super.finalize();
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
   }
 
   public Icon getIcon() {
@@ -34,29 +49,26 @@ public class ModelNodeData extends BaseNodeData {
   }
 
   public Object getIdObject() {
-    return myModelDescriptor.getSModel();
+    if (myIsRemoved) return null;
+    SModelDescriptor modelDescriptor = getModelDescriptor();
+    if (modelDescriptor == null) return null;
+    return modelDescriptor.getSModel();
+  }
+
+  private SModelDescriptor getModelDescriptor() {
+    return SModelRepository.getInstance().getModelDescriptor(myModelUID);
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
     Element modelXML = new Element(MODEL);
-    if (myModelDescriptor.getSModel() == null) {
-      LOG.warning("model descriptor is null");
-      //throw new CantSaveSomethingException("model descriptor is null");
-    } else {
-      modelXML.setAttribute(UID, myModelDescriptor.getModelUID().toString());
-    }
+    modelXML.setAttribute(UID, myModelUID.toString());
     element.addContent(modelXML);
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     super.read(element, project);
     Element modelXML = element.getChild(MODEL);
-    SModelUID modelUID = SModelUID.fromString(modelXML.getAttributeValue(UID));
-    myModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
-    if (myModelDescriptor == null) {
-      LOG.warning("model descriptor is null");
-      //throw new CantLoadSomethingException("model descriptor is null");
-    }
+    myModelUID = SModelUID.fromString(modelXML.getAttributeValue(UID));
   }
 }

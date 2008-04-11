@@ -45,6 +45,7 @@ public class DataNode implements IExternalizeable, IChangeListener {
 
   public void add(DataNode o) {
     myChildren.add(o);
+    o.addChangeListener(this);
     notifyChangeListeners();
   }
 
@@ -129,11 +130,12 @@ public class DataNode implements IExternalizeable, IChangeListener {
         return nodeData instanceof ModelNodeData;
       }
     });
-    List<SModelDescriptor> result = CollectionUtil.map(modelNodes, new Mapper<DataNode, SModelDescriptor>() {
-      public SModelDescriptor map(DataNode dataNode) {
-        return ((ModelNodeData) dataNode.getData()).myModelDescriptor;
-      }
-    });
+
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    for (DataNode node : modelNodes) {
+      SModel model = (SModel) ((ModelNodeData) node.getData()).getIdObject();
+      if (model != null) result.add(model.getModelDescriptor());
+    }
     return result;
   }
 
@@ -156,11 +158,11 @@ public class DataNode implements IExternalizeable, IChangeListener {
         return nodeData instanceof NodeNodeData;
       }
     });
-    List<SNodePointer> result = CollectionUtil.map(nodeNodes, new Mapper<DataNode, SNodePointer>() {
-      public SNodePointer map(DataNode dataNode) {
-        return new SNodePointer(((NodeNodeData) dataNode.getData()).getNode());
-      }
-    });
+    List<SNodePointer> result = new ArrayList<SNodePointer>();
+    for (DataNode node : nodeNodes) {
+      SNode n = (SNode) ((NodeNodeData) node.getData()).getIdObject();
+      if (n != null) result.add(new SNodePointer(n));
+    }
     return result;
   }
 
