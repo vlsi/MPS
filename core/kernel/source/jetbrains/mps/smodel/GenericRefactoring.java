@@ -190,13 +190,17 @@ public class GenericRefactoring {
   }
 
   private void generateModels(ActionContext context, Map<IModule, List<SModel>> sourceModels, RefactoringContext refactoringContext) {
-    SNodeMembersAccessModifier modifier = SNodeMembersAccessModifier.getInstance();
+    final SNodeMembersAccessModifier modifier = SNodeMembersAccessModifier.getInstance();
     refactoringContext.setUpMembersAccessModifier(modifier);
     for (IModule sourceModule : sourceModels.keySet()) {
       try {
         IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
-        List<SModel> models = sourceModels.get(sourceModule);
-        modifier.startModificationMode(models);
+        final List<SModel> models = sourceModels.get(sourceModule);
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            modifier.startModificationMode(models);
+          }
+        });
         new GeneratorManager().generateModels(models,
           null,
           operationContext,
@@ -210,7 +214,12 @@ public class GenericRefactoring {
           new DefaultMessageHandler(operationContext.getProject()),
           false);
       } finally {
-        modifier.clear();
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            modifier.clear();
+          }
+        });
+
       }
     }
   }
