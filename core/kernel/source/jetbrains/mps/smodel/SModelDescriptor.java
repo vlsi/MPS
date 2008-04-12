@@ -106,4 +106,6 @@ public interface SModelDescriptor {
   IModule getModule();
 
   Set<IModule> getModules();
+
+  boolean isValid(IScope scope);
 }

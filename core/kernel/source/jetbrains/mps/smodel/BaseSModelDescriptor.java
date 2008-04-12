@@ -12,10 +12,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -146,5 +143,31 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       message += "another model's file = " + anotherModel.getModelFile();
       LOG.error(message);
     }
+  }
+
+  public boolean isValid(IScope scope) {
+    SModel model = getSModel();
+
+    for (SModelUID uid : model.getImportedModelUIDs()) {
+      if (scope.getModelDescriptor(uid) == null) {
+        return false;
+      }
+    }
+
+    List<String> langsToCheck = new ArrayList<String>();
+    langsToCheck.addAll(model.getExplicitlyImportedLanguages());
+    langsToCheck.addAll(model.getEngagedOnGenerationLanguages());
+    for (String lang : langsToCheck) {
+      if (scope.getLanguage(lang) == null) {
+        return false;
+      }
+    }
+
+    for (String devKit : model.getDevKitNamespaces()) {
+      if (scope.getDevKit(devKit) == null) {
+        return false;
+      }
+    }
+    return true;
   }
 }

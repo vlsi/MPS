@@ -123,38 +123,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     if (myModelDescriptor.isInitialized()) {
-      setErrorState(!isValid(getSModelDescriptor()));
+      setErrorState(!getSModelDescriptor().isValid(getOperationContext().getScope()));
     }
 
     setText(calculateText());
-  }
-
-  private boolean isValid(SModelDescriptor sm) {
-    IScope scope = getOperationContext().getScope();
-
-    SModel model = sm.getSModel();
-
-    for (SModelUID uid : model.getImportedModelUIDs()) {
-      if (scope.getModelDescriptor(uid) == null) {
-        return false;
-      }
-    }
-
-    List<String> langsToCheck = new ArrayList<String>();
-    langsToCheck.addAll(model.getExplicitlyImportedLanguages());
-    langsToCheck.addAll(model.getEngagedOnGenerationLanguages());
-    for (String lang : langsToCheck) {
-      if (scope.getLanguage(lang) == null) {
-        return false;
-      }
-    }
-
-    for (String devKit : model.getDevKitNamespaces()) {
-      if (scope.getDevKit(devKit) == null) {
-        return false;
-      }
-    }
-    return true;
   }
 
   protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
