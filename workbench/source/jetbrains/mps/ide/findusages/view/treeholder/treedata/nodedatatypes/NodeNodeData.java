@@ -7,10 +7,7 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
@@ -54,6 +51,12 @@ public class NodeNodeData extends BaseNodeData {
       }
     };
     node.getModel().addWeakSModelListener(myModelListaner);
+  }
+
+  protected void finalize() throws Throwable {
+    super.finalize();
+    SModelDescriptor model = myNodePointer.getModel();
+    if (model != null) model.removeModelListener(myModelListaner);
   }
 
   public SNode getNode() {

@@ -24,6 +24,7 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   public static String COMPONENT = "component";
   public static String CONSTRUCTOR = "constructor";
   public static String ATTRIBUTE = "attribute";
+  public static String EVENT = "event";
   public static String COMPONENT_METHOD = "componentMethod";
 
   public ComponentController(SNode node) {
@@ -105,6 +106,26 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
 
   public void insertAttribute(AttributeDeclaration prev, AttributeDeclaration node) {
     this.insertChild(prev, ComponentController.ATTRIBUTE, node);
+  }
+
+  public int getEventsCount() {
+    return this.getChildCount(ComponentController.EVENT);
+  }
+
+  public Iterator<EventDeclaration> events() {
+    return this.children(ComponentController.EVENT);
+  }
+
+  public List<EventDeclaration> getEvents() {
+    return this.getChildren(ComponentController.EVENT);
+  }
+
+  public void addEvent(EventDeclaration node) {
+    this.addChild(ComponentController.EVENT, node);
+  }
+
+  public void insertEvent(EventDeclaration prev, EventDeclaration node) {
+    this.insertChild(prev, ComponentController.EVENT, node);
   }
 
   public int getComponentMethodsCount() {
