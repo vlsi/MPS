@@ -390,10 +390,19 @@ public abstract class MPSTree extends JTree {
   }
 
   public void collapseAll(MPSTreeNode node) {
-    for (int i = 0; i < node.getChildCount(); i++) {
-      collapseAll((MPSTreeNode) node.getChildAt(i));
+    boolean wasAutoExpandEnabled = myAutoExpandEnabled;
+    try {
+      myAutoExpandEnabled = false;                                              
+      for (int i = 0; i < node.getChildCount(); i++) {
+        collapseAll((MPSTreeNode) node.getChildAt(i));
+      }
+
+      if (node.isInitialized()) {
+        super.collapsePath(new TreePath(node.getPath()));
+      }
+    } finally {
+      myAutoExpandEnabled = wasAutoExpandEnabled;
     }
-    super.collapsePath(new TreePath(node.getPath()));
   }
 
   public void selectNode(TreeNode node) {
