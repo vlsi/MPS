@@ -23,7 +23,7 @@ public class NodeNodeData extends BaseNodeData {
 
   private SNodePointer myNodePointer;
   private boolean myIsResultNode;
-  private SModelListener myModelListaner;
+  private SModelListener myModelListener = null;
   private boolean myIsRemoved = false;
 
   public NodeNodeData() {
@@ -35,7 +35,12 @@ public class NodeNodeData extends BaseNodeData {
     myNodePointer = new SNodePointer(node);
     myIsResultNode = isResultNode;
 
-    myModelListaner = new SModelAdapter() {
+    startListening();
+  }
+
+  private void startListening() {
+    SNode node = myNodePointer.getNode();
+    myModelListener = new SModelAdapter() {
       public void rootRemoved(SModelRootEvent event) {
         if (event.getRoot() == getNode()) {
           myIsRemoved = true;
@@ -50,13 +55,13 @@ public class NodeNodeData extends BaseNodeData {
         }
       }
     };
-    node.getModel().addWeakSModelListener(myModelListaner);
+    node.getModel().addWeakSModelListener(myModelListener);
   }
 
   protected void finalize() throws Throwable {
     super.finalize();
     SModelDescriptor model = myNodePointer.getModel();
-    if (model != null) model.removeModelListener(myModelListaner);
+    if (model != null && myModelListener != null) model.removeModelListener(myModelListener);
   }
 
   public SNode getNode() {
@@ -81,10 +86,7 @@ public class NodeNodeData extends BaseNodeData {
     super.write(element, project);
     element.setAttribute(RESULT, Boolean.toString(myIsResultNode));
     Element nodeXML = new Element(NODE);
-    if (myNodePointer.getNode() == null) {
-      LOG.warning("node is null");
-      //throw new CantSaveSomethingException("node is null");
-    } else {
+    if (myNodePointer.getNode() != null) {
       nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
     }
     element.addContent(nodeXML);
@@ -96,13 +98,13 @@ public class NodeNodeData extends BaseNodeData {
     SNode node = null;
     if (!children.isEmpty()) {
       node = ComponentsUtil.nodeFromElement((Element) children.get(0));
-      if (node == null) {
-        LOG.warning("node is null");
-        //throw new CantLoadSomethingException("node is null");
-      }
     }
     myNodePointer = new SNodePointer(node);
     myIsResultNode = Boolean.parseBoolean(element.getAttributeValue(RESULT));
+
+    if (!isInvalid()) {
+      startListening();
+    }
   }
 
   private static String snodeRepresentation(final SNode node) {

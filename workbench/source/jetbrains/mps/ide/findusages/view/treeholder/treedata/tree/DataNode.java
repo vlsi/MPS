@@ -101,6 +101,7 @@ public class DataNode implements IExternalizeable, IChangeListener {
       throw new CantLoadSomethingException("can't instantiate node", t);
     }
     myData.read(dataXML, project);
+    myData.addChangeListener(this);
 
     myChildren.clear();
     Element childrenXML = element.getChild(CHILDREN);

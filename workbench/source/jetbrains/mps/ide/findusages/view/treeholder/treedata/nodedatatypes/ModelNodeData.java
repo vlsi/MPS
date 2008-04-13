@@ -2,6 +2,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treedata.nodedatatypes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.moduleRepositoryViewer.ModuleRepositoryView;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -16,7 +17,7 @@ public class ModelNodeData extends BaseNodeData {
   private static final String UID = "uid";
 
   public SModelUID myModelUID = new SModelUID("");
-  private SModelRepositoryListener myModelRepositoryListener;
+  private SModelRepositoryListener myModelRepositoryListener = null;
   private boolean myIsRemoved = false;
 
   public ModelNodeData() {
@@ -27,6 +28,10 @@ public class ModelNodeData extends BaseNodeData {
     super(creator, model.getModelDescriptor().getLongName(), "", false);
     myModelUID = model.getModelDescriptor().getModelUID();
 
+    startListening();
+  }
+
+  private void startListening() {
     myModelRepositoryListener = new SModelRepositoryAdapter() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
         if (modelDescriptor.getModelUID().equals(myModelUID)) {
@@ -41,7 +46,10 @@ public class ModelNodeData extends BaseNodeData {
 
   protected void finalize() throws Throwable {
     super.finalize();
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+
+    if (myModelRepositoryListener != null) {
+      SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+    }
   }
 
   public Icon getIcon() {
@@ -70,5 +78,9 @@ public class ModelNodeData extends BaseNodeData {
     super.read(element, project);
     Element modelXML = element.getChild(MODEL);
     myModelUID = SModelUID.fromString(modelXML.getAttributeValue(UID));
+
+    if (!isInvalid()) {
+      startListening();
+    }
   }
 }
