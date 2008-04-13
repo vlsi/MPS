@@ -9,12 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-
-import java.util.Iterator;
-
 import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
-
-import java.util.List;
 
 public class EventDeclaration extends BaseConcept implements IMember, IClassifier {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.EventDeclaration";
@@ -69,24 +64,12 @@ public class EventDeclaration extends BaseConcept implements IMember, IClassifie
     this.setProperty(EventDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public int getParametersCount() {
-    return this.getChildCount(EventDeclaration.PARAMETER);
+  public ParameterDeclaration getParameter() {
+    return (ParameterDeclaration) this.getChild(EventDeclaration.PARAMETER);
   }
 
-  public Iterator<ParameterDeclaration> parameters() {
-    return this.children(EventDeclaration.PARAMETER);
-  }
-
-  public List<ParameterDeclaration> getParameters() {
-    return this.getChildren(EventDeclaration.PARAMETER);
-  }
-
-  public void addParameter(ParameterDeclaration node) {
-    this.addChild(EventDeclaration.PARAMETER, node);
-  }
-
-  public void insertParameter(ParameterDeclaration prev, ParameterDeclaration node) {
-    this.insertChild(prev, EventDeclaration.PARAMETER, node);
+  public void setParameter(ParameterDeclaration node) {
+    super.setChild(EventDeclaration.PARAMETER, node);
   }
 
 }

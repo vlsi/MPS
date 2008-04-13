@@ -6,9 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class RaiseOperation extends BaseEventOperation {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.RaiseOperation";
+  public static String ARGUMENT = "argument";
 
   public RaiseOperation(SNode node) {
     super(node);
@@ -20,6 +22,15 @@ public class RaiseOperation extends BaseEventOperation {
 
   public static RaiseOperation newInstance(SModel sm) {
     return RaiseOperation.newInstance(sm, false);
+  }
+
+
+  public Expression getArgument() {
+    return (Expression) this.getChild(RaiseOperation.ARGUMENT);
+  }
+
+  public void setArgument(Expression node) {
+    super.setChild(RaiseOperation.ARGUMENT, node);
   }
 
 }
