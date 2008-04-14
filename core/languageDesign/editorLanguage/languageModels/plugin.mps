@@ -15,21 +15,21 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.plugins@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <import index="5" modelUID="java.lang@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.resolve@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.helgins.integration@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.project@java_stub" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.plugins@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1207225803603">
     <property name="name" value="CopyThisDown" />
     <property name="caption" value="Duplicate Node" />
     <property name="shortcut" value="control D" />
-    <link role="extendedAction" targetNodeId="3.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
+    <link role="extendedAction" targetNodeId="9.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1207226167041">
       <property name="name" value="inputNode" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207226167042" />

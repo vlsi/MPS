@@ -27,7 +27,6 @@
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="5" modelUID="jetbrains.mps.patterns.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.patterns.util@java_stub" version="-1" />
-  <import index="7" modelUID="junit.framework@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="9" modelUID="java.lang@java_stub" version="-1" />
   <import index="10" modelUID="java.io@java_stub" version="-1" />
