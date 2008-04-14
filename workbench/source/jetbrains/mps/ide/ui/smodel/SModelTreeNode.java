@@ -468,7 +468,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     private void updatePresentation() {
       CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
         public void run() {
-          updatePresentation();
+          SModelTreeNode.this.updatePresentation();
           updateNodePresentationInTree();
         }
       });
