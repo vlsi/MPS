@@ -28,7 +28,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     SNodePointer pointer = editor.getRootCell().getSNodePointer();
-    boolean notEditable = pointer != null && pointer.getModel().isNotEditable();
+    boolean notEditable = pointer != null &&  pointer.getModel() != null && pointer.getModel().isNotEditable();
     notEditable = (editorContext.getNodeEditorComponent().isReadOnly() || notEditable);
 
     if (notEditable) return false;
