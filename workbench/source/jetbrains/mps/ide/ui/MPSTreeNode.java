@@ -139,12 +139,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   public void remove(int childIndex) {
     ((MPSTreeNode) getChildAt(childIndex)).removeThisAndChildren();
     super.remove(childIndex);
+    updateErrorState();
   }
 
 
   public void insert(MutableTreeNode newChild, int childIndex) {
     super.insert(newChild, childIndex);
     ((MPSTreeNode) getChildAt(childIndex)).addThisAndChildren();
+    updateErrorState();
   }
 
   final void removeThisAndChildren() {
@@ -232,7 +234,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   public final void setIcon(Icon newIcon, boolean expanded) {
     if (expanded) {
       myExpandedIcon = newIcon;
-    } else {
+    } else {                                            
       myCollapsedIcon = newIcon;
     }
   }
