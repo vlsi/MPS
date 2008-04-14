@@ -184,14 +184,24 @@ public class RulesUtil {
   }
 
   @InferenceMethod()
-  public static void equate_inputNodeConcept(SNode op, final SNode TypeToEquate) {
+  public static void equate_inputNodeConcept(SNode op, SNode TypeToEquate) {
+    RulesUtil.equate_inputNodeConcept_internal(op, TypeToEquate, false);
+  }
+
+  @InferenceMethod()
+  public static void equate_inputNodeConceptOrInputConceptType(SNode op, SNode TypeToEquate) {
+    RulesUtil.equate_inputNodeConcept_internal(op, TypeToEquate, true);
+  }
+
+  @InferenceMethod()
+  private static void equate_inputNodeConcept_internal(SNode op, final SNode TypeToEquate, final boolean conceptOfConceptIfInputConcept) {
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
     {
-      final SNode LeftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1206098758674", false);
+      final SNode LeftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100499", false);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
 
         public void run() {
-          SNode conceptDeclaration;
+          SNode conceptDeclaration = null;
           if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
             conceptDeclaration = SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "targetConcept", false);
           } else
@@ -199,15 +209,20 @@ public class RulesUtil {
             conceptDeclaration = SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "concept", false);
           } else
           if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
-            conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
-          } else
-          {
+            if (conceptOfConceptIfInputConcept) {
+              conceptDeclaration = SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "conceptDeclaraton", false);
+            } else
+            {
+              conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
+            }
+          }
+          if (conceptDeclaration == null) {
             conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
           }
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, conceptDeclaration, null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1205278228661");
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, conceptDeclaration, null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100494");
         }
 
-      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062066737");
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1208202100447");
     }
   }
 

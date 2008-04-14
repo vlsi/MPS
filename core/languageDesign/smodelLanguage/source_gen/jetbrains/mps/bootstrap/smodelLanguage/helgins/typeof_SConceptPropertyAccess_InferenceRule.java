@@ -21,7 +21,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
       return;
     }
     final SNode Concept_typevar_1208190489964 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1208190489964));
+    RulesUtil.equate_inputNodeConceptOrInputConceptType(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1208190489964));
     {
       final SNode concreteConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1208190489964);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(concreteConcept, new Runnable() {
