@@ -37,6 +37,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private int myFontStyle = Font.PLAIN;
   private boolean myAutoExpandable = true;
   private boolean myErrorState = false;
+  private boolean myHiglightAsError = false;
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -249,14 +250,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     myColor = color;
   }
 
-  public final boolean isErrorState() {
-    return myErrorState;
-  }
-
-  public final void setErrorState(boolean errorState) {
-    myErrorState = errorState;
-  }
-
   public final int getFontStyle() {
     return myFontStyle;
   }
@@ -292,6 +285,41 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   public final void setText(String text) {
     myText = text;
   }
+
+  public final boolean isErrorState() {
+    return myErrorState;
+  }
+
+  public final void setErrorState(boolean errorState) {
+    myErrorState = errorState;
+    updateErrorState();
+  }
+
+  public final boolean isHighlighAsError() {
+    return myHiglightAsError;
+  }
+
+  private void updateErrorState() {
+    boolean hasErrorInChildren = false;
+    if (propogateErrorUpwards()) {
+      for (int i = 0; i < getChildCount(); i++) {
+        MPSTreeNode node = (MPSTreeNode) getChildAt(i);
+        if (node.isHighlighAsError()) {
+          hasErrorInChildren = true;
+          break;
+        }
+      }
+    }
+    myHiglightAsError = hasErrorInChildren || isErrorState();
+    if (getParent() != null) {
+      ((MPSTreeNode) getParent()).updateErrorState();
+    }
+  }
+
+  protected boolean propogateErrorUpwards() {
+    return true;
+  }
+
 
   public String toString() {
     return getText();

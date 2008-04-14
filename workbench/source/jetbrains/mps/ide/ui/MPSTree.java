@@ -772,7 +772,7 @@ public abstract class MPSTree extends JTree {
 
       super.paint(g);
 
-      if (myNode.isErrorState()) {
+      if (myNode.isHighlighAsError()) {
         g.setColor(Color.RED);
         ColorAndGraphicsUtil.drawWave(g, imageOffset, getWidth(), getHeight() - ColorAndGraphicsUtil.WAVE_HEIGHT - 1);
       }

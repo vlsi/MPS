@@ -26,6 +26,10 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
     return myInitialized;
   }
 
+  protected boolean propogateErrorUpwards() {
+    return false;
+  }
+
   protected void doInit() {
     populate();
     myInitialized = true;
