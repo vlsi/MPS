@@ -2,6 +2,7 @@ package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.GoToNodeWindow.GoToNodeComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
@@ -116,7 +117,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
     myHierarchyTree.setOperationContext(context);
     myContext = context;
     myHierarchyTree.myHierarchyNode = node;
-    SwingUtilities.invokeLater(new Runnable() {
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
       public void run() {
         myHierarchyTree.rebuildNow();
         if (myTreeNode != null) {
