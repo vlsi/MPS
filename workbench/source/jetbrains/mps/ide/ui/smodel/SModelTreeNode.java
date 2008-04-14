@@ -122,7 +122,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       setNodeIdentifier("");
     }
 
-    if (myModelDescriptor.isInitialized()) {
+    if (myModelDescriptor != null && myModelDescriptor.isInitialized()) {
       setErrorState(!getSModelDescriptor().isValid(getOperationContext().getScope()));
     }
 
