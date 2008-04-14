@@ -18,7 +18,6 @@
   <import index="1" modelUID="jetbrains.mps.ide.scriptLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.ide.scriptLanguageInternal.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1172272818532">
     <link role="conceptDeclaration" targetNodeId="1.1172272794406" />

@@ -6,13 +6,17 @@
   </models>
   <accessoryModels>
     <model modelUID="jetbrains.mps.ide.actions" />
+    <model modelUID="jetbrains.mps.plugin@java_stub" />
+    <model modelUID="jetbrains.mps.plugins@java_stub" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.bootstrap.pluginLanguage#1203080439937" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template" />
       </models>
-      <external-templates />
+      <external-templates>
+        <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+      </external-templates>
       <dependencies>
         <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="false">jetbrains.mps.baseLanguage.classifiers</dependency>
@@ -42,6 +46,7 @@
     <dependency reexport="false">jetbrains.mps.ide</dependency>
     <dependency reexport="true">jetbrains.mps.baseLanguage.classifiers</dependency>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
+    <dependency reexport="false">jetbrains.mps.logging.refactoring</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.classifiers</usedLanguages>

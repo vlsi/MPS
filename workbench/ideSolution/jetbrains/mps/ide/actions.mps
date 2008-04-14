@@ -8,11 +8,10 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <maxImportIndex value="29" />
+  <maxImportIndex value="31" />
   <import index="1" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions.model@java_stub" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.refactoring.languages@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.ide.actions.project@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.ide.actions.make@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.ide.actions.file@java_stub" version="-1" />
@@ -33,6 +32,7 @@
   <import index="27" modelUID="jetbrains.mps.svn.ui@java_stub" version="-1" />
   <import index="28" modelUID="jetbrains.mps.vcs.ui@java_stub" version="-1" />
   <import index="29" modelUID="jetbrains.mps.vcs.ui.actions@java_stub" version="-1" />
+  <import index="31" modelUID="jetbrains.mps.refactoring.languages@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -139,7 +139,7 @@
         <property name="caption" value="Refactoring" />
         <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207148434606">
           <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207148437061">
-            <link role="javaClass" targetNodeId="4.~RenameModelAction" resolveInfo="RenameModelAction" />
+            <link role="javaClass" targetNodeId="31.~RenameModelAction" resolveInfo="RenameModelAction" />
           </node>
         </node>
       </node>
