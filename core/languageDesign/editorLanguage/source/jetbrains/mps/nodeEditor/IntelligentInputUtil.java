@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_RTHint;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.inference.TypeCheckingMode;
 
 import java.util.List;
 
@@ -113,7 +115,9 @@ public class IntelligentInputUtil {
       if (rtSubstituteInfo == null) {
         rtSubstituteInfo = new NullSubstituteInfo();
       }
+      TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.COMPLETION);
       List<INodeSubstituteAction> rtMatchingActions = rtSubstituteInfo.getMatchingActions(tail, true);
+      TypeChecker.getInstance().resetTypeCheckingMode();
 
       if (rtSubstituteInfo.hasNoActionsWithPrefix(tail)) { // don't create RT hint cell in such a case
         if (newNode != null) {

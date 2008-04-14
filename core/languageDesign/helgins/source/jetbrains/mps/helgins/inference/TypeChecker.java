@@ -242,13 +242,13 @@ public class TypeChecker {
     return getTypeDontCheck(node);
   }
 
-  private SNode getTypeOf_resolveMode(final SNode node) {
+  private SNode getTypeOf_resolveMode(final SNode node, boolean nodeIsNotChecked) {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
       getNodeTypesComponent(node.getContainingRoot());
-    if (!myCheckedRoots.contains(containingRoot) || component == null) {
+    if (nodeIsNotChecked || !myCheckedRoots.contains(containingRoot) || component == null) {
       final SNode[] result = new SNode[1];
       final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
       final NodeTypesComponent temporaryComponent;
@@ -283,7 +283,9 @@ public class TypeChecker {
     if (myTypeCheckingMode == TypeCheckingMode.GENERATION && HelginsPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
       return getTypeOf_generationMode(node);
     } else if (myTypeCheckingMode == TypeCheckingMode.RESOLVE) {
-      return getTypeOf_resolveMode(node);
+      return getTypeOf_resolveMode(node, false);
+    } else if (myTypeCheckingMode == TypeCheckingMode.COMPLETION) {
+      return getTypeOf_resolveMode(node, true);
     } else {
       return getTypeOf_normalMode(node);
     }
