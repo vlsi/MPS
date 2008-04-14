@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.plugin.IProjectHandler;
@@ -54,15 +55,19 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
         FileUtil.copyFile(mineFile, file);
         ThreadUtils.runInUIThreadNoWait(new Runnable() {
           public void run() {
-            NodeReadAccessCaster.blockEvents();
-            try {
-              Merger.merge(file);
-            } finally {
-              NodeReadAccessCaster.unblockEvents();
-            }
+            CommandProcessor.instance().executeCommand(new Runnable() {
+              public void run() {
+                NodeReadAccessCaster.blockEvents();
+                try {
+                  Merger.merge(file);
+                } finally {
+                  NodeReadAccessCaster.unblockEvents();
+                }
 
-            ReloadUtils.rebuildProjectPanes();            
-            modelDescriptor.reloadFromDisk();
+                ReloadUtils.rebuildProjectPanes();
+                modelDescriptor.reloadFromDisk();
+              }
+            });
           }
         });
       }
