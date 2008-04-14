@@ -20,17 +20,13 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.constraints.StaticConceptMethodCall_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints.StaticConceptMethodCall_Behavior;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.action.RTActionsBuilderContext;
@@ -186,110 +182,6 @@ public class QueriesGenerated {
 
       };
       appTypesInfo = (ApplicableTypesInfo)calc.calculate();
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1180538139816(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    final SNode leftConcept;
-    final ISearchScope hierarchyScope;
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
-          if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
-            // old
-            leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "leftExpression", true);
-          }
-          SNode maybeConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
-          if (maybeConceptType != null) {
-            if (SLinkOperations.getTarget(maybeConceptType, "conceptDeclaraton", false) != null) {
-              return SLinkOperations.getTarget(maybeConceptType, "conceptDeclaraton", false);
-            } else
-            {
-              return SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
-            }
-          }
-          SNode maybeNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-          if (maybeNodeType != null) {
-            if (SLinkOperations.getTarget(maybeNodeType, "concept", false) != null) {
-              return SLinkOperations.getTarget(maybeNodeType, "concept", false);
-            } else
-            {
-              return SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
-            }
-          }
-          return null;
-        }
-
-      };
-      leftConcept = (SNode)calc.calculate();
-    }
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          return new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(leftConcept)));
-        }
-
-      };
-      hierarchyScope = (ISearchScope)calc.calculate();
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        Calculable calc = new Calculable() {
-
-          public Object calculate() {
-            List<ConceptPropertyDeclaration> adapters = hierarchyScope.getAdapters(ConceptPropertyDeclaration.class);
-            return (List<SNode>)BaseAdapter.toNodes(adapters);
-          }
-
-        };
-        Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        assert queryResult != null;
-        for(final SNode item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess", null);
-              SLinkOperations.setTarget(newNode, "conceptProperty", (item), false);
-              return newNode;
-            }
-
-          });
-        }
-      }
-    }
-    {
-      AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess", operationContext.getScope());
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
-        Calculable calc = new Calculable() {
-
-          public Object calculate() {
-            List<ConceptLinkDeclaration> adapters = hierarchyScope.getAdapters(ConceptLinkDeclaration.class);
-            return (List<SNode>)BaseAdapter.toNodes(adapters);
-          }
-
-        };
-        Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        assert queryResult != null;
-        for(final SNode item : queryResult) {
-          result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-            public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-              SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess", null);
-              SLinkOperations.setTarget(newNode, "conceptLinkDeclaration", (item), false);
-              return newNode;
-            }
-
-          });
-        }
-      }
     }
     return result;
   }

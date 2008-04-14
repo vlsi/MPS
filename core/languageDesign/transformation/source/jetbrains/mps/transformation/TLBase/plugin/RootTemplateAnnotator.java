@@ -22,10 +22,12 @@ public class RootTemplateAnnotator implements SModelsListener {
   private SModelListener myModelListener = new MyModelListener();
 
   public void init() {
+    System.out.println("RootTemplateAnnotator.init()");
     SModelsMulticaster.getInstance().addSModelsListener(this);
   }
 
   public void shutDown() {
+    System.out.println("RootTemplateAnnotator.shutDown()");
     SModelsMulticaster.getInstance().removeSModelsListener(this);
   }
 

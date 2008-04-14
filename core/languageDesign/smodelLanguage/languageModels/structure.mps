@@ -21,7 +21,9 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -895,13 +897,6 @@
     <property name="name" value="SConceptPropertyAccess" />
     <property name="package" value="operation.featureAccess" />
     <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1145994841053">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1145994841054">
-      <property name="value" value="&lt;concept property access&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1178324100725">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicable_to_link" />
     </node>
@@ -1436,9 +1431,6 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="conceptLinkDeclaration" />
       <link role="target" targetNodeId="3.1105736576531" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1175618215823">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1178324170214">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" resolveInfo="applicable_to_node" />
