@@ -2,7 +2,9 @@
 <model name="smodelLanguage.typetest">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
@@ -2623,7 +2625,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1173393989839">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1173394040310">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1173394040311">
-            <property name="name" value="aliase" />
+            <property name="name" value="alias" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1173394040309">
               <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
             </node>

@@ -6,9 +6,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.constraints.SNodeOperation_Behavior;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,39 +17,18 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
   public void applyRule(final SNode op) {
     RulesUtil.checkAppliedCorrectly_generic(op);
     final SNode conceptPropertyDecl = SLinkOperations.getTarget(op, "conceptProperty", false);
-    if (!((conceptPropertyDecl != null))) {
-      TypeChecker.getInstance().reportTypeError(op, "no concept property", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060067253");
+    if (conceptPropertyDecl == null) {
+      return;
     }
-    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1200920411564(op);
-    final SNode LeftType_typevar_1186059933158 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059945864", true), TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059950336");
+    final SNode Concept_typevar_1208190489964 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1208190489964));
     {
-      final SNode _representatorVar1 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar1, new Runnable() {
+      final SNode concreteConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1208190489964);
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(concreteConcept, new Runnable() {
 
         public void run() {
-          SNode leftConcept = null;
-          // sconcept ?
-          SNode maybeSConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
-          if (maybeSConceptType != null) {
-            leftConcept = SLinkOperations.getTarget(maybeSConceptType, "conceptDeclaraton", false);
-          } else
-          {
-            SNode maybeSNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186059933158), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-            if (maybeSNodeType != null) {
-              leftConcept = SLinkOperations.getTarget(maybeSNodeType, "concept", false);
-              if (leftConcept == null) {
-                leftConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
-              }
-            } else
-            {
-              if (!(false)) {
-                TypeChecker.getInstance().reportTypeError(op, "can't compute SNodeType from left expression", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060015897");
-              }
-            }
-          }
           SNode declaringConcept = SNodeOperations.getParent(conceptPropertyDecl, null, false, false);
-          RulesUtil.checkAssignableConcept(leftConcept, declaringConcept, op, "operation is applied to wrong concept");
+          RulesUtil.checkAssignableConcept((SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept), declaringConcept, op, "operation is applied to wrong concept");
         }
 
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060002359");

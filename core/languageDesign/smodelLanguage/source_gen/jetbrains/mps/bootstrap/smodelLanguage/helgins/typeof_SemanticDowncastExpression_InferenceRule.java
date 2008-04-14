@@ -20,8 +20,8 @@ public class typeof_SemanticDowncastExpression_InferenceRule implements Inferenc
       final SNode LeftType_typevar_1186060911559 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(expr, "leftExpression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060928458", true), SLinkOperations.getTarget(expr, "leftExpression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060923030");
       {
-        final SNode _representatorVar2 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559);
-        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar2, new Runnable() {
+        final SNode _representatorVar1 = TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559);
+        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar1, new Runnable() {
 
           public void run() {
             if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType")) {
