@@ -9,11 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 
@@ -35,19 +30,7 @@ public class SPropertyAccess_property_ReferentConstraint implements IModelConstr
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode dotOperandConcept = null;
-    SNode dotOperand = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
-    SNode dotOperandType = TypeChecker.getInstance().getTypeOf(dotOperand);
-    if (SNodeOperations.isInstanceOf(dotOperandType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
-      dotOperandConcept = SLinkOperations.getTarget(dotOperandType, "targetConcept", false);
-    } else
-    {
-      SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(dotOperandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-      dotOperandConcept = SLinkOperations.getTarget(nodeType, "concept", false);
-    }
-    if (dotOperandConcept == null) {
-      dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
-    }
+    SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1208193558130(_context.getEnclosingNode());
     return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarationsExcludingOverridden_1203539034160(dotOperandConcept));
   }
 

@@ -9,11 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
@@ -37,19 +32,7 @@ public class SLinkAccess_link_ReferentConstraint implements IModelConstraints, I
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode dotOperand = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
-    SNode dotOperandConcept = null;
-    SNode dotOperandType = TypeChecker.getInstance().getTypeOf(dotOperand);
-    if (SNodeOperations.isInstanceOf(dotOperandType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
-      dotOperandConcept = SLinkOperations.getTarget(dotOperandType, "targetConcept", false);
-    } else
-    {
-      SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(dotOperandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-      dotOperandConcept = SLinkOperations.getTarget(nodeType, "concept", false);
-    }
-    if (dotOperandConcept == null) {
-      dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
-    }
+    SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1208193558130(_context.getEnclosingNode());
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarationsExcludingOverridden_1196820678380(dotOperandConcept);
     return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(links, new zPredicate4(null, null))));
   }
