@@ -52,6 +52,11 @@ public class GlobalScope implements IScope {
   }
 
   @NotNull
+  public List<Solution> getVisibleSolutions() {
+    return MPSModuleRepository.getInstance().getAllModules(Solution.class);
+  }
+
+  @NotNull
   public Set<IModule> getVisibleModules() {
     return new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());
   }
@@ -60,6 +65,14 @@ public class GlobalScope implements IScope {
   public DevKit getDevKit(@NotNull String devKitNamespace) {
     for (DevKit dk : getVisibleDevkits()) {
       if (devKitNamespace.equals(dk.getName())) return dk;
+    }
+    return null;
+  }
+
+  @Nullable
+  public Solution getSolution(@NotNull String solutionNamespace) {
+    for (Solution s : getVisibleSolutions()) {
+      if (solutionNamespace.equals(s.getSolutionDescriptor().getName())) return s;
     }
     return null;
   }
