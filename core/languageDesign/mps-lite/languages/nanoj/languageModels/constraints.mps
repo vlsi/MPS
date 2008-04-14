@@ -15,15 +15,12 @@
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
   <language namespace="jetbrains.mpslite" />
-  <language namespace="jetbrains.mps.ypath" />
-  <language namespace="jetbrains.mps.baseLanguageInternal" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.nanoj.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.ypath.runtime@java_stub" version="-1" />
   <import index="6" modelUID="java.util@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.nanoj.constraints" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1197638405762">
