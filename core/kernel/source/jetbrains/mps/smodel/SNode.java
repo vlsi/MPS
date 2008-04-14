@@ -1514,7 +1514,7 @@ public final class SNode {
     } else {
       conceptDeclaration = node.getConceptDeclarationAdapter();
     }
-    return SModelUtil_new.findConceptProperty(conceptDeclaration, propertyName);
+    return SModelSearchUtil_new.findConceptProperty(conceptDeclaration, propertyName);
   }
 
   public SNode findChildByPath(String path) {

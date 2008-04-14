@@ -6,10 +6,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 /**
  * Igor Alshannikov
@@ -76,11 +73,32 @@ public class SModelSearchUtil_new {
     return result;
   }
 
-  public static PropertyDeclaration findPropertyDeclaration(AbstractConceptDeclaration conceptDeclaration, final String propertyName) {
-    if(propertyName == null) return null;
+  public static PropertyDeclaration findPropertyDeclaration(AbstractConceptDeclaration conceptDeclaration, String propertyName) {
+    if (propertyName == null) return null;
     List<PropertyDeclaration> list = getPropertyDeclarationsExcludingOverridden(conceptDeclaration);
     for (PropertyDeclaration property : list) {
-       if(propertyName.equals(property.getName())) return property;
+      if (propertyName.equals(property.getName())) return property;
+    }
+    return null;
+  }
+
+  public static List<ConceptPropertyDeclaration> getConceptPropertyDeclarations(AbstractConceptDeclaration concept) {
+    List<ConceptPropertyDeclaration> result = new ArrayList<ConceptPropertyDeclaration>();
+    List<AbstractConceptDeclaration> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
+    for (AbstractConceptDeclaration c : concepts) {
+      result.addAll(c.getConceptPropertyDeclarations());
+    }
+    return result;
+  }
+
+  public static ConceptProperty findConceptProperty(AbstractConceptDeclaration concept, String propertyName) {
+    // concept properties are not inherited - don't look-up concept hierarchy
+    if (concept == null) return null;
+    for (ConceptProperty conceptProperty : concept.getConceptPropertys()) {
+      ConceptPropertyDeclaration declaration = conceptProperty.getConceptPropertyDeclaration();
+      if (declaration != null && propertyName.equals(declaration.getName())) {
+        return conceptProperty;
+      }
     }
     return null;
   }

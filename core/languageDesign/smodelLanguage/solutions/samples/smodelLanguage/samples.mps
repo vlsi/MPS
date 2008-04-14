@@ -2222,6 +2222,34 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679281" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1208196798356">
+      <property name="name" value="m1" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1208196798357" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1208196798358" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208196798359">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208196943628">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208196952070">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208196972223">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208196972224">
+                <link role="variableDeclaration" targetNodeId="1208196934516" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1208196972225">
+                <link role="link" targetNodeId="1.1202948736718" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1208196991790">
+              <link role="conceptProperty" targetNodeId="6.1137473891462" resolveInfo="alias" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1208196934516">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1208196934517">
+          <link role="concept" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472682768" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1146073640825">
