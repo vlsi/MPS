@@ -193,7 +193,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(true);
     editorCell.setCanBeFolded(false);
-    if(NodeDefaultSearchScope_Editor._QueryFunction_NodeCondition_1178194465640(node, context, context.getOperationContext().getScope())) {
+    if (NodeDefaultSearchScope_Editor._QueryFunction_NodeCondition_1178194465640(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell(context, node));
     }
     editorCell.addEditorCell(this.createRowCell1(context, node));
@@ -348,7 +348,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new NodeDefaultSearchScope_Editor._Inline4());
     EditorCell editorCell = provider.createEditorCell(context);
     NodeDefaultSearchScope_Editor.setupBasic_ReferentConceptReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       NodeDefaultSearchScope_Editor.setupLabel_ReferentConceptReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -364,7 +364,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createReferentConceptReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -377,7 +377,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     NodeDefaultSearchScope_Editor.setupBasic_DescriptionCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       NodeDefaultSearchScope_Editor.setupLabel_DescriptionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -393,7 +393,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createDescriptionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -406,7 +406,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     NodeDefaultSearchScope_Editor.setupBasic_SearchScopeCanCreateCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       NodeDefaultSearchScope_Editor.setupLabel_SearchScopeCanCreateCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -422,7 +422,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createSearchScopeCanCreateCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -435,7 +435,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     NodeDefaultSearchScope_Editor.setupBasic_SearchScopeFactoryCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       NodeDefaultSearchScope_Editor.setupLabel_SearchScopeFactoryCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -451,7 +451,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createSearchScopeFactoryCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -488,7 +488,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       NodeDefaultSearchScope_Editor._Inline4.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         NodeDefaultSearchScope_Editor._Inline4.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -504,7 +504,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

@@ -371,13 +371,13 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell(context, node));
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758971749(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758971749(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell3(context, node));
     }
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758958929(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758958929(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell13(context, node, "}"));
     }
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177760244173(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177760244173(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell14(context, node, ""));
     }
     return editorCell;
@@ -390,10 +390,10 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createColumnCell1(context, node));
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758985554(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758985554(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell10(context, node, "{"));
     }
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177759001115(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177759001115(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell11(context, node, ";"));
     }
     return editorCell;
@@ -416,16 +416,16 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755751557(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755751557(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell4(context, node));
     }
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755728221(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755728221(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell5(context, node));
     }
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758876012(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758876012(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell6(context, node));
     }
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755844974(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755844974(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell7(context, node));
     }
     return editorCell;
@@ -471,7 +471,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell1(context, node));
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755665241(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755665241(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell2(context, node));
     }
     return editorCell;
@@ -483,16 +483,16 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755613626(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755613626(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell(context, node, "private"));
     }
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755613633(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755613633(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell1(context, node, "public"));
     }
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755613641(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177755613641(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell2(context, node, "virtual"));
     }
-    if(ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758934224(node, context, context.getOperationContext().getScope())) {
+    if (ConceptMethodDeclaration_Editor._QueryFunction_NodeCondition_1177758934224(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell3(context, node, "abstract"));
     }
     editorCell.addEditorCell(this.createReturnTypeCell(context, node));
@@ -702,7 +702,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createParameterList(EditorContext context, SNode node) {
-    if(this.myParameterListHandler_parameterList_ == null) {
+    if (this.myParameterListHandler_parameterList_ == null) {
       this.myParameterListHandler_parameterList_ = new ConceptMethodDeclaration_Editor._RefNodeListHandler4(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
@@ -719,7 +719,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptMethodDeclaration_Editor.setupBasic_BodyCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptMethodDeclaration_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -735,7 +735,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createBodyCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -748,7 +748,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptMethodDeclaration_Editor.setupBasic_IsVirtualCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptMethodDeclaration_Editor.setupLabel_IsVirtualCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -764,7 +764,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createIsVirtualCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -777,7 +777,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptMethodDeclaration_Editor.setupBasic_IsPrivateCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptMethodDeclaration_Editor.setupLabel_IsPrivateCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -793,7 +793,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createIsPrivateCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -806,7 +806,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline6());
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptMethodDeclaration_Editor.setupBasic_OverriddenMethodReferenceCell1(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptMethodDeclaration_Editor.setupLabel_OverriddenMethodReferenceCell1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -822,7 +822,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createOverriddenMethodReferenceCell1internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -835,7 +835,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptMethodDeclaration_Editor.setupBasic_ReturnTypeCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptMethodDeclaration_Editor.setupLabel_ReturnTypeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -851,7 +851,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createReturnTypeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -864,7 +864,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptMethodDeclaration_Editor.setupBasic_NameCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptMethodDeclaration_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -881,7 +881,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -894,7 +894,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline7());
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptMethodDeclaration_Editor.setupBasic_OverriddenMethodReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptMethodDeclaration_Editor.setupLabel_OverriddenMethodReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -910,7 +910,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createOverriddenMethodReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -923,7 +923,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     ConceptMethodDeclaration_Editor.setupBasic_IsAbstractCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       ConceptMethodDeclaration_Editor.setupLabel_IsAbstractCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -939,7 +939,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createIsAbstractCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -974,7 +974,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       ConceptMethodDeclaration_Editor._Inline6.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         ConceptMethodDeclaration_Editor._Inline6.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -990,7 +990,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1026,7 +1026,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       ConceptMethodDeclaration_Editor._Inline7.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         ConceptMethodDeclaration_Editor._Inline7.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -1042,7 +1042,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -1089,15 +1089,15 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
           elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }

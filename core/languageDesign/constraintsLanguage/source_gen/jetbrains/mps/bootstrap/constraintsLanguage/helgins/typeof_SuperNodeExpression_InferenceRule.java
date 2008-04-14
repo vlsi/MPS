@@ -19,7 +19,7 @@ public class typeof_SuperNodeExpression_InferenceRule implements InferenceRule_R
     SNode behaviour = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", true, false);
     SNode concept = SLinkOperations.getTarget(behaviour, "concept", false);
     SNode result = null;
-    if(SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
       SNode cd = concept;
       result = SLinkOperations.getTarget(cd, "extends", false);
     } else

@@ -22,25 +22,25 @@ public class check_ConceptBehavior_NonTypesystemRule implements NonTypesystemRul
 
   public void applyRule(final SNode nodeToCheck) {
     List<SNode> methodDeclarations = AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1198232898469(SLinkOperations.getTarget(nodeToCheck, "concept", false), GlobalScope.getInstance());
-    if(SConceptPropertyOperations.getBoolean(SLinkOperations.getTarget(nodeToCheck, "concept", false), "abstract")) {
+    if (SConceptPropertyOperations.getBoolean(SLinkOperations.getTarget(nodeToCheck, "concept", false), "abstract")) {
       return;
     }
-    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "concept", false), "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "concept", false), "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration")) {
       return;
     }
-    if(!(SequenceOperations.isEmpty(methodDeclarations))) {
+    if (!(SequenceOperations.isEmpty(methodDeclarations))) {
       boolean notImplementedMethods = false;
       for(SNode cm : methodDeclarations) {
-        if(!(SequenceOperations.contains(SLinkOperations.getTargets(nodeToCheck, "method", true), cm))) {
+        if (!(SequenceOperations.contains(SLinkOperations.getTargets(nodeToCheck, "method", true), cm))) {
           notImplementedMethods = true;
         }
       }
-      if(notImplementedMethods) {
+      if (notImplementedMethods) {
         TypeChecker.getInstance().reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1198950378289");
       }
     }
     for(SNode cmd : SLinkOperations.getTargets(nodeToCheck, "method", true)) {
-      if(SConceptPropertyOperations.getBoolean(cmd, "abstract")) {
+      if (SConceptPropertyOperations.getBoolean(cmd, "abstract")) {
         TypeChecker.getInstance().reportTypeError(cmd, "Abstract method in non abstract concept", "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1198949983025");
       }
     }

@@ -16,7 +16,7 @@ public class typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule im
 
   public void applyRule(final SNode node) {
     SNode targetConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint", false, false), "applicableLink", false), "target", false);
-    if((targetConcept == null)) {
+    if ((targetConcept == null)) {
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_6().createNode(), node, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1178176661368");
     } else
     {
