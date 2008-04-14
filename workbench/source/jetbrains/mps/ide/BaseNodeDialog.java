@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.JSplitPaneWithoutBorders;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -22,6 +23,8 @@ import java.awt.HeadlessException;
  * @author Kostik
  */
 public abstract class BaseNodeDialog extends BaseDialog {
+  private static Logger LOG = Logger.getLogger(BaseNodeDialog.class);
+
   private IOperationContext myOperationContext;
   private UIEditorComponent myEditorComponent;
   private JSplitPane mySplitter;
@@ -125,7 +128,12 @@ public abstract class BaseNodeDialog extends BaseDialog {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         myEditorComponent.dispose();
-        saveChanges();
+        try {
+          saveChanges();
+        } catch (Throwable t) {
+          JOptionPane.showInputDialog(BaseNodeDialog.this, "Exception during save");
+          LOG.error(t);
+        }
       }
     });
     return false;
