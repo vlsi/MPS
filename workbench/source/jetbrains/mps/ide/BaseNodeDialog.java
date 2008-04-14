@@ -131,7 +131,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
         try {
           saveChanges();
         } catch (Throwable t) {
-          JOptionPane.showInputDialog(BaseNodeDialog.this, "Exception during save");
+          JOptionPane.showInputDialog(BaseNodeDialog.this, "Exception during save " + t.getMessage());
           LOG.error(t);
         }
       }
