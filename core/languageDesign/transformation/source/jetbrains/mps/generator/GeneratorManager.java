@@ -553,7 +553,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               progress.addText("compiling in JetBrains MPS...");
 
               if (!ModuleMaker.isMakeTurnedOff()) {
-                compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
+                compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new MessagesOnlyAdaptiveProgressMonitorWrapper(progress));
               } else {
                 compilationResult = new CompilationResult(0, 0, false);
               }
