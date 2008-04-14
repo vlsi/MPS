@@ -103,6 +103,15 @@ public class SModelSearchUtil_new {
     return null;
   }
 
+  public static List<ConceptLinkDeclaration> getConceptLinkDeclarations(AbstractConceptDeclaration concept) {
+    List<ConceptLinkDeclaration> result = new ArrayList<ConceptLinkDeclaration>();
+    List<AbstractConceptDeclaration> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
+    for (AbstractConceptDeclaration c : concepts) {
+      result.addAll(c.getConceptLinkDeclarations());
+    }
+    return result;
+  }
+
 
   private static class _ConceptsFromModelLanguagesScope extends AbstractSearchScope {
     private SModel myModel;
