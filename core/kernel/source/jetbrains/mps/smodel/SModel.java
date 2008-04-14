@@ -1085,9 +1085,13 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void refreshRefactoringHistory() {
-    Element e = myRefactoringHistory.toElement();
-    myRefactoringHistory = new RefactoringHistory();
-    myRefactoringHistory.fromElement(e);
+    try {
+      Element e = myRefactoringHistory.toElement();
+      myRefactoringHistory = new RefactoringHistory();
+      myRefactoringHistory.fromElement(e);
+    } catch (Throwable t) {
+      LOG.error("refactoring history refresh failed", t, this);
+    }
   }
 
   /*package*/
