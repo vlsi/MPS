@@ -251,12 +251,8 @@ public class NodeTypesComponent implements IEditorMessageOwner, Cloneable {
           public void run() {
             AbstractEditorComponent component = (AbstractEditorComponent) getEditorComponent();
             if (component == null) return;
-            AbstractEditorComponent inspector1 = null;
-            AbstractEditorComponent inspector2 = null;
             for (SNodePointer skippedNode : skippedNodes) {
               markNode(component, skippedNode);
-
-
               if (component instanceof NodeEditorComponent) {
                 markNode(((NodeEditorComponent) component).getInspector(), skippedNode);
               }
