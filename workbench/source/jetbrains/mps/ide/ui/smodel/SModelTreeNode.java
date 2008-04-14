@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.annotations.structure.AttributeConcept;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.action.ActionContext;
@@ -458,17 +457,17 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private class MySimpleModelListener extends SModelAdapter {
     public void modelSaved() {
-      updatePresentation();
+      updateNodePresentation();
     }
 
     public void modelInitialized() {
-      updatePresentation();
+      updateNodePresentation();
     }
 
-    private void updatePresentation() {
+    private void updateNodePresentation() {
       CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
         public void run() {
-          SModelTreeNode.this.updatePresentation();
+          updatePresentation();
           updateNodePresentationInTree();
         }
       });
