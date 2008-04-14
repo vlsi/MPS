@@ -19,7 +19,12 @@
       </external-templates>
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="false">jetbrains.mps.bootstrap.actionsLanguage</dependency>
       </dependencies>
+      <usedLanguages>
+        <usedLanguages>jetbrains.mps.regexp</usedLanguages>
+        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+      </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
@@ -60,6 +65,9 @@
   <dependencies>
     <dependency reexport="true">jetbrains.mps.quotation</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+  </usedLanguages>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
