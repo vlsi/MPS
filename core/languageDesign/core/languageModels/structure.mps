@@ -69,7 +69,10 @@
       <property name="name" value="deprecated_504" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1206652974901">
-      <property name="name" value="deprecated_next_after_504" />
+      <property name="name" value="deprecated_531" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration" id="1208203973962">
+      <property name="name" value="deprecated_next_after_531" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1133922314101">
       <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />
