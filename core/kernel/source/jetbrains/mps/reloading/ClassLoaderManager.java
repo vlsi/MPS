@@ -307,7 +307,21 @@ public class ClassLoaderManager implements IComponentLifecycle {
       result.add(svnClassPath);
     }
 
+    addIfExists(result, "/lib/annotations/annotations.jar");
+
     return result;
+  }
+
+  private void addIfExists(CompositeClassPathItem item, String path) {
+    path = PathManager.getHomePath() + path.replace('/', File.separatorChar);
+    File file = new File(path);
+    if (file.exists()) {
+      if (file.isDirectory()) {
+        item.add(new FileClassPathItem(path));
+      } else {
+        item.add(new JarFileClassPathItem(path));
+      }
+    }
   }
 
   private IClassPathItem getBaseMPSClassPath() {
