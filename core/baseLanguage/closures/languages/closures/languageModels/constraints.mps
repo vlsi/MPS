@@ -5,7 +5,9 @@
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   </language>
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
@@ -14,7 +16,7 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   </language>
-  <maxImportIndex value="17" />
+  <maxImportIndex value="18" />
   <import index="1" modelUID="jetbrains.mps.closures.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
@@ -25,8 +27,8 @@
   <import index="11" modelUID="java.util@java_stub" version="-1" />
   <import index="12" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <import index="13" modelUID="jetbrains.mps.closures.runtime@java_stub" version="-1" />
-  <import index="16" modelUID="jetbrains.mps.closures.generator.baseLanguage.template.helper" version="-1" />
   <import index="17" modelUID="java.io@java_stub" version="-1" />
+  <import index="18" modelUID="jetbrains.mps.closures.generator.baseLanguage.template.helper" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1199542739822">
     <link role="concept" targetNodeId="1.1199542442495" resolveInfo="FunctionType" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199542742224">
@@ -1385,8 +1387,8 @@
                 <property name="value" value="FunctionTypes." />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1202774119641">
-                <link role="baseMethodDeclaration" targetNodeId="16.1202150292558" resolveInfo="getRuntimeSignature" />
-                <link role="classConcept" targetNodeId="16.1201646588418" resolveInfo="FunctionTypeUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="18.1202150292558" resolveInfo="getRuntimeSignature" />
+                <link role="classConcept" targetNodeId="18.1201646588418" resolveInfo="FunctionTypeUtil" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1202774119642">
                   <link role="variableDeclaration" targetNodeId="1202774119716" resolveInfo="ft" />
                 </node>

@@ -12,7 +12,6 @@
   </language>
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
-  <language namespace="jetbrains.mps.regexp" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
   <maxImportIndex value="41" />
@@ -22,7 +21,6 @@
   <import index="38" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="39" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
   <import index="40" modelUID="java.lang@java_stub" version="-1" />
-  <import index="41" modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1197638404527">
     <property name="package" value="Structure" />
     <property name="name" value="_Identifier_String" />
