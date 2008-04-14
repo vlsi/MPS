@@ -1,21 +1,17 @@
 package jetbrains.mps.make;
 
 import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.make.MakeScheduleBuilder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -122,6 +118,10 @@ public class ModuleMaker {
     JavaCompiler compiler = new JavaCompiler(classPathItems);
 
     for (IModule m : modules) {
+      if (areClassesUpToDate(m)) {
+        continue;
+      }
+      
       if (!m.isCompileInMPS()) {
         LOG.warning("Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleUID(), m);
         continue;
@@ -276,12 +276,12 @@ public class ModuleMaker {
       return true;
     }
 
-    if (!isClassesUpToDate(m)) {
+    if (!areClassesUpToDate(m)) {
       return false;
     }
 
     for (IModule dep : m.getAllDependOnModules(IModule.class)) {
-      if (!isClassesUpToDate(dep)) {
+      if (!areClassesUpToDate(dep)) {
         return false;
       }
     }
@@ -289,7 +289,7 @@ public class ModuleMaker {
     return true;
   }
 
-  private boolean isClassesUpToDate(IModule m) {
+  private boolean areClassesUpToDate(IModule m) {
     if (isExcluded(m)) {
       return true;
     }
