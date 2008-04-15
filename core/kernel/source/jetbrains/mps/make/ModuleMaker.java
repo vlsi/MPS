@@ -38,6 +38,10 @@ public class ModuleMaker {
       monitor.start("Clean", 2000);
       for (IModule m : modules) {
         if (isExcluded(m)) continue;
+        if (monitor.isCanceled()) {
+          monitor.addText("Canceled");
+          break;
+        }
         monitor.addText("Cleaning " + m.getModuleUID() + "...");
         FileUtil.delete(m.getClassesGen().toFile());
       }
@@ -61,6 +65,11 @@ public class ModuleMaker {
       }.buildSchedule(toCompile);
 
       for (Set<IModule> cycle : schedule) {
+        if (monitor.isCanceled()) {
+          monitor.addText("Canceled");
+          break;
+        }
+
         monitor.addText("Compiling modules: " + cycle + "...");
         int currentErrorsCount = compile(cycle).getErrors();
         if (currentErrorsCount != 0) {
