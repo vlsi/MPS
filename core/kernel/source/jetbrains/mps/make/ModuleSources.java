@@ -64,18 +64,18 @@ public class ModuleSources {
 
       if (isJavaFile(child)) {
         String className = child.getName().substring(0, child.getName().length() - JAVA_SUFFIX.length());
-        String fqName = pack.length() > 0 ? pack + "." + className : className;
+        String fqName = addPackage(pack, className);
         myJavaFiles.put(fqName, new JavaFile(child, fqName));
       }
 
       if (isResourceFile(child)) {
         String resourceName = child.getName();
-        String fqName = pack.length() > 0  ? pack + "." + resourceName : resourceName;
+        String fqName = addPackage(pack, resourceName);
         myResourceFiles.put(fqName, new ResourceFile(child, fqName));
       }
 
       if (child.isDirectory()) {
-        collectInput(child, pack.length() > 0 ? pack + "." + child.getName() : child.getName());
+        collectInput(child, addPackage(pack, child.getName()));
       }
     }
   }
@@ -94,14 +94,14 @@ public class ModuleSources {
       if (isIgnored(file)) continue;
 
       if (file.isDirectory()) {
-        collectOutput(file, (pack.length() > 0) ? pack + "." + file.getName() : file.getName());
+        collectOutput(file, addPackage(pack, file.getName()));
       } else {
         if (file.getName().endsWith(CLASS_SUFFIX)) {
           String containerName = file.getName().substring(0, file.getName().length() - CLASS_SUFFIX.length());
           if (containerName.contains("$")) {
             containerName = containerName.substring(0, containerName.lastIndexOf("$"));
           }
-          String fqName = pack.length() > 0 ? pack + "." + containerName : containerName;
+          String fqName = addPackage(pack, containerName);
           JavaFile javaFile = myJavaFiles.get(fqName);
           if (javaFile == null) {
             myFilesToDelete.add(file);
@@ -111,7 +111,7 @@ public class ModuleSources {
         }
 
         if (isResourceFile(file)) {
-          String fqName = pack.length() > 0 ? pack + "." + file.getName() : file.getName();
+          String fqName = addPackage(pack, file.getName());
           ResourceFile resourceFile = myResourceFiles.get(fqName);
           if (resourceFile == null) {
             myFilesToDelete.add(file);
@@ -125,6 +125,14 @@ public class ModuleSources {
 
   private boolean isIgnored(IFile file) {
     return file.isDirectory() && ".svn".equals(file.getName());
+  }
+
+  private String addPackage(String pack, String name) {
+    if (pack.length() > 0) {
+      return pack + "." + name;
+    } else {
+      return name;
+    }
   }
 
   private boolean isJavaFile(IFile file) {
