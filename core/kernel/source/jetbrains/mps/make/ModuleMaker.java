@@ -143,10 +143,7 @@ public class ModuleMaker {
     for (CompilationResult cr : compiler.getCompilationResults()) {
       if (cr.getErrors() != null) {              
         for (CategorizedProblem cp : cr.getErrors()) {
-
-
           String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
-
           if (cp.isWarning()) {
             LOG.warning(messageStirng);            
           } else {
@@ -321,7 +318,7 @@ public class ModuleMaker {
     boolean result = classesTimeStamp >= sourcesTimeStamp;
     if (result){
       for (String s : m.getSourcePaths()) {
-        result = isAllClassesPresented(new File(s), classesGen, JAVA_SUFFIX, CLASS_SUFFIX);
+        result = areAllClassesPresent(new File(s), classesGen, JAVA_SUFFIX, CLASS_SUFFIX);
       }
     }
     myClassesUpToDateStatus.put(m, result);
@@ -344,7 +341,7 @@ public class ModuleMaker {
     return false;
   }
 
-  boolean isAllClassesPresented(File sourcedir, File classdir, String sourceSuffix, String destinationSuffix){
+  boolean areAllClassesPresent(File sourcedir, File classdir, String sourceSuffix, String destinationSuffix){
     File[] sourcefiles = sourcedir.listFiles();
 
     if (sourcefiles == null) {
@@ -374,7 +371,7 @@ public class ModuleMaker {
           return false;
         }
 
-        if (!isAllClassesPresented(source, destination, sourceSuffix, destinationSuffix)) {
+        if (!areAllClassesPresent(source, destination, sourceSuffix, destinationSuffix)) {
           return false;
         }
       }
