@@ -531,8 +531,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void goToNextErrorCell(boolean backwards) {
     new CellNavigator(this) {
       boolean isSuitableCell(EditorCell cell) {
-        IEditorMessage message = cell.getMessage();
-        if (message != null && message.getStatus() == MessageStatus.ERROR) {
+        if (cell.hasErrorMessages()) {
           return true;
         }
         return false;
