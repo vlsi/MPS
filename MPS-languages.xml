@@ -103,7 +103,12 @@
       <fileset dir="core\baseLanguage\dates" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\baseLanguage\dates" includes="*.mpl, *.msd, *.devkit" />
     </copy>
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp\dates.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.runtime.jar" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp" />
+    <mkdir dir="core\baseLanguage\dates\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.runtime.jar">
+      <fileset dir="core\baseLanguage\dates\classes_gen" />
+    </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.ext.dates.lang.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.ext.dates.internal">
@@ -120,9 +125,12 @@
       <fileset dir="core\baseLanguage\dates\runtime" includes="*.mpl, *.msd, *.devkit" />
     </copy>
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.tmp\jetbrains.mps.baseLanguage.dates.runtime.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.runtime.jar" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.tmp\jetbrains.mps.baseLanguage.dates.runtime.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.runtime.jar" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.tmp" />
     <mkdir dir="core\baseLanguage\dates\runtime\classes_gen" />
+    <mkdir dir="core\baseLanguage\dates\runtime\classes_gen" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.runtime.jar">
+      <fileset dir="core\baseLanguage\dates\runtime\classes_gen" />
       <fileset dir="core\baseLanguage\dates\runtime\classes_gen" />
     </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.baseLanguage.dates.runtime.tmp" />
@@ -948,12 +956,7 @@
       <fileset dir="platform\webr\languages\logging" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="platform\webr\languages\logging" includes="*.mpl, *.msd, *.devkit" />
     </copy>
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.tmp\logging.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\webr.logging.runtime.jar" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.tmp" />
-    <mkdir dir="platform\webr\languages\logging\classes_gen" />
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.runtime.jar">
-      <fileset dir="platform\webr\languages\logging\classes_gen" />
-    </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.logging.tmp" />
   </target>
   <target name="pack.webr.xml">
@@ -969,12 +972,7 @@
       <fileset dir="platform\webr\languages\gtext" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="platform\webr\languages\gtext" includes="*.mpl, *.msd, *.devkit" />
     </copy>
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp\gtext.mpl" token="{language_descriptor}\classes_gen" value="{mps_home}\platform\webr.gtext.runtime.jar" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp" />
-    <mkdir dir="platform\webr\languages\gtext\classes_gen" />
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.runtime.jar">
-      <fileset dir="platform\webr\languages\gtext\classes_gen" />
-    </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr.gtext.tmp" />
   </target>
   <target name="pack.webr.xmlInternal">
@@ -998,15 +996,7 @@
       <fileset dir="platform\webr\languages\gtext\runtime" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="platform\webr\languages\gtext\runtime" includes="*.mpl, *.msd, *.devkit" />
     </copy>
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp\jetbrains.mps.gtext.runtime.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.gtext.runtime.runtime.jar" />
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp\jetbrains.mps.gtext.runtime.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.gtext.runtime.runtime.jar" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp" />
-    <mkdir dir="platform\webr\languages\gtext\runtime\classes_gen" />
-    <mkdir dir="platform\webr\languages\gtext\runtime\classes_gen" />
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.runtime.jar">
-      <fileset dir="platform\webr\languages\gtext\runtime\classes_gen" />
-      <fileset dir="platform\webr\languages\gtext\runtime\classes_gen" />
-    </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.gtext.runtime.tmp" />
   </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage">
