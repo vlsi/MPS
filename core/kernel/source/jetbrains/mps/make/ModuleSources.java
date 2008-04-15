@@ -39,14 +39,7 @@ public class ModuleSources {
   }
 
   public boolean isUpToDate() {
-    if (!(getFilesToDelete().isEmpty() && getFilesToCompile().isEmpty() && getResourcesToCopy().isEmpty())) {
-      System.out.println("module = " + myModule);
-      System.out.println("files to delete = " + getFilesToDelete());
-      System.out.println("files to compile = " + getFilesToCompile());
-      System.out.println("resources to copy = " + getResourcesToCopy());
-      return false;
-    }
-    return true;
+    return getFilesToDelete().isEmpty() && getFilesToCompile().isEmpty() && getResourcesToCopy().isEmpty();
   }
 
   private void collectInputFilesInfo() {
