@@ -19,6 +19,16 @@ public class check_VarRef_in_WhenConcreteStatement_InferenceRule implements Infe
   public void applyRule(final SNode variableReference) {
     SNode ancestor = SNodeOperations.getAncestor(variableReference, "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", false, false);
     if (ancestor != null) {
+      SNode argument = SLinkOperations.getTarget(ancestor, "argument", true);
+      SNode parent = variableReference;
+      while(parent != null && parent != ancestor) {
+        if (parent == argument) {
+          return;
+        } else
+        {
+          parent = SNodeOperations.getParent(parent, null, false, false);
+        }
+      }
       SNode variableDeclaration = SLinkOperations.getTarget(variableReference, "variableDeclaration", false);
       if (variableDeclaration != null && !(SequenceOperations.contains(SNodeOperations.getAncestors(variableDeclaration, "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", false), ancestor))) {
         if (!(SPropertyOperations.getBoolean(variableDeclaration, "isFinal"))) {
