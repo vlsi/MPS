@@ -306,6 +306,7 @@
           </module>
           <module name="charisma-agent">
             <files>
+              <file url="file://$CHARISMA_HOME$/charisma-agent/solutions/classes_gen/jetbrains/charisma/desktopagent/ResourceFactoriesConfiguration.xml" />
               <file url="file://$CHARISMA_HOME$/charisma-agent/solutions/source_gen/jetbrains/charisma/desktopagent/ResourceFactoriesConfiguration.xml" />
             </files>
           </module>
@@ -913,7 +914,6 @@
       <module fileurl="file://$PROJECT_DIR$/app/complexLanguage/ComplexNumbersLanguage.iml" filepath="$PROJECT_DIR$/app/complexLanguage/ComplexNumbersLanguage.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/internalCollections/InternalCollections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/internalCollections/InternalCollections.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/internalCollections/languages/collections/runtime/InternalCollections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/internalCollections/languages/collections/runtime/InternalCollections-runtime.iml" group="core/baseLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/app/MForum/MForum.iml" filepath="$PROJECT_DIR$/app/MForum/MForum.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform/panacea/Panacea.iml" filepath="$PROJECT_DIR$/platform/panacea/Panacea.iml" group="platform/YPath-Panacea" />
@@ -922,38 +922,23 @@
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/YPath.iml" filepath="$PROJECT_DIR$/platform/ypath/YPath.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" filepath="$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/solutions/YPath-solutions.iml" filepath="$PROJECT_DIR$/platform/ypath/solutions/YPath-solutions.iml" group="platform/YPath-Panacea" />
-      <module fileurl="file://$PROJECT_DIR$/app/accounting/accounting.iml" filepath="$PROJECT_DIR$/app/accounting/accounting.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/agreement/agreement.iml" filepath="$PROJECT_DIR$/app/agreement/agreement.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/annotations/annotations.iml" filepath="$PROJECT_DIR$/core/languageDesign/annotations/annotations.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.iml" group="core/baseLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/berkeleyDbEntityStore/berkeleyDbEntityStore.iml" group="platform/dnq/runtime" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/blogs/blogs.iml" group="platform/webr/extensions" />
-      <module fileurl="file://$PROJECT_DIR$/platform/businessRules/businessRules.iml" filepath="$PROJECT_DIR$/platform/businessRules/businessRules.iml" group="platform/businessRules" />
-      <module fileurl="file://$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" filepath="$PROJECT_DIR$/platform/businessRules/runtime/businessRules-runtime.iml" group="platform/businessRules" />
-      <module fileurl="file://$CHARISMA_HOME$/charisma.iml" filepath="$CHARISMA_HOME$/charisma.iml" group="app/charisma" />
-      <module fileurl="file://$CHARISMA_HOME$/charisma-agent/charisma-agent.iml" filepath="$CHARISMA_HOME$/charisma-agent/charisma-agent.iml" group="app/charisma" />
-      <module fileurl="file://$CHARISMA_HOME$/charisma-app/charisma-app.iml" filepath="$CHARISMA_HOME$/charisma-app/charisma-app.iml" group="app/charisma" />
-      <module fileurl="file://$CHARISMA_HOME$/charisma-jira-client/charisma-jira-client.iml" filepath="$CHARISMA_HOME$/charisma-jira-client/charisma-jira-client.iml" group="app/charisma" />
-      <module fileurl="file://$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" filepath="$CHARISMA_HOME$/charisma-jira-plugin/charisma-jira-plugin.iml" group="app/charisma" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/classifiers/classifiers.iml" filepath="$PROJECT_DIR$/core/baseLanguage/classifiers/classifiers.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/constraintsLanguage/constraintsLanguage.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" group="core/baseLanguage/csharp" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/runtime/csharp-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/runtime/csharp-runtime.iml" group="core/baseLanguage/csharp" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" group="core/languageDesign/dataFlow" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" group="core/languageDesign/dataFlow" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" filepath="$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" group="core/baseLanguage/dates" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/dates/runtime/dates-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/dates/runtime/dates-runtime.iml" group="core/baseLanguage/dates" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" group="platform/webr/extensions" />
-      <module fileurl="file://$PROJECT_DIR$/platform/dnq/dnq.iml" filepath="$PROJECT_DIR$/platform/dnq/dnq.iml" group="platform/dnq/language" />
-      <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/app/dslbook_example/dslbook_example.iml" filepath="$PROJECT_DIR$/app/dslbook_example/dslbook_example.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/editorLanguage/editorLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/editorLanguage/editorLanguage.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/findUsagesLanguage/findUsagesLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/findUsagesLanguage/findUsagesLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/formulaLanguage/formulaLanguage.iml" filepath="$PROJECT_DIR$/app/formulaLanguage/formulaLanguage.iml" group="app" />
@@ -970,7 +955,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/workbench/monitorLanguage/monitorLanguage.iml" filepath="$PROJECT_DIR$/workbench/monitorLanguage/monitorLanguage.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" filepath="$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" group="app/ParserGenerator" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" group="app/ParserGenerator" />
       <module fileurl="file://$PROJECT_DIR$/app/parsers/parsers.iml" filepath="$PROJECT_DIR$/app/parsers/parsers.iml" group="app/parsers" />
@@ -989,60 +973,23 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/smodelLanguage/smodeLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/smodelLanguage/smodeLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/springframework/springframework.iml" filepath="$PROJECT_DIR$/platform/springframework/springframework.iml" group="platform/spring-framework" />
       <module fileurl="file://$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" group="platform/spring-framework" />
-      <module fileurl="file://$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" filepath="$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" filepath="$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/app/stwiki/stwiki-webapp.iml" filepath="$PROJECT_DIR$/app/stwiki/stwiki-webapp.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/vcs/svn/svn.iml" filepath="$PROJECT_DIR$/core/kernel/vcs/svn/svn.iml" group="core/kernel/vcs" />
       <module fileurl="file://$PROJECT_DIR$/app/testRefactoring/testRefactoring.iml" filepath="$PROJECT_DIR$/app/testRefactoring/testRefactoring.iml" group="core/languageDesign/refactoring" />
-      <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" group="platform/uiLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/runtime/uiLanguage-runtime.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/runtime/uiLanguage-runtime.iml" group="platform/uiLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/unitTest/unitTest.iml" filepath="$PROJECT_DIR$/platform/unitTest/unitTest.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/web-query.iml" filepath="$PROJECT_DIR$/platform/web-query/web-query.iml" group="platform/web-query" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" filepath="$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" group="platform/web-query" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/webr.iml" filepath="$PROJECT_DIR$/platform/webr/webr.iml" group="platform/webr" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/devkit/webrDevkitPlugin.iml" filepath="$PROJECT_DIR$/platform/webr/devkit/webrDevkitPlugin.iml" group="platform/webr" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/runtime/webrRuntime.iml" filepath="$PROJECT_DIR$/platform/webr/runtime/webrRuntime.iml" group="platform/webr" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/runtime_notifications/webrRuntime_notifications.iml" filepath="$PROJECT_DIR$/platform/webr/runtime_notifications/webrRuntime_notifications.iml" group="platform/webr" />
-      <module fileurl="file://$PROJECT_DIR$/app/webrSamples/depot/webrSamples_depot.iml" filepath="$PROJECT_DIR$/app/webrSamples/depot/webrSamples_depot.iml" group="app/webrSamples" />
-      <module fileurl="file://$PROJECT_DIR$/app/webrSamples/hello/webrSamples_hello.iml" filepath="$PROJECT_DIR$/app/webrSamples/hello/webrSamples_hello.iml" group="app/webrSamples" />
-      <module fileurl="file://$PROJECT_DIR$/app/webrSamples/sandbox/webrSamples_sandbox.iml" filepath="$PROJECT_DIR$/app/webrSamples/sandbox/webrSamples_sandbox.iml" group="app/webrSamples" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/baseTemplate/webr_baseTemplate.iml" filepath="$PROJECT_DIR$/platform/webr/languages/baseTemplate/webr_baseTemplate.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/baseTemplateInternal/webr_baseTemplateInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/baseTemplateInternal/webr_baseTemplateInternal.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/component/webr_component.iml" filepath="$PROJECT_DIR$/platform/webr/languages/component/webr_component.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/componentInternal/webr_componentInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/componentInternal/webr_componentInternal.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/css/webr_css.iml" filepath="$PROJECT_DIR$/platform/webr/languages/css/webr_css.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/cssInternal/webr_cssInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/cssInternal/webr_cssInternal.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" filepath="$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/dxml/webr_dxml.iml" filepath="$PROJECT_DIR$/platform/webr/languages/dxml/webr_dxml.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/dxmlInternal/webr_dxmlInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/dxmlInternal/webr_dxmlInternal.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/ftl/webr_ftl.iml" filepath="$PROJECT_DIR$/platform/webr/languages/ftl/webr_ftl.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" filepath="$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" group="platform/webr/languages/gtext" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/gtext/runtime/webr_gtext_runtime.iml" filepath="$PROJECT_DIR$/platform/webr/languages/gtext/runtime/webr_gtext_runtime.iml" group="platform/webr/languages/gtext" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/javascript/webr_javascript.iml" filepath="$PROJECT_DIR$/platform/webr/languages/javascript/webr_javascript.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/javascriptInternal/webr_javascriptInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/javascriptInternal/webr_javascriptInternal.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/logging/webr_logging.iml" filepath="$PROJECT_DIR$/platform/webr/languages/logging/webr_logging.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/mxml/webr_mxml.iml" filepath="$PROJECT_DIR$/platform/webr/languages/mxml/webr_mxml.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/notifications/webr_notifications.iml" filepath="$PROJECT_DIR$/platform/webr/languages/notifications/webr_notifications.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/rest/webr_rest.iml" filepath="$PROJECT_DIR$/platform/webr/languages/rest/webr_rest.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/rss/webr_rss.iml" filepath="$PROJECT_DIR$/platform/webr/languages/rss/webr_rss.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/runtimeLang/webr_runtimeLang.iml" filepath="$PROJECT_DIR$/platform/webr/languages/runtimeLang/webr_runtimeLang.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/templateLanguage/webr_templateLanguage.iml" filepath="$PROJECT_DIR$/platform/webr/languages/templateLanguage/webr_templateLanguage.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/templateLanguageInternal/webr_templateLanguageInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/templateLanguageInternal/webr_templateLanguageInternal.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/userManagement/webr_userManagement.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/userManagement/webr_userManagement.iml" group="platform/webr/extensions/userManagement" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/userManagement/runtime/webr_userManagement_runtime.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/userManagement/runtime/webr_userManagement_runtime.iml" group="platform/webr/extensions/userManagement" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/webUnit/webr_webUnit.iml" filepath="$PROJECT_DIR$/platform/webr/languages/webUnit/webr_webUnit.iml" group="platform/webr/languages/webUnit" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/webUnit/runtime/webr_webUnit_runtime.iml" filepath="$PROJECT_DIR$/platform/webr/languages/webUnit/runtime/webr_webUnit_runtime.iml" group="platform/webr/languages/webUnit" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/webl/webr_webl.iml" filepath="$PROJECT_DIR$/platform/webr/languages/webl/webr_webl.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/weblInternal/webr_weblInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/weblInternal/webr_weblInternal.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/xml/webr_xml.iml" filepath="$PROJECT_DIR$/platform/webr/languages/xml/webr_xml.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/xmlInternal/webr_xmlInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/xmlInternal/webr_xmlInternal.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/xmlSchema/webr_xmlSchema.iml" filepath="$PROJECT_DIR$/platform/webr/languages/xmlSchema/webr_xmlSchema.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/wiki/wiki.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/wiki/wiki.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/workbench/workbench.iml" filepath="$PROJECT_DIR$/workbench/workbench.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/platform/xml/xml.iml" filepath="$PROJECT_DIR$/platform/xml/xml.iml" group="platform" />
     </modules>
@@ -1076,7 +1023,7 @@
       <ConfigurationWrapper RunnerId="Profile " />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
-        <option name="Make" value="true" />
+        <option name="Make" value="false" />
       </method>
     </configuration>
     <configuration default="false" name="depot_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
@@ -1087,30 +1034,6 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="charisma-app/web/charisma-web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_hello/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/webrSamples" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c1" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1180,30 +1103,6 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="charisma-app/web/charisma-web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_hello/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/webrSamples" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1255,30 +1154,6 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="charisma-app/web/charisma-web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_hello/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/webrSamples" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c2" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1348,30 +1223,6 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="charisma-app/web/charisma-web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_hello/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/webrSamples" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />

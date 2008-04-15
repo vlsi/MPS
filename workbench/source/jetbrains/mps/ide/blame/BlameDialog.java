@@ -140,7 +140,7 @@ public class BlameDialog extends BaseDialog implements IExternalizableComponent 
     setVisible(false);
   }
 
-  public static String teamsys = "http://teamsys.labs.intellij.net/teamsys";
+  public static String teamsys = "http://teamsys.intellij.net/teamsys";
   public static String login = "/rest/user/login";
   public static String issue = "XX-1";
   public static String postissue = "/rest/issue/";
