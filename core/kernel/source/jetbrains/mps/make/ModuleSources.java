@@ -7,6 +7,9 @@ import jetbrains.mps.vfs.FileSystem;
 import java.util.*;
 
 public class ModuleSources {
+  private static final String JAVA_SUFFIX = ".java";
+  private static final String CLASS_SUFFIX = ".class";
+
   private IModule myModule;
   private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();
   private Map<String, ResourceFile> myResourceFiles = new HashMap<String, ResourceFile>();
@@ -60,7 +63,7 @@ public class ModuleSources {
       if (isIgnored(child)) continue;
 
       if (isJavaFile(child)) {
-        String className = child.getName().substring(0, child.getName().length() - ModuleMaker.JAVA_SUFFIX.length());
+        String className = child.getName().substring(0, child.getName().length() - JAVA_SUFFIX.length());
         String fqName = pack.length() > 0 ? pack + "." + className : className;
         myJavaFiles.put(fqName, new JavaFile(child, fqName));
       }
@@ -93,8 +96,8 @@ public class ModuleSources {
       if (file.isDirectory()) {
         collectOutput(file, (pack.length() > 0) ? pack + "." + file.getName() : file.getName());
       } else {
-        if (file.getName().endsWith(ModuleMaker.CLASS_SUFFIX)) {
-          String containerName = file.getName().substring(0, file.getName().length() - ModuleMaker.CLASS_SUFFIX.length());
+        if (file.getName().endsWith(CLASS_SUFFIX)) {
+          String containerName = file.getName().substring(0, file.getName().length() - CLASS_SUFFIX.length());
           if (containerName.contains("$")) {
             containerName = containerName.substring(0, containerName.lastIndexOf("$"));
           }
@@ -125,12 +128,12 @@ public class ModuleSources {
   }
 
   private boolean isJavaFile(IFile file) {
-    return file.isFile() && file.getName().endsWith(ModuleMaker.JAVA_SUFFIX);
+    return file.isFile() && file.getName().endsWith(JAVA_SUFFIX);
   }
 
   private boolean isResourceFile(IFile file) {
     return file.isFile() &&
-      !file.getName().endsWith(ModuleMaker.JAVA_SUFFIX) &&
-      !file.getName().endsWith(ModuleMaker.CLASS_SUFFIX);
+      !file.getName().endsWith(JAVA_SUFFIX) &&
+      !file.getName().endsWith(CLASS_SUFFIX);
   }
 }

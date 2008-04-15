@@ -26,9 +26,6 @@ import java.util.*;
 public class ModuleMaker {
   private static Logger LOG = Logger.getLogger(ModuleMaker.class);
 
-  public static final String JAVA_SUFFIX = ".java";
-  public static final String CLASS_SUFFIX = ".class";
-  
   public static boolean isMakeTurnedOff() {
     return "true".equals(System.getProperty("mps.noMake"));    
   }
