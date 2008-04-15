@@ -4,38 +4,35 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.command.CommandRunnable;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 
 import javax.swing.*;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.util.Set;
 
 
 public class EditorUtil {
   public static JComponent createSelectIconButton(SNode sourceNode, final EditorContext context) {
-    return createSelectIconButton(sourceNode, null, context);
+    return createSelectIconButton(sourceNode, ConceptDeclaration.ICON_PATH, context);
   }
 
   public static JComponent createSelectIconButton(final SNode sourceNode, final String propertyName, final EditorContext context) {
-    final ConceptDeclaration conceptDeclaration;
-    if (propertyName == null) {
-      conceptDeclaration = (ConceptDeclaration) BaseAdapter.fromNode(sourceNode);
-    } else {
-      conceptDeclaration = (ConceptDeclaration) sourceNode.getConceptDeclarationAdapter();
-    }
 
-    String path = conceptDeclaration.getIconPath();
-    final Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, context.getScope());
+    IModule module = findAnchorModule(sourceNode);
 
-    String filename = language == null ? null : Macros.languageDescriptor().expandPath(path, language.getDescriptorFile());
+    final Macros macros = Macros.moduleDescriptor(module);
+
+    String path = sourceNode.getProperty(propertyName);
+    final IModule finalModule = module;
+    String filename = finalModule == null ? null : macros.expandPath(path, finalModule.getDescriptorFile());
     final File baseFile = filename == null ? null : new File(filename);
     final JButton button = new JButton();
     button.setAction(new AbstractAction("...") {
@@ -54,21 +51,33 @@ public class EditorUtil {
         if (result == null) return;
 
         String selectedPath = FileUtil.getCanonicalPath(result.toFile());
-        final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
+        final String pathToShow = macros.shrinkPath(selectedPath, finalModule.getDescriptorFile());
 
         new CommandRunnable() {
           protected Object onRun() {
-            if (propertyName == null) {
-              conceptDeclaration.setIconPath(pathToShow);
-            } else {
-              sourceNode.setProperty(propertyName, pathToShow);
-            }
+            sourceNode.setProperty(propertyName, pathToShow);
             return null;
           }
         }.run();
       }
     });
     return button;
+  }
+
+  public static IModule findAnchorModule(SNode sourceNode) {
+    SModel model = sourceNode.getModel();
+    IModule module = null;
+    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    Language modelLang = Language.getLanguageFor(modelDescriptor);
+    if (modelLang != null) {
+      module = modelLang;
+    } else {
+      Set<Solution> ownerSet = SModelRepository.getInstance().getOwners(modelDescriptor, Solution.class);
+      if (!(ownerSet.isEmpty())) {
+        module = ownerSet.iterator().next();
+      }
+    }
+    return module;
   }
 
 

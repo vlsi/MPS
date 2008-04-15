@@ -3,6 +3,10 @@ package jetbrains.mps.util;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.pathVariables.PathVariableManager;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.smodel.Language;
 
 import java.io.File;
 import java.util.Map;
@@ -29,6 +33,19 @@ public abstract class Macros {
 
   public static Macros projectDescriptor() {
     return new ProjectDescriptorMacros();
+  }
+
+  public static Macros moduleDescriptor(IModule module) {
+    if (module instanceof Language) {
+      return Macros.languageDescriptor();
+    } else
+    if (module instanceof Solution) {
+      return Macros.solutionDescriptor();
+    } else
+    if (module instanceof DevKit) {
+      return Macros.devkitMacros();
+    }
+    return new Macros() {};
   }
 
   public final String expandPath(String path, File anchorFile) {

@@ -340,7 +340,7 @@
     <property name="name" value="RunClassConcept" />
     <property name="caption" value="Run" />
     <property name="shortcut" value="control shift F10" />
-    <property name="iconPath" value="${mps_home}\core\baseLanguage\baseLanguage\icons\run.png" />
+    <property name="iconPath" value="${language_descriptor}\icons\run.png" />
     <link role="extendedAction" targetNodeId="8.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1205836731344">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205836731345">
