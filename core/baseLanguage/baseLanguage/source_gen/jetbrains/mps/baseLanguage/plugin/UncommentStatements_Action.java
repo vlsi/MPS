@@ -28,6 +28,10 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
     return "ctrl shift SLASH";
   }
 
+  public boolean isApplicable(ActionContext context) {
+    return (SNodeOperations.getAncestor(this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) != null);
+  }
+
   public void doUpdate(@NotNull() ActionContext context) {
     try {
       super.doUpdate(context);
@@ -36,8 +40,11 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
         this.setVisible(this.isAlwaysVisible);
         return;
       }
-      this.setEnabled(true);
-      this.setVisible(true);
+      {
+        boolean enabled = this.isApplicable(context);
+        this.setEnabled(enabled);
+        this.setVisible(enabled || this.isAlwaysVisible);
+      }
     } catch (Throwable t) {
       UncommentStatements_Action.LOG.error("User's action doUpdate method failed. Action:" + "UncommentStatements", t);
       this.setEnabled(false);
@@ -50,7 +57,7 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
       {
         SNode node = context.getNode();
         if (node != null) {
-          if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"))) {
+          if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.structure.BaseConcept"))) {
             node = null;
           }
         }
@@ -76,17 +83,20 @@ public class UncommentStatements_Action extends CurrentProjectMPSAction {
         return;
       }
       {
-        ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(this.node, "statement", true));
-        try {
-          while(_zCursor.moveToNext()) {
-            SNode statement = _zCursor.getCurrent();
-            SNodeOperations.insertPrevSiblingChild(this.node, statement);
+        SNode commentedStatementsBlock = SNodeOperations.getAncestor(this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false);
+        {
+          ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true));
+          try {
+            while(_zCursor.moveToNext()) {
+              SNode statement = _zCursor.getCurrent();
+              SNodeOperations.insertPrevSiblingChild(commentedStatementsBlock, statement);
+            }
+          } finally {
+            _zCursor.release();
           }
-        } finally {
-          _zCursor.release();
         }
+        SNodeOperations.deleteNode(commentedStatementsBlock);
       }
-      SNodeOperations.deleteNode(this.node);
     } catch (Throwable t) {
       UncommentStatements_Action.LOG.error("User's action execute method failed. Action:" + "UncommentStatements", t);
     }

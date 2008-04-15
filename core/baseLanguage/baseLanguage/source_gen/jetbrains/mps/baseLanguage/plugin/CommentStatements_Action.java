@@ -9,11 +9,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class CommentStatements_Action extends CurrentProjectMPSAction {
@@ -32,10 +33,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
   }
 
   public boolean isApplicable(ActionContext context) {
-    if (SequenceOperations.getSize(this.nodes) == 1 && SNodeOperations.isInstanceOf(SequenceOperations.getFirst(this.nodes), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock")) {
-      return false;
-    }
-    return true;
+    return (SNodeOperations.getAncestor(ListOperations.getElement(this.nodes, 0), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null);
   }
 
   public void doUpdate(@NotNull() ActionContext context) {
