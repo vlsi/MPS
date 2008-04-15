@@ -11,12 +11,12 @@ import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class AssertThrows extends Statement implements MessageHolder {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows";
-  public static String STATEMENT = "statement";
-  public static String EXCEPTION_TYPE = "exceptionType";
-  public static String MESSAGE = "message";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String STATEMENT = "statement";
+  public static String EXCEPTION_TYPE = "exceptionType";
+  public static String MESSAGE = "message";
 
   public  AssertThrows(SNode node) {
     super(node);
@@ -30,30 +30,6 @@ public class AssertThrows extends Statement implements MessageHolder {
     return AssertThrows.newInstance(sm, false);
   }
 
-
-  public Statement getStatement() {
-    return (Statement)this.getChild(AssertThrows.STATEMENT);
-  }
-
-  public void setStatement(Statement node) {
-    super.setChild(AssertThrows.STATEMENT, node);
-  }
-
-  public ClassifierType getExceptionType() {
-    return (ClassifierType)this.getChild(AssertThrows.EXCEPTION_TYPE);
-  }
-
-  public void setExceptionType(ClassifierType node) {
-    super.setChild(AssertThrows.EXCEPTION_TYPE, node);
-  }
-
-  public Message getMessage() {
-    return (Message)this.getChild(AssertThrows.MESSAGE);
-  }
-
-  public void setMessage(Message node) {
-    super.setChild(AssertThrows.MESSAGE, node);
-  }
 
   public String getShortDescription() {
     return this.getProperty(AssertThrows.SHORT_DESCRIPTION);
@@ -77,6 +53,30 @@ public class AssertThrows extends Statement implements MessageHolder {
 
   public void setVirtualPackage(String value) {
     this.setProperty(AssertThrows.VIRTUAL_PACKAGE, value);
+  }
+
+  public Statement getStatement() {
+    return (Statement)this.getChild(AssertThrows.STATEMENT);
+  }
+
+  public void setStatement(Statement node) {
+    super.setChild(AssertThrows.STATEMENT, node);
+  }
+
+  public ClassifierType getExceptionType() {
+    return (ClassifierType)this.getChild(AssertThrows.EXCEPTION_TYPE);
+  }
+
+  public void setExceptionType(ClassifierType node) {
+    super.setChild(AssertThrows.EXCEPTION_TYPE, node);
+  }
+
+  public Message getMessage() {
+    return (Message)this.getChild(AssertThrows.MESSAGE);
+  }
+
+  public void setMessage(Message node) {
+    super.setChild(AssertThrows.MESSAGE, node);
   }
 
 }

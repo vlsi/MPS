@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.unitTest" compileInMPS="false">
+<language namespace="jetbrains.mps.baseLanguage.unitTest" compileInMPS="true">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.baseLanguage.unitTest" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.baseLanguage.unitTest" />
@@ -18,11 +18,9 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}\classes" />
     <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
   </classPath>
   <runtimeClassPath>
-    <entry path="${language_descriptor}\classes" />
     <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
   </runtimeClassPath>
   <sourcePath />
