@@ -29,4 +29,8 @@ class JavaFile {
       throw new RuntimeException(e);
     }
   }
+
+  public String toString() {
+    return "JavaFile " + myClassName + " at " + myFile;
+  }
 }

@@ -24,8 +24,6 @@ import java.io.FilenameFilter;
 import java.util.*;
 
 public class ModuleMaker {
-  private static boolean INCREMENTAL_MODE = false;
-
   private static Logger LOG = Logger.getLogger(ModuleMaker.class);
 
   public static final String JAVA_SUFFIX = ".java";
@@ -36,7 +34,7 @@ public class ModuleMaker {
   }
 
   private Map<String, IModule> myContainingModules = new HashMap<String, IModule>();
-  private Map<IModule, Boolean> myClassesUpToDateStatus = new HashMap<IModule, Boolean>();
+  private Map<IModule, ModuleSources> myModuleSources = new HashMap<IModule, ModuleSources>();
 
   public void clean(final Set<IModule> modules, final IAdaptiveProgressMonitor monitor) {
     try {
@@ -130,28 +128,15 @@ public class ModuleMaker {
         continue;
       }
 
+      ModuleSources sources = getModuleSources(m);
 
-      if (INCREMENTAL_MODE) {
-        ModuleSources sources = new ModuleSources(m);
+      for (IFile f : sources.getFilesToDelete()) {
+        f.delete();
+      }
 
-        for (IFile f : sources.getFilesToDelete()) {
-          f.delete();
-        }
-
-        for (JavaFile f : sources.getFilesToCompile()) {
-          compiler.addSource(f.getContents(), f.getClassName());
-          myContainingModules.put(f.getClassName(), m);
-        }
-
-        System.out.println("");
-      } else {
-        for (String sp : m.getSourcePaths()) {
-          if (new File(sp).exists()) {
-            addSource(compiler, new File(sp), "", m);
-          }
-        }
-
-        FileUtil.delete(m.getClassesGen().toFile());
+      for (JavaFile f : sources.getFilesToCompile()) {
+        compiler.addSource(f.getContents(), f.getClassName());
+        myContainingModules.put(f.getClassName(), m);
       }
     }
 
@@ -202,7 +187,20 @@ public class ModuleMaker {
     }
 
     for (IModule module : modules){
-      copyResources(module, JAVA_SUFFIX);
+      ModuleSources sources = getModuleSources(module);
+      for (ResourceFile toCopy : sources.getResourcesToCopy()) {
+        String fqName = toCopy.getFqName();
+
+        fqName = fqName.substring(0, fqName.length() - toCopy.getFile().getName().length());
+        String path = fqName.replace('.', File.separatorChar) + toCopy.getFile().getName();
+
+        System.out.println("copy to " + path);
+
+        FileUtil.copyFile(
+          toCopy.getFile().toFile(),
+          module.getClassesGen().child(path).toFile()
+        );
+      }
     }
 
     for (IModule module : modules) {
@@ -212,45 +210,6 @@ public class ModuleMaker {
 
     return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
   }                               
-
-  private void copyResources(IModule module, final String sourceSuffix) {
-    File destination = module.getClassesGen().toFile();
-
-    FilenameFilter filenameFilter = new FilenameFilter() {
-      public boolean accept(File dir, String name) {
-        return !name.endsWith(sourceSuffix);
-      }
-    };
-
-    for (String source : module.getSourcePaths()){
-      if (source == null) continue;      
-      File sourceFile = new File(source);
-      copyFiles(sourceFile, destination, filenameFilter);
-    }
-  }
-
-  private boolean isIgnored(File file) {
-    return file.isDirectory() && ".svn".equals(file.getName());
-  }
-
-  private void copyFiles(File source, File destination, FilenameFilter filenameFilter) {
-    if (!source.exists()) {
-      return;
-    }
-    File[] children = source.listFiles(filenameFilter);
-
-    for (File child : children){
-      if (isIgnored(child)) continue;
-      File destinationChild = new File(destination + File.separator + child.getName());
-      if (child.isFile()){
-        FileUtil.copyFile(child, destinationChild);
-      } else {
-        destinationChild.mkdir();
-        copyFiles(child, destinationChild, filenameFilter);
-      }
-    }
-  }
-
 
   private String getName(char[][] compoundName) {
     StringBuilder result = new StringBuilder();
@@ -263,24 +222,6 @@ public class ModuleMaker {
     }
 
     return result.toString();
-  }
-
-  private void addSource(JavaCompiler compiler, File dir, String pack, IModule m) {
-    for (File child : dir.listFiles()) {
-      if (child.isFile() && child.getName().endsWith(JAVA_SUFFIX)) {
-        String className = child.getName().substring(0, child.getName().length() - JAVA_SUFFIX.length());
-        String contents = FileUtil.read(child);
-
-        String classFqName = pack.equals("") ? className : pack + "." + className;
-        myContainingModules.put(classFqName, m);
-
-        compiler.addSource(contents, classFqName);
-      }
-
-      if (child.isDirectory()) {
-        addSource(compiler, child, pack.equals("") ? child.getName() : pack + "." + child.getName(), m);
-      }
-    }
   }
 
   private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {   
@@ -310,38 +251,18 @@ public class ModuleMaker {
       return true;
     }
 
-    if (myClassesUpToDateStatus.containsKey(m)) {
-      return myClassesUpToDateStatus.get(m);
-    }
-
     if (!m.isCompileInMPS()) {
-      myClassesUpToDateStatus.put(m, true);      
       return true;
     }
 
-    File classesGen = m.getClassesGen().toFile();
+    return getModuleSources(m).isUpToDate();
+  }
 
-    long classesTimeStamp = FileUtil.getNewestFileTime(classesGen);
-    long sourcesTimeStamp = 0;
-
-    for (String s : m.getSourcePaths()) {
-      if (s == null) continue;
-      sourcesTimeStamp = Math.max(sourcesTimeStamp, FileUtil.getNewestFileTime(new File(s)));
+  private ModuleSources getModuleSources(IModule module) {
+    if (!myModuleSources.containsKey(module)) {
+      myModuleSources.put(module, new ModuleSources(module));
     }
-
-    if (sourcesTimeStamp == 0) {      
-      //i.e. we have excluded all the sources
-      return true;
-    }
-
-    boolean result = classesTimeStamp >= sourcesTimeStamp;
-    if (result){
-      for (String s : m.getSourcePaths()) {
-        result = areAllClassesPresent(new File(s), classesGen, JAVA_SUFFIX, CLASS_SUFFIX);
-      }
-    }
-    myClassesUpToDateStatus.put(m, result);
-    return result;
+    return myModuleSources.get(module);
   }
 
   private boolean isExcluded(IModule m) {
@@ -358,44 +279,5 @@ public class ModuleMaker {
     }
 
     return false;
-  }
-
-  boolean areAllClassesPresent(File sourcedir, File classdir, String sourceSuffix, String destinationSuffix){
-    File[] sourcefiles = sourcedir.listFiles();
-
-    if (sourcefiles == null) {
-      return true;
-    }
-
-    for (File source : sourcefiles) {
-      if (isIgnored(source)) continue;
-      if (source.isFile()){
-        String destinationName;
-        if (source.getAbsolutePath().endsWith(sourceSuffix)){
-          String sourceName = source.getName().substring(0, source.getName().lastIndexOf("."));
-          destinationName = classdir.getAbsolutePath() + File.separator + sourceName + destinationSuffix;
-        } else {
-          destinationName = classdir.getAbsolutePath() + File.separator + source.getName();
-        }
-        File destination = new File(destinationName);
-
-        if (!destination.exists()){
-          return false;
-        }
-      } else {
-        String destinationName = classdir.getAbsolutePath() + File.separator + source.getName();
-        File destination = new File(destinationName);
-
-        if (!destination.exists()){
-          return false;
-        }
-
-        if (!areAllClassesPresent(source, destination, sourceSuffix, destinationSuffix)) {
-          return false;
-        }
-      }
-    }
-
-    return true;
   }
 }
