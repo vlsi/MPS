@@ -12,6 +12,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.vfs.IFile;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -23,6 +24,8 @@ import java.io.FilenameFilter;
 import java.util.*;
 
 public class ModuleMaker {
+  private static boolean INCREMENTAL_MODE = false;
+
   private static Logger LOG = Logger.getLogger(ModuleMaker.class);
 
   public static final String JAVA_SUFFIX = ".java";
@@ -126,14 +129,30 @@ public class ModuleMaker {
         LOG.warning("Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleUID(), m);
         continue;
       }
-      
-      for (String sp : m.getSourcePaths()) {
-        if (new File(sp).exists()) {
-          addSource(compiler, new File(sp), "", m);
-        }
-      }
 
-      FileUtil.delete(m.getClassesGen().toFile());
+
+      if (INCREMENTAL_MODE) {
+        ModuleSources sources = new ModuleSources(m);
+
+        for (IFile f : sources.getFilesToDelete()) {
+          f.delete();
+        }
+
+        for (JavaFile f : sources.getFilesToCompile()) {
+          compiler.addSource(f.getContents(), f.getClassName());
+          myContainingModules.put(f.getClassName(), m);
+        }
+
+        System.out.println("");
+      } else {
+        for (String sp : m.getSourcePaths()) {
+          if (new File(sp).exists()) {
+            addSource(compiler, new File(sp), "", m);
+          }
+        }
+
+        FileUtil.delete(m.getClassesGen().toFile());
+      }
     }
 
     compiler.compile();

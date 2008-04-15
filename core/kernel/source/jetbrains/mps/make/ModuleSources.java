@@ -39,7 +39,8 @@ public class ModuleSources {
 
       if (child.isFile() && child.getName().endsWith(ModuleMaker.JAVA_SUFFIX)) {
         String className = child.getName().substring(0, child.getName().length() - ModuleMaker.JAVA_SUFFIX.length());
-        myJavaFiles.put(className, new JavaFile(child, className));
+        String fqName = pack + "." + className;
+        myJavaFiles.put(fqName, new JavaFile(child, fqName));
       }
 
       if (child.isDirectory()) {
@@ -72,7 +73,7 @@ public class ModuleSources {
             containerName = containerName.substring(0, containerName.lastIndexOf("$"));
           }
 
-          JavaFile javaFile = myJavaFiles.get(containerName);
+          JavaFile javaFile = myJavaFiles.get(pack + "." + containerName);
           if (javaFile == null) {
             myFilesToDelete.add(file);
           } else if (javaFile.getFile().lastModified() < file.lastModified())   {
