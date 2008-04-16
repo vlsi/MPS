@@ -266,6 +266,8 @@
     <antcall target="pack.jetbrains.mps.bootstrap.helgins" />
     <antcall target="pack.jetbrains.mps.bootstrap.intentionsLanguage" />
     <antcall target="pack.jetbrains.mps.bootstrap.dataFlow" />
+    <antcall target="pack.jetbrains.mpslite" />
+    <antcall target="pack.jetbrains.mps.nanoj" />
     <antcall target="pack.jetbrains.mps.patterns" />
     <antcall target="pack.jetbrains.mps.quotation" />
     <antcall target="pack.jetbrains.mps.bootstrap.pluginLanguage" />
@@ -336,8 +338,8 @@
     <copy file="focuskiller64.dll" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\focuskiller64.dll" />
     <copy file="plugin.xml" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\plugin.xml" />
     <copy file="readme.txt" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\readme.txt" />
-    <copy file="runMPS.bat" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\runMPS.bat" />
-    <copy file="runMPS.sh" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\runMPS.sh" />
+    <copy file="mps.bat" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\mps.bat" />
+    <copy file="mps.sh" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\mps.sh" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip" filesonly="true">
       <fileset dir="${deploy.dir}\MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.ipr" includes="" />
     </zip>
