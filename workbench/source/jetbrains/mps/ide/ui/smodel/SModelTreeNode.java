@@ -52,7 +52,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private boolean myPackagesEnabled = true;
 
   private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
-  private boolean myGenerationRequired = false;
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
@@ -86,7 +85,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myNodesCondition = condition;
     
     setUserObject(modelDescriptor);
-    updateGenerationRequiredStatus();
 
     updatePresentation();
   }
@@ -110,7 +108,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       setIcon(Icons.MODEL_ICON);
     }
 
-    if (myGenerationRequired) {
+    if (generationRequired()) {
       setAdditionalText("generation required");
     } else {
       setAdditionalText(null);
@@ -330,26 +328,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public boolean generationRequired() {
-    return myGenerationRequired;
-  }
-
-  private void updateGenerationRequiredStatus() {
-    //this is possible in model difference view
     if (getSModelDescriptor() == null) {
-      return;
+      return false;
     }
 
-    //once generation required, it can't be changed back unless we revert or reload a model
-    //if a model is rebuilt, the tree is rebuilt as well and we get the flag cleared
-    if (myGenerationRequired) {
-      return;
-    }
-
-    myGenerationRequired = ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor());        
-
-    if (myGenerationRequired && getTree() != null) {
-      updateAncestorsPresentationInTree();
-    }
+    return ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor());
   }
 
   public void updateNodePresentationInTree() {
@@ -552,7 +535,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           updateChangedRefs(nodesWithChangedRefs);
           updateNodesWithChangedPackages(nodesWithChangedPackages);
 
-          updateGenerationRequiredStatus();
           updateAncestorsPresentationInTree();
         }
       }, false);

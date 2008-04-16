@@ -8,9 +8,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.logging.Logger;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.io.File;
 
 public class ModelGenerationStatusManager {
@@ -21,6 +19,7 @@ public class ModelGenerationStatusManager {
   }
 
   private Map<SModelDescriptor, Long> myLastGenerationTime = new HashMap<SModelDescriptor, Long>();
+  private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
   public boolean generationRequired(SModelDescriptor sm) {
     if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) {
@@ -52,6 +51,21 @@ public class ModelGenerationStatusManager {
 
   public void invalidateData(SModelDescriptor sm) {
     myLastGenerationTime.remove(sm);
+    fireStatusChange(sm);
+  }
+
+  public void addGenerationStatusListener(ModelGenerationStatusListener l) {
+    myListeners.add(l);
+  }
+
+  public void removeGenerationStatusListener(ModelGenerationStatusListener l) {
+    myListeners.remove(l);
+  }
+
+  private void fireStatusChange(SModelDescriptor sm) {
+    for (ModelGenerationStatusListener l : myListeners) {
+      l.generationStatusChanged(sm);
+    }
   }
 
   private long calculateLastGenerationTime(SModelDescriptor sm) {
