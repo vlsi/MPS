@@ -9,7 +9,6 @@ import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.reloading.ReloadUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

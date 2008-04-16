@@ -15,6 +15,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
 import org.osgi.framework.*;
@@ -199,6 +200,19 @@ public class ClassLoaderManager implements IComponentLifecycle {
   @Dependency
   public void setModuleRepository(MPSModuleRepository moduleRepository) {
     myModuleRepository = moduleRepository;
+  }
+
+  public void reloadAll() {
+    LOG.assertInCommand();
+    callBeforeReloadHandlers();
+    updateClassPath();
+
+    SModelRepository.getInstance().refreshModels();
+
+    callReloadHandlers();
+    callAfterReloadHandlers();
+    
+    System.gc();
   }
 
   public void updateClassPath() {
@@ -435,19 +449,19 @@ public class ClassLoaderManager implements IComponentLifecycle {
     myReloadHandlers.remove(handler);
   }
 
-  void callBeforeReloadHandlers() {
+  private void callBeforeReloadHandlers() {
     for (ReloadListener h : new ArrayList<ReloadListener>(myReloadHandlers)) {
       h.onBeforeReload();
     }
   }
 
-  void callReloadHandlers() {
+  private void callReloadHandlers() {
     for (ReloadListener h : new ArrayList<ReloadListener>(myReloadHandlers)) {
       h.onReload();
     }
   }
 
-  void callAfterReloadHandlers() {
+  private void callAfterReloadHandlers() {
     for (ReloadListener h : new ArrayList<ReloadListener>(myReloadHandlers)) {
       h.onAfterReload();
     }

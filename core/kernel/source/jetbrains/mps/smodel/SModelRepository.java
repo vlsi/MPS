@@ -5,7 +5,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.reloading.ReloadUtils;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.CollectionUtil;
@@ -575,7 +575,7 @@ public class SModelRepository extends SModelAdapter {
           }
 
           if (needReloadAll) {
-            ReloadUtils.reloadAll();
+            ClassLoaderManager.getInstance().reloadAll();
           }
         } finally {
           myInChangedModelsReloading = false;

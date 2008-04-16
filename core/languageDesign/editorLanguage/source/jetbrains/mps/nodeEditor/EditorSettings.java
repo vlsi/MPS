@@ -6,7 +6,7 @@ import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.reloading.ReloadUtils;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
@@ -55,7 +55,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   public void setDefaultEditorFont(Font newFont) {
     myFontFamily = newFont.getFamily();
     myFontSize = newFont.getSize();
-    ReloadUtils.reloadAll();
+    ClassLoaderManager.getInstance().reloadAll();
   }
 
   public boolean useBraces() {
@@ -388,7 +388,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
       CommandProcessor.instance().executeLightweightCommand(new Runnable() {
         public void run() {
-          ReloadUtils.reloadAll();
+          ClassLoaderManager.getInstance().reloadAll();
         }
       });
     }

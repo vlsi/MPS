@@ -17,7 +17,7 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.Merger;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.reloading.ReloadUtils;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -64,7 +64,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
                   NodeReadAccessCaster.unblockEvents();
                 }
 
-                ReloadUtils.reloadAll();
+                ClassLoaderManager.getInstance().reloadAll();
                 modelDescriptor.reloadFromDisk();
               }
             });

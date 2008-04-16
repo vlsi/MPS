@@ -17,8 +17,7 @@ import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
-import jetbrains.mps.reloading.ReloadUtils;
-import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
@@ -304,7 +303,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     reload();
 
-    ReloadUtils.reloadAll();
+    ClassLoaderManager.getInstance().reloadAll();
 
     registerAspectListener();
 

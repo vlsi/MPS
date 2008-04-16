@@ -6,7 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
-import jetbrains.mps.reloading.ReloadUtils;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -83,7 +83,7 @@ public class Solution extends AbstractModule {
 
     reload();
 
-    ReloadUtils.reloadAll();
+    ClassLoaderManager.getInstance().reloadAll();
 
     myEventTranslator.solutionChanged();
   }

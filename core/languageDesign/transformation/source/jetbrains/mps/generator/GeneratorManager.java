@@ -16,7 +16,6 @@ import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.MessagesOnlyAdaptiveProgressMonitorWrapper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
@@ -26,7 +25,7 @@ import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.reloading.ReloadUtils;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
@@ -579,7 +578,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           progress.addText("");
           progress.addText("reloading MPS classes...");
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-          ReloadUtils.reloadAll();
+          ClassLoaderManager.getInstance().reloadAll();
           progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
         }
 
@@ -626,9 +625,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         System.gc();
       }
       progress.finishAnyway();
-
-      //we need it to update genearation status
-//      ReloadUtils.rebuildProjectPanes();
     }
 
     return true;

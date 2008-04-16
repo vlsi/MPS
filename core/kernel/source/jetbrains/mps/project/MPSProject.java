@@ -29,7 +29,7 @@ import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugins.PluginManager;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
-import jetbrains.mps.reloading.ReloadUtils;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
@@ -39,7 +39,6 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.vcs.IRepository;
 import jetbrains.mps.vcs.ProjectVCSManager;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -110,7 +109,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
         myContext.init();
 
-        ReloadUtils.reloadAll();
+        ClassLoaderManager.getInstance().reloadAll();
       }
     });
 
@@ -226,7 +225,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
 
     readModules();
-    ReloadUtils.reloadAll();
+    ClassLoaderManager.getInstance().reloadAll();
 
     myEventTranslator.projectChanged();
   }
@@ -680,7 +679,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
         if (reloadAll) {
-          ReloadUtils.reloadAll();
+          ClassLoaderManager.getInstance().reloadAll();
         }
       }
     });
@@ -729,7 +728,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         new ModuleMaker().make(modulesToBuild, monitor);
-        ReloadUtils.reloadAll();
+        ClassLoaderManager.getInstance().reloadAll();
       }
     });
   }
