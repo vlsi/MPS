@@ -99,9 +99,8 @@ public class GenerationSession implements IGenerationSession {
     myCurrentContext = context;
   }
 
-  public GenerationStatus generateModel(SModelDescriptor inputModel,
-                                        Language targetLanguage,
-                                        IGenerationScript script) throws Exception {
+  public GenerationStatus generateModel(SModelDescriptor inputModel
+  ) throws Exception {
     return generateModel(inputModel, new GenerationStepController(inputModel.getSModel()));
   }
 
@@ -119,7 +118,7 @@ public class GenerationSession implements IGenerationSession {
     SModelDescriptor currInputModel = inputModel;
     while (true) {
       addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
-      status = generateModel_internal(currInputModel.getSModel(), generationStepController);
+      status = generateModel_step(currInputModel.getSModel(), generationStepController);
       wasErrors |= status.isError();
       wasWarnings |= status.hasWarnings();
       if (status.isCanceled()) {
@@ -144,7 +143,7 @@ public class GenerationSession implements IGenerationSession {
   }
 
 
-  private GenerationStatus generateModel_internal(SModel inputModel,
+  private GenerationStatus generateModel_step(SModel inputModel,
                                                   AbstractGenerationStepController generationStepController)
     throws ClassNotFoundException,
     NoSuchMethodException,

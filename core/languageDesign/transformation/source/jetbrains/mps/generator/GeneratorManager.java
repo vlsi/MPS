@@ -28,7 +28,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
-import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.Mapper;
@@ -428,7 +427,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
             progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
-            GenerationStatus status = generationSession.generateModel(inputModel, targetLanguage, script);
+            GenerationStatus status = generationSession.generateModel(inputModel);
             generationOK = generationOK && status.isOk();
             generationERROR = generationERROR || status.isError();
             if (isDumpStatistics()) {
