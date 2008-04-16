@@ -36,7 +36,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
   private MPSModuleRepository myModuleRepository;
-  private List<IReloadHandler> myReloadHandlers = new ArrayList<IReloadHandler>();
+  private List<IReloadListener> myReloadHandlers = new ArrayList<IReloadListener>();
 
   private Set<String> myToRemove = new LinkedHashSet<String>();
   private Set<String> myToAdd = new LinkedHashSet<String>();
@@ -427,16 +427,16 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
   }
 
-  public void addReloadHandler(IReloadHandler handler) {
+  public void addReloadHandler(IReloadListener handler) {
     myReloadHandlers.add(handler);
   }
 
-  public void removeReloadHandler(IReloadHandler handler) {
+  public void removeReloadHandler(IReloadListener handler) {
     myReloadHandlers.remove(handler);
   }
 
   void callReloadHandlers() {
-    for (IReloadHandler h : myReloadHandlers) {
+    for (IReloadListener h : myReloadHandlers) {
       h.handleReload();
     }
   }

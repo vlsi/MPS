@@ -16,7 +16,7 @@ import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadHandler;
+import jetbrains.mps.reloading.IReloadListener;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -66,7 +66,7 @@ public class TypeChecker implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+    myClassLoaderManager.addReloadHandler(new IReloadListener() {
       public void handleReload() {
         clearForReload();
       }

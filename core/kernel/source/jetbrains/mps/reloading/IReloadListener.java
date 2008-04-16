@@ -1,5 +1,5 @@
 package jetbrains.mps.reloading;
 
-public interface IReloadHandler {
+public interface IReloadListener {
   void handleReload();
 }

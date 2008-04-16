@@ -2,7 +2,6 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.bootstrap.intentionsLanguage.constraints.IntentionDeclaration_Behavior;
 import jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -15,7 +14,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadHandler;
+import jetbrains.mps.reloading.IReloadListener;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -54,7 +53,7 @@ public class IntentionsManager implements IExternalizableComponent, IComponentLi
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+    myClassLoaderManager.addReloadHandler(new IReloadListener() {
       public void handleReload() {
         refresh();
       }

@@ -3,16 +3,12 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapDeclaration;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
-import jetbrains.mps.ide.command.CommandAdapter;
-import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadHandler;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.reloading.IReloadListener;
 
 import java.util.*;
 
@@ -47,7 +43,7 @@ public class LanguagesKeymapManager implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+    myClassLoaderManager.addReloadHandler(new IReloadListener() {
       public void handleReload() {
         clearCaches();
       }

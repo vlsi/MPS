@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadHandler;
+import jetbrains.mps.reloading.IReloadListener;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.component.Dependency;
 
@@ -34,7 +34,7 @@ public class FindUsagesManager implements IComponentLifecycle {
 
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+    myClassLoaderManager.addReloadHandler(new IReloadListener() {
       public void handleReload() {
         invalidateCaches();
       }

@@ -14,7 +14,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadHandler;
+import jetbrains.mps.reloading.IReloadListener;
 import org.jdom.Element;
 
 import java.util.*;
@@ -41,7 +41,7 @@ public class FindersManager implements IExternalizableComponent, IComponentLifec
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+    myClassLoaderManager.addReloadHandler(new IReloadListener() {
       public void handleReload() {
         refresh();
       }
