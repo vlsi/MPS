@@ -295,7 +295,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1203083511112">
     <property name="name" value="ExecuteBlock"/>
     <property name="package" value="Actions.Action.Methods"/>
-    <property name="iconPath" value="${mps_home}\"/>
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1203860227989">
