@@ -6,14 +6,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
-import jetbrains.mps.projectLanguage.structure.LanguageReference;
 import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
@@ -167,13 +164,43 @@ public class Solution extends AbstractModule {
   }
 
   protected List<String> getExportedPackages() {
-    List<String> result = new ArrayList<String>(super.getExportedPackages());
+    Set<String> result = new LinkedHashSet<String>(super.getExportedPackages());
     for (SModelDescriptor sm : getOwnModelDescriptors()) {
       if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) continue;
       result.add(sm.getLongName());
     }
-    collectPackages(result, "");
-    return result;
+
+    collectRuntimePackages(result, "");
+
+    for (String source : getSourcePaths()) {
+      IFile file = FileSystem.getFile(source);
+      collectSourcePackages(result, "", file);
+    }
+
+    return new ArrayList<String>(result);
+  }
+
+  protected void collectRuntimePackages(Set<String> result, String current) {
+    if (!"".equals(current)) {
+      result.add(current);
+    }
+    for (String subpack : getRuntimeClasspath().getSubpackages(current)) {
+      collectRuntimePackages(result, subpack);
+    }
+  }
+
+  private void collectSourcePackages(Set<String> result, String pack, IFile current) {
+    List<IFile> children = current.list();
+    if (children == null) return;
+    for (IFile child : children) {      
+      if (child.getName().equals(".svn")) continue;
+
+      if (child.isDirectory()) {
+        String packName = pack.length() > 0 ? pack + "." + child.getName() : child.getName();
+        result.add(packName);
+        collectSourcePackages(result, packName, child);
+      }
+    }
   }
 
   public List<String> getClassPath() {

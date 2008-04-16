@@ -50,7 +50,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   IScope getScope();
 
-  List<String> getRuntimePackages();
   List<String> getSourcePaths();
 
   Class getClass(String fqName);

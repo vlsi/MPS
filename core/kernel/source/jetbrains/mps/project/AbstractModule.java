@@ -318,12 +318,6 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  public List<String> getRuntimePackages() {
-    List<String> result = new ArrayList<String>();
-    collectPackages(result, "");
-    return result;
-  }
-
   public List<String> getSourcePaths() {
     List<String> result = new ArrayList<String>();
     for (SourcePath p : getModuleDescriptor().getSourcePaths()) {
@@ -331,15 +325,6 @@ public abstract class AbstractModule implements IModule {
     }
     result.add(getGeneratorOutputPath());
     return result;
-  }
-
-  protected void collectPackages(List<String> result, String current) {
-    if (!"".equals(current)) {
-      result.add(current);
-    }
-    for (String subpack : getRuntimeClasspath().getSubpackages(current)) {
-      collectPackages(result, subpack);
-    }
   }
 
   protected void rereadModels() {
@@ -503,8 +488,9 @@ public abstract class AbstractModule implements IModule {
     if (getClassPathString().length() > 0) {
       result.append("Bundle-Classpath: \n").append(getClassPathString());
     }
-    if (getExportedPackagesString().length() > 0) {
-      result.append("Export-Package:\n").append(getExportedPackagesString());
+    String exportedPackages = getExportedPackagesString();
+    if (exportedPackages.length() > 0) {
+      result.append("Export-Package:\n").append(exportedPackages);
     }
 
     if (getDescriptorFile() != null) {
@@ -601,9 +587,10 @@ public abstract class AbstractModule implements IModule {
 
   private String getExportedPackagesString() {
     StringBuilder result = new StringBuilder();
-    List<String> packs = getExportedPackages();
+    List<String> exportedPackages = getExportedPackages();
+    List<String> packs = exportedPackages;
     for (int i = 0; i < packs.size(); i++) {
-      String s = getExportedPackages().get(i);
+      String s = exportedPackages.get(i);
       result.append("  ").append(s);
       if (i != packs.size() - 1) {
         result.append(",");
