@@ -18,14 +18,13 @@ public class JarFileEntryFile implements IFile {
   JarFileEntryFile(JarFileData jarFileData, String path) {
     myJarFileData = jarFileData;
     myEntryPath = path.replace(File.separator, "/");
+    if (myEntryPath.endsWith("/")) {
+      myEntryPath = myEntryPath.substring(0, myEntryPath.length() - 1);
+    }
   }
 
   public String getName() {
     String result = myEntryPath;
-
-    if (result.endsWith("/")) {
-      result = result.substring(0, result.length() - 2);
-    }
 
     int index = result.lastIndexOf('/');
     if (index != -1) {
