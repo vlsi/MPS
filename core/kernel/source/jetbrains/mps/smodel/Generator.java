@@ -115,36 +115,6 @@ public class Generator extends AbstractModule {
     return mySourceLanguage;
   }
 
-  public Language getTargetLanguage() {
-    String targetLanguageName = getTargetLanguageName();
-    if (targetLanguageName != null) {
-      Language language = MPSModuleRepository.getInstance().getLanguage(targetLanguageName, this);
-
-      if (language == null) {
-        language = MPSModuleRepository.getInstance().getLanguage(targetLanguageName, BootstrapLanguagesManager.getInstance());
-      }
-
-      if (language != null) {
-        return language;
-      }
-    }
-
-    LOG.error("Can't find target language for generator " + this + " : " + targetLanguageName);
-
-    return null;
-  }
-
-  /**
-   * @deprecated
-   */
-  public String getTargetLanguageName() {
-    jetbrains.mps.projectLanguage.structure.Language targetLanguage = myGeneratorDescriptor.getTargetLanguage();
-    if (targetLanguage != null) {
-      return targetLanguage.getName();
-    }
-    return null;
-  }
-
   public String toString() {
     return getAlias();
   }

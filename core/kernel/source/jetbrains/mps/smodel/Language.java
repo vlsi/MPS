@@ -405,18 +405,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return new ArrayList<Generator>(myGenerators);
   }
 
-  /**
-   * @deprecated
-   */
-  public Generator getGeneratorTo(String targetLanguageName) {
-    for (Generator generator : myGenerators) {
-      if (targetLanguageName.equals(generator.getTargetLanguageName())) {
-        return generator;
-      }
-    }
-    return null;
-  }
-
   public String getModuleUID() {
     return getNamespace();
   }

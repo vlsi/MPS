@@ -156,58 +156,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return null;
   }
 
-  public static List<Language> getPossibleTargetLanguages(List<SModel> sourceModels, IScope scope) {
-    List<Language> targetLanguages = new LinkedList<Language>();
-    for (SModel sourceModel : sourceModels) {
-      List<Generator> generators = getPossibleGenerators(sourceModel, scope);
-      for (Generator gen : generators) {
-        if (!targetLanguages.contains(gen.getTargetLanguage())) {
-          targetLanguages.add(gen.getTargetLanguage());
-        }
-      }
-    }
-    return targetLanguages;
-  }
-
-  public static List<Language> getPossibleSourceLanguages(List<SModel> sourceModels, IScope scope) {
-    List<Language> result = new ArrayList<Language>();
-    for (SModel sm : sourceModels) {
-      for (Generator g : getPossibleGenerators(sm, scope)) {
-        result.add(g.getSourceLanguage());
-      }
-    }
-    return result;
-  }
-
-  public static List<Generator> getPossibleGenerators(SModel sourceModel, IScope scope) {
-    List<Generator> result = new LinkedList<Generator>();
-    List<Language> languages = sourceModel.getLanguages(scope);
-    for (Language sourceLanguage : languages) {
-      List<Generator> generators = sourceLanguage.getGenerators();
-      for (Generator generator : generators) {
-        Language targetLanguage = generator.getTargetLanguage();
-        if (targetLanguage != null && !result.contains(generator)) {
-          if (targetLanguage == sourceLanguage) {
-            // only take self-generators with 'mapping configuration'.
-            // otherwise it is pure 'rewriting' generator - it's target language is not target of generation
-            if (!containsMappingConfiguration(generator)) continue;
-          }
-          result.add(generator);
-        }
-      }
-    }
-    return result;
-  }
-
-  private static boolean containsMappingConfiguration(Generator generator) {
-    for (SModelDescriptor templateModel : generator.getOwnTemplateModels()) {
-      if (templateModel.getSModel().allAdapters(MappingConfiguration.class).size() > 0) {
-        return true;
-      }
-    }
-    return false;
-  }
-
   protected Object clone() throws CloneNotSupportedException {
     return super.clone();
   }
