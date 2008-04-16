@@ -181,7 +181,7 @@ public class Solution extends AbstractModule {
   }
 
   protected void collectRuntimePackages(Set<String> result, String current) {
-    if (!"".equals(current)) {
+    if (!"".equals(current) && !getRuntimeClasspath().getAvailableClasses(current).isEmpty()) {
       result.add(current);
     }
     for (String subpack : getRuntimeClasspath().getSubpackages(current)) {
@@ -192,14 +192,23 @@ public class Solution extends AbstractModule {
   private void collectSourcePackages(Set<String> result, String pack, IFile current) {
     List<IFile> children = current.list();
     if (children == null) return;
+    boolean hasFiles = false;
+
     for (IFile child : children) {      
       if (child.getName().equals(".svn")) continue;
 
       if (child.isDirectory()) {
         String packName = pack.length() > 0 ? pack + "." + child.getName() : child.getName();
-        result.add(packName);
         collectSourcePackages(result, packName, child);
       }
+
+      if (child.isFile() && child.getName().endsWith(".java")) {
+        hasFiles = true;
+      }
+    }
+
+    if (hasFiles && pack.length() > 0) {
+      result.add(pack);
     }
   }
 
