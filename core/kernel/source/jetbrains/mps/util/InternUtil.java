@@ -21,8 +21,4 @@ public class InternUtil {
     internCache.cacheObject(result, result);
     return result;
   }
-
-  public static void clear() {
-    //internCache.clear();
-  }
 }

@@ -4,10 +4,15 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IReloadHandler;
+import jetbrains.mps.component.Dependency;
+import jetbrains.mps.component.IComponentLifecycle;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -16,10 +21,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public final class BehaviorManager {
+public final class BehaviorManager implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
-
-  private static BehaviorManager ourInstance = new BehaviorManager();
   private static Map<Class, Object> ourDefaultValue = new HashMap<Class, Object>();
 
   static {
@@ -34,7 +37,7 @@ public final class BehaviorManager {
   }
 
   public static BehaviorManager getInstance() {
-    return ourInstance;
+    return ApplicationComponents.getInstance().getComponent(BehaviorManager.class);
   }
 
   private Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
@@ -44,6 +47,21 @@ public final class BehaviorManager {
   private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
   private Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
 
+  private ClassLoaderManager myClassLoaderManager;
+
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
+  }
+
+  public void initComponent() {
+    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+      public void handleReload() {
+        clear();
+      }
+    });
+  }
+
   public void clear() {
     myMethods.clear();
     myConstructors.clear();
@@ -51,6 +69,7 @@ public final class BehaviorManager {
     myCanBeParentMethods.clear();
     myDefaultConceptNameMethods.clear();
   }
+
 
   public void initNode(SNode node) {
     if (node == null) {
