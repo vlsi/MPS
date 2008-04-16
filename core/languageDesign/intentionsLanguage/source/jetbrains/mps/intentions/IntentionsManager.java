@@ -12,12 +12,16 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.component.IComponentLifecycle;
+import jetbrains.mps.component.Dependency;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IReloadHandler;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class IntentionsManager implements IExternalizableComponent {
+public class IntentionsManager implements IExternalizableComponent, IComponentLifecycle {
   private static final String VERSION = "version";
   private static final String ID = "id";
   private static final String VERSION_NUMBER = "0.1";
@@ -34,12 +38,27 @@ public class IntentionsManager implements IExternalizableComponent {
   private HashMap<Class, Language> myIntentionsLanguages = new HashMap<Class, Language>();
   private boolean myCachesAreValid = false;
 
+  private ClassLoaderManager myClassLoaderManager;
+
   public static IntentionsManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(IntentionsManager.class);
   }
 
   public IntentionsManager() {
 
+  }
+
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
+  }
+
+  public void initComponent() {
+    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+      public void handleReload() {
+        refresh();
+      }
+    });
   }
 
   public Set<Intention> getAvailableIntentions(final SNode node, final EditorContext context) {
@@ -129,7 +148,7 @@ public class IntentionsManager implements IExternalizableComponent {
     return myIntentionsLanguages.get(intention.getClass());
   }
 
-  public void reload() {
+  public void refresh() {
     myIntentions.clear();
     myNodesByIntentions.clear();
     myIntentionsLanguages.clear();

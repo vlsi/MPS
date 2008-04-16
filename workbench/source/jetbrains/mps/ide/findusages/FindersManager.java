@@ -11,15 +11,21 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.component.IComponentLifecycle;
+import jetbrains.mps.component.Dependency;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IReloadHandler;
 import org.jdom.Element;
 
 import java.util.*;
 
-public class FindersManager implements IExternalizableComponent {
+public class FindersManager implements IExternalizableComponent, IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(FindersManager.class);
 
   private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
   private Map<GeneratedFinder, SNode> myNodesByFinder = new HashMap<GeneratedFinder, SNode>();
+
+  private ClassLoaderManager myClassLoaderManager;
 
   public static FindersManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(FindersManager.class);
@@ -27,6 +33,19 @@ public class FindersManager implements IExternalizableComponent {
 
   public FindersManager() {
 
+  }
+
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
+  }
+
+  public void initComponent() {
+    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+      public void handleReload() {
+        refresh();
+      }
+    });
   }
 
   public Set<GeneratedFinder> getAvailableFinders(final SNode node) {
@@ -70,7 +89,7 @@ public class FindersManager implements IExternalizableComponent {
     return myNodesByFinder.get(finder);
   }
 
-  public void reload() {
+  public void refresh() {
     myFinders.clear();
     myNodesByFinder.clear();
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {

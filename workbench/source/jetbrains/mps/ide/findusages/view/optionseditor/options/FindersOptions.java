@@ -25,14 +25,14 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
   private static final String CLASS_NAME = "class_name";
 
   @NotNull
-  protected List<String> myFindersClassNames = new ArrayList<String>();
+  private List<String> myFindersClassNames = new ArrayList<String>();
 
   public FindersOptions(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
   }
 
   public FindersOptions(String... findersClassNames) {
-    myFindersClassNames = Arrays.asList(findersClassNames);
+    myFindersClassNames = new ArrayList(Arrays.asList(findersClassNames));
   }
 
   public FindersOptions clone() {
