@@ -201,11 +201,7 @@ public class GenericRefactoring {
           null,
           operationContext,
           IGenerationType.FILES,
-          new IGenerationScript() {
-            public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
-              return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
-            }
-          },
+          IGenerationScript.DEFAULT,
           IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
           new DefaultMessageHandler(operationContext.getProject()),
           false);
