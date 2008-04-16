@@ -108,10 +108,9 @@ public class GenerateAllModelsInModuleAction extends MPSAction {
     IGenerationType generationType = generatorManager.getDefaultModuleGenerationType();
     generatorManager.generateModelsWithProgressWindow(
             params.getModels(),
-            params.getTarget(),
-            operationContext,
+      operationContext,
             generationType,
-            params.getScript(), false);
+      false);
   }
 
 }

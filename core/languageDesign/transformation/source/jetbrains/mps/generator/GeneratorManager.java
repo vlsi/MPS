@@ -198,10 +198,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public Future<Boolean> generateModelsWithProgressWindow(final List<SModel> sourceModels,
-                                                          final Language targetLanguage,
                                                           final IOperationContext invocationContext,
                                                           final IGenerationType generationType,
-                                                          final IGenerationScript script,
                                                           boolean closeOnExit) {
     return generateModelsWithProgressWindow(CollectionUtil.map(sourceModels, new Mapper<SModel, Pair<SModel, IOperationContext>>() {
       public Pair<SModel, IOperationContext> map(SModel sModel) {
@@ -212,10 +210,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       closeOnExit);
   }
 
-  public Future<Boolean> generateModelsWithProgressWindow(final List<Pair<SModel, IOperationContext>> sourceModels,
+  public Future<Boolean> generateModelsWithProgressWindow(final List<Pair<SModel, IOperationContext>> inputModels,
                                                           final IGenerationType generationType,
                                                           boolean closeOnExit) {
-    if (sourceModels.isEmpty()) {
+    if (inputModels.isEmpty()) {
       return myExecutorService.submit(new Callable<Boolean>() {
         public Boolean call() throws Exception {
           return true;
@@ -223,7 +221,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       });
     }
 
-    final IOperationContext invocationContext = sourceModels.get(0).o2;
+    final IOperationContext invocationContext = inputModels.get(0).o2;
     final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
     final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
 
@@ -260,7 +258,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         if (saveTransientModels) {
           invocationContext.getProject().getComponentSafe(GenerationTracer.class).startTracing();
         }
-        boolean result = generateModels(sourceModels, generationType, progress, messages, saveTransientModels);
+        boolean result = generateModels(inputModels, generationType, progress, messages, saveTransientModels);
         invocationContext.getProject().getComponentSafe(GenerationTracer.class).finishTracing();
         return result;
       }
