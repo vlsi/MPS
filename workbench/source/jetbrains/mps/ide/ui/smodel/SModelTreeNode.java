@@ -2,6 +2,7 @@ package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
@@ -40,9 +41,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private String myLabel;
   private boolean myInitialized = false;
   private boolean myInitializing = false;
-  private MyModelListener myModelListener = new MyModelListener();
-  private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener(); 
-
+  private MyCommandModelListener myModelListener = new MyCommandModelListener();
+  private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
+  private MyGenerationStatusListener myStatusListener = new MyGenerationStatusListener();
   private boolean myShowLongName;
   private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<SNodeGroupTreeNode>();
 
@@ -381,10 +382,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         add(group);
       }
       SModel model = getSModel();
-      if (!model.hasModelCommandListener(myModelListener)) {
-        model.addModelCommandListener(myModelListener);
-        model.addModelListener(mySimpleModelListener);
-      }
       Condition<SNode> condition = new Condition<SNode>() {
         public boolean met(SNode object) {
           return !(BaseAdapter.fromNode(object) instanceof AttributeConcept);
@@ -414,18 +411,37 @@ public class SModelTreeNode extends MPSTreeNodeEx {
             getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
   }
 
-  protected void onRemove() {
+  protected void onAdd() {
     if (getSModelDescriptor() != null) {
-      getSModelDescriptor().removeModelCommandListener(myModelListener);
-      getSModelDescriptor().removeModelListener(mySimpleModelListener);
+      addListeners();
     }
   }
 
-  protected void onAdd() {
-    if (myModelDescriptor != null && !myModelDescriptor.hasSModelCommandListener(myModelListener)) {
-      myModelDescriptor.addModelCommandListener(myModelListener);
-      getSModelDescriptor().addModelListener(mySimpleModelListener);
+  protected void onRemove() {
+    if (getSModelDescriptor() != null) {
+      removeListeners();
     }
+  }
+
+  private void addListeners() {
+    myModelDescriptor.addModelCommandListener(myModelListener);
+    getSModelDescriptor().addModelListener(mySimpleModelListener);
+    ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myStatusListener);
+  }
+
+  private void removeListeners() {
+    getSModelDescriptor().removeModelCommandListener(myModelListener);
+    getSModelDescriptor().removeModelListener(mySimpleModelListener);
+    ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
+  }
+
+  private void updateNodePresentation() {
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+      public void run() {
+        updatePresentation();
+        updateNodePresentationInTree();
+      }
+    });
   }
 
   private SNodeTreeNode findRootSNodeTreeNode(SNode node) {
@@ -463,19 +479,19 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     public void modelInitialized() {
       updateNodePresentation();
     }
+  }
 
-    private void updateNodePresentation() {
-      CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
-        public void run() {
-          updatePresentation();
-          updateNodePresentationInTree();
-        }
-      });
+  private class MyGenerationStatusListener implements ModelGenerationStatusListener {
+    public void generationStatusChanged(SModelDescriptor sm) {
+      if (sm == getSModelDescriptor()) {
+        System.out.println("update presentation for " + SModelTreeNode.this);
+        updateNodePresentation();
+      }
     }
   }
 
-  private class MyModelListener implements SModelCommandListener {
-    public MyModelListener() {
+  private class MyCommandModelListener implements SModelCommandListener {
+    public MyCommandModelListener() {
     }
 
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
@@ -801,5 +817,4 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       return myName;
     }
   }
-
 }
