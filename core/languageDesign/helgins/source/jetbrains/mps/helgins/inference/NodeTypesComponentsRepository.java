@@ -5,7 +5,8 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadListener;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -53,8 +54,8 @@ public class NodeTypesComponentsRepository implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new IReloadListener() {
-      public void handleReload() {
+    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+      public void onReload() {
         clear();
       }
     });

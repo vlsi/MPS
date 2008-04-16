@@ -6,7 +6,8 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadListener;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 
 import java.util.*;
 
@@ -51,8 +52,8 @@ public class CachesManager implements IComponentLifecycle {
       }
     });
 
-    myClassLoaderManager.addReloadHandler(new IReloadListener() {
-      public void handleReload() {
+    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+      public void onReload() {
         removeAllCaches();
       }
     });

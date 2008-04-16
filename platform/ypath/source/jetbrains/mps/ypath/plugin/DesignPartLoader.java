@@ -11,7 +11,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadListener;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SModel;
@@ -111,8 +112,8 @@ public class DesignPartLoader {
         classes.clear();
     }
     
-    private class ReloadHandler implements IReloadListener {
-        public void handleReload() {
+    private class ReloadHandler extends ReloadAdapter {
+        public void onReload() {
             clearCache();
         }
     }

@@ -14,7 +14,8 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadListener;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -53,8 +54,8 @@ public class IntentionsManager implements IExternalizableComponent, IComponentLi
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new IReloadListener() {
-      public void handleReload() {
+    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+      public void onReload() {
         refresh();
       }
     });

@@ -8,7 +8,8 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadListener;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 
 import java.util.*;
 
@@ -43,8 +44,8 @@ public class LanguagesKeymapManager implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new IReloadListener() {
-      public void handleReload() {
+    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+      public void onReload() {
         clearCaches();
       }
     });

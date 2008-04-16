@@ -4,7 +4,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadListener;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 
@@ -28,8 +29,8 @@ public class EditorsFinderManager implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    ClassLoaderManager.getInstance().addReloadHandler(new IReloadListener() {
-      public void handleReload() {
+    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+      public void onReload() {
         clear();
       }
     });

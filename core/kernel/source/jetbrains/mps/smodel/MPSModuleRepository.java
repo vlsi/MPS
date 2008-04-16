@@ -10,7 +10,8 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadListener;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.component.*;
 import jetbrains.mps.component.Dependency;
 import org.jetbrains.annotations.NotNull;
@@ -57,8 +58,8 @@ public class MPSModuleRepository implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new IReloadListener() {
-      public void handleReload() {
+    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+      public void onReload() {
         invalidateCaches();
       }
     });

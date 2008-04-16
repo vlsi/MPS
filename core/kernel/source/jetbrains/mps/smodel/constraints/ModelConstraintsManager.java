@@ -11,7 +11,8 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.IReloadListener;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
@@ -78,8 +79,8 @@ public class ModelConstraintsManager implements IComponentLifecycle {
       }
     });
 
-    myClassLoaderManager.addReloadHandler(new IReloadListener() {
-      public void handleReload() {
+    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+      public void onReload() {
         reloadAll();
       }
     });
