@@ -8,6 +8,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.action.Label;
 import jetbrains.mps.ide.actions.make.MakeProjectAction;
 import jetbrains.mps.ide.actions.make.CleanProjectAction;
+import jetbrains.mps.ide.actions.project.OptimizeProjectImportsAction;
 import jetbrains.mps.ide.actions.file.ProjectSettingsAction;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
@@ -17,7 +18,7 @@ public class ProjectActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.ProjectActions";
   public static final String LABEL_ID_projectNew = "projectNew";
 
-  public  ProjectActions_ActionGroup(MPSProject project) {
+  public ProjectActions_ActionGroup(MPSProject project) {
     super("", ProjectActions_ActionGroup.ID);
     this.setInternal(false);
     try {
@@ -25,6 +26,8 @@ public class ProjectActions_ActionGroup extends BaseActionGroup {
       this.addSeparator();
       this.add(new MakeProjectAction(), this);
       this.add(new CleanProjectAction(), this);
+      this.addSeparator();
+      this.add(new OptimizeProjectImportsAction(), this);
       this.addSeparator();
       this.add(new ProjectSettingsAction(), this);
     } catch (Throwable t) {
