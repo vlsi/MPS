@@ -68,10 +68,10 @@ public class Resolver {
   }
 
   private static List<SNode> getSmartReferenceTargets(
-          final ConceptDeclaration referenceNodeConcept,
-          LinkDeclaration smartReference,
-          final SNode parentNode,
-          final IOperationContext context) {
+    final ConceptDeclaration referenceNodeConcept,
+    LinkDeclaration smartReference,
+    final SNode parentNode,
+    final IOperationContext context) {
 
     // try to create referent-search-scope
     SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, context);
@@ -96,7 +96,7 @@ public class Resolver {
 
     SNode containingRoot = sNode.getContainingRoot();
     NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
-            createNodeTypesComponent(containingRoot);
+      createNodeTypesComponent(containingRoot);
     NodeTypesComponent temporaryComponent;
     try {
       temporaryComponent = nodeTypesComponent.clone();
@@ -112,58 +112,61 @@ public class Resolver {
     NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, temporaryComponent);
 
     try {
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
-            referenceNode, referenceNodeConcept, linkDeclaration, operationContext);
-    if (status.isError()) {
-      LOG.error("Couldn't create referent search scope : " + status.getMessage());
-      return false;
-    }
-    ISearchScope searchScope = status.getSearchScope();
-    List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
-      public boolean met(SNode node) {
-        return node.isInstanceOfConcept(referentConcept);
+      SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
+        referenceNode, referenceNodeConcept, linkDeclaration, operationContext);
+      if (status.isError()) {
+        LOG.error("Couldn't create referent search scope : " + status.getMessage());
+        return false;
       }
-    });
-    Condition<SNode> nameMatchesCondition = new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return reference.getResolveInfo().equals(object.getName());
-      }
-    };
-    List<SNode> filtered = CollectionUtil.filter(nodes, nameMatchesCondition);
-    if (!filtered.isEmpty()) {
-      reference.getSourceNode().setReferent(reference.getRole(), filtered.get(0));
-      return true;
-    }
-    if (referenceNode.getParent() == null) {
-      return false;
-    }
-    SNode parent = referenceNode.getParent();
-    LinkDeclaration parentLinkDeclaration = SModelUtil_new.findLinkDeclaration(parent.getConceptDeclarationAdapter(),
-            referenceNode.getRole_());
-    final AbstractConceptDeclaration possibleChildConceptDeclaration = parentLinkDeclaration.getTarget();
-
-    ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parent.getModel(), true, operationContext.getScope());
-    List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return SModelUtil_new.isAssignableConcept((ConceptDeclaration) BaseAdapter.fromNode(object), possibleChildConceptDeclaration);
-      }
-    });
-    for (SNode node : applicableConcepts) {
-      ConceptDeclaration applicableConcept = (ConceptDeclaration) BaseAdapter.fromNode(node);
-      LinkDeclaration smartReference = ReferenceConceptUtil.getCharacteristicReference(applicableConcept);
-      if (smartReference == null) continue;
-      List<SNode> smartReferenceTargets = getSmartReferenceTargets(applicableConcept, smartReference, parent, operationContext);
-      List<SNode> filteredRefTargets = CollectionUtil.filter(smartReferenceTargets, nameMatchesCondition);
-      if (!filteredRefTargets.isEmpty()) {
-        SNode target = filteredRefTargets.get(0);
-        SNode newNode = SModelUtil_new.instantiateConceptDeclaration(applicableConcept, referenceNode.getModel()).getNode();
-        newNode.setReferent(SModelUtil_new.getGenuineLinkRole(smartReference), target);
-        parent.replaceChild(referenceNode, newNode);
+      ISearchScope searchScope = status.getSearchScope();
+      List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
+        public boolean met(SNode node) {
+          return node.isInstanceOfConcept(referentConcept);
+        }
+      });
+      Condition<SNode> nameMatchesCondition = new Condition<SNode>() {
+        public boolean met(SNode object) {
+          return reference.getResolveInfo().equals(object.getName());
+        }
+      };
+      List<SNode> filtered = CollectionUtil.filter(nodes, nameMatchesCondition);
+      if (!filtered.isEmpty()) {
+        reference.getSourceNode().setReferent(reference.getRole(), filtered.get(0));
         return true;
       }
-    }
+      if (referenceNode.getParent() == null) {
+        return false;
+      }
+      SNode parent = referenceNode.getParent();
+      LinkDeclaration parentLinkDeclaration = SModelUtil_new.findLinkDeclaration(parent.getConceptDeclarationAdapter(),
+        referenceNode.getRole_());
+      if (parentLinkDeclaration == null) {
+        return false;
+      }
+      final AbstractConceptDeclaration possibleChildConceptDeclaration = parentLinkDeclaration.getTarget();
 
-    return false;
+      ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parent.getModel(), true, operationContext.getScope());
+      List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
+        public boolean met(SNode object) {
+          return SModelUtil_new.isAssignableConcept((ConceptDeclaration) BaseAdapter.fromNode(object), possibleChildConceptDeclaration);
+        }
+      });
+      for (SNode node : applicableConcepts) {
+        ConceptDeclaration applicableConcept = (ConceptDeclaration) BaseAdapter.fromNode(node);
+        LinkDeclaration smartReference = ReferenceConceptUtil.getCharacteristicReference(applicableConcept);
+        if (smartReference == null) continue;
+        List<SNode> smartReferenceTargets = getSmartReferenceTargets(applicableConcept, smartReference, parent, operationContext);
+        List<SNode> filteredRefTargets = CollectionUtil.filter(smartReferenceTargets, nameMatchesCondition);
+        if (!filteredRefTargets.isEmpty()) {
+          SNode target = filteredRefTargets.get(0);
+          SNode newNode = SModelUtil_new.instantiateConceptDeclaration(applicableConcept, referenceNode.getModel()).getNode();
+          newNode.setReferent(SModelUtil_new.getGenuineLinkRole(smartReference), target);
+          parent.replaceChild(referenceNode, newNode);
+          return true;
+        }
+      }
+
+      return false;
     } finally{
       NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, nodeTypesComponent);
     }
