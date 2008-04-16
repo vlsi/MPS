@@ -22,7 +22,6 @@ import java.util.ArrayList;
  */
 public class TemplateLanguageGenerationUtil {
 
-  // ???? remove it ?
   public static List<SModel> getGeneratorModels(Generator generator) {
     List<SModel> sourceModels = new ArrayList<SModel>();
     List<SModelDescriptor> ownModels = generator.getOwnModelDescriptors();
