@@ -622,11 +622,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       NodeTypesComponentsRepository.getInstance().clear();
 
       if (ideaPresent && generationType.requiresCompilationInIDEAfterGeneration()) {
-        //todo this is tmp anti memory leak hack:
-        progress.addText("invalidate caches");
-        ReloadUtils.invalidateCaches();
-
-        progress.addText("refresh models");
         SModelRepository.getInstance().refreshModels();
         System.gc();
       }
