@@ -1,9 +1,12 @@
 package jetbrains.mps.cache;
 
 import jetbrains.mps.component.IComponentLifecycle;
+import jetbrains.mps.component.Dependency;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IReloadHandler;
 
 import java.util.*;
 
@@ -13,12 +16,19 @@ import java.util.*;
  */
 public class CachesManager implements IComponentLifecycle {
 
+  private ClassLoaderManager myClassLoaderManager;
+
   private Map<Object, AbstractCache> myCaches = new HashMap<Object, AbstractCache>();
   private Map<AbstractCache, ModelEventRouter> myModelEventRouters = new HashMap<AbstractCache, ModelEventRouter>();
   private Map<Object, List<SModelDescriptor>> myDependsOnModels = new HashMap<Object, List<SModelDescriptor>>();
 
   public static CachesManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(CachesManager.class);
+  }
+
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
   }
 
   public void initComponent() {
@@ -38,6 +48,12 @@ public class CachesManager implements IComponentLifecycle {
         for (Object key : keysToRemove) {
           removeCache(key);
         }
+      }
+    });
+
+    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+      public void handleReload() {
+        removeAllCaches();
       }
     });
   }
@@ -85,7 +101,7 @@ public class CachesManager implements IComponentLifecycle {
     cache.cacheRemoved();
   }
 
-  public void removeAllCaches() {
+  private void removeAllCaches() {
     List keys = new ArrayList(myCaches.keySet());
     for (Object key : keys) {
       removeCache(key);
