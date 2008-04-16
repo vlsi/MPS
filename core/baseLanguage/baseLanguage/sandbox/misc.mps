@@ -334,6 +334,78 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208355747521">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208355747522">
+            <property name="name" value="serializable" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208355747523">
+              <link role="classifier" targetNodeId="124.~Serializable" resolveInfo="Serializable" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1208355762670">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1208355813724">
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208355845618">
+                  <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208355853760">
+                  <property name="value" value="1" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208355868214">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208355868215">
+            <property name="name" value="object" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208355879542">
+              <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1208355868217">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1208355868218">
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208355868219">
+                  <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208355868220">
+                  <property name="value" value="1" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208355872535">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208355872536">
+            <property name="name" value="cloneable" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208355888121">
+              <link role="classifier" targetNodeId="1.~Cloneable" resolveInfo="Cloneable" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1208355872538">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1208355872539">
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208355872540">
+                  <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208355872541">
+                  <property name="value" value="1" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208356537490">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1208356540039">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1208356545918">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1208356559047">
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1208356560315" />
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208356562910">
+                  <property name="value" value="1" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208356565271">
+                  <property name="value" value="2" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208356537491">
+              <link role="variableDeclaration" targetNodeId="1208355747522" resolveInfo="serializable" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
