@@ -22,6 +22,7 @@ import java.util.ArrayList;
  */
 public class TemplateLanguageGenerationUtil {
 
+  // ???? remove it ?
   public static List<SModel> getGeneratorModels(Generator generator) {
     List<SModel> sourceModels = new ArrayList<SModel>();
     List<SModelDescriptor> ownModels = generator.getOwnModelDescriptors();
@@ -34,42 +35,6 @@ public class TemplateLanguageGenerationUtil {
       }
     }
     return sourceModels;
-  }
-
-  public static GenerationStatus doGenerateTemplateModel(SModelDescriptor sourceModel, IGenerationScriptContext context) throws Exception {
-    Language baseLanguage = BootstrapLanguagesManager.getInstance().getBaseLanguage();
-
-    // step 1
-    final Language tLBase = BootstrapLanguagesManager.getInstance().getTLBase();
-    Generator generator = tLBase.getGeneratorTo(baseLanguage.getNamespace());
-    context.getOperationContext().getComponent(MessageView.class).add(new Message(MessageKind.INFORMATION, "Extract query methods"));
-    GenerationStatus status = context.doGenerate(sourceModel, baseLanguage, CollectionUtil.iterableAsSet(generator.getOwnMappings()));
-    if (status.isCanceled() || status.isError()) {
-      return status;
-    }
-
-    // step 2
-    SModelDescriptor intermediateModel = status.getOutputModel().getModelDescriptor();
-    context.getOperationContext().getComponent(MessageView.class).add(new Message(MessageKind.INFORMATION, "Generate utility class"));
-    status = context.doGenerate(intermediateModel, baseLanguage, null);
-    return status;
-  }
-
-  /**
-   * @deprecated
-   */
-  public static IGenerationScript getGenerationScript() {
-    return new MyGenerationScript();
-  }
-
-  private static class MyGenerationScript implements IGenerationScript {
-    public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
-      SModelDescriptor sourceModel = context.getSourceModelDescriptor();
-      if (TemplateLanguageUtil.isTemplatesModel(sourceModel)) {
-        return TemplateLanguageGenerationUtil.doGenerateTemplateModel(sourceModel, context);
-      }
-      return context.doGenerate(sourceModel, context.getTargetLanguage(), null);
-    }
   }
 
 }
