@@ -1453,5 +1453,10 @@
       <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration"/>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208351419967">
+    <property name="package" value="Tool"/>
+    <property name="name" value="ToolAccessExpression"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+  </node>
 </model>
 
