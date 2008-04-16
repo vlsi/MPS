@@ -250,7 +250,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
 
-  public IClassPathItem getRTJar() {    
+  public IClassPathItem getRTJar() {
     if (myRTJar == null) {
       if (! SystemInfo.isMac) {
         myRTJar = findBootstrapJarByName("rt.jar");
@@ -409,6 +409,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   public Class getClassFor(IModule module, String classFqName) {
     Bundle b = myOSGIBundles.get(module.getModuleUID());
+    if (b == null) {
+      LOG.error("Can't find a bundle for module " + module.getModuleUID());
+      return null;
+    }
+
     try {
       return b.loadClass(classFqName);
     } catch (ClassNotFoundException e) {
