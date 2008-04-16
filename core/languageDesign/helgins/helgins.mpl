@@ -8,7 +8,7 @@
     <model modelUID="jetbrains.mps.bootstrap.helgins.dependencies" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.bootstrap.helgins#1174411220599" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.bootstrap.helgins#1174411220599">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template" />
       </models>
@@ -39,7 +39,6 @@
     <dependency reexport="false">jetbrains.mps.bootstrap.actionsLanguage</dependency>
     <dependency reexport="false">jetbrains.mps.ide</dependency>
     <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage</dependency>
-    <dependency reexport="false">jetbrains.mpslite</dependency>
   </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>

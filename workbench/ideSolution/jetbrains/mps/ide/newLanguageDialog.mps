@@ -23,7 +23,6 @@
   <import index="9" modelUID="jetbrains.mps.ide.common@java_stub" version="-1" />
   <import index="10" modelUID="jetbrains.mps.ide.command@java_stub" version="-1" />
   <import index="11" modelUID="java.awt@java_stub" version="-1" />
-  <import index="12" modelUID="jetbrains.mpslite.common" version="-1" />
   <import index="13" modelUID="jetbrains.mps.ide.common" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.uiLanguage.components" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1203684597238">

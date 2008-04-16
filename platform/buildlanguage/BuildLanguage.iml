@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/mpsLayoutLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/mpsProjectLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/propertylanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/languages/taskLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.buildlanguage.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.mpsLayoutLanguage.mpsbuild/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />

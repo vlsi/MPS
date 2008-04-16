@@ -10,7 +10,7 @@
     <model modelUID="jetbrains.mps.plugins@java_stub" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.bootstrap.pluginLanguage#1203080439937" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.bootstrap.pluginLanguage#1203080439937">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template" />
       </models>
@@ -42,7 +42,6 @@
   </osgiOptions>
   <dependencies>
     <dependency reexport="false">jetbrains.mps.baseLanguage.strings</dependency>
-    <dependency reexport="false">jetbrains.mpslite</dependency>
     <dependency reexport="false">jetbrains.mps.ide</dependency>
     <dependency reexport="true">jetbrains.mps.baseLanguage.classifiers</dependency>
     <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
