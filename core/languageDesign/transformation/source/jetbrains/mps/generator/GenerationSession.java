@@ -115,46 +115,35 @@ public class GenerationSession implements IGenerationSession {
       throw new GenerationCanceledException();
     }
 
-    GenerationStatus status = script.doGenerate(new IGenerationScriptContext() {
-      public GenerationStatus doGenerate(@NotNull SModelDescriptor inputModel) throws Exception {
-        SModelDescriptor inputModel1 = inputModel;
-        GenerationStatus status1;
-        boolean wasErrors = false;
-        boolean wasWarnings = false;
-        int stepCount = 1;
-        while (true) {
-          addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
-          status1 = generateModel_internal(inputModel1.getSModel(), targetLanguage, generationStepController);
-          wasErrors |= status1.isError();
-          wasWarnings |= status1.hasWarnings();
-          if (status1.isCanceled()) {
-            break;
-          }
-
-          // need more steps?
-          if (!generationStepController.advanceStep()) {
-            // generation complete
-            break;
-          }
-          if (generationStepController.getCurrentMappings().isEmpty()) {
-            break;
-          }
-          if (status1.getOutputModel() == null) {
-            break;
-          }
-          inputModel1 = status1.getOutputModel().getModelDescriptor();
-        }
-
-        return new GenerationStatus(status1.getInputModel(), status1.getOutputModel(), status1.getTraceMap(), wasErrors, wasWarnings, status1.isCanceled());
+    GenerationStatus status;
+    boolean wasErrors = false;
+    boolean wasWarnings = false;
+    int stepCount = 1;
+    SModelDescriptor currInputModel = inputModel;
+    while (true) {
+      addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
+      status = generateModel_internal(currInputModel.getSModel(), targetLanguage, generationStepController);
+      wasErrors |= status.isError();
+      wasWarnings |= status.hasWarnings();
+      if (status.isCanceled()) {
+        break;
       }
 
-      public SModelDescriptor getSourceModelDescriptor() {
-        return inputModel;
+      // need more steps?
+      if (!generationStepController.advanceStep()) {
+        // generation complete
+        break;
       }
-    }); // script.doGenerate()
+      if (generationStepController.getCurrentMappings().isEmpty()) {
+        break;
+      }
+      if (status.getOutputModel() == null) {
+        break;
+      }
+      currInputModel = status.getOutputModel().getModelDescriptor();
+    }
 
-
-    return status;
+    return new GenerationStatus(status.getInputModel(), status.getOutputModel(), status.getTraceMap(), wasErrors, wasWarnings, status.isCanceled());
   }
 
 
