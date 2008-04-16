@@ -7,25 +7,39 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IReloadHandler;
+import jetbrains.mps.component.IComponentLifecycle;
+import jetbrains.mps.component.Dependency;
 
 import java.util.*;
 
-public class FindUsagesManager {
+public class FindUsagesManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(FindUsagesManager.class);
 
   public static FindUsagesManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(FindUsagesManager.class);
   }
 
+  private HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>>();
+  private ClassLoaderManager myClassLoaderManager;
+
   public FindUsagesManager() {
   }
 
-  //---
-  //caches
-  //---
-  private HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>>();
-  //--
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
+  }
 
+
+  public void initComponent() {
+    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+      public void handleReload() {
+        invalidateCaches();
+      }
+    });
+  }
 
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {
     LOG.assertInCommand();
@@ -175,7 +189,7 @@ public class FindUsagesManager {
     }
   }
 
-  public static void invalidateCaches() {
+  private static void invalidateCaches() {   
   }
 
   public static void registerStructureModel(SModelDescriptor descriptor) {

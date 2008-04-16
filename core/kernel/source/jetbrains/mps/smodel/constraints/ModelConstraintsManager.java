@@ -11,6 +11,7 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IReloadHandler;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
@@ -74,6 +75,12 @@ public class ModelConstraintsManager implements IComponentLifecycle {
 
       public void moduleInitialized(IModule module) {
 
+      }
+    });
+
+    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+      public void handleReload() {
+        reloadAll();
       }
     });
   }
@@ -329,7 +336,7 @@ public class ModelConstraintsManager implements IComponentLifecycle {
     myAddedLanguageNamespaces.remove(namespace);
   }
 
-  public void reloadAll() {
+  private void reloadAll() {
     myNodePropertyGettersMap.clear();
     myNodePropertySettersMap.clear();
     myNodeReferentSearchScopeProvidersMap.clear();

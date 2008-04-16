@@ -10,6 +10,10 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IReloadHandler;
+import jetbrains.mps.component.*;
+import jetbrains.mps.component.Dependency;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -20,7 +24,7 @@ import java.util.*;
  * User: Sergey Dmitriev
  * Date: Apr 11, 2005
  */
-public class MPSModuleRepository {
+public class MPSModuleRepository implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
   private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
@@ -30,6 +34,7 @@ public class MPSModuleRepository {
 
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
+  private ClassLoaderManager myClassLoaderManager;
 
   private boolean myDirtyFlag = false;
 
@@ -45,6 +50,19 @@ public class MPSModuleRepository {
 
   public MPSModuleRepository() {
     initializeExtensionsToModuleTypesMap();
+  }
+
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
+  }
+
+  public void initComponent() {
+    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+      public void handleReload() {
+        invalidateCaches();
+      }
+    });
   }
 
   private void initializeExtensionsToModuleTypesMap() {

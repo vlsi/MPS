@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapDeclaration;
 import jetbrains.mps.component.Dependency;
+import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -9,25 +10,26 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IReloadHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 10.06.2006
- * Time: 16:00:19
- * To change this template use File | Settings | File Templates.
- */
-public class LanguagesKeymapManager {
+public class LanguagesKeymapManager implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(LanguagesKeymapManager.class);
+
+  public static LanguagesKeymapManager getInstance() {
+    return ApplicationComponents.getInstance().getComponent(LanguagesKeymapManager.class);
+  }
 
   private Map<String, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<String, List<EditorCellKeyMap>>();
   private Set<Language> myLanguages = new HashSet<Language>();
   private Set<String> myRegisteredLanguages = new HashSet<String>();
   private List<Language> myLanguagesToRegister = new LinkedList<Language>();
   private MyModuleRepositoryListener myListener = new MyModuleRepositoryListener();
+
+  private ClassLoaderManager myClassLoaderManager;
 
 
   public LanguagesKeymapManager() {
@@ -39,11 +41,20 @@ public class LanguagesKeymapManager {
     repository.addModuleRepositoryListener(myListener);
   }
 
-  public static LanguagesKeymapManager getInstance() {
-    return ApplicationComponents.getInstance().getComponent(LanguagesKeymapManager.class);
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
   }
 
-  public void clearCaches() {
+  public void initComponent() {
+    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+      public void handleReload() {
+        clearCaches();
+      }
+    });
+  }
+
+  private void clearCaches() {
     myLanguagesToKeyMaps.clear();
     myRegisteredLanguages.clear();
     for (Language l : myLanguages) {
