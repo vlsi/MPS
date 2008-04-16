@@ -15,7 +15,7 @@ public enum TestState {
 
   private Icon icon;
 
- TestState(String iconName) {
+  TestState(String iconName) {
   }
 
   public Icon getIcon() {

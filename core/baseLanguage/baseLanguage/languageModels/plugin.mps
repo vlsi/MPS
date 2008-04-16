@@ -3,7 +3,7 @@
   <persistence version="1"/>
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.pluginLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="0"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
@@ -546,7 +546,6 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.Tool" id="1205860784192">
     <property name="name" value="Run"/>
     <property name="caption" value="Run"/>
-    <link role="componentClass" targetNodeId="1205860902244" resolveInfo="RunComponent"/>
     <node role="component" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208356235938">
       <link role="baseMethodDeclaration" targetNodeId="1205861021916" resolveInfo="RunComponent"/>
     </node>

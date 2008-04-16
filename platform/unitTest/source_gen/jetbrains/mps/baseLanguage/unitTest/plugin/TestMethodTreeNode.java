@@ -13,7 +13,7 @@ public class TestMethodTreeNode extends MPSTreeNode {
   private SNode testMethod;
   private TestState state = TestState.IN_PROGRESS;
 
-  public  TestMethodTreeNode(IOperationContext operationContext, SNode testMethod) {
+  public TestMethodTreeNode(IOperationContext operationContext, SNode testMethod) {
     super(operationContext);
     this.testMethod = testMethod;
     this.updatePresentation();

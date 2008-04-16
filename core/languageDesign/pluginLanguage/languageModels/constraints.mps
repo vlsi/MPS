@@ -18,12 +18,12 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts"/>
   <language namespace="jetbrains.mps.bootstrap.editorLanguage"/>
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage"/>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
   <maxImportIndex value="28"/>
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="4" modelUID="java.lang@java_stub" version="-1"/>
   <import index="5" modelUID="jetbrains.mps.util@java_stub" version="-1"/>
-  <import index="7" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="0"/>
+  <import index="7" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
   <import index="10" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="11" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1"/>

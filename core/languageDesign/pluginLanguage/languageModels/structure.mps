@@ -13,6 +13,16 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.SafeDeleteLink"/>
+      <moveMap/>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="componentClass" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.Tool"
+               featureKind="REFERENCE"/>
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage"/>
   <language namespace="jetbrains.mps.baseLanguage">
@@ -23,7 +33,7 @@
   </language>
   <language namespace="jetbrains.mps.core"/>
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1"/>
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
   <maxImportIndex value="17"/>
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0"/>
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1"/>
@@ -149,6 +159,13 @@
       <property name="role" value="toolShownBlock"/>
       <link role="target" targetNodeId="1204465182784" resolveInfo="ToolShownBlock"/>
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1208355633825">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="component"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"
           id="1204464921980">
       <property name="name" value="caption"/>
@@ -163,12 +180,6 @@
           id="1204464929231">
       <property name="name" value="icon"/>
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string"/>
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
-          id="1204464989905">
-      <property name="sourceCardinality" value="1"/>
-      <property name="role" value="componentClass"/>
-      <link role="target" targetNodeId="2.1068390468198" resolveInfo="ClassConcept"/>
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
           id="1204470637133">
