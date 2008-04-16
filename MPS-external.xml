@@ -47,13 +47,8 @@
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\configurations" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform" />
-    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\businessRules" />
-    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\dnq" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\panacea" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\springframework" />
-    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\web-query" />
-    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\webr" />
-    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\stateMachine" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\docs" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\META-INF" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\plugin" />
