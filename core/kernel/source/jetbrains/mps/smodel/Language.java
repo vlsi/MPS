@@ -308,9 +308,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     registerAspectListener();
 
-    ReloadUtils.rebuildAllEditors();
-    ReloadUtils.rebuildProjectPanes();
-
     MPSModuleRepository.getInstance().invalidateCaches();
 
     myEventTranslator.languageChanged();

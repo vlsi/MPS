@@ -55,11 +55,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   public void setDefaultEditorFont(Font newFont) {
     myFontFamily = newFont.getFamily();
     myFontSize = newFont.getSize();
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {
-        ReloadUtils.rebuildAllEditors(); 
-      }
-    });
+    ReloadUtils.reloadAll();
   }
 
   public boolean useBraces() {
@@ -392,7 +388,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
       CommandProcessor.instance().executeLightweightCommand(new Runnable() {
         public void run() {
-          ReloadUtils.rebuildAllEditors();
+          ReloadUtils.reloadAll();
         }
       });
     }
