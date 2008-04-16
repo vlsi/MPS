@@ -99,15 +99,14 @@ public class GenerationSession implements IGenerationSession {
     myCurrentContext = context;
   }
 
-  public GenerationStatus generateModel(final SModelDescriptor inputModel,
-                                        final Language targetLanguage,
-                                        final IGenerationScript script) throws Exception {
-    return generateModel(inputModel, targetLanguage, new GenerationStepController(inputModel.getSModel()));
+  public GenerationStatus generateModel(SModelDescriptor inputModel,
+                                        Language targetLanguage,
+                                        IGenerationScript script) throws Exception {
+    return generateModel(inputModel, new GenerationStepController(inputModel.getSModel()));
   }
 
-  public GenerationStatus generateModel(final SModelDescriptor inputModel,
-                                        final Language targetLanguage,
-                                        final AbstractGenerationStepController generationStepController) throws Exception {
+  public GenerationStatus generateModel(SModelDescriptor inputModel,
+                                        AbstractGenerationStepController generationStepController) throws Exception {
     Statistics.clearAll();
     if (!checkGenerationStep(generationStepController)) {
       throw new GenerationCanceledException();
@@ -120,7 +119,7 @@ public class GenerationSession implements IGenerationSession {
     SModelDescriptor currInputModel = inputModel;
     while (true) {
       addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
-      status = generateModel_internal(currInputModel.getSModel(), targetLanguage, generationStepController);
+      status = generateModel_internal(currInputModel.getSModel(), generationStepController);
       wasErrors |= status.isError();
       wasWarnings |= status.hasWarnings();
       if (status.isCanceled()) {
@@ -146,7 +145,6 @@ public class GenerationSession implements IGenerationSession {
 
 
   private GenerationStatus generateModel_internal(SModel inputModel,
-                                                  Language targetLanguage,
                                                   AbstractGenerationStepController generationStepController)
     throws ClassNotFoundException,
     NoSuchMethodException,
