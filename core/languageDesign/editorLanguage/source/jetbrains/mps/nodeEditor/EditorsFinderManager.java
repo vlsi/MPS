@@ -3,16 +3,37 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IReloadHandler;
+import jetbrains.mps.component.Dependency;
+import jetbrains.mps.component.IComponentLifecycle;
 
 import java.util.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-public class EditorsFinderManager {
+public class EditorsFinderManager implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(EditorsFinderManager.class);
 
   private static Map<String, IGeneralizingEntityEditorFinder> ourLanguageNamespacesToGEEditorFinders = new HashMap<String, IGeneralizingEntityEditorFinder>();  
   private static Map<String, Constructor> ourCachedEditors = new HashMap<String, Constructor>();
+
+  public EditorsFinderManager() {
+
+  }
+
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+
+  }
+
+  public void initComponent() {
+    ClassLoaderManager.getInstance().addReloadHandler(new IReloadHandler() {
+      public void handleReload() {
+        clear();
+      }
+    });
+  }
 
   public static INodeEditor loadEditor(EditorContext context, SNode node) {
     IGeneralizingEntityEditorFinder finder = getGEFinder(node);
@@ -67,7 +88,7 @@ public class EditorsFinderManager {
     ourLanguageNamespacesToGEEditorFinders.remove(languageNamespace);
   }
 
-  public static void clear() {
+  private static void clear() {
     ourCachedEditors.clear();
   }
 }
