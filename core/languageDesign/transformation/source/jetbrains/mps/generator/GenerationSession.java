@@ -19,7 +19,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.transformation.TLBase.structure.MappingScriptKind;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
 import java.lang.reflect.InvocationTargetException;
@@ -103,12 +102,11 @@ public class GenerationSession implements IGenerationSession {
   public GenerationStatus generateModel(final SModelDescriptor inputModel,
                                         final Language targetLanguage,
                                         final IGenerationScript script) throws Exception {
-    return generateModel(inputModel, targetLanguage, script, new GenerationStepController(inputModel.getSModel()));
+    return generateModel(inputModel, targetLanguage, new GenerationStepController(inputModel.getSModel()));
   }
 
   public GenerationStatus generateModel(final SModelDescriptor inputModel,
                                         final Language targetLanguage,
-                                        final IGenerationScript script,
                                         final AbstractGenerationStepController generationStepController) throws Exception {
     Statistics.clearAll();
     if (!checkGenerationStep(generationStepController)) {
@@ -161,7 +159,7 @@ public class GenerationSession implements IGenerationSession {
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + inputModel.getUID() + "\"");
 
     // -- replace context
-    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, inputModel, myInvocationContext, generationStepController, myCurrentContext);
+    GenerationSessionContext context = new GenerationSessionContext(inputModel, myInvocationContext, generationStepController, myCurrentContext);
 
     // auto-plan
     if (generationStepController.getCurrentMappings().isEmpty()) {

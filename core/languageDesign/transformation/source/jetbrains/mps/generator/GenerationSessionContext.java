@@ -28,7 +28,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private List<SModelDescriptor> myTemplateModels;
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
-  private Language myTargetLanguage;
   private AbstractGenerationStepController myGenerationStepController;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
@@ -44,14 +43,13 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private Set<IModule> myTransientModulesToKeep = new HashSet<IModule>();
 
 
-  public GenerationSessionContext(Language targetLanguage,
-                                  SModel inputModel,
-                                  IOperationContext invocationContext,
-                                  AbstractGenerationStepController generationStepController,
-                                  GenerationSessionContext prevContext) {
+  public GenerationSessionContext(
+    SModel inputModel,
+    IOperationContext invocationContext,
+    AbstractGenerationStepController generationStepController,
+    GenerationSessionContext prevContext) {
 
 
-    myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
 
     myGenerationStepController = generationStepController;
@@ -72,14 +70,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public void replaceInputModel(SModel inputModel) {
     myTransientObjects.clear();
-    if (myGenerationStepController != null) {
-      // auto-plan - nothing
-    } else {
-      // old
-      myGeneratorModules = getUsedGenerators(inputModel);
-      initTemplateModels();
-      myTransientModule.addGeneratorModules(myGeneratorModules);
-    }
   }
 
   private void initTemplateModels() {
@@ -160,60 +150,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public String toString() {
-    if (myTargetLanguage == null) {
-      // generation with auto-plan
-      return getClass().getName() + "-> " + "<auto-plan>" + "\ninvoked from: " + myInvocationContext;
-    }
-    return getClass().getName() + "-> " + myTargetLanguage.getNamespace() + "\ninvoked from: " + myInvocationContext;
-  }
-
-  private List<Generator> getUsedGenerators(SModel sourceModel) {
-    assert myGenerationStepController == null : "method can't be used with 'auto-plan' generation";
-
-    List<Generator> generators = new ArrayList<Generator>();
-
-    // from all languages used in source model ..
-    // we need our scope, because invocation scope might not contain languages
-    // that we reduced nodes to  
-    List<Language> sourceLanguages = sourceModel.getLanguages(getScope());
-    for (Language sourceLanguage : sourceLanguages) {
-      // don't try to apply templateLang generator to normal models
-      if (sourceLanguage == BootstrapLanguagesManager.getInstance().getTLBase()) {
-        if (!(TemplateLanguageUtil.isTemplatesModel(sourceModel))) {
-          continue;
-        }
-      }
-      List<Generator> sourceLanguageGenerators = sourceLanguage.getGenerators();
-      for (Generator sourceLanguageGenerator : sourceLanguageGenerators) {
-        // .. get generator to 'target language'
-        if (myTargetLanguage.getNamespace().equals(sourceLanguageGenerator.getTargetLanguageName())) {
-          if (!generators.contains(sourceLanguageGenerator)) {
-            generators.add(sourceLanguageGenerator);
-          }
-        }
-        // .. get 'rewriting' generator (to self)
-        if (sourceLanguage.getNamespace().equals(sourceLanguageGenerator.getTargetLanguageName())) {
-          if (!generators.contains(sourceLanguageGenerator)) {
-            generators.add(sourceLanguageGenerator);
-          }
-        }
-      }
-    }
-
-    // found any generators? add another one
-    if (!generators.isEmpty()) {
-      // the target language may have "reduction" generator
-      List<Generator> reductionGenerators = myTargetLanguage.getGenerators();
-      for (Generator generator : reductionGenerators) {
-        if (myTargetLanguage.getNamespace().equals(generator.getTargetLanguageName())) {
-          if (!generators.contains(generator)) {
-            generators.add(generator);
-          }
-        }
-      }
-    }
-
-    return generators;
+    return getClass().getName() + "-> " + "<auto-plan>" + "\ninvoked from: " + myInvocationContext;
   }
 
   public void putTransientObject(Object key, Object o) {
