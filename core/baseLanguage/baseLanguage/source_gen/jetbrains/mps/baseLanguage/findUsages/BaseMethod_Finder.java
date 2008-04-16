@@ -7,10 +7,14 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
+
 import java.util.List;
+
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+
 import java.util.ArrayList;
+
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import org.jetbrains.annotations.Nullable;
 
@@ -47,8 +51,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
     // traverse ancestors
     List<SearchResult> ancestors = new ArrayList<SearchResult>();
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-    } else
-    {
+    } else {
     }
     // traverse self
   }

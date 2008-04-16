@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.findusages.model.searchquery;
+package jetbrains.mps.ide.findusages.model;
 
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;

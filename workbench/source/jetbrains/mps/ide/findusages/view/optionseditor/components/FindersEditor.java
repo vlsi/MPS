@@ -2,7 +2,7 @@ package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
-import jetbrains.mps.ide.findusages.subsystem.FindersManager;
+import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.smodel.SNode;
 

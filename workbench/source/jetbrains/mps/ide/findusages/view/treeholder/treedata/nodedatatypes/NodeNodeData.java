@@ -26,16 +26,16 @@ public class NodeNodeData extends BaseNodeData {
   private SModelListener myModelListener = null;
   private boolean myIsRemoved = false;
 
-  public NodeNodeData() {
-
-  }
-
   public NodeNodeData(String creator, SNode node, boolean isResultNode) {
     super(creator, snodeRepresentation(node), nodeAdditionalInfo(node), false);
     myNodePointer = new SNodePointer(node);
     myIsResultNode = isResultNode;
 
     startListening();
+  }
+
+  public NodeNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+    read(element, project);
   }
 
   private void startListening() {
@@ -56,12 +56,6 @@ public class NodeNodeData extends BaseNodeData {
       }
     };
     node.getModel().addWeakSModelListener(myModelListener);
-  }
-
-  protected void finalize() throws Throwable {
-    super.finalize();
-    SModelDescriptor model = myNodePointer.getModel();
-    if (model != null && myModelListener != null) model.removeModelListener(myModelListener);
   }
 
   public SNode getNode() {

@@ -33,7 +33,11 @@ public abstract class BaseNodeData implements IExternalizeable {
 
   }
 
-  protected BaseNodeData(String creatorID, String caption, String additionalInfo, boolean isExpanded) {
+  public BaseNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+    read(element, project);
+  }
+
+  public BaseNodeData(String creatorID, String caption, String additionalInfo, boolean isExpanded) {
     myCreatorID = creatorID;
     myCaption = caption;
     myAdditionalInfo = additionalInfo;

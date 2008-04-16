@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes;
+package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
 import java.util.List;
 

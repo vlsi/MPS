@@ -7,13 +7,9 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 
-public abstract class BaseOptions<Result> implements IExternalizeable {
-  public BaseOptions() {
+public abstract class BaseOptions<Result> implements IExternalizeable, Cloneable {
+  protected BaseOptions() {
 
-  }
-
-  public BaseOptions(Element element, MPSProject project) throws CantLoadSomethingException {
-    read(element, project);
   }
 
   public abstract BaseOptions clone();

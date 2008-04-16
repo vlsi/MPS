@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.findusages.model.result;
+package jetbrains.mps.ide.findusages.model;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;

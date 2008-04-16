@@ -5,11 +5,9 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -20,8 +18,6 @@ import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Folder;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -101,7 +97,7 @@ public class GenericRefactoring {
   public Thread doExecuteInThread(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
     Thread result = new Thread() {
       public void run() {
-            doExecute(context, refactoringContext);
+        doExecute(context, refactoringContext);
       }
     };
     result.start();
@@ -115,7 +111,7 @@ public class GenericRefactoring {
   private void doExecute(final @NotNull ActionContext context, final @NotNull RefactoringContext refactoringContext) {
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-         SModelRepository.getInstance().saveAll();
+        SModelRepository.getInstance().saveAll();
       }
     });
 

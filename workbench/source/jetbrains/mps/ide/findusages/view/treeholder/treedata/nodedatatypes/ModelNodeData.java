@@ -20,15 +20,15 @@ public class ModelNodeData extends BaseNodeData {
   private SModelRepositoryListener myModelRepositoryListener = null;
   private boolean myIsRemoved = false;
 
-  public ModelNodeData() {
-
-  }
-
   public ModelNodeData(String creator, SModel model) {
     super(creator, model.getModelDescriptor().getLongName(), "", false);
     myModelUID = model.getModelDescriptor().getModelUID();
 
     startListening();
+  }
+
+  public ModelNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+    read(element, project);
   }
 
   private void startListening() {
@@ -42,14 +42,6 @@ public class ModelNodeData extends BaseNodeData {
     };
 
     SModelRepository.getInstance().addWeakModelRepositoryListener(myModelRepositoryListener);
-  }
-
-  protected void finalize() throws Throwable {
-    super.finalize();
-
-    if (myModelRepositoryListener != null) {
-      SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
-    }
   }
 
   public Icon getIcon() {

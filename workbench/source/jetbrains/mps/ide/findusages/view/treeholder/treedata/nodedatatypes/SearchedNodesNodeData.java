@@ -11,12 +11,12 @@ import javax.swing.Icon;
 public class SearchedNodesNodeData extends BaseNodeData {
   public static final String CATEGORY_NAME = "Searched nodes";
 
-  public SearchedNodesNodeData() {
-
-  }
-
   public SearchedNodesNodeData(String creator) {
     super(creator, CATEGORY_NAME, "", true);
+  }
+
+  public SearchedNodesNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+    read(element, project);
   }
 
   public Icon getIcon() {

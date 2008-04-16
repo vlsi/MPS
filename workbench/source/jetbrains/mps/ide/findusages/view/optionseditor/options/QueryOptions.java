@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -32,7 +32,7 @@ public class QueryOptions extends BaseOptions<SearchQuery> {
   public static final String DEFAULT_VALUE = "<default>";
 
   public QueryOptions() {
-
+    myScopeType = GLOBAL_SCOPE;
   }
 
   public QueryOptions(Element element, MPSProject project) {

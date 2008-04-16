@@ -1,8 +1,8 @@
-package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.functionalnodes;
+package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseNode;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseNode;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 
 public class UnionNode extends BaseNode {

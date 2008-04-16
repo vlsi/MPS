@@ -2,8 +2,6 @@ package jetbrains.mps.plugin;
 
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IDEProjectFrame;
@@ -12,7 +10,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
@@ -84,7 +82,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
       public void run() {
         final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
         for (final SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
-          if (!namespace.equals(descriptor.getModelUID().getLongName())) continue;          
+          if (!namespace.equals(descriptor.getModelUID().getLongName())) continue;
           if (!descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
             applicableModelDescriptors.add(descriptor.getSModel());
           }

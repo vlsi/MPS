@@ -14,7 +14,8 @@ public class ViewOptions extends BaseOptions<ViewOptions> {
   public boolean myNewTab;
 
   public ViewOptions() {
-
+    myShowOneResult = true;
+    myNewTab = false;
   }
 
   public ViewOptions(Element element, MPSProject project) {

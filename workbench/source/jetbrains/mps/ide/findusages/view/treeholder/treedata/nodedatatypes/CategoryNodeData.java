@@ -13,13 +13,13 @@ public class CategoryNodeData extends BaseNodeData {
   private static final String CATEGORY = "category";
   private String myCategory = "";
 
-  public CategoryNodeData() {
-
-  }
-
   public CategoryNodeData(String creator, String category) {
     super(creator, "<b>" + category + "</b>", "", true);
     myCategory = category;
+  }
+
+  public CategoryNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+    read(element, project);
   }
 
   public Icon getIcon() {

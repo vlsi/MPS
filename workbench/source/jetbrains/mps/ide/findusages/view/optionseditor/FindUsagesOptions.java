@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.lang.reflect.InvocationTargetException;
 
 public class FindUsagesOptions implements Cloneable {
   private static Logger LOG = Logger.getLogger(FindUsagesOptions.class);
@@ -50,17 +51,29 @@ public class FindUsagesOptions implements Cloneable {
     for (Element optionXML : (List<Element>) element.getChildren(OPTION)) {
       String className = optionXML.getAttribute(CLASS_NAME).getValue();
       try {
-        Object o = Class.forName(className).newInstance();
-        ((BaseOptions) o).read(optionXML, project);
+        Object o = Class.forName(className).getConstructor(Element.class, MPSProject.class).newInstance(optionXML, project);
         myOptions.put(o.getClass(), (BaseOptions) o);
+      } catch (InvocationTargetException e) {
+        if (e.getCause() instanceof CantLoadSomethingException) {
+          throw (CantLoadSomethingException) e.getCause();
+        } else {
+          throwLoadException(e, className);
+        }
       } catch (ClassNotFoundException e) {
-        LOG.error("Couldn't instantiate option with class name " + className, e);
+        throwLoadException(e, className);
       } catch (IllegalAccessException e) {
-        e.printStackTrace();
+        throwLoadException(e, className);
       } catch (InstantiationException e) {
-        e.printStackTrace();
+        throwLoadException(e, className);
+      } catch (NoSuchMethodException e) {
+        throwLoadException(e, className);
       }
     }
+  }
+
+  private void throwLoadException(Throwable t, String className) throws CantLoadSomethingException {
+    LOG.warning("can't instantiate options " + className, t);
+    throw new CantLoadSomethingException("can't instantiate options " + className, t);
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {

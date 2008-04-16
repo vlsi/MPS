@@ -3,9 +3,9 @@ package jetbrains.mps.ide.todoview;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
-import jetbrains.mps.ide.findusages.model.result.SearchResult;
-import jetbrains.mps.ide.findusages.model.result.SearchResults;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsageView;
 import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.path.IPathProvider;
@@ -102,7 +102,7 @@ public class TodoViewer extends DefaultTool {
   }
 
   public static class MyIPathProvider implements IPathProvider {
-    public List<PathItem> getPathForNode(SearchResult result) {
+    public List<PathItem> getPathForSearchResult(SearchResult result) {
       List<PathItem> res = new ArrayList<PathItem>();
       //res.add(new PathItem("<font color=blue>" + result.getNode().getProperty("value") + "</font>", result.getNode(), true, ""));
       return res;

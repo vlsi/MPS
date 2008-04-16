@@ -12,14 +12,13 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.Mapper;
 import org.jdom.Element;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.lang.reflect.InvocationTargetException;
 
 public class DataNode implements IExternalizeable, IChangeListener {
   private static Logger LOG = Logger.getLogger(DataNode.class);
@@ -95,12 +94,23 @@ public class DataNode implements IExternalizeable, IChangeListener {
     Element dataXML = element.getChild(DATA);
     String dataClass = dataXML.getAttributeValue(DATA_CLASS);
     try {
-      myData = (BaseNodeData) Class.forName(dataClass).newInstance();
-    } catch (Throwable t) {
-      LOG.warning("can't instantiate node", t);
-      throw new CantLoadSomethingException("can't instantiate node", t);
+      Class<?> cls = Class.forName(dataClass);
+      myData = (BaseNodeData) cls.getConstructor(Element.class, MPSProject.class).newInstance(dataXML, project);
+    } catch (InvocationTargetException e) {
+      if (e.getCause() instanceof CantLoadSomethingException) {
+        throw (CantLoadSomethingException) e.getCause();
+      } else {
+        throwLoadException(e);
+      }
+    } catch (ClassNotFoundException e) {
+      throwLoadException(e);
+    } catch (NoSuchMethodException e) {
+      throwLoadException(e);
+    } catch (IllegalAccessException e) {
+      throwLoadException(e);
+    } catch (InstantiationException e) {
+      throwLoadException(e);
     }
-    myData.read(dataXML, project);
     myData.addChangeListener(this);
 
     myChildren.clear();
@@ -110,6 +120,11 @@ public class DataNode implements IExternalizeable, IChangeListener {
       child.addChangeListener(this);
       myChildren.add(child);
     }
+  }
+
+  private void throwLoadException(Throwable t) throws CantLoadSomethingException {
+    LOG.warning("can't instantiate node", t);
+    throw new CantLoadSomethingException("can't instantiate node", t);
   }
 
   public List<SModelDescriptor> getIncludedModels() {

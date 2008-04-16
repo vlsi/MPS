@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.findusages.subsystem;
+package jetbrains.mps.ide.findusages;
 
 import jetbrains.mps.bootstrap.findUsagesLanguage.constraints.FinderDeclaration_Behavior;
 import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;

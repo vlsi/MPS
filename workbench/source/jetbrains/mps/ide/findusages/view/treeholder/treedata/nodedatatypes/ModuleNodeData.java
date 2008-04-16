@@ -21,10 +21,6 @@ public class ModuleNodeData extends BaseNodeData {
   private boolean myIsRemoved = false;
   public String myModuleUID = "";
 
-  public ModuleNodeData() {
-
-  }
-
   public ModuleNodeData(String creator, String moduleUID) {
     super(creator, moduleUID, "", true);
     myModuleUID = moduleUID;
@@ -32,11 +28,8 @@ public class ModuleNodeData extends BaseNodeData {
     startListening();
   }
 
-  protected void finalize() throws Throwable {
-    super.finalize();
-    if (myRepositoryListener != null) {
-      MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
-    }
+  public ModuleNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+    read(element, project);
   }
 
   private void startListening() {
