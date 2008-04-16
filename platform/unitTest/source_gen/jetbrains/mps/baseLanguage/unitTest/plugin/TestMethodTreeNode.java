@@ -6,14 +6,13 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class TestMethodTreeNode extends MPSTreeNode {
 
   private SNode testMethod;
   private TestState state = TestState.IN_PROGRESS;
 
-  public TestMethodTreeNode(IOperationContext operationContext, SNode testMethod) {
+  public  TestMethodTreeNode(IOperationContext operationContext, SNode testMethod) {
     super(operationContext);
     this.testMethod = testMethod;
     this.updatePresentation();
@@ -23,7 +22,6 @@ public class TestMethodTreeNode extends MPSTreeNode {
     this.setIcon(this.state.getIcon());
     this.setNodeIdentifier(this.testMethod.getId());
     this.setText(SPropertyOperations.getString(this.testMethod, "name"));
-    this.setAdditionalText(SNodeOperations.getModel(this.testMethod).getLongName());
   }
 
   public void setState(TestState state) {

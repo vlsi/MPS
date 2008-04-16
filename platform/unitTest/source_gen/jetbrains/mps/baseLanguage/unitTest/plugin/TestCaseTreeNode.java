@@ -14,7 +14,7 @@ public class TestCaseTreeNode extends MPSTreeNode {
   private SNode testCase;
   private TestState state;
 
-  public TestCaseTreeNode(IOperationContext operationContext, SNode testCase) {
+  public  TestCaseTreeNode(IOperationContext operationContext, SNode testCase) {
     super(operationContext);
     this.testCase = testCase;
     this.updatePresentation();
