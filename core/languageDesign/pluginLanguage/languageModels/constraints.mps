@@ -2499,5 +2499,81 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1208355170183">
+    <property name="package" value="Actions.Groups.GroupContents"/>
+    <link role="concept" targetNodeId="7.1207145475354" resolveInfo="AddElementStatement"/>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration"
+          id="1208355170184">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208355170185"/>
+    </node>
+    <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild"
+          id="1208355172827">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208355172828">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208355177439">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1208355177440">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1208355177441"/>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208355177442">
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation"
+                    id="1208355177443">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion"
+                      id="1208355177444"/>
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList"
+                      id="1208355177445">
+                  <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference"
+                        id="1208355177446">
+                    <link role="concept" targetNodeId="7.1207145360364" resolveInfo="BuildGroupBlock"/>
+                  </node>
+                  <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference"
+                        id="1208355177447">
+                    <link role="concept" targetNodeId="7.1207489456631" resolveInfo="DoUpdateGroupBlock"/>
+                  </node>
+                </node>
+              </node>
+              <node role="operand"
+                    type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode"
+                    id="1208355182199"/>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1208355211083">
+    <property name="package" value="Shared"/>
+    <link role="concept" targetNodeId="7.1206106212999" resolveInfo="Log"/>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration"
+          id="1208355211084">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208355211085"/>
+    </node>
+    <node role="canBeAChild" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild"
+          id="1208355213133">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208355213134">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208355215229">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1208355215230">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1208355215231"/>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208355215232">
+              <node role="operand"
+                    type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode"
+                    id="1208355231910"/>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation"
+                    id="1208355215234">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList"
+                      id="1208355215235">
+                  <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference"
+                        id="1208355215236">
+                    <link role="concept" targetNodeId="7.1203071646776" resolveInfo="ActionDeclaration"/>
+                  </node>
+                  <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference"
+                        id="1208355215237">
+                    <link role="concept" targetNodeId="7.1206110063106" resolveInfo="CustomPluginDeclaration"/>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
