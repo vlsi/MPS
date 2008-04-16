@@ -547,6 +547,9 @@
     <property name="name" value="Run"/>
     <property name="caption" value="Run"/>
     <link role="componentClass" targetNodeId="1205860902244" resolveInfo="RunComponent"/>
+    <node role="component" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208356235938">
+      <link role="baseMethodDeclaration" targetNodeId="1205861021916" resolveInfo="RunComponent"/>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1205860902244">
     <property name="name" value="RunComponent"/>
