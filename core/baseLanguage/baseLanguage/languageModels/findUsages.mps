@@ -18,18 +18,17 @@
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.findUsages@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.ide.findusages.model.searchquery@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.ide.findusages.model.result@java_stub" version="-1" />
   <import index="7" modelUID="java.util@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="9" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <import index="10" modelUID="java.lang@java_stub" version="-1" />
   <import index="11" modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+  <import index="14" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1200309609796">
     <property name="name" value="OverridingMethods" />
     <property name="description" value="Overriding Methods" />
@@ -2805,14 +2804,14 @@
             <property name="name" value="ancestors" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204900315116">
               <link role="classifier" targetNodeId="7.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204900318586">
-                <link role="classifier" targetNodeId="6.~SearchResult" resolveInfo="SearchResult" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208349591304">
+                <link role="classifier" targetNodeId="14.~SearchResult" resolveInfo="SearchResult" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1204900790418">
               <link role="baseMethodDeclaration" targetNodeId="7.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204900822239">
-                <link role="classifier" targetNodeId="6.~SearchResult" resolveInfo="SearchResult" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208349593133">
+                <link role="classifier" targetNodeId="14.~SearchResult" resolveInfo="SearchResult" />
               </node>
             </node>
           </node>
