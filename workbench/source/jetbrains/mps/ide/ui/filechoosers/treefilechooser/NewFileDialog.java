@@ -49,8 +49,12 @@ public class NewFileDialog extends BaseDialog {
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
-    int w = (int) Math.round(myTextArea.getPreferredSize().getWidth());
-    int h = (int) Math.round(myTextArea.getPreferredSize().getHeight());
+    int w = 200;
+    int h = 30;
+    if (myTextArea != null) {
+      w = (int) Math.round(myTextArea.getPreferredSize().getWidth());
+      h = (int) Math.round(myTextArea.getPreferredSize().getHeight());
+    }
     return new DialogDimensions(300, 300, w + 50, h + 90);
   }
 
