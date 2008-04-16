@@ -803,10 +803,6 @@
       <property name="value" value="instance"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
-          id="1206194696130">
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204477594372">
     <property name="package" value="ProjectPane.Methods"/>
@@ -957,10 +953,6 @@
           id="1204478405232">
       <property name="value" value="instance"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
-          id="1206194716352">
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204903488751">
@@ -1452,11 +1444,6 @@
       <property name="sourceCardinality" value="1"/>
       <link role="target" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration"/>
     </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208351419967">
-    <property name="package" value="Tool"/>
-    <property name="name" value="ToolAccessExpression"/>
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
   </node>
 </model>
 
