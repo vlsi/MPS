@@ -14,7 +14,7 @@ import java.util.Iterator;
  * Igor Alshannikov
  * Jun 2, 2006
  */
-public class BaseLanguageUtil_new {
+public class BaseLanguageUtil {
   public static boolean isAssignable(Classifier fromClassifier, String toClassifierFqName, IScope scope) {
     Classifier toClassifier = SModelUtil_new.findNodeByFQName(toClassifierFqName, Classifier.class, scope);
     return isAssignable(fromClassifier, toClassifier);

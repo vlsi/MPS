@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor.cellProviders;
 
-import jetbrains.mps.baseLanguage.BaseLanguageUtil_new;
+import jetbrains.mps.baseLanguage.BaseLanguageUtil;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
@@ -259,7 +259,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           availableIds.add(name.substring(queryMetodPrefix.length()));
         }
       }
-      queriesClass = BaseLanguageUtil_new.getSuperclass(queriesClass);
+      queriesClass = BaseLanguageUtil.getSuperclass(queriesClass);
     }
     return availableIds;
   }
