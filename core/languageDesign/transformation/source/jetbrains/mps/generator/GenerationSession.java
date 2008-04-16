@@ -170,7 +170,7 @@ public class GenerationSession implements IGenerationSession {
     ITemplateGenerator generator = new TemplateGenerator(context, myProgressMonitor);
     GenerationStatus status;
     try {
-      SModel outputModel = generateModel(inputModel, generator);
+      SModel outputModel = generateModel_stepIntern(inputModel, generator);
       boolean wasErrors = generator.getErrorCount() > 0;
       boolean wasWarnigns = generator.getWarningCount() > 0;
       status = new GenerationStatus(inputModel, outputModel, context.getTraceMap(), wasErrors, wasWarnigns, false);
@@ -198,18 +198,8 @@ public class GenerationSession implements IGenerationSession {
     return status;
   }
 
-  private SModel generateModel(SModel inputModel, ITemplateGenerator generator) {
+  private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) {
     GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
-    if (generationContext.getGenerationStepController() == null) {
-      // old
-      return generateModel(inputModel, generator, generationContext);
-    }
-
-    // auto-plan
-    return generateModel(inputModel, generator, generationContext);
-  }
-
-  private SModel generateModel(SModel inputModel, ITemplateGenerator generator, GenerationSessionContext generationContext) {
     IModule module = generationContext.getModule();
     String modelsLongName = inputModel.getLongName();
     SModel currentInputModel = inputModel;
