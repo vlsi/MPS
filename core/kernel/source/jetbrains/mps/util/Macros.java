@@ -19,6 +19,12 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Macros {
+  public static final String MPS_HOME = "${mps_home}";
+  public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
+  public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
+  public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
+  public static final String PROJECT = "${project}";
+
   public static Macros languageDescriptor() {
     return new LanguageDescriptorMacros();
   }
@@ -70,8 +76,8 @@ public abstract class Macros {
 
   protected String expandPath_internal(String path, IFile anchorFile) {
     IFile result = null;
-    if (path.startsWith("${mps_home}")) {
-      String relativePath = removePrefix(path, "${mps_home}");
+    if (path.startsWith(MPS_HOME)) {
+      String relativePath = removePrefix(path, MPS_HOME);
       result = FileSystem.getFile(PathManager.getHomePath()).child(relativePath);
     } else {
       Map<String, String> pathMacros = PathVariableManager.getInstance().getPathVariables();
@@ -95,7 +101,7 @@ public abstract class Macros {
     String fileName;
     if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
       String relationalPath = shrink(absolutePath, PathManager.getHomePath());
-      fileName = "${mps_home}" + relationalPath;
+      fileName = MPS_HOME + relationalPath;
     } else {
       Map<String, String> pathMacros = PathVariableManager.getInstance().getPathVariables();
       for (String macro : pathMacros.keySet()){
@@ -118,9 +124,10 @@ public abstract class Macros {
   }
 
   private static class LanguageDescriptorMacros extends Macros {
+
     protected String expandPath_internal(String path, IFile languageDescriptor) {
-      if (path.startsWith("${language_descriptor}")) {
-        String modelRelativePath = removePrefix(path, "${language_descriptor}");
+      if (path.startsWith(LANGUAGE_DESCRIPTOR)) {
+        String modelRelativePath = removePrefix(path, LANGUAGE_DESCRIPTOR);
         return languageDescriptor.getParent().child(modelRelativePath).getCanonicalPath();
       }
       return super.expandPath_internal(path, languageDescriptor);
@@ -130,7 +137,7 @@ public abstract class Macros {
       String prefix = languageDescriptor.getParent().getCanonicalPath();
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
-        return "${language_descriptor}" + relationalPath;
+        return LANGUAGE_DESCRIPTOR + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, languageDescriptor);
     }
@@ -138,8 +145,8 @@ public abstract class Macros {
 
   private static class SolutionDescriptorMacros extends Macros {
     protected String expandPath_internal(String path, IFile solutionDescriptor) {
-      if (path.startsWith("${solution_descriptor}")) {
-        String modelRelativePath = removePrefix(path, "${solution_descriptor}");
+      if (path.startsWith(SOLUTION_DESCRIPTOR)) {
+        String modelRelativePath = removePrefix(path, SOLUTION_DESCRIPTOR);
         return solutionDescriptor.getParent().child(modelRelativePath).getCanonicalPath();
       }
       return super.expandPath_internal(path, solutionDescriptor);
@@ -149,7 +156,7 @@ public abstract class Macros {
       String prefix = solutionDescriptor.getParent().getCanonicalPath();
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
-        return "${solution_descriptor}" + relationalPath;
+        return SOLUTION_DESCRIPTOR + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, solutionDescriptor);
     }
@@ -157,8 +164,8 @@ public abstract class Macros {
 
   private static class DevKitDescriptorMacros extends Macros {
     protected String expandPath_internal(String path, IFile devkitDescriptor) {
-      if (path.startsWith("${devkit_descriptor}")) {
-        String modelRelativePath = removePrefix(path, "${devkit_descriptor}");
+      if (path.startsWith(DEVKIT_DESCRIPTOR)) {
+        String modelRelativePath = removePrefix(path, DEVKIT_DESCRIPTOR);
         return devkitDescriptor.getParent().child(modelRelativePath).getCanonicalPath();
       }
       return super.expandPath_internal(path, devkitDescriptor);
@@ -168,7 +175,7 @@ public abstract class Macros {
       String prefix = devkitDescriptor.getParent().getCanonicalPath();
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
-        return "${devkit_descriptor}" + relationalPath;
+        return DEVKIT_DESCRIPTOR + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, devkitDescriptor);
     }
@@ -176,8 +183,8 @@ public abstract class Macros {
 
   private static class ProjectDescriptorMacros extends Macros {
     protected String expandPath_internal(String path, IFile projectDescriptor) {
-      if (path.startsWith("${project}")) {
-        String modelRelativePath = removePrefix(path, "${project}");
+      if (path.startsWith(PROJECT)) {
+        String modelRelativePath = removePrefix(path, PROJECT);
         return projectDescriptor.getParent().child(modelRelativePath).getCanonicalPath();
       }
       return super.expandPath_internal(path, projectDescriptor);
@@ -194,7 +201,7 @@ public abstract class Macros {
         
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
-        return "${project}" + relationalPath;
+        return PROJECT + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, projectDescriptor);
     }
