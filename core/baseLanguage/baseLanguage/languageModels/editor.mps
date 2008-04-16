@@ -9479,6 +9479,10 @@
         <property name="modifiers" value="alt" />
         <property name="keycode" value="VK_INSERT" />
       </node>
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1208286167026">
+        <property name="modifiers" value="alt" />
+        <property name="keycode" value="VK_HELP" />
+      </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_ExecuteFunction" id="1184160621379">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184160621380">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197551596589">
@@ -9611,6 +9615,10 @@
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1184162280853">
         <property name="modifiers" value="alt" />
         <property name="keycode" value="VK_INSERT" />
+      </node>
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1208286178247">
+        <property name="modifiers" value="alt" />
+        <property name="keycode" value="VK_HELP" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_ExecuteFunction" id="1184162280854">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184162280855">

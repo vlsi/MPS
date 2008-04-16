@@ -21,8 +21,10 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     EditorCellKeyMapAction action;
     action = new FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action0();
     this.putAction("alt", "VK_INSERT", action);
+    this.putAction("alt", "VK_HELP", action);
     action = new FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action1();
     this.putAction("alt", "VK_INSERT", action);
+    this.putAction("alt", "VK_HELP", action);
   }
   public static class FieldDeclaration_keyMap_Action0 extends EditorCellKeyMapAction {
 
