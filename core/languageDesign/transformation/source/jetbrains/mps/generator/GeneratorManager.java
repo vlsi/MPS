@@ -628,7 +628,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.finishAnyway();
 
       //we need it to update genearation status
-      ReloadUtils.rebuildProjectPanes();
+//      ReloadUtils.rebuildProjectPanes();
     }
 
     return true;

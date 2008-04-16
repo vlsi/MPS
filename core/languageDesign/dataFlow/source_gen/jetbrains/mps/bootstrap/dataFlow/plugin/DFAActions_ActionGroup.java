@@ -14,7 +14,7 @@ public class DFAActions_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(DFAActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.bootstrap.dataFlow.plugin.DFAActions";
 
-  public DFAActions_ActionGroup(MPSProject project) {
+  public  DFAActions_ActionGroup(MPSProject project) {
     super("", DFAActions_ActionGroup.ID);
     this.setInternal(false);
     try {

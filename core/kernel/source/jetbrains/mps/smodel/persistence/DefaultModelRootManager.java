@@ -64,7 +64,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
                   NodeReadAccessCaster.unblockEvents();
                 }
 
-                ReloadUtils.rebuildProjectPanes();
+                ReloadUtils.reloadAll();
                 modelDescriptor.reloadFromDisk();
               }
             });
