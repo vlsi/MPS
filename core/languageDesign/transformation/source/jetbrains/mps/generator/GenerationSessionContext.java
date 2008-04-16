@@ -35,7 +35,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   // object survive between transient models but not between generation steps 
   private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
 
-  private LinkedHashSet<MappingConfiguration> myCustomMappingConfigurations;
   private LinkedHashSet<MappingConfiguration> myMappingConfigurations;
 
   // these objects survive through all steps of generation
@@ -48,29 +47,17 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   public GenerationSessionContext(Language targetLanguage,
                                   SModel inputModel,
                                   IOperationContext invocationContext,
-                                  Set<MappingConfiguration> configs,
                                   AbstractGenerationStepController generationStepController,
                                   GenerationSessionContext prevContext) {
 
 
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
-    myCustomMappingConfigurations = null;
 
-    if (targetLanguage == null) {
-      // auto-plan
-      myGenerationStepController = generationStepController;
-      myGeneratorModules = myGenerationStepController.getGenerators();
-      myTemplateModels = myGenerationStepController.getTemplateModels();
-      myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
-    } else {
-      // old
-      myGeneratorModules = getUsedGenerators(inputModel);
-      if (configs != null) {
-        myCustomMappingConfigurations = new LinkedHashSet<MappingConfiguration>(configs);
-      }
-      initTemplateModels();
-    }
+    myGenerationStepController = generationStepController;
+    myGeneratorModules = myGenerationStepController.getGenerators();
+    myTemplateModels = myGenerationStepController.getTemplateModels();
+    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
 
     String inputModuleUID = inputModel.getUID().toString();
     myTransientModule = new TransientModule("TransientModule:[" + inputModuleUID + "]", invocationContext.getModule(), myGeneratorModules);
@@ -104,13 +91,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       CollectionUtil.addAllNotPresent(templateModels, myTemplateModels);
     }
 
-    if (myCustomMappingConfigurations != null) {
-      myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myCustomMappingConfigurations);
-    } else {
-      myMappingConfigurations = new LinkedHashSet<MappingConfiguration>();
-      for (SModelDescriptor templateModel : myTemplateModels) {
-        myMappingConfigurations.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
-      }
+    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>();
+    for (SModelDescriptor templateModel : myTemplateModels) {
+      myMappingConfigurations.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
     }
   }
 

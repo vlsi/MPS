@@ -15,24 +15,13 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.projectLanguage.DescriptorsPersistence;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.projectLanguage.structure.ModuleReference;
-import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
-import jetbrains.mps.projectLanguage.structure.LanguageReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.transformation.TLBase.structure.MappingScriptKind;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
-import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
@@ -127,15 +116,7 @@ public class GenerationSession implements IGenerationSession {
     }
 
     GenerationStatus status = script.doGenerate(new IGenerationScriptContext() {
-      public GenerationStatus doGenerate(@NotNull SModelDescriptor inputModel,
-                                         Language targetLanguage,
-                                         Set<MappingConfiguration> confs) throws Exception {
-        if (targetLanguage != null) {
-          // old
-          return generateModel_internal(inputModel.getSModel(), targetLanguage, confs, null);
-        }
-
-        // auto-plan
+      public GenerationStatus doGenerate(@NotNull SModelDescriptor inputModel) throws Exception {
         SModelDescriptor inputModel1 = inputModel;
         GenerationStatus status1;
         boolean wasErrors = false;
@@ -143,7 +124,7 @@ public class GenerationSession implements IGenerationSession {
         int stepCount = 1;
         while (true) {
           addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
-          status1 = generateModel_internal(inputModel1.getSModel(), targetLanguage, confs, generationStepController);
+          status1 = generateModel_internal(inputModel1.getSModel(), targetLanguage, generationStepController);
           wasErrors |= status1.isError();
           wasWarnings |= status1.hasWarnings();
           if (status1.isCanceled()) {
@@ -188,7 +169,6 @@ public class GenerationSession implements IGenerationSession {
 
   private GenerationStatus generateModel_internal(SModel inputModel,
                                                   Language targetLanguage,
-                                                  Set<MappingConfiguration> mappings,
                                                   AbstractGenerationStepController generationStepController)
     throws ClassNotFoundException,
     NoSuchMethodException,
@@ -201,26 +181,14 @@ public class GenerationSession implements IGenerationSession {
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + inputModel.getUID() + "\"");
 
     // -- replace context
-    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, inputModel, myInvocationContext, mappings, generationStepController, myCurrentContext);
-    if (generationStepController != null) {
-      // auto-plan
-//      if (!checkGenerationStep(generationStepController)) {
-//        throw new GenerationCanceledException();
-//      }
-      if (generationStepController.getCurrentMappings().isEmpty()) {
-        addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator avalable");
-        return new GenerationStatus(inputModel, null, null, false, false, false);
-      }
-      printGenerationStepData(generationStepController, inputModel);
+    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, inputModel, myInvocationContext, generationStepController, myCurrentContext);
 
-    } else {
-      // old
-      List<Generator> generators = context.getGeneratorModules();
-      if (generators.isEmpty()) {
-        addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator avalable");
-        return new GenerationStatus(inputModel, null, null, false, false, false);
-      }
+    // auto-plan
+    if (generationStepController.getCurrentMappings().isEmpty()) {
+      addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator avalable");
+      return new GenerationStatus(inputModel, null, null, false, false, false);
     }
+    printGenerationStepData(generationStepController, inputModel);
 
     setGenerationSessionContext(context);
 
