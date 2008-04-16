@@ -2234,9 +2234,17 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204808659452">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204808659453">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204808659454">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204808659455">
-                <link role="variableDeclaration" targetNodeId="1204808659441" resolveInfo="result" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208349287470">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1208349612560">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208349614998">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1208349613705" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1208349618497">
+                    <link role="conceptMethodDeclaration" targetNodeId="1204023987375" resolveInfo="getBasedir" />
+                  </node>
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208349287471">
+                  <link role="variableDeclaration" targetNodeId="1204808659447" resolveInfo="basedir" />
+                </node>
               </node>
             </node>
           </node>
