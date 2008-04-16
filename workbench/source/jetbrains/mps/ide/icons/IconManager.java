@@ -64,38 +64,8 @@ public class IconManager {
       if (language != null) {
         String iconPath = Macros.languageDescriptor().expandPath(conceptDeclaration.getIconPath(), language.getDescriptorFile());
         if (iconPath != null) {
-          Icon icon = ourPathsToIcons.get(iconPath);
-          if (icon != null) return icon;
-          IFile file = FileSystem.getFile(iconPath);
-          if (file.exists()) {
-            byte[] image = new byte[(int) file.length()];
-            InputStream is = null;
-            try {
-              is = file.openInputStream();
-              int current = 0;
-
-              while (true) {
-                int result = is.read(image, current, image.length - current);
-                if (result == -1 || result == 0) {
-                  break;
-                } else {
-                  current += result;
-                }
-              }
-            } catch (IOException e) {
-              LOG.error(e);
-            } finally {
-              try {
-                if (is != null) {
-                  is.close();
-                }
-              } catch (IOException e) {
-                LOG.error(e);
-              }
-            }
-
-            icon = new ImageIcon(image);
-            ourPathsToIcons.put(iconPath, icon);
+          Icon icon = loadIcon(iconPath, true);
+          if (icon != null) {
             return icon;
           }
         }
@@ -166,5 +136,51 @@ public class IconManager {
       return Icons.DEVKIT_ICON;
     }
     return Icons.DEFAULT_ICON;
+  }
+
+  public static Icon getIconFor(IFile file) {
+    Icon icon = null;
+    if (file.exists()) {
+      byte[] image = new byte[(int) file.length()];
+      InputStream is = null;
+      try {
+        is = file.openInputStream();
+        int current = 0;
+
+        while (true) {
+          int result = is.read(image, current, image.length - current);
+          if (result == -1 || result == 0) {
+            break;
+          } else {
+            current += result;
+          }
+        }
+      } catch (IOException e) {
+        LOG.error(e);
+      } finally {
+        try {
+          if (is != null) {
+            is.close();
+          }
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
+
+      icon = new ImageIcon(image);
+    }
+    return icon;
+  }
+
+  public static Icon loadIcon(String iconPath, boolean cache) {
+    Icon icon = ourPathsToIcons.get(iconPath);
+    if (icon == null) {
+      IFile file = FileSystem.getFile(iconPath);
+      icon = getIconFor(file);
+      if (icon != null && cache) {
+        ourPathsToIcons.put(iconPath, icon);
+      }
+    }
+    return icon;
   }
 }
