@@ -8,7 +8,6 @@ import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.TypeCheckingMode;
 import jetbrains.mps.ide.AbstractProjectFrame;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
@@ -174,9 +173,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
           Future<Boolean> f = generatorManager.generateModelsWithProgressWindow(
             modelsWithContext,
-            BootstrapLanguagesManager.getInstance().getBaseLanguage(),
             generationType,
-            IGenerationScript.DEFAULT,
             false);
           f.get();
         } catch (InterruptedException e) {
@@ -211,16 +208,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         return new Pair<SModel, IOperationContext>(sModel, invocationContext);
       }
     }),
-      targetLanguage,
       generationType,
-      script,
       closeOnExit);
   }
 
   public Future<Boolean> generateModelsWithProgressWindow(final List<Pair<SModel, IOperationContext>> sourceModels,
-                                                          final Language targetLanguage,
                                                           final IGenerationType generationType,
-                                                          final IGenerationScript script,
                                                           boolean closeOnExit) {
     if (sourceModels.isEmpty()) {
       return myExecutorService.submit(new Callable<Boolean>() {
@@ -267,7 +260,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         if (saveTransientModels) {
           invocationContext.getProject().getComponentSafe(GenerationTracer.class).startTracing();
         }
-        boolean result = generateModels(sourceModels, targetLanguage, generationType, script, progress, messages, saveTransientModels);
+        boolean result = generateModels(sourceModels, generationType, progress, messages, saveTransientModels);
         invocationContext.getProject().getComponentSafe(GenerationTracer.class).finishTracing();
         return result;
       }
@@ -275,10 +268,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public boolean generateModels(final List<SModel> inputModels,
-                                final Language targetLanguage,
                                 final IOperationContext invocationContext,
                                 final IGenerationType generationType,
-                                final IGenerationScript script,
                                 final IAdaptiveProgressMonitor progress,
                                 final IMessageHandler messages,
                                 final boolean saveTransientModels
@@ -287,16 +278,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       public Pair<SModel, IOperationContext> map(SModel sModel) {
         return new Pair<SModel, IOperationContext>(sModel, invocationContext);
       }
-    }), targetLanguage, generationType, script, progress, messages, saveTransientModels);
+    }), generationType, progress, messages, saveTransientModels);
   }
 
   /**
    * @return false if canceled
    */
   public boolean generateModels(final List<Pair<SModel, IOperationContext>> inputModels,
-                                final Language targetLanguage,
                                 final IGenerationType generationType,
-                                final IGenerationScript script,
                                 final IAdaptiveProgressMonitor progress,
                                 final IMessageHandler messages,
                                 final boolean saveTransientModels
@@ -304,7 +293,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     final boolean[] result = new boolean[1];
     CommandProcessor.instance().executeGenerationCommand(new Runnable() {
       public void run() {
-        result[0] = generateModels_internal(inputModels, targetLanguage, generationType, script, progress, messages, saveTransientModels);
+        result[0] = generateModels_internal(inputModels, generationType, progress, messages, saveTransientModels);
       }
     });
     return result[0];
@@ -314,9 +303,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
    * @return false if canceled
    */
   private boolean generateModels_internal(List<Pair<SModel, IOperationContext>> _inputModels,
-                                          Language targetLanguage,
                                           IGenerationType generationType,
-                                          IGenerationScript script,
                                           IAdaptiveProgressMonitor progress,
                                           IMessageHandler messages,
                                           boolean saveTransientModels) {
@@ -369,7 +356,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     progress.start("generating", totalJob);
 
-
     MPSModuleRepository.getInstance().removeTransientModules();
     MPSProject project = firstContext.getProject();
     IProjectHandler projectHandler = project.getProjectHandler();
@@ -379,7 +365,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     clearMessageVew(project);
     messages.handle(new Message(MessageKind.INFORMATION, generationType.getStartText()));
-
 
     boolean ideaPresent = projectHandler != null;
     Map<IModule, String> outputFolders = new HashMap<IModule, String>();

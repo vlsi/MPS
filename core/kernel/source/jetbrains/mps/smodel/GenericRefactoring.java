@@ -198,10 +198,8 @@ public class GenericRefactoring {
           }
         });
         new GeneratorManager().generateModels(models,
-          null,
           operationContext,
           IGenerationType.FILES,
-          IGenerationScript.DEFAULT,
           IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
           new DefaultMessageHandler(operationContext.getProject()),
           false);

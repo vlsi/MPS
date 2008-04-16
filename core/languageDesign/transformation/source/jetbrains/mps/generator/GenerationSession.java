@@ -99,15 +99,14 @@ public class GenerationSession implements IGenerationSession {
     myCurrentContext = context;
   }
 
-  public GenerationStatus generateModel(SModelDescriptor inputModel
-  ) throws Exception {
+  public GenerationStatus generateModel(SModelDescriptor inputModel) throws Exception {
     return generateModel(inputModel, new GenerationStepController(inputModel.getSModel()));
   }
 
   public GenerationStatus generateModel(SModelDescriptor inputModel,
-                                        AbstractGenerationStepController generationStepController) throws Exception {
+                                        AbstractGenerationStepController stepController) throws Exception {
     Statistics.clearAll();
-    if (!checkGenerationStep(generationStepController)) {
+    if (!checkGenerationStep(stepController)) {
       throw new GenerationCanceledException();
     }
 
@@ -118,7 +117,7 @@ public class GenerationSession implements IGenerationSession {
     SModelDescriptor currInputModel = inputModel;
     while (true) {
       addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
-      status = generateModel_step(currInputModel.getSModel(), generationStepController);
+      status = generateModel_step(currInputModel.getSModel(), stepController);
       wasErrors |= status.isError();
       wasWarnings |= status.hasWarnings();
       if (status.isCanceled()) {
@@ -126,11 +125,11 @@ public class GenerationSession implements IGenerationSession {
       }
 
       // need more steps?
-      if (!generationStepController.advanceStep()) {
+      if (!stepController.advanceStep()) {
         // generation complete
         break;
       }
-      if (generationStepController.getCurrentMappings().isEmpty()) {
+      if (stepController.getCurrentMappings().isEmpty()) {
         break;
       }
       if (status.getOutputModel() == null) {
@@ -144,26 +143,26 @@ public class GenerationSession implements IGenerationSession {
 
 
   private GenerationStatus generateModel_step(SModel inputModel,
-                                                  AbstractGenerationStepController generationStepController)
+                                              AbstractGenerationStepController stepController)
     throws ClassNotFoundException,
     NoSuchMethodException,
     IllegalAccessException,
     InvocationTargetException,
     InstantiationException {
-
+    
     myInvocationCount++;
     myTransientModelsCount = 0;
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + inputModel.getUID() + "\"");
 
     // -- replace context
-    GenerationSessionContext context = new GenerationSessionContext(inputModel, myInvocationContext, generationStepController, myCurrentContext);
+    GenerationSessionContext context = new GenerationSessionContext(inputModel, myInvocationContext, stepController, myCurrentContext);
 
     // auto-plan
-    if (generationStepController.getCurrentMappings().isEmpty()) {
+    if (stepController.getCurrentMappings().isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator avalable");
       return new GenerationStatus(inputModel, null, null, false, false, false);
     }
-    printGenerationStepData(generationStepController, inputModel);
+    printGenerationStepData(stepController, inputModel);
 
     setGenerationSessionContext(context);
 
