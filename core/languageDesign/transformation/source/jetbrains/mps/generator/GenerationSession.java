@@ -172,10 +172,6 @@ public class GenerationSession implements IGenerationSession {
       }
 
 
-      public Language getTargetLanguage() {
-        return targetLanguage;
-      }
-
       public IOperationContext getOperationContext() {
         return myInvocationContext;
       }
