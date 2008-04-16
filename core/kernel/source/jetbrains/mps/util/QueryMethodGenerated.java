@@ -4,7 +4,11 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.component.IComponentLifecycle;
+import jetbrains.mps.component.Dependency;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -13,7 +17,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
 
-public class QueryMethodGenerated {
+public class QueryMethodGenerated implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
 
   private static Map<Pair<SModelUID, String>, Method> ourMethods = new HashMap<Pair<SModelUID, String>, Method>();
@@ -113,5 +117,20 @@ public class QueryMethodGenerated {
       LOG.error(e.getCause());
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     }
+  }
+
+  public QueryMethodGenerated() {
+  }
+
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+  }
+
+  public void initComponent() {
+    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+      public void onBeforeReload() {
+        clearCaches();
+      }
+    });
   }
 }

@@ -436,19 +436,19 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   void callBeforeReloadHandlers() {
-    for (ReloadListener h : myReloadHandlers) {
+    for (ReloadListener h : new ArrayList<ReloadListener>(myReloadHandlers)) {
       h.onBeforeReload();
     }
   }
 
   void callReloadHandlers() {
-    for (ReloadListener h : myReloadHandlers) {
+    for (ReloadListener h : new ArrayList<ReloadListener>(myReloadHandlers)) {
       h.onReload();
     }
   }
 
   void callAfterReloadHandlers() {
-    for (ReloadListener h : myReloadHandlers) {
+    for (ReloadListener h : new ArrayList<ReloadListener>(myReloadHandlers)) {
       h.onAfterReload();
     }
   }

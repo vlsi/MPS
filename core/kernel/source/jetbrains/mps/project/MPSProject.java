@@ -81,7 +81,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
   private List<IMPSProjectCommandListener> myProjectCommandListeners = new ArrayList<IMPSProjectCommandListener>();
   private ProjectEventTranslator myEventTranslator;
-  private PluginManager myPluginManager = new PluginManager(this);
+  private PluginManager myPluginManager = new PluginManager(this);  
 
   public MPSProject(final @NotNull File projectFile) {
     myContext.register(MPSProject.class, this);
@@ -657,6 +657,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
         myContext.get(Highlighter.class).stopUpdater();
         myPluginManager.disposePlugins();
+        myPluginManager.dispose();
 
         for (Object pc : getComponents()) {
           if (pc instanceof IDisposable) {
