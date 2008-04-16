@@ -72,21 +72,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myTransientObjects.clear();
   }
 
-  private void initTemplateModels() {
-    assert myGenerationStepController == null : "method can't be used with 'auto-plan' generation";
-
-    myTemplateModels = new ArrayList<SModelDescriptor>();
-    for (Generator generatorModule : myGeneratorModules) {
-      List<SModelDescriptor> templateModels = generatorModule.getOwnTemplateModels();
-      CollectionUtil.addAllNotPresent(templateModels, myTemplateModels);
-    }
-
-    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>();
-    for (SModelDescriptor templateModel : myTemplateModels) {
-      myMappingConfigurations.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
-    }
-  }
-
   public Set<MappingConfiguration> getMappingConfigurations() {
     return myMappingConfigurations;
   }

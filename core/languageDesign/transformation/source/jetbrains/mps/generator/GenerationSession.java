@@ -149,21 +149,19 @@ public class GenerationSession implements IGenerationSession {
     IllegalAccessException,
     InvocationTargetException,
     InstantiationException {
-    
+
     myInvocationCount++;
     myTransientModelsCount = 0;
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + inputModel.getUID() + "\"");
 
-    // -- replace context
-    GenerationSessionContext context = new GenerationSessionContext(inputModel, myInvocationContext, stepController, myCurrentContext);
-
-    // auto-plan
     if (stepController.getCurrentMappings().isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator avalable");
       return new GenerationStatus(inputModel, null, null, false, false, false);
     }
     printGenerationStepData(stepController, inputModel);
 
+    // -- replace context
+    GenerationSessionContext context = new GenerationSessionContext(inputModel, myInvocationContext, stepController, myCurrentContext);
     setGenerationSessionContext(context);
 
     // -- replace generator
