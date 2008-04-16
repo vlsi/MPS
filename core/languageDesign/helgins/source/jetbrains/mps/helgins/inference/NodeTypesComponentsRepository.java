@@ -3,6 +3,9 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.component.Dependency;
+import jetbrains.mps.component.IComponentLifecycle;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IReloadHandler;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -16,10 +19,16 @@ import java.util.HashMap;
  * Time: 15:40:35
  * To change this template use File | Settings | File Templates.
  */
-public class NodeTypesComponentsRepository {
+public class NodeTypesComponentsRepository implements IComponentLifecycle {
   private Map<SNode, NodeTypesComponent> myNodesToComponents = new HashMap<SNode, NodeTypesComponent>();
   private Set<TypesComponentRepositoryListener> myListeners = new HashSet<TypesComponentRepositoryListener>();
   private TypeChecker myTypeChecker;
+  private ClassLoaderManager myClassLoaderManager;
+
+  public static NodeTypesComponentsRepository getInstance() {
+    return ApplicationComponents.getInstance().getComponent(NodeTypesComponentsRepository.class);
+  }
+
   private SModelRepositoryAdapter myModelRepositoryListener = new SModelRepositoryAdapter() {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       for (final NodeTypesComponent nodeTypesComponent :
@@ -43,8 +52,17 @@ public class NodeTypesComponentsRepository {
     myTypeChecker = typeChecker;
   }
 
-  public static NodeTypesComponentsRepository getInstance() {
-    return ApplicationComponents.getInstance().getComponent(NodeTypesComponentsRepository.class);
+  public void initComponent() {
+    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+      public void handleReload() {
+        clear();
+      }
+    });
+  }
+  
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
   }
 
   public NodeTypesComponent getNodeTypesComponent(SNode node) {

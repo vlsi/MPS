@@ -13,6 +13,10 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
+import jetbrains.mps.component.IComponentLifecycle;
+import jetbrains.mps.component.Dependency;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IReloadHandler;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -24,7 +28,7 @@ import java.util.*;
  * Time: 16:47:20
  * To change this template use File | Settings | File Templates.
  */
-public class TypeChecker {
+public class TypeChecker implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
   private static final String RUNTIME_TYPES = "$runtimeTypes$";
@@ -51,6 +55,7 @@ public class TypeChecker {
   private MPSProject myProject;
   private boolean myIsIncrementalMode = true;
 
+  private ClassLoaderManager myClassLoaderManager;
 
   private TypeCheckingMode myTypeCheckingMode = null;
 
@@ -58,6 +63,19 @@ public class TypeChecker {
     mySubtypingManager = new SubtypingManager(this);
     myRuntimeSupport = new RuntimeSupport(this);
     myRulesManager = new RulesManager(this);
+  }
+
+  public void initComponent() {
+    myClassLoaderManager.addReloadHandler(new IReloadHandler() {
+      public void handleReload() {
+        clearForReload();
+      }
+    });
+  }
+
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
   }
 
   @Hack
