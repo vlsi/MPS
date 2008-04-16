@@ -151,15 +151,6 @@ public class GenerationSession implements IGenerationSession {
       public SModelDescriptor getSourceModelDescriptor() {
         return inputModel;
       }
-
-
-      public IOperationContext getOperationContext() {
-        return myInvocationContext;
-      }
-
-      public IMessageHandler getHandler() {
-        return myMessagesHandler;
-      }
     }); // script.doGenerate()
 
 
