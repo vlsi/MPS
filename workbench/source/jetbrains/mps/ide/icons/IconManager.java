@@ -46,8 +46,13 @@ public class IconManager {
           return Icons.DEFAULT_ICON;
         }
 
-
-        return getIconFor((ConceptDeclaration) node.getConceptDeclarationAdapter());
+        ConceptDeclaration conceptDeclaration = (ConceptDeclaration) node.getConceptDeclarationAdapter();
+        try {
+          return getIconFor(conceptDeclaration);
+        } catch (Throwable t) {
+          LOG.error("can't find an icon for concept declaration " + conceptDeclaration, t);
+          return Icons.DEFAULT_ICON;
+        }
       }
     });
   }
