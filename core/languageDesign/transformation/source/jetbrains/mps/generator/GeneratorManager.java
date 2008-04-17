@@ -315,8 +315,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
     }
 
     // time estimation
-    boolean compile = (
-      generationType.requiresCompilationInIDEAfterGeneration() || generationType.requiresCompilationInIDEABeforeGeneration());
+    boolean compile = (generationType.requiresCompilationInIDEAfterGeneration() || generationType.requiresCompilationInIDEABeforeGeneration());
     long totalJob = 0;
     Map<IModule, Long> modulesToGenerationTimes = new HashMap<IModule, Long>();
     Map<IModule, Long> modulesToResidualTimes = new HashMap<IModule, Long>();
@@ -330,6 +329,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
         modulesToResidualTimes.put(module, jobTime - generationTime);
       }
     }
+    
     if (totalJob == 0) {
       totalJob = 1000; //todo we need it for build file generation
     }
