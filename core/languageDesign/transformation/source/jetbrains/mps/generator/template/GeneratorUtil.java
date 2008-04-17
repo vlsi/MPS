@@ -509,7 +509,7 @@ public class GeneratorUtil {
           generator.showInformationMessage(inputNode, text);
         }
       } else {
-        generator.showInformationMessage(inputNode, "Top rule dismissed with no message");
+//        generator.showInformationMessage(inputNode, "Top rule dismissed with no message");
       }
       throw new DismissTopMappingRuleException();
 
