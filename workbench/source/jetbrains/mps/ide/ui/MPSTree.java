@@ -437,7 +437,7 @@ public abstract class MPSTree extends JTree {
   }
 
   public void rebuildTreeLater(final Runnable rebuildAction, final boolean saveExpansion) {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
       public void run() {
         runRebuildAction(rebuildAction, saveExpansion);
       }
