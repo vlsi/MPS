@@ -295,8 +295,8 @@
                 <link role="classConcept" targetNodeId="7.~Arrays" resolveInfo="Arrays" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207326976398">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1207326976399" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1207327001517">
-                    <link role="member" targetNodeId="1207326987747" resolveInfo="model" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1208392154062">
+                    <link role="member" targetNodeId="1207326673255" resolveInfo="modelDescriptor" />
                   </node>
                 </node>
               </node>
