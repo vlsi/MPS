@@ -1,7 +1,6 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
@@ -10,8 +9,6 @@ import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.transformation.TLBase.structure.MappingScriptReference;
-import jetbrains.mps.transformation.TemplateLanguageUtil;
-import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -31,7 +28,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private AbstractGenerationStepController myGenerationStepController;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
-  // object survive between transient models but not between generation steps 
+  // objects survive between transient models but not between generation steps 
   private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
 
   private LinkedHashSet<MappingConfiguration> myMappingConfigurations;
@@ -146,7 +143,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myTransientObjects.get(key);
   }
 
-  public void putSessionObject(Object key, Object o) {
+  public void putStepObject(Object key, Object o) {
     mySessionObjects.put(key, o);
   }
 
@@ -180,7 +177,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     Set<SNode> set = (Set<SNode>) getSessionObject(COPYED_ROOTS);
     if (set == null) {
       set = new HashSet<SNode>();
-      putSessionObject(COPYED_ROOTS, set);
+      putStepObject(COPYED_ROOTS, set);
     }
     set.add(inputNode);
   }

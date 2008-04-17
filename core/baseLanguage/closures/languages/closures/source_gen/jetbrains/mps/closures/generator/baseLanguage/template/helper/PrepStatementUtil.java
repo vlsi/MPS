@@ -26,7 +26,7 @@ public class PrepStatementUtil {
   }
 
   public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {
-    generator.getGeneratorSessionContext().putSessionObject("closure_data_" + ((SNode)sn).getId(), data);
+    generator.getGeneratorSessionContext().putStepObject("closure_data_" + ((SNode)sn).getId(), data);
   }
 
   public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
@@ -51,11 +51,11 @@ public class PrepStatementUtil {
   }
 
   public static void setFlag(SNode sn, ITemplateGenerator generator, Object flag) {
-    generator.getGeneratorSessionContext().putSessionObject("flag_" + ((SNode)sn).getId(), flag);
+    generator.getGeneratorSessionContext().putStepObject("flag_" + ((SNode)sn).getId(), flag);
     List<SNode> allFlagged = PrepStatementUtil.getAllFlagged(generator);
     if (allFlagged == null) {
       allFlagged = new ArrayList<SNode>();
-      generator.getGeneratorSessionContext().putSessionObject("all_flagged", allFlagged);
+      generator.getGeneratorSessionContext().putStepObject("all_flagged", allFlagged);
     }
     if (!(allFlagged.contains(sn))) {
       allFlagged.add(sn);

@@ -186,7 +186,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201016931738">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201016977356">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201016977357">
-            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putSessionObject(java.lang.Object,java.lang.Object):void" resolveInfo="putSessionObject" />
+            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putStepObject(java.lang.Object,java.lang.Object):void" resolveInfo="putStepObject" />
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201016977358">
               <link role="baseMethodDeclaration" targetNodeId="15.~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201016977359">
@@ -465,7 +465,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202834361654">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202834361655">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1202834361656">
-            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putSessionObject(java.lang.Object,java.lang.Object):void" resolveInfo="putSessionObject" />
+            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putStepObject(java.lang.Object,java.lang.Object):void" resolveInfo="putStepObject" />
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1202834361657">
               <link role="baseMethodDeclaration" targetNodeId="15.~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1202834361658">
@@ -525,7 +525,7 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203005448441">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203005448993">
-                <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putSessionObject(java.lang.Object,java.lang.Object):void" resolveInfo="putSessionObject" />
+                <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putStepObject(java.lang.Object,java.lang.Object):void" resolveInfo="putStepObject" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203005448994">
                   <link role="baseMethodDeclaration" targetNodeId="15.~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203005448995">
@@ -4214,7 +4214,7 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202752214125">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1202752214868">
-                <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putSessionObject(java.lang.Object,java.lang.Object):void" resolveInfo="putSessionObject" />
+                <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putStepObject(java.lang.Object,java.lang.Object):void" resolveInfo="putStepObject" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1202752214869">
                   <link role="baseMethodDeclaration" targetNodeId="15.~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1202752214870">
@@ -4326,7 +4326,7 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201647888971">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201647896236">
-                <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putSessionObject(java.lang.Object,java.lang.Object):void" resolveInfo="putSessionObject" />
+                <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putStepObject(java.lang.Object,java.lang.Object):void" resolveInfo="putStepObject" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201647904926">
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201647904927">
                     <property name="value" value="needs_adapted_" />
@@ -4595,7 +4595,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201696387531">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201696387532">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201696387533">
-            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putSessionObject(java.lang.Object,java.lang.Object):void" resolveInfo="putSessionObject" />
+            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putStepObject(java.lang.Object,java.lang.Object):void" resolveInfo="putStepObject" />
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201696387534">
               <link role="baseMethodDeclaration" targetNodeId="15.~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201696387535">
@@ -4698,7 +4698,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201697323397">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201697323398">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201697323399">
-            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putSessionObject(java.lang.Object,java.lang.Object):void" resolveInfo="putSessionObject" />
+            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putStepObject(java.lang.Object,java.lang.Object):void" resolveInfo="putStepObject" />
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1201697323400">
               <link role="baseMethodDeclaration" targetNodeId="15.~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201697323401">
@@ -5113,7 +5113,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203244633018">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203244633019">
-            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putSessionObject(java.lang.Object,java.lang.Object):void" resolveInfo="putSessionObject" />
+            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putStepObject(java.lang.Object,java.lang.Object):void" resolveInfo="putStepObject" />
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1203244633020">
               <link role="baseMethodDeclaration" targetNodeId="15.~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203244633021">
@@ -7153,7 +7153,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207145118671">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1207145118672">
-            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putSessionObject(java.lang.Object,java.lang.Object):void" resolveInfo="putSessionObject" />
+            <link role="baseMethodDeclaration" targetNodeId="18.~GenerationSessionContext.putStepObject(java.lang.Object,java.lang.Object):void" resolveInfo="putStepObject" />
             <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1207145118673">
               <link role="baseMethodDeclaration" targetNodeId="15.~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1207145118674">

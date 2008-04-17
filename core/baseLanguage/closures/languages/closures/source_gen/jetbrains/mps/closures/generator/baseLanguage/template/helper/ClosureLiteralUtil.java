@@ -53,7 +53,7 @@ public class ClosureLiteralUtil {
     SNode trgCopy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(trgCopy, "classifier", SLinkOperations.getTarget(target, "classifier", false), false);
     ClosureLiteralUtil.matchParameters(target, trgCopy, TypeChecker.getInstance().getTypeOf(literal));
-    generator.getGeneratorSessionContext().putSessionObject("literal_target_" + ((SNode)literal).getId(), trgCopy);
+    generator.getGeneratorSessionContext().putStepObject("literal_target_" + ((SNode)literal).getId(), trgCopy);
     ((SNode)trgCopy).putUserObject("literal", literal);
   }
 

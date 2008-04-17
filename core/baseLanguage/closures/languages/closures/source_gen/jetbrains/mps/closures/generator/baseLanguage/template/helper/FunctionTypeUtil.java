@@ -84,7 +84,7 @@ public class FunctionTypeUtil {
     List<SNode> allAdaptable = FunctionTypeUtil.getAllAdaptableClassifierTypes(generator);
     if (allAdaptable == null) {
       allAdaptable = new ArrayList<SNode>();
-      generator.getGeneratorSessionContext().putSessionObject("all_needs_adapted", allAdaptable);
+      generator.getGeneratorSessionContext().putStepObject("all_needs_adapted", allAdaptable);
     }
     if (!(allAdaptable.contains(adaptable))) {
       allAdaptable.add(adaptable);
@@ -92,7 +92,7 @@ public class FunctionTypeUtil {
     List<SNode> trgList = (List<SNode>)generator.getGeneratorSessionContext().getSessionObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(adaptable, "classifier", false)));
     if (trgList == null) {
       trgList = new ArrayList<SNode>();
-      generator.getGeneratorSessionContext().putSessionObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(adaptable, "classifier", false)), trgList);
+      generator.getGeneratorSessionContext().putStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(adaptable, "classifier", false)), trgList);
     }
     boolean hasOneAlready = false;
     for(SNode ct : trgList) {
@@ -117,7 +117,7 @@ public class FunctionTypeUtil {
   }
 
   public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {
-    generator.getGeneratorSessionContext().putSessionObject("classifierType_prepdata_" + ((SNode)sn).getId(), data);
+    generator.getGeneratorSessionContext().putStepObject("classifierType_prepdata_" + ((SNode)sn).getId(), data);
   }
 
   public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
@@ -125,7 +125,7 @@ public class FunctionTypeUtil {
   }
 
   public static void putPostData(SNode sn, Object data, ITemplateGenerator generator) {
-    generator.getGeneratorSessionContext().putSessionObject("classifierType_postData_" + ((SNode)sn).getId(), data);
+    generator.getGeneratorSessionContext().putStepObject("classifierType_postData_" + ((SNode)sn).getId(), data);
   }
 
   public static Object getPostData(SNode sn, ITemplateGenerator generator) {

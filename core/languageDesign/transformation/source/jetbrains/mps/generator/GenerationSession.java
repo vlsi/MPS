@@ -39,7 +39,7 @@ public class GenerationSession implements IGenerationSession {
 
   private String mySessionId;
   private GenerationSessionContext myCurrentContext;
-  private List<GenerationSessionContext> mySavedContexts = new LinkedList<GenerationSessionContext>();
+  private List<GenerationSessionContext> mySavedContexts = new ArrayList<GenerationSessionContext>();
 
   private int myInvocationCount = 0;
   private int myTransientModelsCount = 0;

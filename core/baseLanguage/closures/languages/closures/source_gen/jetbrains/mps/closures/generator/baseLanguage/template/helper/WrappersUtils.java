@@ -43,7 +43,7 @@ with_decls:
 
   public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {
     System.out.println("--> PUT " + data + " (" + sn.getPresentation() + ") ID=" + sn.getId());
-    generator.getGeneratorSessionContext().putSessionObject("wrappers_data_" + ((SNode)sn).getId(), data);
+    generator.getGeneratorSessionContext().putStepObject("wrappers_data_" + ((SNode)sn).getId(), data);
     sn.putUserObject("wrappers_data_", data);
   }
 

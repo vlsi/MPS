@@ -48,7 +48,7 @@ public class QueriesGenerated {
   public static boolean createRootRule_Condition_1202760124070(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     List<SNode> adapters = FunctionTypeUtil.getAllAdaptableClassifierTypes(_context.getGenerator());
     if (adapters != null && adapters.size() > 0) {
-      _context.getGenerator().getGeneratorSessionContext().putSessionObject("need_weaving_class_for_ClassifierType_adapter", Boolean.TRUE);
+      _context.getGenerator().getGeneratorSessionContext().putStepObject("need_weaving_class_for_ClassifierType_adapter", Boolean.TRUE);
       return true;
     }
     return false;
@@ -131,7 +131,7 @@ public class QueriesGenerated {
       return false;
     }
     if (_context.getGenerator().getGeneratorSessionContext().getSessionObject("done_weaving_interface_for_FunctionType") == null) {
-      _context.getGenerator().getGeneratorSessionContext().putSessionObject("done_weaving_interface_for_FunctionType", Boolean.TRUE);
+      _context.getGenerator().getGeneratorSessionContext().putStepObject("done_weaving_interface_for_FunctionType", Boolean.TRUE);
       return true;
     }
     return false;
@@ -142,7 +142,7 @@ public class QueriesGenerated {
       return false;
     }
     if (_context.getGenerator().getGeneratorSessionContext().getSessionObject("done_weaving_class_for_YieldStatement") == null) {
-      _context.getGenerator().getGeneratorSessionContext().putSessionObject("done_weaving_class_for_YieldStatement", Boolean.TRUE);
+      _context.getGenerator().getGeneratorSessionContext().putStepObject("done_weaving_class_for_YieldStatement", Boolean.TRUE);
       return true;
     }
     return false;
@@ -150,7 +150,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1201783366634(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (_context.getGenerator().getGeneratorSessionContext().getSessionObject("need_weaving_class_for_ClassifierType_adapter") != null) {
-      _context.getGenerator().getGeneratorSessionContext().putSessionObject("need_weaving_class_for_ClassifierType_adapter", null);
+      _context.getGenerator().getGeneratorSessionContext().putStepObject("need_weaving_class_for_ClassifierType_adapter", null);
       return true;
     }
     return false;
@@ -161,7 +161,7 @@ public class QueriesGenerated {
       return false;
     }
     if (_context.getGenerator().getGeneratorSessionContext().getSessionObject("done_weaving_interface_for_FunctionType") == null) {
-      _context.getGenerator().getGeneratorSessionContext().putSessionObject("done_weaving_interface_for_FunctionType", Boolean.TRUE);
+      _context.getGenerator().getGeneratorSessionContext().putStepObject("done_weaving_interface_for_FunctionType", Boolean.TRUE);
       return true;
     }
     return false;
@@ -169,7 +169,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1201789577252(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (_context.getGenerator().getGeneratorSessionContext().getSessionObject("need_weaving_class_for_ClassifierType_adapter") != null) {
-      _context.getGenerator().getGeneratorSessionContext().putSessionObject("need_weaving_class_for_ClassifierType_adapter", null);
+      _context.getGenerator().getGeneratorSessionContext().putStepObject("need_weaving_class_for_ClassifierType_adapter", null);
       return true;
     }
     return false;
@@ -1385,10 +1385,10 @@ public class QueriesGenerated {
           for(SNode cc : SNodeOperations.getAncestors(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)) {
             if (cc == thisCC) {
               if (SNodeOperations.isInstanceOf(thisCC, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-                _context.getGenerator().getGeneratorSessionContext().putSessionObject("remove_this_" + ((SNode)te).getId(), thisCC);
+                _context.getGenerator().getGeneratorSessionContext().putStepObject("remove_this_" + ((SNode)te).getId(), thisCC);
               } else
               {
-                _context.getGenerator().getGeneratorSessionContext().putSessionObject("set_this_classconcept_" + ((SNode)te).getId(), thisCC);
+                _context.getGenerator().getGeneratorSessionContext().putStepObject("set_this_classconcept_" + ((SNode)te).getId(), thisCC);
               }
               break;
             }
