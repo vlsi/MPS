@@ -31,6 +31,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     return ApplicationComponents.getInstance().getComponent(EditorSettings.class);
   }
 
+  private List<EditorSettingsListener> myListeners = new ArrayList<EditorSettingsListener>();
+
   private @Externalizable String myFontFamily = "Monospaced";
   private @Externalizable int myFontSize = 12;
 
@@ -55,7 +57,6 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   public void setDefaultEditorFont(Font newFont) {
     myFontFamily = newFont.getFamily();
     myFontSize = newFont.getSize();
-    ClassLoaderManager.getInstance().reloadAll();
   }
 
   public boolean useBraces() {
@@ -116,6 +117,20 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
   public List<IPreferencesPage> createPreferencesPages() {
     return CollectionUtil.asList((IPreferencesPage) new MyPreferencesPage());
+  }
+
+  public void addEditorSettingsListener(EditorSettingsListener l) {
+    myListeners.add(l);
+  }
+
+  public void removeEditorSettingsListener(EditorSettingsListener l) {
+    myListeners.remove(l);
+  }
+
+  private void fireEditorSettingsChanged() {
+    for (EditorSettingsListener l : myListeners) {
+      l.settingsChanged();
+    }
   }
 
   private abstract static class MyColorComponent extends JPanel {
@@ -386,11 +401,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
       mySelectionColor = mySelectedColorComponent.getColor();
 
-      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-        public void run() {
-          ClassLoaderManager.getInstance().reloadAll();
-        }
-      });
+      fireEditorSettingsChanged();
     }
 
     private int getBlinkingPeriod() {

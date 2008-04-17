@@ -93,6 +93,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private IEditorMessageOwner myMessageOwner = new IEditorMessageOwner() {
   };
 
+  private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
+    public void settingsChanged() {
+      rebuildEditorContent();
+    }
+  };
+
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
   private boolean myReadOnly = false;
@@ -680,12 +686,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     });
+    EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
   }
 
 
   public void removeNotify() {
+    EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
     KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
     super.removeNotify();
+
   }
 
   protected void registerNodeAction(MPSAction action) {

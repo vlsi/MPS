@@ -16,7 +16,6 @@ public interface IFile {
 
   List<IFile> list(IFileNameFilter filter);
 
-
   boolean isDirectory();
 
   boolean isFile();
