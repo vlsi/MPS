@@ -1,6 +1,8 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.components.IExternalizableComponent;
+import jetbrains.mps.components.DefaultExternalizableComponent;
+import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.template.Statistics;
@@ -39,19 +41,15 @@ import java.util.*;
 import java.util.concurrent.*;
 
 
-public class GeneratorManager implements IExternalizableComponent, IComponentWithPreferences {
+public class GeneratorManager extends DefaultExternalizableComponent implements IComponentWithPreferences {
   public static final int AMOUNT_PER_MODEL = 100;
   public static final int AMOUNT_PER_COMPILATION = 100;
 
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
-  private static final String SAVE_TRANSIENT_MODELS = "save-transient-models-on-generation";
-  private static final String DUMP_STATISTICS = "dump-staticstics-on-generation";
-  private static final String SHOW_ERRORS_ONLY = "show-errors-only";
-
-  private boolean mySaveTransientModels;
-  private boolean myDumpStatistics = false;
-  private boolean myShowErrorsOnly;
+  private @Externalizable boolean mySaveTransientModels;
+  private @Externalizable boolean myDumpStatistics = false;
+  private @Externalizable boolean myShowErrorsOnly;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
 
   private ExecutorService myExecutorService = Executors.newCachedThreadPool();
@@ -65,24 +63,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   public void removeFileGenerator(IFileGenerator fileGenerator) {
     myFileGenerators.remove(fileGenerator);
-  }
-
-  public void read(Element element, MPSProject project) {
-    if (element.getAttribute(SAVE_TRANSIENT_MODELS) != null) {
-      mySaveTransientModels = Boolean.parseBoolean(element.getAttributeValue(SAVE_TRANSIENT_MODELS));
-    }
-    if (element.getAttribute(DUMP_STATISTICS) != null) {
-      myDumpStatistics = Boolean.parseBoolean(element.getAttributeValue(DUMP_STATISTICS));
-    }
-    if (element.getAttribute(SHOW_ERRORS_ONLY) != null) {
-      myShowErrorsOnly = Boolean.parseBoolean(element.getAttributeValue(SHOW_ERRORS_ONLY));
-    }
-  }
-
-  public void write(Element element, MPSProject project) {
-    element.setAttribute(SAVE_TRANSIENT_MODELS, "" + mySaveTransientModels);
-    element.setAttribute(DUMP_STATISTICS, "" + myDumpStatistics);
-    element.setAttribute(SHOW_ERRORS_ONLY, "" + myShowErrorsOnly);
   }
 
   public boolean isSaveTransientModels() {
@@ -152,10 +132,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
     }
     return null;
-  }
-
-  protected Object clone() throws CloneNotSupportedException {
-    return super.clone();
   }
 
   public void generateModelsFromDifferentModules(final IOperationContext operationContext, final List<SModelDescriptor> inputModels, final IGenerationType generationType) {
