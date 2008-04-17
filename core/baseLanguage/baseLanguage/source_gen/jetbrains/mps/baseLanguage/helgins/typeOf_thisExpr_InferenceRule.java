@@ -16,10 +16,10 @@ public class typeOf_thisExpr_InferenceRule implements InferenceRule_Runtime {
 
   public void applyRule(final SNode thisExpr) {
     if ((SLinkOperations.getTarget(thisExpr, "classConcept", false) != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_17().createNode(SLinkOperations.getTarget(thisExpr, "classConcept", false)), thisExpr, "jetbrains.mps.baseLanguage.helgins", "1182985650714");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(thisExpr, "jetbrains.mps.baseLanguage.helgins", "1208466580607", true), new QuotationClass_17().createNode(SLinkOperations.getTarget(thisExpr, "classConcept", false)), thisExpr, null, "jetbrains.mps.baseLanguage.helgins", "1208466580605");
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_18().createNode(SNodeOperations.getAncestor(thisExpr, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)), thisExpr, "jetbrains.mps.baseLanguage.helgins", "1182985714033");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(thisExpr, "jetbrains.mps.baseLanguage.helgins", "1208466584314", true), new QuotationClass_18().createNode(SNodeOperations.getAncestor(thisExpr, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)), thisExpr, null, "jetbrains.mps.baseLanguage.helgins", "1208466584312");
     }
   }
 
