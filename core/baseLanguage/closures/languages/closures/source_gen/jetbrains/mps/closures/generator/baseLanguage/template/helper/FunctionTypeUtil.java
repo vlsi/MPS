@@ -89,7 +89,7 @@ public class FunctionTypeUtil {
     if (!(allAdaptable.contains(adaptable))) {
       allAdaptable.add(adaptable);
     }
-    List<SNode> trgList = (List<SNode>)generator.getGeneratorSessionContext().getSessionObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(adaptable, "classifier", false)));
+    List<SNode> trgList = (List<SNode>)generator.getGeneratorSessionContext().getStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(adaptable, "classifier", false)));
     if (trgList == null) {
       trgList = new ArrayList<SNode>();
       generator.getGeneratorSessionContext().putStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(adaptable, "classifier", false)), trgList);
@@ -109,11 +109,11 @@ public class FunctionTypeUtil {
   }
 
   public static List<SNode> getAllAdaptableClassifierTypes(ITemplateGenerator generator) {
-    return (List<SNode>)generator.getGeneratorSessionContext().getSessionObject("all_needs_adapted");
+    return (List<SNode>)generator.getGeneratorSessionContext().getStepObject("all_needs_adapted");
   }
 
   public static List<SNode> getAdaptableClassifierTypeTargets(SNode adaptable, ITemplateGenerator generator) {
-    return (List<SNode>)generator.getGeneratorSessionContext().getSessionObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(adaptable, "classifier", false)));
+    return (List<SNode>)generator.getGeneratorSessionContext().getStepObject("needs_adapted_" + INamedConcept_Behavior.call_getFqName_1184686272576(SLinkOperations.getTarget(adaptable, "classifier", false)));
   }
 
   public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {
@@ -121,7 +121,7 @@ public class FunctionTypeUtil {
   }
 
   public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
-    return generator.getGeneratorSessionContext().getSessionObject("classifierType_prepdata_" + ((SNode)sn).getId());
+    return generator.getGeneratorSessionContext().getStepObject("classifierType_prepdata_" + ((SNode)sn).getId());
   }
 
   public static void putPostData(SNode sn, Object data, ITemplateGenerator generator) {
@@ -129,7 +129,7 @@ public class FunctionTypeUtil {
   }
 
   public static Object getPostData(SNode sn, ITemplateGenerator generator) {
-    return generator.getGeneratorSessionContext().getSessionObject("classifierType_postData_" + ((SNode)sn).getId());
+    return generator.getGeneratorSessionContext().getStepObject("classifierType_postData_" + ((SNode)sn).getId());
   }
 
   public static class FunctionTypeComparator implements Comparator<SNode> {

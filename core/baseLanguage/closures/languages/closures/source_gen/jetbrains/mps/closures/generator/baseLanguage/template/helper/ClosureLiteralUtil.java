@@ -58,7 +58,7 @@ public class ClosureLiteralUtil {
   }
 
   public static SNode getAdaptableClosureLiteralTarget(SNode literal, ITemplateGenerator generator) {
-    return (SNode)generator.getGeneratorSessionContext().getSessionObject("literal_target_" + ((SNode)literal).getId());
+    return (SNode)generator.getGeneratorSessionContext().getStepObject("literal_target_" + ((SNode)literal).getId());
   }
 
   private static void matchParameters(SNode origCT, SNode ctNoParams, SNode ft) {

@@ -147,7 +147,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     mySessionObjects.put(key, o);
   }
 
-  public Object getSessionObject(Object key) {
+  public Object getStepObject(Object key) {
     return mySessionObjects.get(key);
   }
 
@@ -167,14 +167,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public void clearCopiedRootsSet() {
-    Set<SNode> set = (Set<SNode>) getSessionObject(COPYED_ROOTS);
+    Set<SNode> set = (Set<SNode>) getStepObject(COPYED_ROOTS);
     if (set != null) {
       set.clear();
     }
   }
 
   public void registerCopiedRoot(SNode inputNode) {
-    Set<SNode> set = (Set<SNode>) getSessionObject(COPYED_ROOTS);
+    Set<SNode> set = (Set<SNode>) getStepObject(COPYED_ROOTS);
     if (set == null) {
       set = new HashSet<SNode>();
       putStepObject(COPYED_ROOTS, set);
@@ -183,7 +183,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public boolean isCopiedRoot(SNode inputNode) {
-    Set<SNode> set = (Set<SNode>) getSessionObject(COPYED_ROOTS);
+    Set<SNode> set = (Set<SNode>) getStepObject(COPYED_ROOTS);
     if (set == null) return false;
     return set.contains(inputNode);
   }

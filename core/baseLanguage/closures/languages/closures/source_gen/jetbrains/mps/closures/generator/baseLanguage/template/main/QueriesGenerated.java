@@ -130,7 +130,7 @@ public class QueriesGenerated {
     if (true) {
       return false;
     }
-    if (_context.getGenerator().getGeneratorSessionContext().getSessionObject("done_weaving_interface_for_FunctionType") == null) {
+    if (_context.getGenerator().getGeneratorSessionContext().getStepObject("done_weaving_interface_for_FunctionType") == null) {
       _context.getGenerator().getGeneratorSessionContext().putStepObject("done_weaving_interface_for_FunctionType", Boolean.TRUE);
       return true;
     }
@@ -141,7 +141,7 @@ public class QueriesGenerated {
     if (true) {
       return false;
     }
-    if (_context.getGenerator().getGeneratorSessionContext().getSessionObject("done_weaving_class_for_YieldStatement") == null) {
+    if (_context.getGenerator().getGeneratorSessionContext().getStepObject("done_weaving_class_for_YieldStatement") == null) {
       _context.getGenerator().getGeneratorSessionContext().putStepObject("done_weaving_class_for_YieldStatement", Boolean.TRUE);
       return true;
     }
@@ -149,7 +149,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1201783366634(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (_context.getGenerator().getGeneratorSessionContext().getSessionObject("need_weaving_class_for_ClassifierType_adapter") != null) {
+    if (_context.getGenerator().getGeneratorSessionContext().getStepObject("need_weaving_class_for_ClassifierType_adapter") != null) {
       _context.getGenerator().getGeneratorSessionContext().putStepObject("need_weaving_class_for_ClassifierType_adapter", null);
       return true;
     }
@@ -160,7 +160,7 @@ public class QueriesGenerated {
     if (true) {
       return false;
     }
-    if (_context.getGenerator().getGeneratorSessionContext().getSessionObject("done_weaving_interface_for_FunctionType") == null) {
+    if (_context.getGenerator().getGeneratorSessionContext().getStepObject("done_weaving_interface_for_FunctionType") == null) {
       _context.getGenerator().getGeneratorSessionContext().putStepObject("done_weaving_interface_for_FunctionType", Boolean.TRUE);
       return true;
     }
@@ -168,7 +168,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1201789577252(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (_context.getGenerator().getGeneratorSessionContext().getSessionObject("need_weaving_class_for_ClassifierType_adapter") != null) {
+    if (_context.getGenerator().getGeneratorSessionContext().getStepObject("need_weaving_class_for_ClassifierType_adapter") != null) {
       _context.getGenerator().getGeneratorSessionContext().putStepObject("need_weaving_class_for_ClassifierType_adapter", null);
       return true;
     }
@@ -195,11 +195,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1202998342220(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().getSessionObject("remove_this_" + ((SNode)SLinkOperations.getTarget(_context.getNode(), "instance", true)).getId()) != null;
+    return _context.getGenerator().getGeneratorSessionContext().getStepObject("remove_this_" + ((SNode)SLinkOperations.getTarget(_context.getNode(), "instance", true)).getId()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1202998342252(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (SNode)_context.getGenerator().getGeneratorSessionContext().getSessionObject("set_this_classconcept_" + ((SNode)SLinkOperations.getTarget(_context.getNode(), "instance", true)).getId()) != null;
+    return (SNode)_context.getGenerator().getGeneratorSessionContext().getStepObject("set_this_classconcept_" + ((SNode)SLinkOperations.getTarget(_context.getNode(), "instance", true)).getId()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1207145700256(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -1171,7 +1171,7 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_1202998342276(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode te = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
-    SLinkOperations.setTarget(te, "classConcept", (SNode)_context.getGenerator().getGeneratorSessionContext().getSessionObject("set_this_classconcept_" + ((SNode)SLinkOperations.getTarget(_context.getNode(), "instance", true)).getId()), false);
+    SLinkOperations.setTarget(te, "classConcept", (SNode)_context.getGenerator().getGeneratorSessionContext().getStepObject("set_this_classconcept_" + ((SNode)SLinkOperations.getTarget(_context.getNode(), "instance", true)).getId()), false);
     return te;
   }
 

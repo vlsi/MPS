@@ -48,7 +48,7 @@ with_decls:
   }
 
   public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
-    Object sessionData = generator.getGeneratorSessionContext().getSessionObject("wrappers_data_" + ((SNode)sn).getId());
+    Object sessionData = generator.getGeneratorSessionContext().getStepObject("wrappers_data_" + ((SNode)sn).getId());
     if (sessionData == null) {
       sessionData = sn.getUserObject("wrappers_data_");
     }

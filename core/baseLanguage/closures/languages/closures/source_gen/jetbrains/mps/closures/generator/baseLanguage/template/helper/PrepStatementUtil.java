@@ -30,7 +30,7 @@ public class PrepStatementUtil {
   }
 
   public static Object getPrepData(SNode sn, ITemplateGenerator generator) {
-    return generator.getGeneratorSessionContext().getSessionObject("closure_data_" + ((SNode)sn).getId());
+    return generator.getGeneratorSessionContext().getStepObject("closure_data_" + ((SNode)sn).getId());
   }
 
   public static void copyPrepData(SNode from, SNode to, ITemplateGenerator generator) {
@@ -63,11 +63,11 @@ public class PrepStatementUtil {
   }
 
   public static Object getFlag(SNode sn, ITemplateGenerator generator) {
-    return generator.getGeneratorSessionContext().getSessionObject("flag_" + ((SNode)sn).getId());
+    return generator.getGeneratorSessionContext().getStepObject("flag_" + ((SNode)sn).getId());
   }
 
   public static List<SNode> getAllFlagged(ITemplateGenerator generator) {
-    return (List<SNode>)generator.getGeneratorSessionContext().getSessionObject("all_flagged");
+    return (List<SNode>)generator.getGeneratorSessionContext().getStepObject("all_flagged");
   }
 
 
