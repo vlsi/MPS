@@ -19,6 +19,7 @@
     <orderEntry type="module" module-name="generic" />
     <orderEntry type="module" module-name="svn" exported="" />
     <orderEntry type="library" name="JUnit4" level="project" />
+    <orderEntry type="library" name="XStream" level="project" />
     <orderEntryProperties />
   </component>
 </module>
