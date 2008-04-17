@@ -29,18 +29,21 @@ public class HighlighterMessage extends DefaultEditorMessage {
 
   public void paint(Graphics g) {
     EditorCell cell = getCell();
+    paintWaveUnderCell(g, cell);
+  }
+
+  private void paintWaveUnderCell(Graphics g, EditorCell cell) {
     if (cell == null) return;
-    int x = cell.getX();
-    int y = cell.getY();
-    int height = cell.getHeight();
-    int leftInternalInset = cell.getLeftInternalInset();
-    int effectiveWidth = cell.getEffectiveWidth();
     if (isWarning()) {
+      int x = cell.getX();
+      int y = cell.getY();
+      int height = cell.getHeight();
+      int leftInternalInset = cell.getLeftInternalInset();
+      int effectiveWidth = cell.getEffectiveWidth();
       g.setColor(new Color(250,247,158));
       g.fillRect(x + leftInternalInset, y, effectiveWidth, height);
     } else {
-      g.setColor(getColor());
-      ColorAndGraphicsUtil.drawWave(g, x + leftInternalInset, x + leftInternalInset + effectiveWidth, y + height - ColorAndGraphicsUtil.WAVE_HEIGHT);
+      ColorAndGraphicsUtil.drawWaveUnderCell(g, getColor(), cell);
     }
   }
 }
