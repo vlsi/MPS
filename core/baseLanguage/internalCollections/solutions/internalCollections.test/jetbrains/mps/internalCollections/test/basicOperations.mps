@@ -645,7 +645,9 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208429195016">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208429195017">
               <property name="name" value="i" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1208429195018" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208430225182">
+                <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+              </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208429197443">
                 <property name="value" value="1" />
               </node>
@@ -671,6 +673,9 @@
               <property name="name" value="it" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208429165480">
                 <link role="classifier" targetNodeId="3.~Iterator" resolveInfo="Iterator" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208430005974">
+                  <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+                </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208429172093">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208429171554">
@@ -701,12 +706,12 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1208429225790">
-            <node role="expected" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208429228431">
-              <link role="variableDeclaration" targetNodeId="1208429195017" resolveInfo="i" />
-            </node>
-            <node role="actual" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208429229541">
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="1208430276373">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208430279830">
               <property name="value" value="6" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208430281731">
+              <link role="variableDeclaration" targetNodeId="1208429195017" resolveInfo="i" />
             </node>
           </node>
         </node>
