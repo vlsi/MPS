@@ -1,7 +1,6 @@
 package jetbrains.mps.transformation;
 
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.ArrayList;
@@ -13,18 +12,18 @@ import java.util.List;
  */
 public class TemplateLanguageGenerationUtil {
 
-  public static List<SModel> getGeneratorModels(Generator generator) {
-    List<SModel> sourceModels = new ArrayList<SModel>();
+  public static List<SModelDescriptor> getGeneratorModels(Generator generator) {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     List<SModelDescriptor> ownModels = generator.getOwnModelDescriptors();
     for (SModelDescriptor ownModel : ownModels) {
       if (TemplateLanguageUtil.isTemplatesModel(ownModel)) {
-        sourceModels.add(ownModel.getSModel());
+        result.add(ownModel);
       } else if (ownModel.getModelUID().getStereotype().length() == 0) {
         // normal model goes first
-        sourceModels.add(0, ownModel.getSModel());
+        result.add(0, ownModel);
       }
     }
-    return sourceModels;
+    return result;
   }
 
 }

@@ -1,24 +1,24 @@
 package jetbrains.mps.ide.actions.module;
 
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.Calculable;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.projectLanguage.structure.SolutionGeneratorConfiguration;
-import jetbrains.mps.projectLanguage.structure.BaseGeneratorConfiguration;
-import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.projectLanguage.structure.BaseGeneratorConfiguration;
+import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
+import jetbrains.mps.projectLanguage.structure.SolutionGeneratorConfiguration;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
 
@@ -107,9 +107,9 @@ public class GenerateAllModelsInModuleAction extends MPSAction {
     GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
     IGenerationType generationType = generatorManager.getDefaultModuleGenerationType();
     generatorManager.generateModelsWithProgressWindow(
-            params.getModels(),
+      params.getModels(),
       operationContext,
-            generationType,
+      generationType,
       false);
   }
 

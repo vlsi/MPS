@@ -69,14 +69,15 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   public static ModuleContext create(SModel model, AbstractProjectFrame frame, boolean askIfMany) {
-    MPSProject project = frame.getProject();
+    return create(model.getModelDescriptor(), frame, askIfMany);
+  }
 
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
-    assert modelDescriptor != null;
-    Set<IModule> owningModules = SModelRepository.getInstance().getOwners(modelDescriptor, IModule.class);
+  public static ModuleContext create(@NotNull SModelDescriptor model, AbstractProjectFrame frame, boolean askIfMany) {
+    MPSProject project = frame.getProject();
+    Set<IModule> owningModules = SModelRepository.getInstance().getOwners(model, IModule.class);
     if (owningModules.isEmpty()) {
       LOG.error("Couldn't create module context for node:" +
-              "\nCouldn't find owner module for model \"" + modelDescriptor.getModelUID() + "\"");
+              "\nCouldn't find owner module for model \"" + model.getModelUID() + "\"");
       return null;
     }
 

@@ -28,8 +28,8 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.Pair;
 import org.jdom.Element;
 
 import javax.swing.JFrame;
@@ -164,11 +164,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         AbstractProjectFrame projectFrame = operationContext.getComponent(AbstractProjectFrame.class);
         try {
           GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
-          List<SModel> models = toModels(modelDescriptors);
-          List<Pair<SModel, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModel, IOperationContext>>();
-          for (SModel model : models) {
+          List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+          for (SModelDescriptor model : modelDescriptors) {
             ModuleContext moduleContext = ModuleContext.create(model, projectFrame, false);
-            modelsWithContext.add(new Pair<SModel, IOperationContext>(model, moduleContext));
+            modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
           }
 
           Future<Boolean> f = generatorManager.generateModelsWithProgressWindow(
@@ -197,22 +196,22 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return result;
   }
 
-  public Future<Boolean> generateModelsWithProgressWindow(final List<SModel> sourceModels,
+  public Future<Boolean> generateModelsWithProgressWindow(final List<SModelDescriptor> inputModels,
                                                           final IOperationContext invocationContext,
                                                           final IGenerationType generationType,
                                                           boolean closeOnExit) {
-    return generateModelsWithProgressWindow(CollectionUtil.map(sourceModels, new Mapper<SModel, Pair<SModel, IOperationContext>>() {
-      public Pair<SModel, IOperationContext> map(SModel sModel) {
-        return new Pair<SModel, IOperationContext>(sModel, invocationContext);
+    return generateModelsWithProgressWindow(CollectionUtil.map(inputModels, new Mapper<SModelDescriptor, Pair<SModelDescriptor, IOperationContext>>() {
+      public Pair<SModelDescriptor, IOperationContext> map(SModelDescriptor model) {
+        return new Pair<SModelDescriptor, IOperationContext>(model, invocationContext);
       }
     }),
       generationType,
       closeOnExit);
   }
 
-  public Future<Boolean> generateModelsWithProgressWindow(final List<Pair<SModel, IOperationContext>> inputModels,
-                                                          final IGenerationType generationType,
-                                                          boolean closeOnExit) {
+  private Future<Boolean> generateModelsWithProgressWindow(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
+                                                           final IGenerationType generationType,
+                                                           boolean closeOnExit) {
     if (inputModels.isEmpty()) {
       return myExecutorService.submit(new Callable<Boolean>() {
         public Boolean call() throws Exception {
@@ -265,16 +264,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     });
   }
 
-  public boolean generateModels(final List<SModel> inputModels,
+  public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationType generationType,
                                 final IAdaptiveProgressMonitor progress,
                                 final IMessageHandler messages,
                                 final boolean saveTransientModels
   ) {
-    return generateModels(CollectionUtil.map(inputModels, new Mapper<SModel, Pair<SModel, IOperationContext>>() {
-      public Pair<SModel, IOperationContext> map(SModel sModel) {
-        return new Pair<SModel, IOperationContext>(sModel, invocationContext);
+    return generateModels(CollectionUtil.map(inputModels, new Mapper<SModelDescriptor, Pair<SModelDescriptor, IOperationContext>>() {
+      public Pair<SModelDescriptor, IOperationContext> map(SModelDescriptor model) {
+        return new Pair<SModelDescriptor, IOperationContext>(model, invocationContext);
       }
     }), generationType, progress, messages, saveTransientModels);
   }
@@ -282,11 +281,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   /**
    * @return false if canceled
    */
-  public boolean generateModels(final List<Pair<SModel, IOperationContext>> inputModels,
-                                final IGenerationType generationType,
-                                final IAdaptiveProgressMonitor progress,
-                                final IMessageHandler messages,
-                                final boolean saveTransientModels
+  private boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
+                                 final IGenerationType generationType,
+                                 final IAdaptiveProgressMonitor progress,
+                                 final IMessageHandler messages,
+                                 final boolean saveTransientModels
   ) {
     final boolean[] result = new boolean[1];
     CommandProcessor.instance().executeGenerationCommand(new Runnable() {
@@ -300,7 +299,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   /**
    * @return false if canceled
    */
-  private boolean generateModels_internal(List<Pair<SModel, IOperationContext>> _inputModels,
+  private boolean generateModels_internal(List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
                                           IGenerationType generationType,
                                           IAdaptiveProgressMonitor progress,
                                           IMessageHandler messages,
@@ -310,17 +309,15 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     //module partition
     Map<SModelDescriptor, IOperationContext> modelsToContexts = new HashMap<SModelDescriptor, IOperationContext>();
-    for (Pair<SModel, IOperationContext> modelPair : _inputModels) {
-      SModelDescriptor descriptor = modelPair.o1.getModelDescriptor();
-      modelsToContexts.put(descriptor, modelPair.o2);
+    for (Pair<SModelDescriptor, IOperationContext> modelPair : _inputModels) {
+      modelsToContexts.put(modelPair.o1, modelPair.o2);
     }
     List<Pair<IModule, List<SModelDescriptor>>> moduleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
     Map<IModule, IOperationContext> modulesToContexts = new HashMap<IModule, IOperationContext>();
     {
       IModule current = null;
       ArrayList<SModelDescriptor> currentList = null;
-      for (Pair<SModel, IOperationContext> inputModel : _inputModels) {
-        SModelDescriptor inputModelDescriptor = inputModel.o1.getModelDescriptor();
+      for (Pair<SModelDescriptor, IOperationContext> inputModel : _inputModels) {
         IModule newModule = inputModel.o2.getModule();
         if (current == null || newModule != current) {
           current = newModule;
@@ -328,7 +325,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           moduleSequence.add(new Pair<IModule, List<SModelDescriptor>>(current, currentList));
           modulesToContexts.put(current, inputModel.o2);
         }
-        currentList.add(inputModelDescriptor);
+        currentList.add(inputModel.o1);
       }
     }
 
@@ -428,7 +425,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               }
             } else if (!(status.isCanceled() || status.isError())) {
               generationType.handleEmptyOutput(status, outputFolder, invocationContext, progress, messages);
-            }                                                                                                
+            }
             generationSession.discardTransients();
             progress.finishTask(taskName);
           }
@@ -486,13 +483,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               } else {
                 compilationResult = new CompilationResult(0, 0, false);
               }
-              
+
               progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
             }
 
             if (compilationResult.getErrors() > 0) {
               generatedAndCompiledSuccessfully = false;
-            }           
+            }
 
             progress.addText("" + compilationResult);
             progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);

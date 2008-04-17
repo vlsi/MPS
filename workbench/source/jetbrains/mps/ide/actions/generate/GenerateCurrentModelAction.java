@@ -21,7 +21,7 @@ public abstract class GenerateCurrentModelAction extends MPSAction {
 
   public void doExecute(@NotNull ActionContext context) {
     context.get(GeneratorManager.class).generateModelsWithProgressWindow(
-      CollectionUtil.asList(context.getModel().getSModel()),
+      CollectionUtil.asList(context.getModel()),
       context.getOperationContext(),
       getGenerationType(),
       true
