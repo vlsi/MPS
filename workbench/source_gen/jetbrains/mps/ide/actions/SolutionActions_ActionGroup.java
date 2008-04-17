@@ -14,6 +14,7 @@ import jetbrains.mps.ide.actions.solution.GenerateTextFromAllModelsInSolutionAct
 import jetbrains.mps.ide.modelchecker.CheckSolutionAction;
 import jetbrains.mps.ide.actions.solution.OptimizeSolutionImportsAction;
 import jetbrains.mps.ide.actions.make.MakeModuleAction;
+import jetbrains.mps.ide.actions.make.RebuildModuleAction;
 import jetbrains.mps.ide.actions.make.CleanModuleAction;
 import jetbrains.mps.ide.actions.module.SetModuleFolderAction;
 import jetbrains.mps.ide.actions.solution.SolutionPropertiesAction;
@@ -41,6 +42,7 @@ public class SolutionActions_ActionGroup extends BaseActionGroup {
       this.add(new OptimizeSolutionImportsAction(), this);
       this.addSeparator();
       this.add(new MakeModuleAction(), this);
+      this.add(new RebuildModuleAction(), this);
       this.add(new CleanModuleAction(), this);
       this.addSeparator();
       this.add(new SetModuleFolderAction(), this);

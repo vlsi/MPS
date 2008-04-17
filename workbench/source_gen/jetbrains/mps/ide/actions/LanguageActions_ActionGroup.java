@@ -15,6 +15,7 @@ import jetbrains.mps.ide.hierarchy.LanguageHierarchyAction;
 import jetbrains.mps.ide.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
 import jetbrains.mps.ide.actions.make.MakeModuleAction;
+import jetbrains.mps.ide.actions.make.RebuildModuleAction;
 import jetbrains.mps.ide.actions.make.CleanModuleAction;
 import jetbrains.mps.ide.actions.module.SetModuleFolderAction;
 import jetbrains.mps.ide.action.ActionManager;
@@ -43,6 +44,7 @@ public class LanguageActions_ActionGroup extends BaseActionGroup {
       this.add(new RemoveModuleFromProjectAction(), this);
       this.addSeparator();
       this.add(new MakeModuleAction(), this);
+      this.add(new RebuildModuleAction(), this);
       this.add(new CleanModuleAction(), this);
       this.addSeparator();
       this.add(new SetModuleFolderAction(), this);

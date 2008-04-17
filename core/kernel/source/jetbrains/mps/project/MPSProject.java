@@ -718,21 +718,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     }
   }
 
-  public void make(final IAdaptiveProgressMonitor monitor) {
-    final Set<IModule> modulesToBuild = new LinkedHashSet<IModule>();
-
-    modulesToBuild.addAll(getProjectSolutions());
-    modulesToBuild.addAll(getProjectLanguages());
-    modulesToBuild.addAll(getProjectDevKits());
-
-    CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {
-        new ModuleMaker().make(modulesToBuild, monitor);
-        ClassLoaderManager.getInstance().reloadAll();
-      }
-    });
-  }
-
   public static class TestResult {
     public List<String> myGenerationErrors;
     public List<String> myGenerationWarnings;

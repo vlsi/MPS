@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.action.Label;
 import jetbrains.mps.ide.actions.make.MakeProjectAction;
+import jetbrains.mps.ide.actions.make.RebuildProjectAction;
 import jetbrains.mps.ide.actions.make.CleanProjectAction;
 import jetbrains.mps.ide.actions.project.OptimizeProjectImportsAction;
 import jetbrains.mps.ide.actions.file.ProjectSettingsAction;
@@ -18,13 +19,14 @@ public class ProjectActions_ActionGroup extends BaseActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.ProjectActions";
   public static final String LABEL_ID_projectNew = "projectNew";
 
-  public ProjectActions_ActionGroup(MPSProject project) {
+  public  ProjectActions_ActionGroup(MPSProject project) {
     super("", ProjectActions_ActionGroup.ID);
     this.setInternal(false);
     try {
       this.add(new Label(ProjectActions_ActionGroup.LABEL_ID_projectNew), this);
       this.addSeparator();
       this.add(new MakeProjectAction(), this);
+      this.add(new RebuildProjectAction(), this);
       this.add(new CleanProjectAction(), this);
       this.addSeparator();
       this.add(new OptimizeProjectImportsAction(), this);
