@@ -100,17 +100,16 @@ public class CreateRootNodeGroup extends ActionGroup {
       }
 
       public void doExecute(@NotNull final ActionContext context) {
-        final SNode[] node = new SNode[1];
-
-        CommandProcessor.instance().executeCommand(new Runnable() {
-          public void run() {
-            node[0] = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());
-            node[0].setProperty(SModelTreeNode.PACK, myPackage);
-            modelDescriptor.getSModel().addRoot(node[0]);
+        SNode node = CommandProcessor.instance().executeCommand(new Calculable<SNode>() {
+          public SNode calculate() {
+            SNode result = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());
+            result.setProperty(SModelTreeNode.PACK, myPackage);
+            modelDescriptor.getSModel().addRoot(result);
+            return result;
           }
         });
 
-        ide.getProjectPane().selectNode(node[0], context.get(IOperationContext.class));
+        ide.getProjectPane().selectNode(node, context.get(IOperationContext.class));
         ide.getProjectPane().openEditor();
       }
     };

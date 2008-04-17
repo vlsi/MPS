@@ -4,6 +4,7 @@ import jetbrains.mps.annotations.structure.AttributeConcept;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
@@ -477,7 +478,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
-      getTree().rebuildTreeLater(new Runnable() {
+      Runnable action = new Runnable() {
         public void run() {
           final Set<SNode> addedRoots = new LinkedHashSet<SNode>();
           final Set<SNode> removedRoots = new LinkedHashSet<SNode>();
@@ -536,7 +537,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
           updateAncestorsPresentationInTree();
         }
-      }, false);
+      };
+
+      if (ThreadUtils.isEventDispatchThread()) {
+        action.run();        
+      } else {
+        getTree().rebuildTreeLater(action, false);
+      }
     }
 
     private void updateNodesWithChangedPackages(Set<SNode> nodes) {            
