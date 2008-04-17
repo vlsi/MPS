@@ -197,7 +197,13 @@ public class GenericRefactoring {
             modifier.startModificationMode(models);
           }
         });
-        new GeneratorManager().generateModels(models,
+
+        List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
+        for (SModel model : models) {
+          descriptors.add(model.getModelDescriptor());
+        }
+
+        new GeneratorManager().generateModels(descriptors,
           operationContext,
           IGenerationType.FILES,
           IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
