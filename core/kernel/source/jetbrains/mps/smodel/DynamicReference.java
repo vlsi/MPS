@@ -59,18 +59,21 @@ public class DynamicReference extends SReferenceBase {
 
     // todo: what about target model UID?
 
-    AbstractConceptDeclaration sourceNodeConcept = getSourceNode().getConceptDeclarationAdapter();
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(getSourceNode().getParent(),
-            getSourceNode(),
-            sourceNodeConcept,
-            getRole(), // "genuine" role here
-            new GlobalOperationContext());
+    SNode referencingNode = getSourceNode();
+    AbstractConceptDeclaration referencingNodeConcept = referencingNode.getConceptDeclarationAdapter();
+    SNode enclosingNode = getSourceNode().getParent();
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(
+      enclosingNode,
+      referencingNode,
+      referencingNodeConcept,
+      getRole(), // "genuine" role here
+      new GlobalOperationContext());
     if (status.isError()) {
       error("can't obtain search scope: " + status.getMessage());
       return null;
     }
 
-    LinkDeclaration mostSpecificForRole = new ConceptAndSuperConceptsScope(sourceNodeConcept).getMostSpecificLinkDeclarationByRole(getRole());
+    LinkDeclaration mostSpecificForRole = new ConceptAndSuperConceptsScope(referencingNodeConcept).getMostSpecificLinkDeclarationByRole(getRole());
     if (mostSpecificForRole == null) {
       error("couldn't find link declaration '" + getRole() + "' in concept '" + getSourceNode().getConceptFqName() + "'");
       return null;
@@ -86,7 +89,7 @@ public class DynamicReference extends SReferenceBase {
     SNode targetNode = infoResolver.resolve(getResolveInfo());
     if (targetNode == null) {
       error("can't find target by resolve info: '" + getResolveInfo() + "'");
-      infoResolver.resolve(getResolveInfo());
+//      infoResolver.resolve(getResolveInfo());
     }
 
     return targetNode;

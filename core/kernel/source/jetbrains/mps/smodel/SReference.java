@@ -17,6 +17,9 @@ public abstract class SReference {
 
   private String myResolveInfo;
 
+  /**
+   * role must be "genuine"
+   */
   protected SReference(String role, SNode sourceNode) {
     myRole = InternUtil.intern(role);
     mySourceNode = sourceNode;

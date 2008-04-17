@@ -2,15 +2,15 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.inference.TypeCheckingMode;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.TypeCheckingMode;
 
 /**
  * Igor Alshannikov
@@ -56,13 +56,13 @@ public class ModelConstraintsUtil {
   }
 
   private static SearchScopeStatus getSearchScope_intern(
-      SModel model,
-      SNode enclosingNode,
-      SNode referenceNode,
-      AbstractConceptDeclaration referenceNodeConcept,
-      String linkRole,
-      AbstractConceptDeclaration linkTarget,
-      IOperationContext context) {
+    SModel model,
+    SNode enclosingNode,
+    SNode referenceNode,
+    AbstractConceptDeclaration referenceNodeConcept,
+    String linkRole,
+    AbstractConceptDeclaration linkTarget,
+    IOperationContext context) {
 
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
     if (scopeProvider != null) {
