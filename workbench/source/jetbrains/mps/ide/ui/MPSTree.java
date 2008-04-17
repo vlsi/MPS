@@ -487,12 +487,18 @@ public abstract class MPSTree extends JTree {
     }, true);
   }
 
+  public void addNotify() {
+    super.addNotify();
+    if (getModel().getRoot() instanceof MPSTreeNode) {
+      ((MPSTreeNode) getModel().getRoot()).addThisAndChildren();
+    }
+  }
+
   public void removeNotify() {
     super.removeNotify();
     if (getModel().getRoot() instanceof MPSTreeNode) {
       (getRootNode()).removeThisAndChildren();
     }
-    setModel(new DefaultTreeModel(new DefaultMutableTreeNode("None")));
   }
 
   private String pathToString(TreePath path) {
