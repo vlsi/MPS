@@ -9196,9 +9196,9 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207558187060">
             <property name="name" value="loopOrSwitch" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207558187061" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1207558193938">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1207558193939" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207558193940">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208467025211">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1207558193939" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207558193940">
                 <link role="conceptMethodDeclaration" targetNodeId="1207557724489" resolveInfo="getLoopOrSwitch" />
               </node>
             </node>
@@ -9241,9 +9241,9 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207558232782">
             <property name="name" value="loopOrSwitch" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1207558232783" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1207558232784">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1207558232785" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207558232786">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208467025194">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1207558232785" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1207558232786">
                 <link role="conceptMethodDeclaration" targetNodeId="1207557724489" resolveInfo="getLoopOrSwitch" />
               </node>
             </node>
