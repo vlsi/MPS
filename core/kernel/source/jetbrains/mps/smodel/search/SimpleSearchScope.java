@@ -50,7 +50,7 @@ public class SimpleSearchScope extends AbstractSearchScope {
       public SNode resolve(String referenceInfo) {
         if (referenceInfo == null) return null;
         for (SNode node : myNodes) {
-          if (referenceInfo.equals(node.getName())) { // todo: node.getRefName
+          if (referenceInfo.equals(node.getResolveInfo())) {
             return node;
           }
         }
