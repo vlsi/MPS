@@ -29,6 +29,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
   // objects survive between transient models but not between generation steps 
+  private Map<Object, Object> myStepObjects = new HashMap<Object, Object>();
+  // objects survive between transient models and between generation steps
   private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
 
   private LinkedHashSet<MappingConfiguration> myMappingConfigurations;
@@ -57,6 +59,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     String inputModuleUID = inputModel.getUID().toString();
     myTransientModule = new TransientModule("TransientModule:[" + inputModuleUID + "]", invocationContext.getModule(), myGeneratorModules);
     if (prevContext != null) {
+      mySessionObjects = prevContext.mySessionObjects;
       myTransientModule.addDependency(prevContext.getModule());
       myUsedNames = prevContext.myUsedNames;
       myTransientModelsToKeep = prevContext.myTransientModelsToKeep;
@@ -144,10 +147,18 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public void putStepObject(Object key, Object o) {
-    mySessionObjects.put(key, o);
+    myStepObjects.put(key, o);
   }
 
   public Object getStepObject(Object key) {
+    return myStepObjects.get(key);
+  }
+
+  public void putSessionObject(Object key, Object o) {
+    mySessionObjects.put(key, o);
+  }
+
+  public Object getSessionObject(Object key) {
     return mySessionObjects.get(key);
   }
 
