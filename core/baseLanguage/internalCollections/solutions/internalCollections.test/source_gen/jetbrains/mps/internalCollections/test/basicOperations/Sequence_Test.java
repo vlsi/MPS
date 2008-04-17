@@ -172,6 +172,11 @@ __switch__:
     Iterable<Integer> input = this.input5();
     Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, ListSequence.fromIterable(Sequence.fromIterable(input)).toArray()));
     this.assertIterableEquals(this.expect5(), ListSequence.fromIterable(input));
+    int i = 1;
+    for(Iterator it = Sequence.fromIterable(input).iterator() ; it.hasNext() ; i = i + 1) {
+      Assert.assertEquals(i, it.next());
+    }
+    Assert.assertEquals(i, 6);
   }
 
   public void test_toSetList() throws Exception {

@@ -31,6 +31,12 @@ public class Map_Test extends Util_Test {
       Assert.assertEquals(values.get(i - 1), MapSequence.fromMap(map).get(i));
     }
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 3), MapSequence.fromMap(map).keySet());
+    for(Integer i : Arrays.asList(1, 2, 3)) {
+      MapSequence.fromMap(map).remove(i);
+    }
+    for(Integer i : Arrays.asList(1, 2, 3)) {
+      Assert.assertFalse(MapSequence.fromMap(map).containsKey(i));
+    }
   }
 
   public void test_mapNoInitializer() throws Exception {
