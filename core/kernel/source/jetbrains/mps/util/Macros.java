@@ -7,6 +7,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.logging.Logger;
 
 import java.io.File;
 import java.util.Map;
@@ -19,6 +20,8 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Macros {
+  private static final Logger LOG = Logger.getLogger(Macros.class);
+
   public static final String MPS_HOME = "${mps_home}";
   public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
@@ -89,8 +92,14 @@ public abstract class Macros {
           break;
         }
       }
-      
+
       if (result == null) {
+        if (path.startsWith("${")) {
+          LOG.error("Wasn't able to expand path " + path);
+          LOG.error("Please define path variable in path variables section of settings");
+          return path;
+        }
+
         result = FileSystem.getFile(path);
       }
     }
