@@ -124,17 +124,25 @@ public class NullListSequence<T> extends NullSequence<T> implements IListSequenc
     public void addSequence (ISequence<T> seq) {
     }
 
-    public IListSequence<T> getReversed() {
+    public IListSequence<T> reversedList() {
         return this;
     }
 
     public void removeSequence(ISequence<T> seq) {
+    }
+    
+    public IListSequence<T> distinctList() {
+        return this;
     }
 
     public List<T> toList() {
         return this;
     }
     
+    public T[] toGenericArray() {
+        return null;
+    }
+
     private static class EmptyListIterator<U> implements ListIterator<U> {
 
         public void add(U e) {

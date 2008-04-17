@@ -811,23 +811,6 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1207052346917" />
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1207053330501">
-            <node role="expected" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207053339416">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207053334632">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207053333419">
-                  <link role="variableDeclaration" targetNodeId="1207052232799" resolveInfo="input" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DistinctOperation" id="1207053336717" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1207053340779" />
-            </node>
-            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207053345743">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207053345215">
-                <link role="variableDeclaration" targetNodeId="1207052232799" resolveInfo="input" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToSetListOperation" id="1207053346775" />
-            </node>
-          </node>
         </node>
       </node>
     </node>

@@ -170,7 +170,7 @@ __switch__:
 
   public void test_toOperations() throws Exception {
     Iterable<Integer> input = this.input5();
-    Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, ListSequence.fromIterable(Sequence.fromIterable(input)).toArray()));
+    Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, ListSequence.fromIterable(input).toGenericArray()));
     this.assertIterableEquals(this.expect5(), ListSequence.fromIterable(input));
     Integer i = 1;
     for(Iterator<Integer> it = Sequence.fromIterable(input).iterator() ; it.hasNext() ; i = i + 1) {
@@ -181,9 +181,8 @@ __switch__:
 
   public void test_toSetList() throws Exception {
     Iterable<Integer> input = Arrays.asList(5, 3, 2, 5, 1, 1, 4, 5);
-    this.assertIterableEquals(Arrays.asList(5, 3, 2, 1, 4), ListSequence.fromIterable(Sequence.fromIterable(input).distinct()));
-    this.assertIterableEquals(Sequence.fromIterable(input).distinct(), ListSequence.fromIterable(Sequence.fromIterable(input).distinct()));
-    Assert.assertEquals(ListSequence.fromIterable(Sequence.fromIterable(input).distinct()), ListSequence.fromIterable(Sequence.fromIterable(input).distinct()));
+    this.assertIterableEquals(Arrays.asList(5, 3, 2, 1, 4), ListSequence.fromIterable(input).distinctList());
+    this.assertIterableEquals(Sequence.fromIterable(input).distinct(), ListSequence.fromIterable(input).distinctList());
   }
 
 }

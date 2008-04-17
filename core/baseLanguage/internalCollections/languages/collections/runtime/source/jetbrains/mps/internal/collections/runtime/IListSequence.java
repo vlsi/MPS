@@ -20,7 +20,11 @@ public interface IListSequence<T> extends ISequence<T>, List<T> {
 
     void removeSequence(ISequence<T> seq);
 
-    IListSequence<T> getReversed();
+    IListSequence<T> reversedList ();
 
+    IListSequence<T> distinctList ();
+    
     List<T> toList();
+
+    public T[] toGenericArray();
 }

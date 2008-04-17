@@ -226,12 +226,21 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
         }
     }
     
-    public IListSequence<T> getReversed () {
+    public IListSequence<T> reversedList () {
         ListSequence<T> reversed = new ListSequence<T> (this);
         reversed._reverse();
         return reversed;
     }
     
+    public IListSequence<T> distinctList() {
+        return ListSequence.fromIterable(this.distinct());
+    }
+    
+    @SuppressWarnings("unchecked")
+    public T[] toGenericArray() {
+        return (T[]) list.toArray();
+    }
+
     protected ListSequence (List<T> list) {
         this.list = list;
     }

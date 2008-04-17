@@ -50,7 +50,7 @@ public class List_Test extends Util_Test {
 
   public void test_reverse() throws Exception {
     List<String> test = ListSequence.<String>fromArray("A", "B", "C", "D", "E");
-    this.assertIterableEquals(Arrays.asList("E", "D", "C", "B", "A"), ListSequence.fromList(test).getReversed());
+    this.assertIterableEquals(Arrays.asList("E", "D", "C", "B", "A"), ListSequence.fromList(test).reversedList());
     this.assertIterableEquals(Arrays.asList("A", "B", "C", "D", "E"), test);
   }
 
