@@ -6,17 +6,15 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.baseLanguage.ext.collections.lang#1151699677197">
+    <generator name="default" generatorUID="jetbrains.mps.baseLanguage.ext.collections.lang#1151699677197" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template" />
       </models>
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
-        <generator generatorUID="jetbrains.mps.internal.collections#1201792019188" />
       </external-templates>
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
-        <usedLanguages>jetbrains.mps.internal.collections</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
