@@ -81,10 +81,10 @@ public class SModelAdapter implements SModelListener {
   public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
   }
 
-  public void modelInitialized() {
+  public void modelInitialized(SModelDescriptor sm) {
   }
 
-  public void modelSaved() {
+  public void modelSaved(SModelDescriptor sm) {
   }
 
   public void eventFired(SModelEvent event) {

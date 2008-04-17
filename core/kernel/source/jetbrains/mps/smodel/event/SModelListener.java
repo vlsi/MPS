@@ -29,8 +29,8 @@ public interface SModelListener {
   void referenceAdded(SModelReferenceEvent event);
   void referenceRemoved(SModelReferenceEvent event);
 
-  void loadingStateChanged(SModelDescriptor model, boolean isLoading);
 
-  void modelSaved();
-  void modelInitialized();
+  void loadingStateChanged(SModelDescriptor model, boolean isLoading);
+  void modelSaved(SModelDescriptor sm);
+  void modelInitialized(SModelDescriptor sm);
 }

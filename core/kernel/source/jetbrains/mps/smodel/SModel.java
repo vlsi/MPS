@@ -339,7 +339,7 @@ public class SModel implements Iterable<SNode> {
   void fireModelInitialized() {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.modelInitialized();
+      sModelListener.modelInitialized(getModelDescriptor());
     }
   }
 
@@ -418,7 +418,7 @@ public class SModel implements Iterable<SNode> {
   void fireModelSaved() {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.modelSaved();
+      sModelListener.modelSaved(getModelDescriptor());
     }
   }
 
@@ -1225,10 +1225,10 @@ public class SModel implements Iterable<SNode> {
     public void beforeCommandFinished(@NotNull CommandEvent event) {
     }
 
-    public void modelSaved() {
+    public void modelSaved(SModelDescriptor sm) {
     }
 
-    public void modelInitialized() {
+    public void modelInitialized(SModelDescriptor sm) {
     }
 
     public void commandFinished(@NotNull CommandEvent event) {

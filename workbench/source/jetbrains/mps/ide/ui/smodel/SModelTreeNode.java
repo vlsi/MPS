@@ -455,11 +455,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private class MySimpleModelListener extends SModelAdapter {
-    public void modelSaved() {
+    public void modelSaved(SModelDescriptor sm) {
       updateNodePresentation();
     }
 
-    public void modelInitialized() {
+    public void modelInitialized(SModelDescriptor sm) {
       updateNodePresentation();
     }
   }
