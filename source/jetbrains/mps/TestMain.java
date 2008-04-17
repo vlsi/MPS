@@ -258,9 +258,6 @@ public class TestMain {
   }
 
   public static String testProject(File projectFile) {
-
-    HelginsPreferencesComponent.getInstance().setGenerationOptimizationEnabled(true);
-
     return testProject(projectFile, (String) null);
   }
 
@@ -272,14 +269,9 @@ public class TestMain {
    */
   public static String testProject(File projectFile, String treatThisWarningAsError) {
     IdeMain.setTestMode(true);
-
-
     long start = System.currentTimeMillis();
-
     configureMPS();
-
     System.out.println("loading project...");
-
     if (!projectFile.exists()) {
       throw new RuntimeException("Can't find a project in file " + projectFile.getAbsolutePath());
     }
