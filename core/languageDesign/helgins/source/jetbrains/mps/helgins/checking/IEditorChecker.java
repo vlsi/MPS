@@ -17,7 +17,10 @@ import java.util.LinkedHashSet;
  * To change this template use File | Settings | File Templates.
  */
 public interface IEditorChecker {
+  
   public boolean updateEditor(SNode rootNode, IOperationContext operationContext, LinkedHashSet<IEditorMessage> messages);
+
+  public IEditorMessageOwner getOwner(SNode rootNode);
+
   public boolean executeInUndoableCommand();
-  public IEditorMessageOwner getOwner(SNode node);
 }
