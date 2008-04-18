@@ -99,16 +99,14 @@ public class GenerationController {
     myProgress.start("generating", totalJob);
 
     MPSModuleRepository.getInstance().removeTransientModules();
-    MPSProject project = getFirstContext().getProject();
-    IProjectHandler projectHandler = project.getProjectHandler();
-    showMessageView(project);
+    showMessageView();
 
-    project.saveModels();
+    getProject().saveModels();
 
-    clearMessageVew(project);
+    clearMessageVew();
     myMesssages.handle(new Message(MessageKind.INFORMATION, myGenerationType.getStartText()));
 
-    boolean ideaPresent = projectHandler != null;
+    boolean ideaPresent = getProjectHandler() != null;
     Map<IModule, String> outputFolders = new HashMap<IModule, String>();
 
     try {
@@ -124,7 +122,7 @@ public class GenerationController {
           new File(outputFolder).mkdirs();
 
           try {
-            projectHandler.addSourceRoot(outputFolder);
+            getProjectHandler().addSourceRoot(outputFolder);
           } catch (Exception e) {
             myMesssages.handle(new Message(MessageKind.WARNING, "Can't add output folder to IDEA as sources"));
           }
@@ -209,11 +207,11 @@ public class GenerationController {
             CompilationResult compilationResult;
             if (!module.isCompileInMPS()) {
               myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
-              projectHandler.refreshFS();
+              getProjectHandler().refreshFS();
               myProgress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
               myProgress.addText("compiling in IntelliJ IDEA...");
               myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
-              compilationResult = projectHandler.buildModule(outputFolders.get(module));
+              compilationResult = getProjectHandler().buildModule(outputFolders.get(module));
               myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
             } else {
               myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
@@ -266,7 +264,7 @@ public class GenerationController {
 
       if (myGenerationType instanceof GenerateFilesGenerationType && ideaPresent &&
         !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
-        projectHandler.refreshFS();
+        getProjectHandler().refreshFS();
       }
 
     } catch (GenerationCanceledException gce) {
@@ -274,7 +272,7 @@ public class GenerationController {
       myMesssages.handle(new Message(MessageKind.WARNING, "generation canceled"));
 
       myProgress.finishAnyway();
-      showMessageView(project);
+      showMessageView();
 
       return false;
     } catch (Throwable t) {
@@ -294,21 +292,29 @@ public class GenerationController {
     return myInputModels.get(0).o2;
   }
 
+  private IProjectHandler getProjectHandler() {
+    return getProject().getProjectHandler();
+  }
+
+  private MPSProject getProject() {
+    return getFirstContext().getProject();
+  }
+
   private void tryToReloadModelsFromDisk() {
     if (getFirstContext().getMainFrame() != null) {
       SModelRepository.getInstance().tryToReloadModelsFromDisk((JFrame) getFirstContext().getMainFrame());
     }
   }
 
-  private void clearMessageVew(MPSProject project) {
-    MessageView messageView = project.getComponent(MessageView.class);
+  private void clearMessageVew() {
+    MessageView messageView = getProject().getComponent(MessageView.class);
     if (messageView != null) {
       messageView.clear();
     }
   }
 
-  private void showMessageView(MPSProject project) {
-    MessageView messageView = project.getComponent(MessageView.class);
+  private void showMessageView() {
+    MessageView messageView = getProject().getComponent(MessageView.class);
     if (messageView != null) {
       messageView.show(true);
     }
