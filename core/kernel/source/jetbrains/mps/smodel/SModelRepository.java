@@ -13,8 +13,6 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandKind;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.util.*;
@@ -26,7 +24,6 @@ public class SModelRepository extends SModelAdapter {
   private Map<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
   private Map<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
   private Set<SModelDescriptor> myModelsWithNoOwners = new HashSet<SModelDescriptor>();
-  private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
   private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
   private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
 
@@ -114,12 +111,11 @@ public class SModelRepository extends SModelAdapter {
     LOG.debug("Model refresh done");
   }
 
-  public boolean containsModelWithFile(@NotNull IFile modelFile) {
+  public boolean containsModelWithFile(IFile modelFile) {
     return findModel(modelFile) != null;
   }
 
-  @Nullable
-  public SModelDescriptor findModel(@NotNull IFile modelFile) {
+  public SModelDescriptor findModel(IFile modelFile) {
     String canonicalPath = modelFile.getCanonicalPath();
 
     for (SModelDescriptor model : getAllModelDescriptors()) {
@@ -132,23 +128,15 @@ public class SModelRepository extends SModelAdapter {
     return null;
   }
 
-  public void addRepositoryListener(@NotNull RepositoryListener l) {
-    myListeners.add(l);
-  }
-
-  public void removeRepositoryListener(@NotNull RepositoryListener l) {
-    myListeners.remove(l);
-  }
-
-  public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
+  public void addModelRepositoryListener(SModelRepositoryListener l) {
     mySModelRepositoryListeners.add(l);
   }
 
-  public void addWeakModelRepositoryListener(@NotNull SModelRepositoryListener l) {
+  public void addWeakModelRepositoryListener(SModelRepositoryListener l) {
     myWeakSModelRepositoryListeners.add(l);
   }
 
-  public void removeModelRepositoryListener(@NotNull SModelRepositoryListener l) {
+  public void removeModelRepositoryListener(SModelRepositoryListener l) {
     mySModelRepositoryListeners.remove(l);
     myWeakSModelRepositoryListeners.remove(l);
   }
@@ -160,13 +148,11 @@ public class SModelRepository extends SModelAdapter {
     return result;
   }
 
-  @NotNull
   public List<SModelDescriptor> getAllModelDescriptors() {
     return new ArrayList<SModelDescriptor>(myModelDescriptors);
   }
 
-  @NotNull
-  public List<SModelDescriptor> getModelDescriptorsByModelName(@NotNull String modelName) {
+  public List<SModelDescriptor> getModelDescriptorsByModelName(String modelName) {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor d : getAllModelDescriptors()) {
       if (modelName.equals(d.getLongName())) {
@@ -176,7 +162,7 @@ public class SModelRepository extends SModelAdapter {
     return result;
   }
 
-  public void addOwnerForDescriptor(@NotNull SModelDescriptor modelDescriptor, @NotNull ModelOwner owner) {
+  public void addOwnerForDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     if (owners == null) {
       owners = new HashSet<ModelOwner>();
@@ -194,15 +180,15 @@ public class SModelRepository extends SModelAdapter {
     myUIDToModelDescriptorMap.put(modelDescriptor.getModelUID(), modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
 
-    fireRepositoryChanged();
+    fireModelOwnerAdded(modelDescriptor, owner);
   }
 
-  public boolean isRegisteredModelDescriptor(@NotNull SModelDescriptor modelDescriptor, @NotNull ModelOwner owner) {
+  public boolean isRegisteredModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     return owners != null && owners.contains(owner);
   }
 
-  public void registerModelDescriptor(@NotNull SModelDescriptor modelDescriptor, @NotNull ModelOwner owner) {
+  public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     SModelUID modelUID = modelDescriptor.getModelUID();
     SModelDescriptor registeredModel = myUIDToModelDescriptorMap.get(modelUID);
     LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
@@ -230,11 +216,10 @@ public class SModelRepository extends SModelAdapter {
     owners.add(owner);
     modelDescriptor.addWeakModelListener(this);
     modelDescriptor.addModelCommandListener(myListener);
-    fireRepositoryChanged();
     fireModelAdded(modelDescriptor);
   }
 
-  public void unRegisterModelDescriptor(@NotNull SModelDescriptor modelDescriptor, @NotNull ModelOwner owner) {
+  public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     Set<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
     if (modelOwners != null && modelOwners.contains(owner)) {
       modelOwners.remove(owner);
@@ -251,27 +236,17 @@ public class SModelRepository extends SModelAdapter {
       }
     }
 
-    fireRepositoryChanged();
+    fireModelOwnerRemoved(modelDescriptor, owner);
   }
 
-  public void unRegisterModelDescriptors(@NotNull ModelOwner owner) {
+  public void unRegisterModelDescriptors(ModelOwner owner) {
     for (SModelUID uid : new HashMap<SModelUID, SModelDescriptor>(myUIDToModelDescriptorMap).keySet()) {
       SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(uid);
-      Set<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
-      if (modelOwners != null) {
-        modelOwners.remove(owner);
-
-        if (modelOwners.isEmpty()) {
-          myModelsWithNoOwners.add(modelDescriptor);
-        }
-      }
+      unRegisterModelDescriptor(modelDescriptor, owner);
     }
-    myOwnerToModelMap.remove(owner);
-
-    fireRepositoryChanged();
   }
 
-  public void removeModelDescriptor(@NotNull SModelDescriptor modelDescriptor) {
+  public void removeModelDescriptor(SModelDescriptor modelDescriptor) {
     Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     if (owners != null) {
       for (ModelOwner owner : owners) {
@@ -313,16 +288,15 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  @Nullable
-  public SModelDescriptor getModelDescriptor(@NotNull SModel model) {
+  public SModelDescriptor getModelDescriptor(SModel model) {
     return myUIDToModelDescriptorMap.get(model.getUID());
   }
 
-  public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
+  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     return myUIDToModelDescriptorMap.get(modelUID);
   }
 
-  public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID, @NotNull ModelOwner owner) {
+  public SModelDescriptor getModelDescriptor(SModelUID modelUID, ModelOwner owner) {
     SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
     if (descriptor == null) {
       return null;
@@ -334,7 +308,7 @@ public class SModelRepository extends SModelAdapter {
     return null;
   }
 
-  public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName, @NotNull ModelOwner owner) {
+  public List<SModelDescriptor> getModelDescriptors(String modelName, ModelOwner owner) {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor descriptor : getModelDescriptors(owner)) {
       if (modelName.equals(descriptor.getLongName())) {
@@ -344,8 +318,7 @@ public class SModelRepository extends SModelAdapter {
     return result;
   }
 
-  @NotNull
-  public List<SModelDescriptor> getModelDescriptors(@NotNull ModelOwner modelOwner) {
+  public List<SModelDescriptor> getModelDescriptors(ModelOwner modelOwner) {
     Set<SModelDescriptor> result = myOwnerToModelMap.get(modelOwner);
     if (result == null) {
       return new ArrayList<SModelDescriptor>();
@@ -353,26 +326,26 @@ public class SModelRepository extends SModelAdapter {
     return new ArrayList<SModelDescriptor>(result);
   }
 
-  public void modelChanged(@NotNull SModel model) {
+  public void modelChanged(SModel model) {
     markChanged(model);
   }
 
-  public void modelChangedDramatically(@NotNull SModel model) {
+  public void modelChangedDramatically(SModel model) {
     markChanged(model);
   }
 
-  private void markChanged(@NotNull SModel model, boolean changed) {
+  private void markChanged(SModel model, boolean changed) {
     SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(model.getUID());
     if (modelDescriptor != null) { //i.e project model
       markChanged(modelDescriptor, changed);
     }
   }
 
-  public void markChanged(@NotNull SModel model) {
+  public void markChanged(SModel model) {
     markChanged(model, true);
   }
 
-  public void markUnchanged(@NotNull SModel model) {
+  public void markUnchanged(SModel model) {
     markChanged(model, false);
   }
 
@@ -407,10 +380,10 @@ public class SModelRepository extends SModelAdapter {
     }
 
     markChanged(modelDescriptor, true);
-    fireRepositoryChanged();
+    fireModelRenamed(modelDescriptor);
   }
 
-  public void markChanged(@NotNull SModelDescriptor descriptor, boolean b) {
+  public void markChanged(SModelDescriptor descriptor, boolean b) {
     if (!myModelDescriptors.contains(descriptor)) {
       return;
     }
@@ -422,18 +395,18 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  public boolean isChanged(@NotNull SModel model) {
+  public boolean isChanged(SModel model) {
     for (SModelDescriptor m : myChangedModels.keySet()) {
       if (m.getSModel() == model) return true;
     }
     return false;
   }
 
-  public boolean isChanged(@NotNull SModelDescriptor descriptor) {
+  public boolean isChanged(SModelDescriptor descriptor) {
     return myChangedModels.keySet().contains(descriptor);
   }
 
-  public long getLastChangeTime(@NotNull SModelDescriptor descriptor) {
+  public long getLastChangeTime(SModelDescriptor descriptor) {
     if (myChangedModels.containsKey(descriptor)) {
       return myChangedModels.get(descriptor);
     } else if (descriptor != null) {
@@ -444,8 +417,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
 
-  @NotNull
-  public <T extends MPSModuleOwner & ModelOwner> List<SModelDescriptor> getChangedModelsReleasedWhenReleasingOwner(@NotNull T owner) {
+  public <T extends MPSModuleOwner & ModelOwner> List<SModelDescriptor> getChangedModelsReleasedWhenReleasingOwner(T owner) {
     Set<SModelDescriptor> changedModels = getChangedModels();
 
     //copying modelToOwnerMap
@@ -465,11 +437,10 @@ public class SModelRepository extends SModelAdapter {
     return new ArrayList<SModelDescriptor>(releasedModels);
   }
 
-  @NotNull
   private <ModelOwner> Set<SModelDescriptor> collectReleasedModels(
-          @NotNull Set<SModelDescriptor> changedModels,
-          @NotNull Map<SModelDescriptor, HashSet<ModelOwner>> modelToOwnerMap,
-          @NotNull ModelOwner owner) {
+          Set<SModelDescriptor> changedModels,
+          Map<SModelDescriptor, HashSet<ModelOwner>> modelToOwnerMap,
+          ModelOwner owner) {
     Set<SModelDescriptor> releasedModels = new HashSet<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : changedModels) {
       HashSet<ModelOwner> modelOwners = modelToOwnerMap.get(modelDescriptor);
@@ -482,7 +453,6 @@ public class SModelRepository extends SModelAdapter {
     return releasedModels;
   }
 
-  @NotNull
   public Set<SModelDescriptor> getChangedModels() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (SModelDescriptor md : myChangedModels.keySet()) {
@@ -491,7 +461,6 @@ public class SModelRepository extends SModelAdapter {
     return result;
   }
 
-  @NotNull
   public Set<SModelDescriptor> getMaybeTransientChangedModels() {
     return new HashSet<SModelDescriptor>(myChangedModels.keySet());
   }
@@ -514,22 +483,18 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  public boolean hasOwners(@NotNull SModelDescriptor modelDescriptor) {
+  public boolean hasOwners(SModelDescriptor modelDescriptor) {
     Set<ModelOwner> set = myModelToOwnerMap.get(modelDescriptor);
     return !(set == null || set.isEmpty());
   }
 
-  @NotNull
-  public Set<ModelOwner> getOwners(@NotNull SModelDescriptor modelDescriptor) {
+  public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {
     Set<ModelOwner> set = myModelToOwnerMap.get(modelDescriptor);
     if (set == null) return new HashSet<ModelOwner>();
     return new HashSet<ModelOwner>(set);
   }
 
-  @NotNull
-  public <M extends ModelOwner> Set<M> getOwners(
-          @NotNull SModelDescriptor modelDescriptor,
-          @NotNull Class<M> cls) {
+  public <M extends ModelOwner> Set<M> getOwners(SModelDescriptor modelDescriptor, Class<M> cls) {
     Set<M> result = new HashSet<M>();
     for (ModelOwner o : getOwners(modelDescriptor)) {
       if (cls.isInstance(o)) {
@@ -592,21 +557,33 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  private void fireRepositoryChanged() {
-    for (RepositoryListener l : myListeners) {
-      l.repositoryChanged();
-    }
-  }
-
   private void fireModelRemoved(SModelDescriptor modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
       l.modelRemoved(modelDescriptor);
     }
   }
 
-   private void fireModelAdded(SModelDescriptor modelDescriptor) {
+  private void fireModelAdded(SModelDescriptor modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
       l.modelAdded(modelDescriptor);
+    }
+  }
+
+  private void fireModelRenamed(SModelDescriptor modelDescriptor) {
+    for (SModelRepositoryListener l : listeners()) {
+      l.modelRenamed(modelDescriptor);
+    }
+  }
+
+  private void fireModelOwnerAdded(SModelDescriptor modelDescriptor, ModelOwner owner) {
+    for (SModelRepositoryListener l : listeners()) {
+      l.modelOwnerAdded(modelDescriptor, owner);
+    }
+  }
+
+  private void fireModelOwnerRemoved(SModelDescriptor modelDescriptor, ModelOwner owner) {
+    for (SModelRepositoryListener l : listeners()) {
+      l.modelOwnerRemoved(modelDescriptor, owner);
     }
   }
 }

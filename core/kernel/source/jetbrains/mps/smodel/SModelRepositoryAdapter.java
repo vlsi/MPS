@@ -1,17 +1,27 @@
 package jetbrains.mps.smodel;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.07.2007
- * Time: 14:40:45
- * To change this template use File | Settings | File Templates.
- */
 public abstract class SModelRepositoryAdapter implements SModelRepositoryListener {
+
   public void modelRemoved(SModelDescriptor modelDescriptor) {
-
+    modelRepositoryChanged();
   }
+  
   public void modelAdded(SModelDescriptor modelDescriptor) {
+    modelRepositoryChanged();
+  }
 
+  public void modelRenamed(SModelDescriptor modelDescriptor) {
+    modelRepositoryChanged();
+  }
+
+  public void modelOwnerAdded(SModelDescriptor modelDescriptor, ModelOwner owner) {
+    modelRepositoryChanged();
+  }
+
+  public void modelOwnerRemoved(SModelDescriptor modelDescriptor, ModelOwner owner) {
+    modelRepositoryChanged();
+  }
+
+  public void modelRepositoryChanged() {
   }
 }

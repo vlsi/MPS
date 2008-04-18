@@ -149,17 +149,23 @@ public class ModelRepositoryView extends DefaultTool {
     }
   }
 
-  private class DeferringEventHandler extends SModelsAdapter implements ICommandListener, RepositoryListener {
+  private class DeferringEventHandler extends SModelsAdapter implements ICommandListener {
     private boolean myDeferredUpdate = false;
+
+    private SModelRepositoryListener myRepoListener = new SModelRepositoryAdapter() {
+      public void modelRepositoryChanged() {
+        DeferringEventHandler.this.repositoryChanged();
+      }
+    };
 
     public void installListeners() {
       CommandProcessor.instance().addCommandListener(this);
-      SModelRepository.getInstance().addRepositoryListener(this);
+      SModelRepository.getInstance().addModelRepositoryListener(myRepoListener);
       SModelsMulticaster.getInstance().addSModelsListener(this);
     }
     public void unInstallListeners() {
       CommandProcessor.instance().removeCommandListener(this);
-      SModelRepository.getInstance().removeRepositoryListener(this);
+      SModelRepository.getInstance().removeModelRepositoryListener(myRepoListener);
       SModelsMulticaster.getInstance().removeSModelsListener(this);
     }
 
@@ -170,7 +176,8 @@ public class ModelRepositoryView extends DefaultTool {
         myTree.rebuildLater();
       }
     }
-    public void repositoryChanged() {
+
+    private void repositoryChanged() {
       if(CommandProcessor.instance().isInsideCommand()) {
          myDeferredUpdate = true;
       } else {

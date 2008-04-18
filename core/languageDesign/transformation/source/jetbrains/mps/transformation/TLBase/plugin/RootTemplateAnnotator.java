@@ -16,7 +16,7 @@ import java.util.List;
  * Igor Alshannikov
  * Jan 16, 2008
  */
-public class RootTemplateAnnotator implements  SModelRepositoryListener {
+public class RootTemplateAnnotator extends SModelRepositoryAdapter {
 
   private SModelListener myModelListener = new MyModelListener();
 
