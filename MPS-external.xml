@@ -207,7 +207,7 @@
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp">
       <fileset dir="MPSPlugin\MPSSupport\classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, " />
     </copy>
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar" filesonly="true">
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, " />
     </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\mps.jar.tmp" />
@@ -335,7 +335,7 @@
     <copy file="readme.txt" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\readme.txt" />
     <copy file="mps.bat" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\mps.bat" />
     <copy file="mps.sh" tofile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\mps.sh" />
-    <zip destfile="${deploy.dir}\MPS-${build.number}.zip" filesonly="true">
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}\MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.ipr" includes="" />
     </zip>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp" />

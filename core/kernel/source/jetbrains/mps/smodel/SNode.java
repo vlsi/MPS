@@ -310,7 +310,6 @@ public final class SNode {
     return getProperty(IResolveInfo.RESOLVE_INFO);
   }
 
-
   @Nullable
   public String getRole_() {
     return myRoleInParent;

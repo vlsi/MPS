@@ -182,7 +182,6 @@ public class GenerationController {
       TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.GENERATION);
       for (SModelDescriptor inputModel : descriptors) {
         info("");
-
         String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
         myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 

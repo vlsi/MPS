@@ -153,7 +153,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1184610250485(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String description = SPropertyOperations.getString(_context.getNode(), "searchScopeDescription");
-    if(description != null) {
+    if (description != null) {
       return description;
     }
     return _context.getTemplateValue();
@@ -169,7 +169,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1184610822428(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String description = SPropertyOperations.getString(_context.getNode(), "description");
-    if(description != null) {
+    if (description != null) {
       return description;
     }
     return _context.getTemplateValue();
@@ -258,14 +258,14 @@ public class QueriesGenerated {
     SNode propertyConstraint = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint", false, false);
     SNode property = SLinkOperations.getTarget(propertyConstraint, "applicableProperty", false);
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
-    if(dataType == null) {
+    if (dataType == null) {
       return null;
     }
     SNode bltype = DataTypeDeclaration_Behavior.call_toBaseLanguageType_1182472765133(dataType);
-    if(SNodeOperations.isInstanceOf(bltype, "jetbrains.mps.baseLanguage.structure.IntegerType")) {
+    if (SNodeOperations.isInstanceOf(bltype, "jetbrains.mps.baseLanguage.structure.IntegerType")) {
       return SLinkOperations.getTarget(new QuotationClass_().createNode(), "baseMethodDeclaration", false);
     }
-    if(SNodeOperations.isInstanceOf(bltype, "jetbrains.mps.baseLanguage.structure.BooleanType")) {
+    if (SNodeOperations.isInstanceOf(bltype, "jetbrains.mps.baseLanguage.structure.BooleanType")) {
       return SLinkOperations.getTarget(new QuotationClass_1().createNode(), "baseMethodDeclaration", false);
     }
     return SLinkOperations.getTarget(new QuotationClass_2().createNode(), "baseMethodDeclaration", false);
