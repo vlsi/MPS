@@ -42,6 +42,11 @@ public class GenerationController {
   private IMessageHandler myMesssages;
   private boolean mySaveTransientModels;
 
+  private Map<SModelDescriptor, IOperationContext> myModelsToContexts = new HashMap<SModelDescriptor, IOperationContext>();
+  private List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
+  private Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
+
+
 
   public GenerationController(GeneratorManager generatorManager,
                               List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
@@ -50,44 +55,36 @@ public class GenerationController {
                               IMessageHandler messages,
                               boolean saveTransientModels) {
     
-    this.myManager = generatorManager;
-    this.myInputModels = _inputModels;
-    this.myGenerationType = generationType;
+    myManager = generatorManager;
+    myInputModels = _inputModels;
+    myGenerationType = generationType;
     this.myProgress = progress;
     this.myMesssages = messages;
     this.mySaveTransientModels = saveTransientModels;
+
+    for (Pair<SModelDescriptor, IOperationContext> modelPair : myInputModels) {
+      myModelsToContexts.put(modelPair.o1, modelPair.o2);
+    }
+
+    IModule current = null;
+    ArrayList<SModelDescriptor> currentList = null;
+    for (Pair<SModelDescriptor, IOperationContext> inputModel : myInputModels) {
+      IModule newModule = inputModel.o2.getModule();
+      if (current == null || newModule != current) {
+        current = newModule;
+        currentList = new ArrayList<SModelDescriptor>();
+        myModuleSequence.add(new Pair<IModule, List<SModelDescriptor>>(current, currentList));
+        myModulesToContexts.put(current, inputModel.o2);
+      }
+      currentList.add(inputModel.o1);
+    }
   }
 
   public boolean generate() {
-
-    IOperationContext firstContext = myInputModels.get(0).o2;
-
-    //module partition
-    Map<SModelDescriptor, IOperationContext> modelsToContexts = new HashMap<SModelDescriptor, IOperationContext>();
-    for (Pair<SModelDescriptor, IOperationContext> modelPair : myInputModels) {
-      modelsToContexts.put(modelPair.o1, modelPair.o2);
-    }
-    List<Pair<IModule, List<SModelDescriptor>>> moduleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
-    Map<IModule, IOperationContext> modulesToContexts = new HashMap<IModule, IOperationContext>();
-    {
-      IModule current = null;
-      ArrayList<SModelDescriptor> currentList = null;
-      for (Pair<SModelDescriptor, IOperationContext> inputModel : myInputModels) {
-        IModule newModule = inputModel.o2.getModule();
-        if (current == null || newModule != current) {
-          current = newModule;
-          currentList = new ArrayList<SModelDescriptor>();
-          moduleSequence.add(new Pair<IModule, List<SModelDescriptor>>(current, currentList));
-          modulesToContexts.put(current, inputModel.o2);
-        }
-        currentList.add(inputModel.o1);
-      }
-    }
-
     // time estimation
     boolean compile = (myGenerationType.requiresCompilationInIDEAfterGeneration() || myGenerationType.requiresCompilationInIDEABeforeGeneration());
     long totalJob = 0;
-    for (Pair<IModule, List<SModelDescriptor>> pair : moduleSequence) { //todo
+    for (Pair<IModule, List<SModelDescriptor>> pair : myModuleSequence) {
       IModule module = pair.o1;
       if (module != null) {
         long jobTime = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, module != null && !module.isCompileInMPS(), pair.o2);
@@ -102,7 +99,7 @@ public class GenerationController {
     myProgress.start("generating", totalJob);
 
     MPSModuleRepository.getInstance().removeTransientModules();
-    MPSProject project = firstContext.getProject();
+    MPSProject project = getFirstContext().getProject();
     IProjectHandler projectHandler = project.getProjectHandler();
     showMessageView(project);
 
@@ -117,10 +114,10 @@ public class GenerationController {
     try {
       boolean generationOK = true;
       boolean generationERROR = false;
-      for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : moduleSequence) {
+      for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
         IModule currentModule = moduleAndDescriptors.o1;
 
-        IOperationContext invocationContext = modulesToContexts.get(currentModule);
+        IOperationContext invocationContext = myModulesToContexts.get(currentModule);
         myProgress.startTask("generating in module " + currentModule);
         String outputFolder = currentModule != null ? currentModule.getGeneratorOutputPath() : null;
         if (outputFolder != null && !new File(outputFolder).exists()) {
@@ -184,9 +181,7 @@ public class GenerationController {
           TypeChecker.getInstance().setIncrementalMode(true);
           TypeChecker.getInstance().resetTypeCheckingMode();
 
-          if (firstContext.getMainFrame() != null) {
-            SModelRepository.getInstance().tryToReloadModelsFromDisk((JFrame) firstContext.getMainFrame());
-          }
+          tryToReloadModelsFromDisk();
         }
 
         checkMonitorCanceled(myProgress);
@@ -199,7 +194,7 @@ public class GenerationController {
         boolean generatedAndCompiledSuccessfully = true;
         boolean needToReload = false;
 
-        for (Pair<IModule, List<SModelDescriptor>> moduleListPair : moduleSequence) {
+        for (Pair<IModule, List<SModelDescriptor>> moduleListPair : myModuleSequence) {
           IModule module = moduleListPair.o1;
 
           if (module != null && module.reloadClassesAfterGeneration()) {
@@ -243,7 +238,7 @@ public class GenerationController {
           }
         }
 
-        for (SModelDescriptor sm : modelsToContexts.keySet()) {
+        for (SModelDescriptor sm : myModelsToContexts.keySet()) {
           ModelGenerationStatusManager.getInstance().invalidateData(sm);
         }
 
@@ -293,6 +288,16 @@ public class GenerationController {
     }
 
     return true;
+  }
+
+  private IOperationContext getFirstContext() {
+    return myInputModels.get(0).o2;
+  }
+
+  private void tryToReloadModelsFromDisk() {
+    if (getFirstContext().getMainFrame() != null) {
+      SModelRepository.getInstance().tryToReloadModelsFromDisk((JFrame) getFirstContext().getMainFrame());
+    }
   }
 
   private void clearMessageVew(MPSProject project) {
