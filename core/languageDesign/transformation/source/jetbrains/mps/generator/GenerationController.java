@@ -81,22 +81,7 @@ public class GenerationController {
   }
 
   public boolean generate() {
-    // time estimation
-    boolean compile = (myGenerationType.requiresCompilationInIDEAfterGeneration() || myGenerationType.requiresCompilationInIDEABeforeGeneration());
-    long totalJob = 0;
-    for (Pair<IModule, List<SModelDescriptor>> pair : myModuleSequence) {
-      IModule module = pair.o1;
-      if (module != null) {
-        long jobTime = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, module != null && !module.isCompileInMPS(), pair.o2);
-        totalJob += jobTime;
-      }
-    }
-
-    if (totalJob == 0) {
-      totalJob = 1000; //todo we need it for build file generation
-    }
-
-    myProgress.start("generating", totalJob);
+    myProgress.start("generating", estimateGenerationTime());
 
     MPSModuleRepository.getInstance().removeTransientModules();
     showMessageView();
@@ -286,6 +271,23 @@ public class GenerationController {
     }
 
     return true;
+  }
+
+  private long estimateGenerationTime() {
+    boolean compile = (myGenerationType.requiresCompilationInIDEAfterGeneration() || myGenerationType.requiresCompilationInIDEABeforeGeneration());
+    long totalJob = 0;
+    for (Pair<IModule, List<SModelDescriptor>> pair : myModuleSequence) {
+      IModule module = pair.o1;
+      if (module != null) {
+        long jobTime = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, !module.isCompileInMPS(), pair.o2);
+        totalJob += jobTime;
+      }
+    }
+
+    if (totalJob == 0) {
+      totalJob = 1000; //todo we need it for build file generation
+    }
+    return totalJob;
   }
 
   private IOperationContext getFirstContext() {
