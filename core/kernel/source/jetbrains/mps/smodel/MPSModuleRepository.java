@@ -573,11 +573,16 @@ public class MPSModuleRepository implements IComponentLifecycle {
   }
 
   public void removeTransientModules() {
+
+    boolean removedAnything = false;
     for (GenerationSessionContext.TransientModule m : getAllModules(GenerationSessionContext.TransientModule.class)) {
+      removedAnything = true;
       m.dispose();
     }
 
-    ClassLoaderManager.getInstance().reloadAll();
+    if (removedAnything) {
+      ClassLoaderManager.getInstance().reloadAll();
+    }
   }
 
   public List<IModule> getAllModulesInDirectory(File file) {
