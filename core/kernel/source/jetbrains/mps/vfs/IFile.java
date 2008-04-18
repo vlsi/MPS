@@ -6,8 +6,6 @@ import java.util.List;
 public interface IFile {
   String getName();
 
-  IFile getAbsoluteParent();
-
   IFile getParent();
 
   List<IFile> list();

@@ -41,10 +41,6 @@ public class JarFileEntryFile implements IFile {
     return new JarFileEntryFile(myJarFileData, myJarFileData.getParentDirectory(myEntryPath));
   }
 
-  public IFile getAbsoluteParent() {
-    return getParent();
-  }
-
   public List<IFile> list() {
     if (isFile()) {
       return null;

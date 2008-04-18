@@ -24,19 +24,6 @@ public class FileSystemFile implements IFile {
   }
 
   public IFile getParent() {
-    if (myFile.getParentFile() == null) {
-      return null;
-    }
-    return new FileSystemFile(myFile.getParentFile());
-  }
-
-  /**
-   * In contrast with getParent this returns the parent by filesystem means,
-   * e.g.
-   * ~MyDocuments.getParent = ~Desktop
-   * ~MyDocuments.getAbsoluteParent = ~UserHome
-   */
-  public IFile getAbsoluteParent() {
     File parentFile = myFile.getAbsoluteFile().getParentFile();
     if (parentFile == null) return null;
     return new FileSystemFile(parentFile);
