@@ -61,8 +61,6 @@ public class IdeMain {
 
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            if (ModuleMaker.isMakeTurnedOff()) return;
-
             MakeAllModulesAction action = new MakeAllModulesAction();
             action.setCloseOnExit(true);
             ActionContext context = new ActionContext();

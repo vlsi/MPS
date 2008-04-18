@@ -202,11 +202,7 @@ public class GenerationController {
               myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
               myProgress.addText("compiling in JetBrains MPS...");
 
-              if (!ModuleMaker.isMakeTurnedOff()) {
-                compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new MessagesOnlyAdaptiveProgressMonitorWrapper(myProgress));
-              } else {
-                compilationResult = new CompilationResult(0, 0, false);
-              }
+              compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new MessagesOnlyAdaptiveProgressMonitorWrapper(myProgress));
 
               myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
             }

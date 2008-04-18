@@ -26,10 +26,6 @@ import java.util.*;
 public class ModuleMaker {
   private static Logger LOG = Logger.getLogger(ModuleMaker.class);
 
-  public static boolean isMakeTurnedOff() {
-    return "true".equals(System.getProperty("mps.noMake"));    
-  }
-
   private Map<String, IModule> myContainingModules = new HashMap<String, IModule>();
   private Map<IModule, ModuleSources> myModuleSources = new HashMap<IModule, ModuleSources>();
 
