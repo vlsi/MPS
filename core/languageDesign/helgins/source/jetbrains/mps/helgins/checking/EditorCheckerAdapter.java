@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.IEditorMessage;
 import jetbrains.mps.nodeEditor.IEditorMessageOwner;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 
 import java.awt.Color;
@@ -40,11 +41,11 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, IEditorMes
     return error;
   }
 
- /* public Set<IEditorMessage> checkModel(SModel model) {
+  public Set<IEditorMessage> checkModel(SModel model, IOperationContext operationContext) {
     Set<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
     for (SNode node : model.getRoots()) {
-      messages.addAll(createMessages(, node));
+      messages.addAll(createMessages(node, operationContext));
     }
     return messages;
-  }*/
+  }
 }

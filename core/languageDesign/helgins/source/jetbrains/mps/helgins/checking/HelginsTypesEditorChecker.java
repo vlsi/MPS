@@ -12,6 +12,7 @@ import jetbrains.mps.logging.Logger;
 
 import java.awt.Color;
 import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,17 +21,18 @@ import java.util.LinkedHashSet;
  * Time: 15:04:28
  * To change this template use File | Settings | File Templates.
  */
-public class HelginsTypesEditorChecker implements IEditorChecker {
+public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
   private static Logger LOG = Logger.getLogger(HelginsTypesEditorChecker.class);
 
-  public boolean updateEditor(SNode node, IOperationContext operationContext, LinkedHashSet<IEditorMessage> messages) {
+  protected Set<IEditorMessage> createMessages(SNode node, IOperationContext operationContext) {
+    Set<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
     if (!TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
       try {
         TypeChecker.getInstance().checkRoot(node.getContainingRoot());
       } catch (Throwable t) {
         LOG.error(t);
         TypeChecker.getInstance().markAsChecked(node.getContainingRoot()); // for not to check again until the node will be changed
-        return true;
+        return messages;
       }
     }
 
@@ -49,7 +51,7 @@ public class HelginsTypesEditorChecker implements IEditorChecker {
       messages.add(message);
     }
 
-    return true;
+    return messages;
   }
 
   private NodeTypesComponent getNodeTypesComponent(SNode node) {
