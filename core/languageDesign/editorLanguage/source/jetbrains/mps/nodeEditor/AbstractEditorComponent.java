@@ -1443,9 +1443,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     for (final ModelCheckerMessage m : res.getMessages()) {
       if (m.getNode().getContainingRoot() == rootNode) {
-        getHighlightManager().mark(new DefaultEditorMessage(m.getNode(), Color.PINK, m.getMessage(), myMessageOwner, this) {
-          public void paint(Graphics g) {
-            EditorCell cell = getCell();
+        getHighlightManager().mark(new DefaultEditorMessage(m.getNode(), Color.PINK, m.getMessage(), myMessageOwner) {
+          public void paint(Graphics g, IEditorComponent editorComponent) {
+            EditorCell cell = getCell(editorComponent);
             int x = cell.getX();
             int y = cell.getY();
             int height = cell.getHeight();

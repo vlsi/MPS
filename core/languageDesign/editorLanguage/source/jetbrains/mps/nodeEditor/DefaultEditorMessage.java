@@ -17,21 +17,19 @@ public class DefaultEditorMessage implements IEditorMessage {
   private Color myColor;
   private String myMessage;
   private IEditorMessageOwner myOwner;
-  private IEditorComponent myEditor;
   private SNodePointer myNodePointer;
   private MessageStatus myStatus = MessageStatus.OK;
 
 
-  public DefaultEditorMessage(SNode node, Color color, String message, IEditorMessageOwner owner, IEditorComponent editor) {
-    myEditor = editor;
+  public DefaultEditorMessage(SNode node, Color color, String message, IEditorMessageOwner owner) {
     myNodePointer = new SNodePointer(node);
     myColor = color;
     myMessage = message;
     myOwner = owner;
   }
 
-  public DefaultEditorMessage(SNode node, MessageStatus status, Color color, String message, IEditorMessageOwner owner, IEditorComponent editor) {
-    this(node, color, message, owner, editor);
+  public DefaultEditorMessage(SNode node, MessageStatus status, Color color, String message, IEditorMessageOwner owner) {
+    this(node, color, message, owner);
     myStatus = status;
   }
 
@@ -47,36 +45,37 @@ public class DefaultEditorMessage implements IEditorMessage {
     return myOwner;
   }
 
-  public boolean isValid() {
-    return getCell() != null;
+  public boolean isValid(IEditorComponent editorComponent) {
+    return getCell(editorComponent) != null;
   }
 
-  public int getStart() {
-     return getCell().getY();
+  public int getStart(IEditorComponent editorComponent) {
+     return getCell(editorComponent).getY();
    }
 
-  public int getHeight() {
-    return getCell().getHeight();
+  public int getHeight(IEditorComponent editorComponent) {
+    return getCell(editorComponent).getHeight();
   }
 
-  public void doNavigate() {
-    myEditor.changeSelection(getCell());
+  public void doNavigate(IEditorComponent editorComponent) {
+    editorComponent.changeSelection(getCell(editorComponent));
   }
 
   public MessageStatus getStatus() {
     return myStatus;
   }
 
-  public EditorCell getCell() {
-    return myEditor.getBigValidCellForNode(myNodePointer.getNode());
+  public EditorCell getCell(IEditorComponent editor) {
+    if (editor == null) return null;
+    return editor.getBigValidCellForNode(getNode());
   }
 
   public SNode getNode() {
     return myNodePointer.getNode();
   }
 
-  public void paint(Graphics g) {
-    EditorCell cell = getCell();
+  public void paint(Graphics g, IEditorComponent editorComponent) {
+    EditorCell cell = getCell(editorComponent);
     int x = cell.getX();
     int y = cell.getY();
     int width = cell.getWidth();

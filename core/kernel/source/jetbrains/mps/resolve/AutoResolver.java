@@ -59,7 +59,7 @@ public class AutoResolver implements IEditorChecker, IEditorMessageOwner {
     // highlight nodes with errors
     for (SReference ref : yetBadReferences) {
       DefaultEditorMessage message =
-        new DefaultEditorMessage(ref.getSourceNode(), MessageStatus.ERROR, Color.RED, "unresolved reference", this, editor);
+        new DefaultEditorMessage(ref.getSourceNode(), MessageStatus.ERROR, Color.RED, "unresolved reference", this);
       messages.add(message);
     }
 

@@ -5,16 +5,17 @@ import jetbrains.mps.smodel.SNode;
 import java.awt.*;
 
 public interface IEditorMessage {
-  int getStart();
-  int getHeight();
+  int getStart(IEditorComponent editorComponent);
+
+  int getHeight(IEditorComponent editorComponent);
+
+  void doNavigate(IEditorComponent editorComponent);
+
+  boolean isValid(IEditorComponent editorComponent);
 
   String getMessage();
 
   SNode getNode();
-
-  void doNavigate();
-
-  boolean isValid();
 
   MessageStatus getStatus();
 
@@ -22,9 +23,9 @@ public interface IEditorMessage {
 
   IEditorMessageOwner getOwner();
 
-  EditorCell getCell();
+  EditorCell getCell(IEditorComponent editorComponent);
 
-  void paint(Graphics g);
+  void paint(Graphics g, IEditorComponent editorComponent);
 
   boolean isBackGround();
 }

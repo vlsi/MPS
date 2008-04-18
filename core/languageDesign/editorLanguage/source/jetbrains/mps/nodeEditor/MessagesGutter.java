@@ -129,7 +129,7 @@ public class MessagesGutter extends JPanel {
         public void mousePressed(MouseEvent e) {
           List<IEditorMessage> messages = getMessagesAt(e.getY());
           if (messages.size() > 0) {
-            messages.get(0).doNavigate();
+            messages.get(0).doNavigate(myEditorComponent);
           }
         }
       });
@@ -158,7 +158,7 @@ public class MessagesGutter extends JPanel {
         }
       });
       for (IEditorMessage msg : iEditorMessages) {
-        if (!msg.isValid()) {
+        if (!msg.isValid(myEditorComponent)) {
           continue;
         }
         int start = getMessageStart(msg);
@@ -176,11 +176,11 @@ public class MessagesGutter extends JPanel {
     }
 
     private int getMessageHeight(IEditorMessage msg) {
-      return (int) (Math.max(2.0d, msg.getHeight() * (((double) getHeight()) / ((double) myEditorComponent.getHeight()))));
+      return (int) (Math.max(2.0d, msg.getHeight(myEditorComponent) * (((double) getHeight()) / ((double) myEditorComponent.getHeight()))));
     }
 
     private int getMessageStart(IEditorMessage msg) {
-      return (int) (msg.getStart() * (((double) getHeight()) / ((double) myEditorComponent.getHeight())));
+      return (int) (msg.getStart(myEditorComponent) * (((double) getHeight()) / ((double) myEditorComponent.getHeight())));
     }
 
     public String getToolTipText(MouseEvent event) {
@@ -205,7 +205,7 @@ public class MessagesGutter extends JPanel {
       List<IEditorMessage> result = new ArrayList<IEditorMessage>();
       Set<IEditorMessage> messagesToRemove = new HashSet<IEditorMessage>();
       for (IEditorMessage msg : myMessages) {
-        if (!msg.isValid()) continue;
+        if (!msg.isValid(myEditorComponent)) continue;
         int start = getMessageStart(msg);
         int height = getMessageHeight(msg);
         if (y >= start && y <= start + height) {

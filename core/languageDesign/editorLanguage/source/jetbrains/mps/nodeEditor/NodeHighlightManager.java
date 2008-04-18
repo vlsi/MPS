@@ -68,7 +68,7 @@ public class NodeHighlightManager implements IEditorMessageOwner {
 
   public void mark(SNode node, Color color, String messageText, IEditorMessageOwner owner) {
     if (node == null) return;
-    IEditorMessage message = new DefaultEditorMessage(node, color, messageText, owner, myEditor);
+    IEditorMessage message = new DefaultEditorMessage(node, color, messageText, owner);
     mark(message);
   }
 

@@ -50,7 +50,7 @@ public class HelginsTypesEditorChecker implements IEditorChecker {
         color = Color.YELLOW;
       }
       DefaultEditorMessage message =
-        new HighlighterMessage(errorNode.o1, status, color, "TYPE ERROR: " + errorNode.o2.reportError(), editor, typesComponent);
+        new HighlighterMessage(errorNode.o1, status, color, "TYPE ERROR: " + errorNode.o2.reportError(), typesComponent);
       messages.add(message);
     }
 

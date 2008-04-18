@@ -15,8 +15,8 @@ import java.awt.Graphics;
 * To change this template use File | Settings | File Templates.
 */
 public class HighlighterMessage extends DefaultEditorMessage {
-  public HighlighterMessage(SNode errorNode, MessageStatus status, Color color, String string, IEditorComponent editor, IEditorMessageOwner owner) {
-    super(errorNode, status, color, string, owner, editor);
+  public HighlighterMessage(SNode errorNode, MessageStatus status, Color color, String string, IEditorMessageOwner owner) {
+    super(errorNode, status, color, string, owner);
   }
 
   public boolean isBackGround() {
@@ -27,8 +27,8 @@ public class HighlighterMessage extends DefaultEditorMessage {
     return getStatus() == MessageStatus.WARNING;
   }
 
-  public void paint(Graphics g) {
-    EditorCell cell = getCell();
+  public void paint(Graphics g, IEditorComponent editorComponent) {
+    EditorCell cell = getCell(editorComponent);
     paintWaveUnderCell(g, cell);
   }
 
