@@ -1,14 +1,8 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
-import jetbrains.mps.generator.template.Statistics;
-import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.TypeCheckingMode;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -17,26 +11,16 @@ import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.MessagesOnlyAdaptiveProgressMonitorWrapper;
-import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.plugin.CompilationResult;
-import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
-import org.jdom.Element;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import java.io.File;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -47,9 +31,15 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
 
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
-  private @Externalizable boolean mySaveTransientModels;
-  private @Externalizable boolean myDumpStatistics = false;
-  private @Externalizable boolean myShowErrorsOnly;
+  private
+  @Externalizable
+  boolean mySaveTransientModels;
+  private
+  @Externalizable
+  boolean myDumpStatistics = false;
+  private
+  @Externalizable
+  boolean myShowErrorsOnly;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
 
   private ExecutorService myExecutorService = Executors.newCachedThreadPool();
@@ -214,12 +204,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
 
     return myExecutorService.submit(new Callable<Boolean>() {
       public Boolean call() throws Exception {
-        if (saveTransientModels) {
-          invocationContext.getProject().getComponentSafe(GenerationTracer.class).startTracing();
-        }
-        boolean result = generateModels(inputModels, generationType, progress, messages, saveTransientModels);
-        invocationContext.getProject().getComponentSafe(GenerationTracer.class).finishTracing();
-        return result;
+        return generateModels(inputModels, generationType, progress, messages, saveTransientModels);
       }
     });
   }
@@ -231,9 +216,8 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
                                 final IOperationContext invocationContext,
                                 final IGenerationType generationType,
                                 final IAdaptiveProgressMonitor progress,
-                                final IMessageHandler messages,
-                                final boolean saveTransientModels
-  ) {
+                                final IMessageHandler messages) {
+
     return generateModels(
       CollectionUtil.map(
         inputModels,
@@ -246,7 +230,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
       generationType,
       progress,
       messages,
-      saveTransientModels);
+      false);
   }
 
   /**
@@ -261,21 +245,18 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
     final boolean[] result = new boolean[1];
     CommandProcessor.instance().executeGenerationCommand(new Runnable() {
       public void run() {
-        result[0] = generateModels_internal(inputModels, generationType, progress, messages, saveTransientModels);
+        MPSModuleRepository.getInstance().removeTransientModules(); // this will 'reload-all'
+        MPSProject project = inputModels.get(0).o2.getProject();
+        project.saveModels();
+        if (saveTransientModels) {
+          project.getComponentSafe(GenerationTracer.class).startTracing();
+        }
+        GenerationController gc = new GenerationController(GeneratorManager.this, inputModels, generationType, progress, messages, saveTransientModels);
+        result[0] = gc.generate();
+        project.getComponentSafe(GenerationTracer.class).finishTracing();
       }
     });
     return result[0];
-  }
-
-  /**
-   * @return false if canceled
-   */
-  private boolean generateModels_internal(List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
-                                          IGenerationType generationType,
-                                          IAdaptiveProgressMonitor progress,
-                                          IMessageHandler messages,
-                                          boolean saveTransientModels) {
-    return new GenerationController(this, _inputModels, generationType, progress, messages, saveTransientModels).generate();
   }
 
   public boolean willCompile(boolean ideaPresent, IGenerationType generationType) {

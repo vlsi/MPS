@@ -81,9 +81,7 @@ public class GenerationController {
 
   public boolean generate() {
     myProgress.start("generating", estimateGenerationTime());
-    MPSModuleRepository.getInstance().removeTransientModules();
     showMessageView();
-    getProject().saveModels();
     clearMessageVew();
     myMesssages.handle(new Message(MessageKind.INFORMATION, myGenerationType.getStartText()));
     try {

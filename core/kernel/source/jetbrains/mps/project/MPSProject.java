@@ -37,7 +37,6 @@ import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.vcs.ProjectVCSManager;
 import jetbrains.mps.nodeEditor.Highlighter;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -870,8 +869,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
                   new ModuleContext(parms.getModule(), MPSProject.this),
                   generationType,
                   IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
-                  handler,
-                  gm.isSaveTransientModels());
+                  handler
+          );
 
           compilationResults.addAll(createCompilationProblemsList(generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR)));
 

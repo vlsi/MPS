@@ -207,8 +207,8 @@ public class GenericRefactoring {
           operationContext,
           IGenerationType.FILES,
           IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
-          new DefaultMessageHandler(operationContext.getProject()),
-          false);
+          new DefaultMessageHandler(operationContext.getProject())
+        );
       } finally {
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
