@@ -318,7 +318,6 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
     boolean compile = (generationType.requiresCompilationInIDEAfterGeneration() || generationType.requiresCompilationInIDEABeforeGeneration());
     long totalJob = 0;
     Map<IModule, Long> modulesToGenerationTimes = new HashMap<IModule, Long>();
-    Map<IModule, Long> modulesToResidualTimes = new HashMap<IModule, Long>();
     for (Pair<IModule, List<SModelDescriptor>> pair : moduleSequence) { //todo
       IModule module = pair.o1;
       if (module != null) {
@@ -326,7 +325,6 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
         long generationTime = ModelsProgressUtil.estimateTotalGenerationJobMillis(false, false, pair.o2);
         totalJob += jobTime;
         modulesToGenerationTimes.put(module, jobTime);
-        modulesToResidualTimes.put(module, jobTime - generationTime);
       }
     }
     

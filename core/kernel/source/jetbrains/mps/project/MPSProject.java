@@ -867,9 +867,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           GeneratorManager gm = getComponentSafe(GeneratorManager.class);
           gm.generateModels(
                   parms.getModels(),
-            new ModuleContext(parms.getModule(), MPSProject.this),
+                  new ModuleContext(parms.getModule(), MPSProject.this),
                   generationType,
-            IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
+                  IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
                   handler,
                   gm.isSaveTransientModels());
 
