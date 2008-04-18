@@ -307,7 +307,12 @@ public final class SNode {
   }
 
   public String getResolveInfo() {
-    return getProperty(IResolveInfo.RESOLVE_INFO);
+    String resolveInfo = getProperty(IResolveInfo.RESOLVE_INFO);
+    if (resolveInfo != null) {
+      return resolveInfo;
+    }
+    // tmp hack
+    return getProperty(INamedConcept.NAME);
   }
 
   @Nullable
