@@ -40,7 +40,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
     SLinkOperations.setTarget(nonTypesystemRule, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "body", true)), true);
     SLinkOperations.setTarget(nonTypesystemRule, "applicableNode", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "applicableNode", true)), true);
     for(SNode applicableNodeReference : SNodeOperations.getDescendants(SLinkOperations.getTarget(nonTypesystemRule, "body", true), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference", false)) {
-      if(SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(node, "applicableNode", true)) {
+      if (SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(node, "applicableNode", true)) {
         SLinkOperations.setTarget(applicableNodeReference, "applicableNode", SLinkOperations.getTarget(nonTypesystemRule, "applicableNode", true), false);
       }
     }
