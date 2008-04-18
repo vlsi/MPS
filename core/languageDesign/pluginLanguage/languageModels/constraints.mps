@@ -18,6 +18,7 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts"/>
   <language namespace="jetbrains.mps.bootstrap.editorLanguage"/>
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage"/>
+  <language namespace="jetbrains.mps.bootstrap.helgins"/>
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
   <maxImportIndex value="28"/>
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1"/>
@@ -1313,6 +1314,56 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration"
+          id="1208529467292">
+      <property name="name" value="createType"/>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1208529476726">
+        <link role="concept" targetNodeId="10.1068431790189" resolveInfo="Type"/>
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208529467294">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
+              id="1208529496566">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"
+                id="1208529496567">
+            <property name="name" value="type"/>
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1208529496568">
+              <link role="concept" targetNodeId="7.1208528650020" resolveInfo="ToolType"/>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression"
+                  id="1208529509832">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator"
+                    id="1208529509833">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"
+                      id="1208529509834">
+                  <link role="concept" targetNodeId="7.1208528650020" resolveInfo="ToolType"/>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208529518463">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1208529598530">
+            <node role="rValue" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression"
+                  id="1208529600079"/>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208529519481">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                    id="1208529518464">
+                <link role="variableDeclaration" targetNodeId="1208529496567" resolveInfo="type"/>
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
+                    id="1208529597451">
+                <link role="link" targetNodeId="7.1208529537963"/>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1208529512476">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208529515509">
+            <link role="variableDeclaration" targetNodeId="1208529496567" resolveInfo="type"/>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1204478905752">
     <property name="package" value="ProjectPane"/>
@@ -2434,7 +2485,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1208353979039">
-    <property name="package" value="Tool"/>
+    <property name="package" value="Tool.Methods"/>
     <link role="concept" targetNodeId="7.1204471433283" resolveInfo="ToolInstanceExpression"/>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration"
           id="1208353979040">

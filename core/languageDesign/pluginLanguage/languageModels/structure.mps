@@ -805,7 +805,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1204471433283">
-    <property name="package" value="Tool"/>
+    <property name="package" value="Tool.Methods"/>
     <property name="name" value="ToolInstanceExpression"/>
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
@@ -1452,7 +1452,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208525212550">
-    <property name="package" value="Tool"/>
+    <property name="package" value="Tool.Operations"/>
     <property name="name" value="GetToolExpression"/>
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
@@ -1470,7 +1470,69 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
           id="1208526847650">
-      <property name="value" value="tool"/>
+      <property name="value" value="tool &lt;{tool}&gt;"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208528650020">
+    <property name="package" value="Tool"/>
+    <property name="name" value="ToolType"/>
+    <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type"/>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1208529537963">
+      <property name="role" value="tool"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="1203071677434" resolveInfo="Tool"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1208529583047">
+      <property name="value" value="tool&lt;&gt;"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1208530482383">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208530514238">
+    <property name="package" value="Tool.Operations"/>
+    <property name="name" value="ShowToolOperation"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1208530514239">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1208530514240">
+      <property name="value" value="show"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208529751505">
+    <property name="package" value="Tool.Operations"/>
+    <property name="name" value="HideToolOperation"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1208529756396">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1208529774065">
+      <property name="value" value="hide"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208530601190">
+    <property name="package" value="Tool.Operations"/>
+    <property name="name" value="ComponentAccessOperation"/>
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference"
+          id="1208530601191">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1208530601192">
+      <property name="value" value="component"/>
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
     </node>
   </node>
