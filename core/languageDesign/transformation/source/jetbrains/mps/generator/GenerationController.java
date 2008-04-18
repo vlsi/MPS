@@ -31,6 +31,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.io.File;
+import java.rmi.RemoteException;
 
 public class GenerationController {
   private static Logger LOG = Logger.getLogger(GenerationController.class);
@@ -45,8 +46,6 @@ public class GenerationController {
   private Map<SModelDescriptor, IOperationContext> myModelsToContexts = new HashMap<SModelDescriptor, IOperationContext>();
   private List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
   private Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
-
-
 
   public GenerationController(GeneratorManager generatorManager,
                               List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
@@ -87,61 +86,27 @@ public class GenerationController {
     getProject().saveModels();
     clearMessageVew();
     myMesssages.handle(new Message(MessageKind.INFORMATION, myGenerationType.getStartText()));
-    boolean ideaPresent = getProjectHandler() != null;
     try {
       boolean generationOK = true;
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
-        generationOK = generationOK && generateModulesInModule(moduleAndDescriptors.o1, moduleAndDescriptors.o2);
+        generationOK = generationOK && generateModelsInModule(moduleAndDescriptors.o1, moduleAndDescriptors.o2);
       }
       if (generationOK) {
-        boolean generatedAndCompiledSuccessfully = true;
+        boolean compiledSuccessfully = true;
         boolean needToReload = false;
         for (Pair<IModule, List<SModelDescriptor>> moduleListPair : myModuleSequence) {
           IModule module = moduleListPair.o1;
           if (module != null && module.reloadClassesAfterGeneration()) {
             needToReload = true;
           }
-          if (module != null && (!ideaPresent && !module.isCompileInMPS()) || !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
-            generatedAndCompiledSuccessfully = false;
-          } else {
-            checkMonitorCanceled(myProgress);
-            myProgress.startTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-            CompilationResult compilationResult;
-            if (!module.isCompileInMPS()) {
-              myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
-              getProjectHandler().refreshFS();
-              myProgress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
-              myProgress.addText("compiling in IntelliJ IDEA...");
-              myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
-              compilationResult = getProjectHandler().buildModule(module.getGeneratorOutputPath());
-              myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
-            } else {
-              myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
-              myProgress.addText("compiling in JetBrains MPS...");
-              compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new MessagesOnlyAdaptiveProgressMonitorWrapper(myProgress));
-              myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
-            }
-            if (compilationResult.getErrors() > 0) {
-              generatedAndCompiledSuccessfully = false;
-            }
-            myProgress.addText("" + compilationResult);
-            myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-            checkMonitorCanceled(myProgress);
-          }
+          compiledSuccessfully = compiledSuccessfully && compileModule(module);
         }
-
         for (SModelDescriptor sm : myModelsToContexts.keySet()) {
           ModelGenerationStatusManager.getInstance().invalidateData(sm);
         }
-
-        if (generatedAndCompiledSuccessfully && needToReload) {
-          myProgress.addText("");
-          myProgress.addText("reloading MPS classes...");
-          myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-          ClassLoaderManager.getInstance().reloadAll();
-          myProgress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+        if (compiledSuccessfully && needToReload) {
+          reloadClasses();
         }
-
         if (generationOK) {
           myProgress.addText("generation completed successfully");
           myMesssages.handle(new Message(MessageKind.INFORMATION, "generation completed successfully"));
@@ -153,19 +118,15 @@ public class GenerationController {
         myProgress.addText("generation finished with errors");
         myMesssages.handle(new Message(MessageKind.WARNING, "generation finished with errors"));
       }
-
-      if (myGenerationType instanceof GenerateFilesGenerationType && ideaPresent &&
+      if (myGenerationType instanceof GenerateFilesGenerationType && isIDEAPresent() &&
         !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
         getProjectHandler().refreshFS();
       }
-
     } catch (GenerationCanceledException gce) {
       myProgress.addText("generation canceled");
       myMesssages.handle(new Message(MessageKind.WARNING, "generation canceled"));
-
       myProgress.finishAnyway();
       showMessageView();
-
       return false;
     } catch (Throwable t) {
       LOG.error(t);
@@ -175,7 +136,6 @@ public class GenerationController {
     } finally {
       myProgress.finishAnyway();
     }
-
     return true;
   }
 
@@ -196,7 +156,7 @@ public class GenerationController {
     return totalJob;
   }
 
-  private boolean generateModulesInModule(IModule module, List<SModelDescriptor> descriptors) throws Exception {
+  private boolean generateModelsInModule(IModule module, List<SModelDescriptor> descriptors) throws Exception {
     boolean currentGenerationOK = false;
 
     IOperationContext invocationContext = myModulesToContexts.get(module);
@@ -268,6 +228,50 @@ public class GenerationController {
     myProgress.addText("");
     myProgress.finishTask("generating in module " + module);
     return currentGenerationOK;
+  }
+
+  private boolean compileModule(IModule module) throws RemoteException {
+    boolean compiledSuccessfully = true;
+    if (module != null && (!isIDEAPresent() && !module.isCompileInMPS()) || !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
+      compiledSuccessfully = false;
+    } else if (module != null) {
+      checkMonitorCanceled(myProgress);
+      myProgress.startTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
+      CompilationResult compilationResult;
+      if (!module.isCompileInMPS()) {
+        myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
+        getProjectHandler().refreshFS();
+        myProgress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
+        myProgress.addText("compiling in IntelliJ IDEA...");
+        myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
+        compilationResult = getProjectHandler().buildModule(module.getGeneratorOutputPath());
+        myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
+      } else {
+        myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
+        myProgress.addText("compiling in JetBrains MPS...");
+        compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new MessagesOnlyAdaptiveProgressMonitorWrapper(myProgress));
+        myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
+      }
+      if (compilationResult.getErrors() > 0) {
+        compiledSuccessfully = false;
+      }
+      myProgress.addText("" + compilationResult);
+      myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
+      checkMonitorCanceled(myProgress);
+    }
+    return compiledSuccessfully;
+  }
+
+  private void reloadClasses() {
+    myProgress.addText("");
+    myProgress.addText("reloading MPS classes...");
+    myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+    ClassLoaderManager.getInstance().reloadAll();
+    myProgress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+  }
+
+  private boolean isIDEAPresent() {
+    return getProjectHandler() != null;
   }
 
   private IOperationContext getFirstContext() {
