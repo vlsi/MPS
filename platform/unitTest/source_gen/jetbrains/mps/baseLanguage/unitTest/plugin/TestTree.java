@@ -54,7 +54,7 @@ public class TestTree extends MPSTree {
                   {
                     TestMethodTreeNode testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
                     testCaseTreeNode.add(testMethodTreeNode);
-                    methodToNode.put("test_" + SPropertyOperations.getString(method, "name"), testMethodTreeNode);
+                    methodToNode.put(SPropertyOperations.getString(method, "name"), testMethodTreeNode);
                   }
                 }
               } finally {
