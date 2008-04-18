@@ -18,6 +18,7 @@ public class GeneratorActions_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(GeneratorActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorActions";
   public static final String LABEL_ID_generatorNew = "generatorNew";
+  public static final String LABEL_ID_VCS = "VCS";
 
   public  GeneratorActions_ActionGroup(MPSProject project) {
     super("", GeneratorActions_ActionGroup.ID);
@@ -33,6 +34,7 @@ public class GeneratorActions_ActionGroup extends BaseActionGroup {
       this.add(new CheckGeneratorAction(), this);
       this.addSeparator();
       this.add(new GeneratorPropertiesAction(), this);
+      this.add(new Label(GeneratorActions_ActionGroup.LABEL_ID_VCS), this);
     } catch (Throwable t) {
       GeneratorActions_ActionGroup.LOG.error("User group error", t);
     }

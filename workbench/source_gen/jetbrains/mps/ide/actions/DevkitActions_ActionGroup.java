@@ -9,12 +9,14 @@ import jetbrains.mps.ide.actions.module.SetModuleFolderAction;
 import jetbrains.mps.ide.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.ide.actions.project.RemoveModuleFromProjectAction;
 import jetbrains.mps.ide.actions.devkit.DevKitPropertiesAction;
+import jetbrains.mps.ide.action.Label;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.IActionGroupElementOwner;
 
 public class DevkitActions_ActionGroup extends BaseActionGroup {
   public static Logger LOG = Logger.getLogger(DevkitActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions";
+  public static final String LABEL_ID_VCS = "VCS";
 
   public  DevkitActions_ActionGroup(MPSProject project) {
     super("", DevkitActions_ActionGroup.ID);
@@ -26,6 +28,7 @@ public class DevkitActions_ActionGroup extends BaseActionGroup {
       this.add(new RemoveModuleFromProjectAction(), this);
       this.addSeparator();
       this.add(new DevKitPropertiesAction(), this);
+      this.add(new Label(DevkitActions_ActionGroup.LABEL_ID_VCS), this);
     } catch (Throwable t) {
       DevkitActions_ActionGroup.LOG.error("User group error", t);
     }

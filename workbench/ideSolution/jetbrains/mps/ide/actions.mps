@@ -171,20 +171,9 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204909616097">
         <link role="javaClass" targetNodeId="3.~ModelPropertiesAction_New" resolveInfo="ModelPropertiesAction_New" />
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204997836937" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1207743042142">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1208507226807">
         <property name="name" value="VCS" />
-        <property name="caption" value="Version Control" />
-        <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207743067864">
-          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207752718780">
-            <link role="javaClass" targetNodeId="29.~ModelHistoryAction" resolveInfo="ModelHistoryAction" />
-          </node>
-          <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1207751391655">
-            <link role="javaClass" targetNodeId="29.~ModelDiffAction" resolveInfo="ModelDiffAction" />
-          </node>
-        </node>
       </node>
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1207743076367" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991220529">
@@ -283,6 +272,9 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204911408605">
         <link role="javaClass" targetNodeId="10.~SetModuleFolderAction" resolveInfo="SetModuleFolderAction" />
       </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1208507441353">
+        <property name="name" value="VCS" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991225922">
@@ -353,6 +345,9 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204912255351">
         <link role="javaClass" targetNodeId="11.~SolutionPropertiesAction" resolveInfo="SolutionPropertiesAction" />
       </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1208507455106">
+        <property name="name" value="VCS" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991227487">
@@ -387,6 +382,9 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980440117" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980460700">
         <link role="javaClass" targetNodeId="12.~DevKitPropertiesAction" resolveInfo="DevKitPropertiesAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1208507281070">
+        <property name="name" value="VCS" />
       </node>
     </node>
   </node>
@@ -430,6 +428,9 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204980706523" />
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1204980712838">
         <link role="javaClass" targetNodeId="8.~GeneratorPropertiesAction" resolveInfo="GeneratorPropertiesAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1208507404792">
+        <property name="name" value="VCS" />
       </node>
     </node>
   </node>
@@ -908,6 +909,44 @@
     <property name="package" value="ProjectPane.Model" />
     <property name="isInternal" value="true" />
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1207148447327" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1208507818350">
+    <property name="name" value="VCS" />
+    <property name="package" value="ProjectPane" />
+    <property name="caption" value="Version Control" />
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1208507818351">
+      <property name="additionType" value="false" />
+      <link role="modifiedGroup" targetNodeId="1204991228238" resolveInfo="DevkitActions" />
+      <link role="point" targetNodeId="1208507281070" resolveInfo="VCS" />
+    </node>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1208507818352">
+      <property name="additionType" value="false" />
+      <link role="modifiedGroup" targetNodeId="1204991229896" resolveInfo="GeneratorActions" />
+      <link role="point" targetNodeId="1208507404792" resolveInfo="VCS" />
+    </node>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1208507818353">
+      <property name="additionType" value="false" />
+      <link role="modifiedGroup" targetNodeId="1204991224874" resolveInfo="LanguageActions" />
+      <link role="point" targetNodeId="1208507441353" resolveInfo="VCS" />
+    </node>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1208507818354">
+      <property name="additionType" value="false" />
+      <link role="modifiedGroup" targetNodeId="1204991226689" resolveInfo="SolutionActions" />
+      <link role="point" targetNodeId="1208507455106" resolveInfo="VCS" />
+    </node>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1208507818355">
+      <property name="additionType" value="false" />
+      <link role="modifiedGroup" targetNodeId="1204991218714" resolveInfo="ProjectPaneModelActions" />
+      <link role="point" targetNodeId="1208507226807" resolveInfo="VCS" />
+    </node>
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1208507818356">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1208510895090">
+        <link role="javaClass" targetNodeId="29.~ModelHistoryAction" resolveInfo="ModelHistoryAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1208510895091">
+        <link role="javaClass" targetNodeId="29.~ModelDiffAction" resolveInfo="ModelDiffAction" />
+      </node>
+    </node>
   </node>
 </model>
 
