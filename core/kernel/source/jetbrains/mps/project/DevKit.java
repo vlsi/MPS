@@ -93,8 +93,7 @@ public class DevKit extends AbstractModule {
 
     devKitChanged();
 
-    ClassLoaderManager.getInstance().reloadAll();
-    
+    ClassLoaderManager.getInstance().reloadAll();    
   }
 
 

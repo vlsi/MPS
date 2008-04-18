@@ -538,10 +538,6 @@ public class SModelRepository extends SModelAdapter {
               needReloadAll = true;
             }
           }
-
-          if (needReloadAll) {
-            ClassLoaderManager.getInstance().reloadAll();
-          }
         } finally {
           myInChangedModelsReloading = false;
         }
