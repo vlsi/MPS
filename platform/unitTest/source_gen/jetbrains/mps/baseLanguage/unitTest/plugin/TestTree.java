@@ -25,31 +25,31 @@ public class TestTree extends MPSTree {
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
     {
-      ICursor<SNode> _zCursor1 = CursorFactory.createCursor(this.testCases);
+      ICursor<SNode> _zCursor = CursorFactory.createCursor(this.testCases);
       try {
-        while(_zCursor1.moveToNext()) {
-          SNode testCase = _zCursor1.getCurrent();
+        while(_zCursor.moveToNext()) {
+          SNode testCase = _zCursor.getCurrent();
           {
             TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
             root.add(testCaseTreeNode);
             {
-              ICursor<SNode> _zCursor2 = CursorFactory.createCursor(SLinkOperations.getTargets(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", true));
+              ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", true));
               try {
-                while(_zCursor2.moveToNext()) {
-                  SNode method = _zCursor2.getCurrent();
+                while(_zCursor1.moveToNext()) {
+                  SNode method = _zCursor1.getCurrent();
                   {
                     TestMethodTreeNode testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
                     testCaseTreeNode.add(testMethodTreeNode);
                   }
                 }
               } finally {
-                _zCursor2.release();
+                _zCursor1.release();
               }
             }
           }
         }
       } finally {
-        _zCursor1.release();
+        _zCursor.release();
       }
     }
     return root;

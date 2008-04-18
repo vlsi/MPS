@@ -6,7 +6,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.baseLanguage.unitTest#1171932017138" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.baseLanguage.unitTest#1171932017138">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template" />
       </models>
@@ -17,17 +17,16 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath>
-    <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
-  </classPath>
-  <runtimeClassPath>
-    <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
-  </runtimeClassPath>
+  <classPath />
+  <runtimeClassPath />
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
+  <dependencies>
+    <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest.runtime</dependency>
+  </dependencies>
   <extendedLanguages>
     <extendedLanguage>jetbrains.mps.core</extendedLanguage>
     <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
