@@ -126,7 +126,8 @@ public class Resolver {
       });
       Condition<SNode> nameMatchesCondition = new Condition<SNode>() {
         public boolean met(SNode object) {
-          return reference.getResolveInfo().equals(object.getName());
+          String resolveInfo = reference.getResolveInfo();
+          return resolveInfo != null && resolveInfo.equals(object.getName());
         }
       };
       List<SNode> filtered = CollectionUtil.filter(nodes, nameMatchesCondition);
