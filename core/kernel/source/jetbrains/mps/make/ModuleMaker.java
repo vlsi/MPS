@@ -200,8 +200,6 @@ public class ModuleMaker {
         fqName = fqName.substring(0, fqName.length() - toCopy.getFile().getName().length());
         String path = fqName.replace('.', File.separatorChar) + toCopy.getFile().getName();
 
-        System.out.println("copy to " + path);
-
         FileUtil.copyFile(
           toCopy.getFile().toFile(),
           module.getClassesGen().child(path).toFile()
