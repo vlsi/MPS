@@ -82,108 +82,25 @@ public class GenerationController {
 
   public boolean generate() {
     myProgress.start("generating", estimateGenerationTime());
-
     MPSModuleRepository.getInstance().removeTransientModules();
     showMessageView();
-
     getProject().saveModels();
-
     clearMessageVew();
     myMesssages.handle(new Message(MessageKind.INFORMATION, myGenerationType.getStartText()));
-
     boolean ideaPresent = getProjectHandler() != null;
-    Map<IModule, String> outputFolders = new HashMap<IModule, String>();
-
     try {
       boolean generationOK = true;
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
-        boolean currentGenerationOK = false;
-        IModule currentModule = moduleAndDescriptors.o1;
-
-        IOperationContext invocationContext = myModulesToContexts.get(currentModule);
-        myProgress.startTask("generating in module " + currentModule);
-        String outputFolder = currentModule != null ? currentModule.getGeneratorOutputPath() : null;
-        if (outputFolder != null && !new File(outputFolder).exists()) {
-          new File(outputFolder).mkdirs();
-
-          try {
-            getProjectHandler().addSourceRoot(outputFolder);
-          } catch (Exception e) {
-            myMesssages.handle(new Message(MessageKind.WARNING, "Can't add output folder to IDEA as sources"));
-          }
-        }
-
-        myMesssages.handle(new Message(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\""));
-        outputFolders.put(currentModule, outputFolder);
-
-        //++ generation
-        Statistics.setEnabled(Statistics.TPL, myManager.isDumpStatistics());
-        String wasLoggingThreshold = null;
-        IGenerationSession generationSession = new GenerationSession(invocationContext, mySaveTransientModels, myProgress, myMesssages);
-        try {
-          if (myManager.isShowErrorsOnly()) {
-            wasLoggingThreshold = Logger.setThreshold("ERROR");
-          }
-          Logger.addLoggingHandler(generationSession.getLoggingHandler());
-          TypeChecker.getInstance().setIncrementalMode(false);
-          TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.GENERATION);
-          for (SModelDescriptor inputModel : moduleAndDescriptors.o2) {
-            myProgress.addText("");
-
-            String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
-            myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
-
-            GenerationStatus status = generationSession.generateModel(inputModel);
-            currentGenerationOK = status.isOk();
-            if (myManager.isDumpStatistics()) {
-              Statistics.dumpAll();
-            }
-
-            myProgress.addText("handling output...");
-            checkMonitorCanceled(myProgress);
-            if (status.getOutputModel() != null) {
-              boolean result = myGenerationType.handleOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
-
-              if (!result) {
-                myProgress.addText("there were errors.");
-                currentGenerationOK = false;
-              }
-            } else if (!(status.isCanceled() || status.isError())) {
-              myGenerationType.handleEmptyOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
-            }
-            generationSession.discardTransients();
-            myProgress.finishTask(taskName);
-          }
-        } finally {
-          if (wasLoggingThreshold != null) {
-            Logger.setThreshold(wasLoggingThreshold);
-          }
-          generationSession.discardTransients();
-          Logger.removeLoggingHandler(generationSession.getLoggingHandler());
-          TypeChecker.getInstance().setIncrementalMode(true);
-          TypeChecker.getInstance().resetTypeCheckingMode();
-
-          tryToReloadModelsFromDisk();
-        }
-
-        checkMonitorCanceled(myProgress);
-        myProgress.addText("");
-        myProgress.finishTask("generating in module " + currentModule);
-
-        generationOK = generationOK && currentGenerationOK;
+        generationOK = generationOK && generateModulesInModule(moduleAndDescriptors.o1, moduleAndDescriptors.o2);
       }
-
       if (generationOK) {
         boolean generatedAndCompiledSuccessfully = true;
         boolean needToReload = false;
-
         for (Pair<IModule, List<SModelDescriptor>> moduleListPair : myModuleSequence) {
           IModule module = moduleListPair.o1;
-
           if (module != null && module.reloadClassesAfterGeneration()) {
             needToReload = true;
           }
-
           if (module != null && (!ideaPresent && !module.isCompileInMPS()) || !myGenerationType.requiresCompilationInIDEAfterGeneration()) {
             generatedAndCompiledSuccessfully = false;
           } else {
@@ -196,21 +113,17 @@ public class GenerationController {
               myProgress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
               myProgress.addText("compiling in IntelliJ IDEA...");
               myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
-              compilationResult = getProjectHandler().buildModule(outputFolders.get(module));
+              compilationResult = getProjectHandler().buildModule(module.getGeneratorOutputPath());
               myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
             } else {
               myProgress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
               myProgress.addText("compiling in JetBrains MPS...");
-
               compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new MessagesOnlyAdaptiveProgressMonitorWrapper(myProgress));
-
               myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
             }
-
             if (compilationResult.getErrors() > 0) {
               generatedAndCompiledSuccessfully = false;
             }
-
             myProgress.addText("" + compilationResult);
             myProgress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
             checkMonitorCanceled(myProgress);
@@ -281,6 +194,80 @@ public class GenerationController {
       totalJob = 1000; //todo we need it for build file generation
     }
     return totalJob;
+  }
+
+  private boolean generateModulesInModule(IModule module, List<SModelDescriptor> descriptors) throws Exception {
+    boolean currentGenerationOK = false;
+
+    IOperationContext invocationContext = myModulesToContexts.get(module);
+    myProgress.startTask("generating in module " + module);
+    String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
+    if (outputFolder != null && !new File(outputFolder).exists()) {
+      new File(outputFolder).mkdirs();
+
+      try {
+        getProjectHandler().addSourceRoot(outputFolder);
+      } catch (Exception e) {
+        myMesssages.handle(new Message(MessageKind.WARNING, "Can't add output folder to IDEA as sources"));
+      }
+    }
+
+    myMesssages.handle(new Message(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\""));
+
+    //++ generation
+    Statistics.setEnabled(Statistics.TPL, myManager.isDumpStatistics());
+    String wasLoggingThreshold = null;
+    IGenerationSession generationSession = new GenerationSession(invocationContext, mySaveTransientModels, myProgress, myMesssages);
+    try {
+      if (myManager.isShowErrorsOnly()) {
+        wasLoggingThreshold = Logger.setThreshold("ERROR");
+      }
+      Logger.addLoggingHandler(generationSession.getLoggingHandler());
+      TypeChecker.getInstance().setIncrementalMode(false);
+      TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.GENERATION);
+      for (SModelDescriptor inputModel : descriptors) {
+        myProgress.addText("");
+
+        String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
+        myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
+
+        GenerationStatus status = generationSession.generateModel(inputModel);
+        currentGenerationOK = status.isOk();
+        if (myManager.isDumpStatistics()) {
+          Statistics.dumpAll();
+        }
+
+        myProgress.addText("handling output...");
+        checkMonitorCanceled(myProgress);
+        if (status.getOutputModel() != null) {
+          boolean result = myGenerationType.handleOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
+
+          if (!result) {
+            myProgress.addText("there were errors.");
+            currentGenerationOK = false;
+          }
+        } else if (!(status.isCanceled() || status.isError())) {
+          myGenerationType.handleEmptyOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
+        }
+        generationSession.discardTransients();
+        myProgress.finishTask(taskName);
+      }
+    } finally {
+      if (wasLoggingThreshold != null) {
+        Logger.setThreshold(wasLoggingThreshold);
+      }
+      generationSession.discardTransients();
+      Logger.removeLoggingHandler(generationSession.getLoggingHandler());
+      TypeChecker.getInstance().setIncrementalMode(true);
+      TypeChecker.getInstance().resetTypeCheckingMode();
+
+      tryToReloadModelsFromDisk();
+    }
+
+    checkMonitorCanceled(myProgress);
+    myProgress.addText("");
+    myProgress.finishTask("generating in module " + module);
+    return currentGenerationOK;
   }
 
   private IOperationContext getFirstContext() {
