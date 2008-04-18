@@ -55,20 +55,17 @@ public class TreeFileChooser {
     setAdditionalModeFilter(myMode);
     TreeFileChooserDialog dialog = new TreeFileChooserDialog(owner, myMode, myFileFilter, myContext, ourInitialSelectedFile);
     dialog.setVisible(true);
-    if (dialog.isCancelled()) {
-      return null;
-    } else {
-      return dialog.getSelectedFile();
+    IFile res = null;
+    if (!dialog.isCancelled()) {
+      res = dialog.getSelectedFile();
     }
+    if (res != null) ourInitialSelectedFile = res;
+    return res;
   }
 
   @Nullable
   public IFile showDialog(JComponent owner) {
-    IFile result = showDialog(JOptionPane.getFrameForComponent(owner));
-    if (result != null) {
-      ourInitialSelectedFile = result;
-    }
-    return result;
+    return showDialog(JOptionPane.getFrameForComponent(owner));
   }
 
   @Nullable
