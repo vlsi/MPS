@@ -8,12 +8,8 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.ISearchScope;
-import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class TargetReference_targetDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -34,10 +30,8 @@ public class TargetReference_targetDeclaration_ReferentConstraint implements IMo
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
     SNode project = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.buildlanguage.structure.Project", true, false);
-    ListOperations.addAllElements(result, SLinkOperations.getTargets(project, "target", true));
-    return new SimpleSearchScope(result);
+    return new SimpleSearchScope(Project_Behavior.call_getAllTargets_1208515961184(project));
   }
 
   public String getNodeReferentSearchScopeDescription() {
