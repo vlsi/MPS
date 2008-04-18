@@ -24,14 +24,6 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, IEditorMes
     return false;
   }
 
-  public boolean updateEditor(SNode node, IOperationContext operationContext, LinkedHashSet<IEditorMessage> messages) {
-    Set<IEditorMessage> messageSet = createMessages(node, operationContext);
-    messages.addAll(messageSet);
-    return true;
-  }
-
-  protected abstract Set<IEditorMessage> createMessages(SNode node, IOperationContext operationContext);
-
   protected IEditorMessage createErrorMessage(SNode node, String message) {
     DefaultEditorMessage error = new DefaultEditorMessage(node, Color.RED, message, getOwner(node.getContainingRoot())) {
       public void paint(Graphics g, IEditorComponent editorComponent) {

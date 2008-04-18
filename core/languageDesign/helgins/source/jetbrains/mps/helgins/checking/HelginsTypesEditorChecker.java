@@ -24,7 +24,7 @@ import java.util.Set;
 public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
   private static Logger LOG = Logger.getLogger(HelginsTypesEditorChecker.class);
 
-  protected Set<IEditorMessage> createMessages(SNode node, IOperationContext operationContext) {
+  public Set<IEditorMessage> createMessages(SNode node, IOperationContext operationContext) {
     Set<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
     if (!TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
       try {

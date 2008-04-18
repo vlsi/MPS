@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 
 import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,7 +19,7 @@ import java.util.LinkedHashSet;
  */
 public interface IEditorChecker {
   
-  public boolean updateEditor(SNode rootNode, IOperationContext operationContext, LinkedHashSet<IEditorMessage> messages);
+  public Set<IEditorMessage> createMessages(SNode rootNode, IOperationContext operationContext);
 
   public IEditorMessageOwner getOwner(SNode rootNode);
 

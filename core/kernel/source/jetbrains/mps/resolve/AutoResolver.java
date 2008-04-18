@@ -19,7 +19,7 @@ import java.util.*;
  */
 public class AutoResolver extends EditorCheckerAdapter {
 
-  protected Set<IEditorMessage> createMessages(SNode rootNode, IOperationContext operationContext) {
+  public Set<IEditorMessage> createMessages(SNode rootNode, IOperationContext operationContext) {
     Set<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
     List<SReference> yetBadReferences = new ArrayList<SReference>();
     SReference.disableLogging();
