@@ -96,8 +96,8 @@ public class GenerationController {
 
     try {
       boolean generationOK = true;
-      boolean generationERROR = false;
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
+        boolean currentGenerationOK = false;
         IModule currentModule = moduleAndDescriptors.o1;
 
         IOperationContext invocationContext = myModulesToContexts.get(currentModule);
@@ -134,8 +134,7 @@ public class GenerationController {
             myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
 
             GenerationStatus status = generationSession.generateModel(inputModel);
-            generationOK = generationOK && status.isOk();
-            generationERROR = generationERROR || status.isError();
+            currentGenerationOK = status.isOk();
             if (myManager.isDumpStatistics()) {
               Statistics.dumpAll();
             }
@@ -147,7 +146,7 @@ public class GenerationController {
 
               if (!result) {
                 myProgress.addText("there were errors.");
-                generationOK = false;
+                currentGenerationOK = false;
               }
             } else if (!(status.isCanceled() || status.isError())) {
               myGenerationType.handleEmptyOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
@@ -170,8 +169,9 @@ public class GenerationController {
         checkMonitorCanceled(myProgress);
         myProgress.addText("");
         myProgress.finishTask("generating in module " + currentModule);
-      }
 
+        generationOK = generationOK && currentGenerationOK;
+      }
 
       if (generationOK) {
         boolean generatedAndCompiledSuccessfully = true;
@@ -240,11 +240,9 @@ public class GenerationController {
           myProgress.addText("generation completed with errors");
           myMesssages.handle(new Message(MessageKind.INFORMATION, "generation completed with errors"));
         }
-        //  myProgress.finishSomehow();
-      } else if (generationERROR) {
+      } else if (!generationOK) {
         myProgress.addText("generation finished with errors");
         myMesssages.handle(new Message(MessageKind.WARNING, "generation finished with errors"));
-        // myProgress.finishSomehow();
       }
 
       if (myGenerationType instanceof GenerateFilesGenerationType && ideaPresent &&
@@ -265,7 +263,6 @@ public class GenerationController {
       final String text = t.toString();
       myProgress.addText(text);
       myMesssages.handle(new Message(MessageKind.ERROR, text));
-      //  myProgress.finishSomehow();
     } finally {
       myProgress.finishAnyway();
     }
