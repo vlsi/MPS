@@ -519,14 +519,6 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
       messages.handle(new Message(MessageKind.ERROR, text));
       //  progress.finishSomehow();
     } finally {
-
-      TypeChecker.getInstance().clearForReload();
-      NodeTypesComponentsRepository.getInstance().clear();
-
-      if (ideaPresent && generationType.requiresCompilationInIDEAfterGeneration()) {
-        SModelRepository.getInstance().refreshModels();
-        System.gc();
-      }
       progress.finishAnyway();
     }
 
