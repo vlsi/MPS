@@ -10,6 +10,7 @@ import jetbrains.mps.util.Macros;
 import jetbrains.mps.ide.icons.IconManager;
 
 public enum TestState {
+  NOT_RAN("testNotRan.png"),
   IN_PROGRESS("testInProgress1.png"),
   IGNORED("testIgnored.png"),
   FAILED("testFailed.png"),

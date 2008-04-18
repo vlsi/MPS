@@ -6,24 +6,35 @@ import jetbrains.mps.ide.ui.MPSTree;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import java.util.Map;
 import java.util.ArrayList;
+import java.util.HashMap;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.MapOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class TestTree extends MPSTree {
 
   private List<SNode> testCases;
   private IOperationContext operationContext;
+  private Map<String, TestCaseTreeNode> classToTestCase;
+  private Map<String, Map<String, TestMethodTreeNode>> classToMethodToMethodNode;
 
   public  TestTree() {
     this.testCases = new ArrayList<SNode>();
+    this.classToTestCase = new HashMap<String, TestCaseTreeNode>();
+    this.classToMethodToMethodNode = new HashMap<String, Map<String, TestMethodTreeNode>>();
   }
 
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
+    MapOperations.clear(this.classToTestCase);
+    MapOperations.clear(this.classToMethodToMethodNode);
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(this.testCases);
       try {
@@ -32,6 +43,9 @@ public class TestTree extends MPSTree {
           {
             TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
             root.add(testCaseTreeNode);
+            this.classToTestCase.put(INamedConcept_Behavior.call_getFqName_1184686272576(testCase), testCaseTreeNode);
+            Map<String, TestMethodTreeNode> methodToNode = new HashMap<String, TestMethodTreeNode>();
+            this.classToMethodToMethodNode.put(INamedConcept_Behavior.call_getFqName_1184686272576(testCase), methodToNode);
             {
               ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", true));
               try {
@@ -40,6 +54,7 @@ public class TestTree extends MPSTree {
                   {
                     TestMethodTreeNode testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
                     testCaseTreeNode.add(testMethodTreeNode);
+                    methodToNode.put("test_" + SPropertyOperations.getString(method, "name"), testMethodTreeNode);
                   }
                 }
               } finally {
@@ -59,6 +74,19 @@ public class TestTree extends MPSTree {
     this.operationContext = operationContext;
     this.testCases = testCases;
     this.rebuildNow();
+  }
+
+  public TestCaseTreeNode get(String className) {
+    return this.classToTestCase.get(className);
+  }
+
+  public TestMethodTreeNode get(String className, String methodName) {
+    Map<String, TestMethodTreeNode> methodToNode = this.classToMethodToMethodNode.get(className);
+    TestMethodTreeNode result = null;
+    if (methodToNode != null) {
+      result = methodToNode.get(methodName);
+    }
+    return result;
   }
 
 }

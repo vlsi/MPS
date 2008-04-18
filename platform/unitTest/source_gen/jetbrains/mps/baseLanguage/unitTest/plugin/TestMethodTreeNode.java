@@ -10,7 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 public class TestMethodTreeNode extends MPSTreeNode {
 
   private SNode testMethod;
-  private TestState state = TestState.IN_PROGRESS;
+  private TestState state = TestState.NOT_RAN;
 
   public  TestMethodTreeNode(IOperationContext operationContext, SNode testMethod) {
     super(operationContext);
@@ -30,6 +30,10 @@ public class TestMethodTreeNode extends MPSTreeNode {
 
   public boolean isLeaf() {
     return true;
+  }
+
+  public TestState getState() {
+    return this.state;
   }
 
 }
