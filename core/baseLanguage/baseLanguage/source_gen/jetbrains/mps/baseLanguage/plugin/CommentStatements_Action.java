@@ -4,9 +4,7 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.CurrentProjectMPSAction;
 import jetbrains.mps.logging.Logger;
-
 import java.util.List;
-
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
@@ -15,9 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
@@ -27,7 +23,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
   private List<SNode> nodes;
   private boolean isAlwaysVisible = false;
 
-  public CommentStatements_Action(MPSProject project) {
+  public  CommentStatements_Action(MPSProject project) {
     super(project, "Comment Statements");
   }
 
@@ -40,7 +36,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
     return (SNodeOperations.getAncestor(ListOperations.getElement(this.nodes, 0), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null);
   }
 
-  public void doUpdate(@NotNull()ActionContext context) {
+  public void doUpdate(@NotNull() ActionContext context) {
     try {
       super.doUpdate(context);
       if (!(this.fillFieldsIfNecessary(context))) {
@@ -67,23 +63,24 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
         boolean error = false;
         if (nodes != null) {
           {
-            ICursor<SNode> _zCursor15 = CursorFactory.createCursor(nodes);
+            ICursor<SNode> _zCursor16 = CursorFactory.createCursor(nodes);
             try {
-              while (_zCursor15.moveToNext()) {
-                SNode node = _zCursor15.getCurrent();
+              while(_zCursor16.moveToNext()) {
+                SNode node = _zCursor16.getCurrent();
                 if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
                   error = true;
                   break;
                 }
               }
             } finally {
-              _zCursor15.release();
+              _zCursor16.release();
             }
           }
         }
         if (error) {
           this.nodes = null;
-        } else {
+        } else
+        {
           this.nodes = new ArrayList<SNode>(nodes);
         }
       }
@@ -96,7 +93,7 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
     return true;
   }
 
-  public void doExecute(@NotNull()ActionContext context) {
+  public void doExecute(@NotNull() ActionContext context) {
     try {
       if (!(this.fillFieldsIfNecessary(context))) {
         return;
