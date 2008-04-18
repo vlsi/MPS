@@ -3,7 +3,9 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
@@ -1262,6 +1264,14 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1207236167840">
     <link role="conceptDeclaration" targetNodeId="1.1207236100912" resolveInfo="ToIteratorOperation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1207236171678">
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1208542051174">
+    <property name="package" value="mapType" />
+    <link role="conceptDeclaration" targetNodeId="1.1208542034276" resolveInfo="MapRemoveAllOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1208542055708">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
       <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
     </node>
