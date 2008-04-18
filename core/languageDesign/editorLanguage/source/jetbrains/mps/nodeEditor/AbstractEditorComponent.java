@@ -123,6 +123,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private HashMap myUserDataMap = new HashMap();
 
   private MyModelListener myModelListener = new MyModelListener();
+  private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
   private Set<SModelDescriptor> myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
 
   private List<ICellSelectionListener> mySelectionListeners = new LinkedList<ICellSelectionListener>();
@@ -884,12 +885,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void addOurListener(SModelDescriptor sm) {
     if (sm.hasSModelCommandListener(myModelListener)) return;
     sm.addModelCommandListener(myModelListener);
+    sm.addModelListener(mySimpleModelListener);
     myModelDescriptorsWithListener.add(sm);
   }
 
   private void removeOurListener() {
     for (SModelDescriptor sm : myModelDescriptorsWithListener) {
       sm.removeModelCommandListener(myModelListener);
+      sm.removeModelListener(mySimpleModelListener);
     }
     myModelDescriptorsWithListener.clear();
   }
@@ -2201,6 +2204,104 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myEditorContext = editorContext;
   }
 
+  private void runSwapCellsActions(Runnable action) {
+    if (mySelectedCell != null) myRecentlySelectedCellInfo = mySelectedCell.getCellInfo();
+    Object memento = null;
+    if (getEditorContext() != null) {
+      memento = getEditorContext().createMemento();
+    }
+    myFoldedCells.clear();
+    myBracesEnabledCells.clear();
+    action.run();
+    if (getEditorContext() != null) {
+      getEditorContext().setMemento(memento);
+    }
+    myRecentlySelectedCellInfo = null;
+  }
+
+  //to access selected cell info during rebuild
+  /*package*/ CellInfo getRecentlySelectedCellInfo() {
+    return myRecentlySelectedCellInfo;
+  }
+
+  public boolean isReadOnly() {
+    return myReadOnly;
+  }
+
+  public void setReadOnly(boolean readOnly) {
+    myReadOnly = readOnly;
+  }
+
+  public <T> T get(Class<T> cls) {
+    if (cls == SNode.class) return (T) getRootCell().getSNode();
+    if (cls == SModelDescriptor.class && get(SNode.class) != null)
+      return (T) get(SNode.class).getModel().getModelDescriptor();
+    if (cls == IOperationContext.class) return (T) getOperationContext();
+    if (cls == AbstractEditorComponent.class) return (T) this;
+    if (cls == EditorContext.class) return (T) getEditorContext();
+    return null;
+  }
+
+  public IEditorOpener getEditorOpener() {
+    return getOperationContext().getComponent(EditorsPane.class);
+  }
+
+  private void showIntentionsMenu() {
+    EditorCell cell = getSelectedCell();
+
+    IntentionsMenu intentionsMenu = new IntentionsMenu(myOperationContext.getComponent(IDEProjectFrame.class));
+
+    intentionsMenu.init(cell.getSNode(), getEditorContext(), getAvailableIntentions());
+
+    intentionsMenu.addPopupMenuListener(new PopupMenuListener() {
+      public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
+        setLightBulbVisibility(false);
+      }
+
+      public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
+        CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+          public void run() {
+            setLightBulbVisibility(!getEnabledIntentions().isEmpty());
+          }
+        });
+      }
+
+      public void popupMenuCanceled(PopupMenuEvent e) {
+        CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+          public void run() {
+            setLightBulbVisibility(!getEnabledIntentions().isEmpty());
+          }
+        });
+      }
+    });
+
+    EditorCell bigCell = getBigCellForNode(cell.getSNode());
+    assert bigCell != null : "selected cell mustn't be null";
+
+    intentionsMenu.show(this, getRootCell().getX(), bigCell.getY() + myLightBulb.getHeight());
+  }
+
+  private void setLightBulbVisibility(final boolean value) {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        if (value) {
+          Set<Intention> enabledIntentions = getEnabledIntentions();
+          if ((!enabledIntentions.isEmpty()) && (!getEditedNode().getModel().isNotEditable())) {
+            boolean showError = false;
+            for (Intention intention : enabledIntentions) {
+              if (intention.isErrorIntention()) {
+                showError = true;
+              }
+            }
+            showLightBulb(showError);
+          }
+        } else {
+          hideLightBulb();
+        }
+      }
+    });
+  }
+
   private class MyModelListener implements SModelCommandListener {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       if (EventUtil.isDetachedOnlyChange(events)) {
@@ -2365,103 +2466,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-
-  private void runSwapCellsActions(Runnable action) {
-    if (mySelectedCell != null) myRecentlySelectedCellInfo = mySelectedCell.getCellInfo();
-    Object memento = null;
-    if (getEditorContext() != null) {
-      memento = getEditorContext().createMemento();
-    }
-    myFoldedCells.clear();
-    myBracesEnabledCells.clear();
-    action.run();
-    if (getEditorContext() != null) {
-      getEditorContext().setMemento(memento);
-    }
-    myRecentlySelectedCellInfo = null;
-  }
-
-  //to access selected cell info during rebuild
-  /*package*/ CellInfo getRecentlySelectedCellInfo() {
-    return myRecentlySelectedCellInfo;
-  }
-
-  public boolean isReadOnly() {
-    return myReadOnly;
-  }
-
-  public void setReadOnly(boolean readOnly) {
-    myReadOnly = readOnly;
-  }
-
-  public <T> T get(Class<T> cls) {
-    if (cls == SNode.class) return (T) getRootCell().getSNode();
-    if (cls == SModelDescriptor.class && get(SNode.class) != null)
-      return (T) get(SNode.class).getModel().getModelDescriptor();
-    if (cls == IOperationContext.class) return (T) getOperationContext();
-    if (cls == AbstractEditorComponent.class) return (T) this;
-    if (cls == EditorContext.class) return (T) getEditorContext();
-    return null;
-  }
-
-  public IEditorOpener getEditorOpener() {
-    return getOperationContext().getComponent(EditorsPane.class);
-  }
-
-  private void showIntentionsMenu() {
-    EditorCell cell = getSelectedCell();
-
-    IntentionsMenu intentionsMenu = new IntentionsMenu(myOperationContext.getComponent(IDEProjectFrame.class));
-
-    intentionsMenu.init(cell.getSNode(), getEditorContext(), getAvailableIntentions());
-
-    intentionsMenu.addPopupMenuListener(new PopupMenuListener() {
-      public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-        setLightBulbVisibility(false);
-      }
-
-      public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-        CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
-          public void run() {
-            setLightBulbVisibility(!getEnabledIntentions().isEmpty());
-          }
-        });
-      }
-
-      public void popupMenuCanceled(PopupMenuEvent e) {
-        CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
-          public void run() {
-            setLightBulbVisibility(!getEnabledIntentions().isEmpty());
-          }
-        });
-      }
-    });
-
-    EditorCell bigCell = getBigCellForNode(cell.getSNode());
-    assert bigCell != null : "selected cell mustn't be null";
-
-    intentionsMenu.show(this, getRootCell().getX(), bigCell.getY() + myLightBulb.getHeight());
-  }
-
-  private void setLightBulbVisibility(final boolean value) {
-    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-      public void run() {
-        if (value) {
-          Set<Intention> enabledIntentions = getEnabledIntentions();
-          if ((!enabledIntentions.isEmpty()) && (!getEditedNode().getModel().isNotEditable())) {
-            boolean showError = false;
-            for (Intention intention : enabledIntentions) {
-              if (intention.isErrorIntention()) {
-                showError = true;
-              }
-            }
-            showLightBulb(showError);
-          }
-        } else {
-          hideLightBulb();
+  private class MySimpleModelListener extends SModelAdapter {
+    public void modelReloaded(SModelDescriptor sm) {
+      CommandProcessor.instance().invokeLater(new Runnable() {
+        public void run() {
+          rebuildEditorContent();
         }
-      }
-    });
+      });
+    }
   }
 
   public static interface RebuildListener {

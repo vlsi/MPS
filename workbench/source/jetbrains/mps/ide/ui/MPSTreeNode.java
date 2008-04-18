@@ -128,6 +128,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   protected void doInit() {
   }
 
+  public void updateSubTree() {
+    getTree().runRebuildAction(new Runnable() {
+      public void run() {
+        update();
+      }
+    }, true);
+  }
+
   public void update() {
     doUpdate();
     ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);

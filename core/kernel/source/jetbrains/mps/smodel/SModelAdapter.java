@@ -84,6 +84,9 @@ public class SModelAdapter implements SModelListener {
   public void modelInitialized(SModelDescriptor sm) {
   }
 
+  public void modelReloaded(SModelDescriptor sm) {
+  }
+
   public void modelSaved(SModelDescriptor sm) {
   }
 

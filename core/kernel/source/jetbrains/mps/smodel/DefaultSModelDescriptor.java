@@ -97,6 +97,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       oldModel.dispose();
       SModelRepository.getInstance().markChanged(this, false);
       MPSModuleRepository.getInstance().invalidateCaches();
+
+      mySModel.fireModelReloaded();
     }
   }
 

@@ -14,6 +14,7 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -91,6 +92,9 @@ public class DevKit extends AbstractModule {
     reload();
 
     devKitChanged();
+
+    ClassLoaderManager.getInstance().reloadAll();
+    
   }
 
 

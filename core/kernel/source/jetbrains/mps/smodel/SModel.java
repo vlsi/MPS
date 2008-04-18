@@ -343,6 +343,13 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  void fireModelReloaded() {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.modelReloaded(getModelDescriptor());
+    }
+  }
+
   void firePropertyChangedEvent(@NotNull SNode node,
                                 @NotNull String property,
                                 @Nullable String oldValue,
@@ -1229,6 +1236,9 @@ public class SModel implements Iterable<SNode> {
     }
 
     public void modelInitialized(SModelDescriptor sm) {
+    }
+
+    public void modelReloaded(SModelDescriptor sm) {
     }
 
     public void commandFinished(@NotNull CommandEvent event) {

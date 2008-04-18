@@ -28,6 +28,7 @@ import jetbrains.mps.util.ToStringComparator;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
+import javax.swing.SwingUtilities;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.awt.Color;
@@ -419,11 +420,14 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
   }
 
-  private void updateNodePresentation() {
+  private void updateNodePresentation(final boolean reloadSubTree) {
     CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
       public void run() {
         updatePresentation();
         updateNodePresentationInTree();
+        if (reloadSubTree) {
+          updateSubTree();
+        }
       }
     });
   }
@@ -457,18 +461,22 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private class MySimpleModelListener extends SModelAdapter {
     public void modelSaved(SModelDescriptor sm) {
-      updateNodePresentation();
+      updateNodePresentation(false);
     }
 
     public void modelInitialized(SModelDescriptor sm) {
-      updateNodePresentation();
+      updateNodePresentation(false);
+    }
+
+    public void modelReloaded(SModelDescriptor sm) {
+      updateNodePresentation(true);
     }
   }
 
   private class MyGenerationStatusListener implements ModelGenerationStatusListener {
     public void generationStatusChanged(SModelDescriptor sm) {
       if (sm == getSModelDescriptor()) {
-        updateNodePresentation();
+        updateNodePresentation(false);
       }
     }
   }
