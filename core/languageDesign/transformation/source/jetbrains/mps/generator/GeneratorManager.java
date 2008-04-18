@@ -322,7 +322,6 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
       IModule module = pair.o1;
       if (module != null) {
         long jobTime = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, module != null && !module.isCompileInMPS(), pair.o2);
-        long generationTime = ModelsProgressUtil.estimateTotalGenerationJobMillis(false, false, pair.o2);
         totalJob += jobTime;
         modulesToGenerationTimes.put(module, jobTime);
       }
