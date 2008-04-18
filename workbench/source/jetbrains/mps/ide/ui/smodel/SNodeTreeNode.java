@@ -5,7 +5,6 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.modelchecker.ModelCheckResult;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.IOperationContext;
@@ -184,12 +183,12 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   public boolean hasErrors() {
-    SModelTreeNode stn = getSModelModelTreeNode();
+   /* SModelTreeNode stn = getSModelModelTreeNode();
     if (stn != null) {
         // the following line causes sometimes a nasty NPE
         ModelCheckResult r = stn.getModelCheckResult();
         return r != null && r.hasErrorsInside(getSNode());
-    }
+    }*/
     return false;
   }
 }

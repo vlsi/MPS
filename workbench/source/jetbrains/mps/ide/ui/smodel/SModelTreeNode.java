@@ -11,7 +11,6 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.modelchecker.ModelCheckResult;
 import jetbrains.mps.ide.modelchecker.ModelChecker;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -85,23 +84,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myModelDescriptor = modelDescriptor;
     myLabel = label;
     myNodesCondition = condition;
-    
+
     setUserObject(modelDescriptor);
 
     updatePresentation();
   }
 
   protected void updatePresentation() {
-    ModelCheckResult r = getModelCheckResult();
-    if (r != null && r.hasErrors()) {
-      setColor(Color.RED);
+    SModelDescriptor sm = getSModelDescriptor();
+    if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
+      setColor(new Color(0x00, 0x00, 0x90));
     } else {
-      SModelDescriptor sm = getSModelDescriptor();
-      if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
-        setColor(new Color(0x00, 0x00, 0x90));
-      } else {
-        setColor(Color.BLACK);
-      }
+      setColor(Color.BLACK);
     }
 
     if (getSModelDescriptor() != null) {
@@ -280,12 +274,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       if (p.getLastPathComponent() instanceof SModelTreeNode) {
         models.add(((SModelTreeNode) p.getLastPathComponent()).getSModelDescriptor());
       }
-      
+
     }
 
     ActionContext context = new ActionContext(getOperationContext());
     context.put(SModelDescriptor.class, model);
-    if (getOperationContext() != null) {    
+    if (getOperationContext() != null) {
       context.put(MPSProject.class, getOperationContext().getProject());
     }
     context.put(List.class, models);
@@ -311,8 +305,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     String name = myShowLongName ? uid.toString()
-                                 : uid.getShortName();
-            
+      : uid.getShortName();
+
     if (uid.getStereotype().length() > 0) {
       name += "@" + uid.getStereotype();
     }
@@ -340,14 +334,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   public void updateNodePresentationInTree() {
     updatePresentation();
     super.updateNodePresentationInTree();
-  }
-
-  ModelCheckResult getModelCheckResult() {
-    SModelDescriptor sm = getSModelDescriptor();
-    if (sm == null) {
-      return null;
-    }
-    return (ModelCheckResult) sm.getUserObject(ModelChecker.MODEL_CHECK_RESULT);
   }
 
   public boolean isInitialized() {
@@ -393,7 +379,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private boolean showPropertiesAndReferences() {
     return getTree() instanceof ProjectPane.MyTree &&
-            getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
+      getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
   }
 
   protected void onAdd() {
@@ -548,13 +534,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       };
 
       if (ThreadUtils.isEventDispatchThread()) {
-        action.run();        
+        action.run();
       } else {
         getTree().rebuildTreeLater(action, false);
       }
     }
 
-    private void updateNodesWithChangedPackages(Set<SNode> nodes) {            
+    private void updateNodesWithChangedPackages(Set<SNode> nodes) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
       for (SNode node : nodes) {
@@ -568,7 +554,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           groupBecameEmpty((SNodeGroupTreeNode) parent);
         }
       }
-      
+
       insertRoots(nodes);
     }
 
@@ -654,7 +640,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
             int index = parentNode.getChildren().indexOf(childNode);
             if (index > indexof) { // insert added before it
               treeModel.insertNodeInto(createSNodeTreeNode(added, added.getRole_(), getOperationContext()),
-                      parent, treeModel.getIndexOfChild(parent, child));
+                parent, treeModel.getIndexOfChild(parent, child));
               continue outer;
             }
           }
@@ -680,13 +666,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       insertRoots(addedRoots);
     }
 
-    private void insertRoots(Set<SNode> addedRoots) {      
+    private void insertRoots(Set<SNode> addedRoots) {
       if (addedRoots.isEmpty()) {
         return;
       }
 
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-      
+
       final List<SNode> allRoots = new ArrayList<SNode>(getSModel().getRoots());
       Collections.sort(allRoots, new ToStringComparator());
 
@@ -799,7 +785,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       for (SNode root : sm.getSModel().getRoots()) {
         String rootPack = root.getProperty(PACK);
         if (rootPack != null && rootPack.startsWith(getFullPackage())) {
-          nodes.add(root);   
+          nodes.add(root);
         }
       }
       return nodes;

@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.IEditorMessage;
 import jetbrains.mps.helgins.checking.HighlighterMessage;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -24,4 +25,6 @@ public interface IEditorChecker {
   public IEditorMessageOwner getOwner(SNode rootNode);
 
   public boolean executeInUndoableCommand();
+
+  public Set<IEditorMessage> checkModel(SModel model, IOperationContext operationContext);
 }
