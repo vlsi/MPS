@@ -317,13 +317,11 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
     // time estimation
     boolean compile = (generationType.requiresCompilationInIDEAfterGeneration() || generationType.requiresCompilationInIDEABeforeGeneration());
     long totalJob = 0;
-    Map<IModule, Long> modulesToGenerationTimes = new HashMap<IModule, Long>();
     for (Pair<IModule, List<SModelDescriptor>> pair : moduleSequence) { //todo
       IModule module = pair.o1;
       if (module != null) {
         long jobTime = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, module != null && !module.isCompileInMPS(), pair.o2);
         totalJob += jobTime;
-        modulesToGenerationTimes.put(module, jobTime);
       }
     }
     
@@ -353,11 +351,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
         IModule currentModule = moduleAndDescriptors.o1;
 
         IOperationContext invocationContext = modulesToContexts.get(currentModule);
-        Long estimated = modulesToGenerationTimes.get(currentModule);
-        if (estimated == null) {
-          estimated = (long) 1000;
-        }
-        progress.startTask("generating in module " + currentModule, estimated);
+        progress.startTask("generating in module " + currentModule);
         String outputFolder = currentModule != null ? currentModule.getGeneratorOutputPath() : null;
         if (outputFolder != null && !new File(outputFolder).exists()) {
           new File(outputFolder).mkdirs();
