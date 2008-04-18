@@ -64,14 +64,14 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208436397040">
             <property name="name" value="highlighter" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208436397041">
-              <link role="classifier" targetNodeId="26.~Highlighter" resolveInfo="Highlighter" />
+              <link role="classifier" targetNodeId="12.~Highlighter" resolveInfo="Highlighter" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208436397042">
               <node role="operand" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_MPSProject" id="1208436397043" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208436397044">
                 <link role="baseMethodDeclaration" targetNodeId="16.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1208436397045">
-                  <link role="classifier" targetNodeId="26.~Highlighter" resolveInfo="Highlighter" />
+                  <link role="classifier" targetNodeId="12.~Highlighter" resolveInfo="Highlighter" />
                 </node>
               </node>
             </node>
@@ -85,7 +85,7 @@
                   <link role="variableDeclaration" targetNodeId="1208436397040" resolveInfo="highlighter" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208436397051">
-                  <link role="baseMethodDeclaration" targetNodeId="26.~Highlighter.addChecker(jetbrains.mps.helgins.checking.IEditorChecker):void" resolveInfo="addChecker" />
+                  <link role="baseMethodDeclaration" targetNodeId="12.~Highlighter.addChecker(jetbrains.mps.helgins.checking.IEditorChecker):void" resolveInfo="addChecker" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208436397052">
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1208436397053" />
                     <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldReferenceOperation" id="1208436397054">
@@ -111,14 +111,14 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208436450683">
             <property name="name" value="highlighter" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208436450684">
-              <link role="classifier" targetNodeId="26.~Highlighter" resolveInfo="Highlighter" />
+              <link role="classifier" targetNodeId="12.~Highlighter" resolveInfo="Highlighter" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208436450685">
               <node role="operand" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ConceptFunctionParameter_MPSProject" id="1208436450686" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208436450687">
                 <link role="baseMethodDeclaration" targetNodeId="16.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1208436450688">
-                  <link role="classifier" targetNodeId="26.~Highlighter" resolveInfo="Highlighter" />
+                  <link role="classifier" targetNodeId="12.~Highlighter" resolveInfo="Highlighter" />
                 </node>
               </node>
             </node>
@@ -132,7 +132,7 @@
                   <link role="variableDeclaration" targetNodeId="1208436450683" resolveInfo="highlighter" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208436450709">
-                  <link role="baseMethodDeclaration" targetNodeId="26.~Highlighter.removeChecker(jetbrains.mps.helgins.checking.IEditorChecker):void" resolveInfo="removeChecker" />
+                  <link role="baseMethodDeclaration" targetNodeId="12.~Highlighter.removeChecker(jetbrains.mps.helgins.checking.IEditorChecker):void" resolveInfo="removeChecker" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208436450710">
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1208436450711" />
                     <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldReferenceOperation" id="1208436450712">

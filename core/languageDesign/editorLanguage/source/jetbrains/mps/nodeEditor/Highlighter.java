@@ -9,19 +9,38 @@ import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.helgins.checking.IEditorChecker;
 
 import javax.swing.SwingUtilities;
+import java.util.LinkedHashSet;
+import java.util.HashSet;
 
-public abstract class GenericEditorUpdater implements IComponentLifecycle {
-  private static final Logger LOG = Logger.getLogger(GenericEditorUpdater.class);
+public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
+  private static final Logger LOG = Logger.getLogger(Highlighter.class);
+  public static final int CHECK_DELAY = 1000;
 
   private boolean myStopThread = false;
-
   private MPSProjects myProjects;
-
   protected Thread myThread;
+  private HashSet<IEditorChecker> myCheckers = new LinkedHashSet<IEditorChecker>(3);
 
-  public GenericEditorUpdater() {
+  public Highlighter() {
+  }
+
+  private int getCheckDelay() {
+    return CHECK_DELAY;
+  }
+
+  public Thread getThread() {
+    return myThread;
+  }
+
+  public void addChecker(IEditorChecker checker) {
+    myCheckers.add(checker);
+  }
+
+  public void removeChecker(IEditorChecker checker) {
+    myCheckers.remove(checker);
   }
 
   @Dependency
@@ -69,9 +88,6 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
   protected void doUpdate() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        CommandProcessor commandProcessor = CommandProcessor.instance();
-      /*  commandProcessor.tryToExecuteLightweightCommand(new Runnable() {
-          public void run() {*/
             if (myProjects == null) return;
             MPSProjects projects = myProjects;
             for (MPSProject project : projects.getProjects()) {
@@ -104,8 +120,6 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
                 }
               }
             }
-         /* }
-        });*/
       }
     });
   }
@@ -138,6 +152,41 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
     return false;
   }
 
+  protected boolean updateEditor(final IEditorComponent editor) {
+    if (editor == null || editor.getRootCell() == null) {
+      return false;
+    }
+
+    NodeHighlightManager highlightManager = editor.getHighlightManager();
+    for (final IEditorChecker checker : new LinkedHashSet<IEditorChecker>(myCheckers)) {
+      final LinkedHashSet<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
+      final IEditorMessageOwner[] owners = new IEditorMessageOwner[1];
+      Runnable runnable = new Runnable() {
+        public void run() {
+          SNode node = editor.getEditedNode();
+          if (node == null) return;
+          owners[0] = checker.getOwner(node);
+          messages.addAll(checker.createMessages(node, editor.getOperationContext()));
+        }
+      };
+      if (checker.executeInUndoableCommand()) {
+        CommandProcessor.instance().executeCommand(runnable);
+      } else {
+        CommandProcessor.instance().executeLightweightCommand(runnable);
+      }
+
+      IEditorMessageOwner owner = owners[0];
+      if (owner != null) {
+        highlightManager.clearForOwner(owner);
+      }
+      for (IEditorMessage message : messages) {
+        highlightManager.mark(message);
+      }
+    }
+
+    return true;
+  }
+
   private long getLastUpdateTime(IEditorComponent component) {
     Long lastUpdate = (Long) component.getUserData(getLastUpdateKey());
     if (lastUpdate == null) {
@@ -150,11 +199,4 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
     return "LAST_UPDATE_" + getClass().getName();
   }
 
-  protected abstract boolean updateEditor(IEditorComponent editor);
-
-  protected abstract int getCheckDelay();
-
-  public Thread getThread() {
-    return myThread;
-  }
 }
