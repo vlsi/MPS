@@ -4,10 +4,10 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.helgins.checking.IEditorChecker;
 
 import java.awt.Color;
-import java.awt.Graphics;
 import java.util.*;
 
 /**
@@ -21,12 +21,8 @@ public class AutoResolver implements IEditorChecker, IEditorMessageOwner {
 
   //private WeakSet<SNode> myCheckedRoots = new WeakSet<SNode>();
 
-  public boolean updateEditor(final IEditorComponent editor, LinkedHashSet<IEditorMessage> messages) {
-    if (editor == null || editor.getRootCell() == null) {
-      return false;
-    }
-    SNode node = editor.getEditedNode();
-    if (node == null) return false;
+  public boolean updateEditor(SNode rootNode, IOperationContext operationContext, LinkedHashSet<IEditorMessage> messages) {
+    if (rootNode == null) return false;
 
     // if (myCheckedRoots.contains(node)) return false;
 
@@ -36,10 +32,10 @@ public class AutoResolver implements IEditorChecker, IEditorMessageOwner {
     boolean someReferencesResolved = false;
     try {
       // resolve references
-      Set<SReference> badReferences = collectBadReferences(editor);
+      Set<SReference> badReferences = collectBadReferences(rootNode);
       if (!badReferences.isEmpty()) {
         int oldSize = badReferences.size();
-        yetBadReferences = Resolver.resolveReferences(badReferences, editor.getOperationContext());
+        yetBadReferences = Resolver.resolveReferences(badReferences, operationContext);
         int newSize = yetBadReferences.size();
         someReferencesResolved = oldSize > newSize;
       }
@@ -47,14 +43,14 @@ public class AutoResolver implements IEditorChecker, IEditorMessageOwner {
       SReference.enableLogging();
     }
 
-    if (someReferencesResolved) {
+   /* if (someReferencesResolved) {
       CommandProcessor.instance().invokeLater(new Runnable() {
         public void run() {
           editor.rebuildEditorContent();
           editor.relayout();
         }
       });
-    }
+    }*/      //todo why to rebuild?
 
     // highlight nodes with errors
     for (SReference ref : yetBadReferences) {
@@ -66,9 +62,8 @@ public class AutoResolver implements IEditorChecker, IEditorMessageOwner {
     return true;
   }
 
-  private Set<SReference> collectBadReferences(IEditorComponent editor) {
+  private Set<SReference> collectBadReferences(SNode cellNode) {
     Set<SReference> result = new HashSet<SReference>();
-    SNode cellNode = editor.getRootCell().getSNode();
     List<SNode> list = cellNode.getDescendants();
     list.add(0, cellNode);
     for (SNode node : list) {
@@ -81,9 +76,8 @@ public class AutoResolver implements IEditorChecker, IEditorMessageOwner {
     return result;
   }
 
-  public IEditorMessageOwner getOwner(IEditorComponent editorComponent) {
+  public IEditorMessageOwner getOwner(SNode node) {
     return this;
-    //todo is it correct?
   }
 
   public boolean executeInUndoableCommand() {

@@ -17,7 +17,7 @@ import java.util.HashSet;
 
 public abstract class EditorCheckerAdapter implements IEditorChecker, IEditorMessageOwner {
 
-  public IEditorMessageOwner getOwner(IEditorComponent editorComponent) {
+  public IEditorMessageOwner getOwner(SNode node) {
     return this;
   }
 
@@ -25,8 +25,8 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, IEditorMes
     return false;
   }
 
-  public boolean updateEditor(IEditorComponent editorComponent, LinkedHashSet<IEditorMessage> messages) {
-    Set<IEditorMessage> messageSet = createMessages(editorComponent.getOperationContext(), editorComponent.getEditedNode());
+  public boolean updateEditor(SNode node, IOperationContext operationContext, LinkedHashSet<IEditorMessage> messages) {
+    Set<IEditorMessage> messageSet = createMessages(operationContext, node);
     messages.addAll(messageSet);
     return true;
   }

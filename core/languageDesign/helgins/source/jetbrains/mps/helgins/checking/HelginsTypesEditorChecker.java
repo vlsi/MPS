@@ -2,6 +2,7 @@ package jetbrains.mps.helgins.checking;
 
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
@@ -22,13 +23,7 @@ import java.util.LinkedHashSet;
 public class HelginsTypesEditorChecker implements IEditorChecker {
   private static Logger LOG = Logger.getLogger(HelginsTypesEditorChecker.class);
 
-  public boolean updateEditor(IEditorComponent editor, LinkedHashSet<IEditorMessage> messages) {
-    if (editor == null || editor.getRootCell() == null) {
-      return false;
-    }
-
-    SNode node = editor.getEditedNode();
-    if (node == null) return false;
+  public boolean updateEditor(SNode node, IOperationContext operationContext, LinkedHashSet<IEditorMessage> messages) {
     if (!TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
       try {
         TypeChecker.getInstance().checkRoot(node.getContainingRoot());
@@ -67,8 +62,7 @@ public class HelginsTypesEditorChecker implements IEditorChecker {
     return false;
   }
 
-  public IEditorMessageOwner getOwner(IEditorComponent editorComponent) {
-    SNode node = editorComponent.getEditedNode();
+  public IEditorMessageOwner getOwner(SNode node) {
     if (node == null) return null;
     return getNodeTypesComponent(node);
   }
