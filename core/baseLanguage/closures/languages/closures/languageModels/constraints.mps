@@ -186,6 +186,24 @@
                 <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202756405860">
                   <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
                 </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208610009365">
+                  <property name="value" value="_J" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208610004944">
+                  <property name="value" value="_K" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208610000026">
+                  <property name="value" value="_L" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208609997601">
+                  <property name="value" value="_M" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208600324636">
+                  <property name="value" value="_N" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208600288756">
+                  <property name="value" value="_O" />
+                </node>
                 <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1202756405861">
                   <property name="value" value="_P" />
                 </node>
@@ -288,6 +306,23 @@
                   <link role="variableDeclaration" targetNodeId="1202756405855" resolveInfo="paramTypes" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1208600339075">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208600339214">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1208600388244">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208600392873">
+                <property name="value" value="???too many parameters in function type???" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1208600366506">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208600380076">
+              <property name="value" value="0" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208600349948">
+              <link role="variableDeclaration" targetNodeId="1202756405896" resolveInfo="idx" />
             </node>
           </node>
         </node>

@@ -10,6 +10,7 @@ import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
+import junit.framework.Assert;
 
 public class Mapper_Test extends Util_Test {
 
@@ -275,7 +276,114 @@ __switch__:
       }
 
     });
-    this.assertIterableEquals(Arrays.asList(2, 4), test);
+    this.assertIterableEquals(Arrays.asList(2, 4, 6), test);
+  }
+
+  public void test_stopBug() throws Exception {
+    Iterable<Integer> test = Sequence.fromIterable(this.input5()).translate(new ITranslator <Integer, Integer>() {
+
+      public ISequence<Integer> translate(final Integer it) {
+        return new ISequenceIterableAdapter <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      if (it == 5) {
+                        this.__CP__ = 3;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      this.yield(5);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 3:
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      throw new StopIteratingException();
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    this.assertIterableEquals(Arrays.asList(5), test);
+    Iterable<Integer> test2 = Sequence.fromIterable(this.input5()).translate(new ITranslator <Integer, Integer>() {
+
+      public ISequence<Integer> translate(final Integer it) {
+        return new ISequenceIterableAdapter <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      if (false) {
+                        this.__CP__ = 3;
+                        break;
+                      }
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this.__CP__ = 4;
+                      this.yield(999);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      throw new StopIteratingException();
+                    case 3:
+                      this.__CP__ = 5;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    Assert.assertTrue(Sequence.fromIterable(test2).isEmpty());
   }
 
 }

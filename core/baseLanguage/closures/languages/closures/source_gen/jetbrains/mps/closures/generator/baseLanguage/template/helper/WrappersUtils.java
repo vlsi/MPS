@@ -42,7 +42,6 @@ with_decls:
   }
 
   public static void putPrepData(SNode sn, Object data, ITemplateGenerator generator) {
-    System.out.println("--> PUT " + data + " (" + sn.getPresentation() + ") ID=" + sn.getId());
     generator.getGeneratorSessionContext().putStepObject("wrappers_data_" + ((SNode)sn).getId(), data);
     sn.putUserObject("wrappers_data_", data);
   }
@@ -51,9 +50,6 @@ with_decls:
     Object sessionData = generator.getGeneratorSessionContext().getStepObject("wrappers_data_" + ((SNode)sn).getId());
     if (sessionData == null) {
       sessionData = sn.getUserObject("wrappers_data_");
-    }
-    if (sessionData != null) {
-      System.out.println("--> GET " + sessionData + " (" + sn.getPresentation() + ") ID=" + sn.getId());
     }
     return sessionData;
   }

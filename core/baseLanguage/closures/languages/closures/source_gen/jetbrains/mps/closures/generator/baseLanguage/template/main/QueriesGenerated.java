@@ -323,10 +323,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201048260874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      IMatchingPattern pattern_1207250303629 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1207250303611 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1207250303629);
-      if (coercedNode_1207250303611 != null) {
-        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1207250303611, "elementType", true));
+      IMatchingPattern pattern_1208610471327 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1208610471309 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_1208610471327);
+      if (coercedNode_1208610471309 != null) {
+        return BaseConcept_Behavior.call_getPresentation_1180102203531(SLinkOperations.getTarget(coercedNode_1208610471309, "elementType", true));
       }
     }
     return null;
@@ -1423,9 +1423,6 @@ public class QueriesGenerated {
             break;
           }
         }
-      } else
-      {
-        System.out.println("Found classifier: " + SPropertyOperations.getString(SLinkOperations.getTarget(ct, "classifier", false), "name"));
       }
     }
   }
