@@ -10473,10 +10473,6 @@
         <property name="selectable" value="false"/>
         <property name="drawBorder" value="false"/>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList"
-            id="1208706285177">
-        <link role="relationDeclaration" targetNodeId="17.1070462273904"/>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1170346961658">
