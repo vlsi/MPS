@@ -854,6 +854,19 @@
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp" />
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp" />
   </target>
+  <target name="pack.jetbrains.mps.baseLanguage.unitTest.runtime">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.tmp">
+      <fileset dir="platform\unitTest\solutions\runtime" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
+      <fileset dir="platform\unitTest\solutions\runtime" includes="*.mpl, *.msd, *.devkit" />
+    </copy>
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.tmp\jetbrains.mps.baseLanguage.unitTest.runtime.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\platform\jetbrains.mps.baseLanguage.unitTest.runtime.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.tmp" />
+    <mkdir dir="platform\unitTest\solutions\runtime\classes_gen" />
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.runtime.jar" duplicate="preserve">
+      <fileset dir="platform\unitTest\solutions\runtime\classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.tmp" />
+  </target>
   <target name="pack.jetbrains.mps.xml">
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.xml.tmp">
       <fileset dir="platform\xml" excludes="**/*.java, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
