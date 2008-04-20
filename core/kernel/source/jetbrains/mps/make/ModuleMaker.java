@@ -20,7 +20,6 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.FilenameFilter;
 import java.util.*;
 
 public class ModuleMaker {
@@ -191,10 +190,10 @@ public class ModuleMaker {
     for (IModule module : modules){
       ModuleSources sources = getModuleSources(module);
       for (ResourceFile toCopy : sources.getResourcesToCopy()) {
-        String fqName = toCopy.getFqName();
+        String fqName = toCopy.getPath();
 
         fqName = fqName.substring(0, fqName.length() - toCopy.getFile().getName().length());
-        String path = fqName.replace('.', File.separatorChar) + toCopy.getFile().getName();
+        String path = fqName.replace('/', File.separatorChar) + toCopy.getFile().getName();
 
         FileUtil.copyFile(
           toCopy.getFile().toFile(),

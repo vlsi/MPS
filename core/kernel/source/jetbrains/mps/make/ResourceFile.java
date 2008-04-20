@@ -3,16 +3,16 @@ package jetbrains.mps.make;
 import jetbrains.mps.vfs.IFile;
 
 class ResourceFile {
-  private String myFqName;
+  private String myPath;
   private IFile myFile;
 
   ResourceFile(IFile file, String fqName) {
-    myFqName = fqName;
+    myPath = fqName;
     myFile = file;
   }
 
-  String getFqName() {
-    return myFqName;
+  String getPath() {
+    return myPath;
   }
 
   IFile getFile() {
@@ -20,6 +20,6 @@ class ResourceFile {
   }
 
   public String toString() {
-    return "Resource " + myFqName + " at " + myFile;
+    return "Resource " + myPath + " at " + myFile;
   }
 }

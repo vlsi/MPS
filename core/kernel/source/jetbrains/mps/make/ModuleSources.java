@@ -48,7 +48,7 @@ public class ModuleSources {
     }
   }
 
-  private void collectInput(IFile dir, String pack) {
+  private void collectInput(IFile dir, String path) {
     List<IFile> list = dir.list();
     if (list == null) return;
 
@@ -57,18 +57,18 @@ public class ModuleSources {
 
       if (isJavaFile(child)) {
         String className = child.getName().substring(0, child.getName().length() - JAVA_SUFFIX.length());
-        String fqName = addPackage(pack, className);
+        String fqName = toPack(addSubPath(path, className));
         myJavaFiles.put(fqName, new JavaFile(child, fqName));
       }
 
       if (isResourceFile(child)) {
         String resourceName = child.getName();
-        String fqName = addPackage(pack, resourceName);
-        myResourceFiles.put(fqName, new ResourceFile(child, fqName));
+        String childPath = addSubPath(path, resourceName);
+        myResourceFiles.put(childPath, new ResourceFile(child, childPath));
       }
 
       if (child.isDirectory()) {
-        collectInput(child, addPackage(pack, child.getName()));
+        collectInput(child, addSubPath(path, child.getName()));
       }
     }
   }
@@ -79,7 +79,7 @@ public class ModuleSources {
     collectOutput(myModule.getClassesGen(), "");
   }
 
-  private void collectOutput(IFile current, String pack) {
+  private void collectOutput(IFile current, String path) {
     List<IFile> files = current.list();
     if (files == null) return;
 
@@ -87,14 +87,14 @@ public class ModuleSources {
       if (isIgnored(file)) continue;
 
       if (file.isDirectory()) {
-        collectOutput(file, addPackage(pack, file.getName()));
+        collectOutput(file, addSubPath(path, file.getName()));
       } else {
         if (file.getName().endsWith(CLASS_SUFFIX)) {
           String containerName = file.getName().substring(0, file.getName().length() - CLASS_SUFFIX.length());
           if (containerName.contains("$")) {
             containerName = containerName.substring(0, containerName.lastIndexOf("$"));
           }
-          String fqName = addPackage(pack, containerName);
+          String fqName = toPack(addSubPath(path, containerName));
           JavaFile javaFile = myJavaFiles.get(fqName);
           if (javaFile == null) {
             myFilesToDelete.add(file);
@@ -104,8 +104,8 @@ public class ModuleSources {
         }
 
         if (isResourceFile(file)) {
-          String fqName = addPackage(pack, file.getName());
-          ResourceFile resourceFile = myResourceFiles.get(fqName);
+          String childPath = addSubPath(path, file.getName());
+          ResourceFile resourceFile = myResourceFiles.get(childPath);
           if (resourceFile == null) {
             myFilesToDelete.add(file);
           } else if (resourceFile.getFile().lastModified() < file.lastModified()) {
@@ -120,12 +120,16 @@ public class ModuleSources {
     return file.isDirectory() && ".svn".equals(file.getName());
   }
 
-  private String addPackage(String pack, String name) {
-    if (pack.length() > 0) {
-      return pack + "." + name;
+  private String addSubPath(String path, String name) {
+    if (path.length() > 0) {
+      return path + "/" + name;
     } else {
       return name;
     }
+  }
+
+  private String toPack(String path) {
+    return path.replace('/', '.');
   }
 
   private boolean isJavaFile(IFile file) {
