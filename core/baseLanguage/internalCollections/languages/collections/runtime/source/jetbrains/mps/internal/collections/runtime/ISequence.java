@@ -56,4 +56,5 @@ public interface ISequence<T> extends Iterable<T> {
 
     Iterable<T> toIterable();
 
+    IListSequence<T> toListSequence ();
 }

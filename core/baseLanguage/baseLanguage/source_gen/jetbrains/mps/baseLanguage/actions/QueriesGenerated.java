@@ -1294,6 +1294,7 @@ public class QueriesGenerated {
         public SNode doSubstitute(String pattern) {
           SNode operationExpression = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.DotExpression");
           SLinkOperations.setTarget(operationExpression, "operand", _context.getSourceNode(), true);
+          SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.AbstractOperation");
           return operationExpression;
         }
 

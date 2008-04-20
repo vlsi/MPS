@@ -2863,6 +2863,21 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208623807632">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208623812956">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208623809615">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208623807633">
+                      <link role="variableDeclaration" targetNodeId="1197029071826" resolveInfo="operationExpression" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1208623812035">
+                      <link role="link" targetNodeId="1.1197027833540" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1208623814818">
+                    <link role="concept" targetNodeId="1.1208623485264" resolveInfo="AbstractOperation" />
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197029098293">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197029101471">
                   <link role="variableDeclaration" targetNodeId="1197029071826" resolveInfo="operationExpression" />

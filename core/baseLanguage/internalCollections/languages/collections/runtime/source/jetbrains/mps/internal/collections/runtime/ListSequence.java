@@ -240,19 +240,20 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     public T[] toGenericArray() {
         return (T[]) list.toArray();
     }
-
-    protected ListSequence (List<T> list) {
-        this.list = list;
-    }
     
     public List<T> toList() {
         return this;
     }
     
-    public Collection<T> getCollection() {
-        return list;
+    @Override
+    public IListSequence<T> toListSequence() {
+        return this;
     }
 
+    protected ListSequence (List<T> list) {
+        this.list = list;
+    }
+    
     /**
      * Copy constructor.
      * @param other

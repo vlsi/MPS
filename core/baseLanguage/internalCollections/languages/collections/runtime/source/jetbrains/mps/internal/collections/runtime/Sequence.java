@@ -200,4 +200,8 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
         return this;
     }
     
+    public IListSequence<T> toListSequence() {
+        return ListSequence.fromIterable(toIterable());
+    }
+    
 }

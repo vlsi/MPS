@@ -2689,5 +2689,16 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1207665819089">
     <property name="name" value="Closureoid" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208623485264">
+    <property name="package" value="dotExpression" />
+    <property name="name" value="AbstractOperation" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1208623501468">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1208623495895">
+      <link role="intfc" targetNodeId="1197027803184" resolveInfo="IOperation" />
+    </node>
+  </node>
 </model>
 
