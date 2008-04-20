@@ -30,9 +30,9 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent2;
-  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
-  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
+  /* package */ AbstractCellProvider myVariableDeclaration_NameCellComponent2;
+  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList1_;
+  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList_;
 
   private static void setupBasic_ColumnCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188212184237");
@@ -289,7 +289,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList1(EditorContext context, SNode node) {
     if (this.myAnnotationListHandler_annotationList1_ == null) {
-      this.myAnnotationListHandler_annotationList1_ = new LocalVariableDeclaration_Editor._RefNodeListHandler60(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList1_ = new LocalVariableDeclaration_Editor._RefNodeListHandler59(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
     LocalVariableDeclaration_Editor.setupBasic_AnnotationList1(editorCell, node, context);
@@ -302,7 +302,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList(EditorContext context, SNode node) {
     if (this.myAnnotationListHandler_annotationList_ == null) {
-      this.myAnnotationListHandler_annotationList_ = new LocalVariableDeclaration_Editor._RefNodeListHandler64(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList_ = new LocalVariableDeclaration_Editor._RefNodeListHandler63(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
     LocalVariableDeclaration_Editor.setupBasic_AnnotationList(editorCell, node, context);
@@ -319,7 +319,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     LocalVariableDeclaration_Editor.setupBasic_IsFinalCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      LocalVariableDeclaration_Editor.setupLabel_IsFinalCell((EditorCell_Label)editorCell, node, context);
+      LocalVariableDeclaration_Editor.setupLabel_IsFinalCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -339,7 +339,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -348,7 +348,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     LocalVariableDeclaration_Editor.setupBasic_TypeCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      LocalVariableDeclaration_Editor.setupLabel_TypeCell((EditorCell_Label)editorCell, node, context);
+      LocalVariableDeclaration_Editor.setupLabel_TypeCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -368,7 +368,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createInitializerCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -377,7 +377,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     LocalVariableDeclaration_Editor.setupBasic_InitializerCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      LocalVariableDeclaration_Editor.setupLabel_InitializerCell((EditorCell_Label)editorCell, node, context);
+      LocalVariableDeclaration_Editor.setupLabel_InitializerCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -397,12 +397,12 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
-  public static class _RefNodeListHandler60 extends RefNodeListHandler {
+  public static class _RefNodeListHandler59 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler60(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler59(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -442,10 +442,11 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-}
-  public static class _RefNodeListHandler64 extends RefNodeListHandler {
+  }
 
-    public  _RefNodeListHandler64(SNode ownerNode, String childRole, EditorContext context) {
+  public static class _RefNodeListHandler63 extends RefNodeListHandler {
+
+    public _RefNodeListHandler63(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -485,6 +486,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-}
+  }
 
 }

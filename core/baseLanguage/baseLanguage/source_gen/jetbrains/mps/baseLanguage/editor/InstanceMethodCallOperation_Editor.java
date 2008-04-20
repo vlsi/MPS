@@ -32,7 +32,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
+  /* package */ AbstractCellListHandler myActualArgumentListHandler_actualArgumentList_;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1202948902315");
@@ -117,7 +117,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if (this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new InstanceMethodCallOperation_Editor._RefNodeListHandler68(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new InstanceMethodCallOperation_Editor._RefNodeListHandler67(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     InstanceMethodCallOperation_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -134,7 +134,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InstanceMethodCallOperation_Editor.setupBasic_InstanceMethodDeclarationReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InstanceMethodCallOperation_Editor.setupLabel_InstanceMethodDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+      InstanceMethodCallOperation_Editor.setupLabel_InstanceMethodDeclarationReferenceCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -154,12 +154,12 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public static class _Inline25 extends AbstractCellProvider {
 
-    public  _Inline25() {
+    public _Inline25() {
       super();
     }
 
@@ -186,7 +186,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       InstanceMethodCallOperation_Editor._Inline25.setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        InstanceMethodCallOperation_Editor._Inline25.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        InstanceMethodCallOperation_Editor._Inline25.setupLabel_NameCell((EditorCell_Label) editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -206,13 +206,14 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
-      return cellWithRole;
+        return cellWithRole;
     }
 
-}
-  public static class _RefNodeListHandler68 extends RefNodeListHandler {
+  }
 
-    public  _RefNodeListHandler68(SNode ownerNode, String childRole, EditorContext context) {
+  public static class _RefNodeListHandler67 extends RefNodeListHandler {
+
+    public _RefNodeListHandler67(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -275,12 +276,12 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      InstanceMethodCallOperation_Editor._RefNodeListHandler68.setupBasic_ConstantCell1(editorCell, node, context);
-      InstanceMethodCallOperation_Editor._RefNodeListHandler68.setupLabel_ConstantCell1(editorCell, node, context);
+      InstanceMethodCallOperation_Editor._RefNodeListHandler67.setupBasic_ConstantCell1(editorCell, node, context);
+      InstanceMethodCallOperation_Editor._RefNodeListHandler67.setupLabel_ConstantCell1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 
-}
+  }
 
 }

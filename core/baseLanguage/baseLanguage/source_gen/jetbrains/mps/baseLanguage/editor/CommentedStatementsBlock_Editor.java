@@ -7,7 +7,9 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+
 import java.awt.Color;
+
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -21,7 +23,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myStatementListHandler_statementList_;
+  /* package */ AbstractCellListHandler myStatementListHandler_statementList_;
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326571087");
@@ -120,7 +122,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
   public EditorCell createStatementList(EditorContext context, SNode node) {
     if (this.myStatementListHandler_statementList_ == null) {
-      this.myStatementListHandler_statementList_ = new CommentedStatementsBlock_Editor._RefNodeListHandler39(node, "statement", context);
+      this.myStatementListHandler_statementList_ = new CommentedStatementsBlock_Editor._RefNodeListHandler38(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myStatementListHandler_statementList_.createCells(context, new CellLayout_Vertical(), false);
     CommentedStatementsBlock_Editor.setupBasic_StatementList(editorCell, node, context);
@@ -131,9 +133,9 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _RefNodeListHandler39 extends RefNodeListHandler {
+  public static class _RefNodeListHandler38 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler39(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler38(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -173,6 +175,6 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-}
+  }
 
 }

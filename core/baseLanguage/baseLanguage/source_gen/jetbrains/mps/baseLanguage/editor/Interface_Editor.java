@@ -28,13 +28,13 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class Interface_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
-  /* package */AbstractCellProvider my_Component_Visibility4;
-  /* package */AbstractCellListHandler myMethodListHandler_methodsList_;
-  /* package */AbstractCellListHandler myExtendedInterfaceListHandler_extendedInterfaceList_;
-  /* package */AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
-  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
-  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
+  /* package */ AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
+  /* package */ AbstractCellProvider my_Component_Visibility4;
+  /* package */ AbstractCellListHandler myMethodListHandler_methodsList_;
+  /* package */ AbstractCellListHandler myExtendedInterfaceListHandler_extendedInterfaceList_;
+  /* package */ AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
+  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList_;
+  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList1_;
 
   private static void setupBasic_ClassBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1107796852505");
@@ -447,7 +447,7 @@ public class Interface_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList(EditorContext context, SNode node) {
     if (this.myAnnotationListHandler_annotationList_ == null) {
-      this.myAnnotationListHandler_annotationList_ = new Interface_Editor._RefNodeListHandler46(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList_ = new Interface_Editor._RefNodeListHandler45(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
     Interface_Editor.setupBasic_AnnotationList(editorCell, node, context);
@@ -460,7 +460,7 @@ public class Interface_Editor extends DefaultNodeEditor {
 
   public EditorCell createAnnotationList1(EditorContext context, SNode node) {
     if (this.myAnnotationListHandler_annotationList1_ == null) {
-      this.myAnnotationListHandler_annotationList1_ = new Interface_Editor._RefNodeListHandler47(node, "annotation", context);
+      this.myAnnotationListHandler_annotationList1_ = new Interface_Editor._RefNodeListHandler46(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
     Interface_Editor.setupBasic_AnnotationList1(editorCell, node, context);
@@ -477,7 +477,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Interface_Editor.setupBasic_NameCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      Interface_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      Interface_Editor.setupLabel_NameCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -497,12 +497,12 @@ public class Interface_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public static class _RefNodeListHandler12 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler12(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler12(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -564,10 +564,11 @@ public class Interface_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-}
+  }
+
   public static class _RefNodeListHandler13 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler13(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler13(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -629,10 +630,11 @@ public class Interface_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-}
+  }
+
   public static class _RefNodeListHandler16 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler16(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler16(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -694,10 +696,55 @@ public class Interface_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-}
+  }
+
+  public static class _RefNodeListHandler45 extends RefNodeListHandler {
+
+    public _RefNodeListHandler45(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext context) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, context, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext context, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(context, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, context);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext context) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(context);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, context);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if (elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
+        }
+      }
+    }
+
+    public EditorCell createSeparatorCell(EditorContext context) {
+      return super.createSeparatorCell(context);
+    }
+
+  }
+
   public static class _RefNodeListHandler46 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler46(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler46(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -737,49 +784,6 @@ public class Interface_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-}
-  public static class _RefNodeListHandler47 extends RefNodeListHandler {
-
-    public  _RefNodeListHandler47(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
-    }
-
-    public SNode createNodeToInsert(EditorContext context) {
-      SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, context, super.getElementRole());
-    }
-
-    public EditorCell createNodeCell(EditorContext context, SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(context, elementNode);
-      this.installElementCellActions(this.getOwner(), elementNode, elementCell, context);
-      return elementCell;
-    }
-
-    public EditorCell createEmptyCell(EditorContext context) {
-      EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(context);
-      this.installElementCellActions(super.getOwner(), null, emptyCell, context);
-      return emptyCell;
-    }
-
-    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
-        SNode substituteInfoNode = listOwner;
-        if (elementNode != null) {
-          substituteInfoNode = elementNode;
-          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
-        }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
-        }
-      }
-    }
-
-    public EditorCell createSeparatorCell(EditorContext context) {
-      return super.createSeparatorCell(context);
-    }
-
-}
+  }
 
 }
