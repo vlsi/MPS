@@ -20,39 +20,23 @@ public class MyTestListener implements TestListener {
   }
 
   public void startTest(Test test) {
-    System.out.println(MyTestListener.START_TEST_PREFIX + this.getFullTestName(test));
+    this.printSyncToken(MyTestListener.START_TEST_PREFIX + this.getFullTestName(test));
   }
 
   public void addError(Test test, Throwable t) {
-    System.out.println(MyTestListener.ERROR_TEST_PREFIX + this.getFullTestName(test));
-    t.printStackTrace(System.out);
-    System.out.println(MyTestListener.ERROR_TEST_SUFFIX + this.getFullTestName(test));
+    this.printSyncToken(MyTestListener.ERROR_TEST_PREFIX + this.getFullTestName(test));
+    t.printStackTrace(System.err);
+    this.printSyncToken(MyTestListener.ERROR_TEST_SUFFIX + this.getFullTestName(test));
   }
 
   public void addFailure(Test test, AssertionFailedError a) {
-    System.out.println(MyTestListener.FAILURE_TEST_PREFIX + this.getFullTestName(test));
-    a.printStackTrace(System.out);
-    System.out.println(MyTestListener.FAILURE_TEST_SUFFIX + this.getFullTestName(test));
+    this.printSyncToken(MyTestListener.FAILURE_TEST_PREFIX + this.getFullTestName(test));
+    a.printStackTrace(System.err);
+    this.printSyncToken(MyTestListener.FAILURE_TEST_SUFFIX + this.getFullTestName(test));
   }
 
   public void endTest(Test test) {
-    System.out.println(MyTestListener.END_TEST_PREFIX + this.getFullTestName(test));
-  }
-
-  public void testFailed(int status, Test test, Throwable t) {
-    System.out.println("<TEST_FAILED>" + this.getFullTestName(test));
-  }
-
-  public void testStarted(String testName) {
-    System.out.println("<TEST_BEGIN2>" + testName);
-  }
-
-  public void testEnded(String testName) {
-    System.out.println("<TEST_END2>" + testName);
-  }
-
-  public void runFailed(String message) {
-    System.out.println("<RUN_FAILED>" + message);
+    this.printSyncToken(MyTestListener.END_TEST_PREFIX + this.getFullTestName(test));
   }
 
   private String getFullTestName(Test test) {
@@ -64,6 +48,11 @@ public class MyTestListener implements TestListener {
     {
       return testClassName;
     }
+  }
+
+  private void printSyncToken(String token) {
+    System.out.println(token);
+    System.err.println(token);
   }
 
 }

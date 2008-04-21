@@ -14,8 +14,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class TestRunner extends BaseTestRunner {
 
-  private MyTestListener listener = new MyTestListener();
-
   public  TestRunner() {
   }
 
@@ -48,7 +46,7 @@ public class TestRunner extends BaseTestRunner {
       }
     }
     TestResult testResult = new TestResult();
-    testResult.addListener(this.listener);
+    testResult.addListener(new MyTestListener());
     {
       ICursor<Test> _zCursor = CursorFactory.createCursor(tests);
       try {
@@ -63,19 +61,15 @@ public class TestRunner extends BaseTestRunner {
   }
 
   public void testFailed(int status, Test test, Throwable t) {
-    this.listener.testFailed(status, test, t);
   }
 
   public void testStarted(String testName) {
-    this.listener.testStarted(testName);
   }
 
   public void testEnded(String testName) {
-    this.listener.testEnded(testName);
   }
 
   public void runFailed(String message) {
-    this.listener.runFailed(message);
   }
 
 }

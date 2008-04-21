@@ -9,14 +9,12 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.util.Calculable;
-import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
 
 public class TestCaseTreeNode extends MPSTreeNode {
 
-  private SNode testCase;
+  protected SNode testCase;
   private TestState state;
 
   public  TestCaseTreeNode(IOperationContext operationContext, SNode testCase) {
@@ -37,13 +35,10 @@ public class TestCaseTreeNode extends MPSTreeNode {
   }
 
   public String getClassName() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable <String>() {
-
-      public String calculate() {
-        return INamedConcept_Behavior.call_getFqName_1184686272576(TestCaseTreeNode.this.testCase);
-      }
-
-    });
+    final zClosureContext1 _zClosureContext = new zClosureContext1();
+    _zClosureContext.className = null;
+    CommandProcessor.instance().executeLightweightCommand(new Command2(TestCaseTreeNode.this, _zClosureContext));
+    return _zClosureContext.className;
   }
 
   public void doubleClick() {

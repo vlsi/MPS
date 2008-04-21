@@ -7,22 +7,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.util.Calculable;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
 
 public class TestMethodTreeNode extends MPSTreeNode {
 
-  private SNode testMethod;
+  protected SNode testMethod;
   private TestState state = TestState.NOT_RAN;
-  private PresentationUpdater updater;
 
   public  TestMethodTreeNode(IOperationContext operationContext, SNode testMethod) {
     super(operationContext);
     this.testMethod = testMethod;
-    this.updater = new PresentationUpdater(this);
     this.updatePresentation();
   }
 
@@ -38,32 +33,21 @@ public class TestMethodTreeNode extends MPSTreeNode {
 
   public void setState(TestState state) {
     this.state = state;
-    this.updater.start();
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Command3(TestMethodTreeNode.this, null));
   }
 
   public String getClassName() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable <String>() {
-
-      public String calculate() {
-        SNode classConcept = SNodeOperations.getAncestor(TestMethodTreeNode.this.testMethod, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-        String className = null;
-        if (classConcept != null) {
-          className = INamedConcept_Behavior.call_getFqName_1184686272576(classConcept);
-        }
-        return className;
-      }
-
-    });
+    final zClosureContext2 _zClosureContext1 = new zClosureContext2();
+    _zClosureContext1.className = null;
+    CommandProcessor.instance().executeLightweightCommand(new Command4(TestMethodTreeNode.this, _zClosureContext1));
+    return _zClosureContext1.className;
   }
 
   public String getMethodName() {
-    return CommandProcessor.instance().executeLightweightCommand(new Calculable <String>() {
-
-      public String calculate() {
-        return SPropertyOperations.getString(TestMethodTreeNode.this.testMethod, "name");
-      }
-
-    });
+    final zClosureContext3 _zClosureContext2 = new zClosureContext3();
+    _zClosureContext2.methodName = null;
+    CommandProcessor.instance().executeLightweightCommand(new Command5(TestMethodTreeNode.this, _zClosureContext2));
+    return _zClosureContext2.methodName;
   }
 
   public boolean isLeaf() {
