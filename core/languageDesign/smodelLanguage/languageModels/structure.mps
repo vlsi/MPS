@@ -2057,5 +2057,48 @@
     <property name="package" value="operation.parameter" />
     <property name="name" value="IRefConceptArg" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208782791726">
+    <property name="package" value="command" />
+    <property name="name" value="CommandClosure" />
+    <link role="extends" targetNodeId="2.1152728232947" resolveInfo="Closure" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208782992286">
+    <property name="package" value="command" />
+    <property name="name" value="BaseExecuteCommandStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1208783102179">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="commandClosure" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1208782791726" resolveInfo="CommandClosure" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208783294205">
+    <property name="package" value="command" />
+    <property name="name" value="ExecuteCommandStatement" />
+    <link role="extends" targetNodeId="1208782992286" resolveInfo="BaseExecuteCommandStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208783308128">
+      <property name="value" value="command" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208783319895">
+    <property name="package" value="command" />
+    <property name="name" value="ExecuteLightweightCommandStatement" />
+    <link role="extends" targetNodeId="1208782992286" resolveInfo="BaseExecuteCommandStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208783334927">
+      <property name="value" value="lightweight command" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208784234277">
+    <property name="package" value="command" />
+    <property name="name" value="ExecuteEDTCommandStatement" />
+    <link role="extends" targetNodeId="1208782992286" resolveInfo="BaseExecuteCommandStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208784234278">
+      <property name="value" value="EDT command" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
