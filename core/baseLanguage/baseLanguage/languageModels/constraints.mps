@@ -19,6 +19,7 @@
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.patterns" />
   <language namespace="jetbrains.mps.baseLanguage.blTypes" />
+  <language namespace="jetbrains.mps.core" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -5549,6 +5550,42 @@
         <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184160785368">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208781583338">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208781583339">
+            <property name="name" value="prefix" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208781583340">
+              <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208781583341">
+              <property name="value" value="get" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1208781604657">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208781604658">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208781660027">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1208781662265">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208781663504">
+                  <property name="value" value="is" />
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208781660028">
+                  <link role="variableDeclaration" targetNodeId="1208781583339" resolveInfo="prefix" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1208781637591">
+            <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208781640510">
+              <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1208781640511" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1208781640512">
+                <link role="link" targetNodeId="1.1068431790188" />
+              </node>
+            </node>
+            <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1208781644992">
+              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1208781655422" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1184161090833">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1184161093376">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1184161104647">
@@ -5561,8 +5598,8 @@
                 </node>
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1184161090834">
-              <property name="value" value="get" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208781583344">
+              <link role="variableDeclaration" targetNodeId="1208781583339" resolveInfo="prefix" />
             </node>
           </node>
         </node>
