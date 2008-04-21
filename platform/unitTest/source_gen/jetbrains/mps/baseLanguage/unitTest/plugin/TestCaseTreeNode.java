@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.AbstractProjectFrame;
 
 public class TestCaseTreeNode extends MPSTreeNode {
 
@@ -29,6 +31,11 @@ public class TestCaseTreeNode extends MPSTreeNode {
 
   public void setState(TestState state) {
     this.state = state;
+  }
+
+  public void doubleClick() {
+    IDEProjectFrame ide = (IDEProjectFrame)this.getOperationContext().getComponent(AbstractProjectFrame.class);
+    ide.openNode(this.testCase, this.getOperationContext());
   }
 
 }

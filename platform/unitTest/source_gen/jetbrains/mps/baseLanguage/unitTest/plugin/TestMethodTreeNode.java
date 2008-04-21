@@ -6,15 +6,19 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.AbstractProjectFrame;
 
 public class TestMethodTreeNode extends MPSTreeNode {
 
   private SNode testMethod;
   private TestState state = TestState.NOT_RAN;
+  private PresentationUpdater updater;
 
   public  TestMethodTreeNode(IOperationContext operationContext, SNode testMethod) {
     super(operationContext);
     this.testMethod = testMethod;
+    this.updater = new PresentationUpdater(this);
     this.updatePresentation();
   }
 
@@ -24,16 +28,22 @@ public class TestMethodTreeNode extends MPSTreeNode {
     this.setText(SPropertyOperations.getString(this.testMethod, "name"));
   }
 
+  public TestState getState() {
+    return this.state;
+  }
+
   public void setState(TestState state) {
     this.state = state;
+    this.updater.start();
   }
 
   public boolean isLeaf() {
     return true;
   }
 
-  public TestState getState() {
-    return this.state;
+  public void doubleClick() {
+    IDEProjectFrame ide = (IDEProjectFrame)this.getOperationContext().getComponent(AbstractProjectFrame.class);
+    ide.openNode(this.testMethod, this.getOperationContext());
   }
 
 }
