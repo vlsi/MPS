@@ -581,20 +581,20 @@ public class SModelRepository {
   private void fireModelCreatedEvent(SModelDescriptor modelDescriptor) {
     MPSModuleRepository.getInstance().invalidateCaches();
 
-    for (SModelsListener listener : myListeners) {
+    for (SModelRepositoryListener listener : listeners()) {
       listener.modelCreated(modelDescriptor);
+    }
+  }
+
+  private void fireModelDeletedEvent(SModelDescriptor modelDescriptor) {
+    for (SModelRepositoryListener listener : listeners()) {
+      listener.modelDeleted(modelDescriptor);
     }
   }
 
   private void fireModelWillBeDeletedEvent(SModelDescriptor modelDescriptor) {
     for (SModelsListener listener : myListeners) {
       listener.modelWillBeDeleted(modelDescriptor);
-    }
-  }
-
-  private void fireModelDeletedEvent(SModelDescriptor modelDescriptor) {
-    for (SModelsListener listener : myListeners) {
-      listener.modelDeleted(modelDescriptor);
     }
   }
 }
