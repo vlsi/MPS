@@ -38,4 +38,8 @@ public class TestCaseTreeNode extends MPSTreeNode {
     ide.openNode(this.testCase, this.getOperationContext());
   }
 
+  public int getToggleClickCount() {
+    return -1;
+  }
+
 }
