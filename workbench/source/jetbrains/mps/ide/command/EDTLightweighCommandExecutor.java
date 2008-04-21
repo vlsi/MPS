@@ -62,8 +62,12 @@ class EDTLightweighCommandExecutor extends Thread {
       public void run() {
         CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {
           public void run() {
-            for (Runnable r : getToExecute()) {              
-              r.run();
+            for (Runnable r : getToExecute()) {
+              try {
+                r.run();
+              } catch (Throwable t) {
+                LOG.error(t);
+              }
             }
           }
         });
