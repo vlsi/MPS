@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
@@ -455,6 +456,30 @@ public class GenerationTracer {
       tracebackNode.addChild(buildTracebackTree(tracerNode.getParent(), depth + 1));
     }
     return tracebackNode;
+  }
+
+
+  /**
+   * util
+   */
+  public List<Pair<SNode, SNode>> getAllAppiedRulesWithInputNodes(SModelUID outputModelUID) {
+    List<TracerNode> list = myTracingDataByOutputModel.get(outputModelUID.toString());
+    List<TracerNode> ruleNodes = new ArrayList<TracerNode>();
+    for (TracerNode tracerNode : list) {
+      tracerNode.findAll(Kind.RULE, ruleNodes);
+    }
+
+    List<Pair<SNode, SNode>> result = new ArrayList<Pair<SNode, SNode>>();
+    for (TracerNode ruleNode : ruleNodes) {
+      // find input for rule
+      TracerNode inputNode = ruleNode.getParent();
+      while(inputNode != null && inputNode.getKind() != Kind.INPUT) {
+        inputNode = inputNode.getParent();
+      }
+      result.add(new Pair<SNode, SNode>(ruleNode.getNodePointer().getNode(), inputNode != null ? inputNode.getNodePointer().getNode() : null));
+    }
+
+    return result;
   }
 
   public void registerPreMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<MappingScript> preMappingScripts) {

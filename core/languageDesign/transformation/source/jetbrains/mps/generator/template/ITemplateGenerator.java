@@ -66,9 +66,9 @@ public interface ITemplateGenerator {
 
   void showErrorMessage(SNode node, String message);
 
-  void showErrorMessage(SNode sourceNode, SNode templateNode, String message);
+  void showErrorMessage(SNode inputNode, SNode templateNode, String message);
 
-  void showErrorMessage(SNode sourceNode, SNode templateNode, SNode ruleNode, String message);
+  void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message);
 
   GenerationSessionContext getGeneratorSessionContext();
 

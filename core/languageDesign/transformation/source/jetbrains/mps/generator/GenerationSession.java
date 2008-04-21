@@ -19,6 +19,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.transformation.TLBase.structure.MappingScriptKind;
+import jetbrains.mps.util.Pair;
 
 import javax.swing.JOptionPane;
 import java.lang.reflect.InvocationTargetException;
@@ -283,8 +284,16 @@ public class GenerationSession implements IGenerationSession {
       }
 
       if (++secondaryMappingRepeatCount > 10) {
-        generator.showErrorMessage(null, "Failed to generate output after 10 repeated mappings");
-        throw new GenerationFailedException("Failed to generate output after 10 repeated mappings");
+        generator.showErrorMessage(null, "failed to generate output after 10 repeated mappings");
+        if (generationContext.getGenerationTracer().hasTracebackData(transientModel.getUID())) {
+          generator.showErrorMessage(null, "last rules applied:");
+          List<Pair<SNode, SNode>> pairs = generationContext.getGenerationTracer().getAllAppiedRulesWithInputNodes(transientModel.getUID());
+          for (Pair<SNode, SNode> pair : pairs) {
+            generator.showErrorMessage(pair.o1, "rule: " + pair.o1.getDebugText());
+            generator.showErrorMessage(pair.o2, "-- input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"));
+          }
+        }
+        throw new GenerationFailedException("failed to generate output after 10 repeated mappings");
       }
 
       // next iteration ...

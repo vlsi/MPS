@@ -37,12 +37,12 @@ public class GeneratorLogger {
     LOG.error(message, new NodeWithContext(node, myOperationContext));
   }
 
-  public void showErrorMessage(SNode sourceNode, SNode templateNode, String message) {
+  public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
     myErrorsCount++;
-    showErrorMessage(sourceNode, templateNode, null, message);
+    showErrorMessage(inputNode, templateNode, null, message);
   }
 
-  public void showErrorMessage(SNode sourceNode, SNode templateNode, SNode ruleNode, String message) {
+  public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
     myErrorsCount++;
     if (ruleNode != null) {
       if (myFailedRules.contains(ruleNode)) {
@@ -53,9 +53,9 @@ public class GeneratorLogger {
     }
 
     showErrorMessage((templateNode != null ? templateNode : ruleNode), message);
-    if (sourceNode != null) {
-      LOG.error("-- was source node: " + sourceNode.getDebugText(),
-        new NodeWithContext(sourceNode, myOperationContext));
+    if (inputNode != null) {
+      LOG.error("-- was input node: " + inputNode.getDebugText(),
+        new NodeWithContext(inputNode, myOperationContext));
     }
     if (ruleNode != null) {
       LOG.error("-- was rule: " + ruleNode.getDebugText(),

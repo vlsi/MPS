@@ -56,12 +56,12 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myLogger.showErrorMessage(node, message);
   }
 
-  public void showErrorMessage(SNode sourceNode, SNode templateNode, String message) {
-    myLogger.showErrorMessage(sourceNode, templateNode, message);
+  public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
+    myLogger.showErrorMessage(inputNode, templateNode, message);
   }
 
-  public void showErrorMessage(SNode sourceNode, SNode templateNode, SNode ruleNode, String message) {
-    myLogger.showErrorMessage(sourceNode, templateNode, ruleNode, message);
+  public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
+    myLogger.showErrorMessage(inputNode, templateNode, ruleNode, message);
   }
 
   public int getErrorCount() {
