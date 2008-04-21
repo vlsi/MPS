@@ -25,6 +25,4 @@ public interface IEditorChecker {
   public IEditorMessageOwner getOwner(SNode rootNode);
 
   public boolean executeInUndoableCommand();
-
-  public Set<IEditorMessage> checkModel(SModel model, IOperationContext operationContext);
 }

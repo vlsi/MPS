@@ -32,12 +32,4 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, IEditorMes
     };
     return error;
   }
-
-  public Set<IEditorMessage> checkModel(SModel model, IOperationContext operationContext) {
-    Set<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
-    for (SNode node : model.getRoots()) {
-      messages.addAll(createMessages(node, operationContext));
-    }
-    return messages;
-  }
 }
