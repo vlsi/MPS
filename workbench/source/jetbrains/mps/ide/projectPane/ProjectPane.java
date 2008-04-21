@@ -15,7 +15,6 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelsAdapter;
 import jetbrains.mps.util.Condition;
 import org.jdom.Element;
 

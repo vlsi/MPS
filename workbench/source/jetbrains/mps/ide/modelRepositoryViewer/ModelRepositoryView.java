@@ -15,7 +15,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelsAdapter;
+import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -148,7 +148,7 @@ public class ModelRepositoryView extends DefaultTool {
     }
   }
 
-  private class DeferringEventHandler extends SModelsAdapter implements ICommandListener {
+  private class DeferringEventHandler extends SModelAdapter implements ICommandListener {
     private boolean myDeferredUpdate = false;
 
     private SModelRepositoryListener myRepoListener = new SModelRepositoryAdapter() {
@@ -160,15 +160,15 @@ public class ModelRepositoryView extends DefaultTool {
     public void installListeners() {
       CommandProcessor.instance().addCommandListener(this);
       SModelRepository.getInstance().addModelRepositoryListener(myRepoListener);
-      SModelRepository.getInstance().addSModelsListener(this);
+      SModelRepository.getInstance().addGlobalModelListener(this);
     }
     public void unInstallListeners() {
       CommandProcessor.instance().removeCommandListener(this);
       SModelRepository.getInstance().removeModelRepositoryListener(myRepoListener);
-      SModelRepository.getInstance().addSModelsListener(this);
+      SModelRepository.getInstance().removeGlobalModelListener(this);
     }
 
-    public void modelLoaded(SModelDescriptor modelDescriptor) {
+    public void modelInitialized(SModelDescriptor modelDescriptor) {
       if(CommandProcessor.instance().isInsideCommand()) {
          myDeferredUpdate = true;
       } else {

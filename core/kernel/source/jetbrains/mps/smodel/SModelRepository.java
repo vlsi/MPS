@@ -15,6 +15,9 @@ import jetbrains.mps.ide.command.CommandKind;
 
 import javax.swing.*;
 import java.util.*;
+import java.lang.reflect.Proxy;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
 
 public class SModelRepository {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
@@ -26,15 +29,11 @@ public class SModelRepository {
   private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
   private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
 
-  private Set<SModelsListener> myListeners = new LinkedHashSet<SModelsListener>();
-
   private Map<SModelDescriptor, Set<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, Set<ModelOwner>>();
   private Map<ModelOwner, Set<SModelDescriptor>> myOwnerToModelMap = new HashMap<ModelOwner, Set<SModelDescriptor>>();
-
+  private List<SModelListener> myGlobalListeners = new ArrayList<SModelListener>();
   private MPSModuleRepository myModuleRepository;
-
   private BackgroundModelLoader myBackgroundLoader = new BackgroundModelLoader(this);
-
   private boolean myInChangedModelsReloading = false;
 
   private SModelCommandListener myListener = new SModelCommandListener() {
@@ -51,11 +50,8 @@ public class SModelRepository {
     public void modelChangedDramatically(SModel model) {
       markChanged(model);
     }
-
-    public void modelInitialized(SModelDescriptor sm) {
-      fireModelLoadedEvent(sm);
-    }
   };
+  private SModelListener myRelayListener = createRelayListener();
 
   public SModelRepository() {
   }
@@ -111,18 +107,12 @@ public class SModelRepository {
     myWeakSModelRepositoryListeners.remove(l);
   }
 
-  public void addSModelsListener(SModelsListener listener) {
-    myListeners.add(listener);
+  public void addGlobalModelListener(SModelListener l) {
+    myGlobalListeners.add(l);
   }
 
-  public void removeSModelsListener(SModelsListener listener) {
-    myListeners.remove(listener);
-  }
-
-  public void fireModelLoadedEvent(SModelDescriptor modelDescriptor) {
-    for (SModelsListener listener : myListeners) {
-      listener.modelLoaded(modelDescriptor);
-    }
+  public void removeGlobalModelListener(SModelListener l) {
+    myGlobalListeners.remove(l);
   }
 
   private List<SModelRepositoryListener> listeners() {
@@ -218,6 +208,7 @@ public class SModelRepository {
     myModelsWithNoOwners.remove(modelDescriptor);
     owners.add(owner);
     modelDescriptor.addWeakModelListener(myModelsListener);
+    modelDescriptor.addWeakModelListener(myRelayListener);
     modelDescriptor.addModelCommandListener(myListener);
     fireModelAdded(modelDescriptor);
   }
@@ -593,8 +584,41 @@ public class SModelRepository {
   }
 
   private void fireModelWillBeDeletedEvent(SModelDescriptor modelDescriptor) {
-    for (SModelsListener listener : myListeners) {
-      listener.modelWillBeDeleted(modelDescriptor);
+    for (SModelRepositoryListener listener : listeners()) {
+      listener.beforeModelDeleted(modelDescriptor);
     }
+  }
+
+  private List<SModelListener> globalListeners() {
+    return new ArrayList<SModelListener>(myGlobalListeners);
+  }
+
+  private SModelListener createRelayListener() {
+    return (SModelListener) Proxy.newProxyInstance(
+      getClass().getClassLoader(),
+      new Class[] { SModelListener.class },
+      new InvocationHandler() {
+        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+          if (method.getName().equals("equals") && args.length == 1) {
+            return proxy == args[0];
+          }
+
+          if (method.getName().equals("hashCode") && args == null) {
+            return this.hashCode();
+          }
+
+          method.setAccessible(true);
+          for (SModelListener l : globalListeners()) {
+            try {
+              method.invoke(l, args);
+            } catch (Throwable t) {
+              LOG.error(t);
+            }
+          }
+
+          return null;
+        }
+      }
+    );
   }
 }
