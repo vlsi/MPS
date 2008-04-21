@@ -7,9 +7,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-
 import java.awt.Color;
-
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -23,7 +21,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
-  /* package */ AbstractCellListHandler myStatementListHandler_statementList_;
+  /* package */AbstractCellListHandler myStatementListHandler_statementList_;
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177326571087");
@@ -135,7 +133,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler38 extends RefNodeListHandler {
 
-    public _RefNodeListHandler38(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler38(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -175,6 +173,6 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-  }
+}
 
 }

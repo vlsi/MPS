@@ -28,13 +28,13 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class Interface_Editor extends DefaultNodeEditor {
 
-  /* package */ AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
-  /* package */ AbstractCellProvider my_Component_Visibility4;
-  /* package */ AbstractCellListHandler myMethodListHandler_methodsList_;
-  /* package */ AbstractCellListHandler myExtendedInterfaceListHandler_extendedInterfaceList_;
-  /* package */ AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
-  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList_;
-  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList1_;
+  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
+  /* package */AbstractCellProvider my_Component_Visibility4;
+  /* package */AbstractCellListHandler myMethodListHandler_methodsList_;
+  /* package */AbstractCellListHandler myExtendedInterfaceListHandler_extendedInterfaceList_;
+  /* package */AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
+  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
+  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
 
   private static void setupBasic_ClassBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1107796852505");
@@ -477,7 +477,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     Interface_Editor.setupBasic_NameCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      Interface_Editor.setupLabel_NameCell((EditorCell_Label) editorCell, node, context);
+      Interface_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -497,12 +497,12 @@ public class Interface_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public static class _RefNodeListHandler12 extends RefNodeListHandler {
 
-    public _RefNodeListHandler12(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler12(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -564,11 +564,10 @@ public class Interface_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-  }
-
+}
   public static class _RefNodeListHandler13 extends RefNodeListHandler {
 
-    public _RefNodeListHandler13(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler13(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -630,11 +629,10 @@ public class Interface_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-  }
-
+}
   public static class _RefNodeListHandler16 extends RefNodeListHandler {
 
-    public _RefNodeListHandler16(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler16(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -696,11 +694,10 @@ public class Interface_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-  }
-
+}
   public static class _RefNodeListHandler45 extends RefNodeListHandler {
 
-    public _RefNodeListHandler45(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler45(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -740,11 +737,10 @@ public class Interface_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-  }
-
+}
   public static class _RefNodeListHandler46 extends RefNodeListHandler {
 
-    public _RefNodeListHandler46(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler46(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -784,6 +780,6 @@ public class Interface_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-  }
+}
 
 }

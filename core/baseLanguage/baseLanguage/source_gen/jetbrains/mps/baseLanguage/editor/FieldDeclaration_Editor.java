@@ -27,10 +27,10 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */ AbstractCellProvider my_Component_Visibility6;
-  /* package */ AbstractCellProvider myVariableDeclaration_NameCellComponent;
-  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList1_;
-  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList_;
+  /* package */AbstractCellProvider my_Component_Visibility6;
+  /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent;
+  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
+  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576812");
@@ -287,7 +287,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     FieldDeclaration_Editor.setupBasic_TypeCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      FieldDeclaration_Editor.setupLabel_TypeCell((EditorCell_Label) editorCell, node, context);
+      FieldDeclaration_Editor.setupLabel_TypeCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -307,7 +307,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createInitializerCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -316,7 +316,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     FieldDeclaration_Editor.setupBasic_InitializerCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      FieldDeclaration_Editor.setupLabel_InitializerCell((EditorCell_Label) editorCell, node, context);
+      FieldDeclaration_Editor.setupLabel_InitializerCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -336,12 +336,12 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public static class _RefNodeListHandler55 extends RefNodeListHandler {
 
-    public _RefNodeListHandler55(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler55(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -381,11 +381,10 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-  }
-
+}
   public static class _RefNodeListHandler56 extends RefNodeListHandler {
 
-    public _RefNodeListHandler56(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler56(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -425,6 +424,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-  }
+}
 
 }

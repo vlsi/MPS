@@ -99,7 +99,8 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createColumnCell(context, node);
-    } else {
+    } else
+    {
       editorCell = this.createRowCell1(context, node);
     }
     InstanceInitializer_Editor.setupBasic_CellAlternation(editorCell, node, context);
@@ -184,7 +185,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InstanceInitializer_Editor.setupBasic_StatementListCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InstanceInitializer_Editor.setupLabel_StatementListCell((EditorCell_Label) editorCell, node, context);
+      InstanceInitializer_Editor.setupLabel_StatementListCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -204,7 +205,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createStatementListCell1internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -213,7 +214,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InstanceInitializer_Editor.setupBasic_StatementListCell1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InstanceInitializer_Editor.setupLabel_StatementListCell1((EditorCell_Label) editorCell, node, context);
+      InstanceInitializer_Editor.setupLabel_StatementListCell1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -233,7 +234,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
 }

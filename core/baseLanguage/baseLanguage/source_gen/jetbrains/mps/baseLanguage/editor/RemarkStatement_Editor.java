@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.constraints.RemarkStatement_Behavior;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -58,12 +58,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _QueryFunction_NodeCondition_1197651363307(SNode node, EditorContext editorContext, IScope scope) {
-    String v = SPropertyOperations.getString(node, "value");
-    boolean isToDo = false;
-    if (v != null) {
-      isToDo = v.startsWith("TODO:") || v.startsWith("FIX:") || v.startsWith("todo:");
-    }
-    return !(isToDo);
+    return !(RemarkStatement_Behavior.call_isTodo_1208784222268(node));
   }
 
 

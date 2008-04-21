@@ -30,7 +30,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
 
-  /* package */ AbstractCellListHandler myElsifClausesListHandler_elsifClausesList_;
+  /* package */AbstractCellListHandler myElsifClausesListHandler_elsifClausesList_;
 
   private static void setupBasic_StatementBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177555034647");
@@ -269,7 +269,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createIfFalseStatementCell1(context, node);
-    } else {
+    } else
+    {
       editorCell = this.createColumnCell(context, node);
     }
     IfStatement_Editor.setupBasic_CellAlternation(editorCell, node, context);
@@ -498,7 +499,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_ConditionCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      IfStatement_Editor.setupLabel_ConditionCell((EditorCell_Label) editorCell, node, context);
+      IfStatement_Editor.setupLabel_ConditionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -518,7 +519,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createIfTrueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -527,7 +528,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_IfTrueCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      IfStatement_Editor.setupLabel_IfTrueCell((EditorCell_Label) editorCell, node, context);
+      IfStatement_Editor.setupLabel_IfTrueCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -547,7 +548,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createIfFalseStatementCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -556,7 +557,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_IfFalseStatementCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      IfStatement_Editor.setupLabel_IfFalseStatementCell((EditorCell_Label) editorCell, node, context);
+      IfStatement_Editor.setupLabel_IfFalseStatementCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -576,7 +577,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createIfFalseStatementCell1internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -585,7 +586,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_IfFalseStatementCell1(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      IfStatement_Editor.setupLabel_IfFalseStatementCell1((EditorCell_Label) editorCell, node, context);
+      IfStatement_Editor.setupLabel_IfFalseStatementCell1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -605,12 +606,12 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public static class _RefNodeListHandler68 extends RefNodeListHandler {
 
-    public _RefNodeListHandler68(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler68(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -650,6 +651,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-  }
+}
 
 }

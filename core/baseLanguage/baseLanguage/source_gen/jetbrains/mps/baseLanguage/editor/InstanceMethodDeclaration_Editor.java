@@ -35,13 +35,13 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */ AbstractCellProvider my_Component_Visibility;
-  /* package */ AbstractCellProvider myBaseMethodDeclaration_NameCellComponent;
-  /* package */ AbstractCellProvider my_GenericDeclaration_TypeVariables_Component4;
-  /* package */ AbstractCellListHandler myParameterListHandler_parameterList_;
-  /* package */ AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
-  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList1_;
-  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList_;
+  /* package */AbstractCellProvider my_Component_Visibility;
+  /* package */AbstractCellProvider myBaseMethodDeclaration_NameCellComponent;
+  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component4;
+  /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
+  /* package */AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
+  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
+  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
 
   private static void setupBasic_MethodBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075233459438");
@@ -583,7 +583,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InstanceMethodDeclaration_Editor.setupBasic_BodyCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InstanceMethodDeclaration_Editor.setupLabel_BodyCell((EditorCell_Label) editorCell, node, context);
+      InstanceMethodDeclaration_Editor.setupLabel_BodyCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -603,7 +603,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createReturnTypeinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -612,7 +612,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InstanceMethodDeclaration_Editor.setupBasic_ReturnType(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InstanceMethodDeclaration_Editor.setupLabel_ReturnType((EditorCell_Label) editorCell, node, context);
+      InstanceMethodDeclaration_Editor.setupLabel_ReturnType((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -632,7 +632,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createIsAbstractCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -641,7 +641,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     InstanceMethodDeclaration_Editor.setupBasic_IsAbstractCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      InstanceMethodDeclaration_Editor.setupLabel_IsAbstractCell((EditorCell_Label) editorCell, node, context);
+      InstanceMethodDeclaration_Editor.setupLabel_IsAbstractCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -661,12 +661,12 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public static class _RefNodeListHandler19 extends RefNodeListHandler {
 
-    public _RefNodeListHandler19(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler19(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -735,11 +735,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-  }
-
+}
   public static class _RefNodeListHandler39 extends RefNodeListHandler {
 
-    public _RefNodeListHandler39(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler39(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -785,11 +784,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       }
     }
 
-  }
-
+}
   public static class _RefNodeListHandler51 extends RefNodeListHandler {
 
-    public _RefNodeListHandler51(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler51(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -829,11 +827,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-  }
-
+}
   public static class _RefNodeListHandler52 extends RefNodeListHandler {
 
-    public _RefNodeListHandler52(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler52(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -873,6 +870,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-  }
+}
 
 }

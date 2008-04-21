@@ -37,10 +37,10 @@ import jetbrains.mps.smodel.SModel;
 
 public class AnonymousClass_Editor extends DefaultNodeEditor {
 
-  /* package */ AbstractCellListHandler myFieldListHandler_fieldsList_;
-  /* package */ AbstractCellListHandler myMethodListHandler_methodsList_;
-  /* package */ AbstractCellListHandler myParameterListHandler_parameterList_;
-  /* package */ AbstractCellListHandler myTypeParameterListHandler_typeParameterList_;
+  /* package */AbstractCellListHandler myFieldListHandler_fieldsList_;
+  /* package */AbstractCellListHandler myMethodListHandler_methodsList_;
+  /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
+  /* package */AbstractCellListHandler myTypeParameterListHandler_typeParameterList_;
 
   private static void setupBasic_ClassBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1170345921993");
@@ -450,7 +450,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     AnonymousClass_Editor.setupBasic_ConstantCell12(editorCell, node, context);
     AnonymousClass_Editor.setupLabel_ConstantCell12(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new AnonymousClass_Editor.AnonymousClass_generic_cellMenu2(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu1(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new AnonymousClass_Editor.AnonymousClass_generic_cellMenu2(),new AnonymousClass_Editor.AnonymousClass_generic_cellMenu1(),new AnonymousClass_Editor.AnonymousClass_generic_cellMenu()}));
     return editorCell;
   }
 
@@ -528,7 +528,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     AnonymousClass_Editor.setupBasic_ClassifierReferenceCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AnonymousClass_Editor.setupLabel_ClassifierReferenceCell((EditorCell_Label) editorCell, node, context);
+      AnonymousClass_Editor.setupLabel_ClassifierReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -548,7 +548,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createInstanceInitializerCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -557,7 +557,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     AnonymousClass_Editor.setupBasic_InstanceInitializerCell(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      AnonymousClass_Editor.setupLabel_InstanceInitializerCell((EditorCell_Label) editorCell, node, context);
+      AnonymousClass_Editor.setupLabel_InstanceInitializerCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -577,12 +577,12 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public static class _Inline17 extends AbstractCellProvider {
 
-    public _Inline17() {
+    public  _Inline17() {
       super();
     }
 
@@ -610,7 +610,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       EditorCell editorCell = provider.createEditorCell(context);
       AnonymousClass_Editor._Inline17.setupBasic_NameCell(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        AnonymousClass_Editor._Inline17.setupLabel_NameCell((EditorCell_Label) editorCell, node, context);
+        AnonymousClass_Editor._Inline17.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -630,14 +630,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
-        return cellWithRole;
+      return cellWithRole;
     }
 
-  }
-
+}
   public static class _RefNodeListHandler33 extends RefNodeListHandler {
 
-    public _RefNodeListHandler33(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler33(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -700,11 +699,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-  }
-
+}
   public static class _RefNodeListHandler34 extends RefNodeListHandler {
 
-    public _RefNodeListHandler34(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler34(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -773,11 +771,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-  }
-
+}
   public static class _RefNodeListHandler35 extends RefNodeListHandler {
 
-    public _RefNodeListHandler35(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler35(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -843,11 +840,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-  }
-
+}
   public static class _RefNodeListHandler65 extends RefNodeListHandler {
 
-    public _RefNodeListHandler65(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler65(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -893,11 +889,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       }
     }
 
-  }
-
+}
   public static class AnonymousClass_generic_cellMenu extends AbstractCellMenuPart_Generic_Item {
 
-    public AnonymousClass_generic_cellMenu() {
+    public  AnonymousClass_generic_cellMenu() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -908,11 +903,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       return "add initializer";
     }
 
-  }
-
+}
   public static class AnonymousClass_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
 
-    public AnonymousClass_generic_cellMenu1() {
+    public  AnonymousClass_generic_cellMenu1() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -923,11 +917,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       return "add method";
     }
 
-  }
-
+}
   public static class AnonymousClass_generic_cellMenu2 extends AbstractCellMenuPart_Generic_Item {
 
-    public AnonymousClass_generic_cellMenu2() {
+    public  AnonymousClass_generic_cellMenu2() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -938,6 +931,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       return "add field";
     }
 
-  }
+}
 
 }

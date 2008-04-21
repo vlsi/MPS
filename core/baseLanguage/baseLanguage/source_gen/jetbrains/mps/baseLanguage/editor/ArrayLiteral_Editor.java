@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class ArrayLiteral_Editor extends DefaultNodeEditor {
 
-  /* package */ AbstractCellListHandler myItemListHandler_itemList_;
+  /* package */AbstractCellListHandler myItemListHandler_itemList_;
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188220210986");
@@ -96,7 +96,7 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
 
   public static class _RefNodeListHandler61 extends RefNodeListHandler {
 
-    public _RefNodeListHandler61(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler61(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -142,6 +142,6 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
       }
     }
 
-  }
+}
 
 }
