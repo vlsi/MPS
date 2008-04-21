@@ -74,18 +74,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   public ProjectPane(IDEProjectFrame ide) {
     myIDE = ide;
-    SModelRepository.getInstance().addSModelsListener(new SModelsAdapter() {
-      public void modelCreated(SModelDescriptor modelDescriptor) {
-      }
-
-      public void modelDeleted(SModelDescriptor modelDescriptor) {
-      }
-
-      public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {
-        ProjectPane.this.selectNextTreeModel(modelDescriptor);
-      }
-    });
-
     setLayout(new BorderLayout());
 
     myToolbar.setFloatable(false);
@@ -176,6 +164,9 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     rebuildTree();
   }
 
+  protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
+    selectNextTreeModel(sm);
+  }
 
   public String getTitle() {
     return "Logical View";
