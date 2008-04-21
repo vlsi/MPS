@@ -18,7 +18,6 @@ import jetbrains.mps.ide.findusages.view.NewUsagesView;
 import jetbrains.mps.ide.findusages.view.UsageView;
 import jetbrains.mps.ide.modelchecker.ModelCheckResult;
 import jetbrains.mps.ide.modelchecker.ModelChecker;
-import jetbrains.mps.ide.modelchecker.ModelCheckerMessage;
 import jetbrains.mps.ide.navigation.FocusPolicyUtil;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
@@ -1425,49 +1424,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void rebuildEditorContent() {
     clearCaches();
     clearUserData();
-    updateModelCheckerMessages();
     updateMPSActionsWithKeyStrokes();
     rebuildEditorContent(null);
-  }
-
-  void updateModelCheckerMessages() {
-    if (myNodePointer == null) {
-      return;
-    }
-
-    SNode rootNode = myNodePointer.getNode();
-    if (rootNode == null) {
-      return;
-    }
-
-    getMessagesGutter().removeMessages(myMessageOwner);
-    SModelDescriptor sm = rootNode.getModel().getModelDescriptor();
-    ModelCheckResult res = (ModelCheckResult) sm.getUserObject(ModelChecker.MODEL_CHECK_RESULT);
-
-    if (res == null) {
-      return;
-    }
-
-    for (final ModelCheckerMessage m : res.getMessages()) {
-      if (m.getNode().getContainingRoot() == rootNode) {
-        getHighlightManager().mark(new DefaultEditorMessage(m.getNode(), Color.PINK, m.getMessage(), myMessageOwner) {
-          public void paint(Graphics g, IEditorComponent editorComponent) {
-            EditorCell cell = getCell(editorComponent);
-            int x = cell.getX();
-            int y = cell.getY();
-            int height = cell.getHeight();
-            int leftInternalInset = cell.getLeftInternalInset();
-            int effectiveWidth = cell.getEffectiveWidth();
-            g.setColor(getColor());
-            ColorAndGraphicsUtil.drawWave(g, x + leftInternalInset, x + leftInternalInset + effectiveWidth, y + height - ColorAndGraphicsUtil.WAVE_HEIGHT);
-          }
-
-          public String getMessage() {
-            return m.getMessage();
-          }
-        });
-      }
-    }
   }
 
   public void rebuildEditorContent(final List<SModelEvent> events) {
@@ -1475,9 +1433,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void run() {
         CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
-            /*   if (isDisplayable() && !ThreadUtils.isEventDispatchThread()) {
-              throw new RuntimeException("Editor rebuild can only happen in UI Thread");
-            }*/
 
             removeAll();
 
