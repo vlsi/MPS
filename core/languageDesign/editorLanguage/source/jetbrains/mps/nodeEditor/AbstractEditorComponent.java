@@ -491,7 +491,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionProxies.clear();
     for (MPSAction a : myMPSActionsWithShortcuts) {
       KeyStroke keyStroke = KeyStroke.getKeyStroke(a.getKeyStroke());
-      if (keyStroke != null) unregisterKeyboardAction(keyStroke);
+      if (keyStroke != null) {
+        unregisterKeyboardAction(keyStroke);
+      }
     }
     myMPSActionsWithShortcuts.clear();
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
@@ -521,6 +523,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           } catch (Throwable t) {
             LOG.error(t);
           }
+        }
+
+        if (e instanceof GroupToElementsAdapter) {
+          GroupToElementsAdapter adapter = (GroupToElementsAdapter) e;          
+          registerKeyStrokes(adapter.getGroup(), actionContext);
         }
       }
     }
