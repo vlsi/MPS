@@ -1558,33 +1558,6 @@
         <link role="classifier" targetNodeId="28.~HelginsTypesEditorChecker" resolveInfo="HelginsTypesEditorChecker" />
       </node>
     </node>
-    <node role="fieldDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldDeclaration" id="1206189995008">
-      <property name="name" value="myModelsListener" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1206190101628" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206190032935">
-        <link role="classifier" targetNodeId="26.~SModelsListener" resolveInfo="SModelsListener" />
-      </node>
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206190045109">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1206190045110">
-          <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1206190045111">
-            <link role="classifier" targetNodeId="26.~SModelsAdapter" resolveInfo="SModelsAdapter" />
-            <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206190061972">
-              <property name="name" value="modelLoaded" />
-              <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1206190061973" />
-              <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206190061974" />
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206190061975" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1206190076164">
-                <property name="name" value="modelDescriptor" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206190076165">
-                  <link role="classifier" targetNodeId="8.~SModelDescriptor" resolveInfo="SModelDescriptor" />
-                </node>
-              </node>
-            </node>
-            <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206190045112" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="initBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.InitBlock" id="1206190084322">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206190084323">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207837220735">
@@ -1737,23 +1710,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206192358406">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206192363643">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206192360596">
-              <link role="baseMethodDeclaration" targetNodeId="26.~SModelsMulticaster.getInstance():jetbrains.mps.smodel.event.SModelsMulticaster" resolveInfo="getInstance" />
-              <link role="classConcept" targetNodeId="26.~SModelsMulticaster" resolveInfo="SModelsMulticaster" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206192370473">
-              <link role="baseMethodDeclaration" targetNodeId="26.~SModelsMulticaster.addSModelsListener(jetbrains.mps.smodel.event.SModelsListener):void" resolveInfo="addSModelsListener" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206192375881">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206192375882" />
-                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldReferenceOperation" id="1206192375883">
-                  <link role="member" targetNodeId="1206189995008" resolveInfo="myModelsListener" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="disposeBlock" type="jetbrains.mps.bootstrap.pluginLanguage.structure.DisposeBlock" id="1206190085402">
@@ -1813,23 +1769,6 @@
               <link role="baseMethodDeclaration" targetNodeId="14.~MPSProject.removeComponent(java.lang.Class):void" resolveInfo="removeComponent" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1206192458908">
                 <link role="classifier" targetNodeId="2.~SupertypesViewTool" resolveInfo="SupertypesViewTool" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207568482790">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207568484871">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207568483807">
-              <link role="baseMethodDeclaration" targetNodeId="26.~SModelsMulticaster.getInstance():jetbrains.mps.smodel.event.SModelsMulticaster" resolveInfo="getInstance" />
-              <link role="classConcept" targetNodeId="26.~SModelsMulticaster" resolveInfo="SModelsMulticaster" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207568486451">
-              <link role="baseMethodDeclaration" targetNodeId="26.~SModelsMulticaster.removeSModelsListener(jetbrains.mps.smodel.event.SModelsListener):void" resolveInfo="removeSModelsListener" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207568488936">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1207568488937" />
-                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.PluginFieldReferenceOperation" id="1207568488938">
-                  <link role="member" targetNodeId="1206189995008" resolveInfo="myModelsListener" />
-                </node>
               </node>
             </node>
           </node>
