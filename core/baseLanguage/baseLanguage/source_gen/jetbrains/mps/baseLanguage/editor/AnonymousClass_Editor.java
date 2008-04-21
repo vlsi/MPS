@@ -350,7 +350,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell11(context, node, "  "));
-    editorCell.addEditorCell(this.createConstantCell12(context, node, "<add stuff (ctrl+space)>"));
+    editorCell.addEditorCell(this.createConstantCell12(context, node, "<add members (ctrl+space)>"));
     return editorCell;
   }
 
