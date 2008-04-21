@@ -820,15 +820,16 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201860840306">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1201860861231">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201860861232">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201860875327">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1201860876425">
-                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1201860877888">
-                      <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201860914809">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208798650598">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208798653062">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208798650599">
+                      <link role="variableDeclaration" targetNodeId="1199634883989" resolveInfo="paramTypes" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208798662599">
+                      <link role="baseMethodDeclaration" targetNodeId="11.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208798664615">
                         <link role="variableDeclaration" targetNodeId="1201860914802" resolveInfo="c" />
                       </node>
-                    </node>
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201860875328">
-                      <link role="variableDeclaration" targetNodeId="1199634883989" resolveInfo="paramTypes" />
                     </node>
                   </node>
                 </node>
