@@ -6,9 +6,7 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelsListener;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vfs.IFile;
@@ -18,7 +16,7 @@ import jetbrains.mps.ide.command.CommandKind;
 import javax.swing.*;
 import java.util.*;
 
-public class SModelRepository extends SModelAdapter {
+public class SModelRepository {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
   private Set<SModelDescriptor> myModelDescriptors = new HashSet<SModelDescriptor>();
@@ -42,6 +40,20 @@ public class SModelRepository extends SModelAdapter {
   private SModelCommandListener myListener = new SModelCommandListener() {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       someModelChangedInCommand(events);
+    }
+  };
+
+  private SModelListener myModelsListener = new SModelAdapter() {
+    public void modelChanged(SModel model) {
+      markChanged(model);
+    }
+
+    public void modelChangedDramatically(SModel model) {
+      markChanged(model);
+    }
+
+    public void modelInitialized(SModelDescriptor sm) {
+      fireModelLoadedEvent(sm);
     }
   };
 
@@ -205,7 +217,7 @@ public class SModelRepository extends SModelAdapter {
 
     myModelsWithNoOwners.remove(modelDescriptor);
     owners.add(owner);
-    modelDescriptor.addWeakModelListener(this);
+    modelDescriptor.addWeakModelListener(myModelsListener);
     modelDescriptor.addModelCommandListener(myListener);
     fireModelAdded(modelDescriptor);
   }
@@ -315,14 +327,6 @@ public class SModelRepository extends SModelAdapter {
       return new ArrayList<SModelDescriptor>();
     }
     return new ArrayList<SModelDescriptor>(result);
-  }
-
-  public void modelChanged(SModel model) {
-    markChanged(model);
-  }
-
-  public void modelChangedDramatically(SModel model) {
-    markChanged(model);
   }
 
   private void markChanged(SModel model, boolean changed) {

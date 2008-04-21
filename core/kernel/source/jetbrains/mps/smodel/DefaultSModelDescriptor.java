@@ -129,7 +129,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   private void doPostLoadStuff() {
     myModelRootManager.updateAfterLoad(this);
-    SModelRepository.getInstance().fireModelLoadedEvent(this);
     LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
 
     updateModelWithRefactorings();
