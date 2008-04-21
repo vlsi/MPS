@@ -3,6 +3,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -32,11 +33,18 @@ public class ModuleContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(ModuleContext.class);
 
   private MPSProject myProject;
-  private IModule myModule;
 
-  public ModuleContext(IModule module, MPSProject project) {
-    myModule = module;
-    myProject = project;
+  //we need to store module reference this way because generator are recreated on every reload
+  //and if we store generator reference here it will be stale
+  private String myModuleUID;
+
+  public ModuleContext(final IModule module, final MPSProject project) {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        myModuleUID = module.getModuleUID();
+        myProject = project;
+      }
+    });
   }
 
   public <T> T getComponent(@NotNull Class<T> clazz) {
@@ -47,7 +55,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @NotNull
   public IModule getModule() {
-    return myModule;
+    return MPSModuleRepository.getInstance().getModuleByUID(myModuleUID);
   }
 
   @NotNull
@@ -57,11 +65,11 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @NotNull
   public IScope getScope() {
-    return myModule.getScope();
+    return getModule().getScope();
   }
 
   public String toString() {
-    return "module context: " + myModule;
+    return "module context: " + myModuleUID;
   }
 
   public static ModuleContext create(SNode node, AbstractProjectFrame frame) {
