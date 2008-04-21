@@ -16,7 +16,7 @@
   </language>
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <maxImportIndex value="34" />
+  <maxImportIndex value="35" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions" version="-1" />
@@ -50,6 +50,7 @@
   <import index="32" modelUID="jetbrains.mps.baseLanguage.plugin@java_stub" version="-1" />
   <import index="33" modelUID="jetbrains.mps.baseLanguage.refactoring.extractMethod@java_stub" version="-1" />
   <import index="34" modelUID="jetbrains.mps.ide.toolsPane@java_stub" version="-1" />
+  <import index="35" modelUID="jetbrains.mps.plugins.tool@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup" />
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1205247338363">
@@ -331,75 +332,21 @@
     <link role="extendedAction" targetNodeId="8.~CurrentProjectMPSAction" resolveInfo="CurrentProjectMPSAction" />
     <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock" id="1205836731344">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205836731345">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208521377776">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208521377777">
-            <property name="name" value="toolsPane" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208521377778">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208521377780">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1208521377781" />
-                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1208521428367">
-                  <link role="member" targetNodeId="1208521408671" resolveInfo="ide" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208521377779">
-                <link role="baseMethodDeclaration" targetNodeId="30.~AbstractProjectFrame.getToolsPane():jetbrains.mps.ide.toolsPane.ToolsPane" resolveInfo="getToolsPane" />
-              </node>
-            </node>
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208521399829">
-              <link role="classifier" targetNodeId="34.~ToolsPane" resolveInfo="ToolsPane" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208521377785">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208521377786">
-            <property name="name" value="testTool" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1208521377787" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208521377788">
-              <link role="classifier" targetNodeId="34.~ITool" resolveInfo="ITool" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1208521377789">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208521377790">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1208521377791">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208521377797">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208521377798">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1208521377799">
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1208521377801">
-                      <link role="variable" targetNodeId="1208521377803" resolveInfo="tool" />
-                    </node>
-                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208521377800">
-                      <link role="variableDeclaration" targetNodeId="1208521377786" resolveInfo="testTool" />
-                    </node>
-                  </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1208521377802" />
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1208521377792">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208521377794">
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208521377796">
-                    <link role="baseMethodDeclaration" targetNodeId="34.~ITool.getComponent():javax.swing.JComponent" resolveInfo="getComponent" />
-                  </node>
-                  <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1208521377795">
-                    <link role="variable" targetNodeId="1208521377803" resolveInfo="tool" />
-                  </node>
-                </node>
-                <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208521451368">
-                  <link role="classifier" targetNodeId="1205860902244" resolveInfo="RunComponent" />
+            <property name="name" value="runTool" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.pluginLanguage.structure.GetToolExpression" id="1208789214498">
+              <link role="tool" targetNodeId="1208789093348" resolveInfo="Run Class" />
+              <node role="project" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208789230681">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1208789230682" />
+                <node role="operation" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterReferenceOperation" id="1208789230683">
+                  <link role="member" targetNodeId="1208789220993" resolveInfo="project" />
                 </node>
               </node>
             </node>
-          </node>
-          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208521377804">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208521377805">
-              <link role="baseMethodDeclaration" targetNodeId="34.~ToolsPane.getTools():java.util.List" resolveInfo="getTools" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208789354894">
+              <link role="classifier" targetNodeId="35.~BaseTool" resolveInfo="BaseTool" />
             </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208521377806">
-              <link role="variableDeclaration" targetNodeId="1208521377777" resolveInfo="toolsPane" />
-            </node>
-          </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable" id="1208521377803">
-            <property name="name" value="tool" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1208521377807">
@@ -455,16 +402,13 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208521377827">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208521377828">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208521377829">
-                  <link role="variableDeclaration" targetNodeId="1208521377777" resolveInfo="toolsPane" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208789311380">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208789357731">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208789311381">
+                  <link role="variableDeclaration" targetNodeId="1208521377786" resolveInfo="runTool" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208521377830">
-                  <link role="baseMethodDeclaration" targetNodeId="34.~ToolsPane.selectTool(jetbrains.mps.ide.toolsPane.ITool):void" resolveInfo="selectTool" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208521377831">
-                    <link role="variableDeclaration" targetNodeId="1208521377786" resolveInfo="testTool" />
-                  </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208789364805">
+                  <link role="baseMethodDeclaration" targetNodeId="35.~BaseTool.show():void" resolveInfo="show" />
                 </node>
               </node>
             </node>
@@ -537,18 +481,18 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206100493749" />
       <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1206100500158" />
     </node>
-    <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1208521408671">
-      <property name="name" value="ide" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208521423621">
-        <link role="classifier" targetNodeId="30.~IDEProjectFrame" resolveInfo="IDEProjectFrame" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1208521408672" />
-    </node>
     <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1206100520884">
       <property name="name" value="operationContext" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206100520885" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206100523528">
         <link role="classifier" targetNodeId="5.~IOperationContext" resolveInfo="IOperationContext" />
+      </node>
+    </node>
+    <node role="parameterDeclaration" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionParameterDeclaration" id="1208789220993">
+      <property name="name" value="project" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1208789220994" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208789223680">
+        <link role="classifier" targetNodeId="10.~MPSProject" resolveInfo="MPSProject" />
       </node>
     </node>
     <node role="keystroke" type="jetbrains.mps.bootstrap.pluginLanguage.structure.KeyMapKeystroke" id="1207320202659">
@@ -3866,7 +3810,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208520470147">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208520470148">
-            <property name="name" value="l" />
+            <property name="name" value="message" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208520470149">
               <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
             </node>
@@ -3884,8 +3828,8 @@
                     </node>
                   </node>
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1208520470155">
-                    <link role="baseMethodDeclaration" targetNodeId="12.~Logger.getLogger(java.lang.String):jetbrains.mps.logging.Logger" resolveInfo="getLogger" />
                     <link role="classConcept" targetNodeId="12.~Logger" resolveInfo="Logger" />
+                    <link role="baseMethodDeclaration" targetNodeId="12.~Logger.getLogger(java.lang.Class):jetbrains.mps.logging.Logger" resolveInfo="getLogger" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1208520470156">
                       <link role="classifier" targetNodeId="1208520470121" resolveInfo="BaseOutputReader" />
                     </node>
@@ -3903,50 +3847,15 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208520470161">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1208520470162">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208520470171">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1208520620849">
-                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1208520620850">
-                    <property name="name" value="message" />
-                    <property name="isFinal" value="true" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208520620851">
-                      <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
-                    </node>
-                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208520628191">
-                      <link role="variableDeclaration" targetNodeId="1208520470148" resolveInfo="l" />
-                    </node>
-                  </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208520470172">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1208520470173">
-                    <link role="classConcept" targetNodeId="16.~SwingUtilities" resolveInfo="SwingUtilities" />
-                    <link role="baseMethodDeclaration" targetNodeId="16.~SwingUtilities.invokeLater(java.lang.Runnable):void" resolveInfo="invokeLater" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1208520633299">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1208520633300">
-                        <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1208520633301">
-                          <link role="classifier" targetNodeId="9.~Runnable" resolveInfo="Runnable" />
-                          <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1208520638535">
-                            <property name="name" value="run" />
-                            <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1208520638536" />
-                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208520638538">
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208520684564">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208520710044">
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208520750523">
-                                    <link role="baseMethodDeclaration" targetNodeId="1208520583775" resolveInfo="addMessage" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208520758844">
-                                      <link role="variableDeclaration" targetNodeId="1208520620850" resolveInfo="message" />
-                                    </node>
-                                  </node>
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1208520684565">
-                                    <link role="classConcept" targetNodeId="1208520470121" resolveInfo="BaseOutputReader" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1208520638537" />
-                          </node>
-                          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1208520633302" />
-                        </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208788296904">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208788296905">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208788296906">
+                      <link role="baseMethodDeclaration" targetNodeId="1208520583775" resolveInfo="addMessage" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208788300508">
+                        <link role="variableDeclaration" targetNodeId="1208520470148" resolveInfo="l" />
                       </node>
                     </node>
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1208788296907" />
                   </node>
                 </node>
               </node>
@@ -4005,18 +3914,24 @@
         </node>
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208520832752">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208520879491">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208520879951">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208520885554">
-              <link role="baseMethodDeclaration" targetNodeId="1205861498911" resolveInfo="append" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208520888052">
-                <link role="variableDeclaration" targetNodeId="1208520832750" resolveInfo="message" />
-              </node>
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208520879492">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1208520879494" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1208520879493">
-                <link role="fieldDeclaration" targetNodeId="1208520860763" resolveInfo="runComponent" />
+        <node role="statement" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteEDTCommandStatement" id="1208788266823">
+          <node role="commandClosure" type="jetbrains.mps.bootstrap.smodelLanguage.structure.CommandClosure" id="1208788266824">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208788266825">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208520879491">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208520879951">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208520885554">
+                    <link role="baseMethodDeclaration" targetNodeId="1205861498911" resolveInfo="append" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208520888052">
+                      <link role="variableDeclaration" targetNodeId="1208520832750" resolveInfo="message" />
+                    </node>
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208520879492">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1208520879494" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1208520879493">
+                      <link role="fieldDeclaration" targetNodeId="1208520860763" resolveInfo="runComponent" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -4030,7 +3945,7 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208520865339">
         <link role="classifier" targetNodeId="1205860902244" resolveInfo="RunComponent" />
       </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1208520860764" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1208788453411" />
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1208520836063">
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1208520842155">
@@ -4072,6 +3987,12 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1208520815075" />
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208520828709">
       <link role="classifier" targetNodeId="1208520470121" resolveInfo="BaseOutputReader" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.Tool" id="1208789093348">
+    <property name="name" value="Run Class" />
+    <node role="component" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208789114563">
+      <link role="baseMethodDeclaration" targetNodeId="1205861021916" resolveInfo="RunComponent" />
     </node>
   </node>
 </model>

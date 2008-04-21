@@ -63,17 +63,17 @@ public class CommentStatements_Action extends CurrentProjectMPSAction {
         boolean error = false;
         if (nodes != null) {
           {
-            ICursor<SNode> _zCursor16 = CursorFactory.createCursor(nodes);
+            ICursor<SNode> _zCursor15 = CursorFactory.createCursor(nodes);
             try {
-              while(_zCursor16.moveToNext()) {
-                SNode node = _zCursor16.getCurrent();
+              while(_zCursor15.moveToNext()) {
+                SNode node = _zCursor15.getCurrent();
                 if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
                   error = true;
                   break;
                 }
               }
             } finally {
-              _zCursor16.release();
+              _zCursor15.release();
             }
           }
         }
