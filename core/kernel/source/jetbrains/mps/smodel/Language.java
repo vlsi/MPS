@@ -260,6 +260,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     for (String language : getExtendedLanguageNamespaces()) {
       result.add(new Dependency(language, true));
     }
+
+    for (Generator g : getGenerators()) {
+      result.addAll(g.getDependencies());
+    }
+
     return result;
   }
 
