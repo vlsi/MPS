@@ -44,6 +44,7 @@ public class RefactoringContext {
   private Map<ConceptFeature, ConceptFeature> myConceptFeatureMap = new HashMap<ConceptFeature, ConceptFeature>();
   private int myModelVersion = -1;
   private ILoggableRefactoring myRefactoring;
+  private String myRefactoringClassName = null;
   //-----------------
 
   //transient caches
@@ -428,6 +429,11 @@ public class RefactoringContext {
 
   public void setRefactoring(ILoggableRefactoring refactoring) {
     myRefactoring = refactoring;
+    if (myRefactoring != null) {
+      myRefactoringClassName = refactoring.getClass().getName();
+    } else {
+      myRefactoringClassName = null;
+    }
   }
 
   public ILoggableRefactoring getRefactoring() {
@@ -443,7 +449,14 @@ public class RefactoringContext {
     }
     {
       Element refactoringElement = new Element(REFACTORING);
-      refactoringElement.setAttribute(REFACTORING_CLASS, myRefactoring.getClass().getName());
+      if (myRefactoring == null) {
+        LOG.error("saving refactoring: refactoring " + myRefactoringClassName + " is null");
+        if (myRefactoringClassName != null) {
+          refactoringElement.setAttribute(REFACTORING_CLASS, myRefactoringClassName);
+        }
+      } else {
+        refactoringElement.setAttribute(REFACTORING_CLASS, myRefactoring.getClass().getName());
+      }
       refactoringContextElement.addContent(refactoringElement);
     }
     {
@@ -527,6 +540,7 @@ public class RefactoringContext {
       myRefactoring = null;
       Element refactoringElement = element.getChild(REFACTORING);
       String className = refactoringElement.getAttributeValue(REFACTORING_CLASS);
+      myRefactoringClassName = className;
       try {
         String namespace = NameUtil.namespaceFromLongName(
           NameUtil.namespaceFromLongName(className));//remove ".scripts.%ClassName%"
@@ -544,6 +558,9 @@ public class RefactoringContext {
         }
       } catch (Throwable t) {
         LOG.error(t);
+      }
+      if (myRefactoring == null) {
+        LOG.error("refactoring for " + className + " was not loaded");
       }
     }
     {

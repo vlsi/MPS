@@ -1097,7 +1097,7 @@ public class SModel implements Iterable<SNode> {
       myRefactoringHistory = new RefactoringHistory();
       myRefactoringHistory.fromElement(e);
     } catch (Throwable t) {
-      LOG.error("refactoring history refresh failed", t, this);
+      LOG.error("refactoring history refresh failed " + this, t, this);
     }
   }
 
