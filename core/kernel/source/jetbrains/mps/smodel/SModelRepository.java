@@ -32,9 +32,6 @@ public class SModelRepository extends SModelAdapter {
 
   private MPSModuleRepository myModuleRepository;
 
-  private Map<String, List<SModelCommandListener>> myCommandListeners = new HashMap<String, List<SModelCommandListener>>();
-  private Map<ILanguageModelListenerOwner, List<SModelCommandListener>> myOwnersToListeners = new HashMap<ILanguageModelListenerOwner, List<SModelCommandListener>>();
-
   private BackgroundModelLoader myBackgroundLoader = new BackgroundModelLoader(this);
 
   private boolean myInChangedModelsReloading = false;
@@ -57,50 +54,8 @@ public class SModelRepository extends SModelAdapter {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
 
-  public void registerLanguageModelListener(String language, SModelCommandListener listener, ILanguageModelListenerOwner owner) {
-    if (myCommandListeners.get(language) == null) {
-      myCommandListeners.put(language, new ArrayList<SModelCommandListener>());
-    }
-
-    myCommandListeners.get(language).add(listener);
-
-
-    if (myOwnersToListeners.get(owner) == null) {
-      myOwnersToListeners.put(owner, new ArrayList<SModelCommandListener>());
-    }
-
-    myOwnersToListeners.get(owner).add(listener);
-  }
-
-  public void unregisterLanguageModelListeners(ILanguageModelListenerOwner owner) {
-    if (myOwnersToListeners.get(owner) == null) {
-      return;
-    }
-
-    List<SModelCommandListener> listeners = myOwnersToListeners.get(owner);
-
-    for (List<SModelCommandListener> list : myCommandListeners.values()) {
-      list.removeAll(listeners);
-    }
-
-    myOwnersToListeners.remove(owner);
-  }
-
   private void someModelChangedInCommand(List<SModelEvent> events) {
     if (events.size() == 0) return;
-    SModelDescriptor model = events.get(0).getModel().getModelDescriptor();
-    for (String language : model.getSModel().getLanguageNamespaces(GlobalScope.getInstance())) {
-      List<SModelCommandListener> listeners = myCommandListeners.get(language);
-      if (listeners != null) {
-        for (SModelCommandListener l : listeners) {
-          try {
-            l.eventsHappenedInCommand(Collections.unmodifiableList(events));
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
   }
 
   public void refreshModels() {
