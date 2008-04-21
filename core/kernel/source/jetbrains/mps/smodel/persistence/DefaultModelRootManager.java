@@ -255,9 +255,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     }
 
     SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getFile(fileName), modelUID);
-    modelRepository.registerModelDescriptor(modelDescriptor, owner);
-    modelRepository.markChanged(modelDescriptor, true);
-    SModelRepository.getInstance().fireModelCreatedEvent(modelDescriptor);
+    SModelRepository.getInstance().createNewModel(modelDescriptor, owner);
     modelDescriptor.getSModel();
     return modelDescriptor;
   }

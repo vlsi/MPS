@@ -436,13 +436,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public final void delete() {
-    SModelRepository.getInstance().fireModelWillBeDeletedEvent(this);
-    SModelRepository.getInstance().removeModelDescriptor(this);
-    IFile modelFile = getModelFile();
-    if (modelFile != null && modelFile.exists()) {
-      modelFile.delete();
-    }
-    SModelRepository.getInstance().fireModelDeletedEvent(this);
+    SModelRepository.getInstance().deleteModel(this);
   }
 
   private void addUsages(SNode current, Set<SNode> nodes, Set<SReference> result) {

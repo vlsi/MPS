@@ -107,26 +107,6 @@ public class SModelRepository extends SModelAdapter {
     myListeners.remove(listener);
   }
 
-  public void fireModelCreatedEvent(SModelDescriptor modelDescriptor) {
-    MPSModuleRepository.getInstance().invalidateCaches();
-
-    for (SModelsListener listener : myListeners) {
-      listener.modelCreated(modelDescriptor);
-    }
-  }
-
-  public void fireModelWillBeDeletedEvent(SModelDescriptor modelDescriptor) {
-    for (SModelsListener listener : myListeners) {
-      listener.modelWillBeDeleted(modelDescriptor);
-    }
-  }
-
-  public void fireModelDeletedEvent(SModelDescriptor modelDescriptor) {
-    for (SModelsListener listener : myListeners) {
-      listener.modelDeleted(modelDescriptor);
-    }
-  }
-
   public void fireModelLoadedEvent(SModelDescriptor modelDescriptor) {
     for (SModelsListener listener : myListeners) {
       listener.modelLoaded(modelDescriptor);
@@ -178,6 +158,25 @@ public class SModelRepository extends SModelAdapter {
   public boolean isRegisteredModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     return owners != null && owners.contains(owner);
+  }
+
+  /**
+   * do not call this method unless you do it from some ModelRootManager
+   */
+  public void createNewModel(SModelDescriptor modelDescriptor, ModelOwner owner) {
+    registerModelDescriptor(modelDescriptor, owner);
+    markChanged(modelDescriptor, true);
+    fireModelCreatedEvent(modelDescriptor);        
+  }
+
+  public void deleteModel(SModelDescriptor modelDescriptor) {
+    fireModelWillBeDeletedEvent(modelDescriptor);
+    removeModelDescriptor(modelDescriptor);
+    IFile modelFile = modelDescriptor.getModelFile();
+    if (modelFile != null && modelFile.exists()) {
+      modelFile.delete();
+    }
+    SModelRepository.getInstance().fireModelDeletedEvent(modelDescriptor);
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
@@ -572,6 +571,26 @@ public class SModelRepository extends SModelAdapter {
   private void fireModelOwnerRemoved(SModelDescriptor modelDescriptor, ModelOwner owner) {
     for (SModelRepositoryListener l : listeners()) {
       l.modelOwnerRemoved(modelDescriptor, owner);
+    }
+  }
+
+  private void fireModelCreatedEvent(SModelDescriptor modelDescriptor) {
+    MPSModuleRepository.getInstance().invalidateCaches();
+
+    for (SModelsListener listener : myListeners) {
+      listener.modelCreated(modelDescriptor);
+    }
+  }
+
+  private void fireModelWillBeDeletedEvent(SModelDescriptor modelDescriptor) {
+    for (SModelsListener listener : myListeners) {
+      listener.modelWillBeDeleted(modelDescriptor);
+    }
+  }
+
+  private void fireModelDeletedEvent(SModelDescriptor modelDescriptor) {
+    for (SModelsListener listener : myListeners) {
+      listener.modelDeleted(modelDescriptor);
     }
   }
 }
