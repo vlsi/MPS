@@ -2,7 +2,6 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
-import jetbrains.mps.ide.settings.GlobalIdeSettings;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
@@ -15,12 +14,8 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelsAdapter;
-import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.Condition;
 import org.jdom.Element;
 
@@ -79,7 +74,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   public ProjectPane(IDEProjectFrame ide) {
     myIDE = ide;
-    SModelsMulticaster.getInstance().addSModelsListener(new SModelsAdapter() {
+    SModelRepository.getInstance().addSModelsListener(new SModelsAdapter() {
       public void modelCreated(SModelDescriptor modelDescriptor) {
       }
 

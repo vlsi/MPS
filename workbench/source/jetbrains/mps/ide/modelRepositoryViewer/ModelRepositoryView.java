@@ -16,7 +16,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelsAdapter;
-import jetbrains.mps.smodel.event.SModelsMulticaster;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -161,12 +160,12 @@ public class ModelRepositoryView extends DefaultTool {
     public void installListeners() {
       CommandProcessor.instance().addCommandListener(this);
       SModelRepository.getInstance().addModelRepositoryListener(myRepoListener);
-      SModelsMulticaster.getInstance().addSModelsListener(this);
+      SModelRepository.getInstance().addSModelsListener(this);
     }
     public void unInstallListeners() {
       CommandProcessor.instance().removeCommandListener(this);
       SModelRepository.getInstance().removeModelRepositoryListener(myRepoListener);
-      SModelsMulticaster.getInstance().removeSModelsListener(this);
+      SModelRepository.getInstance().addSModelsListener(this);
     }
 
     public void modelLoaded(SModelDescriptor modelDescriptor) {

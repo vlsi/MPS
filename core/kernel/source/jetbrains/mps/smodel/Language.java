@@ -46,7 +46,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private HashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new HashMap<String, AbstractConceptDeclaration>();
   private List<LanguageCommandListener> myCommandListeners = new ArrayList<LanguageCommandListener>();
   private LanguageEventTranslator myEventTranslator = new LanguageEventTranslator();
-  private SModelsListener myModelsListener = new LanguageModelsAdapter();
   private boolean myUpToDate = true;
 
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
@@ -247,7 +246,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
       if (isInitialized()) {
         CommandProcessor.instance().addCommandListener(myEventTranslator);
-        SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
         registerAspectListener();
 
         fireModuleInitialized();
@@ -283,7 +281,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     //Call this method before you remove it and its models from repositories
     //To unregister it correctly from different services we need it and its models    
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
-    SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
     unRegisterAspectListener();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     MPSModuleRepository.getInstance().unRegisterModules(this);
@@ -808,9 +805,4 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
     return null;
   }
-
-  private class LanguageModelsAdapter extends SModelsAdapter {
-    public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {
-    }
-  } // private class LanguageModelsAdapter
 }

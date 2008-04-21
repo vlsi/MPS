@@ -9,7 +9,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
@@ -17,7 +16,6 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.Merger;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -259,7 +257,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getFile(fileName), modelUID);
     modelRepository.registerModelDescriptor(modelDescriptor, owner);
     modelRepository.markChanged(modelDescriptor, true);
-    SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);
+    SModelRepository.getInstance().fireModelCreatedEvent(modelDescriptor);
     modelDescriptor.getSModel();
     return modelDescriptor;
   }

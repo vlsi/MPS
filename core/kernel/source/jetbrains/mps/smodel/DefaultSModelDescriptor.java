@@ -11,7 +11,6 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
@@ -130,7 +129,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   private void doPostLoadStuff() {
     myModelRootManager.updateAfterLoad(this);
-    SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
+    SModelRepository.getInstance().fireModelLoadedEvent(this);
     LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
 
     updateModelWithRefactorings();
@@ -437,13 +436,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public final void delete() {
-    SModelsMulticaster.getInstance().fireModelWillBeDeletedEvent(this);
+    SModelRepository.getInstance().fireModelWillBeDeletedEvent(this);
     SModelRepository.getInstance().removeModelDescriptor(this);
     IFile modelFile = getModelFile();
     if (modelFile != null && modelFile.exists()) {
       modelFile.delete();
     }
-    SModelsMulticaster.getInstance().fireModelDeletedEvent(this);
+    SModelRepository.getInstance().fireModelDeletedEvent(this);
   }
 
   private void addUsages(SNode current, Set<SNode> nodes, Set<SReference> result) {

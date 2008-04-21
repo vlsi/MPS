@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelsListener;
-import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.transformation.TLBase.structure.RootTemplateAnnotation;
 import jetbrains.mps.transformation.TLBase.structure.RootTemplateAnnotation_AnnotationLink;
 

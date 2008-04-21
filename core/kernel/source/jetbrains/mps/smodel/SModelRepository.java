@@ -8,6 +8,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelsListener;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vfs.IFile;
@@ -26,6 +27,8 @@ public class SModelRepository extends SModelAdapter {
   private Set<SModelDescriptor> myModelsWithNoOwners = new HashSet<SModelDescriptor>();
   private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
   private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
+
+  private Set<SModelsListener> myListeners = new LinkedHashSet<SModelsListener>();
 
   private Map<SModelDescriptor, Set<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, Set<ModelOwner>>();
   private Map<ModelOwner, Set<SModelDescriptor>> myOwnerToModelMap = new HashMap<ModelOwner, Set<SModelDescriptor>>();
@@ -94,6 +97,40 @@ public class SModelRepository extends SModelAdapter {
   public void removeModelRepositoryListener(SModelRepositoryListener l) {
     mySModelRepositoryListeners.remove(l);
     myWeakSModelRepositoryListeners.remove(l);
+  }
+
+  public void addSModelsListener(SModelsListener listener) {
+    myListeners.add(listener);
+  }
+
+  public void removeSModelsListener(SModelsListener listener) {
+    myListeners.remove(listener);
+  }
+
+  public void fireModelCreatedEvent(SModelDescriptor modelDescriptor) {
+    MPSModuleRepository.getInstance().invalidateCaches();
+
+    for (SModelsListener listener : myListeners) {
+      listener.modelCreated(modelDescriptor);
+    }
+  }
+
+  public void fireModelWillBeDeletedEvent(SModelDescriptor modelDescriptor) {
+    for (SModelsListener listener : myListeners) {
+      listener.modelWillBeDeleted(modelDescriptor);
+    }
+  }
+
+  public void fireModelDeletedEvent(SModelDescriptor modelDescriptor) {
+    for (SModelsListener listener : myListeners) {
+      listener.modelDeleted(modelDescriptor);
+    }
+  }
+
+  public void fireModelLoadedEvent(SModelDescriptor modelDescriptor) {
+    for (SModelsListener listener : myListeners) {
+      listener.modelLoaded(modelDescriptor);
+    }
   }
 
   private List<SModelRepositoryListener> listeners() {
