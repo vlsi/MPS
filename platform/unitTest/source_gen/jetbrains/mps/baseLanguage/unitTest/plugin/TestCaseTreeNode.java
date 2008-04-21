@@ -8,6 +8,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.util.Calculable;
+import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
 
@@ -31,6 +34,16 @@ public class TestCaseTreeNode extends MPSTreeNode {
 
   public void setState(TestState state) {
     this.state = state;
+  }
+
+  public String getClassName() {
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable <String>() {
+
+      public String calculate() {
+        return INamedConcept_Behavior.call_getFqName_1184686272576(TestCaseTreeNode.this.testCase);
+      }
+
+    });
   }
 
   public void doubleClick() {

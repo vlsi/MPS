@@ -6,6 +6,10 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.util.Calculable;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
 
@@ -35,6 +39,31 @@ public class TestMethodTreeNode extends MPSTreeNode {
   public void setState(TestState state) {
     this.state = state;
     this.updater.start();
+  }
+
+  public String getClassName() {
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable <String>() {
+
+      public String calculate() {
+        SNode classConcept = SNodeOperations.getAncestor(TestMethodTreeNode.this.testMethod, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+        String className = null;
+        if (classConcept != null) {
+          className = INamedConcept_Behavior.call_getFqName_1184686272576(classConcept);
+        }
+        return className;
+      }
+
+    });
+  }
+
+  public String getMethodName() {
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable <String>() {
+
+      public String calculate() {
+        return SPropertyOperations.getString(TestMethodTreeNode.this.testMethod, "name");
+      }
+
+    });
   }
 
   public boolean isLeaf() {
