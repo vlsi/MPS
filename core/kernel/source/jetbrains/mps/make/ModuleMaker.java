@@ -150,9 +150,9 @@ public class ModuleMaker {
         for (CategorizedProblem cp : cr.getErrors()) {
           String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
           if (cp.isWarning()) {
-            LOG.warning(messageStirng);            
+            LOG.warning(messageStirng + " (line: )" + cp.getSourceLineNumber());
           } else {
-            LOG.error(messageStirng);
+            LOG.error(messageStirng + " (line: )" + cp.getSourceLineNumber());
           }
         }
         
