@@ -52,7 +52,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
      * <code>NoSuchElementException</code>, if the underlying sequence if empty.
      * </p>
      */
-    public static final boolean NULL_WHEN_EMPTY = true;    
+    public static final boolean NULL_WHEN_EMPTY = true;
     
     public static <U> ISequence<U> fromArray (U...array) {
         return new BasicSequence<U> (Arrays.asList(array));
@@ -68,8 +68,8 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
                 return NullSequence.instance();
             }
         }
-        if (iterable instanceof Sequence) {
-            return (Sequence<U>) iterable;
+        if (iterable instanceof ISequence) {
+            return (ISequence<U>) iterable;
         }
         return new BasicSequence<U> (iterable);
     }

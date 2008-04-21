@@ -6,8 +6,6 @@ package jetbrains.mps.closures.runtime;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import jetbrains.mps.internal.collections.runtime.StopIteratingException;
-
 /**
  * @author fyodor
  */
@@ -17,15 +15,16 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
 
     private int hasNext = -1;
 
-    private boolean stop = false;
+    private DelayedException delayedEx;
 
     public boolean hasNext() {
         if (this.hasNext < 0) {
             this.hasNext = (this.moveToNext() ? 1 : 0);
         }
-        if (stop) {
-            this.stop = false;
-            throw new StopIteratingException ();
+        if (delayedEx != null) {
+            DelayedException tmp = this.delayedEx;
+            this.delayedEx = null;
+            throw tmp;
         }
         return this.hasNext == 1;
     }
@@ -38,8 +37,8 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
         try {
             this.hasNext = (this.moveToNext() ? 1 : 0);
         }
-        catch (StopIteratingException ignore) {
-            this.stop = true;
+        catch (DelayedException ex) {
+            this.delayedEx = ex;
             this.hasNext = 0;
         }
         return tmp;

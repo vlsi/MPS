@@ -51,8 +51,8 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
                 return NullListSequence.instance();
             }
         }
-        if (list instanceof ListSequence) {
-            return (ListSequence<U>) list;
+        if (list instanceof IListSequence) {
+            return (IListSequence<U>) list;
         }
         return new ListSequence<U> (list);
     }
@@ -63,8 +63,8 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
                 return NullListSequence.instance();
             }
         }
-        if (it instanceof ListSequence) {
-            return (ListSequence<U>) it;
+        if (it instanceof IListSequence) {
+            return (IListSequence<U>) it;
         }
         List<U> list = new ArrayList<U> ();
         for (U u: it) {

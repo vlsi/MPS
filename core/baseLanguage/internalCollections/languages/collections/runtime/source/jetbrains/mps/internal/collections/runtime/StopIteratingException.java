@@ -3,6 +3,8 @@
  */
 package jetbrains.mps.internal.collections.runtime;
 
+import jetbrains.mps.closures.runtime.DelayedException;
+
 
 /**
  * This exception serves as a signal to stop iterations. It may be thrown from iterators that are returned
@@ -11,7 +13,7 @@ package jetbrains.mps.internal.collections.runtime;
  * exception may be removed, so don't rely on it.
  * @author fyodor
  */
-public class StopIteratingException extends RuntimeException {
+public class StopIteratingException extends DelayedException {
 
     /**
      * 

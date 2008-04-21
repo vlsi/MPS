@@ -50,9 +50,12 @@ public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSe
         return new MapSequence<P, Q> (map);
     }
     
-    public static <P,Q> IMapSequence<P, Q> fromIterable (Iterable<IMapping<P, Q>> it) {
+    public static <P,Q> IMapSequence<P, Q> fromIterable (Iterable<IMapping<P, Q>> iterable) {
+        if (iterable instanceof IMapSequence) {
+            return (IMapSequence<P, Q>) iterable;
+        }
         Map<P,Q> map = new HashMap<P, Q> ();
-        for (IMapping<P, Q> mpng: it) {
+        for (IMapping<P, Q> mpng: iterable) {
             map.put(mpng.key(), mpng.value());
         }
         return new MapSequence<P, Q> (map);
@@ -64,7 +67,7 @@ public class MapSequence <U,V> extends Sequence<IMapping<U,V>> implements IMapSe
                 return NullMapSequence.<P,Q>instance();
             }
         }
-        if (map instanceof MapSequence) {
+        if (map instanceof IMapSequence) {
             return (IMapSequence<P, Q>) map;
         }
         return new MapSequence<P, Q> (map);
