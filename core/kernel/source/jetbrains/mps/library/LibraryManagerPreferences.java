@@ -4,6 +4,7 @@ import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -19,6 +20,8 @@ public class LibraryManagerPreferences implements IPreferencesPage {
   private JPanel myMainPanel = new JPanel(new BorderLayout());
   private DefaultListModel myListModel = new DefaultListModel();
   private JList myLibrariesList = new JList(myListModel);
+
+  private boolean myChanged;
 
   public LibraryManagerPreferences(LibraryManager manager) {
     myManager = manager;
@@ -84,6 +87,7 @@ public class LibraryManagerPreferences implements IPreferencesPage {
     }
     myManager.remove((Library) myListModel.get(index));
     updateModel();
+    myChanged = true;
   }
 
 
@@ -111,6 +115,7 @@ public class LibraryManagerPreferences implements IPreferencesPage {
     l.setPath(path);
 
     updateModel();
+    myChanged = true;
   }
 
   private void add() {
@@ -131,8 +136,9 @@ public class LibraryManagerPreferences implements IPreferencesPage {
 
     myManager.newLibrary(name).setPath(path);
     updateModel();
-  }
 
+    myChanged = true;
+  }
 
   public String getName() {
     return "Libraries";
@@ -151,5 +157,8 @@ public class LibraryManagerPreferences implements IPreferencesPage {
   }
 
   public void commit() {
+    if (myChanged) {
+      ClassLoaderManager.getInstance().reloadAll();
+    }
   }
 }
