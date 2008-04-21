@@ -292,6 +292,8 @@ public class GenerationSession implements IGenerationSession {
             generator.showErrorMessage(pair.o1, "rule: " + pair.o1.getDebugText());
             generator.showErrorMessage(pair.o2, "-- input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"));
           }
+        } else {
+          generator.showErrorMessage(null, "to get more diagnostic generate model with the 'save transient models' option");
         }
         throw new GenerationFailedException("failed to generate output after 10 repeated mappings");
       }

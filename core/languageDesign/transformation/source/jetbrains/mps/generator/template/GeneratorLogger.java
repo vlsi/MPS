@@ -24,17 +24,17 @@ public class GeneratorLogger {
   }
 
   public void showInformationMessage(SNode node, String message) {
-    LOG.info(message, new NodeWithContext(node, myOperationContext));
+    LOG.info(message, node != null ? new NodeWithContext(node, myOperationContext) : null);
   }
 
   public void showWarningMessage(SNode node, String message) {
     myWarningsCount++;
-    LOG.warning(message, new NodeWithContext(node, myOperationContext));
+    LOG.warning(message, node != null ? new NodeWithContext(node, myOperationContext) : null);
   }
 
   public void showErrorMessage(SNode node, String message) {
     myErrorsCount++;
-    LOG.error(message, new NodeWithContext(node, myOperationContext));
+    LOG.error(message, node != null ? new NodeWithContext(node, myOperationContext) : null);
   }
 
   public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
