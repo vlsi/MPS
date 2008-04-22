@@ -67,4 +67,16 @@ public class ManyToManyMap<F, S> {
       return Collections.emptySet();
     }
   }
+
+  public boolean contains(F f, S s) {
+    return myFToS.containsKey(f) && myFToS.get(f).contains(s);
+  }
+
+  public boolean containsFirst(F f) {
+    return myFToS.containsKey(f);
+  }
+
+  public boolean containsSecond(S s) {
+    return mySToF.containsKey(s);
+  }
 }
