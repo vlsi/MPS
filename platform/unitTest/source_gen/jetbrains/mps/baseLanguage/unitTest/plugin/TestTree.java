@@ -8,138 +8,71 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.LinkedHashMap;
-import java.util.HashMap;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.MapOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.core.constraints.INamedConcept_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import java.util.ArrayList;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.MapOperations;
 
 public class TestTree extends MPSTree {
 
   private IOperationContext operationContext;
   private Map<SNode, List<SNode>> tests;
-  private Map<String, TestCaseTreeNode> classToTestCase;
-  private Map<String, Map<String, TestMethodTreeNode>> classToMethodToMethodNode;
+  private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> map;
 
   public  TestTree() {
     this.tests = new LinkedHashMap<SNode, List<SNode>>();
-    this.classToTestCase = new HashMap<String, TestCaseTreeNode>();
-    this.classToMethodToMethodNode = new HashMap<String, Map<String, TestMethodTreeNode>>();
+    this.map = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
   }
 
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
-    MapOperations.clear(this.classToTestCase);
-    MapOperations.clear(this.classToMethodToMethodNode);
+    this.map.clear();
     {
-      ICursor<SNode> _zCursor = CursorFactory.createCursor(MapOperations.keys(this.tests));
+      ICursor<SNode> _zCursor3 = CursorFactory.createCursor(MapOperations.keys(this.tests));
       try {
-        while(_zCursor.moveToNext()) {
-          SNode testCase = _zCursor.getCurrent();
+        while(_zCursor3.moveToNext()) {
+          SNode testCase = _zCursor3.getCurrent();
           {
             TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
             root.add(testCaseTreeNode);
-            this.classToTestCase.put(INamedConcept_Behavior.call_getFqName_1184686272576(testCase), testCaseTreeNode);
-            Map<String, TestMethodTreeNode> methodToNode = new HashMap<String, TestMethodTreeNode>();
-            this.classToMethodToMethodNode.put(INamedConcept_Behavior.call_getFqName_1184686272576(testCase), methodToNode);
+            this.map.put(testCase, testCaseTreeNode);
             {
-              ICursor<SNode> _zCursor1 = CursorFactory.createCursor(this.tests.get(testCase));
+              ICursor<SNode> _zCursor4 = CursorFactory.createCursor(this.tests.get(testCase));
               try {
-                while(_zCursor1.moveToNext()) {
-                  SNode method = _zCursor1.getCurrent();
+                while(_zCursor4.moveToNext()) {
+                  SNode method = _zCursor4.getCurrent();
                   {
                     TestMethodTreeNode testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
                     testCaseTreeNode.add(testMethodTreeNode);
-                    methodToNode.put(SPropertyOperations.getString(method, "name"), testMethodTreeNode);
+                    this.map.put(testCase, method, testMethodTreeNode);
                   }
                 }
               } finally {
-                _zCursor1.release();
+                _zCursor4.release();
               }
             }
           }
         }
       } finally {
-        _zCursor.release();
+        _zCursor3.release();
       }
     }
     return root;
   }
 
-  public void setTestCases(IOperationContext operationContext, List<SNode> testCases) {
+  public void setTests(IOperationContext operationContext, Map<SNode, List<SNode>> tests) {
     this.operationContext = operationContext;
-    MapOperations.clear(this.tests);
-    {
-      ICursor<SNode> _zCursor2 = CursorFactory.createCursor(testCases);
-      try {
-        while(_zCursor2.moveToNext()) {
-          SNode testCase = _zCursor2.getCurrent();
-          {
-            List<SNode> testMethods = new ArrayList<SNode>();
-            this.tests.put(testCase, testMethods);
-            {
-              ICursor<SNode> _zCursor3 = CursorFactory.createCursor(SLinkOperations.getTargets(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", true));
-              try {
-                while(_zCursor3.moveToNext()) {
-                  SNode testMethod = _zCursor3.getCurrent();
-                  ListOperations.addElement(testMethods, testMethod);
-                }
-              } finally {
-                _zCursor3.release();
-              }
-            }
-          }
-        }
-      } finally {
-        _zCursor2.release();
-      }
-    }
-    this.rebuildNow();
-  }
-
-  public void setTestMethods(IOperationContext operationContext, List<SNode> testMethods) {
-    this.operationContext = operationContext;
-    MapOperations.clear(this.tests);
-    {
-      ICursor<SNode> _zCursor4 = CursorFactory.createCursor(testMethods);
-      try {
-        while(_zCursor4.moveToNext()) {
-          SNode testMethod = _zCursor4.getCurrent();
-          {
-            SNode testCase = SNodeOperations.getAncestor(testMethod, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-            List<SNode> curTestMethods = this.tests.get(testCase);
-            if (curTestMethods == null) {
-              curTestMethods = new ArrayList<SNode>();
-              this.tests.put(testCase, curTestMethods);
-            }
-            ListOperations.addElement(curTestMethods, testMethod);
-          }
-        }
-      } finally {
-        _zCursor4.release();
-      }
-    }
+    this.tests = tests;
     this.rebuildNow();
   }
 
   public TestCaseTreeNode get(String className) {
-    return this.classToTestCase.get(className);
+    return this.map.get(className);
   }
 
   public TestMethodTreeNode get(String className, String methodName) {
-    Map<String, TestMethodTreeNode> methodToNode = this.classToMethodToMethodNode.get(className);
-    TestMethodTreeNode result = null;
-    if (methodToNode != null) {
-      result = methodToNode.get(methodName);
-    }
-    return result;
+    return this.map.get(className, methodName);
   }
 
 }
