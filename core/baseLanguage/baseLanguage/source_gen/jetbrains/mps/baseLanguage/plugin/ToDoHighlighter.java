@@ -11,6 +11,7 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.constraints.RemarkStatement_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
 public class ToDoHighlighter extends EditorCheckerAdapter {
 
@@ -26,6 +27,16 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
       }
     }
     return messages;
+  }
+
+  public boolean isPropertyEventDramatical(SModelPropertyEvent propertyEvent) {
+    SNode node = propertyEvent.getNode();
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.RemarkStatement")) {
+      if (propertyEvent.getPropertyName().equals("value")) {
+        return true;
+      }
+    }
+    return false;
   }
 
 }
