@@ -5,10 +5,20 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.core.constraints.INamedConcept_Behavior;
+import org.apache.commons.lang.ObjectUtils;
 
 public class TestCaseRow extends TestContainerRow {
 
+  private String testCaseName;
+
   public  TestCaseRow(SNode testCase) {
     super(SPropertyOperations.getString(testCase, "name"), SNodeOperations.getModel(testCase).getLongName());
+    this.testCaseName = INamedConcept_Behavior.call_getFqName_1184686272576(testCase);
   }
+
+  public boolean matches(String testCase, String testMethod) {
+    return testCase == null || ObjectUtils.equals(testCase, this.testCaseName);
+  }
+
 }

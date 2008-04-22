@@ -23,4 +23,6 @@ public interface TestStatisticsRow {
 
   public abstract int getErrored();
 
+  public abstract boolean matches(String testCase, String testMethod);
+
 }
