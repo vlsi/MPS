@@ -31,10 +31,9 @@ public class MPSModuleRepository implements IComponentLifecycle {
   private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
   private Map<String, List<IModule>> myUIDToModulesMap = new HashMap<String, List<IModule>>();
 
-  private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
+  private Set<IModule> myModules = new HashSet<IModule>();
 
-  private Map<IModule, Set<MPSModuleOwner>> myModuleToOwnersMap = new HashMap<IModule, Set<MPSModuleOwner>>();
-  private Map<MPSModuleOwner, Set<IModule>> myOwnerToModules = new HashMap<MPSModuleOwner, Set<IModule>>();
+  private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();    
 
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
@@ -153,14 +152,9 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
   }
 
-  public boolean hasOwners(IModule module) {
-    return myModuleToOwnersMap.get(module) != null;
-  }
 
   public Set<MPSModuleOwner> getOwners(IModule module) {
-    Set<MPSModuleOwner> mpsModuleOwners = myModuleToOwnersMap.get(module);
-    if (mpsModuleOwners == null) return null;
-    return new HashSet<MPSModuleOwner>(mpsModuleOwners);
+    return myModuleToOwners.getByFirst(module);
   }
 
   public Language registerLanguage(IFile file, MPSModuleOwner owner) {
@@ -201,22 +195,11 @@ public class MPSModuleRepository implements IComponentLifecycle {
       if (!cls.isInstance(module)) {
         LOG.error("can't register module " + module + " : module of another kind with the same name already exists", module);
       }
-      Set<MPSModuleOwner> owners = myModuleToOwnersMap.get(module);
-      if (owners == null) {
-        owners = new HashSet<MPSModuleOwner>();
-        myModuleToOwnersMap.put(module, owners);
-        if (owner == module) {
-          LOG.warning("module " + module + " wants to owe itself: will be collected very quickly", module);
-        }
+      if (owner == module) {
+        LOG.warning("module " + module + " wants to owe itself: will be collected very quickly", module);
       }
-      if (owner != module) owners.add(owner);
-
-      Set<IModule> modules = myOwnerToModules.get(owner);
-      if (modules == null) {
-        modules = new HashSet<IModule>();
-        myOwnerToModules.put(owner, modules);
-      }
-      modules.add(module);
+      myModuleToOwners.addLink(module, owner);
+      myModules.add(module);
     }
     fireRepositoryChanged();
     return (TM) module;
@@ -239,8 +222,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
   }
 
   public boolean existsModule(IModule module, MPSModuleOwner owner) {
-    Set<MPSModuleOwner> mpsModuleOwners = myModuleToOwnersMap.get(module);
-    return (mpsModuleOwners != null && mpsModuleOwners.contains(owner));
+    return myModuleToOwners.contains(module, owner);
   }
 
   public void addModule(IModule module, MPSModuleOwner owner) {
@@ -260,17 +242,9 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
 
     putModuleWithUID(module.getModuleUID(), module);
-    Set<MPSModuleOwner> owners = myModuleToOwnersMap.get(module);
-    if (owners == null) owners = new HashSet<MPSModuleOwner>();
-    owners.add(owner);
-    myModuleToOwnersMap.put(module, owners);
 
-    Set<IModule> modules = myOwnerToModules.get(owner);
-    if (modules == null) {
-      modules = new HashSet<IModule>();
-      myOwnerToModules.put(owner, modules);
-    }
-    modules.add(module);
+    myModuleToOwners.addLink(module, owner);
+    myModules.add(module);
 
     fireModuleAdded(module);
   }
@@ -278,13 +252,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
   public void unRegisterModules(MPSModuleOwner owner) {
     myDirtyFlag = true;
 
-    Set<IModule> ownModules = myOwnerToModules.get(owner);
-    if (ownModules != null) {
-      for (IModule module : ownModules) {
-        myModuleToOwnersMap.get(module).remove(owner);
-      }
-      myOwnerToModules.remove(owner);      
-    }
+    myModuleToOwners.clearSecond(owner);
 
     fireRepositoryChanged();
   }
@@ -302,8 +270,8 @@ public class MPSModuleRepository implements IComponentLifecycle {
 
   public Set<IModule> getModelsToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
     Set<MPSModuleOwner> rootOwners = new HashSet<MPSModuleOwner>();
-    for (IModule m : myModuleToOwnersMap.keySet()) {
-      for (MPSModuleOwner owner : myModuleToOwnersMap.get(m)) {
+    for (IModule m : myModules) {
+      for (MPSModuleOwner owner : myModuleToOwners.getByFirst(m)) {
         if (!(owner instanceof IModule)) {
           rootOwners.add(owner);
         }
@@ -312,9 +280,9 @@ public class MPSModuleRepository implements IComponentLifecycle {
     rootOwners.removeAll(willBeReleased);
 
     Set<IModule> visibleModules = new HashSet<IModule>();
-    for (IModule m : myModuleToOwnersMap.keySet()) {
+    for (IModule m : myModules) {
       for (MPSModuleOwner r : rootOwners) {
-        if (myModuleToOwnersMap.get(m).contains(r)) {
+        if (myModuleToOwners.contains(m, r)) {
           visibleModules.add(m);
         }
       }
@@ -323,10 +291,10 @@ public class MPSModuleRepository implements IComponentLifecycle {
     boolean hasModulesToProcess = true;
     while (hasModulesToProcess) {
       Set<IModule> toAdd = new HashSet<IModule>();
-      for (IModule m : myModuleToOwnersMap.keySet()) {
+      for (IModule m : myModules) {
         if (visibleModules.contains(m)) continue;
         for (IModule v : visibleModules) {
-          if (myModuleToOwnersMap.get(m).contains(v)) {
+          if (myModuleToOwners.contains(m, v)) {
             toAdd.add(m);
           }
         }
@@ -336,34 +304,21 @@ public class MPSModuleRepository implements IComponentLifecycle {
       visibleModules.addAll(toAdd);
     }
 
-    Set<IModule> toBeRemoved = new HashSet<IModule>(myModuleToOwnersMap.keySet());
+    Set<IModule> toBeRemoved = new HashSet<IModule>(myModules);
     toBeRemoved.removeAll(visibleModules);
     return toBeRemoved;
   }
 
   public void removeModule(IModule module) {
-    if (!myModuleToOwnersMap.containsKey(module)) {
+    if (!myModules.contains(module)) {
       return;
     }
 
     IFile descriptorFile = module.getDescriptorFile();
 
-    Set<MPSModuleOwner> toRemove = new HashSet<MPSModuleOwner>();
-    for (MPSModuleOwner owner : myModuleToOwnersMap.get(module)) {
-      Set<IModule> modules = myOwnerToModules.get(owner);
-      if (modules != null) {
-        modules.remove(module);
-        if (modules.isEmpty()) {
-          toRemove.add(owner);
-        }
-      }
-    }
+    myModuleToOwners.clearFirst(module);
+    myModules.remove(module);
 
-    for (MPSModuleOwner tr : toRemove) {
-      myOwnerToModules.remove(tr);
-    }
-
-    myModuleToOwnersMap.remove(module);
     removeModuleFromUIDMap(module);
     if (descriptorFile != null) {
       myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
@@ -476,7 +431,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
       return result;
     }
     for (IModule module : modules) {
-      Set<MPSModuleOwner> languageOwners = myModuleToOwnersMap.get(module);
+      Set<MPSModuleOwner> languageOwners = myModuleToOwners.getByFirst(module);
       if (languageOwners.contains(moduleOwner)) {
         result.add(module);
       }
@@ -512,7 +467,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
 
   public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
     List<MT> list = new LinkedList<MT>();
-    Set<IModule> modules = myOwnerToModules.get(moduleOwner);
+    Set<IModule> modules = myModuleToOwners.getBySecond(moduleOwner);
     if (modules != null) {
       for (IModule m : modules) {
         if (cls.isInstance(m)) {
@@ -536,9 +491,8 @@ public class MPSModuleRepository implements IComponentLifecycle {
   }
 
   public <MT extends IModule> List<MT> getAllModules(Class<MT> cls) {
-    Iterator<IModule> modules = myModuleToOwnersMap.keySet().iterator();
     List<MT> result = new ArrayList<MT>();
-    for (IModule module : CollectionUtil.iteratorAsIterable(modules)) {
+    for (IModule module : myModules) {
       if (cls.isInstance(module)) result.add((MT) module);
     }
     return result;
