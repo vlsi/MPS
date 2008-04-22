@@ -6,6 +6,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.Root;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -29,6 +30,9 @@ public class MPSModuleRepository implements IComponentLifecycle {
 
   private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
   private Map<String, List<IModule>> myUIDToModulesMap = new HashMap<String, List<IModule>>();
+
+  private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
+
   private Map<IModule, Set<MPSModuleOwner>> myModuleToOwnersMap = new HashMap<IModule, Set<MPSModuleOwner>>();
   private Map<MPSModuleOwner, Set<IModule>> myOwnerToModules = new HashMap<MPSModuleOwner, Set<IModule>>();
 
@@ -71,21 +75,19 @@ public class MPSModuleRepository implements IComponentLifecycle {
     myExtensionsToModuleTypes.put(DEVKIT_EXT, DevKit.class);
   }
 
-  @NotNull
   public Set<String> getModuleExtensions() {
     return new HashSet<String>(myExtensionsToModuleTypes.keySet());
   }
 
-  @NotNull
   public String getLanguageExtension() {
     return LANGUAGE_EXT;
   }
 
-  public void addRepositoryListener(@NotNull RepositoryListener l) {
+  public void addRepositoryListener(RepositoryListener l) {
     myListeners.add(l);
   }
 
-  public void removeRepositoryListener(@NotNull RepositoryListener l) {
+  public void removeRepositoryListener(RepositoryListener l) {
     myListeners.remove(l);
   }
 
@@ -107,15 +109,15 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
   }
 
-  public void addModuleRepositoryListener(@NotNull ModuleRepositoryListener l) {
+  public void addModuleRepositoryListener(ModuleRepositoryListener l) {
     myModuleListeners.add(l);
   }
 
-  public void removeModuleRepositoryListener(@NotNull ModuleRepositoryListener l) {
+  public void removeModuleRepositoryListener(ModuleRepositoryListener l) {
     myModuleListeners.remove(l);
   }
 
-  private void fireModuleAdded(@NotNull IModule module) {
+  private void fireModuleAdded(IModule module) {
     for (ModuleRepositoryListener l : myModuleListeners) {
       try {
         l.moduleAdded(module);
@@ -125,7 +127,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
   }
 
-  private void fireBeforeModuleRemoved(@NotNull IModule module) {
+  private void fireBeforeModuleRemoved(IModule module) {
     for (ModuleRepositoryListener l : myModuleListeners) {
       try {
         l.beforeModuleRemoved(module);
@@ -135,7 +137,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
   }
 
-  private void fireModuleRemoved(@NotNull IModule module) {
+  private void fireModuleRemoved(IModule module) {
     for (ModuleRepositoryListener l : myModuleListeners) {
       try {
         l.moduleRemoved(module);
@@ -145,34 +147,31 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
   }
 
-  public void fireModuleInitialized(@NotNull IModule module) {
+  public void fireModuleInitialized(IModule module) {
     for (ModuleRepositoryListener l : myModuleListeners) {
       l.moduleInitialized(module);
     }
   }
 
-  public boolean hasOwners(@NotNull IModule module) {
+  public boolean hasOwners(IModule module) {
     return myModuleToOwnersMap.get(module) != null;
   }
 
-  public Set<MPSModuleOwner> getOwners(@NotNull IModule module) {
+  public Set<MPSModuleOwner> getOwners(IModule module) {
     Set<MPSModuleOwner> mpsModuleOwners = myModuleToOwnersMap.get(module);
     if (mpsModuleOwners == null) return null;
     return new HashSet<MPSModuleOwner>(mpsModuleOwners);
   }
 
-  @NotNull
-  public Language registerLanguage(@NotNull IFile file, @NotNull MPSModuleOwner owner) {
+  public Language registerLanguage(IFile file, MPSModuleOwner owner) {
     return registerModule(file, owner, Language.class);
   }
 
-  @NotNull
-  public DevKit registerDevKit(@NotNull IFile file, @NotNull MPSModuleOwner owner) {
+  public DevKit registerDevKit(IFile file, MPSModuleOwner owner) {
     return registerModule(file, owner, DevKit.class);
   }
 
-  @NotNull
-  public Solution registerSolution(@NotNull IFile file, @NotNull MPSModuleOwner owner) {
+  public Solution registerSolution(IFile file, MPSModuleOwner owner) {
     return registerModule(file, owner, Solution.class);
   }
 
@@ -186,7 +185,6 @@ public class MPSModuleRepository implements IComponentLifecycle {
     return modules.get(0);
   }
 
-  @NotNull
   public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
     myDirtyFlag = true;
     String canonicalPath = file.getCanonicalPath();
@@ -240,12 +238,12 @@ public class MPSModuleRepository implements IComponentLifecycle {
     modulesWithUID.add(module);
   }
 
-  public boolean existsModule(@NotNull IModule module, @NotNull MPSModuleOwner owner) {
+  public boolean existsModule(IModule module, MPSModuleOwner owner) {
     Set<MPSModuleOwner> mpsModuleOwners = myModuleToOwnersMap.get(module);
     return (mpsModuleOwners != null && mpsModuleOwners.contains(owner));
   }
 
-  public void addModule(@NotNull IModule module, @NotNull MPSModuleOwner owner) {
+  public void addModule(IModule module, MPSModuleOwner owner) {
     myDirtyFlag = true;
     if (existsModule(module, owner)) {
       throw new RuntimeException("Couldn't add module \"" + module.getModuleUID() + "\" : this module is already registered with this very owner: " + owner);
@@ -277,7 +275,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
     fireModuleAdded(module);
   }
 
-  public void unRegisterModules(@NotNull MPSModuleOwner owner) {
+  public void unRegisterModules(MPSModuleOwner owner) {
     myDirtyFlag = true;
 
     Set<IModule> ownModules = myOwnerToModules.get(owner);
@@ -302,7 +300,6 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
   }
 
-  @NotNull
   public Set<IModule> getModelsToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
     Set<MPSModuleOwner> rootOwners = new HashSet<MPSModuleOwner>();
     for (IModule m : myModuleToOwnersMap.keySet()) {
@@ -344,7 +341,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
     return toBeRemoved;
   }
 
-  public void removeModule(@NotNull IModule module) {
+  public void removeModule(IModule module) {
     if (!myModuleToOwnersMap.containsKey(module)) {
       return;
     }
@@ -381,9 +378,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
     }
   }
 
-  public void readModuleDescriptors(
-          @NotNull Iterator<? extends Root> roots,
-          @NotNull MPSModuleOwner owner) {
+  public void readModuleDescriptors(Iterator<? extends Root> roots, MPSModuleOwner owner) {
     while (roots.hasNext()) {
       Root root = roots.next();
       IFile moduleRoot = FileSystem.getFile(root.getPath());
@@ -399,9 +394,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
   }
 
 
-  public void readModuleDescriptors(
-          @NotNull IFile dir,
-          @NotNull MPSModuleOwner owner) {
+  public void readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
     String dirName = dir.getName();
     List<IFile> files = dir.list();
     if (files == null) { //i.e it isn't a directory
@@ -436,10 +429,7 @@ public class MPSModuleRepository implements IComponentLifecycle {
     return null;
   }
 
-  private void readModuleDescriptor_internal(
-          @NotNull IFile dir,
-          @NotNull MPSModuleOwner owner,
-          @NotNull String extension) {
+  private void readModuleDescriptor_internal(IFile dir, MPSModuleOwner owner, String extension) {
     try {
       Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
       registerModule(dir, owner, cls);
@@ -465,7 +455,6 @@ public class MPSModuleRepository implements IComponentLifecycle {
     myFileToModuleMap.put(l.newDescriptorFileByNewName(newUID).getCanonicalPath(), l);
   }
 
-  @NotNull
   public Language getLanguageSafe(String namespace) {
     Language result = getLanguage(namespace);
     if (result == null) {
@@ -474,15 +463,13 @@ public class MPSModuleRepository implements IComponentLifecycle {
     return result;
   }
 
-  @Nullable
   public Language getLanguage(String namespace) {
     List<IModule> modules = myUIDToModulesMap.get(namespace);
     if (modules == null || modules.isEmpty()) return null;
     return modulesAsLanguage(modules);
   }
 
-  @NotNull
-  private List<IModule> getModules(@NotNull String namespace, @NotNull MPSModuleOwner moduleOwner) {
+  private List<IModule> getModules(String namespace, MPSModuleOwner moduleOwner) {
     List<IModule> modules = myUIDToModulesMap.get(namespace);
     List<IModule> result = new LinkedList<IModule>();
     if (modules == null) {
@@ -519,7 +506,6 @@ public class MPSModuleRepository implements IComponentLifecycle {
     return language;
   }
 
-  @Nullable
   public Language getLanguage(String namespace, MPSModuleOwner moduleOwner) {
     return modulesAsLanguage(getModules(namespace, moduleOwner));
   }
@@ -537,23 +523,19 @@ public class MPSModuleRepository implements IComponentLifecycle {
     return list;
   }
 
-  @NotNull
-  public List<Language> getLanguages(@NotNull MPSModuleOwner moduleOwner) {
+  public List<Language> getLanguages(MPSModuleOwner moduleOwner) {
     return getModules(moduleOwner, Language.class);
   }
 
-  @NotNull
-  public List<DevKit> getDevKits(@NotNull MPSModuleOwner moduleOwner) {
+  public List<DevKit> getDevKits(MPSModuleOwner moduleOwner) {
     return getModules(moduleOwner, DevKit.class);
   }
 
-  @NotNull
-  public List<IModule> getModules(@NotNull MPSModuleOwner moduleOwner) {
+  public List<IModule> getModules(MPSModuleOwner moduleOwner) {
     return getModules(moduleOwner, IModule.class);
   }
 
-  @NotNull
-  public <MT extends IModule> List<MT> getAllModules(@NotNull Class<MT> cls) {
+  public <MT extends IModule> List<MT> getAllModules(Class<MT> cls) {
     Iterator<IModule> modules = myModuleToOwnersMap.keySet().iterator();
     List<MT> result = new ArrayList<MT>();
     for (IModule module : CollectionUtil.iteratorAsIterable(modules)) {
@@ -562,12 +544,10 @@ public class MPSModuleRepository implements IComponentLifecycle {
     return result;
   }
 
-  @NotNull
   public List<Language> getAllLanguages() {
     return getAllModules(Language.class);
   }
 
-  @NotNull
   public List<IModule> getAllModules() {
     return getAllModules(IModule.class);
   }
