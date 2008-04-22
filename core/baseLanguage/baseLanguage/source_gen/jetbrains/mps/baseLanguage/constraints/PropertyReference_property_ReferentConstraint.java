@@ -44,30 +44,30 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
     SNode opClassifier = DotExpression_Behavior.call_getClassifier_1201997214164(_context.getEnclosingNode());
     List<SNode> classifiers = ClassifierAndSuperClassifiersCache.getInstance(opClassifier).getClassifierNodes();
     {
-      ICursor<SNode> _zCursor4 = CursorFactory.createCursor(classifiers);
+      ICursor<SNode> _zCursor5 = CursorFactory.createCursor(classifiers);
       try {
-        while(_zCursor4.moveToNext()) {
-          SNode classifier = _zCursor4.getCurrent();
+        while(_zCursor5.moveToNext()) {
+          SNode classifier = _zCursor5.getCurrent();
           if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
             SNode classConcept = classifier;
             List<SNode> properties = SLinkOperations.getTargets(classConcept, "property", true);
             {
-              ICursor<SNode> _zCursor5 = CursorFactory.createCursor(properties);
+              ICursor<SNode> _zCursor6 = CursorFactory.createCursor(properties);
               try {
-                while(_zCursor5.moveToNext()) {
-                  SNode property = _zCursor5.getCurrent();
+                while(_zCursor6.moveToNext()) {
+                  SNode property = _zCursor6.getCurrent();
                   if (VisibilityUtil.isVisible(_context.getEnclosingNode(), property)) {
                     ListOperations.addElement(resultProperties, property);
                   }
                 }
               } finally {
-                _zCursor5.release();
+                _zCursor6.release();
               }
             }
           }
         }
       } finally {
-        _zCursor4.release();
+        _zCursor5.release();
       }
     }
     return new SimpleSearchScope(resultProperties);

@@ -10,8 +10,13 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class TypeVariableReference_typeVariableDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -32,8 +37,19 @@ public class TypeVariableReference_typeVariableDeclaration_ReferentConstraint im
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode genericDeclaration = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true, false);
-    return new SimpleSearchScope(SLinkOperations.getTargets(genericDeclaration, "typeVariableDeclaration", true));
+    List<SNode> declarations = new ArrayList<SNode>();
+    {
+      ICursor<SNode> _zCursor4 = CursorFactory.createCursor(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true));
+      try {
+        while(_zCursor4.moveToNext()) {
+          SNode genericDeclaration = _zCursor4.getCurrent();
+          ListOperations.addAllElements(declarations, SLinkOperations.getTargets(genericDeclaration, "typeVariableDeclaration", true));
+        }
+      } finally {
+        _zCursor4.release();
+      }
+    }
+    return new SimpleSearchScope(declarations);
   }
 
   public String getNodeReferentSearchScopeDescription() {
