@@ -22,11 +22,8 @@ import java.io.File;
 import java.util.*;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Sep 9, 2005
- * Time: 2:17:14 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Sep 9, 2005
  */
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
@@ -113,7 +110,7 @@ public abstract class AbstractModule implements IModule {
     for (String usedLanguage : getUsedLanguagesNamespaces()) {
       if (MPSModuleRepository.getInstance().getModuleByUID(usedLanguage) == null) {
         return false;
-      }      
+      }
     }
     return true;
   }
@@ -164,13 +161,18 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<ModelRoot> getNonDefaultModelRoots() {
-    return CollectionUtil.iteratorAsList(getModuleDescriptor().modelRoots());
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      return descriptor.getModelRoots();
+    }
+    return new ArrayList<ModelRoot>();
   }
 
   public List<Dependency> getDependencies() {
     List<Dependency> result = new ArrayList<Dependency>();
-    if (getModuleDescriptor() != null) {
-      for (ModuleReference ref : getModuleDescriptor().getDependencys()) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      for (ModuleReference ref : descriptor.getDependencys()) {
         result.add(new Dependency(ref.getName(), ref.getReexport()));
       }
     }
@@ -203,8 +205,9 @@ public abstract class AbstractModule implements IModule {
 
   public List<String> getUsedLanguagesNamespaces() {
     List<String> result = new ArrayList<String>();
-    if (getModuleDescriptor() != null) {
-      for (LanguageReference lr : getModuleDescriptor().getUsedLanguages()) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      for (LanguageReference lr : descriptor.getUsedLanguages()) {
         result.add(lr.getName());
       }
     }
@@ -289,8 +292,9 @@ public abstract class AbstractModule implements IModule {
   public List<String> getClassPath() {
     ArrayList<String> result = new ArrayList<String>();
 
-    if (getModuleDescriptor() != null) {
-      for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(getModuleDescriptor().classPathEntrys())) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(descriptor.classPathEntrys())) {
         result.add(entry.getPath());
       }
     }
@@ -305,8 +309,9 @@ public abstract class AbstractModule implements IModule {
       result.add(getClassesGen().getPath());
     }
 
-    if (getModuleDescriptor() != null) {
-      for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(getModuleDescriptor().runtimeClassPathEntrys())) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(descriptor.runtimeClassPathEntrys())) {
         result.add(entry.getPath());
       }
     }
@@ -320,8 +325,11 @@ public abstract class AbstractModule implements IModule {
 
   public List<String> getSourcePaths() {
     List<String> result = new ArrayList<String>();
-    for (SourcePath p : getModuleDescriptor().getSourcePaths()) {
-      result.add(p.getPath());
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      for (SourcePath p : descriptor.getSourcePaths()) {
+        result.add(p.getPath());
+      }
     }
     result.add(getGeneratorOutputPath());
     return result;
@@ -389,7 +397,7 @@ public abstract class AbstractModule implements IModule {
   private void updateClassPathItem() {
     CompositeClassPathItem result = new CompositeClassPathItem();
     for (String s : getClassPath()) {
-     IFile file = FileSystem.getFile(s);
+      IFile file = FileSystem.getFile(s);
       if (!file.exists()) {
         LOG.error("Can't load class path item " + s + " in " + this);
       } else {
@@ -501,7 +509,8 @@ public abstract class AbstractModule implements IModule {
   }
 
   public boolean isCompileInMPS() {
-    return getModuleDescriptor().getCompileInMPS();
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    return descriptor != null && descriptor.getCompileInMPS();
   }
 
   public boolean reloadClassesAfterGeneration() {
@@ -548,10 +557,13 @@ public abstract class AbstractModule implements IModule {
 
     result.addAll(getDependencies());
 
-    OSGiOptions osgiOptions = getModuleDescriptor().getOsgiOptions();
-    if (osgiOptions != null) {
-      for (BundleReference br : osgiOptions.getRequiredBundles()) {
-        result.add(new Dependency(br.getName(), false));
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      OSGiOptions osgiOptions = descriptor.getOsgiOptions();
+      if (osgiOptions != null) {
+        for (BundleReference br : osgiOptions.getRequiredBundles()) {
+          result.add(new Dependency(br.getName(), false));
+        }
       }
     }
 
@@ -602,10 +614,13 @@ public abstract class AbstractModule implements IModule {
 
   protected List<String> getExportedPackages() {
     List<String> result = new ArrayList<String>();
-    OSGiOptions osgiOptions = getModuleDescriptor().getOsgiOptions();
-    if (osgiOptions != null) {
-      for (PackageReference pr : osgiOptions.getExportedPackages()) {
-        result.add(pr.getName());
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      OSGiOptions osgiOptions = descriptor.getOsgiOptions();
+      if (osgiOptions != null) {
+        for (PackageReference pr : osgiOptions.getExportedPackages()) {
+          result.add(pr.getName());
+        }
       }
     }
     return result;
@@ -629,6 +644,7 @@ public abstract class AbstractModule implements IModule {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         ModuleDescriptor md = getModuleDescriptor();
+        if (md == null) return;
 
         for (ModuleReference r : md.getDependencys()) {
           if (moduleUID.equals(r.getName())) {
@@ -641,7 +657,6 @@ public abstract class AbstractModule implements IModule {
         md.addDependency(ref);
 
         setModuleDescriptor(md);
-
         save();
       }
     });
@@ -651,6 +666,7 @@ public abstract class AbstractModule implements IModule {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         ModuleDescriptor md = getModuleDescriptor();
+        if (md == null) return;
 
         for (LanguageReference r : md.getUsedLanguages()) {
           if (languageNamespace.equals(r.getName())) {
@@ -663,7 +679,6 @@ public abstract class AbstractModule implements IModule {
         md.addUsedLanguage(ref);
 
         setModuleDescriptor(md);
-
         save();
       }
     });

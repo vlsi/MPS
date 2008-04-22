@@ -41,6 +41,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   IFile getDescriptorFile();
 
+  @Nullable
   ModuleDescriptor getModuleDescriptor();
   void setModuleDescriptor(ModuleDescriptor moduleDescriptor);
 
