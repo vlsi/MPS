@@ -24,12 +24,14 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <maxImportIndex value="5" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  <import index="6" modelUID="jetbrains.mps.closures.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1138055754698">
     <property name="name" value="SNodeType" />
     <link role="extends" targetNodeId="2.1068431790189" />
@@ -2099,6 +2101,26 @@
       <property name="value" value="EDT command" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208800367109">
+    <property name="package" value="command" />
+    <property name="name" value="ExecuteCommandStatement_New" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208800501343">
+      <property name="value" value="command_new" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1208800408260">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="commandClosure" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1208899702690" resolveInfo="CommandClosureLiteral" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208899702690">
+    <property name="package" value="command" />
+    <property name="name" value="CommandClosureLiteral" />
+    <link role="extends" targetNodeId="6.1199569711397" resolveInfo="ClosureLiteral" />
   </node>
 </model>
 
