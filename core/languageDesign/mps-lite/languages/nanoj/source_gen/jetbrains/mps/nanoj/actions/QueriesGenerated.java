@@ -43,7 +43,7 @@ public class QueriesGenerated {
     {
       AbstractConceptDeclaration outputConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.nanoj.structure.Expression", operationContext.getScope());
       SNode childConcept = (SNode)_context.getChildConcept();
-      if(outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName((SNode)BaseAdapter.fromAdapter(outputConcept)))) {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -57,7 +57,7 @@ public class QueriesGenerated {
             return true;
           }
 
-          public boolean canSubstitute_internal(String pattern) {
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return _PrecompiledPatterns.REGEXP.matcher(pattern).matches();
           }
 
@@ -80,10 +80,19 @@ public class QueriesGenerated {
           return result;
         }
 
+        public boolean returnSmallPart(SNode nodeToWrap) {
+          return false;
+        }
+
         public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
           SNode wrappedNode = this.wrapNode(nc, nc.getModel());
           _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
-          return wrappedNode;
+          if (this.returnSmallPart(nc)) {
+            return nc;
+          } else
+          {
+            return wrappedNode;
+          }
         }
 
       };
@@ -105,10 +114,19 @@ public class QueriesGenerated {
           return result;
         }
 
+        public boolean returnSmallPart(SNode nodeToWrap) {
+          return false;
+        }
+
         public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
           SNode wrappedNode = this.wrapNode(nc, nc.getModel());
           _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
-          return wrappedNode;
+          if (this.returnSmallPart(nc)) {
+            return nc;
+          } else
+          {
+            return wrappedNode;
+          }
         }
 
       };
@@ -130,10 +148,19 @@ public class QueriesGenerated {
           return result;
         }
 
+        public boolean returnSmallPart(SNode nodeToWrap) {
+          return false;
+        }
+
         public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
           SNode wrappedNode = this.wrapNode(nc, nc.getModel());
           _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
-          return wrappedNode;
+          if (this.returnSmallPart(nc)) {
+            return nc;
+          } else
+          {
+            return wrappedNode;
+          }
         }
 
       };
@@ -155,10 +182,19 @@ public class QueriesGenerated {
           return result;
         }
 
+        public boolean returnSmallPart(SNode nodeToWrap) {
+          return false;
+        }
+
         public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
           SNode wrappedNode = this.wrapNode(nc, nc.getModel());
           _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
-          return wrappedNode;
+          if (this.returnSmallPart(nc)) {
+            return nc;
+          } else
+          {
+            return wrappedNode;
+          }
         }
 
       };
@@ -180,10 +216,19 @@ public class QueriesGenerated {
           return result;
         }
 
+        public boolean returnSmallPart(SNode nodeToWrap) {
+          return false;
+        }
+
         public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
           SNode wrappedNode = this.wrapNode(nc, nc.getModel());
           _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
-          return wrappedNode;
+          if (this.returnSmallPart(nc)) {
+            return nc;
+          } else
+          {
+            return wrappedNode;
+          }
         }
 
       };
@@ -243,7 +288,7 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197638405577(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
@@ -253,15 +298,15 @@ public class QueriesGenerated {
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
-      for(SNode parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, _context.getSourceNode()) {
+      for(final SNode item : parameterObjects) {
+        result.add(new AbstractRTransformHintSubstituteAction(item, _context.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
             SNode target = _context.getSourceNode();
             while(true) {
-              if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(target, null, false, false), "jetbrains.mps.nanoj.structure.BinaryExpression")) {
+              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(target, null, false, false), "jetbrains.mps.nanoj.structure.BinaryExpression")) {
                 SNode concept = SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(target, null, false, false));
-                if(SConceptPropertyOperations.getInteger(((SNode)this.getOutputConcept()), "priority") < SConceptPropertyOperations.getInteger(concept, "priority")) {
+                if (SConceptPropertyOperations.getInteger((item), "priority") < SConceptPropertyOperations.getInteger(concept, "priority")) {
                   target = SNodeOperations.getParent(target, null, false, false);
                 } else
                 {
@@ -272,14 +317,18 @@ public class QueriesGenerated {
                 break;
               }
             }
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)this.getOutputConcept())), null);
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null);
             SNodeOperations.replaceWithAnother(target, result);
             SLinkOperations.setTarget(result, "leftPart", target, true);
             return result;
           }
 
+          public SNode getOutputConcept() {
+            return concept.getNode();
+          }
+
           public String getMatchingText(String text) {
-            return SConceptPropertyOperations.getString(((SNode)this.getOutputConcept()), "sign");
+            return SConceptPropertyOperations.getString((item), "sign");
           }
 
           public String getDescriptionText(String text) {

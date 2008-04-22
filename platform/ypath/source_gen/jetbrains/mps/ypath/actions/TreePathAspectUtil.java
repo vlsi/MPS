@@ -21,9 +21,9 @@ public class TreePathAspectUtil {
     final zClosureContext _zClosureContext = new zClosureContext();
     List<SNode> treePathAspects = new ArrayList<SNode>();
     _zClosureContext.expType = TypeChecker.getInstance().getTypeOf(expression);
-    if((_zClosureContext.expType != null)) {
+    if ((_zClosureContext.expType != null)) {
       SNode sequencetype = TypeUtil_Collections.coerceTo_SequenceType(_zClosureContext.expType);
-      if(sequencetype != null && !(SNodeOperations.isInstanceOf(_zClosureContext.expType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"))) {
+      if (sequencetype != null && !(SNodeOperations.isInstanceOf(_zClosureContext.expType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"))) {
         _zClosureContext.expType = SLinkOperations.getTarget(sequencetype, "elementType", true);
       }
       SNode concept = (SNode)SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect");

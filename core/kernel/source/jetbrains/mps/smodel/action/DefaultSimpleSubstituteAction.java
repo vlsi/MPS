@@ -12,24 +12,27 @@ public abstract class DefaultSimpleSubstituteAction extends DefaultChildNodeSubs
     return false;
   }
 
-
   public boolean canSubstituteStrictly(String pattern) {
     if (hasSubstitute()) {
-      return canSubstitute_internal(pattern);
+      return canSubstitute_internal(pattern, true);
     }
     return super.canSubstituteStrictly(pattern);
   }
 
   public boolean canSubstitute(String pattern) {
     if (hasSubstitute()) {
-      return canSubstitute_internal(pattern);
+      return canSubstitute_internal(pattern, false);
     }
     return super.canSubstitute(pattern);
   }
 
+  protected boolean canSubstitute_internal(String pattern, boolean strictly) {
+    return false;
+  }
+
+  @Deprecated
   protected boolean canSubstitute_internal(String pattern) {
     return false;
   }
 
-  
 }

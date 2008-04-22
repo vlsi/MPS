@@ -10,9 +10,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.WrapperSubstituteMenuPart";
+  public static String WRAPPED_CONCEPT = "wrappedConcept";
   public static String WRAPPER_BLOCK = "wrapperBlock";
   public static String RETURN_SMALL_PART = "returnSmallPart";
-  public static String WRAPPED_CONCEPT = "wrappedConcept";
 
   public  WrapperSubstituteMenuPart(SNode node) {
     super(node);
@@ -26,6 +26,14 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
     return WrapperSubstituteMenuPart.newInstance(sm, false);
   }
 
+
+  public ConceptDeclaration getWrappedConcept() {
+    return (ConceptDeclaration)this.getReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT);
+  }
+
+  public void setWrappedConcept(ConceptDeclaration node) {
+    super.setReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT, node);
+  }
 
   public QueryFunction_SubstituteWrapper getWrapperBlock() {
     return (QueryFunction_SubstituteWrapper)this.getChild(WrapperSubstituteMenuPart.WRAPPER_BLOCK);
@@ -41,14 +49,6 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
 
   public void setReturnSmallPart(QueryFunction_ReturnSmallPart node) {
     super.setChild(WrapperSubstituteMenuPart.RETURN_SMALL_PART, node);
-  }
-
-  public ConceptDeclaration getWrappedConcept() {
-    return (ConceptDeclaration)this.getReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT);
-  }
-
-  public void setWrappedConcept(ConceptDeclaration node) {
-    super.setReferent(WrapperSubstituteMenuPart.WRAPPED_CONCEPT, node);
   }
 
 }

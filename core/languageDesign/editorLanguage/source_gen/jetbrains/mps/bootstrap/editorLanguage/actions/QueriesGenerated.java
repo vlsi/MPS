@@ -392,7 +392,7 @@ public class QueriesGenerated {
             return true;
           }
 
-          public boolean canSubstitute_internal(String pattern) {
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return pattern.startsWith("\"");
           }
 
@@ -423,7 +423,7 @@ public class QueriesGenerated {
             return true;
           }
 
-          public boolean canSubstitute_internal(String pattern) {
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return pattern.startsWith("!");
           }
 

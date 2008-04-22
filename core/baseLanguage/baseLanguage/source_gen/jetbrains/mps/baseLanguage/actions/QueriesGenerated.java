@@ -305,7 +305,7 @@ public class QueriesGenerated {
             return true;
           }
 
-          public boolean canSubstitute_internal(String pattern) {
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return _PrecompiledPatterns.REGEXP.matcher(pattern).matches();
           }
 
@@ -362,7 +362,7 @@ public class QueriesGenerated {
             return true;
           }
 
-          public boolean canSubstitute_internal(String pattern) {
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return _PrecompiledPatterns.REGEXP1.matcher(pattern).matches();
           }
 
@@ -395,7 +395,7 @@ public class QueriesGenerated {
             return true;
           }
 
-          public boolean canSubstitute_internal(String pattern) {
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return _PrecompiledPatterns.REGEXP3.matcher(pattern).matches();
           }
 
