@@ -521,7 +521,6 @@ public class SModelRepository implements IComponentLifecycle {
             }
           }
 
-          boolean needReloadAll = false;
           for (SModelDescriptor sm : toReload) {
             if (isChanged(sm)) {
               int result = JOptionPane.showConfirmDialog(frame,
@@ -530,13 +529,11 @@ public class SModelRepository implements IComponentLifecycle {
 
               if (result == JOptionPane.YES_OPTION) {
                 sm.reloadFromDisk();
-                needReloadAll = true;
               } else {
                 sm.save();
               }
             } else {
               sm.reloadFromDisk();
-              needReloadAll = true;
             }
           }
         } finally {
@@ -549,8 +546,7 @@ public class SModelRepository implements IComponentLifecycle {
       //ignore it during generation
       return;
     } else {
-      //todo it's not very good
-      CommandProcessor.instance().tryToExecuteLightweightCommand(command);
+      CommandProcessor.instance().executeLightweightCommandInEDT(command);
     }
   }
 
