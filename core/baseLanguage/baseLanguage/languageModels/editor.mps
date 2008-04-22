@@ -14316,12 +14316,56 @@
         <property name="text" value="'" />
         <link role="styleClass" targetNodeId="1186415563770" resolveInfo="StringLiteral" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1200397596137">
-        <link role="relationDeclaration" targetNodeId="17.1200397540847" resolveInfo="charConstnat" />
-        <link role="styleClass" targetNodeId="1186415563770" resolveInfo="StringLiteral" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1208859155872">
+        <property name="vertical" value="true" />
+        <property name="layoutConstraint" value="punctuation" />
+        <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1208859155873">
+          <link role="relationDeclaration" targetNodeId="17.1200397540847" resolveInfo="charConstant" />
+          <link role="styleClass" targetNodeId="1186415563770" resolveInfo="StringLiteral" />
+        </node>
+        <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1208859155874">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208859155875">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208859177424">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1208859194339">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1208859218873">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208859218874">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208859218875">
+                      <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1208859218876" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1208859218877">
+                        <link role="property" targetNodeId="17.1200397540847" resolveInfo="charConstant" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208859218878">
+                      <link role="baseMethodDeclaration" targetNodeId="24.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208859218879">
+                        <property name="value" value="\\" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208859187765">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208859178842">
+                    <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1208859177425" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1208859182330">
+                      <link role="property" targetNodeId="17.1200397540847" resolveInfo="charConstant" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple" id="1208859189003">
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1208859190803" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1208859230495">
+          <link role="relationDeclaration" targetNodeId="17.1200397540847" resolveInfo="charConstant" />
+          <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1200397598655">
         <property name="text" value="'" />
+        <property name="layoutConstraint" value="punctuation" />
         <link role="styleClass" targetNodeId="1186415563770" resolveInfo="StringLiteral" />
       </node>
     </node>
