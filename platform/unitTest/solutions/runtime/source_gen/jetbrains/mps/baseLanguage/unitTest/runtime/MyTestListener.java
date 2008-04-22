@@ -5,54 +5,42 @@ package jetbrains.mps.baseLanguage.unitTest.runtime;
 import junit.framework.TestListener;
 import junit.framework.Test;
 import junit.framework.AssertionFailedError;
-import junit.framework.TestCase;
 
 public class MyTestListener implements TestListener {
-  public static String START_TEST_PREFIX = "<START_TEST>";
-  public static String END_TEST_PREFIX = "<END_TEST>";
-  public static String ERROR_TEST_PREFIX = "<TEST_ERROR_BEGIN>";
-  public static String ERROR_TEST_SUFFIX = "<TEST_ERROR_END>";
-  public static String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
-  public static String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
-  public static final String SEPARATOR = ":";
 
-  public  MyTestListener() {
+  private CommandOutputStream out;
+  private CommandOutputStream err;
+
+  public  MyTestListener(CommandOutputStream out, CommandOutputStream err) {
+    this.out = out;
+    this.err = err;
   }
 
   public void startTest(Test test) {
-    this.printSyncToken(MyTestListener.START_TEST_PREFIX + this.getFullTestName(test));
+    this.printSyncToken(TestEvent.START_TEST_PREFIX, test);
   }
 
   public void addError(Test test, Throwable t) {
-    this.printSyncToken(MyTestListener.ERROR_TEST_PREFIX + this.getFullTestName(test));
+    this.printSyncToken(TestEvent.ERROR_TEST_PREFIX, test);
     t.printStackTrace(System.err);
-    this.printSyncToken(MyTestListener.ERROR_TEST_SUFFIX + this.getFullTestName(test));
+    this.printSyncToken(TestEvent.ERROR_TEST_SUFFIX, test);
   }
 
   public void addFailure(Test test, AssertionFailedError a) {
-    this.printSyncToken(MyTestListener.FAILURE_TEST_PREFIX + this.getFullTestName(test));
+    this.printSyncToken(TestEvent.FAILURE_TEST_PREFIX, test);
     a.printStackTrace(System.err);
-    this.printSyncToken(MyTestListener.FAILURE_TEST_SUFFIX + this.getFullTestName(test));
+    this.printSyncToken(TestEvent.FAILURE_TEST_SUFFIX, test);
   }
 
   public void endTest(Test test) {
-    this.printSyncToken(MyTestListener.END_TEST_PREFIX + this.getFullTestName(test));
+    this.printSyncToken(TestEvent.END_TEST_PREFIX, test);
   }
 
-  private String getFullTestName(Test test) {
-    String testClassName = test.getClass().getName();
-    if (test instanceof TestCase) {
-      String testName = ((TestCase)test).getName();
-      return testClassName + MyTestListener.SEPARATOR + testName;
-    } else
-    {
-      return testClassName;
-    }
-  }
-
-  private void printSyncToken(String token) {
-    System.out.println(token);
-    System.err.println(token);
+  private void printSyncToken(String tokenPrefix, Test test) {
+    TestEvent token = new TestEvent(tokenPrefix, test);
+    String out = token.toString();
+    this.out.writeCommand(out);
+    this.err.writeCommand(out);
   }
 
 }

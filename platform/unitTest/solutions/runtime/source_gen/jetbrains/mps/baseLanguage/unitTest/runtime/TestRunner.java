@@ -9,6 +9,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.framework.TestResult;
+import java.io.PrintStream;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
@@ -46,7 +47,11 @@ public class TestRunner extends BaseTestRunner {
       }
     }
     TestResult testResult = new TestResult();
-    testResult.addListener(new MyTestListener());
+    CommandOutputStream out = new CommandOutputStream(System.out);
+    CommandOutputStream err = new CommandOutputStream(System.err);
+    System.setOut(new PrintStream(out));
+    System.setErr(new PrintStream(err));
+    testResult.addListener(new MyTestListener(out, err));
     {
       ICursor<Test> _zCursor = CursorFactory.createCursor(tests);
       try {

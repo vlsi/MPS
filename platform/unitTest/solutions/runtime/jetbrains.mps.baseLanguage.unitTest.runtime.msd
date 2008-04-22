@@ -12,6 +12,7 @@
   <sourcePath />
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage</usedLanguages>
+    <usedLanguages>jetbrains.mps.regexp</usedLanguages>
   </usedLanguages>
 </solution>
 
