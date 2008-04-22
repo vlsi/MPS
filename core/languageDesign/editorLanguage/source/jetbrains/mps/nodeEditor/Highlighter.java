@@ -11,13 +11,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.helgins.checking.IEditorChecker;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
-import javax.swing.SwingUtilities;
 import java.util.*;
 
 public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
@@ -32,7 +30,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   protected Thread myThread;
   private HashSet<IEditorChecker> myCheckers = new LinkedHashSet<IEditorChecker>(3);
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
-  private Set<SNode> myCheckedOnceNodes = new WeakSet<SNode>();
+  private Set<IEditorComponent> myCheckedOnceEditors = new WeakSet<IEditorComponent>();
 
   public Highlighter() {
   }
@@ -45,10 +43,6 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   @Dependency
   public void setClassLoaderManager(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
-  }
-
-  private int getCheckDelay() {
-    return CHECK_DELAY;
   }
 
   public Thread getThread() {
@@ -75,7 +69,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
     }
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
       public void onReload() {
-        myCheckedOnceNodes.clear();
+        myCheckedOnceEditors.clear();
       }
     });
     myGlobalSModelEventsManager.addGlobalCommandListener(new SModelCommandListener() {
@@ -166,7 +160,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
     final SNode editedNode = component.getEditedNode();
     if (editedNode != null) {
       final Set<IEditorChecker> checkersToRecheck = new LinkedHashSet<IEditorChecker>();
-      if (!wasCheckedOnce(editedNode)) {
+      if (!wasCheckedOnce(component)) {
         checkersToRecheck.addAll(myCheckers);
       } else {
         CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {
@@ -184,7 +178,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
         return false;
       }
 
-      myCheckedOnceNodes.add(editedNode);
+      myCheckedOnceEditors.add(component);
       if (updateEditor(component, checkersToRecheck)) {
         return true;
       }
@@ -192,8 +186,8 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
     return false;
   }
 
-  private boolean wasCheckedOnce(SNode editedNode) {
-    return myCheckedOnceNodes.contains(editedNode);
+  private boolean wasCheckedOnce(IEditorComponent editorComponent) {
+    return myCheckedOnceEditors.contains(editorComponent);
   }
 
   protected boolean updateEditor(final IEditorComponent editor, Set<IEditorChecker> checkersToRecheck) {
@@ -230,17 +224,4 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
 
     return true;
   }
-
-  private long getLastUpdateTime(IEditorComponent component) {
-    Long lastUpdate = (Long) component.getUserData(getLastUpdateKey());
-    if (lastUpdate == null) {
-      lastUpdate = (long) 0;
-    }
-    return lastUpdate;
-  }
-
-  private String getLastUpdateKey() {
-    return "LAST_UPDATE_" + getClass().getName();
-  }
-
 }

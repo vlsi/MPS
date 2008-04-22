@@ -278,7 +278,7 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1208879116686">
-              <property name="value" value="todo:" />
+              <property name="value" value="todo: hjshfjdhfjhdf" />
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1208262958471">
