@@ -8,6 +8,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.command.*;
 
@@ -33,8 +34,8 @@ public class SModelRepository implements IComponentLifecycle {
   private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
   private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
 
-  private Map<SModelDescriptor, Set<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, Set<ModelOwner>>();
-  private Map<ModelOwner, Set<SModelDescriptor>> myOwnerToModelMap = new HashMap<ModelOwner, Set<SModelDescriptor>>();
+  private ManyToManyMap<SModelDescriptor, ModelOwner> myModelsToOwners = new ManyToManyMap<SModelDescriptor, ModelOwner>();
+
   private MPSModuleRepository myModuleRepository;
   private boolean myInChangedModelsReloading = false;
   
@@ -112,19 +113,7 @@ public class SModelRepository implements IComponentLifecycle {
   }
 
   public void addOwnerForDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
-    if (owners == null) {
-      owners = new HashSet<ModelOwner>();
-      myModelToOwnerMap.put(modelDescriptor, owners);
-    }
-    owners.add(owner);
-
-    Set<SModelDescriptor> descriptors = myOwnerToModelMap.get(owner);
-    if (descriptors == null) {
-      descriptors = new LinkedHashSet<SModelDescriptor>();
-      myOwnerToModelMap.put(owner, descriptors);
-    }
-    descriptors.add(modelDescriptor);
+    myModelsToOwners.addLink(modelDescriptor, owner);
 
     myUIDToModelDescriptorMap.put(modelDescriptor.getModelUID(), modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
@@ -133,8 +122,7 @@ public class SModelRepository implements IComponentLifecycle {
   }
 
   public boolean isRegisteredModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
-    return owners != null && owners.contains(owner);
+    return myModelsToOwners.getByFirst(modelDescriptor).isEmpty();
   }
 
   /**
@@ -162,45 +150,26 @@ public class SModelRepository implements IComponentLifecycle {
     LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
             "Another model \"" + modelUID + "\" is already registered!");
 
-    Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
+    Set<ModelOwner> owners = myModelsToOwners.getByFirst(modelDescriptor);
     LOG.assertLog(owners == null ||
             !owners.contains(owner),
             "Another model \"" + modelUID + "\" is already registered!");
+
+    myModelsToOwners.addLink(modelDescriptor, owner);
+
     myUIDToModelDescriptorMap.put(modelUID, modelDescriptor);
     myModelDescriptors.add(modelDescriptor);
-    if (owners == null) {
-      owners = new HashSet<ModelOwner>();
-      myModelToOwnerMap.put(modelDescriptor, owners);
-    }
-
-    Set<SModelDescriptor> descriptors = myOwnerToModelMap.get(owner);
-    if (descriptors == null) {
-      descriptors = new LinkedHashSet<SModelDescriptor>();
-      myOwnerToModelMap.put(owner, descriptors);
-    }
-    descriptors.add(modelDescriptor);
 
     myModelsWithNoOwners.remove(modelDescriptor);
-    owners.add(owner);
     addListeners(modelDescriptor);
     fireModelAdded(modelDescriptor);
   }
 
   public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    Set<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
-    if (modelOwners != null && modelOwners.contains(owner)) {
-      modelOwners.remove(owner);
-      if (modelOwners.isEmpty()) {
-        myModelsWithNoOwners.add(modelDescriptor);
-      }
-    }
+    myModelsToOwners.removeLink(modelDescriptor, owner);
 
-    Set<SModelDescriptor> ownModels = myOwnerToModelMap.get(owner);
-    if (ownModels != null) {
-      ownModels.remove(modelDescriptor);
-      if (ownModels.isEmpty()) {
-        myOwnerToModelMap.remove(owner);
-      }
+    if (!hasOwners(modelDescriptor)) {
+      myModelsWithNoOwners.add(modelDescriptor);
     }
 
     fireModelOwnerRemoved(modelDescriptor, owner);
@@ -214,23 +183,13 @@ public class SModelRepository implements IComponentLifecycle {
   }
 
   public void removeModelDescriptor(SModelDescriptor modelDescriptor) {
-    Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
-    if (owners != null) {
-      for (ModelOwner owner : owners) {
-        Set<SModelDescriptor> models = myOwnerToModelMap.get(owner);
-        models.remove(modelDescriptor);
-        if (models.isEmpty()) {
-          myOwnerToModelMap.remove(owner);
-        }
-      }
-    }
-    myModelToOwnerMap.remove(modelDescriptor);
+    myModelsToOwners.clearFirst(modelDescriptor);
 
     myModelDescriptors.remove(modelDescriptor);
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
-    myModelToOwnerMap.remove(modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
+    
     removeListeners(modelDescriptor);
     fireModelRemoved(modelDescriptor);
     modelDescriptor.dispose();
@@ -247,7 +206,7 @@ public class SModelRepository implements IComponentLifecycle {
   public void removeUnusedDescriptors() {
     List<SModelDescriptor> descriptorsToRemove = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor descriptor : new ArrayList<SModelDescriptor>(myModelsWithNoOwners)) {
-      Set<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
+      Set<ModelOwner> modelOwners =  myModelsToOwners.getByFirst(descriptor);
       if (modelOwners == null || modelOwners.isEmpty()) {
         descriptorsToRemove.add(descriptor);
       } else {
@@ -275,7 +234,7 @@ public class SModelRepository implements IComponentLifecycle {
     if (descriptor == null) {
       return null;
     }
-    Set<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
+    Set<ModelOwner> modelOwners = myModelsToOwners.getByFirst(descriptor);
     if (modelOwners.contains(owner)) {
       return descriptor;
     }
@@ -293,11 +252,7 @@ public class SModelRepository implements IComponentLifecycle {
   }
 
   public List<SModelDescriptor> getModelDescriptors(ModelOwner modelOwner) {
-    Set<SModelDescriptor> result = myOwnerToModelMap.get(modelOwner);
-    if (result == null) {
-      return new ArrayList<SModelDescriptor>();
-    }
-    return new ArrayList<SModelDescriptor>(result);
+    return new ArrayList<SModelDescriptor>(myModelsToOwners.getBySecond(modelOwner));
   }
 
   private void markChanged(SModel model, boolean changed) {
@@ -322,8 +277,7 @@ public class SModelRepository implements IComponentLifecycle {
     myModelDescriptors.remove(modelDescriptor);
     Long aLong = myChangedModels.get(modelDescriptor);
     myChangedModels.remove(modelDescriptor);
-    Set<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
-    myModelToOwnerMap.remove(modelDescriptor);
+
     boolean contains2 = myModelsWithNoOwners.contains(modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
 
@@ -340,7 +294,7 @@ public class SModelRepository implements IComponentLifecycle {
     if (aLong != null) {
       myChangedModels.put(modelDescriptor, aLong);
     }
-    myModelToOwnerMap.put(modelDescriptor, owners);
+
     if (contains2) {
       myModelsWithNoOwners.add(modelDescriptor);
     }
@@ -380,27 +334,6 @@ public class SModelRepository implements IComponentLifecycle {
     } else {
       return 0;
     }
-  }
-
-
-  public <T extends MPSModuleOwner & ModelOwner> List<SModelDescriptor> getChangedModelsReleasedWhenReleasingOwner(T owner) {
-    Set<SModelDescriptor> changedModels = getChangedModels();
-
-    //copying modelToOwnerMap
-    Map<SModelDescriptor, HashSet<ModelOwner>> modelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
-    for (SModelDescriptor md : myModelToOwnerMap.keySet()) {
-      modelToOwnerMap.put(md, new HashSet<ModelOwner>(myModelToOwnerMap.get(md)));
-    }//--copying
-
-    //releasing own models
-    Set<SModelDescriptor> releasedModels = collectReleasedModels(changedModels, modelToOwnerMap, owner);
-
-    //releasing models from released modules
-    Set<IModule> releasedModules = myModuleRepository.getModelsToBeRemoved(CollectionUtil.asSet((MPSModuleOwner) owner));
-    for (IModule module : releasedModules) {
-      releasedModels.addAll(collectReleasedModels(changedModels, modelToOwnerMap, module));
-    }
-    return new ArrayList<SModelDescriptor>(releasedModels);
   }
 
   private <ModelOwner> Set<SModelDescriptor> collectReleasedModels(
@@ -444,20 +377,17 @@ public class SModelRepository implements IComponentLifecycle {
   }
 
   public void reloadAll() {
-    for (SModelDescriptor modelDescriptor : new HashSet<SModelDescriptor>(myModelToOwnerMap.keySet())) {
+    for (SModelDescriptor modelDescriptor : new HashSet<SModelDescriptor>(myModelDescriptors)) {
       modelDescriptor.reloadFromDisk();
     }
   }
 
   public boolean hasOwners(SModelDescriptor modelDescriptor) {
-    Set<ModelOwner> set = myModelToOwnerMap.get(modelDescriptor);
-    return !(set == null || set.isEmpty());
+    return !myModelsToOwners.getByFirst(modelDescriptor).isEmpty();
   }
 
   public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {
-    Set<ModelOwner> set = myModelToOwnerMap.get(modelDescriptor);
-    if (set == null) return new HashSet<ModelOwner>();
-    return new HashSet<ModelOwner>(set);
+    return myModelsToOwners.getByFirst(modelDescriptor);
   }
 
   public <M extends ModelOwner> Set<M> getOwners(SModelDescriptor modelDescriptor, Class<M> cls) {

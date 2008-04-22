@@ -31,7 +31,9 @@ public class ManyToManyMap<F, S> {
     mySToF.get(s).add(f);
   }
 
-  public void removeLink(F f, S s) {
+  public void removeLink(F f, S s) {    
+    if (!myFToS.containsKey(f) || !mySToF.containsKey(s)) return;
+
     myFToS.get(f).remove(s);
     mySToF.get(s).remove(f);
     if (myFToS.get(f).isEmpty()) {
