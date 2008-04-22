@@ -112,15 +112,6 @@ public class SModelRepository implements IComponentLifecycle {
     return result;
   }
 
-  public void addOwnerForDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    myModelsToOwners.addLink(modelDescriptor, owner);
-
-    myUIDToModelDescriptorMap.put(modelDescriptor.getModelUID(), modelDescriptor);
-    myModelsWithNoOwners.remove(modelDescriptor);
-
-    fireModelOwnerAdded(modelDescriptor, owner);
-  }
-
   public boolean isRegisteredModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     return myModelsToOwners.getByFirst(modelDescriptor).isEmpty();
   }
@@ -142,6 +133,19 @@ public class SModelRepository implements IComponentLifecycle {
       modelFile.delete();
     }
     SModelRepository.getInstance().fireModelDeletedEvent(modelDescriptor);
+  }
+
+  public void addOwnerForDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {    
+    if (!myModelDescriptors.contains(modelDescriptor)) {
+      throw new IllegalStateException();
+    }
+
+    myModelsToOwners.addLink(modelDescriptor, owner);
+
+    myUIDToModelDescriptorMap.put(modelDescriptor.getModelUID(), modelDescriptor);
+    myModelsWithNoOwners.remove(modelDescriptor);
+
+    fireModelOwnerAdded(modelDescriptor, owner);
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
@@ -334,22 +338,6 @@ public class SModelRepository implements IComponentLifecycle {
     } else {
       return 0;
     }
-  }
-
-  private <ModelOwner> Set<SModelDescriptor> collectReleasedModels(
-          Set<SModelDescriptor> changedModels,
-          Map<SModelDescriptor, HashSet<ModelOwner>> modelToOwnerMap,
-          ModelOwner owner) {
-    Set<SModelDescriptor> releasedModels = new HashSet<SModelDescriptor>();
-    for (SModelDescriptor modelDescriptor : changedModels) {
-      HashSet<ModelOwner> modelOwners = modelToOwnerMap.get(modelDescriptor);
-      if (modelOwners != null) {
-        modelOwners.remove(owner);
-        if (modelOwners.isEmpty()) releasedModels.add(modelDescriptor);
-      }
-    }
-
-    return releasedModels;
   }
 
   public Set<SModelDescriptor> getChangedModels() {
