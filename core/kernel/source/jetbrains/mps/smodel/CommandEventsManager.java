@@ -18,7 +18,7 @@ public class CommandEventsManager implements IComponentLifecycle {
 
 
   public void initComponent() {
-    mySModelRepository.addGlobalCommandListener(new SModelCommandListener() {
+    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
       public void eventsHappenedInCommand(List<SModelEvent> events) {
         fireEvents(events);
       }

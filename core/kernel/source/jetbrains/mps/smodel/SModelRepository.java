@@ -35,16 +35,10 @@ public class SModelRepository implements IComponentLifecycle {
 
   private Map<SModelDescriptor, Set<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, Set<ModelOwner>>();
   private Map<ModelOwner, Set<SModelDescriptor>> myOwnerToModelMap = new HashMap<ModelOwner, Set<SModelDescriptor>>();
-  private List<SModelListener> myGlobalListeners = new ArrayList<SModelListener>();
-  private List<SModelCommandListener> myGlobalCommandListeners = new ArrayList<SModelCommandListener>(); 
   private MPSModuleRepository myModuleRepository;
   private boolean myInChangedModelsReloading = false;
   
   private SModelListener myModelsListener = new ModelChangeListener();
-  private SModelListener myRelayListener = createRelayListener();
-  private SModelListener myCommandEventsCollector = createCommandEventsCollector();
-  private ICommandListener myCommandListener = new MyCommandListener();
-  private List<SModelEvent> myCommandEvents = new ArrayList<SModelEvent>();
 
   public SModelRepository() {
   }
@@ -56,15 +50,6 @@ public class SModelRepository implements IComponentLifecycle {
 
   public void initComponent() {
     new BackgroundModelLoader(this);
-
-    CommandProcessor.instance().addCommandListener(myCommandListener);
-
-
-    addGlobalCommandListener(new SModelCommandListener() {
-      public void eventsHappenedInCommand(List<SModelEvent> events) {
-        System.out.println("events happened : " + events);
-      }
-    });
   }
 
   public void refreshModels() {
@@ -103,22 +88,6 @@ public class SModelRepository implements IComponentLifecycle {
   public void removeModelRepositoryListener(SModelRepositoryListener l) {
     mySModelRepositoryListeners.remove(l);
     myWeakSModelRepositoryListeners.remove(l);
-  }
-
-  public void addGlobalModelListener(SModelListener l) {
-    myGlobalListeners.add(l);
-  }
-
-  public void removeGlobalModelListener(SModelListener l) {
-    myGlobalListeners.remove(l);
-  }
-
-  public void addGlobalCommandListener(SModelCommandListener l) {
-    myGlobalCommandListeners.add(l);
-  }
-
-  public void removeGlobalCommandListener(SModelCommandListener l) {
-    myGlobalCommandListeners.remove(l);
   }
 
   private List<SModelRepositoryListener> listeners() {
@@ -269,14 +238,10 @@ public class SModelRepository implements IComponentLifecycle {
 
   private void addListeners(SModelDescriptor modelDescriptor) {
     modelDescriptor.addModelListener(myModelsListener);
-    modelDescriptor.addModelListener(myRelayListener);
-    modelDescriptor.addModelListener(myCommandEventsCollector);
   }
 
   private void removeListeners(SModelDescriptor modelDescriptor) {
     modelDescriptor.removeModelListener(myModelsListener);
-    modelDescriptor.removeModelListener(myRelayListener);
-    modelDescriptor.removeModelListener(myCommandEventsCollector);
   }
 
   public void removeUnusedDescriptors() {
@@ -600,64 +565,6 @@ public class SModelRepository implements IComponentLifecycle {
     }
   }
 
-  private List<SModelListener> globalListeners() {
-    return new ArrayList<SModelListener>(myGlobalListeners);
-  }
-
-  private SModelListener createRelayListener() {
-    return (SModelListener) Proxy.newProxyInstance(
-      getClass().getClassLoader(),
-      new Class[] { SModelListener.class },
-      new InvocationHandler() {
-        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-          if (method.getName().equals("equals") && args.length == 1) {
-            return proxy == args[0];
-          }
-
-          if (method.getName().equals("hashCode") && args == null) {
-            return this.hashCode();
-          }
-
-          method.setAccessible(true);
-          for (SModelListener l : globalListeners()) {
-            try {
-              method.invoke(l, args);
-            } catch (Throwable t) {
-              LOG.error(t);
-            }
-          }
-
-          return null;
-        }
-      }
-    );
-  }
-
-  private SModelListener createCommandEventsCollector() {
-    return (SModelListener) Proxy.newProxyInstance(
-      getClass().getClassLoader(),
-      new Class[] { SModelListener.class },
-      new InvocationHandler() {
-        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-          if (method.getName().equals("equals") && args.length == 1) {
-            return proxy == args[0];
-          }
-
-          if (method.getName().equals("hashCode") && args == null) {
-            return this.hashCode();
-          }
-
-          if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
-            SModelEvent e = (SModelEvent) args[0];
-            myCommandEvents.add(e);
-          }
-
-          return null;
-        }
-      }
-    );
-  }
-
   private class ModelChangeListener extends SModelAdapter {
     public void modelChanged(SModel model) {
       markChanged(model);
@@ -665,26 +572,6 @@ public class SModelRepository implements IComponentLifecycle {
 
     public void modelChangedDramatically(SModel model) {
       markChanged(model);
-    }
-  }
-
-  private class MyCommandListener extends CommandAdapter {
-    public void commandStarted(@NotNull CommandEvent event) {
-      myCommandEvents.clear();
-    }
-
-    public void commandFinished(@NotNull CommandEvent event) {
-
-      if (myCommandEvents.isEmpty()) return;
-
-      for (SModelCommandListener l : myGlobalCommandListeners) {
-        try {
-          l.eventsHappenedInCommand(Collections.unmodifiableList(myCommandEvents));
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
-      }
-      myCommandEvents.clear();
     }
   }
 }

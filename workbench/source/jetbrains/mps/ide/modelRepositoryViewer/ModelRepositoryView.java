@@ -160,12 +160,12 @@ public class ModelRepositoryView extends DefaultTool {
     public void installListeners() {
       CommandProcessor.instance().addCommandListener(this);
       SModelRepository.getInstance().addModelRepositoryListener(myRepoListener);
-      SModelRepository.getInstance().addGlobalModelListener(this);
+      GlobalSModelEventsManager.getInstance().addGlobalModelListener(this);
     }
     public void unInstallListeners() {
       CommandProcessor.instance().removeCommandListener(this);
       SModelRepository.getInstance().removeModelRepositoryListener(myRepoListener);
-      SModelRepository.getInstance().removeGlobalModelListener(this);
+      GlobalSModelEventsManager.getInstance().removeGlobalModelListener(this);
     }
 
     public void modelInitialized(SModelDescriptor modelDescriptor) {
