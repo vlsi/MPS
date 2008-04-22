@@ -22,7 +22,9 @@
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
-    <exportedPackage />
+    <exportedPackage>
+      <package>junit.framework</package>
+    </exportedPackage>
   </osgiOptions>
   <dependencies>
     <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest.runtime</dependency>
