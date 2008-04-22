@@ -306,7 +306,12 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return _PrecompiledPatterns.REGEXP.matcher(pattern).matches();
+            if (strictly) {
+              return _PrecompiledPatterns.REGEXP.matcher(pattern).matches();
+            } else
+            {
+              return _PrecompiledPatterns.REGEXP1.matcher(pattern).matches();
+            }
           }
 
           public String getMatchingText(String pattern) {
@@ -363,7 +368,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return _PrecompiledPatterns.REGEXP1.matcher(pattern).matches();
+            return _PrecompiledPatterns.REGEXP2.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -382,7 +387,7 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode stringLiteral = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
             {
-              Pattern _pattern_0 = _PrecompiledPatterns.REGEXP2;
+              Pattern _pattern_0 = _PrecompiledPatterns.REGEXP3;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.matches()) {
                 SPropertyOperations.set(stringLiteral, "value", _matcher_0.group(1));
@@ -396,7 +401,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return _PrecompiledPatterns.REGEXP3.matcher(pattern).matches();
+            return _PrecompiledPatterns.REGEXP4.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
