@@ -52,7 +52,7 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
     if (myThread != null && myThread.isAlive()) {
       return;
     }
-    myThread = new Thread() {
+    myThread = new Thread("Highlighter") {
       {
         setDaemon(true);
       }
@@ -86,8 +86,8 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   }
 
   protected void doUpdate() {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
+   // SwingUtilities.invokeLater(new Runnable() {
+   //   public void run() {
             if (myProjects == null) return;
             MPSProjects projects = myProjects;
             for (MPSProject project : projects.getProjects()) {
@@ -120,8 +120,8 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
                 }
               }
             }
-      }
-    });
+  //    }
+  //  });
   }
 
   private boolean updateEditorComponent(IEditorComponent component) {
