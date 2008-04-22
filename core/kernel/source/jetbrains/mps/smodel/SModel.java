@@ -56,8 +56,6 @@ public class SModel implements Iterable<SNode> {
 
   private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
 
-  private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
-
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private SNode myLog;
   private RefactoringHistory myRefactoringHistory = new RefactoringHistory();
@@ -67,8 +65,6 @@ public class SModel implements Iterable<SNode> {
  // private Set<String> myNewDevKitNamespaces = new HashSet<String>();
 
   public SModel(@NotNull SModelUID modelUID) {
-    addWeakSModelListener(myEventTranslator);
-    CommandProcessor.instance().addWeakCommandListener(myEventTranslator);
     myUID = modelUID;
   }
 
@@ -412,7 +408,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  private void fireSModelChangedInCommandEvent(@NotNull List<SModelEvent> events) {
+  void fireSModelChangedInCommandEvent(@NotNull List<SModelEvent> events) {
     for (SModelCommandListener l : copyCommandListeners()) {
       try {
         l.eventsHappenedInCommand(events);
@@ -468,7 +464,6 @@ public class SModel implements Iterable<SNode> {
       }
     }
 
-    result.remove(myEventTranslator);
     return result;
   }
 
@@ -1158,93 +1153,6 @@ public class SModel implements Iterable<SNode> {
 
     public String toString() {
       return (myAdd ? "add" : "delete") + " root " + myRoot;
-    }
-  }
-
-  private class SModelEventTranslator implements ICommandListener, SModelListener {
-    private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
-
-    public void commandStarted(@NotNull CommandEvent event) {
-      myEvents.clear();
-    }
-
-    public void languageAdded(SModelLanguageEvent event) {
-      myEvents.add(event);
-    }
-
-    public void languageRemoved(SModelLanguageEvent event) {
-      myEvents.add(event);
-    }
-
-    public void importAdded(SModelImportEvent event) {
-      myEvents.add(event);
-    }
-
-    public void importRemoved(SModelImportEvent event) {
-      myEvents.add(event);
-    }
-
-    public void rootAdded(SModelRootEvent event) {
-      myEvents.add(event);
-    }
-
-    public void rootRemoved(SModelRootEvent event) {
-      myEvents.add(event);
-    }
-
-    public void beforeRootRemoved(SModelRootEvent event) {
-    }
-
-    public void propertyChanged(SModelPropertyEvent event) {
-      myEvents.add(event);
-    }
-
-    public void childAdded(SModelChildEvent event) {
-      myEvents.add(event);
-    }
-
-    public void childRemoved(SModelChildEvent event) {
-      myEvents.add(event);
-    }
-
-    public void beforeChildRemoved(SModelChildEvent event) {
-    }
-
-    public void referenceAdded(SModelReferenceEvent event) {
-      myEvents.add(event);
-    }
-
-    public void referenceRemoved(SModelReferenceEvent event) {
-      myEvents.add(event);
-    }
-
-    public void devkitAdded(SModelDevKitEvent event) {
-      myEvents.add(event);
-    }
-
-    public void devkitRemoved(SModelDevKitEvent event) {
-      myEvents.add(event);
-    }
-
-    public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
-    }
-
-    public void beforeCommandFinished(@NotNull CommandEvent event) {
-    }
-
-    public void modelSaved(SModelDescriptor sm) {
-    }
-
-    public void modelInitialized(SModelDescriptor sm) {
-    }
-
-    public void modelReloaded(SModelDescriptor sm) {
-    }
-
-    public void commandFinished(@NotNull CommandEvent event) {
-      if (myEvents.size() > 0) {
-        fireSModelChangedInCommandEvent(new ArrayList<SModelEvent>(myEvents));
-      }
     }
   }
 

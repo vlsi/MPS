@@ -678,9 +678,12 @@ public class SModelRepository implements IComponentLifecycle {
     }
 
     public void commandFinished(@NotNull CommandEvent event) {
+
+      if (myCommandEvents.isEmpty()) return;
+
       for (SModelCommandListener l : myGlobalCommandListeners) {
         try {
-          l.eventsHappenedInCommand(new ArrayList<SModelEvent>(myCommandEvents));
+          l.eventsHappenedInCommand(Collections.unmodifiableList(myCommandEvents));
         } catch (Throwable t) {
           LOG.error(t);
         }
