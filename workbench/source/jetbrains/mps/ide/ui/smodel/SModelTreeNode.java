@@ -11,7 +11,6 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.modelchecker.ModelChecker;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -27,7 +26,6 @@ import jetbrains.mps.util.ToStringComparator;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
-import javax.swing.SwingUtilities;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.awt.Color;
@@ -49,6 +47,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<SNodeGroupTreeNode>();
 
   private Condition<SNode> myNodesCondition = Condition.TRUE_CONDITION;
+  
+  private DependencyRecorder<SNodeTreeNode> myDependencyRecorder = new DependencyRecorder<SNodeTreeNode>();
 
   private boolean myPackagesEnabled = true;
 
@@ -121,6 +121,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     setText(calculateText());
+  }
+
+  DependencyRecorder<SNodeTreeNode> getDependencyRecorder() {
+    return myDependencyRecorder;
   }
 
   protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
@@ -480,14 +484,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           final Set<SNode> addedNodes = new LinkedHashSet<SNode>();
           final Set<SNode> removedNodes = new LinkedHashSet<SNode>();
 
-          final Set<SNode> nodesWithChangedProperties = new LinkedHashSet<SNode>();
+          final Set<SNode> nodesWithChangedPresentations = new LinkedHashSet<SNode>();
           final Set<SNode> nodesWithChangedPackages = new LinkedHashSet<SNode>();
 
           final Set<SNode> nodesWithChangedRefs = new LinkedHashSet<SNode>();
 
+          final Set<SNode> changedNodes = new LinkedHashSet<SNode>();
+
           for (SModelEvent event : events) {
             event.accept(new SModelEventVisitorAdapter() {
               public void visitRootEvent(SModelRootEvent event) {
+                changedNodes.add(event.getRoot());
+
                 if (event.isAdded()) {
                   addedRoots.add(event.getRoot());
                   removedRoots.remove(event.getRoot());
@@ -500,6 +508,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
               }
 
               public void visitChildEvent(SModelChildEvent event) {
+                changedNodes.add(event.getParent());
+                changedNodes.add(event.getChild());
+
                 if (event.isAdded()) {
                   addedNodes.add(event.getChild());
                 }
@@ -510,7 +521,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
               }
 
               public void visitPropertyEvent(SModelPropertyEvent event) {
-                nodesWithChangedProperties.add(event.getNode());
+                changedNodes.add(event.getNode());
+
+                nodesWithChangedPresentations.add(event.getNode());
 
                 if (PACK.equals(event.getPropertyName()) && event.getNode().isRoot()) {
                   nodesWithChangedPackages.add(event.getNode());
@@ -518,14 +531,26 @@ public class SModelTreeNode extends MPSTreeNodeEx {
               }
 
               public void visitReferenceEvent(SModelReferenceEvent event) {
+                changedNodes.add(event.getReference().getSourceNode());
+
                 nodesWithChangedRefs.add(event.getReference().getSourceNode());
               }
             });
           }
 
+          Set<SNodeTreeNode> treeNodesToUpdate = new LinkedHashSet<SNodeTreeNode>();
+          for (SNode changedNode : changedNodes) {
+            treeNodesToUpdate.addAll(getDependencyRecorder().getDependOn(changedNode));
+          }          
+          for (SNodeTreeNode n : treeNodesToUpdate) {
+            nodesWithChangedPresentations.add(n.getSNode());
+          }
+
           addAndRemoveRoots(removedRoots, addedRoots);
           addAndRemoveVisibleChildren(removedNodes, addedNodes);
-          updateChangedProperties(nodesWithChangedProperties);
+
+          updateChangedPresentations(nodesWithChangedPresentations);
+
           updateChangedRefs(nodesWithChangedRefs);
           updateNodesWithChangedPackages(nodesWithChangedPackages);
 
@@ -571,7 +596,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       }
     }
 
-    private void updateChangedProperties(Set<SNode> nodesWithChangedProperties) {
+    private void updateChangedPresentations(Set<SNode> nodesWithChangedProperties) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       for (SNode node : nodesWithChangedProperties) {
         SNodeTreeNode treeNode = (SNodeTreeNode) findRootSNodeTreeNode(node);

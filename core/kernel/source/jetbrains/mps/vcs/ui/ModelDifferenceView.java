@@ -229,8 +229,8 @@ public class ModelDifferenceView extends JPanel {
       super(node, role, operationContext);
     }
 
-    public void updatePresentation() {
-      super.updatePresentation();
+    public void doUpdatePresentation() {
+      super.doUpdatePresentation();
       SNodeId id = getSNode().getSNodeId();
       if (myAddedNodes.contains(id)) {
         setColor(new Color(0, 120, 0));

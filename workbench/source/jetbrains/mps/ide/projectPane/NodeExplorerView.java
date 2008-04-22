@@ -116,8 +116,8 @@ public class NodeExplorerView extends DefaultTool {
     }
 
 
-    protected void updatePresentation() {
-      super.updatePresentation();
+    protected void doUpdatePresentation() {
+      super.doUpdatePresentation();
       String string = getText();
       String helginsTypeInfo = " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}";
       setText(string + helginsTypeInfo);

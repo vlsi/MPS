@@ -2,6 +2,7 @@ package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.icons.IconManager;
@@ -21,13 +22,6 @@ import java.awt.Color;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Aug 25, 2005
- * Time: 5:20:04 PM
- * To change this template use File | Settings | File Templates.
- */
 public class SNodeTreeNode extends MPSTreeNodeEx {
   protected boolean myInitialized = false;
   private SNode myNode;
@@ -50,7 +44,35 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     updatePresentation();
   }
 
-  protected void updatePresentation() {
+  protected final void updatePresentation() {
+    if (getSModelModelTreeNode() != null) {
+      getSModelModelTreeNode().getDependencyRecorder().rebuild(this, new Runnable() {
+        public void run() {
+          doUpdatePresentation();
+        }
+      });
+    } else {
+      doUpdatePresentation();
+    }
+  }
+
+  protected void onAdd() {
+    super.onAdd();
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        updatePresentation();
+      }
+    });    
+  }
+
+  protected void onRemove() {
+    if (getSModelModelTreeNode() != null) {
+      getSModelModelTreeNode().getDependencyRecorder().remove(this);
+    }
+    super.onRemove();
+  }
+
+  protected void doUpdatePresentation() {
     if (hasErrors()) {
       setColor(Color.RED);
     } else {
@@ -183,12 +205,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   public boolean hasErrors() {
-   /* SModelTreeNode stn = getSModelModelTreeNode();
-    if (stn != null) {
-        // the following line causes sometimes a nasty NPE
-        ModelCheckResult r = stn.getModelCheckResult();
-        return r != null && r.hasErrorsInside(getSNode());
-    }*/
     return false;
   }
 }
