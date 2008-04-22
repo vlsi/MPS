@@ -7,9 +7,11 @@ import jetbrains.mps.helgins.checking.HighlighterMessage;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.event.SModelEvent;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,4 +27,6 @@ public interface IEditorChecker {
   public IEditorMessageOwner getOwner(SNode rootNode);
 
   public boolean executeInUndoableCommand();
+
+  public boolean hasDramaticalEvent(List<SModelEvent> events);
 }

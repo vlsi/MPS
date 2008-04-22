@@ -8,23 +8,43 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.helgins.checking.IEditorChecker;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import javax.swing.SwingUtilities;
-import java.util.LinkedHashSet;
-import java.util.HashSet;
+import java.util.*;
 
 public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   private static final Logger LOG = Logger.getLogger(Highlighter.class);
   public static final int CHECK_DELAY = 1000;
+  private static final Object EVENTS_LOCK = new Object();
 
   private boolean myStopThread = false;
   private MPSProjects myProjects;
+  private GlobalSModelEventsManager myGlobalSModelEventsManager = new GlobalSModelEventsManager();
+  private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
   private HashSet<IEditorChecker> myCheckers = new LinkedHashSet<IEditorChecker>(3);
+  private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
+  private Set<SNode> myCheckedOnceNodes = new WeakSet<SNode>();
 
   public Highlighter() {
+  }
+
+  @Dependency
+  public void setModelRepository(GlobalSModelEventsManager manager) {
+    myGlobalSModelEventsManager = manager;
+  }
+
+  @Dependency
+  public void setClassLoaderManager(ClassLoaderManager manager) {
+    myClassLoaderManager = manager;
   }
 
   private int getCheckDelay() {
@@ -50,8 +70,21 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
 
   public void initComponent() {
     if (myThread != null && myThread.isAlive()) {
+      LOG.error("trying to initialize a Highlighter being already initialized");
       return;
     }
+    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+      public void onReload() {
+        myCheckedOnceNodes.clear();
+      }
+    });
+    myGlobalSModelEventsManager.addGlobalCommandListener(new SModelCommandListener() {
+      public void eventsHappenedInCommand(List<SModelEvent> events) {
+        synchronized (EVENTS_LOCK) {
+          myLastEvents.addAll(events);
+        }
+      }
+    });
     myThread = new Thread("Highlighter") {
       {
         setDaemon(true);
@@ -63,14 +96,14 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
         CommandProcessor commandProcessor = CommandProcessor.instance();
         try {
           while (true) {
-              while (commandProcessor.isInsideCommand()) {
-                Thread.sleep(200);
-              }
-              doUpdate();
-              if (myStopThread) {
-                break;
-              }
-              Thread.sleep(300);
+            while (commandProcessor.isInsideCommand()) {
+              Thread.sleep(200);
+            }
+            doUpdate();
+            if (myStopThread) {
+              break;
+            }
+            Thread.sleep(300);
           }
         } catch (Exception e) {
           LOG.error(e);
@@ -86,79 +119,90 @@ public class Highlighter implements IComponentLifecycle, IEditorMessageOwner {
   }
 
   protected void doUpdate() {
-   // SwingUtilities.invokeLater(new Runnable() {
-   //   public void run() {
-            if (myProjects == null) return;
-            MPSProjects projects = myProjects;
-            for (MPSProject project : projects.getProjects()) {
-              IDEProjectFrame projectFrame = project.getComponent(IDEProjectFrame.class);
-              if (projectFrame == null) continue;
+    // SwingUtilities.invokeLater(new Runnable() {
+    //   public void run() {
+    if (myProjects == null) return;
+    MPSProjects projects = myProjects;
+    for (MPSProject project : projects.getProjects()) {
+      IDEProjectFrame projectFrame = project.getComponent(IDEProjectFrame.class);
+      if (projectFrame == null) continue;
 
-              EditorsPane editorsPane = project.getComponentSafe(AbstractProjectFrame.class).getEditorsPane();
-              boolean isUpdated = false;
-              for (IEditor editor : editorsPane.getEditors()) {
-                AbstractEditorComponent component = editor.getCurrentEditorComponent();
-                if (component != null) {
-                  if (updateEditorComponent(component)) {
-                    isUpdated = true;
-                  }
+      EditorsPane editorsPane = project.getComponentSafe(AbstractProjectFrame.class).getEditorsPane();
+      boolean isUpdated = false;
+      List<SModelEvent> events = new ArrayList<SModelEvent>();
+      synchronized (EVENTS_LOCK) {
+        events.addAll(myLastEvents);
+        myLastEvents.clear();
+      }
+      for (IEditor editor : editorsPane.getEditors()) {
+        AbstractEditorComponent component = editor.getCurrentEditorComponent();
+        if (component != null) {
+          if (updateEditorComponent(component, events)) {
+            isUpdated = true;
+          }
 
-                  if (component instanceof NodeEditorComponent) {
-                    updateEditorComponent(((NodeEditorComponent) component).getInspector());
-                  }
-                }
-              }
+          if (component instanceof NodeEditorComponent) {
+            updateEditorComponent(((NodeEditorComponent) component).getInspector(), events);
+          }
+        }
+      }
 
-              if (isUpdated) { //why do we need this code? it's looks like a hack.
-                IEditor currentEditor = editorsPane.getCurrentEditor();
-                if (currentEditor != null) {
-                  currentEditor.repaint();
-                  AbstractEditorComponent component = currentEditor.getCurrentEditorComponent();
-                  if (component != null) {
-                    component.getMessagesGutter().repaint();
-                  }
-                }
-              }
-            }
-  //    }
-  //  });
+      if (isUpdated) { //why do we need this code? it's looks like a hack.
+        IEditor currentEditor = editorsPane.getCurrentEditor();
+        if (currentEditor != null) {
+          currentEditor.repaint();
+          AbstractEditorComponent component = currentEditor.getCurrentEditorComponent();
+          if (component != null) {
+            component.getMessagesGutter().repaint();
+          }
+        }
+      }
+    }
+    //    }
+    //  });
   }
 
-  private boolean updateEditorComponent(IEditorComponent component) {
+  private boolean updateEditorComponent(IEditorComponent component, final List<SModelEvent> events) {
     final SNode editedNode = component.getEditedNode();
     if (editedNode != null) {
-      Long lastChangeTime = CommandProcessor.instance().tryToExecuteLightweightCommand(new Calculable<Long>() {
-        public Long calculate() {
-          return editedNode.getModel().getModelDescriptor().lastStructuralChange();
-        }
-      });
+      final Set<IEditorChecker> checkersToRecheck = new LinkedHashSet<IEditorChecker>();
+      if (!wasCheckedOnce(editedNode)) {
+        checkersToRecheck.addAll(myCheckers);
+      } else {
+        CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {
+          public void run() {
+            for (IEditorChecker checker : myCheckers) {
+              if (checker.hasDramaticalEvent(events)) {
+                checkersToRecheck.add(checker);
+              }
+            }
+          }
+        });
+      }
 
-      if (lastChangeTime == null) {
+      if (checkersToRecheck.isEmpty()) {
         return false;
       }
 
-      if (System.currentTimeMillis() - lastChangeTime > getCheckDelay()) {
-        if (lastChangeTime > getLastUpdateTime(component)) {
-          try {
-            if (updateEditor(component)) {
-              return true;
-            }
-          } finally {
-            component.putUserData(getLastUpdateKey(), System.currentTimeMillis());
-          }
-        }
+      myCheckedOnceNodes.add(editedNode);
+      if (updateEditor(component, checkersToRecheck)) {
+        return true;
       }
     }
     return false;
   }
 
-  protected boolean updateEditor(final IEditorComponent editor) {
+  private boolean wasCheckedOnce(SNode editedNode) {
+    return myCheckedOnceNodes.contains(editedNode);
+  }
+
+  protected boolean updateEditor(final IEditorComponent editor, Set<IEditorChecker> checkersToRecheck) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }
 
     NodeHighlightManager highlightManager = editor.getHighlightManager();
-    for (final IEditorChecker checker : new LinkedHashSet<IEditorChecker>(myCheckers)) {
+    for (final IEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<IEditorMessage> messages = new LinkedHashSet<IEditorMessage>();
       final IEditorMessageOwner[] owners = new IEditorMessageOwner[1];
       Runnable runnable = new Runnable() {
