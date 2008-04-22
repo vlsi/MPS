@@ -52,7 +52,7 @@ public class ClosureLiteralUtil {
   public static void addAdaptableClosureLiteralTarget(SNode literal, SNode target, ITemplateGenerator generator) {
     SNode trgCopy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(trgCopy, "classifier", SLinkOperations.getTarget(target, "classifier", false), false);
-    ClosureLiteralUtil.matchParameters(target, trgCopy, TypeChecker.getInstance().getTypeOf(literal));
+    ClosureLiteralUtil.matchParameters(target, trgCopy, TypeChecker.getInstance().getTypeOf(literal), literal, generator);
     generator.getGeneratorSessionContext().putStepObject("literal_target_" + ((SNode)literal).getId(), trgCopy);
     ((SNode)trgCopy).putUserObject("literal", literal);
   }
@@ -61,7 +61,7 @@ public class ClosureLiteralUtil {
     return (SNode)generator.getGeneratorSessionContext().getStepObject("literal_target_" + ((SNode)literal).getId());
   }
 
-  private static void matchParameters(SNode origCT, SNode ctNoParams, SNode ft) {
+  private static void matchParameters(SNode origCT, SNode ctNoParams, SNode ft, SNode literal, ITemplateGenerator generator) {
     Map<String, SNode> map = null;
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
     SNode absRetCT = null;
@@ -79,6 +79,10 @@ public class ClosureLiteralUtil {
       List<SNode> ptypes = FunctionType_Behavior.call_getNormalizedParameterTypes_1201526194584(ft);
       int idx = 0;
       for(SNode pd : SLinkOperations.getTargets(method, "parameter", true)) {
+        if (idx >= ptypes.size()) {
+          generator.showErrorMessage(literal, "Closure parameters count doesn't match method '" + SPropertyOperations.getString(method, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(ctNoParams, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(ctNoParams, "classifier", false), "name")));
+          return;
+        }
         map = ClosureLiteralUtil.matchType(SLinkOperations.getTarget(pd, "type", true), ptypes.get(idx), map);
         idx = idx + 1;
       }
