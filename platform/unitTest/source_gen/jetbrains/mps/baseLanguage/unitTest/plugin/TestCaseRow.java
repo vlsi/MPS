@@ -12,7 +12,7 @@ public class TestCaseRow extends TestContainerRow {
 
   private String testCaseName;
 
-  public  TestCaseRow(SNode testCase) {
+  public TestCaseRow(SNode testCase) {
     super(SPropertyOperations.getString(testCase, "name"), SNodeOperations.getModel(testCase).getLongName());
     this.testCaseName = INamedConcept_Behavior.call_getFqName_1184686272576(testCase);
   }

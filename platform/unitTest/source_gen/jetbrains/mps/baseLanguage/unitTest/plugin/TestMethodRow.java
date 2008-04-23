@@ -22,7 +22,7 @@ public class TestMethodRow implements TestStatisticsRow {
   private long usageAfter = -1;
   private int state = TestMethodRow.UNDEFINED;
 
-  public  TestMethodRow(SNode testMethod) {
+  public TestMethodRow(SNode testMethod) {
     this.testCaseName = INamedConcept_Behavior.call_getFqName_1184686272576(SNodeOperations.getAncestor(testMethod, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
     this.testMethodName = SPropertyOperations.getString(testMethod, "name");
   }

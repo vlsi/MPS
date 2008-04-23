@@ -8,7 +8,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
 
@@ -17,7 +19,7 @@ public class TestCaseTreeNode extends MPSTreeNode {
   protected SNode testCase;
   private TestState state;
 
-  public  TestCaseTreeNode(IOperationContext operationContext, SNode testCase) {
+  public TestCaseTreeNode(IOperationContext operationContext, SNode testCase) {
     super(operationContext);
     this.testCase = testCase;
     this.updatePresentation();
@@ -35,14 +37,19 @@ public class TestCaseTreeNode extends MPSTreeNode {
   }
 
   public String getClassName() {
-    final zClosureContext1 _zClosureContext = new zClosureContext1();
-    _zClosureContext.className = null;
-    CommandProcessor.instance().executeLightweightCommand(new Command2(TestCaseTreeNode.this, _zClosureContext));
-    return _zClosureContext.className;
+    final Wrappers._T<String> className = new Wrappers._T<String>(null);
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+
+      public void run() {
+        className.value = INamedConcept_Behavior.call_getFqName_1184686272576(TestCaseTreeNode.this.testCase);
+      }
+
+    });
+    return className.value;
   }
 
   public void doubleClick() {
-    IDEProjectFrame ide = (IDEProjectFrame)this.getOperationContext().getComponent(AbstractProjectFrame.class);
+    IDEProjectFrame ide = (IDEProjectFrame) this.getOperationContext().getComponent(AbstractProjectFrame.class);
     ide.openNode(this.testCase, this.getOperationContext());
   }
 

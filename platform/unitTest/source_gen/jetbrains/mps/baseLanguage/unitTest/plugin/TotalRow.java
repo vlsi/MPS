@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 public class TotalRow extends TestContainerRow {
 
-  public  TotalRow() {
+  public TotalRow() {
     super("Total:", null);
   }
 

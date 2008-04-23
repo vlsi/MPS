@@ -4,17 +4,18 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import java.util.Map;
 import java.util.HashMap;
+
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.MapOperations;
 
-public class TestNameMap <C, M> {
+public class TestNameMap<C, M> {
 
   private Map<String, C> classToTestCase;
   private Map<String, Map<String, M>> classToMethodToMethodTest;
 
-  public  TestNameMap() {
+  public TestNameMap() {
     this.classToTestCase = new HashMap<String, C>();
     this.classToMethodToMethodTest = new HashMap<String, Map<String, M>>();
   }

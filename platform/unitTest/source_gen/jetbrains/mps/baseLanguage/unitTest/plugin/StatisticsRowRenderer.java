@@ -30,7 +30,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
   private JLabel aloneError;
   private JLabel aloneFailure;
 
-  public  StatisticsRowRenderer() {
+  public StatisticsRowRenderer() {
     this.textPanel = new JPanel(new BorderLayout());
     this.text = new JLabel();
     this.textPanel.add(this.text, BorderLayout.WEST);
@@ -65,7 +65,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
   }
 
   public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-    TestStatisticsRow rowValue = (TestStatisticsRow)value;
+    TestStatisticsRow rowValue = (TestStatisticsRow) value;
     JComponent result = null;
     boolean keepForeground = false;
     JComponent adjustFont = null;
@@ -77,8 +77,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
         String additionalText = rowValue.getAdditionalText();
         if (additionalText != null) {
           this.advancedText.setText(" (" + additionalText + ")");
-        } else
-        {
+        } else {
           this.advancedText.setText("");
         }
         result = this.textPanel;
@@ -133,8 +132,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
           if (e > 0) {
             result = this.aloneError;
           }
-        } else
-        {
+        } else {
           this.simpleField.setText("");
           result = this.simpleField;
         }
@@ -148,8 +146,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
         result.setForeground(table.getSelectionForeground());
       }
       result.setBackground(table.getSelectionBackground());
-    } else
-    {
+    } else {
       if (!(keepForeground)) {
         result.setForeground(table.getForeground());
       }
@@ -157,8 +154,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     }
     if (hasFocus) {
       result.setBorder(UIManager.getBorder("Table.focusCellHighlightBorder"));
-    } else
-    {
+    } else {
       result.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
     }
     result.setEnabled(table.isEnabled());
@@ -166,8 +162,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
       if (container) {
         Font font = table.getFont();
         adjustFont.setFont(new Font(font.getName(), Font.BOLD, font.getSize()));
-      } else
-      {
+      } else {
         adjustFont.setFont(table.getFont());
       }
     }

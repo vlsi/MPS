@@ -7,6 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.closures.runtime.Wrappers;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
 
@@ -15,7 +18,7 @@ public class TestMethodTreeNode extends MPSTreeNode {
   protected SNode testMethod;
   private TestState state = TestState.NOT_RAN;
 
-  public  TestMethodTreeNode(IOperationContext operationContext, SNode testMethod) {
+  public TestMethodTreeNode(IOperationContext operationContext, SNode testMethod) {
     super(operationContext);
     this.testMethod = testMethod;
     this.updatePresentation();
@@ -33,21 +36,41 @@ public class TestMethodTreeNode extends MPSTreeNode {
 
   public void setState(TestState state) {
     this.state = state;
-    CommandProcessor.instance().executeLightweightCommandInEDT(new Command3(TestMethodTreeNode.this, null));
+    CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
+
+      public void run() {
+        TestMethodTreeNode.this.updatePresentation();
+        TestMethodTreeNode.this.updateNodePresentationInTree();
+      }
+
+    });
   }
 
   public String getClassName() {
-    final zClosureContext2 _zClosureContext1 = new zClosureContext2();
-    _zClosureContext1.className = null;
-    CommandProcessor.instance().executeLightweightCommand(new Command4(TestMethodTreeNode.this, _zClosureContext1));
-    return _zClosureContext1.className;
+    final Wrappers._T<String> className = new Wrappers._T<String>(null);
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+
+      public void run() {
+        SNode classConcept = SNodeOperations.getAncestor(TestMethodTreeNode.this.testMethod, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+        if (classConcept != null) {
+          className.value = INamedConcept_Behavior.call_getFqName_1184686272576(classConcept);
+        }
+      }
+
+    });
+    return className.value;
   }
 
   public String getMethodName() {
-    final zClosureContext3 _zClosureContext2 = new zClosureContext3();
-    _zClosureContext2.methodName = null;
-    CommandProcessor.instance().executeLightweightCommand(new Command5(TestMethodTreeNode.this, _zClosureContext2));
-    return _zClosureContext2.methodName;
+    final Wrappers._T<String> methodName = new Wrappers._T<String>(null);
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+
+      public void run() {
+        methodName.value = SPropertyOperations.getString(TestMethodTreeNode.this.testMethod, "name");
+      }
+
+    });
+    return methodName.value;
   }
 
   public boolean isLeaf() {
@@ -55,7 +78,7 @@ public class TestMethodTreeNode extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    IDEProjectFrame ide = (IDEProjectFrame)this.getOperationContext().getComponent(AbstractProjectFrame.class);
+    IDEProjectFrame ide = (IDEProjectFrame) this.getOperationContext().getComponent(AbstractProjectFrame.class);
     ide.openNode(this.testMethod, this.getOperationContext());
   }
 
