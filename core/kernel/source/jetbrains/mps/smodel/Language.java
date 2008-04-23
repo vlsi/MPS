@@ -193,6 +193,28 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return new ArrayList<Language>(set);
   }
 
+  public List<Dependency> getRuntimeDependencies() {
+    List<Dependency> result = new ArrayList<Dependency>();
+    LanguageDescriptor descriptor = getLanguageDescriptor();
+    if (descriptor != null) {
+      for (ModuleReference ref : descriptor.getRuntimeModules()) {
+        result.add(new Dependency(ref.getName(), ref.getReexport()));
+      }
+    }
+    return result;
+  }
+
+  public List<IModule> getRuntimeModules() {
+    List<IModule> result = new ArrayList<IModule>();
+    for (Dependency d : getRuntimeDependencies()) {
+      IModule module = MPSModuleRepository.getInstance().getModuleByUID(d.getModuleUID());
+      if (module != null) {
+        result.add(module);
+      }
+    }
+    return result;
+  }
+
   public boolean isValid() {
     if (!super.isValid()) {
       return false;

@@ -112,12 +112,20 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     for (Generator generator : myLanguage.getGenerators()) {
       MPSTreeNode generatorNode = new GeneratorTreeNode(generator, myProject);
-      this.add(generatorNode);
+      add(generatorNode);
     }
+
+    TextTreeNode languageRuntime = new TextTreeNode("runtime");
+    for (IModule m : myLanguage.getRuntimeModules()) {
+      languageRuntime.add(createFor(myProject, m));
+    }
+    add(languageRuntime);
 
     TextTreeNode allModels = new TextTreeNode("all models");
     allModels.setIcon(Icons.PROJECT_MODELS_ICON);
     SModelsSubtree.create(allModels, getOperationContext());
-    this.add(allModels);
+    add(allModels);
+
+
   }
 }
