@@ -22,7 +22,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   List<Dependency> getDependencies(); 
   List<IModule> getExplicitlyDependOnModules();
-  List<IModule> getDirectlyDependOnMobdules();
+  List<IModule> getDirectlyDependOnModules();
   List<String> getUsedLanguagesNamespaces();
   List<Language> getUsedLanguages();
   List<IModule> getDependOnModules();
