@@ -240,7 +240,7 @@ public abstract class UsagesTree extends MPSTree {
       String invalid = data.isInvalid() ? "<font color=red>[Invalid]</font> " : "";
       String caption = data.getText(new TextOptions(myAdditionalInfoNeeded, myCountersNeeded));
       if (data.isExcluded()) {
-        node.setText(invalid + "<s>" + caption + "</s>");
+        node.setText(invalid + "<font color=gray><s>" + caption + "</s></font>");
       } else {
         node.setText(invalid + caption);
       }
