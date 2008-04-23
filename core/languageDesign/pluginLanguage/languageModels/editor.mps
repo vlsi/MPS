@@ -16,6 +16,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="18"/>
   <import index="1" modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
   <import index="2" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1"/>
@@ -1157,81 +1159,94 @@
             <property name="noTargetText" value="&lt;no&gt;"/>
             <link role="relationDeclaration" targetNodeId="1.1204464939608" resolveInfo="number"/>
           </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
-              id="1208271863237">
-          <property name="selectable" value="false"/>
-          <property name="vertical" value="false"/>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-                id="1208271863238">
-            <property name="text" value="show keystroke: "/>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+                id="1208974878778">
             <property name="selectable" value="false"/>
-            <property name="textFgColor" value="lightGray"/>
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess"
-                id="1208271920228">
-            <property name="textFgColor" value="lightGray"/>
-            <property name="selectable" value="false"/>
-            <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor"
-                  id="1208271920229">
-              <node role="getter"
-                    type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter"
-                    id="1208271920230">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208271920231">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
-                        id="1208271943880">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression"
-                          id="1208271945924">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
-                            id="1208271943881">
-                        <property name="value" value="Alt-"/>
-                      </node>
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
-                            id="1208271952774">
-                        <node role="operand"
-                              type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node"
-                              id="1208271951457"/>
-                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess"
-                              id="1208271960354">
-                          <link role="property" targetNodeId="1.1204464939608" resolveInfo="number"/>
+            <property name="vertical" value="false"/>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+                  id="1208974887398">
+              <property name="text" value="("/>
+              <property name="textFgColor" value="lightGray"/>
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+                  id="1208974878779">
+              <property name="text" value="show keystroke: "/>
+              <property name="selectable" value="false"/>
+              <property name="textFgColor" value="lightGray"/>
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess"
+                  id="1208974878780">
+              <property name="textFgColor" value="lightGray"/>
+              <property name="selectable" value="false"/>
+              <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor"
+                    id="1208974878781">
+                <node role="getter"
+                      type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter"
+                      id="1208974878782">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208974878783">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
+                          id="1208974878784">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression"
+                            id="1208974878785">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
+                              id="1208974878786">
+                          <property name="value" value="Alt-"/>
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                              id="1208974878787">
+                          <node role="operand"
+                                type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node"
+                                id="1208974878788"/>
+                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess"
+                                id="1208974878789">
+                            <link role="property" targetNodeId="1.1204464939608" resolveInfo="number"/>
+                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node role="validator"
-                    type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Validator"
-                    id="1208271920234">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208271920235">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
-                        id="1208271936949">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
-                          id="1208271936950">
-                      <property name="value" value="true"/>
+                <node role="validator"
+                      type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Validator"
+                      id="1208974878790">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208974878791">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
+                          id="1208974878792">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant"
+                            id="1208974878793">
+                        <property name="value" value="true"/>
+                      </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node role="setter"
-                    type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Setter"
-                    id="1208271920232">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208271920233"/>
+                <node role="setter"
+                      type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Setter"
+                      id="1208974878794">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208974878795"/>
+                </node>
               </node>
             </node>
-          </node>
-          <node role="renderingCondition"
-                type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1208272000740">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208272000741">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208273167797">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208273169016">
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall"
-                        id="1208273170292">
-                    <link role="conceptMethodDeclaration" targetNodeId="2v.1208273066932" resolveInfo="hasNumber"/>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+                  id="1208975854394">
+              <property name="text" value=")"/>
+              <property name="textFgColor" value="lightGray"/>
+            </node>
+            <node role="renderingCondition"
+                  type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition"
+                  id="1208974878796">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208974878797">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
+                      id="1208974878798">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208974878799">
+                    <node role="operation"
+                          type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall"
+                          id="1208974878800">
+                      <link role="conceptMethodDeclaration" targetNodeId="2v.1208273066932" resolveInfo="hasNumber"/>
+                    </node>
+                    <node role="operand"
+                          type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node"
+                          id="1208974878801"/>
                   </node>
-                  <node role="operand"
-                        type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node"
-                        id="1208273167798"/>
                 </node>
               </node>
             </node>

@@ -22,6 +22,7 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0"/>
   <maxImportIndex value="28"/>
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1"/>
   <import index="4" modelUID="java.lang@java_stub" version="-1"/>
@@ -1319,9 +1320,7 @@
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration"
           id="1208529467292">
       <property name="name" value="createType"/>
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1208529476726">
-        <link role="concept" targetNodeId="10.1068431790189" resolveInfo="Type"/>
-      </node>
+      <link role="overriddenMethod" targetNodeId="25.1205753057931" resolveInfo="createType"/>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208529467294">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
               id="1208529496566">
@@ -1364,6 +1363,9 @@
             <link role="variableDeclaration" targetNodeId="1208529496567" resolveInfo="type"/>
           </node>
         </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1208977148226">
+        <link role="concept" targetNodeId="24.1205752813637" resolveInfo="BaseClassifierType"/>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration"
