@@ -234,6 +234,7 @@ public abstract class AbstractModule implements IModule {
     }
     
     result.add(BootstrapLanguagesManager.getInstance().getBaseLanguage());
+    result.add(BootstrapLanguagesManager.getInstance().getProjectLanguage());
     result.add(BootstrapLanguagesManager.getInstance().getCollectionsLanguage());
     return result;
   }

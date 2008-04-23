@@ -20,6 +20,8 @@
   <usedLanguages>
     <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
     <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>jetbrains.mps.bootstrap.helgins</usedLanguages>
+    <usedLanguages>jetbrains.mps.quotation</usedLanguages>
   </usedLanguages>
 </solution>
 
