@@ -180,8 +180,9 @@ public class FindUsagesManager implements IComponentLifecycle {
         if (progress.isCanceled()) {
           progress.finishAnyway();
           return result;
+        } else {
+          progress.finishTask(taskName);
         }
-        progress.finishTask(taskName);
       }
       progress.finishTask(ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
       return result;
@@ -190,7 +191,7 @@ public class FindUsagesManager implements IComponentLifecycle {
     }
   }
 
-  private static void invalidateCaches() {   
+  private static void invalidateCaches() {
   }
 
   public static void registerStructureModel(SModelDescriptor descriptor) {
