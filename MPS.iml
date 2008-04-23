@@ -42,6 +42,8 @@
     <orderEntry type="library" exported="" name="Alloy" level="project" />
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
+    <orderEntry type="module" module-name="InternalCollections-runtime" exported="" />
+    <orderEntry type="module" module-name="Closures-runtime" exported="" />
     <orderEntry type="module" module-name="actionsLanguage" exported="" />
     <orderEntry type="module" module-name="constraintsLanguage" exported="" />
     <orderEntry type="module" module-name="editorLanguage" exported="" />
