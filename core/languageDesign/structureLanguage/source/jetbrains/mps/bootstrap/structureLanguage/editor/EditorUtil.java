@@ -65,9 +65,12 @@ public class EditorUtil {
   }
 
   public static IModule findAnchorModule(SNode sourceNode) {
-    SModel model = sourceNode.getModel();
+    return findAnchorModule(sourceNode.getModel());
+  }
+
+  public static IModule findAnchorModule(SModel sourceModel) {
     IModule module = null;
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    SModelDescriptor modelDescriptor = sourceModel.getModelDescriptor();
     Language modelLang = Language.getLanguageFor(modelDescriptor);
     if (modelLang != null) {
       module = modelLang;
