@@ -30,13 +30,13 @@ class ClasspathCollector {
     myResult.add(current.getRuntimeClasspath());
     myResult.add(current.getJavaStubsClassPathItem());
 
-    for (IModule dep : current.getDirectlyDependOnModules()) {
+    for (IModule dep : current.getDependOnModules()) {
       doCollect(dep);
     }
 
     for (Language l : current.getUsedLanguages()) {
       myResult.add(l.getLanguageRuntimeClasspath());
-      for (IModule runtimeModule : l.getRuntimeModules()) {
+      for (IModule runtimeModule : l.getRuntimeDependOnModules()) {
         doCollect(runtimeModule);        
       }
     }

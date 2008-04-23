@@ -6,8 +6,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Dependency;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -92,7 +90,7 @@ public abstract class BaseScope implements IScope {
     Set<IModule> visibleModules = new HashSet<IModule>();    
     visibleModules.addAll(getInitialModules());
     for (IModule module : getInitialModules()) {
-      for (Dependency d : module.getDependencies()) {
+      for (Dependency d : module.getDependOn()) {
         IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(d.getModuleUID());
         if (dependency != null) {
           visibleModules.add(dependency);
@@ -122,7 +120,7 @@ public abstract class BaseScope implements IScope {
 
         }
 
-        for (Dependency dep : module.getDependencies()) {
+        for (Dependency dep : module.getDependOn()) {
           if (dep.isREExport()) {
             IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
             if (dependency != null) {
@@ -147,7 +145,7 @@ public abstract class BaseScope implements IScope {
           }
         }
 
-        for (Dependency dep : language.getDependencies()) {
+        for (Dependency dep : language.getDependOn()) {
           IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
           if (dependency != null) {
             if (dep.isREExport() && !visibleModules.contains(dependency)) {

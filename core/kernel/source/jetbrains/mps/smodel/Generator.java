@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
@@ -9,8 +8,6 @@ import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -129,15 +126,15 @@ public class Generator extends AbstractModule {
     mySourceLanguage.save();
   }
 
-  public List<Dependency> getDependencies() {
-    List<Dependency> result = super.getDependencies();
+  public List<Dependency> getDependOn() {
+    List<Dependency> result = super.getDependOn();
     result.add(new Dependency(mySourceLanguage.getNamespace(), false));
 
     for (String refGenerator : getReferencedGeneratorUIDs()) {
       result.add(new Dependency(refGenerator, false));
     }
 
-    result.addAll(getSourceLanguage().getRuntimeDependencies());
+    result.addAll(getSourceLanguage().getRuntimeDependOn());
     return result;
   }
 

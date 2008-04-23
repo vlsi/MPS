@@ -116,7 +116,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     }
 
     TextTreeNode languageRuntime = new TextTreeNode("runtime");
-    for (IModule m : myLanguage.getRuntimeModules()) {
+    for (IModule m : myLanguage.getRuntimeDependOnModules()) {
       languageRuntime.add(createFor(myProject, m));
     }
     add(languageRuntime);

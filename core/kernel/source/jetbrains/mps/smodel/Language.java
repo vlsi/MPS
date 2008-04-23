@@ -167,8 +167,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     myLanguageRuntimeClasspath = result;
   }
 
-  public List<IModule> getExplicitlyDependOnModules() {
-    List<IModule> result = super.getExplicitlyDependOnModules();
+  public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
+    List<IModule> result = super.getExplicitlyDependOnModules(includeBootstrap);
 
     for (Language extendedLanguage : getExtendedLanguages()) {
       if (!result.contains(extendedLanguage)) {
@@ -225,7 +225,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return new ArrayList<Language>(set);
   }
 
-  public List<Dependency> getRuntimeDependencies() {
+  public List<Dependency> getRuntimeDependOn() {
     List<Dependency> result = new ArrayList<Dependency>();
     LanguageDescriptor descriptor = getLanguageDescriptor();
     if (descriptor != null) {
@@ -236,9 +236,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return result;
   }
 
-  public List<IModule> getRuntimeModules() {
+  public List<IModule> getRuntimeDependOnModules() {
     List<IModule> result = new ArrayList<IModule>();
-    for (Dependency d : getRuntimeDependencies()) {
+    for (Dependency d : getRuntimeDependOn()) {
       IModule module = MPSModuleRepository.getInstance().getModuleByUID(d.getModuleUID());
       if (module != null) {
         result.add(module);
@@ -307,14 +307,14 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
   }
 
-  public List<Dependency> getDependencies() {
-    List<Dependency> result = super.getDependencies();
+  public List<Dependency> getDependOn() {
+    List<Dependency> result = super.getDependOn();
     for (String language : getExtendedLanguageNamespaces()) {
       result.add(new Dependency(language, true));
     }
 
     for (Generator g : getGenerators()) {
-      result.addAll(g.getDependencies());
+      result.addAll(g.getDependOn());
     }
 
     return result;

@@ -15,8 +15,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
@@ -101,7 +99,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public boolean isValid() {
-    for (Dependency dep : getDependencies()) {
+    for (Dependency dep : getDependOn()) {
       String modelUID = dep.getModuleUID();
       if (MPSModuleRepository.getInstance().getModuleByUID(modelUID) == null) {
         return false;
@@ -162,7 +160,7 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<ModelRoot>();
   }
 
-  public List<Dependency> getDependencies() {
+  public List<Dependency> getDependOn() {
     List<Dependency> result = new ArrayList<Dependency>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
@@ -173,20 +171,27 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  public List<IModule> getExplicitlyDependOnModules() {
+  public final List<IModule> getExplicitlyDependOnModules() {
+    return getExplicitlyDependOnModules(false);
+  }
+
+  public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
     LinkedList<IModule> result = new LinkedList<IModule>();
-    result.addAll(getDirectlyDependOnModules());
+    result.addAll(getDependOnModules());
     for (Language usedLanguage : getUsedLanguages()) {
       if (!result.contains(usedLanguage)) {
         result.add(usedLanguage);
       }
     }
+    if (includeBootstrap) {
+      return appendBootstrapLanguages(result);
+    }
     return result;
   }
 
-  public List<IModule> getDirectlyDependOnModules() {
+  public List<IModule> getDependOnModules() {
     List<IModule> result = new ArrayList<IModule>();
-    for (Dependency dep : getDependencies()) {
+    for (Dependency dep : getDependOn()) {
       IModule m = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
       if (m != null) {
         result.add(m);
@@ -219,13 +224,6 @@ public abstract class AbstractModule implements IModule {
       }
     }
     return result;
-  }
-
-  /**
-   * @return all modules which this immediately depends on, bootstrap languages in their number.
-   */
-  public final List<IModule> getDependOnModules() {
-    return appendBootstrapLanguages(getExplicitlyDependOnModules());
   }
 
   protected static List<IModule> appendBootstrapLanguages(List<IModule> list) {
@@ -549,7 +547,7 @@ public abstract class AbstractModule implements IModule {
       result.add(new Dependency(s, false));
     }
 
-    result.addAll(getDependencies());
+    result.addAll(getDependOn());
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
