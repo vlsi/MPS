@@ -5,7 +5,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
@@ -31,7 +30,7 @@ public class TextGenerationUtil {
     CompositeClassPathItem item = new CompositeClassPathItem();
     item.add(context.getModule().getModuleWithDependenciesClassPathItem());
     item.add(ClassLoaderManager.getInstance().getMPSPath());
-    item.add(ClassLoaderManager.getInstance().getRTJar());
+    item.add(ClassLoaderManager.getInstance().getJDK());
 
     JavaCompiler compiler = new JavaCompiler(item);
 

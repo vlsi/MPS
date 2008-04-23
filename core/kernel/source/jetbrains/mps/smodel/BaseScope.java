@@ -117,7 +117,6 @@ public abstract class BaseScope implements IScope {
               changed = true;
             }
           }
-
         }
 
         for (Dependency dep : module.getDependOn()) {
@@ -137,9 +136,9 @@ public abstract class BaseScope implements IScope {
 
       for (Language language : new ArrayList<Language>(usedLanguages)) {
         for (Language extendedLanguage : language.getExtendedLanguages()) {
-          if(extendedLanguage == null){
-              LOG.error("One of extended language of " +  language.getModuleUID() + " in " + this + " is null.");
-          }else if (!usedLanguages.contains(extendedLanguage)) {
+          if (extendedLanguage == null) {
+            LOG.error("One of extended language of " +  language.getModuleUID() + " in " + this + " is null.");
+          } else if (!usedLanguages.contains(extendedLanguage)) {
             usedLanguages.add(extendedLanguage);
             changed = true;
           }

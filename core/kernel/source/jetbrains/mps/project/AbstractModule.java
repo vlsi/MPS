@@ -26,12 +26,21 @@ import java.util.*;
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
+  private static boolean USE_OLD_DEPENDENCY_CLASSPATH_ROUTINE = true;
 
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules) {
     return getDependenciesClasspath(modules, true, true);
   }
 
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeJDK, boolean includeMPS) {
+    if (USE_OLD_DEPENDENCY_CLASSPATH_ROUTINE) {
+      return getDependenciesClasspath_old(modules, includeJDK, includeMPS);
+    } else {
+      return new ClasspathCollector(modules).collect(includeJDK, includeMPS);
+    }
+  }
+
+  private static IClassPathItem getDependenciesClasspath_old(Set<IModule> modules, boolean includeJDK, boolean includeMPS) {
     Set<IModule> dependOnModules = new LinkedHashSet<IModule>();
     dependOnModules.addAll(modules) ;
     for (IModule m : modules) {
@@ -42,7 +51,7 @@ public abstract class AbstractModule implements IModule {
     CompositeClassPathItem result = new CompositeClassPathItem();
 
     if (includeJDK) {
-      result.add(ClassLoaderManager.getInstance().getRTJar());
+      result.add(ClassLoaderManager.getInstance().getJDK());
     }
     if (includeMPS) {
       result.add(ClassLoaderManager.getInstance().getMPSPath());

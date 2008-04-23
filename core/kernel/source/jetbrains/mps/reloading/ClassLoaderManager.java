@@ -265,7 +265,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
 
-  public IClassPathItem getRTJar() {
+  public IClassPathItem getJDK() {
     if (myRTJar == null) {
       if (! SystemInfo.isMac) {
         myRTJar = findBootstrapJarByName("rt.jar");

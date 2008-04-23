@@ -2,23 +2,39 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 
 import java.util.Set;
 import java.util.HashSet;
 
 class ClasspathCollector {
-  private IModule myStart;
+  private Set<IModule> myStart;
   private CompositeClassPathItem myResult = new CompositeClassPathItem();
   private Set<IModule> myVisited = new HashSet<IModule>();
 
-  ClasspathCollector(IModule start) {
-    myStart = start;
+  ClasspathCollector(Set<IModule> start) {
+    myStart = new HashSet<IModule>(start);
   }
 
   IClassPathItem collect() {
-    doCollect(myStart);
-    return myResult;
+    return collect(false, false);
+  }
+
+  IClassPathItem collect(boolean includeJDK, boolean includeMPS) {
+    for (IModule m : myStart) {
+      doCollect(m);
+    }
+
+    if (includeJDK) {
+      myResult.add(ClassLoaderManager.getInstance().getJDK());
+    }
+
+    if (includeMPS) {
+      myResult.add(ClassLoaderManager.getInstance().getMPSPath());
+    }
+
+    return myResult.optimize();
   }
 
   private void doCollect(IModule current) {
