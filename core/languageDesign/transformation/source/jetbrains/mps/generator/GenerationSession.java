@@ -39,8 +39,7 @@ public class GenerationSession implements IGenerationSession {
   private ILoggingHandler myLoggingHandler;
 
   private String mySessionId;
-  private GenerationSessionContext myCurrentContext;
-  private List<GenerationSessionContext> mySavedContexts = new ArrayList<GenerationSessionContext>();
+  private GenerationSessionContext mySessionContext;
 
   private int myInvocationCount = 0;
   private int myTransientModelsCount = 0;
@@ -59,14 +58,14 @@ public class GenerationSession implements IGenerationSession {
     if (myLoggingHandler == null) {
       myLoggingHandler = new LoggingHandlerAdapter() {
         public void addLogEntry(LogEntry e) {
-          if (myCurrentContext == null) return; // test mode?
+          if (mySessionContext == null) return; // test mode?
           Object o = e.getHintObject();
           if (o instanceof SNode) {
-            myCurrentContext.addTransientModelToKeep(((SNode) o).getModel());
+            mySessionContext.addTransientModelToKeep(((SNode) o).getModel());
           } else if (o instanceof NodeWithContext) {
             SNode node = ((NodeWithContext) o).getNode();
             if (node != null) {
-              myCurrentContext.addTransientModelToKeep(node.getModel());
+              mySessionContext.addTransientModelToKeep(node.getModel());
             }
           }
         }
@@ -80,27 +79,11 @@ public class GenerationSession implements IGenerationSession {
   }
 
   public void discardTransients() {
-    if (myCurrentContext == null) return;
-    GenerationSessionContext lastContext = myCurrentContext;
-    setGenerationSessionContext(null);
+    if (mySessionContext == null) return;
     if (myDiscardTransients) {
-//      IModule transientModelsModule = lastContext.getModule();
-//      List<SModelDescriptor> transientModels = transientModelsModule.getOwnModelDescriptors();
-//      for (SModelDescriptor transientModel : transientModels) {
-//        if (transientModel.isTransient() && !(lastContext.isTransientModelToKeep(transientModel.getSModel()))) {
-//          SModelRepository.getInstance().removeModelDescriptor(transientModel);
-//        }
-//      }
-      lastContext.clearTransientModels();
-      mySavedContexts.clear();
+      mySessionContext.clearTransientModels();
     }
-  }
-
-  private void setGenerationSessionContext(GenerationSessionContext context) {
-    if (myCurrentContext != null) {
-      mySavedContexts.add(myCurrentContext);
-    }
-    myCurrentContext = context;
+    mySessionContext = null;
   }
 
   public GenerationStatus generateModel(SModelDescriptor inputModel) throws Exception {
@@ -165,17 +148,16 @@ public class GenerationSession implements IGenerationSession {
     printGenerationStepData(stepController, inputModel);
 
     // -- replace context
-    GenerationSessionContext context = new GenerationSessionContext(inputModel, myInvocationContext, stepController, myCurrentContext);
-    setGenerationSessionContext(context);
+    mySessionContext = new GenerationSessionContext(myInvocationContext, stepController, mySessionContext);
 
     // -- replace generator
-    ITemplateGenerator generator = new TemplateGenerator(context, myProgressMonitor);
+    ITemplateGenerator generator = new TemplateGenerator(mySessionContext, myProgressMonitor);
     GenerationStatus status;
     try {
       SModel outputModel = generateModel_stepIntern(inputModel, generator);
       boolean wasErrors = generator.getErrorCount() > 0;
       boolean wasWarnigns = generator.getWarningCount() > 0;
-      status = new GenerationStatus(inputModel, outputModel, context.getTraceMap(), wasErrors, wasWarnigns, false);
+      status = new GenerationStatus(inputModel, outputModel, mySessionContext.getTraceMap(), wasErrors, wasWarnigns, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + inputModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
     } catch (GenerationCanceledException gce) {
       throw gce;//rethrow it for not to be caught in the last catch block
@@ -270,7 +252,7 @@ public class GenerationSession implements IGenerationSession {
 
       // apply mapping to the output model
       addMessage(MessageKind.INFORMATION, "generating model '" + currentOutputModel.getUID() + "'");
-      generationContext.replaceInputModel(currentOutputModel);
+      generationContext.clearTransientObjects();
       SModel transientModel = createTransientModel(modelsLongName, module);
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
@@ -347,7 +329,7 @@ public class GenerationSession implements IGenerationSession {
   private void recycleWasteModel(SModel model) {
     SModelDescriptor md = model.getModelDescriptor();
     if (md != null && md.isTransient()) {
-      if (myDiscardTransients && !myCurrentContext.isTransientModelToKeep(model)) {
+      if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
         addMessage(MessageKind.INFORMATION, "remove spent model '" + model.getUID() + "'");
         SModelRepository.getInstance().removeModelDescriptor(md);
       }

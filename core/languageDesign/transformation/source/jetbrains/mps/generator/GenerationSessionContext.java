@@ -41,14 +41,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
 
   public GenerationSessionContext(
-    SModel inputModel,
     IOperationContext invocationContext,
     AbstractGenerationStepController generationStepController,
     GenerationSessionContext prevContext) {
 
-
     myInvocationContext = invocationContext;
-
     myGenerationStepController = generationStepController;
     myGeneratorModules = myGenerationStepController.getGenerators();
     myTemplateModels = myGenerationStepController.getTemplateModels();
@@ -60,7 +57,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
   }
 
-  public void replaceInputModel(SModel inputModel) {
+  public void clearTransientObjects() {
     myTransientObjects.clear();
   }
 
@@ -201,17 +198,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   public void addTransientModelToKeep(SModel model) {
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor.isTransient() && keepTransientForMessageNavigation()) {
-//$$keep
-//      myTransientModelsToKeep.add(model);
-//      if (!SModelRepository.getInstance().isRegisteredModelDescriptor(model.getModelDescriptor(), myTransientModule)) {
-//        SModelRepository.getInstance().registerModelDescriptor(model.getModelDescriptor(), myTransientModule);
-//      }
       ((TransientModelsModule) getModule()).addModelToKeep(modelDescriptor);
     }
   }
 
   public boolean isTransientModelToKeep(SModel model) {
-//    return myTransientModelsToKeep.contains(transientModel);
     return ((TransientModelsModule) getModule()).isModelToKeep(model.getModelDescriptor());
   }
 
