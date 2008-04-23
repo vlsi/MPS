@@ -155,12 +155,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   public final List<ModelRoot> getModelRoots() {
-    List<ModelRoot> result = new ArrayList<ModelRoot>();
-    result.addAll(getNonDefaultModelRoots());
-    return result;
-  }
-
-  public List<ModelRoot> getNonDefaultModelRoots() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       return descriptor.getModelRoots();

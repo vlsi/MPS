@@ -12,13 +12,6 @@ import java.io.File;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 28.10.2005
- * Time: 11:34:18
- * To change this template use File | Settings | File Templates.
- */
 public interface IModule extends ModelOwner, MPSModuleOwner {
   String getModuleUID();
 
@@ -26,7 +19,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   List<SModelDescriptor> getOwnModelDescriptors();
   List<ModelRoot> getModelRoots();
-  List<ModelRoot> getNonDefaultModelRoots();
 
   List<Dependency> getDependencies(); 
   List<IModule> getExplicitlyDependOnModules();
@@ -41,7 +33,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   IFile getDescriptorFile();
 
-  @Nullable
   ModuleDescriptor getModuleDescriptor();
   void setModuleDescriptor(ModuleDescriptor moduleDescriptor);
 
