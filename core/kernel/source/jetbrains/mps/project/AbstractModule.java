@@ -26,57 +26,14 @@ import java.util.*;
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
-  private static final boolean USE_OLD_DEPENDENCY_CLASSPATH_ROUTINE = false;
-
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules) {
     return getDependenciesClasspath(modules, true, true);
   }
 
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeJDK, boolean includeMPS) {
-    if (USE_OLD_DEPENDENCY_CLASSPATH_ROUTINE) {
-      return getDependenciesClasspath_old(modules, includeJDK, includeMPS);
-    } else {
-      return new ClasspathCollector(modules).collect(includeJDK, includeMPS);
-    }
+    return new ClasspathCollector(modules).collect(includeJDK, includeMPS);
   }
-
-  private static IClassPathItem getDependenciesClasspath_old(Set<IModule> modules, boolean includeJDK, boolean includeMPS) {
-    Set<IModule> dependOnModules = new LinkedHashSet<IModule>();
-    dependOnModules.addAll(modules) ;
-    for (IModule m : modules) {
-      dependOnModules.addAll(m.getAllDependOnModules(IModule.class));
-    }
-    dependOnModules.addAll(BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore());
-
-    CompositeClassPathItem result = new CompositeClassPathItem();
-
-    if (includeJDK) {
-      result.add(ClassLoaderManager.getInstance().getJDK());
-    }
-    if (includeMPS) {
-      result.add(ClassLoaderManager.getInstance().getMPSPath());
-    }
-
-    for (IModule m : dependOnModules) {
-      result.add(m.getJavaStubsClassPathItem());
-      if (m instanceof Language) {
-        result.add(m.getRuntimeClasspath());
-      }
-    }
-
-    Set<Language> allExtendedLanguages = new LinkedHashSet<Language>();
-    for (IModule m : modules) {
-      if (m instanceof Language) {
-        allExtendedLanguages.addAll(((Language) m).getAllExtendedLanguages());
-      }
-    }
-    for (Language l : allExtendedLanguages) {
-      result.add(l.getRuntimeClasspath());
-    }
-
-    return result.optimize();
-  }
-
+  
   private boolean myModelsRead = false;
   private boolean myInitialized = false;
   protected IFile myDescriptorFile;
