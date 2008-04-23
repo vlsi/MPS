@@ -5,6 +5,7 @@ import jetbrains.mps.component.IContext;
 import jetbrains.mps.components.IContainer;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.AbstractProjectFrame;
@@ -107,6 +108,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         model.setLoading(false);
 
         myContext.init();
+        addComponent(TransientModelsModule.class, new TransientModelsModule(MPSProject.this));
 
         ClassLoaderManager.getInstance().reloadAll();
       }
