@@ -20,11 +20,34 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   List<SModelDescriptor> getOwnModelDescriptors();
   List<ModelRoot> getModelRoots();
 
-  List<Dependency> getDependencies(); 
+  /**
+   * @return All dependencies which are configured in depend on modules section
+   */
+  List<Dependency> getDependencies();
+
+  /**
+   * @return All modules we depend on including depend on modules, using languages, extended languages etc
+   */
   List<IModule> getExplicitlyDependOnModules();
+
+  /**
+   * @return All modules which moduleUIDs are returned in getDependencies
+   */
   List<IModule> getDirectlyDependOnModules();
+
+  /**
+   * @return All used languages namespaces
+   */
   List<String> getUsedLanguagesNamespaces();
+
+  /**
+   * @return All used languages
+   */
   List<Language> getUsedLanguages();
+
+  /**
+   * @return Explicitly depend on modules + bootstrap modules
+   */
   List<IModule> getDependOnModules();
 
   SModelDescriptor createModel(SModelUID uid, ModelRoot root);

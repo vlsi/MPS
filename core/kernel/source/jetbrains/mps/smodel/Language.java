@@ -128,6 +128,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     rereadModels();
     updateRuntimeClassPath();
+    updateLanguageRuntimeClassPathItem();
     reloadStubs();
     revalidateGenerators();
 
@@ -142,6 +143,28 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       result.add(entry.getPath());
     }
     return result;
+  }
+
+  public IClassPathItem getLanguageRuntimeClasspath() {
+    return myLanguageRuntimeClasspath;
+  }
+
+  private void updateLanguageRuntimeClassPathItem() {
+    CompositeClassPathItem result = new CompositeClassPathItem();
+    for (String s : getLanguageRuntimeClassPathItems()) {
+      IFile file = FileSystem.getFile(s);
+      if (!file.exists()) {
+        LOG.error("Can't find " + s);
+        continue;
+      }
+
+      if (file.isFile()) {
+        result.add(new JarFileClassPathItem(s));
+      } else {
+        result.add(new FileClassPathItem(s));
+      }
+    }
+    myLanguageRuntimeClasspath = result;
   }
 
   public List<IModule> getExplicitlyDependOnModules() {

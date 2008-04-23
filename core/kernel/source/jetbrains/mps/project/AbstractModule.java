@@ -35,7 +35,7 @@ public abstract class AbstractModule implements IModule {
 
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeJDK, boolean includeMPS) {
     Set<IModule> dependOnModules = new LinkedHashSet<IModule>();
-    dependOnModules.addAll(modules);
+    dependOnModules.addAll(modules) ;
     for (IModule m : modules) {
       dependOnModules.addAll(m.getAllDependOnModules(IModule.class));
     }
