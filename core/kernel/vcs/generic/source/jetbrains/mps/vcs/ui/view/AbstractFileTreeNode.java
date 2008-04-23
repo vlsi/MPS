@@ -3,7 +3,10 @@ package jetbrains.mps.vcs.ui.view;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vcs.ui.IFileController;
 import jetbrains.mps.vcs.ui.IFileListener;
@@ -40,19 +43,6 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
   }
 
   private void createUI() {
-    myActions = myProvider.createFileActions(myFile, new IFileListener() {
-      public void updateStatus() {
-        updateNodeStatus();
-      }
-    });
-
-    if (myActions.isEmpty()) return;
-
-    myPopupMenu = new JPopupMenu();
-    for (MPSAction a : myActions) {
-      if (a != null) a.add(myPopupMenu, new ActionContext(this.getOperationContext()));
-      else myPopupMenu.addSeparator();
-    }
   }
 
   @Override
@@ -64,10 +54,18 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
 
   @Override
   public JPopupMenu getPopupMenu() {
-    return myPopupMenu;
+    JPopupMenu menu = new JPopupMenu();
+    ActionContext context = new ActionContext(getOperationContext());
+    context.put(IFile.class, myFile);
+    ActionManager.instance().getGroup(FileProjectPane.ACTION_GROUP_ID).add(menu, context);
+    return menu;
   }
 
   private Color getColor(Status status) {
     return StatusStyles.getInstance().getColor(status);
+  }
+
+  public IFile getFile() {
+    return myFile;
   }
 }

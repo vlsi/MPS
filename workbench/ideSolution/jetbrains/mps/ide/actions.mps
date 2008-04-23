@@ -8,7 +8,7 @@
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   </language>
-  <maxImportIndex value="31" />
+  <maxImportIndex value="32" />
   <import index="1" modelUID="jetbrains.mps.ide.actions.nodes@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.modelchecker@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.actions.model@java_stub" version="-1" />
@@ -33,6 +33,7 @@
   <import index="28" modelUID="jetbrains.mps.vcs.ui@java_stub" version="-1" />
   <import index="29" modelUID="jetbrains.mps.vcs.ui.actions@java_stub" version="-1" />
   <import index="31" modelUID="jetbrains.mps.refactoring.languages@java_stub" version="-1" />
+  <import index="32" modelUID="jetbrains.mps.vcs.ui.actions.filepane@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -954,7 +955,31 @@
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1208968097789">
     <property name="package" value="FilePane" />
     <property name="name" value="FileActions" />
-    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1208968141195" />
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1208968141195">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1208971575420">
+        <link role="javaClass" targetNodeId="32.~FilePaneAddAction" resolveInfo="FilePaneAddAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1208971581983">
+        <link role="javaClass" targetNodeId="32.~FilePaneCommitAction" resolveInfo="FilePaneCommitAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1208971635885">
+        <link role="javaClass" targetNodeId="32.~FilePaneRevertAction" resolveInfo="FilePaneRevertAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1208971641010">
+        <link role="javaClass" targetNodeId="32.~FilePaneUpdateAction" resolveInfo="FilePaneUpdateAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1208971621856" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1208971589014">
+        <link role="javaClass" targetNodeId="32.~FilePaneFileDiffAction" resolveInfo="FilePaneFileDiffAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1208971605370">
+        <link role="javaClass" targetNodeId="32.~FilePaneFileDiffWithAction" resolveInfo="FilePaneFileDiffWithAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1208971616480" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1208971612948">
+        <link role="javaClass" targetNodeId="32.~FilePaneFileDiffWithAction" resolveInfo="FilePaneFileDiffWithAction" />
+      </node>
+    </node>
   </node>
 </model>
 
