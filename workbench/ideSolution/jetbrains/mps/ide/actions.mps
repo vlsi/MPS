@@ -951,5 +951,10 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1208968097789">
+    <property name="package" value="FilePane" />
+    <property name="name" value="FileActions" />
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1208968141195" />
+  </node>
 </model>
 

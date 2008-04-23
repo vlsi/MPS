@@ -11,6 +11,7 @@ import jetbrains.mps.project.Solution;
 import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
 import java.util.ArrayList;
+import jetbrains.mps.uiLanguage.runtime.events.Events;
 import java.awt.GridLayout;
 import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
@@ -45,6 +46,11 @@ public class NewSolutionDialogContentPane extends JPanel {
   private Solution myResult;
   private NewSolutionDialog myDialog;
   public List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
+  private Events myEvents = new Events() {
+    {
+    }
+
+  };
 
   public  NewSolutionDialogContentPane() {
     this.myThis = this;
@@ -56,6 +62,10 @@ public class NewSolutionDialogContentPane extends JPanel {
     component.add(this.createComponent1());
     component.add(this.createComponent2());
     component.add(this.createComponent3());
+  }
+
+  public Events getEvents() {
+    return this.myEvents;
   }
 
   public void addNotify() {
