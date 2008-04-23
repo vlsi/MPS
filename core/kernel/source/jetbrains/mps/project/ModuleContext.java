@@ -9,6 +9,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
@@ -81,8 +82,9 @@ public class ModuleContext extends StandaloneMPSContext {
     MPSProject project = frame.getProject();
     Set<IModule> owningModules = SModelRepository.getInstance().getOwners(model, IModule.class);
     if (owningModules.isEmpty()) {
-      LOG.error("Couldn't create module context for node:" +
-              "\nCouldn't find owner module for model \"" + model.getModelUID() + "\"");
+      String uuid = model != null ? model.getModelUID().toString() : "null";
+    LOG.error("Couldn't create module context for node:" +
+              "\nCouldn't find owner module for model \"" + uuid + "\"");
       return null;
     }
 
