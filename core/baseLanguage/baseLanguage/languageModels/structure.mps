@@ -2144,6 +2144,10 @@
       <property name="value" value=".length" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1208944675142">
+      <property name="value" value="Use ArrayLengthOperation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1208203973962" resolveInfo="deprecated_next_after_531" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177326519037">
     <property name="name" value="CommentedStatementsBlock" />
