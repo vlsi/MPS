@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -100,7 +101,7 @@ public class DesignPartLoader {
                 break;
             }
 
-            else if (module == null && owner instanceof GenerationSessionContext.TransientModule) {
+            else if (module == null && owner instanceof TransientModelsModule) {
                 module = (IModule) owner;
             }
         }

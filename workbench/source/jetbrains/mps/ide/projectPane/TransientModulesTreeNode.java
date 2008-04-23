@@ -6,8 +6,8 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.generator.GenerationSessionContext.TransientModule;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.util.ToStringComparator;
 
 import javax.swing.JPopupMenu;
@@ -43,12 +43,7 @@ public class TransientModulesTreeNode extends TextTreeNode {
   }
 
   private void populate() {
-    List<GenerationSessionContext.TransientModule> modules = MPSModuleRepository.getInstance().getAllModules(TransientModule.class);
-
-    Collections.sort(modules, new ToStringComparator());
-    
-    for (TransientModule m : modules) {
-      add(new TransientModuleTreeNode(m, myProject));
-    }    
+    TransientModelsModule module = myProject.getComponentSafe(TransientModelsModule.class);
+    add(new TransientModuleTreeNode(module, myProject));
   }
 }

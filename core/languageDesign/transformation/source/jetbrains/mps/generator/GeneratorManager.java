@@ -5,6 +5,7 @@ import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
@@ -245,8 +246,9 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
     final boolean[] result = new boolean[1];
     CommandProcessor.instance().executeGenerationCommand(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().removeTransientModules(); // this will 'reload-all'
         MPSProject project = inputModels.get(0).o2.getProject();
+        SModelRepository.getInstance().unRegisterModelDescriptors(project.getComponentSafe(TransientModelsModule.class));
+        SModelRepository.getInstance().removeUnusedDescriptors();
         project.saveModels();
         if (saveTransientModels) {
           project.getComponentSafe(GenerationTracer.class).startTracing();
@@ -254,6 +256,10 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
         GenerationController gc = new GenerationController(GeneratorManager.this, inputModels, generationType, progress, messages, saveTransientModels);
         result[0] = gc.generate();
         project.getComponentSafe(GenerationTracer.class).finishTracing();
+
+        // hack ?
+        ProjectPane projectPane = inputModels.get(0).o2.getComponent(ProjectPane.class);
+        projectPane.doRebuildTree();
       }
     });
     return result[0];

@@ -648,11 +648,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         MPSProjects projects = ApplicationComponents.getInstance().getComponentSafe(MPSProjects.class);
         projects.removeProject(MPSProject.this);
 
-        // We have to remove transient because they might depend on modules from project
-        // and these module might get unloaded. In this case we will have can't satisfy
-        // dependency error.
-        MPSModuleRepository.getInstance().removeTransientModules();
-
         myContext.get(Highlighter.class).stopUpdater();
         myPluginManager.disposePlugins();
         myPluginManager.dispose();

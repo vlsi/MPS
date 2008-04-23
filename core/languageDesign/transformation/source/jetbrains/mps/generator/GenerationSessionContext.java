@@ -24,7 +24,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private List<Generator> myGeneratorModules;
   private List<SModelDescriptor> myTemplateModels;
   private IOperationContext myInvocationContext;
-  private TransientModule myTransientModule;
+  private AbstractModule myTransientModule;
   private AbstractGenerationStepController myGenerationStepController;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
@@ -39,7 +39,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private TraceMap myTraceMap = new TraceMap();
   private Set<String> myUsedNames = new HashSet<String>();
   private Set<SModel> myTransientModelsToKeep = new HashSet<SModel>();
-  private Set<IModule> myTransientModulesToKeep = new HashSet<IModule>();
 
 
   public GenerationSessionContext(
@@ -56,15 +55,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myTemplateModels = myGenerationStepController.getTemplateModels();
     myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
 
-    String inputModuleUID = inputModel.getUID().toString();
-    myTransientModule = new TransientModule("TransientModule:[" + inputModuleUID + "]", invocationContext.getModule(), myGeneratorModules);
+    myTransientModule = invocationContext.getProject().getComponentSafe(TransientModelsModule.class);
     if (prevContext != null) {
       mySessionObjects = prevContext.mySessionObjects;
-      myTransientModule.addDependency(prevContext.getModule());
       myUsedNames = prevContext.myUsedNames;
       myTransientModelsToKeep = prevContext.myTransientModelsToKeep;
-      myTransientModulesToKeep = prevContext.myTransientModulesToKeep;
-
     }
   }
 
@@ -213,136 +208,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       if (!SModelRepository.getInstance().isRegisteredModelDescriptor(transientModel.getModelDescriptor(), myTransientModule)) {
         SModelRepository.getInstance().registerModelDescriptor(transientModel.getModelDescriptor(), myTransientModule);
       }
-      myTransientModulesToKeep.add(myTransientModule);
     }
   }
 
   public boolean isTransientModelToKeep(SModel transientModel) {
-    if (transientModel.getModelDescriptor().isTransient()) {
-      return myTransientModelsToKeep.contains(transientModel);
-    }
-    return false;
+    return myTransientModelsToKeep.contains(transientModel);
   }
-
-  public boolean isTransientModuleToKeep(IModule transientModule) {
-    return myTransientModulesToKeep.contains(transientModule);
-  }
-
-
-  public class TransientModule extends AbstractModule {
-    private List<IModule> myDependOnModules = new ArrayList<IModule>();
-    private List<Language> myUsedLanguages = new ArrayList<Language>();
-    private IModule myInvocationModule;
-    private SModelDescriptor myProjectModelDescriptor = ProjectModels.createDescriptorFor(this);
-    private ModuleDescriptor myModuleDescriptor = ModuleDescriptor.newInstance(myProjectModelDescriptor.getSModel());
-    private String myText;
-
-    private MPSModuleOwner myOwnOnwer = new MPSModuleOwner() {
-    };
-
-    TransientModule(String text, IModule invocationModule, List<Generator> generatorModules) {
-      myText = text;
-      myInvocationModule = invocationModule;
-      myDependOnModules.addAll(generatorModules);
-      myDependOnModules.add(invocationModule);
-
-      Set<Language> usedLanguages = new LinkedHashSet<Language>();
-      usedLanguages.addAll(invocationModule.getUsedLanguages());
-      for (Generator g : generatorModules) {
-        usedLanguages.add(g.getSourceLanguage());
-        usedLanguages.addAll(g.getUsedLanguages());
-      }
-      myUsedLanguages.addAll(usedLanguages);
-
-      reload();
-
-      MPSModuleRepository.getInstance().addModule(this, myOwnOnwer);
-    }
-
-    public List<Language> getUsedLanguages() {
-      return myUsedLanguages;
-    }
-
-    public List<Dependency> getDependencies() {
-      List<Dependency> result = new ArrayList<Dependency>();
-      for (IModule dep : myDependOnModules) {
-        result.add(new Dependency(dep.getModuleUID(), false));
-      }
-      return result;
-    }
-
-    public void addGeneratorModules(List<Generator> generatorModules) {
-      for (IModule module : generatorModules) {
-        if (!myDependOnModules.contains(module)) {
-          myDependOnModules.add(module);
-        }
-      }
-    }
-
-    public void addDependency(IModule m) {
-      if (!myDependOnModules.contains(m)) {
-        myDependOnModules.add(m);
-      }
-    }
-
-    public List<ModelRoot> getNonDefaultModelRoots() {
-      return Collections.emptyList();
-    }
-
-    public ModuleDescriptor getModuleDescriptor() {
-      return myModuleDescriptor;
-    }
-
-    public void dispose() {
-      MPSModuleRepository.getInstance().unRegisterModules(this);
-      MPSModuleRepository.getInstance().unRegisterModules(myOwnOnwer);
-
-      // force removing transient models from repository
-      List<SModelDescriptor> ownModelDescriptors = getOwnModelDescriptors();
-      for (SModelDescriptor descriptor : ownModelDescriptors) {
-        SModelRepository.getInstance().unRegisterModelDescriptor(descriptor, this);
-        if (descriptor.isTransient() && !SModelRepository.getInstance().hasOwners(descriptor)) {
-          SModelRepository.getInstance().removeModelDescriptor(descriptor);
-        }
-      }
-
-      if (MPSModuleRepository.getInstance().getOwners(this).size() != 0) {
-        MPSModuleRepository.getInstance().unRegisterModules(myOwnOnwer);
-      }
-    }
-
-    public void createManifest() {
-    }
-
-    public Class getClass(String fqName) {
-      for (IModule m : myDependOnModules) {
-        Class result = m.getClass(fqName);
-        if (result != null) {
-          return result;
-        }
-      }
-      return null;
-    }
-
-    public String toString() {
-      return myText;
-    }
-
-
-    public String getModuleUID() {
-      return "TransientModule" + System.identityHashCode(this);
-    }
-
-    public String getGeneratorOutputPath() {
-      return myInvocationModule.getGeneratorOutputPath();
-    }
-
-    public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
-      throw new UnsupportedOperationException();
-    }
-
-    public void save() {
-      throw new UnsupportedOperationException();
-    }
-  } // private class TransientModule
 }

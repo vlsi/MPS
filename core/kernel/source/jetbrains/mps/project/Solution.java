@@ -16,11 +16,8 @@ import java.io.File;
 import java.util.*;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Aug 26, 2005
- * Time: 8:29:14 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Aug 26, 2005
  */
 public class Solution extends AbstractModule {
   private static Logger LOG = Logger.getLogger(Solution.class);

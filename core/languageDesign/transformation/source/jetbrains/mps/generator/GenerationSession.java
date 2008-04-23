@@ -80,13 +80,15 @@ public class GenerationSession implements IGenerationSession {
   }
 
   public void discardTransients() {
+    if (myCurrentContext == null) return;
     GenerationSessionContext lastContext = myCurrentContext;
     setGenerationSessionContext(null);
     if (myDiscardTransients) {
-      for (GenerationSessionContext savedContext : mySavedContexts) {
-        IModule module = savedContext.getModule();
-        if (!lastContext.isTransientModuleToKeep(module)) {
-          module.dispose(); // unregister transient models and module
+      IModule transientModelsModule = lastContext.getModule();
+      List<SModelDescriptor> transientModels = transientModelsModule.getOwnModelDescriptors();
+      for (SModelDescriptor transientModel : transientModels) {
+        if (transientModel.isTransient() && !(lastContext.isTransientModelToKeep(transientModel.getSModel()))) {
+          SModelRepository.getInstance().removeModelDescriptor(transientModel);
         }
       }
       mySavedContexts.clear();
@@ -331,7 +333,7 @@ public class GenerationSession implements IGenerationSession {
   }
 
   private SModel createTransientModel(String longName, ModelOwner modelOwner) {
-    String stereotype = "" + myInvocationCount + "_" + myTransientModelsCount/* + "_" + getSessionId()*/;
+    String stereotype = "" + myInvocationCount + "_" + myTransientModelsCount;
     while (SModelRepository.getInstance().getModelDescriptor(new SModelUID(longName, stereotype)) != null) {
       stereotype += "_";
     }
