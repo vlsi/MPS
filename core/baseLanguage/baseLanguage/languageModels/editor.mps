@@ -14919,5 +14919,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1208890820881">
+    <property name="package" value="dotExpression" />
+    <link role="conceptDeclaration" targetNodeId="17.1208890769693" resolveInfo="ArrayLengthOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1208890828990">
+      <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 
