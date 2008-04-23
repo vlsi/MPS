@@ -6,6 +6,8 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.util.ToStringComparator;
@@ -14,23 +16,27 @@ import javax.swing.JPopupMenu;
 import java.util.List;
 import java.util.Collections;
 
-public class TransientModulesTreeNode extends TextTreeNode {
-  private MPSProject myProject;
-  private boolean myInitialized;
+public class TransientModelsTreeNode extends ProjectModuleTreeNode {
+  private IModule myTransientModule;
 
-  public TransientModulesTreeNode(MPSProject project) {
-    super("Transient Modules");
-    myProject = project;
-  }
-
-
-  public boolean isInitialized() {
-    return myInitialized;
-  }
-
-  protected void doInit() {
+  public TransientModelsTreeNode(MPSProject project) {
+    super(new ModuleContext(project.getComponentSafe(TransientModelsModule.class), project));
+    myTransientModule = project.getComponentSafe(TransientModelsModule.class);
     populate();
-    myInitialized = true;
+    updatePresentation();
+    setNodeIdentifier(myTransientModule.getModuleUID());
+  }
+
+  protected String getModulePresentation() {
+    return "Transient Models";
+  }
+
+  public IModule getModule() {
+    return myTransientModule;
+  }
+
+  private void populate() {
+    SModelsSubtree.create(this, getOperationContext());
   }
 
   public JPopupMenu getPopupMenu() {
@@ -40,10 +46,5 @@ public class TransientModulesTreeNode extends TextTreeNode {
       .add(result, new ActionContext());
 
     return result;
-  }
-
-  private void populate() {
-    TransientModelsModule module = myProject.getComponentSafe(TransientModelsModule.class);
-    add(new TransientModuleTreeNode(module, myProject));
   }
 }

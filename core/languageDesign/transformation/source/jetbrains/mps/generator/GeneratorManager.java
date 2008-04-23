@@ -257,7 +257,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
         result[0] = gc.generate();
         project.getComponentSafe(GenerationTracer.class).finishTracing();
 
-        // hack ?
+        // hack $$TrM
         ProjectPane projectPane = inputModels.get(0).o2.getComponent(ProjectPane.class);
         projectPane.doRebuildTree();
       }

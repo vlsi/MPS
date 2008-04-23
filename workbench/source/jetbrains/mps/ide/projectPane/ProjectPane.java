@@ -628,9 +628,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       myModulesPool = new ProjectModulesPoolTreeNode(getProject());
       root.add(myModulesPool);
 
-      TransientModulesTreeNode transientModules = new TransientModulesTreeNode(getProject());
-      root.add(transientModules);
-
+      TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(getProject());
+      root.add(transientModelsNode);
       return root;
     }
   } // private class MyTree
