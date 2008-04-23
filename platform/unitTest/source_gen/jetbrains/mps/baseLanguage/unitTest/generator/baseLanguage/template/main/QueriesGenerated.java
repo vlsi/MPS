@@ -8,11 +8,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.generator.JavaModelUtil_new;
-import junit.framework.TestCase;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
@@ -29,10 +24,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1171932074431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode superclass = SLinkOperations.getTarget(_context.getNode(), "superclass", true);
     if ((superclass == null)) {
-      Classifier classifier = JavaModelUtil_new.findClassifier(TestCase.class);
-      SModel model = _context.getGenerator().getTargetModel();
-      superclass = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-      SLinkOperations.setTarget(superclass, "classifier", classifier.getNode(), false);
+      return new QuotationClass_().createNode();
     }
     return superclass;
   }
