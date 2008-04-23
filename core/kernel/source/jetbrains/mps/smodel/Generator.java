@@ -8,6 +8,7 @@ import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.ide.BootstrapLanguagesManager;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -171,6 +172,16 @@ public class Generator extends AbstractModule {
     }
 
     return home.getAbsoluteFile();
+  }
+
+  public List<String> getUsedLanguagesNamespaces() {
+    List<String> result = super.getUsedLanguagesNamespaces();
+    for (Language l : BootstrapLanguagesManager.getInstance().getLanguages()) {
+      if (!result.contains(l.getNamespace())) {
+        result.add(l.getNamespace());
+      }
+    }
+    return result;
   }
 
   public void convert() {
