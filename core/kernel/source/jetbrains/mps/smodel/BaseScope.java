@@ -102,7 +102,6 @@ public abstract class BaseScope implements IScope {
 
     Set<Language> usedLanguages = new HashSet<Language>();
     usedLanguages.addAll(getInitialUsedLanguages());
-    usedLanguages.addAll(BootstrapLanguagesManager.getInstance().getLanguages());
 
     boolean changed = true;
     while (changed) {

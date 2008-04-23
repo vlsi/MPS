@@ -232,6 +232,9 @@ public abstract class AbstractModule implements IModule {
         LOG.error("Can't load language " + l + " from " + this);
       }
     }
+    
+    result.add(BootstrapLanguagesManager.getInstance().getBaseLanguage());
+    result.add(BootstrapLanguagesManager.getInstance().getCollectionsLanguage());
     return result;
   }
 
