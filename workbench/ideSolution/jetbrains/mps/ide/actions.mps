@@ -976,8 +976,8 @@
         <link role="javaClass" targetNodeId="32.~FilePaneFileDiffWithAction" resolveInfo="FilePaneFileDiffWithAction" />
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1208971616480" />
-      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1208971612948">
-        <link role="javaClass" targetNodeId="32.~FilePaneFileDiffWithAction" resolveInfo="FilePaneFileDiffWithAction" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.JavaAction" id="1208973552116">
+        <link role="javaClass" targetNodeId="32.~FilePaneFileHistoryAction" resolveInfo="FilePaneFileHistoryAction" />
       </node>
     </node>
   </node>
