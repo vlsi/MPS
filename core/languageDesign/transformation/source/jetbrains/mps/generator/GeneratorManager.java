@@ -259,7 +259,9 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
 
         // hack $$TrM
         ProjectPane projectPane = inputModels.get(0).o2.getComponent(ProjectPane.class);
-        projectPane.doRebuildTree();
+        if (projectPane != null) {
+          projectPane.doRebuildTree();
+        }
       }
     });
     return result[0];
