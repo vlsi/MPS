@@ -1,9 +1,10 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
-import jetbrains.mps.project.*;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
@@ -24,7 +25,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private List<Generator> myGeneratorModules;
   private List<SModelDescriptor> myTemplateModels;
   private IOperationContext myInvocationContext;
-  private AbstractModule myTransientModule;
   private AbstractGenerationStepController myGenerationStepController;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
@@ -38,7 +38,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   // these objects survive through all steps of generation
   private TraceMap myTraceMap = new TraceMap();
   private Set<String> myUsedNames = new HashSet<String>();
-  private Set<SModel> myTransientModelsToKeep = new HashSet<SModel>();
 
 
   public GenerationSessionContext(
@@ -55,11 +54,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myTemplateModels = myGenerationStepController.getTemplateModels();
     myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
 
-    myTransientModule = invocationContext.getProject().getComponentSafe(TransientModelsModule.class);
     if (prevContext != null) {
       mySessionObjects = prevContext.mySessionObjects;
       myUsedNames = prevContext.myUsedNames;
-      myTransientModelsToKeep = prevContext.myTransientModelsToKeep;
     }
   }
 
@@ -99,7 +96,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   @NotNull
   public IModule getModule() {
-    return myTransientModule;
+    return getProject().getComponentSafe(TransientModelsModule.class);
   }
 
   @NotNull
@@ -109,8 +106,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   @NotNull
   public IScope getScope() {
-//    return myTransientModule.getScope();
-    return GlobalScope.getInstance();
+    return getModule().getScope();
   }
 
   public List<Generator> getGeneratorModules() {
@@ -202,16 +198,24 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return !myInvocationContext.isTestMode();
   }
 
-  public void addTransientModelToKeep(SModel transientModel) {
-    if (transientModel.getModelDescriptor().isTransient() && keepTransientForMessageNavigation()) {
-      myTransientModelsToKeep.add(transientModel);
-      if (!SModelRepository.getInstance().isRegisteredModelDescriptor(transientModel.getModelDescriptor(), myTransientModule)) {
-        SModelRepository.getInstance().registerModelDescriptor(transientModel.getModelDescriptor(), myTransientModule);
-      }
+  public void addTransientModelToKeep(SModel model) {
+    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    if (modelDescriptor.isTransient() && keepTransientForMessageNavigation()) {
+//$$keep
+//      myTransientModelsToKeep.add(model);
+//      if (!SModelRepository.getInstance().isRegisteredModelDescriptor(model.getModelDescriptor(), myTransientModule)) {
+//        SModelRepository.getInstance().registerModelDescriptor(model.getModelDescriptor(), myTransientModule);
+//      }
+      ((TransientModelsModule) getModule()).addModelToKeep(modelDescriptor);
     }
   }
 
-  public boolean isTransientModelToKeep(SModel transientModel) {
-    return myTransientModelsToKeep.contains(transientModel);
+  public boolean isTransientModelToKeep(SModel model) {
+//    return myTransientModelsToKeep.contains(transientModel);
+    return ((TransientModelsModule) getModule()).isModelToKeep(model.getModelDescriptor());
+  }
+
+  public void clearTransientModels() {
+    ((TransientModelsModule) getModule()).clearUnused();
   }
 }

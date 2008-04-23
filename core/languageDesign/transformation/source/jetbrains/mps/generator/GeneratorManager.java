@@ -247,8 +247,7 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
     CommandProcessor.instance().executeGenerationCommand(new Runnable() {
       public void run() {
         MPSProject project = inputModels.get(0).o2.getProject();
-        SModelRepository.getInstance().unRegisterModelDescriptors(project.getComponentSafe(TransientModelsModule.class));
-        SModelRepository.getInstance().removeUnusedDescriptors();
+        project.getComponentSafe(TransientModelsModule.class).clearAll();
         project.saveModels();
         if (saveTransientModels) {
           project.getComponentSafe(GenerationTracer.class).startTracing();
