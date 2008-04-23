@@ -26,9 +26,9 @@
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\closures.mpl" token="{language_descriptor}\runtime\classes" value="{mps_home}\core\baseLanguage\jetbrains.mps.closures.runtime.jar" />
     <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp\closures.mpl" token="{mps_home}\core\baseLanguage\closures\classes" value="{language_descriptor}\classes" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp" />
-    <mkdir dir="core\baseLanguage\closures\languages\closures\runtime\classes" />
+    <mkdir dir="core/baseLanguage/closures/runtime\classes" />
     <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.runtime.jar" duplicate="preserve">
-      <fileset dir="core\baseLanguage\closures\languages\closures\runtime\classes" />
+      <fileset dir="core/baseLanguage/closures/runtime\classes" />
     </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\baseLanguage\jetbrains.mps.closures.tmp" />
   </target>

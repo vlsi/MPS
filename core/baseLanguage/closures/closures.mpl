@@ -6,7 +6,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.closures#1199623535494" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.closures#1199623535494">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.closures.generator.baseLanguage.template" />
       </models>
@@ -43,7 +43,7 @@
     <entry path="${language_descriptor}\runtime\classes" />
   </classPath>
   <runtimeClassPath>
-    <entry path="${mps_home}\core\baseLanguage\closures\classes" />
+    <entry path="${language_descriptor}\classes" />
     <entry path="${language_descriptor}\runtime\classes" />
   </runtimeClassPath>
   <sourcePath />

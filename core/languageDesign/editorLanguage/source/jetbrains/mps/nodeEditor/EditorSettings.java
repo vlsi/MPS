@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.component.Dependency;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 import javax.swing.Timer;
@@ -27,6 +28,8 @@ import java.util.List;
  * @author Kostik
  */
 public class EditorSettings extends DefaultExternalizableComponent implements IComponentWithPreferences {
+  private static Logger LOG = Logger.getLogger(EditorSettings.class);
+
   public static EditorSettings getInstance() {
     return ApplicationComponents.getInstance().getComponent(EditorSettings.class);
   }
@@ -49,7 +52,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   public void setCaretBlinker(CaretBlinker caretBlinker) {
     myCaretBlinker = caretBlinker;
   }
-
+                                         
   public Font getDefaultEditorFont() {
     return new Font(myFontFamily, 0, myFontSize);
   }
@@ -129,7 +132,11 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
   private void fireEditorSettingsChanged() {
     for (EditorSettingsListener l : myListeners) {
-      l.settingsChanged();
+      try {
+        l.settingsChanged();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 

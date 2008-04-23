@@ -19,7 +19,6 @@
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="YPath-runtime" />
     <orderEntry type="module" module-name="Closures" />
-    <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntryProperties />
   </component>
