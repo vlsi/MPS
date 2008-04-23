@@ -149,7 +149,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return SequenceOperations.toList(SequenceOperations.map(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper(null, null)));
+      return SequenceOperations.toList(SequenceOperations.map(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper(BreakStatement_generic_cellMenu.this, null)));
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {

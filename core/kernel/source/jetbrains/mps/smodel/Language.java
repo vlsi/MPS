@@ -179,6 +179,16 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return result;
   }
 
+  public List<String> getUsedLanguagesNamespaces() {
+    List<String> result = super.getUsedLanguagesNamespaces();
+    for (Language l : BootstrapLanguagesManager.getInstance().getLanguages()) {
+      if (!result.contains(l.getNamespace())) {
+        result.add(l.getNamespace());
+      }
+    }
+    return result;
+  }
+
   IFile newDescriptorFileByNewName(String newNamespace) {
     IFile dir = myDescriptorFile.getParent();
     String oldShortFileName = NameUtil.shortNameFromLongName(myDescriptorFile.getAbsolutePath());

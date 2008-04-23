@@ -26,7 +26,7 @@ import java.util.*;
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
-  private static final boolean USE_OLD_DEPENDENCY_CLASSPATH_ROUTINE = true;
+  private static final boolean USE_OLD_DEPENDENCY_CLASSPATH_ROUTINE = false;
 
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules) {
     return getDependenciesClasspath(modules, true, true);

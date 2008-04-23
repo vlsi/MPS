@@ -8,11 +8,13 @@
     <model modelUID="jetbrains.mps.logging.refactoring.samples" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.logging.refactoring#1189697379687" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.logging.refactoring#1189697379687">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.logging.refactoring.generator.baseLanguage.template" />
       </models>
-      <external-templates />
+      <external-templates>
+        <generator generatorUID="jetbrains.mps.bootstrap.smodelLanguage#1139186730696" />
+      </external-templates>
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
         <dependency reexport="false">jetbrains.mps.baseLanguageInternal</dependency>
@@ -21,7 +23,19 @@
       <usedLanguages>
         <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
       </usedLanguages>
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule kind="before_or_together ">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.logging.refactoring.generator.baseLanguage.template.main@templates" nodeID="*" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="jetbrains.mps.bootstrap.smodelLanguage#1139186730696" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <classPath>
@@ -30,6 +44,9 @@
   <runtimeClassPath>
     <entry path="${language_descriptor}\classes" />
   </runtimeClassPath>
+  <languageRuntimeClassPath>
+    <entry path="${language_descriptor}\classes" />
+  </languageRuntimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />

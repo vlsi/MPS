@@ -6,7 +6,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.bootstrap.intentionsLanguage#1192798684353" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.bootstrap.intentionsLanguage#1192798684353">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.intentionsLanguage.generator.baseLanguage.template" />
       </models>
@@ -23,6 +23,9 @@
   <runtimeClassPath>
     <entry path="${language_descriptor}\classes" />
   </runtimeClassPath>
+  <languageRuntimeClassPath>
+    <entry path="${language_descriptor}\classes" />
+  </languageRuntimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
