@@ -16,8 +16,6 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.findusages.view.NewUsagesView;
 import jetbrains.mps.ide.findusages.view.UsageView;
-import jetbrains.mps.ide.modelchecker.ModelCheckResult;
-import jetbrains.mps.ide.modelchecker.ModelChecker;
 import jetbrains.mps.ide.navigation.FocusPolicyUtil;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
@@ -45,6 +43,8 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 import java.awt.*;
@@ -144,6 +144,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
   private AbstractAction myShowIntentionsAction;
+  private Point myLightBulbLocation = new Point();
   private LightBulbMenu myLightBulb;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
@@ -329,7 +330,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         showIntentionsMenu();
       }
     };
-    //add(myLightBulb);
+
+    myScrollPane.getViewport().addChangeListener(new ChangeListener() {
+      public void stateChanged(ChangeEvent e) {
+        adjustLightBulbLocation();
+      }
+    });
 
     myShowIntentionsAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -415,6 +421,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         CommandProcessor.instance().executeLightweightCommandInEDT(new Runnable() {
           public void run() {
             if (getSelectedCell() != null) {
+              adjustLightBulbLocation();
               setLightBulbVisibility(!getEnabledIntentions().isEmpty());
               myShowIntentionsAction.setEnabled(!getAvailableIntentions().isEmpty());
             } else {
@@ -525,7 +532,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
 
         if (e instanceof GroupToElementsAdapter) {
-          GroupToElementsAdapter adapter = (GroupToElementsAdapter) e;          
+          GroupToElementsAdapter adapter = (GroupToElementsAdapter) e;
           registerKeyStrokes(adapter.getGroup(), actionContext);
         }
       }
@@ -1752,9 +1759,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private void showLightBulb(boolean showError) {
+  private void adjustLightBulbLocation() {
     EditorCell selectedCell = getSelectedCell();
-    assert selectedCell != null : "selected cell mustn't be null";
+    if (selectedCell == null) return;
 
     EditorCell bigCell = getBigCellForNode(selectedCell.getSNode());
     if (bigCell != null) {
@@ -1763,12 +1770,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     int x = getRootCell().getX() - ADDITIONAL_SHIFT_X - myLightBulb.getWidth() - 6;
     int y = selectedCell.getY();
-    x = x < 0 ? 2 : x;
-    y = y < 0 ? 2 : y;
+    myLightBulbLocation.x = Math.max(x, myScrollPane.getViewport().getViewPosition().x + 2);
+    myLightBulbLocation.y = Math.max(y, myScrollPane.getViewport().getViewPosition().y + 2);
 
+    myLightBulb.setLocation(myLightBulbLocation);
+  }
+
+  private void showLightBulb(boolean showError) {
     myLightBulb.setError(showError);
     add(myLightBulb);
-    myLightBulb.setLocation(x, y);
+    myLightBulb.setLocation(myLightBulbLocation);
   }
 
   private void hideLightBulb() {
