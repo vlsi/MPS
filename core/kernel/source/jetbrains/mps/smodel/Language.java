@@ -17,7 +17,7 @@ import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
@@ -47,6 +47,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private List<LanguageCommandListener> myCommandListeners = new ArrayList<LanguageCommandListener>();
   private LanguageEventTranslator myEventTranslator = new LanguageEventTranslator();
   private boolean myUpToDate = true;
+  private IClassPathItem myLanguageRuntimeClasspath;
 
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
   private
@@ -133,6 +134,14 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     SModelRepository.getInstance().registerModelDescriptor(myLanguageDescriptor.getModel().getModelDescriptor(), this);
 
     createManifest();
+  }
+
+  public List<String> getLanguageRuntimeClassPathItems() {
+    List<String> result = new ArrayList<String>();
+    for (ClassPathEntry entry : myLanguageDescriptor.getLanguageRuntimeClassPathEntrys()) {
+      result.add(entry.getPath());
+    }
+    return result;
   }
 
   public List<IModule> getExplicitlyDependOnModules() {

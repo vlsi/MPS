@@ -4,6 +4,7 @@ import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.MPSActivator;
 import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandKind;
@@ -322,7 +323,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
 
     addIfExists(result, "/lib/annotations/annotations.jar");
-
+    
     return result;
   }
 

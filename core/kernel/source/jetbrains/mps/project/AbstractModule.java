@@ -77,7 +77,7 @@ public abstract class AbstractModule implements IModule {
   private ModuleScope myScope = new ModuleScope();
 
   private IClassPathItem myRuntimeClassPathItem;
-  private IClassPathItem myJavaStubsClassPathItem;
+  private IClassPathItem myJavaStubsClassPathItem;  
 
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
 

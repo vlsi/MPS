@@ -46,6 +46,10 @@ public class Generator extends AbstractModule {
     }
   }
 
+  public List<String> getClassPath() {
+    return getSourceLanguage().getLanguageRuntimeClassPathItems();
+  }
+
   public SModelDescriptor createModel(SModelUID uid, ModelRoot root) {
     SModelDescriptor result = super.createModel(uid, root);
 
