@@ -9,7 +9,7 @@
     <model modelUID="jetbrains.mps.ypath.internal.generator.helper" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="ypath#1168438160182" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="ypath#1168438160182">
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.ypath.generator.baseLanguage.template" />
       </models>
@@ -90,6 +90,9 @@
     <entry path="${language_descriptor}\runtime\classes" />
     <entry path="${language_descriptor}\classes" />
   </runtimeClassPath>
+  <languageRuntimeClassPath>
+    <entry path="${language_descriptor}\runtime\classes" />
+  </languageRuntimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
