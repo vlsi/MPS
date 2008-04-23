@@ -591,10 +591,11 @@
                 <link role="baseMethodDeclaration" targetNodeId="4.~File.isDirectory():boolean" resolveInfo="isDirectory" />
                 <node role="instance" type="jetbrains.mps.ypath.structure.NodeFunctionParam" id="1198862584596" />
               </node>
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.ArrayLengthExpression" id="1198862597363">
-                <node role="array" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198862594339">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208956763199">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="1208956763200" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1208956763201">
                   <link role="baseMethodDeclaration" targetNodeId="4.~File.listFiles():java.io.File[]" resolveInfo="listFiles" />
-                  <node role="instance" type="jetbrains.mps.ypath.structure.NodeFunctionParam" id="1198862591034" />
+                  <node role="instance" type="jetbrains.mps.ypath.structure.NodeFunctionParam" id="1208956763202" />
                 </node>
               </node>
               <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198862601687">
