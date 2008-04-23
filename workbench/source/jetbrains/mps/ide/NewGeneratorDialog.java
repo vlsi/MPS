@@ -165,11 +165,6 @@ public class NewGeneratorDialog extends BaseDialog {
     GeneratorDescriptor generatorDescriptor = GeneratorDescriptor.newInstance(model);
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(sourceLanguage));
 
-    // set target language
-    jetbrains.mps.projectLanguage.structure.Language _targetLanguage = jetbrains.mps.projectLanguage.structure.Language.newInstance(model);
-    _targetLanguage.setName(targetLanguage.getNamespace());
-    generatorDescriptor.setTargetLanguage(_targetLanguage);
-
     // add "template models" model root
     String templateModelNamePrefix = sourceLanguage.getNamespace() +
       ".generator." +
