@@ -244,7 +244,7 @@ public class GenerationSession implements IGenerationSession {
     }
 
     // -----------------------
-    // secondary mapping (infinite cycle untill 'exit condition' is true)
+    // secondary mapping (infinite cycle until 'exit condition' is true)
     // -----------------------
     int secondaryMappingRepeatCount = 1;
     while (true) {
