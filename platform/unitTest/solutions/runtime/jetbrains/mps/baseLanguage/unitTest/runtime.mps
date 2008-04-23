@@ -288,10 +288,11 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1208534524047">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ArrayLengthExpression" id="1208534535528">
-              <node role="array" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208534525713">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208944224561">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208534525713">
                 <link role="variableDeclaration" targetNodeId="1208533744199" resolveInfo="argv" />
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="1208944227588" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208534522706">
               <link role="variableDeclaration" targetNodeId="1208534515030" resolveInfo="i" />
@@ -1891,10 +1892,11 @@
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208869304213">
               <property name="value" value="0" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ArrayLengthExpression" id="1208869300872">
-              <node role="array" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208869295237">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208944265226">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208869295237">
                 <link role="variableDeclaration" targetNodeId="1208869197174" resolveInfo="b" />
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="1208944266805" />
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208869293830">
@@ -1905,10 +1907,11 @@
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1208869344239">
                       <property name="value" value="1" />
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ArrayLengthExpression" id="1208869341085">
-                      <node role="array" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208869339635">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208944274261">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208869339635">
                         <link role="variableDeclaration" targetNodeId="1208869197174" resolveInfo="b" />
                       </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="1208944276111" />
                     </node>
                   </node>
                   <node role="array" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208869337257">
@@ -1998,10 +2001,11 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208869663912">
                 <link role="variableDeclaration" targetNodeId="1208869586973" resolveInfo="lastIndex" />
               </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ArrayLengthExpression" id="1208869663913">
-                <node role="array" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208869663914">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208944286808">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208869663914">
                   <link role="variableDeclaration" targetNodeId="1208869197183" resolveInfo="b" />
                 </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="1208944288335" />
               </node>
             </node>
           </node>
