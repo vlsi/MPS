@@ -71,7 +71,9 @@ public abstract class BaseScope implements IScope {
   protected abstract Set<IModule> getInitialModules();
 
   protected Set<Language> getInitialUsedLanguages() {
-    return CollectionUtil.filter(Language.class, getInitialModules());    
+    Set<Language> result = CollectionUtil.filter(Language.class, getInitialModules());
+    result.add(BootstrapLanguagesManager.getInstance().getProjectLanguage());
+    return result;
   }
 
   public void invalidateCaches() {
