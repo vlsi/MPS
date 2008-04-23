@@ -47,23 +47,20 @@ public class ModuleContext extends StandaloneMPSContext {
     });
   }
 
-  public <T> T getComponent(@NotNull Class<T> clazz) {
+  public <T> T getComponent(Class<T> clazz) {
     T component = myProject.getComponent(clazz);
     if (component != null) return component;
     return super.getComponent(clazz);
   }
 
-  @NotNull
   public IModule getModule() {
     return MPSModuleRepository.getInstance().getModuleByUID(myModuleUID);
   }
 
-  @NotNull
   public MPSProject getProject() {
     return myProject;
   }
 
-  @NotNull
   public IScope getScope() {
     return getModule().getScope();
   }

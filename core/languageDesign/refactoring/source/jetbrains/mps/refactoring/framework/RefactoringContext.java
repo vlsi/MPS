@@ -543,7 +543,7 @@ public class RefactoringContext {
       myRefactoringClassName = className;
       try {
         String namespace = NameUtil.namespaceFromLongName(
-          NameUtil.namespaceFromLongName(className));//remove ".scripts.%ClassName%"
+         NameUtil.namespaceFromLongName(className));//remove ".scripts.%ClassName%"
         Language l = MPSModuleRepository.getInstance().getLanguage(namespace);
         if (l == null) {
           LOG.errorWithTrace("can't find a language " + namespace);
