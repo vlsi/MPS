@@ -53,8 +53,8 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
     SNode forCondition = SLinkOperations.setNewChild(forStatement, "condition", "jetbrains.mps.baseLanguage.structure.LessThanExpression");
     SLinkOperations.setNewChild(forCondition, "leftExpression", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
     SLinkOperations.setTarget(SLinkOperations.getTarget(forCondition, "leftExpression", true), "variableDeclaration", _zClosureContext.forVariableDeclaration, false);
-    SLinkOperations.setNewChild(forCondition, "rightExpression", "jetbrains.mps.baseLanguage.structure.ArrayLengthExpression");
-    SLinkOperations.setTarget(SLinkOperations.getTarget(forCondition, "rightExpression", true), "array", SNodeOperations.copyNode(_zClosureContext.iterable), true);
+    SLinkOperations.setNewChild(SLinkOperations.setNewChild(forCondition, "rightExpression", "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation");
+    SLinkOperations.setTarget(SLinkOperations.getTarget(forCondition, "rightExpression", true), "operand", SNodeOperations.copyNode(_zClosureContext.iterable), true);
     // null
     SNode iterationExpr = SLinkOperations.setNewChild(forStatement, "iteration", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
     SLinkOperations.setNewChild(iterationExpr, "lValue", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
