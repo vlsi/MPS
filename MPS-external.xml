@@ -10,6 +10,7 @@
     <mkdir dir="${deploy.dir}" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS" />
+    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\Contents" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\beansbinding" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\annotations" />
@@ -59,6 +60,9 @@
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\log" />
   </target>
   <target name="do.the.job" depends="folders.create">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\Contents">
+      <fileset dir="build\Contents" excludes="**/*.iml, **/*.ipr" includes="" />
+    </copy>
     <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\lib\beansbinding">
       <fileset dir="lib\beansbinding" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.jar, **/*.class, **/*.png, " />
     </copy>
