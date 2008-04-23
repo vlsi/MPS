@@ -113,7 +113,7 @@ public class SModelRepository implements IComponentLifecycle {
   }
 
   public boolean isRegisteredModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    return myModelsToOwners.getByFirst(modelDescriptor).isEmpty();
+    return !myModelsToOwners.getByFirst(modelDescriptor).isEmpty();
   }
 
   /**
