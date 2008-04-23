@@ -5,12 +5,13 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="default" generatorUID="jetbrains.mps.bootstrap.actionsLanguage#1154466409006" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.bootstrap.actionsLanguage#1154466409006">
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template" />
       </models>
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+        <generator generatorUID="jetbrains.mps.bootstrap.sharedConcepts#1161623873951" />
       </external-templates>
       <dependencies>
         <dependency reexport="true">jetbrains.mps.baseLanguageInternal</dependency>
@@ -27,6 +28,17 @@
             <mapping-node modelUID="jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@templates" nodeID="1154466410557" />
           </lesser-priority-mapping>
         </mapping-priority-rule>
+        <mapping-priority-rule kind="before_or_together ">
+          <greater-priority-mapping>
+            <all-local-mappings />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="jetbrains.mps.bootstrap.sharedConcepts#1161623873951" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
       </mapping-priorities>
     </generator>
   </generators>
@@ -36,6 +48,7 @@
   <runtimeClassPath>
     <entry path="${language_descriptor}\classes" />
   </runtimeClassPath>
+  <languageRuntimeClassPath />
   <sourcePath />
   <osgiOptions>
     <requiredBundles />

@@ -8,7 +8,7 @@
     <model modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.regexp#1174510748147" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.regexp#1174510748147">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.regexp.generator.baseLanguage.template" />
       </models>
@@ -40,6 +40,9 @@
   <runtimeClassPath>
     <entry path="${language_descriptor}\classes" />
   </runtimeClassPath>
+  <languageRuntimeClassPath>
+    <entry path="${language_descriptor}\runtime\classes" />
+  </languageRuntimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
