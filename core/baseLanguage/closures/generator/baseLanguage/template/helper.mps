@@ -15,6 +15,7 @@
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.core" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="27" />
   <import index="14" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="15" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
@@ -2640,8 +2641,9 @@
                         <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201391222676">
                           <property name="value" value="1" />
                         </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ArrayLengthExpression" id="1201391220330">
-                          <node role="array" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201391213079">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208962268483">
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="1208962268484" />
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208962268485">
                             <link role="variableDeclaration" targetNodeId="1201390517070" resolveInfo="labels" />
                           </node>
                         </node>
@@ -3052,8 +3054,9 @@
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201425527841">
                         <property name="value" value="1" />
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ArrayLengthExpression" id="1201425527842">
-                        <node role="array" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201425527843">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208962268825">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="1208962268826" />
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208962268827">
                           <link role="variableDeclaration" targetNodeId="1201425527824" resolveInfo="parentLabels" />
                         </node>
                       </node>
