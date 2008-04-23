@@ -98,11 +98,6 @@ public class QueriesGenerated {
     return BaseAdapter.fromNode(typeChecker.getTypeOf(_context.getSourceNode())) instanceof ArrayType;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177504604529(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
-    TypeChecker typeChecker = operationContext.getComponent(TypeChecker.class);
-    return BaseAdapter.fromNode(typeChecker.getTypeOf(_context.getSourceNode())) instanceof ArrayType;
-  }
-
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1177505054800(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
     return SLinkOperations.getTarget(_context.getSourceNode(), "initializer", true) == null && VariableDeclaration_Behavior.call_isInitializable_1198838351591(_context.getSourceNode());
   }
@@ -1019,32 +1014,6 @@ public class QueriesGenerated {
 
         public String getDescriptionText(String pattern) {
           return "array access";
-        }
-
-      });
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1177504604528(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLengthExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
-
-        public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ArrayLengthExpression", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "array", _context.getSourceNode(), true);
-          return result;
-        }
-
-        public String getMatchingText(String pattern) {
-          return ".length";
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "array length expression";
         }
 
       });
