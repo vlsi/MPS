@@ -22,12 +22,13 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   List<Dependency> getDependencies(); 
   List<IModule> getExplicitlyDependOnModules();
-  List<IModule> getDirectlyDependOnModules();
+  List<IModule> getDirectlyDependOnMobdules();
   List<String> getUsedLanguagesNamespaces();
   List<Language> getUsedLanguages();
   List<IModule> getDependOnModules();
 
-  SModelDescriptor createModel(SModelUID uid, ModelRoot root);  
+  SModelDescriptor createModel(SModelUID uid, ModelRoot root);
+
   Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
   Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
 
@@ -43,7 +44,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   IScope getScope();
 
   List<String> getSourcePaths();
-
   Class getClass(String fqName);
 
   IClassPathItem getJavaStubsClassPathItem();
