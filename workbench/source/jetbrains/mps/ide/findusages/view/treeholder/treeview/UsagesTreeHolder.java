@@ -32,7 +32,7 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
   private static final String PLAIN_PATH_PROVIDER = "plain_path_provider";
   private static final String CLASS_NAME = "class_name";
 
-  private Class myPlainPathProviderClass;
+  private Class myNodeRepresentatorClass = SimpleRepresentator.class;
 
   private UsagesTree myTree;
   private DataTree myContents = new DataTree();
@@ -62,7 +62,7 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
 
     myPathProvider.add("");
     myPathProvider.add(PlainPath.class.getName());
-    myPlainPathProviderClass = PlainPath.class;
+    myNodeRepresentatorClass = SimpleRepresentator.class;
 
     myViewToolbar = new ViewToolbar();
     myActionsToolbar = new ActionsToolbar();
@@ -82,7 +82,13 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
   }
 
   public void setContents(SearchResults contents) {
-    myContents.setContents(contents);
+    try {
+      myContents.setContents(contents, (INodeRepresentator) myNodeRepresentatorClass.newInstance());
+    } catch (InstantiationException e) {
+      e.printStackTrace();
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();
+    }
   }
 
   public void changed() {
@@ -102,10 +108,8 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
   }
 
   //MUST be called in construction time, introduced for "to do" functionality
-  public void setCustomPlainPathProvider(IPathProvider pathProvider) {
-    removePathComponent(myPlainPathProviderClass);
-    addPathComponent(pathProvider.getClass());
-    myPlainPathProviderClass = pathProvider.getClass();
+  public void setCustomRepresentator(Class nodeRepresentatorClass) {
+    myNodeRepresentatorClass = nodeRepresentatorClass;
   }
 
   public void setComponentsViewOptions(ViewOptions options) {
@@ -121,18 +125,14 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
-    Element plainPathProviderClass = element.getChild(PLAIN_PATH_PROVIDER);
-    removePathComponent(myPlainPathProviderClass);
-    String className = plainPathProviderClass.getAttribute(CLASS_NAME).getValue();
+    Element nodeRepresentatorClass = element.getChild(PLAIN_PATH_PROVIDER);
+    String className = nodeRepresentatorClass.getAttribute(CLASS_NAME).getValue();
     try {
-      Class plainPathProvider = (Class) Class.forName(className);
-      myPlainPathProviderClass = plainPathProvider;
+      myNodeRepresentatorClass = (Class) Class.forName(className);
     } catch (Exception e) {
-      LOG.error("Can't instantiate custom plain path provider class " + className + ". Using default", e);
-      myPlainPathProviderClass = PlainPath.class;
+      LOG.error("Can't instantiate node representator " + className, e);
+      throw new CantLoadSomethingException("Can't instantiate node representator " + className, e);
     }
-    addPathComponent(myPlainPathProviderClass);
-
     Element viewOptionsXML = element.getChild(VIEW_OPTIONS);
     myViewOptions.read(viewOptionsXML, project);
     setComponentsViewOptions(myViewOptions);
@@ -145,7 +145,7 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     Element plainPathProviderClass = new Element(PLAIN_PATH_PROVIDER);
-    plainPathProviderClass.setAttribute(CLASS_NAME, myPlainPathProviderClass.getName());
+    plainPathProviderClass.setAttribute(CLASS_NAME, myNodeRepresentatorClass.getName());
     element.addContent(plainPathProviderClass);
 
     Element viewOptionsXML = new Element(VIEW_OPTIONS);

@@ -3,6 +3,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treedata.tree;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -35,8 +36,8 @@ public class DataTree implements IExternalizeable, IChangeListener {
     return myTreeRoot;
   }
 
-  public void setContents(SearchResults results) {
-    setContents(DataTreeBuilder.build(results));
+  public void setContents(SearchResults results, INodeRepresentator nodeRepresentator) {
+    setContents(DataTreeBuilder.build(results, nodeRepresentator));
   }
 
   public void clearContents() {

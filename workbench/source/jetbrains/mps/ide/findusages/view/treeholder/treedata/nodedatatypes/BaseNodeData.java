@@ -93,6 +93,10 @@ public abstract class BaseNodeData implements IExternalizeable {
     return getIdObject() == null;
   }
 
+  public void setCaption(String caption) {
+    myCaption = caption;
+  }
+
   //----SAVE/LOAD STUFF----
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {

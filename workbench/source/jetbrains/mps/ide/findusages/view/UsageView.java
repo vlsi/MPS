@@ -16,6 +16,7 @@ import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.path.IPathProvider;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeHolder;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
@@ -98,8 +99,8 @@ public abstract class UsageView implements IExternalizeable {
     myTreeHolder.setContents(results);
   }
 
-  public void setCustomPlainPathProvider(IPathProvider pathProvider) {
-    myTreeHolder.setCustomPlainPathProvider(pathProvider);
+  public void setCustomNodeRepresentator(Class nodeRepresentatorClass) {
+    myTreeHolder.setCustomRepresentator(nodeRepresentatorClass);
   }
 
   public void run() {

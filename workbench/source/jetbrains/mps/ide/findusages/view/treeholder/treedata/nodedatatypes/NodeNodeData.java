@@ -4,11 +4,16 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
 
@@ -26,8 +31,13 @@ public class NodeNodeData extends BaseNodeData {
   private SModelListener myModelListener = null;
   private boolean myIsRemoved = false;
 
-  public NodeNodeData(String creator, SNode node, boolean isResultNode) {
-    super(creator, snodeRepresentation(node), nodeAdditionalInfo(node), false);
+  public NodeNodeData(String creator, SNode node, boolean isResultNode, INodeRepresentator nodeRepresentator) {
+    super(
+      creator,
+      isResultNode ? nodeRepresentator.getPresentation(node) : snodeRepresentation(node),
+      nodeAdditionalInfo(node),
+      false
+    );
     myNodePointer = new SNodePointer(node);
     myIsResultNode = isResultNode;
 
@@ -101,7 +111,7 @@ public class NodeNodeData extends BaseNodeData {
     }
   }
 
-  private static String snodeRepresentation(final SNode node) {
+  public static String snodeRepresentation(final SNode node) {
     return
       CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
         public String calculate() {
@@ -114,7 +124,7 @@ public class NodeNodeData extends BaseNodeData {
       });
   }
 
-  private static String nodeAdditionalInfo(final SNode node) {
+  public static String nodeAdditionalInfo(final SNode node) {
     return CommandProcessor.instance().executeLightweightCommand(new Calculable<String>() {
       public String calculate() {
         if (node == node.getContainingRoot()) return "";

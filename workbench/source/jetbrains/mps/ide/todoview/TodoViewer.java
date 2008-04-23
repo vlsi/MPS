@@ -11,6 +11,7 @@ import jetbrains.mps.ide.findusages.view.UsageView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.path.IPathProvider;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItem;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.todoview.icons.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.project.MPSProject;
@@ -64,7 +65,7 @@ public class TodoViewer extends DefaultTool {
               new SearchResults()
             );
 
-            myUsageView.setCustomPlainPathProvider(new MyIPathProvider());
+            myUsageView.setCustomNodeRepresentator(MyNodeRepresentator.class);
 
             myUsageView.run();
           }
@@ -101,11 +102,9 @@ public class TodoViewer extends DefaultTool {
     });
   }
 
-  public static class MyIPathProvider implements IPathProvider {
-    public List<PathItem> getPathForSearchResult(SearchResult result) {
-      List<PathItem> res = new ArrayList<PathItem>();
-      //res.add(new PathItem("<font color=blue>" + result.getNode().getProperty("value") + "</font>", result.getNode(), true, ""));
-      return res;
+  public static class MyNodeRepresentator implements INodeRepresentator {
+    public String getPresentation(SNode node) {
+      return "<font color=blue>" + node.getProperty("value") + "</font>";
     }
   }
 }
