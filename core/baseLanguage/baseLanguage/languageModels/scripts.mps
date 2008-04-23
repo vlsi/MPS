@@ -25,6 +25,8 @@
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -1055,7 +1057,7 @@
     <property name="title" value="Convert old ArrayLengthExpression" />
     <property name="package" value="dotExpression" />
     <property name="category" value="DotExpression" />
-    <property name="migrationFromBuild" value="470" />
+    <property name="migrationFromBuild" value="531" />
     <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1208945034713">
       <property name="description" value="ArrayLengthExpression" />
       <link role="affectedInstanceConcept" targetNodeId="1.1173176849460" resolveInfo="ArrayLengthExpression" />
