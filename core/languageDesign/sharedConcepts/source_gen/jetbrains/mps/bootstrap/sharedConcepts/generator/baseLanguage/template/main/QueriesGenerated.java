@@ -8,12 +8,12 @@ import jetbrains.mps.baseLanguage.constraints.ConceptFunctionParameter_Behavior;
 
 public class QueriesGenerated {
 
-  public static boolean baseMappingRule_Condition_1199881492477(final IOperationContext operationContext, final BaseMappingRuleContext _parameterObject) {
-    return !(ConceptFunctionParameter_Behavior.call_getFromParameterObject_1199878619650(_parameterObject.getNode()));
+  public static boolean baseMappingRule_Condition_1199881492477(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(ConceptFunctionParameter_Behavior.call_getFromParameterObject_1199878619650(_context.getNode()));
   }
 
-  public static boolean baseMappingRule_Condition_1199881537813(final IOperationContext operationContext, final BaseMappingRuleContext _parameterObject) {
-    return ConceptFunctionParameter_Behavior.call_getFromParameterObject_1199878619650(_parameterObject.getNode());
+  public static boolean baseMappingRule_Condition_1199881537813(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return ConceptFunctionParameter_Behavior.call_getFromParameterObject_1199878619650(_context.getNode());
   }
 
 }
