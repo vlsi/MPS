@@ -36,7 +36,9 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    SModelsSubtree.create(this, getOperationContext());
+    if (getOperationContext().getModule() != null) {
+      SModelsSubtree.create(this, getOperationContext());
+    }
   }
 
   public JPopupMenu getPopupMenu() {
