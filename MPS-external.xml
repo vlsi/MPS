@@ -255,7 +255,6 @@
     <antcall target="pack.testLogger" />
     <antcall target="pack.testLogger2" />
     <antcall target="pack.jetbrains.mps.baseLanguage.classifiers" />
-    <antcall target="pack.jetbrains.mps.closures" />
     <antcall target="pack.jetbrains.mps.bootstrap.actionsLanguage" />
     <antcall target="pack.jetbrains.mps.annotations" />
     <antcall target="pack.jetbrains.mps.bootstrap.constraintsLanguage" />
