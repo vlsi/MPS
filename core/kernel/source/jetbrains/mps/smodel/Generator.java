@@ -18,9 +18,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.LinkedHashSet;
 
-/**
- * @author Kostik
- */
 public class Generator extends AbstractModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
 
@@ -140,6 +137,7 @@ public class Generator extends AbstractModule {
       result.add(new Dependency(refGenerator, false));
     }
 
+    result.addAll(getSourceLanguage().getRuntimeDependencies());
     return result;
   }
 
