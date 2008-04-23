@@ -54,6 +54,10 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     return null;
   }
 
+  public int getToggleClickCount() {
+    return -1;
+  }
+
   private JPopupMenu createPopupMenuForInputNode() {
     MPSProject project = myProjectFrame.getProject();
     assert project != null;
