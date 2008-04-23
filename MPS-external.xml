@@ -46,6 +46,8 @@
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\configuration" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\configurations" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel" />
+    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs" />
+    <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\panacea" />
     <mkdir dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\springframework" />

@@ -102,7 +102,11 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
         return PathManager.getBaseLanguagePath()  ;
       }
     });
-
+    result.add(new PredefinedLibrary("mps.vcs") {
+      public String getPath() {
+        return PathManager.getVCSPath()  ;
+      }
+    });
     return result;
   }
 

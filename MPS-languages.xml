@@ -1531,15 +1531,15 @@
   <target name="pack.jetbrains.mps.vcs">
     <mkdir dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
     <mkdir dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
-    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\jetbrains.mps.vcs.tmp">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp">
       <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs" excludes="**/*.java, **/*.class, **/*.mpl, **/*.msd, **/*.devkit, **/*.iml, **/*.ipr" />
       <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs" includes="*.mpl, *.msd, *.devkit" />
     </copy>
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\jetbrains.mps.vcs.lib.jar">
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.lib.jar">
       <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
       <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
     </jar>
-    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\jetbrains.mps.vcs.tmp">
+    <copy todir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp">
       <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs">
         <include name="classes_gen\" />
       </fileset>
@@ -1547,13 +1547,13 @@
         <include name="classes_gen\" />
       </fileset>
     </copy>
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\jetbrains.mps.vcs.tmp\jetbrains.mps.vcs.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\kernel\jetbrains.mps.vcs.runtime.jar" />
-    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\jetbrains.mps.vcs.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\jetbrains.mps.vcs.tmp" />
+    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp\jetbrains.mps.vcs.msd" token="{solution_descriptor}\classes_gen" value="{mps_home}\core\kernel\vcs\generic\jetbrains.mps.vcs.runtime.jar" />
+    <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp" />
     <mkdir dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\jetbrains.mps.vcs.runtime.jar" duplicate="preserve">
+    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.runtime.jar" duplicate="preserve">
       <fileset dir="core\kernel\vcs\generic\solutions\jetbrains.mps.vcs\classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\jetbrains.mps.vcs.tmp" />
+    <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\core\kernel\vcs\generic\jetbrains.mps.vcs.tmp" />
   </target>
   <target name="pack.jetbrains.mps.projectLanguage">
     <mkdir dir="core\projectLanguage\classes_gen" />
@@ -2082,12 +2082,7 @@
         <include name="classes_gen\" />
       </fileset>
     </copy>
-    <replace file="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp\unitTest.mpl" token="{language_descriptor}\solutions\runtime\classes_gen" value="{mps_home}\platform\jetbrains.mps.baseLanguage.unitTest.runtime.jar" />
     <zip destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.mpsarch" basedir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp" />
-    <mkdir dir="platform\unitTest\solutions\runtime\classes_gen" />
-    <jar destfile="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.runtime.jar" duplicate="preserve">
-      <fileset dir="platform\unitTest\solutions\runtime\classes_gen" />
-    </jar>
     <delete dir="${deploy.dir}\MPS-${build.number}.zip.tmp\MPS\platform\jetbrains.mps.baseLanguage.unitTest.tmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.unitTest.runtime">
