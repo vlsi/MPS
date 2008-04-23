@@ -11,6 +11,8 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="java.awt@java_stub" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -324,16 +326,16 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteCommandStatement" id="1208784477816">
-          <node role="commandClosure" type="jetbrains.mps.bootstrap.smodelLanguage.structure.CommandClosure" id="1208784477817">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208784477818">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208784482194">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208784482195">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1208784482196" />
-                  <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1208784482197">
+          <node role="commandClosureLiteral" type="jetbrains.mps.bootstrap.smodelLanguage.structure.CommandClosureLiteral" id="1208942214868">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208942214869">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208942214870">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208942214871">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1208942214872" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1208942214873">
                     <link role="member" targetNodeId="1204027985317" resolveInfo="createNewDevKit" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208784482198">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1208942214874">
                       <link role="baseMethodDeclaration" targetNodeId="8.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208784482199">
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1208942214875">
                         <link role="variableDeclaration" targetNodeId="1204027640132" resolveInfo="devkitPath" />
                       </node>
                     </node>

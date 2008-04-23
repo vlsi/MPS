@@ -26,6 +26,7 @@
   </language>
   <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
@@ -2059,20 +2060,15 @@
     <property name="package" value="operation.parameter" />
     <property name="name" value="IRefConceptArg" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208782791726">
-    <property name="package" value="command" />
-    <property name="name" value="CommandClosure" />
-    <link role="extends" targetNodeId="2.1152728232947" resolveInfo="Closure" />
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208782992286">
     <property name="package" value="command" />
     <property name="name" value="BaseExecuteCommandStatement" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1208783102179">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1208941703859">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="commandClosure" />
+      <property name="role" value="commandClosureLiteral" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1208782791726" resolveInfo="CommandClosure" />
+      <link role="target" targetNodeId="1208899702690" resolveInfo="CommandClosureLiteral" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1208783294205">

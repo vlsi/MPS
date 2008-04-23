@@ -2,7 +2,9 @@
 <model name="jetbrains.mps.bootstrap.smodelLanguage.scripts">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
+  </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   </language>
@@ -12,13 +14,14 @@
   <language namespace="jetbrains.mps.ide.scriptLanguage" />
   <language namespace="jetbrains.mps.bootstrap.intentionsLanguage" />
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="7" modelUID="jetbrains.mps.closures.structure" version="0" />
   <node type="jetbrains.mps.ide.scriptLanguage.structure.Script" id="1177432828777">
     <property name="scriptName" value="SearchDepracatedUsages_GetParentOp" />
     <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177432828778">

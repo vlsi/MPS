@@ -2633,7 +2633,7 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1208783118809" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1208783120764">
-          <link role="relationDeclaration" targetNodeId="1.1208783102179" />
+          <link role="relationDeclaration" targetNodeId="1.1208941703859" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1208783062380">

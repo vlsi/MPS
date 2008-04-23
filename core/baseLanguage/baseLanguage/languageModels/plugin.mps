@@ -16,6 +16,8 @@
   </language>
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="38" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.plugin.uiActions@java_stub" version="-1" />
@@ -3918,19 +3920,19 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208520832752">
         <node role="statement" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteEDTCommandStatement" id="1208788266823">
-          <node role="commandClosure" type="jetbrains.mps.bootstrap.smodelLanguage.structure.CommandClosure" id="1208788266824">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208788266825">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208520879491">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208520879951">
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208520885554">
+          <node role="commandClosureLiteral" type="jetbrains.mps.bootstrap.smodelLanguage.structure.CommandClosureLiteral" id="1208942215313">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208942215314">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208942215315">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208942215316">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208942215317">
                     <link role="baseMethodDeclaration" targetNodeId="1205861498911" resolveInfo="append" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208520888052">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208942215318">
                       <link role="variableDeclaration" targetNodeId="1208520832750" resolveInfo="message" />
                     </node>
                   </node>
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208520879492">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1208520879494" />
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1208520879493">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208942215319">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1208942215320" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1208942215321">
                       <link role="fieldDeclaration" targetNodeId="1208520860763" resolveInfo="runComponent" />
                     </node>
                   </node>

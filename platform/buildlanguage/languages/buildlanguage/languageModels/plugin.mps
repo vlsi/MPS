@@ -17,6 +17,8 @@
   <language namespace="jetbrains.mps.baseLanguage.classifiers" />
   <languageAspect modelUID="jetbrains.mps.buildlanguage.structure" version="16" />
   <languageAspect modelUID="jetbrains.mps.buildlanguage.constraints" version="6" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="jetbrains.mps.buildlanguage.structure" version="16" />
   <import index="2" modelUID="jetbrains.mps.mpsLayoutLanguage@java_stub" version="-1" />

@@ -11,6 +11,8 @@
   </language>
   <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="0" />
   <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
+  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
   <maxImportIndex value="33" />
   <import index="1" modelUID="jetbrains.mps.quotation.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />

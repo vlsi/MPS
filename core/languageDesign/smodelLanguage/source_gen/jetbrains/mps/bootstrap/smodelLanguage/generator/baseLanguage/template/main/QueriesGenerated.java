@@ -557,10 +557,6 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(parm, "concept", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1208783749844(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().createUniqueName("Command");
-  }
-
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(_context.getNode())), _context.getGenerator().getScope());
   }
@@ -1177,24 +1173,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SequenceOperations.getFirst(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept", false)), "conceptArgument", true);
   }
 
-  public static SNode sourceNodeQuery_1208783788776(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "body", true);
-  }
-
   public static SNode sourceNodeQuery_1208783961226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "commandClosure", true);
+    return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
 
   public static SNode sourceNodeQuery_1208784118133(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "commandClosure", true);
+    return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
 
   public static SNode sourceNodeQuery_1208784315509(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "commandClosure", true);
-  }
-
-  public static SNode sourceNodeQuery_1208800756484(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "commandClosure", true);
+    return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
 
   public static List sourceNodesQuery_1179412359821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
