@@ -255,12 +255,6 @@ public class GeneratorManager extends DefaultExternalizableComponent implements 
         GenerationController gc = new GenerationController(GeneratorManager.this, inputModels, generationType, progress, messages, saveTransientModels);
         result[0] = gc.generate();
         project.getComponentSafe(GenerationTracer.class).finishTracing();
-
-        // hack $$TrM
-        ProjectPane projectPane = inputModels.get(0).o2.getComponent(ProjectPane.class);
-        if (projectPane != null) {
-          projectPane.doRebuildTree();
-        }
       }
     });
     return result[0];

@@ -149,17 +149,17 @@ public class ModuleRepositoryView extends DefaultTool {
       }
     }
 
-    public void beforeCommandFinished(@NotNull CommandEvent event) {
+    public void beforeCommandFinished(CommandEvent event) {
     }
 
-    public void commandFinished(@NotNull CommandEvent event) {
+    public void commandFinished(CommandEvent event) {
       if (myDeferredUpdate) {
         myDeferredUpdate = false;
         myTree.rebuildLater();
       }
     }
 
-    public void commandStarted(@NotNull CommandEvent event) {
+    public void commandStarted(CommandEvent event) {
     }
   }
 

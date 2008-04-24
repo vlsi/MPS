@@ -150,11 +150,11 @@ public class GlobalSModelEventsManager implements IComponentLifecycle {
   }
 
   private class MyCommandListener extends CommandAdapter {
-    public void commandStarted(@NotNull CommandEvent event) {
+    public void commandStarted(CommandEvent event) {
       myCommandEvents.clear();
     }
 
-    public void commandFinished(@NotNull CommandEvent event) {
+    public void commandFinished(CommandEvent event) {
 
       if (myCommandEvents.isEmpty()) return;
 
