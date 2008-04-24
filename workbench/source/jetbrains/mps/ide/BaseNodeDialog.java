@@ -3,6 +3,8 @@ package jetbrains.mps.ide;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponentFactory;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -125,17 +127,28 @@ public abstract class BaseNodeDialog extends BaseDialog {
 
   private boolean saveChanges_internal() {
     if (!validateNode()) return true;
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    new Thread() {
       public void run() {
-        myEditorComponent.dispose();
+        IAdaptiveProgressMonitor monitor = getOperationContext().getComponent(AbstractProjectFrame.class).createAdaptiveProgressMonitor();
         try {
-          saveChanges();
-        } catch (Throwable t) {
-          JOptionPane.showInputDialog(BaseNodeDialog.this, "Exception during save " + t.getMessage());
-          LOG.error(t);
+          String taskname = "Applying changes...";
+          monitor.start("Applying changes", TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskname));
+          monitor.startLeafTask(taskname);
+          try {
+            CommandProcessor.instance().executeCommand(new Runnable() {
+              public void run() {
+                saveChanges();
+              }
+            });
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
+        } finally {
+          monitor.finishTask();
+          monitor.finish();
         }
       }
-    });
+    }.start();
     return false;
   }
 
