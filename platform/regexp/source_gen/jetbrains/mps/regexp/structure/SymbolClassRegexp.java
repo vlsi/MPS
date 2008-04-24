@@ -13,7 +13,7 @@ public class SymbolClassRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.SymbolClassRegexp";
   public static String PART = "part";
 
-  public  SymbolClassRegexp(SNode node) {
+  public SymbolClassRegexp(SNode node) {
     super(node);
   }
 

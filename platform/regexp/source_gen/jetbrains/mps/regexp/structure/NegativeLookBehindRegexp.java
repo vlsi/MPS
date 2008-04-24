@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class NegativeLookBehindRegexp extends LookRegexp {
   public static final String concept = "jetbrains.mps.regexp.structure.NegativeLookBehindRegexp";
 
-  public  NegativeLookBehindRegexp(SNode node) {
+  public NegativeLookBehindRegexp(SNode node) {
     super(node);
   }
 

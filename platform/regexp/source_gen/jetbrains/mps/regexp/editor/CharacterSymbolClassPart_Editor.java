@@ -15,13 +15,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_CharacterCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558018736");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558016484");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558016484");
+  private static void setupBasic_CharacterCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558018736");
     editorCell.setDrawBorder(false);
   }
 
@@ -48,7 +48,7 @@ public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     CharacterSymbolClassPart_Editor.setupBasic_CharacterCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       CharacterSymbolClassPart_Editor.setupLabel_CharacterCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -64,7 +64,7 @@ public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createCharacterCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

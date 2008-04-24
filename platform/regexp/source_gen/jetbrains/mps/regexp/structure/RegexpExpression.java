@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class RegexpExpression extends Expression {
   public static final String concept = "jetbrains.mps.regexp.structure.RegexpExpression";
 
-  public  RegexpExpression(SNode node) {
+  public RegexpExpression(SNode node) {
     super(node);
   }
 

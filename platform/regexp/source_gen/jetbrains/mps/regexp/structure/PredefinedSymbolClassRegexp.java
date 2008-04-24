@@ -11,7 +11,7 @@ public class PredefinedSymbolClassRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp";
   public static String SYMBOL_CLASS = "symbolClass";
 
-  public  PredefinedSymbolClassRegexp(SNode node) {
+  public PredefinedSymbolClassRegexp(SNode node) {
     super(node);
   }
 

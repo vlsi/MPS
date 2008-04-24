@@ -12,7 +12,7 @@ public class BinaryRegexp extends Regexp {
   public static String LEFT = "left";
   public static String RIGHT = "right";
 
-  public  BinaryRegexp(SNode node) {
+  public BinaryRegexp(SNode node) {
     super(node);
   }
 

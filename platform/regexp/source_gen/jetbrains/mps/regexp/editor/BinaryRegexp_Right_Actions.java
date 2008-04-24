@@ -19,7 +19,7 @@ public class BinaryRegexp_Right_Actions {
 
     /* package */SNode myNode;
 
-    public  BinaryRegexp_Right_Actions_DELETE(SNode node) {
+    public BinaryRegexp_Right_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

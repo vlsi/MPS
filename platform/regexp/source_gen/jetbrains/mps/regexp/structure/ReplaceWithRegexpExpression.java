@@ -17,7 +17,7 @@ public class ReplaceWithRegexpExpression extends Expression implements RegexpUsi
   public static String REPLACE_BLOCK = "replaceBlock";
   public static String REGEXP = "regexp";
 
-  public  ReplaceWithRegexpExpression(SNode node) {
+  public ReplaceWithRegexpExpression(SNode node) {
     super(node);
   }
 

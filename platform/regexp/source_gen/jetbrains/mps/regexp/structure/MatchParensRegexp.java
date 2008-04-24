@@ -16,7 +16,7 @@ public class MatchParensRegexp extends Regexp implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String REGEXP = "regexp";
 
-  public  MatchParensRegexp(SNode node) {
+  public MatchParensRegexp(SNode node) {
     super(node);
   }
 

@@ -14,7 +14,7 @@ public class InlineRegexpExpression extends RegexpExpression {
   public static String CASE_INSENSITIVE = "caseInsensitive";
   public static String REGEXP = "regexp";
 
-  public  InlineRegexpExpression(SNode node) {
+  public InlineRegexpExpression(SNode node) {
     super(node);
   }
 

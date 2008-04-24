@@ -18,7 +18,7 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String REGEXP = "regexp";
 
-  public  RegexpDeclaration(SNode node) {
+  public RegexpDeclaration(SNode node) {
     super(node);
   }
 

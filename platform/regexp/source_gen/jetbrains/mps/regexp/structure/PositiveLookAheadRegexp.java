@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class PositiveLookAheadRegexp extends LookRegexp {
   public static final String concept = "jetbrains.mps.regexp.structure.PositiveLookAheadRegexp";
 
-  public  PositiveLookAheadRegexp(SNode node) {
+  public PositiveLookAheadRegexp(SNode node) {
     super(node);
   }
 

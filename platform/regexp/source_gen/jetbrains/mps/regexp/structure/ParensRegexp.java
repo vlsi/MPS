@@ -11,7 +11,7 @@ public class ParensRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.ParensRegexp";
   public static String EXPR = "expr";
 
-  public  ParensRegexp(SNode node) {
+  public ParensRegexp(SNode node) {
     super(node);
   }
 

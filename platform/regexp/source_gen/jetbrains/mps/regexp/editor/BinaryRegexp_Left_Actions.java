@@ -19,7 +19,7 @@ public class BinaryRegexp_Left_Actions {
 
     /* package */SNode myNode;
 
-    public  BinaryRegexp_Left_Actions_DELETE(SNode node) {
+    public BinaryRegexp_Left_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

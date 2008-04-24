@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class LineStartRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.LineStartRegexp";
 
-  public  LineStartRegexp(SNode node) {
+  public LineStartRegexp(SNode node) {
     super(node);
   }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class SeqRegexp extends BinaryRegexp {
   public static final String concept = "jetbrains.mps.regexp.structure.SeqRegexp";
 
-  public  SeqRegexp(SNode node) {
+  public SeqRegexp(SNode node) {
     super(node);
   }
 

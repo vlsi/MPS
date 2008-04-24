@@ -12,7 +12,7 @@ public class MatchVariableReference extends Expression {
   public static final String concept = "jetbrains.mps.regexp.structure.MatchVariableReference";
   public static String MATCH = "match";
 
-  public  MatchVariableReference(SNode node) {
+  public MatchVariableReference(SNode node) {
     super(node);
   }
 

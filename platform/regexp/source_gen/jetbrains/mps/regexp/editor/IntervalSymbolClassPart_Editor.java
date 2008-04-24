@@ -17,6 +17,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558324060");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_StartCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558326265");
     editorCell.setDrawBorder(false);
@@ -29,11 +34,6 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_EndCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558329519");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558324060");
     editorCell.setDrawBorder(false);
   }
 
@@ -77,7 +77,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     IntervalSymbolClassPart_Editor.setupBasic_StartCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       IntervalSymbolClassPart_Editor.setupLabel_StartCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -93,7 +93,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createStartCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -106,7 +106,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     IntervalSymbolClassPart_Editor.setupBasic_EndCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       IntervalSymbolClassPart_Editor.setupLabel_EndCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -122,7 +122,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createEndCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

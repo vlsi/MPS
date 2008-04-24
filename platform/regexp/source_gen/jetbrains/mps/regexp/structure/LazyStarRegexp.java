@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class LazyStarRegexp extends UnaryRegexp {
   public static final String concept = "jetbrains.mps.regexp.structure.LazyStarRegexp";
 
-  public  LazyStarRegexp(SNode node) {
+  public LazyStarRegexp(SNode node) {
     super(node);
   }
 

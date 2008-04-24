@@ -19,7 +19,7 @@ public class PredefinedSymbolClasses extends BaseConcept implements INamedConcep
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String SYMBOL_CLASS = "symbolClass";
 
-  public  PredefinedSymbolClasses(SNode node) {
+  public PredefinedSymbolClasses(SNode node) {
     super(node);
   }
 

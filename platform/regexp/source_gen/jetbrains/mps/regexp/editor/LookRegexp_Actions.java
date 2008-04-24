@@ -19,7 +19,7 @@ public class LookRegexp_Actions {
 
     /* package */SNode myNode;
 
-    public  LookRegexp_Actions_DELETE(SNode node) {
+    public LookRegexp_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

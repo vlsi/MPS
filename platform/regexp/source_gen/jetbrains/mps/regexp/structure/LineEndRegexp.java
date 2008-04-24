@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class LineEndRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.LineEndRegexp";
 
-  public  LineEndRegexp(SNode node) {
+  public LineEndRegexp(SNode node) {
     super(node);
   }
 

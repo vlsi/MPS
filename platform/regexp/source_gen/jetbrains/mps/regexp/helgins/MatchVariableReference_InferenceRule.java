@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class MatchVariableReference_InferenceRule implements InferenceRule_Runtime {
 
-  public  MatchVariableReference_InferenceRule() {
+  public MatchVariableReference_InferenceRule() {
   }
 
   public void applyRule(final SNode mvr) {

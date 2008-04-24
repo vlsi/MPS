@@ -19,7 +19,7 @@ public class MatchRegexpStatement extends Statement implements RegexpUsingConstr
   public static String EXPR = "expr";
   public static String REGEXP = "regexp";
 
-  public  MatchRegexpStatement(SNode node) {
+  public MatchRegexpStatement(SNode node) {
     super(node);
   }
 

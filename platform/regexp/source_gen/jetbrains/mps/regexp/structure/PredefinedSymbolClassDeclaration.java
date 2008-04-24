@@ -17,7 +17,7 @@ public class PredefinedSymbolClassDeclaration extends BaseConcept implements INa
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
 
-  public  PredefinedSymbolClassDeclaration(SNode node) {
+  public PredefinedSymbolClassDeclaration(SNode node) {
     super(node);
   }
 

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class DotRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.DotRegexp";
 
-  public  DotRegexp(SNode node) {
+  public DotRegexp(SNode node) {
     super(node);
   }
 

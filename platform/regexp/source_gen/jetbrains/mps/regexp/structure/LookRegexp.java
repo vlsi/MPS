@@ -11,7 +11,7 @@ public class LookRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.LookRegexp";
   public static String REGEXP = "regexp";
 
-  public  LookRegexp(SNode node) {
+  public LookRegexp(SNode node) {
     super(node);
   }
 

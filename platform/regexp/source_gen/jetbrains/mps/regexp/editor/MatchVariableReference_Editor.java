@@ -19,13 +19,13 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class MatchVariableReference_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_MatchReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174565057138");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174565052932");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174565052932");
+  private static void setupBasic_MatchReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174565057138");
     editorCell.setDrawBorder(false);
   }
 
@@ -52,7 +52,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new MatchVariableReference_Editor._Inline2());
     EditorCell editorCell = provider.createEditorCell(context);
     MatchVariableReference_Editor.setupBasic_MatchReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       MatchVariableReference_Editor.setupLabel_MatchReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -68,7 +68,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createMatchReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -78,7 +78,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
 
   public static class _Inline2 extends AbstractCellProvider {
 
-    public  _Inline2() {
+    public _Inline2() {
       super();
     }
 
@@ -106,7 +106,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       MatchVariableReference_Editor._Inline2.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         MatchVariableReference_Editor._Inline2.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -122,7 +122,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

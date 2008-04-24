@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class SplitExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  SplitExpression_InferenceRule() {
+  public SplitExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode se) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(se, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183643", true), new QuotationClass_4().createNode(), SLinkOperations.getTarget(se, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183642");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(se, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183643", true), new QuotationClass_4().createNode(), SLinkOperations.getTarget(se, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183642", false);
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), se, "jetbrains.mps.regexp.helgins", "1178179183649");
   }
 

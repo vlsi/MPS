@@ -11,7 +11,7 @@ public class RegexpDeclarationReferenceRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.RegexpDeclarationReferenceRegexp";
   public static String REGEXP = "regexp";
 
-  public  RegexpDeclarationReferenceRegexp(SNode node) {
+  public RegexpDeclarationReferenceRegexp(SNode node) {
     super(node);
   }
 

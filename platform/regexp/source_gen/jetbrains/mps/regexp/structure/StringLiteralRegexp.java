@@ -11,7 +11,7 @@ public class StringLiteralRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.StringLiteralRegexp";
   public static String TEXT = "text";
 
-  public  StringLiteralRegexp(SNode node) {
+  public StringLiteralRegexp(SNode node) {
     super(node);
   }
 

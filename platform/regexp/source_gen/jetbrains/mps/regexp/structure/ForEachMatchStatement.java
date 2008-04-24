@@ -19,7 +19,7 @@ public class ForEachMatchStatement extends Statement implements RegexpUsingConst
   public static String BODY = "body";
   public static String REGEXP = "regexp";
 
-  public  ForEachMatchStatement(SNode node) {
+  public ForEachMatchStatement(SNode node) {
     super(node);
   }
 

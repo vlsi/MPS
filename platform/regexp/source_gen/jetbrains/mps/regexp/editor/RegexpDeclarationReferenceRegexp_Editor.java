@@ -19,13 +19,13 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_RegexpReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174662648736");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174662639718");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174662639718");
+  private static void setupBasic_RegexpReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174662648736");
     editorCell.setDrawBorder(false);
   }
 
@@ -52,7 +52,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new RegexpDeclarationReferenceRegexp_Editor._Inline3());
     EditorCell editorCell = provider.createEditorCell(context);
     RegexpDeclarationReferenceRegexp_Editor.setupBasic_RegexpReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       RegexpDeclarationReferenceRegexp_Editor.setupLabel_RegexpReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -68,7 +68,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createRegexpReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -78,7 +78,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
 
   public static class _Inline3 extends AbstractCellProvider {
 
-    public  _Inline3() {
+    public _Inline3() {
       super();
     }
 
@@ -106,7 +106,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       RegexpDeclarationReferenceRegexp_Editor._Inline3.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         RegexpDeclarationReferenceRegexp_Editor._Inline3.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -122,7 +122,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

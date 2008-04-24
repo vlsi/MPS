@@ -12,7 +12,7 @@ public class FromNToMTimesRegexp extends UnaryRegexp {
   public static String N = "n";
   public static String M = "m";
 
-  public  FromNToMTimesRegexp(SNode node) {
+  public FromNToMTimesRegexp(SNode node) {
     super(node);
   }
 

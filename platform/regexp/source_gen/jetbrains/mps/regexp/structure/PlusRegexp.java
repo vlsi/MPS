@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class PlusRegexp extends UnaryRegexp {
   public static final String concept = "jetbrains.mps.regexp.structure.PlusRegexp";
 
-  public  PlusRegexp(SNode node) {
+  public PlusRegexp(SNode node) {
     super(node);
   }
 

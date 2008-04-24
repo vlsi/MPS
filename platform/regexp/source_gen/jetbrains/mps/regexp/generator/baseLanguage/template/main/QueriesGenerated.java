@@ -52,8 +52,8 @@ public class QueriesGenerated {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
-    RegexpProcessor.toString((((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true)))), matchparens);
-    return "" + (1 + matchparens.indexOf((((MatchParensRegexp)SNodeOperations.getAdapter(parens)))));
+    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true))), matchparens);
+    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1174655168104(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -74,8 +74,8 @@ public class QueriesGenerated {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
-    RegexpProcessor.toString((((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true)))), matchparens);
-    return "" + (1 + matchparens.indexOf((((MatchParensRegexp)SNodeOperations.getAdapter(parens)))));
+    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true))), matchparens);
+    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1175155526348(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -92,8 +92,8 @@ public class QueriesGenerated {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
-    RegexpProcessor.toString((((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true)))), matchparens);
-    return "" + (1 + matchparens.indexOf((((MatchParensRegexp)SNodeOperations.getAdapter(parens)))));
+    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true))), matchparens);
+    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1175169642723(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -110,8 +110,8 @@ public class QueriesGenerated {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
-    RegexpProcessor.toString((((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true)))), matchparens);
-    return "" + (1 + matchparens.indexOf((((MatchParensRegexp)SNodeOperations.getAdapter(parens)))));
+    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true))), matchparens);
+    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1194610282338(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -120,13 +120,13 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1194610282348(final IOperationContext operationContext, final PropertyMacroContext _context) {
     int result = 0;
-    if(SPropertyOperations.getBoolean(_context.getNode(), "multiLine")) {
+    if (SPropertyOperations.getBoolean(_context.getNode(), "multiLine")) {
       result = result + Pattern.MULTILINE;
     }
-    if(SPropertyOperations.getBoolean(_context.getNode(), "dotAll")) {
+    if (SPropertyOperations.getBoolean(_context.getNode(), "dotAll")) {
       result = result + Pattern.DOTALL;
     }
-    if(SPropertyOperations.getBoolean(_context.getNode(), "caseInsensitive")) {
+    if (SPropertyOperations.getBoolean(_context.getNode(), "caseInsensitive")) {
       result = result + Pattern.CASE_INSENSITIVE;
     }
     return "" + result;

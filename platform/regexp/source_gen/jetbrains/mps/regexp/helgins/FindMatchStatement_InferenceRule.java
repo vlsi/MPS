@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class FindMatchStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  FindMatchStatement_InferenceRule() {
+  public FindMatchStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode fm) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(fm, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183657", true), new QuotationClass_6().createNode(), SLinkOperations.getTarget(fm, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183656");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(fm, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183657", true), new QuotationClass_6().createNode(), SLinkOperations.getTarget(fm, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183656", false);
   }
 
   public String getApplicableConceptFQName() {

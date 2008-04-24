@@ -11,7 +11,7 @@ public class PredefinedSymbolClassSymbolClassPart extends SymbolClassPart {
   public static final String concept = "jetbrains.mps.regexp.structure.PredefinedSymbolClassSymbolClassPart";
   public static String DECLARATION = "declaration";
 
-  public  PredefinedSymbolClassSymbolClassPart(SNode node) {
+  public PredefinedSymbolClassSymbolClassPart(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ public class AtLeastNTimesRegexp extends UnaryRegexp {
   public static final String concept = "jetbrains.mps.regexp.structure.AtLeastNTimesRegexp";
   public static String N = "n";
 
-  public  AtLeastNTimesRegexp(SNode node) {
+  public AtLeastNTimesRegexp(SNode node) {
     super(node);
   }
 

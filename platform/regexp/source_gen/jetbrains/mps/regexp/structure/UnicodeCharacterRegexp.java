@@ -11,7 +11,7 @@ public class UnicodeCharacterRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.UnicodeCharacterRegexp";
   public static String CODE = "code";
 
-  public  UnicodeCharacterRegexp(SNode node) {
+  public UnicodeCharacterRegexp(SNode node) {
     super(node);
   }
 

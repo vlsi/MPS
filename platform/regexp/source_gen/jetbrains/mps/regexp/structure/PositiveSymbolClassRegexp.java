@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class PositiveSymbolClassRegexp extends SymbolClassRegexp {
   public static final String concept = "jetbrains.mps.regexp.structure.PositiveSymbolClassRegexp";
 
-  public  PositiveSymbolClassRegexp(SNode node) {
+  public PositiveSymbolClassRegexp(SNode node) {
     super(node);
   }
 

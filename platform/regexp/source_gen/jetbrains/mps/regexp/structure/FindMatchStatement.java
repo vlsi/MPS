@@ -19,7 +19,7 @@ public class FindMatchStatement extends Statement implements RegexpUsingConstruc
   public static String BODY = "body";
   public static String REGEXP = "regexp";
 
-  public  FindMatchStatement(SNode node) {
+  public FindMatchStatement(SNode node) {
     super(node);
   }
 

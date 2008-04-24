@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class StarRegexp extends UnaryRegexp {
   public static final String concept = "jetbrains.mps.regexp.structure.StarRegexp";
 
-  public  StarRegexp(SNode node) {
+  public StarRegexp(SNode node) {
     super(node);
   }
 

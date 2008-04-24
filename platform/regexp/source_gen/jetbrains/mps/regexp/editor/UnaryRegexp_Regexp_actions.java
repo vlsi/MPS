@@ -19,7 +19,7 @@ public class UnaryRegexp_Regexp_actions {
 
     /* package */SNode myNode;
 
-    public  UnaryRegexp_Regexp_actions_DELETE(SNode node) {
+    public UnaryRegexp_Regexp_actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

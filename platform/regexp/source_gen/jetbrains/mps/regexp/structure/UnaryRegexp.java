@@ -11,7 +11,7 @@ public class UnaryRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.UnaryRegexp";
   public static String REGEXP = "regexp";
 
-  public  UnaryRegexp(SNode node) {
+  public UnaryRegexp(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ public class CharacterSymbolClassPart extends SymbolClassPart {
   public static final String concept = "jetbrains.mps.regexp.structure.CharacterSymbolClassPart";
   public static String CHARACTER = "character";
 
-  public  CharacterSymbolClassPart(SNode node) {
+  public CharacterSymbolClassPart(SNode node) {
     super(node);
   }
 

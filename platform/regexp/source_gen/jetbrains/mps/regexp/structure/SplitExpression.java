@@ -16,7 +16,7 @@ public class SplitExpression extends Expression implements RegexpUsingConstructi
   public static String EXPR = "expr";
   public static String REGEXP = "regexp";
 
-  public  SplitExpression(SNode node) {
+  public SplitExpression(SNode node) {
     super(node);
   }
 

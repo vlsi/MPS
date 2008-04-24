@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ReplaceBlock extends Closure {
   public static final String concept = "jetbrains.mps.regexp.structure.ReplaceBlock";
 
-  public  ReplaceBlock(SNode node) {
+  public ReplaceBlock(SNode node) {
     super(node);
   }
 

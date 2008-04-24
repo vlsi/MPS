@@ -19,7 +19,7 @@ public class Regexps extends BaseConcept implements INamedConcept {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String REGEXP = "regexp";
 
-  public  Regexps(SNode node) {
+  public Regexps(SNode node) {
     super(node);
   }
 

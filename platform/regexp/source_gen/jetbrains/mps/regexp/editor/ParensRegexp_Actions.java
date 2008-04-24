@@ -19,7 +19,7 @@ public class ParensRegexp_Actions {
 
     /* package */SNode myNode;
 
-    public  ParensRegexp_Actions_DELETE(SNode node) {
+    public ParensRegexp_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

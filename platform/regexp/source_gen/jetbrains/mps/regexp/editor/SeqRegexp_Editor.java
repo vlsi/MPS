@@ -15,6 +15,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SeqRegexp_Editor extends DefaultNodeEditor {
 
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900567679");
+    editorCell.setDrawBorder(false);
+  }
+
   private static void setupBasic_LeftCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900570494");
     editorCell.setDrawBorder(false);
@@ -25,11 +30,6 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900573371");
     editorCell.setDrawBorder(false);
     BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900567679");
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupLabel_LeftCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -59,7 +59,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     SeqRegexp_Editor.setupBasic_LeftCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       SeqRegexp_Editor.setupLabel_LeftCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -75,7 +75,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createLeftCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -88,7 +88,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     SeqRegexp_Editor.setupBasic_RightCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       SeqRegexp_Editor.setupLabel_RightCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -104,7 +104,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createRightCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

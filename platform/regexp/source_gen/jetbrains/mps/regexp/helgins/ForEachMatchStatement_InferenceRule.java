@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class ForEachMatchStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  ForEachMatchStatement_InferenceRule() {
+  public ForEachMatchStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode fm) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(fm, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183625", true), new QuotationClass_2().createNode(), SLinkOperations.getTarget(fm, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183624");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(fm, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183625", true), new QuotationClass_2().createNode(), SLinkOperations.getTarget(fm, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183624", false);
   }
 
   public String getApplicableConceptFQName() {

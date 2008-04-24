@@ -19,13 +19,13 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 
 public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_DeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558836402");
+  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558833260");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558833260");
+  private static void setupBasic_DeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174558836402");
     editorCell.setDrawBorder(false);
   }
 
@@ -52,7 +52,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     provider.setAuxiliaryCellProvider(new PredefinedSymbolClassSymbolClassPart_Editor._Inline1());
     EditorCell editorCell = provider.createEditorCell(context);
     PredefinedSymbolClassSymbolClassPart_Editor.setupBasic_DeclarationReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
+    if (editorCell instanceof EditorCell_Label) {
       PredefinedSymbolClassSymbolClassPart_Editor.setupLabel_DeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -68,7 +68,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     EditorCell cellWithRole = this.createDeclarationReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
@@ -78,7 +78,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
 
   public static class _Inline1 extends AbstractCellProvider {
 
-    public  _Inline1() {
+    public _Inline1() {
       super();
     }
 
@@ -106,7 +106,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       PredefinedSymbolClassSymbolClassPart_Editor._Inline1.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
+      if (editorCell instanceof EditorCell_Label) {
         PredefinedSymbolClassSymbolClassPart_Editor._Inline1.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -122,7 +122,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);

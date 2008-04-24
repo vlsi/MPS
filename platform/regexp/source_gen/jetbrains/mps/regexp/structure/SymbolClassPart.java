@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class SymbolClassPart extends BaseConcept {
   public static final String concept = "jetbrains.mps.regexp.structure.SymbolClassPart";
 
-  public  SymbolClassPart(SNode node) {
+  public SymbolClassPart(SNode node) {
     super(node);
   }
 

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Regexp extends BaseConcept {
   public static final String concept = "jetbrains.mps.regexp.structure.Regexp";
 
-  public  Regexp(SNode node) {
+  public Regexp(SNode node) {
     super(node);
   }
 

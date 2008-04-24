@@ -12,14 +12,14 @@ public class GeneratorUtil {
   public static SNode findRegexpUsingConstructionFor(SNode ref) {
     SNode parens = SLinkOperations.getTarget(ref, "match", false);
     SNode ruc = SNodeOperations.getAncestor(parens, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false);
-    if(ruc != null) {
+    if (ruc != null) {
       return ruc;
     } else
     {
       SNode dcl = SNodeOperations.getAncestor(parens, "jetbrains.mps.regexp.structure.RegexpDeclaration", false, false);
       for(SNode parentRuc : SNodeOperations.getAncestors(ref, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false)) {
         for(SNode regref : SNodeOperations.getDescendants(parentRuc, "jetbrains.mps.regexp.structure.RegexpDeclarationReferenceRegexp", false)) {
-          if(SLinkOperations.getTarget(regref, "regexp", false) == dcl) {
+          if (SLinkOperations.getTarget(regref, "regexp", false) == dcl) {
             return parentRuc;
           }
         }

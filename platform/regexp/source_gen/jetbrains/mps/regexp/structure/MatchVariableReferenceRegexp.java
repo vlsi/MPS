@@ -11,7 +11,7 @@ public class MatchVariableReferenceRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.regexp.structure.MatchVariableReferenceRegexp";
   public static String MATCH = "match";
 
-  public  MatchVariableReferenceRegexp(SNode node) {
+  public MatchVariableReferenceRegexp(SNode node) {
     super(node);
   }
 

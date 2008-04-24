@@ -16,7 +16,7 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
   public static String INPUT_EXPRESSION = "inputExpression";
   public static String REGEXP = "regexp";
 
-  public  MatchRegexpExpression(SNode node) {
+  public MatchRegexpExpression(SNode node) {
     super(node);
   }
 

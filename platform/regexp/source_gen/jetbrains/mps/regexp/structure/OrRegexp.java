@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class OrRegexp extends BinaryRegexp {
   public static final String concept = "jetbrains.mps.regexp.structure.OrRegexp";
 
-  public  OrRegexp(SNode node) {
+  public OrRegexp(SNode node) {
     super(node);
   }
 

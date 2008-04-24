@@ -12,7 +12,7 @@ public class IntervalSymbolClassPart extends SymbolClassPart {
   public static String START = "start";
   public static String END = "end";
 
-  public  IntervalSymbolClassPart(SNode node) {
+  public IntervalSymbolClassPart(SNode node) {
     super(node);
   }
 

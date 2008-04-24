@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class MatchRegexpExpression_InferenceRule implements InferenceRule_Runtime {
 
-  public  MatchRegexpExpression_InferenceRule() {
+  public MatchRegexpExpression_InferenceRule() {
   }
 
   public void applyRule(final SNode matchRegexpExpression) {
