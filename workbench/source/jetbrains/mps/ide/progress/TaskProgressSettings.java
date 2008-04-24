@@ -30,10 +30,10 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
   @Externalizable
   Map<String, Long> myTaskKindsToEstimatedTime = new HashMap<String, Long>();
 
-  private Map<String, Long> myTransientTasksToEstimatedTime = new HashMap<String, Long>();
-  private Map<String, Long> myTransientTaskKindsToEstimatedTime = new HashMap<String, Long>();
+  private Map<IAdaptiveProgressMonitor, Map<String, Long>> myTransientTasksToEstimatedTime = new HashMap<IAdaptiveProgressMonitor, Map<String, Long>>();
+  private Map<IAdaptiveProgressMonitor, Map<String, Long>> myTransientTaskKindsToEstimatedTime = new HashMap<IAdaptiveProgressMonitor, Map<String, Long>>();
 
-  private boolean myMeasurementInProgress = false;
+  private Set<IAdaptiveProgressMonitor> myMeasurementsInProgress = new HashSet<IAdaptiveProgressMonitor>();
   private long myDefaultTimeMillis = 150;
 
   public static TaskProgressSettings getInstance() {
@@ -44,32 +44,38 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
 
   }
 
-  public void startTaskProgressAndMeasurement() {
-    if (myMeasurementInProgress) {
+  public void startTaskProgressAndMeasurement(IAdaptiveProgressMonitor monitor) {
+    if (myMeasurementsInProgress.contains(monitor)) {
 //      LOG.warning("trying to start task progress measurement started already", new Throwable());
       return;
     }
-    myTransientTaskKindsToEstimatedTime.clear();
-    myTransientTasksToEstimatedTime.clear();
-    myMeasurementInProgress = true;
+    Map<String, Long> transientTasks = myTransientTasksToEstimatedTime.get(monitor);
+    Map<String, Long> transientTaskKinds = myTransientTaskKindsToEstimatedTime.get(monitor);
+    if (transientTasks != null) transientTasks.clear();
+    if (transientTaskKinds != null) transientTaskKinds.clear();
+    myMeasurementsInProgress.add(monitor);
   }
 
-  public void finishTaskProgressAndCommitMeasurements() {
-    if (!myMeasurementInProgress) {
+  public void finishTaskProgressAndCommitMeasurements(IAdaptiveProgressMonitor monitor) {
+    if (!myMeasurementsInProgress.contains(monitor)) {
 //      LOG.warning("trying to finish task progress measurement which hasn't been started yet or has been already finished", new Throwable());
       return;
     }
-    myTasksToEstimatedTime.putAll(myTransientTasksToEstimatedTime);
-    myTaskKindsToEstimatedTime.putAll(myTransientTaskKindsToEstimatedTime);
-    myTransientTaskKindsToEstimatedTime.clear();
-    myTransientTasksToEstimatedTime.clear();
-    myMeasurementInProgress = false;
+    Map<String, Long> trainsentTasks = myTransientTasksToEstimatedTime.remove(monitor);
+    if (trainsentTasks != null) {
+      myTasksToEstimatedTime.putAll(trainsentTasks);
+    }
+    Map<String, Long> transientTaskKinds = myTransientTaskKindsToEstimatedTime.remove(monitor);
+    if (transientTaskKinds != null) {
+      myTaskKindsToEstimatedTime.putAll(transientTaskKinds);
+    }
+    myMeasurementsInProgress.remove(monitor);
   }
 
-  public void finishTaskProgressAndDropMeasurements() {
-    myTransientTaskKindsToEstimatedTime.clear();
-    myTransientTasksToEstimatedTime.clear();
-    myMeasurementInProgress = false;
+  public void finishTaskProgressAndDropMeasurements(IAdaptiveProgressMonitor monitor) {
+    myTransientTasksToEstimatedTime.remove(monitor);
+    myTransientTaskKindsToEstimatedTime.remove(monitor);
+    myMeasurementsInProgress.remove(monitor);
   }
 
   public long getEstimatedTimeMillis(String... taskNames) {
@@ -99,8 +105,8 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
   }
 
 
-  public void addEstimatedTimeMillis(String taskName, long estimatedTimeMillis) {
-    if (!myMeasurementInProgress) {
+  public void addEstimatedTimeMillis(String taskName, long estimatedTimeMillis, IAdaptiveProgressMonitor monitor) {
+    if (!myMeasurementsInProgress.contains(monitor)) {
       LOG.error("task measurement is not in progress. Can't add any measurement results", new Throwable());
       return;
     }
@@ -110,13 +116,23 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
     long newTime = estimatedTimeMillis;
     Long time = myTasksToEstimatedTime.get(taskName);
     if (time != null) newTime = (time + newTime) / 2;
-    myTransientTasksToEstimatedTime.put(taskName, newTime);
+    Map<String, Long> transientTasks = myTransientTasksToEstimatedTime.get(monitor);
+    if (transientTasks == null) {
+      transientTasks = new HashMap<String, Long>();
+      myTransientTasksToEstimatedTime.put(monitor, transientTasks);
+    }
+    transientTasks.put(taskName, newTime);
 
     if (taskKind != null) {
       long newKindTime = newTime;
       Long kindTime = myTaskKindsToEstimatedTime.get(taskKind);
       if (kindTime != null) newKindTime = (kindTime + newKindTime) / 2;
-      myTransientTaskKindsToEstimatedTime.put(taskKind, newKindTime);
+      Map<String, Long> transientTaskKinds = myTransientTaskKindsToEstimatedTime.get(monitor);
+      if (transientTaskKinds == null) {
+        transientTaskKinds = new HashMap<String, Long>();
+        myTransientTaskKindsToEstimatedTime.put(monitor, transientTaskKinds);
+      }
+      transientTaskKinds.put(taskKind, newKindTime);
     }
   }
 }
