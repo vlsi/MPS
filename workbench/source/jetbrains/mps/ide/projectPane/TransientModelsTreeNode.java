@@ -27,6 +27,11 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
     setNodeIdentifier(myTransientModule.getModuleUID());
   }
 
+  protected void updatePresentation() {
+    super.updatePresentation();
+    setIcon(Icons.TRANSIENT_MODELS_ICON);
+  }
+
   protected String getModulePresentation() {
     return "transient models";
   }
