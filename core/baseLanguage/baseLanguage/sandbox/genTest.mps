@@ -273,6 +273,7 @@
         </node>
       </node>
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1208999472474" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1201491319990">
     <property name="name" value="PropertyTest" />
