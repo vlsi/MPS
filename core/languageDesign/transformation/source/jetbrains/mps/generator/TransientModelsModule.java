@@ -3,6 +3,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -88,5 +89,21 @@ public class TransientModelsModule extends AbstractModule {
   public boolean isModelToKeep(SModelDescriptor model) {
     assert model.isTransient();
     return myModelsToKeep.contains(model.getModelUID().toString());
+  }
+
+  public SModelDescriptor createTransientModel(String name, String stereotype) {
+    DefaultSModelDescriptor result = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelUID(name, stereotype)) {
+      protected SModel loadModel() {
+        return new SModel(getModelUID());
+      }
+
+      public boolean isNotEditable() {
+        return false;
+      }
+    };
+
+    result.setTransient(true);
+    SModelRepository.getInstance().registerModelDescriptor(result, this);
+    return result;
   }
 }

@@ -1,11 +1,9 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.template.CloneUtil;
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationStepController;
 import jetbrains.mps.generator.template.*;
-import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -23,7 +21,8 @@ import jetbrains.mps.util.Pair;
 
 import javax.swing.JOptionPane;
 import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Igor Alshannikov
@@ -320,7 +319,8 @@ public class GenerationSession implements IGenerationSession {
     while (SModelRepository.getInstance().getModelDescriptor(new SModelUID(longName, stereotype)) != null) {
       stereotype += "_";
     }
-    SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, longName, stereotype);
+    TransientModelsModule transientModelsModule = mySessionContext.getModule();
+    SModelDescriptor transientModel = transientModelsModule.createTransientModel(longName, stereotype);
     myTransientModelsCount++;
     transientModel.getSModel().setLoading(true); // we dont need any events to be casted
     return transientModel.getSModel();
