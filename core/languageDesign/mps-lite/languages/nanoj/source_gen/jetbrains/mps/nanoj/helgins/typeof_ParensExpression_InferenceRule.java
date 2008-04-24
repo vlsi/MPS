@@ -13,8 +13,8 @@ public class typeof_ParensExpression_InferenceRule implements InferenceRule_Runt
   public  typeof_ParensExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197638406379", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true), "jetbrains.mps.nanoj.helgins", "1197638406381", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197638406378");
+  public void applyRule(final SNode nodeToCheck) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.nanoj.helgins", "1197638406379", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "expr", true), "jetbrains.mps.nanoj.helgins", "1197638406381", true), nodeToCheck, null, "jetbrains.mps.nanoj.helgins", "1197638406378");
   }
 
   public String getApplicableConceptFQName() {

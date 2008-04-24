@@ -13,9 +13,9 @@ public class typeof_PlusExpression_InferenceRule implements InferenceRule_Runtim
   public  typeof_PlusExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftPart", true), "jetbrains.mps.nanoj.helgins", "1197638406650", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197638406655", true), SLinkOperations.getTarget(argument, "leftPart", true), null, "jetbrains.mps.nanoj.helgins", "1197638406648");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightPart", true), "jetbrains.mps.nanoj.helgins", "1197638406659", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197638406664", true), SLinkOperations.getTarget(argument, "rightPart", true), null, "jetbrains.mps.nanoj.helgins", "1197638406657");
+  public void applyRule(final SNode nodeToCheck) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "leftPart", true), "jetbrains.mps.nanoj.helgins", "1197638406650", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.nanoj.helgins", "1197638406655", true), SLinkOperations.getTarget(nodeToCheck, "leftPart", true), null, "jetbrains.mps.nanoj.helgins", "1197638406648", false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "rightPart", true), "jetbrains.mps.nanoj.helgins", "1197638406659", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.nanoj.helgins", "1197638406664", true), SLinkOperations.getTarget(nodeToCheck, "rightPart", true), null, "jetbrains.mps.nanoj.helgins", "1197638406657", false);
   }
 
   public String getApplicableConceptFQName() {

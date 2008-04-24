@@ -11,7 +11,7 @@ public class typeof_StringType_InferenceRule implements InferenceRule_Runtime {
   public  typeof_StringType_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode nodeToCheck) {
   }
 
   public String getApplicableConceptFQName() {

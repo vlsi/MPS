@@ -11,7 +11,7 @@ public class typeof_LocalVariableDeclarationStatement_InferenceRule implements I
   public  typeof_LocalVariableDeclarationStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode nodeToCheck) {
   }
 
   public String getApplicableConceptFQName() {

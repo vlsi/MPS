@@ -15,8 +15,8 @@ public class subtype_IntType_SubtypingRule extends SubtypingRule_Runtime impleme
   public  subtype_IntType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode type) {
-    return ListOperations.createList(new SNode[]{SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.LongType", null)});
+  public List<SNode> getSubOrSuperTypes(SNode typeNode) {
+    return ListOperations.<SNode>createList(SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.LongType", null));
   }
 
   public String getApplicableConceptFQName() {

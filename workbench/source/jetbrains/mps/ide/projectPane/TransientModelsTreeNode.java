@@ -28,7 +28,7 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   }
 
   protected String getModulePresentation() {
-    return "Transient Models";
+    return "transient models";
   }
 
   public IModule getModule() {

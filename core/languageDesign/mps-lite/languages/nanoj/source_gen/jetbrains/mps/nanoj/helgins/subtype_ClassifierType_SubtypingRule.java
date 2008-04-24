@@ -16,13 +16,13 @@ public class subtype_ClassifierType_SubtypingRule extends SubtypingRule_Runtime 
   public  subtype_ClassifierType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode type) {
-    if(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(type, "classifier", false), "extends", true), "classifier", false) != null) {
+  public List<SNode> getSubOrSuperTypes(SNode typeNode) {
+    if (SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(typeNode, "classifier", false), "extends", true), "classifier", false) != null) {
       SNode t = SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.ClassifierType", null);
-      SLinkOperations.setTarget(t, "classifier", SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(type, "classifier", false), "extends", true), "classifier", false), false);
-      return ListOperations.createList(new SNode[]{t});
+      SLinkOperations.setTarget(t, "classifier", SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(typeNode, "classifier", false), "extends", true), "classifier", false), false);
+      return ListOperations.<SNode>createList(t);
     }
-    return ListOperations.createList(new SNode[]{});
+    return ListOperations.<SNode>createList();
   }
 
   public String getApplicableConceptFQName() {

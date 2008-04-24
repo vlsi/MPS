@@ -13,8 +13,8 @@ public class typeof_NumberExpression_InferenceRule implements InferenceRule_Runt
   public  typeof_NumberExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197638406389", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.IntType", null), argument, null, "jetbrains.mps.nanoj.helgins", "1197638406388");
+  public void applyRule(final SNode nodeToCheck) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.nanoj.helgins", "1197638406389", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.IntType", null), nodeToCheck, null, "jetbrains.mps.nanoj.helgins", "1197638406388");
   }
 
   public String getApplicableConceptFQName() {

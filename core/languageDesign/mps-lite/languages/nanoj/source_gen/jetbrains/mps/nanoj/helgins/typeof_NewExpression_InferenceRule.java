@@ -18,18 +18,18 @@ public class typeof_NewExpression_InferenceRule implements InferenceRule_Runtime
   public  typeof_NewExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode nodeToCheck) {
     SNode ct = SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.ClassifierType", null);
-    SLinkOperations.setTarget(ct, "classifier", SNodeOperations.getParent(SLinkOperations.getTarget(argument, "constructor", false), null, false, false), false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197638406461", true), ct, argument, null, "jetbrains.mps.nanoj.helgins", "1197638406460");
-    if(SequenceOperations.getSize(SLinkOperations.getTargets(argument, "parameter", true)) != SequenceOperations.getSize(SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "constructor", false), "parameter", true))) {
-      TypeChecker.getInstance().reportTypeError(argument, "Wrong parameters number", "jetbrains.mps.nanoj.helgins", "1197638406466");
+    SLinkOperations.setTarget(ct, "classifier", SNodeOperations.getParent(SLinkOperations.getTarget(nodeToCheck, "constructor", false), null, false, false), false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.nanoj.helgins", "1197638406461", true), ct, nodeToCheck, null, "jetbrains.mps.nanoj.helgins", "1197638406460");
+    if (SequenceOperations.getSize(SLinkOperations.getTargets(nodeToCheck, "parameter", true)) != SequenceOperations.getSize(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "constructor", false), "parameter", true))) {
+      TypeChecker.getInstance().reportTypeError(nodeToCheck, "Wrong parameters number", "jetbrains.mps.nanoj.helgins", "1197638406466");
       return;
     }
-    List<SNode> args = SLinkOperations.getTargets(argument, "parameter", true);
-    List<SNode> params = SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "constructor", false), "parameter", true);
-    for(int i = 0 ; i < SequenceOperations.getSize(SLinkOperations.getTargets(argument, "parameter", true)) ; i = i + 1) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(ListOperations.getElement(args, i), "jetbrains.mps.nanoj.helgins", "1197638406518", true), SLinkOperations.getTarget(ListOperations.getElement(params, i), "type", true), ListOperations.getElement(args, i), null, "jetbrains.mps.nanoj.helgins", "1197638406516");
+    List<SNode> args = SLinkOperations.getTargets(nodeToCheck, "parameter", true);
+    List<SNode> params = SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "constructor", false), "parameter", true);
+    for(int i = 0 ; i < SequenceOperations.getSize(SLinkOperations.getTargets(nodeToCheck, "parameter", true)) ; i = i + 1) {
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(ListOperations.getElement(args, i), "jetbrains.mps.nanoj.helgins", "1197638406518", true), SLinkOperations.getTarget(ListOperations.getElement(params, i), "type", true), ListOperations.getElement(args, i), null, "jetbrains.mps.nanoj.helgins", "1197638406516", false);
     }
   }
 

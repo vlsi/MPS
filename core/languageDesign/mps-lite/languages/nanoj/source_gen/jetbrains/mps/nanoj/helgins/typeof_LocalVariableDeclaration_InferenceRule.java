@@ -11,7 +11,7 @@ public class typeof_LocalVariableDeclaration_InferenceRule implements InferenceR
   public  typeof_LocalVariableDeclaration_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode nodeToCheck) {
   }
 
   public String getApplicableConceptFQName() {

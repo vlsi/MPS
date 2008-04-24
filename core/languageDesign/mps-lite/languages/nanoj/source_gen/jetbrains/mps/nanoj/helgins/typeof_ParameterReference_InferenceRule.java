@@ -13,8 +13,8 @@ public class typeof_ParameterReference_InferenceRule implements InferenceRule_Ru
   public  typeof_ParameterReference_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197638406417", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "parameter", false), "jetbrains.mps.nanoj.helgins", "1197638406419", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197638406416");
+  public void applyRule(final SNode nodeToCheck) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.nanoj.helgins", "1197638406417", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "parameter", false), "jetbrains.mps.nanoj.helgins", "1197638406419", true), nodeToCheck, null, "jetbrains.mps.nanoj.helgins", "1197638406416");
   }
 
   public String getApplicableConceptFQName() {

@@ -14,8 +14,8 @@ public class typeof_IfStatement_InferenceRule implements InferenceRule_Runtime {
   public  typeof_IfStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true), "jetbrains.mps.nanoj.helgins", "1197638406323", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.BooleanType", null), argument, null, "jetbrains.mps.nanoj.helgins", "1197638406322");
+  public void applyRule(final SNode nodeToCheck) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "condition", true), "jetbrains.mps.nanoj.helgins", "1197638406323", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.BooleanType", null), nodeToCheck, null, "jetbrains.mps.nanoj.helgins", "1197638406322");
   }
 
   public String getApplicableConceptFQName() {

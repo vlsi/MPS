@@ -15,8 +15,8 @@ public class subtype_FloatType_SubtypingRule extends SubtypingRule_Runtime imple
   public  subtype_FloatType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode type) {
-    return ListOperations.createList(new SNode[]{SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.DoubleType", null)});
+  public List<SNode> getSubOrSuperTypes(SNode typeNode) {
+    return ListOperations.<SNode>createList(SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.DoubleType", null));
   }
 
   public String getApplicableConceptFQName() {

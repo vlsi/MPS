@@ -11,7 +11,7 @@ public class typeof_ClassifierType_InferenceRule implements InferenceRule_Runtim
   public  typeof_ClassifierType_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode nodeToCheck) {
   }
 
   public String getApplicableConceptFQName() {

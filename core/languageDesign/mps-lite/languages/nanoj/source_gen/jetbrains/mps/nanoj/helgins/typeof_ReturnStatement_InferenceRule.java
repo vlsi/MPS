@@ -14,10 +14,10 @@ public class typeof_ReturnStatement_InferenceRule implements InferenceRule_Runti
   public  typeof_ReturnStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode method = SNodeOperations.getAncestor(argument, "jetbrains.mps.nanoj.structure.BaseMethod", false, false);
-    if(method != null) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true), "jetbrains.mps.nanoj.helgins", "1197638406361", true), SLinkOperations.getTarget(method, "type", true), SLinkOperations.getTarget(argument, "expression", true), null, "jetbrains.mps.nanoj.helgins", "1197638406359");
+  public void applyRule(final SNode nodeToCheck) {
+    SNode method = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.nanoj.structure.BaseMethod", false, false);
+    if (method != null) {
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "expression", true), "jetbrains.mps.nanoj.helgins", "1197638406361", true), SLinkOperations.getTarget(method, "type", true), SLinkOperations.getTarget(nodeToCheck, "expression", true), null, "jetbrains.mps.nanoj.helgins", "1197638406359", false);
     }
   }
 

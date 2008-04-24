@@ -11,7 +11,7 @@ public class typeof_FieldDeclaration_InferenceRule implements InferenceRule_Runt
   public  typeof_FieldDeclaration_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode nodeToCheck) {
   }
 
   public String getApplicableConceptFQName() {

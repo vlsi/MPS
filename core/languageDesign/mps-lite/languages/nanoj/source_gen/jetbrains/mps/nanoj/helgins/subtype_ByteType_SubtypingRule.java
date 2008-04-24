@@ -15,8 +15,8 @@ public class subtype_ByteType_SubtypingRule extends SubtypingRule_Runtime implem
   public  subtype_ByteType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode type) {
-    return ListOperations.createList(new SNode[]{SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.ShortType", null)});
+  public List<SNode> getSubOrSuperTypes(SNode typeNode) {
+    return ListOperations.<SNode>createList(SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.ShortType", null));
   }
 
   public String getApplicableConceptFQName() {

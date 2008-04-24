@@ -11,7 +11,7 @@ public class typeof_ParameterDeclaration_InferenceRule implements InferenceRule_
   public  typeof_ParameterDeclaration_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode nodeToCheck) {
   }
 
   public String getApplicableConceptFQName() {
