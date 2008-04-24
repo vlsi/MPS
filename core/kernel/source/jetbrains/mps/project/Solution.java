@@ -1,7 +1,5 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.command.CommandEventTranslator;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;

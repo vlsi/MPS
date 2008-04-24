@@ -12,7 +12,6 @@ import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPathsDialog;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.genconf.GenParameters;

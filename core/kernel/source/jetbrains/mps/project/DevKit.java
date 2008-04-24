@@ -1,7 +1,5 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.command.CommandEventTranslator;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.DevKitDescriptor;
@@ -15,10 +13,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -52,12 +47,9 @@ public class DevKit extends AbstractModule {
 
   private DevKitDescriptor myDescriptor;
   private IFile myDescriptorFile;
-  private DevKitEventTranslator myTranslator = new DevKitEventTranslator();
-  private List<DevKitCommandListener> myListeners = new ArrayList<DevKitCommandListener>();
   private MPSModuleOwner myGenerationOnlyModelsModelOwner = this;
 
   public DevKit() {
-    CommandProcessor.instance().addCommandListener(myTranslator);
   }
 
   public IFile getDescriptorFile() {
@@ -90,9 +82,7 @@ public class DevKit extends AbstractModule {
     myDescriptor = descriptor;
 
     reload();
-
-    devKitChanged();
-
+    
     ClassLoaderManager.getInstance().reloadAll();    
   }
 
@@ -101,7 +91,6 @@ public class DevKit extends AbstractModule {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     MPSModuleRepository.getInstance().unRegisterModules(this);
     MPSModuleRepository.getInstance().unRegisterModules(myGenerationOnlyModelsModelOwner);
-    CommandProcessor.instance().removeCommandListener(myTranslator);
   }
 
   public List<Language> getExportedLanguages() {
@@ -151,19 +140,6 @@ public class DevKit extends AbstractModule {
     super.convert();
   }
 
-  private void devKitChanged() {
-    myTranslator.devKitChanged();
-  }
-
-  public void addListener(DevKitCommandListener cl) {
-    myListeners.add(cl);
-  }
-
-  public void removeListener(DevKitCommandListener cl) {
-    myListeners.remove(cl);
-  }
-
-
   public String getName() {
     return myDescriptor.getName();
   }
@@ -182,22 +158,5 @@ public class DevKit extends AbstractModule {
       result.add(NameUtil.namespaceFromLongName(getDevKitPluginClass()));
     }
     return result;
-  }
-
-  private class DevKitEventTranslator extends CommandEventTranslator {
-
-    private void devKitChanged() {
-      markCurrentCommandsDirty();
-    }
-
-    protected void fireCommandEvent() {
-      for (DevKitCommandListener l : myListeners) {
-        l.devKitChangedInCommand();
-      }
-    }
-  }
-
-  public static interface DevKitCommandListener {
-    public void devKitChangedInCommand();
   }
 }
